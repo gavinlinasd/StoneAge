@@ -1,0 +1,17 @@
+#include "version.h"
+#include <time.h>
+#include <string.h>
+#include "char.h"
+#include "object.h"
+#include "lssproto_serv.h"
+#include "npcutil.h"
+#include "handletime.h"
+#include "char_base.h"
+#include "configfile.h"
+#include "npc_auctioneer.h"
+#include "pet.h"
+#include "item.h"
+#include "util.h"
+#include "anim_tbl.h"
+#include "log.h"
+#include "saacproto_cli.h"

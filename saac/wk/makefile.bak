@@ -1,0 +1,22 @@
+CC=gcc
+
+all : acwk
+
+
+acwk : wk.c TCPIP.o error.o tools.o
+	gcc -o /root/saserver/saac/acwk -O3 -g -w wk.c error.o TCPIP.o tools.o
+
+TCPIP:
+error:
+tools:
+
+clean :
+	rm -f acwk *.o *~
+
+depend: $(RPCSRC) $(ANIMDATAFILE)
+	@for dir in $(SUBDIR) ; do \
+		$(MAKE) -C $$dir depend;\
+	done
+	$(MV) makefile makefile.bak
+	$(SED) -ne '1,/^# DO NOT DELETE THIS LINE/p' makefile.bak>makefile
+	$(CC) $(INCFLAGS) -M $(SRC) >> makefile 
