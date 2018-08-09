@@ -137,7 +137,7 @@
 
 //#define _UNLOCKPOOL		// Robin 2003/12/12  Logout暂存区
 
-#define _KILLDEADWORKER // Robin 2004/02/ 用sigusr1清除所有Worker 在unlock.arg加'K'
+//#define _KILLDEADWORKER // Robin 2004/02/ 用sigusr1清除所有Worker 在unlock.arg加'K'
 
 #define _SLEEP_CHAR		// Robin 2004/02/12	活跃人物与非活跃人物分开储存
 
@@ -151,9 +151,9 @@
 #define _TEACHER_SYSTEM   // 导师系统(未开放)
 // Terry define end   -------------------------------------------------------------------
 
-#define _ANGEL_SUMMON	// Robin 精灵的召唤
+//#define _ANGEL_SUMMON	// Robin 精灵的召唤
 //#define _SASQL //Change 石器资料库 (不可开)
-#define _RACEMAN		// cyg 猎宠大会
+//#define _RACEMAN		// cyg 猎宠大会
 
 
 //--------------------------------------------------------

@@ -178,7 +178,7 @@ char*   makeStringFromEscaped( char* src )
         }else{
             src[searchindex++] = src[i];
         }
-    NEXT:
+    NEXT:;
     }
     src[searchindex] = '\0';
     return src;
