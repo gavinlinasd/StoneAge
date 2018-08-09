@@ -12,7 +12,7 @@ CFLAGS=-w -O3 $(INCFLAGS)
 MYSQL=-L /usr/lib/mysql/ -lmysqlclient -lz 
 
 TOP=../..
-PROG = saac
+PROG = ../saac
 SHELL = /bin/sh
 PERL=/usr/bin/perl
 
