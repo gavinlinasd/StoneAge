@@ -1,0 +1,28 @@
+sql_IP 127.0.0.1
+sql_Port 3306
+sql_ID root
+sql_PS 123456789
+sql_DataBase sa
+sql_Table logindata
+sql_LOCK user_lock
+AutoReg 1
+
+port 9300
+pass test
+rotale_internal 1000
+
+dbdir db
+logdir log
+lockdir lock
+chardir char
+sleepchardir char_sleep
+wklogdir data/wklog
+maildir mail
+familydir data/family
+fmpointdir data/fmpointdir
+fmsmemodir data/fmsmemodir
+
+Total_Charlist 3600
+Expired_mail 600
+Del_Family_or_Member 3600
+Write_Family 600
