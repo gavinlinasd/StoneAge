@@ -1,0 +1,19 @@
+﻿##############################
+#MYSQL基本配置
+#ifdef _SASQL
+#sql服务器IP
+sql_IP          127.0.0.1
+#sql服务器端口
+sql_Port        3306
+#sql服务器账号
+sql_ID          root
+#sql服务器密码
+sql_PS          123456789
+#sql数据库名
+sql_DataBase    sa
+#sql人物信息表名
+sql_Table       logindata
+#sql用户名字段
+sql_NAME        Name
+#sql密码字段名
+sql_PASS        PassWord
