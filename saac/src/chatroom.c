@@ -45,7 +45,7 @@ int CHATROOM_CreateChatRoom( int fd, char *cdkey, char *data,
 	int chat=-1;
 	char buf1[256];
 	if( (chat=CHATROOM_getfreeChatRoom()) == -1 ){
-		sprintf( message, "ÆµµÀÒÑÂú£¡");
+		sprintf( message, "é¢‘é“å·²æ»¡ï¼");
 		return -1;
 	}
 	CHATROOM_resetChat( chat);
@@ -139,7 +139,7 @@ extern gmsv gs[MAXCONNECTION];
 	UniChatRoom[chat].charanum--;
 	{
 		int mti = UniChatRoom[chat].masindex;
-		if( mti == uti ){ //ÊÒ³¤Àë¿ª
+		if( mti == uti ){ //å®¤é•¿ç¦»å¼€
 			for( i=0; i<MAX_PPLINROOM; i++){
 				if( UniChatRoom[chat].charalist[i].use == 0 ) continue;
 				UniChatRoom[chat].masindex = i;
@@ -446,7 +446,7 @@ extern gmsv gs[MAXCONNECTION];
 			);
 		strcat( token, buf);
 	}
-	//¸üĞÂ.
+	//æ›´æ–°.
 	if( fd == -1 ){
 		for( i=0; i<MAXCONNECTION; i++) {
 			if( !gs[i].use ) continue;
@@ -469,27 +469,27 @@ void CHATROOM_RecvAll( int fd, char *cdkey, char *data, int userindex, int clifd
 
 	easyGetTokenFromBuf( data, '|', 1, comm, sizeof(comm) );
 
-	if( !strcmp( comm, "C") ){//½¨Á¢ÆµµÀ
+	if( !strcmp( comm, "C") ){//å»ºç«‹é¢‘é“
 		if( CHATROOM_CreateChatRoom( fd, cdkey, data, token, userindex, clifdid) >= 0 ){
 		}else{
 			saacproto_ACUniChatroom_send( fd, cdkey, FAILED, data, userindex, clifdid );
 		}
-	}else if( !strcmp( comm, "D") ) {//É¾³ıÆµµÀ
+	}else if( !strcmp( comm, "D") ) {//åˆ é™¤é¢‘é“
 		CHATROOM_DelChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "L") ) {//Àë¿ªÆµµÀ
+	}else if( !strcmp( comm, "L") ) {//ç¦»å¼€é¢‘é“
 		CHATROOM_LeaveChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "T") ) {//ÆµµÀÑ¶Ï¢
+	}else if( !strcmp( comm, "T") ) {//é¢‘é“è®¯æ¯
 		CHATROOM_MessageChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "K") ) {//Ìß³öÆµµÀ
+	}else if( !strcmp( comm, "K") ) {//è¸¢å‡ºé¢‘é“
 		CHATROOM_KickChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "J") ) {//ÉêÇë¼ÓÈëÆµµÀ
+	}else if( !strcmp( comm, "J") ) {//ç”³è¯·åŠ å…¥é¢‘é“
 		CHATROOM_AgreeJoinCR( fd, data, userindex, clifdid);
 		//CHATROOM_JoinChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "A") ) {//Í¬Òâ¼ÓÈë
+	}else if( !strcmp( comm, "A") ) {//åŒæ„åŠ å…¥
 		CHATROOM_AgreeChatRoom( cdkey, data);
-	}else if ( strcmp ( comm , "M" ) == 0 ) { // ¸ü»»ÊÒ³¤
+	}else if ( strcmp ( comm , "M" ) == 0 ) { // æ›´æ¢å®¤é•¿
 		CHATROOM_MasterChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "U") ) {//¸üĞÂÆµµÀ
+	}else if( !strcmp( comm, "U") ) {//æ›´æ–°é¢‘é“
 		easyGetTokenFromBuf( data, '|', 2, buf1, sizeof(buf1) );
 		if( atoi( buf1) == -1 ){
 			for( i=0; i<MAX_CHATROOM; i++){

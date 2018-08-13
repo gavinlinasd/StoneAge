@@ -4,7 +4,7 @@
 #include "main.h"
 #include "char.h"
 
-#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS¶ÏÏß×Ô¶¯ËÍLOGOUT¸øWORKER
+#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GSæ–­çº¿è‡ªåŠ¨é€LOGOUTç»™WORKER
 #include "recv.h"
 #endif
 
@@ -33,7 +33,7 @@ void Lock_Init(void)
 		memset( userlock[i]->name, 0, sizeof( userlock[i]->name) );
 #endif
 	}
-	log("´æÖüÆ÷³õÊ¼»¯");
+	log("å­˜è´®å™¨åˆå§‹åŒ–");
 }
 
 LockNode *Creat_newNodes( void)
@@ -63,9 +63,9 @@ int InsertMemLock(int entry, char *cdkey, char *passwd, char *server, int proces
 	int j;
 	LockNode *ln = userlock[entry];
 #ifdef _LOCK_ADD_NAME
-		log("½øÈëÓÎÏ·:Ä¿Â¼:char/0x%x ÕËºÅ:%s Ãû³Æ:%s ·şÎñÆ÷:%s\n", entry, cdkey, name, server);
+		log("è¿›å…¥æ¸¸æˆ:ç›®å½•:char/0x%x è´¦å·:%s åç§°:%s æœåŠ¡å™¨:%s\n", entry, cdkey, name, server);
 #else
-		log("½øÈëÓÎÏ·:Ä¿Â¼:%x ÕËºÅ:%s ·şÎñÆ÷:%s\n", entry, cdkey, server);
+		log("è¿›å…¥æ¸¸æˆ:ç›®å½•:%x è´¦å·:%s æœåŠ¡å™¨:%s\n", entry, cdkey, server);
 #endif
   
 	while( (ln!=NULL) && (ln->use!=0)) ln=ln->next;
@@ -105,12 +105,12 @@ int DeleteMemLock(int entry, char *cdkey, int *process)
 {
 	LockNode *ln = userlock[entry];
 
-	log("É¾³ıÄÚ´æĞÅÏ¢ Î»ÖÃ=%x ÕËºÅ=%s ..\n", entry, cdkey);
+	log("åˆ é™¤å†…å­˜ä¿¡æ¯ ä½ç½®=%x è´¦å·=%s ..\n", entry, cdkey);
 
 	while (ln!=NULL) {
 		if( ln->use != 0) {
 #ifdef _CHANGEGALAXY
-			if( !strcmp( ln->cdkey, cdkey ) && strcmp( ln->server, "ÒÆÃñ") ) break;
+			if( !strcmp( ln->cdkey, cdkey ) && strcmp( ln->server, "ç§»æ°‘") ) break;
 #else
 			if( strcmp( ln->cdkey, cdkey ) == 0 ) break;
 #endif
@@ -125,10 +125,10 @@ int DeleteMemLock(int entry, char *cdkey, int *process)
 		memset( ln->name, 0, sizeof( ln->name) );
 #endif
 		*process = ln->process;
-		log("É¾³ı³É¹¦\n");
+		log("åˆ é™¤æˆåŠŸ\n");
 		return 1;
 	}
-	log("É¾³ıÊ§°Ü!!\n");
+	log("åˆ é™¤å¤±è´¥!!\n");
 	return 0;
 }
 
@@ -150,13 +150,13 @@ void DeleteMemLockServer(char *sname)
 }
 
 
-#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS¶ÏÏß×Ô¶¯ËÍLOGOUT¸øWORKER
+#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GSæ–­çº¿è‡ªåŠ¨é€LOGOUTç»™WORKER
 void Worker_auto_logout(int ti, char *sname)
 {
   int i;
   LockNode *ln;
   
-  log("\nGMSV ÍË³ö»ò¹¤×÷Õ¾ÍË³ö!! \n");
+  log("\nGMSV é€€å‡ºæˆ–å·¥ä½œç«™é€€å‡º!! \n");
 
   for (i=0; i<256; i++) {
     ln = userlock[i];
@@ -167,13 +167,13 @@ void Worker_auto_logout(int ti, char *sname)
 			if( addUnlockPool( ti, ln->cdkey, "", "", "") <0 ) {
 				char id[20];
 				strcpy(id ,ln->cdkey);
-				log("¹¤×÷Õ¾·¢ËÍÍË³ö ==> ti(%d) ÕËºÅ(%s) ĞòºÅ(%d)\n", ti, id, iUnlockPoolAdd );
+				log("å·¥ä½œç«™å‘é€é€€å‡º ==> ti(%d) è´¦å·(%s) åºå·(%d)\n", ti, id, iUnlockPoolAdd );
 				Worker_send_logout(ti, id);
 			}
 #else
 			char id[20];
 			strcpy(id ,ln->cdkey);
-			log("¹¤×÷Õ¾·¢ËÍÍË³ö==>ti(%d) ÕËºÅ(%s)\n", ti, id );
+			log("å·¥ä½œç«™å‘é€é€€å‡º==>ti(%d) è´¦å·(%s)\n", ti, id );
 			Worker_send_logout(ti, id);
 #endif
         }
@@ -193,8 +193,8 @@ int isMemLocked(int entry, char *cdkey)
 	while (ln!=NULL) {
 		if (ln->use != 0) {
 			if (strcmp(ln->cdkey, cdkey)==0) {
-				if( !strcmp(ln->server, "ĞÇÏµÒÆÃñ"))
-					log(" ĞÇÏµÒÆÃñÖĞ ");
+				if( !strcmp(ln->server, "æ˜Ÿç³»ç§»æ°‘"))
+					log(" æ˜Ÿç³»ç§»æ°‘ä¸­ ");
 				break;
 			}
 		}
@@ -210,13 +210,13 @@ int GetMemLockState(int entry, char *cdkey, char *result)
 	while (ln!=NULL) {
 		if (ln->use != 0) {
 			if (strcmp(ln->cdkey, cdkey)==0) {
-				sprintf(result, "%s ÊÇÔÚ %s ±»ËøµÄ.",cdkey, ln->server);
+				sprintf(result, "%s æ˜¯åœ¨ %s è¢«é”çš„.",cdkey, ln->server);
 				return 1;
 			}
 		}
 		ln=ln->next;
 	}
-	sprintf(result, "%s Ã»ÓĞ±»Ëø.", cdkey);
+	sprintf(result, "%s æ²¡æœ‰è¢«é”.", cdkey);
 	return 0;
 }
 
@@ -265,7 +265,7 @@ int DeleteGalaxyChangeLock( void)
 
 		while (ln!=NULL) {
 			if( ln->use != 0) {
-				if( strcmp( ln->server, "ĞÇÏµÒÆÃñ" ) == 0 ) {
+				if( strcmp( ln->server, "æ˜Ÿç³»ç§»æ°‘" ) == 0 ) {
 					ln->use=0;
 					memset( ln->cdkey, 0, sizeof( ln->cdkey) );
 					memset( ln->server, 0, sizeof( ln->server) );
@@ -298,8 +298,8 @@ int isChangeGalaxyLocked( char *cdkey)
 
 	while (ln!=NULL) {
 		if (ln->use != 0) {
-			if( !strcmp(ln->cdkey, cdkey) && !strcmp(ln->server, "ĞÇÏµÒÆÃñ") ) {
-					log(" ĞÇÏµÒÆÃñÖĞ ");
+			if( !strcmp(ln->cdkey, cdkey) && !strcmp(ln->server, "æ˜Ÿç³»ç§»æ°‘") ) {
+					log(" æ˜Ÿç³»ç§»æ°‘ä¸­ ");
 				break;
 			}
 		}
@@ -319,7 +319,7 @@ int ChangeMemDeadline(int entry, char *cdkey, char *deadline)
 	while (ln!=NULL) {
 		if (ln->use != 0) {
 			if (strcmp(ln->cdkey, cdkey)==0) {
-				log(" ĞŞ¸ÄDeadline ");
+				log(" ä¿®æ”¹Deadline ");
 				strcpy( ln->deadline, deadline);
 				break;
 			}
@@ -338,7 +338,7 @@ void UnlockPoolProc( void)
 	int cleanCount =0;
 
 
-	if( sys_time < lastcheck + 3 ) // Ã¿xxÃë¼ì²é
+	if( sys_time < lastcheck + 3 ) // æ¯xxç§’æ£€æŸ¥
 		return;
 	lastcheck = sys_time;
 
@@ -379,12 +379,12 @@ void UnlockPoolProc( void)
 
 			cleanCount++;
 
-			//if( cleanCount >=30) // Ã¿´Î×î¶àËÍX¸ölogout
+			//if( cleanCount >=30) // æ¯æ¬¡æœ€å¤šé€Xä¸ªlogout
 			//	break;
 		}
 	}
 
-	// Ò»´ÎÈ«Çå¹éÁã
+	// ä¸€æ¬¡å…¨æ¸…å½’é›¶
 	iUnlockPoolAdd =0;
 	unlockindex =0;
 

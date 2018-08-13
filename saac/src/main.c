@@ -63,7 +63,7 @@ int worksockfd;
 #include "saacproto_lserver.h"
 #endif
 
-#ifdef _SEND_EFFECT				  // WON ADD ËÍÏÂÑ©¡¢ÏÂÓêµÈÌØĞ§ 
+#ifdef _SEND_EFFECT				  // WON ADD é€ä¸‹é›ªã€ä¸‹é›¨ç­‰ç‰¹æ•ˆ 
 #include "recv.h"
 #endif
 
@@ -102,17 +102,17 @@ struct membuf *mb;
 int mbsize;
 int mbuse ;
 
-int mainsockfd;             /* accept ¼°  ÓòÂ¦ĞÑ±åÖĞÄ¾ÔÂ */
-struct sockaddr_in localaddr;       /* bind ÔÊÔÂÊ§ÓñÒÁµ© */
+int mainsockfd;             /* accept åŠ  åŸŸå¨„é†’åä¸­æœ¨æœˆ */
+struct sockaddr_in localaddr;       /* bind å…æœˆå¤±ç‰ä¼Šæ—¦ */
     
 
-struct connection *con;        /* ÎìÉúÛÍÆËÒà¼ş     */
+struct connection *con;        /* æˆŠç”Ÿå¼æ‰‘äº¦ä»¶     */
 
-static int mb_finder=0;              /* mb¼°ÎëÎåÃ«¸¹³ñÔÊÔÂĞ×»§¼°
-                               ¸¹³ñĞşÓÀÃó¼°ŞË  ·¤Ê¢åÃ */
+static int mb_finder=0;              /* mbåŠåäº”æ¯›è…¹ç»¸å…æœˆå‡¶æˆ·åŠ
+                               è…¹ç»¸ç„æ°¸çš¿åŠåŒ  ç­ç››è¿• */
 // WON FIX
 char tmpbuf[65536];
-//char tmpbuf[65536*3];         /* readåÃ */
+//char tmpbuf[65536*3];         /* readè¿• */
 
 struct timeval select_timeout;
 
@@ -134,24 +134,24 @@ int tcpstruct_connect( char *addr , int port );
 void set_nodelay( int sock );
 
 
-#define OK     0        /* ÔÀ   */
-#define TCPSTRUCT_ENOMEM -1       /* malloc ÁÃ   */
-#define TCPSTRUCT_ESOCK -2        /* socket ÁÃ   */
-#define TCPSTRUCT_EBIND -3        /* bind ÁÃ   */
-#define TCPSTRUCT_ELISTEN -4      /* listen ÁÃ   */
-#define TCPSTRUCT_EBUG -6         /* ÌïºëÆ¥Ø¤ÔÂ */
-#define TCPSTRUCT_EINVCIND -7     /* con³ß¼°index»¥ÔÆ¾®ØÆÖĞ·½ */
-#define TCPSTRUCT_EREADFIN -8     /* read ÔÊÔÂ·¸¡õÕı»¥Ø¦ÈÊ»¯ closed by remote */
-#define TCPSTRUCT_EHOST -9        /* gethostbyname ÁÃ   */
-#define TCPSTRUCT_ECONNECT -10    /* connect ÁÃ   */
-#define TCPSTRUCT_ECFULL -11      /* con »¥ÖĞÔÈÌìÖĞ */
-#define TCPSTRUCT_ETOOLONG -12    /* µæ»¥Ø¦»¥ÔÊ¿º */
-#define TCPSTRUCT_EMBFULL -13     /* mb »¥ÖĞÔÈÌìÖĞ  */
-#define TCPSTRUCT_ECLOSEAGAIN -14 /* close »¥2¼Ô½ñÄ¾Ğ× */
+#define OK     0        /* å²³   */
+#define TCPSTRUCT_ENOMEM -1       /* malloc æ’©   */
+#define TCPSTRUCT_ESOCK -2        /* socket æ’©   */
+#define TCPSTRUCT_EBIND -3        /* bind æ’©   */
+#define TCPSTRUCT_ELISTEN -4      /* listen æ’©   */
+#define TCPSTRUCT_EBUG -6         /* ç”°å¼˜åŒ¹ä¸æœˆ */
+#define TCPSTRUCT_EINVCIND -7     /* conå°ºåŠindexäº’äº‘äº•ä»„ä¸­æ–¹ */
+#define TCPSTRUCT_EREADFIN -8     /* read å…æœˆçŠ¯â–¡æ­£äº’å…ä»åŒ– closed by remote */
+#define TCPSTRUCT_EHOST -9        /* gethostbyname æ’©   */
+#define TCPSTRUCT_ECONNECT -10    /* connect æ’©   */
+#define TCPSTRUCT_ECFULL -11      /* con äº’ä¸­åŒ€å¤©ä¸­ */
+#define TCPSTRUCT_ETOOLONG -12    /* å«äº’å…äº’å…äº¢ */
+#define TCPSTRUCT_EMBFULL -13     /* mb äº’ä¸­åŒ€å¤©ä¸­  */
+#define TCPSTRUCT_ECLOSEAGAIN -14 /* close äº’2èšä»Šæœ¨å‡¶ */
 #endif
 
 
-int port;               /* ±Ø¡õØ©ÈÓ¡õÌï¡õ»¥ÌÎÁ¸ØÆ»¯ÈÊÔÂºÌ¡õĞş */
+int port;               /* å¿…â–¡ä¸æ‰”â–¡ç”°â–¡äº’æ¶›ç²®ä»„åŒ–ä»æœˆç¦¾â–¡ç„ */
 int Total_Charlist;
 int Expired_mail;
 int Del_Family_or_Member;
@@ -172,22 +172,22 @@ char *chartime()
 }
 
 /*
-  sigaction°×ÛÍ
+  sigactionç™½å¼
  */
 void sighandle( int a )
 {
-    if (a==SIGUSR1) log("sigusr1ĞÅºÅ!\n");
+    if (a==SIGUSR1) log("sigusr1ä¿¡å·!\n");
 
 	if (a==SIGUSR2) {
 		sigusr2( a);
-		log("sigusr2ĞÅºÅ!\n");
+		log("sigusr2ä¿¡å·!\n");
 		return;
 	}
 	#ifdef _SQL_BACKGROUND
       if(!sasql_initonline())
-      	log("\nÊı¾İ¿â±£´æÊ§°Ü£¡\n");
+      	log("\næ•°æ®åº“ä¿å­˜å¤±è´¥ï¼\n");
   #endif
-    log("µÃµ½Ò»¸öĞÅºÅ! Òì³£ÖĞ¶Ï......\n" );
+    log("å¾—åˆ°ä¸€ä¸ªä¿¡å·! å¼‚å¸¸ä¸­æ–­......\n" );
     exit(1);
 }
 
@@ -226,49 +226,49 @@ void sigusr1(int a)
       sprintf(key, "echo \"%s\" > ./sigusr1.result", buf);
       system(key);
     break;
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD ¼ÆËãÏßÉÏÈËÊı
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD è®¡ç®—çº¿ä¸Šäººæ•°
 	case 'W':	
       PlayerCount();
 	break;
 #endif
 
-#ifdef _SEND_EFFECT		   // WON ADD ËÍÏÂÑ©¡¢ÏÂÓêµÈÌØĞ§
+#ifdef _SEND_EFFECT		   // WON ADD é€ä¸‹é›ªã€ä¸‹é›¨ç­‰ç‰¹æ•ˆ
 	case 'E':	
-		log("\nAC Ïò GS ·¢ËÍÏÂÑ©ÌØĞ§!!\n");
+		log("\nAC å‘ GS å‘é€ä¸‹é›ªç‰¹æ•ˆ!!\n");
 	    SendEffect(&key[1]);
 	break;
 #endif
 
-#ifdef _BAD_PLAYER            // WON ADD ËÍ»µÍæ¼ÒÈ¥¹Ø
+#ifdef _BAD_PLAYER            // WON ADD é€åç©å®¶å»å…³
 	case 'B':
-		log("\nAC ·¢ËÍ»µÍæ¼Ò¼àÓü!!\n");
+		log("\nAC å‘é€åç©å®¶ç›‘ç‹±!!\n");
 		BadPlayer();
 	break;
 #endif
 
-#ifdef _RECAL_BACKUP_PLAYER			// WON »ØËİ¹¦ÄÜ
+#ifdef _RECAL_BACKUP_PLAYER			// WON å›æº¯åŠŸèƒ½
 	case 'U':
-		log("\n·¢ËÍ±¸·İÈËÎï×ÊÁÏ");
-		// µÃµ½±¸·İÈËÎï×ÊÁÏ
+		log("\nå‘é€å¤‡ä»½äººç‰©èµ„æ–™");
+		// å¾—åˆ°å¤‡ä»½äººç‰©èµ„æ–™
 		send_backup_player_data();
 	break;
 #endif
 	
-#ifdef _GM_BROADCAST					// WON ADD ¿Í·ş¹«¸æÏµÍ³
+#ifdef _GM_BROADCAST					// WON ADD å®¢æœå…¬å‘Šç³»ç»Ÿ
 	case 'G':
 		log("\n won test 1 ==> _GM_BROADCAST" );
 		broadcast(key);
 	break;
 #endif
 
-#ifdef _KILLDEADWORKER	// ½«ËùÓĞWorker³õÊ¼»¯
+#ifdef _KILLDEADWORKER	// å°†æ‰€æœ‰Workeråˆå§‹åŒ–
 	case 'K':
 		log("\nKILL ALL WORKER!!!!!\n");
 		initWorkerPort();
 	break;
 #endif
 
-	case 'L':  // Robin ÁĞ³öËùÓĞServerÁ¬Ïß
+	case 'L':  // Robin åˆ—å‡ºæ‰€æœ‰Serverè¿çº¿
 		log("\nList All Server Conncet!!!!!\n");
 		for( i =0; i <MAXCONNECTION; i++)
 			if( gs[i].use)
@@ -291,8 +291,8 @@ static int netWrite( int ti , char *buf , int len)
 #ifndef _FIX_WORKS
 typedef enum
 {
-    WKSTAT_IDLE = 0,            /* ÖÏÊÖØÆ»¯Ø¦ÖĞÇÁÚØ */
-    WKSTAT_WAITING = 2          /* ·¥¡õÊĞ¾®ÈÕ¼°ß¯²ÏÃ«ÒıÔÈ»¯ÔÂÇÁÚØ */
+    WKSTAT_IDLE = 0,            /* çª’æ‰‹ä»„åŒ–å…ä¸­æ©‡è°ª */
+    WKSTAT_WAITING = 2          /* ä¼â–¡å¸‚äº•æ—¥åŠå¿’èš•æ¯›å¼•åŒ€åŒ–æœˆæ©‡è°ª */
 } WKSTAT;
 
 struct worker
@@ -392,7 +392,7 @@ int addWorkerTask( char *id , char *pas , char *flag,
         if( wk[n].use && wk[n].status == WKSTAT_IDLE ){
             char s[256];
 
-			log("Ê¹ÓÃ¹¤×÷Õ¾:%d \n", n);
+			log("ä½¿ç”¨å·¥ä½œç«™:%d \n", n);
 
             // Nuke
             {
@@ -427,7 +427,7 @@ int addWorkerTask( char *id , char *pas , char *flag,
 			return 0;
         }
     }
-    log( "¹¤×÷Õ¾·±Ã¦»ò¹¤×÷Õ¾Í£Ö¹¹¤×÷. »î¶¯ÖĞµÄ¹¤×÷Õ¾ÓĞ:%d\n", countWorker() );
+    log( "å·¥ä½œç«™ç¹å¿™æˆ–å·¥ä½œç«™åœæ­¢å·¥ä½œ. æ´»åŠ¨ä¸­çš„å·¥ä½œç«™æœ‰:%d\n", countWorker() );
     return -1;
 }
 
@@ -460,7 +460,7 @@ static void doWorker( int ti , char *m )
     char deadline[128];
 
 #ifdef _TIMEOUTKICK
-	//log("¹¤×÷Õ¾:%s ", m);
+	//log("å·¥ä½œç«™:%s ", m);
 	// Nuke 20040519: Protect from error from worker
 	if (m) 
 	{
@@ -474,10 +474,10 @@ static void doWorker( int ti , char *m )
 			res=-1;
 		
 		if (p2)
-			strcpy( deadline, p2 ); // È¡µÃ deadline
+			strcpy( deadline, p2 ); // å–å¾— deadline
 		else {
 			strcpy( deadline, "0" );
-			//log("\n ¹¤×÷Õ¾»Ø´«ÏûÏ¢:%d:%s ", ti, p1);
+			//log("\n å·¥ä½œç«™å›ä¼ æ¶ˆæ¯:%d:%s ", ti, p1);
 		}
 	}
 	else
@@ -515,7 +515,7 @@ static void doWorker( int ti , char *m )
 										wk[i].iparam[0] ,
 										wk[i].iparam[1] );
 					} else {
-						log( "¹¤×÷Õ¾: Â©¶´! callback ²»ÄÜ³õÊ¼»¯\n");
+						log( "å·¥ä½œç«™: æ¼æ´! callback ä¸èƒ½åˆå§‹åŒ–\n");
 					}
 				wk[i].status = WKSTAT_IDLE;
             }
@@ -541,9 +541,9 @@ int login_game_server( int ti , char *svname , char *svpas ,
                char *retdata , int retdatalen )
 {
     if( strcmp( svpas , svpass ) == 0 ){
-        log( "·şÎñÆ÷ÃÜÂëÕıÈ· %s\n" , svname );
+        log( "æœåŠ¡å™¨å¯†ç æ­£ç¡® %s\n" , svname );
     } else {
-        log( "·şÎñÆ÷ÃÜÂë´íÎó %s\n" , svname );
+        log( "æœåŠ¡å™¨å¯†ç é”™è¯¯ %s\n" , svname );
         snprintf( result , resultlen , FAILED );
         snprintf( retdata , retdatalen , "bad passwd" );
         return 0;
@@ -599,87 +599,87 @@ static int readConfig( char *path )
 
         if( strcmp( command , "port" ) == 0 ){
             port = atoi( param );
-        		log( "¶Ë¿Ú:%d\n",port );
+        		log( "ç«¯å£:%d\n",port );
         } else if( strcmp( command , "logdir" ) == 0 ){
             snprintf( logdir , sizeof( logdir) , param );
-            log( "ÈÕÖ¾Ä¿Â¼:%s\n",logdir );
+            log( "æ—¥å¿—ç›®å½•:%s\n",logdir );
         } else if( strcmp( command , "lockdir" ) == 0 ){
             snprintf( lockdir , sizeof( lockdir) , param );
-            log( "Ëø¶¨Ä¿Â¼:%s\n",lockdir );
+            log( "é”å®šç›®å½•:%s\n",lockdir );
         } else if( strcmp( command , "chardir" ) == 0 ){
             snprintf( chardir , sizeof( chardir) , param );
-            log( "µµ°¸Ä¿Â¼:%s\n",chardir );
+            log( "æ¡£æ¡ˆç›®å½•:%s\n",chardir );
 #ifdef _SLEEP_CHAR
 			snprintf( sleepchardir , sizeof( sleepchardir), "%s_sleep", chardir);
-						log( "Ë¯ÃßÄ¿Â¼:%s\n",sleepchardir );
+						log( "ç¡çœ ç›®å½•:%s\n",sleepchardir );
 #endif
         } else if( strcmp( command , "pass" ) == 0 ){
             snprintf( svpass , sizeof( svpass ) , param );
-            log( "ÃÜÂë:%s\n",svpass );
+            log( "å¯†ç :%s\n",svpass );
         } else if( strcmp( command , "wklogdir" ) == 0 ){
             snprintf( wklogdir , sizeof( wklogdir) , param );
-            log( "¹¤×÷ÈÕÖ¾:%s\n",wklogdir );
+            log( "å·¥ä½œæ—¥å¿—:%s\n",wklogdir );
         } else if( strcmp( command , "dbdir" ) == 0 ){
             snprintf( dbdir , sizeof( dbdir) , param );    
-            log( "Êı¾İÄ¿Â¼:%s\n",dbdir );        
+            log( "æ•°æ®ç›®å½•:%s\n",dbdir );        
         } else if( strcmp( command, "rotate_interval" ) == 0 ){
             log_rotate_interval = atoi( param );
-            log( "ÈÕÖ¾Ñ­»·¼ä¸ô:%d\n",log_rotate_interval ); 
+            log( "æ—¥å¿—å¾ªç¯é—´éš”:%d\n",log_rotate_interval ); 
         } else if( strcmp( command, "maildir" ) == 0 ){
             snprintf( maildir, sizeof( maildir ), param );
-            log( "ÓÊ¼şÄ¿Â¼:%s\n",maildir );
+            log( "é‚®ä»¶ç›®å½•:%s\n",maildir );
 #ifdef	__FAMILY
         // CoolFish: Family 2001/5/9
         } else if( strcmp( command, "familydir" ) == 0 ){
             snprintf( familydir, sizeof( familydir ), param );
-            log( "¼Ò×åÄ¿Â¼:%s\n",familydir );
+            log( "å®¶æ—ç›®å½•:%s\n",familydir );
         } else if( strcmp( command, "fmpointdir" ) == 0 ){
             snprintf( fmpointdir, sizeof( fmpointdir ), param );
-            log( "×¯Ô°±íÁĞ:%s\n",fmpointdir );
+            log( "åº„å›­è¡¨åˆ—:%s\n",fmpointdir );
         } else if( strcmp( command, "fmsmemodir" ) == 0 ){
             snprintf( fmsmemodir, sizeof( fmsmemodir ), param );
-            log( "¼Ò×å±¸·İ:%s\n",fmsmemodir );
+            log( "å®¶æ—å¤‡ä»½:%s\n",fmsmemodir );
 #endif
 #ifdef _LOCK_SERVER
         } else if( strcmp( command, "SANAME" ) == 0 ){
             snprintf( SaName, sizeof( SaName ), param );
-            log( "¼Ò×å±¸·İ:%s\n",SaName );
+            log( "å®¶æ—å¤‡ä»½:%s\n",SaName );
         } else if( strcmp( command, "LSADDRESS" ) == 0 ){
             snprintf( LSADDRESS, sizeof( LSADDRESS ), param );
-            log( "ÉÏËø·şÎñÆ÷µØÖ·:%s\n",LSADDRESS );
+            log( "ä¸Šé”æœåŠ¡å™¨åœ°å€:%s\n",LSADDRESS );
         } else if( strcmp( command, "LSPORT" ) == 0 ){//TESTNAME
 						LSPORT = atoi( param);
-						log( "ÉÏËø·şÎñÆ÷¶Ë¿Ú:%d\n",LSPORT );
+						log( "ä¸Šé”æœåŠ¡å™¨ç«¯å£:%d\n",LSPORT );
 				} else if( strcmp( command, "TESTNAME" ) == 0 ){
             snprintf( TESTNAME, sizeof( TESTNAME ), param );
-            log( "²âÊÔÃû:%s\n",TESTNAME );
+            log( "æµ‹è¯•å:%s\n",TESTNAME );
 #endif
 
 #ifdef _OACSTRUCT_TCP
 				} else if( strcmp( command, "OACBIND" ) == 0 ){
             OACbindtype = atoi( param );
-            log( "ÈËÎïÁĞ±í:%d\n",OACbindtype );
+            log( "äººç‰©åˆ—è¡¨:%d\n",OACbindtype );
 #endif
 
-        } else if( strcmp( command, "saacname" ) == 0 ){ // ĞÇÏµÃû
+        } else if( strcmp( command, "saacname" ) == 0 ){ // æ˜Ÿç³»å
 					snprintf( saacname, sizeof( saacname ), param );
-					log( "saacÃû:%s\n",saacname );
+					log( "saacå:%s\n",saacname );
 			  } else if( strcmp( command , "Total_Charlist" ) == 0 ){
         	Total_Charlist = atoi( param );
-        	log( "¸üĞÂÈËÎïµãÊı¼ä¸ô:%d\n",Total_Charlist );
+        	log( "æ›´æ–°äººç‰©ç‚¹æ•°é—´éš”:%d\n",Total_Charlist );
         } else if( strcmp( command , "Expired_mail" ) == 0 ){
         	Expired_mail = atoi( param );
-        	log( "¸üĞÂ½øÆÚÓÊ¼ş¼ä¸ô:%d\n",Expired_mail );
+        	log( "æ›´æ–°è¿›æœŸé‚®ä»¶é—´éš”:%d\n",Expired_mail );
         } else if( strcmp( command , "Del_Family_or_Member" ) == 0 ){
         	Del_Family_or_Member = atoi( param );
-        	log( "É¾³ı¼Ò×å³ÉÔ±¼ä¸ô:%d\n",Del_Family_or_Member );
+        	log( "åˆ é™¤å®¶æ—æˆå‘˜é—´éš”:%d\n",Del_Family_or_Member );
         } else if( strcmp( command , "Write_Family" ) == 0 ){
         	Write_Family = atoi( param );
-        	log( "¸üĞÂ¼Ò×åĞÅÏ¢¼ä¸ô:%d\n",Write_Family );
+        	log( "æ›´æ–°å®¶æ—ä¿¡æ¯é—´éš”:%d\n",Write_Family );
 #ifdef _NEW_PLAYERGOLD
         } else if( strcmp( command , "NEW_PLAYERGOLD" ) == 0 ){
         	New_PlayerGold = atoi( param );
-        	log( "ĞÂÕÊºÅ¸øÇ®:%d\n",New_PlayerGold );
+        	log( "æ–°å¸å·ç»™é’±:%d\n",New_PlayerGold );
 #endif
 		}
     }
@@ -704,22 +704,22 @@ static void parseOpts( int argc, char **argv )
         switch( c ){
         case 'h':
             fprintf( stderr ,
-                     "Ê¹ÓÃ·½·¨: saac [-h] [-w port] [-w port] ... \n"
-                     "-h : ÏÔÊ¾saacµÄ°ïÖú\n"
-                     "-w port : Ìí¼ÓÒ»¸ö¹¤×÷Õ¾½ø³Ì¶Ë¿Ú\n"
-                     "Copyright 2006 Áúzoro¹¤×÷ÊÒ "
+                     "ä½¿ç”¨æ–¹æ³•: saac [-h] [-w port] [-w port] ... \n"
+                     "-h : æ˜¾ç¤ºsaacçš„å¸®åŠ©\n"
+                     "-w port : æ·»åŠ ä¸€ä¸ªå·¥ä½œç«™è¿›ç¨‹ç«¯å£\n"
+                     "Copyright 2006 é¾™zoroå·¥ä½œå®¤ "
                      "( Longzoro System Supply )\n");
             exit(0);
             break;
         case 'w':
 			wknum ++;
 #ifndef _FIX_WORKS
-			log( "Ìí¼Ó¹¤×÷Õ¾¶Ë¿Ú %d\n", atoi ( optarg ));
+			log( "æ·»åŠ å·¥ä½œç«™ç«¯å£ %d\n", atoi ( optarg ));
             addWorkerPort( atoi( optarg ));
 #endif
             break;
         default:
-            log( "²»ÄÜ¶Á¶®Ñ¡Ïî %c\n" , c );
+            log( "ä¸èƒ½è¯»æ‡‚é€‰é¡¹ %c\n" , c );
             exit(0);
         }
     }
@@ -767,7 +767,7 @@ int main( int argc , char **argv )
     initWorkerPort();
     parseOpts( argc, argv );
     if(readConfig( "acserv.cf" )<0){
-        log( "ÎŞ·¨ÔÚµ±Ç°Ä¿Â¼Àï¶ÁÈ¡ acserv.cf .\n" );
+        log( "æ— æ³•åœ¨å½“å‰ç›®å½•é‡Œè¯»å– acserv.cf .\n" );
         exit(1);
     }
 
@@ -792,46 +792,46 @@ int main( int argc , char **argv )
 
 
 
-    log( "¶ÁÈ¡Êı¾İÄ¿Â¼\n" );
+    log( "è¯»å–æ•°æ®ç›®å½•\n" );
     dbRead( dbdir );
 #ifdef _DEFEND_NEWUSERS
 	DEFEND_InitList();
 #endif
 #ifdef	__FAMILY
-    log("¶ÁÈ¡ ¼Ò×å×¯Ô°\n");
+    log("è¯»å– å®¶æ—åº„å›­\n");
     readFMSMemo(fmsmemodir);
-    log("¶ÁÈ¡ ¼Ò×åÁôÑÔ\n");
+    log("è¯»å– å®¶æ—ç•™è¨€\n");
     readFMPoint(fmpointdir);
-    log("¶ÁÈ¡ ¼Ò×åÄ¿Â¼\n");
+    log("è¯»å– å®¶æ—ç›®å½•\n");
     readFamily(familydir);
 #endif
-    log( "×¼±¸ µµ°¸Ä¿Â¼\n" );
+    log( "å‡†å¤‡ æ¡£æ¡ˆç›®å½•\n" );
     prepareDirectories( chardir );
-    log( "×¼±¸ ÈÕÖ¾Ä¿Â¼\n" );
+    log( "å‡†å¤‡ æ—¥å¿—ç›®å½•\n" );
     prepareDirectories( logdir );
-    log( "×¼±¸ ËøµµÄ¿Â¼\n");
+    log( "å‡†å¤‡ é”æ¡£ç›®å½•\n");
     prepareDirectories( lockdir );
-    log( "×¼±¸ ÓÊ¼şÄ¿Â¼\n" );
+    log( "å‡†å¤‡ é‚®ä»¶ç›®å½•\n" );
     prepareDirectories( maildir );
 
 #ifdef _SLEEP_CHAR
     prepareDirectories( sleepchardir );
-    log( "×¼±¸ Ë¯Ãßµµ°¸Ä¿Â¼\n" );
+    log( "å‡†å¤‡ ç¡çœ æ¡£æ¡ˆç›®å½•\n" );
 #endif
 
-    /* Ğ×ÒıÔÈ»¯ÔÂ¶ª¡õ»ïÃ«  ĞÄ³ğ¸ê */
+    /* å‡¶å¼•åŒ€åŒ–æœˆä¸¢â–¡ä¼™æ¯›  å¿ƒä»‡æˆˆ */
     if( readMail(maildir) < 0 ){
-        log( "²»ÄÜ³õÊ¼»¯ÓÊ¼ş\n" );
+        log( "ä¸èƒ½åˆå§‹åŒ–é‚®ä»¶\n" );
         exit(1);
   
 	}
 
-    /* TCPSTRUCT Ã«âÙÓå¼À */
+    /* TCPSTRUCT æ¯›èµ“æ¸ç¥­ */
     {
         int tcpr;
         if( ( tcpr = tcpstruct_init( NULL , port , 0 ,
 		CHARDATASIZE * 16 * MAXCONNECTION , 1 /* DEBUG */ ) ) < 0 ){
-            log( "²»ÄÜ¿ªÆôTCP: %d\n", tcpr );
+            log( "ä¸èƒ½å¼€å¯TCP: %d\n", tcpr );
             return 1;
         }
     }
@@ -842,7 +842,7 @@ int main( int argc , char **argv )
 	{
 		int ret;
 		if( (ret=OAC_InitTcpIp( OACbindtype, NULL, 0)) != OK ){
-			log( "¿ªÆôTCP/ID´íÎó:%d\n", ret );
+			log( "å¼€å¯TCP/IDé”™è¯¯:%d\n", ret );
 			return 1;
 		}
 	}
@@ -850,10 +850,10 @@ int main( int argc , char **argv )
 
 #ifdef _LOCK_SERVER
 	if( connectToLServer( LSADDRESS, LSPORT) == FALSE )	{
-		log("%s", "µÇÂ½Ëø¶¨·şÎñÆ÷Ê§°Ü!!\n");
+		log("%s", "ç™»é™†é”å®šæœåŠ¡å™¨å¤±è´¥!!\n");
 			return 1;
 	}else	{
-		log("%s", "Á¬½ÓËø¶¨·şÎñÆ÷³É¹¦!!");
+		log("%s", "è¿æ¥é”å®šæœåŠ¡å™¨æˆåŠŸ!!");
 		usleep( 100*10000);
 		LServer_SALogin_send();
 	}
@@ -878,12 +878,12 @@ int main( int argc , char **argv )
 
     }
   
-#ifdef _BAD_PLAYER            // WON ADD ËÍ»µÍæ¼ÒÈ¥¹Ø       
-	log("\n ¿ªÆôËÍ»µÍæ¼Ò½ø¼àÓü!!");
+#ifdef _BAD_PLAYER            // WON ADD é€åç©å®¶å»å…³       
+	log("\n å¼€å¯é€åç©å®¶è¿›ç›‘ç‹±!!");
 	BadPlayer();
 #endif	
   
-#ifdef _AC_SEND_FM_PK		 // WON ADD ×¯Ô°¶ÔÕ½ÁĞ±í´¢´æÔÚAC
+#ifdef _AC_SEND_FM_PK		 // WON ADD åº„å›­å¯¹æˆ˜åˆ—è¡¨å‚¨å­˜åœ¨AC
 	load_fm_pk_list();
 #endif
 
@@ -891,7 +891,7 @@ int main( int argc , char **argv )
 	FMPK_LoadList();
 #endif
 #ifdef _ALLDOMAN
-	LOAD_herolist();  // Syu ADD ÅÅĞĞ°ñNPC
+	LOAD_herolist();  // Syu ADD æ’è¡Œæ¦œNPC
 #endif
 
 #ifdef _ANGEL_SUMMON
@@ -902,13 +902,13 @@ int main( int argc , char **argv )
 	initRankTable();
 #endif
 
-		log( "\n°æ±¾£ºÁúzoro°æSAAC·şÎñ¶Ëv1.1\n" );
+		log( "\nç‰ˆæœ¬ï¼šé¾™zoroç‰ˆSAACæœåŠ¡ç«¯v1.1\n" );
 		
-    log( "\n¿ªÊ¼Ñ­»·\n" );
+    log( "\nå¼€å§‹å¾ªç¯\n" );
 
     signal(SIGUSR1,sigusr1);	// Arminius 7.20 memory lock
 #ifdef _CHANGEGALAXY
-	signal(SIGUSR2, sighandle);	// Robin 2003/10/27 ĞÇÏµÒÆÃñ
+	signal(SIGUSR2, sighandle);	// Robin 2003/10/27 æ˜Ÿç³»ç§»æ°‘
 #endif
 	while(1){
         int newti,i;
@@ -943,7 +943,7 @@ int main( int argc , char **argv )
                     dbFlush(dbdir);
                     gettimeofday( &et,NULL);
                     log( "Flushed db(%fsec)\n", time_diff(et,st) );
-                    log( "µµ°¸±íÁĞ×ÜÊı:%d NG:%d\n",
+                    log( "æ¡£æ¡ˆè¡¨åˆ—æ€»æ•°:%d NG:%d\n",
                          total_ok_charlist, total_ng_charlist );
                 }
             }
@@ -953,7 +953,7 @@ int main( int argc , char **argv )
                 gettimeofday( &st,NULL);
                 expireMail();
                 gettimeofday( &et,NULL);
-                log( "¹ıÆÚÓÊ¼ş(%fsec)\n", time_diff(et,st) );
+                log( "è¿‡æœŸé‚®ä»¶(%fsec)\n", time_diff(et,st) );
             }
 #ifdef _NEW_PLAYERGOLD
 			if( ( counter % 300 ) == 0 ){
@@ -962,7 +962,7 @@ int main( int argc , char **argv )
 #endif
 #ifdef	__FAMILY
 
-#ifndef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD ¼Ò×åÕ½µÇÈë¼ì²é
+#ifndef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD å®¶æ—æˆ˜ç™»å…¥æ£€æŸ¥
 			if ((counter % /*10800*/600) == 0)	// 3hr( -> 1min)
             {
             	struct timeval st, et;
@@ -971,7 +971,7 @@ int main( int argc , char **argv )
             	time(&t1);
             	delovertimeFMMem(t1);
             	gettimeofday(&et, NULL);
-            	log("É¾³ı¼Ò×å»ò³ÉÔ±(%fsec)\n", time_diff(et, st));
+            	log("åˆ é™¤å®¶æ—æˆ–æˆå‘˜(%fsec)\n", time_diff(et, st));
             }
 #endif
 
@@ -984,7 +984,7 @@ int main( int argc , char **argv )
             	writeFMPoint(fmpointdir);
             	writeFMSMemo(fmsmemodir);
             	gettimeofday(&et, NULL);
-            	log("¼ÇÂ¼¼Ò×å(%fsec)\n", time_diff(et, st));
+            	log("è®°å½•å®¶æ—(%fsec)\n", time_diff(et, st));
             }
 #endif
         }
@@ -996,7 +996,7 @@ int main( int argc , char **argv )
 
         newti = tcpstruct_accept1();
         if( newti >= 0 ){
-			log( "Í¬Òâ: %d\n" , newti );
+			log( "åŒæ„: %d\n" , newti );
 			gs[newti].use = 1;
         }
 
@@ -1013,7 +1013,7 @@ int main( int argc , char **argv )
 			mlen = MMGet_LsReadBuflist( buf, sizeof( buf));
 			if( mlen > 0 )	{
 				if( lockproto_SaacDispatchMessage( buf) < 0 )	{
-					log( "Ëø¶¨ĞÅÏ¢:%s", buf);
+					log( "é”å®šä¿¡æ¯:%s", buf);
 				}
 			}
 			CHECK_LSTYPE();
@@ -1029,7 +1029,7 @@ int main( int argc , char **argv )
 			int tis[BACKLOGNUM];
 			newti = tcpstruct_work_accept( tis , 1);
 			if( newti == 1 )	{
-				log( "Í¬Òâ¹¤×÷Õ¾: %d\n" , newti );
+				log( "åŒæ„å·¥ä½œç«™: %d\n" , newti );
 			}
 
 
@@ -1077,28 +1077,28 @@ int main( int argc , char **argv )
                     if( saacproto_ServerDispatchMessage( i , buf, debugfun)<0){
                         // Nuke start
                         tcpstruct_close(i);// avoid the shutdown the gmsv ttom
-                        log( "GMSV(%s) ÏûÏ¢:%s\n", gs[i].name, debugfun);
+                        log( "GMSV(%s) æ¶ˆæ¯:%s\n", gs[i].name, debugfun);
                     }
                 } else if( l == TCPSTRUCT_ETOOLONG ){
-                    log( "ºÜ³¤:%d ·şÎñÆ÷Ãû::%s\n", i , gs[i].name );
+                    log( "å¾ˆé•¿:%d æœåŠ¡å™¨å::%s\n", i , gs[i].name );
 
-#ifdef _AC_UNLOCK_GS_PLAYER     // WON ADD ×Ô¶¯UNLOCK
+#ifdef _AC_UNLOCK_GS_PLAYER     // WON ADD è‡ªåŠ¨UNLOCK
 					DeleteMemLockServer(gs[i].name);
-					log("\nÓÃ»§(%s) µÇ³ö! Íæ¼Ò½âËø!!\n", gs[i].name );
+					log("\nç”¨æˆ·(%s) ç™»å‡º! ç©å®¶è§£é”!!\n", gs[i].name );
 #endif
                     logout_game_server( i );
                 } else if( l < 0 ){
-                    log( "¹Ø±Õ:%d ·şÎñÆ÷Ãû:%s\n", i , gs[i].name );
+                    log( "å…³é—­:%d æœåŠ¡å™¨å:%s\n", i , gs[i].name );
 #ifdef _UNIVERSE_CHATROOM
 					CHATROOM_GSClosedHandle( i);
 #endif
-#ifdef _AC_UNLOCK_GS_PLAYER     // WON ADD ×Ô¶¯UNLOCK
+#ifdef _AC_UNLOCK_GS_PLAYER     // WON ADD è‡ªåŠ¨UNLOCK
 					DeleteMemLockServer(gs[i].name);
-					log("\nÓÃ»§(%s) µÇ³ö! Íæ¼Ò½âËø!!\n", gs[i].name );
+					log("\nç”¨æˆ·(%s) ç™»å‡º! ç©å®¶è§£é”!!\n", gs[i].name );
 #endif
 
 
-#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS¶ÏÏß×Ô¶¯ËÍLOGOUT¸øWORKER
+#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GSæ–­çº¿è‡ªåŠ¨é€LOGOUTç»™WORKER
 					Worker_auto_logout( i, gs[i].name );
 #endif
                     logout_game_server(i);
@@ -1119,9 +1119,9 @@ int main( int argc , char **argv )
             tv_loop_store = now;
         }
 
-        /* ·¥¡õÊĞ¡õ¼°ÕıÄÌØ©Ê§ËüĞşÃ«Æ©ÍÍÔÂ£Û
-           ÕıÄÌØ©Ê§ËüĞşØÆĞ×ÈÕ·òºëÃ«·ÖØÆ»¯·¥¡õÊĞ¡õÃ«Ú½ØÆ»¯ØÆÒıµ¤£Û
-           Æ¥±Ø¡õØ©ÈÓ¡õÌï¡õ±å  ±Î¶Á±å·´É§ôÅÔÊÔÂ           */
+        /* ä¼â–¡å¸‚â–¡åŠæ­£å¥¶ä¸å¤±å®ƒç„æ¯›è­¬å±¯æœˆï¼»
+           æ­£å¥¶ä¸å¤±å®ƒç„ä»„å‡¶æ—¥å¤«å¼˜æ¯›åˆ†ä»„åŒ–ä¼â–¡å¸‚â–¡æ¯›è¯®ä»„åŒ–ä»„å¼•ä¸¹ï¼»
+           åŒ¹å¿…â–¡ä¸æ‰”â–¡ç”°â–¡å  è”½è¯»ååéªšè¥å…æœˆ           */
         {
             int i;
             time_t thre = time(NULL) - WKTIMEOUT;            
@@ -1131,7 +1131,7 @@ int main( int argc , char **argv )
                     wk[i].status == WKSTAT_WAITING &&
                     wk[i].last_query < thre ){
                     // Nuke start--
-                    log( "¹¤×÷Õ¾ %d ³¬Ê±! ¹Ø±ÕÖĞ...\n", i );
+                    log( "å·¥ä½œç«™ %d è¶…æ—¶! å…³é—­ä¸­...\n", i );
 #ifdef _FIX_WORKS
 					Work_close( wk[i].ti );
 					wk[i].use = 0;
@@ -1140,7 +1140,7 @@ int main( int argc , char **argv )
 #else
                     tcpstruct_close( wk[i].ti );
 #endif
-                    log( "¹¤×÷Õ¾ %d ³¬Ê±! uhmmm...\n", i);
+                    log( "å·¥ä½œç«™ %d è¶…æ—¶! uhmmm...\n", i);
 
                     if( wk[i].callback ){
 						// Robin log
@@ -1181,11 +1181,11 @@ time_diff(struct timeval subtrahend,
 
 
 /*
-  ·òºë¼°·ò¡õ  ¡õĞşÊĞËü¼şĞşÃ«  ÔÂ£Û
-  ÔÆØ¦ÔªÁİÓå¼°ÊÖ¼°·´ÔÊÍÍ»¯¼°·òºë°×ÑëÄÌ»ï»¥ÔÆØ¦Ôª±åØ¦ÔÂ·½µ¤±åÔÊÔÂ£Û
+  å¤«å¼˜åŠå¤«â–¡  â–¡ç„å¸‚å®ƒä»¶ç„æ¯›  æœˆï¼»
+  äº‘å…å…ƒå‡›æ¸åŠæ‰‹åŠåå…å±¯åŒ–åŠå¤«å¼˜ç™½å¤®å¥¶ä¼™äº’äº‘å…å…ƒåå…æœˆæ–¹ä¸¹åå…æœˆï¼»
 
-  ³ğ¼°¿á  ·´ĞÑÙ¯¼°è¦»¥ÔÆÔÆÈÊØ¦ÔÂ»¥£ı    Æ¥ÄÌ¼şÕı¡õÌï»ïÃ«  µÊØÆ»¯ÊÖ
-    åßá¨·Ö£Û
+  ä»‡åŠé…·  åé†’ä¾¬åŠç‘•äº’äº‘äº‘ä»å…æœˆäº’ï½    åŒ¹å¥¶ä»¶æ­£â–¡ç”°ä¼™æ¯›  å‡³ä»„åŒ–æ‰‹
+    æš¹å±ºåˆ†ï¼»
   
  */
 int get_rotate_count(void )
@@ -1259,7 +1259,7 @@ int tcpstruct_init( char *addr , int p , int timeout_ms , int mem_use , int db )
 		return TCPSTRUCT_WORKERROR;
 
 	worksockfd = socket( AF_INET , SOCK_STREAM ,  0 );
-	log( "¿ªÊ¼¹¤×÷: %d...\n" , worksockfd);
+	log( "å¼€å§‹å·¥ä½œ: %d...\n" , worksockfd);
 	if( worksockfd < 0 ) return TCPSTRUCT_ESOCK;
     bzero( &localaddr ,sizeof( localaddr ));
     localaddr.sin_family = AF_INET;
@@ -1373,7 +1373,7 @@ int tcpstruct_accept( int *tis , int ticount )
             newcon = findregBlankCon( );
             if( newcon < 0 ) continue;
             newsockfd = accept( mainsockfd, (struct sockaddr*)&c , &len );
-            log( "Í¬Òâ: %d\n" , newsockfd );
+            log( "åŒæ„: %d\n" , newsockfd );
             if( newsockfd < 0 ){
                 unregMemBuf( newcon );
                 continue;
@@ -1401,7 +1401,7 @@ int tcpstruct_close( int ti )
     con[ti].use = 0;
     con[ti].fd = -1;
 
-    /* Øøµ©ĞşÃ«Ğ×ÉıÔÈ»¯òå  Ã«ÛÍØøÊ§ÔÊÔÂ */
+    /* ä¼‰æ—¦ç„æ¯›å‡¶å‡åŒ€åŒ–èˆ  æ¯›å¼ä¼‰å¤±å…æœˆ */
     consumeMemBufList( con[ti].mbtop_ri , NULL,
                    mbsize * sizeof( mb[0].buf ), 1, 0 );
     consumeMemBufList( con[ti].mbtop_wi , NULL,
@@ -1414,7 +1414,7 @@ int tcpstruct_close( int ti )
 }
 
 /*
-    ĞÄ³ğ¸êÊÖ¼°»¥ÊÖµ¤Ø¦ÈÊ»¯£ıØÆ¾®ÊÖ remoteclose ·ÖÔÈĞ×ÈÕ -1 Ã«¾®ÒüÔÊ
+    å¿ƒä»‡æˆˆæ‰‹åŠäº’æ‰‹ä¸¹å…ä»åŒ–ï½ä»„äº•æ‰‹ remoteclose åˆ†åŒ€å‡¶æ—¥ -1 æ¯›äº•å°¹å…
   
  */
 int tcpstruct_read( int ti , char *buf , int len )
@@ -1430,11 +1430,11 @@ int tcpstruct_read( int ti , char *buf , int len )
 }
 
 /*
-  1µæÃ«·½ĞÄ³ğ¸ê£Û
-  int kend : 1Ø¦ÈÕµæ  ¼° \n Ã«Ú½ÔÊ
-  int kend_r : 1Ø¦ÈÕµæ  ¼° \r ÊÖÚ½ÔÊ(Ø¤Ä¾ÈÉ)
+  1å«æ¯›æ–¹å¿ƒä»‡æˆˆï¼»
+  int kend : 1å…æ—¥å«  åŠ \n æ¯›è¯®å…
+  int kend_r : 1å…æ—¥å«  åŠ \r æ‰‹è¯®å…(ä¸æœ¨å£¬)
 
-    ĞÄ³ğ¸êÊÖ¼°»¥ÊÖµ¤Ø¦ÈÊ»¯£ı¾®¹´ remote closed ·ÖÔÈĞ×ÈÕ-1Ã«¾®ÒüÔÊ
+    å¿ƒä»‡æˆˆæ‰‹åŠäº’æ‰‹ä¸¹å…ä»åŒ–ï½äº•å‹¾ remote closed åˆ†åŒ€å‡¶æ—¥-1æ¯›äº•å°¹å…
   // Nuke
 	Read 1 line
 	if kend==1 then delete \n at the tail
@@ -1514,7 +1514,7 @@ int tcpstruct_connect( char *addr , int port )
     set_nodelay( s );
     newti = findregBlankCon( );
     if( newti < 0 ){
-        fprintf( stderr , "Á¬½ÓÊ§°Ü: newti:%d\n", newti );
+        fprintf( stderr , "è¿æ¥å¤±è´¥: newti:%d\n", newti );
         return TCPSTRUCT_ECFULL;
     }
     con[newti].fd = s;
@@ -1609,7 +1609,7 @@ static int consumeMemBufList( int top , char *out , int len ,
         if( consumeflag ){
             mb[top].len -= cpsize;
             if( mb[top].len > 0 ){
-                /* ¹´¾®ÖĞ·´Ğ×ØÆ»¯Ø¦ÖĞ¼°Æ¥memmove */
+                /* å‹¾äº•ä¸­åå‡¶ä»„åŒ–å…ä¸­åŠåŒ¹memmove */
                 memmove( mb[top].buf , mb[top].buf + cpsize ,
                          sizeof( mb[top].buf ) - cpsize );
             }
@@ -1621,7 +1621,7 @@ static int consumeMemBufList( int top , char *out , int len ,
     }
 
     if( consumeflag ){
-        /* Ø¦»¥½ñ»¥0±åØ¦ÔÈ»¯ÔÂØ¦ÈÕİ©  £ÛÆ¥ÊÖ  âÙ¼°Ö§¹´·´İ©  ØÆØ¦ÖĞÈß */
+        /* å…äº’ä»Šäº’0åå…åŒ€åŒ–æœˆå…æ—¥è¸  ï¼»åŒ¹æ‰‹  èµ“åŠæ”¯å‹¾åè¸  ä»„å…ä¸­å†— */
         top = mb[top_store].next;
         for(;;){
             if( top == -1 )break;
@@ -1661,10 +1661,10 @@ static int getLineReadBuffer( int index , char *buf, int len )
         top = mb[top].next;
     }
     if( ti > len ){
-        /* 1µæ»¥Ø¦»¥ÔÊ¿ºÔÂ£Û    Ø¦¾Ş·Â¡õÃ«¾®ÒüÁù */
+        /* 1å«äº’å…äº’å…äº¢æœˆï¼»    å…å·¨ä»¿â–¡æ¯›äº•å°¹å…­ */
         return TCPSTRUCT_ETOOLONG;
     }
-    /* µæ»¥¶ØÔÀØÆ»¯Ø¦ÖĞ */
+    /* å«äº’æ•¦å²³ä»„åŒ–å…ä¸­ */
     if( breakflag == 0 ){
         return 0;
     }
@@ -1675,16 +1675,16 @@ static int getLineReadBuffer( int index , char *buf, int len )
 
 
 /*
-    ĞÄ³ğ»§ÔÂ    Ó®½ñÃ«ß¯ÔÊ
+    å¿ƒä»‡æˆ·æœˆ    èµ¢ä»Šæ¯›å¿’å…
   int index : con index
 
   return:
-    ·´¾Ş·Â¡õ
-  0¶¯Ïş¼°èëÄş·´ read ØÆ»¯ÊÖ·½ÖĞÓ®½ñ£Û
+    åå·¨ä»¿â–¡
+  0åŠ¨æ™“åŠæ¡¦å®å read ä»„åŒ–æ‰‹æ–¹ä¸­èµ¢ä»Šï¼»
 
 
-  mbsize ¾®ÈÕmbuse Ã«Â¦ÖĞ»¯ÈÓÄÌÊõÃ«¾®ØêÔÂ·ÖØê£Û
-  ³ğÒı¾®ÖĞÜÌÔ»¼°ÛĞ·´  ÷»ÔÊÔÂ£Û¹«ÊÏØ¦³Æ¾®ÖĞ°À±å³ğ·Ö´õÈÕØ¦ÈÊ»¯ÊÖµÚ£Û
+  mbsize äº•æ—¥mbuse æ¯›å¨„ä¸­åŒ–æ‰”å¥¶æœ¯æ¯›äº•ä»ƒæœˆåˆ†ä»ƒï¼»
+  ä»‡å¼•äº•ä¸­èŠ´æ›°åŠåŒå  éª°å…æœˆï¼»å…¬æ°å…ç§°äº•ä¸­è¢„åä»‡åˆ†æ­¹æ—¥å…ä»åŒ–æ‰‹ç¬¬ï¼»
   
  */   
 static int getFreeMem( void )
@@ -1694,13 +1694,13 @@ static int getFreeMem( void )
 
 /*
   
-  membuf ¼°ÎëÎåÃ«¼ëØÆ·ÖÔÊ£Û
+  membuf åŠåäº”æ¯›èŒ§ä»„åˆ†å…ï¼»
 
-  return : ĞÄ¹´¾®ÔÈĞ×ÈÕ >=0 Æ¥ index.
-  ĞÄ¹´¾®ÈÕØ¦¾®ÔÈĞ×ÈÕ  
+  return : å¿ƒå‹¾äº•åŒ€å‡¶æ—¥ >=0 åŒ¹ index.
+  å¿ƒå‹¾äº•æ—¥å…äº•åŒ€å‡¶æ—¥  
 
-  ¸¹³ñ¼°ÎçÎå±å·´ mb_finder Ã«¹´¾®µ¤£Û
-  ³ğÄ¾Æ¥¸¹³ñØÆ»¯£ı    ±åregÔÊÔÂ£Û
+  è…¹ç»¸åŠåˆäº”åå mb_finder æ¯›å‹¾äº•ä¸¹ï¼»
+  ä»‡æœ¨åŒ¹è…¹ç»¸ä»„åŒ–ï½    åregå…æœˆï¼»
  */
 
 static int findregBlankMemBuf( void  )
@@ -1722,7 +1722,7 @@ static int findregBlankMemBuf( void  )
 }
 
 /*
-  mb Ã«İ©  ÔÊÔÂ
+  mb æ¯›è¸  å…æœˆ
   
  */
 static int unregMemBuf(  int index )
@@ -1805,17 +1805,17 @@ void set_nodelay( int sock )
     int result = setsockopt( sock, IPPROTO_TCP, TCP_NODELAY,
                              (char*)&flag, sizeof(int));
     if( result < 0 ){
-        log( "²»ÄÜÉèÖÃÑÓ³Ù.\n" );
+        log( "ä¸èƒ½è®¾ç½®å»¶è¿Ÿ.\n" );
     } else {
-        log( "ÉèÖÃÑÓ³Ù: fd:%d\n", sock );
+        log( "è®¾ç½®å»¶è¿Ÿ: fd:%d\n", sock );
     }
 }
 
 
 /*
-  ÔÊÍÍ»¯¼°±Ø¡õØ©ÈÓ¡õÌï¡õ±å  Ëª£Û
+  å…å±¯åŒ–åŠå¿…â–¡ä¸æ‰”â–¡ç”°â–¡å  éœœï¼»
 
-  int flag : 1·ÖÔÈĞ×ÈÕËªññİç±å·´ÔÆÈÊÈÕØ¦ÖĞ
+  int flag : 1åˆ†åŒ€å‡¶æ—¥éœœè€¨è‘­ååäº‘ä»æ—¥å…ä¸­
   
  */
 void gmsvBroadcast( int fd, char *p1, char *p2, char *p3 , int flag )
@@ -1846,7 +1846,7 @@ void gmsvBroadcast( int fd, char *p1, char *p2, char *p3 , int flag )
 */
 }
 
-// ĞÇÏµÒÆÃñ
+// æ˜Ÿç³»ç§»æ°‘
 void sigusr2(int a)
 {
 	
@@ -1862,42 +1862,42 @@ void sigusr2(int a)
 
 	char servername[16][20] =
 	{
-		"ÏÉÅ®", // 0
-		"Ì«Ñô", // 1
-		"ÌìÉñ", // 2
-		"±±¶·", // 3
-		"×ÏÎ¢", // 4
-		"²ÔÁú", // 5
-		"ÒøºÓÏµ", // 6
-		"Ïã¸Û", // 7
-		"ĞÇÀÖÔ°", // 8
-		"ÍøÂ·¼ÒÍ¥", // 9
-		"Ê¥ÊŞ", // 10
-		"ÌìÓ¥", // 11
-		"ĞÂ½ç", // 12
-		"ÏÉÅ®1", // 13
-		"ÏÉÅ®2", // 14
-		"ÏÉÅ®3" // 15
+		"ä»™å¥³", // 0
+		"å¤ªé˜³", // 1
+		"å¤©ç¥", // 2
+		"åŒ—æ–—", // 3
+		"ç´«å¾®", // 4
+		"è‹é¾™", // 5
+		"é“¶æ²³ç³»", // 6
+		"é¦™æ¸¯", // 7
+		"æ˜Ÿä¹å›­", // 8
+		"ç½‘è·¯å®¶åº­", // 9
+		"åœ£å…½", // 10
+		"å¤©é¹°", // 11
+		"æ–°ç•Œ", // 12
+		"ä»™å¥³1", // 13
+		"ä»™å¥³2", // 14
+		"ä»™å¥³3" // 15
 	};
 
 
 	log("\n  %s Change_Galaxies.......\n", saacname);
 
-	// ½â³ıÈ«²¿ÒÆÃñËø¶¨
+	// è§£é™¤å…¨éƒ¨ç§»æ°‘é”å®š
 	DeleteGalaxyChangeLock(0);
 
 	for( j=1; j<=12; j++) {
 
 		char listfilename[1024];
 		
-		// ¶ÁÈ¡ÒÆÃñÁĞ±í
+		// è¯»å–ç§»æ°‘åˆ—è¡¨
 		sprintf( listfilename, "StaMove_%d.txt", j);
 		listfile = fopen( listfilename, "r");
 		if( listfile == NULL)
 		{
 			continue;
 		}
-		log("´ò¿ªÁĞ±íÎÄ¼ş:%s\n", listfilename);
+		log("æ‰“å¼€åˆ—è¡¨æ–‡ä»¶:%s\n", listfilename);
 
 		
 		while(1)
@@ -1908,7 +1908,7 @@ void sigusr2(int a)
 			if( databuf[0] == '#')
 				continue;
 			
-			// ¶ÁÒ»±Ê×ÊÁÏ  (ÕÊºÅ À´Ô´ĞÇÏµ Ä¿µÄĞÇÏµ)
+			// è¯»ä¸€ç¬”èµ„æ–™  (å¸å· æ¥æºæ˜Ÿç³» ç›®çš„æ˜Ÿç³»)
 			//if( sscanf( databuf, "%s,%s,%s", playerinfo, frominfo, toinfo) != 3)
 			//	continue;
 			playerinfo = strtok( databuf, ",");
@@ -1921,21 +1921,21 @@ void sigusr2(int a)
 			if( (frominfo <0) || ( frominfo >15) || (toinfo <0) || ( toinfo >15))
 				continue;
 			
-			// ÊÇ·ñÒªÒÆÃñ³öÈ¥»òÒÆÃñ½øÀ´
+			// æ˜¯å¦è¦ç§»æ°‘å‡ºå»æˆ–ç§»æ°‘è¿›æ¥
 			if( !strcmp( servername[frominfo], saacname) || !strcmp( servername[toinfo], saacname) )
 			{
 				
 				log(" from:%s to:%s ", servername[frominfo], servername[toinfo]);
 
-				// ËøÕÊºÅ
+				// é”å¸å·
 #ifdef _LOCK_ADD_NAME
-				InsertMemLock( getHash(playerinfo) & 0xff, playerinfo, "", "", "ĞÇÏµÒÆÃñ", 0, "0");
+				InsertMemLock( getHash(playerinfo) & 0xff, playerinfo, "", "", "æ˜Ÿç³»ç§»æ°‘", 0, "0");
 #else
-				InsertMemLock( getHash(playerinfo) & 0xff, playerinfo, "", "ĞÇÏµÒÆÃñ", 0, "0");
+				InsertMemLock( getHash(playerinfo) & 0xff, playerinfo, "", "æ˜Ÿç³»ç§»æ°‘", 0, "0");
 #endif
 				
-				// ÌßÈË
-				log("ÒÆÃñÇ°ÌßÈË ");
+				// è¸¢äºº
+				log("ç§»æ°‘å‰è¸¢äºº ");
 				for(i=0;i<MAXCONNECTION;i++)	{
 					if( is_game_server_login(i) ){
 						saacproto_ACKick_send( i , 1 , playerinfo , -2/*mesgid*/ );
@@ -1950,7 +1950,7 @@ void sigusr2(int a)
 			
 		}
 		
-		// ÁĞ±íµµ°¸¸ÄÃû±¸·İ
+		// åˆ—è¡¨æ¡£æ¡ˆæ”¹åå¤‡ä»½
 		//sprintf( backup_movelist, "%s.old", listfilename);
 		//rename( listfilename, backup_movelist);
 		
@@ -1977,10 +1977,10 @@ static int initMissionTable( void )
 	memset( missiontable, 0, sizeof(missiontable));
 	fp = fopen( MISSIONFILE, "r");
 	if( !fp ) {
-		log("\n¼ÓÔØÈÎÎñ´íÎó!!!! \n");
+		log("\nåŠ è½½ä»»åŠ¡é”™è¯¯!!!! \n");
 		//return false;
 	}
-	log("\n¼ÓÔØÈÎÎñ...");
+	log("\nåŠ è½½ä»»åŠ¡...");
 	while(1) {
 		//
 		if( fgets( onedata, sizeof(onedata), fp) == NULL)
@@ -2020,7 +2020,7 @@ static int initMissionTable( void )
 		if( index >= MAXMISSIONTABLE) break;
 	}
 	fclose( fp);
-	log("..³É¹¦! \n");
+	log("..æˆåŠŸ! \n");
 	//return true;
 }
 
@@ -2034,10 +2034,10 @@ int saveMissionTable( void )
 
 	fp = fopen( MISSIONFILE, "w");
 	if( !fp ) {
-		log("\n´ò¿ªÈÎÎñ´íÎó!!!! \n");
+		log("\næ‰“å¼€ä»»åŠ¡é”™è¯¯!!!! \n");
 		//return false;
 	}
-	log("\n\n±£´æÈÎÎñ...");
+	log("\n\nä¿å­˜ä»»åŠ¡...");
 	for( index =0; index < MAXMISSIONTABLE; index++) {
 
 		if( missiontable[index].angelinfo[0] == NULL )
@@ -2052,7 +2052,7 @@ int saveMissionTable( void )
 		fputs( onedata, fp);
 	}
 	fclose( fp);
-	log("..³É¹¦! \n");
+	log("..æˆåŠŸ! \n");
 	//return true;
 }
 
@@ -2060,7 +2060,7 @@ void delMissionTableOnedata( int index)
 {
 	int gi;
 
-	log("\nÉ¾³ıÈÎÎñ:%d:%s:%s \n", index, missiontable[index].angelinfo, missiontable[index].heroinfo);
+	log("\nåˆ é™¤ä»»åŠ¡:%d:%s:%s \n", index, missiontable[index].angelinfo, missiontable[index].heroinfo);
 
 	if( index <0 || index >=MAXMISSIONTABLE) return;
 	strcpy( missiontable[index].angelinfo, "");
@@ -2077,9 +2077,9 @@ void delMissionTableOnedata( int index)
 	}
 }
 
-#define ANSWERTIME 1 // µÈ´ı»Ø´ğÊ±¼ä(Ğ¡Ê±)
-//#define DOINGTIME 3*24 // ÈÎÎñÊ±¼ä(Ğ¡Ê±)
-#define BOUNDSTIME 1*24 // ±£ÁôÊ±¼ä(Ğ¡Ê±)
+#define ANSWERTIME 1 // ç­‰å¾…å›ç­”æ—¶é—´(å°æ—¶)
+//#define DOINGTIME 3*24 // ä»»åŠ¡æ—¶é—´(å°æ—¶)
+#define BOUNDSTIME 1*24 // ä¿ç•™æ—¶é—´(å°æ—¶)
 
 void checkMissionTimelimit( void)
 {
@@ -2089,25 +2089,25 @@ void checkMissionTimelimit( void)
 	if( sys_time < lastcheck + 5*60 )
 		return;
 
-	log("\n¼ì²éÈÎÎñÊ±¼äÏŞÖÆ:%d \n", sys_time);
+	log("\næ£€æŸ¥ä»»åŠ¡æ—¶é—´é™åˆ¶:%d \n", sys_time);
 	for( index =0; index < MAXMISSIONTABLE; index++) {
 		if( missiontable[index].flag == MISSION_NONE) {
 			continue;
 		}
-		// µÈ´ıÊ¹Õß»ØÓ¦1Ğ¡Ê±
+		// ç­‰å¾…ä½¿è€…å›åº”1å°æ—¶
 		else if( missiontable[index].flag == MISSION_WAIT_ANSWER
 				&& sys_time > missiontable[index].time + ANSWERTIME*60*60 ) {
 			
-			delMissionTableOnedata( index);// É¾
+			delMissionTableOnedata( index);// åˆ 
 		}
-		// µÈ´ıÁì½±Íê³É limittimeĞ¡Ê±
+		// ç­‰å¾…é¢†å¥–å®Œæˆ limittimeå°æ—¶
 		else if( ( missiontable[index].flag == MISSION_DOING || missiontable[index].flag == MISSION_HERO_COMPLETE )
 				&& ( sys_time > (missiontable[index].time + missiontable[index].limittime*60*60))		 ) {
 
 			char buf[1024];
 			int gi;
-			// ¸ÄTIMEOVER
-			log(" ÈÎÎñ¼°Áì½±Ê±¼ä¹ı:%d ", index);
+			// æ”¹TIMEOVER
+			log(" ä»»åŠ¡åŠé¢†å¥–æ—¶é—´è¿‡:%d ", index);
 			missiontable[index].flag = MISSION_TIMEOVER;
 			missiontable[index].time = time(NULL);
 			missiontable[index].limittime = BOUNDSTIME;
@@ -2129,15 +2129,15 @@ void checkMissionTimelimit( void)
 		}
 		//else if( missiontable[index].flag == MISSION_HERO_COMPLETE
 		//		&& sys_time > missiontable[index].time + BOUNDSTIME*60*60 ) {
-		//	log(" Áì½±Ê±¼ä¹ı:%d ", index);
-		//	delMissionTableOnedata( index);// É¾
+		//	log(" é¢†å¥–æ—¶é—´è¿‡:%d ", index);
+		//	delMissionTableOnedata( index);// åˆ 
 		//}
 
-		// ×ÊÁÏ±£ÁôÊ±¼ä(BOUNDSTIMEĞ¡Ê±)
+		// èµ„æ–™ä¿ç•™æ—¶é—´(BOUNDSTIMEå°æ—¶)
 		else if( missiontable[index].flag == MISSION_TIMEOVER
 				&& sys_time > missiontable[index].time + BOUNDSTIME*60*60 ) {
-			log(" ±£ÁôÊ±¼ä¹ı:%d ", index);
-			delMissionTableOnedata( index);// É¾
+			log(" ä¿ç•™æ—¶é—´è¿‡:%d ", index);
+			delMissionTableOnedata( index);// åˆ 
 		}
 
 	}

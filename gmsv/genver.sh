@@ -6,4 +6,4 @@ echo "char *genver=\"" > $OUT
 cat $IN | grep -e "^#define" | cut -b 9- | sed "s/\"/\'/g" | \
   sed 's/\\/\\\\/g' >> $OUT
 echo "<<Generated at "`date`">>" >> $OUT
-echo "by : Áúzoro¹¤×÷ÊÒ\n\";" >> $OUT
+echo "by : é¾™zoroå·¥ä½œå®¤\n\";" >> $OUT

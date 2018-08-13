@@ -63,7 +63,7 @@ int PKLIST_GetOneBHistory( int ti )
 	log("return CODE_ERRBATTLEFULL err !! \n") ;
 	return CODE_ERRBATTLEFULL;
 }
-//Îğ¶¯-------------------------------------------------------
+//å‹¿åŠ¨-------------------------------------------------------
 void PKLIST_ResetOneTeamMan( int ti )
 {
 	int k;
@@ -147,14 +147,14 @@ int PKLIST_UpdateOnePkTeamData( int ti, int forti, int winerflg)
 	}else{
 		PkTeamList[ti].lost++;
 	}
-	PkTeamList[ti].battleplay++; //³¡´Î
-	PkTeamList[ti].score = (PkTeamList[ti].win*3) - (PkTeamList[ti].lost*1);//»ı·Ö
+	PkTeamList[ti].battleplay++; //åœºæ¬¡
+	PkTeamList[ti].score = (PkTeamList[ti].win*3) - (PkTeamList[ti].lost*1);//ç§¯åˆ†
 
 	PkTeamList[ti].updata = (int)time(NULL);
 
 	if( PkTeamList[ti].score >= DEFWINSCORE ){
-		PkTeamList[ti].inside = 2; //Â¼È¡
-	}else if( PkTeamList[ti].lost > DEFMAXBATTLENUM*DEFLOSERATE){// 0.7 = (1-Ê¤ÂÊ3³É)*×î¸ß³¡´Î
+		PkTeamList[ti].inside = 2; //å½•å–
+	}else if( PkTeamList[ti].lost > DEFMAXBATTLENUM*DEFLOSERATE){// 0.7 = (1-èƒœç‡3æˆ)*æœ€é«˜åœºæ¬¡
 		PkTeamList[ti].inside = 0;
 	}else {
 		PkTeamList[ti].inside = 1;
@@ -286,7 +286,7 @@ extern gmsv gs[MAXCONNECTION];
 	if( (toti = PKLIST_GetPkTeamListArray( tonum, tocdkey)) == -1 ) return;
 
 	//andy_log
-	log( "Update() [%d,%d] %s [%d,%d] ", meti, menum, (winer==0)?"Ê¤":"¸º", toti, tonum);
+	log( "Update() [%d,%d] %s [%d,%d] ", meti, menum, (winer==0)?"èƒœ":"è´Ÿ", toti, tonum);
 	if( PKLIST_UpdateCheckRepeatBHistory( meti, menum, toti, tonum ) == -1 ){
 		log( "  err Repeat !!\n");
 	}else{
@@ -300,13 +300,13 @@ extern gmsv gs[MAXCONNECTION];
 			log( "*UpdateOnePkTeamData( %d,%d,%d) err %d !!\n", toti, meti, (winer==1)?0:1, ret);
 			return;
 		}
-		for (i = 0 ; i < MAXCONNECTION ; i ++ ) { //ËÍdelµ½game server
+		for (i = 0 ; i < MAXCONNECTION ; i ++ ) { //é€delåˆ°game server
 			if ( gs[i].use && gs[i].name[0] ) {
 				PKLIST_GetPkTeamListDataOne( i, meti);
 				PKLIST_GetPkTeamListDataOne( i, toti);
 			}
 		}
-		//±¸·İ
+		//å¤‡ä»½
 		PKLIST_BackupPkTeamListfromFile( "pklist", "pk_list_team.txt" );
 
 	}
@@ -346,10 +346,10 @@ void PKLIST_CheckRepeatBattleHistory( void)
 			if( PkTeamList[i].BHistory[j].flg == 0 ) PkTeamList[i].lost++;
 			PkTeamList[i].battleplay++;
 		}
-		PkTeamList[i].score = (PkTeamList[i].win*3) - (PkTeamList[i].lost*1);//»ı·Ö
+		PkTeamList[i].score = (PkTeamList[i].win*3) - (PkTeamList[i].lost*1);//ç§¯åˆ†
 		if( PkTeamList[i].score >= DEFWINSCORE ){
-			PkTeamList[i].inside = 2; //Â¼È¡
-		}else if( PkTeamList[i].lost > DEFMAXBATTLENUM*DEFLOSERATE){// 0.7 = (1-Ê¤ÂÊ3³É)*×î¸ß³¡´Î
+			PkTeamList[i].inside = 2; //å½•å–
+		}else if( PkTeamList[i].lost > DEFMAXBATTLENUM*DEFLOSERATE){// 0.7 = (1-èƒœç‡3æˆ)*æœ€é«˜åœºæ¬¡
 			PkTeamList[i].inside = 0;
 		}else {
 			PkTeamList[i].inside = 1;
@@ -357,7 +357,7 @@ void PKLIST_CheckRepeatBattleHistory( void)
 	}
 }
 
-//loadµµ
+//loadæ¡£
 int PKLIST_LoadPkTeamListfromFile( char *dirpath, char *listfilename )
 {
 	char line[512], filename[256], buf1[64];
@@ -471,7 +471,7 @@ int PKLIST_LoadPkTeamListfromFile( char *dirpath, char *listfilename )
 					readfirst = 0;
 					continue;
 				}
-				if( bnum >= MAXBATTLENUM )break;//³¬¹ıÕ½¶·³¡´Î
+				if( bnum >= MAXBATTLENUM )break;//è¶…è¿‡æˆ˜æ–—åœºæ¬¡
 				for( k=0; k<10; k++){
 					easyGetTokenFromBuf( bufarg, '|', k+1, buf1, sizeof( buf1 ));
 					if( strlen( buf1) <= 0 ) continue;
@@ -533,7 +533,7 @@ int PKLIST_LoadPkTeamListfromFile( char *dirpath, char *listfilename )
 	return 1;
 }
 
-//Backupµµ
+//Backupæ¡£
 int PKLIST_BackupPkTeamListfromFile( char *dirpath, char *listfilename )
 {
 	char filename[256];
@@ -606,7 +606,7 @@ int PKLIST_BackupPkTeamListfromFile( char *dirpath, char *listfilename )
 	return 1;
 }
 //PKListSort[1000]
-void PKLIST_SortTheCharts( int ti) //ÅÅĞĞ°ñ´¦Àí
+void PKLIST_SortTheCharts( int ti) //æ’è¡Œæ¦œå¤„ç†
 {
 extern gmsv gs[MAXCONNECTION];
 	int i, k, last=-1;
@@ -639,7 +639,7 @@ extern gmsv gs[MAXCONNECTION];
 	log( "\nPKListSort[%d]=%d \n", PKListSort[last], ti);
 	PKListSort[last]=ti;
 
-	//¸üĞÂËùÓĞËÅ·şÆ÷
+	//æ›´æ–°æ‰€æœ‰ä¼ºæœå™¨
 	for (i=0; i<MAXCONNECTION; i++) {
 		if (gs[i].use && gs[i].name[0]) {
 			PKLIST_TheCharts( i, 2, 1);
@@ -662,7 +662,7 @@ extern gmsv gs[MAXCONNECTION];
 			PkTeamList[PKListSort[i]].battleplay, PkTeamList[PKListSort[i]].score,
 			PkTeamList[PKListSort[i]].inside, PkTeamList[PKListSort[i]].updata );
 /*
-			fprintf( fp, "%dth ¶ÓÎé:%-32s Ê¤:%-4d ¸º:%-4d ³¡Êı:%-4d »ı·Ö:%-4d\n",
+			fprintf( fp, "%dth é˜Ÿä¼:%-32s èƒœ:%-4d è´Ÿ:%-4d åœºæ•°:%-4d ç§¯åˆ†:%-4d\n",
 				i, PkTeamList[PKListSort[i]].teamname,
 				PkTeamList[PKListSort[i]].win, PkTeamList[PKListSort[i]].lost,
 				PkTeamList[PKListSort[i]].battleplay, PkTeamList[PKListSort[i]].score );
@@ -681,13 +681,13 @@ extern gmsv gs[MAXCONNECTION];
 	log("PKLIST_TheCharts( %d, %d) \n", type, flg);
 	switch( type){
 	case 1:
-		for( i=0 ; i < MAXCONNECTION ; i ++ ) { //ËÍdelµ½game server
+		for( i=0 ; i < MAXCONNECTION ; i ++ ) { //é€delåˆ°game server
 			if ( gs[i].use && gs[i].name[0] ) {
 				PKLIST_GetPkTeamListDataOne( i, flg);
 			}
 		}
 		break;
-	case 2: //ÅÅĞĞ°ñ
+	case 2: //æ’è¡Œæ¦œ
 		memset( data, 0, sizeof(data));
 		for( i=0; i<550; i++){
 			if( PKListSort[i] == -1 ) continue;
@@ -730,10 +730,10 @@ extern gmsv gs[MAXCONNECTION];
 	}
 }
 
-//±¸·İ´æµµ
+//å¤‡ä»½å­˜æ¡£
 
 
-//loadµµ
+//loadæ¡£
 int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 {
 	char line[512], filename[256], buf1[64];
@@ -768,7 +768,7 @@ int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 		if( count >= maxteam )break;
 		del_rn( line);
 
-		//¶ÓÎéÃû³Æ ¶ÓÎéĞòºÅ
+		//é˜Ÿä¼åç§° é˜Ÿä¼åºå·
 		easyGetTokenFromBuf( line, ',', 1, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( PkTeamList[count].teamname, "%s", buf1);
@@ -778,19 +778,19 @@ int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 		while( 1){
 			easyGetTokenFromBuf( line, ',', spoint++, buf1, sizeof( buf1 ));
 			if( strlen( buf1) <= 0 ) break;
-			sprintf( StartS, "%s", buf1); //ĞÇÏµ
+			sprintf( StartS, "%s", buf1); //æ˜Ÿç³»
 
 			easyGetTokenFromBuf( line, ',', spoint++, buf1, sizeof( buf1 ));
 			if( strlen( buf1) <= 0 ) break;
-			sprintf( PkTeamList[count].MyTeamMans[ManNum].cdkey, "%s", buf1); //ÕÊºÅ
+			sprintf( PkTeamList[count].MyTeamMans[ManNum].cdkey, "%s", buf1); //å¸å·
 
 			easyGetTokenFromBuf( line, ',', spoint++, buf1, sizeof( buf1 ));
 			if( strlen( buf1) <= 0 ) break;
-			sprintf( PkTeamList[count].MyTeamMans[ManNum].name, "%s", buf1); //ÈËÎïÃû
+			sprintf( PkTeamList[count].MyTeamMans[ManNum].name, "%s", buf1); //äººç‰©å
 
 			easyGetTokenFromBuf( line, ',', spoint++, buf1, sizeof( buf1 ));
 			if( strlen( buf1) <= 0 ) break;
-			leve = atoi( buf1); //ÈËÎïµÈ¼¶
+			leve = atoi( buf1); //äººç‰©ç­‰çº§
 
 			sprintf( dData, "%s,%s,%s,%d\n",
 				StartS, PkTeamList[count].MyTeamMans[ManNum].cdkey,
@@ -825,7 +825,7 @@ int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 	fclose( bfp);
 	fclose( tfp);
 	fclose( fp);
-	//Çå³ı
+	//æ¸…é™¤
 	sprintf( filename, "%s/%s", dirpath, listfilename);
 	remove( filename);
 
@@ -867,7 +867,7 @@ int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 }
 
 
-//loadµµ
+//loadæ¡£
 int PKLIST_CutStartUserfromFile( char *dirpath, char *listfilename )
 {
 	char line[512], filename[256], buf1[64];
@@ -898,28 +898,28 @@ int PKLIST_CutStartUserfromFile( char *dirpath, char *listfilename )
 			fprintf( bfp, "%s\n", line);
 			continue;
 		}
-		sprintf( StartS, "%s", buf1); //ĞÇÏµ
+		sprintf( StartS, "%s", buf1); //æ˜Ÿç³»
 
 		easyGetTokenFromBuf( line, ',', 2, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ){
 			fprintf( bfp, "%s\n", line);
 			continue;
 		}
-		sprintf( cdkey, "%s", buf1); //ÕÊºÅ
+		sprintf( cdkey, "%s", buf1); //å¸å·
 
 		easyGetTokenFromBuf( line, ',', 3, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ){
 			fprintf( bfp, "%s\n", line);
 			continue;
 		}
-		sprintf( name, "%s", buf1); //ÈËÎïÃû
+		sprintf( name, "%s", buf1); //äººç‰©å
 
 		easyGetTokenFromBuf( line, ',', 4, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ){
 			fprintf( bfp, "%s\n", line);
 			continue;
 		}
-		leve = atoi( buf1);		//ÈËÎïµÈ¼¶
+		leve = atoi( buf1);		//äººç‰©ç­‰çº§
 
 		{
 			FILE *tfp=NULL;
@@ -938,7 +938,7 @@ int PKLIST_CutStartUserfromFile( char *dirpath, char *listfilename )
 	return 1;
 }
 
-//loadµµ
+//loadæ¡£
 int PKLIST_alteUserfromFile( char *dirpath, char *listfilename )
 {
 	char line[512], filename[256], buf1[64];
@@ -966,22 +966,22 @@ extern gmsv gs[MAXCONNECTION];
 		if( strlen( line) <= 0 || line[0] == '#' ) continue;
 		del_rn( line);
 
-		//¶ÓÎé
+		//é˜Ÿä¼
 		easyGetTokenFromBuf( line, ',', 1, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( TeamName, "%s", buf1);
 
-		//ĞÇÏµ
+		//æ˜Ÿç³»
 		easyGetTokenFromBuf( line, ',', 2, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( Star, "%s", buf1);
 
-		//ÕÊºÅ
+		//å¸å·
 		easyGetTokenFromBuf( line, ',', 3, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( Cdkey, "%s", buf1);
 
-		//ÈËÎïÃû
+		//äººç‰©å
 		easyGetTokenFromBuf( line, ',', 4, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( UserName, "%s", buf1);
@@ -1014,7 +1014,7 @@ extern gmsv gs[MAXCONNECTION];
 				}
 				break;
 			}
-			for( j=0 ; j < MAXCONNECTION ; j ++ ) { //ËÍdelµ½game server
+			for( j=0 ; j < MAXCONNECTION ; j ++ ) { //é€delåˆ°game server
 				if ( gs[j].use && gs[j].name[0] ) {
 					PKLIST_GetPkTeamListDataOne( j, i);
 				}
@@ -1024,7 +1024,7 @@ extern gmsv gs[MAXCONNECTION];
 	}
 	fclose( bfp);
 	fclose( fp);
-	//Çå³ı
+	//æ¸…é™¤
 	sprintf( filename, "%s/%s", dirpath, listfilename);
 	remove( filename);
 	PKLIST_CheckAllUser();
@@ -1109,19 +1109,19 @@ void PKLIST_CheckAllUser( void)
 	fclose( ffp);
 }
 /*
-ĞòºÅ|¶ÓÃû|ÕÊºÅ_ÈËÎïÃû|ÕÊºÅ_ÈËÎïÃû|ÕÊºÅ_ÈËÎïÃû|ÕÊºÅ_ÈËÎïÃû|ÕÊºÅ_ÈËÎïÃû|Ê¤|°Ü|0
+åºå·|é˜Ÿå|å¸å·_äººç‰©å|å¸å·_äººç‰©å|å¸å·_äººç‰©å|å¸å·_äººç‰©å|å¸å·_äººç‰©å|èƒœ|è´¥|0
 
-#ĞòºÅ|Ä¿Â¼|¶ÓÃû|ÕÊºÅ_ÈËÎïÃû|Ê¤|°Ü|³¡|»ı·Ö|0
+#åºå·|ç›®å½•|é˜Ÿå|å¸å·_äººç‰©å|èƒœ|è´¥|åœº|ç§¯åˆ†|0
 
-1|0x10|µÚ1¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-2|0x10|µÚ2¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-3|0x10|µÚ3¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-4|0x10|µÚ4¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-5|0x10|µÚ5¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-6|0x10|µÚ6¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-7|0x10|µÚ7¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-8|0x10|µÚ8¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-9|0x10|µÚ9¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
-10|0x10|µÚ10¶Ó|cdkey|Ê¤|°Ü|³¡|»ı·Ö|0
+1|0x10|ç¬¬1é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+2|0x10|ç¬¬2é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+3|0x10|ç¬¬3é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+4|0x10|ç¬¬4é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+5|0x10|ç¬¬5é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+6|0x10|ç¬¬6é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+7|0x10|ç¬¬7é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+8|0x10|ç¬¬8é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+9|0x10|ç¬¬9é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
+10|0x10|ç¬¬10é˜Ÿ|cdkey|èƒœ|è´¥|åœº|ç§¯åˆ†|0
 */
 #endif

@@ -9,21 +9,21 @@
 
 typedef struct _tagDefendArrayList
 {
-	char cdkey[256]; //ÕÊºÅ
-	char name[256];	//ÈËÎïÃû
-	int defnums;	//´ÎÊı
-	int type;		//×´Ì¬
-	int score;		//·ÖÊı
-	int use;		//Ê¹ÓÃ
+	char cdkey[256]; //å¸å·
+	char name[256];	//äººç‰©å
+	int defnums;	//æ¬¡æ•°
+	int type;		//çŠ¶æ€
+	int score;		//åˆ†æ•°
+	int use;		//ä½¿ç”¨
 }DefendArrayList;
 
 typedef struct _tagScoreArrayList
 {
-	char cdkey[256]; //ÕÊºÅ
-	char name[256];	//ÈËÎïÃû
+	char cdkey[256]; //å¸å·
+	char name[256];	//äººç‰©å
 	char fromname[256];
-	int score;		//·ÖÊı
-	int use;		//Ê¹ÓÃ
+	int score;		//åˆ†æ•°
+	int use;		//ä½¿ç”¨
 }ScoreArrayList;
 
 
