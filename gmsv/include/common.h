@@ -59,7 +59,7 @@ extern int snprintf (char* , size_t, const char* , ...)
 #define BOOL int
 #define FALSE 0
 #define TRUE  1
-#define INLINE inline
+#define INLINE // remove the inline keyword as this is incorrectly used
 #define USE_MTIO 0
 
 #endif
