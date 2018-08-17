@@ -1,0 +1,9 @@
+NomalMainMsg:最近在路上越来越常看到尼斯人了，是因为地城水城重新开放的缘故吗？
+
+#聊水怪事件
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&NOWEV=88
+NomalWindowMsg:好像最近动物园的人在从事不太好的事情，经常鬼鬼祟祟地搬运一些大箱子，还有人听到箱子里有动物在哀嚎呢，难道是虐待动物吗？
+NomalWindowMsg2:话又说回来……你是尼斯人吧？\n\n说到虐待动物……你们才是最拿手的不是吗？
+EventEnd

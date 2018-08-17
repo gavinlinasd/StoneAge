@@ -1,0 +1,13 @@
+NPCTEMPLATE
+#比大小宠物
+{
+templatename=auctioneer
+makeatnobody=1
+makeatnosee=1
+type=100872
+functionset=Auctioneer
+hp=100
+mp=100
+str=1
+tough=1
+}

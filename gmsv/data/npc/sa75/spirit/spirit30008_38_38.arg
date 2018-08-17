@@ -1,0 +1,84 @@
+########　水晶任务红岩石　########
+
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+WARP:0,0,0
+NomalMsg:这里怎么会摆块石头？
+PartyMsg:这块石头有点诡异。
+OVER
+
+
+###　空间足够有旗标178　###
+TALKEVENT1
+FREE:LV>79&ENDEV=4&ENDEV!=177&ENDEV=178&ITEM=19292&ITEM=3900&reITEM>8
+WARP:30017,18,3
+FreeMsg:\n\n要进入危险地带了，准备冲～～～～。
+OVER
+
+
+###　空间不足有旗标178　###
+TALKEVENT2
+FREE:LV>79&ENDEV=4&ENDEV!=177&ENDEV=178&ITEM=19292&ITEM=3900&ITEM=19292
+WARP:0,0,0
+FreeMsg:\n\n好像没办法钻过去，我是不是该丢掉某些东西～～～～。
+OVER
+
+###　空间足够有旗标178　###
+TALKEVENT3
+FREE:LV>79&ENDEV=4&ENDEV!=177&ENDEV=178&ITEM=19292&ITEM!=3900&reITEM>8
+WARP:0,0,0
+FreeMsg:\n\n\n我好像忘了该去琉璃洞窟带回绿珀石～～
+OVER
+
+###　空间足够有旗标178没火守护　###
+TALKEVENT4
+FREE:LV>79&ENDEV=4&ENDEV!=177&ENDEV=178&ITEM!=19292&reITEM>12
+WARP:0,0,0
+FreeMsg:\n\n咦？火的守护怎么不见了，我放哪了～～～？
+OVER
+
+###　空间足够有旗标177　###
+TALKEVENT5
+FREE:LV>79&ENDEV=4&ENDEV=177&ENDEV!=178&ITEM=19304&ITEM=19292&reITEM>12
+WARP:30017,18,3
+FreeMsg:\n找到了～～！依照地图标示，在这一块石头下就是水晶矿场的入口。\n\n现在就进去吧～～～～。
+OVER
+
+###　空间足够有旗标177无178　###
+TALKEVENT6
+FREE:LV>79&ENDEV=4&ENDEV=177&ENDEV!=178&ITEM=19304&ITEM!=19292
+WARP:0,0,0
+FreeMsg:\n\n要安全通过从没去过的火山裂缝需要先获得伊拉大人的帮忙，先去底层一趟吧。
+OVER
+
+
+###　空间足够有旗标177无地图　###
+TALKEVENT7
+FREE:LV>79&ENDEV=4&ENDEV=177&ITEM!=19304
+WARP:0,0,0
+FreeMsg:\n\n咦？地图不知道丢哪了，这里怎么会有一块石头？？
+OVER
+
+###　空间不足有旗标178　###
+TALKEVENT8
+FREE:LV>79&ENDEV=4&ENDEV!=177&ENDEV=178&ITEM!=19304&ITEM=19292
+WARP:0,0,0
+FreeMsg:\n东西太多了，钻不过去。\n\n我看～～～处理掉一些东西吧。
+OVER
+
+
+###　空间不足有旗标177　###
+TALKEVENT9
+FREE:LV>79&ENDEV=4&ENDEV=177&ENDEV!=178&ITEM=19304&ITEM=19292
+WARP:0,0,0
+FreeMsg:\n东西太多了，钻不过去。\n\n我看～～～处理掉一些东西吧。
+OVER
+
+###　条件都不成立　###
+TALKEVENT10
+FREE:LV>0
+WARP:0,0,0
+FreeMsg:\n\n这里怎么会摆块红色的大石头？
+OVER

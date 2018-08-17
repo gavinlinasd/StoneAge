@@ -1,0 +1,16 @@
+NEWWARPMAN
+
+#### 标全不正确，不理 ####
+NOFREE
+FREE:LV>0
+NomalMsg:沙～沙～沙～
+PartyMsg:沙沙沙沙沙～～～～～
+OVER
+
+####　传送人　####
+TALKEVENT1
+WARP:60035,23,97
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=1445&ITEM=1446&ITEM=1447
+DelItem:1446*1,1447*1,1445*1
+FreeMsg:你是文狄船长所认定的英雄吗？十年来有不少人挑战，可从来没人成功过呢，那我送你进去吧！
+OVER

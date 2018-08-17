@@ -1,0 +1,8 @@
+#格里兰01
+WAVE:54
+routenum:1
+routeto1:7001,26,20;7001,26,25;7001,34,25;7001,34,20;7001,26,20
+routename1:格里格里
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:1

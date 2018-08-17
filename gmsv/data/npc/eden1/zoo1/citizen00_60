@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:哈哈哈～～我刚在游乐场狂赢了快五十万分～～\n偷偷告诉你，在买彩卷前向东方拜三下更容易下中啦～～\n我下次要多拜几下～～
+EventEnd

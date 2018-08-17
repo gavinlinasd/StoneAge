@@ -1,0 +1,29 @@
+########找到真正的老人给暴########
+
+NomalMainMsg:要好好养那支暴喔！
+
+#### 任务完成对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=125&ENDEV=81&ITEM=2414
+NomalWindowMsg:记得先把它养的肥一点再还给库沙达。
+EventEnd
+
+###完成任务拿到布洛多多（关标１２５）###
+EventNo:125
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ITEM=1482&NOWEV=125&ENDEV=81&ITEM=2414
+AcceptMsg1:嘿嘿～还是被你找到了，既然你这么有心，依照约定还是给你布洛多多吧！不过，他吃鸟食吃不习惯，水土不服很久也瘦了不少........
+ThanksMsg1:记得先把他养的胖一点再还给库沙达喔！
+GetPet:2048
+DelItem:1482*1
+PetFullMsg:你身上宠物满了喔，难道说你不想要？！
+EndSetFlg:125
+EventEnd
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:终于让你找到了，但是，你的恐龙蛋呢。
+EventEnd

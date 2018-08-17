@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:我儿子为了让我能够看到新大陆，不惜抓了五十只飞龙给霍特雷敦……\n唉～～其实我只想好好在家里休息……\n人老了……做什么事都懒……唉～～\n现在到了这里我反而不知该做些什么……
+EventEnd

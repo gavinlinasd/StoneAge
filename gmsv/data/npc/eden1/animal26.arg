@@ -1,0 +1,9 @@
+#摩酷罗01
+WAVE:60
+routenum:1
+routeto1:7001,42,38;7001,42,57;7001,42,38
+routename1:酷罗
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:13
+

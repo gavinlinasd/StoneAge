@@ -1,0 +1,9 @@
+NomalMainMsg:最近来了好多尼斯人喔，尼斯人怎么都那么有石币坐得起飞龙航空啊……
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:伊甸这儿挺和平的，所以没有武器店，如果要买武器的话，可能要到弗烈顿国吧？
+NomalWindowMsg1:你问我怎么去？就从北边那个出口一直出去就是了啊？
+EventEnd

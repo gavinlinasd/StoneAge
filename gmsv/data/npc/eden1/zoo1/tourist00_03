@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:伊甸人对动物的习性调查得真清楚，不知道尼斯的动物是不是也喜欢吃这些东西呢？
+EventEnd

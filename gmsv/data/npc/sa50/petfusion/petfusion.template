@@ -1,0 +1,9 @@
+NPCTEMPLATE
+{
+templatename=npc_petfusion
+makeatnobody=1
+name=
+makeatnosee=1
+graphicname=100444
+functionset=PetFusion
+}

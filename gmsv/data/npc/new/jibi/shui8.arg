@@ -1,0 +1,15 @@
+########地########
+
+NomalMainMsg:这里很危险
+
+
+####给信物####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&ITEM=20793
+AcceptMsg1:这个世界终于清净了
+ThanksMsg1:接受我们的祝福吧~小老鼠与你同在
+GetPet:1804
+DelItem:20793
+PetFullMsg:你宠物太多了哦。
+EventEnd

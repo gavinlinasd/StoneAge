@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:要是可以带个几只新宠物回去尼斯一定可以成为众人注目的焦点……
+EventEnd

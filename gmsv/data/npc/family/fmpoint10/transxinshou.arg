@@ -1,0 +1,13 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV<0
+NomalMsg:....................
+OVER
+
+TALKEVENT1
+WARP:147,152,105
+FREE:LV>0
+FreeMsg:哦~~~~~你想参观瑞尔亚斯新手村！\n请进请进~~！！！
+PartyMsg:\n不好意思、可以一个一个来吗？团队无法进入哦！！！
+OVER

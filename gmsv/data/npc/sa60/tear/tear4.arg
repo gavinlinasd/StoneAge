@@ -1,0 +1,12 @@
+#### 杰士冰后手下废话NPC ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&ITEM=2414
+NomalWindowMsg:你还不是我的对手，要接走洛林先打倒我的伙伴吧！
+EventEnd
+#### 杰士冰后手下废话NPC ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:卡～卡
+EventEnd

@@ -1,0 +1,13 @@
+LIMITSHOP
+sell_rate:0.8
+buy_msg:你好,欢迎惠顾,买,买这个,buy
+sell_msg:卖,我卖,我要卖,卖什么,sell
+main_msg:欢迎光临
+sell_main:欢迎光临，我只收购附近出产的木材喔。\n你想卖木材吗？
+other_msg:暗示,情报,情况如何,木材,niku
+hint_msg:目前在募集打工人员
+sellonly_msg:欢迎光临，我是这里专门收购木材的商人\n你要卖木材吗？
+stone_msg:这样钱太多了哦。
+realy_msg:确定要交易了吗？
+special_rate:1.0
+LimitItemNo:20181,20182,20183,11810-11819,13075

@@ -1,0 +1,11 @@
+talklog=talk.log
+itemlog=item.log
+petlog=pet.log
+tenseilog=tensei.log
+tradelog=trade.log
+stonelog=stone.log
+killlog=kill.log
+hacklog=hack.log
+speedlog=speed.log
+proc=proc.log
+fmpklog=fmpk.log

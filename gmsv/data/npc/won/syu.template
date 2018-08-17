@@ -1,0 +1,11 @@
+NPCTEMPLATE
+# Syu TEST
+{
+templatename=npc_alldoman
+makeatnobody=1
+makeatnosee=1
+name=
+graphicname=SPR_kkanngof
+loopfunctime=4000
+functionset=Alldoman
+}

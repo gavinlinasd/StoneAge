@@ -1,0 +1,7 @@
+NomalMainMsg:每天生活在这么美丽的地方，心情也不由得都会很愉快呢！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:每天生活在这么美丽的地方，\n心情也不由得都会很愉快呢！
+EventEnd

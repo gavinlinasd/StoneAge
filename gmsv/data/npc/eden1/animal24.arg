@@ -1,0 +1,9 @@
+#摩米索拉01
+WAVE:60
+routenum:1
+routeto1:7001,44,56;7001,44,38;7001,41,38;7001,41,56;7001,44,56
+routename1:米索
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:9
+

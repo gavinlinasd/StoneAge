@@ -1,0 +1,8 @@
+#迪米布斯01
+WAVE:81
+routenum:1
+routeto1:7001,46,22;7001,46,28;7001,41,28;7001,41,22;7001,46,22
+routename1:迪米
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:5

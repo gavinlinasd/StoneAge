@@ -1,0 +1,86 @@
+NPCCREATE
+
+########　闇灵法师　#########
+##### 公会导师 ######
+{
+name=萨哈克
+floorid=8218
+borncenter=17,21
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16169
+enemy=npcgen_warpman|file:sa70/class/mag.arg
+}
+
+{
+name=就职导师希尔
+floorid=8218
+borncenter=13,25
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16170
+enemy=npcgen_warpman|file:sa70/class/mag2
+}
+
+##### 公会解说员 ######
+#{
+#name=公会解说员
+#floorid=8218
+#borncenter=17,30
+#dir=4
+#ignoreinvincible=1
+#createnum=1
+#graphicname=16166
+#enemy=changeevent|file:sa70/class/mag3
+#}
+
+##### 试练者一 ######
+{
+name=闇灵试炼者
+floorid=8221
+borncenter=7,3
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16167
+enemy=npcgen_warpman|file:sa70/class/mquest1
+}
+
+##### 试练者二 ######
+{
+name=闇灵试炼者
+floorid=8221
+borncenter=68,28
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16167
+enemy=npcgen_warpman|file:sa70/class/mquest2
+}
+
+##### 试练者三 ######
+{
+name=闇灵试炼者
+floorid=8221
+borncenter=151,4
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16167
+enemy=npcgen_warpman|file:sa70/class/mquest3
+}
+
+##### 试练者四 ######
+{
+name=闇灵试炼者
+floorid=8221
+borncenter=120,85
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16172
+enemy=sb_dou|file:sa70/class/mquest4
+}
+

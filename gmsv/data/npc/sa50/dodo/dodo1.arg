@@ -1,0 +1,41 @@
+########　布洛乌乌　########
+
+NomalMainMsg:吼吼！
+
+####　任务完成对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=125&ITEM=2414
+NomalWindowMsg:感谢…感谢…太感谢了。
+EventEnd
+
+####　带回布洛多多任务对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=2414&PET>0-1042
+NomalWindowMsg:哇…太感谢你了，谢谢你救了我弟弟。
+EventEnd
+
+########　接任务对话　#####
+EventNo:-1
+TYPE:REQUEST
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=2414
+RequestMsg1:吼！你真的想见我们的队长？他走失了一只宝贝暴龙，所以心情很差，你觉得你能够帮的上忙吗？如果可以我就告訢你是怎么一回事。
+RequestMsg2:队长带我们训练时，我的那位宝贝弟弟因为好奇误闯了飞龙的地盘，不小心把飞龙的蛋震下来打破了。突然间有位生气的老人就跑出来把我弟弟布洛多多给抓回去了。
+RequestMsg3:我们也不甘示弱，拿走他们飞龙蛋，要他放了布洛多多出来，可是那老头就是不肯，气死我了。希望你可以帮我跟那老头谈谈，放了我们家布洛多多。
+ThanksMsg1:一切就请你帮忙了。
+EventEnd
+
+####　未接任务对话(身上无贝壳)　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125
+NomalWindowMsg:吼！
+EventEnd
+
+####　未接任务对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:吼～～～～～～～～～
+EventEnd

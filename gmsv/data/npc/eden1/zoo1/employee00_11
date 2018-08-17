@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:最近来了好多外地人，他们真的是喜欢伊甸才来这里的吗？
+EventEnd

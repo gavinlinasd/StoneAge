@@ -1,0 +1,15 @@
+NomalMainMsg:你有没有去过我们的盐矿呢？这儿出产的岩盐很有名的喔！
+
+#任务结束
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&ENDEV=87
+NomalWindowMsg:沙尔特先生最近有精神多了，又听到他那开朗的笑声，大家都放心多了。\n沙尔特先生给你采盐证也是希望你可以用这种心情继续帮助别人吧，我相信你一定可以做到的呢！
+EventEnd
+
+#聊盐矿任务
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81
+NomalWindowMsg:欢迎来到塔耳塔城，我们的特产是岩盐，虽然不给外来者，不过医疗功效很神奇喔，那儿就是采岩盐的矿坑了，可以去看看喔！
+EventEnd

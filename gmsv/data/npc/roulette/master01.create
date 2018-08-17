@@ -1,0 +1,12 @@
+NPCCREATE
+{
+name=ÂÖÅÌÖ÷³ÖÈË
+floorid=7003
+dir=4
+createnum=1
+time=0
+graphicname=100735
+borncorner=14,3,14,3
+ignoreinvincible=1
+enemy=NPC_GambleMaster|file:roulette/master01.arg
+}

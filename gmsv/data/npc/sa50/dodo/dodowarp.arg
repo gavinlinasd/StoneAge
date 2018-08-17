@@ -1,0 +1,16 @@
+NEWWARPMAN
+
+#### 迷官老人标全不正确，不理 ####
+NOFREE
+FREE:LV>0
+NomalMsg:飞龙蛋呢？！
+PartyMsg:....................
+OVER
+
+####传送老人有旗标１２５（身上有蛋）####
+TALKEVENT1
+WARP:60067,121,8
+FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1482&ITEM=2414
+FreeMsg:嗯～果然把蛋给拿回来了，为了感谢你，我会把布洛多多给你的，不过啊～～你得先找到真正的我啊！
+OVER
+

@@ -1,0 +1,9 @@
+NPCTEMPLATE
+#宠物竞速主持人
+{
+templatename=petracemaster
+makeatnobody=1
+makeatnosee=1
+type=SPR_sslma_1
+functionset=PetRaceMaster
+}

@@ -1,0 +1,8 @@
+NomalMainMsg:来了这么多的尼斯人啊……
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:只是来看个病而已就看到这么多尼斯人，你也受伤了吗？
+EventEnd

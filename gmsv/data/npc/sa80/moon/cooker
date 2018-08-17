@@ -1,0 +1,37 @@
+####  圆煮  ####
+
+NomalMainMsg:啦啦啦…我是个了不起的月饼师傅
+
+###　告知中秋宠讯息　###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&ENDEV=4&ITEM=2236
+NomalWindowMsg:你在幻境里得到这把斧头吗？！我记得这把斧头的柄是用一种奇兽的骨头所做成的，这种奇兽平常是见不到的，不过如果带着这把斧头的话，或许它们会攻击你，小心，这种奇兽就在梦幻洞窟里面。
+EventEnd
+
+###　物品正确…随机得到匕首　###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&ENDEV=4&ITEM=2207&ITEM=2208&ITEM=12821
+AcceptMsg1:嗯，就是这三种材料没错。那我准备开始做了喔，不过我要提醒你，这个月饼因为是新的配方，所以不容易成功，有时候会做成超级甜的月饼喔…。
+ThanksMsg1:那就…谢谢光顾了。
+GetRandItem:2209,2210
+DelStone:20000
+DelItem:2207*1,2208*1,12821*1
+ItemFullMsg:你身上放满了东西我怎么给你月饼啊？
+StoneLessMsg:你身上的钱好像不太够喔，要二万元。
+EventEnd
+
+###　告知神奇月饼讯息　###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&ENDEV=4
+NomalWindowMsg:我是个很厉害的月饼师傅喔，最近刚研究出一种全新的月饼，吃了之后会产生意想不到的效果喔，不过材料有点不好找。如果你要的话，就到梦幻洞窟里帮我找出苦涩的调味粉、辛辣的大蒜，另外再给我一个大福我就可以帮你做一个。另外…还要工本费二万元…
+EventEnd
+
+###　不符合条件　###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:啦啦啦…我是个了不起的月饼师傅…
+EventEnd

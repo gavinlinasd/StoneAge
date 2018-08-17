@@ -1,0 +1,10 @@
+NPCTEMPLATE
+#NPC_GambleBank
+{
+templatename=FreePetSkill
+makeatnobody=1
+name=
+makeatnosee=1
+graphicname=100444
+functionset=NPC_FreePetSkill
+}

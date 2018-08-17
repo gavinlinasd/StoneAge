@@ -1,0 +1,36 @@
+NomalMainMsg:我的黄金凯比特最近老是不听话！！
+
+####任务187中　身上有花盆###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:NOWEV=187&ITEM=20846,NOWEV=187&ITEM=20847,NOWEV=187&ITEM=20848,NOWEV=187&ITEM=20849,NOWEV=187&ITEM=20850,NOWEV=187&ITEM=20851
+NomalWindowMsg:快去吧！！！
+EventEnd
+
+###收下洁素冰晶，种子　给花盆和甘之泪石###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20842&ITEM=20843
+AcceptMsg:HOHO～小伙子挺不错的噢？！～～～这么快就找回来了
+ThanksMsg:拿好了噢！
+DelItem:20842,20843
+GetItem:20846*1,20872*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+####任务187中　身上有洁素冰晶###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20842
+NomalWindowMsg:快去吧！！！
+EventEnd
+
+####任务187中　####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM!=20842
+GetItem:20842
+ItemFullMsg:身上道具太多了喔！
+AcceptMsg:鸠桃花呀！你帮我去无息之境找一只翼龙吧！在它身上能找到鸠桃花的种子！先找来吧！
+ThanksMsg:这个拿好！只有带上这个翼龙才会出现！具体什么地方不知道？在无息之境的中央噢！１５０，１５０附近
+EventEnd

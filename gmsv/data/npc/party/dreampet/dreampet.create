@@ -1,0 +1,13 @@
+NPCCREATE
+
+{
+floorid=1000
+borncorner=49,99,49,99
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=16092
+name=梦工厂工程人员
+enemy=changeevent|file:party/dreampet/changeticket
+}

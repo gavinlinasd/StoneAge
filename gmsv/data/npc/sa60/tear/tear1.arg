@@ -1,0 +1,24 @@
+########洛林########
+
+NomalMainMsg:小心喔！在水世界里有很多旋涡和一些凶猛的鲨鱼。
+
+###身上有戒指收戒指给项炼###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&ENDEV=4&ITEM=1678&NOWEV=136
+AcceptMsg1:咦？！你是谁呢？好特别的戒指喔！这个戒指好像见过但是却忘了。
+AcceptMsg2:（怎么一直记不起来呢？这个戒指会不会和夕姬有关系呢？问问看他好了。）
+AcceptMsg3:请问你有听说过夕姬这个人吗？最近我的脑海中时常浮现夕姬这个名字……。
+AcceptMsg4:（把这条项炼交给他说不定可以找到答案！）
+ThanksMsg1:如果你知道夕姬在那请你帮我将这条项炼交给他，或许能帮助我想起以前的事…谢谢你。
+ItemFullMsg:你身上的东西可以减少一点吗。
+DelItem:1678*1
+GetItem:1676*1
+EventEnd
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:小心喔！在这个海里有很多可怕的漩涡和一些凶猛的鱼类。
+EventEnd

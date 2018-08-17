@@ -1,0 +1,25 @@
+NEWWARPMAN
+
+####贝克标全不正确，不理 ####
+NOFREE
+WARP:0,0,0
+FREE:LV>0
+NomalMsg:你是谁呢？想进去拿宝箱吗？那你的钥匙呢？
+PartyMsg:你是谁呢？想进去拿宝箱吗？那你的钥匙呢？
+OVER
+
+####传送到宝箱地图####
+TALKEVENT1
+WARP:8007,13,15
+FREE:LV>79&ENDEV=4&ENDEV=81&ENDEV=126&ITEM=1718&NOWEV=133
+FreeMsg:果然不是浪得虚名，跟我进来我再告诉你前因后果吧！
+Event_End:133
+OVER
+
+####传送到宝箱地图####
+TALKEVENT2
+WARP:8007,13,15
+FREE:LV>79&ENDEV=4&ENDEV=81&ENDEV=126&ITEM=1719&NOWEV=133
+FreeMsg:果然不是浪得虚名，跟我进来我再告诉你前因后果吧！
+Event_End:133
+OVER

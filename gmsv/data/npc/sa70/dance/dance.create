@@ -1,0 +1,14 @@
+NPCCREATE
+####ÌøÎèµÄÍŞÍŞ####
+########Àò¶ù#########
+{
+name=Àò¶ù
+floorid=1000
+borncenter=63,43
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16083
+enemy=changeevent|file:sa70/dance/dance.arg
+}
+

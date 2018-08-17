@@ -1,0 +1,14 @@
+NPCCREATE
+###无人料理的宴会###
+########梅尔吉#########
+{
+name=梅尔吉
+floorid=1100
+borncenter=44,31
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16092
+enemy=changeevent|file:sa70/risk/risk1.arg
+}
+

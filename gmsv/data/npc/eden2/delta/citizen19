@@ -1,0 +1,8 @@
+aNomalMainMsg:我的朋友最近加入了战士团，结果里头两位战士长的对立闹得气愤很僵，害她也很紧张……,真是的，战士团只要顾好自己的本分就好了，为什么还有时间对立呢？
+
+#第一次遇见玩家
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>100&ENDEV=81&ENDEV=104
+NomalWindowMsg:啊啊，听说战士团的对立已经解除了，这样子我们也放心多了。
+EventEnd

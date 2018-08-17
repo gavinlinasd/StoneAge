@@ -1,0 +1,8 @@
+#巴克亚司01
+WAVE:56
+routenum:1
+routeto1:7001,11,7;7001,4,7;7001,4,4;7001,11,4;7001,11,7
+routename1:巴克
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:17

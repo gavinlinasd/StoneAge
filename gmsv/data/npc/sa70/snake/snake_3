@@ -1,0 +1,15 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+NomalMsg:Ë»¡«¡«¡«¡«¡«¡£
+PartyMsg:Ë»¡«¡«¡«¡«¡«¡«¡«£¿
+OVER
+
+TALKEVENT1
+WARP:9356,7,23
+FREE:LV>79&ENDEV=4&NOWEV=165
+MONEY:-1
+FreeMsg:Ë»¡«¡«¡«¡«¡«Ë»¡«£¡
+OVER
+

@@ -1,0 +1,14 @@
+####卡罗(工作室)####
+
+NomalMainMsg:………
+
+####倒在地上的卡罗####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112
+NomalWindowMsg:…………
+EventEnd
+
+
+
+

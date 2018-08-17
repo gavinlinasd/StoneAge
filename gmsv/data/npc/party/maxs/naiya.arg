@@ -1,0 +1,12 @@
+NomalMainMsg:每年到了年末我都有好多事要忙喔～～。
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=20704&ITEM=20697
+AcceptMsg:\n\n哈啰！你身上这礼物的包装可真少见呢！
+ThanksMsg:\n\n是要给我的啊？谢谢你，由于这阵子太忙了，忙到忘了我有写信给耶诞老公公，幸好他老人家记得，回去之后帮我跟他说声谢谢啰！
+ItemFullMsg:\n\n你身上装不下东西了，没办法给你一些证明。
+DelItem:20697
+GetRandItem:20681*1
+EventEnd

@@ -1,0 +1,33 @@
+#### 王子友人C 裘恩斯 ####
+
+NomalMainMsg:谈到武艺的话，我可是不会输给任何人的。
+
+####任务结束，认旗标114关####
+
+
+#### 任务进行中对话，给裘恩斯的信 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114&ITEM=20574
+AcceptMsg1:原来你见过比吉斯了，他过的还好吗？我们几个老朋友很久没有见面了。
+AcceptMsg2:王子真是个学武的天才啊！进步非常神速，我已没有东西可以教他了。为了印证他所学的，他到了伊甸去参加武术大赛了。
+ThanksMsg1:这封信交给你吧，王子不会轻易相信你，因为他不想回去。看了这信，他会懂的。
+ItemFullMsg:想给你这封信，但你好像好不下了耶。
+GetItem:20575
+DelItem:20574
+EventEnd
+
+#### 身上有裘恩斯信对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114&ITEM=20574
+NomalWindowMsg:你应该知道伊甸在那里吧？王子现在就在那里准备参加比赛，不过，我猜他会扮成一般人喔，可能是守卫之类的吧。呵呵呵…
+EventEnd
+
+#### 全不符 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:最近刚指导完一个朋友关于武术方面知识。
+EventEnd
+

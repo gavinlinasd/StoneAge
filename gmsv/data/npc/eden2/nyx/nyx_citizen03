@@ -1,0 +1,7 @@
+NomalMainMsg:今天挖到了很大的一颗海螺！晚餐可以好好吃一顿了！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:今天挖到了很大的一颗海螺！\n晚餐可以好好吃一顿了！
+EventEnd

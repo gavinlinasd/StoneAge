@@ -1,0 +1,5 @@
+#测试伺服器专用店
+SHOP 7002 32 38 16315 4 彩卷兑换员 LimitItemType:TRUE buy_rate:1.0 sell_rate:0.15 main_msg:欢迎光临！这里是彩卷兑换处 buy_msg:买,购买,感谢您,kau,buy,menu,谢谢,买东西 sell_msg:卖 other_msg:彩卷 hint_msg:一人最多十五张哦～ sellonly_msg:这里是不买进东西的唷！ buy_main:想兑换多少彩卷呢？ sell_main: what_msg:要几张呢？ stone_msg: level_msg: realy_msg:这样就可以了吗？  itemfull_msg:您身上已经放不下多余的物品了…… ItemList:20121 LimitItemType:ACCESSORY LimitItemNo: special_rate:1.5 special_item:
+
+SHOP 7005 7 26 16315 4 彩卷兑换员 LimitItemType:TRUE buy_rate:1.0 sell_rate:0.15 main_msg:欢迎光临！这里是彩卷兑换处 buy_msg:买,购买,感谢您,kau,buy,menu,谢谢,买东西 sell_msg:卖 other_msg:彩卷 hint_msg:一人最多十五张哦～ sellonly_msg:这里是不买进东西的唷！ buy_main:想兑换多少彩卷呢？ sell_main: what_msg:要几张呢？ stone_msg: level_msg: realy_msg:这样就可以了吗？  itemfull_msg:您身上已经放不下多余的物品了…… ItemList:20121 LimitItemType:ACCESSORY LimitItemNo: special_rate:1.5 special_item:
+

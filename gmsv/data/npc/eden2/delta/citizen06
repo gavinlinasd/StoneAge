@@ -1,0 +1,8 @@
+NomalMainMsg:卡尔夫那家伙真是老顽固，真正的战士是最注重战术的，像他那样子带队，迟早会把我们大家都害死的！
+
+#任务结束
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>100&ENDEV=81&ENDEV=104
+NomalWindowMsg:当时和大家闹得那么别扭真是不对，战士团都是一家人，应该要同心协力才能保卫塔耳塔城啊！
+EventEnd

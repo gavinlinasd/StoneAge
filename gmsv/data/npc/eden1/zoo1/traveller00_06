@@ -1,0 +1,8 @@
+NomalMainMsg:还有其他的游乐设施吗？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:听说还有很多的游乐设施还在施工呢，真是让人期待啊！
+EventEnd

@@ -1,0 +1,8 @@
+NomalMainMsg:我喜欢在荷叶上玩水珠！
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:我喜欢在荷叶上玩水珠！
+EventEnd

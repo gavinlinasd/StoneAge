@@ -1,0 +1,30 @@
+########贝丝安娜########
+
+NomalMainMsg:我好喜欢养宠物喔！
+
+#### 完成任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&ITEM=1821
+NomalWindowMsg:邦洛洛克斯它很乖喔，又很听话，我真很好喜欢它喔！
+EventEnd
+
+###身上有邦洛洛克斯###
+EventNo:-1 
+TYPE:ACCEPT
+EVENT:LV>0&PET<2-331*1
+AcceptMsg1:你身上的邦洛洛克斯是给我的吗？
+ThanksMsg1:那真是谢谢你啰。感谢感谢！希望你下次再来。
+GetItem:1821
+DelPet:PET<2-331*1
+ItemFullMsg:你身上东西都满了，那我给你的东西你要装在那里啊！
+EventEnd
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:我在收集邦洛洛克斯喔！对了？邦洛洛克斯我要纯种的喔！纯种的意思就是要一级的啦，不是纯种的我就不收喔。
+EventEnd
+
+

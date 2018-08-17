@@ -1,0 +1,19 @@
+NEWNPCENEMY
+
+#### 训练吉比 ####
+
+entype:2
+askbattlemsg1:来吧…开始你的战斗修行～。
+startmsg:努力体会战斗的真谛吧…。
+dieact:1
+enemyno:2118
+deniedmsg:看来你已经慢慢变强了。
+alreadymsg:有别的人正在接受我的训练呢…你等一下吧…。
+onebattle:1
+OVER
+
+NEWEVENT1:
+FREE:LV>0
+endmsg:不错喔～再接再厉吧…！！
+OVER
+

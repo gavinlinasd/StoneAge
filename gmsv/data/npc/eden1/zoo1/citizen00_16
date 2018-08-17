@@ -1,0 +1,9 @@
+NomalMainMsg:我的老家在弗烈顿城，你有没有去过啊？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:哎呀，有客人耶？
+NomalWindowMsg1:我们都是从外地移居到伊甸园的，大家都是女孩子就都住在一起了。\n你也是从外地来的嘛，装扮很特殊呢。
+EventEnd

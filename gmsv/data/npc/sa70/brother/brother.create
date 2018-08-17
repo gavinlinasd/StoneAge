@@ -1,0 +1,14 @@
+NPCCREATE
+####¶ñ°ÔÈıĞÖµÜ####
+########ÎÄÉ­#########
+{
+name=ÎÄÉ­
+floorid=5000
+borncenter=49,40
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16093
+enemy=changeevent|file:sa70/brother/brother1.arg
+}
+

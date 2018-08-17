@@ -1,0 +1,12 @@
+LIMITSHOP
+sell_rate:1.0
+main_msg:欢迎光临海族的世界！
+buy_msg:买,购买,感谢您,kau,buy,menu,谢谢,买东西
+sell_msg:卖东西,卖,sell,uru
+other_msg:提示,情报,生意如何？,珊瑚,火山岩,niku
+hint_msg:目前收集粮食中
+sellonly_msg:这里是只买收的店。\n你要卖珊瑚或是火山岩碎片吗？
+stone_msg:你的钱太多了唷！
+realy_msg:这样就好了吗？
+LimitItemNo:1728-1731,1738-1745
+special_rate:1.0

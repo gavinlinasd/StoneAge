@@ -1,0 +1,10 @@
+########洛林########
+
+NomalMainMsg:水果你都拿了，赶快离开我的地盘！
+
+####打完对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:水果你都拿了，赶快离开我的地盘！
+EventEnd

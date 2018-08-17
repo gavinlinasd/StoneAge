@@ -1,0 +1,56 @@
+#### 苍绿等级二装备精工师  ####
+
+START_MSG:想精工更好的苍绿装备吗？材料是…等级一的苍绿系列装备武器，加上三个石１０及二个绿珊瑚和二个单位纯净的海水就可以做了。可是如果是苍绿之铠２的话…就要四个石１０以及三个绿珊瑚喔，最后再加上一千五百元石币的工本费就可以了。
+
+MenuHead:选择想要交换的装备
+NeedHead:需要的材料
+
+####  苍绿斧等级二精工 ####
+{
+CHANGEITEM:1909
+NeedItem:1877,1725,11809,1683
+FREE:LV>0&ENDEV=4&ITEM=1877&ITEM=1725*2&ITEM=11809*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1725*2,11809*3,1877*1,1683*2
+AddItem:1909
+}
+
+####  苍绿枪等级二精工 ####
+{
+CHANGEITEM:1910
+NeedItem:1878,1725,11809,1683
+FREE:LV>0&ENDEV=4&ITEM=1878&ITEM=1725*2&ITEM=11809*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1725*2,11809*3,1878*1,1683*2
+AddItem:1910
+}
+
+####  苍绿棍等级二精工 ####
+{
+CHANGEITEM:1911
+NeedItem:1879,1725,11809,1683
+FREE:LV>0&ENDEV=4&ITEM=1879&ITEM=1725*2&ITEM=11809*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1725*2,11809*3,1879*1,1683*2
+AddItem:1911
+}
+
+####  苍绿兜等级二精工 ####
+{
+CHANGEITEM:1912
+NeedItem:1880,1725,11809,1683
+FREE:LV>0&ENDEV=4&ITEM=1880&ITEM=1725*2&ITEM=11809*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1725*2,11809*3,1880*1,1683*2
+AddItem:1912
+}
+
+####  苍绿铠等级二精工 ####
+{
+CHANGEITEM:1913
+NeedItem:1881,1725,11809,1683
+FREE:LV>0&ENDEV=4&ITEM=1881&ITEM=1725*3&ITEM=11809*4&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1725*3,11809*4,1881*1,1683*2
+AddItem:1913
+}

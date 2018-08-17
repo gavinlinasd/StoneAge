@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:还好没有把全部的钱都玩完了，不然就没钱治疗了呢。
+EventEnd

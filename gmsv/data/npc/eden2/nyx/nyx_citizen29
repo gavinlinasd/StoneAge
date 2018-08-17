@@ -1,0 +1,7 @@
+NomalMainMsg:原来世界是如此的广阔呀～没想到在伊甸大陆之外还有个尼斯大陆～！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:原来世界是如此的广阔呀～\n没想到在伊甸大陆之外还有个尼斯大陆～！
+EventEnd

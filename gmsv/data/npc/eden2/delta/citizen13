@@ -1,0 +1,8 @@
+NomalMainMsg:两位战士长之间的摩擦越演越烈，害我们的战士团都分裂成两派了，要是这时候有怪物还是敌人来骚扰的话怎么办啊，这样子还能保卫塔耳塔城吗？
+
+#任务结束
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>100&ENDEV=81&ENDEV=104
+NomalWindowMsg:又回到往昔团结一心的战士团了，真是太好了呢！\n要是英嘉小姐能够归团就更好了呢……
+EventEnd

@@ -1,0 +1,9 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:綠穿+綠穿+綠穿 小牛+烏力+烏力\n石龜+石龜+石龜 地魔+撲豬+黑暴\n黑穿+黑穿+黑穿 石龜+石龜+黃雷\n穿山甲+穿山甲+黑暴 機豹+撲滿+黑暴\n地端+撲滿+黑暴 地蜥蜴＋撲滿＋金暴\n黑暴+撲滿烏力+黑暴 艾迪希洛+撲滿烏力\n卡達魯卡斯+卡達魯卡斯 卡恩法爾+撲滿烏力 
+NomalWindowMsg1:石龜+石龜 帖尼布+撲滿烏力 \n赫拉克勒斯+撲滿烏力 艾迪希洛+巴林吉魯 \n洛克斯+洛克斯 吉比＋耶普魯 
+EventEnd

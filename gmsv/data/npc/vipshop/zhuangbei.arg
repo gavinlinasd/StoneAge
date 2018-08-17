@@ -1,0 +1,174 @@
+START_MSG:嗨！这可是会员物品商店哦~\n\n那请你先熟读下列规则：\n购买物品需要相应的会员点卷数哦！点数不够请与管理员联系冲值哦。
+END_MSG:你是否确定购买这个物品？？
+MenuHead:选择道具：
+
+#炎龙会员证
+{
+MenuStr:炎龙会员证       需扣除点数 40
+VipItem:20898,40
+}
+
+#犬神御守[攻] 2964
+{
+MenuStr:犬神御守[功]     需扣除点数 5
+VipItem:2964,5
+}
+
+#犬神御守[防] 2965
+{
+MenuStr:犬神御守[防]     需扣除点数 5
+VipItem:2965,5
+}
+
+#犬神御守[敏] 2966
+{
+MenuStr:犬神御守[敏]     需扣除点数 5
+VipItem:2966,5
+}
+
+#炎龙盾 20819
+{
+MenuStr:炎龙盾           需扣除点数 20
+VipItem:20819,20
+}
+
+#炎龙恩惠铠 20853
+{
+MenuStr:炎龙恩惠铠       需扣除点数 20
+VipItem:20853,20
+}
+
+#炎龙滋润铠 20853
+{
+MenuStr:炎龙滋润铠       需扣除点数 20
+VipItem:20820,20
+}
+
+#炎龙腰带 20822
+{
+MenuStr:炎龙腰带         需扣除点数 20
+VipItem:20822,20
+}
+
+#炎龙头盔 20821
+{
+MenuStr:炎龙头盔         需扣除点数 20
+VipItem:20821,20
+}
+
+#炎龙棍 20823
+{
+MenuStr:炎龙棍           需扣除点数 20
+VipItem:20823,20
+}
+
+#炎龙靴 20824
+{
+MenuStr:炎龙靴           需扣除点数 20
+VipItem:20824,20
+}
+
+#流金手套 2061
+{
+MenuStr:流金手套         需扣除点数 2
+VipItem:2061,2
+}
+
+{
+MenuStr:岚黄之斧4        需扣除点数 5
+VipItem:1439,5
+}
+
+{
+MenuStr:岚黄之枪4        需扣除点数 5
+VipItem:1440,5
+}
+
+{
+MenuStr:岚黄之棍4        需扣除点数 5
+VipItem:1441,5
+}
+
+{
+MenuStr:岚黄之兜4        需扣除点数 5
+VipItem:1442,5
+}
+
+{
+MenuStr:岚黄之铠4        需扣除点数 5
+VipItem:1443,5
+}
+
+{
+MenuStr:仓绿之斧4        需扣除点数 5
+VipItem:1444,5
+}
+
+{
+MenuStr:仓绿之枪4        需扣除点数 5
+VipItem:1425,5
+}
+
+{
+MenuStr:仓绿之棍4        需扣除点数 5
+VipItem:1426,5
+}
+{
+MenuStr:仓绿之兜4        需扣除点数 5
+VipItem:1427,5
+}
+{
+MenuStr:仓绿之铠4        需扣除点数 5
+VipItem:1428,5
+}
+
+{
+MenuStr:焰红之斧4        需扣除点数 5
+VipItem:1434,5
+}
+
+{
+MenuStr:焰红之枪4        需扣除点数 5
+VipItem:1435,5
+}
+
+{
+MenuStr:焰红之棍4        需扣除点数 5
+VipItem:1436,5
+}
+
+{
+MenuStr:焰红之兜4        需扣除点数 5
+VipItem:1437,5
+}
+
+{
+MenuStr:焰红之铠4        需扣除点数 5
+VipItem:1438,5
+}
+
+{
+MenuStr:湛蓝之斧4        需扣除点数 5
+VipItem:1429,5
+}
+
+{
+MenuStr:湛蓝之枪4        需扣除点数 5
+VipItem:1430,5
+}
+
+{
+MenuStr:湛蓝之棍4        需扣除点数 5
+VipItem:1431,5
+}
+
+{
+MenuStr:湛蓝之兜4        需扣除点数 5
+VipItem:1432,5
+}
+
+{
+MenuStr:湛蓝之铠4        需扣除点数 5
+VipItem:1433,5
+}
+

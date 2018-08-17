@@ -1,0 +1,16 @@
+NPCCREATE
+##############蛇之鳞###############
+
+########莫西克#########
+{
+name=莫西克
+floorid=3300
+borncenter=68,57
+dir=6
+time=0
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:sa60/snake/snake1.arg
+graphicname=16105
+}
+

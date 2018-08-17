@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:Ｈｅｙ！您也是从尼斯来的吧，我嘎林讲，千万不要对自己太有信心，玩游戏轻松一点玩就是了！
+EventEnd

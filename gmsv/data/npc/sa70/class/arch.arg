@@ -1,0 +1,102 @@
+########　猎人导师奈尔秋　########
+
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+WARP:0,0,0
+NomalMsg:有何指教呢？
+PartyMsg:请一个一个来嘿！！
+OVER
+
+###　已解完任务但未就职者　###
+TALKEVENT1
+FREE:LV>79&ENDEV=4&ENDEV=147&CLASS=0
+WARP:0,0,0
+FreeMsg:找不到可叶吗？先去就职吧。
+OVER
+
+###　已就职者　###
+TALKEVENT2
+FREE:LV>79&ENDEV=4&CLASS=3
+WARP:0,0,0
+FreeMsg:如何？对追猎者的能力有更深一层的体认了吧？
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT3
+FREE:LV>79&ENDEV=4&ENDEV=145
+WARP:0,0,0
+FreeMsg:抱歉，你已解完其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT4
+FREE:LV>79&ENDEV=4&ENDEV=146
+WARP:0,0,0
+FreeMsg:抱歉，你已解完其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT5
+FREE:LV>79&ENDEV=4&NOWEV=145
+WARP:0,0,0
+FreeMsg:抱歉，你已接了其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT6
+FREE:LV>79&ENDEV=4&NOWEV=146
+WARP:0,0,0
+FreeMsg:抱歉，你已接了其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　结束任务…关标　###
+TALKEVENT7
+FREE:LV>79&ENDEV=4&NOWEV=147&ITEM=2096&ITEM=2097&ITEM=2098
+DelItem:2096,2097,2098
+Event_End:147
+WARP:0,0,0
+FreeMsg:呵呵，我就知道，你果然有追猎者的血液，那么加油吧，下一步是找旁边的可叶就职，然后再找贝吉去学习技能。可叶会给你一些装备，记得身上要有空间哟…
+OVER
+
+###　任务进行中　###
+TALKEVENT8
+FREE:LV>79&ENDEV=4&NOWEV=147
+WARP:8220,68,89
+FreeMsg:哎呀，你还在试炼中呢，怎么跑出来了呢？快进去吧。
+OVER
+
+####  接下就职任务  ####
+TALKEVENT9
+FREE:LV>79&ENDEV=4&CLASS=0
+Event_Now:147
+WARP:8220,68,89
+FreeMsg:就因为追猎者要面对严苛的自然环境的考验，所以我们的要求也比较高，如果你能够通过我们的考验的话，才能够成为我们的一员喔。准备好了吗，你还有考虑的机会。另外请记得清出空间，试炼者们会给你一些信物喔，也记得最后要把信物带回来给我。
+OVER
+
+###　已具有其他职业身份　###
+TALKEVENT10
+FREE:LV>0&CLASS>0
+WARP:0,0,0
+FreeMsg:嗯嗯…你已经是其他公会的人了呀！！还来这里做什么呢？？
+OVER
+
+###　人物未解成人礼　###
+TALKEVENT11
+FREE:LV>29&ENDEV!=4
+WARP:0,0,0
+FreeMsg:还没通过成人礼的试炼就想来就职，你也未免太自满了？
+OVER
+
+###　人物成人未达80　###
+TALKEVENT15
+FREE:LV<80&ENDEV=4
+WARP:0,0,0
+FreeMsg:要通过我们严苛的训练，等级没有到达80以上的人是办不到的
+OVER
+
+
+
+
+

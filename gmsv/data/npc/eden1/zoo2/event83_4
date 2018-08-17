@@ -1,0 +1,31 @@
+NomalMainMsg:（拔不起来……）
+
+## 动物园任务结束
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ENDEV=82
+NomalMsg:（拔不起来…………）
+EventEnd
+
+## 有红萝卜不再给
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM=12090,ITEM=12091,ITEM=12092,ITEM=12093
+NomalMsg:（无法携带那么多大萝卜！）
+EventEnd
+
+## 没铲子没萝卜
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM!=19701&NOWEV=83&NOWEV=82&ENDEV=81&NOWEV=71,ITEM!=19701&ENDEV=83&NOWEV=82&ENDEV=81&NOWEV=71
+NomalMsg:（萝卜被拔坏了！）
+EventEnd
+
+## 有铲子给九分之五红萝１，九分之三红萝２，九分之一红萝３
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM=19701&NOWEV=83&NOWEV=82&ENDEV=81&NOWEV=71,ITEM=19701&ENDEV=83&NOWEV=82&ENDEV=81&NOWEV=71
+NomalWindowMsg:叭嗤……
+ItemFullMsg:（袋子满了！）
+GetRandItem:12090,12090,12090,12090,12090,12091,12091,12091,12092
+EventEnd

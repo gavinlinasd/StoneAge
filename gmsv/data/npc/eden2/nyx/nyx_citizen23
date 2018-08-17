@@ -1,0 +1,7 @@
+NomalMainMsg:尼克斯的手工艺可是很盛行的，几乎人人都会制作饰品～
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:尼克斯的手工艺可是很盛行的，\n几乎人人都会制作饰品～
+EventEnd

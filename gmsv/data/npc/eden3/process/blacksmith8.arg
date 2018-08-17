@@ -1,0 +1,81 @@
+#### 风城金属武器加工师 ####
+
+START_MSG:你想加工铁制武器？？加工一次要一万元喔。铁斧１需要一块铁及其他材料，铁斧２要铁斧１加五块铁。铁棍１需要一块铁及其他材料，铁棍２要铁棍１加五块铁。铁枪１需要一块铁及皮１１、线１１，铁枪２要铁枪１加五块铁。
+
+MenuHead:选择你想要的武器
+NeedHead:需要的材料
+
+####  铁斧１加工 ####
+{
+CHANGEITEM:20276
+NeedItem:20285,13075,13082
+FREE:ENDEV=4&ENDEV=81&ITEM=20285&ITEM=13075&ITEM=13082&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*1,13075*1,13082*1
+AddItem:20276
+}
+
+####  铁斧２加工 ####
+{
+CHANGEITEM:20277
+NeedItem:20285,20276
+FREE:ENDEV=4&ENDEV=81&ITEM=20285*5&ITEM=20276&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*5,20276*1
+AddItem:20277
+}
+
+####  铁棍１加工 ####
+{
+CHANGEITEM:20279
+NeedItem:20285,13074,13082
+FREE:ENDEV=4&ENDEV=81&ITEM=20285&ITEM=13074&ITEM=13082&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*1,13074*1,13082*1
+AddItem:20279
+}
+
+####  铁棍２加工 ####
+{
+CHANGEITEM:20280
+NeedItem:20285,20279
+FREE:ENDEV=4&ENDEV=81&ITEM=20285*5&ITEM=20279&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*5,20279*1
+AddItem:20280
+}
+
+####  铁枪１加工 ####
+{
+CHANGEITEM:20282
+NeedItem:20285,13078,13082
+FREE:ENDEV=4&ENDEV=81&ITEM=20285&ITEM=13078&ITEM=13082&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*1,13078*1,13082*1
+AddItem:20282
+}
+
+####  铁枪２加工 ####
+{
+CHANGEITEM:20283
+NeedItem:20285,20282
+FREE:ENDEV=4&ENDEV=81&ITEM=20285*5&ITEM=20282&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*5,20282*1
+AddItem:20283
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

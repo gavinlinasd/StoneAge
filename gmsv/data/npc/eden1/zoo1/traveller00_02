@@ -1,0 +1,8 @@
+NomalMainMsg:来到伊甸还住得习惯吗？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:这家旅馆吃得好睡得也舒服，都不想回尼斯了呢。
+EventEnd

@@ -1,0 +1,56 @@
+#### 岚黄等级二装备精工师  ####
+
+START_MSG:想精工更好的岚黄装备吗？材料是…等级一的岚黄系列装备武器，加上三个木１０及二个火山岩和二个单位纯净的海水就可以做了。可是如果是岚黄之铠２的话…就要四个木１０以及三个火山岩喔，最后再加上一千五百元石币的工本费就可以了。
+
+MenuHead:选择想要交换的装备
+NeedHead:需要的材料
+
+####  岚黄斧等级二精工 ####
+{
+CHANGEITEM:1924
+NeedItem:1898,1727,11819,1683
+FREE:LV>0&ENDEV=4&ITEM=1898&ITEM=1727*2&ITEM=11819*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1727*2,11819*3,1898*1,1683*2
+AddItem:1924
+}
+
+####  岚黄枪等级二精工 ####
+{
+CHANGEITEM:1925
+NeedItem:1899,1727,11819,1683
+FREE:LV>0&ENDEV=4&ITEM=1899&ITEM=1727*2&ITEM=11819*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1727*2,11819*3,1899*1,1683*2
+AddItem:1925
+}
+
+####  岚黄棍等级二精工 ####
+{
+CHANGEITEM:1926
+NeedItem:1906,1727,11819,1683
+FREE:LV>0&ENDEV=4&ITEM=1906&ITEM=1727*2&ITEM=11819*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1727*2,11819*3,1906*1,1683*2
+AddItem:1926
+}
+
+####  岚黄兜等级二精工 ####
+{
+CHANGEITEM:1927
+NeedItem:1907,1727,11819,1683
+FREE:LV>0&ENDEV=4&ITEM=1907&ITEM=1727*2&ITEM=11819*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1727*2,11819*3,1907*1,1683*2
+AddItem:1927
+}
+
+####  岚黄铠等级二精工 ####
+{
+CHANGEITEM:1928
+NeedItem:1908,1727,11819,1683
+FREE:LV>0&ENDEV=4&ITEM=1908&ITEM=1727*3&ITEM=11819*4&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1727*3,11819*4,1908*1,1683*2
+AddItem:1928
+}

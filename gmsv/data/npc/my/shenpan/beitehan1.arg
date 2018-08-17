@@ -1,0 +1,72 @@
+NEWWARPMAN
+
+NOFREE
+NomalMsg:？？？！！！！你是谁！
+PartyMsg:等下吧！急啥
+WARP:0,0,0
+OVER
+
+####任务186完成后　对话#####
+TALKEVENT1
+WARP:0,0,0
+FREE:LV>79&TRANS=6&ENDEV=184&ENDEV=185&ENDEV=186
+FreeMsg:不想理你！好不容易弄来的研究书！。。。。。。。哎～～～
+OVER
+
+####186进行中　身上已经拿到完整的研究书第三章#####
+TALKEVENT2
+WARP:0,0,0
+FREE:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21180
+FreeMsg:研究书第三章我都给你了！你还来干嘛？？！！
+OVER
+
+####是窃贼形象　有研究书第三章２／３　给完整的研究书 并收走研究书第三章２／３#####
+TALKEVENT3
+WARP:0,0,0
+FREE:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21179&BBI=101530
+DelItem:21179
+AddItem:21180
+FreeMsg:研究书第三章就在这！拿去吧！～
+NPCPOINT:8119,38,5;8119,39,69;8118,17,47;8118,92,79;8117,47,33;8117,70,20;8120,46,48
+OVER
+
+####不是窃贼形象　有研究书第三章２／３　#####
+TALKEVENT4
+WARP:0,0,0
+FREE:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21179&BBI!=101530
+FreeMsg:这是最后一次了！马上我就会把完整的研究书第三章交给你了！可是你的样子。。。。偶不大喜欢呢！～嘿嘿
+OVER
+
+####是窃贼形象　有研究书第三章１／３　给研究书第三章２／３　并收走研究书第三章１／３#####
+TALKEVENT5
+WARP:0,0,0
+FREE:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21178&BBI=101530
+DelItem:21178
+AddItem:21179
+FreeMsg:哎呀！还是被你追上了～难道机关难不到你？？？
+NPCPOINT:8119,38,5;8119,39,69;8118,17,47;8118,92,79;8117,47,33;8117,70,20;8120,46,48
+OVER
+
+####不是窃贼形象　有研究书第三章１／３　#####
+TALKEVENT6
+WARP:0,0,0
+FREE:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21178&BBI!=101530
+FreeMsg:就凭你这装扮！？也想拿走研究书２／３吗？？？！～～～～
+OVER
+
+####是窃贼形象　有窃贼的足迹　给研究书第三章１／３ 并收走窃贼的足迹#####
+TALKEVENT7
+WARP:0,0,0
+FREE:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21177&BBI=101530
+DelItem:21177
+AddItem:21178
+FreeMsg:哎呀！这么快就被你追上了～！嘿嘿～不急～！下面还有２次呢！
+NPCPOINT:8119,38,5;8119,39,69;8118,17,47;8118,92,79;8117,47,33;8117,70,20;8120,46,48
+OVER
+
+####不是窃贼形象　有窃贼的足迹　#####
+TALKEVENT8
+WARP:0,0,0
+FREE:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21177&BBI!=101530
+FreeMsg:你的样子～我非常不喜欢～换成我这个造型吧～嘿嘿！
+OVER

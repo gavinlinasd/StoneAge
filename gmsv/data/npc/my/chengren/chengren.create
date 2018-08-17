@@ -1,0 +1,13 @@
+NPCCREATE
+
+{
+floorid=2000
+borncenter=63,47
+time=0
+createnum=1
+dir=6
+ignoreinvincible=1
+graphicname=16001
+name=ргй╫╣диСеп
+enemy=changeevent|file:my/chengren/chengren.arg
+}

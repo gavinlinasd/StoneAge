@@ -1,0 +1,46 @@
+#### 珊瑚精工师贝恩斯 ####
+
+START_MSG:你有珊瑚或是火山岩的碎片吗？？那是我们海族最爱吃的东西了，如果同一种珊瑚的三个碎片你都有的话，我愿意拿完整的珊瑚跟你交换喔，只收工本费一千元。
+
+MenuHead:选择你想要交换的珊瑚或是火山岩
+NeedHead:需要的材料
+
+####  红珊瑚精工 ####
+{
+CHANGEITEM:1724
+NeedItem:1728,1729,1730
+FREE:ITEM=1728&ITEM=1729&ITEM=1730&GOLD>=1000&reITEM>1
+DelGold:1000
+DelItem:1728*1,1729*1,1730*1
+AddItem:1724
+}
+
+####  绿珊瑚精工 ####
+{
+CHANGEITEM:1725
+NeedItem:1731,1738,1739
+FREE:ITEM=1731&ITEM=1738&ITEM=1739&GOLD>=1000&reITEM>1
+DelGold:1000
+DelItem:1731*1,1738*1,1739*1
+AddItem:1725
+}
+
+####  蓝珊瑚精工 ####
+{
+CHANGEITEM:1726
+NeedItem:1740,1741,1742
+FREE:ITEM=1740&ITEM=1741&ITEM=1742&GOLD>=1000&reITEM>1
+DelGold:1000
+DelItem:1740*1,1741*1,1742*1
+AddItem:1726
+}
+
+####  火山岩精工 ####
+{
+CHANGEITEM:1727
+NeedItem:1743,1744,1745
+FREE:ITEM=1743&ITEM=1744&ITEM=1745&GOLD>=1000&reITEM>1
+DelGold:1000
+DelItem:1743*1,1744*1,1745*1
+AddItem:1727
+}

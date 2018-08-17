@@ -1,0 +1,56 @@
+#### 药丹提炼师（加敏） ####
+
+START_MSG:你想提炼出可以让宠物提高敏捷力成长的药丹吗？？帮你磨出药丹的工本费一次一百元。材料需要各种等级的蕨类植物一个加上一帖龙骨粉末。这种研磨出来的药剂只有对经过合体后的宠物才有效用喔。
+
+MenuHead:选择你想要的药丹
+NeedHead:需要的药引材料
+
+####  等级1药丹 ####
+{
+CHANGEITEM:1549
+NeedItem:1586,1569
+FREE:ITEM=1586&ITEM=1569&GOLD>=100
+DelGold:100
+DelItem:1586*1,1569*1
+AddItem:1549
+}
+
+####  等级2药丹 ####
+{
+CHANGEITEM:1553
+NeedItem:1586,1573
+FREE:ITEM=1586&ITEM=1573&GOLD>=100
+DelGold:100
+DelItem:1586*1,1573*1
+AddItem:1553
+}
+
+####  等级3药丹 ####
+{
+CHANGEITEM:1557
+NeedItem:1586,1577
+FREE:ITEM=1586&ITEM=1577&GOLD>=100
+DelGold:100
+DelItem:1586*1,1577*1
+AddItem:1557
+}
+
+####  等级4药丹 ####
+{
+CHANGEITEM:1561
+NeedItem:1586,1581
+FREE:ITEM=1586&ITEM=1581&GOLD>=100
+DelGold:100
+DelItem:1586*1,1581*1
+AddItem:1561
+}
+
+####  等级5药丹 ####
+{
+CHANGEITEM:1565
+NeedItem:1586,1585
+FREE:ITEM=1586&ITEM=1585&GOLD>=100
+DelGold:100
+DelItem:1586*1,1585*1
+AddItem:1565
+}

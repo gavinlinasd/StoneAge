@@ -1,0 +1,9 @@
+NomalMainMsg:今天该煮什么菜呢？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:搬到地面上这么久了，其实还挺舒适的嘛，看看哪天也把塔耳塔城的爸妈接来玩吧。
+NomalWindowMsg1:喔？你也是从外地来玩的啊？伊甸园这里是个好地方吧，住起来不错喔。
+EventEnd

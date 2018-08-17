@@ -1,0 +1,15 @@
+NPCCREATE
+##############É³Ä®Ö®Ó¥###############
+
+########Ëþ¿ÉµÇ#########
+{
+name=Ëþ¿ÉµÇ
+floorid=1400 
+borncenter=98,104
+dir=6
+time=0
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:sa60/desert/desert1.arg
+graphicname=16103
+}

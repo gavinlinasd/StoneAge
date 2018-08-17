@@ -1,0 +1,27 @@
+#######牢门传送########
+
+NomalMainMsg:你是谁，怎么也会被关进来了呢？
+
+###身上有标###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=4&&ENDEV=81&ENDEV=174&ENDEV=116&ENDEV=111&ENDEV=115&NOWEV=175&NOWEV=176
+NomalWindowMsg:你快点从那个洞出去吧！快去找四大精灵向他们告知这件事情，我先回地城找我父亲，不然他会很担心我的。
+EventEnd
+
+####接任务给标##
+EventNo:-1
+TYPE:REQUEST
+EVENT:LV>90&ENDEV=4&&ENDEV=81&ENDEV=174&ENDEV=116&ENDEV=111&ENDEV=115&NOWEV=175
+RequestMsg1:想必你就是帮助雷尔去取得四大精灵力量的勇者吧，我是地城王子＜亚巴＞，我因为发现雷尔的阴谋所以才会被关在这个地牢。
+RequestMsg2:唉！你被雷尔给欺骗了，其实雷尔才是想要破坏这个世界的人。由于雷尔的主人艾巴登畏惧四大精灵，所以一直在计划消耗四大精灵的力量，如今四大精灵的力量各失去了一半，他们能抵抗艾巴登的力量所剩无几，所以我们应该要想辨法出去。
+RequestMsg3:对了，之前我就有试着打破这个牢房，但是我的力量不够强大，你可以试试打破这个牢房！
+ThanksMsg1:加油加油，用你吃奶的力量，冲啊～～～～～
+EventEnd
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:卡卡卡！
+EventEnd

@@ -1,0 +1,7 @@
+NomalMainMsg:我做的超营养蘑菇汤很好喝喔！不过可不能告诉你做法～
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:我做的超营养蘑菇汤很好喝喔！\n不过可不能告诉你做法～
+EventEnd

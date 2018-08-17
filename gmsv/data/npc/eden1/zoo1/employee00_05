@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:欢迎到伊甸来，要尝尝我手艺的话请到伊甸旅馆吧！
+EventEnd

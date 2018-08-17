@@ -1,0 +1,39 @@
+#### 老臣布得耳斯 ####
+
+NomalMainMsg:王子回来的话，那我们国家就又有希望了。
+
+####任务结束，认旗标114关####
+
+
+#### 任务进行中对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114
+NomalWindowMsg:………
+EventEnd
+
+#### 任务解完 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&ENDEV=114
+NomalWindowMsg:谢谢你，我们的新国王学习的很快呢。这全是你的功劳。
+EventEnd
+
+#### 请求寻找王子，给委托信 ####
+EventNo:114
+TYPE:REQUEST
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113
+RequestMsg1:喔，感谢你帮了我们城民一个大忙。我知道你是个阅历丰富的人，能否再请你帮我们一个大忙呢？？
+RequestMsg2:事情是这个样子的，我们的王子个性喜欢游玩。现在又不知道到那里去了，可是国王年事已高，实在无法再负荷国事的辛劳。所以想请你帮我们找到王子来接下王位。
+RequestMsg3:这张委托信就交给你了，有了这封信。亚依欧城的人民都将会尽所能的援助你。如果真的找回王子的话，你将是亚依欧城的大恩人。我们全城都会感谢你的…。
+ThanksMsg1:目前唯一可以告诉你的是，王子有个朋友在尼克斯城。他叫做布列克。也许他会知道王子的下落吧，那就拜托你了。
+ItemFullMsg:你身上没有空位了，难道你并没有诚意要帮助我们吗？
+GetItem:20200
+EventEnd
+
+#### 全不符 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:你是谁？再不出去我要叫守卫了。
+EventEnd

@@ -1,0 +1,18 @@
+NEWWARPMAN
+
+#### 标全不正确，不理 ####
+NOFREE
+WARP:0,0,0
+FREE:LV>0
+NomalMsg:我心爱的暴龙被阿谷拔给抓走了，谁可以帮我找回来我重重有赏。
+PartyMsg:
+OVER
+
+###库沙达之传送人###
+TALKEVENT1
+WARP:60076,54,78
+FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1481&ITEM=2414
+FreeMsg:咦？！你身上挂的骨头是.............天啊！原来你已经把它杀掉了！太可恶了，看我怎么教训你！
+OVER
+
+

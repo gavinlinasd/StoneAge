@@ -1,0 +1,11 @@
+entype:2
+askbattlemsg1:嗯嗯？？想过去吗？？偏偏就没这么简单…。
+startmsg:去吧…佑佑木…不属于泪之海的人全部都给我赶走！！
+dieact:0
+#warpfl:100
+#warpx:472
+#warpy:293
+endmsg:可恶啊～～佑佑木…我对你好失望！！！
+enemyno:2206,2207
+deniedmsg:哈哈哈哈…泪之海的恶人就是我…！！
+time=60

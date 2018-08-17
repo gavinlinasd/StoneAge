@@ -1,0 +1,56 @@
+#### 湛蓝等级二装备精工师  ####
+
+START_MSG:想精工更好的湛蓝装备吗？材料是…等级一的湛蓝系列装备武器，加上三个骨１０及二个蓝珊瑚和二个单位纯净的海水就可以做了。可是如果是湛蓝之铠２的话…就要四个骨１０以及三个蓝珊瑚喔，最后再加上一千五百元石币的工本费就可以了。
+
+MenuHead:选择想要交换的装备
+NeedHead:需要的材料
+
+####  湛蓝斧等级二精工 ####
+{
+CHANGEITEM:1914
+NeedItem:1888,1726,11829,1683
+FREE:LV>0&ENDEV=4&ITEM=1888&ITEM=1726*2&ITEM=11829*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1726*2,11829*3,1888*1,1683*2
+AddItem:1914
+}
+
+####  湛蓝枪等级二精工 ####
+{
+CHANGEITEM:1915
+NeedItem:1889,1726,11829,1683
+FREE:LV>0&ENDEV=4&ITEM=1889&ITEM=1726*2&ITEM=11829*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1726*2,11829*3,1889*1,1683*2
+AddItem:1915
+}
+
+####  湛蓝棍等级二精工 ####
+{
+CHANGEITEM:1916
+NeedItem:1890,1726,11829,1683
+FREE:LV>0&ENDEV=4&ITEM=1890&ITEM=1726*2&ITEM=11829*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1726*2,11829*3,1890*1,1683*2
+AddItem:1916
+}
+
+####  湛蓝兜等级二精工 ####
+{
+CHANGEITEM:1917
+NeedItem:1891,1726,11829,1683
+FREE:LV>0&ENDEV=4&ITEM=1891&ITEM=1726*2&ITEM=11829*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1726*2,11829*3,1891*1,1683*2
+AddItem:1917
+}
+
+####  湛蓝铠等级二精工 ####
+{
+CHANGEITEM:1918
+NeedItem:1892,1726,11829,1683
+FREE:LV>0&ENDEV=4&ITEM=1892&ITEM=1726*3&ITEM=11829*4&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1726*3,11829*4,1892*1,1683*2
+AddItem:1918
+}

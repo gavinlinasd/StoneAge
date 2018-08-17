@@ -1,0 +1,18 @@
+NEWWARPMAN
+
+#### 标全不正确，不理 ####
+NOFREE
+FREE:LV>0
+NomalMsg:卡～卡～卡
+PartyMsg:卡～卡～卡
+OVER
+
+####　收钥匙给黄金图腾像　####
+TALKEVENT1
+WARP:0,0,0
+FREE:LV>0&ITEM=1852
+AddItem:1853
+DelItem:1852*1
+FreeMsg:卡！
+NPCPOINT:817,148,26;817,168,85;817,268,59;817,370,113;817,355,102
+OVER

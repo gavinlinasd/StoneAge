@@ -1,0 +1,13 @@
+NPCCREATE
+
+###¡¡¸»ÉÌ¡¡###
+{
+name=¸ÇÂå±È
+floorid=6000
+borncenter=54,76
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16076
+enemy=changeevent|file:sa70/wish/wish.arg
+}

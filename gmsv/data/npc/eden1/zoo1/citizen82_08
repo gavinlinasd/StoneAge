@@ -1,0 +1,26 @@
+NomalMainMsg:
+
+#确认动物园任务结束
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ENDEV=81&ENDEV=82
+NomalWindowMsg:啊，我说错了啊？真是抱歉呢。\n不过那些动物还是都被你找到了不是吗，你真是厉害呢！
+EventEnd
+
+#确认玩家接了动物园任务
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ENDEV=81&NOWEV=82
+AcceptMsg1:你想知道从动物园里跑掉的波波顿要到哪儿找吗？
+AcceptMsg2:我怎么知道你在找这些动物吗？伊甸园这么小，消息传得很快的！ \n我刚好对波波顿的习性挺熟的，应该可以帮上一点忙啦，需要吗？
+ThanksMsg1:是这样的，我以前养波波顿的时候，拿什么东西喂它它都吃，难怪生命力那么强！
+ThanksMsg2:我以前那只波波顿是在山崖附近抓到的，你也可以去那附近看看，说不定这一只也是跑到山崖那里躲起来了。
+ThanksMsg3:至于布伊胖跟拉斯基的话，我就不知道了，跟其他人问问会比较好吧？
+EventEnd
+
+#确认玩家未接动物园任务
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:伊甸园的园主叫雷尔，那儿有一座他的雕像，看起来颇有威严的喔。
+EventEnd

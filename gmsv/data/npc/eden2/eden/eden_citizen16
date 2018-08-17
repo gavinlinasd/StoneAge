@@ -1,0 +1,9 @@
+NomalMainMsg:我最喜欢动物园了，你也喜欢去动物园吗？,听说动物园之前跑掉的动物都抓回来了呢，又可以看到它们了呢！
+
+#聊水怪任务
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&NOWEV=88
+NomalWindowMsg:动物园要展出新动物了呢！好棒喔好棒喔！
+NomalWindowMsg2:听说还有凶猛的大水怪呢，真是太棒了！
+EventEnd

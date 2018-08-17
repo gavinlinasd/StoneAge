@@ -1,0 +1,23 @@
+NEWWARPMAN
+#### 十二年前的葳娜 ####
+
+NOFREE
+FREE:LV>0
+NomalMsg:………
+PartyMsg:………
+OVER
+
+TALKEVENT1
+WARP:60308,39,44
+FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM=20179
+FreeMsg:你是来帮助卡罗的吗？他把咒语给弄丢了，我带你去找吧…。
+OVER
+
+
+TALKEVENT2
+WARP:7350,34,30
+FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM!=20179
+FreeMsg:你没办法回到十二年后吗？？让我来助你一臂之力吧。
+OVER
+
+

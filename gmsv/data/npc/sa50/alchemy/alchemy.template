@@ -1,0 +1,8 @@
+NPCTEMPLATE
+{
+templatename=ITEMCHANGE
+makeatnobody=1
+makeatnosee=1
+graphicname=100444
+functionset=ItemchangeMan
+}

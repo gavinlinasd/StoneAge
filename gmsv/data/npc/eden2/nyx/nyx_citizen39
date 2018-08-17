@@ -1,0 +1,8 @@
+NomalMainMsg:我爸爸去找水怪算帐了，他不在。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:我爸爸去找水怪算帐了，他不在。
+EventEnd

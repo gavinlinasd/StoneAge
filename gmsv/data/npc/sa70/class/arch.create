@@ -1,0 +1,73 @@
+NPCCREATE
+
+########　追猎者　#########
+##### 公会导师 ######
+{
+name=奈尔秋
+floorid=8217
+borncenter=17,14
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16190
+enemy=npcgen_warpman|file:sa70/class/arch.arg
+}
+
+{
+name=就职导师可叶
+floorid=8217
+borncenter=21,18
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16186
+enemy=npcgen_warpman|file:sa70/class/arch2
+}
+
+##### 公会解说员 ######
+{
+name=公会解说员
+floorid=8217
+borncenter=17,29
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16189
+enemy=changeevent|file:sa70/class/arch3
+}
+
+##### 试练者一 ######
+{
+name=试炼者
+floorid=8220
+borncenter=108,93
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16193
+enemy=npcgen_warpman|file:sa70/class/aquest1
+}
+
+##### 试练者二 ######
+{
+name=试炼者
+floorid=8220
+borncenter=124,11
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16188
+enemy=npcgen_warpman|file:sa70/class/aquest2
+}
+
+##### 试练者三 ######
+{
+name=试炼者
+floorid=8220
+borncenter=64,4
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16188
+enemy=npcgen_warpman|file:sa70/class/aquest3
+}

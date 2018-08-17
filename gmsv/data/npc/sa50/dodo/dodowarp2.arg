@@ -1,0 +1,16 @@
+NEWWARPMAN
+
+#### 迷官老人标全不正确，不理 ####
+NOFREE
+FREE:LV>0
+NomalMsg:.........
+PartyMsg:....................
+OVER
+
+####假老人####
+TALKEVENT1
+WARP:777,20,30
+FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1482&ITEM=2414
+FreeMsg:我帮你传回去吧，我猜你还是找不到我的。
+OVER
+

@@ -1,0 +1,105 @@
+########　闇灵导师萨哈克　########
+
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+WARP:0,0,0
+NomalMsg:有何指教呢？
+PartyMsg:请一个一个来嘿！！
+OVER
+
+###　已解完任务但未就职者　###
+TALKEVENT1
+FREE:LV>79&ENDEV=4&ENDEV=146&CLASS=0
+WARP:0,0,0
+FreeMsg:怎么还不去就职呢？卡拉特正等着你呢。
+OVER
+
+###　已就职者　###
+TALKEVENT2
+FREE:LV>79&ENDEV=4&CLASS=2
+WARP:0,0,0
+FreeMsg:嗯…你越来越贴近闇灵的领域了，我很欣慰…
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT3
+FREE:LV>79&ENDEV=4&ENDEV=145
+WARP:0,0,0
+FreeMsg:抱歉，你已解完其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT4
+FREE:LV>79&ENDEV=4&ENDEV=147
+WARP:0,0,0
+FreeMsg:抱歉，你已解完其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT5
+FREE:LV>79&ENDEV=4&NOWEV=145
+WARP:0,0,0
+FreeMsg:抱歉，你已接了其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT6
+FREE:LV>79&ENDEV=4&NOWEV=147
+WARP:0,0,0
+FreeMsg:抱歉，你已接了其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　结束任务…关标　###
+TALKEVENT7
+FREE:LV>79&ENDEV=4&ITEM=2104&ITEM=2105&ITEM=2095
+DelItem:2104,2105,2095
+Event_End:146
+WARP:0,0,0
+FreeMsg:先去找希尔就职吧，记得身上要有一些空间，希尔会给你基本的闇灵法师装备。从今而后希望你能发挥闇灵的力量及精神来行善，另外…旁边的卡拉特会教导你一些闇灵法师的特殊法术。
+OVER
+
+###　任务进行中　###
+TALKEVENT8
+FREE:LV>79&ENDEV=4&NOWEV=146
+WARP:8221,6,27
+FreeMsg:哎呀，你还在试炼中呢，怎么跑出来了呢？快进去吧。
+OVER
+
+####  接下就职任务  ####
+TALKEVENT9
+FREE:LV>79&ENDEV=4&CLASS=0
+DelItem:2112
+Event_Now:146
+WARP:8221,6,29
+FreeMsg:真正要加入我们的行列，得具备无比的智慧才行，所以我们得对你进行一些试炼，你准备好了吗？另外请记得清出空间，试炼者们会给你一些信物，记得把信物全带回来给我，还有记住这句咒语：塔希摩比奥，会派上用场的。
+OVER
+
+
+###　已具有其他职业身份　###
+TALKEVENT10
+FREE:LV>0&CLASS>0
+WARP:0,0,0
+FreeMsg:嗯嗯…你已经是其他公会的人了呀！！还来这里做什么呢？？
+OVER
+
+
+###　人物未解成人礼　###
+TALKEVENT11
+FREE:LV>29&ENDEV!=4
+WARP:0,0,0
+FreeMsg:还没通过成人礼的试炼就想来就职，你也未免太自满了？
+OVER
+
+###　人物成人未达80　###
+TALKEVENT15
+FREE:LV<80&ENDEV=4
+WARP:0,0,0
+FreeMsg:要通过我们严苛的训练，等级没有到达80以上的人是办不到的
+OVER
+
+
+
+
+

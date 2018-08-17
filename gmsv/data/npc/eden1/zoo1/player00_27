@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:哈哈哈～～我已经连赢五十次了，说不定我对玩轮盘游戏有天份喔！
+EventEnd

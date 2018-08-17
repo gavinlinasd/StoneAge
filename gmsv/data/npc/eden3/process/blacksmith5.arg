@@ -1,0 +1,15 @@
+####  毁天灭地魔法戒加工师 ####
+
+START_MSG:你想加工出最强的魔法钻戒吗？？加工一次一万五千元喔。材料的话就是要一个ＬＶ５的魔法戒加上十三个钻石。
+
+MenuHead:选择你想要的魔法钻戒
+NeedHead:需要的材料
+
+{
+CHANGEITEM:20269
+NeedItem:20287,20191
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*13&ITEM=20191&GOLD>=15000&reITEM>=1
+DelGold:15000
+DelItem:20287*13,20191*1
+AddItem:20269
+}

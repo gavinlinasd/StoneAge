@@ -1,0 +1,7 @@
+NomalMainMsg:我活了这么大一把年纪了，可是第一次看见有从伊甸园大陆以外的地方来的人～
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:西北方那最近常常有成群暴龙出没，那里可能就是暴龙队长的住所吧？！
+EventEnd

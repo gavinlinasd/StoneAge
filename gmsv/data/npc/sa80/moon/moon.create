@@ -1,0 +1,64 @@
+NPCCREATE
+
+##### 月饼师傅圆煮，奇努伊村肉店 ######
+{
+name=圆煮
+floorid=6004
+borncenter=19,15
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16001
+enemy=changeevent|file:sa80/moon/cooker
+}
+
+##### 伐木工人无干…幻境之月 ######
+{
+name=无干
+floorid=8255
+borncenter=9,22
+dir=7
+ignoreinvincible=1
+createnum=1
+graphicname=100406
+enemy=npcgen_warpman|file:sa80/moon/wugan
+action=2
+}
+
+##### 嫦娥的朋友 ######
+{
+name=嫦娥的好朋友
+floorid=8255
+borncenter=28,24
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=100150
+enemy=npcgen_warpman|file:sa80/moon/girl
+action=13
+}
+
+##### 兔子 ######
+{
+name=玉兔的同类
+floorid=8255
+borncenter=29,51
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=101440
+enemy=npcgen_warpman|file:sa80/moon/rabbit
+action=2
+}
+
+##### 水缸 ######
+{
+name=水缸
+floorid=8255
+borncenter=33,38
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=12929
+enemy=npcgen_warpman|file:sa80/moon/can
+}

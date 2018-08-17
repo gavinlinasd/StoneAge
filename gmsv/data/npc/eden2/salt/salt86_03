@@ -1,0 +1,14 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+NomalMsg:我负责管制这个盐矿的进出人员。
+PartyMsg:盐矿很危险，一次只能让一个人进去，请先等一下。
+WARP:30691,87,68
+OVER
+
+TALKEVENT1
+WARP:60100,55,69
+FREE:LV>90&ENDEV=81&ENDEV=86&ENDEV=87&ITEM=20122
+FreeMsg:喔？你怎么会有采盐许可证呢？难不成你就是那位帮了沙尔德先生大忙的尼斯人？请进请进！\n进去盐矿以后要小心点喔！
+OVER

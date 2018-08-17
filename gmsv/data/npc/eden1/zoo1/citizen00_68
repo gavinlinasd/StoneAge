@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:你还记得吗？我们尼斯大陆的霍特尔村也是沙漠地形，不过我觉得这里好像比较热耶……\n假如这里缺水的话，不知道会有怎样的措施来补救喔？
+EventEnd

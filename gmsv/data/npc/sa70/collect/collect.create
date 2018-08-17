@@ -1,0 +1,13 @@
+NPCCREATE
+####武器收集者####
+########史比########
+{
+name=史比
+floorid=2000
+borncenter=73,112
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16056
+enemy=changeevent|file:sa70/collect/collect1.arg
+}

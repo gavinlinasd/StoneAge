@@ -1,0 +1,12 @@
+NomalMainMsg:爸爸妈妈，都出门去了，只剩下我一个人，他们什么时候才会回家～～。
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=20704&ITEM=20687
+AcceptMsg:\n\n哇！？大哥哥，你要送我礼物啊？
+ThanksMsg:\n\n谢谢你帮耶诞老公公送来给我！我好高兴喔，我要等爸爸妈妈回来，跟他们讲我有收到礼物喔！好高兴喔！
+ItemFullMsg:\n\n大哥哥你身上装不下东西了，没办法给你小纸条。
+DelItem:20687
+GetRandItem:20677*1
+EventEnd

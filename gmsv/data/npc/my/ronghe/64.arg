@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:機豹+黑蛙+綠龍 黑蛙+橙雞+紅狗\n雞+風飛龍+黑暴 黑蛙＋猴子＋塔斯夫\n克克洛斯+金飛+黑暴 克克洛斯+金猩\n蒙哥拉斯＋水怪＋黑暴 藍龜+藍雞+黑暴\n 艾迪希洛+里昂蛙 里昂蛙+塔斯夫\n格裏蘭+朵拉比斯 里昂蛙＋蒙奇\n克克洛斯+朵拉比斯 克克洛斯+戈登爾頓
+EventEnd

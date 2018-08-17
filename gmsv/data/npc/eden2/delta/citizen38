@@ -1,0 +1,7 @@
+NomalMainMsg:外面的世界一定特别吧！我长大以后一定要去冒险！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:帕加一定又跑找暴龙队长了。
+EventEnd

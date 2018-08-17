@@ -1,0 +1,8 @@
+NomalMainMsg:刚来到这里人生地不熟，又受了伤，真是麻烦，还好医院还在营业呢。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:出外旅行最怕的就是生病受伤了，还是经常保持最佳状态比较好喔。
+EventEnd

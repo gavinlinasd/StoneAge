@@ -1,0 +1,43 @@
+########　幽灵之一　#######
+
+NomalMainMsg:海贼王文狄船长正在等候你的到来。
+
+####　完成任务对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>99&ENDEV=4&ENDEV=81&ENDEV=126
+NomalWindowMsg:多年来的守候，终于出现你这样一位勇者了。
+EventEnd
+
+####　已拿勾玉对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=1447
+NomalWindowMsg:海贼王正在等候你的到来，快往前进吧！
+EventEnd
+
+###　带来砂鲨拿到勾玉　###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&PET>99-785&ITEM!=1447
+AcceptMsg1:你挺有本事的啊！不过试炼可没这么简单就结束了。
+ThanksMsg1:海贼王正在等候你的到来，快往前进吧。
+GetItem:1447
+DelPet:PET>99-785*1
+ItemFullMsg:你身上太多东西了喔，难道说你不想要？！
+EventEnd
+
+####　接任务去打海贼王　####
+EventNo:-1
+TYPE:REQUEST
+EVENT:LV>99&ENDEV=4&ENDEV=81&NOWEV=126
+RequestMsg1:文狄船长的愿望是希望你能带一只他最心爱的宠物，１００级的砂鲨。那么我这关就算通过了！
+ThanksMsg1:砂鲨可是很凶悍的……。
+EventEnd
+
+####　未接任务对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:这不是你该来的地方，小心死亡的诅咒……！
+EventEnd

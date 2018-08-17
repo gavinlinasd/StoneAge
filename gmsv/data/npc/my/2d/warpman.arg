@@ -1,0 +1,15 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+WARP:0,0,0
+NomalMsg:有何指教呢？
+PartyMsg:请一个一个来嘿！！
+OVER
+
+TALKEVENT1
+FREE:LV>79&TRANS>4&ENDEV=184&NOWEV=189
+WARP:1214,1,27
+FreeMsg:\n\n是来揭开醒龙的秘密的吧？\n\n请进！！
+OVER
+

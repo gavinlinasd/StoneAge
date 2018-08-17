@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:藍人+布伊比 藍龜+格洛格魯\n藍龜+格洛格魯+土羊 紅象+紅象+黑暴\n揚奇洛斯+布伊比 巴朵蘭恩+多洛加\n 藍龜+格洛格魯 薩格魯+歐林吉魯\n 史卡魯+沙瓦克 沙瓦克+史卡魯\n巴朵蘭恩+藍龜 沙瓦克+沙瓦克\n史卡魯+史卡魯 戈登爾頓+布克布克
+EventEnd

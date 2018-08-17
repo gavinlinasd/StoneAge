@@ -1,0 +1,82 @@
+######## 浇花########
+
+NomalMainMsg:一般的人是到不了这里的！你是怎么来的呢？
+
+
+####鸠桃花盛开了####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20850
+NomalWindowMsg:呵呵好了～鸠桃花盛开了！　
+EventEnd
+
+
+### 有迷之甘露 花盆中的迷之谷物开花了 ###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20849&ITEM=20844
+AcceptMsg1:呵呵又打到了？让我来帮你吧！
+ThanksMsg1:这…
+GetItem:20850
+DelItem:20849,20844,20872
+ItemFullMsg:你的道具满了
+EventEnd
+
+### 有迷之甘露 花盆中的迷之谷物长出了嫩芽 ###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20848&ITEM=20844
+AcceptMsg1:呵呵又打到了？让我来帮你吧！
+ThanksMsg1:这…
+GetRandItem:20849,20851
+DelItem:20848,20844
+ItemFullMsg:你的道具满了
+EventEnd
+
+### 有迷之甘露 花盆迷之谷物在生长中###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20847&ITEM=20844
+AcceptMsg1:呵呵又打到了？让我来帮你吧！
+ThanksMsg1:这…
+GetRandItem:20848,20851
+DelItem:20847,20844
+ItemFullMsg:你的道具满了
+EventEnd
+
+### 有迷之甘露 种下了迷之谷物的花盆###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20846&ITEM=20844
+AcceptMsg1:呵呵又打到了？让我来帮你吧！
+ThanksMsg1:这…
+GetRandItem:20847,20851
+DelItem:20846,20844
+ItemFullMsg:你的道具满了
+EventEnd
+
+
+### 有迷之甘露 枯萎了的###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20851&ITEM=20844
+AcceptMsg1:虽然枯萎了！但是我还可以帮他救活一次呢！
+ThanksMsg1:这…
+GetItem:20846
+DelItem:20851,20844
+ItemFullMsg:你的道具满了
+EventEnd
+
+
+
+###　不符合条件　###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187
+NomalWindowMsg:在我附近找找迷之甘露吧！只有这个才能浇灌你的鸠桃花呢！
+EventEnd
+
+
+
+
+

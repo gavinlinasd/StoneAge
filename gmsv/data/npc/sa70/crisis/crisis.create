@@ -1,0 +1,14 @@
+NPCCREATE
+########¿­Àö#########
+
+{
+name=¿­Àö
+floorid=2000
+borncenter=64,77
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16096
+enemy=changeevent|file:sa70/crisis/crisis1.arg
+}
+

@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:怎么一直赢啊，好运来了真的是挡都挡不住喔？\n要不要让你吃点红，沾点我的好运啊？
+EventEnd

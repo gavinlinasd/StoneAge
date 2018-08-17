@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:开游乐场挺赚钱的样子呢，听说以后还有其他的游乐设施会开放，真是让人期待。
+EventEnd

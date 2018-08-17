@@ -1,0 +1,42 @@
+########　老人１给签名和骨头　########
+
+NomalMainMsg:还不走吗，要不要我请飞龙载你回去啊！快滚！！！
+
+####　任务完成对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&EMDEV=125
+NomalWindowMsg:多亏你的帮助和库沙达的感情比较好了。
+EventEnd
+
+####　接任务中（身上有签名）　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1449&ITEM=2414
+NomalWindowMsg:想要拿回那只暴龙就快去找队长吧！
+EventEnd
+
+####　接任务中（身上有ｋｅｙ） ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1481&ITEM=2414
+NomalWindowMsg:想要拿回那只暴龙就快去找队长吧！
+EventEnd
+
+####　接任务给签名和骨头　####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM!=1449&ITEM!=1481&ITEM!=1482&ITEM=2414
+AcceptMsg1:你大老远跑来想必你一定是有事要找我吧，要是我猜的没错，你应该是为了那只暴龙而来的。但是,你也想的太容易了吧，要知道是那个队长管教手下不力，让那只笨暴龙跑进来我这里乱搞一通，弄破了几颗蛋不说，还把我培育的飞龙蛋拿走一颗，这像话吗？
+AcceptMsg2:唉～暴龙队长他以前是我的徒弟呢！不相信？这是他亲手写的签名，表示愿意拜我为师。这样好了，把这个暴龙骨头ＫＥＹ还有他之前的签名拿给他，请他先把蛋给我还来再说吧！
+ThanksMsg1:如果想救回那只暴龙，就把飞龙蛋拿还给我。
+GetItem:1449,1481
+ItemFullMsg:你身上太多东西了喔！
+EventEnd
+
+####　未接任务对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:年轻人，这里可不像公园可以让你乱逛的。
+EventEnd

@@ -1,0 +1,12 @@
+NPCCREATE
+#宠物竞速主持人
+{
+floorid=7005
+borncenter=25,33,1,1
+movecenter=25,33,1,1
+createnum=1
+dir=0
+graphicname=100140
+name=宠物竞速场主持人
+enemy=petracemaster|
+}

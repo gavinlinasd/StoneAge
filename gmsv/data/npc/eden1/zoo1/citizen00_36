@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:虽然艾巴登的雕像造的很雄伟，不过不知为什么，看起来总有种令人害怕，难以亲近的感觉……
+EventEnd

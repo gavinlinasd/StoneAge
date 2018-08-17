@@ -1,0 +1,15 @@
+NPCTEMPLATE
+
+{
+templatename=frecos
+makeatnobody=1
+makeatnosee=1
+type=100023
+hp=
+mp=
+str=
+tough=
+functionset=NPCEnemy
+fly=
+itemnum=
+}

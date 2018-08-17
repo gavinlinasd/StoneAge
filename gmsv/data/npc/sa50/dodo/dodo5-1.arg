@@ -1,0 +1,13 @@
+#### 遇到假的老人 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1482&ITEM=2414
+NomalWindowMsg:年轻人，再接再励吧，成功的脚步离你越来越近了。
+EventEnd
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:你的恐龙蛋呢。
+EventEnd

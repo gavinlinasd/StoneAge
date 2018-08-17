@@ -1,0 +1,58 @@
+#### 国王赫肯豪 ####
+
+NomalMainMsg:凡是被承认为火灵勇士的人，将获得弗烈顿永远的尊敬。
+
+####任务结束，认旗标111关####
+
+#### 开启任务见国王关111标得忠诚之心 ####	
+EventNo:111
+TYPE:ACCEPT
+EVENT:LV>100&ENDEV=4&ENDEV=81&ENDEV=110&NOWEV=111&ITEM!=20176
+AcceptMsg1:呵呵，我真是太高兴了，没想到除了我们弗烈顿的人还有这样厉害的勇士。
+AcceptMsg2:能够打败所有挑战者来到这里的人，绝不是个简单的人物。我们弗烈顿人最崇拜勇士了。
+AcceptMsg3:从今以后，你就是我们的火灵勇士之一了，弗烈顿城大门永远为你而开，也希望弗烈顿有危难时，你能够伸出援手。
+AcceptMsg4:根据传统，成为火灵勇士的人可以得到弗烈顿独有的宝物忠诚之心，以及拥有晋见火精灵的资格。
+ThanksMsg1:现在我就把忠诚之心交给你，我后面的门就可以通到火精灵居住的地方了。
+ItemFullMsg:忠诚之心这么宝贵的东西，应该比你身上其他的东西还要重要吧？？
+GetItem:20176
+EndSetFlg:111
+EventEnd
+
+#### 身上已有忠诚之心的重复对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>100&ENDEV=4&ENDEV=81&ENDEV=110&NOWEV=111&ITEM=20176
+NomalWindowMsg:既然你拿到忠诚之心的话，就快去见火精灵吧。
+EventEnd
+
+#### 已关火灵勇士标再见国王仍有忠诚之心 ####	
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>100&ENDEV=4&ENDEV=81&ENDEV=110&ENDEV=111&ITEM!=20176
+AcceptMsg1:又见到你了，勇士。再次来到这里，想必你需要忠诚之心吧，只要你能通过考验，就能拿到忠诚之心。
+ThanksMsg1:收下这个忠诚之心吧。
+ItemFullMsg:忠诚之心这么宝贵的东西，应该比你身上其他的东西还要重要吧？？
+GetItem:20176
+EventEnd
+
+#### 身上已有忠诚之心的重复对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>100&ENDEV=4&ENDEV=81&ENDEV=110&ENDEV=111&ITEM=20176
+NomalWindowMsg:拿到了这忠诚之心后，希望你好好利用它。
+EventEnd
+
+#### 任务标不符合之对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:挑选出来的火灵勇士们，战力可是非一般人所能想像的。
+EventEnd
+
+
+
+
+
+
+
+

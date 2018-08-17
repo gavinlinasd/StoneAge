@@ -1,0 +1,9 @@
+#格里兰02
+WAVE:54
+routenum:1
+routeto1:7001,33,26;7001,27,26;7001,27,20;7001,33,20;7001,33,26
+routename1:里兰
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:3
+

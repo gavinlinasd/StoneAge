@@ -1,0 +1,16 @@
+NEWNPCENEMY
+
+entype:2
+askbattlemsg1:你·······是人类却拥有魔龙之鳞？可疑的人类！
+startmsg:来吧，先让你看看魔界乌力王的力量吧！哈哈哈～可别把我当成一般的猪，我可是当初横霸人间的乌力王。
+dieact:0
+warpfl:7021
+warpx:32
+warpy:22
+item:19539,19538,19537
+enemyno:2501,2502,2502,2502,2502,2502,2502,2502,2502,2502
+deniedmsg:呼呼呼～～～～！
+alreadymsg:想早点死也不用太着急！
+onebattle:1
+OVER
+

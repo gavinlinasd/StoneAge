@@ -1,0 +1,53 @@
+NPCCREATE
+
+###### 药粉提炼师（加血） ######
+{
+name=药粉提炼师
+floorid=2000
+borncenter=66,33
+dir=4
+time=0
+createnum=1
+ignoreinvincible=1
+graphicname=16095
+enemy=ITEMCHANGE|file:sa50/alchemy/alchemyhp
+}
+
+###### 药丸提炼师（加防） ######
+{
+name=药丸提炼师
+floorid=7105
+borncenter=12,11
+dir=4
+time=0
+createnum=1
+ignoreinvincible=1
+graphicname=16095
+enemy=ITEMCHANGE|file:sa50/alchemy/alchemyac
+}
+
+###### 药汤提炼师（加攻） ######
+{
+name=药汤提炼师
+floorid=7000
+borncenter=98,102
+dir=4
+time=0
+createnum=1
+ignoreinvincible=1
+graphicname=16095
+enemy=ITEMCHANGE|file:sa50/alchemy/alchemystr
+}
+
+###### 药丹提炼师（加敏） ######
+{
+name=药丹提炼师
+floorid=4000
+borncenter=71,104
+dir=4
+time=0
+createnum=1
+ignoreinvincible=1
+graphicname=16095
+enemy=ITEMCHANGE|file:sa50/alchemy/alchemydex
+}

@@ -1,0 +1,56 @@
+####  法师精工师  ####
+
+START_MSG:准备好材料来找我吧，我会帮你制做专属于闇灵法师的装备。基本材料为线１０和骨１０，头盔多个骨１０，服的话多一个骨１０、一个线１０和一个皮１０。而手杖的话多一个骨１０和线１０。工本费为五千元哟…。
+
+MenuHead:选择想要交换的装备
+NeedHead:需要的材料
+
+####  月神之帽精工 ####
+{
+CHANGEITEM:2262
+NeedItem:11889,11829
+FREE:LV>0&ENDEV=4&CLASS=2&ITEM=11889&ITEM=11829*2&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11829*2
+AddItem:2262
+}
+
+####  月神之服精工 ####
+{
+CHANGEITEM:2263
+NeedItem:11889,11829,11849
+FREE:LV>0&ENDEV=4&CLASS=2&ITEM=11889*2&ITEM=11829*2&ITEM=11849&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*2,11829*2,11849*1
+AddItem:2263
+}
+
+####  月神腰带精工 ####
+{
+CHANGEITEM:2264
+NeedItem:11889,11829
+FREE:LV>0&ENDEV=4&CLASS=2&ITEM=11889&ITEM=11829&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11829*1
+AddItem:2264
+}
+
+####  月神之靴精工 ####
+{
+CHANGEITEM:2265
+NeedItem:11889,11829
+FREE:LV>0&ENDEV=4&CLASS=2&ITEM=11889&ITEM=11829*1&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11829*1
+AddItem:2265
+}
+
+####  月神之杖精工 ####
+{
+CHANGEITEM:2266
+NeedItem:11889,11829
+FREE:LV>0&ENDEV=4&CLASS=2&ITEM=11889*2&ITEM=11829*2&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*2,11829*2
+AddItem:2266
+}

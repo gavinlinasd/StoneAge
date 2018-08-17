@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:你的积分多少了啊？我快可以换到我要的奖品了喔，只要再赢一次就够了……
+EventEnd

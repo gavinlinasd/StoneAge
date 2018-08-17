@@ -1,0 +1,12 @@
+NomalMainMsg:海边的村庄每当夏季的时候，非常容易遭受灾害～～～。
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=20704&ITEM=20702
+AcceptMsg:\n\n在这个村庄偶尔可以看见一些流浪汉，他们真是可怜。
+ThanksMsg:\n\n这是？真是不好意思，我没做什么事居然可以收到礼物，那能不能也给一些无依无靠的流浪汉一些温饱呢？我的要求会不会太过份？
+ItemFullMsg:\n\n这位好心人，你身上没有空位，没办法写纸条给你呢。
+DelItem:20702
+GetRandItem:20685*1
+EventEnd

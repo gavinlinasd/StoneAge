@@ -1,0 +1,37 @@
+NomalMainMsg:欢迎你！来自远方的勇士！瑞尔亚斯城就喜欢象你这样的~加入我们吧！
+
+
+###184任务完成　但是惩戒令却没了###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&ENDEV=4&ENDEV=81&ENDEV=126&ENDEV=133&ENDEV=184
+NomalWindowMsg:贝克他还好么！我们都很期待他回来。。
+EventEnd
+
+###184任务进行中　身上有惩戒令###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&ENDEV=4&ENDEV=81&ENDEV=126&ENDEV=133&NOWEV=184&ITEM=21123
+NomalWindowMsg:麻烦您了~一路小心！
+EventEnd
+
+###收奥义交惩戒令###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&ENDEV=4&ENDEV=81&ENDEV=126&ENDEV=133&NOWEV=184&ITEM=20918
+AcceptMsg1:精练奥义？是贝克叫你带给我的吗？
+AcceptMsg2:嗯。。。。。。。。。。其实那些事情我们早已经淡忘了，都几十年过去了。
+ThanksMsg1:这是惩戒令～麻烦你辛苦一趟给贝克送去！\n就说我们已经原谅他了，希望他有一天能回到瑞尔亚斯，我们随时都欢迎他。
+ItemFullMsg:你的包袱好象满了。
+GetItem:21123*1
+DelItem:20918
+EventEnd
+
+###184任务进行中　但是惩戒令却没了###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&ENDEV=4&ENDEV=81&ENDEV=126&ENDEV=133&NOWEV=184&ITEM!=21123
+NomalWindowMsg:惩戒令掉了吗？没关系，我再做一份给你，这次拿好了噢！别再丢了
+ItemFullMsg:你的包袱好象满了。
+GetItem:21123*1
+EventEnd

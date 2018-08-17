@@ -1,0 +1,12 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+NomalMsg:走开～～不要来这里！
+PartyMsg:一次一个进来。
+OVER
+
+TALKEVENT1
+WARP:5579,15,22
+FREE:ENDEV=81
+FreeMsg:哦～～你是小组长的救命恩人，\n请进请进～～。OVER

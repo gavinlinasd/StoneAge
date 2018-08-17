@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:怎么有三个栅栏都破了呢？是不是有什么大阴谋啊？
+EventEnd

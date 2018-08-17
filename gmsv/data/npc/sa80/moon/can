@@ -1,0 +1,24 @@
+NEWWARPMAN
+#### 水缸 ####
+
+NOFREE
+FREE:LV>0
+NomalMsg:有个水缸，这里面的水应该可以喝吧…
+PartyMsg:……
+WARP:0,0,0
+OVER
+
+TALKEVENT1
+WARP:0,0,0
+FREE:LV>0&ENDEV=4&ITEM=2228
+DelItem:2228
+AddItem:2229
+FreeMsg:（装这里的水给无干喝应该没问题吧？）
+OVER
+
+TALKEVENT2
+WARP:0,0,0
+FREE:LV>0&ENDEV=4
+FreeMsg:（这个水缸里的水好像很清澈…）
+OVER
+

@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:拉斯基+拉斯基+拉斯基 克拉爾+克拉爾+克拉爾\n紅布克＋紅布克＋紅布克 黑暴+瑞德寶+黑暴\n拉斯基+拉斯基 帖拉格恩 +烏力固力\n戈登爾頓+撲滿烏力 克拉爾+克拉爾\n戈登爾頓+歐林吉魯 梅魯莎+塔克\n布魯頓+瑞德寶 戈登爾頓+塔克
+EventEnd

@@ -1,0 +1,9 @@
+NomalMainMsg:我们弗烈顿最尊敬勇士了，你也是个勇士吗？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:来了伊甸园这么久，还是不太习惯。\n好想回去弗烈顿呢～～
+NomalWindowMsg1:喔对了，要是你有兴趣的话，或许可以挑战挑战我们弗烈顿的火山喔！
+EventEnd

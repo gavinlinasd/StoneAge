@@ -1,0 +1,17 @@
+NomalMainMsg:我是送钱的.
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0
+AcceptMsg:要钱吗?
+ThanksMsg:好就送给你吧.多谢我噢~!
+StoneFullMsg:对不起,你的钱太多了,丢掉点吧.
+GetStone:990000
+EventEnd
+
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM=2522
+NomalMsg:???????
+EventEnd

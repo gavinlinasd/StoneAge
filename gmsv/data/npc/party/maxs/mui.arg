@@ -1,0 +1,13 @@
+NomalMainMsg:遍地的碎石，却都是没有用的石头。
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=20704&ITEM=20699
+AcceptMsg:\n\n最近这里的矿大家可抢的凶啊～～～～！\n你也是来采矿的吗？
+ThanksMsg:\n\n原来你是来送礼物的啊？！谢谢！还真劳耶诞老人费心，也谢谢你跑这一趟。
+ItemFullMsg:\n\n你身上装不下东西了，没办法给你一些证明。
+DelItem:20699
+GetRandItem:20682*1
+NpcWarp:31803.34.23,31803.21.34
+EventEnd

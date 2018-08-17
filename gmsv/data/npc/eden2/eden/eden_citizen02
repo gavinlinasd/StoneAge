@@ -1,0 +1,10 @@
+NomalMainMsg:我看到什么事情就会一直联想下去，你也会这样吗？,脑子还是要越用才会越灵光的啦！
+
+#聊水怪任务
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&NOWEV=88
+NomalWindowMsg:最近有没有碰上一些怪事？
+NomalWindowMsg2:倒是还好，只是动物园那群员工经常在我家附近搬运很大箱子，很吵的。\n而且好像里头有装动物，会听到它们的叫声呢。
+NomalWindowMsg3:动物要搬就搬，何必藏在箱子里呢，难不成是不可以被人发现吗？
+EventEnd

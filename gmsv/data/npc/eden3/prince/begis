@@ -1,0 +1,31 @@
+#### 王子友人B 比吉斯 ####
+
+NomalMainMsg:我可是料理王呢～～
+
+####任务结束，认旗标114关####
+
+#### 任务进行中对话，给比吉斯的信 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114&ITEM=20573
+AcceptMsg1:你怎么会有这信？？布列克这么爱旅行，要找到他不简单吧？没错，王子到过我这里，可惜他已经离开了。
+AcceptMsg2:他跟我说要去找我们另外一个好朋友裘恩斯学武术耶，现在人应该跑到弗烈顿去了吧…这样好了，给你这封信，裘恩斯看了就会明白的。
+ThanksMsg1:顺便帮我跟王子说一声我最近过的还好好吗？？
+ItemFullMsg:收这封信之前，你可能要先把东西整理一下喔。
+GetItem:20574
+DelItem:20573
+EventEnd
+
+#### 身上有比吉斯信对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114&ITEM=20574
+NomalWindowMsg:裘恩斯在弗烈顿，应该不难找的。
+EventEnd
+
+#### 全不符 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:我想出去收集材料…
+EventEnd

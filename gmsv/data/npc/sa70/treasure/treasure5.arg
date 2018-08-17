@@ -1,0 +1,18 @@
+NEWWARPMAN
+
+#### 标全不正确，不理 ####
+NOFREE
+FREE:LV>0
+NomalMsg:卡～卡～卡
+PartyMsg:卡～卡～卡
+OVER
+
+####　收钥匙给金砂　####
+TALKEVENT1
+WARP:0,0,0
+FREE:LV>0&ITEM=1852
+AddItem:1856
+DelItem:1852*1
+FreeMsg:卡！
+NPCPOINT:817,242,72;817,315,53;817,327,23;817,318,93;817,155,53
+OVER

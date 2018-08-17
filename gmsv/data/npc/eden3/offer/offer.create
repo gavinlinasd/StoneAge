@@ -1,0 +1,29 @@
+NPCCREATE
+
+
+###### 受伤的男主人德夫 ######
+{
+name=德夫
+floorid=7303
+borncenter=13,10
+dir=6
+time=0
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:eden3/offer/druve
+graphicname=16643
+}
+
+###### 祭司拉法特 ######
+{
+name=拉法特
+floorid=7302
+borncenter=22,21
+dir=4
+time=0
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:eden3/offer/larfart
+graphicname=16655
+}
+

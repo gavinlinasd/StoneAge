@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:嗯，这游戏真的这么有趣吗？我都看不出来呢，试试看好了……
+EventEnd

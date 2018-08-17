@@ -1,0 +1,9 @@
+
+{
+start_msg:我是宠物技能饲育员，我的专长是教导宠物学习落马术喔，不过只有鸟类宠物可以学习这技能。
+main_msg:准备好要学技能了吗？
+nothing_msg:好了．．．．
+err_msg:这不是它该学的哦～～
+skill_rate:1.0
+pet_skill:210
+}

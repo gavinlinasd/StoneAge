@@ -1,0 +1,36 @@
+#### 夜晚兽化葳娜 ####
+
+NomalMainMsg:我好希望变回原来的样子…
+
+####任务结束，认旗标112关####
+
+#### 开完标 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112
+NomalWindowMsg:时间很急迫了，请你快动身去救卡罗吧。
+EventEnd
+
+#### 说故事，开标 ####
+EventNo:112
+TYPE:REQUEST
+EVENT:LV>89&ENDEV=4&ENDEV=81&ITEM=20178
+RequestMsg:看到我的样子，现在你知道为什么我不喜欢见到其他的人了吧。我一到晚上就会变形成现在的怪物。
+RequestMsg1:为什么我会变现在的样子吗？说来话长。你可以先答应我的请求吗？
+ThanksMsg:后山有间伊塔工作室，里面有一个我的朋友叫卡罗，他现在正陷于危机中，请你帮个忙，他会告诉你我的一切的。
+ThanksMsg1:谢谢你的帮忙，不过…我不想再见到任何人了，也请你以后别再过来，我不会见你的。
+DelItem:20178
+EventEnd
+
+#### 标不符合 不理 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:…………
+EventEnd
+
+
+
+
+
+

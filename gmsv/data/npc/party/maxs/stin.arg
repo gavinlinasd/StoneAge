@@ -1,0 +1,13 @@
+NomalMainMsg:这里的修行者还真不少啊。
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=20704&ITEM=20689
+AcceptMsg:\n\n疑！？这礼物是～～～～！
+ThanksMsg:\n\n谢谢你，还真亏你四处奔波送来给我啊，谢谢你！不过，辛劳后所得的果实最为甜美，你说是不是呢！？
+ItemFullMsg:\n\n你身上装不下东西了，没办法给你一些证明。
+DelItem:20689
+GetRandItem:20679*1
+NpcWarp:10914.37.51,10914.7.32
+EventEnd

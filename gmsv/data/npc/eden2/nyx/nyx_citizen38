@@ -1,0 +1,8 @@
+NomalMainMsg:你没见过水怪？真是太逊了。。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:你没见过水怪？真是太逊了。。
+EventEnd

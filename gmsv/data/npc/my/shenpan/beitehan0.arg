@@ -1,0 +1,28 @@
+NomalMainMsg:你是谁？陌生人请离开这里！
+
+####186任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&ENDEV=186
+NomalWindowMsg:。。。。。真是不甘心！难道是我的机关太简单了吗？？
+EventEnd
+
+####任务186中　身上有搜捕令及盗贼的足迹####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21176&ITEM=21177
+NomalWindowMsg:别发愣了！快动身去找吧！～～～
+EventEnd
+
+####任务186中　身上有搜捕令给盗贼的足迹####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=186&ITEM=21176&ITEM!=21177&ITEM!=21180
+GetItem:21177
+ItemFullMsg:身上道具太多了喔！
+AcceptMsg1:你是来抓我的吗？！嘿嘿！你能在下面找到我３次我就把研究书给你了！
+AcceptMsg2:还有一个要提醒你噢！就你现在这身打扮，我很不喜欢，太傻了吧～嘿嘿
+AcceptMsg3:你在找我的路上可能会碰到一些远古猛兽～我在它们身上放了一些能让你改变样子的东西～
+AcceptMsg4:记住了噢！就你这样子！我是不会理你的噢！～～～哈哈哈哈
+ThanksMsg:还有～这个给你！也许能让你更方便的找到我！哈哈
+EventEnd

@@ -1,0 +1,8 @@
+WARP:8113,63,39
+FREE:ITEM=20917
+DelItem:20917*1
+MONEY:-1
+FreeMsg1:嗯....不错~就是这个东西！\n那我收下了
+PayMsg:没我想要的东西～你还想通过吗？。。\n快去找到欧拓首饰再来吧！
+PartyMsg:这里无法组队通过
+MoneyMsg:.....

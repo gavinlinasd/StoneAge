@@ -1,0 +1,11 @@
+########给人龙ＫＥＹ之杰克森########
+
+NomalMainMsg:小鬼＞＠＜！！我想你没见过我吧！我制造特殊宝箱锁和特殊钥匙的功力可是没人比我的过我喔。
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:Ｚ～Ｚ～Ｚ～Ｚ～～～～
+EventEnd
+

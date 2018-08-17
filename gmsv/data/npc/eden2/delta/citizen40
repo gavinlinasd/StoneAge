@@ -1,0 +1,7 @@
+NomalMainMsg:爸爸总是叫我待在家里，今天好不容易可以出来玩一下了！呀比！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:爸爸总是叫我待在家里，\n今天好不容易可以出来玩一下了！呀比！
+EventEnd

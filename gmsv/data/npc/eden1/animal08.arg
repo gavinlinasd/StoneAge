@@ -1,0 +1,9 @@
+#塔斯夫01
+WAVE:54
+routenum:1
+routeto1:7001,31,22;7001,28,22;7001,28,25;7001,31,25;7001,31,22
+routename1:塔斯
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:9
+

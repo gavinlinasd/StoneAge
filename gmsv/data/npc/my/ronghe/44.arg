@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:凱比特+凱比特+凱比特金飛+撲滿+黑暴\n凱比特+凱比特 朵拉比斯+撲滿烏力 
+EventEnd

@@ -1,0 +1,51 @@
+#### 女王娜丽斯 ####
+
+NomalMainMsg:看到孩子长大了，是我这个做母亲最大的安慰。
+
+####完成任务####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=116
+AcceptMsg:谢谢你，两城的婚礼现在可以顺利举行了。到时希望你也能来参加，因为你是促成这婚事最大的功臣。
+ThanksMsg:为了感谢你的相助，我已经将你帮助我们的事迹告知水精灵，他就在下面的神殿里面。水精灵充满智慧，跟她见面相信会对你未来的旅程有所帮助。
+EventEnd
+
+#### 任务进行中对话(拿到公主，已关124) ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&PET>0-946
+NomalWindowMsg:什么？！唉…孩子大了就是管不住，算了，麻烦你帮我多照顾她吧。
+EventEnd
+
+#### 任务进行中对话(见过奶妈，已开116) ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=116
+NomalWindowMsg:希望能快些找到吉德王子才好。
+EventEnd
+
+#### 任务进行中对话(未见奶妈) ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=124
+NomalWindowMsg:找不到吗？奶妈就在这皇宫的东方。
+EventEnd
+
+#### 请求玩家前往寻找吉德 ####	
+EventNo:124
+TYPE:REQUEST
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112
+RequestMsg1:外乡的朋友，欢迎来到尼克斯城。你看起来似乎蛮喜欢旅行…能否分享一下你的见闻呢？
+RequestMsg2:什么？！原来你见过吉德啊？那真是太好了。
+RequestMsg3:是这样的。我们尼克斯城跟火城弗烈顿关系一向很友好。而在我的女儿出生的同时，弗烈顿的王后也正好生了一个小王子，于是我们就约定他们二人的婚事。
+RequestMsg4:现在二人都已经长大了，二城的人都希望能早点见到他二人在一起。只是小王子吉德好像到别的地方去找他的朋友了。如果要办婚礼的话，得先找到吉德王子才行呢。
+RequestMsg5:既然你见过他的话，那麻烦你帮我们找寻吉德王子的下落好吗？对了，麻烦你顺便帮我告诉奶妈一声，她也一直挂念着这件事呢，就在王宫的东方。
+ThanksMsg:如果能早点促成这件婚事，我们二城的人民都会感谢你的…。
+EventEnd
+
+#### 没资格接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:是外来的冒险者吗？欢迎。
+EventEnd

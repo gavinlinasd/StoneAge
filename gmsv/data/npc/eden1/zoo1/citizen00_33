@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:最近从外地来的人真是不少啊──\n\n有什么塞伊那斯、加鲁卡来的，还讲到什么吉鲁、沙姆、波拉？\n弄得我头都晕了……\n\n你们尼斯那边怎么都是一堆小岛啊？这样交通不是很不方便吗？
+EventEnd

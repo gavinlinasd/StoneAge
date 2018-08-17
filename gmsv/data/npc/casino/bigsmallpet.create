@@ -1,0 +1,24 @@
+NPCCREATE
+#比大小宠物
+{
+floorid=7008
+borncenter=8,9,1,1
+movecenter=8,9,1,1
+createnum=1
+dir=2
+graphicname=100850
+name=小小
+enemy=bigsmallpet|1
+}
+# 宠物1 的 arg 写 1 ( enemy=bigsmallpet|1 ), 宠物2 就写 2
+# 一定两只都要有, 而且要跟 master 的 floor 一样
+{
+floorid=7008
+borncenter=17,9,1,1
+movecenter=17,9,1,1
+createnum=1
+dir=6
+graphicname=100850
+name=大大
+enemy=bigsmallpet|2
+}

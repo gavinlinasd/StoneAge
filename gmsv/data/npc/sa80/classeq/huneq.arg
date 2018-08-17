@@ -1,0 +1,56 @@
+#### 猎人精工师  ####
+
+START_MSG:准备好材料来找我吧，我会帮你制做专属于追猎者的装备。基本材料为线１０和木１０，头盔多个木１０，炼甲的话多一个木１０、一个线１０和一个牙１０。而战弓的话多一个木１０和线１０。工本费为五千元哟…。
+
+MenuHead:选择想要交换的装备
+NeedHead:需要的材料
+
+####  星河头盔精工 ####
+{
+CHANGEITEM:2267
+NeedItem:11889,11819
+FREE:LV>0&ENDEV=4&CLASS=3&ITEM=11889&ITEM=11819*2&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11819*2
+AddItem:2267
+}
+
+####  星河炼甲精工 ####
+{
+CHANGEITEM:2268
+NeedItem:11889,11819,11839
+FREE:LV>0&ENDEV=4&CLASS=3&ITEM=11889*2&ITEM=11819*2&ITEM=11839&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*2,11819*2,11839*1
+AddItem:2268
+}
+
+####  星河腰带精工 ####
+{
+CHANGEITEM:2269
+NeedItem:11889,11819
+FREE:LV>0&ENDEV=4&CLASS=3&ITEM=11889&ITEM=11819&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11819*1
+AddItem:2269
+}
+
+####  星河之靴精工 ####
+{
+CHANGEITEM:2270
+NeedItem:11889,11819
+FREE:LV>0&ENDEV=4&CLASS=3&ITEM=11889&ITEM=11819&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11819*1
+AddItem:2270
+}
+
+####  星河战弓精工 ####
+{
+CHANGEITEM:2271
+NeedItem:11889,11819
+FREE:LV>0&ENDEV=4&CLASS=3&ITEM=11889*2&ITEM=11819*2&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*2,11819*2
+AddItem:2271
+}

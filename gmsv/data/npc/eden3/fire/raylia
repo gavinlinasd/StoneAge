@@ -1,0 +1,19 @@
+####　德夫女儿蕾丽亚　####
+
+NomalMainMsg:今年的火灵祭就如同往年一样精彩。
+
+####110任务结束####
+
+####未完成任务前对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:NOWEV=110
+NomalWindowMsg:请你帮帮我的父亲吧。
+EventEnd
+
+####已完成任务对话####
+EventNo:-1
+EVENT:ENDEV=110
+NomalWindowMsg:真不知该如何感谢你才好。
+EventEnd
+

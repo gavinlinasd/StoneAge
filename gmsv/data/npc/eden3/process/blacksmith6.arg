@@ -1,0 +1,72 @@
+#### 金属防具加工师 ####
+
+START_MSG:你想加工铜制防具吗？？加工一次要一万元喔。铜铠１需要三块铜及其他材料，铜铠２需要铜铠１及七块铜，铜铠３要铜铠２及１３块铜。铜兜１需要三块铜及其他材料，铜兜２需要铜兜１及七块铜，铜兜３要铜兜２及１３块铜。
+
+MenuHead:选择你想要的防具
+NeedHead:需要的材料
+
+####  铜铠１加工 ####
+{
+CHANGEITEM:20270
+NeedItem:20286,13078
+FREE:ENDEV=4&ENDEV=81&ITEM=20286*3&ITEM=13078&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20286*3,13078*1
+AddItem:20270
+}
+
+####  铜铠２加工 ####
+{
+CHANGEITEM:20271
+NeedItem:20286,20270
+FREE:ENDEV=4&ENDEV=81&ITEM=20286*7&ITEM=20270&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20286*7,20270*1
+AddItem:20271
+}
+
+####  铜铠３加工 ####
+{
+CHANGEITEM:20272
+NeedItem:20286,20271
+FREE:ENDEV=4&ENDEV=81&ITEM=20286*13&ITEM=20271&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20286*13,20271*1
+AddItem:20272
+}
+
+####  铜兜１加工 ####
+{
+CHANGEITEM:20273
+NeedItem:20286,13076
+FREE:ENDEV=4&ENDEV=81&ITEM=20286*3&ITEM=13076&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20286*3,13076*1
+AddItem:20273
+}
+
+####  铜兜２加工 ####
+{
+CHANGEITEM:20274
+NeedItem:20286,20273
+FREE:ENDEV=4&ENDEV=81&ITEM=20286*7&ITEM=20273&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20286*7,20273*1
+AddItem:20274
+}
+
+####  铜兜３加工 ####
+{
+CHANGEITEM:20275
+NeedItem:20286,20274
+FREE:ENDEV=4&ENDEV=81&ITEM=20286*13&ITEM=20274&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20286*13,20274*1
+AddItem:20275
+}
+
+
+
+
+
+

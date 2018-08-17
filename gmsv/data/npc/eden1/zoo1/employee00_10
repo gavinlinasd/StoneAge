@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:最近好多客人来买卖宠物，照顾宠物店真是累死了。
+EventEnd

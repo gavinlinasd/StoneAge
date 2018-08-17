@@ -1,0 +1,14 @@
+NPCCREATE
+
+{
+floorid=777
+borncorner=24,19,24,19
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=122019
+name=会员骑宠证发放员
+enemy=npcgen_shop|file:my/yucunpc/qizheng.arg
+}
+

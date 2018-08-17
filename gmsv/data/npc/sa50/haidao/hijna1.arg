@@ -1,0 +1,34 @@
+########　海贼王分身　#######
+
+NomalMainMsg:真正的海贼王文狄正在等候你的到来。
+
+####　已完成任务之对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>99&ENDEV=4&ENDEV=81&ENDEV=126
+NomalWindowMsg:我的预感果然没错，当你打败我的那时候我就知道你一定能通过考验的。
+EventEnd
+
+#### 打完假的海贼王对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=1446
+NomalWindowMsg:害怕了吗？还不快点前进？
+EventEnd
+
+####　打完假的海贼王给火的勾玉　####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>99&ENDEV=4&ENDEV=81&NOWEV=126
+AcceptMsg1:看来我也不是你的对手，这个力量的勾玉就送给你吧。
+ThanksMsg1:不过这里只是牛刀小试，下一次的战斗将更为惨烈的喔，小心了！
+GetItem:1446
+ItemFullMsg:你身上太多东西了喔！
+EventEnd
+
+####　未接任务对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:………
+EventEnd

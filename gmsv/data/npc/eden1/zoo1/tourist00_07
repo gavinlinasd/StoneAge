@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:抓这些动物一定费了一番手脚吧，跑了这么多出去，园长一定急死了呢！
+EventEnd

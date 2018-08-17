@@ -1,0 +1,10 @@
+entype:2
+item:20631
+askbattlemsg1:想见祭师？先让我看看你的本事！
+startmsg:你也是来伤害祭师的人类之一吧？
+dieact:0
+time:120
+enemyno:2565,2565,2565
+deniedmsg:你这陌生人休想靠近祭师，让开！
+onebattle:0
+OVER

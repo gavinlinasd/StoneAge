@@ -1,0 +1,85 @@
+########　神兵专家莫非（１４３）　########
+
+NomalMainMsg:唉…天下间还有我做不出来的武器吗？
+
+###　成功带回精灵草得到带有精灵的枪　###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>39&ENDEV=4&ENDEV=143&ITEM=1812&ITEM=1809
+AcceptMsg1:找到精灵草了？了不起，那我就开始帮你封印精灵进去吧。
+ThanksMsg1:拿去吧，这是一把全新的枪，好好使用喔…。
+DelItem:1812*1,1809*1
+GetItem:1807
+ItemFullMsg:你的身上好像没有空间置放了？！
+EventEnd
+
+###　只有枪没有精灵草　###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>39&ENDEV=4&ENDEV=143&ITEM=1812
+NomalWindowMsg:还没找到精灵草吗？加油了，毕竟这是你需要的东西。
+EventEnd
+
+###　只有精灵草没有枪　###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>39&ENDEV=4&ENDEV=143&ITEM=1809
+NomalWindowMsg:只有带回精灵草是没有用的，你的枪呢？？
+EventEnd
+
+###　成功带回石头得到没有精灵的枪　###
+EventNo:143
+TYPE:ACCEPT
+EVENT:LV>39&ENDEV=4&NOWEV=143&ITEM=1808*2
+AcceptMsg1:嗯嗯…你把石头给带回来了吗？我看一下…。
+AcceptMsg2:没错…就是这个吉岩石，那你等我一下，我马上就可打造出一把武器来。
+ThanksMsg1:其实我本来想将精灵也一起封印进去的，可惜需要精灵草才办的到，而我手上的精灵草又在前几天被强恩洞窟的小毛贼给抢去了，如果你能帮我找回来的话，我会再帮你封印精灵的。小毛贼我忘了他是在二楼还是三楼出没了。
+DelItem:1808,1813*1
+GetItem:1812*1
+ItemFullMsg:你的身上好像没有空间置放了？！
+EndSetFlg:143
+EventEnd
+
+###　已开标，只带一个石头　###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>39&ENDEV=4&NOWEV=143&ITEM=1808*1
+NomalWindowMsg:只带回来一个石头…你不想要了吗？那我会不好意思的耶…。
+EventEnd
+
+###　已开标，斧头不见　###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>39&ENDEV=4&NOWEV=143&ITEM!=1813
+AcceptMsg:啊～斧头不见了吗…只好再给你一把了。
+ThanksMsg:这次可得小心保管
+GetItem:1813*1
+ItemFullMsg:你的身上好像没有空间置放了？！
+EventEnd
+
+###　已开标，未带石头　###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>39&ENDEV=4&NOWEV=143
+AcceptMsg:还没找到吗？就在阿斯玛鲁矿山的某一层，不过不好找喔…。
+EventEnd
+
+####  接任务（开标１４３）  ####
+EventNo:143
+TYPE:REQUEST
+EVENT:LV>39&ENDEV=4
+RequestMsg1:你知道吗？人家叫我神兵专家，就是因为我有一双灵巧的双手，可以打造各种神兵利器。但是…巧妇难为无米之炊，没有材料也是没有用的。
+RequestMsg2:听说在阿斯玛鲁矿山里有一种吉岩矿，质地坚硬无比，如果能用这种石头来打造武器，一定可以做出来一只很棒的武器的。
+RequestMsg3:嗯嗯～我帮人家打造武器一向是非常昂贵的，不过如果你能帮我带一颗这种石头过来，我就免费帮你打造一把枪，你觉得如何呢？
+ThanksMsg:嗯嗯…答应的话，那就记得带二个石头过来，一个我的，一个你的。另外给你这把小斧头，只有这把小斧头的硬度，才能顺利开采吉岩矿。记得身上要有空位喔…。
+GetItem:1813*1
+ItemFullMsg:哎呀！道具已经满了！
+EventEnd
+
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:我的手艺虽然被别人所认同…但是没有好的材料也没有用呢。
+EventEnd

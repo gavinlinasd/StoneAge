@@ -1,0 +1,14 @@
+NEWWARPMAN
+#### 凯菈村守卫 ####
+
+NOFREE
+FREE:LV>0
+NomalMsg:抱歉，此地曾经被魔物入侵，现在里面变的非常危险，不适合你进去。
+PartyMsg:请轮流发问问题。
+OVER
+
+TALKEVENT1
+WARP:7402,45,123
+FREE:LV>99&ENDEV=4
+FreeMsg:这里已变成很危险的地方，不过以你的能力，应该可以应付吧。
+OVER

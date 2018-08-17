@@ -1,0 +1,12 @@
+NomalMainMsg:巨大的花巨大的花～～～。
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=20704&ITEM=20700
+AcceptMsg:\n\n这里看出去的风景好漂亮喔，你也是来欣赏风景的吗？
+ThanksMsg:\n\n这是什么？要给我的啊？！谢谢！爷爷说，收到礼物都要说谢谢！
+ItemFullMsg:\n\n大哥哥你身上没有空位，没办法写纸条给你呢。
+DelItem:20700
+GetRandItem:20683*1
+EventEnd

@@ -1,0 +1,12 @@
+NPCCREATE
+
+###乌力王###
+{
+name=老乌力神
+floorid=100
+borncenter=642,396,1,1
+dir=4
+createnum=1
+graphicname=100822
+enemy=changeevent|file:party/piggod/piggod
+}

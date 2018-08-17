@@ -1,0 +1,13 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+NomalMsg:我一直都觉得很奇怪，为什么在这片大沙漠的正中央能够找到水源而建立起伊甸园呢？
+OVER
+
+TALKEVENT1
+WARP:102,10,20
+FREE:LV>79&ENDEV=4&ENDEV=162&NOWEV=163
+MONEY:-1
+FreeMsg:你问我是否有看到你朋友？他刚刚听到井里面一声哀嚎就跳下去了，你也想下去吗？
+OVER

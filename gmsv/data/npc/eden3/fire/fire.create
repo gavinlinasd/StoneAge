@@ -1,0 +1,266 @@
+NPCCREATE
+###### 弗烈顿一般NPC ######
+
+### 德夫女儿
+{
+name=蕾丽亚
+floorid=7303
+borncenter=13,7
+dir=4
+createnum=1
+enemy=changeevent|file:eden3/fire/raylia
+graphicname=16608
+}
+
+### 火城女性
+{
+name=弗烈顿女子
+floorid=7300
+borncenter=39,47
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_1
+graphicname=16645
+}
+
+### 火城男性
+{
+name=弗烈顿男子
+floorid=7300
+borncenter=88,128
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_2
+graphicname=16625
+}
+
+### 火城小孩
+{
+name=弗烈顿小孩
+floorid=7300
+borncenter=34,102
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_3
+graphicname=16639
+}
+
+### 火城女性
+{
+name=弗烈顿女子
+floorid=7300
+borncenter=46,59
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_4
+graphicname=16647
+}
+
+### 火城男性
+{
+name=弗烈顿男子
+floorid=7300
+borncenter=87,88
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_5
+graphicname=16618
+}
+
+### 火城老人
+{
+name=弗烈顿老人
+floorid=7300
+borncenter=34,85
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_6
+graphicname=16630
+}
+
+### 火城男性教师
+{
+name=弗烈顿教师
+floorid=7300
+borncenter=23,113
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_7
+graphicname=16636
+}
+
+### 火城祭坛守卫
+{
+name=祭坛守卫
+floorid=7301
+borncenter=45,118
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_8
+graphicname=16914
+}
+
+### 火城祭坛守卫
+{
+name=祭坛守卫
+floorid=7301
+borncenter=45,124
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_8
+graphicname=16914
+}
+
+### 蒙达村民
+{
+name=樵夫
+floorid=7350
+borncenter=65,70
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_9
+graphicname=16915
+}
+
+### 蒙达村民
+{
+name=小女孩
+floorid=7350
+borncenter=52,64
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_10
+graphicname=16641
+}
+
+### 蒙达村民
+{
+name=守卫
+floorid=7350
+borncenter=52,42
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_11
+graphicname=16914
+}
+
+### 蒙达村民
+{
+name=村民
+floorid=7350
+borncenter=41,48
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_12
+graphicname=16917
+}
+
+### 十二年前蒙达村民
+{
+name=守卫
+floorid=7351
+borncenter=52,42
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_13
+graphicname=16920
+}
+
+### 十二年前蒙达村民
+{
+name=村民
+floorid=7351
+borncenter=36,26
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_14
+graphicname=16631
+}
+
+### 十二年前蒙达村民
+{
+name=村民
+floorid=7351
+borncenter=49,29
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_15
+graphicname=16644
+}
+
+### 火山道场火灵勇士
+{
+name=火灵勇士
+floorid=7301
+borncenter=50,93
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_16
+graphicname=16627
+}
+
+### 火山道场火灵勇士
+{
+name=火灵勇士
+floorid=7301
+borncenter=50,56
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_17
+graphicname=16628
+}
+
+### 火山道场火灵勇士
+{
+name=火灵勇士
+floorid=7301
+borncenter=32,75
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_18
+graphicname=16627
+}
+
+### 火山道场人民
+{
+name=小孩
+floorid=7301
+borncenter=39,17
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_19
+graphicname=16603
+}
+
+### 火城国王
+{
+name=赫肯豪
+floorid=7300
+borncenter=71,70
+dir=6
+createnum=1
+enemy=changeevent|file:eden3/fire/npc_20
+graphicname=16938
+}
+
+### 火城皇宫守卫
+{
+name=皇宫侍卫
+floorid=7300
+borncenter=58,66
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_21
+graphicname=16914
+}
+
+### 火城皇宫守卫
+{
+name=皇宫侍卫
+floorid=7300
+borncenter=58,70
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/fire/npc_22
+graphicname=16914
+}

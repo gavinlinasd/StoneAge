@@ -1,0 +1,515 @@
+#ChangeRunLevel
+#运行等级 范围是-20~19 其中-20的运行级别最高
+runlevel=0
+
+#性能调节，诺想CPU使用率大些的请把值设大些
+CPUUSE=10
+ 
+#recvbuffer表示每个玩家接收缓冲区大小 范围0-128    
+recvbuffer=64                                      
+#recvbuffer表示每个玩家发送缓冲区大小 范围0-128    
+sendbuffer=64                                      
+#readbuffer表示每个玩家接收缓冲区下限 范围128-1024 
+recvlowatbuffer=128                                
+                                                   
+sendlowatbuffer=128                                
+# Debug Level 0 for none                           
+#服务器调试等级                                    
+#有用的值为0、1、3                                 
+#0：不报告任何错误                                 
+#1: 只报告关键错误 其他错误将忽略                  
+#3：报告所有错误                                   
+debuglevel=3  
+
+#融合是否可以转生
+#(0不可转生，1为可以1转，最大只能2转)
+FUSIONBEIT=1 
+
+#设置庄园家族成员可使用的宠物编号
+FMPOINGPET1=-1
+FMPOINGPET2=-1
+FMPOINGPET3=-1
+FMPOINGPET4=-1
+FMPOINGPET5=-1
+FMPOINGPET6=-1
+FMPOINGPET7=-1
+FMPOINGPET8=-1
+FMPOINGPET9=-1
+FMPOINGPET10=-1
+
+#减少玩家步行遇敌机率倍数
+ENEMYACTION=2
+
+#庄园家族互抢庄园模式
+FMPOINTPK=1
+
+#2.0骑宠模式
+RIDEMODE=0  
+
+#自定义在线人虚假人数(虚假人数+在线人数+随机人数)
+PLAYERNUM=100
+
+#新手出生可获得会员点数
+GIVEVIPPOINT=0
+
+#精灵召唤时间间隔(ANGELPLAYERTIME/在线人数)分钟
+ANGELPLAYERTIME=4000
+#精灵召唤所需在线人数(最小为2)
+ANGELPLAYERMUN=10
+
+#战斗完获得金钱(所得的原始经验*?%)
+BATTLEGOLD=100
+                                   
+#VIP字段显示方法
+#0为不显示VIP
+#1为在家族中显示VIP
+#2为在名称中显示VIP
+SHOWVIP=0
+
+#VIP版的功能
+#玩家使用大瞬移每次所需点数(-1为关闭)
+PMOVE=-1
+
+#玩家使用小喇叭每次所需点数(-1为关闭)
+PANNOUNCE=-1
+
+#恶魔宝石遇敌时间倍数(遇敌时间0.1秒*倍数)
+CHARLOOPS=6
+
+#自定义骑宠相差等级
+RIDELEVEL=10
+
+#自定义升级点数
+SKILLUPPOINT=3
+
+#禁止点数上限复点(当POINT=0时,每转点数上限生效)
+POINT=0
+#正常点数可超越(指得是使用多少祝福点数)
+TRANS0=10
+TRANS1=10
+TRANS2=10
+TRANS3=10
+TRANS4=10
+TRANS5=10
+TRANS6=30
+
+#设置循环公告循环时间(分钟)
+ANNOUNCETIME=10
+#设置循环公告路径
+ANNOUNCEPATH=loopannounce.txt
+
+#是否允许所有地图强制战斗(1为是0为不是)
+BATTLEFLOOR=0
+#可强制战斗地图
+BATTLEFLOOR1=711
+BATTLEFLOOR2=
+BATTLEFLOOR3=
+BATTLEFLOOR4=
+BATTLEFLOOR5=
+
+#是否所有地图可观战
+WATCHFLOOR=0
+#自定义可观战地图
+WATCHFLOOR1=1000
+WATCHFLOOR2=2000
+WATCHFLOOR3=3000
+WATCHFLOOR4=4000
+WATCHFLOOR5=
+
+#丢出来的宠是否可以给别人捡获
+PETUP=1
+
+#该服务器是否会员专区(1为是0为不是)
+VIPSERVER=0
+#如果是会员专区每分钟收取会员点数为
+VIPPOINT=1
+#会员扣点地图(当VIPSERVER=0以下便生效)
+VIPMAP0=
+VIPMAP1=
+VIPMAP2=
+VIPMAP3=
+VIPMAP4=
+VIPMAP5=
+VIPMAP6=
+VIPMAP7=
+VIPMAP8=
+VIPMAP9=
+
+#禁止IP配置文件
+LOCKIP=lockip.txt
+
+#新增禁止玩家互相传送地区
+FLOOR1=32021
+FLOOR2=8213
+FLOOR3=850
+FLOOR4=30695
+FLOOR5=777
+
+#禁止使用以下人物名称
+NAME1=众里千寻
+NAME2=小吮儿
+NAME3=by*{emis}
+NAME4=
+NAME5= 
+
+#自定义升级经验等级
+USEREXP=data/exp.txt
+
+#多少转可超越一般等级达到最高级(目前版本开放最高160级)
+#人物转数
+CHARTRANS=6
+#宠物转数
+PETTRANS=2
+
+#玩家等级超越最大等级时还原最大等级
+REVLEVEL=1
+#最大等级设置
+MAXLEVEL=160
+#一般等级设置
+LEVEL=150
+
+
+#战斗后所获得经验倍数
+battleexp=1
+
+#自定义出生转数
+TRANS=0
+
+#自定义出生等级
+LV=1
+
+#自定义出生宠物(1为送虎，2为送雷，3为送虎加雷)
+NPRIDE=3
+#自定义出生宠物
+PET1=
+PET2=
+PET3=
+PET4=
+
+#自定义出生物品
+ITEM1=20172
+ITEM2=
+ITEM3=
+ITEM4=
+ITEM5=
+ITEM6=
+ITEM7=
+ITEM8=
+ITEM9=
+ITEM10=
+ITEM11=
+ITEM12=
+ITEM13=
+ITEM14=
+ITEM15=
+
+#自定义出生宠物等级
+PETLV=1
+
+#自定义出生金钱
+GOLD=500000
+
+# Size of unit that will allocate
+#每内存单元大小 单位：字节
+usememoryunit=128
+
+# Number of unit
+#有多少个内存单元
+usememoryunitnum=4000000
+
+#GMSV启动占用内存总量公式为 (usememoryunit*usememoryunitnum)/(1024*1024) 兆
+
+# Account Server Name
+# 帐号服务器 SAAC的服务器IP地址
+acserv=localhost
+
+# Account Server Port
+# 帐号服务器 SAAC的服务器端口
+acservport=9200
+
+# Account Server password
+# 连接到帐号服务器 SAAC的密码
+acpasswd=test
+
+# Game Server Name
+# 服务器名字
+gameservname=炎龙测试线
+
+# 服务器的ID
+gameservid=炎龙测试线
+
+
+==================================================
+以下内容作废 对服务器无任何影响
+#ifdef _SERVICE   (另设置??)
+#config.apid, sizeof(config.apid), NULL, 0},
+apid=
+#NULL ,0 ,(void*)&config.apport ,SHORT},
+apport=
+#NULL,0,(void*)&config.looptime,INT},
+looptime=
+#NULL,0,(void*)&config.enableservice,INT},
+enableservice=
+#endif
+==================================================
+
+#NULL, 0, (void*)&config.allowmanorpk, SHORT},
+# 是否允许族战
+allowmanorpk=1
+#NULL ,0 , (void*)&config.port,SHORT},
+# 服务器端口
+port=8888
+
+# Server Number
+# 服务器SN
+servernumber=3
+
+# Re-use addr
+# 重复使用socket地址
+# 当9065端口被占用的情况下会不断重试使用该端口
+reuseaddr=1
+
+# delay. If set to 1, may increase network load...
+# socket套接字延迟 TCP_NODELAY 不建议开放
+nodelay=0
+
+==================================================
+以下请设置为0 不写日志
+# How long should logfile be wrote? In seconds?
+
+log_write_time=0
+# ?
+log_io_time=0
+# ?
+log_game_time=0
+==================================================
+
+
+# 记录netloop_faster() 函数的LOG
+log_netloop_faster=1
+
+# 每次读取SAAC的数目
+saacwritenum=10000
+
+# 每次写入SAAC的数目
+saacreadnum=10000
+
+# Max fds, should be larger than online ppls
+# 最大在线人数
+fdnum=100
+# Max pets numbers
+# 最大在线宠数
+petnum=2000
+# Max other char numbers
+# 其他最大数目 包含NPC数目+玩家数目
+othercharnum=9000
+
+# Max object numbers
+# 最大对象数目
+objnum=12000
+
+# Max item numbers
+# 最大道具数目
+itemnum=22000
+
+# Max battle numbers
+# 最大战斗数目
+battlenum=100
+
+# Top directory(顶层文件夹?)
+topdir=. 
+# Map file directory(地图文件夹)
+mapdir=data/map
+# Map tile file directory(地图设置文件)
+maptilefile=data/map/mapset.txt
+
+# Battle map file(战斗地图文件)
+battlemapfile=data/map/battlemap.txt
+
+#ifdef _ITEMSET6_TXT(道具文件)
+itemset6file=data/itemset6.txt
+
+========================================================
+以下作废 可有可无
+#else(如果没有itemset6.txt的话选择下面的文件,应该是这样)
+#ifdef _ITEMSET5_TXT
+#      { "itemset5file",      config.itemfile,      sizeof(config.invfile),      NULL,      0},
+#else
+#ifdef _ITEMSET4_TXT
+#      { "itemset4file" , config.itemfile,sizeof(config.invfile),NULL,0},
+#else
+#ifdef _ITEMSET3_ITEM
+#      { "itemset3file" , config.itemfile,sizeof(config.invfile),NULL,0},
+#endif
+#endif
+#endif
+#endif
+========================================================
+# ?(无敌NPC或不可战斗NPC???)
+invinciblefile=data/inv.txt
+
+# ?(显示位置文件)
+appearpositionfile=data/appear.txt
+
+# ?(所有名称文件?)
+titlenamefile=data/titlename.txt
+
+# ?(所有设置文件?)
+titleconfigfile=./data/titleconfig.txt
+
+# ?(遇到怪的文件?)
+encountfile=./data/encount.txt
+
+# ?(宠物文件?)
+enemyfile=./data/enemy1.txt
+
+# ?(宠物基础设置文件?)
+enemybasefile=./data/enemybase1.txt
+
+# ?(遇敌组文件?)
+groupfile=./data/group1.txt
+
+# ?(精灵和魔法文件?)
+magicfile=./data/magic.txt
+
+#ifdef __ATTACK_MAGIC(攻击魔法文件?)
+attmagicfile=./data/attmagic.bin
+#endif
+
+#ifdef _PETSKILL2_TXT(宠物技能文件)
+petskillfile2=./data/petskill2.txt
+#else
+petskillfile1=./data/petskill.txt
+#endif
+
+# ?(物品组成文件?还是素材文件?)
+itematomfile=./data/itematom.txt
+# ?(遇敌?)
+effectfile=data/effect.txt
+# 猜迷的文件
+quizfile=data/question.txt
+# ?
+#lsgenlogfilename=log/genlog
+#ifdef _GMRELOAD(GM帐号文件)
+gmsetfile=./data/gmset.txt
+#endif
+
+# Store DB?
+# 还原玩家资料目录 可防止当机回档
+storedir=../saac/char
+# Npc dir
+# NPC 目录
+npcdir=data/npc
+# Log dir
+# 日志目录
+logdir=./log
+# Log configuration file
+# 日志配置文件
+logconfname=log.cf
+# ?GM PASSWORD(GM密码)
+chatmagicpasswd=292647
+#ifdef _STORECHAR
+#   { "storechar", config.storechar, sizeof( config.storechar),NULL,0},
+#endif
+
+# ?(是否所有人都能使用GM权限)
+chatmagiccdkeycheck=1
+
+# NPC下最大使用文件总数
+filesearchnum=8192
+
+# 注册NPC_fuction类型文件最大数
+npctemplatenum=256
+
+# NPC最大数
+npccreatenum=8192
+
+# Walk Send Interval
+# 走路间隔 (在GMSV没开启MUTLITHREAD模式时 无作用)
+walkinterval=250
+
+# ?CA send interval (ms)
+# CleanAll间隔 (在GMSV没开启MUTLITHREAD模式时 无作用)
+CAinterval=250
+
+# ?CD send interval (ms)
+# CleanDest间隔 (在GMSV没开启MUTLITHREAD模式时 无作用)
+CDinterval=250
+
+# Character data save interval(数据存储间隔?)
+CharSaveinterval=86400
+
+# 执行一次 netloop_faster 所消耗时间
+Onelooptime=6
+
+# How long a pet will be deleted (30 min?)(宠物消失时间)
+Petdeletetime=10
+
+# How long a item will be deleted (5 minutes?)(物品消失时间)
+Itemdeletetime=5
+
+#删除石币时间间隔
+Golddeletetime=600
+
+# 名片相关的设置 好象是发送名片最大限制 没仔细看过
+addressbookoffmesgnum=1000
+
+# 接口频率调整 值越大频率越慢越节省资源
+protocolreadfrequency=3000
+
+# 每个连接错误上限 超过这个上限的连接将被关闭
+allowerrornum=100
+
+# ?(log时间?)
+loghour=24
+
+# ?(战斗错误消息?)
+battledebugmsg=0
+
+#   //ttom add because the second had
+# 客户端验证码 大陆无效
+encodekey=1
+# 往writebuffer缓冲区写数据大小 单位字节
+acwritesize=1048560
+# 缓冲区大小
+acwbsize=1048560
+# 如果发现玩家使用非法手段 比如说改封包跳NPC判断 或者点数异常 则关进监狱
+erruser_down=1
+#   //ttom end
+
+
+
+====================================================================
+#以下可省略
+#ifdef _AUCTIONEER
+#   { "auctiondir" , config.auctiondir, sizeof(config.auctiondir),NULL,0},
+#endif
+#ifdef _BLACK_MARKET
+#      { "blackmarketfile", config.blackmarketfile, sizeof(config.blackmarketfile), NULL, 0},
+#endif
+#ifdef _M_SERVER
+#   { "msname",            config.msname,sizeof(config.msname) ,NULL , 0},
+#   { "msport",            NULL ,0 , (void*)&config.msport   ,SHORT},
+#endif
+#ifdef _NPCSERVER_NEW
+#   { "npcaddress",            config.nsaddress, sizeof(config.nsaddress) ,NULL , 0},
+#   { "nsport",            NULL, 0 , (void*)&config.nsport   ,SHORT},
+#endif
+
+====================================================================
+
+#人物职业技能
+profession=./data/profession.txt
+#endif
+
+#退出团队的道具
+itemquitparty=./data/itemquitparty.txt
+#endif
+
+#ifdef _MUSEUM
+#   { "museum",            NULL , 0 , (void*)&config.museum ,            INT},
+#endif
+
+#ifdef _DEL_DROP_GOLD
+#      { "Golddeletetime" ,NULL,0,(void*)&config.Golddeletetime,      INT},
+#endif

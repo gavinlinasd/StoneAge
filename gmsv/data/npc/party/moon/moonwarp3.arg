@@ -1,0 +1,6 @@
+TALKEVENT1
+WARP:6000,56,61
+FREE:LV>0
+FreeMsg:\n\n\n我送你回地上，祝你好运！喝！(玉兔飞踢)
+PartyMsg:\n\n\n麻烦一个一个来吧？
+OVER

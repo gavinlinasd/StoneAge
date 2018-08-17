@@ -1,0 +1,67 @@
+#### 火魔法钻戒加工师 ####
+
+START_MSG:你想加工出火系的魔法钻戒吗？？加工一次一千五百元喔。材料的话就是要一个同等级的魔法戒指加上一些数量的钻石。钻石的数量分别为ＬＶ４十个，ＬＶ３－３八个，ＬＶ３－２七个，ＬＶ３－１六个，ＬＶ２四个，ＬＶ１一个。
+
+MenuHead:选择你想要的魔法钻戒
+NeedHead:需要的材料
+
+####  等级1火魔法戒加工 ####
+{
+CHANGEITEM:20257
+NeedItem:20287,19643
+FREE:ENDEV=4&ENDEV=81&ITEM=20287&ITEM=19643&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*1,19643*1
+AddItem:20257
+}
+
+####  等级2火魔法戒加工 ####
+{
+CHANGEITEM:20258
+NeedItem:20287,19731
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*4&ITEM=19731&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*4,19731*1
+AddItem:20258
+}
+
+
+####  等级3-1火魔法戒加工 ####
+{
+CHANGEITEM:20292
+NeedItem:20287,20177
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*6&ITEM=20177&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*6,20177*1
+AddItem:20292
+}
+
+####  等级3-2火魔法戒加工 ####
+{
+CHANGEITEM:20260
+NeedItem:20287,20587
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*7&ITEM=20587&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*7,20587*1
+AddItem:20260
+}
+
+####  等级3-3火魔法戒加工 ####
+{
+CHANGEITEM:20261
+NeedItem:20287,20588
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*8&ITEM=20588&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*8,20588*1
+AddItem:20261
+}
+
+####  等级4火魔法戒加工 ####
+{
+CHANGEITEM:20262
+NeedItem:20287,20589
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*10&ITEM=20589&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*10,20589*1
+AddItem:20262
+}

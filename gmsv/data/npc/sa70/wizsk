@@ -1,0 +1,10 @@
+{
+start_msg:您好，我是专门教导新进人员的法术训练师
+main_msg:准备好要学一些法术了吗？
+nothing_msg:这样就可以了．．．．
+err_msg:这法术你不能学哦!
+skill_rate:1.0
+profession_skill:1,6,12,11,21,15,16,17
+profession_class:2
+}
+

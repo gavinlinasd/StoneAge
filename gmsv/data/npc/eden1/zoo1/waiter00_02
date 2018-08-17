@@ -1,0 +1,8 @@
+NomalMainMsg:我负责煮饭。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:伊甸这儿物产丰富，可以尝到各地的名产，我就是负责把这些名产做成让客人高兴的料理。\n不是我夸口，只要是住过的客人都对我的手艺赞不绝口喔！
+EventEnd

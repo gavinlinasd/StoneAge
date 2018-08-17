@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:每天都有好多人来游乐场玩，又赚了不少钱了呢。
+EventEnd

@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:哇，扑满乌力跑轮盘数字的样子好可爱喔！这点子谁想出来的啊？
+EventEnd

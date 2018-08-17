@@ -1,0 +1,16 @@
+NomalMainMsg:你就是从尼斯大陆来的吗？原来那里真的有住人啊？
+
+#任务结束
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&ENDEV=87
+NomalWindowMsg:听说是你带了治疗心脏病的药给沙尔特吧，第一次看到你就觉得你人应该不坏，果然是个好心人喔！\n听说路程还很遥远是吧，真是太佩服了！
+EventEnd
+
+#聊盐矿任务
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81
+NomalWindowMsg:如果从这里一直挖的话，会不会挖到尼斯大陆去呢？
+NomalWindowMsg2:这样想想还真有趣，哪天和沙尔特谈谈，挖看看吧？
+EventEnd

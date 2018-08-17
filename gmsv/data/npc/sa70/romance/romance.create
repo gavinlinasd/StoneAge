@@ -1,0 +1,14 @@
+NPCCREATE
+####罗曼蒂克的礼物#####
+########契雷多#########
+{
+name=契雷多
+floorid=1300
+borncenter=62,44
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16048
+enemy=changeevent|file:sa70/romance/romance1.arg
+}
+

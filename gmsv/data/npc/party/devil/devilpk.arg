@@ -1,0 +1,14 @@
+entype:2
+askbattlemsg1:你不想活了吗？
+askbattlemsg2:或者你觉得你够强，能够打败我？
+askbattlemsg3:这些人全部都是我从地狱召唤上来的。
+askbattlemsg4:想试试就来吧。
+start msg:
+dieact:1
+warpfl:148
+warpx:9
+warpy:6
+end msg:
+enemyno:2049,1894,1895,1896,1897,1690,1686,1687,1688,1689
+deniedmsg:我看你还是好好的回家休息吧。
+onebattle:0

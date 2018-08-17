@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:爷爷最近好奇怪喔，老是说自己已经无怨无悔了，真是奇怪……\n以前爷爷总是充满精神，说什么要好好建立自己的家园，那时候的爷爷好帅喔！\n不像现在老是无精打采的真奇怪……
+EventEnd

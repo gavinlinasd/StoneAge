@@ -1,0 +1,7 @@
+NomalMainMsg:住在地底可是冬暖夏凉的唷！你要不要也搬来一起住呀？
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:住在地底可是冬暖夏凉的唷！\n你要不要也搬来一起住呀？
+EventEnd

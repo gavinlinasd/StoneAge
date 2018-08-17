@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:这儿动物的肉不知道好不好吃，你有没有拿来做过料理呢？
+EventEnd

@@ -1,0 +1,68 @@
+####  多吉爾  ####
+
+NomalMainMsg:好想念我的女朋友啊…。
+
+####  拿回御飯團結束任務  ####
+EventNo:139
+TYPE:ACCEPT
+EVENT:LV>0&NOWEV=139&ITEM=1755&ITEM=12744
+AcceptMsg:哇！！這是伊芙麗託你拿來的嗎？！她對我真是太好了，知道我最愛吃的就是飯團了。好開心唷…也謝謝你幫我們的忙，真是太感謝了。
+ThanksMsg:這是我們結婚時要發給朋友們的結婚蛋糕，就先送給你以表達我們的謝意，也祝你早日找到結婚的對象喔…。
+ItemFullMsg:哎呀！道具好像已經滿了呢！
+GetItem:1232
+DelItem:12744*1,1755*1
+EndSetFlg:139
+EventEnd
+
+####  伊芙麗接任務委託送來合飯團  ####
+EventNo:139
+TYPE:REQUEST
+EVENT:LV>0&ITEM=12744&ITEM=1755
+RequestMsg:哇！！這是伊芙麗託你拿來的嗎？！她對我真是太好了，知道我最愛吃的就是飯團了。好開心唷…真是太感謝了。其實我一直想親手製造一個合成戒指來給她以表達我對她的愛意，可是我一直都做不出來，好難過唷～。可以請你幫我這個忙嗎？？
+ThanksMsg:那就麻煩你了，另外這封信也請你連同戒指一起幫我交給她好嗎？？謝謝你…。
+ItemFullMsg:哎呀！道具好像已經滿了呢！
+GetItem:1754
+DelItem:12744*1,1755*1
+EventEnd
+
+#### 伊芙麗接任務之對話（身上未帶飯團） ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&ITEM=1755
+NomalWindowMsg:嗯嗯，謝謝你…但是伊芙麗信上有提到關於飯團的事，你沒帶過來嗎？？
+EventEnd
+
+#### 接任務後對話（身上無物品） ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&ITEM=1754
+NomalWindowMsg:一切就拜託你了…。
+EventEnd
+
+####  已結束任務清標  ####
+EventNo:-1
+TYPE:CLEAN
+EVENT:ENDEV=139
+CleanFlg:139
+CleanMainMsg:我跟伊芙麗就快要結婚了，希望你能來參加我們的婚禮，日子不遠了呢…。
+CleanFlgMsg:分隔兩地的相戀真是辛苦………。
+EventEnd
+
+####  把信丟掉清標  ####
+EventNo:-1
+TYPE:CLEAN
+EVENT:LV>0&NOWEV=139
+CleanFlg:139
+CleanMainMsg:拜託你的事已經完成了嗎？伊芙麗沒託你帶東西回來嗎？？
+CleanFlgMsg:好吧…既然你沒有時間幫忙的話…我也不會怪你的…。
+EventEnd
+
+####  身上無任何物品，開始接任務  ####
+EventNo:-1
+TYPE:REQUEST
+EVENT:LV>0
+RequestMsg:我的女朋友住在科奧村，他的名字叫做伊芙麗。我一直想親手製造一個合成戒指來給她以表達我對她的愛意，可是我一直都做不出來，好難過唷～。可以請你幫我這個忙嗎？？
+ThanksMsg:那麼就麻煩你了，伊芙麗住在科奧村，如果你成功做出來的話，就幫我連同這封信一起交給她吧，我會答謝你這個恩惠的。
+GetItem:1754
+ItemFullMsg:哎呀！道具好像已經滿了呢！
+EventEnd

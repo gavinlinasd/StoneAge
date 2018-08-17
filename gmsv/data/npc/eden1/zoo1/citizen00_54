@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:这是我第一次坐飞龙航空，从上空看到整个尼斯，感觉是不错啦，只不过飞了十几个小时弄得我全身酸痛死了！
+EventEnd

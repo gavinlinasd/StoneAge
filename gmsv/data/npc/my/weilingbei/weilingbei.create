@@ -1,0 +1,166 @@
+NPCCREATE
+
+###### 塔利姆 ######
+{
+name=塔利姆
+floorid=500
+borncenter=227,294,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/talimu.arg
+graphicname=17011
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=227,293,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=230,246,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=554,464,1,1
+dir=6
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10060
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=547,564,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=548,674,1,1
+dir=6
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10060
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=454,651,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=377,633,1,1
+dir=6
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10060
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=321,627,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=321,501,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=524,615,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=79,454,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=421,539,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######５０年前的 慰灵碑 ######
+{
+name=慰灵碑
+floorid=500
+borncenter=333,362,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:my/weilingbei/bei0.arg
+graphicname=10061
+}
+
+######现代的　慰灵碑 ######
+{
+name=慰灵碑
+floorid=5540
+borncenter=227,294,1,1
+dir=4
+createnum=1
+enemy=npcgen_warpman|file:my/weilingbei/bei1.arg
+graphicname=10061
+}

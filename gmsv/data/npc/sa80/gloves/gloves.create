@@ -1,0 +1,29 @@
+NPCCREATE
+
+
+###### °¬¶ûË¹######
+
+{
+name=°¬¶ûË¹
+floorid=100
+borncenter=404,466
+dir=6
+time=0
+ignoreinvincible=1
+createnum=1
+graphicname=16353
+enemy=changeevent|file:sa80/gloves/gloves_1
+}
+
+###### °¬¶ûµÇ######
+{
+name=°¬¶ûµÇ
+floorid=200
+borncenter=109,1020
+dir=6
+time=0
+ignoreinvincible=1
+createnum=1
+graphicname=16353
+enemy=changeevent|file:sa80/gloves/gloves_2
+}

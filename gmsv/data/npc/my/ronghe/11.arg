@@ -1,0 +1,9 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:绿虎+地年 水人龙+金虎\n莫拉斯+卡恩法尔 巴朵兰恩+卡恩法尔\n绿暴+地龙 蓝鸡+水人龙\n莫拉斯+卡恩格登 巴朵兰恩+布鲁顿
+EventEnd
+

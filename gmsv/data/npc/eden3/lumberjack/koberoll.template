@@ -1,0 +1,16 @@
+NPCTEMPLATE
+
+#####林务局长柯比罗尔战斗型
+{
+templatename=koberoll
+makeatnobody=1
+makeatnosee=1
+type=100886
+hp=
+mp=
+str=
+tough=
+functionset=NPCEnemy
+fly=
+itemnum=
+}

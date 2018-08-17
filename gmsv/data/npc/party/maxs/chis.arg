@@ -1,0 +1,12 @@
+NomalMainMsg:这里经常有黑虎出没伤人，没事少通行此处～～～。
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=20704&ITEM=20703
+AcceptMsg:\n\n这里经常有黑虎出没伤人，没事少通行此处～～～不然你很容易遭受攻击。
+ThanksMsg:\n\n哦？圣诞快乐！我在这里守护好久了，连家也很少回去，我想我也该回去一趟了，起码这重要的节日也该回去看看妻儿，也祝你圣诞快乐，感谢你的礼物。
+ItemFullMsg:\n\n你身上没有空位，没办法写纸条给你呢。
+DelItem:20703
+GetRandItem:20686*1
+EventEnd

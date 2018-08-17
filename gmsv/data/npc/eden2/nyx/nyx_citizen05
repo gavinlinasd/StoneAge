@@ -1,0 +1,7 @@
+NomalMainMsg:你知道吗？塔耳塔的人都是住在地底下呢！真不可思议！他们是怎么建造的呢？
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:你知道吗？塔耳塔的人都是住在地底下呢！\n真不可思议！他们是怎么建造的呢？
+EventEnd

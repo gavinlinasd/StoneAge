@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:綠穿+黑蛙+哈密瓜雷 克雷爾+克雷爾+克雷爾\n藍雷+綠穿+綠穿 綠雷+任何穿山甲\n卡達魯卡斯+里昂蛙 利則諾頓+瑞德寶\n克雷爾+克雷爾 艾迪希洛+多洛加\n布林帖斯+卡達魯卡斯 梅爾頓+歐林吉魯\n斯天多斯+卡達魯卡斯 洛克斯+撲滿烏力\n蒙哥拉斯+卡達魯卡斯
+EventEnd

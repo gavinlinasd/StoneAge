@@ -1,0 +1,70 @@
+#### 宝石提炼师 ####
+
+START_MSG:如果你的装备有问题，请携带该装备来找我，我将帮你修复～
+
+MenuHead:选择要更换或合成的装备
+NeedHead:需要的原装备或原料：
+
+
+####  金牌 ####
+{
+CHANGEITEM:2882
+NeedItem:2882
+FREE:ITEM=2882&reITEM>=1
+DelItem:2882*1
+GetRandItem:2882
+}
+
+####  银牌 ####
+{
+CHANGEITEM:2881
+NeedItem:2881
+FREE:ITEM=2881&reITEM>=1
+DelItem:2881*1
+GetRandItem:2881
+}
+
+####  铜牌 ####
+{
+CHANGEITEM:2880
+NeedItem:2880
+FREE:ITEM=2880&reITEM>=1
+DelItem:2880*1
+GetRandItem:2880
+}
+
+####  姆伊证 ####
+{
+CHANGEITEM:22000
+NeedItem:22000
+FREE:ITEM=22000&reITEM>=1
+DelItem:22000*1
+GetRandItem:22000
+}
+
+####  海马证 ####
+{
+CHANGEITEM:22001
+NeedItem:22001
+FREE:ITEM=22001&reITEM>=1
+DelItem:22001*1
+GetRandItem:22001
+}
+
+####  白虎证 ####
+{
+CHANGEITEM:22002
+NeedItem:22002
+FREE:ITEM=22002&reITEM>=1
+DelItem:22002*1
+GetRandItem:22002
+}
+
+####  鲨鱼证 ####
+{
+CHANGEITEM:22003
+NeedItem:22003
+FREE:ITEM=22003&reITEM>=1
+DelItem:22003*1
+GetRandItem:22003
+}

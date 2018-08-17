@@ -1,0 +1,13 @@
+NPCTEMPLATE
+#######PC�ΦѤj##########
+{
+templatename=event81_3f
+makeatnobody=1
+makeatnosee=1
+type=100400
+functionset=NPCEnemy
+hp=100
+mp=100
+str=1
+tough=1
+}

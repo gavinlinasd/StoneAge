@@ -1,0 +1,131 @@
+START_MSG:嗨！这可是会员宠物商店哦~\n\n那请你先熟读下列规则：\n购买宠物需要相应的会员点数哦！点数不够请与管理员联系冲值哦。
+END_MSG:你是否确定购买这个宠物？？
+MenuHead:选择宠物：
+
+#点黑鸡 2655
+{
+MenuStr:点黑鸡          需扣除点数  10
+VipPet:2655,10
+}
+
+{
+MenuStr:点棕雷          需扣除点数  1
+VipPet:2677,1
+}
+
+{
+MenuStr:点蓝雷          需扣除点数  1
+VipPet:2678,1
+}
+
+{
+MenuStr:点红雷          需扣除点数  1
+VipPet:2679,1
+}
+
+{
+MenuStr:点绿雷          需扣除点数  1
+VipPet:2680,1
+}
+
+{
+MenuStr:点黄雷          需扣除点数  1
+VipPet:2681,1
+}
+
+{
+MenuStr:点史卡鲁        需扣除点数  5
+VipPet:2666,5
+}
+{
+MenuStr:点罗多克雷      需扣除点数  5
+VipPet:2667,5
+}
+
+{
+MenuStr:点蓝暴          需扣除点数  5
+VipPet:2654,5
+}
+
+{
+MenuStr:点红暴[水5火5]  需扣除点数  1
+VipPet:2658,1
+}
+
+#点奇宝 2657
+{
+MenuStr:点奇宝          需扣除点数  1
+VipPet:2657,1
+}
+
+#点霍克尔 2656
+{
+MenuStr:点霍克尔        需扣除点数  1
+VipPet:2656,1
+}
+
+#点金虎 2650
+{
+MenuStr:点金虎          需扣除点数  1
+VipPet:2650,1
+}
+
+#点红虎 2653
+{
+MenuStr:点红虎          需扣除点数  1
+VipPet:2653,1
+}
+
+#点黄虎 2652
+{
+MenuStr:点黄虎          需扣除点数  1
+VipPet:2652,1
+}
+
+#点绿虎 2651
+{
+MenuStr:点绿虎          需扣除点数  1
+VipPet:2651,1
+}
+
+#点机暴 2659 
+{
+MenuStr:点机暴          需扣除点数  1
+VipPet:2659,1
+}
+
+#点金飞 2595 
+{
+MenuStr:点金飞          需扣除点数  1
+VipPet:2595,1
+}
+
+{
+MenuStr:点蓝人龙        需扣除点数  1
+VipPet:2668,1
+}
+
+{
+MenuStr:点格尔格        需扣除点数  1
+VipPet:2669,1
+}
+
+{
+MenuStr:点拉奇鲁哥      需扣除点数  1
+VipPet:2670,1
+}
+
+{
+MenuStr:点卡卡金宝      需扣除点数  1
+VipPet:2671,1
+}
+
+{
+MenuStr:点卡达鲁卡斯    需扣除点数  1
+VipPet:2672,1
+}
+
+{
+MenuStr:点玛恩摩洛斯    需扣除点数  1
+VipPet:2673,1
+}

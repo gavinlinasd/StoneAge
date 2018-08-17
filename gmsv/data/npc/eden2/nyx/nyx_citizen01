@@ -1,0 +1,9 @@
+NomalMainMsg:啊啊，好痛啊，再去跟医生拿点药吧……
+
+#聊水怪事件
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&NOWEV=88
+NomalWindowMsg:我是在上次克拉肯袭击的时候受伤的，也不是被它咬的啦，我是在房子里睡觉的时候逃避不及被倒下来的墙壁压伤的，真是倒楣啊……
+NomalWindowMsg2:好像近卫长有受到女王命令要尽快处理这件事，不过克拉肯这么厉害，到底有谁能够完美解决这件事呢？\n再说，如果打起来的话怎么打得赢克拉肯啊？
+EventEnd

@@ -1,0 +1,13 @@
+NEWWARPMAN
+
+NOFREE
+FREE:VIP!=1
+NomalMsg:请使用会员证，获得正式会员资格后再来这里吧！
+OVER
+
+TALKEVENT1
+WARP:777,25,20
+FREE:VIP=1
+FreeMsg:哦~~~~~你已经是正式会员！\n请进请进~~！！！
+PartyMsg:\n不好意思、可以一个一个来吗？团队无法进入哦！！！
+OVER

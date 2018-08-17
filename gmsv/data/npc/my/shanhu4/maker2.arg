@@ -1,0 +1,47 @@
+#### Éºº÷ÌáÁ¶Ê¦ ####
+
+START_MSG:ÄãÏëÌáÁ¶Éºº÷¿ó·ÛÂð£¿£¿ÌáÁ¶Ò»´Î1000Ôªà¸¡£¶øÇÒ¡­Èý¸öÉºº÷Ô­Òº²ÅÄÜÌáÁ¶³öÒ»·ÝÉºº÷¾«Á¶¿ó·Û¡£\n½Å±¾ÖÆ×÷-ÍµÍµ&QQ£º28952572
+
+MenuHead:Ñ¡ÔñÒªÌáÁ¶µÄÉºº÷¾«Á¶¿ó·Û
+NeedHead:ÐèÒªµÄÉºº÷Ô­Òº
+
+
+####  ºìÉºº÷¾«Á·¿ó·ÛÌáÁ¶ ####
+{
+CHANGEITEM:21150
+NeedItem:21146,21146,21146
+FREE:ENDEV=4&ENDEV=81&ITEM=21146*3&GOLD>=1000&reITEM>=1
+DelGold:1000
+DelItem:21146*3
+AddItem:21150
+}
+
+####  À¶Éºº÷¾«Á·¿ó·ÛÌáÁ¶ ####
+{
+CHANGEITEM:21152
+NeedItem:21148,21148,21148
+FREE:ENDEV=4&ENDEV=81&ITEM=21148*3&GOLD>=1000&reITEM>=1
+DelGold:1000
+DelItem:21148*3
+AddItem:21152
+}
+
+####  ÂÌÉºº÷¾«Á·¿ó·ÛÌáÁ¶ ####
+{
+CHANGEITEM:21151
+NeedItem:21147,21147,21147
+FREE:ENDEV=4&ENDEV=81&ITEM=21147*3&GOLD>=1000&reITEM>=1
+DelGold:1000
+DelItem:21147*3
+AddItem:21151
+}
+
+####  »ÆÉºº÷¾«Á·¿ó·ÛÌáÁ¶ ####
+{
+CHANGEITEM:21153
+NeedItem:21149,21149,21149
+FREE:ENDEV=4&ENDEV=81&ITEM=21149*3&GOLD>=1000&reITEM>=1
+DelGold:1000
+DelItem:21149*3
+AddItem:21153
+}

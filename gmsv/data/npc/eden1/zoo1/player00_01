@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:您也是跟我坐同一班飞过来的吧！\n坐飞龙一次就要一万，非得要在这里好好玩一玩不可！
+EventEnd

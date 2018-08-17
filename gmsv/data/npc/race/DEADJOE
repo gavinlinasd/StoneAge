@@ -1,0 +1,49 @@
+
+*** Modified files in JOE when it aborted on Fri Nov 12 18:31:44 2004
+*** JOE was aborted by signal 1
+
+*** File 'raceman2.arg'
+subject_msg:请您尽情狩猎８５级上的砂鲨宠吧！！
+time_msg:比赛截止时间为2004年11月12日
+card_msg:请小心，猎宠证无法交易，丢出后即消失，比赛记录可是会归零喔～\n还有砂鲨宠最好抓５００只以上喔～
+caution_msg:猎宠证无法交易或丢弃
+itemfull_msg:道具已满，猎宠证无法交付给你。
+haditem_msg:您已经有猎宠证啰！
+nonitem_msg:您没有猎宠证，要参加猎宠比赛请领取猎宠证
+thanks1_msg:您真是英雄！！荣登狩猎砂鲨比赛第一名，获得神秘神物兑换券一张，请到萨村宠物店附近找毛克利兑换喔～
+thanks2_msg:您真是不赖！！赢得狩猎砂鲨比赛第二名，获得我们精心制造的武器一把，希望您会喜欢喔～
+thanks3_msg:狩猎砂鲨比赛的第三名就是您啦！！获得我们精心制造的武器一把，希望您会喜欢喔～
+thanks_msg:您辛苦啰～虽然没有前三名，不过您的猎宠实力是容忽视的，下次第一名就会是您！当然！您的努力并不会白费～我们特地准备一份小礼送给您，希望您能喜欢喔～
+notnew_msg:抱歉，您已经不是新手。
+repeat_msg:这种宠物已经抓过喔～
+
+FornewLv:0
+DelFlag:on
+CheckItem:20706
+GetItem:20706
+CheckPet:1618
+PetLevel:85
+GameMode:2
+EndFlag:off
+
+Mode1:20041111
+Mode2:20041111-1
+Mode3:20041030
+Mode4:20041104
+Mode5:20041108
+RankNum:30
+
+LowLevel:5
+First:20708
+Second:20284
+Third:20278
+Normal:19567,19568,19569,20282,20279
+
+*** Modified files in JOE when it aborted on Mon Nov 15 17:58:34 2004
+*** JOE was aborted by signal 1
+
+*** Modified files in JOE when it aborted on Tue Nov 23 18:21:43 2004
+*** JOE was aborted by signal 1
+
+*** Modified files in JOE when it aborted on Wed Nov 24 09:47:15 2004
+*** JOE was aborted by signal 1

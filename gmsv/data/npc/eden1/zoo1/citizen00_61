@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:加加加加加加加加加加加加加加加加加加加！\n\n我们这一队要到北边的弗烈顿抓可爱的拉斯基喔！\n\n什么？不知道拉斯基是什么？太老土了啦！\n\n自己去园里的宠物店看看吧！
+EventEnd

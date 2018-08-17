@@ -1,0 +1,9 @@
+
+{
+start_msg:我的专长是教宠物使用镶宝石技能，不过只有灵巧的克克尔系宠物可以学习这技能。
+main_msg:准备好要学技能了吗？
+nothing_msg:好了．．．．
+err_msg:这不是它该学的哦～～
+skill_rate:1.0
+pet_skill:572
+}

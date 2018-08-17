@@ -1,0 +1,26 @@
+NPCCREATE
+###### 金暴洞路人 ######
+{
+name=冒险者
+floorid=707
+borncenter=52,150
+time=0
+dir=4
+createnum=1
+ignoreinvincible=1
+enemy=changeevent|file:eden3/hole1
+graphicname=16717
+}
+
+###### 哥吉拉洞路人 ######
+{
+name=冒险者
+floorid=708
+borncenter=223,254
+time=0
+dir=4
+createnum=1
+ignoreinvincible=1
+enemy=changeevent|file:eden3/hole2
+graphicname=16717
+}

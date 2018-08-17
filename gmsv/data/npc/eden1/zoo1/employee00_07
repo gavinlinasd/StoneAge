@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:今天上班的时候有尼斯来的客人偷摸我喔，好讨厌喔！
+EventEnd

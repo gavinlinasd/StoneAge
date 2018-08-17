@@ -1,0 +1,56 @@
+#### 焰红等级二装备精工师  ####
+
+START_MSG:想精工更好的焰红装备吗？材料是…等级一的焰红系列装备武器，加上三个牙１０及二个红珊瑚和二个单位纯净的海水就可以做了。可是如果是焰红之铠２的话…就要四个牙１０以及三个红珊瑚喔，最后再加上一千五百元石币的工本费就可以了。
+
+MenuHead:选择想要交换的装备
+NeedHead:需要的材料
+
+####  焰红斧等级二精工 ####
+{
+CHANGEITEM:1919
+NeedItem:1893,1724,11839,1683
+FREE:LV>0&ENDEV=4&ITEM=1893&ITEM=1724*2&ITEM=11839*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1724*2,11839*3,1893*1,1683*2
+AddItem:1919
+}
+
+####  焰红枪等级二精工 ####
+{
+CHANGEITEM:1920
+NeedItem:1894,1724,11839,1683
+FREE:LV>0&ENDEV=4&ITEM=1894&ITEM=1724*2&ITEM=11839*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1724*2,11839*3,1894*1,1683*2
+AddItem:1920
+}
+
+####  焰红棍等级二精工 ####
+{
+CHANGEITEM:1921
+NeedItem:1895,1724,11839,1683
+FREE:LV>0&ENDEV=4&ITEM=1895&ITEM=1724*2&ITEM=11839*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1724*2,11839*3,1895*1,1683*2
+AddItem:1921
+}
+
+####  焰红兜等级二精工 ####
+{
+CHANGEITEM:1922
+NeedItem:1896,1724,11839,1683
+FREE:LV>0&ENDEV=4&ITEM=1896&ITEM=1724*2&ITEM=11839*3&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1724*2,11839*3,1896*1,1683*2
+AddItem:1922
+}
+
+####  焰红铠等级二精工 ####
+{
+CHANGEITEM:1923
+NeedItem:1897,1724,11839,1683
+FREE:LV>0&ENDEV=4&ITEM=1897&ITEM=1724*3&ITEM=11839*4&ITEM=1683*2&GOLD>=1500&reITEM>1
+DelGold:1500
+DelItem:1724*3,11839*4,1897*1,1683*2
+AddItem:1923
+}

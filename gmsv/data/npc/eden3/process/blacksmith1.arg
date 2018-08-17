@@ -1,0 +1,84 @@
+#### 地魔法钻戒加工师 ####
+
+START_MSG:你想加工出地系的魔法钻戒吗？？加工一次一千五百元喔。材料的话就是要一个同等级的魔法戒指加上一些数量的钻石。钻石的数量分别为ＬＶ４十个，ＬＶ３－３八个，ＬＶ３－２七个，ＬＶ３－１六个，ＬＶ２四个，ＬＶ１一个。
+
+MenuHead:选择你想要的魔法钻戒
+NeedHead:需要的材料
+
+####  等级1地魔法戒加工 ####
+{
+CHANGEITEM:20245
+NeedItem:20287,19641
+FREE:ENDEV=4&ENDEV=81&ITEM=20287&ITEM=19641&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*1,19641*1
+AddItem:20245
+}
+
+####  等级2地魔法戒加工 ####
+{
+CHANGEITEM:20246
+NeedItem:20287,19729
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*4&ITEM=19729&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*4,19729*1
+AddItem:20246
+}
+
+####  等级3-1地魔法戒加工 ####
+{
+CHANGEITEM:20247
+NeedItem:20287,20169
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*6&ITEM=20169&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*6,20169*1
+AddItem:20247
+}
+
+####  等级3-2地魔法戒加工 ####
+{
+CHANGEITEM:20248
+NeedItem:20287,20581
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*7&ITEM=20581&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*7,20581*1
+AddItem:20248
+}
+
+####  等级3-3地魔法戒加工 ####
+{
+CHANGEITEM:20249
+NeedItem:20287,20582
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*8&ITEM=20582&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*8,20582*1
+AddItem:20249
+}
+
+####  等级四地魔法戒加工 ####
+{
+CHANGEITEM:20250
+NeedItem:20287,20583
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*10&ITEM=20583&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*10,20583*1
+AddItem:20250
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

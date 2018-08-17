@@ -1,0 +1,30 @@
+####樵夫马斯####
+
+NomalMainMsg:黑豹真是可怕。
+
+#### 任务结束对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112
+NomalWindowMsg:真是感谢你，原来这中间有这么多的故事，看来…那黑豹并不坏，以后我又可以放心上山去了。
+EventEnd
+
+#### 任务进行中对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112
+NomalWindowMsg:真想不到，那么凶猛的黑豹竟然是有人饲养的。
+EventEnd
+
+#### 马斯告知黑豹讯息 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81
+NomalWindowMsg:嗯？你问我怎么受伤的？？说来就有气，你要听吗？？
+NomalWindowMsg1:前两天我上山砍柴时，突然出现一只黑豹，它一看见我就扑上来咬我，还好我逃的快，只被它咬伤，要不然连小命都丢了。
+NomalWindowMsg2:对了，村长好像准备要对付这只黑豹了。毕竟这黑豹一天不除去，我们村民就一天不得安宁。
+NomalWindowMsg3:那只黑豹出没的地方就在蒙达山上，你要上山的话要小心些。
+EventEnd
+
+
+

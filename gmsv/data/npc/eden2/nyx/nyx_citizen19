@@ -1,0 +1,7 @@
+NomalMainMsg:水精灵是最有智慧的精灵～
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:水精灵是最有智慧的精灵～
+EventEnd

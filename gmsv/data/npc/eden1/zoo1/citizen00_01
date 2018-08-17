@@ -1,0 +1,9 @@
+NomalMainMsg:我是从尼克斯城来的，我家是采集贝类为生的喔。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:我的家乡是尼克斯，那儿的风景很漂亮喔！
+NomalWindowMsg1:听说最近出现了水怪，已经破坏尼克斯城很多地方了，不知道我的家人们有没有受伤呢……
+EventEnd

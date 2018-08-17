@@ -1,0 +1,7 @@
+NomalMainMsg:想当年我年轻的时候就像一尾活龙！这些小东西我一手就可以抓两只！　	
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:想当年我年轻的时候就像一尾活龙！\n这些小东西我一手就可以抓两只！
+EventEnd

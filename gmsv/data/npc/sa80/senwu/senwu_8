@@ -1,0 +1,14 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+NomalMsg:这里是禁区，没事尽量不要靠近这里。
+PartyMsg:这里没有那么吸引人吧？
+OVER
+
+TALKEVENT1
+WARP:105,12,15
+FREE:LV>79&ENDEV=4&ITEM=19539
+MONEY:-1
+FreeMsg:嗯？你弥漫着魔界的气息.........\n魔界的朋友，欢迎你！
+OVER

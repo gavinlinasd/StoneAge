@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:如果要住宿的话请到伊甸旅馆，物美价廉喔！
+EventEnd

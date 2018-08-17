@@ -1,0 +1,133 @@
+########　白狼导师拉斐尔　########
+
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+WARP:0,0,0
+NomalMsg:有何指教呢？
+PartyMsg:请一个一个来嘿！！
+OVER
+
+###　已就职者　###
+TALKEVENT1
+FREE:LV>79&ENDEV=4&CLASS=1
+WARP:0,0,0
+FreeMsg:又见面了，看来你又变得更强了。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT2
+FREE:LV>79&ENDEV=4&ENDEV=147
+WARP:0,0,0
+FreeMsg:抱歉，你已解完其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT3
+FREE:LV>79&ENDEV=4&ENDEV=146
+WARP:0,0,0
+FreeMsg:抱歉，你已解完其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT4
+FREE:LV>79&ENDEV=4&NOWEV=147
+WARP:0,0,0
+FreeMsg:抱歉，你已接了其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　已接下其他就职任务者　###
+TALKEVENT5
+FREE:LV>79&ENDEV=4&NOWEV=146
+WARP:0,0,0
+FreeMsg:抱歉，你已接了其他职业任务了喔，如果后悔的话，就找旁边的马尔吧，他会让你获得重新开始试炼的资格。
+OVER
+
+###　收完宠物请去找马尔　###
+TALKEVENT6
+FREE:LV>79&ENDEV=4&ENDEV=145
+WARP:0,0,0
+FreeMsg:呃…如果你要就职的话就找吉可因，如果你要重新选择职业的话马尔可以帮得上忙的。
+OVER
+
+###　已拿免职之石者　###
+TALKEVENT7
+FREE:LV>79&ENDEV=4&NOWEV=145&ITEM=2112
+WARP:0,0,0
+FreeMsg:嗯，去找马尔吧，还等什么呢？
+OVER
+
+###　结束任务…关标　###
+TALKEVENT8
+FREE:LV>79&ENDEV=4&NOWEV=145&PET>19-99&ITEM=2100&ITEM=2101&ITEM=2102&ITEM=2103&ITEM=2099
+Event_End:145
+DelPet:PET>19-99*1
+DelItem:2099,2100,2101,2102,2103
+WARP:0,0,0
+FreeMsg:那就恭喜你了，希望你能秉持白狼勇士的信念，以决心、勇气、友情和爱去面对危险。去找吉可因就职吧。
+OVER
+
+###　有带宠物但等级不足　###
+TALKEVENT9
+FREE:LV>79&ENDEV=4&NOWEV=145&PET>0-99&ITEM=2100&ITEM=2101&ITEM=2102&ITEM=2103&ITEM=2099
+WARP:0,0,0
+FreeMsg:宠物等级还不够耶，这样是不能过关的，记得要二十级才行。
+OVER
+
+###　宠物不见蛋　###
+TALKEVENT10
+FREE:LV>79&ENDEV=4&NOWEV=145&ITEM=2100&ITEM=2101&ITEM=2102&ITEM=2103&ITEM=2099
+WARP:0,0,0
+FreeMsg:你的宠物呢？不带回来不能算通过哟～
+OVER
+
+###　不想解任务者　###
+TALKEVENT11
+FREE:LV>79&ENDEV=4&NOWEV=145&PET>0-99
+WARP:0,0,0
+FreeMsg:呃？你来找我的意思是你不想继续这个试炼了吗？那去找旁边的马尔吧，他会把你的名字删掉的，如果你想继续进行试炼，就先别把拉奇鲁哥带过来，我会再传送你进去，等完成试炼后把它养大再带过来就职。
+OVER
+
+###　任务进行中　###
+TALKEVENT12
+FREE:LV>79&ENDEV=4&NOWEV=145
+WARP:8219,153,5
+FreeMsg:哎呀，你还在试炼中呢，怎么跑出来了呢？
+OVER
+
+####  接下就职任务没转生  ####
+TALKEVENT13
+FREE:LV>79&ENDEV=4&CLASS=0
+AddPet:2393
+DelItem:2112
+Event_Now:145
+WARP:8219,153,5
+FreeMsg:话说在前头，我们的考验是集合了智慧、勇气、战斗力而成的，对一般人来说并不容易通过，你真的下了决心了吗？？另外请记得清出空间，我会给你一只宠物，通过试炼并把它训练到二十级才算通过喔，而且试炼者们会给你一些信物，记得带回来给我。
+OVER
+
+###　已具有其他职业身份　###
+TALKEVENT14
+FREE:LV>0&CLASS>0
+WARP:0,0,0
+FreeMsg:嗯嗯…你已经是其他公会的人了呀！！还来这里做什么呢？？
+OVER
+
+###　人物成人未达80　###
+TALKEVENT15
+FREE:LV<80&ENDEV=4
+WARP:0,0,0
+FreeMsg:要通过我们严苛的训练，等级没有到达80以上的人是办不到的
+OVER
+
+###　人物未解成人礼　###
+TALKEVENT16
+FREE:LV>29&ENDEV!=4
+WARP:0,0,0
+FreeMsg:还没通过成人礼的试炼就想来就职，你也未免太自满了？
+OVER
+
+
+
+
+

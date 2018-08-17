@@ -1,0 +1,7 @@
+NomalMainMsg:嗯？小伙子？你说什么呀？可不可以大声一点？最近我的耳朵不大好了．．．
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:唉.....自从老朋友阿谷拔隐居到伊甸园东部的深山去研究飞龙蛋之后，就再也没有见到他了。
+EventEnd

@@ -1,0 +1,41 @@
+NPCCREATE
+
+
+#### 来吉卡使者 ####
+{
+name=来吉卡使者
+floorid=3000
+borncenter=63,109
+dir=4
+time=0
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:sa50/laigi.arg
+graphicname=16092
+}
+
+#### 魔王使者 ## 魔王挑战包 ####
+{
+name=魔王使者
+floorid=3000
+borncenter=61,109
+dir=4
+time=0
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:sa50/laigi_1.arg
+graphicname=16186
+}
+
+#### 麋鹿使者 ## 玩性大发包 ####
+{
+name=牧场少年
+floorid=3000
+borncenter=62,109
+dir=4
+time=0
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:sa50/laigi_2.arg
+graphicname=16047
+}

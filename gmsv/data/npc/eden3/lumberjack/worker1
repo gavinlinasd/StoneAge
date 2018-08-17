@@ -1,0 +1,16 @@
+####  伐木工人ａ ####
+
+#### 任务结束对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&ENDEV=114&NOWEV=115
+NomalWindowMsg:风精灵吗？？传说是在她他在北方那个洞里，就在不远处了。
+EventEnd
+
+#### 一般对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:伐木伐木…我是一个快乐的伐木工人。
+EventEnd
+

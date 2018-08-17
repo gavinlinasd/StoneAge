@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:冲ㄚ，我的小可爱蓝虎─翔Blue极速号，要是你没跑第一名回来，老娘就把你给宰了卖到肉店去！！！
+EventEnd

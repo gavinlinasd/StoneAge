@@ -1,0 +1,15 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>80&ENDEV=81
+NomalMsg:这里就是克拉肯栖息的地下水路，请小心！
+PartyMsg:对不起，为了不引起克拉肯的注意，请一个一个人走好吗？
+WARP:9876,50,50
+OVER
+
+#传送玩家回到尼克斯城
+TALKEVENT1
+FREE:LV>90&ENDEV=81
+WARP:7200,97,25
+FreeMsg:您要回去尼克斯了吗？请让我带您回去吧？
+OVER

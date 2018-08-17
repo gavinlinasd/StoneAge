@@ -1,0 +1,11 @@
+###### 哥吉拉洞路人 ######
+
+NomalMainMsg:要进去的话，千万小心呢。
+
+
+####提示####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:千万别进去呀，里面都是很强的生物呢。而且啊，听说这里的暴龙特别喜欢带有火魔法的戒指呢。尤其是幼小的暴龙唷。
+EventEnd

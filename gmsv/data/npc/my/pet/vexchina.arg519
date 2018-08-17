@@ -1,0 +1,228 @@
+NomalMainMsg:我是炎龙超级大魔王可可西里！\n\n你想合成宠技罐头吗？？加工一次要五只特定的宠物、十五个宠技罐头原料和一百万元喔。
+
+#### 撕裂伤口技能罐头 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-8122*5&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成撕裂伤口技能罐头吗？需要五只斑尼迪克和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-8122*5
+DelITEM:21022*15
+DelGold:1000000
+GetRandItem :19885*10,19886*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 撕裂伤口技能罐头 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-814*5&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成撕裂伤口技能罐头吗？需要五只邦司凉朵和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-814*5
+DelITEM:21022*15
+DelGold:1000000
+GetRandItem :19885*10,19886*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### MP攻击3 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-918*5&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成MP攻击3技能罐头吗？需要五只凯恩和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-918*5
+DelITEM:21022*15
+DelGold:1000000
+AddItem :19886*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 虎虎生威 ####
+####EventNo:-1####
+####TYPE:ACCEPT####
+####EVENT:LV=160&TRANS>=6&Pet=160-1409*1&Pet=160-777*4&ITEM=21022*15&GOLD>=1000000&reITEM>6####
+####AcceptMsg:你想合成虎虎生威技能罐头吗？需要一只真的佩露夏和四只普通佩露夏和15个宠技罐头原料哦！费用是一百万元。####
+####ThanksMsg:合成成功！####
+####DelPet:Pet=160-1409*1,Pet=160-777*4####
+####DelITEM:21022*15####
+####DelGold:1000000####
+####AddItem :19888*6####
+####ItemFullMsg:身上道具太多了喔！####
+####EventEnd####
+
+#### 铜墙 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-7008*1&Pet=160-7009*1&Pet=160-7010*1&Pet=160-7011*1&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成铜墙技能罐头吗？需要四色狗年兽和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-7008*1,Pet=160-7009*1,Pet=160-7010*1,Pet=160-7011*1
+DelITEM:21022*15
+DelGold:1000000
+AddItem :铜墙罐头编号*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 铁壁 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-2474*5&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成铁壁技能罐头吗？需要五只美拉和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-2474*5
+DelITEM:21022*15
+DelGold:1000000
+AddItem :铁壁罐头编号*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 全体逆转 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-2734*1&160-2486*1&160-2487*1&160-2488*1&160-2489*1&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成全体逆转技能罐头吗？需要四色猴年、司卡奇各一只和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-2734*1,160-2486*1,160-2487*1,160-2488*1,160-2489*1
+DelITEM:21022*15
+DelGold:1000000
+GetRandItem :19889*1,19890*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### T憾甲一击 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-5324*1&Pet=160-5325*1&Pet=160-5326*1&Pet=160-5327*1&Pet=160-2586*1&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成T憾甲一击技能罐头吗？需要四色猪年、摩洛索思各一只和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=Pet=160-5324*1,Pet=160-5325*1,Pet=160-5326*1,Pet=160-5327*1,Pet=160-2586*1
+DelITEM:21022*15
+DelGold:1000000
+AddItem :19891*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### T水灵滋润 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-20039*5&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成T水灵滋润技能罐头吗？需要五只艾斯卓恩和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-20039*5
+DelITEM:21022*15
+DelGold:1000000
+AddItem :19892*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 地属性加强 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-2646*1&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成地属性加强技能罐头吗？需要一只绿鲨和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-2646*1
+DelITEM:21022*15
+DelGold:1000000
+AddItem :19893*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 水属性加强 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-2647*1&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成水属性加强技能罐头吗？需要一只蓝鲨和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-2647*1
+DelITEM:21022*15
+DelGold:1000000
+AddItem :19894*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 火属性加强 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-2648*1&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成火属性加强技能罐头吗？需要一只红鲨和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-2648*1
+DelITEM:19895*15
+DelGold:1000000
+AddItem :火属性加强罐头编号*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 风属性加强 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-2649*1&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成风属性加强技能罐头吗？需要一只黄鲨和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-2649*1
+DelITEM:19896*15
+DelGold:1000000
+AddItem :风属性加强罐头编号*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### 怯战 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-2066*1&Pet=160-2067*1&Pet=160-2068*1&Pet=160-2069*1&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成怯战技能罐头吗？需要四色龙蜥和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-2066*1,Pet=160-2067*1,Pet=160-2068*1,Pet=160-2069*1
+DelITEM:21022*15
+DelGold:1000000
+AddItem :19897*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+#### T愤怒 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-5156*1&Pet=160-5157*1&Pet=160-5158*1&Pet=160-5159*1&Pet=160-5160&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成T愤怒技能罐头吗？需要五色3D人龙和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-5156*1,Pet=160-5157*1,Pet=160-5158*1,Pet=160-5159*1,Pet=160-5160
+DelITEM:21022*15
+DelGold:1000000
+AddItem :19898*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+
+#### T狂暴 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-2660*1&Pet=160-2661*1&Pet=160-2662*1&Pet=160-2663*1&Pet=160-2664&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成T狂暴技能罐头吗？需要五色2D人龙和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-2660*1,Pet=160-2661*1,Pet=160-2662*1,Pet=160-2663*1,Pet=160-2664
+DelITEM:21022*15
+DelGold:1000000
+AddItem :T狂暴罐头编号*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+
+#### 调和 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV=160&TRANS>=6&Pet=160-1794*1&Pet=160-1795*1&Pet=160-1796*1&Pet=160-1797*1&Pet=160-2735&ITEM=21022*15&GOLD>=1000000&reITEM>1
+AcceptMsg:你想合成调和技能罐头吗？需要莫里卡奇、四色马年各一只和15个宠技罐头原料哦！费用是一百万元。
+ThanksMsg:合成成功！
+DelPet:Pet=160-1794*1,Pet=160-1795*1,Pet=160-1796*1,Pet=160-1797*1,Pet=160-2735
+DelITEM:21022*15
+DelGold:1000000
+AddItem :19899*1
+ItemFullMsg:身上道具太多了喔！
+EventEnd
+
+
+
+

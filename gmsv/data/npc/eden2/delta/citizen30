@@ -1,0 +1,6 @@
+NomalMainMsg:你说你从哪来的？尼斯大陆？那到底在哪呀？
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:你说你从哪来的？尼斯大陆？那到底在哪呀？
+EventEnd

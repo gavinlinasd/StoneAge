@@ -1,0 +1,30 @@
+NEWWARPMAN
+#### 黑豹查拉 ####
+
+NEWTIME:ALLNOON
+GraNo:100873&0
+TimeXYPoint:60303,6,24&60303,1,20
+Time_Msg:吼吼～～吼吼～～吼吼～～
+
+#### 标全不正确，不理 ####
+NOFREE
+FREE:LV>0
+NomalMsg:吼～吼～吼吼～
+PartyMsg:吼吼～～吼吼～～吼吼～～
+OVER
+
+#### 有缎带及开标，入葳娜房 ####
+TALKEVENT1
+WARP:60305,1,16
+FREE:LV>89&ENDEV=4&ENDEV=81&ITEM=20178
+FreeMsg:吼～～
+OVER
+
+#### 标不符　不给进 ####
+TALKEVENT2
+WARP:0,0,0
+FREE:LV>0
+FreeMsg:吼～～
+OVER
+
+

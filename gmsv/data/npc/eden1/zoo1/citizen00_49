@@ -1,0 +1,9 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:啊？我不是巫女啦，你认错了啦！\n会把我以为是巫女，你一定也是尼斯人吧？
+NomalWindowMsg1:想说第一次坐飞龙航空旅行才穿了最漂亮的衣服出来，漂亮吧！\n还好这儿没有巫女，不然还真是会被人认错呢！
+EventEnd

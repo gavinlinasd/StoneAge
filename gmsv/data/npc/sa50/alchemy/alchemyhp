@@ -1,0 +1,56 @@
+#### 药粉提炼师（加血） ####
+
+START_MSG:你想提炼出可以让宠物提高体质成长的药粉吗？？帮你磨出药粉的工本费一次一百元。材料需要各种等级的果类植物一个加上一帖龙骨粉末。这种研磨出来的药剂只有对经过合体后的宠物才有效用喔。
+
+MenuHead:选择你想要的药粉
+NeedHead:需要的药引材料
+
+####  等级1药粉 ####
+{
+CHANGEITEM:1546
+NeedItem:1586,1566
+FREE:ITEM=1586&ITEM=1566&GOLD>=100
+DelGold:100
+DelItem:1586*1,1566*1
+AddItem:1546
+}
+
+####  等级2药粉 ####
+{
+CHANGEITEM:1550
+NeedItem:1586,1570
+FREE:ITEM=1586&ITEM=1570&GOLD>=100
+DelGold:100
+DelItem:1586*1,1570*1
+AddItem:1550
+}
+
+####  等级3药粉 ####
+{
+CHANGEITEM:1554
+NeedItem:1586,1574
+FREE:ITEM=1586&ITEM=1574&GOLD>=100
+DelGold:100
+DelItem:1586*1,1574*1
+AddItem:1554
+}
+
+####  等级4药粉 ####
+{
+CHANGEITEM:1558
+NeedItem:1586,1578
+FREE:ITEM=1586&ITEM=1578&GOLD>=100
+DelGold:100
+DelItem:1586*1,1578*1
+AddItem:1558
+}
+
+####  等级5药粉 ####
+{
+CHANGEITEM:1562
+NeedItem:1586,1582
+FREE:ITEM=1586&ITEM=1582&GOLD>=100
+DelGold:100
+DelItem:1586*1,1582*1
+AddItem:1562
+}

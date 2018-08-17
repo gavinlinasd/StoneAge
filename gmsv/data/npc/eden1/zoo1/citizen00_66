@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:你看看这一颗树的树叶与尼斯上的树叶相比大上好几倍，假如我把这颗树带回家乡去种，不知道能不能适应我那边的环境……\n到底要不要把树带回去，真伤脑筋……
+EventEnd

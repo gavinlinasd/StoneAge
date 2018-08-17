@@ -1,0 +1,7 @@
+NomalMainMsg:伊甸大陆的四大城一直都维持着奇妙的平衡，不知道是不是跟精灵的力量有关？
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:伊甸大陆的四大城一直都维持着奇妙的平衡\n，不知道是不是跟精灵的力量有关？
+EventEnd

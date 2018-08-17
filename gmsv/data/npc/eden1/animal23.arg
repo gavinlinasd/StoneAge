@@ -1,0 +1,9 @@
+#固力摩02
+WAVE:60
+routenum:1
+routeto1:7001,42,53;7001,45,53;7001,45,57;7001,42,57;7001,42,53
+routename1:小力
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:7
+

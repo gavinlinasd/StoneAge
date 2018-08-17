@@ -1,0 +1,12 @@
+NomalMainMsg:我正赶着买材料修补住屋，请让一让好吗？,我的家就是被克拉肯打坏的那一间，这一阵子都在忙着找材料整修，真是累死我了～～
+
+#聊水怪事件
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&NOWEV=88
+NomalWindowMsg:你问我为什么要买这么多东西啊？\n\n这都要怪克拉肯啊！这家伙突然冲破栅栏跑进城里大闹了一场，我的家首当其冲，就这样子被打坏了……
+NomalWindowMsg2:知不知道克拉肯为什么要袭击我们城？\n\n这我怎么会知道？幸好是没人因此死亡，不然恐怕连精灵妮芙都会降临替我们主持公道了。
+NomalWindowMsg3:很生气？\n\n这倒是还好，只是要修理房子比较麻烦而已，我们尼克斯人没那么好战啦，不过要是弗烈顿人发生这种是可就不知道喽，呵呵。
+NomalWindowMsg4:
+NomalWindowMsg5:
+EventEnd

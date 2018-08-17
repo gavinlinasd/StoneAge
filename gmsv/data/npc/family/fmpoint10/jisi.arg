@@ -1,0 +1,18 @@
+NomalMainMsg:我忘记我要和你说什么了。。。不好意思！也许过几天你再来，我会想起来的
+
+###接过185任务 身上没有结界之羽###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS=6&TIME=0&ENDEV=184&NOWEV=185&ITEM!=21164
+GetItem:21164
+ItemFullMsg:身上道具太多了喔！
+AcceptMsg:你是要去黄泉境地吗？
+ThanksMsg:嗯...是他告诉你我有办法的吧！那就拿去吧！路上自己小心！
+EventEnd
+
+###接过185任务 身上有结界之羽###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&TRANS=6&TIME=0&ENDEV=184&NOWEV=185&ITEM=21164
+NomalWindowMsg:我不是给了你吗？还想来拿！！！！！
+EventEnd

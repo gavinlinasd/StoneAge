@@ -1,0 +1,11 @@
+NPCCREATE
+{
+floorid=7008
+borncenter=13,3,1,1
+movecenter=13,3,1,1
+createnum=1
+dir=2
+graphicname=100015
+name=ÅÄÂôÍõ
+enemy=auctioneer|
+}

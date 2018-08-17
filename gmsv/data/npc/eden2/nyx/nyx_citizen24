@@ -1,0 +1,7 @@
+NomalMainMsg:屋子里面的老人又在胡言乱语了，他常常都和村民说水龙洞那里有幽灵的存在，那只是个古老的传说而已。
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:屋子里面的老人又在胡言乱语了，他常常都和村民说水龙洞那里有幽灵的存在，那只是个古老的传说而已。
+EventEnd

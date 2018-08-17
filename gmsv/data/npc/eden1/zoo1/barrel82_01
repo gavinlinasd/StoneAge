@@ -1,0 +1,11 @@
+NomalMainMsg:（好像是个饲料桶，不过没有经过允许还是不要碰比较好……）
+
+#确认执行动物园任务中，给饲料
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ENDEV=81&NOWEV=82
+AcceptMsg:（饲料桶外写着草食性饲料一号，要拿一些带着吗？）
+ThanksMsg:（从桶子里拿了一些饲料。）
+ItemFullMsg:（身上没地方放饲料了！）
+GetItem:19720
+EventEnd

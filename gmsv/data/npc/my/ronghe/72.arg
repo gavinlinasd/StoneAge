@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:火蜥蜴+金豬+機豹 藍龜+藍龜+藍龜\n黑蛙+石龜+綠穿 紅蛙+石龜+黑暴\n藍龜+藍龜+土羊 藍龜+藍龜+黑暴\n火龍蜥＋撲滿＋黑暴 水蜥蜴＋撲滿＋機豹\n藍龜+藍龜+藍蝙蝠 卡卡金寶+石龜\n藍龜+藍龜 莫拉斯+撲滿烏力 \n里昂蛙+石龜 卡恩修比+撲滿烏力 
+EventEnd

@@ -1,0 +1,148 @@
+NPCCREATE
+###### 亚依欧一般NPC ######
+
+### 风城守卫
+{
+name=守卫
+floorid=7400
+borncenter=97,64
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_1
+graphicname=16741
+}
+
+### 风城人民
+{
+name=厨师
+floorid=7400
+borncenter=80,82
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_2
+graphicname=16722
+}
+
+### 风城人民
+{
+name=孩童
+floorid=7400
+borncenter=119,87
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_3
+graphicname=16708
+}
+
+### 风城人民
+{
+name=亚伊欧老人
+floorid=7400
+borncenter=119,74
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_4
+graphicname=16714
+}
+
+### 风城人民
+{
+name=女孩
+floorid=7400
+borncenter=135,110
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_5
+graphicname=16727
+}
+
+### 风城人民
+{
+name=了望者
+floorid=7400
+borncenter=118,139
+dir=6
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_6
+graphicname=16740
+}
+
+### 风城人民
+{
+name=孩童
+floorid=7400
+borncenter=36,86
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_7
+graphicname=16711
+}
+
+### 风城人民
+{
+name=老人
+floorid=7400
+borncenter=39,110
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_8
+graphicname=16746
+}
+
+### 风城人民
+{
+name=女孩
+floorid=7400
+borncenter=64,122
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_9
+graphicname=16726
+}
+
+### 风城人民
+{
+name=守卫
+floorid=7400
+borncenter=89,134
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_10
+graphicname=16741
+}
+
+### 风城人民
+{
+name=守卫
+floorid=7400
+borncenter=90,133
+dir=4
+createnum=1
+enemy=npcgen_man|file:eden3/wind/npc_11
+graphicname=16741
+}
+
+###### 凯菈村守卫 ######
+{
+name=守卫
+floorid=704
+borncenter=341,126
+dir=4
+ignoreinvincible=1
+createnum=1
+enemy=npcgen_warpman|file:eden3/wind/guard.arg
+graphicname=16957
+}
+
+###### 凯菈村守卫 ######
+{
+name=守卫
+floorid=704
+borncenter=310,93
+dir=6
+ignoreinvincible=1
+createnum=1
+enemy=npcgen_warpman|file:eden3/wind/guard2.arg
+graphicname=16914
+}
+

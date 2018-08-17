@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:撲滿+吉比+黑暴 青龍+轉吉比+轉黑暴\n青龍+青龍+青龍 青龍+機豹+金暴\n撲滿烏力+GP+火年 烏力撲滿+吉比\n繆那+吉比 凱恩+吉比\n凱恩+艾迪希洛 凱恩+凱恩\n朵拉比斯＋巴朵蘭恩 风鸡+绿暴龙
+EventEnd

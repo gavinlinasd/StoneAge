@@ -1,0 +1,16 @@
+NEWWARPMAN
+
+#### 警卫 ####
+NOFREE
+FREE:LV>0
+NomalMsg:这里不是你说想进去就可以进去的喔！
+PartyMsg:这里不是你说想进去就可以进去的喔！
+OVER
+
+####警卫（身上水果酒）####
+TALKEVENT1
+WARP:8232,22,6
+FREE:LV>0&ITEM=2020
+FreeMsg:你身上有好浓的酒味！我～～～醉了～～～～～～
+OVER
+

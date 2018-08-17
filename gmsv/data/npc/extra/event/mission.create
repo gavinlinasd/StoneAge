@@ -1,0 +1,14 @@
+NPCCREATE
+
+
+{
+floorid=2000
+borncorner=77,41,77,41
+time=0
+createnum=1
+dir=6
+ignoreinvincible=1
+graphicname=16181
+name=”¢–€’Ω≥°∞‰Ω±‘±
+enemy=changeevent|file:extra/event/songc
+}

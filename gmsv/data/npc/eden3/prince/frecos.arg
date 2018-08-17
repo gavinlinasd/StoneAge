@@ -1,0 +1,26 @@
+NEWNPCENEMY
+
+#### 王子福列克斯战斗型 ####
+
+entype:2
+askbattlemsg1:没想到刚才的守卫就是我吧？没想到你竟然找得到我，真是不简单。
+askbattlemsg2:不过我可还没想到要回去，当上了国王就不能到处跑了。
+askbattlemsg3:为什么你这么坚持啊？？伊甸园可是个好地方，我还没玩够呢。
+askbattlemsg4:这么坚持的话，我们只好以武士的方式解决了～看招吧。
+startmsg:我可是个修炼过的武士
+dieact:1
+warpfl:7000
+warpx:122
+warpy:136
+enemyno:1885
+deniedmsg:你也是来参加比武的吗？看来好像很强的样子。
+alreadymsg:一个一个来，表现武士道精神吧。
+onebattle:1
+OVER
+
+NEWEVENT1:
+FREE:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114
+WARP:7411,24,10
+endmsg:光荣的落败了～我是个说话算话的人，就跟你回去吧。
+OVER
+

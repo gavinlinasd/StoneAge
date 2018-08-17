@@ -1,0 +1,8 @@
+NomalMainMsg:喜欢接任务吗？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:你去过这儿的动物园了吗，听说那位园长有麻烦了呢。
+EventEnd

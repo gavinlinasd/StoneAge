@@ -1,0 +1,66 @@
+#### 勇士精工师  ####
+
+START_MSG:准备好材料来找我吧，我会帮你制做专属于白狼勇士的装备。基本材料为线１０和石１０，头盔多个石１０，铠甲的话多一个石１０、一个线１０和一个贝１０。而斧头的话多一个石１０和线１０，石盾要多加一个石１０和壳１０，工本费为五千元哟…。
+
+MenuHead:选择想要交换的装备
+NeedHead:需要的材料
+
+####  阳焰头盔精工 ####
+{
+CHANGEITEM:2272
+NeedItem:11889,11809
+FREE:LV>0&ENDEV=4&CLASS=1&ITEM=11889&ITEM=11809*2&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11809*2
+AddItem:2272
+}
+
+####  阳焰之铠精工 ####
+{
+CHANGEITEM:2273
+NeedItem:11889,11809,11869
+FREE:LV>0&ENDEV=4&CLASS=1&ITEM=11889*2&ITEM=11809*2&ITEM=11869&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*2,11809*2,11869*1
+AddItem:2273
+}
+
+####  阳焰腰带精工 ####
+{
+CHANGEITEM:2274
+NeedItem:11889,11809
+FREE:LV>0&ENDEV=4&CLASS=1&ITEM=11889&ITEM=11809*1&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11809*1
+AddItem:2274
+}
+
+####  阳焰之靴精工 ####
+{
+CHANGEITEM:2275
+NeedItem:11889,11809
+FREE:LV>0&ENDEV=4&CLASS=1&ITEM=11889&ITEM=11809*1&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11809*1
+AddItem:2275
+}
+
+####  阳焰之斧精工 ####
+{
+CHANGEITEM:2276
+NeedItem:11889,11809
+FREE:LV>0&ENDEV=4&CLASS=1&ITEM=11889*2&ITEM=11809*2&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*2,11809*2
+AddItem:2276
+}
+
+####  阳焰石盾精工 ####
+{
+CHANGEITEM:2277
+NeedItem:11889,11809
+FREE:LV>0&ENDEV=4&CLASS=1&ITEM=11889&ITEM=11809*2&ITEM=11879&GOLD>=5000&reITEM>0
+DelGold:5000
+DelItem:11889*1,11809*2,11879*1
+AddItem:2277
+}

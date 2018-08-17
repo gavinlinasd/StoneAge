@@ -1,0 +1,17 @@
+NEWWARPMAN
+
+###身上缺少某样道具####
+NOFREE
+FREE:LV>0
+NomalMsg:四大精灵的力量呢？我的力量快要撑不住了。
+PartyMsg:四大精灵的力量呢？我的力量快要撑不住了。
+OVER
+
+####身上有精灵力量传送至地牢####
+TALKEVENT1
+WARP:8513,23,9
+FREE:LV>90&ENDEV=4&ENDEV=81&ENDEV=174&ENDEV=116&ENDEV=111&ENDEV=115&ITEM=20601&ITEM=20602&ITEM=20603&ITEM=20604&NOWEV=175
+DelItem:20601*1,20602*1,20603*1,20604*1
+FreeMsg:精灵的力量你带回来了吗？那请你快点交给我吧，我的力量快要撑不住了！
+OVER
+

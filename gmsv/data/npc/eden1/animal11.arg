@@ -1,0 +1,9 @@
+#裘里蛙01
+WAVE:59
+routenum:1
+routeto1:7001,9,35;7001,15,35;7001,9,35
+routename1:裘丽
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:12
+

@@ -1,0 +1,104 @@
+NPCCREATE
+#### 追猎者 ####
+{
+name=技能导师贝吉
+floorid=8217
+borncenter=13,18
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16187
+enemy=ProfessionShop|file:sa70/hunsk
+}
+
+#### 闇灵法师 ####
+{
+name=技能导师卡拉特
+floorid=8218
+borncenter=21,25
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16168
+enemy=ProfessionShop|file:sa70/wizsk
+}
+
+#### 白狼勇士 ####
+{
+name=技能导师肯尔特
+floorid=8216
+borncenter=26,20
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16185
+enemy=ProfessionShop|file:sa70/warsk
+}
+
+#### 白狼勇士二阶 ####
+{
+name=流浪勇士
+floorid=300
+borncenter=475,176
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16185
+enemy=ProfessionShop|file:sa70/warsk2
+}
+#### 闇灵法师二阶####
+{
+name=闇灵使者
+floorid=30304
+borncenter=9,31
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16168
+enemy=ProfessionShop|file:sa70/wizsk2
+}
+#### 追猎者二阶 ####
+{
+name=野外狩猎者
+floorid=200
+borncenter=439,902
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16187
+enemy=ProfessionShop|file:sa70/hunsk2
+}
+
+#### 白狼勇士三阶 ####
+{
+name=勇士之王
+floorid=100
+borncenter=651,585
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16185
+enemy=ProfessionShop|file:sa70/warsk3
+}
+#### 闇灵法师三阶####
+{
+name=闇灵之王
+floorid=400
+borncenter=97,49
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16168
+enemy=ProfessionShop|file:sa70/wizsk3
+}
+#### 追猎者三阶 ####
+{
+name=追猎之王
+floorid=200
+borncenter=300,568
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16187
+enemy=ProfessionShop|file:sa70/hunsk3
+}

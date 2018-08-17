@@ -1,0 +1,8 @@
+NomalMainMsg:我也是从尼斯来的喔！,你是出生在哪个村子的呢？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:来到这里几乎把我打石龟存的石币都用完了呢！
+EventEnd

@@ -1,0 +1,10 @@
+NomalMainMsg:我们亚伊欧人最喜欢流浪的生活了，可以四处旅行真的很有趣喔！
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:喔，你就是尼斯人啊，长相跟我们差不了多少嘛，连说的话也差不多呢……
+NomalWindowMsg1:听说我们祖先也是从尼斯来的，看来所言不假呢……
+NomalWindowMsg2:决定了！我也存点石币飞去尼斯看看好了！
+EventEnd

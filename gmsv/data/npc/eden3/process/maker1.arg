@@ -1,0 +1,56 @@
+#### 宝石提炼师 ####
+
+START_MSG:你想提炼宝石吗？？提炼一次一百五十元喔。而且…三个相同的宝石矿才能提炼出一个该种宝石。
+
+MenuHead:选择要提炼的宝石
+NeedHead:需要的矿石
+
+####  钻石提炼 ####
+{
+CHANGEITEM:20287
+NeedItem:20236,20236,20236
+FREE:ENDEV=4&ENDEV=81&ITEM=20236*3&GOLD>=150&reITEM>=1
+DelGold:150
+DelItem:20236*3
+AddItem:20287
+}
+
+####  红宝石提炼 ####
+{
+CHANGEITEM:20288
+NeedItem:20237,20237,20237
+FREE:ENDEV=4&ENDEV=81&ITEM=20237*3&GOLD>=150&reITEM>=1
+DelGold:150
+DelItem:20237*3
+AddItem:20288
+}
+
+####  蓝宝石提炼 ####
+{
+CHANGEITEM:20289
+NeedItem:20238,20238,20238
+FREE:ENDEV=4&ENDEV=81&ITEM=20238*3&GOLD>=150&reITEM>=1
+DelGold:150
+DelItem:20238*3
+AddItem:20289
+}
+
+####  绿宝石提炼 ####
+{
+CHANGEITEM:20290
+NeedItem:20239,20239,20239
+FREE:ENDEV=4&ENDEV=81&ITEM=20239*3&GOLD>=150&reITEM>=1
+DelGold:150
+DelItem:20239*3
+AddItem:20290
+}
+
+####  黄宝石提炼 ####
+{
+CHANGEITEM:20291
+NeedItem:20240,20240,20240
+FREE:ENDEV=4&ENDEV=81&ITEM=20240*3&GOLD>=150&reITEM>=1
+DelGold:150
+DelItem:20240*3
+AddItem:20291
+}

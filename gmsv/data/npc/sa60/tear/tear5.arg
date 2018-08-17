@@ -1,0 +1,7 @@
+#### 出现怪物对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:你去解决门口那一个！旁边这一个就交给我吧！
+EventEnd
+

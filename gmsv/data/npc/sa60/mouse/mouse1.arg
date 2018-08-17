@@ -1,0 +1,27 @@
+NEWWARPMAN
+
+#### 标全不正确，不理 ####
+NOFREE
+FREE:LV>0
+NomalMsg:吱！吱！吱！吱！吱！
+PartyMsg:吱！吱！吱！吱！吱！
+OVER
+
+####　收大福给吃过的大福　####
+TALKEVENT1
+WARP:0,0,0
+FREE:LV>0&ITEM=1696&NOWEV=140&ITEM=2414
+DelItem:1696
+AddItem:1750
+FreeMsg:吱！吱！吱！
+OVER
+
+####　给牙收吃过的大福　####
+TALKEVENT2
+WARP:0,0,0
+FREE:LV>0&ITEM=1750&NOWEV=140&ITEM=2414
+AddItem:1697
+DelItem:1750
+FreeMsg:吱！吱！吱！我的牙齿，好痛喔！吱！吱！吱！快跑去村长家的屋子里躲起来。用假的老鼠来骗他，嘻～嘻。
+NPCPOINT:3000,119,93;3000,88,77;3000,78,120
+OVER

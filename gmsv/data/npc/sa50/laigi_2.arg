@@ -1,0 +1,12 @@
+NomalMainMsg:我是专门饲养麋鹿的高手喔！你要是想要想一只麋鹿，就拿出你的认养证吧。
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM=2784
+AcceptMsg1:你身上有认养证，你就是那位善心人士吗？这些麋鹿是我从小养到大的，虽然有点不舍，不过看到认养证就代表你心地非常好。
+AcceptMsg2:你只要把认养证给我，我就让你饲养这只麋鹿。
+ThanksMsg1:就请你好好照顾这只麋鹿吧。
+DelItem:2784*1
+GetPet:2480
+PetFullMsg:你怎么会带这么多宠物啊？
+EventEnd

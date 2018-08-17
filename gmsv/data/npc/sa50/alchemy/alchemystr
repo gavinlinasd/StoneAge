@@ -1,0 +1,56 @@
+#### 药汤提炼师（加攻） ####
+
+START_MSG:你想提炼出可以让宠物提高攻击力成长的药汤吗？？帮你磨出药汤的工本费一次一百元。材料需要各种等级的芽类植物一个加上一帖龙骨粉末。这种研磨出来的药剂只有对经过合体后的宠物才有效用喔。
+
+MenuHead:选择你想要的药汤
+NeedHead:需要的药引材料
+
+####  等级1药汤 ####
+{
+CHANGEITEM:1548
+NeedItem:1586,1568
+FREE:ITEM=1586&ITEM=1568&GOLD>=100
+DelGold:100
+DelItem:1586*1,1568*1
+AddItem:1548
+}
+
+####  等级2药汤 ####
+{
+CHANGEITEM:1552
+NeedItem:1586,1572
+FREE:ITEM=1586&ITEM=1572&GOLD>=100
+DelGold:100
+DelItem:1586*1,1572*1
+AddItem:1552
+}
+
+####  等级3药汤 ####
+{
+CHANGEITEM:1556
+NeedItem:1586,1576
+FREE:ITEM=1586&ITEM=1576&GOLD>=100
+DelGold:100
+DelItem:1586*1,1576*1
+AddItem:1556
+}
+
+####  等级4药汤 ####
+{
+CHANGEITEM:1560
+NeedItem:1586,1580
+FREE:ITEM=1586&ITEM=1580&GOLD>=100
+DelGold:100
+DelItem:1586*1,1580*1
+AddItem:1560
+}
+
+####  等级5药汤 ####
+{
+CHANGEITEM:1564
+NeedItem:1586,1584
+FREE:ITEM=1586&ITEM=1584&GOLD>=100
+DelGold:100
+DelItem:1586*1,1584*1
+AddItem:1564
+}

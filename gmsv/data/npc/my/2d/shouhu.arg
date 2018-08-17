@@ -1,0 +1,40 @@
+NomalMainMsg:你是谁！滚出去。
+
+####189完成####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>79&TRANS>4&ENDEV=184&ENDEV=189
+NomalWindowMsg:作为醒龙家族的一员！我要永远在这里守护着醒龙的灵魂！
+EventEnd
+
+
+
+###189中　手下５色７７级人龙###
+EventNo:189
+TYPE:ACCEPT
+EVENT:LV>79&TRANS>4&ENDEV=184&NOWEV=189&ITEM=19427&PET=160-207&PET=160-208&PET=160-206&PET=160-204&PET=160-205
+AcceptMsg:。。让我看看！确实都是2转160级的！呵呵
+ThanksMsg:喏～拿去吧！醒龙家族的秘密希望你能保守噢！？
+GetPet:5156,5157,5158,5159,5160
+DelPet:PET=160-208*1,PET=160-207*1,PET=160-206*1,PET=160-204*1,PET=160-205*1
+DelItem:19427
+PetFullMsg:你身上宠物太多了！
+EndSetFlg:189
+EventEnd
+
+
+###189中　有醒龙奥义的研究报告###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS>4&ENDEV=184&NOWEV=189&ITEM=19427
+AcceptMsg:你有醒龙奥义的研究报告！！？？你也是研究醒龙的成员之一么？根据我们最新的研究成果显示，5兄弟洞中得到的2D人龙才是最纯正的品种，而且要练到最高等级才有希望合成新的更强大的品种。
+ThanksMsg:帮我找５色5兄弟2D人龙来吧！不过等级要达到2转160级级噢！！
+EventEnd
+
+###189中　有醒龙奥义的研究报告###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>79&TRANS>4&ENDEV=184&NOWEV=189
+AcceptMsg:你也是研究醒龙的成员之一么？呵呵！不过你没有研究报告噢？是不是丢了呢！？
+ThanksMsg:帮我找５色人龙来吧！不过等级要达到2转160级级噢！！
+EventEnd

@@ -1,0 +1,25 @@
+NPCCREATE
+
+
+
+###### ÈøÄ·¼ª¶û ######
+{
+name=ÈøÄ·¼ª¶û
+floorid=777
+borncenter=20,19,1,1
+dir=6
+createnum=1
+enemy=changeevent|file:poru/samugiru
+graphicname=100036
+}
+
+###### ³¬¼úÍÃ ######
+{
+name=ÀïÀ­À­
+floorid=777
+borncenter=22,19,1,1
+dir=4
+createnum=1
+enemy=changeevent|file:eden1/zoo2/event83_1a
+graphicname=100854
+}

@@ -1,0 +1,27 @@
+########　熔炉　########
+
+NomalMainMsg:嘶～～嘶嘶～
+
+###　物品正确…随机得到匕首　###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&ENDEV=4&NOWEV=145&ITEM=2100&ITEM=2101&ITEM=2102&ITEM=2087&ITEM=2088&ITEM=2089
+AcceptMsg1:应该是这个熔炉了…希望能成功。
+ThanksMsg1:这…
+GetRandItem:2087,2088,2089,2099
+DelItem:2087,2088,2089
+ItemFullMsg:嘶～～嘶嘶～
+EventEnd
+
+
+###　不符合条件　###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:嘶～～嘶嘶～
+EventEnd
+
+
+
+
+

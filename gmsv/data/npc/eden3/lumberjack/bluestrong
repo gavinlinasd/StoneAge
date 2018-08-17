@@ -1,0 +1,45 @@
+#### 工头布鲁斯壮一般型 ####
+
+NomalMainMsg:好好的认真赚钱才能养家…
+
+####任务结束，认旗标115关####
+
+#### 任务结束对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&ENDEV=114&ENDEV=115
+NomalWindowMsg:以后我会告诫我手下的工人伐木要有节制的。
+EventEnd
+
+#### 已拿悔过书对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&ENDEV=114&NOWEV=115&ITEM=20198
+NomalWindowMsg:局长已经悔过了吗？那太好了，快去告诉风精灵吧。
+EventEnd
+
+#### 拿了命令书的对话　 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&ENDEV=114&NOWEV=115&ITEM=20214
+NomalWindowMsg:局长应该还在林务局，他很少离开的。
+EventEnd
+
+#### 战败的工头给命令书 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&ENDEV=114&NOWEV=115
+AcceptMsg1:可恶，我只是想赚钱而已，这又有什么错？什么？这是违法的吗？不是吧…
+AcceptMsg2:原来你见过风精灵了，既然你是代表风精灵前来的。我想不会有错。
+AcceptMsg3:之前我受到了局长的蒙蔽，这张命令书给你看吧，证明我是受到指使的。帮我拿去还给局长吧，我不再效忠他了。
+ThanksMsg1:虽然你打败了我，但是我还是感谢你告诉我事实。
+ItemFullMsg:你身上没有空位了，先整理一下吧。
+GetItem:20214
+EventEnd
+
+#### 一般对话未接任务 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:想当个快乐的伐木人吗？去伊甸园的林务局找秘书领证件吧。
+EventEnd

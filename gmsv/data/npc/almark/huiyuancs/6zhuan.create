@@ -1,0 +1,15 @@
+NPCCREATE
+
+
+#### 6转会员证发放员 ####
+{
+name=瑞尔亚斯传送员
+floorid=2000
+borncorner=57,57,57,57
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16990
+enemy=npcgen_warpman|file:almark/huiyuancs/6zhuan.arg
+}
+

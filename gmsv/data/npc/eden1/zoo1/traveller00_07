@@ -1,0 +1,8 @@
+NomalMainMsg:你有抓到新动物吗？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:喔，你有没有抓到什么新的宠物啊？这里动物的生态跟尼斯不太一样，不知道还会出现什么宠物，真是让人期待呢！
+EventEnd

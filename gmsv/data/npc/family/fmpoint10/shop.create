@@ -1,0 +1,75 @@
+NPCCREATE
+
+#line 149
+{
+floorid=7505
+borncorner=19,12,19,12
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=16605
+name=瑞尔亚斯护士
+enemy=npcgen_winhealer|10|1.5|3.0|2
+}
+#line 151
+{
+floorid=7505
+borncorner=17,12,17,12
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=17037
+name=瑞尔亚斯药剂师
+enemy=npcgen_shop|file:family/fmpoint10/ss_10310_9_2
+}
+#line 153
+{
+floorid=7505
+borncorner=25,13,25,13
+time=0
+createnum=1
+dir=6
+ignoreinvincible=1
+graphicname=17054
+name=瑞尔亚斯美容师
+enemy=npcgen_charm
+}
+#line 156
+{
+floorid=7501
+borncorner=19,15,19,15
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=16160
+name=瑞尔亚斯防具店员
+enemy=npcgen_shop|file:family/fmpoint10/ss_10311_15_9
+}
+#line 158
+{
+floorid=7501
+borncorner=12,15,12,15
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=16159
+name=瑞尔亚斯武器店员
+enemy=npcgen_shop|file:family/fmpoint10/ss_10311_2_9
+}
+#line 158
+{
+floorid=7502
+borncorner=14,12,14,12
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=16155
+name=瑞尔亚斯神秘商人
+enemy=npcgen_shop|file:family/fmpoint10/ss_10311_9_7
+}
+

@@ -1,0 +1,15 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+NomalMsg:¡­¡­¡­¡­¡­
+PartyMsg:¡­¡­¡­¡­¡­
+OVER
+
+TALKEVENT1
+WARP:2006,22,16
+FREE:ITEM=20624
+CHECKPARTY:TRUE
+warp_msg:OO0OO
+FreeMsg:¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­OVER
+

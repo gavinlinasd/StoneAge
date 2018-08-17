@@ -1,0 +1,13 @@
+NPCCREATE
+{
+floorid=3206
+borncorner=15,19,15,19
+time=0
+createnum=1
+dir=6
+ignoreinvincible=1
+graphicname=16171
+name=ÄÝ¿É
+enemy=npc_raceman|file:race2/second.arg
+}
+

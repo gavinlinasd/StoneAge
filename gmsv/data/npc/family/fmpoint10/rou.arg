@@ -1,0 +1,23 @@
+buy_rate:1.0
+sell_rate:1.0
+buy_msg:买,购买,感谢您,kau,buy,menu,谢谢,买东西
+sell_msg:卖东西,卖,sell,uru
+other_msg:最近生意如何？
+hint_msg:这也开始卖肉了喔。
+sellonly_msg:并不是专门收买东西的店
+main_msg:欢迎光临瑞尔亚斯的肉店！\n特别感谢脚本制作人-偷偷  QQ:28952572
+buy_main:店里有上好的肉喔。\n想要哪一个呢？
+sell_main:那么、要卖哪种肉呢？
+what_msg:要买多少呢？
+stone_msg:你带的钱太多了喔。
+level_msg:等级不足以使用那个。
+realy_msg:真的吗？？？
+itemfull_msg:不好意思、道具已经满了。
+ItemList:20919-20938
+LimitItemNo:20919-20938
+special_rate:0.8
+special_item:20919-20938
+
+
+
+

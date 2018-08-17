@@ -1,0 +1,413 @@
+NomalMainMsg:我是炎龙超级大魔王沉默的温柔！想领取一只DIY宠物回去饲养吗？带领79级雷尔、1只1DMM、2只2DMM以及160级的"威威""威比""帖拉所伊朵""艾迪希洛""萨德迪比""萨德斯凯""凯恩""菲奇亚""怀沃夫""莱恩洛克""莱恩奇夫""变身狼王""司卡奇""哈利恩斯""布里萨尔""黑乌力王""里昂蛙"任意一只就可以来找我哦!
+
+
+#### DIY威威宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-32
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只威威宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！威威宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-32*1
+GetPet:30001
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 威威 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6001
+AcceptMsg:威威宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成威威噢！请拿好！
+DelPet:PET=79-6001*1
+GetPet:30002,30003,30004,30005
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY威比宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-737
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只威比宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！威比宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-737*1
+GetPet:30006
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 威比 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6006
+AcceptMsg:威比宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的威比噢！请拿好！
+DelPet:PET=79-6006*1
+GetPet:30007,3008,30009,30010
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY帖拉所伊朵宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-304
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只帖拉所伊朵宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！帖拉所伊朵宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-304*1
+GetPet:30011
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 地帖拉所伊朵 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6011&ITEM=19168
+AcceptMsg:帖拉所伊朵宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 地属性的帖拉所伊朵噢！请拿好！
+DelItem:19168*1
+DelPet:PET=79-6011*1
+GetPet:30012,30013
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 水帖拉所伊朵 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6011&ITEM=19169
+AcceptMsg:帖拉所伊朵宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 水属性的帖拉所伊朵噢！请拿好！
+DelItem:19169*1
+DelPet:PET=79-6011*1
+GetPet:30014,30015
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 火帖拉所伊朵 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6011&ITEM=19170
+AcceptMsg:帖拉所伊朵宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 火属性的帖拉所伊朵噢！请拿好！
+DelItem:19170*1
+DelPet:PET=79-6011*1
+GetPet:30016,30017
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 风帖拉所伊朵 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6011&ITEM=19171
+AcceptMsg:帖拉所伊朵宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 风属性的帖拉所伊朵噢！请拿好！
+DelItem:19171*1
+DelPet:PET=79-6011*1
+GetPet:30018,30019
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY艾迪希洛宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-968
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只艾迪希洛宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！艾迪希洛宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-968*1
+GetPet:30020
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 艾迪希洛 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6020
+AcceptMsg:艾迪希洛宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的艾迪希洛噢！请拿好！
+DelPet:PET=79-6020*1
+GetPet:30021,30022,30023,30024
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY萨德迪比宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-1450
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只萨德迪比宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！萨德迪比宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-1450*1
+GetPet:30025
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 萨德迪比 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6025
+AcceptMsg:萨德迪比宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的萨德迪比噢！请拿好！
+DelPet:PET=79-6025*1
+GetPet:30026,30027,30028,30029
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY萨德斯凯宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-1460
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只萨德斯凯宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！萨德斯凯宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-1460*1
+GetPet:30030
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 萨德斯凯 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6030
+AcceptMsg:萨德斯凯宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的萨德斯凯噢！请拿好！
+DelPet:PET=79-6030*1
+GetPet:30031,30032,30033,30034
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY凯恩宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-918
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只凯恩宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！凯恩宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-918*1
+GetPet:30035
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 凯恩 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6035
+AcceptMsg:凯恩宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的凯恩噢！请拿好！
+DelPet:PET=79-6035*1
+GetPet:30036,30037,30038,30039
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY菲奇亚宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-933
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只菲奇亚宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！菲奇亚宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-933*1
+GetPet:30040
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 菲奇亚 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6040
+AcceptMsg:菲奇亚宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的菲奇亚噢！请拿好！
+DelPet:PET=79-6040*1
+GetPet:30041,30042,30043,30044
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY怀沃夫宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-150
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只怀沃夫宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！怀沃夫宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-150*1
+GetPet:30045
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 怀沃夫 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6045
+AcceptMsg:怀沃夫宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的怀沃夫噢！请拿好！
+DelPet:PET=79-6045*1
+GetPet:30047,30048,30049,30046
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY莱恩洛克宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-179
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只莱恩洛克宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！莱恩洛克宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-179*1
+GetPet:30050
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 莱恩洛克 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6050
+AcceptMsg:莱恩洛克宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的莱恩洛克噢！请拿好！
+DelPet:PET=79-6050*1
+GetPet:30051,30052,30053,30054
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY莱恩奇夫宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-178
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只莱恩奇夫宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！莱恩奇夫宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-178*1
+GetPet:30055
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 莱恩奇夫 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6055
+AcceptMsg:莱恩奇夫宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的莱恩奇夫噢！请拿好！
+DelPet:PET=79-6055*1
+GetPet:30056,30705,30058,30059
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY变身狼王宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-1272
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只变身狼王宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！变身狼王宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-1272*1
+GetPet:30060
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 变身狼王 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6060
+AcceptMsg:变身狼王宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的变身狼王噢！请拿好！
+DelPet:PET=79-6060*1
+GetPet:30062,30063,30061,30064
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY司卡奇宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-812
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只司卡奇宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！司卡奇宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-812*1
+GetPet:30065
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 司卡奇 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6065
+AcceptMsg:司卡奇宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的司卡奇噢！请拿好！
+DelPet:PET=79-6065*1
+GetPet:30066,30067,30068,30069
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY哈利恩斯宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-1164
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只哈利恩斯宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！哈利恩斯宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-1164*1
+GetPet:30070
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 哈利恩斯 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6070
+AcceptMsg:哈利恩斯宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的哈利恩斯噢！请拿好！
+DelPet:PET=79-6070*1
+GetPet:30071,30072,30073,30074
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY布里萨尔宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-1177
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只布里萨尔宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！布里萨尔宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-1177*1
+GetPet:30075
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 布里萨尔 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6075
+AcceptMsg:布里萨尔宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的布里萨尔噢！请拿好！
+DelPet:PET=79-6075*1
+GetPet:30076,30077,30078,30079
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY黑乌力王宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-1147
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只黑乌力王宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！黑乌力王宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-1147*1
+GetPet:30080
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 黑乌力王 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6080
+AcceptMsg:黑乌力王宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的黑乌力王噢！请拿好！
+DelPet:PET=79-6080*1
+GetPet:30082,30083,30084,30081
+PetFullMsg:你的宠物已满!
+EventEnd
+
+#### DIY里昂蛙宝宝 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6000&PET=79-401*2&PET=79-718&PET=160-791
+AcceptMsg:我是炎龙超级大魔王沉默的温柔！\n\n想领取一只里昂蛙宝宝回去饲养吗？
+ThanksMsg:恩！宠物我就收下了！里昂蛙宝宝交给你了噢！
+DelPet:PET=79-401*2,PET=79-718*1,PET=79-6000*1,PET=160-791*1
+GetPet:30085
+PetFullMsg:你的宠物已满!
+EventEnd
+
+###### 里昂蛙 ######
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>119&TRANS>5&ENDEV=190&ENDEV=210&PET=79-6085
+AcceptMsg:里昂蛙宝宝已经79级拉？
+ThanksMsg:按你的要求~交给你 养成的里昂蛙噢！请拿好！
+DelPet:PET=79-6085*1
+GetPet:30086,30087,30088,30089
+PetFullMsg:你的宠物已满!
+EventEnd

@@ -1,0 +1,10 @@
+#####　铜铁进化说明员　#####
+
+NomalMainMsg:
+
+####　一段对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:
+EventEnd

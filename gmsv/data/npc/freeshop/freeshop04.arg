@@ -1,0 +1,8 @@
+{
+start_msg:经过我多年来的研究，要发挥蛇类生物的能力，只有虚弱这个技能。
+main_msg:准备好要学技能了吗？
+nothing_msg:这样就可以了．．．．
+err_msg:它…不适合学虚弱哦～～
+skill_rate:1.0
+pet_skill:575,503
+}

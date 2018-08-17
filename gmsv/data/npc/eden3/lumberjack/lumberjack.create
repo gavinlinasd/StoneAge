@@ -1,0 +1,147 @@
+NPCCREATE
+
+###### 林务局外传送点 ######
+{
+floorid=7000
+borncenter=27,161
+createnum=1
+ignoreinvincible=1
+enemy=npcgen_warp|file:eden3/lumberjack/warppoint1.arg
+}
+
+###### 林务局外传送点 ######
+{
+floorid=7000
+borncenter=20,160
+createnum=1
+ignoreinvincible=1
+enemy=npcgen_warp|file:eden3/lumberjack/warppoint2.arg
+}
+
+###### 林务局长柯比罗尔 ######
+{
+name=柯比罗尔
+floorid=7015
+borncenter=16,3
+dir=4
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:eden3/lumberjack/kobe
+graphicname=100102
+}
+
+###### 秘书布鲁乌齐 ######
+{
+name=布鲁乌齐
+floorid=7015
+borncenter=22,8
+dir=6
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:eden3/lumberjack/bluewuchi
+graphicname=16730
+}
+
+###### 木材商人达比 ######
+{
+name=达比
+floorid=7015
+borncenter=8,9
+time=0
+dir=4
+ignoreinvincible=1
+createnum=1
+enemy=npcgen_limitshop|file:eden3/lumberjack/dabe
+graphicname=16019
+}
+
+###### 工头房间外传送点 ######
+{
+floorid=703
+borncenter=334,182
+createnum=1
+ignoreinvincible=1
+enemy=npcgen_warp|file:eden3/lumberjack/warppoint3.arg
+}
+
+###### 工头布鲁斯壮 ######
+{
+name=布鲁斯壮
+floorid=7453
+borncenter=10,8
+dir=6
+createnum=1
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:eden3/lumberjack/bluestrong
+graphicname=100439
+}
+
+###### 布鲁斯壮战斗型 ######
+{
+name=布鲁斯壮
+floorid=7454
+borncenter=10,8
+dir=6
+ignoreinvincible=1
+createnum=1
+enemy=bluestrong|file:eden3/lumberjack/bluestrong.arg
+graphicname=100439
+}
+
+###### 风森林外传送点 ######
+{
+floorid=703
+borncenter=147,146
+createnum=1
+ignoreinvincible=1
+enemy=npcgen_warp|file:eden3/lumberjack/warppoint4.arg
+}
+
+###### 风精灵弗斯温蒂 ######
+{
+name=弗斯温蒂
+floorid=7464
+borncenter=62,27
+dir=4
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:eden3/lumberjack/windy
+graphicname=16950
+}
+
+###### 林务局长柯比罗尔战斗型 ######
+{
+name=柯比罗尔
+floorid=7024
+borncenter=16,3
+dir=4
+ignoreinvincible=1
+createnum=1
+enemy=koberoll|file:eden3/lumberjack/koberoll.arg
+graphicname=100102
+}
+
+###### 伐木工人a ######
+{
+name=伐木工人
+floorid=703
+borncenter=144,187
+dir=6
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:eden3/lumberjack/worker1
+graphicname=16925
+}
+
+###### 伐木工人b ######
+{
+name=伐木工人
+floorid=703
+borncenter=202,140
+dir=4
+ignoreinvincible=1
+createnum=1
+enemy=changeevent|file:eden3/lumberjack/worker2
+graphicname=16926
+}

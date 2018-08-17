@@ -1,0 +1,15 @@
+NPCCREATE
+##############躲猫猫任务###############
+
+########躲猫猫任务########
+{
+name=柯西
+floorid=2000
+borncenter=62,33
+dir=4
+time=0
+ignoreinvincible=1
+createnum=1
+enemy=npcgen_warpman|file:sa70/cat/cat.arg
+graphicname=16084
+}

@@ -1,0 +1,39 @@
+#### 勇士团长辛克莱尔 ####
+
+NomalMainMsg:弗烈顿的勇士拥有最强的战斗力。
+
+####任务结束，认旗标111关####
+
+#### 已有挑战资格对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>100&ENDEV=4&ENDEV=81&ENDEV=110&NOWEV=111
+NomalWindowMsg:那祝福你成功，火灵勇士可不容易对付。
+EventEnd
+
+#### 成功得到火灵勇士的头衔讯息 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>100&ENDEV=4&ENDEV=81&ENDEV=110&ENDEV=111
+NomalWindowMsg:从此以后你就是火灵勇士了，如果想再见火精灵的话，跟柯亚说一声就行了。不过，当然也欢迎你再度挑战。
+EventEnd
+
+#### 开启任务标允许参加火灵勇士比赛 ####	
+EventNo:111
+TYPE:REQUEST
+EVENT:LV>100&ENDEV=4&ENDEV=81&ENDEV=110
+RequestMsg1:原来就是你帮德夫找到祭品啊？？很好，根据我们的传统，凡是成功送达祭品的人，都有资格参加我们火灵勇士的比赛。
+RequestMsg2:对了，另外说明一下，要挑战火灵勇士最好采用团战的方式，如果一个人要挑战的话，难度可是很高的。
+ThanksMsg1:那祝福你成功，火灵勇士可不容易对付。
+EventEnd
+
+#### 任务标不符合之对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:我是火灵勇士团团长辛克莱尔。
+EventEnd
+
+
+
+

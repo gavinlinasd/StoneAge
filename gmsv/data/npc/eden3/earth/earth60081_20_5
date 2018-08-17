@@ -1,0 +1,11 @@
+entype:2
+askbattlemsg1:这里是监牢，没事请离开。
+startmsg:想趁混乱趁机解救人质吗？太小看我了，好好看看我的威力吧！
+dieact:1
+warpfl:60083
+warpx:6
+warpy:20
+enemyno:2505,2505,2505,2505,2505
+deniedmsg:这么弱小也敢劫狱！
+onebattle:0
+OVER

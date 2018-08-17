@@ -1,0 +1,12 @@
+NEWNPCENEMY
+
+entype:2
+startmsg:练抗性找我就对啦！！！
+dieact:1
+warpfl:2000
+warpx:58
+warpy:69
+endmsg:我靠！你还真厉害！
+enemyno:1690
+onebattle:0
+OVER

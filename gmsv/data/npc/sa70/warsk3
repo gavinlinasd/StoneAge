@@ -1,0 +1,10 @@
+{
+start_msg:您好，我是职业技能训练师
+main_msg:这是白狼勇士工公会，准备好要学技能了吗？
+nothing_msg:这样就可以了．．．．
+err_msg:这技能你不能学哦!
+skill_rate:1.0
+profession_skill:39,41,42,54
+profession_class:1
+trans:1,2,3,4,5
+}

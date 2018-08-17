@@ -1,0 +1,8 @@
+NomalMainMsg:真正的战士是要以守为攻，防御才是最大的攻击，毕竟人死了就什么都没了，这才是我们塔耳塔战士团的根本思想啊。
+
+#任务结束
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>100&ENDEV=81&ENDEV=104
+NomalWindowMsg:经过这次教训，我发现到其实如果只守不攻的话也是不对的，这样子下去士气会低落，大家也会累，有时候还是要痛痛快快地攻击才行啦！
+EventEnd

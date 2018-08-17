@@ -1,0 +1,17 @@
+NomalMainMsg:你是第一次来到塔耳塔城吗？这里是盐矿坑，没什么好看的，去别地方吧。
+
+#任务结束
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&ENDEV=87
+NomalWindowMsg:就是你带给沙尔特那个香香的草药啊？看他现在可有精神的呢，真是多亏了你热心助人呢，哪天我有困难的时候也要请你大力帮助喽？
+EventEnd
+
+#聊盐矿任务
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81
+NomalWindowMsg:你知道我们的岩盐为什么这么珍贵吗？
+NomalWindowMsg2:哈哈哈，我刚然知道你是外来人啦，只是随口问问你啊。\n让我告诉你吧，我们这里所产的岩盐有神奇的治疗功效喔！只要吃点用塔耳塔岩盐调味的料理，很多病症都会慢慢地好起来喔。
+NomalWindowMsg3:不过我们负责人沙尔特身体也不太好，听说胸口常会痛，吃了这儿的岩盐也没好，真是可怜哪，不知道有没有办法帮他把病治好呢？
+EventEnd

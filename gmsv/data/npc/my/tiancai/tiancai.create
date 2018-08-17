@@ -1,0 +1,14 @@
+NPCCREATE
+
+# Óæ´å
+{
+floorid=2000
+borncenter=53,47
+time=0
+createnum=1
+graphicname=101866
+name=´«ËÍµã
+dir=4
+ignoreinvincible=1
+enemy=transman|file:my/tiancai/yucun.arg
+}

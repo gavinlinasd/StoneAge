@@ -1,0 +1,12 @@
+NPCCREATE
+{
+floorid=7002
+borncorner=13,42,13,42
+time=0
+createnum=1
+graphicname=16096
+name=游乐场银行服务员
+dir=6
+ignoreinvincible=1
+enemy=GambleBank|file:bank/bankman01.arg
+}

@@ -1,0 +1,9 @@
+#加耶布斯02
+WAVE:81
+routenum:1
+routeto1:7001,44,17;7001,42,17;7001,42,28;7001,44,28;7001,44,17
+routename1:加耶
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:9
+

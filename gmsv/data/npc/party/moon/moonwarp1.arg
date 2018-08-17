@@ -1,0 +1,15 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+NomalMsg:这一颗球是什么？
+WARP:0,0,0
+OVER
+
+
+TALKEVENT1
+WARP:8259,18,19
+FREE:ITEM=20642
+FreeMsg:\n\n\n怎么有股吸力把我往里面拉～～这～～～这是～～～
+PartyMsg:\n\n\n......
+OVER

@@ -1,0 +1,85 @@
+NEWWARPMAN
+
+####　未接任务对话　####
+NOFREE
+FREE:LV>0
+WARP:0,0,0
+NomalMsg:嘎？！嘎！？嘎
+PartyMsg:嘎？！嘎！？嘎
+OVER
+
+####　完成任务之对话　####
+TALKEVENT1
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&ENDEV=126
+FreeMsg:虽然你已是获得认可的英雄了，但这个地方还是少来为妙。
+OVER
+
+####　身上有勾玉之对话　####
+TALKEVENT2
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=1445
+FreeMsg:还不快走吗？听到后面有更难的考验就怕了吗？
+OVER
+
+###　带来三样东西换勾玉　###
+TALKEVENT3
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=9390&ITEM=5010&ITEM=8410
+FreeMsg1:很好，三样东西都齐全了，这表示你可以通过这关卡，可是文狄船长的幽灵还会给你更大的考验的！要得到文狄船长的认可就加快脚步吧。
+AddItem:1445
+DelItem:9390*1,5010*1,8410*1
+OVER
+
+####　只有防具跟爪对话　####
+TALKEVENT4
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=8410&ITEM=5010
+FreeMsg:只带来了防具跟爪就可以了吗？再去弄一件服来吧。
+OVER
+
+####　只有爪跟服对话　####
+TALKEVENT5
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=5010&ITEM=9390
+FreeMsg:只带来了爪跟服就可以了吗？再去弄个防具来吧。
+OVER
+
+####　只有防具跟服对话　####
+TALKEVENT6
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=8410&ITEM=9390
+FreeMsg:只带来了防具跟服就可以了吗？再去弄一只爪来吧。
+OVER
+
+####　只有防具对话　####
+TALKEVENT7
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=8410
+FreeMsg:怎么只有防具呢？？我说过要三样东西，太迷糊可当不了勇者的。再去弄服和爪来吧。
+OVER
+
+####　只有爪对话　####
+TALKEVENT8
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=5010
+FreeMsg:怎么只有爪呢？？我说过要三样东西，太迷糊可当不了勇者的。再去弄服和防具来吧。
+OVER
+
+####　只有服对话　####
+TALKEVENT9
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126&ITEM=9390
+FreeMsg:怎么只有服呢？？我说过要三样东西，太迷糊可当不了勇者的。再去弄防具和爪来吧。
+OVER
+
+
+####　接任务去合成　####
+TALKEVENT10
+WARP:0,0,0
+FREE:LV>99&ENDEV=4&ENDEV=81&NOWEV=126
+FreeMsg:我猜你是来找寻文狄船长留下来的宝藏吧，想拿的话，得看你有没有这个本事！要再想继续通过的话，拿给我等级八的防具、爪及服吧，记住文狄船长考验的是你的勇气和毅力。
+OVER
+
+
+

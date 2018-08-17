@@ -1,0 +1,69 @@
+####　王子吉德　####
+
+NomalMainMsg:我想要跟着伊塔再学更高深的魔法。
+
+##############################################################################
+#顽皮公主任务
+
+#### 最后的吉德(最后出现在伊塔工作室) ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=116
+NomalWindowMsg:真不知说什么才好，你帮了我两次呢。下次你到弗烈顿作客的时候，我一定好好招待你。
+EventEnd
+
+####完成任务####
+EventNo:116
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=116&PET>49-946
+AcceptMsg:啊～公主真的五十级了（真是没想到啊～），那好吧，我暂时没这么早要回城，你不放心的话，那就把公主先留在这里陪我吧。
+ThanksMsg:谢谢你在我们的婚事上出了这么大的力，多谢你了。有空到弗烈顿或尼克斯坐坐吧。
+EndSetFlg:116
+DelPet:PET>49-946
+EventEnd
+
+#### 任务进行中对话（带着公主，但等级未练到５０） ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=116&PET>5-946
+NomalWindowMsg:还没到五十级啊？那加油吧，我说过的话是不会改变的，别想打怪主意。
+EventEnd
+
+#### 任务进行中对话（带着公主） ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=116&PET<6-946
+NomalWindowMsg:你怎么把公主给带来了？？！！这个…好吧，人都来了我也得有个交代才是。我不愿意我日后的王后是个弱不禁风的女子，如果你可以帮她成长的话我就回去准备婚礼。
+NomalWindowMsg1:成长的话…就是帮她等级提升到五十级吧，那时候我也没话好说了。（看这公主瘦弱不堪的模样，一定是办不到的，那我就不用结婚了）
+EventEnd
+
+#### 任务进行中对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=116
+NomalWindowMsg:找我回去结婚吗？可是我还年轻呢，不想这么早结婚。
+EventEnd
+
+##############################################################################
+#卡罗回忆任务
+
+####被萨登击倒的吉德####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112
+NomalWindowMsg:…………
+EventEnd
+
+#### 最后的吉德(最后出现在伊塔工作室) ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112
+NomalWindowMsg:萨登真是强呀，还好有你帮忙。
+EventEnd
+
+####条件不符####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:………
+EventEnd

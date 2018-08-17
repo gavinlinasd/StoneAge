@@ -1,0 +1,16 @@
+NPCTEMPLATE
+
+#####工头布鲁斯壮战斗型
+{
+templatename=bluestrong
+makeatnobody=1
+makeatnosee=1
+type=100439
+hp=
+mp=
+str=
+tough=
+functionset=NPCEnemy
+fly=
+itemnum=
+}

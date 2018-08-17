@@ -1,0 +1,14 @@
+NPCCREATE
+####被封闭的海路#####
+########皮尔克#########
+{
+name=皮尔克
+floorid=817
+borncenter=269,116
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=101548
+enemy=changeevent|file:sa70/closed/closed1.arg
+}
+

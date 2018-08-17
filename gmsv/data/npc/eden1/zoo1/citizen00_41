@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:呵呵～～为什么说那个地下水源神秘呢？\n\n因为之前有好几百年的时间，很多人都希望能在这片沙漠找到水源，让大陆上的交通方便些，可是都失败了──\n\n没想到被一个来历不明的雷尔给找到了……
+EventEnd

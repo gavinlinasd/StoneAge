@@ -1,0 +1,7 @@
+NomalMainMsg:因为我们一直生活在地底，所以我的皮肤才会这么的白呢！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:因为我们一直生活在地底，\n所以我的皮肤才会这么的白呢！
+EventEnd

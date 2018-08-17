@@ -1,0 +1,29 @@
+#### 金属提炼师 ####
+
+START_MSG:你想提炼金属吗？？提炼一次一百五十元喔。而且…二个相同的金属矿石才能提炼出一个该种金属。
+
+MenuHead:选择要提炼的金属
+NeedHead:需要的矿石
+
+####  铁矿提炼 ####
+{
+CHANGEITEM:20285
+NeedItem:20234,20234
+FREE:ENDEV=4&ENDEV=81&ITEM=20234*2&GOLD>=150&reITEM>=1
+DelGold:150
+DelItem:20234*2
+AddItem:20285
+}
+
+####  铜矿提炼 ####
+{
+CHANGEITEM:20286
+NeedItem:20235,20235
+FREE:ENDEV=4&ENDEV=81&ITEM=20235*2&GOLD>=150&reITEM>=1
+DelGold:150
+DelItem:20235*2
+AddItem:20286
+}
+
+
+

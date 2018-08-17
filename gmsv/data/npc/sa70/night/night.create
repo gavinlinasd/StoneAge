@@ -1,0 +1,14 @@
+NPCCREATE
+####Ê§ÃßµÄÒ¹####
+########¹ş¶ûÀû#########
+{
+name=¹ş¶ûÀû
+floorid=3400
+borncenter=63,43
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16017
+enemy=changeevent|file:sa70/collect/collect1.arg
+}
+

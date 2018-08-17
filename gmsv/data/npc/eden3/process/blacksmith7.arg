@@ -1,0 +1,50 @@
+#### 火城金属武器加工师 ####
+
+START_MSG:你想加工铁制武器？？加工一次要一万元喔。铁斧３要铁斧２加１３块铁。铁棍３要铁棍２加１３块铁。铁枪３要铁枪２加１３块铁。
+
+MenuHead:选择你想要的武器
+NeedHead:需要的材料
+
+####  铁斧３加工 ####
+{
+CHANGEITEM:20278
+NeedItem:20285,20277
+FREE:ENDEV=4&ENDEV=81&ITEM=20285*13&ITEM=20277&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*13,20277*1
+AddItem:20278
+}
+
+####  铁棍３加工 ####
+{
+CHANGEITEM:20281
+NeedItem:20285,20280
+FREE:ENDEV=4&ENDEV=81&ITEM=20285*13&ITEM=20280&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*13,20280*1
+AddItem:20281
+}
+
+####  铁枪３加工 ####
+{
+CHANGEITEM:20284
+NeedItem:20285,20283
+FREE:ENDEV=4&ENDEV=81&ITEM=20285*13&ITEM=20283&GOLD>=10000&reITEM>=1
+DelGold:10000
+DelItem:20285*13,20283*1
+AddItem:20284
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

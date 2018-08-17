@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:金飛+克克洛斯+金飛 撲滿+克克洛斯+黑暴\n橙飛+橙飛+橙飛 金飛+奇寶+機豹\n金飛+金飛+金飛 金飛+克克洛斯+黑暴\n撲滿+奇寶+黑暴 撲滿+克克洛斯+機豹\n撲滿烏力+克克洛斯 朵拉比斯+塔斯夫\n朵拉比斯+奇寶 朵拉比斯+朵拉比斯\n朵拉比斯+克克洛斯 撲滿烏力+奇寶
+EventEnd

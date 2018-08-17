@@ -1,0 +1,56 @@
+待机,什么也不做,PETSKILL_None,,0,1,5,500,PETSKILL_NONE
+攻击,通常攻击,PETSKILL_NormalAttack,,1,1,6,1000,PETSKILL_NORMALATTACK
+防御,通常防御,PETSKILL_NormalGuard,,2,1,5,1000,PETSKILL_NORMALGUARD
+破除防御,对采取防敌人攻击可能,PETSKILL_GuardBreak,,3,1,6,1500,PETSKILL_GUARDBREAK
+连续攻击,两次连续攻击,PETSKILL_ContinuationAttack,2,10,1,6,2000,PETSKILL_CONTINUATIONATTACK1
+三段攻击,3回合连续攻击,PETSKILL_ContinuationAttack,3,11,1,6,5000,PETSKILL_CONTINUATIONATTACK2
+T四段攻击,4回合连续攻击,PETSKILL_ContinuationAttack,4,12,1,6,15000,PETSKILL_CONTINUATIONATTACK3
+T五段攻击,5回合连续攻击,PETSKILL_ContinuationAttack,5,13,1,6,25000,PETSKILL_CONTINUATIONATTACK4
+忠犬,保护主人不受到敌人的直接攻击,PETSKILL_Guardian,攻%-20  COM:攻击,20,1,7,2500,PETSKILL_GUARDIAN
+突击,1回合储存力量　　　　　下次攻击时　　　　　　　就会有两倍的攻击力,PETSKILL_ChargeAttack,1 攻%+90,30,1,6,4000,PETSKILL_CHARGE1
+双重突击,2回合储存力量 　　　下次攻击时 　　　就会有两倍的攻击力,PETSKILL_ChargeAttack,2 攻%+110,31,1,6,8000,PETSKILL_CHARGE2
+一击必杀,给予两倍的攻击伤害但是命中率下降,PETSKILL_Mighty,倍2 回避30,40,1,6,2500,PETSKILL_MIGHTY1
+T一击必杀改,给予三倍的攻击伤害但是命中率下降,PETSKILL_Mighty,倍3 回避15,41,1,6,25000,PETSKILL_MIGHTY2
+背水之战其之１,防御力减30%　　攻击力变成+30%,PETSKILL_PowerBalance,攻%+25 防%-35,50,1,6,2000,PETSKILL_POWERBALANCE1
+背水之战其之２,防御力减50%　　攻击力变成+50%,PETSKILL_PowerBalance,攻%+45 防%-55,51,1,6,2500,PETSKILL_POWERBALANCE2
+T背水之战其之３,防御力减50%　　攻击力变成+80%,PETSKILL_PowerBalance,攻%+80 防%-50,52,1,6,30000,PETSKILL_POWERBALANCE3
+毒攻击,攻击力减30%三回合前后让敌人中毒,PETSKILL_StatusChange,毒 turn 3  攻%-30,60,1,6,2500,PETSKILL_POISON_ATTACK1
+猛毒攻击,攻击力减50%五回合前后让敌人中毒,PETSKILL_StatusChange,毒 turn 5  攻%-50,61,1,6,4000,PETSKILL_POISON_ATTACK2
+石化攻击,攻击力减30%三回合前后让敌人石化,PETSKILL_StatusChange,石 turn 3  攻%-30,80,1,6,2300,PETSKILL_STONE
+混乱攻击,攻击力减30%三回合前后让敌人混乱,PETSKILL_StatusChange,乱 turn 3 攻%-30,90,1,6,2000,PETSKILL_CONFUSION_ATTACK
+泥醉攻击,攻击力减30%三回合前后让敌人酒醉,PETSKILL_StatusChange,醉 turn 3 攻%-30,100,1,6,2000,PETSKILL_DRUNK_ATTACK
+催眠攻击,攻击力减30%三回合前后让敌人沉睡,PETSKILL_StatusChange,眠 turn 3  攻%-30,110,1,6,2500,PETSKILL_SLEEP_ATTACK
+地球一周,一回合从敌人背后以两倍攻击力攻击,PETSKILL_EarthRound,攻%+90,120,1,6,2000,PETSKILL_EARTHROUND1
+旅程伙伴,把一只恐龙当作是伙伴当场带走,PETSKILL_Abduct,,130,1,7,3000,PETSKILL_Abduct
+偷窃,偷窃,PETSKILL_Steal,,140,1,7,0,PETSKILL_STEAL
+不防守战法,自己不进行攻击　　反击跟回避率　　　　　就会变的非常高,PETSKILL_NoGuard,回避%+30 反击%+50 会心%+20,150,1,5,3000,PETSKILL_NOGUARD1
+T不防守战法2,自己不进行攻击　　反击跟回避率　　　　　就会变的非常高,PETSKILL_NoGuard,回避%+40 反击%+60 会心%+30,151,1,5,15000,PETSKILL_NOGUARD2
+T不防守战法3,自己不进行攻击　　反击跟回避率　　　　　就会变的非常高,PETSKILL_NoGuard,回避%+50 反击%+70 会心%+40,152,1,5,25000,PETSKILL_NOGUARD3
+加工,合成素材制作道具,PETSKILL_Merge,,200,2,0,1500,PETSKILL_MERGE
+料理,使用素材制作料理,PETSKILL_Merge,,201,2,0,1000,PETSKILL_MERGE2
+落马术,落马,PETSKILL_FallGround,攻%-30,210,1,6,0,PETSKILL_FALLGROUND
+岩石撞击,地魔法LV1,PETSKILL_AttackMagic,magic 301 item 19647,301,1,7,0,PETSKILL_AttactMagic
+落石撞击,地魔法LV2,PETSKILL_AttackMagic,magic 302 item 19648,302,1,7,0,PETSKILL_AttactMagic
+土石流,地魔法LV3-1,PETSKILL_AttackMagic,magic 303 item 19649,303,1,7,0,PETSKILL_AttactMagic
+巨岩撞击,地魔法LV3-2,PETSKILL_AttackMagic,magic 304 item 19650,304,1,7,0,PETSKILL_AttactMagic
+地震,地魔法LV3-3,PETSKILL_AttackMagic,magic 305 item 19651,305,1,7,0,PETSKILL_AttactMagic
+陨石冲击,地魔法LV4,PETSKILL_AttackMagic,magic 306 item 19652,306,1,7,0,PETSKILL_AttactMagic
+水柱,水魔法LV1,PETSKILL_AttackMagic,magic 307 item 19653,307,1,7,0,PETSKILL_AttactMagic
+水刃,水魔法LV2,PETSKILL_AttackMagic,magic 308 item 19654,308,1,7,0,PETSKILL_AttactMagic
+大冰山,水魔法LV3-1,PETSKILL_AttackMagic,magic 309 item 19655,309,1,7,0,PETSKILL_AttactMagic
+沸点攻击,水魔法LV3-2,PETSKILL_AttackMagic,magic 310 item 19656,310,1,7,0,PETSKILL_AttactMagic
+暴风雪,水魔法LV3-3,PETSKILL_AttackMagic,magic 311 item 19657,311,1,7,0,PETSKILL_AttactMagic
+冰天雪地,水魔法LV4,PETSKILL_AttackMagic,magic 312 item 19658,312,1,7,0,PETSKILL_AttactMagic
+火球,火魔法LV1,PETSKILL_AttackMagic,magic 313 item 19659,313,1,7,0,PETSKILL_AttactMagic
+火焰连弹,火魔法LV2,PETSKILL_AttackMagic,magic 314 item 19660,314,1,7,0,PETSKILL_AttactMagic
+蒸汽喷射,火魔法LV3-1,PETSKILL_AttackMagic,magic 315 item 19661,315,1,7,0,PETSKILL_AttactMagic
+火焰风爆,火魔法LV3-2,PETSKILL_AttackMagic,magic 316 item 19662,316,1,7,0,PETSKILL_AttactMagic
+熔岩爆发,火魔法LV3-3,PETSKILL_AttackMagic,magic 317 item 19663,317,1,7,0,PETSKILL_AttactMagic
+火山爆发,火魔法LV4,PETSKILL_AttackMagic,magic 318 item 19664,318,1,7,0,PETSKILL_AttactMagic
+风刃,风魔法LV1,PETSKILL_AttackMagic,magic 319 item 19665,319,1,7,0,PETSKILL_AttactMagic
+真空刃,风魔法LV2,PETSKILL_AttackMagic,magic 320 item 19666,320,1,7,0,PETSKILL_AttactMagic
+龙卷风,风魔法LV3-1,PETSKILL_AttackMagic,magic 321 item 19667,321,1,7,0,PETSKILL_AttactMagic
+暴风烈刃,风魔法LV3-2,PETSKILL_AttackMagic,magic 322 item 19668,322,1,7,0,PETSKILL_AttactMagic
+暴风冰刃,风魔法LV3-3,PETSKILL_AttackMagic,magic 323 item 19669,323,1,7,0,PETSKILL_AttactMagic
+南极飓风,风魔法LV4,PETSKILL_AttackMagic,magic 324 item 19670,324,1,7,0,PETSKILL_AttactMagic
+毁天灭地,魔法LV5,PETSKILL_AttackMagic,magic 325 item 19671,325,1,7,0,PETSKILL_AttactMagic

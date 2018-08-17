@@ -1,0 +1,44 @@
+#### 白天正常的葳娜 ####
+
+NomalMainMsg:我好希望永远都是现在的样子…
+
+####任务结束，认旗标112关####
+
+#### 有缎带对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ITEM=20178
+NomalWindowMsg:记得晚上再过来，有了这缎带见到了查拉不用怕的。
+EventEnd
+
+####  给缎带 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81
+AcceptMsg1:什么？？！！查拉咬伤人了吗？啊～～一定是有人靠近这个洞口，查拉知道我不喜欢被人看见的。
+AcceptMsg2:为什么吗？这个………我想…你晚上再来就会知道原因了。不过，你晚上来的时候，查拉会守在洞口。怕它会咬伤你。
+AcceptMsg3:嗯嗯…我有办法，这个缎带给你，查拉见了这个，就会放你进来的。
+ThanksMsg1:那么就晚上见了
+ItemFullMsg:你放不下了耶。
+GetItem:20178
+EventEnd
+
+#### 标不符合 不理 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:…………
+EventEnd
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+NomalMainMsg:前阵子只是听说要开通到尼斯大陆的航空，没想到真的成功了呢！
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:奇怪！最近怎么来了一堆尼斯人！\n你们是坐飞龙来的？难怪！欢迎来到伊甸，这里的娱乐设施可是一流的喔！
+EventEnd

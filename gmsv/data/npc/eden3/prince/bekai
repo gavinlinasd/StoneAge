@@ -1,0 +1,15 @@
+NEWWARPMAN
+#### 王子的前身比凯 ####
+
+NOFREE
+FREE:LV>0
+NomalMsg:快开始比赛了。
+PartyMsg:想问比赛的事请一个一个来好吗？？
+OVER
+
+TALKEVENT1
+WARP:7020,9,13
+FREE:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114&ITEM=20575
+FreeMsg:你说的是风城王子吧？嗯？这信…？？跟我来吧。
+DelItem:20575
+OVER

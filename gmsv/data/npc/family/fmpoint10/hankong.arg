@@ -1,0 +1,13 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV<0
+NomalMsg:....................
+OVER
+
+TALKEVENT1
+WARP:104,50,50
+FREE:LV>0
+FreeMsg:哦~~~~~你想到瑞尔亚斯航空站吗？那是到瑞尔亚斯新手村的必经之道，从那里坐史卡鲁航空就可到达荒废伊甸园。\n那我给你传送了，祝愿一路顺风~~！！！
+PartyMsg:\n不好意思、可以一个一个来吗？团队无法进入哦！！！
+OVER

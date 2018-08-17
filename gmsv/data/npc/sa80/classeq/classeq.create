@@ -1,0 +1,41 @@
+NPCCREATE
+
+########　法师精工师　#########
+{
+name=凯莉
+floorid=8218
+borncenter=23,16
+dir=4
+time=0
+createnum=1
+ignoreinvincible=1
+graphicname=16916
+enemy=ITEMCHANGE|file:sa80/classeq/wizeq.arg
+}
+
+########　猎人精工师　#########
+{
+name=凯莉
+floorid=8217
+borncenter=24,15
+dir=4
+time=0
+createnum=1
+ignoreinvincible=1
+graphicname=16916
+enemy=ITEMCHANGE|file:sa80/classeq/huneq.arg
+}
+
+########　勇士精工师 #########
+{
+name=凯莉
+floorid=8216
+borncenter=19,11
+dir=4
+time=0
+createnum=1
+ignoreinvincible=1
+graphicname=16916
+enemy=ITEMCHANGE|file:sa80/classeq/wareq.arg
+}
+

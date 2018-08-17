@@ -1,0 +1,23 @@
+NPCCREATE
+#######司卡奇航空 瑞尔亚斯～魔法之城##########
+{
+floorid=7500
+borncenter=41,60,1,1
+movecenter=41,60,41,60
+createnum=1
+dir=6
+graphicname=101990
+name=司卡奇航空
+enemy=airplane|file:my/airway/airway_1.arg
+}
+#######司卡奇航空 瑞尔亚斯～魔法之城##########
+{
+floorid=7500
+borncenter=41,57,1,1
+movecenter=41,57,41,57
+createnum=1
+dir=6
+graphicname=101990
+name=司卡奇航空
+enemy=airplane|file:my/airway/airway_2.arg
+}

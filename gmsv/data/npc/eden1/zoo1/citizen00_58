@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:抓宠～～抓宠～～我辛辛苦苦来到这里就是为了抓宠～～\n呵～～我要先抓满克克尔类还有火鸡类～～\n呵呵呵～～一想到这我就高兴啦～～
+EventEnd

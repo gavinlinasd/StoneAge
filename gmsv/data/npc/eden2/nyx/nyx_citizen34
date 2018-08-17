@@ -1,0 +1,8 @@
+NomalMainMsg:陌生人，没见过你啊？到地洞探险要非常小心啊！别说我没提醒你！
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:陌生人，没见过你啊？\n到地洞探险要非常小心啊！别说我没提醒你！
+EventEnd

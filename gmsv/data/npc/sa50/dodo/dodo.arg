@@ -1,0 +1,58 @@
+########帕加########
+
+NomalMainMsg:我有一天也会是暴龙队长喔。
+
+####　对话任务完成　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=125
+NomalWindowMsg:库沙达队长真是好帅啊！
+EventEnd
+
+####　接任务中已拿飞龙蛋　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1482
+NomalWindowMsg:谢谢你，帮我拿队长的签名回来。
+EventEnd
+
+####　接任务中已拿巧克力　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1480
+NomalWindowMsg:谢谢你，帮我拿队长的签名回来。
+EventEnd
+
+###　拿签名回来了　###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1449
+AcceptMsg1:哇哇哇～这就是暴龙队长的签名吗？太棒了，真是太感谢你了。为了谢谢你帮我要到了签名，这是我很喜欢的巧克力，请收下吧！这巧克力可是暴龙最爱吃的唷！
+ThanksMsg1:也许对你会有帮助吧。
+GetItem:1480
+DelItem:1449*1
+ItemFullMsg:你身上太多东西了喔！
+EventEnd
+
+####　接任务中还没拿签名　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=125
+NomalWindowMsg:还有一点忘了告訢你，听说暴龙队长有一个师父叫阿谷拔，他好像也有队长的签名，不管如何只要是队长的签名我都可以接受的啦！那一切都拜托你啰！
+EventEnd
+
+####　接任务去拿签名（开１２５）　####
+EventNo:125
+TYPE:REQUEST
+EVENT:LV>89&ENDEV=4&ENDEV=81
+RequestMsg1:你知道吗？常常在西北方看到大批的暴龙飞奔而过，那位暴龙队长骑在暴龙上真是英姿焕发呀！太帅了！长大我一定要跟他拜师学艺。
+RequestMsg2:我好崇拜他，你可以帮我跟他要个签名吗？暴龙大队一瞬间就从我眼前冲过，根本没办法接近他呀！
+ThanksMsg1:谢谢你！你真是好心人！我一定会报答你的，那一切就拜托你了。
+EventEnd
+
+####　未接任务对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:不知道你有没有看过暴龙队的队长，他真的好帅…
+EventEnd

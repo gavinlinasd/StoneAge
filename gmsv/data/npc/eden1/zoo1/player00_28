@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:能有这么一个地方可以大家一起玩游戏实在太有趣了，游乐场到底是谁想出来的点子啊？
+EventEnd

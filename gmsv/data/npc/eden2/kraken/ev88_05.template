@@ -1,0 +1,15 @@
+NPCTEMPLATE
+
+{
+templatename=ev88_05
+makeatnobody=1
+makeatnosee=1
+type=100401
+hp=
+mp=
+str=
+tough=
+functionset=NPCEnemy
+fly=
+itemnum=
+}

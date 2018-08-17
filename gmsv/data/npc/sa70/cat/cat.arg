@@ -1,0 +1,53 @@
+NEWWARPMAN
+
+#### 标全不正确，不理 ####
+NOFREE
+FREE:LV>0
+NomalMsg:
+PartyMsg:
+OVER
+
+####　身上有盐巴　####
+TALKEVENT1
+WARP:0,0,0
+FREE:LV>0&ITEM=12180
+FreeMsg:我说过不玩躲猫猫了了啦！你再来烦我，我要哭了喔！
+OVER
+
+####　第四次遇到柯西　####
+TALKEVENT2
+WARP:0,0,0
+FREE:LV>0&ITEM=2026
+AddItem:12180
+DelItem:2026
+FreeMsg:不和你玩躲猫猫了啦！这些盐你拿去算是你陪我玩躲猫猫的代价。你那么厉害，不好玩！
+OVER
+
+####　第三次遇到柯西　####
+TALKEVENT3
+WARP:0,0,0
+FREE:LV>0&ITEM=2025
+AddItem:2026
+DelItem:2025
+FreeMsg:好好玩喔！可是？你有没有作弊啊！怎么那么快就找到我了！真是的～～！贝壳拿去啦！！
+NPCPOINT:2000,53,71;2000,49,43;2000,79,43
+OVER
+
+####　第二次遇到柯西　####
+TALKEVENT4
+WARP:0,0,0
+FREE:LV>0&ITEM=2024
+AddItem:2025
+DelItem:2024
+FreeMsg:呵呵！你怎么那么厉害啊！下次我一定要找一个别人找不到的地方躲起来才行！！贝壳你拿去吧！这是你第二次找到我喔！嘻嘻！！
+NPCPOINT:2000,62,33;2000,42,73;2000,84,61
+OVER
+
+####　第一次遇到柯西　####
+TALKEVENT5
+WARP:0,0,0
+FREE:LV>0
+AddItem:2024
+FreeMsg:爸爸妈妈都出门去了，好无聊！你愿意和我玩躲猫猫吗？我先给你第一颗贝壳，加油喔！再找到我之后我们再交换贝壳。
+NPCPOINT:2000,79,67;2000,104,70;2000,101,85
+OVER

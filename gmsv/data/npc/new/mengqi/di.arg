@@ -1,0 +1,15 @@
+########地########
+
+NomalMainMsg:想吃桃子~5555555555555
+
+
+####拿猴子####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&ITEM=20790&ENDEV=202
+AcceptMsg1:晕啦晕啦~真被这个迷猴桃给迷住啦~5555555555555555555
+ThanksMsg1:让我的小宝宝和你一起多锻炼锻炼吧~加油！
+GetPet:1947
+DelItem:20790
+ItemFullMsg:身上道具太多了喔！
+EventEnd

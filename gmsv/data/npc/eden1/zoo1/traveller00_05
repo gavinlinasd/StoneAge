@@ -1,0 +1,8 @@
+NomalMainMsg:要不要跟我一起去外面逛逛啊？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:这个大陆上还有其他四个城呢，只是门都没开，不知道里面是什么样子呢？
+EventEnd

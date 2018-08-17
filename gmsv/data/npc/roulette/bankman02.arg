@@ -1,0 +1,18 @@
+#银行
+{
+GAMBLE_TYPE:4
+gamble_start:欢迎光临！\n本银行为游乐场个人银行。\n每次提款不得低于100石币，\n最高提领金额为100万石币，\n每次提领时需从存款中扣除300石币手续费用。
+gamble_msg01:          有什么需要我服务的吗？
+gamble_msg02:               ＜ 银    行 ＞
+gamble_msg03:NULL
+gamble_msg04:NULL
+gamble_msg05:                 ＜ 离开 ＞
+full_msg1:个人携带石币不可大于１百万。
+full_msg2:个人银行石币不可大于５千万。
+money_msg:你的钱不够喔！\n你所提领金额加上手续费大于你银行中的金额。
+nomal_msg:NOMALMSG
+end_msg:谢谢光临！
+getmax_msg:提领上限１００万。
+getmin_msg:单次取款不得低于１００。
+error_msg:本银行不提供此项服务。
+}

@@ -1,0 +1,13 @@
+NPCCREATE
+
+###　神兵专家　###
+{
+name=莫非
+floorid=3200
+borncenter=45,44
+dir=4
+ignoreinvincible=1
+createnum=1
+graphicname=16128
+enemy=changeevent|file:sa70/weapon/weapon.arg
+}

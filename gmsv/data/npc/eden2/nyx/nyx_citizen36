@@ -1,0 +1,11 @@
+NomalMainMsg:哇，真的有好多房子倒了呢！
+
+#聊水怪事件
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&NOWEV=88
+NomalWindowMsg:听说有大水怪来打坏我们很多房子，原来是真的呢！
+NomalWindowMsg2:不可以幸灾乐祸喔？\n\n这我知道啦，妈妈也有跟我说啦，我只是好奇而已啦！
+NomalWindowMsg3:最近城里有没有什么异样？\n\n嗯，之前是有穿着灰色衣服的叔叔伯伯经常在城里面搬进搬出一些大箱子啦，很匆忙的样子，不知道到底是在搬什么重要的东西啊？
+NomalWindowMsg4:啊，对了！我好像有听到动物的叫声从那些箱子里传出来呢，把那些动物关在箱子里会不会太残忍啊，也难怪它们要叫呢……
+EventEnd

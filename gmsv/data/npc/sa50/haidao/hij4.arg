@@ -1,0 +1,14 @@
+###解完任务之对话###
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>99&ENDEV=4&ENDEV=81&ENDEV=126
+NomalWindowMsg:你进去过里面了，那传说中真的有幽灵吗？！
+EventEnd
+
+####水龙洞前的海贼小卒####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:里面总是散布着一股死亡的气息，听说有我的前辈们的亡灵呢。
+EventEnd
+

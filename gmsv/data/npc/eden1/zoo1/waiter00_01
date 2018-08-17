@@ -1,0 +1,8 @@
+NomalMainMsg:我负责打扫。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:欢迎来到伊甸旅馆，我们旅馆上上下下都是由我打点的，一定让客人您住得舒舒服服的喔！
+EventEnd

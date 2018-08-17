@@ -1,0 +1,8 @@
+NomalMainMsg:年轻人，见识过水怪的威力吗？我脚上的伤就是它咬的啊！
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:年轻人，见识过水怪的威力吗？\n我脚上的伤就是它咬的啊！
+EventEnd

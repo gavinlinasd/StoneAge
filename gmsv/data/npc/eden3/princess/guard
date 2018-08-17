@@ -1,0 +1,22 @@
+### 皇宫守卫 ###
+
+####重复对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=116
+NomalWindowMsg:谢谢你帮我们的女王了结一件心事。
+EventEnd
+
+####重复对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=124
+NomalWindowMsg:请好好的照顾我们的公主，千万别让她受了什么伤害。拜托了。
+EventEnd
+
+####重复对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:在皇宫出入请保持礼节，这是尊重的表现。
+EventEnd

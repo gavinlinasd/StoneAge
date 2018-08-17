@@ -1,0 +1,14 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0&ENDEV!=184
+NomalMsg:你没做过思念故乡的贝克这个任务？赶紧去做吧，要不你没上冰城瑞尔亚斯之都的资格！
+OVER
+
+TALKEVENT1
+WARP:7500,46,52
+FREE:LV>0&ENDEV=184
+FreeMsg:你想参观冰城瑞尔亚斯之都吗？\n你想参观的话我给你传送了~~\n不过你必须完成思念故乡的贝克这个任务！
+PartyMsg:\n不好意思、可以一个一个来吗？团队无法进入哦！！！
+OVER
+

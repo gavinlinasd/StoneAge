@@ -1,0 +1,30 @@
+###麦特Ｂ线###
+NomalMainMsg:一张空白的信～～
+
+###麦特家地上的信###
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ITEM!=20136&ENDEV=95
+NomalWindowMsg:一张空白的信～～
+EventEnd
+
+###开旗标96###
+
+EventNo:96
+TYPE:ACCEPT
+EVENT:NOWEV=96
+AcceptMsg1:＜看来是麦特不小心掉在地上的一封信，要看内容吗？＞
+ThanksMsg1:麦特：\n　　　我现在在城西南方的空屋里，有事就来这找我，不过不要告诉喀尔斯和莉娜哦～～～\n　　　　　　　　　　　　　　　　　卡蜜儿
+
+EventEnd
+
+
+EventNo:96
+TYPE:REQUEST
+EVENT:ITEM=20136&ENDEV=95
+RequestMsg:＜看来是麦特不小心掉在地上的一封信，要看内容吗？＞
+ThanksMsg1:麦特：\n　　　我现在在城西南方的空屋里，有事就来这找我，不过不要告诉喀尔斯和莉娜哦～～～\n　　　　　　　　　　　　　　　　　卡蜜儿
+EventEnd
+
+

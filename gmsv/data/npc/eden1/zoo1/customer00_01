@@ -1,0 +1,8 @@
+NomalMainMsg:最近来了一堆尼斯人，肉都被买光了，真是讨厌。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:今天的肉价还不错，多买一些回去好了。
+EventEnd

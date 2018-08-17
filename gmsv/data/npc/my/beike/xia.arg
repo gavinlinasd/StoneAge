@@ -1,0 +1,11 @@
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:ITEM!=20918
+AcceptMsg:.....
+NomalMainMsg:.....
+ThanksMsg:....给你了
+GetItem:20918
+ItemFullMsg:你身上东西太多了
+EventEnd
+

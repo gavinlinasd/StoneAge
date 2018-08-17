@@ -1,0 +1,8 @@
+NomalMainMsg:嗨，你是从外地来的吧？这么奇特的服装，一看就知道了呢。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:伊甸最好玩的就是游乐场了，来到伊甸不去游乐场玩玩就太可惜了！
+EventEnd

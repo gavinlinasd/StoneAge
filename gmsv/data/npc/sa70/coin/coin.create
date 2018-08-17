@@ -1,0 +1,15 @@
+NPCCREATE
+####打不開的錢箱#####
+########迪克#########
+{
+name=皮洛
+floorid=3300
+borncenter=65,68
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16220
+enemy=changeevent|file:sa70/coin/coin1.arg
+}
+
+

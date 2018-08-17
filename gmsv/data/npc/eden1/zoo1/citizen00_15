@@ -1,0 +1,9 @@
+NomalMainMsg:该从哪开始打扫呢……
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:最近好像有动物在伊甸园里出没，有时候都会听到奇怪的叫声。\n不过还好并没有人受伤，不然雷尔园主又要伤脑筋了呢。
+NomalWindowMsg1:雷尔园主住哪里？就那个被墙壁围起来的房子啊。\n进不去？园主可能在忙吧，也许等他忙完了就会开门了喔。
+EventEnd

@@ -1,0 +1,56 @@
+#### 药丸提炼师（加防） ####
+
+START_MSG:你想提炼出可以让宠物提高防御力成长的药丸吗？？帮你磨出药丸的工本费一次一百元。材料需要各种等级的藻类植物一个加上一帖龙骨粉末。这种研磨出来的药剂只有对经过合体后的宠物才有效用喔。
+
+MenuHead:选择你想要的药丸
+NeedHead:需要的药引材料
+
+####  等级1药丸 ####
+{
+CHANGEITEM:1547
+NeedItem:1586,1567
+FREE:ITEM=1586&ITEM=1567&GOLD>=100
+DelGold:100
+DelItem:1586*1,1567*1
+AddItem:1547
+}
+
+####  等级2药丸 ####
+{
+CHANGEITEM:1551
+NeedItem:1586,1571
+FREE:ITEM=1586&ITEM=1571&GOLD>=100
+DelGold:100
+DelItem:1586*1,1571*1
+AddItem:1551
+}
+
+####  等级3药丸 ####
+{
+CHANGEITEM:1555
+NeedItem:1586,1575
+FREE:ITEM=1586&ITEM=1575&GOLD>=100
+DelGold:100
+DelItem:1586*1,1575*1
+AddItem:1555
+}
+
+####  等级4药丸 ####
+{
+CHANGEITEM:1559
+NeedItem:1586,1579
+FREE:ITEM=1586&ITEM=1579&GOLD>=100
+DelGold:100
+DelItem:1586*1,1579*1
+AddItem:1559
+}
+
+####  等级5药丸 ####
+{
+CHANGEITEM:1563
+NeedItem:1586,1583
+FREE:ITEM=1586&ITEM=1583&GOLD>=100
+DelGold:100
+DelItem:1586*1,1583*1
+AddItem:1563
+}

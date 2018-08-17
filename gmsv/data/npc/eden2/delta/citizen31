@@ -1,0 +1,9 @@
+NomalMainMsg:我虽然老了，身体可还硬朗得很呢！这可都是因为神奇的岩盐呢！
+
+#聊盐矿任务
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81
+NomalWindowMsg:说到我们的岩盐哪，这可是大有来头的喔，想知道吗？那你可要听好了喔！
+NomalWindowMsg2:我们塔耳塔城的最深处住着地精灵格隆，传说这些岩盐就是因为吸收了祂的魔力所以才有神奇的治愈能力呢。\n像我就是吃这岩盐才活这么久喔！
+EventEnd

@@ -1,0 +1,9 @@
+#艾尔蛙01
+WAVE:59
+routenum:1
+routeto1:7001,15,37;7001,15,33;7001,10,33;7001,10,37;7001,15,37
+routename1:艾尔比
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:14
+

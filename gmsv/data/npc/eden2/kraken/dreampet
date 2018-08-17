@@ -1,0 +1,15 @@
+NEWWARPMAN
+
+NOFREE
+FREE:LV>0
+NomalMsg:欢迎来到伊甸动物园，希望你玩得高兴！我们还预定会展出其他更珍奇的动物。
+PartyMsg:对不起，请一个一个来好吗？
+WARP:7025,143,134
+OVER
+
+#虚拟包对话
+TALKEVENT1
+FREE:LV>0
+FreeMsg:欢迎来到伊甸的饲养森林。\n逛累了想要离开这里了吗？\n\n注意：离开后身上必须拥有参观券才可以再进来喔！！
+WARP:7001,41,6
+OVER

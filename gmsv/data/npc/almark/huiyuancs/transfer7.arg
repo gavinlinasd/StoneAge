@@ -1,0 +1,7 @@
+NomalMainMsg:要进入会员区请从村长家左后方的VIP区传送员处进去，具体坐标为46，20，谢谢配合！！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:VIP=1
+NomalMsg:要进入会员区请从村长家左后方的VIP区传送员处进去，具体坐标为46，20，谢谢配合！！
+EventEnd

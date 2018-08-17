@@ -1,0 +1,16 @@
+####  清除就职任务标  ####
+
+NomalMainMsg:想跳槽可以来找我…。
+
+
+#### 已就职 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:CLASS>0
+AcceptMsg1:嗯嗯，恭喜您已经正式就职了。
+AcceptMsg2:如果你对自己选择的职业感到后悔的话，我会帮你办理退出的事宜。
+AcceptMsg3:只不过之前所做的努力都将白费，已经学得的等级与技能都必须遗忘。\n\n请务必要考虑清楚。你确定要退出吗？
+ThanksMsg:好吧，我就受理你的要求了。\n现在的年轻人真是没有毅力呀....
+PROFESSION:0
+EventEnd
+

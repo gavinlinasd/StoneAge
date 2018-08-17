@@ -1,0 +1,9 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:可以在这沙漠里建立家园，是我长久以来的梦想。
+NomalWindowMsg1:光是找水源就花了我二十年的时间；虽然水源是被雷尔大人找到的，不过我这一生也已经毫无怨尤了。\n因为雷尔大人完成了我的梦想，我衷心地感谢雷尔大人。
+EventEnd

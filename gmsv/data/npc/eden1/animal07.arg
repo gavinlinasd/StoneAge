@@ -1,0 +1,9 @@
+#摩里01
+WAVE:54
+routenum:1
+routeto1:7001,26,24;7001,26,20;7001,31,20;7001,31,24;7001,26,24
+routename1:小摩
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:7
+

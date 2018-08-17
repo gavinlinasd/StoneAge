@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:这么大一座城到底是谁盖起来的呢，听说外面还有四座城还没有开门呢，是因为害怕我们尼斯人还是有别的原因呢？
+EventEnd

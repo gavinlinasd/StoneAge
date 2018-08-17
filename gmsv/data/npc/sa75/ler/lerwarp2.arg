@@ -1,0 +1,26 @@
+NEWWARPMAN
+
+####ÀÎÃÅÃ»Ô¿³× ####
+NOFREE
+FREE:LV>0
+NomalMsg:¿¨¿¨¿¨£¡
+PartyMsg:¿¨¿¨¿¨£¡
+OVER
+
+####¡¡ÀÎÃÅÓÐÔ¿³×´«ËÍÖÁµØÀÎ ####
+TALKEVENT1
+WARP:8513,23,18
+FREE:LV>89&ENDEV=4&ENDEV=81&ENDEV=174&ENDEV=116&ENDEV=111&ENDEV=115&NOWEV=175&NOWEV=176&ITEM=20609
+DelItem:20609
+FreeMsg:¿¨¿¨¿¨£¡
+OVER
+
+####¡¡ÀÎÃÅÃ»Ô¿³× ####
+TALKEVENT2
+WARP:0,0,0
+FREE:LV>89&ENDEV=4&ENDEV=81&ENDEV=174&ENDEV=116&ENDEV=111&ENDEV=115&NOWEV=175
+FreeMsg:¿¨¿¨¿¨£¡
+OVER
+
+
+

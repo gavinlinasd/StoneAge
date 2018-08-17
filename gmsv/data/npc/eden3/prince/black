@@ -1,0 +1,42 @@
+#### 王子好友A 布列克 ####
+
+NomalMainMsg:尼克斯跟亚伊欧真是大不相同…
+
+####任务结束，认旗标114关####
+
+
+#### 任务进行中对话，给布列克的信 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114&ITEM=20200
+AcceptMsg1:你说的是王子吗？？呵呵…我跟他可是难兄难弟呢！他跟我说要到塔耳塔城学做料理，我想他会去找比吉斯吧。
+ThanksMsg1:顺便帮我跟王子说一声我最近过的还好好吗？？
+ItemFullMsg:没想到你身上连放一封信的位置都没有。
+GetItem:20573
+DelItem:20200
+EventEnd
+
+#### 身上有布列克信对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114&ITEM=20573
+NomalWindowMsg:比吉斯可是塔耳塔出名的大厨师呢。
+EventEnd
+
+#### 任务进行中对话，给布列克的信(无委托信) ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113&NOWEV=114
+AcceptMsg1:你说的是王子吗？？呵呵…我跟他可是难兄难弟呢！他跟我说要到塔耳塔城学做料理，我想他会去找比吉斯吧。
+ThanksMsg1:顺便帮我跟王子说一声我最近过的还好好吗？？
+ItemFullMsg:没想到你身上连放一封信的位置都没有。
+GetItem:20573
+EventEnd
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:我是一个旅行者，我来自风城。
+EventEnd
+

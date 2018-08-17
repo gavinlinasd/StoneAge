@@ -1,0 +1,95 @@
+####  清除就职任务标  ####
+
+NomalMainMsg:好想念我的男朋友啊…。
+
+
+#### 已就职 ####
+EventNo:-1
+TYPE:ACCEPT
+EVENT:CLASS>0
+AcceptMsg1:嗯嗯，恭喜您已经正式就职了。
+AcceptMsg2:如果你对自己选择的职业感到后悔的话，我会帮你办理退出的事宜。
+AcceptMsg3:只不过之前所做的努力都将白费，已经学得的等级与技能都必须遗忘。\n\n请务必要考虑清楚。你确定要退出吗？
+ThanksMsg:好吧，我就受理你的要求了。\n现在的年轻人真是没有毅力呀....
+PROFESSION:0
+EventEnd
+
+
+####  解完白狼勇士就职任务但未就职  ####
+EventNo:-1
+TYPE:CLEAN
+EVENT:ENDEV=145&CLASS=0
+CleanFlg:145
+CleanMainMsg:唔，你已经完成了白狼勇士的试炼，所以你的意思是你后悔了吗？决定了的话就按下ｏｋ吧，可得想清楚才好。
+CleanFlgMsg:这样就可以了，你可以再重新选择想要的职业，这次可得想清楚才行。
+EventEnd
+
+####  解完闇灵法师就职任务但未就职  ####
+EventNo:-1
+TYPE:CLEAN
+EVENT:ENDEV=146&CLASS=0
+CleanFlg:146
+CleanMainMsg:唔，你已经完成了闇灵法师的试炼，所以你的意思是你后悔了吗？决定了的话就按下ｏｋ吧，可得想清楚才好。
+CleanFlgMsg:这样就可以了，你可以再重新选择想要的职业，这次可得想清楚才行。
+EventEnd
+
+####  解完追猎者就职任务但未就职  ####
+EventNo:-1
+TYPE:CLEAN
+EVENT:ENDEV=147&CLASS=0
+CleanFlg:147
+CleanMainMsg:唔，你已经完成了追猎者的试炼，所以你的意思是你后悔了吗？决定了的话就按下ｏｋ吧，可得想清楚才好。
+CleanFlgMsg:这样就可以了，你可以再重新选择想要的职业，这次可得想清楚才行。
+EventEnd
+
+####  解白狼勇士就职任务中  ####
+EventNo:-1
+TYPE:CLEAN
+EVENT:NOWEV=145
+CleanFlg:145
+CleanMainMsg:唔，你正在接受白狼勇士的试炼，所以你的意思是你后悔了吗？决定了的话就按下ｏｋ吧，可得想清楚才好。
+CleanFlgMsg:这样就可以了，你可以再重新选择想要的职业，这次可得想清楚才行。
+EventEnd
+
+####  解闇灵法师就职任务中  ####
+EventNo:-1
+TYPE:CLEAN
+EVENT:NOWEV=146
+CleanFlg:146
+CleanMainMsg:唔，你正在接受闇灵法师的试炼，所以你的意思是你后悔了吗？决定了的话就按下ｏｋ吧，可得想清楚才好。
+CleanFlgMsg:这样就可以了，你可以再重新选择想要的职业，这次可得想清楚才行。
+EventEnd
+
+####  解追猎者就职任务中  ####
+EventNo:-1
+TYPE:CLEAN
+EVENT:NOWEV=147
+CleanFlg:147
+CleanMainMsg:唔，你正在接受追猎者的试炼，所以你的意思是你后悔了吗？决定了的话就按下ｏｋ吧，可得想清楚才好。
+CleanFlgMsg:这样就可以了，你可以再重新选择想要的职业，这次可得想清楚才行。
+EventEnd
+
+#### 全不符 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:问我吗？喔，我的工作是帮一些草率下决定的人，当他们后悔所选择的职业，重新让他们有选择的机会。
+EventEnd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

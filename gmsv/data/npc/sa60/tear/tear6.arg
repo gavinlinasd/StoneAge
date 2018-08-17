@@ -1,0 +1,16 @@
+NEWWARPMAN
+
+####洛林####
+NOFREE
+FREE:LV>0
+NomalMsg:这封信是给我的吗？
+PartyMsg:这封信是给我的吗？
+OVER
+
+####洛林传送玩家至怪物中####
+TALKEVENT1
+WARP:8029,10,8
+FREE:LV>0&ENDEV=4&ITEM=1679&NOWEV=136
+FreeMsg:这封信是给我的吗？等等！？有人来了～！！！
+OVER
+

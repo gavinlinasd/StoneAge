@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:身上的钱都玩完了，一不小心就在游乐场玩过头了，真是的……
+EventEnd

@@ -1,0 +1,10 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:機豹+克克洛斯+黑暴 機豹+奇寶+黑暴\n機豹+奇寶+威比 風蛇+克克洛斯+風年\n地年+奇寶+風年 邦凱斯+邦凱斯+邦凱斯\n水蛇+藍雞+黑暴 機豹+綠雞+黑暴\n 機豹+紅雞+金飛 機豹+奇寶+火年\n地蛇+奇寶+黑暴 機豹+藍雞 + 機豹\n藍暴+綠鳥+黑暴 地蛇+藍雞+黑暴 
+NomalWindowMsg1:紅暴+摩裏+紅暴 藍暴+摩裏+藍暴\n豹子+藍雞+紅龍 綠人+塔斯夫+黑暴\n綠暴+藍雞+黑暴 地端+綠雞+黑暴\n蒙哥拉斯+戈登爾頓+朵巴奈特 綠龍+ 橙雞+黑暴\n水端+紅雞+水年 巴朵蘭恩+摩裏\n艾迪希洛+克克洛斯 艾迪希洛+格裏蘭\n艾迪希洛+奇寶 艾迪希洛+摩裏 
+NomalWindowMsg2:卡恩米滋+克克洛斯 卡恩法爾+奇寶\n葛雷基歐+奇寶 卡恩法爾+格裏蘭\n邦凱斯+邦凱斯 奧卡洛斯+摩裏\n卡恩修比+摩裏 赫拉克勒斯+摩裏\n卡恩法爾+摩裏 左迪洛斯+摩裏\n左迪洛斯+格裏蘭 利則諾頓+塔斯夫 
+EventEnd

@@ -1,0 +1,22 @@
+NEWNPCENEMY
+
+entype:2
+askbattlemsg1:你想找亚曼塔？他现在是我们的人了，要想见他你得先打败我！
+startmsg:来吧！Come on baby！～～～～～～～～
+dieact:1
+warpfl:0
+warpx:0
+warpy:0
+enemyno:5124,5124,5124,5124,5124,5123,5124,5124,5124,5124
+deniedmsg:你有鬼卒的钥匙么？～
+alreadymsg:急啥！？要见亚曼塔一个个地来！
+item:21165
+onebattle:1
+OVER
+
+NEWEVENT1:
+FREE:NOWEV=185&ITEM=21165
+WARP:8122,68,11
+DelItem:21165
+endmsg:挖靠！！你真的好强！要找亚曼塔是吧，那就放你过去吧！但是碰得上碰不上就看你运气了！
+OVER

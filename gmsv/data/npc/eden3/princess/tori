@@ -1,0 +1,45 @@
+#### 奶妈多莉 ####
+
+NomalMainMsg:我最担心的，还是公主嫁了之后会不会幸福…。
+
+#### 任务结束后对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=116
+NomalWindowMsg:还好他们小两口终于顺利的见过面了，这都得谢谢你呢。
+EventEnd
+
+####标正确给公主人宠
+EventNo:124
+TYPE:ACCEPT
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=116&NOWEV=124
+AcceptMsg:没办法，我说不动她，毕竟年轻人心都是向着外面的，让她出去见识见识也好。
+ThanksMsg:我们的小公主非常顽皮，而且她很想看看那个吉德长什么样，毕竟他们将要相守一辈子。只好请你照顾她了…。
+PetFullMsg:哎呀，你都带着这么多宠物到处走吗？那我的公主可不能跟你去。
+GetPet:1893
+EndSetFlg:124
+EventEnd
+
+#### 已得公主对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=124
+NomalWindowMsg:请你好好替我照顾公主，我实在很担心。
+EventEnd
+
+### 收信开１１６  ###
+EventNo:116
+TYPE:REQUEST
+EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=124
+RequestMsg1:我是公主的奶妈，二十年来我辛苦的把她带大，现在看到她要嫁人，心里还真是高兴又有点舍不得。
+RequestMsg2:唉，公主一听到你要去找寻吉德王子，就一直吵着也要跟去；真是拿他没办法。
+RequestMsg3:请等我一下，我再试试看能不能说服她，实在不敢让她出这种远门，我会担心的睡不着。
+ThanksMsg:等我跟公主再商量一下。
+EventEnd
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:是外来的客人吗？我要忙着照顾我们的小公主呢。
+EventEnd

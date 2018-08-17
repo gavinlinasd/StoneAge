@@ -1,0 +1,35 @@
+#######戒指#######
+
+NomalMainMsg:...
+
+
+#### 完成任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&ENDEV=4&ENDEV=136
+NomalWindowMsg:（呵！这一顶帽子还在这里喔！）
+EventEnd
+
+#### 身上有戒指对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0&ENDEV=4&ITEM=1677&NOWEV=136&ITEM=1679
+NomalWindowMsg:（再找找看有没有别的东西？！唉！好像没有了，这顶破帽子也没什么用吧！）
+EventEnd
+
+###身上有信给戒指###
+EventNo:-1
+TYPE:ACCEPT
+EVENT:LV>0&ENDEV=4&ITEM=1679&NOWEV=136
+AcceptMsg1:（咦！怎么有一个顶破帽子呢？洛林呢？一定被刚刚他旁边那个人给抓走了。咦！帽子里好像还有东西，一枚戒指？）
+ThanksMsg1:（可能是洛林的吧！算了！现在也追不上他们了。）
+GetItem:1677*1
+ItemFullMsg:（糟了！物品好像满了。）
+EventEnd
+
+#### 未接任务对话 ####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:沙～
+EventEnd

@@ -1,0 +1,6 @@
+####城外守卫重复对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:前阵子为了公主的婚事，宫里上上下下都忙着整修呢!
+EventEnd

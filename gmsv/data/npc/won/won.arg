@@ -1,0 +1,23 @@
+NEWWARPMAN
+
+#### nomalmsg ####
+NOFREE
+WARP:0,0,0
+FREE:LV>0
+NomalMsg:您是招待室的客人，请先留下吧。
+PartyMsg:请先解散队伍。
+OVER
+
+#### 坏玩家 ####
+TALKEVENT1
+WARP:0,0,0
+FREE:LV>0&ENDEV=135
+FreeMsg:您是招待室的客人，请先留下吧。
+OVER
+
+#### 正常玩家 ####
+TALKEVENT2
+WARP:1000,89,69
+FREE:LV>0
+FreeMsg:您要离开了吗？
+OVER

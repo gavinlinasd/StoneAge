@@ -1,0 +1,8 @@
+NomalMainMsg:我们弗烈顿国因为所处的地理位置不太好，所以在那儿生存的人都锻炼出了强健的身体喔！
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:别小看女人，我的力气也是很大的呢！
+EventEnd

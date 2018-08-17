@@ -1,0 +1,7 @@
+NomalMainMsg:你在看我吗？我也很喜欢看我自己～
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:你在看我吗？我也很喜欢看我自己～
+EventEnd

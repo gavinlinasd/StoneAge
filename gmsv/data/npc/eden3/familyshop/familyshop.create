@@ -1,0 +1,66 @@
+NPCCREATE
+
+###### 伊甸封闭商人 ######
+{
+name=商人
+floorid=5036
+borncenter=7,4
+time=0
+dir=4
+createnum=1
+ignoreinvincible=1
+enemy=changeevent|file:eden3/familyshop/edenshop.arg
+graphicname=16310
+}
+
+###### 地城封闭商人 ######
+{
+name=商人
+floorid=6037
+borncenter=8,5
+time=0
+dir=6
+createnum=1
+ignoreinvincible=1
+enemy=changeevent|file:eden3/familyshop/earthshop.arg
+graphicname=16311
+}
+
+###### 水城封闭商人 ######
+{
+name=商人
+floorid=7035
+borncenter=9,10
+time=0
+dir=6
+createnum=1
+ignoreinvincible=1
+enemy=changeevent|file:eden3/familyshop/watershop.arg
+graphicname=16311
+}
+
+###### 火城封闭商人 ######
+{
+name=商人
+floorid=8035
+borncenter=11,10
+time=0
+dir=6
+createnum=1
+ignoreinvincible=1
+enemy=changeevent|file:eden3/familyshop/fireshop.arg
+graphicname=16311
+}
+
+###### 风城封闭商人 ######
+{
+name=商人
+floorid=9038
+borncenter=11,11
+time=0
+dir=6
+createnum=1
+ignoreinvincible=1
+enemy=changeevent|file:eden3/familyshop/windshop.arg
+graphicname=16311
+}

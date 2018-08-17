@@ -1,0 +1,7 @@
+NomalMainMsg:年轻人，这间动物园可是伊甸大陆唯一的一间喔。
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:年轻人，\n这间动物园可是伊甸大陆唯一的一间喔。
+EventEnd

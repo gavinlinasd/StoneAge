@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:根据我的计算，这次的结果是……（不知道在算些什么的样子……）
+EventEnd

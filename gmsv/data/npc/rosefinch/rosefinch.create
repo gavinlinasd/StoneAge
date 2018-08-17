@@ -1,0 +1,13 @@
+NPCCREATE
+#测试用
+{
+floorid=1000
+borncorner=49,104,49,104
+time=0
+createnum=1
+dir=4
+ignoreinvincible=1
+graphicname=100401
+name=朱雀活动领奖NPC
+enemy=npc_newwarpman|file:rosefinch/rosefinch02.arg
+}

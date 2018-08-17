@@ -1,0 +1,9 @@
+NomalMainMsg:我们尼克斯人都是以采集维生的，因为水精灵一直教导我们要有颗慈悲的心，所以我们都尽量不杀生的。
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:每天采收作物真是辛苦，虽然很累，不过每天都过得挺充实的呢。
+NomalWindowMsg1:不过我在家乡的朋友就没那么好运了，听说有人在工作的时候刚好碰上水怪而受伤了呢，真是可怜啊……
+EventEnd

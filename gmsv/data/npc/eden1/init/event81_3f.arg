@@ -1,0 +1,11 @@
+entype:2
+askbattlemsg1:你这家伙！ 说我背后的布兰恩是偷来的，这一只是我捡到的，想要就看你有几分斤两！
+startmsg:不怕死的就放马过来！
+dieact:1
+warpfl:5580
+warpx:58
+warpy:20
+end msg:痛...痛死我了！
+enemyno:1705,1704,1704,1704,1704,1704,1704,1704,1704,1704
+deniedmsg:你是什么东西？
+

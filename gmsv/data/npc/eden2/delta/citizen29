@@ -1,0 +1,7 @@
+NomalMainMsg:上次听到有人说我们塔耳塔的人民都住在地洞里，跟兔子没两样，真是气死人了！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:上次听到有人说我们塔耳塔的人民都住在\n地洞里，跟兔子没两样，真是气死人了！
+EventEnd

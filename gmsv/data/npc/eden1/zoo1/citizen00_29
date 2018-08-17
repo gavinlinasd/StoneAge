@@ -1,0 +1,9 @@
+NomalMainMsg:我们塔耳塔国是建筑在地下的喔，你要是看到了一定会大吃一惊的呢！
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:伊甸这儿比塔耳塔国亮多了，还真是有点不习惯呢！
+NomalWindowMsg1:你还没去过塔耳塔国啊？真是可惜呢，我们国王每年都会举办皇家厨师的比赛，算算也就是现在了，会有很多的人参加喔，很热闹的！
+EventEnd

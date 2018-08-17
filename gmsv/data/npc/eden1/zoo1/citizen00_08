@@ -1,0 +1,9 @@
+NomalMainMsg:玩游戏真的那么有趣的话大家都不要做事算了？
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:你去看过伊甸的游乐场了吗？游乐场很热闹的，既然来到伊甸可是非去不可的喔！
+NomalWindowMsg1:不过我不喜欢玩游戏，所以我都没进去游乐场过。
+EventEnd

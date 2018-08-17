@@ -1,0 +1,66 @@
+#### 水魔法钻戒加工师 ####
+
+START_MSG:你想加工出水系的魔法钻戒吗？？加工一次一千五百元喔。材料的话就是要一个同等级的魔法戒指加上一些数量的钻石。钻石的数量分别为ＬＶ４十个，ＬＶ３－３八个，ＬＶ３－２七个，ＬＶ３－１六个，ＬＶ２四个，ＬＶ１一个。
+
+MenuHead:选择你想要的魔法钻戒
+NeedHead:需要的材料
+
+####  等级1水魔法戒加工 ####
+{
+CHANGEITEM:20251
+NeedItem:20287,19642
+FREE:ENDEV=4&ENDEV=81&ITEM=20287&ITEM=19642&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*1,19642*1
+AddItem:20251
+}
+
+####  等级2水魔法戒加工 ####
+{
+CHANGEITEM:20252
+NeedItem:20287,19730
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*4&ITEM=19730&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*4,19730*1
+AddItem:20252
+}
+
+####  等级3-1水魔法戒加工 ####
+{
+CHANGEITEM:20253
+NeedItem:20287,20180
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*6&ITEM=20180&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*6,20180*1
+AddItem:20253
+}
+
+####  等级3-2水魔法戒加工 ####
+{
+CHANGEITEM:20254
+NeedItem:20287,20584
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*7&ITEM=20584&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*7,20584*1
+AddItem:20254
+}
+
+####  等级3-3水魔法戒加工 ####
+{
+CHANGEITEM:20255
+NeedItem:20287,20585
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*8&ITEM=20585&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*8,20585*1
+AddItem:20255
+}
+
+####  等级四水魔法戒加工 ####
+{
+CHANGEITEM:20256
+NeedItem:20287,20586
+FREE:ENDEV=4&ENDEV=81&ITEM=20287*10&ITEM=20586&GOLD>=1500&reITEM>=1
+DelGold:1500
+DelItem:20287*10,20586*1
+AddItem:20256
+}

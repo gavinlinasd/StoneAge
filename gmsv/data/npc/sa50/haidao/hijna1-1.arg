@@ -1,0 +1,31 @@
+########　打完宝箱给道具海贼王　#######
+
+NomalMainMsg:我就是海贼王文狄。
+
+####　任务完成对话 　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>99&ENDEV=4&ENDEV=81&ENDEV=126
+NomalWindowMsg:伟大的英雄…带着我的祝福继续你的历炼吧…。
+EventEnd
+
+###　关任务标　###
+EventNo:126
+TYPE:ACCEPT
+EVENT:LV>99&ENDEV=4&ENDEV=81&NOWEV=126
+AcceptMsg1:看来你是一个真正的英雄，这些我长年以来守候的宝物就送给你吧，宝剑要配英雄啊…。
+ThanksMsg1:要好好使用它。
+GetItem:1448,20289
+GetStone:200000
+StoneFullMsg:你带这么多石头干嘛？！
+ItemFullMsg:你身上太多东西了喔，难道说你不想要？！
+EndSetFlg:126
+EventEnd
+
+####　未接任务对话　####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:……………
+EventEnd
+

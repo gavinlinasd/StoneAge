@@ -1,0 +1,8 @@
+#雷德力克斯01
+WAVE:56
+routenum:1
+routeto1:7001,10,7;7001,6,3;7001,6,7;7001,10,3;7001,10,7
+routename1:克斯
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:19

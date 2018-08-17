@@ -1,0 +1,8 @@
+NomalMainMsg:
+
+#闲聊
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:没想到伊甸乐园居然是在沙漠的最中央，这可真是令人感到神奇，真是令人不由得打从心里佩服伊甸的创立者艾巴登ㄚ……
+EventEnd

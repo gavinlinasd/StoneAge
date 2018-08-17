@@ -1,0 +1,9 @@
+#玻洛布斯02
+WAVE:81
+routenum:1
+routeto1:7001,43,28;7001,43,17;7001,43,28
+routename1:洛布
+needstone:100000
+msg_stone:嘎嘎嘎（动物很惊慌地四处逃窜）
+waittime:13
+

@@ -1,0 +1,8 @@
+NomalMainMsg:动物园真是个古怪的地方，为什么要在沙漠里开动物园呢？,有没有去过贫民窟啊？
+
+#聊水怪任务
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>90&ENDEV=81&NOWEV=88
+NomalWindowMsg:我告诉你喔，动物园一定有在进行不可告人的事情呢！\n我上次碰见它们在搬大箱子的时候才多看了一眼他们就匆匆忙忙地很快跑掉了。\n这是一定有问题的啦！
+EventEnd
