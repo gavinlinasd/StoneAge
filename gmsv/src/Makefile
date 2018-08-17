@@ -15,7 +15,7 @@ INCFLAGS=-Iinclude
 
 CFLAGS=-w -O3 $(INCFLAGS)
 
-PROG=gmsv
+PROG=../gmsv
 
 #TOP=../..
 TOP=..
