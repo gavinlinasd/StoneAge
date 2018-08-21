@@ -295,7 +295,6 @@ char *genver=
 "_PETSKILL_2TIMID         // (可开) Change 怯战第二版(狂狮怒吼)\n"
 "CAVALRY_DEBUG            // (暂时开) Change 座骑攻击除错中\n"
 "_SHOW_FUSION             // (可开) Change 融合宠物在CLIENT端只显示转生数,修改为融合宠显示为融合(client端也要开)\n"
-"_CONTRACT                // (可开) Robin 契约功能 \n"
 "_FONT_SIZE               // (可开) Robin 字型大小功能\n"
 "_PROSK99                 // (可开) Change 检查职技等级送白狼\n"
 "_TIME_TICKET             // Robin 限时入场 森林捉宠用\n"
@@ -319,5 +318,5 @@ char *genver=
 "_GM_METAMO_RIDE          // GM人物骑所有宠\n"
 "_GM_RIDE                 // GM命令设置骑宠权限\n"
 "_LOCK_IP                 // 锁定IP\n"
-"<<Generated at Fri Aug 17 15:55:26 PDT 2018>>"
+"<<Generated at Tue Aug 21 03:31:44 PDT 2018>>"
 "by : 龙zoro工作室";

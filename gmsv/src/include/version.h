@@ -532,7 +532,7 @@ Game Server 游戏环境:
 #define _PETSKILL_2TIMID         // (可开) Change 怯战第二版(狂狮怒吼)
 #define CAVALRY_DEBUG            // (暂时开) Change 座骑攻击除错中
 #define _SHOW_FUSION             // (可开) Change 融合宠物在CLIENT端只显示转生数,修改为融合宠显示为融合(client端也要开)
-#define _CONTRACT                // (可开) Robin 契约功能 
+//#define _CONTRACT                // (可开) Robin 契约功能 
 #define _FONT_SIZE               // (可开) Robin 字型大小功能
 #define _PROSK99                 // (可开) Change 检查职技等级送白狼
 #define _TIME_TICKET             // Robin 限时入场 森林捉宠用

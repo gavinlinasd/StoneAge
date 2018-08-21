@@ -7,7 +7,7 @@ sql_Table logindata
 sql_LOCK user_lock
 AutoReg 1
 
-port 9300
+port 9301
 pass test
 rotale_internal 1000
 
