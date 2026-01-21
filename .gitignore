@@ -1,0 +1,15 @@
+# Build artifacts
+*.o
+*.a
+*.so
+
+# Binaries
+gmsv/gmsv
+saac/saac
+saac/acwk
+
+# Generated files
+gmsv/genver.h
+
+# Log files
+*.log
