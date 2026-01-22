@@ -337,7 +337,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 		ch.data[CHAR_LOWRIDEPETS] = 0;
 #endif
 
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	ch.data[CHAR_FAME] = 0;
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -364,7 +364,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 	ch.data[CHAR_KINDCNT9] = 0;
 	ch.data[CHAR_KINDCNT10] = 0;
 #endif
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 	ch.data[PROFESSION_CLASS] = 0;
 	ch.data[PROFESSION_LEVEL] = 0;
 //	ch.data[PROFESSION_EXP] = 0;
@@ -2130,7 +2130,7 @@ static void CHAR_dropItemAtLogout( int charaindex )
 				LogItem(
 					CHAR_getChar( charaindex, CHAR_NAME ),
 					CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
 		       		ITEM_getInt( itemindex, ITEM_ID ),
@@ -2980,7 +2980,7 @@ DebugPoint = 100;
 			hskill = CHAR_getCharHaveSkill( index, i );
 
 			if( hskill != NULL && hskill->use == TRUE ){
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 				snprintf( token , sizeof(token), "%s|", SKILL_makeSkillStatusString(&hskill->skill, index, i) );
 #else
 				snprintf( token , sizeof(token), "%s|", SKILL_makeSkillStatusString(&hskill->skill) );
@@ -3330,7 +3330,7 @@ DebugPoint = 100;
 		return CHAR_statusSendBuffer;
 }
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	case 'y':
 {
 		int num = 0, f_num = 0;
@@ -3906,7 +3906,7 @@ int _CHAR_complianceParameter( int index, char *FILE, int LINE)
 			}
 		}
 		
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�		
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能		
 		{
 			int i, add_pile = 0;
 			int old_pile = CHAR_getWorkInt( index, CHAR_WORKATTACHPILE);
@@ -4210,8 +4210,8 @@ BOOL _CHAR_makeObjectCString( char *file, int line, int objindex,char* buf, int 
 	   		petlevel = CHAR_getInt( ridepet, CHAR_LV);
 	   	}
 #ifdef _OBJSEND_C
-  #ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
-    #ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+  #ifdef _CHAR_PROFESSION			// WON ADD 職業
+    #ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 		  snprintf( buf, buflen, "%d|%d|%s|%d|%d|%d|%d|%d|%d|%s|%s|%d|%d|%d|%s|%s|%d|%d|%d|%d|%d",
     #else
 		  snprintf( buf, buflen, "%d|%d|%s|%d|%d|%d|%d|%d|%d|%s|%s|%d|%d|%d|%s|%s|%d|%d|%d|%d",
@@ -4243,13 +4243,13 @@ BOOL _CHAR_makeObjectCString( char *file, int line, int objindex,char* buf, int 
 				  tmp,
 				  makeEscapeString( petname, escapepetname, sizeof(escapepetname)),
 				  petlevel
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 				  ,CHAR_getInt( charaindex, PROFESSION_CLASS)	// 眥珛梗
 				  ,CHAR_getInt( charaindex, PROFESSION_LEVEL)	// 眥珛脹撰
 //				  ,CHAR_getInt( charaindex, PROFESSION_EXP)		// 眥珛冪桄硉
 				  ,CHAR_getInt( charaindex, PROFESSION_SKILL_POINT)	// 撮夔萸杅
 #endif
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 				  ,CHAR_getInt( charaindex, CHAR_HEROFLOOR )	// 荎倯桵部瞼脯
 #endif
 #ifdef _GM_IDENTIFY
@@ -4627,7 +4627,7 @@ BOOL _CHAR_warpToSpecificPoint( char *file, int line, int charaindex, int floor,
 		CHAR_setWorkInt( charaindex, CHAR_WORKENCOUNTPROBABILITY_MAX, per);
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	CHAR_setWorkInt( charaindex, CHAR_ENCOUNT_FIX, 0);
 #endif
 
@@ -6740,7 +6740,7 @@ BOOL CHAR_initEffectSetting( char* filename )
         fclose( f );
         return FALSE;
     }
-    /* 疐趵撬 */
+    /* 參數結構 */
 {
     int     i;
     for( i = 0; i < CHAR_effectnum; i ++ ) {
@@ -6765,8 +6765,8 @@ BOOL CHAR_initEffectSetting( char* filename )
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  菜禱堆魠埰堎    */
-        /*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
+        /* 實際調用的函數 */
+        /* 將tab轉換為空格 */
         replaceString( line, '\t' , ' ' );
         /*    襄媃倜 " " 禱痲敁僑勗埰堎 */
         deleteSequentChar( line, " " );

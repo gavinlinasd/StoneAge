@@ -491,7 +491,7 @@ CHAR_AFTERWALK:
 		    int minep = CHAR_getWorkInt(charaindex, CHAR_WORKENCOUNTPROBABILITY_MIN);
 		    int cep = CONNECT_get_CEP(enfd);
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 			int temp=0;
 			int p_cep = CHAR_getWorkInt(charaindex, CHAR_ENCOUNT_FIX);
 			if( p_cep != 0 ){
@@ -539,7 +539,7 @@ CHAR_AFTERWALK:
 				}
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 			  if( rand()%120 < temp ){
 #else			
 		      if (rand()%120<cep){	// Arminius 6.28 lower encounter prob.

@@ -28,7 +28,7 @@
 100 :   
 */
 
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 void saacproto_UpdataStele_send( int fd , char *cdkey , char *name , char *title , int level , int trns , int time , int floor) {
 	saacproto_CreateHeader( saacproto.work , "UpdataStele" );
 	saacproto_strcatsafe( saacproto.work , saacproto_mkstr_string( cdkey ) ,saacproto.workbufsize );
@@ -359,7 +359,7 @@ void saacproto_ACAddFM_send(int fd, char *fmname, char *fmleadername,
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charfdid), saacproto.workbufsize);
 	saacproto_Send(fd, saacproto.work);
 }
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
         char *charid, int charlv, int index, int fame, int charfdid)
 #else
@@ -374,7 +374,7 @@ void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_string(charid), saacproto.workbufsize);
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charlv), saacproto.workbufsize);
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(index), saacproto.workbufsize);
-// #ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+// #ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(fame), saacproto.workbufsize);
 // #endif
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charfdid), saacproto.workbufsize);
@@ -411,7 +411,7 @@ void saacproto_ACShowFMList_send(int fd)
 	saacproto_Send(fd, saacproto.work);
 }
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 void saacproto_ACShowMemberList_2_send( int fd, int charaindex, int fm1, int fm2, int time, int id )
 {
 	saacproto_CreateHeader(saacproto.work, "ACShowMemberList2");
@@ -524,7 +524,7 @@ void saacproto_new_ACFM_Login_send( int acfd, int charaindex, char *char_id, cha
 }
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 void saacproto_ReloadFamily_send( int acfd, int charaindex )
 {
 	saacproto_CreateHeader(saacproto.work, "ACRELOADFM");
@@ -656,7 +656,7 @@ void saacproto_ACgetFMBankgold_send(int fd, char *fmname, int fmindex, int index
 #endif
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 void saacproto_Init_FM_PK_STRUC_send( int fd )
 {
 	saacproto_CreateHeader(saacproto.work, "FMINITPKSTRUCT");
@@ -1332,7 +1332,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_DBGetEntryByCount_recv( fd,result,list,table,count_start,msgid,msgid2);
 		return 0;
 	}
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 	if ( strcmp( funcname , "UpdataStele" ) == 0 ) {
 		char* token;
 		token = saacproto_wrapStringAddr( saacproto_stringwrapper[1] , saacproto.workbufsize , saacproto_demkstr_string( saacproto.token_list[2] ));
@@ -1475,7 +1475,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		return 0;
 	}
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	if( strcmp( funcname, "ACRELOADFMOK") == 0){
 		int charindex;
 		charindex = saacproto_demkstr_int(saacproto.token_list[2]);
@@ -1502,7 +1502,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 
 #endif
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 	if( strcmp( funcname, "ACSendFmPkStruct") == 0){
 		char *data;
 
@@ -1568,7 +1568,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 	if( strcmp( funcname, "ACFMCharLogin") == 0){
 		int charfdid, index, floor, fmdp, joinflag, fmsetupflag, flag, charindex;
-#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME   // Arminius: 家族個人聲望
 		int charfame;
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -1583,7 +1583,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		fmsetupflag = saacproto_demkstr_int(saacproto.token_list[7]);
 		flag = saacproto_demkstr_int(saacproto.token_list[8]);
 		charindex = saacproto_demkstr_int(saacproto.token_list[9]);
-#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME   // Arminius: 家族個人聲望
 		charfame = saacproto_demkstr_int(saacproto.token_list[10]);
 		charfdid = saacproto_demkstr_int(saacproto.token_list[11]);
 	#ifdef _NEW_MANOR_LAW

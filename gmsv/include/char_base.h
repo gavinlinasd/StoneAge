@@ -23,7 +23,7 @@
 #ifdef _PERSONAL_FAME	// Arminius 8.30: 模逜跺�侂驫�
 #define MAX_PERSONALFAME 100000000
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 #define CHAR_SKILLMAXHAVE   26		// 眥珛撮夔奻癹
 #else
 #define CHAR_SKILLMAXHAVE   5
@@ -264,7 +264,7 @@ typedef enum
   CHAR_TYPEAUCTIONEER,
 #endif
 
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
   CHAR_TYPEALLDOMAN,
 #endif
 
@@ -466,7 +466,7 @@ typedef enum
 	CHAR_ENDEVENT5,				/* (128~159) */
 	CHAR_ENDEVENT6,				/* (160~191) */
 #endif
-#ifdef _ADD_NEWEVENT            // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT            // WON 多增加資料
 	CHAR_ENDEVENT7,					
 	CHAR_ENDEVENT8,
 #endif
@@ -479,7 +479,7 @@ typedef enum
 	CHAR_NOWEVENT5,				/* (128~159)	*/
 	CHAR_NOWEVENT6,				/* (160~191)	*/
 #endif
-#ifdef _ADD_NEWEVENT            // WON 嗣崝�恄鮿麇�	
+#ifdef _ADD_NEWEVENT            // WON 多增加資料	
 	CHAR_NOWEVENT7,				
 	CHAR_NOWEVENT8,				// 224~255 儕鍾欸遢蚳蚚
 #endif
@@ -587,7 +587,7 @@ typedef enum
 		CHAR_FMTIMELIMIT,
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 		PROFESSION_CLASS,			// 眥珛梗
 		PROFESSION_LEVEL,			// 眥珛脹撰
 //		PROFESSION_EXP,				// 眥珛冪桄硉
@@ -600,7 +600,7 @@ typedef enum
 		PROFESSION_ICE_R,			// 梨蕨俶	
 		PROFESSION_THUNDER_R,		// 濘蕨俶
 #endif
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 		CHAR_HEROFLOOR, 
 #endif
 #ifdef _PETSKILL_BECOMEPIG
@@ -1058,11 +1058,11 @@ typedef enum
 	CHAR_WORKITEM_ADDEXP,
     CHAR_WORKITEM_ADDEXPTIME,
 #endif
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 	CHAR_WORKHEROFLOOR, 
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	CHAR_ENCOUNT_FIX,		// 郣菩薹
 	CHAR_ENCOUNT_NUM,
 	CHAR_WORK_F_PROFICIENCY,// 鳶抇褶僅
@@ -1165,7 +1165,7 @@ typedef enum
 	CHAR_MAGICICE,//梨蕨儕鍾
 #endif
 
-#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
+#ifdef _PET_SKILL_SARS			// WON ADD 職業延長
 	CHAR_WORKSARS,
 	CHAR_WORKMODSARS,
 #endif
@@ -1593,7 +1593,7 @@ typedef enum
 } CHAR_PET_STAT;
 
 
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 void CHAR_earnFame(int index, int fame);
 #endif
 
@@ -1683,7 +1683,7 @@ INLINE int _CHAR_DelGold( char *file, int line, int charaindex, int gold);
 int CHAR_getMaxHaveGold( int charaindex);
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 
 int CHAR_getCharSkill( int index,int sindex );
 int CHAR_setCharSkill( int index,int sindex,int new );

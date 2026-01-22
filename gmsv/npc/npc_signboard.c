@@ -41,12 +41,12 @@ BOOL NPC_SignBoardInit( int meindex )
 void NPC_SignBoardLooked( int meindex , int lookedindex)
 {
 
-    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+    /* 設定相關參數處理 */
     if( CHAR_getInt( lookedindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
 
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( NPC_Util_CharDistance( lookedindex, meindex ) > 1) return;
 
 

@@ -188,7 +188,7 @@ void NPC_FMWarpManLoop(int meindex)
 	struct tm *tm2;
 	int fmpks_pos = CHAR_getWorkInt(meindex, NPC_WORK_ID) * MAX_SCHEDULE;
 	int floor = CHAR_getWorkInt(meindex, NPC_WORK_WARPFLOOR);
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	int i;
 	int playernum = CHAR_getPlayerMaxNum();
 #endif
@@ -200,7 +200,7 @@ void NPC_FMWarpManLoop(int meindex)
 	}
 	memcpy(&tm1, localtime((time_t *)&NowTime.tv_sec), sizeof(tm1));
 	
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	{
 		static int next_time[5] = {10,20,30,40,50}, flag[5] = {0};
 		int now_time = time(NULL);
@@ -287,7 +287,7 @@ void NPC_FMWarpManLoop(int meindex)
 				print("\n won ==> set fmwaperman state busy !!");
 				
 				
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 				{
 					int num1 = 0, num2 = 0;
 					int winflag = 0;
@@ -303,7 +303,7 @@ void NPC_FMWarpManLoop(int meindex)
 							CHAR_getInt(meindex, CHAR_X),
 							CHAR_getInt(meindex, CHAR_Y));
 						NPC_talkToFloor( floor,  -1, fmpks[fmpks_pos].guest_index, "秪帤雛媼坋�侀衋貐�" );
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 						{
 							char out[256];
 							sprintf( out, "[%s](%d) 秪帤雛媼坋�侔���",  fmpks[fmpks_pos].guest_name, num2 );
@@ -319,7 +319,7 @@ void NPC_FMWarpManLoop(int meindex)
 							CHAR_getInt(meindex, CHAR_X),
 							CHAR_getInt(meindex, CHAR_Y));
 						NPC_talkToFloor( floor,  fmpks[fmpks_pos].host_index, -1, "秪帤雛媼坋�侀衋貐�" );
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 						{
 							char out[256];
 							sprintf( out, "[%s](%d) 秪帤雛媼坋�侔���",  fmpks[fmpks_pos].host_name/* .host_index*/, num1 );
@@ -392,7 +392,7 @@ void NPC_FMWarpManLoop(int meindex)
 #ifdef _MANOR_PKRULE      
 			if(meid > MANORNUM){
 #endif
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 				{
 					int i, win_index = -1, loser_index = -1;
 					char *win_name, *loser_name, msg[256] = {0}, token[256] = {0};
@@ -431,7 +431,7 @@ void NPC_FMWarpManLoop(int meindex)
 						sprintf( token, "桵錶畦惆ㄩ %s", msg );
 					}
 					
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 					{
 						char out[256] = {0};
 						sprintf( out, "%d/%d/%d:%d %s", tm1.tm_mon+1, tm1.tm_mday, tm1.tm_hour, tm1.tm_min, msg );
@@ -801,7 +801,7 @@ void NPC_ERR_FMDiSP(int meindex,int talker,int errNO)
 			if(otherindex != -1){
 				 fd = getfdFromCharaIndex( otherindex);
 
-				/*-喫喫ぁ邞嚭埰堎--*/
+				/*--這裡搜索處理--*/
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 							WINDOW_BUTTONTYPE_OK,
 							CHAR_WINDOWTYPE_WINDOWWARPMAN_ERR, 
@@ -820,7 +820,7 @@ void NPC_ERR_FMDiSP(int meindex,int talker,int errNO)
 			}
 		}
 
-		/*-喫喫ぁ邞嚭埰堎--*/
+		/*--這裡搜索處理--*/
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 						WINDOW_BUTTONTYPE_OK,
 						CHAR_WINDOWTYPE_WINDOWWARPMAN_ERR, 
@@ -1047,7 +1047,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 		CONNECT_set_pass(fd, FALSE);
 		CONNECT_set_first_warp(fd, FALSE);
 	}
-	/*-喫喫ぁ邞嚭埰堎--*/
+	/*--這裡搜索處理--*/
 	lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 		WINDOW_BUTTONTYPE_YESNO,
 		CHAR_WINDOWTYPE_WINDOWWARPMAN_MAIN, 

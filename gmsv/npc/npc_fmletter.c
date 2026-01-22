@@ -144,11 +144,11 @@ static void NPC_FmLetter_selectWindow( int meindex, int toindex, int num)
 	int		fd;
 	char	buf[256];
 	
-	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+	/* 設定相關參數處理 */
 	if( CHAR_getInt( toindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( !NPC_Util_charIsInFrontOfChar( toindex, meindex, 1 )) return; 
 
 	if( !NPC_FmLetter_readData( meindex, num, FALSE) ) {
@@ -175,7 +175,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 	int		button = -1;
 	char	buf[512];
 
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	
 	/* 喫摯坳贖璃迶坳  蠕摯溢↓淏禱  陑  資 */	
@@ -230,10 +230,10 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 				LogItem(
 					CHAR_getChar( talkerindex, CHAR_NAME ), /* す籤溘   */
 					CHAR_getChar( talkerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
-					ITEM_getInt( itemindex, ITEM_ID ),  /* 囮騷  堜  蠕 */
+					ITEM_getInt( itemindex, ITEM_ID ),  /* 錯誤訊息 */
 #endif
 					"AddLetter(秶釬肂③滲)",
 					CHAR_getInt( talkerindex,CHAR_FLOOR),
@@ -266,10 +266,10 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 				LogItem(
 					CHAR_getChar( talkerindex, CHAR_NAME ), /* す籤溘   */
 					CHAR_getChar( talkerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
-					ITEM_getInt( itemindex, ITEM_ID ),  /* 囮騷  堜  蠕 */
+					ITEM_getInt( itemindex, ITEM_ID ),  /* 錯誤訊息 */
 #endif
 					"AddLetter(秶釬肂③滲)",
 					CHAR_getInt( talkerindex,CHAR_FLOOR),
@@ -359,7 +359,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 		b_mode = -1;
 		errflg = FALSE;
 
-		/* 疐趵撬 */
+		/* 參數結構 */
 		w.windowno = -1;
 		w.windowtype = -1;
 		w.buttontype = -1;
@@ -393,8 +393,8 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 			/* 搊菜噁堎 */
 			chomp( line );
 			
-			/*  菜禱堆魠埰堎    */
-			/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
+			/* 實際調用的函數 */
+			/* 將tab轉換為空格 */
 			replaceString( line, '\t' , ' ' );
 			/* 袸  摯筒妐↓筒禱噁堎��*/
 			for( i = 0; i < strlen( line); i ++) {

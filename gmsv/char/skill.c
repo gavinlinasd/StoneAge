@@ -7,7 +7,7 @@
 #include "util.h"
 #include "char.h"
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 #include "battle.h"
 #include "profession_skill.h"
 #endif
@@ -115,7 +115,7 @@ BOOL SKILL_makeSkillFromStringToArg( char* src, Skill* sk )
     return TRUE;
 }
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 INLINE int SKILL_getRealInt( Skill* skill, int element)
 {
     return skill->data[element];
@@ -139,7 +139,7 @@ INLINE int SKILL_setInt( Skill* skill, int element, int new)
     return buf;
 }
 
-#ifndef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifndef _PROFESSION_SKILL			// WON ADD 職業技能
 static void SKILL_setitemlimit( int charaindex, Skill* sk );
 static void SKILL_setmerchant( int charaindex, Skill* sk );
 static void SKILL_setlevel( int charaindex, Skill* sk );
@@ -147,7 +147,7 @@ static void SKILL_setlevel( int charaindex, Skill* sk );
 
 static SKILL_table  SKILL_tbl[]={
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	{ 100,	NULL},		// 1
 	{ 100,	NULL},
 	{ 100,	NULL},
@@ -179,7 +179,7 @@ static SKILL_table  SKILL_tbl[]={
 };
 
 
-#ifndef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifndef _PROFESSION_SKILL			// WON ADD 職業技能
 static void SKILL_setitemlimit( int charaindex, Skill* sk )
 {
     static int itemlimit[9]={
@@ -265,7 +265,7 @@ static void SKILL_setlevel( int charaindex, Skill* sk )
 static char    ITEM_statusStringBuffer[SKILLSTRINGBUFSIZ];
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 char* SKILL_makeSkillStatusString( Skill* skill, int charaindex, int skill_num )
 {
 	  int skillindex=SKILL_getInt( skill,SKILL_IDENTITY);
@@ -409,7 +409,7 @@ void SKILL_skillEffect( int charaindex )
 
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 // �﹋墓藥孚那譟埒P
 int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 {

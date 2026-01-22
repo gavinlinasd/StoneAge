@@ -310,7 +310,7 @@ int BATTLE_MagicEffect(	int battleindex,int attackNo,int ToList[],int MyEffect,i
 
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 void PROFESSION_MAGIC_ATTAIC( int battleindex, int attackNo, int toNo, int attIdx, int FieldAttr, int skill);
 int PROFESSION_MAGIC_ATTAIC_Effect( int battleindex, int attackNo, int ToList[], int AttackMgcNo );
 int analysis_profession_parameter( int attIdx, int skill, int toNo, int charaindex );

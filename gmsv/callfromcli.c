@@ -27,7 +27,7 @@
 #include "family.h" // CoolFish: Family 2001/5/24
 #include "item_event.h" // shan: blackmarket
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 #include "profession_skill.h"
 #endif
 #ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋

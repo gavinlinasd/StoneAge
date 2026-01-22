@@ -17,7 +17,7 @@
 #include "log.h"
 #include "pet.h"
 #include "enemy.h"
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 #include "char_base.h"
 #include "configfile.h"
 #endif
@@ -446,7 +446,7 @@ BOOL CHAR_initInvinciblePlace( char* filename )
         fclose( f );
         return FALSE;
     }
-    /* 疐趵撬 */
+    /* 參數結構 */
 {
     int     i;
     for( i = 0; i < CHAR_invareanum; i ++ ) {
@@ -866,7 +866,7 @@ BOOL CHAR_ElderSetPosition( int elderindex ,int fl,int x ,int y)
 void CHAR_setInitValues( Char* ch )
 {
 
-#ifndef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifndef _PROFESSION_SKILL			// WON ADD 職業技能
 
     static int CHAR_titleindextbl[] ={ 0,1,2,3,4,5,6 };
     int     elderindex;
@@ -1145,7 +1145,8 @@ int CHAR_GetLevel()
 {	
 	return arraysizeof( LevelUpTbl )-1;
 }
-int CHAR_GetLevelExp( int charaindex, int level)
+int CHAR_GetLevelExp( int charaindex, int level)
+
 {
 #ifdef _NEWOPEN_MAXEXP
 #ifdef _USER_EXP_CF

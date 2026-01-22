@@ -489,7 +489,7 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 		LogItem(
 				CHAR_getChar( toindex, CHAR_NAME ),
 				CHAR_getChar( toindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
 				ITEM_getInt( itemindex, ITEM_ID ),

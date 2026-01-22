@@ -72,7 +72,7 @@ void CHAR_CHAT_DEBUG_reset( int charaindex, char* message );
 #ifdef _GMRELOAD
 void CHAR_CHAT_DEBUG_gmreload(int charaindex, char *message);
 #endif
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 void CHAR_CHAT_DEBUG_addsk( int charaindex, char *message );
 void CHAR_CHAT_DEBUG_delsk( int charaindex, char *message );
 #endif
@@ -120,7 +120,7 @@ void CHAR_CHAT_DEBUG_dropmyitem( int charindex , char *message );
 void CHAR_CHAT_DEBUG_cleanqute( int charaindex, char *message);
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 void CHAR_CHAT_DEBUG_show_profession( int charaindex, char*message );
 void CHAR_CHAT_DEBUG_set_regist( int charaindex, char*message );
 #endif
@@ -174,7 +174,7 @@ void CHAR_CHAT_DEBUG_ShowMyDepotPets( int charaindex, char *message );
 void CHAR_CHAT_DEBUG_InSideMyDepotPets( int charaindex, char *message );
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 void CHAR_CHAR_DEBUG_reloadfm( int charaindex, char* message );
 void CHAR_CHAR_DEBUG_fmpk( int charaindex, char* message );
 void CHAR_CHAR_DEBUG_fmpk_clean( int charaindex, char* message );

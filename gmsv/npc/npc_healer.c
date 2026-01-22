@@ -62,7 +62,7 @@ void NPC_HealerTalked( int meindex , int talker , char *msg ,int color )
     if( CHAR_getInt( talker , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )	return;
 
 	/*---  ⑹雄  凝ㄑ  ⑹毀1竘倜毀��媃庌ぁ笢堎凝ㄑ---*/
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( NPC_Util_CharDistance( talker, meindex ) > 2) return;
 
 	if( (CHAR_getWorkInt( talker, CHAR_WORKPARTYMODE) == 0)

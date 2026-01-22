@@ -42,12 +42,12 @@ BOOL NPC_JankenInit( int meindex )
 void NPC_JankenTalked( int meindex , int talkerindex , char *szMes ,
 					 int color )
 {
-	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+	/* 設定相關參數處理 */
 	if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
 	
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 
 	NPC_Janken_selectWindow(meindex, talkerindex, 0);
@@ -162,7 +162,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 
 
 //	makeEscapeString( token, escapedname, sizeof(escapedname));
-	/*-喫喫ぁ邞嚭埰堎--*/
+	/*--這裡搜索處理--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,
@@ -181,7 +181,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 void NPC_JankenWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
 {
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 
 	switch( seqno){
@@ -446,10 +446,10 @@ BOOL NPC_JankenEntryItemDel(int talker,char *buf)
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"QuizDelItem(笨譏->蝠堤耋撿)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -476,10 +476,10 @@ BOOL NPC_JankenEntryItemDel(int talker,char *buf)
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"QuizDelItem(笨譏->蝠堤耋撿)",
 							CHAR_getInt( talker,CHAR_FLOOR),

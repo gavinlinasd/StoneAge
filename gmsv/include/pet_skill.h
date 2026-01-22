@@ -483,7 +483,7 @@ int PETSKILL_Mdfyattack( int charaindex, int toNo, int array, char *data );
 int	PETSKILL_MagicStatusChange( int charaindex, int toindex, int array, char *data );
 #endif
 
-#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
+#ifdef _PET_SKILL_SARS				// WON ADD 職業延長
 int PETSKILL_Sars( int charaindex, int toNo, int array, char *data );
 #endif
 

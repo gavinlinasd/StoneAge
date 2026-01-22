@@ -156,7 +156,7 @@ struct	FAMILY
    int		fmsprite; 		// 0:嫖隴儕鍾 1:窪做儕鍾
    int		fmpointindex;		// 模逜擂萸 index
    int 		fmpopular;		// 模逜軘磁汒咡
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    int		fmtotalfame;		// 模逜軘磁 + 模逜跺�侂驫�軞磁
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -188,7 +188,7 @@ extern gmsv gs[MAXCONNECTION];
 
 struct FAMILY family[MAX_FAMILY];
 int fmpopularindex[MAX_FAMILY];	// Arminius: sort family
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 int fmtotalfameindex[MAX_FAMILY];
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -207,7 +207,7 @@ struct FMSMEMO	fmsmemo;
 #ifdef _NEW_MANOR_LAW
 int fmMomentumcompar(const void *indexa, const void *indexb);
 #endif
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 int fmtotalfamecompar(const void *indexa, const void *indexb);
 #endif
 int fmpopularcompar(const void *indexa, const void *indexb);
@@ -228,7 +228,7 @@ void sortFamily(void)
 
   for(i = 0; i < MAX_FAMILY; i++)
   {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	fmtotalfameindex[i] = i;
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -241,7 +241,7 @@ void sortFamily(void)
   	fmdealfoodindex[i] = i;
   	fmpkindex[i] = i;
   }
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
   qsort(fmtotalfameindex, MAX_FAMILY, sizeof(int), &fmtotalfamecompar);
 #endif
   qsort(fmpopularindex, MAX_FAMILY, sizeof(int), &fmpopularcompar);
@@ -255,7 +255,7 @@ void sortFamily(void)
 #endif
 }
 
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 int fmtotalfamecompar(const void *indexa, const void *indexb)
 {
   int famea,fameb;
@@ -379,7 +379,7 @@ int ACShowTopFMList(char *data, int datasize, int kindflag)
          	j++;
          	continue;
          }
-#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME   // Arminius: 家族個人聲望
 	#ifdef _NEW_MANOR_LAW
 				 sprintf(t1, "%d|%d|%s|%s|%d|%d|%d",fmtotalfameindex[i], i + 1,
          	family[fmtotalfameindex[i]].fmname,
@@ -513,7 +513,7 @@ int ACShowTopFMList(char *data, int datasize, int kindflag)
       	 strcat(data, t1);
       }
    }
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    else if (kindflag == 7)
    {
       for (i = 0; i < MAX_FAMILY; i++) {
@@ -657,7 +657,7 @@ void AddFMMaintainSort(int index)
    } else if (j < i) {
    	log("ACAddFM: fmpkindex add error (j < i)");
    } else log("ACAddFM: fmpkindex add error (j = i)");
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    // modify pk sort
    i = 0;j = MAX_FAMILY;k = 0;
    while ((family[fmtotalfameindex[i]].fmtotalfame >= family[index].fmtotalfame)
@@ -751,7 +751,7 @@ void DelFMMaintainSort(int index)
         	fmpkindex[j] = fmpkindex[j + 1];
         fmpkindex[MAX_FAMILY - 1] = index;	// move to last one
      }
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
      // modify pk sort
      i = 0;j = 0;
      while ((fmtotalfameindex[i] != index) && (i < MAX_FAMILY)) i++;
@@ -824,7 +824,7 @@ int readFamily(char *dir)
 }
    closedir(d);
    
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    // 數呾模逜軞磁汒咡 = 模逜軘磁汒咡 + 模逜跺�侂驫�
    {
      int i,j;
@@ -844,7 +844,7 @@ int readFamily(char *dir)
    
    sortFamily();	// Arminius: sort it
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 	read_fm_pk_score();
 #endif
 
@@ -1317,7 +1317,7 @@ void delovertimeFMMem(int time)
          char msg[256];
          if ((strcmp(family[i].fmname, "") != 0) && (family[i].fmindex != -1))
          {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
             sprintf(msg, "%d %s %s %d %d %d %d %d|", family[i].fmindex, family[i].fmname,
                family[i].fmleadername, family[i].fmtotalfame, family[i].fmjoinnum, i,
                family[i].fmsetupflag, family[i].fmacceptflag);
@@ -1401,7 +1401,7 @@ int ACAddFM(int fd, int *workindex, char *fmname, char *fmleadername,
 	family[index].fmsynthesize = 0;
 	family[index].fmdealfood = 0;
 	family[index].fmpk = 0;
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	family[index].fmmemberindex[0].popular = fame;
 	family[index].fmtotalfame = fame;
 #endif
@@ -1420,7 +1420,7 @@ int ACAddFM(int fd, int *workindex, char *fmname, char *fmleadername,
 }
 
 // 樓�趧眢�
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 int ACJoinFM(int fd, int index, char *fmname, int fmindex,
 	char *charname, char *charid, int charlv, int fame, int charfdid)
 #else
@@ -1456,7 +1456,7 @@ int ACJoinFM(int fd, int index, char *fmname, int fmindex,
 			family[index].fmmemberindex[i].charfdid = charfdid;
 			time(&t1);
 			family[index].fmmemberindex[i].predeltime = t1 + PREDEL_TIME;
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 			family[index].fmmemberindex[i].popular = fame;
 			log("fame:%d\n", fame);
 			// 涴跺奀緊遜祥褫眕參涴跺�佽馨驫�樓善模逜
@@ -1467,7 +1467,7 @@ int ACJoinFM(int fd, int index, char *fmname, int fmindex,
 			family[index].fmnum = family[index].fmnum + 1;
 			if (family[index].fmmemberindexmaxnum <= i) family[index].fmmemberindexmaxnum = i + 1;
 			db_familyupdate[index] = 1;
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 			// 載陔俙模訧蹋
 			saacproto_ACFMCharLogin_send(
 				family[index].fmmemberindex[i].onlineflag,
@@ -1680,7 +1680,7 @@ int ACFixFMData(int index, char *fmname, int fmindex, int kindflag, int charinde
 		 // 載陔逜酗訧蹋
 		 if (family[index].fmmemberindex[0].onlineflag > 0)
 		 {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 			 saacproto_ACFMCharLogin_send(
    	   		family[index].fmmemberindex[0].onlineflag,
 					SUCCESSFUL, index, floor, family[index].fmtotalfame,
@@ -1704,7 +1704,7 @@ int ACFixFMData(int index, char *fmname, int fmindex, int kindflag, int charinde
 		 // 載陔傖埜訧蹋
 		 if (family[index].fmmemberindex[charindex].onlineflag > 0)
 		 {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 			 saacproto_ACFMCharLogin_send(
    	   		family[index].fmmemberindex[charindex].onlineflag,
 					SUCCESSFUL, index, floor, family[index].fmtotalfame,
@@ -1744,7 +1744,7 @@ int ACFixFMData(int index, char *fmname, int fmindex, int kindflag, int charinde
 #endif
 		 )
    {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 		 // 暮翹俙模模逜汒咡
 #ifndef _NEW_MANOR_LAW
 		 if (charindex >= 0 && charindex < MAX_MEMBERNUM)
@@ -1800,7 +1800,7 @@ int ACFixFMData(int index, char *fmname, int fmindex, int kindflag, int charinde
 		 if (family[index].fmmemberindex[0].onlineflag > 0)
 		 {
 			 int	floor =  ACgetFMFloor(fmindex);
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 			 saacproto_ACFMCharLogin_send(
    	   		family[index].fmmemberindex[0].onlineflag,
 					SUCCESSFUL, index, floor, family[index].fmtotalfame,
@@ -1865,7 +1865,7 @@ int ACFixFMPK(int winindex, char* winfmname, int winfmindex, int loseindex,
    		+ family[winindex].fmsynthesize + family[winindex].fmdealfood
    		+ family[winindex].fmpk;
 
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	{
           int j;
           family[winindex].fmtotalfame=family[winindex].fmpopular;
@@ -1880,7 +1880,7 @@ int ACFixFMPK(int winindex, char* winfmname, int winfmindex, int loseindex,
    	if (family[winindex].fmmemberindex[0].onlineflag > 0)
    	{
    		int	floor =  ACgetFMFloor(winfmindex);
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    	 	saacproto_ACFMCharLogin_send(
    	   		family[winindex].fmmemberindex[0].onlineflag,
    	   		SUCCESSFUL, winindex, floor, family[winindex].fmtotalfame,
@@ -1911,7 +1911,7 @@ int ACFixFMPK(int winindex, char* winfmname, int winfmindex, int loseindex,
    		+ family[loseindex].fmsynthesize + family[loseindex].fmdealfood
    		+ family[loseindex].fmpk;
 
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	{
           int j;
           family[loseindex].fmtotalfame=family[loseindex].fmpopular;
@@ -1926,7 +1926,7 @@ int ACFixFMPK(int winindex, char* winfmname, int winfmindex, int loseindex,
    	if (family[loseindex].fmmemberindex[0].onlineflag > 0)
    	{
    		int	floor =  ACgetFMFloor(losefmindex);
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    	 	saacproto_ACFMCharLogin_send(
    	   		family[loseindex].fmmemberindex[0].onlineflag,
    	   		SUCCESSFUL, loseindex, floor, family[loseindex].fmtotalfame,
@@ -1957,7 +1957,7 @@ int ACFixFMPK(int winindex, char* winfmname, int winfmindex, int loseindex,
    sortFamily();
    if (family[winindex].fmpointindex >= 0)
    {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    	fmpoint[family[winindex].fmpointindex].hadfmpopular = family[winindex].fmtotalfame;
 #else
    	fmpoint[family[winindex].fmpointindex].hadfmpopular = family[winindex].fmpopular;
@@ -1966,7 +1966,7 @@ int ACFixFMPK(int winindex, char* winfmname, int winfmindex, int loseindex,
    }
    if (family[loseindex].fmpointindex >= 0)
    {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    	fmpoint[family[loseindex].fmpointindex].hadfmpopular = family[loseindex].fmtotalfame;
 #else
    	fmpoint[family[loseindex].fmpointindex].hadfmpopular = family[loseindex].fmpopular;
@@ -2007,7 +2007,7 @@ int ACDelFM(int index, char *fmname, int fmindex)
 	family[index].fmsynthesize = 0;
 	family[index].fmdealfood = 0;
 	family[index].fmpk = 0;
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	family[index].fmtotalfame = 0;
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -2016,7 +2016,7 @@ int ACDelFM(int index, char *fmname, int fmindex)
 	for (i = 0; i < family[index].fmmemberindexmaxnum; i++)
 	{
    	// 換冞郔陔袨怓跤模逜傖埜
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    	if (family[index].fmmemberindex[i].onlineflag > 0)
 			saacproto_ACFMCharLogin_send(
    			family[index].fmmemberindex[i].onlineflag,
@@ -2075,7 +2075,7 @@ int ACShowFMList(char *data)
       char msg[256];
       if ((strcmp(family[i].fmname, "") != 0) && (family[i].fmindex != -1))
       {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
          sprintf(msg, "%d %s %s %d %d %d %d %d|", family[i].fmindex, family[i].fmname,
          	family[i].fmleadername, family[i].fmtotalfame, family[i].fmjoinnum, i,
          	family[i].fmsetupflag, family[i].fmacceptflag);
@@ -2209,7 +2209,7 @@ int ACMemberJoinFM(int index, char *fmname, int fmindex,
 				family[index].predel_time = -1;
 			}
 			if (family[index].fmjoinnum >= MAX_MEMBERNUM)	family[index].fmacceptflag = 0;
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 			{
 				int j;
 				family[index].fmtotalfame=family[index].fmpopular;
@@ -2280,7 +2280,7 @@ int ACMemberJoinFM(int index, char *fmname, int fmindex,
 					family[index].fmmomentum += ((family[index].fmjoinnum * family[index].fmjoinnum) / 10 + 1) * 100;
 				}
 #endif
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 				saacproto_ACFMCharLogin_send(
 					family[index].fmmemberindex[charindex].onlineflag,
 					SUCCESSFUL, index, floor, family[index].fmtotalfame,
@@ -2310,7 +2310,7 @@ int ACMemberJoinFM(int index, char *fmname, int fmindex,
 			// 載陔逜酗袨怓
 			if (family[index].fmmemberindex[charindex].onlineflag > 0)
 			{
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 				saacproto_ACFMCharLogin_send(
 					family[index].fmmemberindex[0].onlineflag,
 					SUCCESSFUL, index, floor, family[index].fmtotalfame,
@@ -2373,7 +2373,7 @@ int ACMemberLeaveFM(int index, char *fmname, int fmindex,
 		if (family[index].fmmemberindex[charindex].onlineflag > 0)
 		{
    	 	char	buf[256];
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    	 	saacproto_ACFMCharLogin_send(
 				family[index].fmmemberindex[charindex].onlineflag,
 				FAILED, index, family[index].fmpointindex,
@@ -2420,7 +2420,7 @@ int ACMemberLeaveFM(int index, char *fmname, int fmindex,
 			family[index].fmjoinnum = family[index].fmjoinnum - 1;
 		family[index].fmnum = family[index].fmnum - 1;
 		family[index].fmmemberindex[charindex].charflag = FMMEMBER_NONE;
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 		{
 			int j;
 			family[index].fmtotalfame=family[index].fmpopular;
@@ -2530,7 +2530,7 @@ int ACFMAssignOcp(int index, char *fmname, int fmindex,
    	family[index].fmmemberindex[charindex].charflag = result;
         if (family[index].fmmemberindex[charindex].onlineflag > 0)
         {
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
         	saacproto_ACFMCharLogin_send(
 			   		family[index].fmmemberindex[charindex].onlineflag,
 			   		SUCCESSFUL, index, floor, family[index].fmtotalfame,
@@ -2585,7 +2585,7 @@ int ACFMCharLogin(int fd, int index, char *fmname, int fmindex,
 	#endif
 	)
 #else
-	#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
+	#ifdef _PERSONAL_FAME   // Arminius: 家族個人聲望
 	int ACFMCharLogin(int fd, int index, char *fmname, int fmindex,
 		char *charname, char *charid, int charlv, int *floor, int *fmpopular, 
 		int *joinflag, int *fmsetupflag, int *charindex, int charfdid,
@@ -2604,7 +2604,7 @@ int ACFMCharLogin(int fd, int index, char *fmname, int fmindex,
    
 	if (family[index].fmpointindex != -1)
 		*floor = ACgetFMFloor(fmindex);
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	*fmpopular = family[index].fmtotalfame;
 #else
 	*fmpopular = family[index].fmpopular;
@@ -2621,7 +2621,7 @@ int ACFMCharLogin(int fd, int index, char *fmname, int fmindex,
 #ifdef _FM_MODIFY
 			family[index].fmmemberindex[i].gsnum = gsnum;
 #endif
-#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME   // Arminius: 家族個人聲望
 			*charfame = family[index].fmmemberindex[i].popular;
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -2811,7 +2811,7 @@ int ACSetFMPoint(int index, char *fmname, int fmindex, int fmpointindex,
 	fmpoint[fmpointindex].hadfmindex = fmindex;
 	family[index].fmpointindex = fmpointindex;
 	strcpy(fmpoint[fmpointindex].hadfmname, fmname);
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	fmpoint[fmpointindex].hadfmpopular = family[index].fmtotalfame;
 #else
 	fmpoint[fmpointindex].hadfmpopular = family[index].fmpopular;
@@ -2822,7 +2822,7 @@ int ACSetFMPoint(int index, char *fmname, int fmindex, int fmpointindex,
 		if (family[index].fmmemberindex[i].onlineflag > 0){
 			int floor =  ACgetFMFloor(fmindex);
 #ifdef _FMVER21
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
    	 	saacproto_ACFMCharLogin_send(
 				family[index].fmmemberindex[i].onlineflag,
 				SUCCESSFUL, index, floor, family[index].fmtotalfame,
@@ -2898,7 +2898,7 @@ int ACFixFMPoint(int winindex, char *winfmname, int winfmindex, int loseindex,
 	fmpoint[village -1].hadfmindex = winfmindex;
 	family[winindex].fmpointindex = village - 1;
 	strcpy(fmpoint[village - 1].hadfmname, winfmname);
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	fmpoint[village -1].hadfmpopular = family[winindex].fmtotalfame;
 #else
 	fmpoint[village -1].hadfmpopular = family[winindex].fmpopular;
@@ -2918,7 +2918,7 @@ int ACFixFMPoint(int winindex, char *winfmname, int winfmindex, int loseindex,
 		if (family[winindex].fmmemberindex[i].onlineflag > 0){
 			int	floor =  ACgetFMFloor(winfmindex);
 #ifdef _FMVER21
-	#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+	#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 			saacproto_ACFMCharLogin_send(
 					family[winindex].fmmemberindex[i].onlineflag,
 					SUCCESSFUL, winindex, floor, family[winindex].fmtotalfame,
@@ -2961,7 +2961,7 @@ int ACFixFMPoint(int winindex, char *winfmname, int winfmindex, int loseindex,
 #endif
 			if (family[loseindex].fmmemberindex[i].onlineflag > 0){
 #ifdef _FMVER21
-	#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+	#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 				saacproto_ACFMCharLogin_send(
 					family[loseindex].fmmemberindex[i].onlineflag,
 					SUCCESSFUL, loseindex, -1, family[loseindex].fmtotalfame,
@@ -3344,7 +3344,7 @@ int ACGMFixFMData(int index, char *fmname, char *charid, char *cmd,
 #ifdef _NEW_MANOR_LAW
 						sortFamily();
 #endif
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 						saacproto_ACFMCharLogin_send(
 							family[index].fmmemberindex[0].onlineflag,
 							SUCCESSFUL,index,floor,family[index].fmtotalfame,
@@ -3402,7 +3402,7 @@ int ACGMFixFMData(int index, char *fmname, char *charid, char *cmd,
             }
             db_familyupdate[index] = 1; 
             sortFamily();
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 						saacproto_ACFMCharLogin_send(
 							family[index].fmmemberindex[0].onlineflag,
 							SUCCESSFUL,index,floor,family[index].fmtotalfame,
@@ -3502,7 +3502,7 @@ int ACGMFixFMData(int index, char *fmname, char *charid, char *cmd,
 #ifdef _NEW_MANOR_LAW
 				 sortFamily();
 #endif
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 				 saacproto_ACFMCharLogin_send(
 					 family[index].fmmemberindex[charindex].onlineflag,
 					 SUCCESSFUL,index,floor,family[index].fmtotalfame,
@@ -3544,7 +3544,7 @@ int ACGMFixFMData(int index, char *fmname, char *charid, char *cmd,
 				 }
 				 db_familyupdate[index] = 1; 
 				 sortFamily();
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 				 saacproto_ACFMCharLogin_send(
 					 family[index].fmmemberindex[charindex].onlineflag,
 					 SUCCESSFUL,index,floor,family[index].fmtotalfame,
@@ -3759,7 +3759,7 @@ int readOneFamily( char *filename, int i)
 }
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 void saacproto_ACRELOADFM_recv( int fd, int charindex )
 {
 	log("\n won test 51 ==>");
@@ -3809,7 +3809,7 @@ void saacproto_ACFMCharLogin2_recv( int fd, char *char_id, char *char_name, int 
 }
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 char *get_fm_leader_index( int fm_index )
 {
 
@@ -3819,7 +3819,7 @@ char *get_fm_leader_index( int fm_index )
 #endif
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 
 FM_PK_STRUCT	fm_pk_struct;
 

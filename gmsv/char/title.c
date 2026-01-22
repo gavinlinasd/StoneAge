@@ -311,7 +311,7 @@ BOOL TITLE_initTitleName( char* filename )
 		fclose( f );
 		return FALSE;
 	}
-	/* 疐趵撬 */
+	/* 參數結構 */
 {
 	int     i;
 	for( i = 0; i < TITLE_titlenum; i ++ ) {
@@ -331,8 +331,8 @@ BOOL TITLE_initTitleName( char* filename )
 		if( line[0] == '\n' )continue;       /* none    */
 		chomp( line );
 
-		/*  菜禱堆魠埰堎    */
-		/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
+		/* 實際調用的函數 */
+		/* 將tab轉換為空格 */
 		replaceString( line, '\t' , ' ' );
 		/* 袸  摯筒妐↓筒禱噁堎��*/
 {
@@ -446,8 +446,8 @@ static int TITLE_getConfigOneLine( FILE *fp, char *line, int linelen)
 		linenum ++;
 		if( buf[0] == '#' )continue;        /* comment */
 		if( buf[0] == '\n' )continue;       /* none    */
-		/*  菜禱堆魠埰堎    */
-		/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
+		/* 實際調用的函數 */
+		/* 將tab轉換為空格 */
 		replaceString( buf, '\t' , ' ' );
 		/* 筒妐↓筒朝謫 */
 		deleteCharFromString( buf, " ");
@@ -561,7 +561,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 		fclose( f );
 		return FALSE;
 	}
-	/* 疐趵撬 */
+	/* 參數結構 */
 {
 	int     i;
 	for( i = 0; i < TITLE_titlecfgnum; i ++ ) {
@@ -751,7 +751,7 @@ static BOOL TITLE_TitleCheck_Main( int charaindex, BOOL mode, int *addcnt, int *
 {
 	int     i, j,k, ret;
 	
-	/* 疐趵撬 */
+	/* 參數結構 */
 {
 	int     i;
 	for( i = 0; i < TITLE_titlecfgnum && TITLE_configbuf[i].title != -1; i ++ ) {

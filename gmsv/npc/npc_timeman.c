@@ -107,7 +107,7 @@ void NPC_TimeManTalked( int meindex , int talkerindex , char *msg ,int color )
 
 	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex ,2)==FALSE){
-		/* 兒精惉蚗迶雄  摯陑 */
+		/* 角色動畫重置 */
 		if( NPC_Util_CharDistance( talkerindex ,meindex ) > 1) return;
 	}
 

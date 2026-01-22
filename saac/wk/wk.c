@@ -152,7 +152,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 		switch (*flag) {
 		case '1': // Login
 		
-#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��		
+#ifdef _FIX_MESSAGE                // WON ADD 修改相關內容��		
 
 #ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
 			sprintf(buffer,"&;5;6;%s;%s;0;%s;",idbuf,pasbuf, AC_IP);
@@ -168,7 +168,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			break;
 		case '4': // Delete
 
-#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��		
+#ifdef _FIX_MESSAGE                // WON ADD 修改相關內容��		
 
 #ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
 			sprintf(buffer,"刉壺�冼鵃�%s %s %s\n",idbuf,pasbuf, AC_IP);
@@ -187,7 +187,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 		case '5': // recheck WGS deadline
 #endif
 
-#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��		
+#ifdef _FIX_MESSAGE                // WON ADD 修改相關內容��		
 
 #ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
 			sprintf(buffer,"輛�邆恘楠�%s %s %s\n",idbuf,pasbuf, AC_IP);
@@ -203,7 +203,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			break;
 		case '3': // Game End
 		
-#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��		
+#ifdef _FIX_MESSAGE                // WON ADD 修改相關內容��		
 
 #ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
 			sprintf(buffer,"豖堤蚔牁ㄩ%s %s\n",idbuf, AC_IP);
@@ -262,7 +262,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 
 			int payType;
 
-#ifndef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��	
+#ifndef _FIX_MESSAGE                // WON ADD 修改相關內容��	
 			if (atoi(ptr+1)!=baka){
 				char buff1[256];
 				sprintf( buff1, "%d != %d\n", atoi(ptr+1), baka);
@@ -327,7 +327,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			return(0); // Authencation passed
 		}
 
-#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��
+#ifdef _FIX_MESSAGE                // WON ADD 修改相關內容��
 		// 隙換渣昫鎢
 		else if (ptr[0]=='E'){
 			char err_code[10];
@@ -547,7 +547,7 @@ while( fgets( linebuf,sizeof(linebuf), fp)){
         }else{
        		switch (i_flag) {  //Arminius && ttom
 
-#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��	
+#ifdef _FIX_MESSAGE                // WON ADD 修改相關內容��	
 
 #ifdef _TIMEOUTKICK
 
@@ -653,7 +653,7 @@ static void parseOpt( int argc , char **argv )
     int c;
     int option_index;
 
-#ifdef _ADD_AC_IP                // WON ADD 党蜊猾婦囀��
+#ifdef _ADD_AC_IP                // WON ADD 修改相關內容��
 	memset( AC_IP, -1 , sizeof( AC_IP) );
 #endif
 
@@ -671,13 +671,13 @@ static void parseOpt( int argc , char **argv )
             {"logdir", 1, 0, 'l' },
             {"csaddr", 1, 0, 'a' },
             {"csport", 1, 0, 'c' },
-#ifdef _ADD_AC_IP                // WON ADD 党蜊猾婦囀��
+#ifdef _ADD_AC_IP                // WON ADD 修改相關內容��
 			{"acaddr", 1, 0, 'w' },
 #endif
             {0,0,0,0}
         };
 
-#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��
+#ifdef _FIX_MESSAGE                // WON ADD 修改相關內容��
         c = getopt_long ( argc, argv, "p:dhl:a:c:w:", long_options, &option_index );
 #else
         c = getopt_long ( argc, argv, "p:dhl:a:c:", long_options, &option_index );

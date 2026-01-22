@@ -476,7 +476,7 @@ static FunctionNameSet  functionSet[]={
 	}
 #endif
 
-#ifdef _ALLDOMAN   // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN   // (不可開) Syu ADD 排行榜NPC
 	,{
 		"Alldoman","AlldomanInit","","",
       "","","","","","AlldomanTalked","","","","","","",

@@ -732,7 +732,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"evt5",				/*  CHAR_EVENT5	*/
 	"evt6",				/*  CHAR_EVENT6	*/
 #endif
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 	"evt7",				/*  CHAR_EVENT7	*/
 	"evt8",				//	CHAR_ENDEVENT8, 224~255 儕鍾欸遢蚳蚚
 #endif
@@ -745,7 +745,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"nev5",				/*  CHAR_NOWEVENT5	*/
 	"nev6",				/*  CHAR_NOWEVENT6	*/
 #endif
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 	"nev7",				/*  CHAR_NOWEVENT7	*/
 	"nev8",				//	CHAR_NOWEVENT8, 224~255 儕鍾欸遢蚳蚚
 #endif
@@ -845,7 +845,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"fmtimelimit", //	CHAR_FMTIMELIMIT,
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 	"profession_class",
 	"profession_level",
 //	"profession_exp",
@@ -858,7 +858,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"profession_ice_r",
 	"profession_thunder_r",
 #endif
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 	"herofloor",
 #endif
 #ifdef _PETSKILL_BECOMEPIG
@@ -1425,7 +1425,7 @@ INLINE void _CHAR_setIntPSkill( char *file, int line, int index, int skillti, SK
 }
 //------------------------------------------------------------------------
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 int CHAR_getCharSkill( int index,int sindex )
 {
 	CHAR_HaveSkill* hskill;
@@ -2701,7 +2701,7 @@ void CHAR_DetainSameItem( int charaindex, int itemindex)
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME),
 			CHAR_getChar( charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
 			ITEM_getInt( itemindex, ITEM_ID),

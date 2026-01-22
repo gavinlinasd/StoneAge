@@ -83,7 +83,7 @@ void ACShowDpTop(int result,int num, char *data, int kindflag);
 void ACShowPointList(int result, char *data);
 void ACShowFMMemo(int result, int index, int num, int dataindex, char *data);
 
-#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME   // Arminius: 家族個人聲望
 void ACFMCharLogin(int fd, int ret, int index, int floor, int fmdp,
 	int joinflag, int fmsetupflag, int flag, int charindex, int charfame
 	#ifdef _NEW_MANOR_LAW
@@ -217,7 +217,7 @@ extern char    familyListBuf[MAXFAMILYLIST];
 void JoinMemberIndex( int charaindex, int fmindexi);
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 
 
 #define fm_pk_max 200

@@ -148,7 +148,7 @@ void NPC_PKPetShopTalked( int meindex , int talker , char *szMes ,int color )
 	BOOL	sellonlyflg = FALSE;
 	char	sellmsg[1024];
 
-    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+    /* 設定相關參數處理 */
     if( CHAR_getInt( talker , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) 
 	{
     	return;
@@ -156,7 +156,7 @@ void NPC_PKPetShopTalked( int meindex , int talker , char *szMes ,int color )
 
 	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex, talker, 2) == FALSE) 
-	{		/* 兒精惉蚗迶雄  摯陑 */
+	{		/* 角色動畫重置 */
 		if( NPC_Util_CharDistance( talker, meindex ) > 1) return;
 	}
 
@@ -1382,10 +1382,10 @@ BOOL NPC_PKPetShop_SellNewPet(int meindex,int talker,char *data)
 			LogItem(
 					CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 					CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
-	       			ITEM_getInt( itemindex, ITEM_ID ),  /* 囮騷  堜  蠕 */
+	       			ITEM_getInt( itemindex, ITEM_ID ),  /* 錯誤訊息 */
 #endif
 					"SellErr",
 					CHAR_getInt( talker, CHAR_FLOOR),
@@ -1405,7 +1405,7 @@ BOOL NPC_PKPetShop_SellNewPet(int meindex,int talker,char *data)
 			LogItem(
 					CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 					CHAR_getChar( talker, CHAR_CDKEY ),
-	       			-1,  /* 囮騷  堜  蠕 */
+	       			-1,  /* 錯誤訊息 */
 					"SellErr",
 					CHAR_getInt( talker, CHAR_FLOOR),
 					CHAR_getInt( talker, CHAR_X ),
@@ -1431,10 +1431,10 @@ BOOL NPC_PKPetShop_SellNewPet(int meindex,int talker,char *data)
 			LogItem(
 				CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 				CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-	       		ITEM_getInt( itemindex, ITEM_ID ),  /* 囮騷  堜  蠕 */
+	       		ITEM_getInt( itemindex, ITEM_ID ),  /* 錯誤訊息 */
 #endif
 				"Sell",
 				CHAR_getInt( talker,CHAR_FLOOR),

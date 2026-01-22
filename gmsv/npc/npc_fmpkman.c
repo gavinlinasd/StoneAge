@@ -79,14 +79,14 @@ BOOL NPC_FMPKManInit( int meindex )
 *********************************/
 void NPC_FMPKManTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
-    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+    /* 設定相關參數處理 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
 	
 	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace(talkerindex,meindex,2 )==FALSE){
-		/* 兒精惉蚗迶雄  摯陑 */
+		/* 角色動畫重置 */
 		if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	}
 

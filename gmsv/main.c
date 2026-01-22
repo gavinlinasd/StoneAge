@@ -147,7 +147,7 @@ void mainloop( void )
 	Init_GM_BROADCAST( 0, 0, 0, "" );
 #endif
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 	Init_FM_PK_STRUCT();			
 #endif
 

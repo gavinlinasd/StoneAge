@@ -347,7 +347,7 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	makeEscapeString( token, escapedname, sizeof(escapedname));
-	/*-喫喫ぁ邞嚭埰堎--*/
+	/*--這裡搜索處理--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,

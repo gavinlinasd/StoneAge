@@ -57,7 +57,7 @@ int MAGIC_GetArrayNo(
 int MAGIC_DirectUse(
 	int charaindex, // 窅竣す籤溘摯騷璃溢蚗袲筒
 	int marray, 	// 窅竣��絊摯騷璃溢蚗袲筒
-	int toindex, 	// 移勗窅竣ㄑ
+	int toindex, 	// 目標窅竣ㄑ
 	int itemnum
 );
 //

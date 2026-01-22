@@ -8,8 +8,8 @@
 #include "pet_skill.h"
 
 struct B_AI_RESULT {
-	BATTLE_COM	command;		/* 笰禱埰堎凝 */
-	int			target;			/* 移勗 */
+	BATTLE_COM	command;		/* 執行命令 */
+	int			target;			/* 目標 */
 };
 
 static int BATTLE_ai_normal( int, int, BATTLE_ENTRY *,struct B_AI_RESULT *);
@@ -38,7 +38,7 @@ int BATTLE_ai_all( int battleindex, int side, int turn)
 
 		mode = CHAR_getWorkInt( charaindex, CHAR_WORKTACTICS);
 		if( mode < 0 || mode >= arraysizeof( functbl)){
-			print( "BATTLE_ai_all 笢,桵須軀憮耀宒竭も墅(%s)(%d)\n",
+			print( "BATTLE_ai_all 笢,戰鬥邏輯模式很奇怪(%s)(%d)\n",
 				CHAR_getUseName( charaindex ), mode );
 			mode = 1;
 		}

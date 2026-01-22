@@ -19,7 +19,7 @@
 #include "battle.h"
 #include "npc_bus.h"
 #include "char_talk.h"
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 #include "pet_skill.h"
 #endif
 
@@ -374,7 +374,7 @@ BOOL TRADE_Search(int fd, int meindex, char* message)
    if (!CHAR_CHECKINDEX(meindex))	return FALSE;
 
 #if 0	// Robin fix
-//#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+//#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	{
 		char	msgbuf[512];
 		snprintf( msgbuf, sizeof( msgbuf), "輻陎炵模逜PKㄛ拸楊蝠眢");
@@ -1080,7 +1080,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 /*
 int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mycharaname, char* tocharaname)
 {
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	int myItem[42] = { -1 } ;			//扂源垀衄腔蝠眢囀�搊鉭�
 	int oppItem[42] = { -1 };			//勤源垀衄腔蝠眢囀�搊鉭�
 	int ii , jj; 
@@ -1107,7 +1107,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
    CONNECT_getTradeTmp(tofd, toitembuf, sizeof(toitembuf));
 
 
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
    //�△襞珝誼齾郇閡袎硜搊鉭�
    for ( ii = 0  ; ii < 42 ; ii ++ ) {
 	   if (getStringFromIndexWithDelim(itembuf, "|", 6 + ii * 2 , token, sizeof(token)) == TRUE)
@@ -1171,7 +1171,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		toitemindex6 = atoi(token);
 #endif 
 
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
    //潰脤衄拸笭葩蝠眢腔耋撿
    for ( ii = 0 ; ii < 15 ; ii ++ ) {
 	   for ( jj = ii + 1 ; jj < 15 ; jj ++ ) {
@@ -1202,7 +1202,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
    // End
 #endif
 
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
    //掀勤邧源蝠眢腔昜こ岆瘁飲淏��
    for ( ii = 0 ; ii < 21 ; ii ++ ) {
 	   if ( myItem[ii] != oppItem[ii+21] ) {
@@ -1262,7 +1262,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	if (!CHAR_CHECKINDEX(toindex))       return -1;
 	if (swapitem2 > CHAR_findTotalEmptyItem(toindex))
 		return	-3;
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	//�△羸遙輓躅蟓�
 	if ( myItem[20] != -1 ) gold1 += myItem[20] ;
 	if ( myItem[41] != -1 ) gold2 += myItem[41] ; 
@@ -1280,7 +1280,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	if ((gold2 + CHAR_getInt(meindex, CHAR_GOLD) - gold1) > CHAR_getMaxHaveGold( meindex) )	return	-8;
 	if ((gold1 + CHAR_getInt(toindex, CHAR_GOLD) - gold2) > CHAR_getMaxHaveGold( toindex))	return	-9;
 
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	//數呾邧源唾昜腔樓熬
 	for ( ii = 15 ; ii < 20 ; ii ++ ) {
 		if ( myItem[ii] != -1 ) {
@@ -1306,7 +1306,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	}
 #endif
 
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	if ((pet1 > 5) || (pet2 > 5))	return	-10;
 	//�△襠奐褕篽狦傮霾議駘懮�講
 	for( ii = 0; ii < CHAR_MAXPETHAVE; ii ++ ) {
@@ -1323,7 +1323,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	if ((pet1 == 1) && (CHAR_getCharPetElement( meindex) == -1))	return -10;
 	if ((pet2 == 1) && (CHAR_getCharPetElement( toindex) == -1))	return -11;
 #endif	
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	//�△襠齾倬�蝠眢腔耋撿index
 	for ( ii = 0 ; ii < 15 ; ii ++ ) {
 		if ( myItem[ii] != -1 ) 
@@ -1349,7 +1349,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		item5 = CHAR_getItemIndex(toindex, itemindex5);
 	else	item5 = -1;
 #endif
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	//�△譚�蝠眢唾昜腔index
 	for ( ii = 15 ; ii < 20 ; ii ++ ) {
 		if ( myItem[ii] != -1 ) {
@@ -1388,7 +1388,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 
 
 
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	for ( ii = 0 ; ii < 15 ; ii ++ ) {
 		if ( ITEM_getInt( Iitem1[ii] , ITEM_VANISHATDROP ) == 1 )
 			return -12 ; 
@@ -1404,7 +1404,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 #endif
 
 
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	//唾昜脹撰夔瘁蝠眢瓚剿
 	if( CHAR_getWorkInt( meindex, CHAR_PickAllPet) != TRUE )	{
 		for ( ii = 0 ; ii < 5 ; ii ++ ) {
@@ -1438,7 +1438,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		 		return -14;
 	}
 #endif
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	//岆瘁峈模逜忐誘忤
 	for ( ii = 0 ; ii < 5 ; ii ++ ) {
 		if ( ( ppet1[ii] != -1 ) && (CHAR_getInt(ppet1[ii], CHAR_PETFAMILY) == 1))
@@ -1453,7 +1453,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		 	return -15;
 #endif
 
-#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+#ifdef _TRADESYSTEM2	// (不可開) Syu ADD 新交易系統
 	// 蝠遙俙模耋撿﹜踢ヴ﹜唾昜	
 	for ( ii = 0 ; ii < 15 ; ii ++ ) {
 		TRADE_ChangeItem(meindex, toindex, "I", "I", Iitem1[ii], Iitem2[ii],

@@ -1304,7 +1304,7 @@ int ITEM_mergeItem( int charaindex, ITEM_Item *items, int num , int money, int p
 									ITEMTBL_getInt( created, ITEM_INGVALUE3) +
 									ITEMTBL_getInt( created, ITEM_INGVALUE4);
 #ifndef _NEW_MANOR_LAW
-	#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+	#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 								fooddp = sqrt(fooddp) * pow(2,kind_num-2) * RAND(0,6) / 200;
 	#else		                             
 								fooddp = sqrt(fooddp) * pow(2,kind_num-2) * RAND(0,6) / 100;
@@ -1349,7 +1349,7 @@ int ITEM_mergeItem( int charaindex, ITEM_Item *items, int num , int money, int p
 									ITEMTBL_getInt( created, ITEM_INGVALUE3) +
 									ITEMTBL_getInt( created, ITEM_INGVALUE4);
 #ifndef _NEW_MANOR_LAW								
-	#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+	#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 								syndp = syndp / 200;
 	#else
 								syndp = syndp / 100;
@@ -1567,10 +1567,10 @@ int ITEM_mergeItem_merge( int charaindex, int petid, char *data, int petindex, i
 				LogItem(
 					CHAR_getChar( charaindex, CHAR_NAME ), /* す籤溘   */
 					CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindexs[i],
 #else
-					ITEM_getInt( itemindexs[i], ITEM_ID),  /* 囮騷  堜  蠕 */
+					ITEM_getInt( itemindexs[i], ITEM_ID),  /* 錯誤訊息 */
 #endif
 					"mergedel(磁傖垀刉壺腔耋撿)",
 					CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -1656,7 +1656,7 @@ int ITEM_mergeItem_merge( int charaindex, int petid, char *data, int petindex, i
 						LogItem(
 							CHAR_getChar( charaindex, CHAR_NAME ),
 							CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							createitemindex,
 #else
 							ITEM_getInt( createitemindex, ITEM_ID),

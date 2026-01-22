@@ -1,7 +1,7 @@
 #if 0
 static Char    slime=
 {
-    FALSE,      /*  use     升丹匹手中中*/
+    FALSE,      /*  use     隨便*/
 
     /*  data    */
     {
@@ -12,7 +12,7 @@ static Char    slime=
         0,      /*  CHAR_FLOOR  */
         0,      /*  CHAR_X */
         0,      /*  CHAR_Y  */
-        0,      /*  CHAR_DIR 12凜毛0卞凜煌璃曰卞 */
+        0,      /*  CHAR_DIR 12點轉為0點方向 */
         0,      /*  CHAR_LV  */
         0,      /*  CHAR_GOLD    */
         1,      /*  CHAR_HP  */
@@ -27,10 +27,10 @@ static Char    slime=
     	0,		/*  CHAR_CHARM	*/
     	0,		/*  CHAR_LUCK	*/
 
-		0,		/* 譁簞嶺 */
-		0,		/* 踹簞嶺 */
-		0,		/* 紹簞嶺 */
-		0,		/* 氘簞嶺 */
+		0,		/* 地屬性 */
+		0,		/* 水屬性 */
+		0,		/* 火屬性 */
+		0,		/* 風屬性 */
 
 		0,		/* CHAR_SLOT */
 		0,		/* CHAR_CRITIAL */

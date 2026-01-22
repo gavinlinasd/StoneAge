@@ -263,7 +263,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
         return FALSE;
     }
 
-	/* 疐趵撬 */
+	/* 參數結構 */
     for( i = 0; i < ENEMYTEMP_enemynum; i ++ ) {
     	for( j = 0; j < E_T_DATAINTNUM; j ++ ) {
     		ENEMYTEMP_setInt( i,j,-1);
@@ -681,7 +681,7 @@ BOOL GROUP_initGroup( char* filename )
         fclose( f );
         return FALSE;
     }
-	/* 疐趵撬 */
+	/* 參數結構 */
     for( i = 0; i < GROUP_groupnum; i ++ ) {
     	for( j = 0; j < GROUP_DATAINTNUM; j ++ ) {
     		GROUP_setInt( i,j,-1);
@@ -699,8 +699,8 @@ BOOL GROUP_initGroup( char* filename )
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  菜禱堆魠埰堎    */
-        /*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
+        /* 實際調用的函數 */
+        /* 將tab轉換為空格 */
         replaceString( line, '\t' , ' ' );
         /* 袸  摯筒妐↓筒禱噁堎��*/
 {

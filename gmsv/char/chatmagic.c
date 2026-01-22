@@ -43,7 +43,7 @@
 #include "deathcontend.h"
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 #include "profession_skill.h"
 #endif
 #include "char_talk.h"
@@ -576,7 +576,7 @@ void CHAR_CHAT_DEBUG_additem( int charindex , char *message )
 				LogItem(
 					CHAR_getChar( charindex, CHAR_NAME ),
 					CHAR_getChar( charindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 		itemindex,
 #else
 		atoi( message),
@@ -623,7 +623,7 @@ void CHAR_CHAT_DEBUG_additem( int charindex , char *message )
 			LogItem(
 				CHAR_getChar( charindex, CHAR_NAME ),
 				CHAR_getChar( charindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
 				atoi( message),
@@ -787,7 +787,7 @@ void CHAR_CHAT_DEBUG_info( int charindex , char *message )
 			  CHAR_getInt( index , CHAR_CONFUSION ) );
 	CHAR_talkToCli( charindex, -1 , line , CHAR_COLORWHITE );
 
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 	snprintf( line, sizeof( line),
 #ifdef _NEW_MANOR_LAW
 				"TitInd:%d FL:%d X:%d Y:%d DIR:%d FAME:%d MOMENTUM:%d" ,
@@ -1056,7 +1056,7 @@ void CHAR_CHAT_DEBUG_delitem( int charindex , char *message )
 					LogItem(
 						CHAR_getChar( charindex, CHAR_NAME ),
 						CHAR_getChar( charindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 						itemid,
 #else
 			       		ITEM_getInt( itemid, ITEM_ID ),
@@ -1086,7 +1086,7 @@ void CHAR_CHAT_DEBUG_delitem( int charindex , char *message )
 			LogItem(
 				CHAR_getChar( charindex, CHAR_NAME ),
 				CHAR_getChar( charindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemid,
 #else
 	       		ITEM_getInt( itemid, ITEM_ID ),
@@ -1104,7 +1104,7 @@ void CHAR_CHAT_DEBUG_delitem( int charindex , char *message )
 	}
 }
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 void CHAR_CHAT_DEBUG_addsk( int charaindex, char* message )
 {
 
@@ -1657,7 +1657,7 @@ void CHAR_CHAT_DEBUG_battlewatch( int charaindex, char* message )
 // shan 2001/12/18 Begin   蚕黺蜊曹徹嗣ㄛ嘟蔚埻珂腔function蛁裁
 void CHAR_CHAT_DEBUG_eventclean( int charaindex, char* message )
 {	
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 	int event_num = 8;
 #else
 	int event_num = 6;
@@ -1725,7 +1725,7 @@ void CHAR_CHAT_DEBUG_eventclean( int charaindex, char* message )
 		CHAR_setInt( charaindex_tmp, CHAR_NOWEVENT5, 0);
 		CHAR_setInt( charaindex_tmp, CHAR_NOWEVENT6, 0);
 #endif
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 		CHAR_setInt( charaindex_tmp, CHAR_ENDEVENT7, 0);
 		CHAR_setInt( charaindex_tmp, CHAR_NOWEVENT7, 0);
 		CHAR_setInt( charaindex_tmp, CHAR_ENDEVENT8, 0);
@@ -1773,7 +1773,7 @@ void CHAR_CHAT_DEBUG_eventclean( int charaindex, char* message )
 
 void CHAR_CHAT_DEBUG_eventsetnow( int charaindex, char* message )
 {
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 	int event_num = 8;
 #else
 	int event_num = 6;
@@ -1834,7 +1834,7 @@ void CHAR_CHAT_DEBUG_eventsetnow( int charaindex, char* message )
 		CHAR_setInt( charaindex_tmp, CHAR_NOWEVENT5, -1);
 		CHAR_setInt( charaindex_tmp, CHAR_NOWEVENT6, -1);
 #endif
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 		CHAR_setInt( charaindex_tmp, CHAR_NOWEVENT7, -1);
 		CHAR_setInt( charaindex_tmp, CHAR_NOWEVENT8, -1);
 #endif
@@ -1901,7 +1901,7 @@ void CHAR_CHAT_DEBUG_eventsetnow( int charaindex, char* message )
 
 void CHAR_CHAT_DEBUG_eventsetend( int charaindex, char* message )
 {
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 	int event_num = 8;
 #else
  	int event_num = 6;
@@ -1962,7 +1962,7 @@ void CHAR_CHAT_DEBUG_eventsetend( int charaindex, char* message )
 		CHAR_setInt( charaindex_tmp, CHAR_ENDEVENT5, -1);
 		CHAR_setInt( charaindex_tmp, CHAR_ENDEVENT6, -1);
 #endif
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 		CHAR_setInt( charaindex_tmp, CHAR_ENDEVENT7, -1);
 		CHAR_setInt( charaindex_tmp, CHAR_ENDEVENT8, -1);
 #endif
@@ -2905,7 +2905,7 @@ void CHAR_CHAT_DEBUG_shutdown(int charindex , char *message )
 
 void CHAR_CHAT_DEBUG_watchevent( int charaindex, char* message )
 {
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 	int event_num = 8;
 #else
 	int event_num = 6;
@@ -4283,7 +4283,7 @@ void CHAR_CHAT_DEBUG_playerspread( int charaindex, char *message)
 }
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 
 void CHAR_CHAT_DEBUG_set_regist( int charaindex, char*message )
 {
@@ -4609,7 +4609,7 @@ void CHAR_CHAT_DEBUG_updatepklist( int charaindex, char* message )
 
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 
 void CHAR_CHAR_DEBUG_reloadfm( int charaindex, char* message )
 {

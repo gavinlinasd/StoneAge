@@ -94,7 +94,7 @@ BOOL ENCOUNT_initEncount( char* filename )
         return FALSE;
     }
 
-    /* 疐趵撬 */
+    /* 參數結構 */
 {
     int     i,j;
     for( i = 0; i < ENCOUNT_encountnum; i ++ ) {
@@ -128,8 +128,8 @@ BOOL ENCOUNT_initEncount( char* filename )
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  菜禱堆魠埰堎    */
-        /*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
+        /* 實際調用的函數 */
+        /* 將tab轉換為空格 */
         replaceString( line, '\t' , ' ' );
         /* 袸  摯筒妐↓筒禱噁堎��*/
 {

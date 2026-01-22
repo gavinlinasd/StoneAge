@@ -756,7 +756,7 @@ int	MAGIC_Recovery_Battle( int charaindex, int toNo, int marray, int mp )
 }
 
 void BATTLE_MultiResAndDef( 
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int attackNo,		// 井仃月谛  寞
 	int toNo,			// 井仃日木月谛  寞
 	int power,			// 湘  荚汊袄
@@ -777,7 +777,7 @@ void BATTLE_MultiResAndDef(
 	BATTLE_MultiListDead( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
+		battleindex, 			// 字符串索引
 		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
 		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
 		UseEffect, 				// 井仃月谛巨白尼弁玄
@@ -1758,7 +1758,7 @@ void BATTLE_MultiToCallDragonMagic( int battleindex, int attackNo, int toNo,
 //    芊羁匹  醒及平乓仿弁正□毛汊唾今六月
 //
 void BATTLE_MultiRessurect(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int attackNo,		// 井仃月谛  寞
 	int toNo,			// 井仃日木月谛  寞
 	int power,			// 湘  荚汊袄
@@ -1779,7 +1779,7 @@ void BATTLE_MultiRessurect(
 	BATTLE_MultiListDead( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
+		battleindex, 			// 字符串索引
 		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
 		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
 		UseEffect, 				// 井仃月谛巨白尼弁玄
@@ -1934,7 +1934,7 @@ void BATTLE_MultiReLife( int battleindex, int attackNo, int toNo,
 #endif
 
 void BATTLE_MultiStatusChange(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int attackNo,		// 井仃月谛  寞
 	int toNo,			// 井仃日木月谛  寞
 	int status,			// 旦  □正旦潘  
@@ -1951,7 +1951,7 @@ void BATTLE_MultiStatusChange(
 
 	BATTLE_MultiList( battleindex, toNo, ToList );
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
+		battleindex, 			// 字符串索引
 		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
 		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
 		UseEffect, 				// 井仃月谛巨白尼弁玄
@@ -2033,7 +2033,7 @@ void BATTLE_MultiMagicStatusChange( int battleindex, int attackNo, int toNo, int
 //    芊羁匹  醒及平乓仿弁正□毛旦  □正旦荚汊
 //
 void BATTLE_MultiStatusRecovery(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int attackNo,		// 井仃月谛  寞
 	int toNo,			// 井仃日木月谛  寞
 	int status,			// 旦  □正旦潘  
@@ -2054,7 +2054,7 @@ void BATTLE_MultiStatusRecovery(
 	BATTLE_MultiList( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
+		battleindex, 			// 字符串索引
 		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
 		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
 		UseEffect, 				// 井仃月谛巨白尼弁玄
@@ -2129,7 +2129,7 @@ void BATTLE_MultiStatusRecovery(
 //    芊羁匹  醒及平乓仿弁正□毛  芊  豢
 //
 void BATTLE_MultiMagicDef(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int attackNo,		// 井仃月谛  寞
 	int toNo,			// 井仃日木月谛  寞
 	int kind,			// 升及  芊  豢井
@@ -2150,7 +2150,7 @@ void BATTLE_MultiMagicDef(
 	BATTLE_MultiList( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
+		battleindex, 			// 字符串索引
 		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
 		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
 		UseEffect, 				// 井仃月谛巨白尼弁玄
@@ -2185,7 +2185,7 @@ void BATTLE_MultiMagicDef(
 //    芊羁匹  醒及平乓仿弁正□及由仿丢□正毛晓票今六月
 //
 void BATTLE_MultiParamChange(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int attackNo,		// 井仃月谛  寞
 	int toNo,			// 井仃日木月谛  寞
 	int kind,			// 升及由仿丢□正井
@@ -2207,7 +2207,7 @@ void BATTLE_MultiParamChange(
 	BATTLE_MultiList( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
+		battleindex, 			// 字符串索引
 		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
 		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
 		UseEffect, 				// 井仃月谛巨白尼弁玄
@@ -2309,7 +2309,7 @@ void BATTLE_MultiParamChange(
 //    芊羁匹  醒及箪岭  鳖
 //
 void BATTLE_MultiAttReverse(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int attackNo,		// 井仃月谛  寞
 	int toNo,			// 井仃日木月谛  寞
 	int UseEffect,		// 银丹谛及巨白尼弁玄
@@ -2327,7 +2327,7 @@ void BATTLE_MultiAttReverse(
 	BATTLE_MultiList( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
+		battleindex, 			// 字符串索引
 		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
 		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
 		UseEffect, 				// 井仃月谛巨白尼弁玄

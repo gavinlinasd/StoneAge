@@ -1,6 +1,6 @@
 #include "version.h"
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 #include "common.h"
 #include "util.h"
 #include "skill.h"

@@ -1,7 +1,7 @@
 #include "version.h"
 
 #ifdef _NPC_WELFARE
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 
 #include <string.h>
 #include "char.h"

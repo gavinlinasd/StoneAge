@@ -115,12 +115,12 @@ void NPC_BodyLanTalked( int meindex , int talkerindex , char *szMes ,int color )
 	char szP[256], szArg[4096];
 	int EventNo = -1,Pre_Event = -1;
 
-    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+    /* 設定相關參數處理 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
 
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 2 )
 	{
 		return;
@@ -430,7 +430,7 @@ static void NPC_BodyLan_Window(
 	}
 
 	makeEscapeString( token, escapedname, sizeof(escapedname));
-	/*-喫喫ぁ邞嚭埰堎--*/
+	/*--這裡搜索處理--*/
 	lssproto_WN_send( fd, windowtype,
 					buttontype,
 					windowno,

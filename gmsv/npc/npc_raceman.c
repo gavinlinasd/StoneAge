@@ -871,7 +871,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 	int  i;
 
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return ;
@@ -1216,7 +1216,7 @@ int Raceman_CheckGameType(int meindex , int talker )
 	char buf[64];
 	int  gmode;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1252,7 +1252,7 @@ BOOL Raceman_CheckItem(int meindex,int talker)
 	int item,i,itemindex,id;
 	char buf[128];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1302,7 +1302,7 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		return FALSE;
 	}
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1377,10 +1377,10 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		LogItem(
 		CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 		CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 		itemindex,
 #else
-   		ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+   		ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 		"EventAddItem(�恄鵓駍鯤驧繭蔥警擰�)",
 		CHAR_getInt( talker, CHAR_FLOOR),
@@ -1408,7 +1408,7 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	int  index,gmode;
 	unsigned int  askno,asklv,askbbi;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
@@ -1607,7 +1607,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 	int  base,intNo,shift,petNo,j;	
 	unsigned int  askno,asklv,temp;
 	
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
@@ -1790,7 +1790,7 @@ void Raceman_countrank( int meindex, int talker )
 	int  ranknum = 0,gmode;
 	char buf[64],buf1[64];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -1822,7 +1822,7 @@ void Raceman_renewrank( int meindex , int talker , int select )
 	int  ranknum = 0;
 	char buf[64],buf1[64];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -1856,7 +1856,7 @@ BOOL Raceman_checkprize( int meindex , int talker ,char *token)
 	int  lowlevel;//郔腴梓袧  狟癹	
 	int  gmode;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
@@ -1915,7 +1915,7 @@ void Raceman_awardprize( int meindex , int talker )
 
 	memset(prizebuf,0,sizeof(prizebuf));
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -2042,7 +2042,7 @@ DELITEM:
 					LogItem(
 						CHAR_getChar( talker, CHAR_NAME ), 
 						CHAR_getChar( talker, CHAR_CDKEY ),
-			#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+			#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 						itemindex,
 			#else
        					ITEM_getInt( itemindex, ITEM_ID ),  
@@ -2074,7 +2074,7 @@ int Raceman_readmode( int meindex , int talkerindex )
 	int  gmode;  // 1:陔忒癹 2:跺�冾� 3:芶极癹 4:跺�侘銨� 5:芶极祥癹
 	char buf[10];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 	}
@@ -2094,7 +2094,7 @@ int Raceman_CheckSelectRank(meindex,talkerindex,datanum)
 	int  select = 0;
 
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //讀取數據
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 	}

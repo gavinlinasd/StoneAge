@@ -2314,7 +2314,7 @@ void lssproto_SPET_send(int fd, int standbypet, int result)
          int havepetskill
          笰    摯  禱窅暵媃倜凝��
  	int toindex
- 	 移勗  傮禱窅暵媃倜凝�蛦蟤噸棚鬷仇熗摛迖�盓す籤溘摯indexぁ毀埵笢�蛚紜掉�  勗埵埱趙笢堎��
+ 	 目標  傮禱窅暵媃倜凝�蛦蟤噸棚鬷仇熗摛迖�盓す籤溘摯indexぁ毀埵笢�蛚紜掉�  勗埵埱趙笢堎��
  	
  	  猷覕    = 0
  	  妐蚗哱  = 1   5

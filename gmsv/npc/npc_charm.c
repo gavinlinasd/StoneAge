@@ -47,7 +47,7 @@ BOOL NPC_CharmInit( int meindex )
 void NPC_CharmTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
 
-    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+    /* 設定相關參數處理 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )
     {
     	return;
@@ -55,7 +55,7 @@ void NPC_CharmTalked( int meindex , int talkerindex , char *szMes ,int color )
 	
 	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex , 2) == FALSE) {
-		/* 兒精惉蚗迶雄  摯陑 */
+		/* 角色動畫重置 */
 		if(NPC_Util_isFaceToChara( talkerindex, meindex, 1) == FALSE) return;
 	}
 
@@ -180,7 +180,7 @@ static void NPC_Charm_selectWindow( int meindex, int toindex, int num)
 	}
 	
 	makeEscapeString( token, escapedname, sizeof( escapedname));
-	/*-喫喫ぁ邞嚭埰堎--*/
+	/*--這裡搜索處理--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,

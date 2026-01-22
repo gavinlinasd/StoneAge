@@ -27,7 +27,7 @@ int BATTLE_ItemUseDelete(
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
@@ -167,7 +167,7 @@ void ITEM_useMRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
@@ -215,7 +215,7 @@ void ITEM_useMagic_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
@@ -330,7 +330,7 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),

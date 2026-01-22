@@ -96,11 +96,11 @@ void NPC_WindowmanLooked( int meindex , int lookedindex)
 	int		fd;
 	char	buf[256];
 	
-	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+	/* 設定相關參數處理 */
 	if( CHAR_getInt( toindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( !NPC_Util_charIsInFrontOfChar( toindex, meindex, 1 )) return; 
 
 	if( !NPC_Windowman_readData( meindex, num, FALSE) ) {
@@ -251,7 +251,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 		b_mode = -1;
 		errflg = FALSE;
 
-		/* 疐趵撬 */
+		/* 參數結構 */
 		w.windowno = -1;
 		w.windowtype = -1;
 		w.buttontype = -1;
@@ -285,8 +285,8 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 			/* 搊菜噁堎 */
 			chomp( line );
 			
-			/*  菜禱堆魠埰堎    */
-			/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
+			/* 實際調用的函數 */
+			/* 將tab轉換為空格 */
 			replaceString( line, '\t' , ' ' );
 			/* 袸  摯筒妐↓筒禱噁堎��*/
 			for( i = 0; i < strlen( line); i ++) {

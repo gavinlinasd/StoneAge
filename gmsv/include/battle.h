@@ -214,7 +214,7 @@ typedef enum{
 #ifdef _MAGICPET_SKILL
 	BATTLE_COM_S_SETMAGICPET,
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 
 // 拵呇
 	BATTLE_COM_S_VOLCANO_SPRINGS,	// 鳶刓��	
@@ -281,7 +281,7 @@ typedef enum{
 #endif
 #endif	
 
-#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
+#ifdef _PET_SKILL_SARS				// WON ADD 職業延長
 	BATTLE_COM_S_SARS,
 #endif
 #ifdef _SONIC_ATTACK				// WON ADD 秞疏馴僻
@@ -368,11 +368,11 @@ enum{
 #define BC_FLG_NOCAST		(1<<14) // 麥蘇
 #endif
 
-#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
+#ifdef _PET_SKILL_SARS			// WON ADD 職業延長
 #define BC_FLG_SARS			(1<<15) // 馮伢
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 #define BC_FLG_DIZZY		(1<<16)	// 婠悈	
 #define BC_FLG_ENTWINE		(1<<17)	// 攷跦莊��
 #define BC_FLG_DRAGNET		(1<<18)	// 毞蹕華厙	
@@ -674,7 +674,7 @@ int Battle_getTotalBattleNum();
 void CHAR_ComToxicationHp( int charaindex);
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 void BATTLE_ProfessionStatus_init( int battleindex, int charaindex );
 void BATTLE_ProfessionStatusSeq( int battleindex, int charaindex);
 #endif

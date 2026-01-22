@@ -170,7 +170,7 @@ static PETSKILL_PetskillFunctionTable PETSKILL_functbl[] = {
     { "PETSKILL_Roar",	PETSKILL_Roar, 0},//vincent add 2002/07/11
 #endif	
 
-#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
+#ifdef _PET_SKILL_SARS				// WON ADD 職業延長
 	{ "PETSKILL_Sars",	PETSKILL_Sars, 0},
 #endif
 
@@ -353,7 +353,7 @@ BOOL PETSKILL_initPetskill( char *filename)
         return FALSE;
     }
 
-	/* 疐趵撬 */
+	/* 參數結構 */
     for( i = 0; i < PETSKILL_petskillnum; i ++ ) {
     	for( j = 0; j < PETSKILL_DATAINTNUM; j ++ ) {
     		PETSKILL_setInt( i,j,-1);
@@ -372,8 +372,8 @@ BOOL PETSKILL_initPetskill( char *filename)
                 
         chomp( line );
 
-        /*  菜禱堆魠埰堎    */
-        /*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
+        /* 實際調用的函數 */
+        /* 將tab轉換為空格 */
         replaceString( line, '\t' , ' ' );
         /* 袸  摯筒妐↓筒禱噁堎��*/
 {
@@ -1611,7 +1611,7 @@ int PETSKILL_Mdfyattack( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_S_MDFYATTACK);
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 
 	pszOption = PETSKILL_getChar( array, PETSKILL_OPTION );
 	if( pszOption == NULL ) return FALSE;
@@ -1622,7 +1622,7 @@ int PETSKILL_Mdfyattack( int charaindex, int toNo, int array, char *data )
 		break;
 	}
 	if( i == 4 ) return FALSE;
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM4, i);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM4, i);//記錄屬性
 	if( getStringFromIndexWithDelim( pszOption, "|", 2, buf1, sizeof( buf1)) == FALSE )
 		return FALSE;
 	nums=atoi( buf1);
@@ -1730,7 +1730,7 @@ int	PETSKILL_MagicStatusChange( int charaindex, int toindex, int array, char *da
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_S_SUPERWALL);
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toindex );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 
 	return TRUE;
 }
@@ -1745,7 +1745,7 @@ int PETSKILL_SetDuck( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_S_SETDUCK);
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 
 
 	CHAR_setWorkInt( charaindex, CHAR_MAGICPETMP, 0 );
@@ -1771,7 +1771,7 @@ int PETSKILL_SetMagicPet( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_S_SETMAGICPET);
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 	return TRUE;
 }
 #endif
@@ -1877,7 +1877,7 @@ int PETSKILL_BattleTimid( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKATTACKPOWER, ( CHAR_getWorkInt( charaindex, CHAR_WORKFIXSTR)*0.7) );
 	CHAR_setWorkInt( charaindex, CHAR_WORKDEFENCEPOWER, ( CHAR_getWorkInt( charaindex, CHAR_WORKFIXTOUGH)*0.4) );
 	CHAR_setWorkInt( charaindex, CHAR_WORKQUICK, ( CHAR_getWorkInt( charaindex, CHAR_WORKFIXDEX)*0.8) );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 
 	return TRUE;
 }
@@ -1927,7 +1927,7 @@ int PETSKILL_2BattleTimid( int charaindex, int toNo, int array, char *data )
 		CHAR_setWorkInt( charaindex, CHAR_WORKQUICK, CHAR_getWorkInt( charaindex, CHAR_WORKFIXDEX)+(CHAR_getWorkInt( charaindex, CHAR_WORKFIXDEX)*fPer) );
 	}
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 
 	return TRUE;
 }
@@ -1941,7 +1941,7 @@ int PETSKILL_AntInter( int charaindex, int toNo, int array, char* data)
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 	return TRUE;
 }
 #endif
@@ -1959,7 +1959,7 @@ int PETSKILL_BattleProperty( int charaindex, int toNo, int array, char *data )
 //	CHAR_setWorkInt( charaindex, CHAR_WORKATTACKPOWER, ( CHAR_getWorkInt( charaindex, CHAR_WORKFIXSTR)*0.7) );
 //	CHAR_setWorkInt( charaindex, CHAR_WORKDEFENCEPOWER, ( CHAR_getWorkInt( charaindex, CHAR_WORKFIXTOUGH)*0.5) );
 //	CHAR_setWorkInt( charaindex, CHAR_WORKQUICK, ( CHAR_getWorkInt( charaindex, CHAR_WORKFIXDEX)*0.95) );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 
 	return TRUE;
 }
@@ -1977,7 +1977,7 @@ int PETSKILL_BattleTearDamage( int charaindex, int toNo, int array, char *data )
 
 	CHAR_setWorkInt( charaindex, CHAR_WORKATTACKPOWER, ( CHAR_getWorkInt( charaindex, CHAR_WORKFIXSTR)*0.9) );
 	CHAR_setWorkInt( charaindex, CHAR_WORKDEFENCEPOWER, ( CHAR_getWorkInt( charaindex, CHAR_WORKFIXTOUGH)*0.8) );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 	return TRUE;
 }
 #endif
@@ -1996,7 +1996,7 @@ int PETSKILL_Lighttakeed( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKATTACKPOWER, (CHAR_getWorkInt( charaindex, CHAR_WORKFIXSTR)*0.7) );
 	CHAR_setWorkInt( charaindex, CHAR_WORKDEFENCEPOWER, (CHAR_getWorkInt( charaindex, CHAR_WORKFIXTOUGH)*0.5) );
 //	CHAR_setWorkInt( charaindex, CHAR_WORKQUICK, (CHAR_getWorkInt( charaindex, CHAR_WORKFIXDEX)*0.95) );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 	return TRUE;
 }
 #endif
@@ -2018,7 +2018,7 @@ int PETSKILL_AttackCrazed( int charaindex, int toNo, int array, char *data )
 	pszOption = PETSKILL_getChar( array, PETSKILL_OPTION );
 	if( pszOption == NULL ) return FALSE;
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 	CHAR_SETWORKINT_HIGH( charaindex, CHAR_WORKBATTLECOM3, atoi(pszOption));
 	return TRUE;
 }
@@ -2057,13 +2057,13 @@ int PETSKILL_AttackShoot( int charaindex, int toNo, int array, char *data )
 		CHAR_setWorkInt( charaindex, CHAR_WORKATTACKPOWER, (CHAR_getWorkInt( charaindex, CHAR_WORKFIXSTR) * 1.2 / 4 ) );
 	CHAR_setWorkInt( charaindex, CHAR_WORKDEFENCEPOWER, (CHAR_getWorkInt( charaindex, CHAR_WORKFIXTOUGH) * 1) );
 */
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);//記錄屬性
 	CHAR_SETWORKINT_HIGH( charaindex, CHAR_WORKBATTLECOM3, n);
 	return TRUE;
 }
 #endif
 
-#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
+#ifdef _PET_SKILL_SARS				// WON ADD 職業延長
 int PETSKILL_Sars( int charaindex, int toNo, int array, char *data )
 {
 
@@ -2109,7 +2109,7 @@ int PETSKILL_Sonic( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//記錄屬性
 	return TRUE;
 
 }
@@ -2141,7 +2141,7 @@ int PETSKILL_Regret( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//記錄屬性
 	return TRUE;
 
 }
@@ -2176,7 +2176,7 @@ int PETSKILL_Gyrate( int charaindex, int toNo, int array, char *data )
 		CHAR_setWorkInt(charaindex,CHAR_WORKATTACKPOWER,(CHAR_getWorkInt(charaindex,CHAR_WORKFIXSTR)+strdef));
 	}
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//記錄屬性
 	return TRUE;
 }
 #endif
@@ -2188,7 +2188,7 @@ int PETSKILL_Acupuncture( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//記錄屬性
 	return TRUE;
 }
 #endif
@@ -2221,7 +2221,7 @@ int PETSKILL_Retrace( int charaindex, int toNo, int array, char *data )
 		CHAR_setWorkInt(charaindex,CHAR_WORKATTACKPOWER,(CHAR_getWorkInt(charaindex,CHAR_WORKFIXSTR)+strdef));
 	}
 */
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//記錄屬性
 	return TRUE;
 }
 #endif
@@ -2267,7 +2267,7 @@ int PETSKILL_Hector( int charaindex, int toNo, int array, char *data )
 		CHAR_setWorkInt( charaindex, CHAR_WORKQUICK, CHAR_getWorkInt( charaindex, CHAR_WORKFIXDEX) + d_dep);	
 	}
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//記錄屬性
 
 	return TRUE;
 }
@@ -2280,7 +2280,7 @@ int PETSKILL_Firekill( int charaindex, int toNo, int array, char *data )
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//記錄屬性
 
 	return TRUE;
 }
@@ -2327,7 +2327,7 @@ int PETSKILL_BecomePig( int charaindex, int toNo, int array, char* data)
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_S_BECOMEPIG);
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, toNo );
 	CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//暮翹扽俶
+	CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, array);	//記錄屬性
 	return TRUE;
 }
 #endif

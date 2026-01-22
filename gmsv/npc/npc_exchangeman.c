@@ -280,14 +280,14 @@ BOOL NPC_EventWarpNpc(int meindex,char *buf)
 *********************************/
 void NPC_ExChangeManTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
-	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+	/* 設定相關參數處理 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
 
 	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex ,2) == FALSE) {
-		/* 兒精惉蚗迶雄  摯陑 */
+		/* 角色動畫重置 */
 		if(NPC_Util_isFaceToChara(talkerindex,meindex,1 ) == FALSE) return;
 	}
 	
@@ -963,7 +963,7 @@ BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 		}
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	if(strcmp(buf,"CLASS")==0){
 		if(NPC_ActionClassCheck(meindex,talker,kosuu,flg)==TRUE)
 				return TRUE;
@@ -1631,9 +1631,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					NPC_EventWarpNpc(meindex,token2);
 				}
 
-				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+				/*--守護時返回道具和寵物的類型--*/
 				if(strstr( buf, "ThanksMsg2") != NULL) {
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_REQTHANK,
@@ -1657,10 +1657,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 						strcpysafe( token,sizeof( buf2), buf2);
 					}
 
-					/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+					/*--守護時返回道具和寵物的類型--*/
 					if(strstr( buf, "ThanksMsg2") != NULL) {
 					
-						/*喫喫ぁ邞嚭埰堎*/
+						/*這裡搜索處理*/
 						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 									WINDOW_BUTTONTYPE_NEXT,
 									CHAR_WINDOWTYPE_WINDOWEVENT_REQTHANK,
@@ -1682,10 +1682,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					sprintf( tmp, "ThanksMsg%d", work);
 	
 	
-					/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+					/*--守護時返回道具和寵物的類型--*/
 					if(strstr( buf, tmp) != NULL) {
 						
-						/*喫喫ぁ邞嚭埰堎*/
+						/*這裡搜索處理*/
 						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 									WINDOW_BUTTONTYPE_NEXT,
 									CHAR_WINDOWTYPE_WINDOWEVENT_REQTHANK,
@@ -1769,7 +1769,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, "RequestMsg2") != NULL) {
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_REQMAINMSG,
@@ -1792,9 +1792,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 						strcpysafe( token, sizeof( buf2), buf2);
 					}
 
-					/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+					/*--守護時返回道具和寵物的類型--*/
 					if(strstr( buf, "RequestMsg2") != NULL){
-						/*喫喫ぁ邞嚭埰堎*/
+						/*這裡搜索處理*/
 						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 									WINDOW_BUTTONTYPE_NEXT,
 									CHAR_WINDOWTYPE_WINDOWEVENT_REQMAINMSG,
@@ -1813,10 +1813,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					}
 					work++;
 					sprintf( tmp, "RequestMsg%d", work);
-					/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+					/*--守護時返回道具和寵物的類型--*/
 					if(strstr( buf, tmp) != NULL) {
 						
-						/*喫喫ぁ邞嚭埰堎*/
+						/*這裡搜索處理*/
 						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 									WINDOW_BUTTONTYPE_NEXT,
 									CHAR_WINDOWTYPE_WINDOWEVENT_REQMAINMSG,
@@ -1865,7 +1865,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 			/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 			if(strstr( buf, "AcceptMsg2") != NULL) {
-				/*喫喫ぁ邞嚭埰堎*/
+				/*這裡搜索處理*/
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 							WINDOW_BUTTONTYPE_NEXT,
 							CHAR_WINDOWTYPE_WINDOWEVENT_ACCMAINMSG,
@@ -1889,9 +1889,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					strcpysafe( token,sizeof( buf2), buf2);
 				}
 
-				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+				/*--守護時返回道具和寵物的類型--*/
 				if(strstr( buf, "AcceptMsg2") != NULL) {
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCMAINMSG,
@@ -1909,10 +1909,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				}
 				work++;
 				sprintf( tmp, "AcceptMsg%d", work);
-				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+				/*--守護時返回道具和寵物的類型--*/
 				if(strstr( buf, tmp) != NULL) {
 					
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCMAINMSG,
@@ -2133,7 +2133,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 #ifdef _NEWEVENT
 #else
 				if(strstr( buf, "ThanksMsg2") != NULL){
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCTHANK,
@@ -2213,9 +2213,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					strcpysafe( token,sizeof( buf2), buf2);
 				}
 
-				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+				/*--守護時返回道具和寵物的類型--*/
 				if(strstr( buf, "ThanksMsg2") != NULL){
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCTHANK,
@@ -2236,10 +2236,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				work++;
 				sprintf( tmp, "ThanksMsg%d", work);
 
-				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+				/*--守護時返回道具和寵物的類型--*/
 				if(strstr( buf, tmp) != NULL) {
 						
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCTHANK,
@@ -2328,7 +2328,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 			/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 			if(strstr( buf, "NomalWindowMsg2") != NULL) {
-				/*喫喫ぁ邞嚭埰堎*/
+				/*這裡搜索處理*/
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 							WINDOW_BUTTONTYPE_NEXT,
 							CHAR_WINDOWTYPE_WINDOWEVENT_STARTMSG,
@@ -2350,9 +2350,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 									 buf2, sizeof( buf2) ) != NULL)
 					strcpysafe( token,sizeof( buf2), buf2);
 
-				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+				/*--守護時返回道具和寵物的類型--*/
 				if(strstr( buf, "NomalWindowMsg2") != NULL) {
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_STARTMSG,
@@ -2370,10 +2370,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				}
 				work++;
 				sprintf( tmp, "NomalWindowMsg%d", work);
-				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
+				/*--守護時返回道具和寵物的類型--*/
 				if(strstr( buf, tmp) != NULL) {
 					
-					/*喫喫ぁ邞嚭埰堎*/
+					/*這裡搜索處理*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_STARTMSG,
@@ -2504,7 +2504,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 	}
 
-	/*喫喫ぁ邞嚭埰堎*/
+	/*這裡搜索處理*/
 #ifdef _NEWEVENT
 	if(num != 8)
 #endif
@@ -2921,10 +2921,10 @@ BOOL NPC_RandItemGet(int meidex,int talker,int rand_j,char *buf)
 		LogItem(
 			CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 			CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
-			ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+			ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 			"EventAddItem(�恄鵓駍鯤驧繭蔥警擰�)",
 			CHAR_getInt( talker,CHAR_FLOOR),
@@ -3649,7 +3649,7 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 						    LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), // す籤溘   
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
 							ITEM_getInt( itemindex, ITEM_ID),  // 囮騷  堜  蠕 
@@ -3693,10 +3693,10 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"EventDelItem(�恄鵓駍鯤鱹梬媯警擰�)",
 							CHAR_getInt( talker,CHAR_FLOOR),
@@ -3778,10 +3778,10 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"EventDelItem(�恄鵓駍鯤鱹梬媯警擰�)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -3835,10 +3835,10 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"EventDelItem(�恄鵓駍鯤鱹梬媯警擰�)",
 							CHAR_getInt( talker,CHAR_FLOOR),
@@ -3915,10 +3915,10 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 					LogItem(
 						CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 						CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 						itemindex,
 #else
-	    				ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+	    				ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 						"EventAddItem(�恄鵓駍鯤驧繭蔥警擰�)",
 						CHAR_getInt( talker, CHAR_FLOOR),
@@ -3951,10 +3951,10 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 				LogItem(
 				CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 				CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-	       		ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+	       		ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 				"EventAddItem(�恄鵓駍鯤驧繭蔥警擰�)",
 				CHAR_getInt( talker, CHAR_FLOOR),

@@ -350,7 +350,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 				free(PLAYER.ptr);
 				
 #if 0				
-				/*-喫喫ぁ邞嚭埰堎--*/
+				/*--這裡搜索處理--*/
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE, 
 						WINDOW_BUTTONTYPE_OK, 
 						CHAR_WINDOWTYPE_QUIZ_START,
@@ -525,7 +525,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 
 	}
 	 
-	/*-喫喫ぁ邞嚭埰堎--*/
+	/*--這裡搜索處理--*/
 	lssproto_WN_send( fd, messagetype, 
 					buttontype, 
 					windowno,
@@ -695,10 +695,10 @@ BOOL NPC_QuizAddItem(int talker,char *buf)
 		LogItem(
 			CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 			CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
-    		ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+    		ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 			"QuizAddItem(笨譏->鍰善腔耋撿)",
 			CHAR_getInt( talker, CHAR_FLOOR),
@@ -1284,10 +1284,10 @@ BOOL NPC_EntryItemDel(int talker,char *buf)
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"QuizDelItem(笨譏->蝠堤腔耋撿)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -1315,10 +1315,10 @@ BOOL NPC_EntryItemDel(int talker,char *buf)
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"QuizDelItem(笨譏->鍰善腔耋撿)",
 							CHAR_getInt( talker,CHAR_FLOOR),

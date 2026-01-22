@@ -20,7 +20,7 @@
 #define MAXLSRPCARGS ( 7 + 1 )
 #endif
 
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 void saacproto_UpdataStele_send( int fd , char *cdkey , char *name , char *title , int level , int trns , int time , int floor) ;
 void saacproto_UpdataStele_recv( int fd , char *token) ;
 void saacproto_S_UpdataStele_recv( int i , char *ocdkey , char *oname , char *ncdkey , 
@@ -95,7 +95,7 @@ void saacproto_ACAddFM_send(int fd, char *fmname, char *fmleadername,
 void saacproto_ACAddFM_recv(int fd, char *result, int fmindex, int index,
 	int charfdid);
 // 樓�趧眢�
-// #ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+// #ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
         char *charid, int charlv, int index, int fame, int charfdid);
 // #else
@@ -154,7 +154,7 @@ void saacproto_ACFMCharLogin_send(int fd, char *fmname, int fmindex, char *charn
 		char *charid, int result, int charfdid);
 	#endif
 #endif
-#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME   // Arminius: 家族個人聲望
 void saacproto_ACFMCharLogin_recv(int fd, char *result, int index, int floor,
 	int fmdp, int joinflag, int fmsetupflag, int flag, int charindex,
 	int charfame, int charfdid
@@ -336,14 +336,14 @@ void saacproto_new_ACFM_Login_send( int acfd, int charaindex, char *char_id, cha
 void saacproto_ACSendMember_recv(int fd, char *result, char *data, int charindex );
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 void saacproto_ReloadFamily_send( int acfd, int charaindex );
 void saacproto_ACRELOADFMOK_recv( int fd, int charindex );
 void saacproto_ACShowMemberList_2_send( int fd, int charaindex, int fm1, int fm2, int time, int id );
 void saacproto_ACSHOWMEMBERLIST2_recv( int fd, int charaindex, int fm1, char *fm1_id, int fm2, char *fm2_id, int time, int id );
 #endif
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 void saacproto_Init_FM_PK_STRUC_send( int fd );
 void saacproto_FM_PK_STRUCT_send( int fd, char *msg );
 void saacproto_ACSendFmPkStruct_recv( int fd, char *data );

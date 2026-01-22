@@ -24,7 +24,7 @@ BOOL NPC_ActionClearEvent( int toindex, char * buf);
 BOOL NPC_ActionCheckTrans(int meindex,int talker,int trans,int flg);
 BOOL NPC_ActionLevelCheck(int meindex,int talker,int level,int flg);
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 BOOL NPC_ActionClassCheck( int meindex,int talker,int p_class,int flg);
 
 BOOL NPC_ActionSkillCheck( int meindex,int talker,int skillId,int flg);
@@ -109,7 +109,7 @@ BOOL NPC_DelItem( int toindex, int ti, int num);
 void NPC_ActionDoPileClearItem( int toindex, int itemID);
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 int PROFESSION_RESTORE_POINT( int charaindex );
 #endif
 

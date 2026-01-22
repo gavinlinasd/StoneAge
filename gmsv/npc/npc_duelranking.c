@@ -14,7 +14,7 @@
 #include "deathcontend.h"
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 #include "family.h"
 #endif
 
@@ -120,7 +120,7 @@ void NPC_DuelrankingLooked( int meindex , int lookedindex)
 	}
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	NPC_Duelranking_selectWindow( meindex, lookedindex, 2, -1);
 #endif
 
@@ -423,7 +423,7 @@ print("FPKList[%d]:%s\n", i, buf);
 #endif
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	case 2:
 		{
 			char	message[1024] = {0};
@@ -605,7 +605,7 @@ void NPC_DuelrankingWindowTalked( int meindex, int talkerindex, int seqno, int s
 		break;
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	case WINDOWTYPE_PKLIST_START:
 		{
 			switch( atoi( data ) ){

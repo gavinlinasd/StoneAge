@@ -13,7 +13,7 @@
 #include "function.h"
 #include "magic_base.h"
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 #include "profession_skill.h"
 #endif
 
@@ -1275,7 +1275,7 @@ CHAR_EquipPlace ITEM_getEquipPlace( int charaindex, int itmid )
 	case ITEM_BREAKTHROW:
 	case ITEM_BOUNDTHROW:
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 		{	
 			int i=0;
 
@@ -1402,7 +1402,7 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 				char    tmpbuf[128];
 				value = ITEM_getInt(itemindex,showparamint[i].intindex);
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 				
 				
 
@@ -1741,13 +1741,13 @@ void ITEM_equipEffect( int index )
 			int     j;
 			int		attrib = 0;
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 			if( i == CHAR_ARM )
 					CHAR_sendStatusString( index , "S");
 #endif
 
 			for( j=0; j < arraysizeof( itemEffect ); j ++ ) {
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 
 				if( i == CHAR_EQSHIELD ){
 					int item_type = ITEM_FIST;
@@ -1945,7 +1945,7 @@ void Other_DefcharWorkInt( int index)
 	}
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	if( CHAR_getWorkInt( index, CHAR_MYSKILLHIT) > 0 ){
 		int mpower, mdef;
 		mpower = CHAR_getWorkInt( index, CHAR_MYSKILLHIT);

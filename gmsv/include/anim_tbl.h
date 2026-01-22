@@ -7,55 +7,55 @@
 // す籤溘
 #define SPR_001em			100000		//	碳潔鮸兒	搫鱗
 #define SPR_001ax			100001		// 			  
-#define SPR_001cl			100002		//			喫庌摲
+#define SPR_001cl			100002		//搜索處理
 #define SPR_001sp			100003		//			瑩
 #define SPR_001bw			100004		//			楗
 
 #define SPR_002em			100005		//	碳潔鮸兒	搫鱗
 #define SPR_002ax			100006		// 			  
-#define SPR_002cl			100007		//			喫庌摲
+#define SPR_002cl			100007		//搜索處理
 #define SPR_002sp			100008		//			瑩
 #define SPR_002bw			100009		//			楗
 
 #define SPR_003em			100010		//	碳潔鮸兒	搫鱗
 #define SPR_003ax			100011		// 			  
-#define SPR_003cl			100012		//			喫庌摲
+#define SPR_003cl			100012		//搜索處理
 #define SPR_003sp			100013		//			瑩
 #define SPR_003bw			100014		//			楗
 
 #define SPR_004em			100015		//	碳潔鮸兒	搫鱗
 #define SPR_004ax			100016		// 			  
-#define SPR_004cl			100017		//			喫庌摲
+#define SPR_004cl			100017		//搜索處理
 #define SPR_004sp			100018		//			瑩
 #define SPR_004bw			100019		//			楗
 
 #define SPR_011em			100020		//	撙  兒		搫鱗
 #define SPR_011ax			100021		// 			  
-#define SPR_011cl			100022		//			喫庌摲
+#define SPR_011cl			100022		//搜索處理
 #define SPR_011sp			100023		//			瑩
 #define SPR_011bw			100024		//			楗
 
 #define SPR_012em			100025		//	撙  兒		搫鱗
 #define SPR_012ax			100026		// 			  
-#define SPR_012cl			100027		//			喫庌摲
+#define SPR_012cl			100027		//搜索處理
 #define SPR_012sp			100028		//			瑩
 #define SPR_012bw			100029		//			楗
 
 #define SPR_013em			100030		//	撙  兒		搫鱗
 #define SPR_013ax			100031		// 			  
-#define SPR_013cl			100032		//			喫庌摲
+#define SPR_013cl			100032		//搜索處理
 #define SPR_013sp			100033		//			瑩
 #define SPR_013bw			100034		//			楗
 
 #define SPR_014em			100035		//	撙  兒		搫鱗
 #define SPR_014ax			100036		// 			  
-#define SPR_014cl			100037		//			喫庌摲
+#define SPR_014cl			100037		//搜索處理
 #define SPR_014sp			100038		//			瑩
 #define SPR_014bw			100039		//			楗
 
 #define SPR_021em			100040		//	撙  兕		搫鱗
 #define SPR_021ax			100041		// 			  
-#define SPR_021cl			100042		//			喫庌摲
+#define SPR_021cl			100042		//搜索處理
 #define SPR_021sp			100043		//			瑩
 #define SPR_021bw			100044		//			楗
 
@@ -79,7 +79,7 @@
 
 #define SPR_031em			100060		//	撙  兩		搫鱗
 #define SPR_031ax			100061		// 			  
-#define SPR_031cl			100062		//			喫庌摲
+#define SPR_031cl			100062		//搜索處理
 #define SPR_031sp			100063		//			瑩
 #define SPR_031bw			100064		//			楗
 
@@ -103,7 +103,7 @@
 
 #define SPR_041em			100080		//	螻  兒		搫鱗
 #define SPR_041ax			100081		// 			  
-#define SPR_041cl			100082		//			喫庌摲
+#define SPR_041cl			100082		//搜索處理
 #define SPR_041sp			100083		//			瑩
 #define SPR_041bw			100084		//			楗
 
@@ -127,7 +127,7 @@
 
 #define SPR_051em			100100		//	螻  兕		搫鱗
 #define SPR_051ax			100101		// 			  
-#define SPR_051cl			100102		//			喫庌摲
+#define SPR_051cl			100102		//搜索處理
 #define SPR_051sp			100103		//			瑩
 #define SPR_051bw			100104		//			楗
 
@@ -151,7 +151,7 @@
 
 #define SPR_061em			100120		//	碳潔閩兒		搫鱗
 #define SPR_061ax			100121		// 			  
-#define SPR_061cl			100122		//			喫庌摲
+#define SPR_061cl			100122		//搜索處理
 #define SPR_061sp			100123		//			瑩
 #define SPR_061bw			100124		//			楗
 
@@ -175,7 +175,7 @@
 
 #define SPR_071em			100140		//	撙閩兒兒	搫鱗
 #define SPR_071ax			100141		// 			  
-#define SPR_071cl			100142		//			喫庌摲
+#define SPR_071cl			100142		//搜索處理
 #define SPR_071sp			100143		//			瑩
 #define SPR_071bw			100144		//			楗
 
@@ -199,7 +199,7 @@
 
 #define SPR_081em			100160		//	撙閩兕		搫鱗
 #define SPR_081ax			100161		// 			  
-#define SPR_081cl			100162		//			喫庌摲
+#define SPR_081cl			100162		//搜索處理
 #define SPR_081sp			100163		//			瑩
 #define SPR_081bw			100164		//			楗
 
@@ -223,7 +223,7 @@
 
 #define SPR_091em			100180		//	撙閩兩		搫鱗
 #define SPR_091ax			100181		// 			  
-#define SPR_091cl			100182		//			喫庌摲
+#define SPR_091cl			100182		//搜索處理
 #define SPR_091sp			100183		//			瑩
 #define SPR_091bw			100184		//			楗
 
@@ -247,7 +247,7 @@
 
 #define SPR_101em			100200		//	閩鍛兒		搫鱗
 #define SPR_101ax			100201		// 			  
-#define SPR_101cl			100202		//			喫庌摲
+#define SPR_101cl			100202		//搜索處理
 #define SPR_101sp			100203		//			瑩
 #define SPR_101bw			100204		//			楗
 
@@ -271,7 +271,7 @@
 
 #define SPR_111em			100220		//	閩鍛兕		搫鱗
 #define SPR_111ax			100221		// 			  
-#define SPR_111cl			100222		//			喫庌摲
+#define SPR_111cl			100222		//搜索處理
 #define SPR_111sp			100223		//			瑩
 #define SPR_111bw			100224		//			楗
 
@@ -537,7 +537,7 @@
 
 #define SPR_151em			100446		//	撙閩兒其	搫鱗
 #define SPR_151ax			100447		// 			  
-#define SPR_151cl			100448		//			喫庌摲
+#define SPR_151cl			100448		//搜索處理
 #define SPR_151sp			100449		//			瑩
 #define SPR_151bw			100450		//			楗
 
@@ -549,7 +549,7 @@
 
 #define SPR_161em			100456		//	撙閩兒典	搫鱗
 #define SPR_161ax			100457		// 			  
-#define SPR_161cl			100458		//			喫庌摲
+#define SPR_161cl			100458		//搜索處理
 #define SPR_161sp			100459		//			瑩
 #define SPR_161bw			100460		//			楗
 

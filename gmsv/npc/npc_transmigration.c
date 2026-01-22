@@ -54,14 +54,14 @@ void NPC_TransmigrationTalked( int meindex , int talkerindex , char *szMes ,int 
 	int i,petindex;
 	char buf[256];
 #endif	
-    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+    /* 設定相關參數處理 */
 	if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )
 	{
     		return;
 	}
 	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex , 2) == FALSE) {
-		/* 兒精惉蚗迶雄  摯陑 */
+		/* 角色動畫重置 */
 		if(NPC_Util_isFaceToChara( talkerindex, meindex, 1) == FALSE) return;
 	}    
 //	print("savepoot=%d",CHAR_getInt( talkerindex, CHAR_SAVEPOINT));
@@ -348,7 +348,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 	
 	}
 //	makeEscapeString( token, escapedname, sizeof(escapedname));
-	/*-喫喫ぁ邞嚭埰堎--*/
+	/*--這裡搜索處理--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,
@@ -1111,7 +1111,7 @@ int NPC_TransmigrationFlg_CLS(int meindex, int toindex)
 	CHAR_setInt(toindex,CHAR_NOWEVENT5,0);
 	CHAR_setInt(toindex,CHAR_NOWEVENT6,0);
 #endif
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 	CHAR_setInt(toindex,CHAR_ENDEVENT7,0);
 	CHAR_setInt(toindex,CHAR_NOWEVENT7,0);
 	CHAR_setInt(toindex,CHAR_ENDEVENT8,0);
@@ -1728,7 +1728,7 @@ BOOL NPC_PetTransManStatus( int meindex, int toindex, int petNo)
 							LogItem(
 								CHAR_getChar( toindex, CHAR_NAME ),
 								CHAR_getChar( toindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 								itemindex,
 #else
 								ITEM_getInt( itemindex, ITEM_ID),
@@ -1758,7 +1758,7 @@ BOOL NPC_PetTransManStatus( int meindex, int toindex, int petNo)
 // shan add
 void s_eventsetend( int charaindex, int shiftbit )
 {
-#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
+#ifdef _ADD_NEWEVENT              // WON 多增加資料
 	int event_num = 8;
 #else
 	int event_num = 6;

@@ -172,7 +172,7 @@ void NPC_BusTalked( int meindex , int talkerindex , char *szMes ,
     int i;
     int	partyflg = FALSE;
 	
-    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
+    /* 設定相關參數處理 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
@@ -687,7 +687,7 @@ BOOL NPC_BusCheckJoinParty( int meindex, int charaindex, BOOL msgflg)
 	int		ret;
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 
-	/* 兒精惉蚗迶雄  摯陑 */
+	/* 角色動畫重置 */
 	if( !NPC_Util_charIsInFrontOfChar( charaindex, meindex, 1 )) return FALSE; 
 	/*     篥氈毀藸  埰堎 */
 	if( CHAR_getWorkInt( meindex, NPC_WORK_MODE) != 0 ) {

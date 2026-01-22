@@ -145,7 +145,7 @@ int ACAddFM(int fd, int *workindex, char *fmname, char *fmleadername,
 	char *fmleaderid, int fmleaderlv, char *petname, char *petattr,
 	char *fmrule, int fmsprite, int fmleadergrano, int charfdid);
 #endif
-#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
+#ifdef _PERSONAL_FAME	// Arminius: 家族個人聲望
 int ACJoinFM(int fd, int index, char *fmname, int fmindex,
         char *charname, char *charid, int charlv, int fame, int charfdid);
 #else
@@ -185,7 +185,7 @@ int ACFMCharLogin(int fd, int index, char *fmname, int fmindex,
 	#endif
 	);
 #else
-	#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
+	#ifdef _PERSONAL_FAME   // Arminius: 家族個人聲望
 	int ACFMCharLogin(int fd, int index, char *fmname, int fmindex,
 		char *charname, char *charid, int charlv, int *floor, int *fmpopular,
 		int *joinflag, int *fmsetupflag, int *charindex, int charfdid,
@@ -245,7 +245,7 @@ int FMPK_SetData( int ti, int Pkflg, char *Data, int sizes);
 
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 void saacproto_ACRELOADFM_recv( int fd, int charindex );
 char *get_fm_leader_index( int fm_index );
 #endif
@@ -253,7 +253,7 @@ char *get_fm_leader_index( int fm_index );
 
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 
 #define fm_pk_max 200
 

@@ -338,7 +338,7 @@ void GM_BROADCAST();
 #endif
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族戰存檔時紀錄
 void Init_FM_PK_STRUCT();
 #endif
 

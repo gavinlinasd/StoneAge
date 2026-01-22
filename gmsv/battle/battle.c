@@ -3744,7 +3744,7 @@ static int BATTLE_EnemyCommand( int battleindex, int side )
 // 爵    丐月扔奶玉及戏五酸曰皿伊奶乩□卞    毛笛遥
 //
 int BATTLE_AddDpAlive(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int side, 			// 扔奶玉( 0 or 1 )
 	int dp
 )
@@ -3786,7 +3786,7 @@ int BATTLE_AddDpAlive(
 // 爵    ｝皿伊奶乩□互戏五酸匀化中月井譬屯月
 //
 int BATTLE_CountAlive(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int side 			// 扔奶玉( 0 or 1 )
 )
 //
@@ -3827,7 +3827,7 @@ int BATTLE_CountAlive(
 // 爵    ｝辅爵仄凶化皿伊奶乩□及心互戏五化中月橇谪井毛民尼永弁
 //
 int BATTLE_OnlyRescue(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// 字符串索引
 	int side, 			// 扔奶玉( 0 or 1 )
 	int *pOnlyFlg
 )

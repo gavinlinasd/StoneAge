@@ -131,7 +131,7 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 	}
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	{
 		char	msgbuf[512];
 		snprintf( msgbuf, sizeof( msgbuf), "輻陎炵模逜PKㄛ拸楊敵冞陓璃﹝");
@@ -519,7 +519,7 @@ static void PETMAIL_sendPetmail( int index, int tocharaindex)
 	index_to_my_info =  ADDRESSBOOK_getIndexInAddressbook( tocharaindex, 
 						CHAR_getChar( index, CHAR_OWNERCDKEY),
 						CHAR_getChar( index, CHAR_OWNERCHARANAME));
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族戰GM指令
 	{
 		char	msgbuf[512];
 		snprintf( msgbuf, sizeof( msgbuf), "輻陎炵模逜PKㄛ拸楊敵冞陓璃﹝");

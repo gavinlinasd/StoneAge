@@ -39,7 +39,7 @@
 #define BCF_MODIFY		(1 << 21)
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 #define BCF_F_SKILLACT	(1 << 22)	//僻笢ヶ凅芞
 #define	BCF_TRAP		(1 << 25)	//疪筘
 #define BCF_NO_DAMAGE   (1 << 26)   //邧笭馴僻
@@ -103,10 +103,10 @@ enum{
 	BATTLE_ST_DEEPPOISON,//  8 "曄馮"
 	BATTLE_ST_BARRIER,   //  9 "藹梤"
 	BATTLE_ST_NOCAST,    // 10 "麥蘇"
-#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
+#ifdef _PET_SKILL_SARS				// WON ADD 職業延長
 	BATTLE_ST_SARS,		 // 11 "伢"
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	BATTLE_ST_DIZZY,	 // 12 "婠"
 	BATTLE_ST_ENTWINE,	 // 13 "莊"
 	BATTLE_ST_DRAGNET,	 // 14 "毞蹕華厙"
@@ -359,7 +359,7 @@ int CHAR_BattleStayLoop( int charaindex);//埻華郣菩
 int PET_PetskillPropertyEvent( int Myindex, int defindex, int *damage, int *T_Pow, int size);
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 int battle_profession_attack_fun(int battleindex, int attackNo, int defNo, int charaindex);
 int battle_profession_attack_magic_fun(int battleindex, int attackNo, int defNo, int charaindex);
 int battle_profession_assist_fun(int battleindex, int attackNo, int defNo, int charaindex);

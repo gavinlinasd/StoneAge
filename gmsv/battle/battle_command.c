@@ -12,7 +12,7 @@
 #include "magic_base.h"
 #include "handletime.h"
 
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 #include "profession_skill.h"
 #endif
 
@@ -25,7 +25,7 @@ int BATTLE_MpDown( int charaindex, int down )
 #else
 {
 	int mp, battleindex;
-	// 橋  毀葡硞橋凝��???橋凝
+	// 橋  相關處理��???處理
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return TRUE;
@@ -429,7 +429,7 @@ void BattleCommandDispach( int fd,	char *command )
 			min( 100, CHAR_getInt( charaindex, CHAR_MP ) + 30 ) );
 
 	}else
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	if( strncmp( command, "P", 1 ) == 0 ){
 		int iNum=-1, ToNo=-1;
 		int skillindex=-1;
@@ -707,12 +707,12 @@ BOOL BATTLE_MakeCharaString(
 			if( BATTLE_IsHide( charaindex ) == TRUE ){
 				flg |= BC_FLG_HIDE;
 			}
-#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
+#ifdef _PET_SKILL_SARS			// WON ADD 職業延長
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKSARS ) > 0 ){
 				flg |= BC_FLG_SARS;
 			}
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKDIZZY ) > 0 ){
 				flg |= BC_FLG_DIZZY;			// 婠悈	
 			}

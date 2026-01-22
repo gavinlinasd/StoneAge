@@ -339,7 +339,7 @@ static BOOL CHAR_moveItemFromItemBoxToEquip( int index, int fromindex,
 	if( CHAR_getInt( index, CHAR_STR) < ITEM_getInt( fromid, ITEM_NEEDSTR) ) return FALSE;
 	if( CHAR_getInt( index, CHAR_DEX) < ITEM_getInt( fromid, ITEM_NEEDDEX) ) return FALSE;
 	if( CHAR_getInt( index, CHAR_TRANSMIGRATION) < ITEM_getInt( fromid, ITEM_NEEDTRANS) ) return FALSE;
-#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+#ifdef _CHAR_PROFESSION			// WON ADD 職業
 	if( ITEM_getInt( fromid, ITEM_NEEDPROFESSION) != 0 ){
 		if( CHAR_getInt( index, PROFESSION_CLASS ) != ITEM_getInt( fromid, ITEM_NEEDPROFESSION) )
 			return FALSE;
@@ -481,7 +481,7 @@ int CHAR_getMyMaxPilenum( int charaindex)
 		+ (CHAR_getInt( charaindex, CHAR_TRANSMIGRATION)/5) * 2 + 3;
 
 /*
-#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
 	maxpile += CHAR_getInt( charaindex, ATTACHPILE );
 #endif
 */
@@ -736,10 +736,10 @@ void CHAR_ItemUse( int charaindex, int to_charaindex, int haveitemindex )
 			LogItem(
 				CHAR_getChar( charaindex, CHAR_NAME ), /* す籤溘   */
 				CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),       /* 囮騷  堜  蠕 */
+				ITEM_getInt( itemindex, ITEM_ID ),       /* 錯誤訊息 */
 #endif
 				"Use(妏蚚耋撿)",
 				CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -833,10 +833,10 @@ BOOL CHAR_DropItemFXY( int charaindex, int itemcharaindex, int fl,
 			LogItem(
 				CHAR_getChar( charaindex, CHAR_NAME ), /* す籤溘   */
 				CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),  /* 囮騷  堜  蠕 */
+				ITEM_getInt( itemindex, ITEM_ID ),  /* 錯誤訊息 */
 #endif
 				"Drop(隍堤耋撿)",
 			   	CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -938,7 +938,7 @@ void CHAR_DropStakeByDropItem( int charaindex, int itemcharaindex, int itemindex
 	if( casinoflag == 0) return;
 		LogItem(CHAR_getChar(charaindex, CHAR_NAME),
 				CHAR_getChar(charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
 				ITEM_getInt(itemindex, ITEM_ID),
@@ -1055,10 +1055,10 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 			LogItem(
 				CHAR_getChar( charaindex, CHAR_NAME ), /* す籤溘   */
 				CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),  /* 囮騷  堜  蠕 */
+				ITEM_getInt( itemindex, ITEM_ID ),  /* 錯誤訊息 */
 #endif
 				"Drop(隍堤耋撿)",
 		   		CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -1244,7 +1244,7 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 				CHAR_sendItemDataOne(charaindex, itemcharaindex);
 				LogItem(CHAR_getChar(charaindex, CHAR_NAME),
 						CHAR_getChar(charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 						itemindex,
 #else
 						ITEM_getInt(itemindex, ITEM_ID),
@@ -1464,7 +1464,7 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 					// 暮翹潯隙暮翹
 					LogItem(CHAR_getChar(charaindex, CHAR_NAME),
 							CHAR_getChar(charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
 							ITEM_getInt(itemindex, ITEM_ID),
@@ -1668,7 +1668,7 @@ void CHAR_PickUpItem( int charaindex, int dir )
 				LogItem(
 					CHAR_getChar( charaindex, CHAR_NAME ),
 					CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					contents,
 #else
 					ITEM_getInt(contents, ITEM_ID),

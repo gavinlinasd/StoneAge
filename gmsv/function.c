@@ -132,7 +132,7 @@
 #include "npc_petfusion.h"
 #endif
 
-#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 #include "npc_alldoman.h"
 #endif
 
@@ -697,7 +697,7 @@ correspondStringAndFunctionTable[]=
 	{ {"BlackMarketWindowTalked"},	   NPC_BlackMarketWindowTalked, 0},
 #endif
 
-#ifdef _ALLDOMAN   // (祥褫羲) Syu ADD 齬俴埤NPC
+#ifdef _ALLDOMAN   // (不可開) Syu ADD 排行榜NPC
     { {"AlldomanInit"} ,                        NPC_AlldomanInit,        0 },
     { {"AlldomanTalked"} ,                      NPC_AlldomanTalked ,     0 },
     { {"AlldomanWindowTalked"},                 NPC_AlldomanWindowTalked , 0},

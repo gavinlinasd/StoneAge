@@ -313,10 +313,10 @@ BOOL PetTalk_DelItem(int meindex,int talker,char *buf)
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"WarpManDelItem(NPC彶耋撿摽換祫議萸)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -345,10 +345,10 @@ BOOL PetTalk_DelItem(int meindex,int talker,char *buf)
 						LogItem(
 							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 錯誤訊息 */
 #endif
 							"WarpManDelItem(NPC彶耋撿摽換祫議萸)",
 							CHAR_getInt( talker,CHAR_FLOOR),

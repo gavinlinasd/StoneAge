@@ -420,10 +420,10 @@ static BOOL NPC_SimpleShopProcessSellMsg(char *msg, int shopindex,
 		LogItem(
 			CHAR_getChar( playerindex, CHAR_NAME ), /* す籤溘   */
 			CHAR_getChar( playerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemind,
 #else
-       		ITEM_getInt( itemind, ITEM_ID ),  /* 囮騷  堜  蠕 */
+       		ITEM_getInt( itemind, ITEM_ID ),  /* 錯誤訊息 */
 #endif
 			"Sell",
 			CHAR_getInt( playerindex,CHAR_FLOOR),
@@ -499,10 +499,10 @@ static BOOL NPC_LimitBuyInShopProcessSellMsg(char *msg,
 		LogItem(
 			CHAR_getChar( playerindex, CHAR_NAME ), /* す籤溘   */
 			CHAR_getChar( playerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
+#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemind,
 #else
-       		ITEM_getInt( itemind, ITEM_ID ),  /* 囮騷  堜  蠕 */
+       		ITEM_getInt( itemind, ITEM_ID ),  /* 錯誤訊息 */
 #endif
 			"Sell",
 			CHAR_getInt( playerindex,CHAR_FLOOR),

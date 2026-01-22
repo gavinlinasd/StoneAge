@@ -270,9 +270,9 @@ void LogAcMess(	int fd, char *type, char *mess )
 }
 
 void LogItem(
-	char *CharName, /* す籤溘袲淏   */
+	char *CharName, /* 對象類型 */
         char *CharID, /* す籤溘袲淏ID */	
-	int ItemNo, 	/* 囮騷  堜  蠕 */
+	int ItemNo, 	/* 錯誤訊息 */
 	char *Key, 		/* す↓極↓迶 */
 	int floor,		/* 淢   */
 	int x,
@@ -332,7 +332,7 @@ void LogPetTrans(
  *
 -------------------------------------------------------------*/
 void LogPet(
-	char *CharName, /* す籤溘袲淏   */
+	char *CharName, /* 對象類型 */
 	char *CharID,
 	char *PetName,
 	int  PetLv,
@@ -381,7 +381,7 @@ void LogStreetVendor(
 #endif
 
 void LogBankStone(
-        char *CharName, /* す籤溘袲淏   */
+        char *CharName, /* 對象類型 */
         char *CharId, /* 蝠↓勒↓ID */
 		int	meindex,
         int Gold,               /* 鉣滌 */
@@ -434,7 +434,7 @@ void LogPetPointChange(
  *
 -------------------------------------------------------------*/
 void LogTensei(
-	char *CharName, /* す籤溘袲淏   */
+	char *CharName, /* 對象類型 */
 	char *CharID,
 	char *Key, 		/* す↓極↓迶 */
 	int level,		//畛穫鳴
@@ -478,7 +478,7 @@ void LogTensei(
 
 // LOG_TALK
 void LogTalk(
-	char *CharName, /* す籤溘袲淏   */
+	char *CharName, /* 對象類型 */
 	char *CharID,
 	int floor,		/* 淢   */
 	int x,
@@ -587,7 +587,7 @@ void LogFamilyBankStone(
 
 void LogStone(
 				int TotalGold,
-        char *CharName, /* す籤溘袲淏   */
+        char *CharName, /* 對象類型 */
         char *CharId, /* 蝠↓勒↓ID */
         int Gold,               /* 鉣滌 */
 		int MyGold,
