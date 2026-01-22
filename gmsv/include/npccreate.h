@@ -16,24 +16,24 @@
 
 typedef enum
 {
-    NPC_CREATEFLOORID,      /*  白夫失ID    */
-    NPC_CREATEBORNLEFTUPX,        /*  尔晓及X甄   */
-    NPC_CREATEBORNLEFTUPY,        /*  尔晓及Y甄   */
-    NPC_CREATEBORNRIGHTDOWNX,     /*  惘票及X甄   */
-    NPC_CREATEBORNRIGHTDOWNY,     /*  惘票及Y甄   */
+    NPC_CREATEFLOORID,      /*  啞痲囮ID    */
+    NPC_CREATEBORNLEFTUPX,        /*  嫌窀摯X淢   */
+    NPC_CREATEBORNLEFTUPY,        /*  嫌窀摯Y淢   */
+    NPC_CREATEBORNRIGHTDOWNX,     /*  蒟き摯X淢   */
+    NPC_CREATEBORNRIGHTDOWNY,     /*  蒟き摯Y淢   */
 
-    NPC_CREATEMOVELEFTUPX,        /*  尔晓及X甄   */
-    NPC_CREATEMOVELEFTUPY,        /*  尔晓及Y甄   */
-    NPC_CREATEMOVERIGHTDOWNX,     /*  惘票及X甄   */
-    NPC_CREATEMOVERIGHTDOWNY,     /*  惘票及Y甄   */
+    NPC_CREATEMOVELEFTUPX,        /*  嫌窀摯X淢   */
+    NPC_CREATEMOVELEFTUPY,        /*  嫌窀摯Y淢   */
+    NPC_CREATEMOVERIGHTDOWNX,     /*  蒟き摯X淢   */
+    NPC_CREATEMOVERIGHTDOWNY,     /*  蒟き摯Y淢   */
 
-    NPC_CREATEDIR,                /*  综月凛及  轾    */
-    NPC_CREATEBASEIMAGENUMBER,    /*  template 及涩烂毛晓踏五允月
-                                        飓  寞    */
-    NPC_CREATETIME,               /* 凛棉 */
-    NPC_CREATEBORNNUM,            /*    公及哗  卞请蜇今六月醒    */
+    NPC_CREATEDIR,                /*  軘堎鄹摯  澺    */
+    NPC_CREATEBASEIMAGENUMBER,    /*  template 摯优擭禱窀怳拻埰堎
+                                        鴢  蠕    */
+    NPC_CREATETIME,               /* 鄹蹬 */
+    NPC_CREATEBORNNUM,            /*    鼠摯貍  勗③藯踏鞠堎倳    */
 
-    NPC_CREATEENEMYNUM,           /*  衬及潘  醒  */
+    NPC_CREATEENEMYNUM,           /*  傍摯攣  倳  */
     NPC_CREATEBOUNDARY,
     NPC_CREATEDATE,
     NPC_CREATEIGNOREINVINCIBLE,
@@ -47,7 +47,7 @@ typedef enum
 
 typedef enum
 {
-    NPC_CREATENAME,             /* template毛晓踏五允月井手仄木卅中  蟆*/
+    NPC_CREATENAME,             /* template禱窀怳拻埰堎凝忒媃躂埵笢  鞳*/
     NPC_CREATECHARNUM,
 }NPC_CREATECHAR;
 

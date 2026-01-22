@@ -18,12 +18,12 @@ int NPC_GetMoney(int meindex,int talker,char *buf);
 
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_LuckyManInit( int meindex )
 {
 
-	/*--平乓仿及正奶皿毛涩烂--**/
+	/*--す籤溘摯淏騷鏤禱优擭--**/
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPELUCKYMAN );
 
 	return TRUE;
@@ -33,7 +33,7 @@ BOOL NPC_LuckyManInit( int meindex )
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_LuckyManTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
@@ -45,13 +45,13 @@ void NPC_LuckyManTalked( int meindex , int talkerindex , char *szMes ,int color 
 
 
 
-	/*--  及蟆卞中月井升丹井＂--*/
+	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex ,2) == FALSE) {
-		/* ㄠ弘伉永玉动  及心 */
+		/* 兒精惉蚗迶雄  摯陑 */
 		if(NPC_Util_isFaceToChara( talkerindex, meindex, 1) == FALSE) return;
 	}
 	
-	/*--涩烂白央奶伙毛  心  心--*/
+	/*--优擭啞栝騷鳴禱  陑  陑--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr)) == NULL) {
 		print("NPC_ExChange.c TypeCheck: GetArgStrErr\n");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
@@ -80,7 +80,7 @@ static void NPC_LuckyMan_selectWindow( int meindex, int toindex, int num,char *m
 
 	switch( num){
 		case 1:
-			sprintf(token ,"　　　　　　　☆今日的运势☆　"
+			sprintf(token ,"﹛﹛﹛﹛﹛﹛﹛∵踏�桮齟侕ヾ謘�"
 					"\n\n%s",msg
 				);
 				buttontype = WINDOW_BUTTONTYPE_OK;
@@ -89,7 +89,7 @@ static void NPC_LuckyMan_selectWindow( int meindex, int toindex, int num,char *m
 		break;
 	
 		case 2:
-			sprintf(token, "　　　　　　　　☆占卜师☆　"
+			sprintf(token, "﹛﹛﹛﹛﹛﹛﹛﹛∵梩眺呇∵﹛"
 					"\n\n%s",msg
 				);
 				buttontype = WINDOW_BUTTONTYPE_YESNO;
@@ -98,7 +98,7 @@ static void NPC_LuckyMan_selectWindow( int meindex, int toindex, int num,char *m
 		break;
 
 		case 3:
-			sprintf(token, "　　　　　　　　☆占卜师☆　"
+			sprintf(token, "﹛﹛﹛﹛﹛﹛﹛﹛∵梩眺呇∵﹛"
 					"\n\n%s",msg
 				);
 				buttontype = WINDOW_BUTTONTYPE_OK;
@@ -108,7 +108,7 @@ static void NPC_LuckyMan_selectWindow( int meindex, int toindex, int num,char *m
 	}
 
 
-	/*--霜耨--*/
+	/*--邞嚭--*/
 	lssproto_WN_send( fd, windowtype, 
 				buttontype, 
 				windowno,
@@ -120,7 +120,7 @@ static void NPC_LuckyMan_selectWindow( int meindex, int toindex, int num,char *m
 
 
 /*-----------------------------------------
-弁仿奶失件玄井日忒匀化五凶凛卞裟太请今木月［
+袲溘騷囮璃哱凝�氪耽�趙拻倜鄹勗蠙怮③踏躂堎��
 -------------------------------------------*/
 void NPC_LuckyManWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
@@ -130,7 +130,7 @@ void NPC_LuckyManWindowTalked( int meindex, int talkerindex,
 	int money;
 	int level;
 	
-	/*--涩烂白央奶伙毛  心  心--*/
+	/*--优擭啞栝騷鳴禱  陑  陑--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {
 		print("NPC_ExChange.c TypeCheck: GetArgStrErr\n");
 		print("NPCName=%s\n", CHAR_getChar(meindex,CHAR_NAME));
@@ -184,13 +184,13 @@ void NPC_LuckyDisp(int meindex,int talker)
 	char buf2[512];
 	int i = 1;
 
-	/*--涩烂白央奶伙毛  心  心--*/
+	/*--优擭啞栝騷鳴禱  陑  陑--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr)) == NULL) {
 		print("NPC_Savepoint.c Init: GetArgStrErr");
 		return;
 	}
 
-	/*--扪毛苇月--*/
+	/*--痶禱峟堎--*/
 	sprintf( buf, "luck%d", CHAR_getInt( talker, CHAR_LUCK));
 	NPC_Util_GetStrFromStrWithDelim( argstr, buf, buf2, sizeof( buf2));
 
@@ -202,17 +202,17 @@ void NPC_LuckyDisp(int meindex,int talker)
 	i--;
 	i = rand()%i + 1;
 
-	/*--仿件母丞匹丢永本□斥毛  憎今六月--*/
+	/*--溘璃譫堜ぁ隍蚗掛↓喇禱  崚踏鞠堎--*/
 	getStringFromIndexWithDelim( buf2,",", i, token, sizeof( token));
 	NPC_LuckyMan_selectWindow( meindex, talker, 1, token);
 }
 
 
-/*---云嗯及民尼永弁-**/
+/*---堁鉣摯鏍攝蚗袲-**/
 BOOL NPC_LuckyCostCheck(int meindex,int talker,int cost)
 {
-	/*--蜇箕反移涩烂---*/
-	/*---云嗯互箫曰月井升丹井及民尼永弁---*/
+	/*--藯凜毀痄优擭---*/
+	/*---堁鉣誑鵿堇堎凝汔竣凝摯鏍攝蚗袲---*/
 	if(CHAR_getInt( talker, CHAR_GOLD) < cost) {
 		return FALSE;
 	}

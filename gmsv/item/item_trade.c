@@ -1,5 +1,5 @@
 /********************/
-/*	市集交易系统	*/
+/*	庈摩蝠眢炵苀	*/
 /********************/
 #include <string.h>
 #include "version.h"
@@ -56,11 +56,11 @@ int CHECKMAP_TRADEXY( int charindex, int floor, int x, int y)
 }
 
 BOOL MAP_TRADEDROP( int charindex, int itemindex,int floor, int x, int y)
-{	//return FALSE 物品丢在地上 TRUE 不丢在地上(可能是贩卖道具)
+{	//return FALSE 昜こ隍婓華奻 TRUE 祥隍婓華奻(褫夔岆毽闖耋撿)
 	int exhibition=-1;
 	int CreateItem=-1,/*itemID=-1,*/ itemimage=-1;
 	int objindex;
-	char itemname[256]="(样)";
+	char itemname[256]="(欴)";
 
 	if( CHECKMAP_TRADE( charindex, floor, x, y) == FALSE )
 		return FALSE;
@@ -68,12 +68,12 @@ BOOL MAP_TRADEDROP( int charindex, int itemindex,int floor, int x, int y)
 		return FALSE;
 	exhibition+=TRADESTARTNUM;
 	if( CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE) != exhibition )	{
-		print("\n 不是摊位[%d]主人[%d] ", exhibition, CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE));
+		print("\n 祥岆怉弇[%d]翋�汥%d] ", exhibition, CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE));
 		return TRUE;
 	}
 
 	if( MAPTRADE_CHECKMAPFULL( floor, x, y) == TRUE )	{
-		CHAR_talkToCli( charindex, -1, "前方已有贩卖样品!", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charindex, -1, "ヶ源眒衄毽闖欴こ!", CHAR_COLORYELLOW);
 		return TRUE;
 	}
 
@@ -81,23 +81,23 @@ BOOL MAP_TRADEDROP( int charindex, int itemindex,int floor, int x, int y)
 	//CreateItem = ITEM_makeItemAndRegist( itemID);
 	itemimage = ITEM_getInt( itemindex, ITEM_BASEIMAGENUMBER);
 	if( ITEM_getChar( itemindex, ITEM_SECRETNAME) != NULL )	{
-		if( strstr( ITEM_getChar( itemindex, ITEM_SECRETNAME), "(样)") == NULL )	{
-			sprintf( itemname, "%s(样)", ITEM_getChar( itemindex, ITEM_SECRETNAME));
+		if( strstr( ITEM_getChar( itemindex, ITEM_SECRETNAME), "(欴)") == NULL )	{
+			sprintf( itemname, "%s(欴)", ITEM_getChar( itemindex, ITEM_SECRETNAME));
 		}
 	}
 
-	//CREAT 贩卖样品
+	//CREAT 毽闖欴こ
 	CreateItem = ITEM_makeItemAndRegist( TRADEITEMID);
 	if( !ITEM_CHECKINDEX( CreateItem ) )
 		return TRUE;
-	//复制ITEM资料
+	//葩秶ITEM訧蹋
 	ITEM_setInt( CreateItem, ITEM_BASEIMAGENUMBER, itemimage);
 	ITEM_setChar( CreateItem, ITEM_NAME, itemname);
 	ITEM_setChar( CreateItem, ITEM_SECRETNAME, itemname);
-	ITEM_setChar( CreateItem, ITEM_EFFECTSTRING, "贩卖样品");//ITEM_EFFECTSTRING
-	ITEM_setChar( CreateItem, ITEM_ARGUMENT, "贩卖样品");
+	ITEM_setChar( CreateItem, ITEM_EFFECTSTRING, "毽闖欴こ");//ITEM_EFFECTSTRING
+	ITEM_setChar( CreateItem, ITEM_ARGUMENT, "毽闖欴こ");
 
-	//丢
+	//隍
 	ITEM_setWorkInt( CreateItem, ITEM_WORKOBJINDEX, -1);
 	ITEM_setWorkInt( CreateItem, ITEM_WORKCHARAINDEX, charindex);
 	ITEM_setInt( CreateItem, ITEM_PUTTIME, NowTime.tv_sec);
@@ -116,7 +116,7 @@ BOOL MAP_TRADEDROP( int charindex, int itemindex,int floor, int x, int y)
 	CHAR_sendCToArroundCharacter( objindex);
 	TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodindex = CreateItem;
 	
-	sprintf( TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodname,"道具-%s", itemname);
+	sprintf( TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodname,"耋撿-%s", itemname);
 	return TRUE;
 }
 
@@ -124,7 +124,7 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
 {
 	int masterindex;
 	int objindex=-1;
-	int exhibition;//摊位
+	int exhibition;//怉弇
 
 	if( (exhibition = CHECKMAP_TRADEXY(charindex, floor, x, y)) == -1 )
 		return FALSE;
@@ -132,8 +132,8 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
 	if( MAPTRADE_CHECKMASTERIN( masterindex, charindex, exhibition) == FALSE )
 		return TRUE;
 
-	if( masterindex == charindex || !CHAR_CHECKINDEX( masterindex) )	{//主人收回
-		switch( flg )	{	//清除
+	if( masterindex == charindex || !CHAR_CHECKINDEX( masterindex) )	{//翋�侕梬�
+		switch( flg )	{	//ь壺
 		case TRADEITEMTYPE:
 			objindex = ITEM_getWorkInt( index, ITEM_WORKOBJINDEX);
 			ITEM_endExistItemsOne( index);
@@ -146,7 +146,7 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
 			ITEM_endExistItemsOne( index);
 			break;
 		}
-	}else	{	//交易
+	}else	{	//蝠眢
 		char buf1[256], msg[256];
 		int fd = getfdFromCharaIndex( charindex);
 		int mfd = getfdFromCharaIndex( masterindex);
@@ -156,10 +156,10 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
  		//masterindex
 		if( CHAR_getWorkInt( masterindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_TRADING ||
 			CHAR_getWorkInt( masterindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_TRADING ){
-			CHAR_talkToCli( charindex, -1, "主人正在买卖中!", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charindex, -1, "翋�劼�婓鎗闖笢!", CHAR_COLORYELLOW);
 			return TRUE;
 		}
-   		CHAR_talkToCli(charindex, -1, "请稍候。", CHAR_COLORYELLOW);
+   		CHAR_talkToCli(charindex, -1, "③尕緊﹝", CHAR_COLORYELLOW);
    		sprintf(buf1, "C|%d|%s|1", fd, CHAR_getChar( charindex, CHAR_NAME));
    		lssproto_TD_send( mfd, -1, buf1);
    		sprintf(buf1, "C|%d|%s|1", mfd, CHAR_getChar( masterindex, CHAR_NAME));
@@ -172,7 +172,7 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
 		CHAR_sendTradeEffect( charindex, 1);
 		CHAR_sendTradeEffect( masterindex, 1);
 
-		switch( flg )	{	//清除
+		switch( flg )	{	//ь壺
 		case TRADEITEMTYPE:	//CHAR_Trade
 			if( (snum = MAPTRADE_getItemSpace( masterindex, index)) != -1 )	{
 				sprintf( buf1, "T|%d|%s|I|1|%d", fd, CHAR_getChar( charindex, CHAR_NAME),
@@ -238,7 +238,7 @@ int TRADE_getMaxNumInt()
 }
 
 int TRADE_AddMasrerTrade( int toindex)
-{	//设定摊位主人
+{	//扢隅怉弇翋��
 	int i;
 	if( CHAR_getWorkInt( toindex, CHAR_MAPTRADETYPE) > 0 )
 		return -1;
@@ -258,7 +258,7 @@ void MAPTRADE_CLEANGOLD( int floor, int num)
 	int x,y;
 
 	if( TRADE_DATAS[ num].masterindex != -1 )	{
-		print("\n 删除摊位[%d], 主人[%d]存在!!", num, TRADE_DATAS[ num].masterindex);
+		print("\n 刉壺怉弇[%d], 翋�汥%d]湔婓!!", num, TRADE_DATAS[ num].masterindex);
 		return;
 	}
 	for( x=TRADE_DATAS[ num].x; x<(TRADE_DATAS[ num].x+TRADEXSIZE); x++ )	{
@@ -273,7 +273,7 @@ void MAPTRADE_CLEANGOLD( int floor, int num)
 					if( ITEM_getWorkInt( objindex, ITEM_WORKTRADETYPE) == TRADETYPE_SELL )	{
 						ITEM_endExistItemsOne( objindex);
 						OBJECT_setIndex( index, 0);
-						CHAR_ObjectDelete(index);	//清除
+						CHAR_ObjectDelete(index);	//ь壺
 						print("clean( %d )", index );
 					}
 					break;
@@ -300,8 +300,8 @@ BOOL MAPTRADE_CHECKMASTERIN( int masterindex , int toindex, int num)
 	if( CHAR_getWorkInt( masterindex, CHAR_MAPTRADETYPE) != exhibition )
 		return FALSE;
 
-	if( CHAR_getInt( masterindex, CHAR_FLOOR) != TRADEMAP )	{	//主人不在了
-		CHAR_talkToCli( toindex, -1, "主人不在!", CHAR_COLORYELLOW);
+	if( CHAR_getInt( masterindex, CHAR_FLOOR) != TRADEMAP )	{	//翋�侘閩睋�
+		CHAR_talkToCli( toindex, -1, "翋�侘閩�!", CHAR_COLORYELLOW);
 		return FALSE;
 	}else	{
 		int mapnum = CHECKMAP_TRADEXY( masterindex, CHAR_getInt( masterindex, CHAR_FLOOR),
@@ -309,8 +309,8 @@ BOOL MAPTRADE_CHECKMASTERIN( int masterindex , int toindex, int num)
 							CHAR_getInt( masterindex, CHAR_Y));
 		if( (mapnum == -1 ) ||
 			CHAR_getWorkInt( masterindex, CHAR_MAPTRADETYPE) != (mapnum+TRADESTARTNUM) )	{
-			CHAR_talkToCli( toindex, -1, "主人不在摊位上!", CHAR_COLORYELLOW);
-			//主人不在位置上
+			CHAR_talkToCli( toindex, -1, "翋�侘閩确翁銅�!", CHAR_COLORYELLOW);
+			//翋�侘閩硩閥蟹�
 			return FALSE;
 		}
 		
@@ -347,7 +347,7 @@ BOOL MAP_TRADEPETDROP( int charindex, int petindex,int floor, int x, int y)
 	int exhibition=-1;
 	int Createpet=-1,petid=-1, petimage=-1;
 	int objindex, i, enemynum=-1;
-	char petname[256]="(样)";
+	char petname[256]="(欴)";
 	if( CHECKMAP_TRADE( charindex, floor, x, y) == FALSE )
 		return FALSE;
 	if( (exhibition = CHECKMAP_TRADEXY(charindex, floor, x, y)) == -1 )
@@ -355,24 +355,24 @@ BOOL MAP_TRADEPETDROP( int charindex, int petindex,int floor, int x, int y)
 	exhibition+=TRADESTARTNUM;
 
 	if( CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE) != exhibition )	{
-		print("\n 不是摊位[%d]主人[%d] ", exhibition, CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE));
+		print("\n 祥岆怉弇[%d]翋�汥%d] ", exhibition, CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE));
 		return TRUE;
 	}
 
 	if( MAPTRADE_CHECKMAPFULL( floor, x, y) == TRUE )	{
-		CHAR_talkToCli( charindex, -1, "前方已有贩卖样品!", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charindex, -1, "ヶ源眒衄毽闖欴こ!", CHAR_COLORYELLOW);
 		return TRUE;
 	}
 
 
 	petimage = CHAR_getInt( petindex, CHAR_BASEIMAGENUMBER);
 	if( CHAR_getChar( petindex, CHAR_NAME) != NULL )	{
-		if( strstr( CHAR_getChar( petindex, CHAR_NAME), "(样)") == NULL )	{
-			sprintf( petname ,"%s(样)", CHAR_getChar( petindex, CHAR_NAME) );
+		if( strstr( CHAR_getChar( petindex, CHAR_NAME), "(欴)") == NULL )	{
+			sprintf( petname ,"%s(欴)", CHAR_getChar( petindex, CHAR_NAME) );
 		}
 	}
 
-	//CREAT 贩卖样品	ENEMY_TEST_createPetIndex
+	//CREAT 毽闖欴こ	ENEMY_TEST_createPetIndex
 
 	petid = CHAR_getInt( petindex, CHAR_PETID );
 	enemynum = ENEMY_getEnemyNum();
@@ -386,12 +386,12 @@ BOOL MAP_TRADEPETDROP( int charindex, int petindex,int floor, int x, int y)
 		return FALSE;
 	Createpet = ENEMY_TEST_createPetIndex( i);
 	if( !CHAR_CHECKINDEX( Createpet ) ) return TRUE;
-	//复制可视条件
+	//葩秶褫弝沭璃
 	CHAR_setChar( Createpet, CHAR_NAME, petname);
 	CHAR_setInt( Createpet, CHAR_BASEIMAGENUMBER, petimage);
 	CHAR_setInt( Createpet, CHAR_BASEBASEIMAGENUMBER, petimage);
 
-	//丢下宠物
+	//隍狟唾昜
 	objindex = PET_dropPetAbsolute( Createpet,floor,x,y, FALSE );
 	if( objindex == -1 )	{
 		CHAR_endCharOneArray( Createpet );
@@ -412,7 +412,7 @@ BOOL MAP_TRADEPETDROP( int charindex, int petindex,int floor, int x, int y)
 	CHAR_sendCToArroundCharacter( objindex);
 	TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodindex = Createpet;
 
-	sprintf( TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodname,"宠物-%s", petname);
+	sprintf( TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodname,"唾昜-%s", petname);
 	return TRUE;
 }
 

@@ -21,10 +21,10 @@
 
 extern  struct  FM_POINTLIST fmpointlist;
 
-#ifdef _PERSONAL_FAME	// Arminius 8.30: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius 8.30: 模逜跺�侂驫�
 
-// Arminius: 我把声望值减半
-int FMAdvTbl[] = {	// 家族冒险 Table
+// Arminius: 扂參汒咡硉熬圉
+int FMAdvTbl[] = {	// 模逜簸玸 Table
 	0,	// 0
 	15,	// 1
 	5,	// 2
@@ -242,8 +242,8 @@ static struct ynset
     { 0 , "NO" },
     { 0 , "No" },
     { 0 , "no" },
-    { 0 , "否" },
-    { 0 , "否" },
+    { 0 , "瘁" },
+    { 0 , "瘁" },
 
     { 1 , "yes" },
     { 1 , "Yes" },
@@ -251,8 +251,8 @@ static struct ynset
     { 1 , "YES" },
     { 1 , "Yes" },
     { 1 , "yes" },
-    { 1 , "是" },
-    { 1 , "是" },
+    { 1 , "岆" },
+    { 1 , "岆" },
 
 };
 
@@ -403,12 +403,12 @@ BOOL NPC_Util_isFaceToChara( int index1, int index2, int distance )
     }
     if(CHAR_getInt(index1,CHAR_X) == CHAR_getInt(index2,CHAR_X )
        && CHAR_getInt(index1,CHAR_Y) == CHAR_getInt(index2,CHAR_Y) ){
-        /* 井今卅匀化中凶日FALSE */
+        /* 凝踏埵埱趙笢倜�帴ALSE */
         return FALSE;
     }
 
     for( i=1;i<=distance;i++ ){
-        /* 引内｝中匀仇户及平乓仿互汹中凶  及甄  毛菲户月 */
+        /* 竘囀��笢埱喫誧摯す籤溘誑倵笢倜  摯淢  禱滑誧堎 */
         int walked_x, walked_y;
         CHAR_getCoordinationDir( CHAR_getInt(index1,CHAR_DIR)
                                  , CHAR_getInt(index1,CHAR_X)
@@ -422,7 +422,7 @@ BOOL NPC_Util_isFaceToChara( int index1, int index2, int distance )
             return FALSE;
         }
     }
-    /* 兮氏兮氏褐卅日卅井匀凶日FALSE */
+    /* 殽庌殽庌福埵�欷汙朗�倜�帴ALSE */
     return FALSE;
 }
 
@@ -618,36 +618,36 @@ static int  SearchNearLine(
 
 
 static int SearchNearAround(
-	int x, 	   /* 腹绸  艘及  甄   */
-	int y,     /* 腹绸  艘及  甄   */
-	int floor, /* 腹绸  艘及白夫失 */
-	int Part,  /* 腹绸钒铵允月  赓及仿奶件 */
-	int Level, /*   艘方曰  木化中月覃   */
-	int type   /* 腹绸允月 CHAR 正奶皿 */
+	int x, 	   /* 號喙  刳摯  淢   */
+	int y,     /* 號喙  刳摯  淢   */
+	int floor, /* 號喙  刳摯啞痲囮 */
+	int Part,  /* 號喙楣鴽埰堎  疐摯溘騷璃 */
+	int Level, /*   刳源堇  躂趙笢堎嬾   */
+	int type   /* 號喙埰堎 CHAR 淏騷鏤 */
 ){
 	int i, iTarget = -1;
 	for( i = 0; i < 4; i ++ ){
-		if( Part == 0 ){ /* 晓及仿奶件毛腹绸 */
+		if( Part == 0 ){ /* 窀摯溘騷璃禱號喙 */
 			iTarget = SearchNearLine( x-Level+1, y-Level,
 				floor, 1, 0, Level*2, type );
 			if( iTarget >= 0 )break;
 		}else
-		if( Part == 1 ){ /* 惘及仿奶件毛腹绸 */
+		if( Part == 1 ){ /* 蒟摯溘騷璃禱號喙 */
 			iTarget = SearchNearLine( x+Level, y-Level+1,
 				floor, 0, 1, Level*2, type );
 			if( iTarget >= 0 )break;
 		}else
-		if( Part == 2 ){ /* 票及仿奶件毛腹绸 */
+		if( Part == 2 ){ /* き摯溘騷璃禱號喙 */
 			iTarget = SearchNearLine( x+Level-1, y+Level,
 				floor, -1, 0, Level*2, type );
 			if( iTarget >= 0 ) break;
 		}else
-		if( Part == 3 ){ /* 尔及仿奶件毛腹绸 */
+		if( Part == 3 ){ /* 嫌摯溘騷璃禱號喙 */
 			iTarget = SearchNearLine( x-Level, y+Level-1,
 				floor, 0, -1, Level*2, type );
 			if( iTarget >= 0 ) break;
 		}
-		Part ++; Part &= 3; /* 戚及由□玄毛腹绸 */
+		Part ++; Part &= 3; /* べ摯蚕↓哱禱號喙 */
 	}
 	return iTarget;
 }
@@ -655,15 +655,15 @@ static int SearchNearAround(
 int NPC_Util_SearchNear( int meindex, int maxlen, int type )
 {
 #if 1
-	/* MAP 井日及伉件弁匹腹绸允月方丹卞  凳 */
+	/* MAP 凝�梩啡虃�袲ぁ號喙埰堎源竣勗  脾 */
     int	floor, x, y, i,iTarget = -1;
-	/* 蜇箕及愤坌及树  毛娄五请允 */
+	/* 藯凜摯猷覕摯攷  禱礎拻③埰 */
     if( !CHAR_CHECKINDEX( meindex ) )return -1;
     floor = CHAR_getInt( meindex, CHAR_FLOOR );
     x  = CHAR_getInt( meindex, CHAR_X );
     y  = CHAR_getInt( meindex, CHAR_Y );
 
-	/*       区  匹譬屯月 */
+	/*       ⑹  ぁぅ迋堎 */
 	for( i = 0; i < maxlen; i ++ ){
 		iTarget = SearchNearAround( x, y, floor, RAND( 0,3 ), i+1, type );
 		if( iTarget >= 0 )break;
@@ -672,39 +672,39 @@ int NPC_Util_SearchNear( int meindex, int maxlen, int type )
 
 
 #else
-	/* 仇切日反衙中支曰   */
+	/* 喫з�梫棋譆倗忍�   */
     int	floor, x, y, i,iTarget = -1, iLen, iMin = 655360, tX, tY;
-    /*   醒必永玄*/
+    /*   倳斛蚗哱*/
     if( !CHAR_CHECKINDEX( meindex ) )return -1;
     floor = CHAR_getInt( meindex, CHAR_FLOOR );
     x  = CHAR_getInt( meindex, CHAR_X );
     y  = CHAR_getInt( meindex, CHAR_Y );
 
-    /*  腹绸 */
+    /*  號喙 */
     for( i = 0 ; i<objnum ; i++ ){
-        /*平乓仿弁正□及凛*/
+        /*す籤溘袲淏↓摯鄹*/
         if( obj[i].type != OBJTYPE_CHARA ) continue;
-		/* 潘  毛苇月*/
+		/* 攣  禱峟堎*/
         if( CHAR_getInt( obj[i].index,CHAR_WHICHTYPE)
             != type ) continue;
-		/*   元白夫失及凛*/
+		/*   啋啞痲囮摯鄹*/
 	    if( floor != obj[i].floor ) continue;
 
-	    /* CHAR_TYPEENEMY 及凛反index互愤坌及桦宁互丐月及匹民尼永弁允月 */
+	    /* CHAR_TYPEENEMY 摯鄹毀index誑猷覕摯鳹譴誑堣堎摯ぁ鏍攝蚗袲埰堎 */
         if( obj[i].index == meindex ) continue;
 
-		/*     及覃  毛煌遥*/
+		/*     摯嬾  禱銓猀*/
 		tX = ABS( x-CHAR_getInt(obj[i].index,CHAR_X) );
 		tY = ABS( y-CHAR_getInt(obj[i].index,CHAR_Y) );
-		if( tX > maxlen )continue;	/*   木允亢*/
-		if( tY > maxlen )continue;	/* 卅日戚尺*/
+		if( tX > maxlen )continue;	/*   躂埰蕩*/
+		if( tY > maxlen )continue;	/* 埵�梪摀�*/
 
-        /* 称井中覃  毛煌遥*/
+        /* 備凝笢嬾  禱銓猀*/
 		iLen = tX*tX+tY*tY;
-		/* 域  嗤井匀凶桦宁反筏  凳蕙*/
+		/* 郖  閟凝埱倜鳹譴毀楔  脾犍*/
 		if( iMin > iLen ){
 			iMin = iLen;
-			iTarget = obj[i].index;	/* 奶件犯永弁旦毛瓒  */
+			iTarget = obj[i].index;	/* 騷璃溢蚗袲筒禱頞  */
 		}
 	}
 
@@ -712,14 +712,14 @@ int NPC_Util_SearchNear( int meindex, int maxlen, int type )
 #endif
 }
 /*------------------------------------------------------------
-* 域  嗤中皿伊奶乩□及腹绸
+* 郖  閟笢鏤畛騷媕↓摯號喙
 ------------------------------------------------------------*/
 int NPC_Util_SearchNearPlayer( int meindex, int maxlen )
 {
 	return( NPC_Util_SearchNear( meindex, maxlen, CHAR_TYPEPLAYER));
 }
 /*------------------------------------------------------------
-* 域  嗤中衬及腹绸-
+* 郖  閟笢傍摯號喙-
 -----------------------------------------------------------*/
 int NPC_Util_SearchNearEnemy( int meindex, int maxlen )
 {
@@ -730,45 +730,45 @@ int NPC_Util_SearchNearEnemy( int meindex, int maxlen )
 
 /*******************************************************
 
-  标户啖  允月蟆卞窒井卞少勾井匀化中月井升丹井譬屯月
+  梓誧遉  埰堎鞳勗笰凝勗屾僑凝埱趙笢堎凝汔竣凝ぅ迋堎
   int NPC_Util_SuberiWalk(
-	int	index,	CHAR 及奶件犯永弁旦
-	int	dir		汹仁轾五
+	int	index,	CHAR 摯騷璃溢蚗袲筒
+	int	dir		倵�抎鱺�
   );
 
-    曰袄  0  7“汹仃月  轾
-          -1  “穴永皿卞娄匀井井匀化巨仿□
-          -2  “平乓仿弁正卞娄匀井井匀化巨仿□
-          -3  “    卞娄匀井井匀化巨仿□
+    堇偯  0  7※倵崹堎  澺
+          -1  ※悃蚗鏤勗礎埱凝凝埱趙操溘↓
+          -2  ※す籤溘袲淏勗礎埱凝凝埱趙操溘↓
+          -3  ※    勗礎埱凝凝埱趙操溘↓
 
-  标户啖  允月桦宁引内冲｝产卞啖  匹五月井譬屯月［
-      啖  匹五木壬标户毛民尼永弁允月［    仄井啖  匹五卅仃木壬
-  公切日及  轾毛忒允［
+  梓誧遉  埰堎鳹譴竘囀喳��莉勗遉  ぁ拻堎凝ぅ迋堎��
+      遉  ぁ拻躂�伀篕岔姻鯆慪濛邴彸瞿�    媃凝遉  ぁ拻埵崹躂��
+  鼠з�梩�  澺禱蒍埰��
 
- 公仇卞窒井丐匀凶日  穴永皿动陆  ㄠ毛忒允
+ 鼠喫勗笰凝堣埱倜��  悃蚗鏤雄翻  兒禱蒍埰
 *******************************************************/
 int NPC_Util_OtherCharCheck( int ff, int fx, int fy)
 {
 #if 1
-	/* 腹绸  挚毛      井日及伉件弁卞  凳 */
+	/* 號喙  祪禱      凝�梩啡虃�袲勗  脾 */
 	OBJECT object;
 	for( object=MAP_getTopObj(ff,fx,fy); object ;
 		object = NEXT_OBJECT(object) )
 	{
 		int objindex = GET_OBJINDEX(object);
-		/*   元甄  卞平乓仿弁正互丐月井 */
+		/*   啋淢  勗す籤溘袲淏誑堣堎凝 */
     	if( OBJECT_getType(objindex) == OBJTYPE_CHARA ){
     		return 1;
 		}
 	}
 	return 0;
 #else
-	/* 仇切日反蛙挚及支曰   */
+	/* 喫з�梫棹嗒蕉啄忍�   */
     int i;
     for( i = 0 ; i < objnum ; i ++){
-		/* 甄  互  元井＂*/
+		/* 淢  誑  啋凝ㄑ*/
         if( obj[i].x == fx && obj[i].y == fy && obj[i].floor == ff ){
-        	/* 平乓仿弁正井＂*/
+        	/* す籤溘袲淏凝ㄑ*/
 	        if( obj[i].type != OBJTYPE_NOUSE ){
 	            return 1;
             }
@@ -779,7 +779,7 @@ int NPC_Util_OtherCharCheck( int ff, int fx, int fy)
 }
 
 
-/* 汹仃卅中桦宁反唤匀化心月*/
+/* 倵崹埵笢鳹譴毀遢埱趙陑堎*/
 int NPC_Util_SuberiWalk(
 	int	index,
 	int	dir
@@ -793,7 +793,7 @@ int NPC_Util_SuberiWalk(
     y  = CHAR_getInt(index,CHAR_Y);
     fl = CHAR_getInt(index,CHAR_FLOOR);
 
-	/* 标户  轾井＂*/
+	/* 梓誧  澺凝ㄑ*/
 	switch( dir ){
 	case 1: aDirList[0] = 0; aDirList[1] = 2; aDirList[2] = 1;
 		break;
@@ -806,70 +806,70 @@ int NPC_Util_SuberiWalk(
 	default:
 		tX = x+CHAR_getDX(dir);
 		tY = y+CHAR_getDY(dir);
-		/* 褡户凶*/
+		/* 鵌誧倜*/
 		if( MAP_walkAble( index,fl,tX,tY ) == 0 ){
-			dir = -1;/* 穴永皿卞娄匀井井匀凶*/
+			dir = -1;/* 悃蚗鏤勗礎埱凝凝埱倜*/
 		}
 //		}else
 //		if( NPC_Util_OtherCharCheck( fl,tX, tY ) ){
-//			dir = -2;/* 平乓仿卞娄匀井井匀凶*/
+//			dir = -2;/* す籤溘勗礎埱凝凝埱倜*/
 //		}
-		/* 引匀允什分!! 公及引引汹仁*/
+		/* 竘埱埰妦煦!! 鼠摯竘竘倵��*/
 /*		CHAR_walk( index, dir, 0 );*/
 		return dir;
 	}
 
-	/* 引匀允什卅日  烂卅仄*/
+	/* 竘埱埰妦埵��  擭埵媃*/
 	for( i = 0; i < 3; i ++ ){
 		dir2 = aDirList[i];
 		tX = x+CHAR_getDX(dir2);
 		tY = y+CHAR_getDY(dir2);
 		if( MAP_walkAble( index,fl,tX,tY ) == 0 ){
-			aDirList[i] = -1; /* 垫仃卅中桦宁反公及  轾坫诮*/
+			aDirList[i] = -1; /* 菜崹埵笢鳹譴毀鼠摯  澺詌睍*/
 //		}else if( NPC_Util_OtherCharCheck( fl,tX, tY ) ){
-//			aDirList[i] = -2; /* 垫仃卅中桦宁反公及  轾坫诮*/
+//			aDirList[i] = -2; /* 菜崹埵笢鳹譴毀鼠摯  澺詌睍*/
 		}else{
-			/* 垫仃凶!!*/
+			/* 菜崹倜!!*/
 			OkFlg ++;
 		}
 	}
 
-	/* ㄢ勾蝈  第  卅桦宁反｝  赓及骚曰  仁*/
+	/* 兩僑蠈  菴  埵鳹譴毀��  疐摯玊堇  ��*/
 	if( aDirList[0] >= 0 && aDirList[1] >= 0 && aDirList[2] >= 0 ){
 	}else
-        /* 仇切日卞  仃月井＂*/
+        /* 喫з�梇�  崹堎凝ㄑ*/
 	if( aDirList[0] >= 0 ){
 		dir = aDirList[0];
 	}else
-        /* 公木午手仇切日井＂*/
+        /* 鼠躂敁忒喫з�桴恐�*/
 	if( aDirList[1] >= 0 ){
 		dir = aDirList[1];
 	}else{
 		dir = aDirList[0]+aDirList[1];
 	}
 
-	/* 啖  */
+	/* 遉  */
 /*	CHAR_walk( index, dir, 0 );*/
 
 	return dir;
 }
 /*-----------------------------------------------------------------------
-* NPC及create凛及娄醒及  井日隙烂今木凶  侬  毛腹绸仄］
-* 公及  及醒袄毛潸  允月［左皿扑亦件匹醒袄毛隙烂今六化支曰凶中午五卞忐厍
+* NPC摯create鄹摯礎倳摯  凝�梤黃羸鯆憶�  棬  禱號喙媃��
+* 鼠摯  摯倳偯禱噁  埰堎�詍鬊鬷刳鉏�ぁ倳偯禱炩擭踏鞠趙盓堇倜笢敁拻勗檎媋
 *
-* 镗啦“犯伉立正反"|"卞蜃烂仄化引允［
-*       娄醒卞  元  侬  互ㄡ勾岈氏分桦宁］
-*       燮及  互穸燮今木引允［
+* 曛徽※溢惉蕾淏毀"|"勗藦擭媃趙竘埰��
+*       礎倳勗  啋  棬  誑兕僑嶈庌煦鳹譴��
+*       袸摯  誑騅袸踏躂竘埰��
 * ----------------------------------
-* IN : int meindex : 平乓仿index
-*    : char* in    : 腹绸允月  侬  
+* IN : int meindex : す籤溘index
+*    : char* in    : 號喙埰堎  棬  
 * OUT:
 * RETURN:
-* 潸  请  卅井匀凶凛 :-1
-* 潸  请  凶凛       :醒袄
+* 噁  ③  埵凝埱倜鄹 :-1
+* 噁  ③  倜鄹       :倳偯
 * ----------------------------------
 *
-*   “
+*   ※
 * [File:enemykill.create]
 * enemy=enemykill|range:4
 *
@@ -885,7 +885,7 @@ int NPC_Util_GetNumFromArg( int meindex, char* in)
 	char 	*a = CHAR_getChar( meindex, CHAR_NPCARGUMENT);
 
 	for( i = 1; ; i++ ) {
-		/* 犯伉立正ㄠ勾内勾  戈 */
+		/* 溢惉蕾淏兒僑囀僑  資 */
 		rc = getStringFromIndexWithDelim( a, "|", i, outstr, sizeof(outstr));
 		if( rc == FALSE) break;
 		if( strstr( outstr, in) != NULL ) {
@@ -898,20 +898,20 @@ int NPC_Util_GetNumFromArg( int meindex, char* in)
 }
 
 /*
- * 失奶  丞及 index 午平乓仿 index 及孔凶勾及树  井日｝
- * 平乓仿互公及失奶  丞毛  匀化月井升丹井仄日屯化  匀化凶日升及
- * 匏  卞  匀化月井毛忒允［  失奶  丞楮  及NPC迕［CHAR_卞啖垫
- * 匹五月井手仄木氏楮醒瓜伉
+ * 囮騷  堜摯 index 敁す籤溘 index 摯謂倜僑摯攷  凝�掁�
+ * す籤溘誑鼠摯囮騷  堜禱  埱趙堎凝汔竣凝媃�梠芼�  埱趙倜�桾�摯
+ * 痾  勗  埱趙堎凝禱蒍埰��  囮騷  堜匴  摯NPC暵�羡HAR_勗遉菜
+ * ぁ拻堎凝忒媃躂庌匴倳圖惉
  * by ringo
  *
- * int charindex : 覆擂平乓仿及 index
- * int itemindex : 失奶  丞及index
+ * int charindex : 葡濯す籤溘摯 index
+ * int itemindex : 囮騷  堜摯index
  *
- * 忒曰袄
+ * 蒍堇偯
  *
- *  >=0 : 升及匏  卞  匀化中月及井［  躲卅袄［
- *  -1 : 手仄仁反  匀化卅中［
- *  -2 : 巨仿□［
+ *  >=0 : 汔摯痾  勗  埱趙笢堎摯凝��  嗚埵偯��
+ *  -1 : 忒媃�妢�  埱趙埵笢��
+ *  -2 : 操溘↓��
  */
 int NPC_Util_SearchItemInChar( int charindex , int itemindex)
 {
@@ -931,20 +931,20 @@ int NPC_Util_SearchItemInChar( int charindex , int itemindex)
 
 
 /*------------------------------------------------------------------------
-* 平乓仿井日心凶职及平乓仿及  轾毛菲户月
+* す籤溘凝�桸鹹趼側副褐珝翹�  澺禱滑誧堎
 *
 * int NPC_Util_GetDirCharToChar( int fromindex, int toindex, int mode)
 *
-* int	fromindex 	仇及平乓仿index井日
-* int	toindex		仇及平乓仿index卞覆仄化及  轾互菲户日木月
-* int	mode		潸  允月  轾
-*                   0:toindex卞轾井匀化
-*                   1:toindex及  覆  轾
-*                   2:toindex卞覆仄化惘ㄨㄟ蘸  轾
-*                   3:toindex卞覆仄化尔ㄨㄟ蘸  轾
+* int	fromindex 	喫摯す籤溘index凝��
+* int	toindex		喫摯す籤溘index勗葡媃趙摯  澺誑滑誧�桫戰�
+* int	mode		噁  埰堎  澺
+*                   0:toindex勗澺凝埱趙
+*                   1:toindex摯  葡  澺
+*                   2:toindex勗葡媃趙蒟刻兔梣  澺
+*                   3:toindex勗葡媃趙嫌刻兔梣  澺
 *
-* 忒曰袄 岳   “dir    轾毛忒允  
-*        撩   “-1
+* 蒍堇偯 埬   ※dir    澺禱蒍埰  
+*        謄   ※-1
 ------------------------------------------------------------------------*/
 int NPC_Util_GetDirCharToChar( int fromindex, int toindex, int mode)
 {
@@ -969,21 +969,21 @@ int NPC_Util_GetDirCharToChar( int fromindex, int toindex, int mode)
 }
 
 /*------------------------------------------------------------------------
-*     平乓仿卞覆仄化］丐月  轾卞啖  允月［
+*     す籤溘勗葡媃趙�楉夭�  澺勗遉  埰堎��
 *
 * int NPC_Util_WalkCharToChar( int fromindex, int toindex, int mode)
 *
-* int	fromindex 	汹仁平乓仿index
-* int	toindex		汹仁    及平乓仿index
-* int	mode		汹仁  轾
-*                   0:toindex卞轾井匀化
-*                   1:toindex及  覆  轾
-*                   2:toindex卞覆仄化惘ㄨㄟ蘸  轾
-*                   3:toindex卞覆仄化尔ㄨㄟ蘸  轾
-* BOOL	suberi		NPC_Util_SuberiWalk毛哔  允月井＂TRUE:允月 FALSE:仄卅中
+* int	fromindex 	倵�岊褐珝檯ndex
+* int	toindex		倵��    摯す籤溘index
+* int	mode		倵��  澺
+*                   0:toindex勗澺凝埱趙
+*                   1:toindex摯  葡  澺
+*                   2:toindex勗葡媃趙蒟刻兔梣  澺
+*                   3:toindex勗葡媃趙嫌刻兔梣  澺
+* BOOL	suberi		NPC_Util_SuberiWalk禱萳  埰堎凝ㄑTRUE:埰堎 FALSE:媃埵笢
 *
-* 忒曰袄 岳    汹中凶  “dir  汹中凶  轾毛忒允  
-*        撩            “-1
+* 蒍堇偯 埬    倵笢倜  ※dir  倵笢倜  澺禱蒍埰  
+*        謄            ※-1
 ------------------------------------------------------------------------*/
 int NPC_Util_WalkCharToChar( int fromindex, int toindex, int mode, int suberi)
 {
@@ -1011,11 +1011,11 @@ int NPC_Util_WalkCharToChar( int fromindex, int toindex, int mode, int suberi)
 
 
 /*------------------------------------------------------------------------
-* NPC毛壅  今六月［
+* NPC禱觛  踏鞠堎��
 *
 * void NPC_Util_NPCDelete( int srcindex)
 *
-* int	srcindex 	壅允index
+* int	srcindex 	觛埰index
 *
 ------------------------------------------------------------------------*/
 void NPC_Util_NPCDelete( int srcindex)
@@ -1023,10 +1023,10 @@ void NPC_Util_NPCDelete( int srcindex)
     //int objindex;
     //objindex = CHAR_getWorkInt(srcindex,CHAR_WORKOBJINDEX);
 
-	/* createnum 互    及凛］戏引木凶凛棉毛本永玄允月
-	 * 卅兮仇仇匹仇氏卅仪毛仄化中月井午中丹午
-	 * create白央奶伙及time袄互戏引木化井日公木分仃坌烦匀化中月午］
-	 * 濮覆卞允什卞戏引木化仁月午中丹酷  毛卅氏午井仄方丹午允月啃
+	/* createnum 誑    摯鄹�椿煉�躂倜鄹蹬禱掛蚗哱埰堎
+	 * 埵殽喫喫ぁ喫庌埵痀禱媃趙笢堎凝敁笢竣敁
+	 * create啞栝騷鳴摯time偯誑牁竘躂趙凝�桯孩噸笭縍郱勛�趙笢堎敁��
+	 * 憪葡勗埰妦勗牁竘躂趙�彸蟲誸迮凶�  禱埵庌敁凝媃源竣敁埰堎諱
 	 */
 	if( CHAR_getInt( srcindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ) return;
 	if( NPC_createCheckMaxEnemynum( CHAR_getInt(srcindex,CHAR_NPCCREATEINDEX )))
@@ -1053,7 +1053,7 @@ char *NPC_Util_CheckAssignArgFile( int index, char *filename)
 	}
 
 	for( i = 1; ; i++ ) {
-		/* 犯伉立正ㄠ勾内勾  戈 */
+		/* 溢惉蕾淏兒僑囀僑  資 */
 		rc = getStringFromIndexWithDelim( a, "|", i, outstr, sizeof(outstr));
 		if( rc == FALSE) break;
 		if( strstr( outstr, "file") != NULL ) {
@@ -1125,7 +1125,7 @@ int NPC_Util_GetNumFromStrWithDelim( char *srcstr, char* in)
 	int		out = -1;
 
 	for( i = 1; ; i++ ) {
-		/* 犯伉立正ㄠ勾内勾  戈 */
+		/* 溢惉蕾淏兒僑囀僑  資 */
 		rc = getStringFromIndexWithDelim( srcstr, "|", i, outstr, sizeof(outstr));
 		if( rc == FALSE) break;
 		if( strstr( outstr, in) != NULL ) {
@@ -1326,27 +1326,27 @@ int *NPC_Util_getEnemy( int meindex, int charaindex)
 		curEnemy = ENEMY_getEnemyArrayFromId( atoi( data));
 		if( !ENEMY_CHECKINDEX( curEnemy) ) continue;
 		et_array = ENEMYTEMP_getEnemyTempArray( curEnemy );
-		/* 扔奶术互  五中及互中凶凛及啃及岈太赘尹 */
+		/* �蚅昃齠�  拻笢摯誑笢倜鄹摯諱摯嶈怮袑窇 */
 		if( ENEMYTEMP_getInt( et_array, E_T_SIZE ) == E_T_SIZE_BIG) {
 			if( bigcnt >= 5 ) {
 				continue;
 			}
-			/* 桦赭互    卞卅匀化中凶桦宁反  木晶尹月 */
+			/* 鳹鐎誑    勗埵埱趙笢倜鳹譴毀  躂儒窇堎 */
 			if( insert > 4 ) {
 				int	target_et_array;
 				int	flg = FALSE;
 				int	j;
-				/*   木月桦赭毛茧允 */
+				/*   躂堎鳹鐎禱潺埰 */
 				for( j = 0; j < 5; j ++ ) {
-					/* 坞中化月及反云井仄中 */
+					/* 昶笢趙堎摯毀堁凝媃笢 */
 					if( !ENEMY_CHECKINDEX( NPCUtil_enemytbl[j])) break;
 
 					target_et_array = ENEMYTEMP_getEnemyTempArray(
 													NPCUtil_enemytbl[j]);
-					/* 云井仄中 */
+					/* 堁凝媃笢 */
 					if( !ENEMYTEMP_CHECKINDEX( target_et_array)) break;
 
-					/*   木医歹木月 */
+					/*   躂瓟渦躂堎 */
 					if( ENEMYTEMP_getInt( target_et_array, E_T_SIZE)
 						== E_T_SIZE_NORMAL )
 					{
@@ -1372,10 +1372,10 @@ int *NPC_Util_getEnemy( int meindex, int charaindex)
 	return NPCUtil_enemytbl;
 }
 
-/*==================动票｝白仿弘申永玄楮溢=============================*/
+/*==================雄き��啞溘精扠蚗哱匴祛=============================*/
 
-/* 奶矛件玄蔽  
- * 申永玄白仿弘毛  化月分仃及质  
+/* 騷穫璃哱敖  
+ * 扠蚗哱啞溘精禱  趙堎煦崹摯窐  
  */
 void  NPC_EventSetFlg(int talker,int shiftbit)
 
@@ -1387,7 +1387,7 @@ void  NPC_EventSetFlg(int talker,int shiftbit)
 	int iGetFame = 0;
 #endif
 
-	/*--  -1反白仿弘卞楮溢互卅中奶矛件玄   -*/
+	/*--  -1毀啞溘精勗匴祛誑埵笢騷穫璃哱   -*/
 	if(shiftbit==-1) return;
 
 	array = shiftbit / 32;
@@ -1404,23 +1404,23 @@ void  NPC_EventSetFlg(int talker,int shiftbit)
 #endif
 	}
 #ifdef _TEACHER_SYSTEM
-	iGetFame /= 20; // 导师获得学生所得声望的 5% (1/20)
-	// 检查所得的声望有没有大於0
+	iGetFame /= 20; // 絳呇鳳腕悝汜垀腕汒咡腔 5% (1/20)
+	// 潰脤垀腕腔汒咡衄羶衄湮黺0
 	if(iGetFame > 0){
-		// 检查有没有导师
+		// 潰脤衄羶衄絳呇
 		if(strlen(CHAR_getChar(talker,CHAR_TEACHER_ID)) > 0 && strlen(CHAR_getChar(talker,CHAR_TEACHER_NAME)) > 0){
 			int iPlayernum = CHAR_getPlayerMaxNum(),i;
 			char szMsg[128];
 			
-			// 检查导师在不在线上
+			// 潰脤絳呇婓祥婓盄奻
 			for(i=0;i<iPlayernum;i++){
 				if(CHAR_getCharUse(i) == FALSE) continue;
 				if(strcmp(CHAR_getChar(talker,CHAR_TEACHER_ID),CHAR_getChar(i,CHAR_CDKEY)) == 0 &&
 					strcmp(CHAR_getChar(talker,CHAR_TEACHER_NAME),CHAR_getChar(i,CHAR_NAME)) == 0){
 					float fGetFame = (float)iGetFame/100;
-					// 导师在线上
+					// 絳呇婓盄奻
 					CHAR_setWorkInt(i,CHAR_WORK_GET_TEACHER_FAME,CHAR_getWorkInt(i,CHAR_WORK_GET_TEACHER_FAME) + iGetFame);
-					sprintf(szMsg,"获得学生 %s %.2f 点声望",CHAR_getChar(talker,CHAR_NAME),fGetFame);
+					sprintf(szMsg,"鳳腕悝汜 %s %.2f 萸汒咡",CHAR_getChar(talker,CHAR_NAME),fGetFame);
 					CHAR_talkToCli(i,-1,szMsg,CHAR_COLORYELLOW);
 					break;
 				}
@@ -1433,18 +1433,18 @@ void  NPC_EventSetFlg(int talker,int shiftbit)
 	CHAR_setInt( talker, CHAR_ENDEVENT+array, point);
 }
 
-/* 奶矛件玄蔽  
- * 申永玄白仿弘互  匀化月井毛譬屯月
+/* 騷穫璃哱敖  
+ * 扠蚗哱啞溘精誑  埱趙堎凝禱ぅ迋堎
  *
- *	  匀化中木壬	TRUE
- *	卅仃木壬		FALSE
+ *	  埱趙笢躂��	TRUE
+ *	埵崹躂��		FALSE
  */
 BOOL NPC_EventCheckFlg(int talker,int shiftbit)
 {
 	int point=0;
 	int array;
 	int shift;
-	/*--  -1反白仿弘卞楮溢互卅中奶矛件玄   -*/
+	/*--  -1毀啞溘精勗匴祛誑埵笢騷穫璃哱   -*/
 	if(shiftbit==-1) return FALSE;
 
 	array = shiftbit / 32;
@@ -1457,15 +1457,15 @@ BOOL NPC_EventCheckFlg(int talker,int shiftbit)
 	return FALSE;
 }
 
-/* 奶矛件玄  
- * 申永玄白仿弘毛  化月分仃及质  
+/* 騷穫璃哱  
+ * 扠蚗哱啞溘精禱  趙堎煦崹摯窐  
  */
 void  NPC_NowEventSetFlg(int talker,int shiftbit)
 {
 	int point=0;
 	int array;
 	int shift;
-	/*--  -1反白仿弘卞楮溢互卅中奶矛件玄   -*/
+	/*--  -1毀啞溘精勗匴祛誑埵笢騷穫璃哱   -*/
 	if(shiftbit==-1) return;
 
 	array = shiftbit / 32;
@@ -1550,7 +1550,7 @@ void AddFMAdv(int talker, int shiftbit)
 		fmadv = FMAdvTbl[shiftbit];
 	if (fmadv <= 0)	return;
 	sprintf(buf, "%d", fmadv);
-	#ifdef _PERSONAL_FAME	// Arminius 8.30: 家族个人声望
+	#ifdef _PERSONAL_FAME	// Arminius 8.30: 模逜跺�侂驫�
 	  CHAR_earnFame(talker, fmadv);
 	#endif
 	#ifdef _NEW_MANOR_LAW
@@ -1580,7 +1580,7 @@ void AddFMAdv(int talker, int shiftbit)
 		 {
 			 int i;
 			 for(i=0;i<FAMILY_MAXHOME;i++){
-				 // 任何一个庄园有在挑战排程,气势值一改变就向AC要最新气势资料
+				 // �庥扂遘囆耽商俶确譭褐鑒�,ァ岊硉珨蜊曹憩砃AC猁郔陔ァ岊訧蹋
 				 if(fmpointlist.fm_inwar[i]){
 					 saacproto_ACShowTopFMList_send(acfd, FM_TOP_MOMENTUM);
 					 break;
@@ -1590,7 +1590,7 @@ void AddFMAdv(int talker, int shiftbit)
 #endif
 	}
 #ifdef _NEW_MANOR_LAW
-	// 未审核通过时只更新成员气势值
+	// 帤机瞄籵徹奀硐載陔傖埜ァ岊硉
 	else if(CHAR_getInt(talker, CHAR_FMLEADERFLAG) == FMMEMBER_APPLY){
 		int fd = getfdFromCharaIndex(talker);
 		sprintf(buf,"%d",CHAR_getInt(talker,CHAR_FAME));
@@ -1671,7 +1671,7 @@ int addNpcFamilyTax( int meindex, int talkerindex, int income )
 		case 60:
 			npc_village = 6;
 			break;
-// Syu ADD 修正四大城无税收问题
+// Syu ADD 党淏侐湮傑拸阭彶恀枙
 		case 71:
 			npc_village = 6;
 			break;
@@ -1710,7 +1710,7 @@ int addNpcFamilyTax( int meindex, int talkerindex, int income )
 					if( getStringFromIndexWithDelim(fmpointlist.pointlistarray[i], "|", 5, token, sizeof(token)) == FALSE)
 						return 0;
 					fmindex = atoi(token);
-// Terry add for 如果庄园没人占领则不计算
+// Terry add for �蝜�蚽埶羶�劼撙嬦繰遞で�
 					if(fmindex < 0) return 0;
 // end
 					memset( token, 0, sizeof( token));

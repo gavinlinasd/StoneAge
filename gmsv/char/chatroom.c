@@ -16,7 +16,7 @@
 #include "chatroom.h"
 #include "net.h"
 #include "util.h"
-#ifdef _CHATROOMPROTOCOL			// (不可开) Syu ADD 聊天室频道
+#ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋
 
 
 
@@ -46,16 +46,16 @@ BOOL ChatCheck_Free( int myindex)
 		return FALSE;
 	old_gold = CHAR_getInt( myindex, CHAR_GOLD );
 	if( old_gold < 200 ){
-		CHAR_talkToCli ( myindex , -1 , "成立聊天室需花费２００石币" , CHAR_COLORYELLOW ); 
+		CHAR_talkToCli ( myindex , -1 , "傖蕾謐毞弅剒豪煤ㄡㄟㄟ坒啟" , CHAR_COLORYELLOW ); 
 		return FALSE;
 	}
 	if ( CHAR_getInt ( myindex , CHAR_LV ) < 30 &&
 		CHAR_getInt ( myindex , CHAR_TRANSMIGRATION ) < 1 ) {
-		CHAR_talkToCli ( myindex , -1 , "成立聊天室需０转３０级以上！" , CHAR_COLORYELLOW );
+		CHAR_talkToCli ( myindex , -1 , "傖蕾謐毞弅剒ㄟ蛌ㄢㄟ撰眕奻ㄐ" , CHAR_COLORYELLOW );
 		return FALSE;
 	}
 	if ( CHAR_getWorkInt ( myindex , CHAR_WORKCHATROOMTYPE ) != 0 ) {
-		CHAR_talkToCli ( myindex , -1 , "你已经在其他聊天室中！" , CHAR_COLORYELLOW );
+		CHAR_talkToCli ( myindex , -1 , "斕眒冪婓む坻謐毞弅笢ㄐ" , CHAR_COLORYELLOW );
 		return FALSE;
 	}
 	return TRUE;
@@ -215,7 +215,7 @@ void ChatRoom_recvall ( int fd , char *data )
 
 	//andy_log
 	print( "CR:%s.\n", data);
-	if ( strcmp ( Head , "C" ) == 0 ) { // 成立频道
+	if ( strcmp ( Head , "C" ) == 0 ) { // 傖蕾け耋
 		char chatname[256];
 		if( ChatCheck_Free( charaindex) == FALSE ) return;
 		if( getStringFromIndexWithDelim( data , "|", 2, chatname, sizeof(chatname)) == FALSE ) return;
@@ -225,7 +225,7 @@ void ChatRoom_recvall ( int fd , char *data )
 			CHAR_getChar( charaindex, CHAR_NAME),
 			CHAR_getChar( charaindex, CHAR_OWNTITLE)
 		);
-	}else if ( strcmp ( Head , "D" ) == 0 ) { // 删除频道
+	}else if ( strcmp ( Head , "D" ) == 0 ) { // 刉壺け耋
 		int chat;
 
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKCHATROOMTYPE) != 1 ) return;
@@ -237,12 +237,12 @@ void ChatRoom_recvall ( int fd , char *data )
 		);
 		//ChatRoom_Destroy( myindex);
 /*
-	}else if ( strcmp ( Head, "A") == 0 ) {// 同意加入频道
+	}else if ( strcmp ( Head, "A") == 0 ) {// 肮砩樓�踰紫�
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		getStringFromIndexWithDelim( data , "|", 3, buf, sizeof(buf));
 		ChatRoom_Agree ( myindex , atoi( message ) , atoi( buf ) ) ;
 */
-	}else if ( strcmp( Head , "J") == 0 ) {//加入频道
+	}else if ( strcmp( Head , "J") == 0 ) {//樓�踰紫�
 		int chat;
 		if( getStringFromIndexWithDelim( data , "|", 2, buf, sizeof(buf)) == FALSE ) return;
 		chat = atoi( buf);
@@ -253,10 +253,10 @@ void ChatRoom_recvall ( int fd , char *data )
 			CHAR_getChar( charaindex, CHAR_OWNTITLE)
 		);
 //		ChatRoom_Join ( myindex , atoi( message ) ) ;
-	}else if ( strcmp( Head , "L") == 0 ) {// 离开频道
+	}else if ( strcmp( Head , "L") == 0 ) {// 燭羲け耋
 		ChatRoom_Leave( charaindex);
 		return;
-	}else if ( strcmp ( Head , "K" ) == 0 ) {//踢出频道
+	}else if ( strcmp ( Head , "K" ) == 0 ) {//杺堤け耋
 		int ti, chat;
 		if( getStringFromIndexWithDelim( data , "|", 2, buf, sizeof( buf)) == FALSE ) return;
 		ti = atoi( buf);
@@ -272,7 +272,7 @@ void ChatRoom_recvall ( int fd , char *data )
 			ti );
 
 //		ChatRoom_Kick ( myindex , atoi( message ) ); 
-	}else if ( strcmp ( Head , "M" ) == 0 ) { // 更换室长
+	}else if ( strcmp ( Head , "M" ) == 0 ) { // 載遙弅酗
 		int ti, chat;
 		if( getStringFromIndexWithDelim( data , "|", 2, buf, sizeof(buf)) == FALSE ) return;
 		ti = atoi( buf);
@@ -286,7 +286,7 @@ void ChatRoom_recvall ( int fd , char *data )
 			CHAR_getChar( charaindex, CHAR_NAME),
 			ti );
 //		ChatRoom_Make ( myindex , atoi( message ) ); 
-	}else if ( strcmp ( Head , "T" ) == 0 ) {// 频道讯息
+	}else if ( strcmp ( Head , "T" ) == 0 ) {// け耋捅洘
 		int chat;
 		if( getStringFromIndexWithDelim( data , "|", 2, buf, sizeof(buf)) == FALSE ) return;
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKCHATROOMTYPE) == 0 ) return;
@@ -295,7 +295,7 @@ void ChatRoom_recvall ( int fd , char *data )
 		snprintf( token, sizeof( token),"T|%d|%s|",	chat, buf);
 		
 //		ChatRoom_Message ( myindex , message ) ; 
-	}else if ( strcmp ( Head , "B" ) == 0 ) {// 聊天室清单
+	}else if ( strcmp ( Head , "B" ) == 0 ) {// 謐毞弅ь等
 		ChatRoom_List ( fd );
 		return;
 	}
@@ -315,7 +315,7 @@ void saac_ChatRoom_recvall ( int fd , char *result, char *data, int charaindex, 
 	print( "saac CR:%s.\n", data);
 	if( getStringFromIndexWithDelim( data , "|", 1, Head, sizeof(Head)) == FALSE ) return;
 
-	if( strcmp( Head, "C") == 0 ) { // 成立频道
+	if( strcmp( Head, "C") == 0 ) { // 傖蕾け耋
 //		int fd = getfdFromCharaIndex( charaindex);
 //		if( getStringFromIndexWithDelim( data , "|", 2, result, sizeof(result)) == FALSE ) return;
 		if( !strcmp( result, SUCCESSFUL) ){
@@ -338,11 +338,11 @@ void saac_ChatRoom_recvall ( int fd , char *result, char *data, int charaindex, 
 			ChatRoom[chat].use = 1;
 			CHAR_setWorkInt ( charaindex , CHAR_WORKCHATROOMTYPE , 1 ) ; 
 			CHAR_setWorkInt ( charaindex , CHAR_WORKCHATROOMNUM , chat ) ; 
-			CHAR_talkToCli ( charaindex , -1 , "成立聊天室扣除２００石币。" , CHAR_COLORYELLOW );
+			CHAR_talkToCli ( charaindex , -1 , "傖蕾謐毞弅諶壺ㄡㄟㄟ坒啟﹝" , CHAR_COLORYELLOW );
 
 			ChatRoom_Refresh( chat);
 		}else{
-			CHAR_talkToCli ( charaindex , -1 , "无法成立聊天室，聊天频道已满或条件不足！" , CHAR_COLORYELLOW );
+			CHAR_talkToCli ( charaindex , -1 , "拸楊傖蕾謐毞弅ㄛ謐毞け耋眒雛麼沭璃祥逋ㄐ" , CHAR_COLORYELLOW );
 		}
 	}else if( strcmp( Head, "U") == 0 ) {
 		int k=2, ti;
@@ -405,12 +405,12 @@ void saac_ChatRoom_recvall ( int fd , char *result, char *data, int charaindex, 
 			if( !strcmp( CHAR_getChar( j, CHAR_CDKEY), ChatRoom[chat].charalist[ti].cdkey) &&
 				!strcmp( CHAR_getChar( j, CHAR_NAME), ChatRoom[chat].charalist[ti].name) ){
 				CHAR_setWorkInt( j, CHAR_WORKCHATROOMTYPE, 1);
-				CHAR_talkToCli( j, -1 , "你现在是聊天室的室长！", CHAR_COLORRED);
+				CHAR_talkToCli( j, -1 , "斕珋婓岆謐毞弅腔弅酗ㄐ", CHAR_COLORRED);
 			}
 			if( !strcmp( CHAR_getChar( j, CHAR_CDKEY), ChatRoom[chat].charalist[ChatRoom[chat].masindex].cdkey) &&
 				!strcmp( CHAR_getChar( j, CHAR_NAME), ChatRoom[chat].charalist[ChatRoom[chat].masindex].name) ){
 				CHAR_setWorkInt( j, CHAR_WORKCHATROOMTYPE, 2);
-				CHAR_talkToCli( j, -1 , "你现在已经不是聊天室的室长！", CHAR_COLORRED);
+				CHAR_talkToCli( j, -1 , "斕珋婓眒冪祥岆謐毞弅腔弅酗ㄐ", CHAR_COLORRED);
 			}
 		}
 		ChatRoom[ chat].masindex = ti;
@@ -450,7 +450,7 @@ print( "_CHATROOM_send( %d, K|) \n", fd );
 print( "ChatRoom_Refresh( %d) \n", chat);
 		ChatRoom[chat].charalist[ti].use = 0;
 		ChatRoom_Refresh( chat);
-	}else if ( strcmp ( Head , "J" ) == 0 ) {//加入频道
+	}else if ( strcmp ( Head , "J" ) == 0 ) {//樓�踰紫�
 	}else if ( strcmp ( Head , "A" ) == 0 ) {
 		if ( !CHAR_CHECKINDEX ( charaindex ) ) return;
 
@@ -459,14 +459,14 @@ print( "ChatRoom_Refresh( %d) \n", chat);
 		if( chat < 0 || chat >= MAX_CHATROOM ) return;
 		if( getStringFromIndexWithDelim( data , "|", 3, result, sizeof( result)) == FALSE ) return;
 		if( !strcmp( result, "FULL") ){
-			CHAR_talkToCli( charaindex, -1, "该频道已满！", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "蜆け耋眒雛ㄐ", CHAR_COLORYELLOW);
 		}else if( !strcmp( result, "OK") ){
-			CHAR_talkToCli( charaindex, -1, "加入聊天频道！", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "樓�蹅騷噾紫壓�", CHAR_COLORYELLOW);
 			CHAR_setWorkInt( charaindex, CHAR_WORKCHATROOMNUM, chat);
 			CHAR_setWorkInt( charaindex, CHAR_WORKCHATROOMTYPE, 2);
 		}
 		ChatRoom_Refresh( chat);
-	}else if( !strcmp( Head, "T") ) {//频道讯息
+	}else if( !strcmp( Head, "T") ) {//け耋捅洘
 		int j;
 		char message[256];
 		int playernum = CHAR_getPlayerMaxNum();
@@ -500,9 +500,9 @@ void CHATROOM_getChatRoomList( void)
 
 /*
 CHAR_WORKCHATROOMTYPE :
-	0 : 无
-	1 : 聊天室室长
-	2 : 聊天室成员
+	0 : 拸
+	1 : 謐毞弅弅酗
+	2 : 謐毞弅傖埜
 */
 typedef struct {
 	BOOL useFlag ;
@@ -537,16 +537,16 @@ BOOL ChatCheck_Free( int myindex)
 		return FALSE;
 	old_gold = CHAR_getInt( myindex, CHAR_GOLD );
 	if( old_gold < 200 ){
-		CHAR_talkToCli ( myindex , -1 , "成立聊天室需花费２００石币" , CHAR_COLORYELLOW ); 
+		CHAR_talkToCli ( myindex , -1 , "傖蕾謐毞弅剒豪煤ㄡㄟㄟ坒啟" , CHAR_COLORYELLOW ); 
 		return FALSE;
 	}
 	if ( CHAR_getInt ( myindex , CHAR_LV ) < 30 &&
 		CHAR_getInt ( myindex , CHAR_TRANSMIGRATION ) < 1 ) {
-		CHAR_talkToCli ( myindex , -1 , "成立聊天室需０转３０级以上！" , CHAR_COLORYELLOW );
+		CHAR_talkToCli ( myindex , -1 , "傖蕾謐毞弅剒ㄟ蛌ㄢㄟ撰眕奻ㄐ" , CHAR_COLORYELLOW );
 		return FALSE;
 	}
 	if ( CHAR_getWorkInt ( myindex , CHAR_WORKCHATROOMTYPE ) != 0 ) {
-		CHAR_talkToCli ( myindex , -1 , "你已经在其他聊天室中！" , CHAR_COLORYELLOW );
+		CHAR_talkToCli ( myindex , -1 , "斕眒冪婓む坻謐毞弅笢ㄐ" , CHAR_COLORYELLOW );
 		return FALSE;
 	}
 	return TRUE;
@@ -582,11 +582,11 @@ BOOL ChatRoom_Create ( int myindex , char *message )
 			ChatRoom_Refresh ( i ) ; 
 
 			CHAR_DelGold( myindex, 200);
-			CHAR_talkToCli ( myindex , -1 , "成立聊天室扣除２００石币" , CHAR_COLORYELLOW ); 
+			CHAR_talkToCli ( myindex , -1 , "傖蕾謐毞弅諶壺ㄡㄟㄟ坒啟" , CHAR_COLORYELLOW ); 
 			return TRUE; 
 		}
 	}
-	CHAR_talkToCli ( myindex , -1 , "聊天室已满无法建立新的聊天频道！" , CHAR_COLORYELLOW ); 
+	CHAR_talkToCli ( myindex , -1 , "謐毞弅眒雛拸楊膘蕾陔腔謐毞け耋ㄐ" , CHAR_COLORYELLOW ); 
 	return FALSE; 
 }
 
@@ -661,7 +661,7 @@ void ChatRoom_Kick ( int myindex , int toindex )
 		else {
 			CHAR_setWorkInt ( toindex , CHAR_WORKCHATROOMTYPE , 0 ) ; 
 			CHAR_setWorkInt ( toindex , CHAR_WORKCHATROOMNUM , -1) ; 
-			//CHAR_talkToCli ( toindex , -1 , "室长将你踢出聊天室！" , CHAR_COLORRED ) ; 
+			//CHAR_talkToCli ( toindex , -1 , "弅酗蔚斕杺堤謐毞弅ㄐ" , CHAR_COLORRED ) ; 
 			fd = getfdFromCharaIndex( toindex );
 			lssproto_CHATROOM_send ( fd , "K|" ) ; 
 			ChatRoom[ Num ].NowPeople --;
@@ -690,12 +690,12 @@ void ChatRoom_Make ( int myindex , int toindex )
 			CHAR_getInt ( toindex , CHAR_TRANSMIGRATION ) >= 1 ) {
 			CHAR_setWorkInt ( myindex , CHAR_WORKCHATROOMTYPE , 2 ) ; 
 			CHAR_setWorkInt ( toindex , CHAR_WORKCHATROOMTYPE , 1 ) ; 
-			CHAR_talkToCli ( toindex , -1 , "你现在是聊天室的室长！" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( toindex , -1 , "斕珋婓岆謐毞弅腔弅酗ㄐ" , CHAR_COLORRED ) ; 
 		
 			ChatRoom[ Num ].Maker = toindex ; 			
 		}
 		else {
-			CHAR_talkToCli ( myindex , -1 , "您选择的继任人物等级不足以担任室长！" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( myindex , -1 , "蠟恁寁腔樟�恛冼齔�撰祥逋眕童�恀珜不�" , CHAR_COLORRED ) ; 
 		}
 	}
 	ChatRoom_Refresh ( Num ) ; 
@@ -763,7 +763,7 @@ void ChatRoom_Join ( int myindex , int num )
 		fd = getfdFromCharaIndex( ChatRoom[ num ].Maker );
 		lssproto_CHATROOM_send ( fd , buf );
 	}else if ( ChatRoom[ num ].NowPeople >= MAX_PPLINROOM ) 
-		CHAR_talkToCli ( myindex , -1 , "聊天室人数已满！" , CHAR_COLORRED ) ; 
+		CHAR_talkToCli ( myindex , -1 , "謐毞弅�侕�眒雛ㄐ" , CHAR_COLORRED ) ; 
 
 }
 
@@ -788,10 +788,10 @@ void ChatRoom_Agree ( int myindex , int toindex , int YesNo ) {
 				}
 			}
 		}else if ( YesNo == 0 ) {
-			CHAR_talkToCli ( toindex , -1 , "您申请的聊天室室长拒绝您的加入！" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( toindex , -1 , "蠟扠③腔謐毞弅弅酗擇橈蠟腔樓�諴�" , CHAR_COLORRED ) ; 
 		}else if ( ChatRoom[ Num ].NowPeople >= MAX_PPLINROOM ) {
-			CHAR_talkToCli ( toindex , -1 , "您申请的聊天室人数已满！" , CHAR_COLORRED ) ; 
-			CHAR_talkToCli ( myindex , -1 , "聊天室人数已满！" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( toindex , -1 , "蠟扠③腔謐毞弅�侕�眒雛ㄐ" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( myindex , -1 , "謐毞弅�侕�眒雛ㄐ" , CHAR_COLORRED ) ; 
 		}
 	}
 	ChatRoom_Refresh ( Num ) ; 
@@ -804,7 +804,7 @@ void ChatRoom_List ( int fd )
 	char token[2048] = "B|";
 	for ( i = 0 ; i < MAX_CHATROOM ; i ++ ) {
 		if ( ChatRoom[ i ].useFlag == TRUE ) {
-			sprintf ( buf , "聊天室%2d资讯：室名=>%20s , 室长=>%16s , 人数=>%2d" , 
+			sprintf ( buf , "謐毞弅%2d訧捅ㄩ弅靡=>%20s , 弅酗=>%16s , �侕�=>%2d" , 
 				i , 
 				ChatRoom[ i ].RoomName , 
 				CHAR_getChar ( ChatRoom[ i ].Maker , CHAR_NAME ) , 
@@ -869,31 +869,31 @@ void ChatRoom_recvall ( int fd , char *data )
 	getStringFromIndexWithDelim( data , "|", 1, Head, sizeof(Head));
 	getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 
-	if ( strcmp ( Head , "C" ) == 0 ) { // 成立频道
+	if ( strcmp ( Head , "C" ) == 0 ) { // 傖蕾け耋
 		if ( !ChatRoom_Create ( myindex , message ) )
 			print("\nSyu log Create Channel Error" );
-	}else if ( strcmp ( Head , "D" ) == 0 ) { // 删除频道
+	}else if ( strcmp ( Head , "D" ) == 0 ) { // 刉壺け耋
 		if ( !ChatRoom_Destroy ( myindex ) )
 			print("\nSyu log Destroy Channel Error" ) ; 
-	}else if ( strcmp ( Head , "A" ) == 0 ) {// 同意加入频道
+	}else if ( strcmp ( Head , "A" ) == 0 ) {// 肮砩樓�踰紫�
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		getStringFromIndexWithDelim( data , "|", 3, buf, sizeof(buf));
 		ChatRoom_Agree ( myindex , atoi( message ) , atoi( buf ) ) ; 
-	}else if ( strcmp ( Head , "J" ) == 0 ) {// 申请频道
+	}else if ( strcmp ( Head , "J" ) == 0 ) {// 扠③け耋
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		ChatRoom_Join ( myindex , atoi( message ) ) ; 
-	}else if ( strcmp ( Head , "L" ) == 0 ) {// 离开频道
+	}else if ( strcmp ( Head , "L" ) == 0 ) {// 燭羲け耋
 		ChatRoom_Leave ( myindex ) ; 
-	}else if ( strcmp ( Head , "K" ) == 0 ) {//踢出频道
+	}else if ( strcmp ( Head , "K" ) == 0 ) {//杺堤け耋
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		ChatRoom_Kick ( myindex , atoi( message ) ); 
-	}else if ( strcmp ( Head , "M" ) == 0 ) { // 更换室长
+	}else if ( strcmp ( Head , "M" ) == 0 ) { // 載遙弅酗
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		ChatRoom_Make ( myindex , atoi( message ) ); 
-	}else if ( strcmp ( Head , "T" ) == 0 ) {// 频道讯息
+	}else if ( strcmp ( Head , "T" ) == 0 ) {// け耋捅洘
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		ChatRoom_Message ( myindex , message ) ; 
-	}else if ( strcmp ( Head , "B" ) == 0 ) {// 聊天室清单
+	}else if ( strcmp ( Head , "B" ) == 0 ) {// 謐毞弅ь等
 		ChatRoom_List ( fd );
 	}else 
 		print("\nSyu log None");

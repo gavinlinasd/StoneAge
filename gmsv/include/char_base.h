@@ -20,17 +20,17 @@
 #ifdef _NEW_MANOR_LAW
 #define MAX_PERSONAL_MOMENTUM 10000000
 #endif
-#ifdef _PERSONAL_FAME	// Arminius 8.30: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius 8.30: 模逜跺�侂驫�
 #define MAX_PERSONALFAME 100000000
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
-#define CHAR_SKILLMAXHAVE   26		// 职业技能上限
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#define CHAR_SKILLMAXHAVE   26		// 眥珛撮夔奻癹
 #else
 #define CHAR_SKILLMAXHAVE   5
 #endif
 
 #ifdef _STREET_VENDOR
-#define MAX_SELL_ITEM 20					// 道具加宠物共可卖二十个
+#define MAX_SELL_ITEM 20					// 耋撿樓唾昜僕褫闖媼坋跺
 #endif
 #define CHAR_TITLEMAXHAVE   30
 
@@ -39,7 +39,7 @@
 #define CHAR_MAXPETHAVE         5
 #define CHAR_MAXPERSONAGOLD		50000000
 
-#ifdef _ADD_POOL_ITEM			   // WON ADD 增加可寄放的道具
+#ifdef _ADD_POOL_ITEM			   // WON ADD 崝樓褫敵溫腔耋撿
 #define CHAR_MAXPOOLPETHAVE         15
 #else
 #define CHAR_MAXPOOLPETHAVE         10
@@ -53,18 +53,18 @@
 #define CHAR_DEFAULTMAXAI		(60)
 #define CHAR_MAXVARIABLEAI		(100*100)
 #define CHAR_MINVARIABLEAI		(-100*100)
-#define CHAR_POISONSTRING           "中毒"
-#define CHAR_RECOVERPOISONSTRING    "解毒了"
-#define CHAR_PARALYSISSTRING        "麻痹了"
-#define CHAR_RECOVERPARALYSISSTRING "麻醉退了"
-#define CHAR_SILENCESTRING          "无法念魔法了"
-#define CHAR_RECOVERSILENCESTRING   "可以念魔法了"
-#define CHAR_STONESTRING            "石化了"
-#define CHAR_RECOVERSTONESTRING     "变灵活了"
-#define CHAR_DARKNESSSTRING         "四周不见了"
-#define CHAR_RECOVERDARKNESSSTRING  "四周出现了"
-#define CHAR_CONFUSIONSTRING        "陷入恐慌"
-#define CHAR_RECOVERCONFUSIONSTRING "恢复正常"
+#define CHAR_POISONSTRING           "笢馮"
+#define CHAR_RECOVERPOISONSTRING    "賤馮賸"
+#define CHAR_PARALYSISSTRING        "鎊敘賸"
+#define CHAR_RECOVERPARALYSISSTRING "鎊郳豖賸"
+#define CHAR_SILENCESTRING          "拸楊癩藹楊賸"
+#define CHAR_RECOVERSILENCESTRING   "褫眕癩藹楊賸"
+#define CHAR_STONESTRING            "坒趙賸"
+#define CHAR_RECOVERSTONESTRING     "曹鍾魂賸"
+#define CHAR_DARKNESSSTRING         "侐笚祥獗賸"
+#define CHAR_RECOVERDARKNESSSTRING  "侐笚堤珋賸"
+#define CHAR_CONFUSIONSTRING        "疪�踸硐�"
+#define CHAR_RECOVERCONFUSIONSTRING "閥葩淏都"
 
 #define CHAR_DEFAULTSEESIZ  23
 #define MAP_CHAR_DEFAULTSEESIZ      (CHAR_DEFAULTSEESIZ+4)
@@ -77,9 +77,9 @@ typedef enum
     CHAR_DECORATION1,
     CHAR_DECORATION2,
 #ifdef _ITEM_EQUITSPACE
-	CHAR_EQBELT,	//腰带
-	CHAR_EQSHIELD,	//盾
-	CHAR_EQSHOES,	//鞋子
+	CHAR_EQBELT,	//殈湍
+	CHAR_EQSHIELD,	//嗎
+	CHAR_EQSHOES,	//衧赽
 #endif
 #ifdef _EQUIT_NEWGLOVE
 	CHAR_EQGLOVE,
@@ -95,11 +95,11 @@ typedef struct tagCharHaveSkill
 
 #ifdef _STREET_VENDOR
 typedef struct STREET_VENDDOR_t{
-	int pile;												// 数量
-	int price;											// 价格
-	int index;											// 索引
-	int kind;											// 道具或是宠物 0:道具 1:宠物
-	BOOL usage;											// 是否使用中
+	int pile;												// 杅講
+	int price;											// 歎跡
+	int index;											// 坰竘
+	int kind;											// 耋撿麼岆唾昜 0:耋撿 1:唾昜
+	BOOL usage;											// 岆瘁妏蚚笢
 }StreetVendor_t;
 
 enum{
@@ -213,11 +213,11 @@ typedef enum
 	CHAR_TYPECHECKMAN,
 	CHAR_TYPEJANKEN,
 	CHAR_TYPETRANSMIGRATION,
-	CHAR_TYPEFMWARPMAN,			// 家族ＰＫ场管理员
-	CHAR_TYPEFMSCHEDULEMAN,		// 家族ＰＫ场登记员
-	CHAR_TYPEMANORSCHEDULEMAN,	// 庄园ＰＫ场预约人
+	CHAR_TYPEFMWARPMAN,			// 模逜�苺佼★傱顈�
+	CHAR_TYPEFMSCHEDULEMAN,		// 模逜�苺佼△Фл�
+	CHAR_TYPEMANORSCHEDULEMAN,	// 蚽埶�苺佼√夭暫�
 #ifdef _SERVICE
-	CHAR_TYPESTONESERVICEMAN,       // 石器服务员
+	CHAR_TYPESTONESERVICEMAN,       // 坒ん督昢埜
 #endif 
 #ifdef _GAMBLE_BANK
 	CHAR_GAMBLEBANK,
@@ -256,7 +256,7 @@ typedef enum
 	CHAR_FREESKILLSHOP,
 #endif
 #ifdef _PETRACE
-	CHAR_PETRACEMASTER,			// 宠物竞速
+	CHAR_PETRACEMASTER,			// 唾昜噥厒
 	CHAR_PETRACEPET,
 #endif
 
@@ -264,7 +264,7 @@ typedef enum
   CHAR_TYPEAUCTIONEER,
 #endif
 
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
   CHAR_TYPEALLDOMAN,
 #endif
 
@@ -278,12 +278,12 @@ typedef enum
   CHAR_TYPEVERYWELFARE,
 #endif
 
-#ifdef _NPC_WELFARE_2				// WON ADD 职业NPC-2
+#ifdef _NPC_WELFARE_2				// WON ADD 眥珛NPC-2
   CHAR_TYPEWELFARE2,
 #endif
 
 #ifdef _RACEMAN
-	CHAR_RACEMAN,					// CYG 猎宠大会
+	CHAR_RACEMAN,					// CYG 轂唾湮頗
 #endif
 
     CHAR_TYPENUM,
@@ -312,10 +312,10 @@ typedef enum
 
 typedef enum
 {
-      CHAR_TRADE_FREE,      /* 可交易 */
-      CHAR_TRADE_SENDING,   /* 交易请求中 */
-      CHAR_TRADE_TRADING,   /* 交易中 */
-      CHAR_TRADE_LOCK,	    /* 交易锁定中 */
+      CHAR_TRADE_FREE,      /* 褫蝠眢 */
+      CHAR_TRADE_SENDING,   /* 蝠眢③⑴笢 */
+      CHAR_TRADE_TRADING,   /* 蝠眢笢 */
+      CHAR_TRADE_LOCK,	    /* 蝠眢坶隅笢 */
 }CHAR_TRADE_MODE;
                   
 typedef enum
@@ -338,12 +338,12 @@ typedef enum
 #ifdef _DROPSTAKENEW
 typedef enum
 {
-	DICE_BIG = 1,		// 骰子_大
-	DICE_SMALL,			// 骰子_小
-	DICE_ALLEAT,		// 骰子_通吃
-	PET_RACE1 = 5,		// 竞速场_宠物1
-	PET_RACE2,			// 竞速场_宠物2
-	PET_RACE3,			// 竞速场_宠物3
+	DICE_BIG = 1,		// 鷋赽_湮
+	DICE_SMALL,			// 鷋赽_苤
+	DICE_ALLEAT,		// 鷋赽_籵勛
+	PET_RACE1 = 5,		// 噥厒部_唾昜1
+	PET_RACE2,			// 噥厒部_唾昜2
+	PET_RACE3,			// 噥厒部_唾昜3
 	ROULETTE1 = 11,	ROULETTE2, ROULETTE3, ROULETTE4, ROULETTE5,	ROULETTE6, ROULETTE7, 
 	ROULETTE8, ROULETTE9, ROULETTE10, ROULETTE11, ROULETTE12, ROULETTE13, ROULETTE14,
 	ROULETTE15,	ROULETTE16,	ROULETTE17,	ROULETTE18,	ROULETTE19,	ROULETTE20,	
@@ -352,8 +352,8 @@ typedef enum
 	ROULETTE33,	ROULETTE34,	ROULETTE35,	ROULETTE36,	ROULETTE37,	ROULETTE38,
 	ROULETTE39,	ROULETTE40,
 	ROULETTE41 = 71, ROULETTE42, ROULETTE43, ROULETTE44, ROULETTE45,
-	ROULETTE51 = 101, ROULETTE52, ROULETTE53,	//横列
-	ROULETTE61 = 111, ROULETTE62,				//1到10 10到11
+	ROULETTE51 = 101, ROULETTE52, ROULETTE53,	//筵蹈
+	ROULETTE61 = 111, ROULETTE62,				//1善10 10善11
 	PETFIGHT_WIN1 = 120,
 	PETFIGHT_WIN2,
 	PETFIGHT_DUEL,
@@ -361,7 +361,7 @@ typedef enum
 #endif
 
 #ifdef _CHAR_POOLITEM
-#ifdef _NPC_DEPOTPET // 开放宠物仓库同时增加道具仓库容量
+#ifdef _NPC_DEPOTPET // 羲溫唾昜累踱肮奀崝樓耋撿累踱�暕�
 #define CHAR_MAXDEPOTITEMHAVE 100
 #else
 #define CHAR_MAXDEPOTITEMHAVE 60
@@ -373,7 +373,7 @@ typedef enum
 #endif
 
 
-#ifdef _ADD_POOL_ITEM				// (不可开) WON ADD 增加可寄放的道具
+#ifdef _ADD_POOL_ITEM				// (祥褫羲) WON ADD 崝樓褫敵溫腔耋撿
 #define CHAR_MAXPOOLITEMHAVE	30
 #else
 #define CHAR_MAXPOOLITEMHAVE	20
@@ -466,7 +466,7 @@ typedef enum
 	CHAR_ENDEVENT5,				/* (128~159) */
 	CHAR_ENDEVENT6,				/* (160~191) */
 #endif
-#ifdef _ADD_NEWEVENT            // WON 多增任务旗标
+#ifdef _ADD_NEWEVENT            // WON 嗣崝�恄鮿麇�
 	CHAR_ENDEVENT7,					
 	CHAR_ENDEVENT8,
 #endif
@@ -479,27 +479,27 @@ typedef enum
 	CHAR_NOWEVENT5,				/* (128~159)	*/
 	CHAR_NOWEVENT6,				/* (160~191)	*/
 #endif
-#ifdef _ADD_NEWEVENT            // WON 多增任务旗标	
+#ifdef _ADD_NEWEVENT            // WON 嗣崝�恄鮿麇�	
 	CHAR_NOWEVENT7,				
-	CHAR_NOWEVENT8,				// 224~255 精灵召唤专用
+	CHAR_NOWEVENT8,				// 224~255 儕鍾欸遢蚳蚚
 #endif
 
 	CHAR_TRANSMIGRATION,
 	CHAR_TRANSEQUATION,
     CHAR_INITDATA,
     CHAR_SILENT,				/* char shutup time */    
-    CHAR_FMINDEX,				// 家族 index
-    CHAR_FMLEADERFLAG,			/* 家族成员种类
-    							 * FMMEMBER_NONE	:没有加入任何家族
-    							 * FMMEMBER_APPLY	:申请加入家族中
-    							 * FMMEMBER_LEADER	:族长
-    							 * FMMEMBER_MEMBER	:一般成员
-    							 * FMMEMBER_ELDER	:长老    
-    							 * FMMEMBER_INVITE	:祭司			// 暂时不用
-    							 * FMMEMBER_BAILEE	:财务长			// 暂时不用
-    							 * FMMEMBER_VICELEADER  :副族长		// 暂时不用
+    CHAR_FMINDEX,				// 模逜 index
+    CHAR_FMLEADERFLAG,			/* 模逜傖埜笱濬
+    							 * FMMEMBER_NONE	:羶衄樓�躽庥弮眢�
+    							 * FMMEMBER_APPLY	:扠③樓�趧眢樛�
+    							 * FMMEMBER_LEADER	:逜酗
+    							 * FMMEMBER_MEMBER	:珨啜傖埜
+    							 * FMMEMBER_ELDER	:酗橾    
+    							 * FMMEMBER_INVITE	:撬侗			// 婃奀祥蚚
+    							 * FMMEMBER_BAILEE	:笙昢酗			// 婃奀祥蚚
+    							 * FMMEMBER_VICELEADER  :萵逜酗		// 婃奀祥蚚
     							*/
-    CHAR_FMSPRITE,		// 家族守护精灵
+    CHAR_FMSPRITE,		// 模逜忐誘儕鍾
 
     CHAR_BANKGOLD,
     CHAR_RIDEPET,
@@ -509,11 +509,11 @@ typedef enum
 #endif
     CHAR_LIMITLEVEL,
 #ifdef _PET_FUSION
-	CHAR_FUSIONCODE,		//物种编码
-	CHAR_FUSIONINDEX,		//孵化宠物编号
-	CHAR_FUSIONRAISE,		//  养次数
-	CHAR_FUSIONBEIT,		//宠蛋旗标
-	CHAR_FUSIONTIMELIMIT,	//  养时间
+	CHAR_FUSIONCODE,		//昜笱晤鎢
+	CHAR_FUSIONINDEX,		//痿趙唾昜晤瘍
+	CHAR_FUSIONRAISE,		//  欱棒杅
+	CHAR_FUSIONBEIT,		//唾粥よ梓
+	CHAR_FUSIONTIMELIMIT,	//  欱奀潔
 #endif
 
 #ifdef _DEATH_CONTEND
@@ -521,7 +521,7 @@ typedef enum
 	CHAR_PKLISTLEADER,
 #endif
 
-#ifdef _PERSONAL_FAME	// Arminius 8.30: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius 8.30: 模逜跺�侂驫�
     CHAR_FAME,
 #endif
 
@@ -530,36 +530,36 @@ typedef enum
 #endif
  
 #ifdef __ATTACK_MAGIC
-		CHAR_EARTH_EXP,						// 玩家的地魔法熟练度
-		CHAR_WATER_EXP,						// 玩家的水魔法熟练度
-		CHAR_FIRE_EXP,						// 玩家的火魔法熟练度
-		CHAR_WIND_EXP,						// 玩家的风魔法熟练度
-		CHAR_EARTH_RESIST,					// 玩家的地魔法抗性
-		CHAR_WATER_RESIST,					// 玩家的水魔法抗性
-		CHAR_FIRE_RESIST,					// 玩家的火魔法抗性
-		CHAR_WIND_RESIST,					// 玩家的风魔法抗性
-		CHAR_EARTH_ATTMAGIC_EXP,			// 玩家的地魔法熟练度经验值
-		CHAR_WATER_ATTMAGIC_EXP,			// 玩家的水魔法熟练度经验值
-		CHAR_FIRE_ATTMAGIC_EXP,				// 玩家的火魔法熟练度经验值
-		CHAR_WIND_ATTMAGIC_EXP,				// 玩家的风魔法熟练度经验值
-	 	CHAR_EARTH_DEFMAGIC_EXP,			// 玩家的地魔法抗性经验值
-		CHAR_WATER_DEFMAGIC_EXP,			// 玩家的水魔法抗性经验值
-		CHAR_FIRE_DEFMAGIC_EXP,				// 玩家的火魔法抗性经验值
-		CHAR_WIND_DEFMAGIC_EXP,				// 玩家的风魔法抗性经验值
+		CHAR_EARTH_EXP,						// 俙模腔華藹楊抇褶僅
+		CHAR_WATER_EXP,						// 俙模腔阨藹楊抇褶僅
+		CHAR_FIRE_EXP,						// 俙模腔鳶藹楊抇褶僅
+		CHAR_WIND_EXP,						// 俙模腔瑞藹楊抇褶僅
+		CHAR_EARTH_RESIST,					// 俙模腔華藹楊蕨俶
+		CHAR_WATER_RESIST,					// 俙模腔阨藹楊蕨俶
+		CHAR_FIRE_RESIST,					// 俙模腔鳶藹楊蕨俶
+		CHAR_WIND_RESIST,					// 俙模腔瑞藹楊蕨俶
+		CHAR_EARTH_ATTMAGIC_EXP,			// 俙模腔華藹楊抇褶僅冪桄硉
+		CHAR_WATER_ATTMAGIC_EXP,			// 俙模腔阨藹楊抇褶僅冪桄硉
+		CHAR_FIRE_ATTMAGIC_EXP,				// 俙模腔鳶藹楊抇褶僅冪桄硉
+		CHAR_WIND_ATTMAGIC_EXP,				// 俙模腔瑞藹楊抇褶僅冪桄硉
+	 	CHAR_EARTH_DEFMAGIC_EXP,			// 俙模腔華藹楊蕨俶冪桄硉
+		CHAR_WATER_DEFMAGIC_EXP,			// 俙模腔阨藹楊蕨俶冪桄硉
+		CHAR_FIRE_DEFMAGIC_EXP,				// 俙模腔鳶藹楊蕨俶冪桄硉
+		CHAR_WIND_DEFMAGIC_EXP,				// 俙模腔瑞藹楊蕨俶冪桄硉
 #endif
 
 
 #ifdef _GAMBLE_BANK
-		CHAR_PERSONAGOLD,	//赌场个人银行
+		CHAR_PERSONAGOLD,	//傭部跺�刳靇�
 #endif
 #ifdef _DROPSTAKENEW
-		CHAR_GAMBLENUM,		//赌场积分
+		CHAR_GAMBLENUM,		//傭部儅煦
 #endif
-#ifdef _ADD_ACTION          //npc动作
+#ifdef _ADD_ACTION          //npc雄釬
 		CHAR_ACTIONSTYLE,
 #endif
 #ifdef _AUCTIONEER
-		CHAR_AUCGOLD,		// 拍卖所得
+		CHAR_AUCGOLD,		// 鼴闖垀腕
 #endif
 #ifdef _PET_EVOLUTION
 		CHAR_EVOLUTIONBASEVTL,
@@ -580,34 +580,34 @@ typedef enum
 #endif
 
 #ifdef _FAMILYBANKSTONELOG
-		CHAR_FMBANKGOLD, //家族银行存款
+		CHAR_FMBANKGOLD, //模逜窅俴湔遴
 #endif
 
 #ifdef _FM_JOINLIMIT
 		CHAR_FMTIMELIMIT,
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
-		PROFESSION_CLASS,			// 职业别
-		PROFESSION_LEVEL,			// 职业等级
-//		PROFESSION_EXP,				// 职业经验值
-		PROFESSION_SKILL_POINT,		// 技能点数
-		ATTACHPILE,					// 增加堆叠
-		PROFESSION_FIRE_P,			// 火熟练度
-		PROFESSION_ICE_P,			// 冰熟练度		
-		PROFESSION_THUNDER_P,		// 雷熟练度
-		PROFESSION_FIRE_R,			// 火抗性
-		PROFESSION_ICE_R,			// 冰抗性	
-		PROFESSION_THUNDER_R,		// 雷抗性
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+		PROFESSION_CLASS,			// 眥珛梗
+		PROFESSION_LEVEL,			// 眥珛脹撰
+//		PROFESSION_EXP,				// 眥珛冪桄硉
+		PROFESSION_SKILL_POINT,		// 撮夔萸杅
+		ATTACHPILE,					// 崝樓剽詁
+		PROFESSION_FIRE_P,			// 鳶抇褶僅
+		PROFESSION_ICE_P,			// 梨抇褶僅		
+		PROFESSION_THUNDER_P,		// 濘抇褶僅
+		PROFESSION_FIRE_R,			// 鳶蕨俶
+		PROFESSION_ICE_R,			// 梨蕨俶	
+		PROFESSION_THUNDER_R,		// 濘蕨俶
 #endif
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 		CHAR_HEROFLOOR, 
 #endif
 #ifdef _PETSKILL_BECOMEPIG
 		CHAR_BECOMEPIG,
-		CHAR_BECOMEPIG_BBI,//要变成的图号
+		CHAR_BECOMEPIG_BBI,//猁曹傖腔芞瘍
 #endif
-		CHAR_LASTLEAVETIME, // Robin add 最後离线时间
+		CHAR_LASTLEAVETIME, // Robin add 郔摽燭盄奀潔
 
 #ifdef _NEW_MANOR_LAW
 		CHAR_MOMENTUM,
@@ -619,20 +619,20 @@ typedef enum
 #endif
 
 #ifdef _ANGEL_SUMMON
-		CHAR_HEROCNT, // 完成勇者任务的次数
+		CHAR_HEROCNT, // 俇傖蚋氪�恄騊譬恀�
 #endif
 
 #ifdef _TEACHER_SYSTEM
-	CHAR_TEACHER_FAME,	// 导师领导声望
+	CHAR_TEACHER_FAME,	// 絳呇鍰絳汒咡
 #endif
 
 #ifdef _RACEMAN
-		CHAR_CHECKIN,	//宠物是否登记
-		CHAR_CATCHCNT1,  //新手限 猎宠次数
-		CHAR_CATCHCNT2,  //老手限 猎宠次数
-		CHAR_CATCHCNT3,  //家族限 猎宠次数
-		CHAR_CATCHCNT4,  //老手不限 猎宠次数
-		CHAR_CATCHCNT5,  //老手不限 猎宠次数
+		CHAR_CHECKIN,	//唾昜岆瘁腎暮
+		CHAR_CATCHCNT1,  //陔忒癹 轂唾棒杅
+		CHAR_CATCHCNT2,  //橾忒癹 轂唾棒杅
+		CHAR_CATCHCNT3,  //模逜癹 轂唾棒杅
+		CHAR_CATCHCNT4,  //橾忒祥癹 轂唾棒杅
+		CHAR_CATCHCNT5,  //橾忒祥癹 轂唾棒杅
 		CHAR_KINDCNT1,	/*   (0~31)		*/
 		CHAR_KINDCNT2,  /*   (32~63)		*/
 		CHAR_KINDCNT3,	/*   (64~95)		*/
@@ -646,7 +646,7 @@ typedef enum
 #endif
 
 #ifdef _GM_ITEM
-	CHAR_GMTIME,       // 玩家GM命令次数
+	CHAR_GMTIME,       // 俙模GM韜鍔棒杅
 #endif
 
 		CHAR_DATAINTNUM,
@@ -654,23 +654,23 @@ typedef enum
 }CHAR_DATAINT;
 
 typedef enum {
-    CHAR_MODAI    			= CHAR_CHARM,    		/*  矢永玄  及及镝擦艘膜恳袄    */
-	CHAR_VARIABLEAI 		= CHAR_LUCK,			/*  矢永玄及镝擦艘  祭袄  ㄠㄟㄟ  仄凶袄匹  匀化云仁   */
-    CHAR_SLOT 				= CHAR_DEFAULTPET,		/* 檗  毛本永玄请  月旦夫永玄醒  矢永玄互银迕  */
-   	CHAR_PETGETLV			= CHAR_CHATVOLUME,		/* 必永玄今木凶伊矛伙  矢永玄及心银迕   */
-    CHAR_PUTPETTIME			= CHAR_LOGINCOUNT,		/*  矢永玄互哗  卞  井木凶凛棉 */
-	CHAR_MAILMODE 			= CHAR_RADARSTRENGTH,	/*   矢永玄及心银迕  丢□伙霜耨橇谪 */
-    CHAR_ALLOCPOINT			= CHAR_LEVELUPPOINT,	/* 伊矛伙失永皿凛及喃曰蕊曰禾奶件玄(矢永玄迕) */
-    CHAR_PETMAILBUFINDEX	= CHAR_GETPETCOUNT, 	/* 矢永玄丢□伙(offmsg)尺及index */
-	CHAR_PETMAILIDLETIME	= CHAR_SENDMAILCOUNT,	/* 矢永玄丢□伙及啃及凛棉卅升 */
-	CHAR_PETMAILFROMFLOOR	= CHAR_DUELBATTLECOUNT,	/* 丢□伙毛霜匀凶凛及白夫失 */
-	CHAR_PETMAILFROMX		= CHAR_DUELWINCOUNT,	/* 丢□伙毛霜匀凶凛及  甄   */
-	CHAR_PETMAILFROMY		= CHAR_DUELLOSECOUNT,	/* 丢□伙毛霜匀凶凛及  甄   */
-	CHAR_PETMAILEFFECT		= CHAR_DUELSTWINCOUNT,	/* 矢永玄丢□伙及请蜇及巨白尼弁玄  寞 */
-	CHAR_PETSENDMAILCOUNT	= CHAR_TALKCOUNT,		/* 矢永玄互丢□伙毛扪氏分荚醒 */
-    CHAR_PETRANK			= CHAR_LASTTIMESETLUCK, /* 矢永玄及仿件弁(矢永玄迕  ㄠ  ㄥ［ㄟ反巨仿□迕 */
-	CHAR_PETID				= CHAR_DUELMAXSTWINCOUNT,/* 矢永玄及  件皿伊□玄及     */
-    CHAR_PETFAMILY		= CHAR_FMLEADERFLAG,		// CoolFish: Family 判断是否为家族守护兽
+    CHAR_MODAI    			= CHAR_CHARM,    		/*  妐蚗哱  摯摯櫆笠刳臚諜偯    */
+	CHAR_VARIABLEAI 		= CHAR_LUCK,			/*  妐蚗哱摯櫆笠刳  撬偯  兒兔兔  媃倜偯ぁ  埱趙堁��   */
+    CHAR_SLOT 				= CHAR_DEFAULTPET,		/* 歕  禱掛蚗哱③  堎筒痲蚗哱倳  妐蚗哱誑窅暵  */
+   	CHAR_PETGETLV			= CHAR_CHATVOLUME,		/* 斛蚗哱踏躂倜畛穫鳴  妐蚗哱摯陑窅暵   */
+    CHAR_PUTPETTIME			= CHAR_LOGINCOUNT,		/*  妐蚗哱誑貍  勗  凝躂倜鄹蹬 */
+	CHAR_MAILMODE 			= CHAR_RADARSTRENGTH,	/*   妐蚗哱摯陑窅暵  隍↓鳴邞嚭Щ稃 */
+    CHAR_ALLOCPOINT			= CHAR_LEVELUPPOINT,	/* 畛穫鳴囮蚗鏤鄹摯鄎堇�擸遣昉抯�哱(妐蚗哱暵) */
+    CHAR_PETMAILBUFINDEX	= CHAR_GETPETCOUNT, 	/* 妐蚗哱隍↓鳴(offmsg)喜摯index */
+	CHAR_PETMAILIDLETIME	= CHAR_SENDMAILCOUNT,	/* 妐蚗哱隍↓鳴摯諱摯鄹蹬埵汔 */
+	CHAR_PETMAILFROMFLOOR	= CHAR_DUELBATTLECOUNT,	/* 隍↓鳴禱邞埱倜鄹摯啞痲囮 */
+	CHAR_PETMAILFROMX		= CHAR_DUELWINCOUNT,	/* 隍↓鳴禱邞埱倜鄹摯  淢   */
+	CHAR_PETMAILFROMY		= CHAR_DUELLOSECOUNT,	/* 隍↓鳴禱邞埱倜鄹摯  淢   */
+	CHAR_PETMAILEFFECT		= CHAR_DUELSTWINCOUNT,	/* 妐蚗哱隍↓鳴摯③藯摯操啞攝袲哱  蠕 */
+	CHAR_PETSENDMAILCOUNT	= CHAR_TALKCOUNT,		/* 妐蚗哱誑隍↓鳴禱痶庌煦樊倳 */
+    CHAR_PETRANK			= CHAR_LASTTIMESETLUCK, /* 妐蚗哱摯溘璃袲(妐蚗哱暵  兒  典�菬葽晷瑀癒籓� */
+	CHAR_PETID				= CHAR_DUELMAXSTWINCOUNT,/* 妐蚗哱摯  璃鏤畛↓哱摯     */
+    CHAR_PETFAMILY		= CHAR_FMLEADERFLAG,		// CoolFish: Family 瓚剿岆瘁峈模逜忐誘忤
 }CHAR_PET;
 
 
@@ -694,17 +694,17 @@ typedef enum
 	CHAR_GMIDENTIFY,
 #endif
 #ifdef _TEACHER_SYSTEM
-	CHAR_TEACHER_ID,		// 导师帐号
-	CHAR_TEACHER_NAME,	// 导师名字
+	CHAR_TEACHER_ID,		// 絳呇梛瘍
+	CHAR_TEACHER_NAME,	// 絳呇靡趼
 #endif
 #ifdef _ITEM_SETLOVER
-	CHAR_LOVE,         // 结婚判断
-	CHAR_LOVERID,      // 爱人帐号
-	CHAR_LOVERNAME,    // 爱人名字
+	CHAR_LOVE,         // 賦駁瓚剿
+	CHAR_LOVERID,      // 乾�劼妧�
+	CHAR_LOVERNAME,    // 乾�佸�趼
 #endif
 
 #ifdef _GM_ITEM
-	CHAR_GMFUNCTION,   // 玩家GM命令
+	CHAR_GMFUNCTION,   // 俙模GM韜鍔
 #endif
 
     CHAR_DATACHARNUM,
@@ -730,13 +730,13 @@ typedef enum
     CHAR_ISTRADECARD,
     CHAR_ISTRADE,
 #ifdef _CHANNEL_MODIFY
-		CHAR_ISTELL,				//密语频道开关
-		CHAR_ISFM,					//家族频道开关
-		CHAR_ISOCC,					//职业频道开关
-		CHAR_ISSAVE,				//对话储存开关
-		CHAR_ISCHAT,				//聊天室
+		CHAR_ISTELL,				//躇逄け耋羲壽
+		CHAR_ISFM,					//模逜け耋羲壽
+		CHAR_ISOCC,					//眥珛け耋羲壽
+		CHAR_ISSAVE,				//勤趕揣湔羲壽
+		CHAR_ISCHAT,				//謐毞弅
 #endif
-#ifdef _AUCPROTOCOL				// (不可开) Syu ADD 拍卖频道开关Protocol
+#ifdef _AUCPROTOCOL				// (祥褫羲) Syu ADD 鼴闖け耋羲壽Protocol
 	CHAR_ISAUC,
 #endif
     CHAR_FLGNUM,
@@ -745,17 +745,17 @@ typedef enum
 #define CHAR_FS_PARTY			(1 << 0)
 #define CHAR_FS_BATTLE		(1 << 1)
 #define CHAR_FS_DUEL    	(1 << 2)
-#define CHAR_FS_PARTYCHAT	(1 << 3)	//队伍频道开关
+#define CHAR_FS_PARTYCHAT	(1 << 3)	//勦斪け耋羲壽
 #define CHAR_FS_TRADECARD	(1 << 4)
 #define CHAR_FS_TRADE			(1 << 5)
 #ifdef _CHANNEL_MODIFY
-#define CHAR_FS_TELL			(1 << 6)	//密语频道开关
-#define CHAR_FS_FM				(1 << 7)	//家族频道开关
-#define	CHAR_FS_OCC				(1 << 8)	//职业频道开关
-#define	CHAR_FS_SAVE			(1 << 9)	//对话储存开关
-#define CHAR_FS_CHAT			(1 << 10)	//聊天室开关
+#define CHAR_FS_TELL			(1 << 6)	//躇逄け耋羲壽
+#define CHAR_FS_FM				(1 << 7)	//模逜け耋羲壽
+#define	CHAR_FS_OCC				(1 << 8)	//眥珛け耋羲壽
+#define	CHAR_FS_SAVE			(1 << 9)	//勤趕揣湔羲壽
+#define CHAR_FS_CHAT			(1 << 10)	//謐毞弅羲壽
 #endif
-#ifdef _AUCPROTOCOL				// (不可开) Syu ADD 拍卖频道开关Protocol
+#ifdef _AUCPROTOCOL				// (祥褫羲) Syu ADD 鼴闖け耋羲壽Protocol
 #define CHAR_FS_AUC			(1 << 6)
 #endif
 
@@ -778,10 +778,10 @@ typedef enum
     CHAR_WORKFIXFIREAT,
     CHAR_WORKFIXWINDAT,
 #ifdef _PROFESSION_ADDSKILL
-	CHAR_WORKFIXEARTHAT_BOUNDARY, //地结界  左16位元存放加强百分比 右16位元存放回合数
-    CHAR_WORKFIXWATERAT_BOUNDARY, //水结界
-    CHAR_WORKFIXFIREAT_BOUNDARY,  //火结界
-	CHAR_WORKFIXWINDAT_BOUNDARY,  //风结界
+	CHAR_WORKFIXEARTHAT_BOUNDARY, //華賦賜  酘16弇啋湔溫樓Ч啃煦掀 衵16弇啋湔溫隙磁杅
+    CHAR_WORKFIXWATERAT_BOUNDARY, //阨賦賜
+    CHAR_WORKFIXFIREAT_BOUNDARY,  //鳶賦賜
+	CHAR_WORKFIXWINDAT_BOUNDARY,  //瑞賦賜
 #endif
 	CHAR_WORKMAXHP,
     CHAR_WORKMAXMP,
@@ -801,7 +801,7 @@ typedef enum
 	CHAR_WORKFIXSEQUENCE,
 	CHAR_WORKSEQUENCEPOWER,
 	CHAR_WORKATTACHPILE,
-	CHAR_WORKHITRIGHT,	//额外命中
+	CHAR_WORKHITRIGHT,	//塗俋韜笢
 #endif
 #ifdef _ITEMSET6_TXT
 	CHAR_WORKNEGLECTGUARD,
@@ -827,10 +827,10 @@ typedef enum
     CHAR_WORKSTONE,
     CHAR_WORKDRUNK,
     CHAR_WORKCONFUSION,
-    CHAR_WORKWEAKEN,             //虚弱  vincent add  _MAGIC_WEAKEN
-	CHAR_WORKDEEPPOISON,         //剧毒  vincent add _MAGIC_DEEPPOISON
-	CHAR_WORKBARRIER,            //魔障  vincent add _MAGIC_BARRIER
-	CHAR_WORKNOCAST,             //沉默  vincent add _MAGIC_NOCAST  
+    CHAR_WORKWEAKEN,             //剞��  vincent add  _MAGIC_WEAKEN
+	CHAR_WORKDEEPPOISON,         //曄馮  vincent add _MAGIC_DEEPPOISON
+	CHAR_WORKBARRIER,            //藹梤  vincent add _MAGIC_BARRIER
+	CHAR_WORKNOCAST,             //麥蘇  vincent add _MAGIC_NOCAST  
     CHAR_WORKMODPOISON,
     CHAR_WORKMODPARALYSIS,
     CHAR_WORKMODSLEEP,
@@ -839,16 +839,16 @@ typedef enum
     CHAR_WORKMODCONFUSION,
 	CHAR_WORKMODWEAKEN,
 	CHAR_WORKMODDEEPPOISON,
-	CHAR_WORKMODBARRIER,		//魔障
-	CHAR_WORKMODNOCAST,			//沉默
-	CHAR_WORKMODCRITICAL,		//一击必杀
+	CHAR_WORKMODBARRIER,		//藹梤
+	CHAR_WORKMODNOCAST,			//麥蘇
+	CHAR_WORKMODCRITICAL,		//珨僻斛伀
     CHAR_WORKULTIMATE,
     CHAR_WORKPARTYMODE,
-    CHAR_WORKTRADEMODE,         /* 交易模式
-    							 * 0: CHAR_TRADE_FREE   :可交易
-                                 * 1: CHAR_TRADE_SENDING:交易请求中
-                                 * 2: CHAR_TRADE_TRADING:交易中
-                                 * 3: CHAR_TRADE_LOCK   :交易锁定中
+    CHAR_WORKTRADEMODE,         /* 蝠眢耀宒
+    							 * 0: CHAR_TRADE_FREE   :褫蝠眢
+                                 * 1: CHAR_TRADE_SENDING:蝠眢③⑴笢
+                                 * 2: CHAR_TRADE_TRADING:蝠眢笢
+                                 * 3: CHAR_TRADE_LOCK   :蝠眢坶隅笢
                                 */
     CHAR_WORKPARTYINDEX1,
     CHAR_WORKPARTYINDEX2,
@@ -885,16 +885,16 @@ typedef enum
 	CHAR_NPCWORKINT13,
     CHAR_WORKWARPCHECK,
     CHAR_TENSEICHECKED,    
-    CHAR_WORKFMINDEXI,		// 家族索引 index
-    CHAR_WORKFMCHANNEL,		// 家族频道
+    CHAR_WORKFMINDEXI,		// 模逜坰竘 index
+    CHAR_WORKFMCHANNEL,		// 模逜け耋
     CHAR_WORKFMCHANNELQUICK,
-    CHAR_WORKFMFLOOR,		// 家族据点图层
-    CHAR_WORKFMDP,			// 家族ＤＰ值
-    CHAR_WORKFMPKFLAG,		// 是否正参与家族ＰＫ 1:Yes
-    CHAR_WORKFMSETUPFLAG,	// 家族是否已正式成立
+    CHAR_WORKFMFLOOR,		// 模逜擂萸芞脯
+    CHAR_WORKFMDP,			// 模逜�耀倗�
+    CHAR_WORKFMPKFLAG,		// 岆瘁淏統迵模逜�苺� 1:Yes
+    CHAR_WORKFMSETUPFLAG,	// 模逜岆瘁眒淏宒傖蕾
     CHAR_WORKFMMANINDEX,	// FMWARPMAN Index
-    CHAR_WORKFMCHARINDEX,	// 家族成员索引 index
-    CHAR_WORKBATTLEFLAG,    // -1(战斗不能)，1(可战斗)    
+    CHAR_WORKFMCHARINDEX,	// 模逜傖埜坰竘 index
+    CHAR_WORKBATTLEFLAG,    // -1(桵須祥夔)ㄛ1(褫桵須)    
 
 	CHAR_WORK_PET0_STAT,        
 	CHAR_WORK_PET1_STAT,
@@ -902,12 +902,12 @@ typedef enum
 	CHAR_WORK_PET3_STAT,
 	CHAR_WORK_PET4_STAT,	
 
-    CHAR_WORKLOGINTIME,		// 玩家登入时间
+    CHAR_WORKLOGINTIME,		// 俙模腎�輮掉�
     CHAR_WORKTALKCOUNT,
     CHAR_WORKTALKTIME,
-    CHAR_WORKPETFOLLOW,		// 宠物跟随
-    CHAR_WORKPETFALL,		// 战斗落马
-    CHAR_WORKLEADERCHANGE,	// 族长换位index
+    CHAR_WORKPETFOLLOW,		// 唾昜躲呴
+    CHAR_WORKPETFALL,		// 桵須邈鎮
+    CHAR_WORKLEADERCHANGE,	// 逜酗遙弇index
 #ifdef _EQUIT_DEFMAGIC
 	CHAR_EQUITDEFMAGIC_E,
 	CHAR_EQUITDEFMAGIC_WA,
@@ -916,13 +916,13 @@ typedef enum
 	CHAR_EQUITQUIMAGIC,
 #endif
 #ifdef _EQUIT_RESIST
-	CHAR_WORKEQUITFIRE,   //装备抗火
-	CHAR_WORKEQUITTHUNDER,//装备抗雷
-	CHAR_WORKEQUITICE,//装备抗冰
-	CHAR_WORKEQUITWEAKEN,//装备抗虚弱
-	CHAR_WORKEQUITBARRIER,//装备抗魔障
-	CHAR_WORKEQUITNOCAST,//装备抗沉默
-	CHAR_WORKEQUITFALLRIDE,//装备抗落马
+	CHAR_WORKEQUITFIRE,   //蚾掘蕨鳶
+	CHAR_WORKEQUITTHUNDER,//蚾掘蕨濘
+	CHAR_WORKEQUITICE,//蚾掘蕨梨
+	CHAR_WORKEQUITWEAKEN,//蚾掘蕨剞��
+	CHAR_WORKEQUITBARRIER,//蚾掘蕨藹梤
+	CHAR_WORKEQUITNOCAST,//蚾掘蕨麥蘇
+	CHAR_WORKEQUITFALLRIDE,//蚾掘蕨邈鎮
 #endif
 #ifdef _PETMAIL_DEFNUMS
 	CHAR_PETMAILNUMS,
@@ -944,7 +944,7 @@ typedef enum
 #endif
 
 #ifdef _LOSE_FINCH_ 
-	CHAR_WORKSPETRELIFE,	//宠物复活特性
+	CHAR_WORKSPETRELIFE,	//唾昜葩魂杻俶
 #endif
 
 #ifdef _CHIKULA_STONE
@@ -990,7 +990,7 @@ typedef enum
 #endif
 
 #ifdef _MARKET_TRADE
-	CHAR_MAPTRADETYPE,	//市集摊位
+	CHAR_MAPTRADETYPE,	//庈摩怉弇
 	CHAR_WORKTRADETYP,
 	CHAR_WORKTRADESELLINDEX,
 #endif
@@ -1006,34 +1006,34 @@ typedef enum
 	CHAR_WORKSUITDEX,
 	CHAR_WORKSUITMODSTR,
 #ifdef _SUIT_ADDENDUM
-    CHAR_WORKRESIST, //异常抗性率
-	CHAR_WORKCOUNTER,//反击率
-	CHAR_WORKMPOWER, //加强法师的魔法( 受影响的法术:火山泉 火星球 召雷术 电流术 暴风雨 冰箭术 冰爆术 世界末日 火龙枪 嗜血成性 嗜血蛊 一针见血 附身术 )
+    CHAR_WORKRESIST, //祑都蕨俶薹
+	CHAR_WORKCOUNTER,//毀僻薹
+	CHAR_WORKMPOWER, //樓Ч楊呇腔藹楊( 忳荌砒腔楊扲:鳶刓�� 鳶陎⑩ 欸濘扲 萇霜扲 惟瑞迾 梨璋扲 梨惇扲 岍賜藺�� 鳶韓Л 岓悛傖俶 岓悛嘍 珨渀獗悛 蜇旯扲 )
 #endif
 #ifdef _SUIT_TWFWENDUM
-	CHAR_WORK_EA,//地
-	CHAR_WORK_WR,//水
-	CHAR_WORK_FI,//火
-	CHAR_WORK_WI,//风
+	CHAR_WORK_EA,//華
+	CHAR_WORK_WR,//阨
+	CHAR_WORK_FI,//鳶
+	CHAR_WORK_WI,//瑞
 #endif
 #ifdef _SUIT_ADDPART3
-	CHAR_WORKDUCKPOWER,//套装回避
-    CHAR_WORKRENOCAST, //沉默抗性率
-	CHAR_WORKSUITSTR_P,//攻提升 单位为%
-	CHAR_WORKSUITTGH_P,//防提升 单位为%
-	CHAR_WORKSUITDEX_P,//敏提升 单位为%
+	CHAR_WORKDUCKPOWER,//杶蚾隙旌
+    CHAR_WORKRENOCAST, //麥蘇蕨俶薹
+	CHAR_WORKSUITSTR_P,//馴枑汔 等弇峈%
+	CHAR_WORKSUITTGH_P,//滅枑汔 等弇峈%
+	CHAR_WORKSUITDEX_P,//鏗枑汔 等弇峈%
 #endif
 #ifdef _SUIT_ADDPART4
-	CHAR_SUITPOISON,   //装备带毒
-	CHAR_WORKMPOWER2,  //与CHAR_WORKMPOWER相同
-	CHAR_WORKUNMPOWER, //抵抗法师的魔法( 受影响的法术:火山泉 火星球 召雷术 电流术 暴风雨 冰箭术 冰爆术 世界末日 火龙枪 嗜血成性 嗜血蛊 一针见血 附身术 )
+	CHAR_SUITPOISON,   //蚾掘湍馮
+	CHAR_WORKMPOWER2,  //迵CHAR_WORKMPOWER眈肮
+	CHAR_WORKUNMPOWER, //萋蕨楊呇腔藹楊( 忳荌砒腔楊扲:鳶刓�� 鳶陎⑩ 欸濘扲 萇霜扲 惟瑞迾 梨璋扲 梨惇扲 岍賜藺�� 鳶韓Л 岓悛傖俶 岓悛嘍 珨渀獗悛 蜇旯扲 )
 #endif
 #endif//_SUIT_ITEM
 
 #ifdef _IMPRECATE_ITEM
-	CHAR_WORKHURTMP,		//伤害 MP
-	CHAR_WORKWISHESHP,		//祝福 hp
-	CHAR_WORKWISHESMP,		//祝福 MP
+	CHAR_WORKHURTMP,		//夼漲 MP
+	CHAR_WORKWISHESHP,		//蛅腦 hp
+	CHAR_WORKWISHESMP,		//蛅腦 MP
 	CHAR_WORKIMPRECATENUM1,
 	CHAR_WORKIMPRECATENUM2,
 	CHAR_WORKIMPRECATENUM3,
@@ -1054,45 +1054,45 @@ typedef enum
 #ifdef _ITEM_CRACKER
 	CHAR_WORKITEM_CRACKER,
 #endif
-#ifdef _ITEM_ADDEXP	//vincent 经验提升
+#ifdef _ITEM_ADDEXP	//vincent 冪桄枑汔
 	CHAR_WORKITEM_ADDEXP,
     CHAR_WORKITEM_ADDEXPTIME,
 #endif
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 	CHAR_WORKHEROFLOOR, 
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
-	CHAR_ENCOUNT_FIX,		// 遇敌率
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+	CHAR_ENCOUNT_FIX,		// 郣菩薹
 	CHAR_ENCOUNT_NUM,
-	CHAR_WORK_F_PROFICIENCY,// 火熟练度
-	CHAR_WORK_I_PROFICIENCY,// 冰熟练度
-	CHAR_WORK_T_PROFICIENCY,// 电熟练度
-	CHAR_WORK_F_RESIST,		// 火抗
-	CHAR_WORK_I_RESIST,		// 冰抗
-	CHAR_WORK_T_RESIST,		// 电抗
-	CHAR_MYSKILLHIT,		// 命中率
+	CHAR_WORK_F_PROFICIENCY,// 鳶抇褶僅
+	CHAR_WORK_I_PROFICIENCY,// 梨抇褶僅
+	CHAR_WORK_T_PROFICIENCY,// 萇抇褶僅
+	CHAR_WORK_F_RESIST,		// 鳶蕨
+	CHAR_WORK_I_RESIST,		// 梨蕨
+	CHAR_WORK_T_RESIST,		// 萇蕨
+	CHAR_MYSKILLHIT,		// 韜笢薹
 	CHAR_MYSKILLHIT_NUM,		
-	CHAR_WORKDIZZY,			// 晕眩
+	CHAR_WORKDIZZY,			// 婠悈
 	CHAR_WORKMODDIZZY,
-	CHAR_WORKENTWINE,		// 树根缠绕
+	CHAR_WORKENTWINE,		// 攷跦莊��
 	CHAR_WORKMODENTWINE,
-	CHAR_WORKTRAP,			// 陷阱
+	CHAR_WORKTRAP,			// 疪筘
 	CHAR_WORKMODTRAP,
-	CHAR_WORKDRAGNET,		// 天罗地网
+	CHAR_WORKDRAGNET,		// 毞蹕華厙
 	CHAR_WORKMODDRAGNET,
 #ifdef _PROFESSION_ADDSKILL
-	//***********注意:这里的位置不可更动*************
-	CHAR_WORKICECRACK,		// 冰爆术	
-	CHAR_WORKICECRACK2,		// 冰爆术存放处2
-	CHAR_WORKICECRACK3,		// 冰爆术存放处3
-	CHAR_WORKICECRACK4,		// 冰爆术存放处4
-	CHAR_WORKICECRACK5,		// 冰爆术存放处5
-	CHAR_WORKICECRACK6,		// 冰爆术存放处6
-	CHAR_WORKICECRACK7,		// 冰爆术存放处7
-	CHAR_WORKICECRACK8,		// 冰爆术存放处8
-	CHAR_WORKICECRACK9,		// 冰爆术存放处9
-	CHAR_WORKICECRACK10,	// 冰爆术存放处10
+	//***********蛁砩:涴爵腔弇离祥褫載雄*************
+	CHAR_WORKICECRACK,		// 梨惇扲	
+	CHAR_WORKICECRACK2,		// 梨惇扲湔溫揭2
+	CHAR_WORKICECRACK3,		// 梨惇扲湔溫揭3
+	CHAR_WORKICECRACK4,		// 梨惇扲湔溫揭4
+	CHAR_WORKICECRACK5,		// 梨惇扲湔溫揭5
+	CHAR_WORKICECRACK6,		// 梨惇扲湔溫揭6
+	CHAR_WORKICECRACK7,		// 梨惇扲湔溫揭7
+	CHAR_WORKICECRACK8,		// 梨惇扲湔溫揭8
+	CHAR_WORKICECRACK9,		// 梨惇扲湔溫揭9
+	CHAR_WORKICECRACK10,	// 梨惇扲湔溫揭10
 	CHAR_WORKMODICECRACK,
 	CHAR_WORKMODICECRACK2,
 	CHAR_WORKMODICECRACK3,
@@ -1105,67 +1105,67 @@ typedef enum
 	CHAR_WORKMODICECRACK10,
 	//*****************************************
 #else
-	CHAR_WORKICECRACK,		// 冰爆术	
+	CHAR_WORKICECRACK,		// 梨惇扲	
 	CHAR_WORKMODICECRACK,
 #endif //_PROFESSION_ADDSKILL
 
-	CHAR_WORKOBLIVION,		// 遗忘
+	CHAR_WORKOBLIVION,		// 疻咭
 	CHAR_WORKMODOBLIVION,
-	CHAR_WORKICEARROW,		// 冰箭
+	CHAR_WORKICEARROW,		// 梨璋
 	CHAR_WORKMODICEARROW,
-	CHAR_WORKBLOODWORMS,	// 嗜血蛊
+	CHAR_WORKBLOODWORMS,	// 岓悛嘍
 	CHAR_WORKMODBLOODWORMS,
 	CHAR_WORKBLOODWORMSID,
-	CHAR_WORKSIGN,			// 一针见血
+	CHAR_WORKSIGN,			// 珨渀獗悛
 	CHAR_WORKMODSIGN,
 	CHAR_WORKSIGNID,
-	CHAR_WORK_P_DUCK,		// 回避
+	CHAR_WORK_P_DUCK,		// 隙旌
 	CHAR_WORKMOD_P_DUCK,
-	CHAR_WORK_WEAPON,		// 武器专精
+	CHAR_WORK_WEAPON,		// 挕ん蚳儕
 	CHAR_WORKMOD_WEAPON,
-	CHAR_WORK_FOCUS,		// 专注战斗
+	CHAR_WORK_FOCUS,		// 蚳蛁桵須
 	CHAR_WORKMOD_FOCUS,		
-	CHAR_WORKINSTIGATE,		// 挑拨
+	CHAR_WORKINSTIGATE,		// 泔畢
 	CHAR_WORKMODINSTIGATE,
-	CHAR_WORK_F_ENCLOSE,	// 火附体
-	CHAR_WORK_I_ENCLOSE,	// 冰附体
-	CHAR_WORK_T_ENCLOSE,	// 雷附体
+	CHAR_WORK_F_ENCLOSE,	// 鳶蜇极
+	CHAR_WORK_I_ENCLOSE,	// 梨蜇极
+	CHAR_WORK_T_ENCLOSE,	// 濘蜇极
 	CHAR_WORKMOD_F_ENCLOSE,
 	CHAR_WORKMOD_I_ENCLOSE,
 	CHAR_WORKMOD_T_ENCLOSE,
-	CHAR_WORK_F_ENCLOSE_2,	// 火附	
-	CHAR_WORK_I_ENCLOSE_2,	// 冰附
-	CHAR_WORK_T_ENCLOSE_2,	// 雷附
+	CHAR_WORK_F_ENCLOSE_2,	// 鳶蜇	
+	CHAR_WORK_I_ENCLOSE_2,	// 梨蜇
+	CHAR_WORK_T_ENCLOSE_2,	// 濘蜇
 	CHAR_WORKMOD_F_ENCLOSE_2,	
 	CHAR_WORKMOD_I_ENCLOSE_2,
 	CHAR_WORKMOD_T_ENCLOSE_2,
-	CHAR_WORKRESIST_F,		// 提升火抗性
-	CHAR_WORKRESIST_I,		// 提升冰抗性
-	CHAR_WORKRESIST_T,		// 提升雷抗性
+	CHAR_WORKRESIST_F,		// 枑汔鳶蕨俶
+	CHAR_WORKRESIST_I,		// 枑汔梨蕨俶
+	CHAR_WORKRESIST_T,		// 枑汔濘蕨俶
 #ifdef _PROFESSION_ADDSKILL
-    CHAR_WORKERSIST_F_I_T,  // 提升火冰雷抗性
-	CHAR_WORKANNEX,         //附身
-	CHAR_WORKWATER,         //水附体
-	CHAR_WORKFEAR,			//恐惧
-	CHAR_DOOMTIME,			//世界末日集气(与火龙枪共用)
+    CHAR_WORKERSIST_F_I_T,  // 枑汔鳶梨濘蕨俶
+	CHAR_WORKANNEX,         //蜇旯
+	CHAR_WORKWATER,         //阨蜇极
+	CHAR_WORKFEAR,			//謁曉
+	CHAR_DOOMTIME,			//岍賜藺�梩紜�(迵鳶韓Л僕蚚)
 	CHAR_WORK_com1,
 	CHAR_WORK_toNo,
 	CHAR_WORK_mode,
 	CHAR_WORK_skill_level,
 	CHAR_WORK_array,
 #endif
-	CHAR_WORKMODRESIST_F,   // 提升火抗性百分比数值
-	CHAR_WORKMODRESIST_I,   // 提升冰抗性百分比数值
-	CHAR_WORKMODRESIST_T,   // 提升雷抗性百分比数值
+	CHAR_WORKMODRESIST_F,   // 枑汔鳶蕨俶啃煦掀杅硉
+	CHAR_WORKMODRESIST_I,   // 枑汔梨蕨俶啃煦掀杅硉
+	CHAR_WORKMODRESIST_T,   // 枑汔濘蕨俶啃煦掀杅硉
 #endif
 
 #ifdef _MAGICSTAUTS_RESIST
-	CHAR_MAGICFIRE, //火抗精灵
-	CHAR_MAGICTHUNDER,//电抗精灵
-	CHAR_MAGICICE,//冰抗精灵
+	CHAR_MAGICFIRE, //鳶蕨儕鍾
+	CHAR_MAGICTHUNDER,//萇蕨儕鍾
+	CHAR_MAGICICE,//梨蕨儕鍾
 #endif
 
-#ifdef _PET_SKILL_SARS			// WON ADD 毒煞蔓延
+#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
 	CHAR_WORKSARS,
 	CHAR_WORKMODSARS,
 #endif
@@ -1177,25 +1177,25 @@ typedef enum
 	CHAR_WORKRETRACE,
 #endif
 
-#ifdef _CHATROOMPROTOCOL			// (不可开) Syu ADD 聊天室频道
+#ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋
 	CHAR_WORKCHATROOMTYPE , 
 	CHAR_WORKCHATROOMNUM , 
 #endif
 
-#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 职业抗性装备
+#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 眥珛蕨俶蚾掘
 	 CHAR_WORK_F_SUIT,
 	 CHAR_WORK_I_SUIT,
 	 CHAR_WORK_T_SUIT,
 #endif
 
 #ifdef _PETSKILL_BECOMEFOX
-     CHAR_WORKFOXROUND,  //计算狐狸变身回合数
+     CHAR_WORKFOXROUND,  //數呾緒燥曹旯隙磁杅
 #endif
 
-	CHAR_WORKSTANDBYPET, // Robin add 待机宠
+	CHAR_WORKSTANDBYPET, // Robin add 渾儂唾
 #ifdef _STREET_VENDOR
-	CHAR_WORKSTREETVENDOR, // 摆摊状态 -1:没在摆摊,也没在摆摊交易;1:摆摊中;2:卖方在交易中;3:摆摊的买方
-	CHAR_WORKSTREETVENDOR_WHO, // 谁和我交易
+	CHAR_WORKSTREETVENDOR, // 啊怉袨怓 -1:羶婓啊怉,珩羶婓啊怉蝠眢;1:啊怉笢;2:闖源婓蝠眢笢;3:啊怉腔鎗源
+	CHAR_WORKSTREETVENDOR_WHO, // 阰睿扂蝠眢
 #endif
 
 #ifdef _ANGEL_SUMMON
@@ -1203,20 +1203,20 @@ typedef enum
 	CHAR_WORKANGELMODE,
 #endif
 #ifdef _MAP_TIME
-	CHAR_WORK_MAP_TIME,	// 特殊地图倒数
+	CHAR_WORK_MAP_TIME,	// 杻忷華芞給杅
 #endif
 #ifdef _PETSKILL_LER
-	CHAR_WORK_RELIFE,		// 雷尔复活
+	CHAR_WORK_RELIFE,		// 濘嫌葩魂
 #endif
 #ifdef _TEACHER_SYSTEM
-	CHAR_WORK_GET_TEACHER_FAME,	// 导师领导声望
+	CHAR_WORK_GET_TEACHER_FAME,	// 絳呇鍰絳汒咡
 #endif
 
-	CHAR_WORKSKYWALKER, // GM天行者??
+	CHAR_WORKSKYWALKER, // GM毞俴氪??
 
-	CHAR_WORKLASTMERGETIME, // 最後合成时间
+	CHAR_WORKLASTMERGETIME, // 郔摽磁傖奀潔
 
-#ifdef _ESCAPE_RESET	// 恶宝逃跑後暂时不可组队
+#ifdef _ESCAPE_RESET	// 填惘枅變摽婃奀祥褫郪勦
 	CHAR_WORKLASTESCAPE,
 #endif
 
@@ -1229,7 +1229,7 @@ typedef enum
 	CHAR_WORKTICKETTIMESTART,
 #endif
 
-	CHAR_WORKDEBUGMODE, // 除错模式中
+	CHAR_WORKDEBUGMODE, // 壺渣耀宒笢
 
 	CHAR_WORKDATAINTNUM,
 
@@ -1593,7 +1593,7 @@ typedef enum
 } CHAR_PET_STAT;
 
 
-#ifdef _PERSONAL_FAME	// Arminius: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
 void CHAR_earnFame(int index, int fame);
 #endif
 
@@ -1604,10 +1604,10 @@ void ITEM_setItemUniCode(int itemindex);
 void Check_P_I_UniCode(int charindex);
 #endif
 
-// Arminius 12.15 判断是否是男士
+// Arminius 12.15 瓚剿岆瘁岆鹹尪
 int IsMale(int charindex);
 
-// Arminius 12.15 判断是否是女士
+// Arminius 12.15 瓚剿岆瘁岆躓尪
 int IsFemale(int charindex);
 
 
@@ -1683,7 +1683,7 @@ INLINE int _CHAR_DelGold( char *file, int line, int charaindex, int gold);
 int CHAR_getMaxHaveGold( int charaindex);
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
 
 int CHAR_getCharSkill( int index,int sindex );
 int CHAR_setCharSkill( int index,int sindex,int new );
@@ -1760,8 +1760,8 @@ int CHAR_getStreetVendor(int charindex,int index,int set);
 
 #ifdef _ANGEL_SUMMON
 
-#define ANGELITEM 2884 //20701	//使者的信物 道具编号
-#define HEROITEM 2885 //20702	//勇者的信物 道具编号
+#define ANGELITEM 2884 //20701	//妏氪腔陓昜 耋撿晤瘍
+#define HEROITEM 2885 //20702	//蚋氪腔陓昜 耋撿晤瘍
 
 typedef enum
 {

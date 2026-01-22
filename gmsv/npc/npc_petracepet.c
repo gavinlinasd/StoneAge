@@ -10,8 +10,8 @@
 #ifdef _PETRACE
 #include "npc_petracepet.h"
 
-#define PETRACEPET_WAIT_LOOPTIME			30000	// 30秒
-#define PETRACEPET_SHOWWIN_LOOPTIME			10000	// 10秒
+#define PETRACEPET_WAIT_LOOPTIME			30000	// 30鏃
+#define PETRACEPET_SHOWWIN_LOOPTIME			10000	// 10鏃
 
 static void	NPC_PetRacePet_Walk(int meindex);
 static int NPC_PetRacePetSetPoint(int meindex, char *argstr);
@@ -111,7 +111,7 @@ void NPC_PetRacePetLoop( int meindex)
 						random = 3;
 				else
 					random = RAND(0, 8);
-				if (random == 0) // 攻击
+				if (random == 0) // 馴僻
 				{
 					int rands = RAND(0, 3);
 					interval = 1500;
@@ -123,19 +123,19 @@ void NPC_PetRacePetLoop( int meindex)
 						int master = CHAR_getWorkInt(meindex, NPC_WORK_MASTER);
 						int randomi = RAND(1, 9);
 						if (randomi == 1)
-							snprintf(tmpbuf, sizeof(tmpbuf), "哦～看来%s好像发威了唷！",
+							snprintf(tmpbuf, sizeof(tmpbuf), "韃‵艘懂%s疑砉楷哏賸遄ㄐ",
 								CHAR_getChar(meindex, CHAR_NAME));
 						else if (randomi == 2)
-							snprintf(tmpbuf, sizeof(tmpbuf), "%s使出了奋力的一击～",
+							snprintf(tmpbuf, sizeof(tmpbuf), "%s妏堤賸煖薯腔珨僻‵",
 								CHAR_getChar(meindex, CHAR_NAME));
 						else if (randomi == 3)
-							snprintf(tmpbuf, sizeof(tmpbuf), "咦...%s发怒了？",
+							snprintf(tmpbuf, sizeof(tmpbuf), "葇...%s楷躑賸ˋ",
 								CHAR_getChar(meindex, CHAR_NAME));
 						if (randomi > 0 && randomi < 4)
 							CHAR_talkToFloor(floor, master, tmpbuf, CHAR_COLORWHITE);
 					}
 				}
-				else if (random == 1) // 晕倒
+				else if (random == 1) // 婠給
 				{
 					int rands = RAND(0, 3);
 					interval = 2500;
@@ -147,24 +147,24 @@ void NPC_PetRacePetLoop( int meindex)
 						int master = CHAR_getWorkInt(meindex, NPC_WORK_MASTER);
 						int randomi = RAND(1, 9);
 						if (randomi == 1)
-							snprintf(tmpbuf, sizeof(tmpbuf), "%s好像晕倒了呢...",
+							snprintf(tmpbuf, sizeof(tmpbuf), "%s疑砉婠給賸儸...",
 								CHAR_getChar(meindex, CHAR_NAME));
 						else if (randomi == 2)
-							snprintf(tmpbuf, sizeof(tmpbuf), "%s受伤了吗？",
+							snprintf(tmpbuf, sizeof(tmpbuf), "%s忳夼賸鎘ˋ",
 								CHAR_getChar(meindex, CHAR_NAME));
 						else if (randomi == 3)
-							snprintf(tmpbuf, sizeof(tmpbuf), "嘿...%s晕倒後又勇敢的爬起来了！",
+							snprintf(tmpbuf, sizeof(tmpbuf), "稱...%s婠給摽衱蚋詫腔鰾れ懂賸ㄐ",
 								CHAR_getChar(meindex, CHAR_NAME));
 						if (randomi > 0 && randomi < 4)
 							CHAR_talkToFloor(floor, master, tmpbuf, CHAR_COLORWHITE);
 					}
 				}
-				else if (random == 2) // 站立
+				else if (random == 2) // 桴蕾
 				{
 					interval = 500;
 					CHAR_sendAction(meindex, 3, FALSE);
 				}
-				else // 一般
+				else // 珨啜
 					interval = RAND(20, 100);
 				NPC_PetRacePet_Walk(meindex);
 				CHAR_setInt(meindex, CHAR_LOOPINTERVAL, interval);
@@ -200,7 +200,7 @@ static void NPC_PetRacePet_Walk(int meindex)
 
 		if (NPC_PetRacePetSetPoint(meindex, argstr) == FALSE)
 		{
-			// 到达目的地後，初始状态
+			// 善湛醴腔華摽ㄛ場宎袨怓
 			char tmpbuf[256];
 			int masterindex = CHAR_getWorkInt(meindex, NPC_WORK_MASTER);
 			int petgoal = CHAR_getWorkInt(masterindex, CHAR_NPCWORKINT9);
@@ -209,13 +209,13 @@ static void NPC_PetRacePet_Walk(int meindex)
 			{
 				CHAR_setWorkInt(masterindex, CHAR_NPCWORKINT8, meindex);
 				CHAR_sendAction(meindex, 3, FALSE);
-				snprintf(tmpbuf, sizeof(tmpbuf), "首先到达目的地的是...%s",
+				snprintf(tmpbuf, sizeof(tmpbuf), "忑珂善湛醴腔華腔岆...%s",
 					CHAR_getChar(meindex, CHAR_NAME));
 			}
 			else
 			{
 				CHAR_warpToSpecificPoint(meindex, 888, 7, 7);
-				snprintf(tmpbuf, sizeof(tmpbuf), "接着到达目的地的是...%s",
+				snprintf(tmpbuf, sizeof(tmpbuf), "諉覂善湛醴腔華腔岆...%s",
 					CHAR_getChar(meindex, CHAR_NAME));
 			}
 			CHAR_setWorkInt(meindex, NPC_WORK_STATE, NPC_State_ShowWin);
@@ -247,7 +247,7 @@ static void NPC_PetRacePet_Walk(int meindex)
 
 static int NPC_PetRacePetSetPoint(int meindex, char *argstr)
 {
-	// 寻找下一步 x , y
+	// 扆梑狟珨祭 x , y
 	char buf[4096], buf2[256], buf3[256];
 	int ret;
 	char routetostring[64];

@@ -25,14 +25,14 @@
 #include "npcserver.h"
 #endif
 
-#ifdef _RECAL_SEND_COUNT		// WON 传送GS资讯 
+#ifdef _RECAL_SEND_COUNT		// WON 換冞GS訧捅 
 #include "mclient.h"
 #endif
 
 #ifdef _DEATH_CONTEND
 #include "deathcontend.h"
 #endif
-#ifdef _CHATROOMPROTOCOL			// (不可开) Syu ADD 聊天室频道
+#ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋
 #include "chatroom.h"
 #endif
 
@@ -50,7 +50,7 @@ extern int InitOccChannel(void);
 #endif
 
 #ifdef _ANGEL_SUMMON
-#define ANGELTIMELIMIT	3*24*60*60 // 完成任务时限(秒)
+#define ANGELTIMELIMIT	3*24*60*60 // 俇傖�恄鯓救�(鏃)
 int AngelReady =0;
 int AngelTimelimit = ANGELTIMELIMIT;
 time_t AngelNextTime;
@@ -63,7 +63,7 @@ void warplog_proc();
 
 int main( int argc , char** argv, char** env )
 {
-    /*  午曰丐尹内凛棉毛涩烂仄化云仁    */
+    /*  敁堇堣窇囀鄹蹬禱优擭媃趙堁��    */
     setNewTime();
 
     if ( argc > 1 && 0==strcmp(argv[1],"-v"))
@@ -77,7 +77,7 @@ int main( int argc , char** argv, char** env )
 
     LoadAnnounce();	// Arminius 7.12 loginannounce
 
-	/* 赓渝涩烂 */
+	/* 疐趵优擭 */
 	memcpy( &tmOld, localtime( (time_t *)&NowTime.tv_sec), sizeof( tmNow ) );
 
     EXITWITHEXITCODEIFFALSE( init(argc , argv ,env ) , 1);
@@ -100,13 +100,13 @@ int main( int argc , char** argv, char** env )
 #endif
 
 #if USE_MTIO
-    /* 穴伙民旦伊永玉及午五反仇仇匹坌昴 */    
+    /* 悃鳴鏍筒畛蚗迶摯敁拻毀喫喫ぁ覕篫 */    
     if( MTIO_setup() < 0 ){
         print( "cannot setup MT environment\n" );
         return 1;
     }
 
-    /* 仇仇匹 join 仄化蔽   */
+    /* 喫喫ぁ join 媃趙敖   */
     MTIO_join();
 #else
     mainloop();
@@ -135,19 +135,19 @@ void mainloop( void )
 	check_battle_com_init();
 #endif
 
-#ifdef _CHATROOMPROTOCOL			// (不可开) Syu ADD 聊天室频道
+#ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋
 	InitChatRoom();
 #endif
 
 #ifdef _CHANNEL_MODIFY
-	if(!InitOccChannel()) return;			// 初始化职业频道
+	if(!InitOccChannel()) return;			// 場宎趙眥珛け耋
 #endif
 
-#ifdef _GM_BROADCAST					// WON ADD 客服公告系统
+#ifdef _GM_BROADCAST					// WON ADD 諦督鼠豢炵苀
 	Init_GM_BROADCAST( 0, 0, 0, "" );
 #endif
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 	Init_FM_PK_STRUCT();			
 #endif
 
@@ -171,7 +171,7 @@ void mainloop( void )
 		}
         setNewTime();
 
-#ifdef _ASSESS_SYSEFFICACY_SUB //显示LOOP时间
+#ifdef _ASSESS_SYSEFFICACY_SUB //珆尨LOOP奀潔
 Assess_SysEfficacy_sub( 0, 1);
         netloop_faster();
 Assess_SysEfficacy_sub( 1, 1);
@@ -199,13 +199,13 @@ Assess_SysEfficacy_sub( 1, 4);
 //Assess_SysEfficacy_sub( 0, 7);
         chardatasavecheck();
 //Assess_SysEfficacy_sub( 1, 7);
-#ifdef _GM_BROADCAST					// WON ADD 客服公告系统
+#ifdef _GM_BROADCAST					// WON ADD 諦督鼠豢炵苀
 //Assess_SysEfficacy_sub( 0, 8);
 		GM_BROADCAST();
 //Assess_SysEfficacy_sub( 1, 8);
 #endif
 
-#else	//不显示LOOP时间
+#else	//祥珆尨LOOP奀潔
         netloop_faster();
         NPC_generateLoop( 0 );
         BATTLE_Loop();
@@ -213,7 +213,7 @@ Assess_SysEfficacy_sub( 1, 4);
         PETMAIL_proc();
         family_proc();
         chardatasavecheck();
-#ifdef _GM_BROADCAST					// WON ADD 客服公告系统
+#ifdef _GM_BROADCAST					// WON ADD 諦督鼠豢炵苀
 		GM_BROADCAST();
 #endif
 #endif
@@ -252,8 +252,8 @@ static void sendmsg_toall( char *msg )
 }
 static void ShutdownProc( void)
 {
-#define		SYSINFO_SHUTDOWN_MSG		"再过 %d 分钟後，即开始进行server系统维护。"
-#define		SYSINFO_SHUTDOWN_MSG_COMP	"server已关闭。"
+#define		SYSINFO_SHUTDOWN_MSG		"婬徹 %d 煦笘摽ㄛ撈羲宎輛俴server炵苀峎誘﹝"
+#define		SYSINFO_SHUTDOWN_MSG_COMP	"server眒壽敕﹝"
 	int diff,hun;
 
 	diff = NowTime.tv_sec - SERVSTATE_getShutdown();
@@ -278,8 +278,8 @@ static void ShutdownProc( void)
 		SERVSTATE_setShutdown(0);
 		SERVSTATE_setDsptime(0);
 		SERVSTATE_setLimittime(0);
-#ifdef _KILL_12_STOP_GMSV      // WON ADD 下sigusr2後关闭GMSV
-		//andy_reEdit 2003/04/28不准开...
+#ifdef _KILL_12_STOP_GMSV      // WON ADD 狟sigusr2摽壽敕GMSV
+		//andy_reEdit 2003/04/28祥袧羲...
 		//system("./stop.sh"); 
 #endif
 	}
@@ -292,17 +292,17 @@ void family_proc()
 	static  unsigned long checktime = 0;
 	static  unsigned long proctime = 0;
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 计算线上人数	
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 數呾盄奻�侕�	
 	static	unsigned long player_count_time = 0;
-    int PLAYER_COUNT_TIME = 60*5;	  // 30秒传一次人数至 AC
+    int PLAYER_COUNT_TIME = 60*5;	  // 30鏃換珨棒�侕�祫 AC
 #endif
 
-#ifdef _RECAL_SEND_COUNT		// WON 传送GS资讯 
+#ifdef _RECAL_SEND_COUNT		// WON 換冞GS訧捅 
 	static	unsigned long recal_count_time = 0;
     int RECAL_COUNT_TIME = 60;	  
 	if( (unsigned long)NowTime.tv_sec > recal_count_time  ){
 		recal_get_count();
-#ifdef _GSERVER_RUNTIME //传送GSERVER执行多少时间给MSERVER
+#ifdef _GSERVER_RUNTIME //換冞GSERVER硒俴嗣屾奀潔跤MSERVER
 	    gserver_runtime();
 #endif
 		recal_count_time = (unsigned long)NowTime.tv_sec + RECAL_COUNT_TIME;
@@ -323,7 +323,7 @@ void family_proc()
 		checktime = (unsigned long)NowTime.tv_sec + 60*30;
 	}
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 计算线上人数
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 數呾盄奻�侕�
 	if( (unsigned long)NowTime.tv_sec > player_count_time  ){
 		GS_SEND_PLAYER_COUNT();
 		player_count_time = (unsigned long)NowTime.tv_sec + PLAYER_COUNT_TIME;
@@ -360,7 +360,7 @@ void AngelReadyProc()
 
 	if( player_online <= 10 )
 	{
-		//print(" ANGEL:线上人数不足=%d ", player_online);
+		//print(" ANGEL:盄奻�侕�祥逋=%d ", player_online);
 		return;
 	}
 
@@ -369,7 +369,7 @@ void AngelReadyProc()
 	AngelNextTime = min( (int)(5000/player_online), 100)*60 + (unsigned long)nowTime;
 
 	temptime = localtime( &AngelNextTime );
-	sprintf( msg, " ANGEL:产生一位缺额  下次产生时间=(%d/%d %d:%d) 目前人数=%d ",
+	sprintf( msg, " ANGEL:莉汜珨弇�捷�  狟棒莉汜奀潔=(%d/%d %d:%d) 醴ヶ�侕�=%d ",
 		temptime->tm_mon+1, temptime->tm_mday, temptime->tm_hour, temptime->tm_min, player_online );
 	print( msg);
 	//LogAngel( msg);

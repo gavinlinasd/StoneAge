@@ -7,42 +7,42 @@
 #include "net.h"
 #include "time.h"
 
-#define FAMILY_MAXNUM			1000	// 家族数量
+#define FAMILY_MAXNUM			1000	// 模逜杅講
 #ifdef _FMVER21
-#define FAMILY_MAXMEMBER		100	// 家族人数
-#define FAMILY_MAXCHANNELMEMBER		50	// 频道人数
+#define FAMILY_MAXMEMBER		100	// 模逜�侕�
+#define FAMILY_MAXCHANNELMEMBER		50	// け耋�侕�
 #else
-#define FAMILY_MAXMEMBER		50	// 家族人数
-#define FAMILY_MAXCHANNELMEMBER		10	// 频道人数
+#define FAMILY_MAXMEMBER		50	// 模逜�侕�
+#define FAMILY_MAXCHANNELMEMBER		10	// け耋�侕�
 #endif
-#define FAMILY_MAXCHANNEL 		5	// 家族频道
+#define FAMILY_MAXCHANNEL 		5	// 模逜け耋
 
 #define CHAR_MAXNAME			20
 #define CHAR_MAXID			20
-#define MINFMLEVLEFORPOINT      	3       // 3 申请庄园最低等级
-#define FMLEADERLV			30	// 族长等级
+#define MINFMLEVLEFORPOINT      	3       // 3 扠③蚽埶郔腴脹撰
+#define FMLEADERLV			30	// 逜酗脹撰
 
 #ifdef _FAMILY_MANORNUM_CHANGE
-#define FAMILY_FMPKFLOOR		15	// 家族ＰＫ图层
+#define FAMILY_FMPKFLOOR		15	// 模逜�苺冞撞�
 #else
-#define FAMILY_FMPKFLOOR		9	// 家族ＰＫ图层
-#define FMPOINTNUM			4       // 有据点家族的最大数量
+#define FAMILY_FMPKFLOOR		9	// 模逜�苺冞撞�
+#define FMPOINTNUM			4       // 衄擂萸模逜腔郔湮杅講
 #define MANORNUM                	4
-#define FAMILY_MAXHOME			4	// 家族据点
+#define FAMILY_MAXHOME			4	// 模逜擂萸
 #endif
 
 enum
 {
-    FM_TOP_INTEGRATE = 1,    // DPTOP 综合
-    FM_TOP_ADV,              // DPTOP 冒险
-    FM_TOP_FEED,             // DPTOP 饲育
-    FM_TOP_SYNTHESIZE,       // DPTOP 合成
-    FM_TOP_DEALFOOD,         // DPTOP 料理
-    FM_TOP_PK,               // DPTOP ＰＫ
+    FM_TOP_INTEGRATE = 1,    // DPTOP 軘磁
+    FM_TOP_ADV,              // DPTOP 簸玸
+    FM_TOP_FEED,             // DPTOP 侞郤
+    FM_TOP_SYNTHESIZE,       // DPTOP 磁傖
+    FM_TOP_DEALFOOD,         // DPTOP 蹋燴
+    FM_TOP_PK,               // DPTOP �苺�
 #ifdef _NEW_MANOR_LAW
-		FM_TOP_MOMENTUM = 8,		 // DPTOP 气势
+		FM_TOP_MOMENTUM = 8,		 // DPTOP ァ岊
 #endif
-    FM_TOP_NUM,              // DPTOP 数量
+    FM_TOP_NUM,              // DPTOP 杅講
 };
 
 enum
@@ -65,9 +65,9 @@ enum
 };
 
 /*
- * 扔□田    及职及桦赭午及 cdkey charname 及赢今毛宁六月凶户卞
+ * �荂懽�    摯眥摯鳹鐎敁摯 cdkey charname 摯荇踏禱譴鞠堎倜誧勗
  * CHEKEYLEN, CHARNAMELEN
- * 毛银丹方丹卞  凳［
+ * 禱窅竣源竣勗  脾��
  */
     
 void CHAR_Family(int fd, int index, char* message);
@@ -83,7 +83,7 @@ void ACShowDpTop(int result,int num, char *data, int kindflag);
 void ACShowPointList(int result, char *data);
 void ACShowFMMemo(int result, int index, int num, int dataindex, char *data);
 
-#ifdef _PERSONAL_FAME   // Arminius: 家族个人声望
+#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
 void ACFMCharLogin(int fd, int ret, int index, int floor, int fmdp,
 	int joinflag, int fmsetupflag, int flag, int charindex, int charfame
 	#ifdef _NEW_MANOR_LAW
@@ -118,7 +118,7 @@ void FAMILY_LeaderFunc( int fd, int meindex, char* message );
 
 
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 计算线上人数
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 數呾盄奻�侕�
 void GS_SEND_PLAYER_COUNT(void);
 #endif
 
@@ -141,57 +141,57 @@ struct FMMEMBER_LIST
 //  int  fmindex;
     int  fmnum; 
     int  fmjoinnum;
-//  BOOL use;                                       // 0->没使用   1->使用
+//  BOOL use;                                       // 0->羶妏蚚   1->妏蚚
     int  memberindex[FAMILY_MAXMEMBER];             
     char numberlistarray[FAMILY_MAXMEMBER][64];
     char memo[35][220];                             // family dengon
-    int  accept;                                    // 召募成员与否
+    int  accept;                                    // 欸躁傖埜迵瘁
     int  memonum;
     int  memoindex;
 };
-// 家族之间的留言板
+// 模逜眳潔腔隱晟啣
 struct FMS_MEMO
 {
     char memo[140][220];
     int  memonum;
     int  memoindex;
 };
-// 家族强者表
+// 模逜Ч氪桶
 struct FMS_DPTOP
 {
-    int  num;															// 记录有多少个家族(综合)
+    int  num;															// 暮翹衄嗣屾跺模逜(軘磁)
     char topmemo[FAMILY_MAXNUM][128];
-    int  fmtopid[FAMILY_MAXNUM];          // 家族索引
+    int  fmtopid[FAMILY_MAXNUM];          // 模逜坰竘
 #ifdef _FMVER21    
-    int  fmtopdp[FAMILY_MAXNUM];          // 家族综合声望
+    int  fmtopdp[FAMILY_MAXNUM];          // 模逜軘磁汒咡
 #endif    
 #ifdef _NEW_MANOR_LAW
-		int	fmMomentum[FAMILY_MAXNUM];		// 家族气势
-		char	momentum_topmemo[30][96];			// 家族气势 top
-		int	momentum_topid[FAMILY_MAXNUM];	// 家族气势 top id 索引
+		int	fmMomentum[FAMILY_MAXNUM];		// 模逜ァ岊
+		char	momentum_topmemo[30][96];			// 模逜ァ岊 top
+		int	momentum_topid[FAMILY_MAXNUM];	// 模逜ァ岊 top id 坰竘
 #endif
-    int  adv_num;                // 冒险
+    int  adv_num;                // 簸玸
     char adv_topmemo[30][96];    
-    int  feed_num;               // 伺育
+    int  feed_num;               // 侜郤
     char feed_topmemo[30][96];        
-    int  syn_num;                // 合成
+    int  syn_num;                // 磁傖
     char syn_topmemo[30][96];        
-    int  food_num;               // 料理
+    int  food_num;               // 蹋燴
     char food_topmemo[30][96];        
-    int  pk_num;                 // ＰＫ
+    int  pk_num;                 // �苺�
     char pk_topmemo[30][96];        
 };
-// 家族据点
+// 模逜擂萸
 struct FM_POINTLIST
 {
   char pointlistarray[FAMILY_MAXHOME][1024];	// Arminius: 32->1024
 
 #ifdef _NEW_MANOR_LAW
-	int fm_momentum[FAMILY_MAXHOME];	// 记录挑战时期开始时的守庄家族气势值
-	BOOL fm_inwar[FAMILY_MAXHOME];		// 此庄园是否进行庄园排程中
+	int fm_momentum[FAMILY_MAXHOME];	// 暮翹泔桵奀ぶ羲宎奀腔忐蚽模逜ァ岊硉
+	BOOL fm_inwar[FAMILY_MAXHOME];		// 森蚽埶岆瘁輛俴蚽埶齬最笢
 #endif
 };
-// 家族PK图层
+// 模逜PK芞脯
 struct FM_PKFLOOR
 {
     int fl;
@@ -200,12 +200,12 @@ struct FM_PKFLOOR
 
 #ifdef _NEW_MANOR_LAW
 typedef struct _ManorSchedule_t{
-	int iFmIndex[10];						// 排入挑战排程的家族索引
-	int iFmMomentum[10];				// 家族气势
-	int iSort[10];							// 排名用
-	char szMemo[10][256];				// 记录: 家族名称|约战时间|家族气势
-	char szFmName[10][32];			// 家族名称
-	struct tm tm1[10];							// 记录挑战时间
+	int iFmIndex[10];						// 齬�輲譭褐鑒拑躁眢樆壨�
+	int iFmMomentum[10];				// 模逜ァ岊
+	int iSort[10];							// 齬靡蚚
+	char szMemo[10][256];				// 暮翹: 模逜靡備|埮桵奀潔|模逜ァ岊
+	char szFmName[10][32];			// 模逜靡備
+	struct tm tm1[10];							// 暮翹泔桵奀潔
 }ManorSchedule_t;
 
 extern ManorSchedule_t ManorSchedule[MANORNUM];
@@ -217,7 +217,7 @@ extern char    familyListBuf[MAXFAMILYLIST];
 void JoinMemberIndex( int charaindex, int fmindexi);
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 
 
 #define fm_pk_max 200

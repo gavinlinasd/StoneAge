@@ -63,7 +63,7 @@ BOOL NPC_FreePetSkillShopInit( int meindex )
 			if( PETSKILL_CHECKINDEX( skillarray) == FALSE ) continue;
 			if( PETSKILL_getInt( skillarray, PETSKILL_ILLEGAL) == 1){
 				if( NPC_Util_CheckAssignArgFile( meindex, filename) != NULL ){
-						print("\n宠物技能不规范:[%d-%s] ->文件:%s\n",
+						print("\n唾昜撮夔祥寞毓:[%d-%s] ->恅璃:%s\n",
 						skillID,
 						PETSKILL_getChar( skillarray, PETSKILL_NAME),
 						filename );
@@ -114,14 +114,14 @@ static void NPC_FreePetSkillShop_selectWindow( int meindex, int toindex, int num
 			CHAR_setWorkInt( toindex, CHAR_WORKSHOPRELEVANT, 0);
 			return;
 		}
-		//玩家条件判断
+		//俙模沭璃瓚剿
 		if( NPC_Util_GetStrFromStrWithDelim( npcarg, "FREE", buf1, sizeof( buf1)) != NULL ) {
 			if( NPC_ActionPassCheck( meindex, toindex, buf1) == FALSE )	{
 				 Evflg = FALSE;
 			}
 		}
 		if( Evflg == FALSE)	{
-			CHAR_talkToCli( toindex, -1, "你想让宠物学特殊技能？可你的条件还不够喔！", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "斕砑�籀駘擿弟婽熉敵隀蕞厊蒫騷齞�遜祥劂鉊ㄐ", CHAR_COLORYELLOW);
 			CHAR_setWorkInt( toindex, CHAR_WORKSHOPRELEVANT, 0);
 			return;
 		}else	{
@@ -136,7 +136,7 @@ static void NPC_FreePetSkillShop_selectWindow( int meindex, int toindex, int num
 		break;
 	  case SKILL_WINDOW:
 		  if( NPC_FreePetSkillMakeStr( meindex, toindex, select) == FALSE )	{
-			print("\n npc_freepetskillshop.c 错误");
+			print("\n npc_freepetskillshop.c 渣昫");
 		  }
 		break;
 	  case MEEND_WINDOW:
@@ -221,7 +221,7 @@ void NPC_FreePetSkillShopWindowTalked( int meindex, int talkerindex, int seqno, 
 		cost = PETSKILL_getInt( petskillindex, PETSKILL_COST );
 		cost = cost * rate;
 
-		//条件判断
+		//沭璃瓚剿
 		if(CHAR_getInt(talkerindex,CHAR_GOLD) < cost){
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 			return;
@@ -230,7 +230,7 @@ void NPC_FreePetSkillShopWindowTalked( int meindex, int talkerindex, int seqno, 
 		if( NPC_CHECKFREEPETSKILL( talkerindex, petindex, skillID ) == TRUE ){
 
 			if( Action_RunDoEventAction( meindex, talkerindex, argstr) == FALSE ){
-				CHAR_talkToCli( talkerindex, -1, "所需物品不足!!", CHAR_COLORYELLOW);
+				CHAR_talkToCli( talkerindex, -1, "垀剒昜こ祥逋!!", CHAR_COLORYELLOW);
 				CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 				CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 				return;
@@ -247,7 +247,7 @@ void NPC_FreePetSkillShopWindowTalked( int meindex, int talkerindex, int seqno, 
 					return;
 		}else	{
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
-			CHAR_talkToCli( talkerindex, -1, "条件不足!!", CHAR_COLORYELLOW);
+			CHAR_talkToCli( talkerindex, -1, "沭璃祥逋!!", CHAR_COLORYELLOW);
 		}
 		//ADD
 		NPC_FreePetSkillShop_selectWindow( meindex, talkerindex, SKILL_WINDOW, -1);
@@ -286,11 +286,11 @@ BOOL NPC_CHECKFREEPETSKILL( int toindex, int petindex, int skillID)
 		}
 	}
 
-	//找不到这只宠物
+	//梑祥善涴硐唾昜
 	if( i == arraysizeof( Code_skill) )	{
 		{
 			char buff1[256];
-			sprintf( buff1, "%s不能学特殊技能!!", CHAR_getChar( petindex, CHAR_NAME));
+			sprintf( buff1, "%s祥夔悝杻忷撮夔!!", CHAR_getChar( petindex, CHAR_NAME));
 			CHAR_talkToCli( toindex, -1, buff1, CHAR_COLORYELLOW);
 		}
 		return FALSE;
@@ -300,7 +300,7 @@ BOOL NPC_CHECKFREEPETSKILL( int toindex, int petindex, int skillID)
 	if( strstr( Code_skill[i].Code, SCode ) != NULL )	{
 		if( NPC_SkillShopPetCheck( toindex, petindex, skillID) == FALSE )	{
 			char buff1[256];
-			sprintf( buff1, "%s现在还不能学%s!", CHAR_getChar( petindex, CHAR_NAME),
+			sprintf( buff1, "%s珋婓遜祥夔悝%s!", CHAR_getChar( petindex, CHAR_NAME),
 									PETSKILL_getChar( skillindex, PETSKILL_NAME) );
 			CHAR_talkToCli( toindex, -1, buff1, CHAR_COLORYELLOW);
 			return  FALSE;
@@ -308,7 +308,7 @@ BOOL NPC_CHECKFREEPETSKILL( int toindex, int petindex, int skillID)
 		return TRUE;
 	}else	{
 			char buff1[256];
-			sprintf( buff1, "%s不能学%s!!", CHAR_getChar( petindex, CHAR_NAME),
+			sprintf( buff1, "%s祥夔悝%s!!", CHAR_getChar( petindex, CHAR_NAME),
 						PETSKILL_getChar( skillindex, PETSKILL_NAME) );
 			CHAR_talkToCli( toindex, -1, buff1, CHAR_COLORYELLOW);
 	}

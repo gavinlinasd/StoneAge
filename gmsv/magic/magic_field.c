@@ -9,13 +9,13 @@
 #include "magic_field.h"
 
 /*
- * 哗晓匹及  芊及质  
+ * 貍窀ぁ摯  傮摯窐  
  */
 /*----------------------------------------------------------------------
- * 愤坌及心荚汊
- * 娄醒
- * charaindex		int		愤坌及index
- * magicindex		int		  芊及index
+ * 猷覕摯陑樊蜾
+ * 礎倳
+ * charaindex		int		猷覕摯index
+ * magicindex		int		  傮摯index
  *---------------------------------------------------------------------*/
 int MAGIC_Recovery_Field( int charaindex, int magicindex)
 {
@@ -66,18 +66,18 @@ int MAGIC_Recovery_Field( int charaindex, int magicindex)
 			}
 		}
 	}
-	snprintf( msgbuf, sizeof( msgbuf), "耐久力回复%d",
+	snprintf( msgbuf, sizeof( msgbuf), "騵壅薯隙葩%d",
 			min( workhp, CHAR_getWorkInt( charaindex, CHAR_WORKMAXHP)) - prevhp);
 	CHAR_talkToCli( charaindex, -1, msgbuf, CHAR_COLORWHITE);
 	return TRUE;
 
 }
 /*----------------------------------------------------------------------
- * 职谛毛荚汊
- * 娄醒
- * charaindex		int		愤坌及index
- * toindex			int		荚汊允月谛及index
- * magicindex		int		  芊及index
+ * 眥硞禱樊蜾
+ * 礎倳
+ * charaindex		int		猷覕摯index
+ * toindex			int		樊蜾埰堎硞摯index
+ * magicindex		int		  傮摯index
  *---------------------------------------------------------------------*/
 int MAGIC_OtherRecovery_Field( int charaindex, int toindex, int magicindex)
 {
@@ -124,20 +124,20 @@ int MAGIC_OtherRecovery_Field( int charaindex, int toindex, int magicindex)
 	}
 
 	if( charaindex != toindex) {
-		snprintf( msgbuf, sizeof( msgbuf), "%s的耐久力回复%d",
+		snprintf( msgbuf, sizeof( msgbuf), "%s腔騵壅薯隙葩%d",
 				CHAR_getUseName( toindex ),
 				min( workhp, CHAR_getWorkInt( toindex, CHAR_WORKMAXHP)) - prevhp);
 		CHAR_talkToCli( charaindex, -1, msgbuf, CHAR_COLORWHITE);
 
 		if( CHAR_getInt( toindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER) {
-			snprintf( msgbuf, sizeof( msgbuf), "藉由%s耐久力回复%d",
+			snprintf( msgbuf, sizeof( msgbuf), "賢蚕%s騵壅薯隙葩%d",
 					CHAR_getUseName( charaindex ),
 					min( workhp,CHAR_getWorkInt( toindex, CHAR_WORKMAXHP)) - prevhp);
 			CHAR_talkToCli( toindex, -1, msgbuf, CHAR_COLORWHITE);
 		}
 	}
 	else {
-		snprintf( msgbuf, sizeof( msgbuf), "耐久力回复%d",
+		snprintf( msgbuf, sizeof( msgbuf), "騵壅薯隙葩%d",
 				min( workhp,CHAR_getWorkInt( charaindex, CHAR_WORKMAXHP)) - prevhp);
 		CHAR_talkToCli( charaindex, -1, msgbuf, CHAR_COLORWHITE);
 

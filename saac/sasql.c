@@ -2,7 +2,7 @@
 
 #include "version.h"
 
-#ifdef _SASQL1//新添加
+#ifdef _SASQL1//陔氝樓
 
 #include "main.h"
 #include "util.h"
@@ -60,7 +60,7 @@ int worksockfd;
 #include "saacproto_lserver.h"
 #endif
 
-#ifdef _SEND_EFFECT               // WON ADD 送下雪、下雨等特效 
+#ifdef _SEND_EFFECT               // WON ADD 冞狟悕﹜狟迾脹杻虴 
 #include "recv.h"
 #endif
 
@@ -130,54 +130,54 @@ static int readConfig( char *path )
         if( strcmp( command , "sql_IP" ) == 0 ){
             strcmp( config.sql_IP , param ) ;
             snprintf( config.sql_IP , sizeof( config.sql_IP) , param );
-            log("\n数据库地址：  %s",config.sql_IP);
+            log("\n杅擂踱華硊ㄩ  %s",config.sql_IP);
         } else if( strcmp( command , "sql_Port" ) == 0 ){
         		config.sql_Port = atoi( param );
             snprintf( config.sql_Port1 , sizeof( config.sql_Port1) , param );
-				  	log("\n数据库端口：  %d",config.sql_Port);
+				  	log("\n杅擂踱傷諳ㄩ  %d",config.sql_Port);
         } else if( strcmp( command , "sql_ID" ) == 0 ){
         		strcmp( config.sql_ID , param ) ;
             snprintf( config.sql_ID , sizeof( config.sql_ID) , param );
-						log("\n数据库用户：  %s",config.sql_ID);
+						log("\n杅擂踱蚚誧ㄩ  %s",config.sql_ID);
         } else if( strcmp( command , "sql_PS" ) == 0 ){
         		strcmp( config.sql_PS , param ) ;
             snprintf( config.sql_PS , sizeof( config.sql_PS) , param );
-						log("\n数据库密码：  %s",config.sql_PS);
+						log("\n杅擂踱躇鎢ㄩ  %s",config.sql_PS);
         } else if( strcmp( command , "sql_DataBase" ) == 0 ){
         		strcmp( config.sql_DataBase , param ) ;
             snprintf( config.sql_DataBase , sizeof( config.sql_DataBase) , param );
-						log("\n登陆数据库名：%s",config.sql_DataBase);
+						log("\n腎翻杅擂踱靡ㄩ%s",config.sql_DataBase);
         } else if( strcmp( command , "sql_Table" ) == 0 ){
         		strcmp( config.sql_Table , param ) ;
             snprintf( config.sql_Table , sizeof( config.sql_Table) , param );
-				  	log("\n数据库表名：  %s",config.sql_Table);
+				  	log("\n杅擂踱桶靡ㄩ  %s",config.sql_Table);
         } else if( strcmp( command , "sql_Name" ) == 0 ){
         		strcmp( config.sql_Name , param ) ;
             snprintf( config.sql_Name , sizeof( config.sql_Name) , param );
-						log("\n用户名字段：  %s",config.sql_Name);
+						log("\n蚚誧靡趼僇ㄩ  %s",config.sql_Name);
         } else if( strcmp( command , "sql_PassWord" ) == 0 ){
         		strcmp( config.sql_PassWord , param ) ;
         		snprintf( config.sql_PassWord , sizeof( config.sql_PassWord) , param );
-						log("\n密码字段：    %s",config.sql_PassWord);
+						log("\n躇鎢趼僇ㄩ    %s",config.sql_PassWord);
         } else if( strcmp( command , "sql_RegTime" ) == 0 ){
         		strcmp( config.sql_RegTime , param ) ;
             snprintf( config.sql_RegTime , sizeof( config.sql_RegTime) , param );
-						log("\n注册时间：    %s",config.sql_RegTime);
+						log("\n蛁聊奀潔ㄩ    %s",config.sql_RegTime);
         } else if( strcmp( command , "sql_LoginTime" ) == 0 ){
         		strcmp( config.sql_LoginTime , param ) ;
             snprintf( config.sql_LoginTime , sizeof( config.sql_LoginTime) , param );
-						log("\n登陆时间：    %s",config.sql_LoginTime);
+						log("\n腎翻奀潔ㄩ    %s",config.sql_LoginTime);
 				} else if( strcmp( command , "sql_Path" ) == 0 ){
         		strcmp( config.sql_Path , param ) ;
             snprintf( config.sql_Path , sizeof( config.sql_Path) , param );
-						log("\n路径字段：    %s",config.sql_Path);
+						log("\n繚噤趼僇ㄩ    %s",config.sql_Path);
 				} else if( strcmp( command , "sql_OnlineName" ) == 0 ){
         		strcmp( config.sql_OnlineName , param ) ;
             snprintf( config.sql_OnlineName , sizeof( config.sql_OnlineName) , param );
-						log("\n在线玩家字段：%s",config.sql_OnlineName);
+						log("\n婓盄俙模趼僇ㄩ%s",config.sql_OnlineName);
 				} else if( strcmp( command , "AutoReg" ) == 0 ){
         		AutoReg = atoi( param );
-        		log("\n开放自动注册：%d",AutoReg);
+        		log("\n羲溫赻雄蛁聊ㄩ%d",AutoReg);
     fclose(fp);
     return 0;
     		}
@@ -189,28 +189,28 @@ BOOL sasql_init( void )
 	
 if( mysql_init(&mysql) == NULL & readConfig("acserv.cf"))
 {
-	  log("\n数据库初始化失败！");
+	  log("\n杅擂踱場宎趙囮啖ㄐ");
 	  exit(1);
     return FALSE;
 }
 
   if( !mysql_real_connect( &mysql,
           config.sql_IP,
-          config.sql_ID,//帐号
-          config.sql_PS,//密码
-          config.sql_DataBase,//选择的资料库
+          config.sql_ID,//梛瘍
+          config.sql_PS,//躇鎢
+          config.sql_DataBase,//恁寁腔訧蹋踱
           config.sql_Port,
           NULL,
           0 ) )
 	{
-		log("\n更新数据库失败！\n");
+		log("\n載陔杅擂踱囮啖ㄐ\n");
 		return FALSE;
 	}
   
-  	log("\n数据库连接成功！\n");
+  	log("\n杅擂踱蟀諉傖髡ㄐ\n");
 #ifdef _SQL_BACKGROUND
     if(!sasql_initonline())
-      	log("\n数据库初始化失败！\n");
+      	log("\n杅擂踱場宎趙囮啖ㄐ\n");
 #endif
   	return TRUE;
 }
@@ -234,7 +234,7 @@ BOOL sasql_query(char *nm, char *pas){
 	  else{
 	  	return FALSE;}}
 	else{
-		log("\n 数据库查找失败！\n");
+		log("\n 杅擂踱脤梑囮啖ㄐ\n");
 		return FALSE;}
 }
 
@@ -246,7 +246,7 @@ BOOL sasql_update(char *nm, char *path){
 	if(!mysql_query(&mysql,sqlstr)){
 		return TRUE;}
 	else{
-		log("\n更新数据库失败！\n");
+		log("\n載陔杅擂踱囮啖ㄐ\n");
 		return FALSE;}
 }
 
@@ -256,7 +256,7 @@ BOOL sasql_online(char *nm,char *lnm){
 	if(!mysql_query(&mysql,sqlstr)){
 		return TRUE;}
 	else{
-		log("\n更新数据库失败！\n");
+		log("\n載陔杅擂踱囮啖ㄐ\n");
 		return FALSE;}
 }
 
@@ -284,15 +284,15 @@ BOOL sasql_register(char *nm, char *pas){
 		  if(num_row==0){
 				sprintf(sqlstr,"INSERT INTO %s (%s,%s,%s) VALUES ('%s','%s',NOW())",config.sql_Table,config.sql_Name,config.sql_PassWord,config.sql_RegTime,nm,pas);
 				if(!mysql_query(&mysql,sqlstr)){
-					log("\n新用户注册成功！\n");
+					log("\n陔蚚誧蛁聊傖髡ㄐ\n");
 					return TRUE;}
 				else{
-					log("\n新用户注册失败！\n");
+					log("\n陔蚚誧蛁聊囮啖ㄐ\n");
 				return FALSE;}}
 		  else{
 		  	return FALSE;}}
 		else{
-			log("\n 数据库查找失败！\n");
+			log("\n 杅擂踱脤梑囮啖ㄐ\n");
 			return FALSE;}
 	}
 	else{

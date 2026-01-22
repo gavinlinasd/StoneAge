@@ -412,48 +412,48 @@ tagRidePetTable ridePetTable[296] =
 #ifdef _NEW_RIDEPETS
 
 tagRideCodeMode RideCodeMode[] = {
-	{ 100374, RIDE_PET0 },  /*骑宠帖拉所伊朵*/
-	{ 100358, RIDE_PET1 },  /*骑宠玛恩摩洛斯*/
-	{ 100362, RIDE_PET2 },  /*骑宠朵拉比斯*/
-	{ 100279, RIDE_PET3 },  /*骑宠拉奇鲁哥*/
-	{ 100288, RIDE_PET4 },  /*骑宠扬奇洛斯*/
-	{ 100283, RIDE_PET5 },  /*骑宠卡达鲁卡斯*/
-	{ 100346, RIDE_PET6 },  /*骑宠卡卡金宝*/
-	{ 100310, RIDE_PET7 },  /*骑宠格尔格*/
-	{ 100372, RIDE_PET8 },  /*骑宠左迪洛斯*/
-	{ 100373, RIDE_PET9 },  /*骑宠巴朵兰恩*/
-	{ 101532, RIDE_PET10 }, /*镲宠史卡鲁*/
-	{ 101576, RIDE_PET11 }, /*骑宠罗多克雷*/
+	{ 100374, RIDE_PET0 },  /*る唾泃嶺垀畛嗡*/
+	{ 100358, RIDE_PET1 },  /*る唾鎖塋藻醫佴*/
+	{ 100362, RIDE_PET2 },  /*る唾嗡嶺掀佴*/
+	{ 100279, RIDE_PET3 },  /*る唾嶺も糧貊*/
+	{ 100288, RIDE_PET4 },  /*る唾栨も醫佴*/
+	{ 100283, RIDE_PET5 },  /*る唾縐湛糧縐佴*/
+	{ 100346, RIDE_PET6 },  /*る唾縐縐踢惘*/
+	{ 100310, RIDE_PET7 },  /*る唾跡嫌跡*/
+	{ 100372, RIDE_PET8 },  /*る唾酘舜醫佴*/
+	{ 100373, RIDE_PET9 },  /*る唾匙嗡擘塋*/
+	{ 101532, RIDE_PET10 }, /*瀅唾妢縐糧*/
+	{ 101576, RIDE_PET11 }, /*る唾蹕嗣親濘*/
 };
 
 tagRideNoList RideNoList[] = {
-	{{ 101305, 101306, 101307, 101308, 101309, 101310, 101311, 101312, 101008, 101009, 101978, 101989},0},	//小矮子
-	{{ 101313, 101314, 101315, 101316, 101317, 101318, 101319, 101320, 101018, 101019, 101986, 101988},0},	//赛亚人
-	{{ 101321, 101322, 101323, 101324, 101325, 101326, 101327, 101328, 101028, 101029, 101975, 101965},0},	//辫子男孩
-	{{ 101329, 101330, 101331, 101332, 101333, 101334, 101335, 101336, 101038, 101039, 101976, 101966},0},	//酷哥
-	{{ 101337, 101338, 101339, 101340, 101341, 101342, 101343, 101344, 101048, 101049, 101984, 101973},0},	//熊皮男
-	{{ 101345, 101346, 101347, 101348, 101349, 101350, 101351, 101352, 101058, 101059, 101985, 101974},0},	//大个
-	{{ 101353, 101354, 101355, 101356, 101357, 101358, 101359, 101360, 101068, 101069, 101977, 101967},0},	//小矮妹
-	{{ 101361, 101362, 101363, 101364, 101365, 101366, 101367, 101368, 101078, 101079, 101979, 101968},0},	//熊皮妹
-	{{ 101369, 101370, 101371, 101372, 101373, 101374, 101375, 101376, 101088, 101089, 101981, 101970},0},	//帽子妹
-	{{ 101377, 101378, 101379, 101380, 101381, 101382, 101383, 101384, 101098, 101099, 101980, 101969},0},	//短法发夹妹
-	{{ 101385, 101386, 101387, 101388, 101389, 101390, 101391, 101392, 101108, 101109, 101983, 101972},0},	//手套女
-	{{ 101393, 101394, 101395, 101396, 101397, 101398, 101399, 101400, 101118, 101119, 101982, 101970},0},	//辣妹
+	{{ 101305, 101306, 101307, 101308, 101309, 101310, 101311, 101312, 101008, 101009, 101978, 101989},0},	//苤鬥赽
+	{{ 101313, 101314, 101315, 101316, 101317, 101318, 101319, 101320, 101018, 101019, 101986, 101988},0},	//��捚��
+	{{ 101321, 101322, 101323, 101324, 101325, 101326, 101327, 101328, 101028, 101029, 101975, 101965},0},	//梯赽鹹滯
+	{{ 101329, 101330, 101331, 101332, 101333, 101334, 101335, 101336, 101038, 101039, 101976, 101966},0},	//蹄貊
+	{{ 101337, 101338, 101339, 101340, 101341, 101342, 101343, 101344, 101048, 101049, 101984, 101973},0},	//倱々鹹
+	{{ 101345, 101346, 101347, 101348, 101349, 101350, 101351, 101352, 101058, 101059, 101985, 101974},0},	//湮跺
+	{{ 101353, 101354, 101355, 101356, 101357, 101358, 101359, 101360, 101068, 101069, 101977, 101967},0},	//苤鬥藤
+	{{ 101361, 101362, 101363, 101364, 101365, 101366, 101367, 101368, 101078, 101079, 101979, 101968},0},	//倱々藤
+	{{ 101369, 101370, 101371, 101372, 101373, 101374, 101375, 101376, 101088, 101089, 101981, 101970},0},	//簽赽藤
+	{{ 101377, 101378, 101379, 101380, 101381, 101382, 101383, 101384, 101098, 101099, 101980, 101969},0},	//傻楊楷標藤
+	{{ 101385, 101386, 101387, 101388, 101389, 101390, 101391, 101392, 101108, 101109, 101983, 101972},0},	//忒杶躓
+	{{ 101393, 101394, 101395, 101396, 101397, 101398, 101399, 101400, 101118, 101119, 101982, 101970},0},	//彌藤
 };
 
 tagRidePetList RPlistMode[] = {
-	{ 100000, 0, 1 }, { 100005, 0, 1 }, { 100010, 0, 1 }, { 100015, 0, 1 }, { 100700, 0, 1 }, { 100705, 0, 1 },	//小矮子
-	{ 100020, 1, 1 }, { 100025, 1, 1 }, { 100030, 1, 1 }, { 100035, 1, 1 },	{ 100710, 1, 1 }, { 100715, 1, 1 },//赛亚人
-	{ 100040, 2, 1 }, { 100045, 2, 1 }, { 100050, 2, 1 }, { 100055, 2, 1 }, { 100720, 2, 1 }, { 100725, 2, 1 },	//辫子男孩
-	{ 100060, 3, 1 }, { 100065, 3, 1 }, { 100070, 3, 1 }, { 100075, 3, 1 },	{ 100730, 3, 1 }, { 100735, 3, 1 },	//酷哥
-	{ 100080, 4, 1 }, { 100085, 4, 1 }, { 100090, 4, 1 }, { 100095, 4, 1 },	{ 100740, 4, 1 }, { 100745, 4, 1 },	//熊皮男
-	{ 100100, 5, 1 }, { 100105, 5, 1 }, { 100110, 5, 1 }, { 100115, 5, 1 },	{ 100750, 5, 1 }, { 100755, 5, 1 },	//大个
-	{ 100120, 6, 2 }, { 100125, 6, 2 }, { 100130, 6, 2 }, { 100135, 6, 2 },	{ 100760, 6, 2 }, { 100765, 6, 2 },	//小矮妹
-	{ 100140, 7, 2 }, { 100145, 7, 2 }, { 100150, 7, 2 }, { 100155, 7, 2 },	{ 100770, 7, 2 }, { 100775, 7, 2 },	//熊皮妹
-	{ 100160, 8, 2 }, { 100165, 8, 2 }, { 100170, 8, 2 }, { 100175, 8, 2 },	{ 100780, 8, 2 }, { 100785, 8, 2 },	//帽子妹
-	{ 100180, 9, 2 }, { 100185, 9, 2 }, { 100190, 9, 2 }, { 100195, 9, 2 },	{ 100790, 9, 2 }, { 100795, 9, 2 },	//短发夹妹
-	{ 100200, 10, 2 }, { 100205, 10, 2 }, { 100210, 10, 2 }, { 100215, 10, 2 }, { 100800, 10, 2 }, { 100805, 10, 2 },	//手套女
-	{ 100220, 11, 2 }, { 100225, 11, 2 }, { 100230, 11, 2 }, { 100235, 11, 2 },	{ 100810, 11, 2 }, { 100815, 11, 2 },	//辣妹
+	{ 100000, 0, 1 }, { 100005, 0, 1 }, { 100010, 0, 1 }, { 100015, 0, 1 }, { 100700, 0, 1 }, { 100705, 0, 1 },	//苤鬥赽
+	{ 100020, 1, 1 }, { 100025, 1, 1 }, { 100030, 1, 1 }, { 100035, 1, 1 },	{ 100710, 1, 1 }, { 100715, 1, 1 },//��捚��
+	{ 100040, 2, 1 }, { 100045, 2, 1 }, { 100050, 2, 1 }, { 100055, 2, 1 }, { 100720, 2, 1 }, { 100725, 2, 1 },	//梯赽鹹滯
+	{ 100060, 3, 1 }, { 100065, 3, 1 }, { 100070, 3, 1 }, { 100075, 3, 1 },	{ 100730, 3, 1 }, { 100735, 3, 1 },	//蹄貊
+	{ 100080, 4, 1 }, { 100085, 4, 1 }, { 100090, 4, 1 }, { 100095, 4, 1 },	{ 100740, 4, 1 }, { 100745, 4, 1 },	//倱々鹹
+	{ 100100, 5, 1 }, { 100105, 5, 1 }, { 100110, 5, 1 }, { 100115, 5, 1 },	{ 100750, 5, 1 }, { 100755, 5, 1 },	//湮跺
+	{ 100120, 6, 2 }, { 100125, 6, 2 }, { 100130, 6, 2 }, { 100135, 6, 2 },	{ 100760, 6, 2 }, { 100765, 6, 2 },	//苤鬥藤
+	{ 100140, 7, 2 }, { 100145, 7, 2 }, { 100150, 7, 2 }, { 100155, 7, 2 },	{ 100770, 7, 2 }, { 100775, 7, 2 },	//倱々藤
+	{ 100160, 8, 2 }, { 100165, 8, 2 }, { 100170, 8, 2 }, { 100175, 8, 2 },	{ 100780, 8, 2 }, { 100785, 8, 2 },	//簽赽藤
+	{ 100180, 9, 2 }, { 100185, 9, 2 }, { 100190, 9, 2 }, { 100195, 9, 2 },	{ 100790, 9, 2 }, { 100795, 9, 2 },	//傻楷標藤
+	{ 100200, 10, 2 }, { 100205, 10, 2 }, { 100210, 10, 2 }, { 100215, 10, 2 }, { 100800, 10, 2 }, { 100805, 10, 2 },	//忒杶躓
+	{ 100220, 11, 2 }, { 100225, 11, 2 }, { 100230, 11, 2 }, { 100235, 11, 2 },	{ 100810, 11, 2 }, { 100815, 11, 2 },	//彌藤
 };
 
 int RIDEPET_getNOindex( int baseNo)
@@ -656,7 +656,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
     "fl",               /*  CHAR_FLOOR  */
     "x",                /*  CHAR_X */
     "y",                /*  CHAR_Y  */
-    "dir",              /*  CHAR_DIR 12凛毛0卞凛煌璃曰卞 */
+    "dir",              /*  CHAR_DIR 12鄹禱0勗鄹銓薛堇勗 */
 	"lv",               /*  CHAR_LV  */
     "gld",              /*  CHAR_GOLD    */
 
@@ -671,10 +671,10 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 
 	"chr",				/*  CHAR_CHARM	*/
 	"luc",				/*  CHAR_LUCK	*/
-	"aea",				/*  哗箪岭 */
-	"awa",				/*    箪岭 */
-	"afi",				/*  绍箪岭 */
-	"awi",				/*  氘箪岭 */
+	"aea",				/*  貍鶂鍛 */
+	"awa",				/*    鶂鍛 */
+	"afi",				/*  庄鶂鍛 */
+	"awi",				/*  諿鶂鍛 */
 
 	"slt",				/*  CHAR_SLOT */
 	"cr",				/*  CHAR_CRITIAL */
@@ -732,9 +732,9 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"evt5",				/*  CHAR_EVENT5	*/
 	"evt6",				/*  CHAR_EVENT6	*/
 #endif
-#ifdef _ADD_NEWEVENT              // WON 多增任务旗标
+#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
 	"evt7",				/*  CHAR_EVENT7	*/
-	"evt8",				//	CHAR_ENDEVENT8, 224~255 精灵召唤专用
+	"evt8",				//	CHAR_ENDEVENT8, 224~255 儕鍾欸遢蚳蚚
 #endif
 
 	"nev",				/*  CHAR_NOWEVENT	*/
@@ -745,9 +745,9 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"nev5",				/*  CHAR_NOWEVENT5	*/
 	"nev6",				/*  CHAR_NOWEVENT6	*/
 #endif
-#ifdef _ADD_NEWEVENT              // WON 多增任务旗标
+#ifdef _ADD_NEWEVENT              // WON 嗣崝�恄鮿麇�
 	"nev7",				/*  CHAR_NOWEVENT7	*/
-	"nev8",				//	CHAR_NOWEVENT8, 224~255 精灵召唤专用
+	"nev8",				//	CHAR_NOWEVENT8, 224~255 儕鍾欸遢蚳蚚
 #endif
     
 	"trn",				/*  CHAR_TRANSMIGRATION */
@@ -755,9 +755,9 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
     
     "ini",              /*  CHAR_INITDATA   */
     "silent",              /*  CHAR_SILENT   */    
-    "fmi",		// CoolFish: Family 2001/5/24 家族 index
-    "fmlf",		// CoolFish: Family 2001/5/24 是否为家族族长
-    "fmspr",		// CoolFish: Family 2001/7/13 家族守护精灵
+    "fmi",		// CoolFish: Family 2001/5/24 模逜 index
+    "fmlf",		// CoolFish: Family 2001/5/24 岆瘁峈模逜逜酗
+    "fmspr",		// CoolFish: Family 2001/7/13 模逜忐誘儕鍾
 
     "bankgld",		/* CHAR_BANKGOLD */
     "ridepet",		/* CHAR_RIDEPET */
@@ -778,7 +778,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"pkleader", //CHAR_PKLISTLEADER,
 #endif
 
-#ifdef _PERSONAL_FAME	// Arminius 8.30: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius 8.30: 模逜跺�侂驫�
     "fame",
 #endif
 
@@ -787,35 +787,35 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 #endif
 
 #ifdef __ATTACK_MAGIC
-		"earth_exp",						// 玩家的地魔法熟练度
-		"water_exp",						// 玩家的水魔法熟练度
-		"fire_exp",	  					// 玩家的火魔法熟练度
-		"wind_exp", 						// 玩家的风魔法熟练度
-		"earth_resist", 				// 玩家的地魔法抗性
-		"water_resist", 				// 玩家的水魔法抗性
-		"fire_resist",					// 玩家的火魔法抗性
-		"wind_resist",					// 玩家的风魔法抗性
-		"earth_attmagic_exp",		// 玩家的地魔法熟练度经验值
-		"water_attmagic_exp",		// 玩家的水魔法熟练度经验值
-		"fire_attmagic_exp",		// 玩家的火魔法熟练度经验值
-		"wind_attmagic_exp",		// 玩家的风魔法熟练度经验值
-		"earth_defmagic_exp",   // 玩家的地魔法抗性经验值
-		"water_defmagic_exp",   // 玩家的水魔法抗性经验值
-		"fire_defmagic_exp",    // 玩家的火魔法抗性经验值
-		"wind_defmagic_exp",    // 玩家的风魔法抗性经验值
+		"earth_exp",						// 俙模腔華藹楊抇褶僅
+		"water_exp",						// 俙模腔阨藹楊抇褶僅
+		"fire_exp",	  					// 俙模腔鳶藹楊抇褶僅
+		"wind_exp", 						// 俙模腔瑞藹楊抇褶僅
+		"earth_resist", 				// 俙模腔華藹楊蕨俶
+		"water_resist", 				// 俙模腔阨藹楊蕨俶
+		"fire_resist",					// 俙模腔鳶藹楊蕨俶
+		"wind_resist",					// 俙模腔瑞藹楊蕨俶
+		"earth_attmagic_exp",		// 俙模腔華藹楊抇褶僅冪桄硉
+		"water_attmagic_exp",		// 俙模腔阨藹楊抇褶僅冪桄硉
+		"fire_attmagic_exp",		// 俙模腔鳶藹楊抇褶僅冪桄硉
+		"wind_attmagic_exp",		// 俙模腔瑞藹楊抇褶僅冪桄硉
+		"earth_defmagic_exp",   // 俙模腔華藹楊蕨俶冪桄硉
+		"water_defmagic_exp",   // 俙模腔阨藹楊蕨俶冪桄硉
+		"fire_defmagic_exp",    // 俙模腔鳶藹楊蕨俶冪桄硉
+		"wind_defmagic_exp",    // 俙模腔瑞藹楊蕨俶冪桄硉
 #endif
 
-#ifdef _GAMBLE_BANK //个人银行
+#ifdef _GAMBLE_BANK //跺�刳靇�
 		"personaglod",	//CHAR_PERSONAGOLD,
 #endif
 #ifdef _DROPSTAKENEW
 		"gamblenums",	//CHAR_GAMBLENUM
 #endif
-#ifdef _ADD_ACTION          //npc动作
+#ifdef _ADD_ACTION          //npc雄釬
 		"actsty",		//CHAR_ACTIONSTYLE
 #endif
 #ifdef _AUCTIONEER
-    "aucgold",    // CHAR_AUCGOLD 拍卖所得
+    "aucgold",    // CHAR_AUCGOLD 鼴闖垀腕
 #endif
 #ifdef _PET_EVOLUTION
 	"evbasevtl",//	CHAR_EVOLUTIONBASE,	
@@ -838,14 +838,14 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 
 
 #ifdef _FAMILYBANKSTONELOG
-	"fmbankgold", //家族银行存款
+	"fmbankgold", //模逜窅俴湔遴
 #endif
 
 #ifdef _FM_JOINLIMIT
 	"fmtimelimit", //	CHAR_FMTIMELIMIT,
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
 	"profession_class",
 	"profession_level",
 //	"profession_exp",
@@ -858,7 +858,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"profession_ice_r",
 	"profession_thunder_r",
 #endif
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 	"herofloor",
 #endif
 #ifdef _PETSKILL_BECOMEPIG
@@ -879,7 +879,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"herocnt",	// CHAR_HEROCNT
 #endif
 #ifdef _TEACHER_SYSTEM
-	"tsf",	// CHAR_TEACHER_FAME,	// 导师领导声望
+	"tsf",	// CHAR_TEACHER_FAME,	// 絳呇鍰絳汒咡
 #endif
 
 #ifdef _RACEMAN
@@ -901,7 +901,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"kindcnt10", //CHAR_KINDCNT10,	/*   (288~319)		*/
 #endif
 #ifdef _GM_ITEM
-	"gmtime", // 玩家GM命令次数
+	"gmtime", // 俙模GM韜鍔棒杅
 #endif
 };
 
@@ -912,12 +912,12 @@ static char* CHAR_setchardata[CHAR_DATACHARNUM]={
     "arg",                 /*  CHAR_NPCARGUMENT */
     "ocd",				/* CHAR_OWNERCDKEY */
     "ocn",				/* CHAR_OWNERCHARANAME */
-    "fmname",	// CoolFish: Family 2001/5/24 家族名称 CHAR_FMNAME
+    "fmname",	// CoolFish: Family 2001/5/24 模逜靡備 CHAR_FMNAME
 #ifdef _UNIQUE_P_I    
     "ucode",	// CoolFish: 2001/10/11 UNIQUE_P_I CHAR_UNIQUECODE
 #endif
 #ifdef _ACTION_GMQUE
-	//人物 npc 使用 
+	//�冼� npc 妏蚚 
 	"gmque",	//CHAR_GMQUESTR1,
 	//"temp2",	//CHAR_GMQUESTR2,
 	//"temp3",	//CHAR_GMQUESTR3,
@@ -925,21 +925,21 @@ static char* CHAR_setchardata[CHAR_DATACHARNUM]={
 #endif
 
 #ifdef _GM_IDENTIFY
-  "gmidentify", //gm名称
+  "gmidentify", //gm靡備
 #endif
 #ifdef _TEACHER_SYSTEM
-	"tsi",	// 导师帐号
-	"tsn",	// 导师名字
+	"tsi",	// 絳呇梛瘍
+	"tsn",	// 絳呇靡趼
 #endif
 
 #ifdef _ITEM_SETLOVER
-	"love",       // 结婚判断
-	"lovrrid",    // 爱人帐号
-	"lovrrneme",	// 爱人名字
+	"love",       // 賦駁瓚剿
+	"lovrrid",    // 乾�劼妧�
+	"lovrrneme",	// 乾�佸�趼
 #endif
 
 #ifdef _GM_ITEM
-	"gmfunction", // 玩家GM命令
+	"gmfunction", // 俙模GM韜鍔
 #endif
 };
 
@@ -1240,7 +1240,7 @@ INLINE char _CHAR_setFlg( char *file, int line, int index , CHAR_DATACHAR elemen
     elementnum = element / (sizeof( char )*8);
     bitnum = element % (sizeof( char )*8);
 
-    /*  樯及袄毛转      */
+    /*  橑摯偯禱蛌      */
     buf = CHAR_chara[index].flg[elementnum]
         & CHAR_flgbitmaskpattern[bitnum];
 
@@ -1399,7 +1399,7 @@ INLINE CHAR_HaveSkill* CHAR_getCharHaveSkill( int index,int sindex )
 	return &CHAR_chara[index].haveSkill[sindex];
 }
 //------------------------------------------------------------------------
-//人物index  技能位置  索引
+//�冼魈ndex  撮夔弇离  坰竘
 INLINE int _CHAR_getIntPSkill( char *file, int line, int index, int skillti, SKILL_DATAINT ti)
 {
     if( !CHAR_CHECKINDEX( index) ) return -1;
@@ -1411,7 +1411,7 @@ INLINE int _CHAR_getIntPSkill( char *file, int line, int index, int skillti, SKI
 	if( CHAR_chara[index].haveSkill[skillti].skill.data[ti] <= 0 ) return -1;
 	return CHAR_chara[index].haveSkill[skillti].skill.data[ti];
 }
-//人物index  技能位置  索引 欲设定值
+//�冼魈ndex  撮夔弇离  坰竘 郗扢隅硉
 INLINE void _CHAR_setIntPSkill( char *file, int line, int index, int skillti, SKILL_DATAINT ti, int data)
 {
     if( !CHAR_CHECKINDEX( index) ) return;
@@ -1425,7 +1425,7 @@ INLINE void _CHAR_setIntPSkill( char *file, int line, int index, int skillti, SK
 }
 //------------------------------------------------------------------------
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 int CHAR_getCharSkill( int index,int sindex )
 {
 	CHAR_HaveSkill* hskill;
@@ -1661,13 +1661,13 @@ BOOL CHAR_initCharArray( int pnum, int petnum,int onum )
 
     CHAR_chara = allocateMemory( sizeof( Char ) * CHAR_charanum );
     if( CHAR_chara == NULL ){
-		print("无法分配人物内存 !!\n");
+		print("拸楊煦饜�冼巀痟� !!\n");
 		return FALSE;
 	}
 
 
 	//andy_log
-	print("人物内存: %4.2f...", ((float)sizeof( Char )*CHAR_charanum)/1024);
+	print("�冼巀痟�: %4.2f...", ((float)sizeof( Char )*CHAR_charanum)/1024);
 
     for( i = 0 ; i < CHAR_charanum ; i ++ ){
 		memset( &CHAR_chara[i], 0 , sizeof( Char ));
@@ -2154,16 +2154,16 @@ DebugPoint=51;
 		char *sp2 = strstr( data, "ownt=");
 		if( sp && sp2 ){
 			snprintf( name, sp2-sp-5, "%s", sp+5 );		
-			print("\n开始登陆人物名称:%s ", name );
+			print("\n羲宎腎翻�冼屪�備:%s ", name );
 		}else
-			print("\n开始登陆人物名称错误! ");
+			print("\n羲宎腎翻�冼屪�備渣昫! ");
 			
 		if( data[strlen(data)-2] != '\n' ){
-			print("\n 登陆错误!:%s ",data+strlen(data)-20 );
+			print("\n 腎翻渣昫!:%s ",data+strlen(data)-20 );
 		}
 		
 		if( strlen(name) > 16 ){
-			print("人物名称过长!! 人物名称:%s 长度:%d ", name ,strlen(name) );
+			print("�冼屪�備徹酗!! �冼屪�備:%s 酗僅:%d ", name ,strlen(name) );
 		}
     }
 
@@ -2347,14 +2347,14 @@ DebugPoint=66;
 			if( ret == TRUE ){
 		        int petindex = PET_initCharOneArray( &ch );
 		        if( petindex < 0 ){
-		        	print( "宠物制作失败。\n");
+		        	print( "唾昜秶釬囮啖﹝\n");
 		        }
 		        one->unionTable.indexOfPet[petnumber]  = petindex;
 				goto NEXT;
 			}else{
-				LodBadPetString( data, "错误总计", petnumber);
+				LodBadPetString( data, "渣昫軞數", petnumber);
 
-				fprint( "错误 宠物字符串 无法作成\n");
+				fprint( "渣昫 唾昜趼睫揹 拸楊釬傖\n");
 				return FALSE;
 			}
 		}
@@ -2369,13 +2369,13 @@ DebugPoint=67;
 			if( ret == TRUE ) {
 		        int petindex = PET_initCharOneArray( &ch );
 		        if( petindex < 0 ) {
-		        	fprint( "错误 宠物 无法作成\n");
+		        	fprint( "渣昫 唾昜 拸楊釬傖\n");
 		        }
 		        one->indexOfPoolPet[petnumber]  = petindex;
 				goto NEXT;
 			}else{
 				LodBadPetString( data, "err *total", petnumber);
-				fprint( "错误 合成宠物字符串 无法作成\n");
+				fprint( "渣昫 磁傖唾昜趼睫揹 拸楊釬傖\n");
 				return FALSE;
 			}
 		}
@@ -2399,13 +2399,13 @@ DebugPoint=68;
 		char *sp2 = strstr( data, "ownt=");
 		if( sp && sp2 ){		
 			snprintf( name, sp2-sp-5, "%s", sp+5 );	
-			print("\n登陆成功 人物名称:%s ", name );
+			print("\n腎翻傖髡 �冼屪�備:%s ", name );
 		}
 		else
-			print("\n登陆成功 人物名称错误! ");
+			print("\n腎翻傖髡 �冼屪�備渣昫! ");
 			
 		if( data[strlen(data)-2] != '\n' ){
-			print("\n玩家登陆出错! ");
+			print("\n俙模腎翻堤渣! ");
 			//return FALSE;
 		}
     }
@@ -2460,7 +2460,7 @@ char *CHAR_makePetStringFromPetIndex( int petindex)
                     linedata );
         strlength += strlen( linedata );
         if( strlength > sizeof( CHAR_petdataString ) ) {
-			fprint( "错误 宠物数据缓冲不足\n");
+			fprint( "渣昫 唾昜杅擂遣喳祥逋\n");
         	return NULL;
     	}
     }
@@ -2476,7 +2476,7 @@ char *CHAR_makePetStringFromPetIndex( int petindex)
                     sizeof( CHAR_petdataString ) - strlength, linedata );
         strlength += strlen( linedata );
         if( strlength > sizeof( CHAR_petdataString ) ) {
-			fprint( "错误 宠物数据缓冲不足\n");
+			fprint( "渣昫 唾昜杅擂遣喳祥逋\n");
         	return NULL;
 		}
 	}
@@ -2498,7 +2498,7 @@ char *CHAR_makePetStringFromPetIndex( int petindex)
 
         strlength += strlen( linedata );
         if( strlength > sizeof( CHAR_petdataString ) ) {
-			fprint( "错误 宠物数据缓冲不足\n");
+			fprint( "渣昫 唾昜杅擂遣喳祥逋\n");
         	return NULL;
     	}
     }
@@ -2506,7 +2506,7 @@ char *CHAR_makePetStringFromPetIndex( int petindex)
 
 	if( strstr( CHAR_petdataString, "name:") == NULL ||
 		strstr( CHAR_petdataString, "ownt:") == NULL ){
-		LodBadPetString( CHAR_petdataString, "名字 错误", -1);
+		LodBadPetString( CHAR_petdataString, "靡趼 渣昫", -1);
 	}
 	return CHAR_petdataString;
 }
@@ -2638,7 +2638,7 @@ int CHAR_makePetFromStringToArg( char *src, Char *ch, int ti)
 	return TRUE;
 }
 
-#ifdef _PERSONAL_FAME	// Arminius 8.30: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius 8.30: 模逜跺�侂驫�
 
 void CHAR_earnFame(int index, int fame)
 {
@@ -2701,12 +2701,12 @@ void CHAR_DetainSameItem( int charaindex, int itemindex)
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME),
 			CHAR_getChar( charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemindex,
 #else
 			ITEM_getInt( itemindex, ITEM_ID),
 #endif
-			"SysDeleteSame(系统删除重覆道具)",
+			"SysDeleteSame(炵苀刉壺笭葡耋撿)",
 			CHAR_getInt( charaindex, CHAR_FLOOR),
 			CHAR_getInt( charaindex, CHAR_X),
 			CHAR_getInt( charaindex, CHAR_Y),
@@ -2728,7 +2728,7 @@ void CHAR_DetainSamePet( int charaindex, int petindex)
 	 	   		CHAR_getChar( charaindex, CHAR_CDKEY),
 	   	   		CHAR_getChar( petindex, CHAR_NAME),
 	   	   		CHAR_getInt( petindex, CHAR_LV),
-	   	   		"SysDeleteSame(删除重覆宠物)",
+	   	   		"SysDeleteSame(刉壺笭葡唾昜)",
 	   	   		CHAR_getInt( charaindex, CHAR_FLOOR),
 	   	   		CHAR_getInt( charaindex, CHAR_X),
 	   	   		CHAR_getInt( charaindex, CHAR_Y),
@@ -2891,7 +2891,7 @@ void Check_P_I_UniCode( int charaindex)
 }
 #endif
 
-// Arminius 12.15 判断是否是男士
+// Arminius 12.15 瓚剿岆瘁岆鹹尪
 int IsMale(int charindex) {
   int bbi=CHAR_getInt(charindex, CHAR_BASEBASEIMAGENUMBER);
 
@@ -2908,7 +2908,7 @@ int IsMale(int charindex) {
   return 0;
 }
 
-// Arminius 12.15 判断是否是女士
+// Arminius 12.15 瓚剿岆瘁岆躓尪
 int IsFemale(int charindex) {
   int bbi=CHAR_getInt(charindex, CHAR_BASEBASEIMAGENUMBER);
 
@@ -2933,7 +2933,7 @@ BOOL CHAR_CanCureFlg( int charaindex, char *arg)
 	if( getToxication( fd) == 1 ){
 		if( strstr( arg, "FALSE") == 0 )	{
 			char buf[256];
-			sprintf( buf,"因中毒无法补%s。", arg);
+			sprintf( buf,"秪笢馮拸楊硃%s﹝", arg);
 			CHAR_talkToCli( charaindex, -1, buf, CHAR_COLORYELLOW);
 		}
 		return FALSE;
@@ -3045,7 +3045,7 @@ BOOL CHAR_PETSKILLCAN( int toindex)
 		petindex = CHAR_getCharPet( toindex, i);
 		if( !CHAR_CHECKINDEX( petindex) ) continue;
 
-		{//清除狂暴攻击
+		{//ь壺遼惟馴僻
 			int j;
 			for( j=0; j<CHAR_MAXPETSKILLHAVE; j++)	{
 				if( CHAR_getPetSkill( petindex, j) != 541 )continue;
@@ -3068,7 +3068,7 @@ BOOL CHAR_PETSKILLCAN( int toindex)
 			}
 		}
 		if( CHAR_getInt( petindex, CHAR_PETID) != 968 &&
-			CHAR_getInt ( petindex, CHAR_FUSIONBEIT) != 1 ){ //不是融合宠
+			CHAR_getInt ( petindex, CHAR_FUSIONBEIT) != 1 ){ //祥岆�睆炡�
 			int j;
 			for( j=0; j<CHAR_MAXPETSKILLHAVE; j++)	{
 				if( CHAR_getPetSkill( petindex, j) != 542 )continue;
@@ -3098,7 +3098,7 @@ BOOL CHAR_PETSKILLCAN( int toindex)
 				Finds = TRUE;
 			}
 		}
-		{//清除狂暴攻击
+		{//ь壺遼惟馴僻
 			int j;
 			for( j=0; j<CHAR_MAXPETSKILLHAVE; j++)	{
 				if( CHAR_getPetSkill( petindex, j) != 541 )continue;
@@ -3112,7 +3112,7 @@ BOOL CHAR_PETSKILLCAN( int toindex)
 		}
 //CHAR_setInt ( newindex, CHAR_FUSIONBEIT, 1);
 		if( CHAR_getInt( petindex, CHAR_PETID) != 968 &&
-			CHAR_getInt ( petindex, CHAR_FUSIONBEIT) != 1 ){ //不是融合宠
+			CHAR_getInt ( petindex, CHAR_FUSIONBEIT) != 1 ){ //祥岆�睆炡�
 			int j;
 			for( j=0; j<CHAR_MAXPETSKILLHAVE; j++)	{
 				if( CHAR_getPetSkill( petindex, j) != 542 )continue;
@@ -3195,7 +3195,7 @@ INLINE int _CHAR_DelItem( char *file, int line, int charaindex, int ti, int num,
 #endif
 /*
 		if( flg == 1 ){
-			sprintf( token, "交出%s。", ITEM_getChar( itemindex, ITEM_NAME));
+			sprintf( token, "蝠堤%s﹝", ITEM_getChar( itemindex, ITEM_NAME));
 			CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 		}
 */
@@ -3212,7 +3212,7 @@ INLINE int _CHAR_DelItem( char *file, int line, int charaindex, int ti, int num,
 int CHAR_getMaxHaveGold( int charaindex)
 {
 	int MaxGold;
-#ifdef _FIX_MAX_GOLD				// WON ADD 增加人物金钱上限
+#ifdef _FIX_MAX_GOLD				// WON ADD 崝樓�冼嚚蟓時珫�
 	int trans = CHAR_getInt( charaindex, CHAR_TRANSMIGRATION);
 	MaxGold = 1000000 + trans*( 1800000);
 #else
@@ -3231,7 +3231,7 @@ INLINE int _CHAR_AddGold( char *file, int line, int charaindex, int gold)
 	MyGold = CHAR_getInt( charaindex, CHAR_GOLD);
 	MyGold = (MyGold>MaxGold)?MaxGold:MyGold;
 	gold = (gold>MaxGold)?MaxGold:gold;
-	sprintf( token, "得到%d石币", gold);
+	sprintf( token, "腕善%d坒啟", gold);
 	CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 	MyGold += gold;
 
@@ -3242,11 +3242,11 @@ INLINE int _CHAR_AddGold( char *file, int line, int charaindex, int gold)
 		MyGBGold += reGolds;
 		MyGBGold = (MyGBGold > CHAR_MAXPERSONAGOLD)?CHAR_MAXPERSONAGOLD:MyGBGold;
 		CHAR_setInt( charaindex, CHAR_PERSONAGOLD, MyGBGold);
-		sprintf( token,"存款：%d ，银行剩馀：%d 。", reGolds, CHAR_getInt( charaindex, CHAR_PERSONAGOLD ));
+		sprintf( token,"湔遴ㄩ%d ㄛ窅俴呁牄ㄩ%d ﹝", reGolds, CHAR_getInt( charaindex, CHAR_PERSONAGOLD ));
 		CHAR_talkToCli( charaindex, -1, token,  CHAR_COLORYELLOW);
 			LogBankStone(    CHAR_getChar( charaindex, CHAR_NAME ), CHAR_getChar( charaindex, CHAR_CDKEY ),
 						charaindex, reGolds, 
-						"GB_Bank_save(宝箱)", 
+						"GB_Bank_save(惘眊)", 
 						CHAR_getInt( charaindex, CHAR_FLOOR),
 						CHAR_getInt( charaindex, CHAR_X ), CHAR_getInt( charaindex, CHAR_Y ),
 						CHAR_getInt( charaindex, CHAR_GOLD ),
@@ -3271,7 +3271,7 @@ INLINE int _CHAR_DelGold( char *file, int line, int charaindex, int gold)
 	gold = (gold>MaxGold)?MaxGold:gold;
 
 	if( MyGold < gold ){
-		sprintf( token, "没有足够的石币！(%d石币)", gold);
+		sprintf( token, "羶衄逋劂腔坒啟ㄐ(%d坒啟)", gold);
 		CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 		return 0;
 	}
@@ -3335,7 +3335,7 @@ void CHAR_removeDepotItem( int charaindex)
 	int i,itemindex;
 	Char*   ch = NULL;
 	if( !CHAR_CHECKINDEX( charaindex) ) return;
-	if( !CHAR_CheckDepotItem( charaindex) ) return; //仓库未存在
+	if( !CHAR_CheckDepotItem( charaindex) ) return; //累踱帤湔婓
 	ch = CHAR_getCharPointer( charaindex);
     if( ch == NULL ){
 		print( "removeDepotItem err ch == NULL :%d\n", charaindex);
@@ -3483,7 +3483,7 @@ BOOL CHAR_SaveDepotItem( int charaindex)
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return FALSE;
 	fd = getfdFromCharaIndex( charaindex);
-	if( !CHAR_CheckDepotItem( charaindex) ) return FALSE; //仓库未存在
+	if( !CHAR_CheckDepotItem( charaindex) ) return FALSE; //累踱帤湔婓
 	if( (CdKey=CHAR_getChar( charaindex, CHAR_CDKEY)) == NULL ) return FALSE;
 	if( (databuf = CHAR_makeDepotItemFromCharIndex( charaindex)) == NULL ){
 		CHAR_removeDepotItem( charaindex);
@@ -3502,10 +3502,10 @@ BOOL CHAR_GetDepotItem( int meindex, int charaindex)
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return FALSE;
 	fd = getfdFromCharaIndex( charaindex);
-	if( CHAR_CheckDepotItem( charaindex) ) return FALSE;//仓库已存在
+	if( CHAR_CheckDepotItem( charaindex) ) return FALSE;//累踱眒湔婓
 	if( (CdKey=CHAR_getChar( charaindex, CHAR_CDKEY)) == NULL ) return FALSE;
 
-	//向AC要仓库资料
+	//砃AC猁累踱訧蹋
 	saacproto_ACCharGetPoolItem_send( acfd, meindex, charaindex, CONNECT_getFdid(fd), CdKey);
 	return TRUE;
 }
@@ -3574,7 +3574,7 @@ void CHAR_removeDepotPet( int charaindex)
 	int i,petindex;
 	Char*   ch = NULL;
 	if( !CHAR_CHECKINDEX( charaindex) ) return;
-	if( !CHAR_CheckDepotPet( charaindex) ) return; //仓库未存在
+	if( !CHAR_CheckDepotPet( charaindex) ) return; //累踱帤湔婓
 	ch = CHAR_getCharPointer( charaindex);
     if( ch == NULL ){
 		print( "removeDepotPet err ch == NULL :%d\n", charaindex);
@@ -3724,7 +3724,7 @@ BOOL CHAR_SaveDepotPet( int charaindex)
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return FALSE;
 	fd = getfdFromCharaIndex( charaindex);
-	if( !CHAR_CheckDepotPet( charaindex) ) return FALSE; //仓库未存在
+	if( !CHAR_CheckDepotPet( charaindex) ) return FALSE; //累踱帤湔婓
 	if( (CdKey=CHAR_getChar( charaindex, CHAR_CDKEY)) == NULL ) return FALSE;
 	if( (databuf = CHAR_makeDepotPetFromCharIndex( charaindex)) == NULL ){
 		CHAR_removeDepotPet( charaindex);
@@ -3743,10 +3743,10 @@ BOOL CHAR_GetDepotPet( int meindex, int charaindex)
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return FALSE;
 	fd = getfdFromCharaIndex( charaindex);
-	if( CHAR_CheckDepotPet( charaindex) ) return FALSE;//仓库已存在
+	if( CHAR_CheckDepotPet( charaindex) ) return FALSE;//累踱眒湔婓
 	if( (CdKey=CHAR_getChar( charaindex, CHAR_CDKEY)) == NULL ) return FALSE;
 
-	//向AC要仓库资料
+	//砃AC猁累踱訧蹋
 	saacproto_ACCharGetPoolPet_send( acfd, meindex, charaindex, CONNECT_getFdid(fd), CdKey);
 	return TRUE;
 }

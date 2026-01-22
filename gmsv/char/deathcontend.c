@@ -28,7 +28,7 @@ static int maxteam = 0;
 
 static int PKListSort[550];
 
-//正式赛
+//淏宒��
 ArrangeBattleC *NowABattle[MAXBAHEAD][MAXBAFLOOR][MAXNOWBATTLE];
 ArrangeBattleC *headABattle[MAXBAHEAD];
 ArrangeBattleC *InBattle[MAXBATTLEPAGE];
@@ -95,7 +95,7 @@ void del_rn( char *s )
 	}
 }
 
-//勿动-------------------------------------------------------
+//昦雄-------------------------------------------------------
 void PKLIST_ResetOneTeamMan( int ti )
 {
 	int k;
@@ -178,7 +178,7 @@ int PKLIST_InitPkTeamList( int teamnum )
 #ifdef _DEATH_CONTENDAB
 	ABATTLE_InitABattle(19);
 #endif
-	PKLIST_LoadPkTeamListData();	// 本来向ac要,改为直接读档
+	PKLIST_LoadPkTeamListData();	// 掛懂砃ac猁,蜊峈眻諉黍紫
 	PKLIST_Sort_PKListSort();
 
 	return 1;
@@ -206,7 +206,7 @@ int PKLIST_GetPkTeamListArray( int teamnum, char *cdkey)
 	return -1;
 }
 
-//确认约战
+//�溜珆槳�
 BOOL PKLIST_CHECKPkTeamSame( int teamnum, int charaindex, char *cdkey, int toteamnum )
 {
 	int k;
@@ -216,7 +216,7 @@ BOOL PKLIST_CHECKPkTeamSame( int teamnum, int charaindex, char *cdkey, int totea
 	if( array == -1 ) return FALSE;
 	for( k=0; k<MAXBATTLENUM; k++){
 		if( k >= DEFMAXBATTLENUM ){
-			CHAR_talkToCli( charaindex, -1, "对战场次已满！", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "勤桵部棒眒雛ㄐ", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 		if( PkTeamList[array].BHistory[k].use == 0 ) continue;
@@ -231,7 +231,7 @@ int PKLIST_CHECKPkTeamNew( int teamnum, int charaindex, char *cdkey )
 	int array;
 	array = PKLIST_GetPkTeamListArray( teamnum, cdkey);
 	if( array == -1 ){
-		CHAR_talkToCli( charaindex, -1, "无法取得队伍资料！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "拸楊�△繹蚔樼岏洷�", CHAR_COLORYELLOW);
 		return -1;
 	}
 	for( k=0; k<MAXBATTLENUM; k++){
@@ -239,7 +239,7 @@ int PKLIST_CHECKPkTeamNew( int teamnum, int charaindex, char *cdkey )
 		break;
 	}
 	if( k>= DEFMAXBATTLENUM ){
-		CHAR_talkToCli( charaindex, -1, "对战场次已满！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "勤桵部棒眒雛ㄐ", CHAR_COLORYELLOW);
 		return -1;
 	}
 	return k;
@@ -270,11 +270,11 @@ BOOL PKLIST_LoadPkTeamListDataSub( int ti, char *data)
 	if( getStringFromIndexWithDelim( data, "|", 9, buf, sizeof( buf)) == FALSE  ) return FALSE;
 		PkTeamList[ti].inside = atoi( buf);
 
-	if( PkTeamList[ti].inside == 2 && PkTeamList[ti].inside != oldinside ){//广播
+	if( PkTeamList[ti].inside == 2 && PkTeamList[ti].inside != oldinside ){//嫘畦
 		char token[256];
 		int i;
 		int playernum = CHAR_getPlayerMaxNum();
-		sprintf( token, "%s 队，达成比赛规定积分，积分：%d。",
+		sprintf( token, "%s 勦ㄛ湛傖掀��寞隅儅煦ㄛ儅煦ㄩ%d﹝",
 			PkTeamList[ti].teamname, PkTeamList[ti].score );
 
 		for( i=0; i<playernum; i++){
@@ -330,7 +330,7 @@ BOOL PKLIST_LoadPkTeamListDataBHistory( int ti, char *data)
 	return TRUE;
 }
 
-// teamlist.ini 内容
+// teamlist.ini 囀��
 // teamnum|teamname|leadercdkeky|leadername|cdkey|name|cdkey|name|cdkey|name|cdkey|name
 
 void PKLIST_LoadInitPkTeamListData(void)
@@ -387,10 +387,10 @@ void PKLIST_LoadInitPkTeamListData(void)
 	PKLIST_SavePkTeamListData();
 }
 
-// teamlist.txt 内容
+// teamlist.txt 囀��
 // teamindex_teamnum|pathdir|teamname|leadercdkeky|win|lost|battleplay|score|inside_cdkey,name|...|cdkey,name|_teamnum,flg|...|teamnum,flg
-//																																									|--------最多五笔--------| |--------最多一百笔-------|
-BOOL PKLIST_LoadPkTeamListData(void) // 改成读档
+//																																									|--------郔嗣拻捩--------| |--------郔嗣珨啃捩-------|
+BOOL PKLIST_LoadPkTeamListData(void) // 蜊傖黍紫
 {
 	FILE *fp = NULL;
 	int array = -1,count = 0;
@@ -657,15 +657,15 @@ void NPC_PKLIST_PlayerLogout_Exit( int charaindex )
 		if( (aB1=aBo->next[0]) == NULL || (aB2=aBo->next[1]) == NULL ) return;
 
 		if( aB1->teamnum == menum ){
-			sprintf( token, "%s 队 胜 %s 队。", aB2->teamname, aB1->teamname );
+			sprintf( token, "%s 勦 吨 %s 勦﹝", aB2->teamname, aB1->teamname );
 			LogPkContend( aB2->teamname , aB1->teamname, 0, 0, 0, 0);
-			ABATTLE_RecordBattle( -1, aB1->teamname, "", aB2->teamname, "胜");
+			ABATTLE_RecordBattle( -1, aB1->teamname, "", aB2->teamname, "吨");
 			tonum = aB2->teamnum;
 			ABATTLE_EnterBattle( aB2);
 		}else{
-			sprintf( token, "%s 队 胜 %s 队。", aB1->teamname, aB2->teamname );
+			sprintf( token, "%s 勦 吨 %s 勦﹝", aB1->teamname, aB2->teamname );
 			LogPkContend( aB1->teamname , aB2->teamname, 0, 0, 0, 0);
-			ABATTLE_RecordBattle( -1, aB1->teamname, "胜", aB2->teamname, "");
+			ABATTLE_RecordBattle( -1, aB1->teamname, "吨", aB2->teamname, "");
 			tonum = aB1->teamnum;
 			ABATTLE_EnterBattle( aB1);
 		}
@@ -673,7 +673,7 @@ void NPC_PKLIST_PlayerLogout_Exit( int charaindex )
 			if( InBattle[i] == NULL) continue;
 			if( InBattle[i] == aBo ) InBattle[i] = NULL;
 		}
-		{ //广播胜负
+		{ //嫘畦吨蛹
 			int i;
 			int playernum = CHAR_getPlayerMaxNum();
 			for( i=0; i<playernum; i++){
@@ -728,7 +728,7 @@ void NPC_PKLIST_PlayerLogout_Exit( int charaindex )
 		//saacproto_PkListUpDate_send( acfd , tocdkey, mecdkey,tonum, menum, 0, 0);
 		PKLIST_UpData(tocdkey,mecdkey,tonum,menum,0,0);
 
-		sprintf( token, "%s 队 胜 %s 队。",
+		sprintf( token, "%s 勦 吨 %s 勦﹝",
 			PkTeamList[toarray].teamname, PkTeamList[mearray].teamname);
 
 		LogPkContend( PkTeamList[toarray].teamname, PkTeamList[mearray].teamname,
@@ -738,7 +738,7 @@ void NPC_PKLIST_PlayerLogout_Exit( int charaindex )
 		PKLIST_DelPKProcedures( battlearray, 0, PKTYPE_WAIT);
 		PKLIST_DelPKProcedures( battlearray, 1, PKTYPE_WAIT);
 
-		{ //广播胜负
+		{ //嫘畦吨蛹
 			int i;
 			int playernum = CHAR_getPlayerMaxNum();
 			for( i=0; i<playernum; i++){
@@ -789,14 +789,14 @@ int NPC_PKLIST_Finish_Exit( int menum, int tonum, int winside, int battlemap)
 			aB1->top != aB2->top ) return 0;
 
 		if( winside == 0 ){
-			sprintf( token, "%s 队 胜 %s 队。", aB1->teamname, aB2->teamname );
+			sprintf( token, "%s 勦 吨 %s 勦﹝", aB1->teamname, aB2->teamname );
 			LogPkContend( aB1->teamname , aB2->teamname, 0, 0, 0, 0);
-			ABATTLE_RecordBattle( -1, aB1->teamname, "胜", aB2->teamname, "");
+			ABATTLE_RecordBattle( -1, aB1->teamname, "吨", aB2->teamname, "");
 			ABATTLE_EnterBattle( aB1);
 		}else{
-			sprintf( token, "%s 队 胜 %s 队。", aB2->teamname, aB1->teamname );
+			sprintf( token, "%s 勦 吨 %s 勦﹝", aB2->teamname, aB1->teamname );
 			LogPkContend( aB2->teamname , aB1->teamname, 0, 0, 0, 0);
-			ABATTLE_RecordBattle( -1, aB1->teamname, "", aB2->teamname, "胜");
+			ABATTLE_RecordBattle( -1, aB1->teamname, "", aB2->teamname, "吨");
 			ABATTLE_EnterBattle( aB2);
 		}
 
@@ -805,7 +805,7 @@ int NPC_PKLIST_Finish_Exit( int menum, int tonum, int winside, int battlemap)
 			if( InBattle[i] == aB1->top ) InBattle[i] = NULL;
 		}
 
-		{ //广播胜负
+		{ //嫘畦吨蛹
 			int i;
 			int playernum = CHAR_getPlayerMaxNum();
 			for( i=0; i<playernum; i++){
@@ -845,7 +845,7 @@ int NPC_PKLIST_Finish_Exit( int menum, int tonum, int winside, int battlemap)
 	//saacproto_PkListUpDate_send( acfd , mecdkey, tocdkey, menum, tonum, winside, 0);
 	PKLIST_UpData(mecdkey,tocdkey,menum,tonum,winside,0);
 
-	sprintf( token, "%s 队 胜 %s 队。",
+	sprintf( token, "%s 勦 吨 %s 勦﹝",
 		(winside==0)?PkTeamList[mearray].teamname:PkTeamList[toarray].teamname,
 		(winside==0)?PkTeamList[toarray].teamname:PkTeamList[mearray].teamname );
 
@@ -854,7 +854,7 @@ int NPC_PKLIST_Finish_Exit( int menum, int tonum, int winside, int battlemap)
 		(winside==0)?PkTeamList[toarray].teamname:PkTeamList[mearray].teamname,
 		0, 0, 0 ,0);
 
-	{ //广播胜负
+	{ //嫘畦吨蛹
 		int i;
 		int playernum = CHAR_getPlayerMaxNum();
 		for( i=0; i<playernum; i++){
@@ -911,16 +911,16 @@ BOOL PKLIST_GetMyPKListTeamData( int teamnum, char *data, int sizes )
 	if( PkTeamList[ti].use == 0 ) return FALSE;
 	if( PkTeamList[ti].MyTeamMans[0].use == 0 ) return FALSE;
 
-	/*snprintf( data, sizes, "队伍：%s\n胜：%d 负：%d 场：%d 积：%d分 \n",
+	/*snprintf( data, sizes, "勦斪ㄩ%s\n吨ㄩ%d 蛹ㄩ%d 部ㄩ%d 儅ㄩ%d煦 \n",
 			PkTeamList[ti].teamname, PkTeamList[ti].win, PkTeamList[ti].lost,
 			PkTeamList[ti].battleplay, PkTeamList[ti].score );*/
-	snprintf( data, sizes, "队伍：%s\n胜：%d 负：%d 场：%d\n",
+	snprintf( data, sizes, "勦斪ㄩ%s\n吨ㄩ%d 蛹ㄩ%d 部ㄩ%d\n",
 			PkTeamList[ti].teamname, PkTeamList[ti].win, PkTeamList[ti].lost,
 			PkTeamList[ti].battleplay);
 
-	sprintf( buf, "队长：%s \n", PkTeamList[ti].MyTeamMans[0].name );
+	sprintf( buf, "勦酗ㄩ%s \n", PkTeamList[ti].MyTeamMans[0].name );
 	strcat( data, buf);
-	strcat( data, "队员：");
+	strcat( data, "勦埜ㄩ");
 
 	for( k=1; k<MAXTEAMMANNUM; k++){
 		if( PkTeamList[ti].MyTeamMans[k].use == 0 ) continue;
@@ -931,7 +931,7 @@ BOOL PKLIST_GetMyPKListTeamData( int teamnum, char *data, int sizes )
 
 	return TRUE;
 }
-//赛程
+//��最
 void PKLIST_DelPKProcedures( int ti, int side, int type)
 {
 	if( ti<0 || ti>=40 ) return;
@@ -980,12 +980,12 @@ BOOL PKLIST_CheckPKSameTeam( int charaindex )
 	}
 #else
 	if( PkTeamList[meti].battleplay >= DEFMAXBATTLENUM ){
-		CHAR_talkToCli( charaindex, -1, "对战场数已满！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "勤桵部杅眒雛ㄐ", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 
 	if( CHAR_getInt( charaindex, CHAR_PKLISTLEADER) != 1 ){
-		CHAR_talkToCli( charaindex, -1, "只有参赛队伍的队长才能加入赛程喔！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "硐衄統��勦斪腔勦酗符夔樓�躽�最鉊ㄐ", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 #endif
@@ -997,7 +997,7 @@ BOOL PKLIST_CheckPKSameTeam( int charaindex )
 		int pindex = CHAR_getWorkInt( charaindex, CHAR_WORKPARTYINDEX1+i);
 		if( !CHAR_CHECKINDEX( pindex) ) continue;
 		if( teamnum != CHAR_getInt( pindex, CHAR_PKLISTTEAMNUM) ){
-			CHAR_talkToCli( charaindex, -1, "你的队里怎会有不同队伍的人呢？", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "斕腔勦爵崋頗衄祥肮勦斪腔�侐堧�", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 	}
@@ -1005,12 +1005,12 @@ BOOL PKLIST_CheckPKSameTeam( int charaindex )
 		int pindex = CHAR_getWorkInt( charaindex, CHAR_WORKPARTYINDEX1+i);
 		if(!CHAR_CHECKINDEX(pindex)) continue;
 		if(CHAR_getInt(pindex,CHAR_LV) < 120){
-			sprintf(szMsg,"你的队里 %s 等级 %d 未达比赛标准喔！",CHAR_getChar(pindex,CHAR_NAME),CHAR_getInt(pindex,CHAR_LV));
+			sprintf(szMsg,"斕腔勦爵 %s 脹撰 %d 帤湛掀��梓袧鉊ㄐ",CHAR_getChar(pindex,CHAR_NAME),CHAR_getInt(pindex,CHAR_LV));
 			CHAR_talkToCli(charaindex,-1,szMsg,CHAR_COLORYELLOW);
 			return FALSE;
 		}
 		if(CHAR_getInt(pindex,CHAR_TRANSMIGRATION) < 3){
-			sprintf(szMsg,"你的队里 %s 转生数 %d 转，未达比赛标准喔！",CHAR_getChar(pindex,CHAR_NAME),CHAR_getInt(pindex,CHAR_TRANSMIGRATION));
+			sprintf(szMsg,"斕腔勦爵 %s 蛌汜杅 %d 蛌ㄛ帤湛掀��梓袧鉊ㄐ",CHAR_getChar(pindex,CHAR_NAME),CHAR_getInt(pindex,CHAR_TRANSMIGRATION));
 			CHAR_talkToCli(charaindex,-1,szMsg,CHAR_COLORYELLOW);
 			return FALSE;
 		}
@@ -1058,14 +1058,14 @@ BOOL PKLIST_JoinPKProcedures( int charaindex )
 	}
 	if( (teamnum = CHAR_getInt( charaindex, CHAR_PKLISTTEAMNUM)) < 0 ) return FALSE;
 	if( PKLIST_CheckLOCKTeam( teamnum) == FALSE ){
-		CHAR_talkToCli( charaindex, -1, "系统忙碌中，请稍後！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "炵苀疆繕笢ㄛ③尕摽ㄐ", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 
 	for( i=0; i<MAXJOINTEAM; i++ ){
 		if( PKProcedure[i].type == PKTYPE_STANDBY ){
 			if( PKProcedure[i].time + (5*60) < (int)time(NULL) ){
-				print( "太久未战斗\n");
+				print( "怮壅帤桵須\n");
 				if( PKProcedure[i].Team[0].use != 0 &&
 					PKLIST_CheckPklistInServerMap( i, 0) == TRUE &&
 					PKProcedure[i].Team[1].use != 0 &&
@@ -1073,7 +1073,7 @@ BOOL PKLIST_JoinPKProcedures( int charaindex )
 
 					if( CHAR_getWorkInt( PKProcedure[i].Team[0].toindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE ){
 						//andy_log
-						print("强制战斗!!\n");
+						print("Ч秶桵須!!\n");
 						BATTLE_CreateVsPlayer( PKProcedure[i].Team[0].toindex,
 							PKProcedure[i].Team[1].toindex );
 					}
@@ -1113,7 +1113,7 @@ BOOL PKLIST_JoinPKProcedures( int charaindex )
 				PKProcedure[i].type = PKTYPE_WAIT;
 			}
 //-----------------------------------------------------------------------------
-			//载入队伍资料
+			//婥�賱蚔樼岏�
 			PKProcedure[i].Team[j].teamnum = teamnum;
 			snprintf( PKProcedure[i].Team[j].cdkey, sizeof(PKProcedure[i].Team[j].cdkey),"%s",
 				CHAR_getChar( charaindex, CHAR_CDKEY) );
@@ -1132,7 +1132,7 @@ BOOL PKLIST_JoinPKProcedures( int charaindex )
 	}
 
 	if( Finds == FALSE ){
-		CHAR_talkToCli( charaindex, -1, "目前赛程中之队伍已满请稍後再试！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "醴ヶ��最笢眳勦斪眒雛③尕摽婬彸ㄐ", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	return TRUE;
@@ -1144,7 +1144,7 @@ void PKLIST_CheckTeamBeEnable( void)
 	for( i=0; i<MAXJOINTEAM; i++ ){
 		for( j=0; j<2; j++ ){
 			if( PKProcedure[i].Team[j].use == 0 ) continue;
-			PKLIST_CheckPklistInServerMap( i, j);//确认队伍是否成立
+			PKLIST_CheckPklistInServerMap( i, j);//�溜炩蚔樨Й騄匢�
 		}
 	}
 }
@@ -1169,14 +1169,14 @@ void PKLIST_warp( int ti, int side, int fl, int x, int y )
 	if( !CHAR_CHECKINDEX(PKProcedure[ti].Team[side].toindex) );
 	if( CHAR_getWorkInt( PKProcedure[ti].Team[side].toindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_LEADER ){
 		CHAR_warpToSpecificPoint( PKProcedure[ti].Team[side].toindex, fl, x, y);
-		CHAR_talkToCli( PKProcedure[ti].Team[side].toindex, -1, "请在此等待对战队伍！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( PKProcedure[ti].Team[side].toindex, -1, "③婓森脹渾勤桵勦斪ㄐ", CHAR_COLORYELLOW);
 	}else{
 		for( k = 0; k < CHAR_PARTYMAX; k ++ ){
 			int subindex = CHAR_getWorkInt( PKProcedure[ti].Team[side].toindex,
 				CHAR_WORKPARTYINDEX1+k );
 
 			if( !CHAR_CHECKINDEX( subindex ) )continue;
-			CHAR_talkToCli( subindex, -1, "请在此等待对战队伍！如时间超过１０分後未有对战队伍，建议玩家可重原登後重新加入赛程。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( subindex, -1, "③婓森脹渾勤桵勦斪ㄐ�褖掉銙牲�ㄠㄟ煦摽帤衄勤桵勦斪ㄛ膘祜俙模褫笭埻腎摽笭陔樓�躽�最﹝", CHAR_COLORYELLOW);
 			CHAR_warpToSpecificPoint( subindex, fl, x, y);
 		}
 	}
@@ -1263,7 +1263,7 @@ void PKLIST_Sort_PKListSort( void)
 	PKLIST_HandleChartsMess(0,data,2,0);
 }
 
-//正式赛
+//淏宒��
 
 void ABATTLE_InitABattle( int maxnums )
 {
@@ -1438,11 +1438,11 @@ BOOL ABATTLE_InsertBattle( ArrangeBattleC *aB)
 			InBattle[i]->next[0]->teamnum, InBattle[i]->next[0]->teamname,
 			InBattle[i]->next[1]->teamnum, InBattle[i]->next[1]->teamname );
 #ifdef _DEATH_CONTENDTEST
-		aB->time = (int)time(NULL)+30;	//战斗时间
+		aB->time = (int)time(NULL)+30;	//桵須奀潔
 #else
-		aB->time = (int)time(NULL)+(5*60);	//战斗时间
+		aB->time = (int)time(NULL)+(5*60);	//桵須奀潔
 #endif
-		aB->type = 1; // 战斗旗标
+		aB->type = 1; // 桵須よ梓
 		return TRUE;
 	}
 	return FALSE;
@@ -1503,17 +1503,17 @@ int ABATTLE_FindBattlefromFl( int ti, int fl)
 			side = (j+1)%2;
 			aB2=aBo->next[side];
 
-			if( aB2 == NULL || aB2->use == 0 || aB2->teamnum == -1 ){ //没有对手
+			if( aB2 == NULL || aB2->use == 0 || aB2->teamnum == -1 ){ //羶衄勤忒
 			}else{
 				if( ABATTLE_InsertBattle( aBo) == FALSE ){
 					return -1;
 				}else{
 					char token[256];
 					int playernum = CHAR_getPlayerMaxNum();
-					sprintf( token, "%s队 VS %s队 ５分钟後决斗。", aB1->teamname, aB2->teamname );
+					sprintf( token, "%s勦 VS %s勦 ㄤ煦笘摽樵須﹝", aB1->teamname, aB2->teamname );
 					PKLIST_shoutToAll( token, -1, -1);
 					count++;
-					// 把排入赛程的人员传入地图 8250
+					// 參齬�躽�最腔�刱探客賮媏� 8250
 					for(i=0;i<playernum;i++){
 						if(CHAR_getCharUse(i) == FALSE) continue;
 						printf("%s will be send...",CHAR_getChar(i,CHAR_NAME));
@@ -1542,7 +1542,7 @@ void ABATTLE_CheckBattlefromFl(int charindex, int ti,int battleindex)
 	//for( i=0; i<MAXBAHEAD; i++){
 	{
 		if( ABFloor[i] == -1 ){
-			CHAR_talkToCli( charindex, -1, "组别不存在", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charindex, -1, "郪梗祥湔婓", CHAR_COLORYELLOW);
 			return;
 		}
 		floor = ABATTLE_CheckBattlefromFl_sub(charindex, i, ABFloor[i],battleindex);
@@ -1555,9 +1555,9 @@ void ABATTLE_CheckBattlefromFl(int charindex, int ti,int battleindex)
 			FILE *fp=NULL;
 			if( headABattle[i]->use == 1 && headABattle[i]->teamnum != -1 ){
 				char token[256];
-				sprintf( token, "恭喜 %s 队，取得分组优胜，晋级下一阶段。", headABattle[i]->teamname );
+				sprintf( token, "鳩炰 %s 勦ㄛ�△繩笫橔戀不狠�撰狟珨論僇﹝", headABattle[i]->teamname );
 				PKLIST_shoutToAll( token, -1, 8250);
-				ABATTLE_RecordBattle( i, headABattle[i]->teamname, "晋级８强", "NULL", "");
+				ABATTLE_RecordBattle( i, headABattle[i]->teamname, "輩撰ㄧЧ", "NULL", "");
 
 			}
 			if( (fp=fopen( "nbattle.txt", "a+")) != NULL ){
@@ -1586,20 +1586,20 @@ int ABATTLE_CheckBattlefromFl_sub(int charindex, int ti, int fl, int battleindex
 		aB1=aBo->next[0];
 		aB2=aBo->next[1];
 		if( (aB1 == NULL || aB1->use == 0 ) &&
-			(aB2 == NULL || aB2->use == 0 ) ){//两队都不成立
+			(aB2 == NULL || aB2->use == 0 ) ){//謗勦飲祥傖蕾
 			if( aB1 != NULL ) free( aB1);
 			if( aB2 != NULL ) free( aB2);
 			aBo->next[0] = NULL;
 			aBo->next[1] = NULL;
 			continue;
-		}else if( aB1 == NULL || aB1->use == 0 || aB1->teamnum == -1 ){ //0不成立
+		}else if( aB1 == NULL || aB1->use == 0 || aB1->teamnum == -1 ){ //0祥傖蕾
 			ABATTLE_EliminateBattlefromFl( aB1);
 			aBo->next[0] = NULL;
 			if( aB2 != NULL && aB2->use != 0 && aB2->type == 0 ){
 				ABATTLE_EnterBattle( aB2);
 			}
 			return fl;
-		}else if( aB2 == NULL || aB2->use == 0 || aB2->teamnum == -1 ){ //1不成立
+		}else if( aB2 == NULL || aB2->use == 0 || aB2->teamnum == -1 ){ //1祥傖蕾
 			ABATTLE_EliminateBattlefromFl( aB2);
 			aBo->next[1] = NULL;
 			if( aB1 != NULL && aB1->use != 0 && aB1->type == 0 ){
@@ -1608,7 +1608,7 @@ int ABATTLE_CheckBattlefromFl_sub(int charindex, int ti, int fl, int battleindex
 			return fl;
 		}else{
 			//andy_log
-			print("两者成立!.%d.%x[%d,%s] %x[%d,%s]\n", i,
+			print("謗氪傖蕾!.%d.%x[%d,%s] %x[%d,%s]\n", i,
 				aB1, aB1->teamnum, aB1->teamname,
 				aB2, aB2->teamnum, aB2->teamname );
 			return fl;
@@ -1618,7 +1618,7 @@ int ABATTLE_CheckBattlefromFl_sub(int charindex, int ti, int fl, int battleindex
 	return (fl-1);
 }
 
-//确认赛程战斗状态 包含时间
+//�溜珂�最桵須袨怓 婦漪奀潔
 BOOL ABATTLE_CheckInABattle( int ti)
 {
 	ArrangeBattleC *aB=NULL;
@@ -1637,11 +1637,11 @@ BOOL ABATTLE_CheckInABattle( int ti)
 	switch( aB->type){
 	case 0:
 		break;
-	case 1:	//已排入赛程 5分钟後进场
+	case 1:	//眒齬�躽�最 5煦笘摽輛部
 		if( aB->time < (int)time(NULL) ){
 			if( aB1 == NULL || aB1->use == 0 || 
 				aB2 == NULL || aB2->use == 0 ) return FALSE;
-			sprintf( token, "%s队 VS %s队，赛程即将开始，请两队做好准备。",
+			sprintf( token, "%s勦 VS %s勦ㄛ��最撈蔚羲宎ㄛ③謗勦酕疑袧掘﹝",
 				aB1->teamname, aB2->teamname );
 			//PKLIST_shoutToAll( token, aB1->teamnum, 8250);
 			PKLIST_shoutToAll( token, aB2->teamnum, 8250);
@@ -1651,7 +1651,7 @@ BOOL ABATTLE_CheckInABattle( int ti)
 			aB->time=(int)time(NULL)+(2*60);
 #endif
 			aB->type=2;
-			// 把排入赛程的人员传入地图 8250
+			// 參齬�躽�最腔�刱探客賮媏� 8250
 			for(i=0;i<playernum;i++){
 				if(CHAR_getCharUse(i) == FALSE) continue;
 				printf("%s will be send...",CHAR_getChar(i,CHAR_NAME));
@@ -1664,7 +1664,7 @@ BOOL ABATTLE_CheckInABattle( int ti)
 			}
 		}
 		break;
-	case 2:	//已排入赛程 进场3分钟 并判断队长是否存在 并广播
+	case 2:	//眒齬�躽�最 輛部3煦笘 甜瓚剿勦酗岆瘁湔婓 甜嫘畦
 		{
 			int playernum = CHAR_getPlayerMaxNum();
 			for( i=0 ; i<playernum ; i++) {
@@ -1675,7 +1675,7 @@ BOOL ABATTLE_CheckInABattle( int ti)
 					PKLIST_CheckPKSameTeam( i) == TRUE ){
 
 						int stime = ((aB->time)-(int)time(NULL));
-						sprintf( token, "请快找齐你的所有队员，并组好队，%d秒後将进行传送。", (stime<0)?0:stime);
+						sprintf( token, "③辦梑ょ斕腔垀衄勦埜ㄛ甜郪疑勦ㄛ%d鏃摽蔚輛俴換冞﹝", (stime<0)?0:stime);
 						CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW);
 						aB1->toindex = i;
 						continue;
@@ -1686,14 +1686,14 @@ BOOL ABATTLE_CheckInABattle( int ti)
 					CHAR_getInt( i, CHAR_PKLISTLEADER) == 1 &&
 					PKLIST_CheckPKSameTeam( i) == TRUE ){
 						int stime = ((aB->time)-(int)time(NULL));
-						sprintf( token, "请快找齐你的所有队员，并组好队，%d秒後将进行传送。", (stime<0)?0:stime);
+						sprintf( token, "③辦梑ょ斕腔垀衄勦埜ㄛ甜郪疑勦ㄛ%d鏃摽蔚輛俴換冞﹝", (stime<0)?0:stime);
 						CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW);
 						aB2->toindex = i;
 						continue;
 				}
 			}
 		}
-		// 把排入赛程的人员传入地图 8250
+		// 參齬�躽�最腔�刱探客賮媏� 8250
 		for(i=0;i<playernum;i++){
 			if(CHAR_getCharUse(i) == FALSE) continue;
 			if((CHAR_getInt(i,CHAR_PKLISTTEAMNUM) == aB1->teamnum || CHAR_getInt(i,CHAR_PKLISTTEAMNUM) == aB2->teamnum) &&
@@ -1703,7 +1703,7 @@ BOOL ABATTLE_CheckInABattle( int ti)
 		if( aB->time < (int)time(NULL) ){
 			char token[256];
 
-			sprintf( token, "%s队 VS %s队，赛程开始。", aB1->teamname, aB2->teamname );
+			sprintf( token, "%s勦 VS %s勦ㄛ��最羲宎﹝", aB1->teamname, aB2->teamname );
 			PKLIST_shoutToAll( token, -1, 8250);
 
 			if( CHAR_CHECKINDEX( aB1->toindex) && CHAR_CHECKINDEX( aB2->toindex) ){
@@ -1717,20 +1717,20 @@ BOOL ABATTLE_CheckInABattle( int ti)
 				aB->type=3;
 				return TRUE;
 			}else if( !CHAR_CHECKINDEX( aB1->toindex) && !CHAR_CHECKINDEX( aB2->toindex) ){
-				sprintf( token, "%s队(%d)，%s队(%d)，因队长未在时间内到场，视为弃权。",aB1->teamname,aB1->toindex,
+				sprintf( token, "%s勦(%d)ㄛ%s勦(%d)ㄛ秪勦酗帤婓奀潔囀善部ㄛ弝峈ィ�芋�",aB1->teamname,aB1->toindex,
 					aB2->teamname,aB2->toindex);
-				ABATTLE_RecordBattle( ti, aB1->teamname, "未", aB2->teamname, "未");
+				ABATTLE_RecordBattle( ti, aB1->teamname, "帤", aB2->teamname, "帤");
 				aB1->use = 0;
 				aB2->use = 0;
 			}else if( !CHAR_CHECKINDEX( aB1->toindex) ) {
-				sprintf( token, "%s队(%d)，因队长未在时间内到场，视为弃权。",aB1->teamname,aB1->toindex);
+				sprintf( token, "%s勦(%d)ㄛ秪勦酗帤婓奀潔囀善部ㄛ弝峈ィ�芋�",aB1->teamname,aB1->toindex);
 				aB1->use = 0;
-				ABATTLE_RecordBattle( ti, aB1->teamname, "未", "NULL", "");
+				ABATTLE_RecordBattle( ti, aB1->teamname, "帤", "NULL", "");
 				ABATTLE_EnterBattle( aB2);
 			}else if( !CHAR_CHECKINDEX( aB2->toindex) ){
-				sprintf( token, "%s队(%d)，因队长未在时间内到场，视为弃权。",aB2->teamname,aB2->toindex);
+				sprintf( token, "%s勦(%d)ㄛ秪勦酗帤婓奀潔囀善部ㄛ弝峈ィ�芋�",aB2->teamname,aB2->toindex);
 				aB2->use = 0;
-				ABATTLE_RecordBattle( ti, aB2->teamname, "未", "NULL", "");
+				ABATTLE_RecordBattle( ti, aB2->teamname, "帤", "NULL", "");
 				ABATTLE_EnterBattle( aB1);
 			}
 			PKLIST_shoutToAll( token, -1, 8250);
@@ -1738,15 +1738,15 @@ BOOL ABATTLE_CheckInABattle( int ti)
 			return FALSE;
 		}
 		break;
-	case 3:	//已排入赛程 队伍到齐 5分钟内 强制战斗
+	case 3:	//眒齬�躽�最 勦斪善ょ 5煦笘囀 Ч秶桵須
 		aB->type=4;
 		aB->time=(int)time(NULL)+(2*60);
 		break;
 	case 4:
-		if( aB->time < (int)time(NULL) ){//强制战斗
+		if( aB->time < (int)time(NULL) ){//Ч秶桵須
 			if( CHAR_getWorkInt( aB1->toindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE ){
 				//andy_log
-				print("强制战斗 %s vs %s \n", aB1->teamname, aB2->teamname);
+				print("Ч秶桵須 %s vs %s \n", aB1->teamname, aB2->teamname);
 				BATTLE_CreateVsPlayer( aB1->toindex, aB2->toindex );
 				aB->type = 5;
 			}
@@ -1775,15 +1775,15 @@ void ABATTLE_MakeInABattleString( void)
 		switch( aB->type){
 		case 0: continue;
 			break;
-		case 1://预定
-			strcpy( buf, "预定");
+		case 1://啎隅
+			strcpy( buf, "啎隅");
 			break;
-		case 2://准备
-			strcpy( buf, "准备");
+		case 2://袧掘
+			strcpy( buf, "袧掘");
 			break;
-		case 3://开始
+		case 3://羲宎
 		case 4:
-			strcpy( buf, "开始");
+			strcpy( buf, "羲宎");
 			break;
 		}
 
@@ -1825,10 +1825,10 @@ BOOL PKLIST_GetABattlelistDataString( int ti, int *tindex, int *stimes,
 			*tindex=atoi( buf);
 			if( getStringFromIndexWithDelim( data, "|", 2, buff, sizeof( buff)) == FALSE ) return FALSE;
 			if( getStringFromIndexWithDelim( data, "|", 3, buf, sizeof( buf)) == FALSE ) return FALSE;
-			sprintf( buf1, "［%s］%s ", buff, buf);
+			sprintf( buf1, "��%s��%s ", buff, buf);
 			if( getStringFromIndexWithDelim( data, "|", 4, buff, sizeof( buff)) == FALSE ) return FALSE;
 			if( getStringFromIndexWithDelim( data, "|", 5, buf, sizeof( buf)) == FALSE ) return FALSE;
-			sprintf( buf2, "［%s］%s ", buff, buf);
+			sprintf( buf2, "��%s��%s ", buff, buf);
 		}
 		break;
 	}
@@ -1970,12 +1970,12 @@ int PKLIST_UpdateOnePkTeamData( int ti, int forti, int winerflg)
 	}else{
 		PkTeamList[ti].lost++;
 	}
-	PkTeamList[ti].battleplay++; //场次
-	PkTeamList[ti].score = (PkTeamList[ti].win*3) - (PkTeamList[ti].lost*1);//积分
+	PkTeamList[ti].battleplay++; //部棒
+	PkTeamList[ti].score = (PkTeamList[ti].win*3) - (PkTeamList[ti].lost*1);//儅煦
 
 	if( PkTeamList[ti].score >= 90 ){
-		PkTeamList[ti].inside = 2; //录取
-	}else if( PkTeamList[ti].lost > 50*0.4){// 0.7 = (1-胜率3成)*最高场次
+		PkTeamList[ti].inside = 2; //翹��
+	}else if( PkTeamList[ti].lost > 50*0.4){// 0.7 = (1-吨薹3傖)*郔詢部棒
 		PkTeamList[ti].inside = 0;
 	}else {
 		PkTeamList[ti].inside = 1;

@@ -5,39 +5,39 @@
 
 typedef enum
 {
-	MAGIC_FIELD_ALL,			/* 允屯化及桦赭匹银尹月 */
-	MAGIC_FIELD_BATTLE,				/* 爵    及心 */
-	MAGIC_FIELD_MAP,				/* 骚橘穴永皿晓及心 */
+	MAGIC_FIELD_ALL,			/* 埰迋趙摯鳹鐎ぁ窅窇堎 */
+	MAGIC_FIELD_BATTLE,				/* 橋    摯陑 */
+	MAGIC_FIELD_MAP,				/* 玊橖悃蚗鏤窀摯陑 */
 
 }MAGIC_FIELDTYPE;
 
 typedef enum
 {
-	MAGIC_TARGET_MYSELF,		/* 愤坌及心 */
-	MAGIC_TARGET_OTHER,			/* 职及谛  愤坌殖戈) */
-	MAGIC_TARGET_ALLMYSIDE,		/*     蝈   */
-	MAGIC_TARGET_ALLOTHERSIDE,	/* 锹澎础蝈   */
-	MAGIC_TARGET_ALL,			/* 蝈化 */
-	MAGIC_TARGET_NONE,			/* 簿手蓟  请  卅中［  豢支凶户及凛 */
-	MAGIC_TARGET_OTHERWITHOUTMYSELF,/* 职及谛  愤坌殖引卅中) */
-	MAGIC_TARGET_WITHOUTMYSELFANDPET,  /* 愤坌午矢永玄动陆 */
-	MAGIC_TARGET_WHOLEOTHERSIDE,/*     及扔奶玉蝈   */
+	MAGIC_TARGET_MYSELF,		/* 猷覕摯陑 */
+	MAGIC_TARGET_OTHER,			/* 眥摯硞  猷覕硈資) */
+	MAGIC_TARGET_ALLMYSIDE,		/*     蠈   */
+	MAGIC_TARGET_ALLOTHERSIDE,	/* Ъ鱗插蠈   */
+	MAGIC_TARGET_ALL,			/* 蠈趙 */
+	MAGIC_TARGET_NONE,			/* 移忒撒  ③  埵笢��  遛盓倜誧摯鄹 */
+	MAGIC_TARGET_OTHERWITHOUTMYSELF,/* 眥摯硞  猷覕硈竘埵笢) */
+	MAGIC_TARGET_WITHOUTMYSELFANDPET,  /* 猷覕敁妐蚗哱雄翻 */
+	MAGIC_TARGET_WHOLEOTHERSIDE,/*     摯�蚅枅嚦�   */
 
 #ifdef __ATTACK_MAGIC
 
-        MAGIC_TARGET_SINGLE,            // 针对敌方的某一人
-        MAGIC_TARGET_ONE_ROW,           // 针对敌方的某一列
-        MAGIC_TARGET_ALL_ROWS,          // 针对敌方的所有人
+        MAGIC_TARGET_SINGLE,            // 渀勤菩源腔議珨��
+        MAGIC_TARGET_ONE_ROW,           // 渀勤菩源腔議珨蹈
+        MAGIC_TARGET_ALL_ROWS,          // 渀勤菩源腔垀衄��
 
 #endif
 }MAGIC_TARGETTYPE;
 
 typedef enum
 {
-	MAGIC_ID,					/* 栋    寞 */
-	MAGIC_FIELD,				/* 银尹月桦赭 */
-	MAGIC_TARGET,				/* 覆擂 */
-	MAGIC_TARGET_DEADFLG,		/* 韶氏分樊手覆擂卞殖户月井 */
+	MAGIC_ID,					/* 集    蠕 */
+	MAGIC_FIELD,				/* 窅窇堎鳹鐎 */
+	MAGIC_TARGET,				/* 葡濯 */
+	MAGIC_TARGET_DEADFLG,		/* 屻庌煦榆忒葡濯勗硈誧堎凝 */
 #ifdef __ATTACK_MAGIC
   MAGIC_IDX ,
 #endif
@@ -46,10 +46,10 @@ typedef enum
 
 typedef enum
 {
-	MAGIC_NAME,					/* 热诸   */
-	MAGIC_COMMENT,				/* 戊丢件玄*/
-	MAGIC_FUNCNAME,				/* 楮醒   */
-	MAGIC_OPTION,				/* 左皿扑亦件 */
+	MAGIC_NAME,					/* ��絊   */
+	MAGIC_COMMENT,				/* 昡隍璃哱*/
+	MAGIC_FUNCNAME,				/* 匴倳   */
+	MAGIC_OPTION,				/* 酘鏤で砫璃 */
 	MAGIC_DATACHARNUM,
 }MAGIC_DATACHAR;
 
@@ -64,25 +64,25 @@ typedef struct tagMagic
 
 typedef struct tagAttMagic
 {
-  unsigned int  uiSpriteNum;// 此咒术在Spr_x.bin的编号
-  unsigned int  uiAttackType;// 攻击的方式：单人，整排( 轮流 ) ,  整排( 轮流 ) , 整排( 同时 ) , 全体( 轮流 ) , 全体( 同时 )
-  unsigned int  uiSliceTime;// 轮流攻击时的时间差
-  unsigned int  uiShowType;             // 显示的位置方式：中央、指定
-  int           siSx;                   // 显示的位置 - X轴
-  int           siSy;                   // 显示的位置 - Y轴
-  unsigned int  uiShowBehindChar;       // 显示在人物的前方或下方
-  unsigned int  uiShakeScreen;          // 是否震动画面
-  unsigned int  uiShakeFrom;            // 震动画面的起始时间( 毫秒 )
-  unsigned int  uiShakeTo;              // 震动画面的结束时间( 毫秒 _
-  unsigned int  uiPrevMagicNum;         // 前置咒术的索引号( 0XFFFFFFFFFF 表示无前置咒术 )
-  int           siPrevMagicSx;          // 前置咒术的显示位置 - X轴
-  int           siPrevMagicSy;          // 前置咒术的显示位置 - Y轴
-  int           siPrevMagicOnChar;      // 前置咒术显示在人物的前方或下方
-  unsigned int  uiPostMagicNum;         // 後置咒术的索引号( 0XFFFFFFFF 表示无後置咒术 )
-  int           siPostMagicSx;          // 後置咒术的显示位置 - X轴
-  int           siPostMagicSy;          // 後置咒术的显示位置 - Y轴
-  int           siPostMagicOnChar;      // 後置咒术显示在人物的前方或下方
-  int           siField[3][5];          // 攻击索引
+  unsigned int  uiSpriteNum;// 森紸扲婓Spr_x.bin腔晤瘍
+  unsigned int  uiAttackType;// 馴僻腔源宒ㄩ等�芄盈�齬( 謫霜 ) ,  淕齬( 謫霜 ) , 淕齬( 肮奀 ) , �屏�( 謫霜 ) , �屏�( 肮奀 )
+  unsigned int  uiSliceTime;// 謫霜馴僻奀腔奀潔船
+  unsigned int  uiShowType;             // 珆尨腔弇离源宒ㄩ笢栝﹜硌隅
+  int           siSx;                   // 珆尨腔弇离 - X粣
+  int           siSy;                   // 珆尨腔弇离 - Y粣
+  unsigned int  uiShowBehindChar;       // 珆尨婓�冼齔饒健蝠藲繚�
+  unsigned int  uiShakeScreen;          // 岆瘁涾雄賒醱
+  unsigned int  uiShakeFrom;            // 涾雄賒醱腔れ宎奀潔( 瑭鏃 )
+  unsigned int  uiShakeTo;              // 涾雄賒醱腔賦旰奀潔( 瑭鏃 _
+  unsigned int  uiPrevMagicNum;         // ヶ离紸扲腔坰竘瘍( 0XFFFFFFFFFF 桶尨拸ヶ离紸扲 )
+  int           siPrevMagicSx;          // ヶ离紸扲腔珆尨弇离 - X粣
+  int           siPrevMagicSy;          // ヶ离紸扲腔珆尨弇离 - Y粣
+  int           siPrevMagicOnChar;      // ヶ离紸扲珆尨婓�冼齔饒健蝠藲繚�
+  unsigned int  uiPostMagicNum;         // 摽离紸扲腔坰竘瘍( 0XFFFFFFFF 桶尨拸摽离紸扲 )
+  int           siPostMagicSx;          // 摽离紸扲腔珆尨弇离 - X粣
+  int           siPostMagicSy;          // 摽离紸扲腔珆尨弇离 - Y粣
+  int           siPostMagicOnChar;      // 摽离紸扲珆尨婓�冼齔饒健蝠藲繚�
+  int           siField[3][5];          // 馴僻坰竘
 }AttMagic;
 
 #endif
@@ -91,26 +91,26 @@ typedef struct tagAttMagic
 
 typedef struct tagToCallMagic
 {
-  unsigned int  uiSpriteNum;// 此咒术在Spr_x.bin的编号
-  unsigned int  uiAttackType;// 攻击的方式：单人，整排( 轮流 ) ,  整排( 轮流 ) , 整排( 同时 ) , 全体( 轮流 ) , 全体( 同时 )
-  unsigned int  uiSliceTime;// 轮流攻击时的时间差
-  unsigned int  uiShowType;             // 显示的位置方式：中央、指定
-  int           siSx;                   // 显示的位置 - X轴
-  int           siSy;                   // 显示的位置 - Y轴
-  unsigned int  uiShowBehindChar;       // 显示在人物的前方或下方
-  unsigned int  uiShakeScreen;          // 是否震动画面
-  unsigned int  uiShakeFrom;            // 震动画面的起始时间( 毫秒 )
-  unsigned int  uiShakeTo;              // 震动画面的结束时间( 毫秒 _
-  unsigned int  uiPrevMagicNum;         // 前置咒术的索引号( 0XFFFFFFFFFF 表示无前置咒术 )
-  int           siPrevMagicSx;          // 前置咒术的显示位置 - X轴
-  int           siPrevMagicSy;          // 前置咒术的显示位置 - Y轴
-  int           siPrevMagicOnChar;      // 前置咒术显示在人物的前方或下方
-  unsigned int  uiPostMagicNum;         // 後置咒术的索引号( 0XFFFFFFFF 表示无後置咒术 )
-  int           siPostMagicSx;          // 後置咒术的显示位置 - X轴
-  int           siPostMagicSy;          // 後置咒术的显示位置 - Y轴
-  int           siPostMagicOnChar;      // 後置咒术显示在人物的前方或下方
-  int			isPostDisappear;		// 咒术一般攻击完时是否马上消失
-  int			ToCallMagicNo;			// 召唤术的编号
+  unsigned int  uiSpriteNum;// 森紸扲婓Spr_x.bin腔晤瘍
+  unsigned int  uiAttackType;// 馴僻腔源宒ㄩ等�芄盈�齬( 謫霜 ) ,  淕齬( 謫霜 ) , 淕齬( 肮奀 ) , �屏�( 謫霜 ) , �屏�( 肮奀 )
+  unsigned int  uiSliceTime;// 謫霜馴僻奀腔奀潔船
+  unsigned int  uiShowType;             // 珆尨腔弇离源宒ㄩ笢栝﹜硌隅
+  int           siSx;                   // 珆尨腔弇离 - X粣
+  int           siSy;                   // 珆尨腔弇离 - Y粣
+  unsigned int  uiShowBehindChar;       // 珆尨婓�冼齔饒健蝠藲繚�
+  unsigned int  uiShakeScreen;          // 岆瘁涾雄賒醱
+  unsigned int  uiShakeFrom;            // 涾雄賒醱腔れ宎奀潔( 瑭鏃 )
+  unsigned int  uiShakeTo;              // 涾雄賒醱腔賦旰奀潔( 瑭鏃 _
+  unsigned int  uiPrevMagicNum;         // ヶ离紸扲腔坰竘瘍( 0XFFFFFFFFFF 桶尨拸ヶ离紸扲 )
+  int           siPrevMagicSx;          // ヶ离紸扲腔珆尨弇离 - X粣
+  int           siPrevMagicSy;          // ヶ离紸扲腔珆尨弇离 - Y粣
+  int           siPrevMagicOnChar;      // ヶ离紸扲珆尨婓�冼齔饒健蝠藲繚�
+  unsigned int  uiPostMagicNum;         // 摽离紸扲腔坰竘瘍( 0XFFFFFFFF 桶尨拸摽离紸扲 )
+  int           siPostMagicSx;          // 摽离紸扲腔珆尨弇离 - X粣
+  int           siPostMagicSy;          // 摽离紸扲腔珆尨弇离 - Y粣
+  int           siPostMagicOnChar;      // 摽离紸扲珆尨婓�冼齔饒健蝠藲繚�
+  int			isPostDisappear;		// 紸扲珨啜馴僻俇奀岆瘁鎮奻秏囮
+  int			ToCallMagicNo;			// 欸遢扲腔晤瘍
 }ToCallMagic;
 
 #endif

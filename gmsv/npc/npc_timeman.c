@@ -18,12 +18,12 @@
 
 
 enum {
-	E_INT_GRAPHIC = CHAR_NPCWORKINT1,		/*   褥蟆及  飓 */
-	E_INT_GRAPHIC2 = CHAR_NPCWORKINT2,		/*   褥  及  飓 */
-	E_INT_BORN = CHAR_NPCWORKINT3,			/* 藕戏凛棉 */
-	E_INT_DEAD = CHAR_NPCWORKINT4,			/* 壅尹月凛棉*/ 
-	E_INT_MODE = CHAR_NPCWORKINT5,			/* 蜇箕及乒□玉 */
-	E_INT_NOWGRAPHIC = CHAR_NPCWORKINT6,	/* 蜇箕及弘仿白奴永弁瓜件田□ */
+	E_INT_GRAPHIC = CHAR_NPCWORKINT1,		/*   �檍□�  鴢 */
+	E_INT_GRAPHIC2 = CHAR_NPCWORKINT2,		/*   ��  摯  鴢 */
+	E_INT_BORN = CHAR_NPCWORKINT3,			/* 驕牁鄹蹬 */
+	E_INT_DEAD = CHAR_NPCWORKINT4,			/* 觛窇堎鄹蹬*/ 
+	E_INT_MODE = CHAR_NPCWORKINT5,			/* 藯凜摯さ↓迶 */
+	E_INT_NOWGRAPHIC = CHAR_NPCWORKINT6,	/* 藯凜摯精溘啞贖蚗袲圖璃泬↓ */
 
 };
 
@@ -42,14 +42,14 @@ typedef struct {
 
 static NPC_TimeMan	TimeTble[] = {
 
-	{"ALLNIGHT",	NICHIBOTU+1,	YOAKE}, 	/* 脐  互请化中卅中凛 */
-	{"ALLNOON",		YOAKE+1,		NICHIBOTU},/* 脐  互请化中月凛 */
-	{"AM",			YONAKA+1,		SHOUGO}, 	/* AM 凛及心 */
-	{"PM",			SHOUGO+1,		YONAKA}, 	/* PM 凛及心 */
-	{"FORE",		YOAKE+1,		SHOUGO},	/* 脐  互匹化井日恳诟引匹 */
-	{"AFTER",		SHOUGO+1,		NICHIBOTU},/* 恳诟井日脐  互释戈引匹 */
-	{"EVNING",		NICHIBOTU+1,	YONAKA}, 	/* 脐  互释氏匹井日蕞    引匹 */
-	{"MORNING",		YONAKA+1,		YOAKE}, 	/* 蕞    井日脐  互哝月引匹 */
+	{"ALLNIGHT",	NICHIBOTU+1,	YOAKE}, 	/* ゆ  誑③趙笢埵笢鄹 */
+	{"ALLNOON",		YOAKE+1,		NICHIBOTU},/* ゆ  誑③趙笢堎鄹 */
+	{"AM",			YONAKA+1,		SHOUGO}, 	/* AM 鄹摯陑 */
+	{"PM",			SHOUGO+1,		YONAKA}, 	/* PM 鄹摯陑 */
+	{"FORE",		YOAKE+1,		SHOUGO},	/* ゆ  誑ぁ趙凝�梲砬詫�ぁ */
+	{"AFTER",		SHOUGO+1,		NICHIBOTU},/* 諜皒凝�梪�  誑庋資竘ぁ */
+	{"EVNING",		NICHIBOTU+1,	YONAKA}, 	/* ゆ  誑庋庌ぁ凝�殌�    竘ぁ */
+	{"MORNING",		YONAKA+1,		YOAKE}, 	/* 犎    凝�梪�  誑蛺堎竘ぁ */
 	{"FREE",		0,				1024},
 };
 
@@ -105,14 +105,14 @@ void NPC_TimeManTalked( int meindex , int talkerindex , char *msg ,int color )
 	int i;
 
 
-	/*--  及蟆卞中月井升丹井＂--*/
+	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex ,2)==FALSE){
-		/* ㄠ弘伉永玉动  及心 */
+		/* 兒精惉蚗迶雄  摯陑 */
 		if( NPC_Util_CharDistance( talkerindex ,meindex ) > 1) return;
 	}
 
 	if(CHAR_getInt(meindex,CHAR_BASEIMAGENUMBER)==9999){
-		/*--壅尹化中月乒□玉--*/
+		/*--觛窇趙笢堎さ↓迶--*/
 		return;
 	}
 
@@ -130,29 +130,29 @@ void NPC_TimeManTalked( int meindex , int talkerindex , char *msg ,int color )
 
 
 	if(CHAR_getWorkInt(meindex,E_INT_MODE)==0){
-		/*--丢永本□斥毛忒允 */
+		/*--隍蚗掛↓喇禱蒍埰 */
 		NPC_Util_GetStrFromStrWithDelim(argstr,"main_msg",buf,sizeof( buf) );
  	
  	}else{
- 		/*弘仿白奴永弁    毛  尹凶分仃卅及匹｝啜丹丢永本□斥毛忒允 */
+ 		/*精溘啞贖蚗袲    禱  窇倜煦崹埵摯ぁ��鄖竣隍蚗掛↓喇禱蒍埰 */
 		NPC_Util_GetStrFromStrWithDelim(argstr,"change_msg",buf,sizeof( buf) );
  	}
 
    	tokennum = 1;
-   	/* 戊件穴匹嗉濠日木凶玄□弁件互窒仇丐月井醒尹月 */
+   	/* 昡璃悃ぁ鉏憍�桫憶豝�↓袲璃誑笰喫堣堎凝倳窇堎 */
 	 for( i=0;buf[i]!='\0';i++ ){
           if( buf[i] == ',' ) tokennum++;
      }
  
-    /* 仿件母丞匹升木毛韵月井瑁户化｝公及玄□弁件毛潸曰分允 */
+    /* 溘璃譫堜ぁ汔躂禱婘堎凝鋆誧趙��鼠摯哱↓袲璃禱噁堇煦埰 */
     getStringFromIndexWithDelim( buf,",", rand()%tokennum+1,token, sizeof(token));
-	/*--仄扎屯月--*/
+	/*--媃崨迋堎--*/
 	CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORWHITE );
 
 
 }
 
-/** 引歹曰卞窒井互粟仇匀凶午五卞裟壬木月*/
+/** 竘渦堇勗笰凝誑厔喫埱倜敁拻勗蠙�厊戰�*/
 void NPC_TimeManWatch( int meobjindex, int objindex, CHAR_ACTION act,
                     int x,int y,int dir, int* opt,int optlen )
 {
@@ -165,7 +165,7 @@ void NPC_TimeManWatch( int meobjindex, int objindex, CHAR_ACTION act,
 	if( OBJECT_getType( objindex) != OBJTYPE_CHARA) return;
 	index = OBJECT_getIndex( objindex);
 
-	/* 皿伊奶乩□卞及心  杀允月 */
+	/* 鏤畛騷媕↓勗摯陑  伀埰堎 */
 	if( CHAR_getInt( index, CHAR_WHICHTYPE) != CHAR_TYPEPLAYER) return;
 
     meindex = OBJECT_getIndex( meobjindex);
@@ -174,7 +174,7 @@ void NPC_TimeManWatch( int meobjindex, int objindex, CHAR_ACTION act,
 
 //	print("now_hour=%d",nowlstime.hour);
 	
-	/* 凛棉毛苇化橇谪毛瑁户月 */
+	/* 鄹蹬禱峟趙Щ稃禱鋆誧堎 */
 	if(born < dead){
 		RealTimeToLSTime( NowTime.tv_sec, &nowlstime);
 		if( (born < nowlstime.hour) && (dead > nowlstime.hour) ){
@@ -188,7 +188,7 @@ void NPC_TimeManWatch( int meobjindex, int objindex, CHAR_ACTION act,
 			CHAR_setWorkInt(meindex,E_INT_NOWGRAPHIC,
 								CHAR_getInt(meindex,CHAR_BASEIMAGENUMBER));
 		}else{
-			/*-壅尹化中月--*/
+			/*-觛窇趙笢堎--*/
 			if(CHAR_getWorkInt(meindex,E_INT_NOWGRAPHIC)
 				==CHAR_getWorkInt( meindex, E_INT_GRAPHIC2)) return;
 

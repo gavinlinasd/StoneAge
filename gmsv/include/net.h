@@ -25,52 +25,52 @@
 
 
 /*
- * 夫弘奶件仄化中卅中｝ 夫弘奶件仄化中月｝ 夫弘奶件   平乓仿综曰  
- * 夫弘失它玄  ( 本□皮   ) , 夫弘失它玄  ( 失件夫永弁   )
- *  N 反 NOT ｝ W 反 WHILE , UL 反 UNLOCK 及仪
+ * 痲精騷璃媃趙笢埵笢�� 痲精騷璃媃趙笢堎�� 痲精騷璃   す籤溘軘堇  
+ * 痲精囮坳哱  ( 掛↓々   ) , 痲精囮坳哱  ( 囮璃痲蚗袲   )
+ *  N 毀 NOT �� W 毀 WHILE , UL 毀 UNLOCK 摯痀
  */
 typedef enum
 {
-    NOTLOGIN,           /*  夫弘奶件仄化中卅中  */
-    LOGIN,              /*  夫弘奶件            */
-    WHILELOGIN,         /*  夫弘奶件仄化中月    */
-    WHILECREATE,        /*  综匀化中月          */
-    WHILELOGOUTSAVE,    /*  夫弘失它玄及本□皮      */
-    WHILECANNOTLOGIN,   /*  夫弘奶件匹五卅井匀凶凛及失件夫永弁质        */
-    WHILECHARDELETE,    /*  平乓仿绰轮      */
-    WHILEDOWNLOADCHARLIST,  /*  平乓仿伉旦玄母它件夫□玉    */
-    WHILECHANGEPASSWD,  /*  由旦伐□玉  凳      */
+    NOTLOGIN,           /*  痲精騷璃媃趙笢埵笢  */
+    LOGIN,              /*  痲精騷璃            */
+    WHILELOGIN,         /*  痲精騷璃媃趙笢堎    */
+    WHILECREATE,        /*  軘埱趙笢堎          */
+    WHILELOGOUTSAVE,    /*  痲精囮坳哱摯掛↓々      */
+    WHILECANNOTLOGIN,   /*  痲精騷璃ぁ拻埵凝埱倜鄹摯囮璃痲蚗袲窐        */
+    WHILECHARDELETE,    /*  す籤溘朝謫      */
+    WHILEDOWNLOADCHARLIST,  /*  す籤溘惉筒哱譫坳璃痲↓迶    */
+    WHILECHANGEPASSWD,  /*  蚕筒極↓迶  脾      */
 
-    WHILELOSTCHARSAVE,  /*  夫旦玄匹平乓仿本□皮仄      */
-    WHILELOSTCHARDELETE,/*  夫旦玄匹平乓仿壅仄      */
+    WHILELOSTCHARSAVE,  /*  痲筒哱ぁす籤溘掛↓々媃      */
+    WHILELOSTCHARDELETE,/*  痲筒哱ぁす籤溘觛媃      */
 
-    WHILECLOSEALLSOCKETSSAVE, /* closeallsockets 匹平乓仿本□皮仄  */
-    WHILESAVEWAIT,              /* 夫弘失它玄及本□皮卞垫仁蟆及赐  谨切  */
+    WHILECLOSEALLSOCKETSSAVE, /* closeallsockets ぁす籤溘掛↓々媃  */
+    WHILESAVEWAIT,              /* 痲精囮坳哱摯掛↓々勗菜�扷□偌�  輝з  */
 }LoginType;
 
-/*     仄化中卅中｝失市它件玄扔□田｝弁仿奶失件玄｝失玉丞 */
+/*     媃趙笢埵笢��囮庈坳璃哱�荂懽鵃�袲溘騷囮璃哱��囮迶堜 */
 typedef enum
 {
     NOTDETECTED,AC,CLI,ADM
 }ConnectType;
 
 
-/*  扔□田互忡绣仄化云仁赢今    */
+/*  �荂懽嚜乒覣槾し耽つ弝捐�    */
 #define CDKEYLEN    16
 #define PASSWDLEN   16
-/* 仇木及  凳反尕第(允月卅日 Char 及STRING64 手赝濠卅袄卞濠曰晶月仇午*/
+/* 喫躂摯  脾毀箾菴(埰堎埵�� Char 摯STRING64 忒媏憍埵偯勗憍堇儒堎喫敁*/
 #define CHARNAMELEN     32
 
-#define CLITIMEOUT_SEC  120     /* 弁仿奶失件玄井日read仄卅井匀凶日｝
-                                   仇及凛棉匹正奶丞失它玄｝夫弘失它玄［ */
+#define CLITIMEOUT_SEC  120     /* 袲溘騷囮璃哱凝�捯ead媃埵凝埱倜�掁�
+                                   喫摯鄹蹬ぁ淏騷堜囮坳哱��痲精囮坳哱�� */
 
 #define		NET_STRING_SUCCESSFULL	"successful"
 #define		NET_STRING_FAILED		"failed"
 
-// 孔勾丹及    及伉□玉］仿奶玄田永白央扔奶术
+// 謂僑竣摯    摯惉↓迶�揧薩昐�泬蚗啞栝�蚅昃�
 #define RBSIZE 65536
 #define WBSIZE (65536*6)
-// 失市它件玄扔□田□迕
+// 囮庈坳璃哱�荂懽鵅籓�
 
 #define	AC_RBSIZE (65536*48)
 //#define	AC_RBSIZE (65536*32)
@@ -78,9 +78,9 @@ typedef enum
 //#define	AC_WBSIZE (65536*16)
 extern int AC_WBSIZE;
 
-EXTERN int      bindedfd;     /*夫□市伙失玉伊旦卞田奶件玉仄凶末弗永玄*/
-EXTERN int      acfd;         /*失市它件玄扔□田卞戊生弁玄扑正末弗永玄*/
-EXTERN int      ConnectLen;   /*票及袄及赢今*/
+EXTERN int      bindedfd;     /*痲↓庈鳴囮迶畛筒勗泬騷璃迶媃倜藺艇蚗哱*/
+EXTERN int      acfd;         /*囮庈坳璃哱�荂懽黿槸嚁�袲哱で淏藺艇蚗哱*/
+EXTERN int      ConnectLen;   /*き摯偯摯荇踏*/
 #define CONNECT_WINDOWBUFSIZE 7
 
 //#ifdef _M_SERVER
@@ -91,7 +91,7 @@ EXTERN int		mfd;
 EXTERN int		npcfd;
 #endif
 
-/* 湘  凶切 */
+/* 盻  倜з */
 BOOL initConnect( int size );
 void endConnect( void );
 #define		CONNECT_endOne( sockfd, lin) \
@@ -127,14 +127,14 @@ void SERVSTATE_setDsptime(int a);
 void SERVSTATE_setLimittime(int a);
 
 
-/* 公及幻井 */
+/* 鼠摯酵凝 */
 void outputNetProcLog( int fd, int mode);
 void chardatasavecheck( void );
 void closeAllConnectionandSaveData( void );
 BOOL SetShutdown( BOOL nvalue );
 int GetShutdown( void );
 
-/* 伙□皿仄化腹绸楮醒 */
+/* 鳴↓鏤媃趙號喙匴倳 */
 int getfdFromCdkey( char* cd );
 int getfdFromCharaIndex( int charaindex );
 int getcdkeyFromCharaIndex( int charaindex , char *out, int outlen );
@@ -144,7 +144,7 @@ int getfdFromFdid( int fdid );
 int getfdFromCdkeyWithLogin( char* cd );
 
 
-/* 仄日屯 */        
+/* 媃�梠� */        
 INLINE int CONNECT_checkfd( int fd );
 BOOL CONNECT_isCLI( int fd );
 BOOL CONNECT_isAC( int fd );
@@ -179,10 +179,10 @@ int CONNECT_getTradecardcharaindex( int fd, int i );
 int CONNECT_getClosed( int fd );
 void CONNECT_setClosed( int fd, int a );
 
-/* MT犯田永弘迕穴弁夫 */
+/* MT溢泬蚗精暵悃袲痲 */
 #define CONNECT_endOne_debug(a) CONNECT_endOne( (a) , __LINE__ )
 
-/* 犯□正丑综楮醒(引月切允木匀升覆杀迕) */
+/* 溢↓淏堯軘匴倳(竘堎з埰躂埱汔葡伀暵) */
 void CONNECT_setCDKEY( int sockfd, char *cd );
 void CONNECT_getCDKEY( int sockfd , char *out, int outlen );
 void CONNECT_setState( int fd, int s );
@@ -318,17 +318,17 @@ int CONNECT_getTradeList(int fd);
 BOOL MSBUF_CHECKbuflen( int size, float defp);
 
 
-#ifdef _GM_BROADCAST					// WON ADD 客服公告系统
+#ifdef _GM_BROADCAST					// WON ADD 諦督鼠豢炵苀
 
 
 typedef struct tag_broadcast_struct
 {
-	int time;			// 讯息间隔时间
-	int loop;			// 执行次数	
-	int wait;			// 公告完休息时间
+	int time;			// 捅洘潔路奀潔
+	int loop;			// 硒俴棒杅	
+	int wait;			// 鼠豢俇倎洘奀潔
 	int next_msg;
-	int max_msg_line;	// 讯息数
-	char msg[10][128];	// 公告讯息
+	int max_msg_line;	// 捅洘杅
+	char msg[10][128];	// 鼠豢捅洘
 }broadcast_struct;
 
 broadcast_struct BS;
@@ -338,7 +338,7 @@ void GM_BROADCAST();
 #endif
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 void Init_FM_PK_STRUCT();
 #endif
 

@@ -16,21 +16,21 @@
 
 
 /*
- *   赏读卅饕及伙□民件［by nakamura
+ *   奼黍埵壨摯鳴↓鏍璃�萒y nakamura
  *
- * NPCARGUMENT卞俜  仄凶失奶  丞毛  蜃卞赭  仄化中月云饕［
- *     SIMPLESHOP_MAXINFINITITEM潘    蜃卞戏岳允月仇午互匹五月［
- *   蜃戏岳失奶  丞午  元潘  及失奶  丞毛  匀凶日  匀凶支勾互
- * 壑钗井日壅  允月［
- * 引凶｝皿伊奶乩□井日手及毛  中午月仇午互匹五月互｝丐月袄蟾
- * (NPC_SIMPLESHOPMAXBUYPRICE)方曰嫖中嗯毛障  歹卅仁化反中仃
- * 卅中  潸反匹五卅中［  中午匀凶失奶  丞反公及桦匹卅仁卅月［
- * 引凶｝失奶  丞及涩烂匹cost互涩烂今木化中卅中手及手  中午木卅中［
- * 2谛动晓及皿伊奶乩□互饕卞五凶午五反｝  及菸毛穸燮允月［公丹允月
- * 仇午卞方曰饕互捩菁卞簿井毛锹澎仄化中月仇午毛  什［
+ * NPCARGUMENT勗棶  媃倜囮騷  堜禱  藦勗鐎  媃趙笢堎堁壨��
+ *     SIMPLESHOP_MAXINFINITITEM攣    藦勗牁埬埰堎喫敁誑ぁ拻堎��
+ *   藦牁埬囮騷  堜敁  啋攣  摯囮騷  堜禱  埱倜��  埱倜盓僑誑
+ * 詎鎃凝�殏�  埰堎��
+ * 竘倜��鏤畛騷媕↓凝�梛祤冕�  笢敁堎喫敁誑ぁ拻堎誑��堣堎偯騤
+ * (NPC_SIMPLESHOPMAXBUYPRICE)源堇禜笢鉣禱梤  渦埵�妡窈棉倠�
+ * 埵笢  噁毀ぁ拻埵笢��  笢敁埱倜囮騷  堜毀鼠摯鳹ぁ埵�忐耒瞿�
+ * 竘倜��囮騷  堜摯优擭ぁcost誑优擭踏躂趙笢埵笢忒摯忒  笢敁躂埵笢��
+ * 2硞雄窀摯鏤畛騷媕↓誑壨勗拻倜敁拻毀��  摯楱禱騅袸埰堎�蛫奏夭彸�
+ * 喫敁勗源堇壨誑碔敯勗移凝禱Ъ鱗媃趙笢堎喫敁禱  妦��
  *
- * 正奶皿  “SimpleShop
- * 健丹奶矛件玄: init, talked, specialtalked
+ * 淏騷鏤  ※SimpleShop
+ * 翩竣騷穫璃哱: init, talked, specialtalked
  *
  *
  */
@@ -56,7 +56,7 @@ static BOOL NPC_SimpleShopOpenShopOrNot( char *msg, char *openshopstr );
 #define NPC_SIMPLESHOPMAXBUYPRICE 9999
 #define SIMPLESHOPTALKBUFSIZE 256
 
-#define SIMPLESHOP_FATALERRSTR "好痛！对不起,最近状况不太佳。。。"
+#define SIMPLESHOP_FATALERRSTR "疑芫ㄐ勤祥れ,郔輪袨錶祥怮槽﹝﹝﹝"
 
 #define SIMPLESHOP_MAXINFINITITEM 40
 
@@ -310,10 +310,10 @@ void NPC_LimitBuyInShopSpecialTalked( int meindex, int talker, char *msg, int co
 
 
 /*
- * 饕互用□穴伙它奶件玉它毛请允［它奶件玉它及廿凶氏毛瓷允午｝
- *   赓卞饕卞  仄井仃凶午五午  元橇谪卞手升月［
- * int meindex : 饕及index
- * int playerindex : 它奶件玉它毛请允皿伊奶乩□及index
+ * 壨誑蚚↓悃鳴坳騷璃迶坳禱③埰�袷�騷璃迶坳摯堨倜庌禱棟埰敁��
+ *   疐勗壨勗  媃凝崹倜敁拻敁  啋Щ稃勗忒汔堎��
+ * int meindex : 壨摯index
+ * int playerindex : 坳騷璃迶坳禱③埰鏤畛騷媕↓摯index
  * char *str :
  */
 static void NPC_SimpleShopNormalWindow( int meindex, int playerindex,
@@ -332,12 +332,12 @@ static void NPC_SimpleShopNormalWindow( int meindex, int playerindex,
 }
 
 /*
- * 饕它奶件玉它及奶件犯弁旦井日｝失奶  丞  □皮伙及奶件犯弁旦卞  晶
- * 娄醒
- * int charindex:平乓仿及奶件犯弁旦
- * int shopwindowindex:饕它奶件玉它及奶件犯弁旦［0井日反元引月［
- * 忒曰袄
- * 失奶  丞  □皮伙及奶件犯弁旦［巨仿□反-1［
+ * 壨坳騷璃迶坳摯騷璃溢袲筒凝�掁�囮騷  堜  ↓々鳴摯騷璃溢袲筒勗  儒
+ * 礎倳
+ * int charindex:す籤溘摯騷璃溢袲筒
+ * int shopwindowindex:壨坳騷璃迶坳摯騷璃溢袲筒��0凝�梫椒肫�堎��
+ * 蒍堇偯
+ * 囮騷  堜  ↓々鳴摯騷璃溢袲筒�蛨瑀癒黦�-1��
  */
 static int NPC_ShopWindowIndexToItemTableIndex( int charindex,
                                                 int shopwindowindex )
@@ -418,12 +418,12 @@ static BOOL NPC_SimpleShopProcessSellMsg(char *msg, int shopindex,
     id = ITEM_getInt(itemind,ITEM_ID);
 	{
 		LogItem(
-			CHAR_getChar( playerindex, CHAR_NAME ), /* 平乓仿   */
+			CHAR_getChar( playerindex, CHAR_NAME ), /* す籤溘   */
 			CHAR_getChar( playerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemind,
 #else
-       		ITEM_getInt( itemind, ITEM_ID ),  /* 失奶  丞  寞 */
+       		ITEM_getInt( itemind, ITEM_ID ),  /* 囮騷  堜  蠕 */
 #endif
 			"Sell",
 			CHAR_getInt( playerindex,CHAR_FLOOR),
@@ -497,12 +497,12 @@ static BOOL NPC_LimitBuyInShopProcessSellMsg(char *msg,
 
 	{
 		LogItem(
-			CHAR_getChar( playerindex, CHAR_NAME ), /* 平乓仿   */
+			CHAR_getChar( playerindex, CHAR_NAME ), /* す籤溘   */
 			CHAR_getChar( playerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemind,
 #else
-       		ITEM_getInt( itemind, ITEM_ID ),  /* 失奶  丞  寞 */
+       		ITEM_getInt( itemind, ITEM_ID ),  /* 囮騷  堜  蠕 */
 #endif
 			"Sell",
 			CHAR_getInt( playerindex,CHAR_FLOOR),
@@ -514,7 +514,7 @@ static BOOL NPC_LimitBuyInShopProcessSellMsg(char *msg,
 		);
 	}
 
-    /*   中潸匀凶失奶  丞毛壅蛔 */
+    /*   笢噁埱倜囮騷  堜禱觛閤 */
     NPC_Util_RemoveItemByID(shopindex,id,FALSE);
 
     return 1;
@@ -522,7 +522,7 @@ static BOOL NPC_LimitBuyInShopProcessSellMsg(char *msg,
 }
 
 /*
- * 饕卞丐月失奶  丞及醒毛  月
+ * 壨勗堣堎囮騷  堜摯倳禱  堎
  */
 static int NPC_SimpleShopGetItemNum( int meindex )
 {
@@ -530,7 +530,7 @@ static int NPC_SimpleShopGetItemNum( int meindex )
 
     counter = 0;
     for( i=CHAR_STARTITEMARRAY;i<CHAR_MAXITEMHAVE;i++ ){
-        /* 失奶  丞  毛蝈  扔□民仄化手匀化月支勾毛市它件玄允月 */
+        /* 囮騷  堜  禱蠈  �荂劗鵗し缺笪�趙堎盓僑禱庈坳璃哱埰堎 */
         if( ITEM_CHECKINDEX( CHAR_getItemIndex(meindex,i) ) ){
             counter++;
         }
@@ -540,10 +540,10 @@ static int NPC_SimpleShopGetItemNum( int meindex )
 }
 
 /*
- * 丐月平乓仿奶件犯弁旦及平乓仿卞｝云心六window毛钒仁凶户及
- * 树  毛芨尹月［
- * int meindex:愤坌及(饕及)奶件犯弁旦
- * int cliindex:菸及奶件犯弁旦
+ * 堣堎す籤溘騷璃溢袲筒摯す籤溘勗��堁陑鞠window禱楣�庈袘尬�
+ * 攷  禱僄窇堎��
+ * int meindex:猷覕摯(壨摯)騷璃溢袲筒
+ * int cliindex:楱摯騷璃溢袲筒
  */
 static void NPC_SimpleShopOpenShopWindow( int meindex, int cliindex,
                                           char *npcarg )
@@ -602,7 +602,7 @@ static void NPC_SimpleShopOpenShopWindow( int meindex, int cliindex,
 
 
 /*
- * TK匹霜月凶户及  侬  毛勾仁月［
+ * TKぁ邞堎倜誧摯  棬  禱僑�彸瞿�
  */
 static void NPC_SimpleShopGetEscapedItemString( int shopindex,
                                                 int cliindex, char *str )
@@ -615,14 +615,14 @@ static void NPC_SimpleShopGetEscapedItemString( int shopindex,
 
     str[0] = '\0';
 
-    /* 引内饕及  切  及伉旦玄 */
+    /* 竘囀壨摯  з  摯惉筒哱 */
     for( i=CHAR_STARTITEMARRAY;i<CHAR_MAXITEMHAVE;i++ ){
         itemindex=CHAR_getItemIndex( shopindex , i );
         if( ITEM_CHECKINDEX(itemindex) ){
             itemname = ITEM_getChar( itemindex, ITEM_SECRETNAME );
             makeEscapeString( itemname, escapedname, sizeof(escapedname));
             cost = ITEM_getInt( itemindex, ITEM_COST );
-            /* 嗯喊及譬帮［MERCHANTLEVEL卞方匀化  歹月［ */
+            /* 鉣滌摯ぅ堆�腏ERCHANTLEVEL勗源埱趙  渦堎�� */
             cost *= NPC_Util_buyRate(cliindex);
             cl = ITEM_getInt( itemindex, ITEM_LEVEL );
             imageno = ITEM_getInt( itemindex, ITEM_BASEIMAGENUMBER );
@@ -637,17 +637,17 @@ static void NPC_SimpleShopGetEscapedItemString( int shopindex,
         }
     }
 
-    /* 戚卞｝菸及  切  及伉旦玄 */
+    /* べ勗��楱摯  з  摯惉筒哱 */
     for( i=CHAR_STARTITEMARRAY;i<CHAR_MAXITEMHAVE;i++ ){
         itemindex=CHAR_getItemIndex( cliindex , i );
         if( ITEM_CHECKINDEX(itemindex) ){
             cost = ITEM_getInt( itemindex, ITEM_COST );
-            /* 嗯喊及譬帮［MERCHANTLEVEL卞方匀化  歹月［ */
+            /* 鉣滌摯ぅ堆�腏ERCHANTLEVEL勗源埱趙  渦堎�� */
             cost *=NPC_Util_sellRate(cliindex);
             snprintf( tmp, sizeof(tmp), "|%d", cost );
             strcat( str, tmp );
         }else{
-            /* 失奶  丞毛  匀化卅中桦赭卞反0毛中木月     */
+            /* 囮騷  堜禱  埱趙埵笢鳹鐎勗毀0禱笢躂堎     */
             strcat( str, "|0" );
         }
     }
@@ -655,8 +655,8 @@ static void NPC_SimpleShopGetEscapedItemString( int shopindex,
 }
 
 /*
- * 饕互  蜃卞  匀化中月失奶  丞毛  凶六月［赓渝祭凛午潸曰娄五及  
- * 卞裟少［
+ * 壨誑  藦勗  埱趙笢堎囮騷  堜禱  倜鞠堎�詊棑撘擱楱諙�堇礎拻摯  
+ * 勗蠙屾��
  */
 static BOOL NPC_SimpleShopFillItem( int meindex, char *npcarg )
 {
@@ -675,11 +675,11 @@ static BOOL NPC_SimpleShopFillItem( int meindex, char *npcarg )
             }
             num=NPC_Util_countHaveItem(meindex,itemid);
             if( num < 0 ){
-                return FALSE;/* 尕恳卅id卅升及fatal err */
-            }else if( num == 0 ){ /* 手匀化卅井匀凶日  虾 */
+                return FALSE;/* 箾諜埵id埵汔摯fatal err */
+            }else if( num == 0 ){ /* 忒埱趙埵凝埱倜��  牬 */
                 NPC_Util_createItemToChar( meindex,itemid, FALSE);
 
-            }else if( num>=2 ){ /* 手切允亢及桦宁绰轮 */
+            }else if( num>=2 ){ /* 忒з埰蕩摯鳹譴朝謫 */
                 NPC_Util_RemoveItemByID(meindex,itemid,FALSE);
             }
         }else{
@@ -687,7 +687,7 @@ static BOOL NPC_SimpleShopFillItem( int meindex, char *npcarg )
         }
     }
 
-    /* 域荚仄五屯勾今木凶橇谪卞允月 */
+    /* 郖樊媃拻迋僑踏躂倜Щ稃勗埰堎 */
     //NPC_SimpleShopSetLeakLevel( meindex );
 
     return TRUE;
@@ -695,7 +695,7 @@ static BOOL NPC_SimpleShopFillItem( int meindex, char *npcarg )
 
 
 /*
- * 赓渝祭允月［
+ * 疐趵撬埰堎��
  */
 BOOL NPC_SimpleShopInit( int meindex )
 {
@@ -703,7 +703,7 @@ BOOL NPC_SimpleShopInit( int meindex )
     char npcarg[NPC_UTIL_GETARGSTR_BUFSIZE];
 
 
-    /* 域荚撩  仄凶丐午反2蘸午综日卅中方丹卞允月 */
+    /* 郖樊謄  媃倜堣敁毀2梣敁軘�欷聿郱蔥仃槬彸� */
     int createindex = CHAR_getInt( meindex, CHAR_NPCCREATEINDEX );
 
 /*    print("shopinit start\n" );*/
@@ -717,8 +717,8 @@ BOOL NPC_SimpleShopInit( int meindex )
     CHAR_setInt( meindex , CHAR_STR , 0 );
     CHAR_setInt( meindex , CHAR_TOUGH, 0 );
     CHAR_setInt( meindex , CHAR_LV , 0 );
-    mlevel = ((100<<16)|(100<<0)); /* 晓匏2田奶玄互  丹午五及    ｝
-                                    票匏2田奶玄互  月午五及    ［ */
+    mlevel = ((100<<16)|(100<<0)); /* 窀痾2泬騷哱誑  竣敁拻摯    ��
+                                    き痾2泬騷哱誑  堎敁拻摯    �� */
     CHAR_setInt( meindex, CHAR_MERCHANTLEVEL, mlevel );
 
     CHAR_setWorkInt( meindex, CHAR_WORKSHOPCLIENTINDEX, -1 );
@@ -729,7 +729,7 @@ BOOL NPC_SimpleShopInit( int meindex )
 
     NPC_Util_GetArgStr( meindex, npcarg, sizeof(npcarg));
 
-    /* 失奶  丞  凶六月［撩  仄凶日return FALSE */
+    /* 囮騷  堜  倜鞠堎�衖�  媃倜�捯eturn FALSE */
     if( ! NPC_SimpleShopFillItem( meindex,npcarg ) ){
         print( "SHOP INIT ERROR: npcarg=%s\n", npcarg );
         return FALSE;
@@ -742,16 +742,16 @@ BOOL NPC_SimpleShopInit( int meindex )
 }
 
 /*
- * 饕它奶件玉它毛钒仁井升丹井  烂允月［
- * npcarg及中匀仇户及玄□弁件卞
- * 仇氏卞切反,仍户氏仁分今中,仁分今中卅
- * 及方丹卞俜  今木凶  侬  毛手午卞  烂允月［仇及午五及犯伉立正反","［
+ * 壨坳騷璃迶坳禱楣�尨時�竣凝  擭埰堎��
+ * npcarg摯笢埱喫誧摯哱↓袲璃勗
+ * 喫庌勗з毀,�堇廷珂妢祧鵖�,�妢祧鵖倠�
+ * 摯源竣勗棶  踏躂倜  棬  禱忒敁勗  擭埰堎�蛦蟦匿覢撘健誇讔Ｇ�毀","��
  *
- * 娄醒
- * msg:皿伊奶乩□互仄扎屯匀凶  侬  
- * openshopstr:npcarg及中匀仇户及玄□弁件［
- * 忒曰袄
- * 钒仁卅日TRUE, 钒井卅中卅日FALSE
+ * 礎倳
+ * msg:鏤畛騷媕↓誑媃崨迋埱倜  棬  
+ * openshopstr:npcarg摯笢埱喫誧摯哱↓袲璃��
+ * 蒍堇偯
+ * 楣�忐牟悾RUE, 楣凝埵笢埵�帴ALSE
  */
 static BOOL NPC_SimpleShopOpenShopOrNot( char *msg, char *openshopstr )
 {
@@ -767,7 +767,7 @@ static BOOL NPC_SimpleShopOpenShopOrNot( char *msg, char *openshopstr )
 }
 
 /*
- * 允屯化及手切手及毛域荚摹  今木凶橇谪卞允月［
+ * 埰迋趙摯忒з忒摯禱郖樊纂  踏躂倜Щ稃勗埰堎��
  */
 #if 0
 static void NPC_SimpleShopSetLeakLevel( int meindex )

@@ -45,12 +45,12 @@ int MAGIC_Use( int charaindex, int haveitemindex, int toindex)
 	
         // shan add begin
         if( CHAR_getInt( charaindex, CHAR_FMINDEX ) >= 1 ){
-            // 光精
+            // 嫖儕
             if( CHAR_getInt( charaindex, CHAR_FMSPRITE ) == 0){
                 if( (marray >=0 && marray <=31) || (marray >= 105 && marray <=107 ))
                     mp *= MP_RATE;
             }
-            // 暗精
+            // 做儕
             if( CHAR_getInt( charaindex, CHAR_FMSPRITE ) == 1){
                 if( marray >=32 && marray <=81 )
                     mp *= MP_RATE;
@@ -86,9 +86,9 @@ int MAGIC_DirectUse(
 	MAGIC_CALLFUNC func;
 	int mp, ret, marray;
 	int itemindex=-1;
-#ifdef _MAGIC_NOCAST//沉默状态无法施法
+#ifdef _MAGIC_NOCAST//麥蘇袨怓拸楊囥楊
     if( CHAR_getWorkInt( charaindex, CHAR_WORKNOCAST ) > 0 ){
-		CHAR_talkToCli(charaindex, -1, "沉默中无法吟唱咒术", CHAR_COLORYELLOW);
+		CHAR_talkToCli(charaindex, -1, "麥蘇笢拸楊窉釭紸扲", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 #endif
@@ -109,12 +109,12 @@ int MAGIC_DirectUse(
 	}
         // shan add begin
         if( CHAR_getInt( charaindex, CHAR_FMINDEX ) >= 1 ){
-            // 光精
+            // 嫖儕
             if( CHAR_getInt( charaindex, CHAR_FMSPRITE ) == 0){
                 if( (marray >=0 && marray <=31) )
                     mp *= MP_RATE;
             }
-            // 暗精
+            // 做儕
             if( CHAR_getInt( charaindex, CHAR_FMSPRITE ) == 1){
                 if( marray >=32 && marray <=81 )
                     mp *= MP_RATE;
@@ -143,23 +143,23 @@ int MAGIC_Recovery( int charaindex, int toindex, int marray, int mp )
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
 	if( IsBATTLING( charaindex ) == TRUE ){
-#ifdef _PREVENT_TEAMATTACK	//恩惠不得 使用敌方
+#ifdef _PREVENT_TEAMATTACK	//塋需祥腕 妏蚚菩源
 		int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER &&
 			BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P ){
 
-			if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//不同边
+			if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//祥肮晚
 				int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 				BATTLE_NoAction( battleindex, BATTLE_Index2No( battleindex, charaindex) );
-				CHAR_talkToCli( charaindex, -1, "恩惠精灵..不得施予非玩家敌方。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( charaindex, -1, "塋需儕鍾..祥腕囥軑準俙模菩源﹝", CHAR_COLORYELLOW);
 				return FALSE;
 			}
 		}
 #endif
-		if (toindex==22){print("jinchao err\n");return FALSE;}  // shan(对全体使用魔法的bug)，修改者jinchao+2001/12/07
+		if (toindex==22){print("jinchao err\n");return FALSE;}  // shan(勤�屏樀墓藥孚巡懺ug)ㄛ党蜊氪jinchao+2001/12/07
 		MAGIC_Recovery_Battle( charaindex, toindex, marray, mp );
 	}else{
-		if( CHAR_CHECKINDEX( toindex ) == FALSE )return FALSE;  // shan(对全体使用魔法的bug)，修改者jinchao+2001/12/07
+		if( CHAR_CHECKINDEX( toindex ) == FALSE )return FALSE;  // shan(勤�屏樀墓藥孚巡懺ug)ㄛ党蜊氪jinchao+2001/12/07
 		MAGIC_Recovery_Field( charaindex, marray);
 	}
 
@@ -169,62 +169,62 @@ int MAGIC_Recovery( int charaindex, int toindex, int marray, int mp )
 int MAGIC_OtherRecovery( int charaindex, int toindex, int marray, int mp )
 {
 	int battlemode;
-	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //｛撩  
+	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //��謄  
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   井匀凶日母丢
+	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   凝埱倜�桫葆�
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
 	if( IsBATTLING( charaindex ) == TRUE ){
-#ifdef _PREVENT_TEAMATTACK	//滋润 不得使用敌方
+#ifdef _PREVENT_TEAMATTACK	//訞�� 祥腕妏蚚菩源
 		int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER &&
 			BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P ){
-			if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//不同边
+			if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//祥肮晚
 				int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 				BATTLE_NoAction( battleindex, BATTLE_Index2No( battleindex, charaindex) );
-				CHAR_talkToCli( charaindex, -1, "滋润精灵..不得施予非玩家敌方。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( charaindex, -1, "訞�騞姦�..祥腕囥軑準俙模菩源﹝", CHAR_COLORYELLOW);
 				return FALSE;
 			}
 		}
 #endif
 		MAGIC_Recovery_Battle( charaindex, toindex, marray, mp );
 	}else{
-		if( CHAR_CHECKINDEX( toindex ) == FALSE )return FALSE; //｛撩  
+		if( CHAR_CHECKINDEX( toindex ) == FALSE )return FALSE; //��謄  
 		MAGIC_OtherRecovery_Field( charaindex, toindex, marray);
 	}
 	return TRUE;
 }
 
-// 白奴□伙玉及箪岭毛  祭今六月  芊
+// 啞贖↓鳴迶摯鶂鍛禱  撬踏鞠堎  傮
 int	MAGIC_FieldAttChange( int charaindex, int toindex, int marray, int mp )
 {
 	int battlemode;
 
-	// INDEX民尼永弁
-	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //｛撩  
+	// INDEX鏍攝蚗袲
+	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //��謄  
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月
+	// 橋  楣鴽鄹毀  鷋埰堎
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	//     壅  民尼永弁
-	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   井匀凶日母丢
-	// 仇及  芊反  骚卞    壅  仄化  中［穴奶瓜旦卞卅月仇午反  中
+	//     觛  鏍攝蚗袲
+	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   凝埱倜�桫葆�
+	// 喫摯  傮毀  玊勗    觛  媃趙  笢�覘乖拊炵店槾耒糧蠁蝺�  笢
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
 
-	// 爵    分匀凶日
+	// 橋    煦埱倜��
 	if( IsBATTLING( charaindex ) == TRUE ){
 		return MAGIC_FieldAttChange_Battle( charaindex, toindex, marray, mp );
 	}else{
-	// 爵    匹卅井匀凶日
+	// 橋    ぁ埵凝埱倜��
 		return FALSE;
 	}
 }
@@ -240,14 +240,14 @@ int	MAGIC_StatusChange( int charaindex, int toindex, int marray, int mp )
 	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE;
 	CHAR_setInt( charaindex, CHAR_MP, CHAR_getInt( charaindex, CHAR_MP ) - mp );
 	if( IsBATTLING( charaindex ) == TRUE ){
-#ifdef _PREVENT_TEAMATTACK	//异常状态不得使用友方
+#ifdef _PREVENT_TEAMATTACK	//祑都袨怓祥腕妏蚚衭源
 		int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER &&
 			BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P ){
-			if( BATTLE_CheckSameSide( charaindex, toindex) == 1 ){//同边
+			if( BATTLE_CheckSameSide( charaindex, toindex) == 1 ){//肮晚
 				int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 				BATTLE_NoAction( battleindex, BATTLE_Index2No( battleindex, charaindex) );
-				CHAR_talkToCli( charaindex, -1, "异常状态..不得施予友方。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( charaindex, -1, "祑都袨怓..祥腕囥軑衭源﹝", CHAR_COLORYELLOW);
 				return FALSE;
 			}
 		}
@@ -278,23 +278,23 @@ int	MAGIC_MagicStatusChange( int charaindex, int toindex, int marray, int mp )
 }
 #endif
 
-#ifdef _MAGIC_DEEPPOISON//新增ver2,主要设定毒状态5回未解时人物会阵亡
-// 旦  □正旦唱橘毛芨尹月  芊
+#ifdef _MAGIC_DEEPPOISON//陔崝ver2,翋猁扢隅馮袨怓5隙帤賤奀�冼嚜慖鯢�
+// 筒  ↓淏筒釭橖禱僄窇堎  傮
 int	MAGIC_StatusChange2( int charaindex, int toindex, int marray, int mp )
 {
 	int battlemode;
 
-	// INDEX民尼永弁
-	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //｛撩  
+	// INDEX鏍攝蚗袲
+	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //��謄  
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月
+	// 橋  楣鴽鄹毀  鷋埰堎
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-    //扣气
+    //諶ァ
 	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; 
 
 	CHAR_setInt( charaindex, CHAR_MP,
@@ -308,32 +308,32 @@ int	MAGIC_StatusChange2( int charaindex, int toindex, int marray, int mp )
 	}
 }
 #endif
-// 旦  □正旦唱橘荚汊今六月  芊
+// 筒  ↓淏筒釭橖樊蜾踏鞠堎  傮
 int	MAGIC_StatusRecovery( int charaindex, int toindex, int marray, int mp )
 {
 	int battlemode;
 
-	// INDEX民尼永弁
-	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //｛撩  
+	// INDEX鏍攝蚗袲
+	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //��謄  
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月
+	// 橋  楣鴽鄹毀  鷋埰堎
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	//     壅  民尼永弁
-	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   井匀凶日母丢
-	// 仇及  芊反  骚卞    壅  仄化  中［穴奶瓜旦卞卅月仇午反  中
+	//     觛  鏍攝蚗袲
+	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   凝埱倜�桫葆�
+	// 喫摯  傮毀  玊勗    觛  媃趙  笢�覘乖拊炵店槾耒糧蠁蝺�  笢
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
 
-	// 爵    分匀凶日
+	// 橋    煦埱倜��
 	if( IsBATTLING( charaindex ) == TRUE ){
 		return MAGIC_StatusRecovery_Battle( charaindex, toindex, marray, mp );
 	}else{
-	// 爵    匹卅井匀凶日
+	// 橋    ぁ埵凝埱倜��
 		return FALSE;
 	}
 }
@@ -350,14 +350,14 @@ int	MAGIC_MagicDef( int charaindex, int toindex, int marray, int mp )
 	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE;
 	CHAR_setInt( charaindex, CHAR_MP, CHAR_getInt( charaindex, CHAR_MP ) - mp );
 	if( IsBATTLING( charaindex ) == TRUE ){
-#ifdef _PREVENT_TEAMATTACK //光镜守..不得使用敌方
+#ifdef _PREVENT_TEAMATTACK //嫖噩忐..祥腕妏蚚菩源
 		int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER 
 			/*&& BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P*/ ){
-			if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//不同边
+			if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//祥肮晚
 				int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 				BATTLE_NoAction( battleindex, BATTLE_Index2No( battleindex, charaindex) );
-				CHAR_talkToCli( charaindex, -1, "光镜守..不得施予敌方。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( charaindex, -1, "嫖噩忐..祥腕囥軑菩源﹝", CHAR_COLORYELLOW);
 				return FALSE;
 			}
 		}
@@ -369,94 +369,94 @@ int	MAGIC_MagicDef( int charaindex, int toindex, int marray, int mp )
 }
 
 
-// 竣濮井日汊唾今六月  芊
+// 縈憪凝�涳獌棌魌齉�  傮
 int	MAGIC_Ressurect( int charaindex, int toindex, int marray, int mp )
 {
 	int battlemode;
 
-	// INDEX民尼永弁
-	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //｛撩  
+	// INDEX鏍攝蚗袲
+	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //��謄  
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月
+	// 橋  楣鴽鄹毀  鷋埰堎
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	//     壅  民尼永弁
-	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   井匀凶日母丢
-	// 仇及  芊反  骚卞    壅  仄化  中［穴奶瓜旦卞卅月仇午反  中
+	//     觛  鏍攝蚗袲
+	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   凝埱倜�桫葆�
+	// 喫摯  傮毀  玊勗    觛  媃趙  笢�覘乖拊炵店槾耒糧蠁蝺�  笢
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
 
-	// 爵    分匀凶日
+	// 橋    煦埱倜��
 	if( IsBATTLING( charaindex ) == TRUE ){
 		return MAGIC_Ressurect_Battle( charaindex, toindex, marray, mp );
 	}else{
-	// 爵    匹卅井匀凶日
+	// 橋    ぁ埵凝埱倜��
 		return FALSE;
 	}
 }
 
-// 箪岭毛  鳖今六月  芊
+// 鶂鍛禱  梱踏鞠堎  傮
 int	MAGIC_AttReverse( int charaindex, int toindex, int marray, int mp )
 {
 	int battlemode;
 
-	// INDEX民尼永弁
-	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //｛撩  
+	// INDEX鏍攝蚗袲
+	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //��謄  
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月
+	// 橋  楣鴽鄹毀  鷋埰堎
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	//     壅  民尼永弁
-	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   井匀凶日母丢
-	// 仇及  芊反  骚卞    壅  仄化  中［穴奶瓜旦卞卅月仇午反  中
+	//     觛  鏍攝蚗袲
+	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   凝埱倜�桫葆�
+	// 喫摯  傮毀  玊勗    觛  媃趙  笢�覘乖拊炵店槾耒糧蠁蝺�  笢
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
 
-	// 爵    分匀凶日
+	// 橋    煦埱倜��
 	if( IsBATTLING( charaindex ) == TRUE ){
 		return MAGIC_AttReverse_Battle( charaindex, toindex, marray, mp );
 	}else{
-	// 爵    匹卅井匀凶日
+	// 橋    ぁ埵凝埱倜��
 		return FALSE;
 	}
 }
 
 
 
-// 竣濮井日汊唾≈  芊  豢
+// 縈憪凝�涳獌晼�  傮  遛
 int	MAGIC_ResAndDef( int charaindex, int toindex, int marray, int mp )
 {
 	int battlemode;
 
-	// INDEX民尼永弁
-	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //｛撩  
+	// INDEX鏍攝蚗袲
+	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE; //��謄  
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月
+	// 橋  楣鴽鄹毀  鷋埰堎
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	//     壅  民尼永弁
-	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   井匀凶日母丢
-	// 仇及  芊反  骚卞    壅  仄化  中［穴奶瓜旦卞卅月仇午反  中
+	//     觛  鏍攝蚗袲
+	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; //   凝埱倜�桫葆�
+	// 喫摯  傮毀  玊勗    觛  媃趙  笢�覘乖拊炵店槾耒糧蠁蝺�  笢
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
 
-	// 爵    分匀凶日
+	// 橋    煦埱倜��
 	if( IsBATTLING( charaindex ) == TRUE ){
 		return MAGIC_ResAndDef_Battle( charaindex, toindex, marray, mp );
 	}else{
-	// 爵    匹卅井匀凶日
+	// 橋    ぁ埵凝埱倜��
 		return FALSE;
 	}
 }
@@ -475,7 +475,7 @@ int MAGIC_AttMagic( int charaindex , int toindex , int marray , int mp )
    battlemode = CHAR_getWorkInt( charaindex , CHAR_WORKBATTLEMODE );
    if( BATTLE_CHARMODE_INIT == battlemode )
    	return FALSE;
-	 // 若是宠物魔法,不扣mp
+	 // �襣Ё駘巀孚�,祥諶mp
    if(CHAR_getInt(charaindex,CHAR_WHICHTYPE) == CHAR_TYPEPLAYER)
 	 {
      if( CHAR_getInt( charaindex , CHAR_MP ) < mp )
@@ -502,11 +502,11 @@ int MAGIC_Metamo( int charaindex, int toindex, int marray, int mp )
 	if( CHAR_CHECKINDEX( charaindex ) == FALSE ) return FALSE;
 	
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
-	// 爵  钒铵凛反  骰允月
+	// 橋  楣鴽鄹毀  鷋埰堎
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
-	// 爵    分匀凶日
+	// 橋    煦埱倜��
 	if( IsBATTLING( charaindex ) == TRUE ){
 		//MAGIC_Recovery_Battle( charaindex, toindex, marray, mp );
 		//return FALSE;
@@ -518,17 +518,17 @@ int MAGIC_Metamo( int charaindex, int toindex, int marray, int mp )
 	if( CHAR_CHECKINDEX( toindex ) == FALSE ) return FALSE;
 
 	if( CHAR_getInt( charaindex, CHAR_RIDEPET ) != -1 ){
-		CHAR_talkToCli( charaindex, -1, "无法变身，骑乘中不能变身！", CHAR_COLORWHITE );
+		CHAR_talkToCli( charaindex, -1, "拸楊曹旯ㄛる傚笢祥夔曹旯ㄐ", CHAR_COLORWHITE );
 		return FALSE;
 	}
 #ifdef _FIX_METAMORIDE
 	if( CHAR_CHECKJOINENEMY( charaindex) == TRUE ){
-		CHAR_talkToCli( charaindex, -1, "无法变身，搭乘中不能变身！", CHAR_COLORYELLOW );
+		CHAR_talkToCli( charaindex, -1, "拸楊曹旯ㄛ減傚笢祥夔曹旯ㄐ", CHAR_COLORYELLOW );
 		return FALSE;
 	}
 #else
 	if( CHAR_getInt( charaindex, CHAR_BASEIMAGENUMBER) == 100259 ){
-		CHAR_talkToCli( charaindex, -1, "无法变身，搭乘中不能变身！", CHAR_COLORWHITE );
+		CHAR_talkToCli( charaindex, -1, "拸楊曹旯ㄛ減傚笢祥夔曹旯ㄐ", CHAR_COLORWHITE );
 		return FALSE;
 	}
 #endif
@@ -539,7 +539,7 @@ int MAGIC_Metamo( int charaindex, int toindex, int marray, int mp )
 			int armtype = BATTLE_GetWepon( charaindex);
 			if( armtype == ITEM_BOW || armtype == ITEM_BOUNDTHROW ||
 				armtype == ITEM_BREAKTHROW || armtype == ITEM_BOOMERANG)	{
-				CHAR_talkToCli( charaindex, -1, "使用远距离武器无法变身！", CHAR_COLORYELLOW );
+				CHAR_talkToCli( charaindex, -1, "妏蚚堈擒燭挕ん拸楊曹旯ㄐ", CHAR_COLORYELLOW );
 				return FALSE;
 			}
 		}
@@ -555,12 +555,12 @@ int MAGIC_Metamo( int charaindex, int toindex, int marray, int mp )
 	}
 	if( haveindex == -1 && charaindex != toindex )
 	{
-		CHAR_talkToCli( charaindex, -1, "无法变身，只能变成自己的宠物！", CHAR_COLORWHITE );
+		CHAR_talkToCli( charaindex, -1, "拸楊曹旯ㄛ硐夔曹傖赻撩腔唾昜ㄐ", CHAR_COLORWHITE );
 		return FALSE;
 	}
 
 	if( CHAR_getInt( toindex, CHAR_BASEIMAGENUMBER) == 100259 ){
-		CHAR_talkToCli( charaindex, -1, "不能变身成加美！", CHAR_COLORWHITE );
+		CHAR_talkToCli( charaindex, -1, "祥夔曹旯傖樓藝ㄐ", CHAR_COLORWHITE );
 		return FALSE;
 	}
 
@@ -573,11 +573,11 @@ int MAGIC_Metamo( int charaindex, int toindex, int marray, int mp )
 
 	if( toindex != charaindex ) {
 		CHAR_setWorkInt( charaindex, CHAR_WORKITEMMETAMO, NowTime.tv_sec +power);
-		sprintf( msg, "变身成%s！", CHAR_getChar( toindex, CHAR_NAME) );
+		sprintf( msg, "曹旯傖%sㄐ", CHAR_getChar( toindex, CHAR_NAME) );
 	}
 	else {
 		CHAR_setWorkInt( charaindex, CHAR_WORKITEMMETAMO, 0);
-		sprintf( msg, "变回自己！");
+		sprintf( msg, "曹隙赻撩ㄐ");
 	}
 	CHAR_talkToCli( charaindex, -1, msg, CHAR_COLORWHITE );
 
@@ -635,7 +635,7 @@ int MAGIC_AttSkill( int charaindex, int toindex,int marray, int mp )
 
 }
 #endif
-#ifdef _MAGIC_BARRIER// vincent  精灵:魔障
+#ifdef _MAGIC_BARRIER// vincent  儕鍾:藹梤
 int	MAGIC_Barrier( int charaindex, int toindex, int marray, int mp )
 {
 
@@ -646,7 +646,7 @@ int	MAGIC_Barrier( int charaindex, int toindex, int marray, int mp )
 	int  attackNo=0;
 	int battleindex,Success = 0;
 	char szTurn[] = "turn";
-	char szSuccess[] = "成";
+	char szSuccess[] = "傖";
 	char *pszP;
 
 	//check index
@@ -654,17 +654,17 @@ int	MAGIC_Barrier( int charaindex, int toindex, int marray, int mp )
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月//??
+	// 橋  楣鴽鄹毀  鷋埰堎//??
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	//mp不足
+	//mp祥逋
 	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; 
-	//消耗mp
+	//秏瘧mp
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
-    //魔法名称
+    //藹楊靡備
 	magicarg = MAGIC_getChar( marray, MAGIC_OPTION );
 	if( magicarg == NULL )	{
 		print("\n magicarg == NULL ");
@@ -672,12 +672,12 @@ int	MAGIC_Barrier( int charaindex, int toindex, int marray, int mp )
 	}
 	pszP = magicarg;
 
-    //读取作用回合数
+    //黍�＝壧羶媞珅�
 	if( ( pszP = strstr( pszP, szTurn ) ) != NULL){
 		pszP += sizeof( szTurn );
 		sscanf( pszP, "%d", &turn );
 	}
-	// 岳    涩烂//命中率
+	// 埬    优擭//韜笢薹
 	if( ( pszP = strstr( pszP, szSuccess ) ) != NULL){
 		pszP += sizeof( szSuccess );
 		sscanf( pszP, "%d", &Success );
@@ -686,11 +686,11 @@ int	MAGIC_Barrier( int charaindex, int toindex, int marray, int mp )
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 	BATTLE_MultiList( battleindex, toindex, ToList );
-//施魔法动画效果
+//囥藹楊雄賒虴彆
 	BATTLE_MagicEffect(battleindex, attackNo, ToList, MAGIC_EFFECT_USER, SPR_hoshi);
 
 	charaindex = BATTLE_No2Index( battleindex, attackNo );
-	//check是否战斗中
+	//check岆瘁桵須笢
 	if( IsBATTLING( charaindex ) == TRUE )
 	{
 
@@ -709,7 +709,7 @@ int	MAGIC_Barrier( int charaindex, int toindex, int marray, int mp )
 	}
 }
 #endif
-#ifdef _MAGIC_NOCAST// vincent  精灵:沉默
+#ifdef _MAGIC_NOCAST// vincent  儕鍾:麥蘇
 int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp )
 {
 
@@ -720,7 +720,7 @@ int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp )
 	int  attackNo=0;
 	int battleindex,Success = 0;
 	char szTurn[] = "turn";
-	char szSuccess[] = "成";
+	char szSuccess[] = "傖";
 	char *pszP;
 
 	//check index
@@ -728,17 +728,17 @@ int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp )
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月//??
+	// 橋  楣鴽鄹毀  鷋埰堎//??
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	//mp不足
+	//mp祥逋
 	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; 
-	//消耗mp
+	//秏瘧mp
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
-    //魔法名称
+    //藹楊靡備
 	magicarg = MAGIC_getChar( marray, MAGIC_OPTION );
 	if( magicarg == NULL )	{
 		print("\n magicarg == NULL ");
@@ -746,12 +746,12 @@ int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp )
 	}
 	pszP = magicarg;
 
-    //读取作用回合数
+    //黍�＝壧羶媞珅�
 	if( ( pszP = strstr( pszP, szTurn ) ) != NULL){
 		pszP += sizeof( szTurn );
 		sscanf( pszP, "%d", &turn );
 	}
-	// 岳    涩烂//命中率
+	// 埬    优擭//韜笢薹
 	if( ( pszP = strstr( pszP, szSuccess ) ) != NULL){
 		pszP += sizeof( szSuccess );
 		sscanf( pszP, "%d", &Success );
@@ -760,10 +760,10 @@ int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp )
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 	BATTLE_MultiList( battleindex, toindex, ToList );
-//施魔法动画效果
+//囥藹楊雄賒虴彆
 	BATTLE_MagicEffect(battleindex, attackNo, ToList, MAGIC_EFFECT_USER, SPR_hoshi);
 	charaindex = BATTLE_No2Index( battleindex, attackNo );
-	//check是否战斗中
+	//check岆瘁桵須笢
 	if( IsBATTLING( charaindex ) == TRUE )
 	{
 
@@ -774,7 +774,7 @@ int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp )
 				&& CHAR_getInt( toindex, CHAR_WHICHTYPE) != CHAR_TYPEPET)
 			{
 		       CHAR_setWorkInt( toindex, CHAR_WORKNOCAST, turn );
-//无法展开咒术页
+//拸楊桯羲紸扲珜
 	           lssproto_NC_send( getfdFromCharaIndex( toindex ), 1);
                //print("\nvincent-->NOCASTING2");
 //		       BATTLE_BadStatusString( ToList[i], BATTLE_ST_NOCAST );
@@ -787,7 +787,7 @@ int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp )
 }
 #endif
 
-#ifdef _MAGIC_WEAKEN// vincent  精灵:虚弱
+#ifdef _MAGIC_WEAKEN// vincent  儕鍾:剞��
 int	MAGIC_Weaken( int charaindex, int toindex, int marray, int mp )
 {
 
@@ -797,18 +797,18 @@ int	MAGIC_Weaken( int charaindex, int toindex, int marray, int mp )
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
 
-	// 爵  钒铵凛反  骰允月//??
+	// 橋  楣鴽鄹毀  鷋埰堎//??
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return FALSE;
 	}
 
-	//mp不足
+	//mp祥逋
 	if( CHAR_getInt( charaindex, CHAR_MP ) < mp )return FALSE; 
-	//消耗mp
+	//秏瘧mp
 	CHAR_setInt( charaindex, CHAR_MP,
 		CHAR_getInt( charaindex, CHAR_MP ) - mp );
 
-	//check是否战斗中
+	//check岆瘁桵須笢
 	if( IsBATTLING( charaindex ) == TRUE ){
 		return MAGIC_ParamChange_Turn_Battle( charaindex, toindex, marray, mp );
 	}else{

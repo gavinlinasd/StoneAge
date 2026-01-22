@@ -1,9 +1,9 @@
 #ifndef _BATTLE_ITEM_H_
 #define _BATTLE_ITEM_H_
 //--------------------------------------------------------------
-//  荚汊失奶  丞毛银匀凶桦宁及质  
+//  樊蜾囮騷  堜禱窅埱倜鳹譴摯窐  
 //--------------------------------------------------------------
-// 爵    及桦宁
+// 橋    摯鳹譴
 void ITEM_useRecovery_Battle( int charaindex, int toindex, int itemindex );
 void ITEM_useStatusChange_Battle( int charaindex, int toindex, int itemindex );
 void ITEM_useMagicDef_Battle( int charaindex, int toindex, int itemindex );
@@ -15,10 +15,10 @@ void ITEM_useCaptureUp_Battle( int charaindex, int toindex, int itemindex );
 #ifdef _ITEM_CRACKER
 void ITEM_useCracker_Effect( int charaindex, int toindex, int haveitemindex);
 #endif
-#ifdef _ITEM_ADDEXP	//vincent 经验提升
+#ifdef _ITEM_ADDEXP	//vincent 冪桄枑汔
 void ITEM_useAddexp_Effect( int charaindex, int toindex, int haveitemindex);
 #endif
-#ifdef _ITEM_REFRESH //vincent 解除异常状态道具
+#ifdef _ITEM_REFRESH //vincent 賤壺祑都袨怓耋撿
 void ITEM_useRefresh_Effect( int charaindex, int toindex, int haveitemindex);
 #endif
 //Terry add 2001/12/24

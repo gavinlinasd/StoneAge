@@ -8,7 +8,7 @@
 #include "common.h"
 #include "net.h"
 
-#ifdef _SEND_EFFECT	   	        // WON ADD AC送下雪、下雨等特效
+#ifdef _SEND_EFFECT	   	        // WON ADD AC冞狟悕﹜狟迾脹杻虴
 #include "chatmagic.h"
 #endif
 
@@ -16,19 +16,19 @@
 
 /*
 90 :   <LI>  <a name="ACServerLoginC"><font color=red>clienttoserver ACServerLogin(string servername,string serverpas);<br></font></a>
-91 :      必□丞扔□田□互失市它件玄扔□田□卞夫弘奶件允月午五卞银丹［
-92 :      涛粮毛舰匀凶丐午｝仇及夫弘奶件毛仄卅中午允屯化及扔□申旦毛仄卅中［
+91 :      斛↓堜�荂懽鵅齠瓜廷倓�璃哱�荂懽鵅麙撌罊踽抯�埰堎敁拻勗窅竣��
+92 :      旽襄禱耦埱倜堣敁��喫摯痲精騷璃禱媃埵笢敁埰迋趙摯�荂巋窱怔建ぴ聿苺�
 93 :      <br><br>
 94 :      <dl>
 95 :        <dt>string servername
-96 :        <dd>扔□田□  ［acserv.cf卞涩烂今木化中月［
+96 :        <dd>�荂懽鵅�  �菨cserv.cf勗优擭踏躂趙笢堎��
 97 :        <dt>string serverpas
-98 :        <dd>扔□田□由旦伐□玉［acserv.cf卞涩烂今木化中月［
+98 :        <dd>�荂懽鵅灃伂弧央灃韗菨cserv.cf勗优擭踏躂趙笢堎��
 99 :      </dl>
 100 :   
 */
 
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 void saacproto_UpdataStele_send( int fd , char *cdkey , char *name , char *title , int level , int trns , int time , int floor) {
 	saacproto_CreateHeader( saacproto.work , "UpdataStele" );
 	saacproto_strcatsafe( saacproto.work , saacproto_mkstr_string( cdkey ) ,saacproto.workbufsize );
@@ -52,9 +52,9 @@ void saacproto_ACServerLogin_send( int fd,char* servername,char* serverpas )
 }
 /*
 114 : <LI><a name="ACServerLogoutC"><font color=red>clienttoserver ACServerLogout(void);<br></font></a>
-115 :      扔□田□互失市它件玄扔□田□井日夫弘失它玄允月午五卞银丹［
-116 :      涛粮反扔□田卞方匀化  澎卞濠日木月［仄凶互匀化仇木卞覆允月失市它件玄扔□田
-117 :      及忒蚕反戊生弁扑亦件毛濠月仪匹丐月［
+115 :      �荂懽鵅齠瓜廷倓�璃哱�荂懽鵅齙旅梫罊輮弄�哱埰堎敁拻勗窅竣��
+116 :      旽襄毀�荂懽黿撌諂�趙  鱗勗憍�桫戰瞿訹ぬ袘疋�趙喫躂勗葡埰堎囮庈坳璃哱�荂懽�
+117 :      摯蒍紮毀昡汜袲で砫璃禱憍堎痀ぁ堣堎��
 118 :      <br>
 119 :      <br>
 120 :      <br>
@@ -256,17 +256,17 @@ void saacproto_DBGetEntryByCount_send( int fd,char* table,int count_start,int nu
 }
 /*
 608 :  <LI><a name="Broadcast"><font color=red>clienttoserver Broadcast( string id, string charname, string message , int flag );</font></a><BR>
-609 : 	 必□丞扔□田□卞覆仄化仇及戊穴件玉毛霜耨允月午｝
-610 : 	 允屯化及必□丞扔□田□卞凶中仄化  元丢永本□斥互霜耨今木月［
-611 : 	 id , charname 反方仁勾井歹木月及匹｝蜊  及娄醒毛手勾方丹卞仄凶［
-612 : 	 中切中切  侬  由□旦及伙□民件毛踏井卅仁化手中中方丹卞［
+609 : 	 斛↓堜�荂懽鵅麙撣紲し秦蟦匿嬣釆�迶禱邞嚭埰堎敁��
+610 : 	 埰迋趙摯斛↓堜�荂懽鵅麙槱趼倠し�  啋隍蚗掛↓喇誑邞嚭踏躂堎��
+611 : 	 id , charname 毀源�妏晷捎囃戰翹副奴�蠀  摯礎倳禱忒僑源竣勗媃倜��
+612 : 	 笢з笢з  棬  蚕↓筒摯鳴↓鏍璃禱怳凝埵�妡缺笱倗郱蔥仃憯�
 613 : 	 <dl>
 614 : 	   <dt>string id
 615 : 	   <dd>user ID
 616 : 	   <dt>string charname
-617 : 	   <dd>平乓仿  (巨旦弗□皿卅仄)
+617 : 	   <dd>す籤溘  (操筒艇↓鏤埵媃)
 618 : 	   <dt>string message
-619 : 	   <dd>  霜今木月丢永本□斥［必□丞扔□田□互驯五卞银丹［
+619 : 	   <dd>  邞踏躂堎隍蚗掛↓喇�蛘堙灅怕荂懽鵅齠由敖撅樠礸不�
 620 : 	 </dl>
 */
 
@@ -281,7 +281,7 @@ void saacproto_Broadcast_send( int fd,char* id,char* charname,char* message,int 
 }
 /*
 634 :  <LI><a name="Message"><font color=red>clienttoserver Message( string id_from, string charname_from, string id_to, string charname_to, string message , int option );</font></a><BR>
-635 : 	 奶件旦正件玄丢永本□斥毛霜耨允月
+635 : 	 騷璃筒淏璃哱隍蚗掛↓喇禱邞嚭埰堎
 636 : 	 <dl>
 637 : 	   <dt>string id_from
 638 : 	   <dd>from ID
@@ -292,11 +292,11 @@ void saacproto_Broadcast_send( int fd,char* id,char* charname,char* message,int 
 643 : 	   <dt>string charname_to
 644 : 	   <dd>to character name
 645 : 	   <dt>string message
-646 : 	   <dd>丢永本□斥    
+646 : 	   <dd>隍蚗掛↓喇    
 647 : 	   <dt>int option
-648 : 	   <dd>左皿扑亦件［民乓永玄及缙午井中欠中欠  木木月［漆  及傀舰迕
-649 : 		   仇木毛升丹银丹井反必□丞扔□田□及  澎匹｝失市它件玄扔□田□反
-650 : 		   域濠仇及    卞正永民仄卅中
+648 : 	   <dd>酘鏤で砫璃�袺鯃眑檗�摯褗敁凝笢Й笢Й  躂躂堎�袸�  摯錚耦暵
+649 : 		   喫躂禱汔竣窅竣凝毀斛↓堜�荂懽鵅齞�  鱗ぁ��囮庈坳璃哱�荂懽鵅黦�
+650 : 		   郖憍喫摯    勗淏蚗鏍媃埵笢
 651 : 	 </dL>
 */
 
@@ -359,7 +359,7 @@ void saacproto_ACAddFM_send(int fd, char *fmname, char *fmleadername,
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charfdid), saacproto.workbufsize);
 	saacproto_Send(fd, saacproto.work);
 }
-#ifdef _PERSONAL_FAME	// Arminius: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
 void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
         char *charid, int charlv, int index, int fame, int charfdid)
 #else
@@ -374,7 +374,7 @@ void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_string(charid), saacproto.workbufsize);
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charlv), saacproto.workbufsize);
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(index), saacproto.workbufsize);
-// #ifdef _PERSONAL_FAME	// Arminius: 家族个人声望
+// #ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(fame), saacproto.workbufsize);
 // #endif
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charfdid), saacproto.workbufsize);
@@ -411,7 +411,7 @@ void saacproto_ACShowFMList_send(int fd)
 	saacproto_Send(fd, saacproto.work);
 }
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 void saacproto_ACShowMemberList_2_send( int fd, int charaindex, int fm1, int fm2, int time, int id )
 {
 	saacproto_CreateHeader(saacproto.work, "ACShowMemberList2");
@@ -513,7 +513,7 @@ void saacproto_ACFMCharLogin_send(int fd, char *fmname, int fmindex, char *charn
 }
 
 
-#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 家族战登入检查
+#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 模逜桵腎�趧麮�
 void saacproto_new_ACFM_Login_send( int acfd, int charaindex, char *char_id, char *char_name )
 {
 	saacproto_CreateHeader(saacproto.work, "ACFMCharLogin2");
@@ -524,7 +524,7 @@ void saacproto_new_ACFM_Login_send( int acfd, int charaindex, char *char_id, cha
 }
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 void saacproto_ReloadFamily_send( int acfd, int charaindex )
 {
 	saacproto_CreateHeader(saacproto.work, "ACRELOADFM");
@@ -570,7 +570,7 @@ void saacproto_ACFMPointList_send(int fd)
 	saacproto_Send(fd, saacproto.work);
 }
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 计算线上人数
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 數呾盄奻�侕�
 void saacproto_GS_PLAYER_COUNT_SEND(int acfd, int num)
 {
 	saacproto_CreateHeader(saacproto.work, "ACGSPCOUNT");
@@ -656,7 +656,7 @@ void saacproto_ACgetFMBankgold_send(int fd, char *fmname, int fmindex, int index
 #endif
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 void saacproto_Init_FM_PK_STRUC_send( int fd )
 {
 	saacproto_CreateHeader(saacproto.work, "FMINITPKSTRUCT");
@@ -744,7 +744,7 @@ void saacproto_ACSendFmPk_send(int fd, int toindex, int PkFlg, int fmpks_pos, ch
 #endif
 
 
-#ifdef _RECAL_ASK_PLAYER			// WON 要求人物资料
+#ifdef _RECAL_ASK_PLAYER			// WON 猁⑴�冼擼岏�
 void saacproto_Recal_Player_send(int acfd, char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, int backup_flag)
 {
 	saacproto_CreateHeader(saacproto.work, "ACSendRecalPlayer");
@@ -1028,10 +1028,10 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 354 :  <LI><a name="DBUpdateEntryStringS"><font color=blue>servertoclient DBUpdateEntryString( string result, string table, string key, int msgid, int msgid2 );</font></a><BR>
-355 : 	 晓及戊穴件玉及瑛绊［撩  仄化手荚汊尕第  卅及匹  骰仄化方中冗
+355 : 	 窀摯昡悃璃迶摯踕堅�衖�  媃趙忒樊蜾箾菴  埵摯ぁ  鷋媃趙源笢��
 356 : 	 <dl>
 357 : 	   <dt>string result
-358 : 	   <dD>successful 井failed	   
+358 : 	   <dD>successful 凝failed	   
 359 : 	   <dt>string table
 360 : 	   <dD>
 361 : 	   <dt>int msgid
@@ -1058,7 +1058,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 379 :  <LI><a name="DBDeleteEntryStringS"><font color=blue>servertoclient DBDeleteEntryString( string result, string table, string key , int msgid , int msgid2 );</font></a><BR>
-380 : 	   侬  巨件玄伉及绰轮及瑛绊
+380 : 	   棬  操璃哱惉摯朝謫摯踕堅
 381 : 	 <dl>
 382 : 	   <dt>string result
 383 : 	   <dd>successful / failed
@@ -1090,12 +1090,12 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 406 :  <Li><a name="DBGetEntryStringS"><font color=blue>servertoclient DBGetEntryString( string result, string value, string table, string key, int msgid, int msgid2 );</font></a><BR>
-407 : 	 潸曰分仄及忒曰袄
+407 : 	 噁堇煦媃摯蒍堇偯
 408 : 	 <dl>
 409 : 	   <dt>string result
 410 : 	   <dd>successful / failed
 411 : 	   <dt>string value
-412 : 	   <dd>袄
+412 : 	   <dd>偯
 413 : 	   <dt>string table
 414 : 	   <dd>		   
 415 : 	   <dt>string key
@@ -1126,16 +1126,16 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 445 :  <LI><a name="DBUpdateEntryIntS"><font color=blue>servertoclient DBUpdateEntryInt( string result , string table, string key, int msgid, int msgid2 );</font></a><BR>
-446 : 	 DBUpdateEntry及瑛绊［
+446 : 	 DBUpdateEntry摯踕堅��
 447 : 	 <dl>
 448 : 	   <dt>string result
 449 : 	   <dd>succesful/failed
 450 : 	   <dt>string table
-451 : 	   <dd>  □皮伙  毛公及引引井尹允
+451 : 	   <dd>  ↓々鳴  禱鼠摯竘竘凝窇埰
 452 : 	   <dt>string key
-453 : 	   <dd>平□毛公及引引井尹允		   
+453 : 	   <dd>す↓禱鼠摯竘竘凝窇埰		   
 454 : 	   <dt>int msgid, int msgid2
-455 : 	   <dd>msgid 毛公及引引忒允［
+455 : 	   <dd>msgid 禱鼠摯竘竘蒍埰��
 456 : 	 </dl>
 457 : 	 <BR><BR>
 458 : 
@@ -1157,20 +1157,20 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 473 :  <LI><a name="DBGetEntryRankS"><font color=blue>servertoclient DBGetEntryRank( string result , int rank , int count, string table, string key, int msgid, int msgid2 );</font></a><BR>
-474 : 	 赐匏毛忒允［
+474 : 	 棹痾禱蒍埰��
 475 : 	 <dl>
 476 : 	   <dt>string result
 477 : 	   <dd>successful/failed
 478 : 	   <dt>int rank
-479 : 	   <dd>赐匏［1动晓及袄毛潸月［
+479 : 	   <dd>棹痾��1雄窀摯偯禱噁堎��
 480 : 	   <dt>int count
-481 : 	   <dd>晓井日中仁勾户井［  赓及巨件玄伉反0井日反元引月［
+481 : 	   <dd>窀凝�欶倞妏暑屁恐�  疐摯操璃哱惉毀0凝�梫椒肫�堎��
 482 : 	   <dt>string table
-483 : 	   <dd>  □皮伙  毛公及引引井尹允
+483 : 	   <dd>  ↓々鳴  禱鼠摯竘竘凝窇埰
 484 : 	   <dt>string key
-485 : 	   <dd>平□毛公及引引井尹允
+485 : 	   <dd>す↓禱鼠摯竘竘凝窇埰
 486 : 	   <dt>int msgid, int msgid2
-487 : 	   <dd>msgid 毛公及引引忒允
+487 : 	   <dd>msgid 禱鼠摯竘竘蒍埰
 488 : 	 </dl>
 489 : 	 <BR><BR>
 490 : 
@@ -1197,16 +1197,16 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 504 :  <LI><a name="DBDeleteEntryIntS"><font color=blue>servertoclient DBDeleteEntryInt( string result , string table, string key, int msgid, int msgid2 );</font></a><BR>
-505 : 	 绰轮及瑛绊
+505 : 	 朝謫摯踕堅
 506 : 	 <dl>
 507 : 	   <dt>string result
 508 : 	   <dd>successful/failed
 509 : 	   <dt>string table
-510 : 	   <dd>  □皮伙  毛公及引引井尹允
+510 : 	   <dd>  ↓々鳴  禱鼠摯竘竘凝窇埰
 511 : 	   <dt>string key
-512 : 	   <dd>平□毛公及引引井尹允
+512 : 	   <dd>す↓禱鼠摯竘竘凝窇埰
 513 : 	   <dt>int msgid, int msgid2
-514 : 	   <dd>msgid 毛公及引引忒允
+514 : 	   <dd>msgid 禱鼠摯竘竘蒍埰
 515 : 	 </dl>
 516 : 	 <BR><BR>
 517 : 
@@ -1228,18 +1228,18 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 530 :  <LI><a name="DBGetEntryIntS"><font color=blue>servertoclient DBGetEntryInt( string result , int value , string table, string key, int msgid, int msgid2 );</font></a><BR>
-531 : 	 巨件玄伉及袄毛井尹允
+531 : 	 操璃哱惉摯偯禱凝窇埰
 532 : 	 <dl>
 533 : 	   <dt>string result
 534 : 	   <dd>successful/failed
 535 : 	   <dt>int value
-536 : 	   <dd>袄公及手及
+536 : 	   <dd>偯鼠摯忒摯
 537 : 	   <dt>string table
-538 : 	   <dd>  □皮伙  毛公及引引井尹允
+538 : 	   <dd>  ↓々鳴  禱鼠摯竘竘凝窇埰
 539 : 	   <dt>string key
-540 : 	   <dd>平□毛公及引引井尹允
+540 : 	   <dd>す↓禱鼠摯竘竘凝窇埰
 541 : 	   <dt>int msgid, int msgid2
-542 : 	   <dd>msgid 毛公及引引忒允
+542 : 	   <dd>msgid 禱鼠摯竘竘蒍埰
 543 : 	 </dl>
 544 : 
 545 : 
@@ -1264,19 +1264,19 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 562 :  <LI><a name="DBGetEntryByRankS"><font color=blue>servertoclient DBGetEntryByRank( string result , string list , string table, int msgid, int msgid2 );</font></a><BR>
-563 : 	 DBGetEntryByRank及瑛绊［
+563 : 	 DBGetEntryByRank摯踕堅��
 564 : 	 <dl>
 565 : 	   <dt>string result
 566 : 	   <dd>
 567 : 	   <dt>string list
 568 : 	   <dd>"RANK,KEY,SCORE,INFO|RANK,KEY,SCORE,INFO|...."<BR>
-569 : 		   RANK反赐匏匹丐月［KEY反公及赐匏卞卅匀化中月旦戊失毛手匀化中月
-570 : 		   平□［SCORE反帮醒袄匹旦戊失匹丐月［
-571 : 		     ［<br>
+569 : 		   RANK毀棹痾ぁ堣堎�腊EY毀鼠摯棹痾勗埵埱趙笢堎筒昡囮禱忒埱趙笢堎
+570 : 		   す↓�臮CORE毀堆倳偯ぁ筒昡囮ぁ堣堎��
+571 : 		     ��<br>
 572 : 		   "1,RINGO,123465,data1|2,HOGE,4567,data2|2,FUCK,4567,data3"<BR>
-573 : 		   仇及  分午｝2匏反2谛中月仇午卞卅月［
+573 : 		   喫摯  煦敁��2痾毀2硞笢堎喫敁勗埵堎��
 574 : 	   <dt>string table
-575 : 	   <dd>  □皮伙  
+575 : 	   <dd>  ↓々鳴  
 576 : 	   <dt>int msgid, int msgid2
 577 : 	   <dd>
 578 : 	 </dl>
@@ -1300,18 +1300,18 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 593 :  <LI><a name="DBGetEntryByCountS"><font color=blue>servertoclient DBGetEntryByCount( string result , string list , string table, int count_start, int msgid, int msgid2 );</font></a><BR>
-594 : 	 DBGetEntryByCount 及瑛绊［
+594 : 	 DBGetEntryByCount 摯踕堅��
 595 : 	 <dl>
 596 : 	   <dt>string result
 597 : 	   <dd>SUCCESSFUL/FAILED
 598 : 	   <dt>string list
-599 : 	   <dd>请  伉旦玄［1巨件玄伉丐凶曰 "INDEX,RANK,KEY,SCORE,INFO" 及4蜊及树  
-600 : 		   及赚匹丐曰｝公木互蜊醒坌 "|" 匹勾卅互月［蜊醒互0及桦宁反
-601 : 		   坞  侬  ［
+599 : 	   <dd>③  惉筒哱��1操璃哱惉堣倜堇 "INDEX,RANK,KEY,SCORE,INFO" 摯4蠀摯攷  
+600 : 		   摯蚻ぁ堣堇��鼠躂誑蠀倳覕 "|" ぁ僑埵誑堎�跍覕捋�0摯鳹譴毀
+601 : 		   昶  棬  ��
 602 : 	   <dt>int num
-603 : 	   <dd>中仁勾午曰分允井［1卅日1蜊［2卅日2蜊［
+603 : 	   <dd>笢�妏棒諏遠笪尨恐�1埵��1蠀��2埵��2蠀��
 604 : 	   <dt>int msgid ,msgid2
-605 : 	   <dd>丢永本□斥ID.	   
+605 : 	   <dd>隍蚗掛↓喇ID.	   
 606 : 	 </dL>
 607 : 
 */
@@ -1332,7 +1332,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_DBGetEntryByCount_recv( fd,result,list,table,count_start,msgid,msgid2);
 		return 0;
 	}
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 	if ( strcmp( funcname , "UpdataStele" ) == 0 ) {
 		char* token;
 		token = saacproto_wrapStringAddr( saacproto_stringwrapper[1] , saacproto.workbufsize , saacproto_demkstr_string( saacproto.token_list[2] ));
@@ -1363,16 +1363,16 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 #endif
 /*
 621 :  <LI><a name="Broadcast"><font color=blue>servertoclient Broadcast( string id, string charname, string message );</font></a><BR>
-622 : 	 Broadcast及失市它件玄扔□田□井日必□丞扔□田□尺及霜耨迕
+622 : 	 Broadcast摯囮庈坳璃哱�荂懽鵅齙旅梇堙灅怕荂懽鵅麚葝匐近鼫�
 623 : 	 <dl>
 624 : 	   <dt>string id
 625 : 	   <dd>user ID
 626 : 	   <dt>string charname
 627 : 	   <dd>character name
 628 : 	   <dt>string message
-629 : 	   <dd>丢永本□斥
+629 : 	   <dd>隍蚗掛↓喇
 630 : 	   <dt>int flag
-631 : 	   <dd>1卞允月午｝愤坌卞卞反  霜今木卅中［
+631 : 	   <dd>1勗埰堎敁��猷覕勗勗毀  邞踏躂埵笢��
 632 : 	 </dl>
 633 : 
 */
@@ -1389,7 +1389,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 652 :  <LI><a name="Message"><font color=blue>servertoclient Message( string id_from, string charname_from, string id_to, string charname_to, string message , int option , int mesgid );</font></a><BR>
-653 : 	 失市它件玄扔□田□井日必□丞扔□田□卞丢永本□斥毛霜耨允月［
+653 : 	 囮庈坳璃哱�荂懽鵅齙旅梇堙灅怕荂懽鵅麙撊肩彌鴃麚熁屎近鵋彸瞿�
 654 : 	 <dl>
 655 : 	   <dt>string id_from
 656 : 	   <dd>from ID
@@ -1400,11 +1400,11 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 661 : 	   <dt>string charname_to
 662 : 	   <dd>to character name
 663 : 	   <dt>string message
-664 : 	   <dd>丢永本□斥及    
+664 : 	   <dd>隍蚗掛↓喇摯    
 665 : 	   <dt>int option
-666 : 	   <dd>左皿扑亦件(晓及楮醒毛辅寰)
+666 : 	   <dd>酘鏤で砫璃(窀摯匴倳禱落敺)
 667 : 	   <dt>int mesgid
-668 : 	   <dd>丢永本□斥ID 失市它件玄扔□田□及栋  迕
+668 : 	   <dd>隍蚗掛↓喇ID 囮庈坳璃哱�荂懽鵅齞偉�  暵
 669 : 	 </dl>
 670 : 
 */
@@ -1475,7 +1475,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		return 0;
 	}
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	if( strcmp( funcname, "ACRELOADFMOK") == 0){
 		int charindex;
 		charindex = saacproto_demkstr_int(saacproto.token_list[2]);
@@ -1502,7 +1502,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 
 #endif
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 	if( strcmp( funcname, "ACSendFmPkStruct") == 0){
 		char *data;
 
@@ -1513,7 +1513,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 #endif
 
-#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 家族战登入检查
+#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 模逜桵腎�趧麮�
 	if( strcmp( funcname, "ACSendMemberList") == 0){
 		int charindex;
 		char *result, *data;
@@ -1568,7 +1568,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 	if( strcmp( funcname, "ACFMCharLogin") == 0){
 		int charfdid, index, floor, fmdp, joinflag, fmsetupflag, flag, charindex;
-#ifdef _PERSONAL_FAME   // Arminius: 家族个人声望
+#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
 		int charfame;
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -1583,7 +1583,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		fmsetupflag = saacproto_demkstr_int(saacproto.token_list[7]);
 		flag = saacproto_demkstr_int(saacproto.token_list[8]);
 		charindex = saacproto_demkstr_int(saacproto.token_list[9]);
-#ifdef _PERSONAL_FAME   // Arminius: 家族个人声望
+#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
 		charfame = saacproto_demkstr_int(saacproto.token_list[10]);
 		charfdid = saacproto_demkstr_int(saacproto.token_list[11]);
 	#ifdef _NEW_MANOR_LAW
@@ -1763,8 +1763,8 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 
 
 
-#ifdef _RECAL_ASK_PLAYER			// WON 要求人物资料
-	if( strcmp( funcname, "ACRecalPlayer") == 0){		// 线上人物资料
+#ifdef _RECAL_ASK_PLAYER			// WON 猁⑴�冼擼岏�
+	if( strcmp( funcname, "ACRecalPlayer") == 0){		// 盄奻�冼擼岏�
 		char *uid, *id, *char_data;
 		int userfdid, char_num, date, GmCliId;
 
@@ -1779,7 +1779,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_ACRecalPlayer_recv(uid, userfdid, GmCliId, id, char_num, date, char_data);	
 		return 0;
 	}
-	if( strcmp( funcname, "ACRecalBackupPlayer") == 0){		// 备份人物资料
+	if( strcmp( funcname, "ACRecalBackupPlayer") == 0){		// 掘爺�冼擼岏�
 		char *uid, *id, *char_data;
 		int userfdid, char_num, date, GmCliId;
 
@@ -1794,7 +1794,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_ACRecalBackupPlayer_recv(uid, userfdid, GmCliId, id, char_num, date, char_data);	
 		return 0;
 	}
-	if( strcmp( funcname, "ACRecalBackupDate") == 0){		// 备份日期
+	if( strcmp( funcname, "ACRecalBackupDate") == 0){		// 掘爺�梪�
 		char *uid, *id, *char_data;
 		int userfdid, char_num, date, GmCliId;
 
@@ -1809,7 +1809,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_ACRecalBackupDate_recv(uid, userfdid, GmCliId, id, char_num, date, char_data);	
 		return 0;
 	}
-	if( strcmp( funcname, "ACRecalAllBackupOK") == 0){		// 回溯ok
+	if( strcmp( funcname, "ACRecalAllBackupOK") == 0){		// 隙咁ok
 		char *uid, *id, *char_data;
 		int userfdid, char_num, date, GmCliId;
 
@@ -1851,7 +1851,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 #endif
 
-#ifdef _SEND_EFFECT	   	        // WON ADD AC送下雪、下雨等特效
+#ifdef _SEND_EFFECT	   	        // WON ADD AC冞狟悕﹜狟迾脹杻虴
   if( strcmp(funcname, "EFFECT") == 0){
 		char *effect;
 		effect = saacproto_wrapStringAddr(saacproto_stringwrapper[1], saacproto.workbufsize, saacproto_demkstr_string(saacproto.token_list[2]));
@@ -1862,7 +1862,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 #endif
 
-#ifdef _GM_BROADCAST					// WON ADD 客服公告系统
+#ifdef _GM_BROADCAST					// WON ADD 諦督鼠豢炵苀
   if( strcmp(funcname, "GMBROADCAST") == 0){
 		int time = 0, loop = 0, wait = 0;
 		char *msg;

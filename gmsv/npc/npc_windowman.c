@@ -26,7 +26,7 @@ struct	{
 	int		warp;
 	int		battle;
 	int		gotowin;
-}buttonproc[13];		/* ok,cancel, yes,no,prev,next 及凛及质   */
+}buttonproc[13];		/* ok,cancel, yes,no,prev,next 摯鄹摯窐   */
 
 
 
@@ -40,7 +40,7 @@ enum {
 //static int NPC_Windowman_restoreButtontype( char *data );
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_WindowmanInit( int meindex )
 {
@@ -55,10 +55,10 @@ BOOL NPC_WindowmanInit( int meindex )
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", buf, sizeof( buf))
 		== NULL ) 
 	{
-		print( "windowman:没有指定设定的档案 。\n");
+		print( "windowman:羶衄硌隅扢隅腔紫偶 ﹝\n");
 		return FALSE;
 	}
-	/* 赓渝凛卞涩烂犯□正毛民尼永弁仄化支月 */
+	/* 疐趵鄹勗优擭溢↓淏禱鏍攝蚗袲媃趙盓堎 */
 	if( !NPC_Windowman_readData( meindex, -1, TRUE) ) {
 		return FALSE;
 	}
@@ -72,7 +72,7 @@ BOOL NPC_WindowmanInit( int meindex )
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_WindowmanTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
@@ -81,7 +81,7 @@ void NPC_WindowmanTalked( int meindex , int talkerindex , char *szMes ,int color
 	
 }
 /*********************************
-* 苇日木凶凛及质  
+* 峟�桫憶袬敯啄�  
 *********************************/
 void NPC_WindowmanLooked( int meindex , int lookedindex)
 {
@@ -96,11 +96,11 @@ void NPC_WindowmanLooked( int meindex , int lookedindex)
 	int		fd;
 	char	buf[256];
 	
-	/* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
 	if( CHAR_getInt( toindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( !NPC_Util_charIsInFrontOfChar( toindex, meindex, 1 )) return; 
 
 	if( !NPC_Windowman_readData( meindex, num, FALSE) ) {
@@ -223,10 +223,10 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 	char	firstToken[1024];
 	char	secondToken[1024];
 	
-	/* 它奴件玉它及涩烂毛  曰  戈厌瞻   */
+	/* 坳贖璃迶坳摯优擭禱  堇  資栖桹   */
 	
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
-	/* 涩烂白央奶伙  潸   */
+	/* 优擭啞栝騷鳴  噁   */
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", filename, sizeof( filename)) == NULL )	{
 		print("\n err:NOT FIND [conff] ");
 		return FALSE;
@@ -251,7 +251,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 		b_mode = -1;
 		errflg = FALSE;
 
-		/* 赓渝祭 */
+		/* 疐趵撬 */
 		w.windowno = -1;
 		w.windowtype = -1;
 		w.buttontype = -1;
@@ -280,15 +280,15 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			linenum ++;
 			
-			/* 戊丢件玄反  骰 */
+			/* 昡隍璃哱毀  鷋 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 荼垫潸月 */
+			/* 搊菜噁堎 */
 			chomp( line );
 			
-			/*  垫毛帮溥允月    */
-			/*  引内 tab 毛 " " 卞  五晶尹月    */
+			/*  菜禱堆魠埰堎    */
+			/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
 			replaceString( line, '\t' , ' ' );
-			/* 燮  及旦矢□旦毛潸月［*/
+			/* 袸  摯筒妐↓筒禱噁堎��*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;
@@ -297,7 +297,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 			}
 			if( i != 0 ) strcpy( line, buf);
 
-			/* delim "=" 匹  赓(1)及玄□弁件毛  月*/
+			/* delim "=" ぁ  疐(1)摯哱↓袲璃禱  堎*/
 			ret = getStringFromIndexWithDelim( line, "=",  1, firstToken,
 											   sizeof( firstToken ) );
 			if( ret == FALSE ){
@@ -305,7 +305,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 					   filename , linenum);
 				continue;
 			}
-			/* delim "=" 匹2    及玄□弁件毛  月*/
+			/* delim "=" ぁ2    摯哱↓袲璃禱  堎*/
 			ret = getStringFromIndexWithDelim( line, "=", 2, secondToken,
 											   sizeof( secondToken ) );
 			if( ret == FALSE ){
@@ -316,26 +316,26 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			if( strcasecmp( firstToken, "winno") == 0 ) {
 				if( winno != -1 ) {
-					print( "windowman:已有winno却重新定义winno\n");
+					print( "windowman:眒衄winno�棉寪繞例徲inno\n");
 					print( "filename:[%s] line[%d]\n", filename, linenum);
 					errflg = TRUE;
 					readflg = FALSE;
 					break;
 				}
-				/* 它奴件玉它No毛忡绣 */
+				/* 坳贖璃迶坳No禱瞀凎 */
 				winno = atoi( secondToken);
 				continue;
 			}
-			/* 它奴件玉它No 互瑁引匀化中卅中凛及垫反  骰允月 */
+			/* 坳贖璃迶坳No 誑鋆竘埱趙笢埵笢鄹摯菜毀  鷋埰堎 */
 			if( winno == -1 ) {
-				print( "windowman:winno 尚未定义，资料却已设定。\n");
+				print( "windowman:winno 奾帤隅砱ㄛ訧蹋�棍挸頞芋αn");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				readflg = FALSE;
 				errflg = FALSE;
 				break;
 			}
-			/* 它奴件玉它No 互域谯仄凶凛反椭瘀毛  戈［
-			 * 公木动陆反  骰允月 */
+			/* 坳贖璃迶坳No 誑郖窙媃倜鄹毀邳贀禱  資��
+			 * 鼠躂雄翻毀  鷋埰堎 */
 			if( (chkflg == FALSE && winno == windowno )||
 				chkflg == TRUE) 
 			{
@@ -363,7 +363,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 								errflg = TRUE;
 							}
 							else {
-								/* 升匀切井井凶匀吊分仃匹手涩烂今木化中木壬     */
+								/* 汔埱з凝凝倜埱裂煦崹ぁ忒优擭踏躂趙笢躂��     */
 								if( !((buttonproc[b_mode].checkhaveitem != -1 && 
 									   buttonproc[b_mode].checkhaveitemgotowin != -1)
 									 || (buttonproc[b_mode].checkdonthaveitem != -1 && 
@@ -375,7 +375,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 						}
 						
 						if( errflg == TRUE) {
-							print( "windowman: 找不到gotowin\n");
+							print( "windowman: 梑祥善gotowin\n");
 							print( "filename:[%s] line[%d]\n", filename, linenum);
 							readflg = FALSE;
 							errflg = TRUE;
@@ -389,23 +389,23 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 				else {
 					
 					w.windowno = winno;
-					/* 它奴件玉它正奶皿及涩烂 */
+					/* 坳贖璃迶坳淏騷鏤摯优擭 */
 					if( strcasecmp( firstToken, "wintype") == 0 ) {
 						w.windowtype = atoi( secondToken);
 					}
-					/* 示正件正奶皿及涩烂 */
+					/* 尨淏璃淏騷鏤摯优擭 */
 					else if( strcasecmp( firstToken, "buttontype") == 0 ) {
 						w.buttontype = NPC_Windowman_restoreButtontype( secondToken);
 					}
-					/* getitem及涩烂 */
+					/* getitem摯优擭 */
 					else if( strcasecmp( firstToken, "takeitem") == 0 ) {
 						w.takeitem = atoi( secondToken);
 					}
-					/* giveitem及涩烂 */
+					/* giveitem摯优擭 */
 					else if( strcasecmp( firstToken, "giveitem") == 0 ) {
 						w.giveitem = atoi( secondToken);
 					}
-					/* message及涩烂 */
+					/* message摯优擭 */
 					else if( strcasecmp( firstToken, "message") == 0 ) {
 						if( messagepos == 0 ) {
 							strcpy(  w.message, secondToken);
@@ -418,7 +418,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 							messagepos+=strlen(secondToken);
 						}
 					}
-					/* 示正件毛瓷仄凶凛及涩烂 */
+					/* 尨淏璃禱棟媃倜鄹摯优擭 */
 					else if( strcasecmp( firstToken, "okpressed") == 0 ) {
 						buttonconfmode = TRUE;
 						b_mode = 0;
@@ -455,7 +455,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 						buttonendflg = FALSE;
 						selectnum ++;
 					}
-					/* 涩烂蔽歹曰 */
+					/* 优擭敖渦堇 */
 					else if( strcasecmp( firstToken, "endwin") == 0 ) {
 						endflg = TRUE;
 						if( chkflg == FALSE) {
@@ -464,7 +464,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 						break;
 					}
 					else {
-						print( "windowman:设定是不可能的参数\n");
+						print( "windowman:扢隅岆祥褫夔腔統杅\n");
 						print( "filename:[%s] line[%d]\n", filename, linenum);
 					}
 				}
@@ -476,26 +476,26 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 			}
 		}
 		if( buttonendflg == FALSE) {
-			print( "windowman: 找不到endbutton\n");
+			print( "windowman: 梑祥善endbutton\n");
 			print( "filename:[%s] line[%d]\n", filename, linenum);
 			errflg = TRUE;
 			break;
 		}
 		if( winno != -1 ) {
 			if( w.windowtype == -1 ) {
-				print( "windowman: 找不到wintype\n");
+				print( "windowman: 梑祥善wintype\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
 			}
 			if( w.buttontype == -1 ) {
-				print( "windowman: 找不到button\n");
+				print( "windowman: 梑祥善button\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
 			}
 			if( strlen( w.message) == 0 ) {
-				print( "windowman: 找不到message\n");
+				print( "windowman: 梑祥善message\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
@@ -505,12 +505,12 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 	fclose( fp);
 	
 	if( chkflg == FALSE && w.windowno == -1 ) {
-		print( "windowman: 找不到所指定的windowno\n");
+		print( "windowman: 梑祥善垀硌隅腔windowno\n");
 		print( "filename:[%s] line[%d]\n", filename, linenum);
 		return FALSE;
 	}
 	if( winno != -1 && endflg == FALSE) {
-		print( "windowman: 找不到endwin\n");
+		print( "windowman: 梑祥善endwin\n");
 		print( "filename:[%s] line[%d]\n", filename, linenum);
 		return FALSE;
 	}
@@ -519,7 +519,7 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 	return TRUE;
 }
 /*
- * buttontype=匹隙烂仄凶  侬  毛醒袄卞  晶允月［
+ * buttontype=ぁ炩擭媃倜  棬  禱倳偯勗  儒埰堎��
  *
  */
 /*static*/ int NPC_Windowman_restoreButtontype( char *data )

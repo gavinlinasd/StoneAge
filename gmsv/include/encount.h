@@ -17,20 +17,20 @@ int ENCOUNT_getGroupIdFromArray( int array, int grouparray );
 int ENCOUNT_getGroupProbFromArray( int array, int grouparray );
 int ENCOUNT_getZorderFromArray( int array );
 
-#ifdef _ADD_ENCOUNT           // WON ADD 增加敌遭遇触发修件
+#ifdef _ADD_ENCOUNT           // WON ADD 崝樓菩婈郣揖楷党璃
 typedef struct tagENCOUNT_Table
 {
     int                 index;
     int                 floor;
-    int                 encountprob_min;                /* 巨件市它件玄割   */
-    int                 encountprob_max;                /* 巨件市它件玄割   */
-    int                 enemymaxnum;        /* 升木分仃衬毛综月井 */
+    int                 encountprob_min;                /* 操璃庈坳璃哱賃   */
+    int                 encountprob_max;                /* 操璃庈坳璃哱賃   */
+    int                 enemymaxnum;        /* 汔躂煦崹傍禱軘堎凝 */
     int                 zorder;
-    int                 groupid[ENCOUNT_GROUPMAXNUM];       /* 弘伙□皿No */
-    int                 createprob[ENCOUNT_GROUPMAXNUM];    /* 公及弘伙□皿及请蜇   */
+    int                 groupid[ENCOUNT_GROUPMAXNUM];       /* 精鳴↓鏤No */
+    int                 createprob[ENCOUNT_GROUPMAXNUM];    /* 鼠摯精鳴↓鏤摯③藯   */
 	int					event_now;			
 	int					event_end;
-	int					enemy_group;		// 怪物的group 编号
+	int					enemy_group;		// 墅昜腔group 晤瘍
     RECT                rect;
 }ENCOUNT_Table;
 

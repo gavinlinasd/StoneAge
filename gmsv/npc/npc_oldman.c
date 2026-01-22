@@ -18,7 +18,7 @@ BOOL NPC_OldmanInit( int meindex )
     int     oldmanid=0, bornfl=0, bornx=0 ,borny=0;
     char*   npcarg;
     char    token[32]="";
-/*    print( "长老的引数: '%s'\n" , CHAR_getChar(
+/*    print( "酗橾腔竘杅: '%s'\n" , CHAR_getChar(
                          meindex, CHAR_NPCARGUMENT ));*/
     npcarg = CHAR_getChar(meindex,CHAR_NPCARGUMENT);
 
@@ -31,24 +31,24 @@ BOOL NPC_OldmanInit( int meindex )
     getStringFromIndexWithDelim( npcarg,"|",4,token,sizeof(token));
     borny = atoi( token );
 
-    /* 赢  反ID毛创尹化云仁瓜伉 */
+    /* 荇  毀ID禱斐窇趙堁�妏瓮� */
     CHAR_setWorkInt( meindex , CHAR_WORKOLDMANID ,oldmanid );
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEHEALER );
     CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );
     CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );
 
     if( MAP_IsValidCoordinate( bornfl,bornx,borny )== TRUE
-        /*  白夫失ID互中中井升丹井毛譬屯月  */
+        /*  啞痲囮ID誑笢笢凝汔竣凝禱ぅ迋堎  */
         &&
         CHAR_ElderSetPosition( oldmanid ,bornfl,bornx, borny ) 
         == TRUE ){
-        /* 赢  及匏  毛赓渝祭允月卅曰 */
+        /* 荇  摯痾  禱疐趵撬埰堎埵堇 */
         return TRUE;
     }else{
         printf( "Invalid elder npcarg=%s\n", npcarg );
         
-        /* 丐引曰卞褐邰卅巨仿□卅及匹｝neverMake仄卅中［
-             荚巨仿□丢永本□斥请今六月 */
+        /* 堣竘堇勗福菺埵操溘↓埵摯ぁ��neverMake媃埵笢��
+             樊操溘↓隍蚗掛↓喇③踏鞠堎 */
         return FALSE;
     }
 #endif
@@ -60,10 +60,10 @@ BOOL NPC_OldmanInit( int meindex )
 
 /*
  *
- *  赢  ［
+ *  荇  ��
  *
- *  云手卅酷仪反  仄井仃日木凶午五卞惫寞及  烂毛仄凶曰
- * 允月仇午分［
+ *  堁忒埵蹄痀毀  媃凝崹�桫憶谻覢撅撅嘆紡�  擭禱媃倜堇
+ * 埰堎喫敁煦��
  * * by ringo
  */
 
@@ -75,20 +75,20 @@ void NPC_OldmanTalked( int meindex , int talkerindex , char *msg ,
     char *n = CHAR_getChar( talkerindex , CHAR_NAME );
     int title_change = 0;
 
-    /* 反卅仄井仃凶蛊卞｝愤坌及ID毛筏盛今六月 */
+    /* 毀埵媃凝崹倜嘍勗��猷覕摯ID禱楔呏踏鞠堎 */
     CHAR_setInt( talkerindex, CHAR_LASTTALKELDER ,
                  CHAR_getWorkInt( meindex, CHAR_WORKOLDMANID ) );
 
     /*
 
-      if( title_change == 0 && strcmp( n , "苹果" ) == 0 ){
+      if( title_change == 0 && strcmp( n , "し彆" ) == 0 ){
         
         if( NPC_Util_HaveTitle( talkerindex , 3 ) == 0 ){
             char *ts;
             NPC_Util_AddOneTitle( talkerindex , 3 );
             ts = TITLE_makeTitleStatusString( talkerindex , 3 );
             snprintf( message , sizeof(message),
-                  "那是个不错的名字, 就叫%s吧！",
+                  "饒岆跺祥渣腔靡趼, 憩請%s勘ㄐ",
                   ts );
             title_change = 1;
         }
@@ -100,20 +100,20 @@ void NPC_OldmanTalked( int meindex , int talkerindex , char *msg ,
 	
     if( !title_change){
         snprintf( message, sizeof( message ) ,
-              "来的好%s在给你称号时"
-              "不是还没来吗？" , n );
+              "懂腔疑%s婓跤斕備瘍奀"
+              "祥岆遜羶懂鎘ˋ" , n );
 	    CHAR_talkToCli( talkerindex , meindex , message , CHAR_COLORWHITE );
     }
     else {
     	#define		NPC_OLDMAN_TITLE_UNIT1		"TSU"
     	#define		NPC_OLDMAN_TITLE_UNIT2		"KO"
     	
-        snprintf( message, sizeof( message ) ,"来的好%s",n );
+        snprintf( message, sizeof( message ) ,"懂腔疑%s",n );
     	CHAR_talkToCli( talkerindex , meindex , message , CHAR_COLORWHITE );
 		if( delcnt > 0 && addcnt > 0 ) {
 	        snprintf( message, sizeof( message ) ,
-	    			"你丧失了%d%s 称号的资格。"
-	    			"不是得到了%d%s 的称号资格吗？"
+	    			"斕犮囮賸%d%s 備瘍腔訧跡﹝"
+	    			"祥岆腕善賸%d%s 腔備瘍訧跡鎘ˋ"
 	    			, delcnt,
 	    			delcnt < 10 ?  NPC_OLDMAN_TITLE_UNIT1:NPC_OLDMAN_TITLE_UNIT2,
 	    			addcnt,
@@ -123,25 +123,25 @@ void NPC_OldmanTalked( int meindex , int talkerindex , char *msg ,
 		}
 		else if( delcnt > 0 ) {
 	        snprintf( message, sizeof( message ) ,
-	    			"你已丧失得到%d%s称号的资格。", delcnt,
+	    			"斕眒犮囮腕善%d%s備瘍腔訧跡﹝", delcnt,
 	    			delcnt < 10 ?  NPC_OLDMAN_TITLE_UNIT1:NPC_OLDMAN_TITLE_UNIT2);
 	    	CHAR_talkToCli( talkerindex , meindex , message , CHAR_COLORWHITE );
 		}
 		else if( addcnt > 0 ) {
 	        snprintf( message, sizeof( message ) ,
-	    			"给你%d%s的称号吧！", addcnt, // CoolFish: d%s -> %d%s 2001/4/18
+	    			"跤斕%d%s腔備瘍勘ㄐ", addcnt, // CoolFish: d%s -> %d%s 2001/4/18
 	    			addcnt < 10 ?  NPC_OLDMAN_TITLE_UNIT1:NPC_OLDMAN_TITLE_UNIT2);
 	    	CHAR_talkToCli( talkerindex , meindex , message , CHAR_COLORWHITE );
 		}
 	    if( delcnt > 0 ) {
 	        snprintf( message, sizeof( message), 
-	                    "失去%d%s 称号！", delcnt,
+	                    "囮��%d%s 備瘍ㄐ", delcnt,
 	    				delcnt < 10 ?  NPC_OLDMAN_TITLE_UNIT1:NPC_OLDMAN_TITLE_UNIT2);
 	        CHAR_talkToCli( talkerindex, -1, message,  CHAR_COLORYELLOW);
 	    }
 	    if( addcnt > 0 ) {
 	        snprintf( message, sizeof( message), 
-	                    "获得%d%s 称号！", addcnt,
+	                    "鳳腕%d%s 備瘍ㄐ", addcnt,
 	    				addcnt < 10 ?  NPC_OLDMAN_TITLE_UNIT1:NPC_OLDMAN_TITLE_UNIT2);
 	        CHAR_talkToCli( talkerindex, -1, message,  CHAR_COLORYELLOW);
 	    }

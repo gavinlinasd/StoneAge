@@ -61,7 +61,7 @@ enum {
 };
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_ExChangeManInit( int meindex )
 {
@@ -80,17 +80,17 @@ BOOL NPC_ExChangeManInit( int meindex )
 	int nameflg=0;
 	int itemno;
 	char *ret;
-	char sendbuf[2][10]={"无法传送。","可以传送。"};
-	char droplogbuf[2][10]={"没消失。","消失了。"};
+	char sendbuf[2][10]={"拸楊換冞﹝","褫眕換冞﹝"};
+	char droplogbuf[2][10]={"羶秏囮﹝","秏囮賸﹝"};
 	int flg=0;
 #endif			
 
 
-	/*--NPC及正奶皿毛本永玄允月--*/
+	/*--NPC摯淏騷鏤禱掛蚗哱埰堎--*/
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEEVENT );
 
 
-	/*--涩烂白央奶伙毛  心  心--*/
+	/*--优擭啞栝騷鳴禱  陑  陑--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr)) == NULL) {
 		print("NPC_ExChange.c TypeCheck: GetArgStrErr\n");
 		print("NPCName=%s\n", CHAR_getChar( meindex ,CHAR_NAME));
@@ -98,17 +98,17 @@ BOOL NPC_ExChangeManInit( int meindex )
 	}
 
 	i = 1;
-	/*--奶矛件玄NPC互健丹失奶  丞毛民尼永弁允月--*/
-	/*--民尼永弁嫩  ｝  午仄化壅尹月井＂｝矢永玄丢□伙匹霜木月井＂--*/
+	/*--騷穫璃哱NPC誑翩竣囮騷  堜禱鏍攝蚗袲埰堎--*/
+	/*--鏍攝蚗袲囂  ��  敁媃趙觛窇堎凝ㄑ��妐蚗哱隍↓鳴ぁ邞躂堎凝ㄑ--*/
 	while(getStringFromIndexWithDelim( argstr ,"EventEnd" ,i ,buf ,sizeof(buf))
 	!= FALSE)
 	{
 		i++;
-		/*--仇仇匹踏井木化中月及反｝伐□瓦件弘毛请允-*/
+		/*--喫喫ぁ怳凝躂趙笢堎摯毀��極↓俓璃精禱③埰-*/
 		if(strstr( buf,"GetItem") != NULL) {
 			if(strstr( buf,"ItemFullMsg") == NULL) {
 				NPC_Util_GetStrFromStrWithDelim(buf,"EventNo",buf4,sizeof(buf4));
-				print("\n### EventNo=%d %s:ItemFullMsg 脱离###",
+				print("\n### EventNo=%d %s:ItemFullMsg 迕燭###",
 				atoi( buf4),
 				CHAR_getChar( meindex, CHAR_NAME));
 			}
@@ -117,7 +117,7 @@ BOOL NPC_ExChangeManInit( int meindex )
 		if(strstr( buf,"GetPet") != NULL) {
 			if(strstr( buf,"PetFullMsg") == NULL) {
 				NPC_Util_GetStrFromStrWithDelim(buf,"EventNo",buf4,sizeof(buf4));
-				print("\n### ventNo=%d %s:PetFullMsg 脱离 ###",
+				print("\n### ventNo=%d %s:PetFullMsg 迕燭 ###",
 				atoi(buf4),
 				CHAR_getChar(meindex,CHAR_NAME));
 			}
@@ -126,7 +126,7 @@ BOOL NPC_ExChangeManInit( int meindex )
 		if(strstr( buf,"GetEgg") != NULL) {
 			if(strstr( buf,"PetFullMsg") == NULL) {
 				NPC_Util_GetStrFromStrWithDelim(buf,"EventNo",buf4,sizeof(buf4));
-				print("\n### ventNo=%d %s:PetFullMsg 脱离 ###",
+				print("\n### ventNo=%d %s:PetFullMsg 迕燭 ###",
 				atoi(buf4),
 				CHAR_getChar(meindex,CHAR_NAME));
 			}
@@ -135,7 +135,7 @@ BOOL NPC_ExChangeManInit( int meindex )
 		if(strstr( buf,"GetStone") != NULL){
 			if(strstr( buf,"StoneFullMsg") == NULL){
 				NPC_Util_GetStrFromStrWithDelim(buf,"EventNo",buf4,sizeof(buf4));
-				print("\n### EventNo=%d %s:StonFullMsg 脱离 ###",
+				print("\n### EventNo=%d %s:StonFullMsg 迕燭 ###",
 				atoi( buf4),
 				CHAR_getChar( meindex, CHAR_NAME));
 			}
@@ -144,7 +144,7 @@ BOOL NPC_ExChangeManInit( int meindex )
 		if(strstr( buf,"DelStone") != NULL) {
 			if(strstr( buf,"StoneLessMsg") == NULL) {
 				NPC_Util_GetStrFromStrWithDelim(buf,"EventNo",buf4,sizeof(buf4));
-				print("\n### EventNo=%d %s:StoneLessMsg 脱离 ###",
+				print("\n### EventNo=%d %s:StoneLessMsg 迕燭 ###",
 				atoi(buf4),
 				CHAR_getChar(meindex,CHAR_NAME));
 			}
@@ -155,13 +155,13 @@ BOOL NPC_ExChangeManInit( int meindex )
 	i = 1;
 
 #if 0
-	/*--奶矛件玄NPC互健丹失奶  丞毛民尼永弁允月--*/
-	/*--民尼永弁嫩  ｝  午仄化壅尹月井＂｝矢永玄丢□伙匹霜木月井＂--*/
+	/*--騷穫璃哱NPC誑翩竣囮騷  堜禱鏍攝蚗袲埰堎--*/
+	/*--鏍攝蚗袲囂  ��  敁媃趙觛窇堎凝ㄑ��妐蚗哱隍↓鳴ぁ邞躂堎凝ㄑ--*/
 	while(getStringFromIndexWithDelim( argstr ,"EventEnd" ,i ,buf ,sizeof(buf))
 	!=FALSE)
 	{
 		i++;
-		/*--仇仇匹踏井木化中月及反｝伐□瓦件弘毛请允-*/
+		/*--喫喫ぁ怳凝躂趙笢堎摯毀��極↓俓璃精禱③埰-*/
 		if(NPC_Util_GetStrFromStrWithDelim( buf,"GetItem", buf2,sizeof( buf2)) 
 		!=NULL)
 		{
@@ -175,7 +175,7 @@ BOOL NPC_ExChangeManInit( int meindex )
 					getStringFromIndexWithDelim( buf3 ,"*" ,1, buf4 ,sizeof(buf4));
 					itemno = atoi(buf4);
 				}else{
-					/*--失奶  丞瓜件田□必永玄--*/
+					/*--囮騷  堜圖璃泬↓斛蚗哱--*/
 					itemno = atoi(buf3);
 				}
 				
@@ -224,7 +224,7 @@ BOOL NPC_ExChangeManInit( int meindex )
 
 }
 
-/*--      及啖  --*/
+/*--      摯遉  --*/
 BOOL NPC_EventWarpNpc(int meindex,char *buf)
 {
 	char token[32];
@@ -234,7 +234,7 @@ BOOL NPC_EventWarpNpc(int meindex,char *buf)
 	int cnt;
 	int dcnt = 1;
 
-	/*--蜇箕及伐□皿及赐  --*/
+	/*--藯凜摯極↓鏤摯棹  --*/
 	cnt = CHAR_getWorkInt(meindex,CHAR_WORK_EVENTWARP);
 	while(getStringFromIndexWithDelim(buf,",", dcnt,buf2,sizeof(buf2) )
 	 !=FALSE ){
@@ -276,33 +276,33 @@ BOOL NPC_EventWarpNpc(int meindex,char *buf)
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_ExChangeManTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
-	/* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
 
-	/*--  及蟆卞中月井升丹井＂--*/
+	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex ,2) == FALSE) {
-		/* ㄠ弘伉永玉动  及心 */
+		/* 兒精惉蚗迶雄  摯陑 */
 		if(NPC_Util_isFaceToChara(talkerindex,meindex,1 ) == FALSE) return;
 	}
 	
-	/*--皿伊奶乩□及伐□弁    毛赓渝祭--*/
+	/*--鏤畛騷媕↓摯極↓袲    禱疐趵撬--*/
 	CHAR_setWorkInt( talkerindex ,CHAR_WORKSHOPRELEVANT, 0);
 	CHAR_setWorkInt( talkerindex ,CHAR_WORKSHOPRELEVANTSEC, 0);
 	CHAR_setWorkInt( talkerindex ,CHAR_WORKSHOPRELEVANTTRD, 0);
 
-	/*--正奶皿  卞坌仃月--*/
+	/*--淏騷鏤  勗覕崹堎--*/
 	NPC_TypeCheck( meindex, talkerindex, szMes);
 
 }
 
 /*------------------------------------------------------------
- *涩烂白央奶伙毛  心  心｝椭瘀互丐匀凶正奶皿及质  毛允月
+ *优擭啞栝騷鳴禱  陑  陑��邳贀誑堣埱倜淏騷鏤摯窐  禱埰堎
  *-------------------------------------------------------------*/
 BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 {
@@ -314,21 +314,21 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 	int EvNo;
 	int evch;
 	
-	/*--涩烂白央奶伙毛  心  心--*/
+	/*--优擭啞栝騷鳴禱  陑  陑--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {
 		print("NPC_ExChange.c TypeCheck: GetArgStrErr\n");
 		print("NPCName=%s\n", CHAR_getChar(meindex,CHAR_NAME));
 		return FALSE;
 	}
 
-	/*-- 涩烂白央奶伙毛坌喃允月 --*/
+	/*-- 优擭啞栝騷鳴禱覕鄎埰堎 --*/
 	while(getStringFromIndexWithDelim( argstr,"EventEnd",i,buf,sizeof( buf))
 	!= FALSE){
 		i++;
 		CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANT, 0);
 		CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 0);
 
-		/*-- 奶矛件玄瓜件田□毛必永玄 --*/
+		/*-- 騷穫璃哱圖璃泬↓禱斛蚗哱 --*/
 		if(NPC_Util_GetStrFromStrWithDelim(buf,"EventNo",
 								buf2, sizeof( buf2) ) == NULL) continue;
 
@@ -338,17 +338,17 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 			EvNo = atoi( buf2);
 		}
 
-		/*-- 白仿弘民尼永弁毛垫丹［允匹卞奶矛件玄互蔽  仄化中月桦宁反戚尺 --*/
+		/*-- 啞溘精鏍攝蚗袲禱菜竣�觚岊弗暰斻狩�哱誑敖  媃趙笢堎鳹譴毀べ喜 --*/
 		if(NPC_EventCheckFlg( talker, EvNo) == TRUE) continue;
 
-		/*--平□伐□玉及民尼永弁毛垫丹--*/
+		/*--す↓極↓迶摯鏍攝蚗袲禱菜竣--*/
 		if(NPC_Util_GetStrFromStrWithDelim( buf,"KeyWord", buf2,sizeof( buf2) ) 
 		 != NULL){
 			if(strcmp( szMes, buf2) != 0) continue;
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANT, i);
 		}
 
-		/*--矢永玄及  蟆及民尼永弁互  匀化月井毛民尼永弁--*/
+		/*--妐蚗哱摯  鞳摯鏍攝蚗袲誑  埱趙堎凝禱鏍攝蚗袲--*/
 		if(NPC_Util_GetStrFromStrWithDelim( buf,"Pet_Name", buf2,sizeof( buf2)) != NULL){
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 1);
 		}
@@ -360,7 +360,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 					NPC_RequestMain( meindex, talker, buf);
 					return TRUE;
 				}else if( strstr( buf2, "ACCEPT") != NULL) {
-					/*-匙  毛熬仃午月  --*/
+					/*-啻  禱偏崹敁堎  --*/
 					NPC_AcceptMain( meindex, talker, buf);
 					return TRUE;
 					
@@ -401,7 +401,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 							}
 						}
 #ifdef _ANGEL_SUMMON
-						// 完成召唤任务
+						// 俇傖欸遢�恄�
 						if( NPC_Util_GetStrFromStrWithDelim( buf, "MISSIONOVER",
 							buf2, sizeof( buf2)) != NULL)
 						{
@@ -416,20 +416,20 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 							{
 								char msg[1024];
 								
-								print(" ====完成召唤任务==== ");
+								print(" ====俇傖欸遢�恄�==== ");
 
 								CHAR_setInt( talker, CHAR_HEROCNT, 
 									CHAR_getInt( talker, CHAR_HEROCNT)+1 );
 								getMissionNameInfo( talker, nameinfo);
 								saacproto_ACMissionTable_send( acfd, MISSION_HERO_COMPLETE, 4, nameinfo, "");
-								sprintf( msg, " 完成任务 i:%d m:%d %s ", mindex, mission, nameinfo);
+								sprintf( msg, " 俇傖�恄� i:%d m:%d %s ", mindex, mission, nameinfo);
 								print( msg);
 								LogAngel( msg );
 							}
 							
 						}
 						
-						// 清除召唤任务
+						// ь壺欸遢�恄�
 						if( NPC_Util_GetStrFromStrWithDelim( buf, "MISSIONCLEAN",
 							buf2, sizeof( buf2)) != NULL)
 						{
@@ -447,7 +447,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 								getMissionNameInfo( talker, nameinfo);
 								saacproto_ACMissionTable_send( acfd, mindex, 3, nameinfo, "");
 
-								sprintf( msg, " 放弃任务 i:%d m:%d %s ", mindex, mission, nameinfo);
+								sprintf( msg, " 溫ィ�恄� i:%d m:%d %s ", mindex, mission, nameinfo);
 								print( msg);
 								LogAngel( msg );
 							}
@@ -458,7 +458,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 					}else if(NPC_Util_GetStrFromStrWithDelim(buf, "NomalWindowMsg",
 						token, sizeof( token) )
 						!=NULL) {
-						/*--它奶件玉它匹丢永本□斥毛忒允--*/
+						/*--坳騷璃迶坳ぁ隍蚗掛↓喇禱蒍埰--*/
 						int fd = getfdFromCharaIndex( talker);
 #ifdef _NEWEVENT
 						if(NPC_Util_GetStrFromStrWithDelim(buf, "NomalWindowMsg1",
@@ -489,7 +489,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 									NPC_EventSetFlg( talker, atoi( buf3));
 								}
 							}
-							//奶矛件玄白仿弘毛壅允
+							//騷穫璃哱啞溘精禱觛埰
 							if( NPC_Util_GetStrFromStrWithDelim( buf, "CleanFlg",
 								buf2, sizeof( buf2)) != NULL) {
 								char buf3[16];
@@ -503,7 +503,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 								}
 							}
 #ifdef _ANGEL_SUMMON
-							// 完成召唤任务
+							// 俇傖欸遢�恄�
 							if( NPC_Util_GetStrFromStrWithDelim( buf, "MISSIONOVER",
 								buf2, sizeof( buf2)) != NULL)
 							{
@@ -518,20 +518,20 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 								{
 									char msg[1024];
 									
-									print(" ====完成召唤任务==== ");
+									print(" ====俇傖欸遢�恄�==== ");
 
 									CHAR_setInt( talker, CHAR_HEROCNT, 
 										CHAR_getInt( talker, CHAR_HEROCNT)+1 );
 									getMissionNameInfo( talker, nameinfo);
 									saacproto_ACMissionTable_send( acfd, MISSION_HERO_COMPLETE, 4, nameinfo, "");
-									sprintf( msg, " 完成任务 i:%d m:%d %s ", mindex, mission, nameinfo);
+									sprintf( msg, " 俇傖�恄� i:%d m:%d %s ", mindex, mission, nameinfo);
 									print( msg);
 									LogAngel( msg );
 								}
 								
 							}
 							
-							// 清除召唤任务
+							// ь壺欸遢�恄�
 							if( NPC_Util_GetStrFromStrWithDelim( buf, "MISSIONCLEAN",
 								buf2, sizeof( buf2)) != NULL)
 							{
@@ -544,7 +544,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 								
 								if( mission == missiontable[mindex].mission )
 								{
-									print(" ====清除召唤任务==== ");
+									print(" ====ь壺欸遢�恄�==== ");
 									
 									getMissionNameInfo( talker, nameinfo);
 									saacproto_ACMissionTable_send( acfd, mindex, 3, nameinfo, "");
@@ -591,31 +591,31 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 
 
 /*-----------------------------------
- *正奶皿  卞质  毛坌仃月
+ *淏騷鏤  勗窐  禱覕崹堎
  ------------------------------------*/
 static void NPC_ExChangeMan_selectWindow( int meindex, int talker,int num)
 {
 
 	switch( num) {
-		/*--伉弁巨旦玄滇--*/
+		/*--惉袲操筒哱菲--*/
 		  case 0:
-		  /*-奶矛件玄  卅及匹｝奶矛件玄毛鞅户月井升丹井毛  丹--*/
+		  /*-騷穫璃哱  埵摯ぁ��騷穫璃哱禱鰼誧堎凝汔竣凝禱  竣--*/
 		  	NPC_MsgDisp( meindex, talker, 0);
 			break;
 
 		  case 1:
-		  /*--蕙筋卞奶矛件玄垫丹--*/
+		  /*--犍踐勗騷穫璃哱菜竣--*/
 	  		NPC_MsgDisp( meindex, talker, 5);
 		  	break;
 
-			/*--失弁本皿玄滇--*/
+			/*--囮袲掛鏤哱菲--*/
 		  case 2:
-			/*--熬仃潸曰--*/
+			/*--偏崹噁堇--*/
 			NPC_MsgDisp( meindex, talker, 6);
 			break;
 
 		  case 3:
-			/*--熬仃潸曰--*/
+			/*--偏崹噁堇--*/
 			NPC_MsgDisp( meindex, talker, 11);
 			break;
 	}
@@ -623,14 +623,14 @@ static void NPC_ExChangeMan_selectWindow( int meindex, int talker,int num)
 }
 
 /*-------------------------------------
- *奶矛件玄毛匙  允月质  及丢奶件
+ *騷穫璃哱禱啻  埰堎窐  摯隍騷璃
  --------------------------------------*/
 void NPC_RequestMain(int meindex,int talker,char *buf)
 {
 	int shiftbit;
 	char buf2[128];
 		
-	/*--奶矛件玄瓜件田□毛必永玄--*/
+	/*--騷穫璃哱圖璃泬↓禱斛蚗哱--*/
 	NPC_Util_GetStrFromStrWithDelim( buf,"EventNo", buf2,sizeof( buf2) );
 	shiftbit = atoi( buf2);
 
@@ -642,7 +642,7 @@ void NPC_RequestMain(int meindex,int talker,char *buf)
 }
 
 /*---------------------------------------
- * 奶矛件玄蔽  及丢奶件
+ * 騷穫璃哱敖  摯隍騷璃
  ----------------------------------------*/
 void NPC_AcceptMain(int meindex,int  talker ,char *buf)
 {
@@ -651,7 +651,7 @@ void NPC_AcceptMain(int meindex,int  talker ,char *buf)
 }
 
 /*----------------------------------------
- *  白仿弘毛弁伉失允月啃及丢奶件
+ *  啞溘精禱袲惉囮埰堎諱摯隍騷璃
  ----------------------------------------*/
 void NPC_CleanMain(int meindex,int talker,char *buf)
 {
@@ -659,12 +659,12 @@ void NPC_CleanMain(int meindex,int talker,char *buf)
 }
 
 /*-----------------------------------------
-弁仿奶失件玄井日忒匀化五凶凛卞裟太请今木月［
+袲溘騷囮璃哱凝�氪耽�趙拻倜鄹勗蠙怮③踏躂堎��
 -------------------------------------------*/
 void NPC_ExChangeManWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
 {
-	/*--       及引歹曰卞中卅中午五反蔽   --*/
+	/*--       摯竘渦堇勗笢埵笢敁拻毀敖   --*/
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 2) {
 		return;
 	}
@@ -672,7 +672,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 
 	switch( seqno) {
 
-		/*--白仿弘毛壅允凛及它奶件玉它--*/
+		/*--啞溘精禱觛埰鄹摯坳騷璃迶坳--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_CLEANMSG:
 		if( select == WINDOW_BUTTONTYPE_YES) {
 			NPC_MsgDisp( meindex, talkerindex, 12);
@@ -696,7 +696,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_STARTMSG:
 		break;
 #endif
-		/*--伉弁巨旦玄及丐曰互午丹丢永本□斥--*/
+		/*--惉袲操筒哱摯堣堇誑敁竣隍蚗掛↓喇--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_REQTHANK:
 			if(select == WINDOW_BUTTONTYPE_NEXT) {
 				 CHAR_setWorkInt(talkerindex,CHAR_WORKSHOPRELEVANTTRD,
@@ -709,7 +709,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 			}
 		break;
 		
-		/*--失弁本皿玄及丐曰互午丹丢永本□斥--*/
+		/*--囮袲掛鏤哱摯堣堇誑敁竣隍蚗掛↓喇--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_ACCTHANK:
 			if(select == WINDOW_BUTTONTYPE_NEXT) {
 				 CHAR_setWorkInt(talkerindex,CHAR_WORKSHOPRELEVANTTRD,
@@ -722,7 +722,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 			}
 		break;
 
-		/*--蜇箕及奶矛件玄毛鞅户月井--*/
+		/*--藯凜摯騷穫璃哱禱鰼誧堎凝--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_NOWEVENT:
 		if(select == WINDOW_BUTTONTYPE_YES) {
 			NPC_MsgDisp( meindex, talkerindex, 7);
@@ -731,7 +731,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 		}
 		break;
 		
-		/*--伉弁巨旦玄及丢奶件它奶件玉它--*/
+		/*--惉袲操筒哱摯隍騷璃坳騷璃迶坳--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_REQMAINMSG:
 		if(select == WINDOW_BUTTONTYPE_YES) {
 			CHAR_setWorkInt(talkerindex,CHAR_WORKSHOPRELEVANTTRD,0);
@@ -749,7 +749,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 		}
 		break;
 
-		/*--熬仃潸曰及丢奶件及它奶件玉它--*/
+		/*--偏崹噁堇摯隍騷璃摯坳騷璃迶坳--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_ACCMAINMSG:
 		if(select == WINDOW_BUTTONTYPE_YES) {
 			CHAR_setWorkInt(talkerindex,CHAR_WORKSHOPRELEVANTTRD,0);
@@ -786,7 +786,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 		  }
 		  break;
 #endif
-		/*--矢永玄及  毛芨尹月它奶件玉它--*/
+		/*--妐蚗哱摯  禱僄窇堎坳騷璃迶坳--*/
 	  case CHAR_WINDOWTYPE_WINDOWPETSKILLSHOP:
 			if(CHAR_getWorkInt( talkerindex ,CHAR_WORKSHOPRELEVANTTRD) ==0) {
 				NPC_EventPetSkill( meindex, talkerindex, data);
@@ -801,7 +801,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 
 
 /*-------------------------
- *  椭瘀毛心凶仄化中月井
+ *  邳贀禱陑倜媃趙笢堎凝
  --------------------------*/
 int NPC_ExChangeManEventCheck( int meindex, int talker, char *buff1)
 {
@@ -813,12 +813,12 @@ int NPC_ExChangeManEventCheck( int meindex, int talker, char *buff1)
 	
 	NPC_Util_GetStrFromStrWithDelim( buff1, "EVENT", buf, sizeof( buf));
 
-	/*-- EVENt及椭瘀毛赐  卞苇化中仁 --*/
+	/*-- EVENt摯邳贀禱棹  勗峟趙笢�� --*/
 	while( getStringFromIndexWithDelim(buf, ",", i, buff2,sizeof( buff2))
 	 !=FALSE )
 	{
 		i++;
-		/*-- "&"互丐月及匹  醒椭瘀 --*/
+		/*-- "&"誑堣堎摯ぁ  倳邳贀 --*/
 		if(strstr( buff2, "&")!=NULL){
 			j = 1;
 			loop = 0;
@@ -837,7 +837,7 @@ int NPC_ExChangeManEventCheck( int meindex, int talker, char *buff1)
 				i--;
 				return i;
 			}
-		/*--椭瘀互夫午勾--*/
+		/*--邳贀誑痲敁僑--*/
 		}else{
 			if(NPC_EventBigSmallCheck( meindex, talker, buff2) == TRUE) {
 				i--;
@@ -852,7 +852,7 @@ int NPC_ExChangeManEventCheck( int meindex, int talker, char *buff1)
 }
 
 /*---------------------------------
- *   凝筏寞民尼永弁
+ *   覽楔蠕鏍攝蚗袲
  --------------------------------*/
 BOOL NPC_EventBigSmallCheck(int meindex,int talker, char* buf)
 {
@@ -860,7 +860,7 @@ BOOL NPC_EventBigSmallCheck(int meindex,int talker, char* buf)
 	char buff2[128];
 	int kosuu;
 	
-	/*--矢永玄及民尼永弁互反中匀化中月桦宁反域绎PET椭瘀毛民尼永弁允月 --*/
+	/*--妐蚗哱摯鏍攝蚗袲誑毀笢埱趙笢堎鳹譴毀郖秠PET邳贀禱鏍攝蚗袲埰堎 --*/
 	if(strstr( buf, "PET") != NULL) {
 		if(strstr( buf, "EV") != NULL) {
 			if(NPC_PetLvCheck( meindex, talker, buf, 1) != FALSE) return TRUE;
@@ -870,7 +870,7 @@ BOOL NPC_EventBigSmallCheck(int meindex,int talker, char* buf)
 		return FALSE;
 	}
 
-	/*--动票反｝  骚及筏寞民尼永弁 --*/
+	/*--雄き毀��  玊摯楔蠕鏍攝蚗袲 --*/
 	if(strstr( buf, "<") != NULL) {
 		getStringFromIndexWithDelim( buf, "<", 2, buff2, sizeof( buff2));
 		kosuu = atoi( buff2);
@@ -919,26 +919,26 @@ BOOL NPC_EventBigSmallCheck(int meindex,int talker, char* buf)
 
 
 /*-----------------------------------
- * 嫩  毛  凶仄化中月井及民尼永弁
+ * 囂  禱  倜媃趙笢堎凝摯鏍攝蚗袲
  *-----------------------------------*/
 BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 {
 
-	/*--伊矛伙民尼永弁--*/
+	/*--畛穫鳴鏍攝蚗袲--*/
 	if(strcmp( buf, "LV") == 0) {
 		if(NPC_EventLevelCheck( meindex, talker, kosuu, flg) == TRUE) {
 			return TRUE;
 		}
 	}
 
-	/*--失奶  丞民尼永弁--*/
+	/*--囮騷  堜鏍攝蚗袲--*/
 	if(strcmp( buf, "ITEM") == 0) {
 		if(NPC_EventItemCheck( meindex, talker, kosuu, flg) == TRUE) {
 			return TRUE;
 		}
 	}
 
-	/*--蔽  奶矛件玄民尼永弁--*/
+	/*--敖  騷穫璃哱鏍攝蚗袲--*/
 	if(strcmp( buf, "ENDEV") == 0) {
 		if(NPC_ENDEventNoCheck( meindex, talker, kosuu, flg) == TRUE) {
 			return TRUE;
@@ -963,7 +963,7 @@ BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 		}
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if(strcmp(buf,"CLASS")==0){
 		if(NPC_ActionClassCheck(meindex,talker,kosuu,flg)==TRUE)
 				return TRUE;
@@ -1034,9 +1034,9 @@ BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 
 #endif
 #ifdef _NPC_EXCHANGEMANTRANS
-	//判断转生
+	//瓚剿蛌汜
 	{
-		//print("\n判断转生");
+		//print("\n瓚剿蛌汜");
 		if(strcmp(buf,"TRANS")==0){
 			int mytrans;
 			mytrans = CHAR_getInt(talker,CHAR_TRANSMIGRATION);
@@ -1046,7 +1046,7 @@ BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 	}
 #endif
 #ifdef _PROSK99
-	if(strstr( buf, "PROSK" ) != NULL) {//PROSK99>16 职技等级大於等於99%的数量要超过16个
+	if(strstr( buf, "PROSK" ) != NULL) {//PROSK99>16 眥撮脹撰湮黺脹黺99%腔杅講猁閉徹16跺
 		char *p=NULL;
 		int i,level=0,count=0;
 		CHAR_HaveSkill *pSkil;
@@ -1082,7 +1082,7 @@ BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 }
 
 /*--------------------------------
- *  矢永玄及伊矛伙毛民尼永弁允月
+ *  妐蚗哱摯畛穫鳴禱鏍攝蚗袲埰堎
  ---------------------------------*/
 BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)
 {
@@ -1101,7 +1101,7 @@ BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)
 	int loop;
 	
 
-	/*--隙烂今木凶矢永玄及瓜件田□  ID)毛潸  --*/
+	/*--炩擭踏躂倜妐蚗哱摯圖璃泬↓  ID)禱噁  --*/
 	getStringFromIndexWithDelim( buf, "-", 2, buff2, sizeof( buff2));
 	if(strstr(buff2,"*") != NULL) {
 		getStringFromIndexWithDelim( buff2, "*", 1, buf3, sizeof( buf3));
@@ -1115,21 +1115,21 @@ BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)
 
 	}
 
-	/*--矢永玄  互钒中化中月井及民尼永弁--*/
+	/*--妐蚗哱  誑楣笢趙笢堎凝摯鏍攝蚗袲--*/
 	for(i=0; i < CHAR_MAXPETHAVE ; i++) {
 		if(loop == cnt) return TRUE;
 		
 		petindex = CHAR_getCharPet( talker, i);
 		if( petindex == -1  )  continue;
 	
-		/*--矢永玄及ID毛潸  仄化中仁--*/
+		/*--妐蚗哱摯ID禱噁  媃趙笢��--*/
 		baseno = CHAR_getInt( petindex, CHAR_PETID);
 
-		/* 矢永玄及ID午｝蜇箕及乒□玉毛譬屯月 */
+		/* 妐蚗哱摯ID敁��藯凜摯さ↓迶禱ぅ迋堎 */
 		if( (baseno == petno) && (CHAR_getInt( petindex, CHAR_ENDEVENT)
 		 == mode))
 		 {
-			/*--伊矛伙毛民尼永弁允月--*/
+			/*--畛穫鳴禱鏍攝蚗袲埰堎--*/
 			mypetlevel = CHAR_getInt( petindex, CHAR_LV);
 			getStringFromIndexWithDelim( buf, "-", 1, buff2, sizeof( buff2));
 
@@ -1147,11 +1147,11 @@ BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)
 			petlevel = atoi( buf3);
 
 			if(NPC_EventBigSmallLastCheck( petlevel, mypetlevel, flg) == TRUE) {
-				/*--矢永玄及  蟆互涩烂今木化中凶日  蟆及民尼永弁  月--*/
+				/*--妐蚗哱摯  鞳誑优擭踏躂趙笢倜��  鞳摯鏍攝蚗袲  堎--*/
 				if(CHAR_getWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC)==1) {
 					char *usename;
 					
-					/*--涩烂白央奶伙及  心  心--*/
+					/*--优擭啞栝騷鳴摯  陑  陑--*/
 					if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {
 						print("PetLevel:GetArgStrErr");
 						return FALSE;
@@ -1183,7 +1183,7 @@ BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)
 
 
 /*--------------------------------
- *  矢永玄及伊矛伙毛民尼永弁允月
+ *  妐蚗哱摯畛穫鳴禱鏍攝蚗袲埰堎
  ---------------------------------*/
 int NPC_PetLvCheckType2(int petindex,int meindex,int talker,char *buf,int mode)
 {
@@ -1197,7 +1197,7 @@ int NPC_PetLvCheckType2(int petindex,int meindex,int talker,char *buf,int mode)
 	int mypetlevel = 0;
 	char name[512];
 	
-	/*--隙烂今木凶矢永玄及瓜件田□  ID)毛潸  --*/
+	/*--炩擭踏躂倜妐蚗哱摯圖璃泬↓  ID)禱噁  --*/
 	getStringFromIndexWithDelim( buf, "-", 2, buff2, sizeof( buff2));
 	if(strstr(buff2,"*") != NULL) {
 		getStringFromIndexWithDelim( buff2, "*", 1, buf3, sizeof( buf3));
@@ -1207,14 +1207,14 @@ int NPC_PetLvCheckType2(int petindex,int meindex,int talker,char *buf,int mode)
 	}
 
 	
-	/*--矢永玄及ID毛潸  仄化中仁--*/
+	/*--妐蚗哱摯ID禱噁  媃趙笢��--*/
 	baseno = CHAR_getInt( petindex, CHAR_PETID);
 
-	/*--矢永玄及ID午｝蜇箕及乒□玉毛譬屯月--*/
+	/*--妐蚗哱摯ID敁��藯凜摯さ↓迶禱ぅ迋堎--*/
 	if( (baseno == petno) && (CHAR_getInt( petindex, CHAR_ENDEVENT)
 	 == mode))
 	{
-		/*--伊矛伙毛民尼永弁允月--*/
+		/*--畛穫鳴禱鏍攝蚗袲埰堎--*/
 		mypetlevel=CHAR_getInt( petindex, CHAR_LV);
 		getStringFromIndexWithDelim( buf, "-", 1,buff2,sizeof(buff2));
 
@@ -1235,11 +1235,11 @@ int NPC_PetLvCheckType2(int petindex,int meindex,int talker,char *buf,int mode)
 		if(NPC_EventBigSmallLastCheck( petlevel, mypetlevel, flg)
 		 == TRUE)
 		{
-			/*--矢永玄及  蟆互涩烂今木化中凶日  蟆及民尼永弁  月--*/
+			/*--妐蚗哱摯  鞳誑优擭踏躂趙笢倜��  鞳摯鏍攝蚗袲  堎--*/
 			if(CHAR_getWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC) == 1) {
 				char *usename;
 
-				/*--涩烂白央奶伙及  心  心--*/
+				/*--优擭啞栝騷鳴摯  陑  陑--*/
 				if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {
 					print("PetLevel:GetArgStrErr");
 					return FALSE;
@@ -1265,7 +1265,7 @@ int NPC_PetLvCheckType2(int petindex,int meindex,int talker,char *buf,int mode)
 }
 
 /*------------------------
- *请  鳔及民尼永弁
+ *③  鬻摯鏍攝蚗袲
  --------------------------*/
 BOOL NPC_SavePointCheck(int meindex,int talker,int shiftbit,int flg)
 {
@@ -1283,7 +1283,7 @@ BOOL NPC_SavePointCheck(int meindex,int talker,int shiftbit,int flg)
 }
 
 /*------------------------
- *奶丢□斥及民尼永弁
+ *騷隍↓喇摯鏍攝蚗袲
  --------------------------*/
 BOOL NPC_ImageCheck(int meindex,int talker,int kosuu,int flg)
 {
@@ -1300,7 +1300,7 @@ BOOL NPC_ImageCheck(int meindex,int talker,int kosuu,int flg)
 
 
 /*-----------------------------------------
- * 凛棉及民尼永弁毛垫丹(丐中引中凛棉)
+ * 鄹蹬摯鏍攝蚗袲禱菜竣(堣笢竘笢鄹蹬)
  ------------------------------------------*/
 BOOL NPC_TiemCheck(int meindex,int talker,int time,int flg)
 {
@@ -1318,7 +1318,7 @@ BOOL NPC_TiemCheck(int meindex,int talker,int time,int flg)
 }
 
 /*------------------------------
- *--Item毛民尼永弁				
+ *--Item禱鏍攝蚗袲				
  -------------------------------*/
 BOOL NPC_EventItemCheck(int meindex,int talker,int itemNo,int flg)
 {
@@ -1326,7 +1326,7 @@ BOOL NPC_EventItemCheck(int meindex,int talker,int itemNo,int flg)
 	int itemindex = -1;
 	int id;
 
-	//Change fix 不检查穿戴在身上的道具
+	//Change fix 祥潰脤援渴婓旯奻腔耋撿
 	for( i = CHAR_STARTITEMARRAY ; i < CHAR_MAXITEMHAVE ; i++ ) {
 
 		itemindex=CHAR_getItemIndex( talker , i );
@@ -1351,7 +1351,7 @@ BOOL NPC_EventItemCheck(int meindex,int talker,int itemNo,int flg)
 
 
 /*------------------------------
- * level毛民尼永弁				
+ * level禱鏍攝蚗袲				
  -------------------------------*/
 BOOL NPC_EventLevelCheck(int meindex,int talker,int level,int flg)
 {
@@ -1373,7 +1373,7 @@ BOOL NPC_EventLevelCheck(int meindex,int talker,int level,int flg)
 
 
 /*------------------------------
- * ENDEventNo毛民尼永弁
+ * ENDEventNo禱鏍攝蚗袲
  -------------------------------*/
 BOOL NPC_ENDEventNoCheck(int meindex,int talker,int shiftbit,int flg)
 {
@@ -1389,7 +1389,7 @@ BOOL NPC_ENDEventNoCheck(int meindex,int talker,int shiftbit,int flg)
 
 
 /*------------------------------
- * NOWEventNo毛民尼永弁
+ * NOWEventNo禱鏍攝蚗袲
  -------------------------------*/
 BOOL NPC_NOWEventNoCheck(int meindex,int talker,int shiftbit,int flg)
 {
@@ -1403,7 +1403,7 @@ BOOL NPC_NOWEventNoCheck(int meindex,int talker,int shiftbit,int flg)
 }
 
 /*---------------------------------------
- *    蔽民尼永弁
+ *    敖鏍攝蚗袲
  --------------------------------------*/
 BOOL NPC_EventBigSmallLastCheck(int point1,int mypoint,int flg)
 {
@@ -1430,7 +1430,7 @@ BOOL NPC_EventBigSmallLastCheck(int point1,int mypoint,int flg)
 
 
 /*---------------------------------
- *丢永本□斥毛请  允月
+ *隍蚗掛↓喇禱③  埰堎
  *----------------------------------*/
 #ifdef _CHANNEL_MODIFY
 extern int *piOccChannelMember;
@@ -1474,14 +1474,14 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		getStringFromIndexWithDelim( argstr, "EventEnd", pwork, buf,sizeof( buf));
 		
 	}else{
-		/*涩烂白央奶伙毛坌喃允月*/
+		/*优擭啞栝騷鳴禱覕鄎埰堎*/
 		while(getStringFromIndexWithDelim( argstr, "EventEnd", i, buf, sizeof(buf))
 		 != FALSE)
 		{
 			i++;
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 0);
 			
-			/*--奶矛件玄瓜件田□毛必永玄--*/
+			/*--騷穫璃哱圖璃泬↓禱斛蚗哱--*/
 			NPC_Util_GetStrFromStrWithDelim( buf, "EventNo", buf2, sizeof( buf2));
 			if(strstr( buf2, "-1") != 0) {
 				EvNo = -1;
@@ -1490,17 +1490,17 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 			}
 			EvNo = atoi( buf2);
 
-			/*--白仿弘民尼永弁毛垫丹［允匹卞｝仇及奶矛件玄互蔽  仄化中月桦宁反戚尺--*/
+			/*--啞溘精鏍攝蚗袲禱菜竣�觚岊弗憯�喫摯騷穫璃哱誑敖  媃趙笢堎鳹譴毀べ喜--*/
 			if(NPC_EventCheckFlg( talker, EvNo) == TRUE) continue;
 
-			/*--平□伐□玉及民尼永弁毛垫丹--*/
+			/*--す↓極↓迶摯鏍攝蚗袲禱菜竣--*/
 			if(NPC_Util_GetStrFromStrWithDelim( buf,"Pet_Name", buf2,sizeof( buf2)) 
 			 != NULL )
 			{
 				CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 1);
 			}
 
-			/*--平□伐□玉及民尼永弁毛垫丹--*/
+			/*--す↓極↓迶摯鏍攝蚗袲禱菜竣--*/
 			if(NPC_Util_GetStrFromStrWithDelim( buf,"KeyWord", buf2,sizeof( buf2) ) 
 			 != NULL)
 			{
@@ -1511,7 +1511,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 			if(evch != -1) {
 
-			/*--奶矛件玄椭瘀及民尼永弁--*/
+			/*--騷穫璃哱邳贀摯鏍攝蚗袲--*/
 		//	if(NPC_ExChangeManEventCheck( meindex, talker, buf) == TRUE) {
 				break;
 			}
@@ -1522,7 +1522,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 	
 	switch( num) {
 		  case 0:
-			/*蜇箕及奶矛件玄毛鞅户月井升丹井毛  仁丢永本□斥--*/
+			/*藯凜摯騷穫璃哱禱鰼誧堎凝汔竣凝禱  �妎肩彌鴃麚�--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "StopMsg", 
 												buf2, sizeof( buf2) )
 			 != NULL)
@@ -1534,7 +1534,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 		
 		  case 1:
-		  	/*--支户月井升丹井毛  中凶今中及NO毛蚕尹凶桦宁及丢永本□斥--*/
+		  	/*--盓誧堎凝汔竣凝禱  笢倜踏笢摯NO禱紮窇倜鳹譴摯隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "NoStopMsg",
 												 buf2, sizeof( buf2))
 			 != NULL)
@@ -1545,20 +1545,20 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 		
 		  case 7:
-			/*--蜇箕及奶矛件玄毛鞅户凶午五及丢永本□斥--*/
+			/*--藯凜摯騷穫璃哱禱鰼誧倜敁拻摯隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "EndStopMsg",
 												 buf2, sizeof( buf2))
 			 != NULL)
 			{
 				strcpysafe( token, sizeof( buf2), buf2);
 			
-				/*--奶矛件玄  毛  匀化中凶桦宁反壅蛔--*/
+				/*--騷穫璃哱  禱  埱趙笢倜鳹譴毀觛閤--*/
 				NPC_EventAdd( meindex, talker, 1);
 			
-				/*--白仿弘毛壅允--*/
+				/*--啞溘精禱觛埰--*/
 				NPC_NowEventSetFlgCls( talker, EvNo);
 			
-				/*--蝇匀凶及匹｝    毛今仆凶--*/
+				/*--茯埱倜摯ぁ��    禱踏ど倜--*/
 				if(CHAR_getInt( talker, CHAR_CHARM) > 0) {
 					CHAR_setInt( talker, CHAR_CHARM, CHAR_getInt(talker,CHAR_CHARM) -1);
 					CHAR_complianceParameter( talker );
@@ -1569,13 +1569,13 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 		
 		  case 2:
-				/*--丐曰互午丹丢永本□斥--*/
+				/*--堣堇誑敁竣隍蚗掛↓喇--*/
 				if( NPC_Util_GetStrFromStrWithDelim( buf, "ThanksMsg",
 													 buf2, sizeof( buf2) )
 				 != NULL)
 				{
 					strcpysafe( token,sizeof( buf2), buf2);
-					/*--奶矛件玄  白仿弘毛本永玄--*/
+					/*--騷穫璃哱  啞溘精禱掛蚗哱--*/
 					if(NPC_EventAdd(meindex, talker, 0) != FALSE) {
 						NPC_NowEventSetFlg( talker, EvNo);
 					}
@@ -1631,9 +1631,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					NPC_EventWarpNpc(meindex,token2);
 				}
 
-				/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, "ThanksMsg2") != NULL) {
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_REQTHANK,
@@ -1657,10 +1657,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 						strcpysafe( token,sizeof( buf2), buf2);
 					}
 
-					/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+					/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 					if(strstr( buf, "ThanksMsg2") != NULL) {
 					
-						/*仇仇匹霜耨允月*/
+						/*喫喫ぁ邞嚭埰堎*/
 						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 									WINDOW_BUTTONTYPE_NEXT,
 									CHAR_WINDOWTYPE_WINDOWEVENT_REQTHANK,
@@ -1682,10 +1682,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					sprintf( tmp, "ThanksMsg%d", work);
 	
 	
-					/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+					/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 					if(strstr( buf, tmp) != NULL) {
 						
-						/*仇仇匹霜耨允月*/
+						/*喫喫ぁ邞嚭埰堎*/
 						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 									WINDOW_BUTTONTYPE_NEXT,
 									CHAR_WINDOWTYPE_WINDOWEVENT_REQTHANK,
@@ -1704,13 +1704,13 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 
 		  case 25:
-			  /*--丐曰互午丹丢永本□斥--*/
+			  /*--堣堇誑敁竣隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "ThanksMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
 			{
 				strcpysafe( token,sizeof( buf2), buf2);
-				/*--奶矛件玄  白仿弘毛本永玄--*/
+				/*--騷穫璃哱  啞溘精禱掛蚗哱--*/
 				if(NPC_EventAdd(meindex, talker, 2) != FALSE) {
 					NPC_NowEventSetFlg( talker, EvNo);
 				}
@@ -1719,7 +1719,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 
 		  case 3:
-			/*--  骚及丢永本□斥--*/
+			/*--  玊摯隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "NomalMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -1729,7 +1729,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 
 		  case 4:
-		  	/*--失奶  丞互中匀天中及凛及丢永本□斥--*/
+		  	/*--囮騷  堜誑笢埱毞笢摯鄹摯隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "ItemFullMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -1739,7 +1739,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 
 		case 5:
-			/*--匙  毛允月端及丢奶件及丢永本□斥--*/
+			/*--啻  禱埰堎傷摯隍騷璃摯隍蚗掛↓喇--*/
 				if( NPC_Util_GetStrFromStrWithDelim( buf, "RequestMsg",
 													 buf2, sizeof( buf2) )
 				 != NULL)
@@ -1767,9 +1767,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				work = work + ( i * 100);
 				CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTTRD, work);
 
-				/*--戚矢□斥互丐月桦宁反示正件它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, "RequestMsg2") != NULL) {
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_REQMAINMSG,
@@ -1792,9 +1792,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 						strcpysafe( token, sizeof( buf2), buf2);
 					}
 
-					/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+					/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 					if(strstr( buf, "RequestMsg2") != NULL){
-						/*仇仇匹霜耨允月*/
+						/*喫喫ぁ邞嚭埰堎*/
 						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 									WINDOW_BUTTONTYPE_NEXT,
 									CHAR_WINDOWTYPE_WINDOWEVENT_REQMAINMSG,
@@ -1813,10 +1813,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					}
 					work++;
 					sprintf( tmp, "RequestMsg%d", work);
-					/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+					/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 					if(strstr( buf, tmp) != NULL) {
 						
-						/*仇仇匹霜耨允月*/
+						/*喫喫ぁ邞嚭埰堎*/
 						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 									WINDOW_BUTTONTYPE_NEXT,
 									CHAR_WINDOWTYPE_WINDOWEVENT_REQMAINMSG,
@@ -1836,8 +1836,8 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 
 		  case 6:
-			  //print(" 6_答应? ");
-			/*--熬仃潸曰及端及丢奶件及丢永本□斥--*/
+			  //print(" 6_湘茼? ");
+			/*--偏崹噁堇摯傷摯隍騷璃摯隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "AcceptMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -1863,9 +1863,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 			work = work + ( i * 100);
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTTRD, work);
 
-			/*--戚矢□斥互丐月桦宁反示正件它奶件玉它及正奶皿毛井尹月--*/
+			/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 			if(strstr( buf, "AcceptMsg2") != NULL) {
-				/*仇仇匹霜耨允月*/
+				/*喫喫ぁ邞嚭埰堎*/
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 							WINDOW_BUTTONTYPE_NEXT,
 							CHAR_WINDOWTYPE_WINDOWEVENT_ACCMAINMSG,
@@ -1877,7 +1877,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 
 	   case 66:
-		   //print(" 66_答应? ");
+		   //print(" 66_湘茼? ");
 			work = CHAR_getWorkInt( talker, CHAR_WORKSHOPRELEVANTTRD);
 			work = work % 100;
 
@@ -1889,9 +1889,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					strcpysafe( token,sizeof( buf2), buf2);
 				}
 
-				/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, "AcceptMsg2") != NULL) {
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCMAINMSG,
@@ -1909,10 +1909,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				}
 				work++;
 				sprintf( tmp, "AcceptMsg%d", work);
-				/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, tmp) != NULL) {
 					
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCMAINMSG,
@@ -1931,14 +1931,14 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 
 		case 8:
-				//print(" 8_答应? ");
+				//print(" 8_湘茼? ");
 			
 				if( NPC_Util_GetStrFromStrWithDelim( buf, "ThanksMsg",
 													buf2, sizeof( buf2) )
 				 != NULL)
 				{
 					strcpysafe( token, sizeof( buf2), buf2);
-					/*--奶矛件玄  白仿弘毛本永玄--*/
+					/*--騷穫璃哱  啞溘精禱掛蚗哱--*/
 					if(NPC_AcceptDel( meindex, talker,0) == FALSE){
 						return ;
 					}
@@ -1964,7 +1964,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 						buf2, sizeof( buf2))
 						!=NULL)
 					{
-						/*--仇仇引匹  凶日｝    毛晓仆月---*/
+						/*--喫喫竘ぁ  倜�掁�    禱窀ど堎---*/
 						if( CHAR_getInt( talker, CHAR_CHARM) < 100 && EvNo > 0 ){
 							if(CHAR_getInt( talker, CHAR_CHARM) + atoi(buf2) > 100){
 								CHAR_setInt( talker, CHAR_CHARM,100);
@@ -1998,31 +1998,31 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					}
 					
 					
-					// Robin add 清除职业
+					// Robin add ь壺眥珛
 					if( NPC_Util_GetStrFromStrWithDelim( buf, "PROFESSION",
 						buf2, sizeof( buf2)) != NULL)
 					{
 						int p_class = atoi( buf2);
 						//Change fix 2004/07/05
-						for( i=0; i<CHAR_STARTITEMARRAY; i++){ //检查装备中道具
+						for( i=0; i<CHAR_STARTITEMARRAY; i++){ //潰脤蚾掘笢耋撿
 							if( ITEM_CHECKINDEX( CHAR_getItemIndex( talker , i ) )){
 								if( CHAR_getInt( talker, PROFESSION_CLASS ) != 0
 									&& CHAR_getInt( talker, PROFESSION_CLASS ) != ITEM_getInt( CHAR_getItemIndex( talker , i ), ITEM_NEEDPROFESSION) 
 									&& ITEM_getInt( CHAR_getItemIndex( talker , i ), ITEM_NEEDPROFESSION) > 0 ){
 									p_class = 1;
-									CHAR_talkToCli( talker, -1, "请先把职业装备通通卸下！", CHAR_COLORWHITE);
+									CHAR_talkToCli( talker, -1, "③珂參眥珛蚾掘籵籵迠狟ㄐ", CHAR_COLORWHITE);
 									break;
 								}
 							}
 						}
 						if( p_class == 0)
 						{
-							print(" ====清除职业==== ");
+							print(" ====ь壺眥珛==== ");
 							
-							// 还原点数	
+							// 遜埻萸杅	
 							//if( PROFESSION_RESTORE_POINT( talker ) != 1 )	return FALSE;
 							
-							// 设定职业归零
+							// 扢隅眥珛寥錨
 							CHAR_setInt( talker, PROFESSION_CLASS, p_class );	
 #ifdef _CHANNEL_MODIFY
 							if(CHAR_getInt(talker,PROFESSION_CLASS) > 0){
@@ -2036,26 +2036,26 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 							}
 #endif
 							
-							// 设定职业等级 0
+							// 扢隅眥珛脹撰 0
 							CHAR_setInt( talker, PROFESSION_LEVEL, 0 );
 							
-							// 技能点数归零
+							// 撮夔萸杅寥錨
 							CHAR_setInt(talker, PROFESSION_SKILL_POINT, 0 );
 							
-							// 还原抗性
+							// 遜埻蕨俶
 							for( i=0; i<3; i++ )
 								CHAR_setInt( talker, PROFESSION_FIRE_R+i, /*CHAR_getInt( toindex, PROFESSION_FIRE_R+i) + value*/0 );
 							
-							// 还原巫师MP上限
+							// 遜埻拵呇MP奻癹
 							CHAR_setInt( talker , CHAR_MAXMP , 100 );
 							
-							// 删除所有技能
+							// 刉壺垀衄撮夔
 							CHAR_CHAT_DEBUG_delsk( talker, "all" );
 							
 							// ?? Andy add
 							CHAR_setInt( talker , ATTACHPILE, 0);
 							
-							// 清除任务旗标
+							// ь壺�恄鮿麇�
 							NPC_NowEndEventSetFlgCls( talker, 145);
 							NPC_NowEndEventSetFlgCls( talker, 146);
 							NPC_NowEndEventSetFlgCls( talker, 147);					
@@ -2069,7 +2069,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					}
 
 #ifdef _ANGEL_SUMMON
-					// 完成召唤任务
+					// 俇傖欸遢�恄�
 					if( NPC_Util_GetStrFromStrWithDelim( buf, "MISSIONOVER",
 						buf2, sizeof( buf2)) != NULL)
 					{
@@ -2084,20 +2084,20 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 						{
 							char msg[1024];
 							
-							print(" ====完成召唤任务==== ");
+							print(" ====俇傖欸遢�恄�==== ");
 
 							CHAR_setInt( talker, CHAR_HEROCNT, 
 								CHAR_getInt( talker, CHAR_HEROCNT)+1 );
 							getMissionNameInfo( talker, nameinfo);
 							saacproto_ACMissionTable_send( acfd, MISSION_HERO_COMPLETE, 4, nameinfo, "");
-							sprintf( msg, " 完成任务 i:%d m:%d %s ", mindex, mission, nameinfo);
+							sprintf( msg, " 俇傖�恄� i:%d m:%d %s ", mindex, mission, nameinfo);
 							print( msg);
 							LogAngel( msg );
 						}
 						
 					}
 
-					// 清除召唤任务
+					// ь壺欸遢�恄�
 					if( NPC_Util_GetStrFromStrWithDelim( buf, "MISSIONCLEAN",
 						buf2, sizeof( buf2)) != NULL)
 					{
@@ -2110,7 +2110,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 						if( mission == missiontable[mindex].mission )
 						{
-							print(" ====清除召唤任务==== ");
+							print(" ====ь壺欸遢�恄�==== ");
 
 							getMissionNameInfo( talker, nameinfo);
 							saacproto_ACMissionTable_send( acfd, mindex, 3, nameinfo, "");
@@ -2129,11 +2129,11 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					!= NULL){
 						NPC_EventWarpNpc(meindex,token2);
 				}
-				/*--戚矢□斥互丐月桦宁反示正件它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 #ifdef _NEWEVENT
 #else
 				if(strstr( buf, "ThanksMsg2") != NULL){
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCTHANK,
@@ -2146,7 +2146,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 #ifdef _NEWEVENT
 		case 81:
-			//print(" 81_答应? ");
+			//print(" 81_湘茼? ");
 
 			work = CHAR_getWorkInt( talker, CHAR_WORKSHOPRELEVANTTRD);
 			work = work % 100;
@@ -2213,9 +2213,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 					strcpysafe( token,sizeof( buf2), buf2);
 				}
 
-				/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, "ThanksMsg2") != NULL){
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCTHANK,
@@ -2236,10 +2236,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				work++;
 				sprintf( tmp, "ThanksMsg%d", work);
 
-				/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, tmp) != NULL) {
 						
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_ACCTHANK,
@@ -2258,15 +2258,15 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 			break;
 
 		case 88:
-			/*--失弁本皿玄及--*/
-			/*--丐曰互午丹丢永本□斥--*/
-			/*--矢永玄及  迕--*/
+			/*--囮袲掛鏤哱摯--*/
+			/*--堣堇誑敁竣隍蚗掛↓喇--*/
+			/*--妐蚗哱摯  暵--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "ThanksMsg",
 												buf2, sizeof( buf2) )
 			 != NULL)
 			{
 				strcpysafe( token, sizeof( buf2), buf2);
-				/*--奶矛件玄  白仿弘毛本永玄--*/
+				/*--騷穫璃哱  啞溘精禱掛蚗哱--*/
 				if(NPC_AcceptDel( meindex, talker,1) == FALSE){
 					return ;
 				}
@@ -2293,7 +2293,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 													buf2, sizeof( buf2))
 				!=NULL)
 				{
-					/*--仇仇引匹  凶日｝    毛晓仆月---*/
+					/*--喫喫竘ぁ  倜�掁�    禱窀ど堎---*/
 					if( CHAR_getInt( talker, CHAR_CHARM) < 100 && EvNo > 0 ){
 						if(CHAR_getInt( talker, CHAR_CHARM) + atoi(buf2) > 100){
 							CHAR_setInt( talker, CHAR_CHARM,100);
@@ -2326,9 +2326,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 			work = work + ( i * 100);
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTTRD, work);
 
-			/*--戚矢□斥互丐月桦宁反示正件它奶件玉它及正奶皿毛井尹月--*/
+			/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 			if(strstr( buf, "NomalWindowMsg2") != NULL) {
-				/*仇仇匹霜耨允月*/
+				/*喫喫ぁ邞嚭埰堎*/
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 							WINDOW_BUTTONTYPE_NEXT,
 							CHAR_WINDOWTYPE_WINDOWEVENT_STARTMSG,
@@ -2350,9 +2350,9 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 									 buf2, sizeof( buf2) ) != NULL)
 					strcpysafe( token,sizeof( buf2), buf2);
 
-				/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, "NomalWindowMsg2") != NULL) {
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_STARTMSG,
@@ -2370,10 +2370,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				}
 				work++;
 				sprintf( tmp, "NomalWindowMsg%d", work);
-				/*--戚矢□斥互丐月桦宁反示正件方它奶件玉它及正奶皿毛井尹月--*/
+				/*--べ妐↓喇誑堣堎鳹譴毀尨淏璃源坳騷璃迶坳摯淏騷鏤禱凝窇堎--*/
 				if(strstr( buf, tmp) != NULL) {
 					
-					/*仇仇匹霜耨允月*/
+					/*喫喫ぁ邞嚭埰堎*/
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 								WINDOW_BUTTONTYPE_NEXT,
 								CHAR_WINDOWTYPE_WINDOWEVENT_STARTMSG,
@@ -2383,10 +2383,10 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				}else{
 					int fd = getfdFromCharaIndex( talker);
 					char token2[14*50];
-					/*--仇仇匹｝失奶  丞卅升及馨笛毛垫丹--*/
+					/*--喫喫ぁ��囮騷  堜埵汔摯黹萃禱菜竣--*/
 					if(NPC_AcceptDel( meindex, talker,0) == FALSE) return;
 	
-					/*白仿弘毛本永玄仄化中木壬｝本永玄允月--*/
+					/*啞溘精禱掛蚗哱媃趙笢躂�氿�掛蚗哱埰堎--*/
 					if( EvNo != -1) NPC_NowEventSetFlg( talker, EvNo);
 						
 					if(NPC_Util_GetStrFromStrWithDelim( buf,"NpcWarp",
@@ -2394,7 +2394,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 								NPC_EventWarpNpc(meindex,token2);
 					}
 					
-					//白仿弘毛  化月
+					//啞溘精禱  趙堎
 					if(NPC_Util_GetStrFromStrWithDelim( buf, "EndSetFlg", 
 										buf2, sizeof( buf2) )!=NULL)
 					{
@@ -2410,7 +2410,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 							NPC_EventSetFlg( talker, atoi( buf3));
 						}
 					}
-					//奶矛件玄白仿弘毛壅允
+					//騷穫璃哱啞溘精禱觛埰
 					if( NPC_Util_GetStrFromStrWithDelim( buf, "CleanFlg",
 							 buf2, sizeof( buf2)) != NULL) {
 						 	char buf3[16];
@@ -2437,7 +2437,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 #endif
 		  case 10:
 			  
-			/*--矢永玄互中匀天中及凛及丢永本□斥--*/
+			/*--妐蚗哱誑笢埱毞笢摯鄹摯隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "PetFullMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -2452,7 +2452,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 
 	  case 11:
-			/*--白仿弘毛壅允午五及丢永本□斥--*/
+			/*--啞溘精禱觛埰敁拻摯隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "CleanMainMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -2463,7 +2463,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 			}
 		break;
 	  case 12:
-			/*--白仿弘毛壅仄凶  及永本□斥--*/
+			/*--啞溘精禱觛媃倜  摯蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "CleanFlgMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -2484,7 +2484,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 
 	  case 13:
-			/*--云嗯互中匀天中及丢永本□斥--*/
+			/*--堁鉣誑笢埱毞笢摯隍蚗掛↓喇--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "StoneFullMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -2494,7 +2494,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 		
 		 case 14:
-			/*--云嗯互凶曰卅中丢永本□斥--*/
+			/*--堁鉣誑倜堇埵笢隍蚗掛↓喇--*/
 					if( NPC_Util_GetStrFromStrWithDelim( buf, "StoneLessMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -2504,7 +2504,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 	}
 
-	/*仇仇匹霜耨允月*/
+	/*喫喫ぁ邞嚭埰堎*/
 #ifdef _NEWEVENT
 	if(num != 8)
 #endif
@@ -2517,7 +2517,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 }
 
 /*--------------------------------------
- *奶矛件玄迕及失奶  丞毛馨笛允月
+ *騷穫璃哱暵摯囮騷  堜禱黹萃埰堎
  ---------------------------------------*/
 BOOL NPC_EventAdd(int meindex,int talker,int mode)
 {
@@ -2534,20 +2534,20 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	int evcnt;
 	int b_flg = 0;
 
-	/*--涩烂白央奶伙  卞踏中化丐月椭瘀毛  凶仄化中月手及毛  五请允--*/
+	/*--优擭啞栝騷鳴  勗怳笢趙堣堎邳贀禱  倜媃趙笢堎忒摯禱  拻③埰--*/
 	evcnt = NPC_EventFile( meindex, talker, buff);
 
 	if(evcnt == -1) return FALSE;
 
 //	if(NPC_EventFile( meindex, talker, buff) == FALSE) return FALSE;
 
-	/*--失奶  丞及醒毛民尼永弁--*/
+	/*--囮騷  堜摯倳禱鏍攝蚗袲--*/
 	if(NPC_ItemFullCheck( meindex, talker, buff, mode, evcnt) == FALSE){
 		NPC_MsgDisp( meindex, talker, 4);
 		return FALSE;
 	}
 
-	/*--云嗯民尼永弁卞  月--*/
+	/*--堁鉣鏍攝蚗袲勗  堎--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "DelStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -2562,7 +2562,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	}
 
 
-	/*--矢永玄及  毛馨笛允月--*/
+	/*--妐蚗哱摯  禱黹萃埰堎--*/
 	if((NPC_Util_GetStrFromStrWithDelim( buff, "pet_skill", buff2, sizeof( buff2) )
 	 !=NULL) && mode == 0 ){
 		if(mode == 0) {
@@ -2574,7 +2574,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	
 	if(mode == 2) mode = 0;
 	
-	/*--矢永玄毛馨笛允月---*/
+	/*--妐蚗哱禱黹萃埰堎---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "GetPet", buff2, sizeof( buff2) )
 	 !=NULL)
 	{	
@@ -2588,7 +2588,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 		}
 	}
 
-	// Robin add 从NPC取宠物蛋
+	// Robin add 植NPC�○駘齔�
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "GetEgg", buff2, sizeof( buff2) )
 	 !=NULL)
 	{	
@@ -2634,7 +2634,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 		}
 	}
 
-	/*--云嗯毛潸月---*/
+	/*--堁鉣禱噁堎---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "DelStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -2645,14 +2645,14 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 
 		CHAR_setInt(talker,CHAR_GOLD,CHAR_getInt( talker, CHAR_GOLD) - stone);
 
-		/*--由仿丢□正霜曰--*/
+		/*--蚕溘隍↓淏邞堇--*/
 		CHAR_send_P_StatusString( talker, CHAR_P_STRING_GOLD);
-		sprintf(token, "付出%d的stone。", stone);
+		sprintf(token, "葆堤%d腔stone﹝", stone);
 		CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 	}
 
 
-	/*--仿件母丞失奶  丞---*/
+	/*--溘璃譫堜囮騷  堜---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "GetRandItem", buf, sizeof( buf) ) != NULL ){
 		j=1;
 		while( getStringFromIndexWithDelim( buf , "," , j, buff2, sizeof( buff2)) != FALSE ){
@@ -2663,11 +2663,11 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	}
 
 
-	/*--  骚及失奶  丞必永玄--*/
+	/*--  玊摯囮騷  堜斛蚗哱--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "GetItem", buf, sizeof( buf)) != NULL ){
 		if(mode == 0) {
 			j = 1;
-			/*--窒蜊及失奶  丞毛  允井＂--*/
+			/*--笰蠀摯囮騷  堜禱  埰凝ㄑ--*/
 			while(getStringFromIndexWithDelim( buf, "," , j, buff2, sizeof(buff2)) !=FALSE ){
 				j++;
 			}
@@ -2704,14 +2704,14 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	if( (NPC_Util_GetStrFromStrWithDelim( buff, "GetRandItem", buf, sizeof( buf) )
 		!=NULL) && (rand_flg == 0) && mode == 0 )
 	{	
-		/*--民尼永弁   癫卞蝈    月井＂-*/
+		/*--鏍攝蚗袲   騍勗蠈    堎凝ㄑ-*/
 		for( i = CHAR_STARTITEMARRAY ; i < CHAR_MAXITEMHAVE ; i++ ){
 			itemindex=CHAR_getItemIndex( talker , i );
 			if( !ITEM_CHECKINDEX( itemindex) ){
 				kosuucnt++;
 			 }
 		}
-		/*--坞五互丐月井升丹井--*/
+		/*--昶拻誑堣堎凝汔竣凝--*/
 		if( kosuucnt == 0 ){
 			NPC_MsgDisp( meindex, talker, 4);
 			return FALSE;
@@ -2774,12 +2774,12 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 						if(NPC_EventDelPet( meindex, talker,i) == FALSE) return FALSE;
 						
 						petcnt++;
-						/*--隙烂蜊醒坌及矢永玄毛壅仄凶井升丹井＂--*/
+						/*--炩擭蠀倳覕摯妐蚗哱禱觛媃倜凝汔竣凝ㄑ--*/
 						if(cnt == petcnt) break;
 
 					}
 				}else{
-					/*--矢永玄毛绰轮允月醒毛隙烂仄化卅中及匹竟癫矢永玄毛蝈化壅允--*/
+					/*--妐蚗哱禱朝謫埰堎倳禱炩擭媃趙埵笢摯ぁ器騍妐蚗哱禱蠈趙觛埰--*/
 
 					int petindex;
 
@@ -2804,12 +2804,12 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 			}
 		
 		}else{
-			/*--手丹1蘸｝矢永玄毛  匀化中月井及民尼永弁毛垫丹--*/
+			/*--忒竣1梣��妐蚗哱禱  埱趙笢堎凝摯鏍攝蚗袲禱菜竣--*/
 			while(getStringFromIndexWithDelim( buff2, ",", j, work, sizeof( work))
 			!=FALSE)
 			{
 				j++;
-				/*--矢永玄及民尼永弁互反中匀化中月桦宁反域绎PET椭瘀毛民尼永弁允月 --*/
+				/*--妐蚗哱摯鏍攝蚗袲誑毀笢埱趙笢堎鳹譴毀郖秠PET邳贀禱鏍攝蚗袲埰堎 --*/
 				if(strstr( work, "PET") != NULL) {
 					if(strstr( work, "EV") != NULL) {
 						if(NPC_PetLvCheck( meindex, talker, work, 1) == FALSE) return FALSE;
@@ -2850,11 +2850,11 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 						if(NPC_EventDelPet( meindex, talker,i) == FALSE) return FALSE;
 						
 						petcnt++;
-						/*--隙烂蜊醒坌及矢永玄毛壅仄凶井升丹井＂--*/
+						/*--炩擭蠀倳覕摯妐蚗哱禱觛媃倜凝汔竣凝ㄑ--*/
 						if(cnt == petcnt) break;
 					}
 				}else{
-					/*--矢永玄毛绰轮允月醒毛隙烂仄化卅中及匹竟癫矢永玄毛蝈化壅允--*/
+					/*--妐蚗哱禱朝謫埰堎倳禱炩擭媃趙埵笢摯ぁ器騍妐蚗哱禱蠈趙觛埰--*/
 
 					int petindex;
 
@@ -2885,7 +2885,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 
 
 /*--------------------------------------
- *仿件母丞匹失奶  丞毛必永玄今六月
+ *溘璃譫堜ぁ囮騷  堜禱斛蚗哱踏鞠堎
  ------------------------------------ */
 BOOL NPC_RandItemGet(int meidex,int talker,int rand_j,char *buf)
 {
@@ -2896,7 +2896,7 @@ BOOL NPC_RandItemGet(int meidex,int talker,int rand_j,char *buf)
 	char token[128];
 
 	if(rand_j == 0) {
-		print("Event:由於０的介入，出现错误。");
+		print("Event:蚕黺ㄟ腔賡�諴炯鼘硒簊鞳�");
  		return FALSE;
  	}
  	
@@ -2909,7 +2909,7 @@ BOOL NPC_RandItemGet(int meidex,int talker,int rand_j,char *buf)
 
 	if(itemindex == -1) return FALSE;
 	
-	/*失奶  丞及馨笛(  涛失奶  丞  卞中木化仄引丹  */
+	/*囮騷  堜摯黹萃(  旽囮騷  堜  勗笢躂趙媃竘竣  */
 	ret = CHAR_addItemSpecificItemIndex( talker, itemindex);
 	if( ret < 0 || ret >= CHAR_MAXITEMHAVE ) {
 		print( "npc_exchangeman.c: additem error itemindex[%d]\n", itemindex);
@@ -2919,14 +2919,14 @@ BOOL NPC_RandItemGet(int meidex,int talker,int rand_j,char *buf)
 
 	if(itemindex != -1) {
 		LogItem(
-			CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+			CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 			CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemindex,
 #else
-			ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+			ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-			"EventAddItem(任务需求所得到的道具)",
+			"EventAddItem(�恄鵓駍鯤驧繭蔥警擰�)",
 			CHAR_getInt( talker,CHAR_FLOOR),
 			CHAR_getInt( talker,CHAR_X ),
  			CHAR_getInt( talker,CHAR_Y ),
@@ -2936,7 +2936,7 @@ BOOL NPC_RandItemGet(int meidex,int talker,int rand_j,char *buf)
 		);
 	}
 					
-	sprintf(token,"收下了%s",ITEM_getChar( itemindex, ITEM_NAME));
+	sprintf(token,"彶狟賸%s",ITEM_getChar( itemindex, ITEM_NAME));
 	CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 
 	CHAR_sendItemDataOne( talker, ret);
@@ -2946,7 +2946,7 @@ BOOL NPC_RandItemGet(int meidex,int talker,int rand_j,char *buf)
 
 
 /*----------------------------------------------------
- * 奶矛件玄
+ * 騷穫璃哱
  ----------------------------------------------------*/
 BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 {
@@ -2960,16 +2960,16 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	evcnt = NPC_EventFile( meindex, talker, buf);
 	if(evcnt == -1) return FALSE;
 
-	/*--涩烂白央奶伙  卞井井木化中月椭瘀毛  凶仄化中月手及毛  五请允--*/
+	/*--优擭啞栝騷鳴  勗凝凝躂趙笢堎邳贀禱  倜媃趙笢堎忒摯禱  拻③埰--*/
 //	if(NPC_EventFile(meindex,talker,buf)==FALSE) return FALSE;
 
-	/*--失奶  丞及醒毛民尼永弁--*/
+	/*--囮騷  堜摯倳禱鏍攝蚗袲--*/
 	if(NPC_ItemFullCheck( meindex, talker, buf, mode, evcnt) == FALSE){
 		NPC_MsgDisp( meindex, talker, 4);
 		return FALSE;
 	}
 	
-	/*--云嗯民尼永弁卞  月--*/
+	/*--堁鉣鏍攝蚗袲勗  堎--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "DelStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -2983,7 +2983,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--云嗯民尼永弁卞  月--*/
+	/*--堁鉣鏍攝蚗袲勗  堎--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetStone", buff2, sizeof( buff2) )!=NULL){
 		int stone;
 		stone = atoi(buff2);
@@ -2995,7 +2995,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--矢永玄及  毛馨笛允月--*/
+	/*--妐蚗哱摯  禱黹萃埰堎--*/
 	if((NPC_Util_GetStrFromStrWithDelim( buf, "pet_skill", buff2, sizeof( buff2) )
 	 !=NULL) && mode == 0 ){
 		if(mode == 0){
@@ -3005,7 +3005,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 		}
 	}
 
-	/*--矢永玄毛壅允---*/
+	/*--妐蚗哱禱觛埰---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "DelPet", buff2, sizeof( buff2) ) != NULL) {
 		char buf4[32];
 		char buf5[256];
@@ -3018,13 +3018,13 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 			getStringFromIndexWithDelim( buf5, ",",evcnt , buff2, sizeof( buff2));
 		
 		
-			/*--手丹1蘸｝矢永玄毛  匀化中月井及民尼永弁毛垫丹--*/
+			/*--忒竣1梣��妐蚗哱禱  埱趙笢堎凝摯鏍攝蚗袲禱菜竣--*/
 			while(getStringFromIndexWithDelim( buff2, "&", j, work, sizeof( work))
 			!=FALSE)
 			{
 				j++;
 				
-				/*--矢永玄及民尼永弁互反中匀化中月桦宁反域绎PET椭瘀毛民尼永弁允月 --*/
+				/*--妐蚗哱摯鏍攝蚗袲誑毀笢埱趙笢堎鳹譴毀郖秠PET邳贀禱鏍攝蚗袲埰堎 --*/
 				if(strstr( work, "PET") != NULL) {
 					if(strstr( work, "EV") != NULL) {
 						if(NPC_PetLvCheck( meindex, talker, work, 1) == FALSE) return FALSE;
@@ -3071,12 +3071,12 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 						if(NPC_EventDelPet( meindex, talker,i) == FALSE) return FALSE;
 						
 						petcnt++;
-						/*--隙烂蜊醒坌及矢永玄毛壅仄凶井升丹井＂--*/
+						/*--炩擭蠀倳覕摯妐蚗哱禱觛媃倜凝汔竣凝ㄑ--*/
 						if(cnt == petcnt) break;
 
 					}
 				}else{
-					/*--矢永玄毛绰轮允月醒毛隙烂仄化卅中及匹竟癫矢永玄毛蝈化壅允--*/
+					/*--妐蚗哱禱朝謫埰堎倳禱炩擭媃趙埵笢摯ぁ器騍妐蚗哱禱蠈趙觛埰--*/
 
 					int petindex;
 
@@ -3104,12 +3104,12 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 		
 		}else{
 		
-			/*--手丹1蘸｝矢永玄毛  匀化中月井及民尼永弁毛垫丹--*/
+			/*--忒竣1梣��妐蚗哱禱  埱趙笢堎凝摯鏍攝蚗袲禱菜竣--*/
 			while(getStringFromIndexWithDelim( buff2, ",", j, work, sizeof( work))
 			!=FALSE)
 			{
 				j++;
-				/*--矢永玄及民尼永弁互反中匀化中月桦宁反域绎PET椭瘀毛民尼永弁允月 --*/
+				/*--妐蚗哱摯鏍攝蚗袲誑毀笢埱趙笢堎鳹譴毀郖秠PET邳贀禱鏍攝蚗袲埰堎 --*/
 				if(strstr( work, "PET") != NULL) {
 					if(strstr( work, "EV") != NULL) {
 						if(NPC_PetLvCheck( meindex, talker, work, 1) == FALSE) return FALSE;
@@ -3154,12 +3154,12 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 						if(NPC_EventDelPet( meindex, talker,i) == FALSE) return FALSE;
 						
 						petcnt++;
-						/*--隙烂蜊醒坌及矢永玄毛壅仄凶井升丹井＂--*/
+						/*--炩擭蠀倳覕摯妐蚗哱禱觛媃倜凝汔竣凝ㄑ--*/
 						if(cnt == petcnt) break;
 
 					}
 				}else{
-					/*--矢永玄毛绰轮允月醒毛隙烂仄化卅中及匹竟癫矢永玄毛蝈化壅允--*/
+					/*--妐蚗哱禱朝謫埰堎倳禱炩擭媃趙埵笢摯ぁ器騍妐蚗哱禱蠈趙觛埰--*/
 
 					int petindex;
 
@@ -3189,7 +3189,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	
 
 
-	/*--云嗯毛丐仆月---*/
+	/*--堁鉣禱堣ど堎---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3198,15 +3198,15 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 
 		stone = atoi(buff2);
 		CHAR_setInt(talker,CHAR_GOLD,CHAR_getInt( talker, CHAR_GOLD) + stone);
-		/*--由仿丢□正霜曰--*/
+		/*--蚕溘隍↓淏邞堇--*/
 		CHAR_send_P_StatusString( talker, CHAR_P_STRING_GOLD);
 	
-		sprintf( token,"得到%d的stone", stone);
+		sprintf( token,"腕善%d腔stone", stone);
 		CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 	}
 
 
-	/*--矢永玄毛馨笛允月---*/
+	/*--妐蚗哱禱黹萃埰堎---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetPet", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3216,7 +3216,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 		}
 	}
 	
-	// Robin add 从NPC取宠物蛋
+	// Robin add 植NPC�○駘齔�
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetEgg", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3227,7 +3227,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 		}
 	}
 
-	/*--失奶  丞毛壅允--*/
+	/*--囮騷  堜禱觛埰--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "DelItem", buff2, sizeof( buff2) )	!= NULL){
 		if(strstr(buff2,"EVDEL") != NULL){
 			char work[256];
@@ -3258,7 +3258,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--云嗯毛潸月---*/
+	/*--堁鉣禱噁堎---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "DelStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3268,14 +3268,14 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 		stone = NPC_EventGetCost( meindex, talker, buff2);
 
 		CHAR_setInt(talker,CHAR_GOLD,CHAR_getInt( talker, CHAR_GOLD) - stone);
-		/*--由仿丢□正霜曰--*/
+		/*--蚕溘隍↓淏邞堇--*/
 		CHAR_send_P_StatusString( talker, CHAR_P_STRING_GOLD);
-		sprintf( token, "付出%d的stone。", stone);
+		sprintf( token, "葆堤%d腔stone﹝", stone);
 		CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 	}
 
 
-	/*--仿件母丞失奶  丞毛馨笛允月---*/
+	/*--溘璃譫堜囮騷  堜禱黹萃埰堎---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetRandItem", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3291,14 +3291,14 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--失奶  丞毛馨笛允月---*/
+	/*--囮騷  堜禱黹萃埰堎---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetItem", buff2, sizeof( buff2) )
 	!=NULL)
 	{
 		 NPC_EventAddItem( meindex, talker, buff2);
 	}
 
-	/*--由仿丢□正及霜耨--*/
+	/*--蚕溘隍↓淏摯邞嚭--*/
 	CHAR_complianceParameter( talker );
 	CHAR_send_P_StatusString( talker ,
 					CHAR_P_STRING_ATK|CHAR_P_STRING_DEF|
@@ -3313,7 +3313,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 
 
 /*--------------------------
- * 奶矛件玄矢永玄毛绰轮
+ * 騷穫璃哱妐蚗哱禱朝謫
  ---------------------------*/
 BOOL NPC_EventDelPet(int  meindex,int  talker, int petsel)
 {
@@ -3331,7 +3331,7 @@ BOOL NPC_EventDelPet(int  meindex,int  talker, int petsel)
 
 	if( CHAR_getInt( talker, CHAR_RIDEPET) == petsel ) {
 
-		//CHAR_talkToCli( talker, -1, "骑乘中的宠物无法交出！", CHAR_COLORYELLOW );
+		//CHAR_talkToCli( talker, -1, "る傚笢腔唾昜拸楊蝠堤ㄐ", CHAR_COLORYELLOW );
     	//return	FALSE;
 
 		CHAR_setInt( talker, CHAR_RIDEPET, -1);
@@ -3342,27 +3342,27 @@ BOOL NPC_EventDelPet(int  meindex,int  talker, int petsel)
 	}
 	print(" EventDelPet ");
 
-	/*--公及平乓仿互爵    卅日｝矢永玄毛丹日内蔽  --*/
+	/*--鼠摯す籤溘誑橋    埵�掁�妐蚗哱禱竣�桫痡�  --*/
 	if( CHAR_getWorkInt( CONNECT_getCharaindex( fd),
    	                     CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) return FALSE;
-	/*--公及矢永玄互田玄伙井升丹井及民尼永弁--*/
+	/*--鼠摯妐蚗哱誑泬哱鳴凝汔竣凝摯鏍攝蚗袲--*/
 	defpet = CHAR_getInt( talker, CHAR_DEFAULTPET);
 	if(defpet == petsel){
 		CHAR_setInt( talker, CHAR_DEFAULTPET, -1);
 		lssproto_KS_send( fd, -1, TRUE);
 	}
 
-	snprintf( msgbuf,sizeof( msgbuf), "交出%s。",
+	snprintf( msgbuf,sizeof( msgbuf), "蝠堤%s﹝",
 									CHAR_getChar( petindex, CHAR_NAME));
 	CHAR_talkToCli( talker, -1, msgbuf,  CHAR_COLORWHITE);
 
-	// 矢永玄毛澎  仄凶夫弘
+	// 妐蚗哱禱鱗  媃倜痲精
 	LogPet(
-		CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+		CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 		CHAR_getChar( talker, CHAR_CDKEY ),
 		CHAR_getChar( petindex, CHAR_NAME),
 		CHAR_getInt( petindex, CHAR_LV),
-		"EvnetDell(任务删除)",
+		"EvnetDell(�恄鮸噫�)",
 		CHAR_getInt( talker,CHAR_FLOOR),
 		CHAR_getInt( talker,CHAR_X ),
 		CHAR_getInt( talker,CHAR_Y ),
@@ -3370,13 +3370,13 @@ BOOL NPC_EventDelPet(int  meindex,int  talker, int petsel)
 	);
 
 
-	/*   切  井日壅允 */
+	/*   з  凝�殏梊� */
 	CHAR_setCharPet( talker, petsel, -1);
 
 	CHAR_endCharOneArray( petindex );
 
 	snprintf( szPet, sizeof( szPet ), "K%d", petsel);
-	// 蕙仄中矢永玄旦  □正旦霜曰勾仃月
+	// 犍媃笢妐蚗哱筒  ↓淏筒邞堇僑崹堎
 	CHAR_sendStatusString( talker, szPet );
 
 	return TRUE;
@@ -3385,7 +3385,7 @@ BOOL NPC_EventDelPet(int  meindex,int  talker, int petsel)
 
 
 /*----------------------------
- *  矢永玄毛馨笛允月
+ *  妐蚗哱禱黹萃埰堎
  ------------------------------*/
 BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)
 {
@@ -3396,7 +3396,7 @@ BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)
 	int	i;
 	int petindex;
 
-	/*--矢永玄  互钒中化中月井及民尼永弁--*/
+	/*--妐蚗哱  誑楣笢趙笢堎凝摯鏍攝蚗袲--*/
 	for( i = 0 ;i < CHAR_MAXPETHAVE ; i++) {
 		petindex = CHAR_getCharPet( talker, i);
 		if( petindex == -1  )  break;
@@ -3405,7 +3405,7 @@ BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)
 	if(i == CHAR_MAXPETHAVE) return FALSE;
 
 
-	/* 娄醒及ID井日index毛潸   */
+	/* 礎倳摯ID凝�掂ndex禱噁   */
 	if(strstr(buff2,",") != NULL){
 		char buf2[16];
 		while(getStringFromIndexWithDelim( buff2, ",", i, buf2, sizeof( buf2))
@@ -3448,17 +3448,17 @@ BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)
 
 	snprintf( msgbuf, sizeof( msgbuf ), "W%d", i );
 	CHAR_sendStatusString( talker, msgbuf );
-	snprintf( msgbuf,sizeof( msgbuf), "拿到%s。",
+	snprintf( msgbuf,sizeof( msgbuf), "鏽善%s﹝",
 								CHAR_getChar(petindex,CHAR_NAME));
 	CHAR_talkToCli( talker, -1, msgbuf,  CHAR_COLORWHITE);
 
-	// 矢永玄毛澎卞  木凶夫弘
+	// 妐蚗哱禱鱗勗  躂倜痲精
 	LogPet(
-		CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+		CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 		CHAR_getChar( talker, CHAR_CDKEY ),
 		CHAR_getChar( petindex, CHAR_NAME),
 		CHAR_getInt( petindex, CHAR_LV),
-		"EventGet(任务得到)",
+		"EventGet(�恄騊繭�)",
 		CHAR_getInt( talker,CHAR_FLOOR),
 		CHAR_getInt( talker,CHAR_X ),
 		CHAR_getInt( talker,CHAR_Y ),
@@ -3468,7 +3468,7 @@ BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)
 
 
 	if(mode == 0) {
-		/*--奶矛件玄迕及矢永玄--*/
+		/*--騷穫璃哱暵摯妐蚗哱--*/
 		CHAR_setInt( petindex, CHAR_ENDEVENT, 1);
 	}
 
@@ -3476,7 +3476,7 @@ BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)
 
 }
 
-// Robin add NPC给宠物蛋
+// Robin add NPC跤唾昜粥
 BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 {
 	int	ret;
@@ -3490,9 +3490,9 @@ BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 	char buf2[32];
 	char buf3[32];
 
-	print("\n 给蛋啦!!:%s ", buff2);
+	print("\n 跤粥徽!!:%s ", buff2);
 
-	/*--矢永玄  互钒中化中月井及民尼永弁--*/
+	/*--妐蚗哱  誑楣笢趙笢堎凝摯鏍攝蚗袲--*/
 	for( i = 0 ;i < CHAR_MAXPETHAVE ; i++) {
 		petindex = CHAR_getCharPet( talker, i);
 		if( petindex == -1  )  break;
@@ -3504,8 +3504,8 @@ BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 	}
 
 
-	/* 娄醒及ID井日index毛潸   */
-	if(strstr(buff2,",") != NULL){ // 是否为随机给与
+	/* 礎倳摯ID凝�掂ndex禱噁   */
+	if(strstr(buff2,",") != NULL){ // 岆瘁峈呴儂跤迵
 		while(getStringFromIndexWithDelim( buff2, ",", i, buf2, sizeof( buf2))
 		!= FALSE) {
 			i++;
@@ -3519,14 +3519,14 @@ BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 	}
 
 	getStringFromIndexWithDelim( buf2, ";", 1, buf3, sizeof( buf3));
-	enemyid = atoi( buf3); // 宠物蛋ID
+	enemyid = atoi( buf3); // 唾昜粥ID
 	getStringFromIndexWithDelim( buf2, ";", 2, buf3, sizeof( buf3));
-	petid = atoi( buf3); // 孵出的宠物ID
+	petid = atoi( buf3); // 痿堤腔唾昜ID
 	getStringFromIndexWithDelim( buf2, ";", 3, buf3, sizeof( buf3));
-	raise = atoi( buf3); //   养次数
+	raise = atoi( buf3); //   欱棒杅
 
 
-	// 将enemyid转成enemybaseid
+	// 蔚enemyid蛌傖enemybaseid
 	enemynum = ENEMY_getEnemyNum();
 	for( i = 0; i < enemynum; i ++ ) {
 		if( ENEMY_getInt( i, ENEMY_ID) == petid) {
@@ -3568,7 +3568,7 @@ BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 		return FALSE;
 	}
 
-	// 设为宠物蛋
+	// 扢峈唾昜粥
 	CHAR_setInt( petindex, CHAR_FUSIONBEIT, 1);
 	CHAR_setInt( petindex, CHAR_FUSIONCODE, -1);
 	CHAR_setInt( petindex, CHAR_FUSIONRAISE, raise);
@@ -3581,17 +3581,17 @@ BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 
 	snprintf( msgbuf, sizeof( msgbuf ), "W%d", i );
 	CHAR_sendStatusString( talker, msgbuf );
-	snprintf( msgbuf,sizeof( msgbuf), "拿到%s。",
+	snprintf( msgbuf,sizeof( msgbuf), "鏽善%s﹝",
 								CHAR_getChar(petindex,CHAR_NAME));
 	CHAR_talkToCli( talker, -1, msgbuf,  CHAR_COLORWHITE);
 
-	// 矢永玄毛澎卞  木凶夫弘
+	// 妐蚗哱禱鱗勗  躂倜痲精
 	LogPet(
-		CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+		CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 		CHAR_getChar( talker, CHAR_CDKEY ),
 		CHAR_getChar( petindex, CHAR_NAME),
 		CHAR_getInt( petindex, CHAR_LV),
-		"EventGetEgg(任务得到)",
+		"EventGetEgg(�恄騊繭�)",
 		CHAR_getInt( talker,CHAR_FLOOR),
 		CHAR_getInt( talker,CHAR_X ),
 		CHAR_getInt( talker,CHAR_Y ),
@@ -3601,7 +3601,7 @@ BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 
 
 	if(mode == 0) {
-		/*--奶矛件玄迕及矢永玄--*/
+		/*--騷穫璃哱暵摯妐蚗哱--*/
 		CHAR_setInt( petindex, CHAR_ENDEVENT, 1);
 	}
 
@@ -3611,7 +3611,7 @@ BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 
 
 /*---------------------------
- *  奶矛件玄  毛绰轮允月
+ *  騷穫璃哱  禱朝謫埰堎
  -----------------------------**/
 BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 {
@@ -3638,7 +3638,7 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 			kosuu = atoi( buf2);
 	 
 			if( breakflg != 1 )
-                NPC_ActionDoPileDelItem( talker, itemno, kosuu);//有堆叠的处理
+                NPC_ActionDoPileDelItem( talker, itemno, kosuu);//衄剽詁腔揭燴
             else{
 			    for( i =0 ; i < CHAR_MAXITEMHAVE ; i++ ){
 				    itemindex = CHAR_getItemIndex( talker , i );
@@ -3647,14 +3647,14 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 					    if(itemno == id) {
 						    cnt++;
 						    LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), // 平乓仿   
+							CHAR_getChar( talker, CHAR_NAME ), // す籤溘   
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  // 失奶  丞  寞 
+							ITEM_getInt( itemindex, ITEM_ID),  // 囮騷  堜  蠕 
 #endif
-							"EventDelItem(任务需求所收回的道具)",
+							"EventDelItem(�恄鵓駍鯤鱹梬媯警擰�)",
 							CHAR_getInt( talker, CHAR_FLOOR),
 							CHAR_getInt( talker, CHAR_X ),
  							CHAR_getInt( talker, CHAR_Y ),
@@ -3664,13 +3664,13 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 	     					);
 	 
 		    				if(breakflg == 1){
-			    			    sprintf(token,"%s 坏了",ITEM_getChar( itemindex, ITEM_NAME));
+			    			    sprintf(token,"%s 輓賸",ITEM_getChar( itemindex, ITEM_NAME));
 							    CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 							}else{
-							    sprintf(token,"交出%s",ITEM_getChar( itemindex, ITEM_NAME));
+							    sprintf(token,"蝠堤%s",ITEM_getChar( itemindex, ITEM_NAME));
 							    CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 							}
-						    //--失奶  丞毛坫诮--
+						    //--囮騷  堜禱詌睍--
 						    CHAR_setItemIndex( talker, i ,-1);
 						    ITEM_endExistItemsOne(itemindex);
 						    CHAR_sendItemDataOne( talker, i);
@@ -3684,21 +3684,21 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 			}
 		}
 		else{
-			/*--蓟氏分  寞及失奶  丞毛蓟请---*/
+			/*--撒庌煦  蠕摯囮騷  堜禱撒③---*/
 			for( j = 0 ;  j < CHAR_MAXITEMHAVE ; j++){
 				itemindex = CHAR_getItemIndex( talker ,j);
 
 				if( ITEM_CHECKINDEX( itemindex)){
 					if( atoi( buff3) == ITEM_getInt( itemindex, ITEM_ID)) {
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-							"EventDelItem(任务需求所收回的道具)",
+							"EventDelItem(�恄鵓駍鯤鱹梬媯警擰�)",
 							CHAR_getInt( talker,CHAR_FLOOR),
 							CHAR_getInt( talker,CHAR_X ),
 							CHAR_getInt( talker,CHAR_Y ),
@@ -3707,17 +3707,17 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 							ITEM_getInt( itemindex, ITEM_ID)
 						);
 						if(breakflg == 1){
-								sprintf(token,"%s 坏了",ITEM_getChar( itemindex, ITEM_NAME));
+								sprintf(token,"%s 輓賸",ITEM_getChar( itemindex, ITEM_NAME));
 							CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 						}else{
-							sprintf( token, "交出%s。", 
+							sprintf( token, "蝠堤%s﹝", 
 											ITEM_getChar( itemindex, ITEM_NAME));
 							CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 						}
-						/*--失奶  丞毛坫诮--*/
+						/*--囮騷  堜禱詌睍--*/
 						CHAR_setItemIndex( talker, j ,-1);
 						ITEM_endExistItemsOne( itemindex);
-						/*--由仿丢□正霜耨--*/
+						/*--蚕溘隍↓淏邞嚭--*/
 						CHAR_sendItemDataOne( talker, j);
 					}
 				}
@@ -3776,14 +3776,14 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 					if(itemno == id) {
 						cnt++;
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-							"EventDelItem(任务需求所收回的道具)",
+							"EventDelItem(�恄鵓駍鯤鱹梬媯警擰�)",
 							CHAR_getInt( talker, CHAR_FLOOR),
 							CHAR_getInt( talker, CHAR_X ),
  							CHAR_getInt( talker, CHAR_Y ),
@@ -3792,10 +3792,10 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 							ITEM_getInt( itemindex, ITEM_ID)
 						);
 						if(breakflg == 1){
-							sprintf(token,"%s 坏了",ITEM_getChar( itemindex, ITEM_NAME));
+							sprintf(token,"%s 輓賸",ITEM_getChar( itemindex, ITEM_NAME));
 							CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 						}else{
-							sprintf(token,"交出%s",ITEM_getChar( itemindex, ITEM_NAME));
+							sprintf(token,"蝠堤%s",ITEM_getChar( itemindex, ITEM_NAME));
 							CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 						}
 						CHAR_setItemIndex( talker, i ,-1);
@@ -3833,14 +3833,14 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 				if( ITEM_CHECKINDEX( itemindex)){
 					if( atoi( buff3) == ITEM_getInt( itemindex, ITEM_ID)) {
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-							"EventDelItem(任务需求所收回的道具)",
+							"EventDelItem(�恄鵓駍鯤鱹梬媯警擰�)",
 							CHAR_getInt( talker,CHAR_FLOOR),
 							CHAR_getInt( talker,CHAR_X ),
 							CHAR_getInt( talker,CHAR_Y ),
@@ -3849,10 +3849,10 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 							ITEM_getInt( itemindex, ITEM_ID)
 						);
 						if(breakflg == 1){
-							sprintf(token,"%s 坏了",ITEM_getChar( itemindex, ITEM_NAME));
+							sprintf(token,"%s 輓賸",ITEM_getChar( itemindex, ITEM_NAME));
 							CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 						}else{
-							sprintf( token, "交出%s。", 
+							sprintf( token, "蝠堤%s﹝", 
 										ITEM_getChar( itemindex, ITEM_NAME));
 							CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 						}
@@ -3871,7 +3871,7 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 
 
 /*----------------------
- * 奶矛件玄  毛馨笛]
+ * 騷穫璃哱  禱黹萃]
  -----------------------*/
 BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 {
@@ -3903,7 +3903,7 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 	
 				if(itemindex == -1) return FALSE;
 	
-				/*失奶  丞及馨笛(  涛失奶  丞  卞中木化仄引丹  */
+				/*囮騷  堜摯黹萃(  旽囮騷  堜  勗笢躂趙媃竘竣  */
 				ret = CHAR_addItemSpecificItemIndex( talker, itemindex);
 				if( ret < 0 || ret >= CHAR_MAXITEMHAVE ) {
 				    print("npc_exchange:ACCEPTadditem error itemindex[%d]\n",itemindex);
@@ -3913,14 +3913,14 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 
 				if(itemindex != -1) {
 					LogItem(
-						CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+						CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 						CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 						itemindex,
 #else
-	    				ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+	    				ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-						"EventAddItem(任务需求所得到的道具)",
+						"EventAddItem(�恄鵓駍鯤驧繭蔥警擰�)",
 						CHAR_getInt( talker, CHAR_FLOOR),
 						CHAR_getInt( talker, CHAR_X ),
 						CHAR_getInt( talker, CHAR_Y ),
@@ -3929,7 +3929,7 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 						ITEM_getInt( itemindex, ITEM_ID)
 					);
 				}
-				sprintf( token, "拿到%s。", ITEM_getChar( itemindex, ITEM_NAME));
+				sprintf( token, "鏽善%s﹝", ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 
 				CHAR_sendItemDataOne( talker, ret);
@@ -3939,7 +3939,7 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 	
 			if(itemindex == -1) return FALSE;
 
-			/*失奶  丞及馨笛(  涛失奶  丞  卞中木化仄引丹  */
+			/*囮騷  堜摯黹萃(  旽囮騷  堜  勗笢躂趙媃竘竣  */
 			ret = CHAR_addItemSpecificItemIndex( talker, itemindex);
 			if( ret < 0 || ret >= CHAR_MAXITEMHAVE ) {
 				print( "npc_exchange.c: ACCEPTadditem error itemindex[%d]\n", itemindex);
@@ -3949,14 +3949,14 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 
 			if(itemindex != -1) {
 				LogItem(
-				CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+				CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 				CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 				itemindex,
 #else
-	       		ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+	       		ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-				"EventAddItem(任务需求所得到的道具)",
+				"EventAddItem(�恄鵓駍鯤驧繭蔥警擰�)",
 				CHAR_getInt( talker, CHAR_FLOOR),
 				CHAR_getInt( talker, CHAR_X ),
  				CHAR_getInt( talker, CHAR_Y ),
@@ -3965,7 +3965,7 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 				ITEM_getInt( itemindex, ITEM_ID)
 			);
 			}
-			sprintf(token,"拿到%s。", ITEM_getChar( itemindex, ITEM_NAME));
+			sprintf(token,"鏽善%s﹝", ITEM_getChar( itemindex, ITEM_NAME));
 			CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 
 			CHAR_sendItemDataOne( talker, ret);
@@ -3977,7 +3977,7 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 
 
 /*---------------------------------
- *椭瘀毛  凶仄化中月及毛  五请允
+ *邳贀禱  倜媃趙笢堎摯禱  拻③埰
  ------------- ---------------------*/
 int NPC_EventFile(int meindex,int talker,char *arg)
 {
@@ -3989,33 +3989,33 @@ int NPC_EventFile(int meindex,int talker,char *arg)
 	int EvNo=0;
 	int evch;
 	
-	/*--涩烂白央奶伙毛  心  戈--*/
+	/*--优擭啞栝騷鳴禱  陑  資--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {
 
 		print("GetArgStrErr");
 		return -1;
 	}
 
-	/*涩烂白央奶伙毛坌喃允月*/
+	/*优擭啞栝騷鳴禱覕鄎埰堎*/
 	while(getStringFromIndexWithDelim( argstr, "EventEnd", i, buf,sizeof( buf))
 	!= FALSE)
 	{
 		CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 0);
 		i++;
-		/*--奶矛件玄瓜件田□毛必永玄--*/
+		/*--騷穫璃哱圖璃泬↓禱斛蚗哱--*/
 		NPC_Util_GetStrFromStrWithDelim( buf, "EventNo", buff2,sizeof( buff2) );
 		EvNo = atoi( buff2);
 
-		/*--白仿弘民尼永弁毛垫丹［允匹卞｝仇及奶矛件玄互蔽  仄化中月桦宁反戚尺--*/
+		/*--啞溘精鏍攝蚗袲禱菜竣�觚岊弗憯�喫摯騷穫璃哱誑敖  媃趙笢堎鳹譴毀べ喜--*/
 		if(NPC_EventCheckFlg( talker, EvNo) == TRUE) continue;
 
-		/*--平□伐□玉及民尼永弁毛垫丹--*/
+		/*--す↓極↓迶摯鏍攝蚗袲禱菜竣--*/
 		if(NPC_Util_GetStrFromStrWithDelim( buf,"Pet_Name", buff2,sizeof( buff2) ) 
 		 != NULL)
 		{
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 1);
 		}
-		/*--平□伐□玉及民尼永弁毛垫丹--*/
+		/*--す↓極↓迶摯鏍攝蚗袲禱菜竣--*/
 		if(NPC_Util_GetStrFromStrWithDelim( buf,"KeyWord", buff2,sizeof( buff2) ) 
 		 != NULL)
 		{
@@ -4025,7 +4025,7 @@ int NPC_EventFile(int meindex,int talker,char *arg)
 		evch = NPC_ExChangeManEventCheck( meindex, talker, buf);
 
 		if(evch != -1) {
-		/*--奶矛件玄椭瘀及民尼永弁--*/
+		/*--騷穫璃哱邳贀摯鏍攝蚗袲--*/
 //		if(NPC_ExChangeManEventCheck( meindex, talker, buf) == TRUE) {
 			strcpysafe(arg, sizeof( buf) ,buf);
 			return evch;
@@ -4038,7 +4038,7 @@ int NPC_EventFile(int meindex,int talker,char *arg)
 
 
 /*---------------------------------
- * 失奶  丞及民尼永弁分仃毛垫丹
+ * 囮騷  堜摯鏍攝蚗袲煦崹禱菜竣
  -----------------------------------*/
 BOOL NPC_EventReduce(int meindex,int talker,char *buf)
 {
@@ -4063,7 +4063,7 @@ BOOL NPC_EventReduce(int meindex,int talker,char *buf)
 		if( ITEM_CHECKINDEX( itemindex) ){
 			id = ITEM_getInt( itemindex ,ITEM_ID);
 			if(itemno == id){
-				//change add 增加对堆叠的判断
+				//change add 崝樓勤剽詁腔瓚剿
 				int pilenum = ITEM_getInt( itemindex, ITEM_USEPILENUMS);
 				if( pilenum )
 					cnt+=pilenum;
@@ -4082,7 +4082,7 @@ BOOL NPC_EventReduce(int meindex,int talker,char *buf)
 }
 
 /*----------------------------------
- *矢永玄卞旦平伙毛创尹今六月
+ *妐蚗哱勗筒す鳴禱斐窇踏鞠堎
  ----------------------------------*/
 void NPC_EventPetSkill( int meindex, int talker, char *data)
 {
@@ -4108,15 +4108,15 @@ void NPC_EventPetSkill( int meindex, int talker, char *data)
 
 	if(evcnt == -1) return;
 
-	/*--涩烂白央奶伙  卞妪井k伊  中月椭瘀毛  凶仄化中月手及毛  五请允--*/
+	/*--优擭啞栝騷鳴  勗濆凝k畛  笢堎邳贀禱  倜媃趙笢堎忒摯禱  拻③埰--*/
 //	if(NPC_EventFile( meindex, talker, argstr) == FALSE) return ;
 
-	/*弁仿奶失件玄井日忒匀化仁月犯□正--*/
-	/*升及  毛尹日氏分井＂(蓟    寞)  升及矢永玄井＂(蓟    寞)  
-	升及旦夫永玄井＂(蓟    寞)  袄蟾*/
+	/*袲溘騷囮璃哱凝�氪耽�趙�彸繚腹灊�--*/
+	/*汔摯  禱窇�梛牁祩恐�(撒    蠕)  汔摯妐蚗哱凝ㄑ(撒    蠕)  
+	汔摯筒痲蚗哱凝ㄑ(撒    蠕)  偯騤*/
 	makeStringFromEscaped( data);
 
-	/*--犯□正及蕊曰坌仃--*/
+	/*--溢↓淏摯�擸雌倠�--*/
 	getStringFromIndexWithDelim( data, "|", 1, buf, sizeof( buf));
 	skill = atoi( buf);
 	getStringFromIndexWithDelim( data, "|", 2, buf, sizeof( buf));
@@ -4126,7 +4126,7 @@ void NPC_EventPetSkill( int meindex, int talker, char *data)
 	getStringFromIndexWithDelim( data, "|", 4, buf, sizeof( buf));
 	cost = atoi( buf);
 
-	/*--旦平伙    毛必永玄允月--*/
+	/*--筒す鳴    禱斛蚗哱埰堎--*/
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "pet_skill", 
 									msg, sizeof( msg)) != NULL) 
 	{
@@ -4143,19 +4143,19 @@ void NPC_EventPetSkill( int meindex, int talker, char *data)
 		return;
 	}
 
-	/*--公及平乓仿互爵    卅日｝矢永玄毛丹日内蔽  --*/
+	/*--鼠摯す籤溘誑橋    埵�掁�妐蚗哱禱竣�桫痡�  --*/
 	if( CHAR_getWorkInt( CONNECT_getCharaindex( fd),
                          CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) return ;
 
-	/*--矢永玄卞  毛创尹今六月--*/
+	/*--妐蚗哱勗  禱斐窇踏鞠堎--*/
 	CHAR_setPetSkill( petindex, slot, skillID);
 			
-	/*--云嗯毛蛹日允--*/
+	/*--堁鉣禱蚍�梊�--*/
 	CHAR_setInt( talker, CHAR_GOLD, (CHAR_getInt( talker, CHAR_GOLD) - cost));
 
 	snprintf( msgbuf, sizeof( msgbuf ), "W%d",pet-1);
 
-	// 蕙仄中矢永玄及  犯□正毛霜曰勾仃月
+	// 犍媃笢妐蚗哱摯  溢↓淏禱邞堇僑崹堎
 	CHAR_sendStatusString( talker, msgbuf );
 			
 	CHAR_sendStatusString( talker, "P");
@@ -4164,7 +4164,7 @@ void NPC_EventPetSkill( int meindex, int talker, char *data)
 
 
 /*----------------------------------------
- *  失奶  丞互中匀天中井升丹井及民尼永弁
+ *  囮騷  堜誑笢埱毞笢凝汔竣凝摯鏍攝蚗袲
 ----------- ------------------------------*/
 BOOL NPC_ItemFullCheck(int meindex,int talker,char *buf,int mode,int evcnt)
 {

@@ -19,29 +19,29 @@
 #include "battle.h"
 #include "npc_bus.h"
 #include "char_talk.h"
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
 #include "pet_skill.h"
 #endif
 
-#define TRADE_WAIT		"请稍候，连络%s中···"
-#define TRADE_NONE		"前方什麽人也没有！"
-#define	TRADE_OVERPLAYER	"前方不只一位玩家喔！"
-#define	TRADE_NOWILL		"真是抱歉，对方不愿意跟你交易！"
-#define	TRADE_TRADING		"%s正在与其他人交易···"
-#define	TRADE_VANISHITEM	"丢在地上会消失的物品无法交易！"
-#define TRADE_PETFULL		"%s宠物栏已满，交易取消！"
-#define	TRADE_ITEMFULL		"%s物品栏已满，请整理後再交易～"
-#define TRADE_CANCEL		"%s将交易取消了！"
-#define TRADE_POOR		"%s钱不够，无法交易！"
-#define	TRADE_RICH		"%s金钱交易请勿超过一百万！"
-#define TRADE_TOORICH		"%s金钱将会超过一百万！"
-#define TRADE_POORLV		"%s等级不够，无法照顾交易後的宠物！"
-#define	TRADE_LOCK		"交易锁定···"
-#define	TRADE_SUCCESS		"交易ＯＫ！"
-#define	TRADE_FAILED		"交易失败！"
-#define TRADE_FMPET		"家族守护兽无法交易！"
+#define TRADE_WAIT		"③尕緊ㄛ蟀釐%s笢﹞﹞﹞"
+#define TRADE_NONE		"ヶ源妦欒�刳笛閨苺�"
+#define	TRADE_OVERPLAYER	"ヶ源祥硐珨弇俙模鉊ㄐ"
+#define	TRADE_NOWILL		"淩岆惕Кㄛ勤源祥堋砩躲斕蝠眢ㄐ"
+#define	TRADE_TRADING		"%s淏婓迵む坻�佌閡蛂丑丑�"
+#define	TRADE_VANISHITEM	"隍婓華奻頗秏囮腔昜こ拸楊蝠眢ㄐ"
+#define TRADE_PETFULL		"%s唾昜戲眒雛ㄛ蝠眢�＋�ㄐ"
+#define	TRADE_ITEMFULL		"%s昜こ戲眒雛ㄛ③淕燴摽婬蝠眢‵"
+#define TRADE_CANCEL		"%s蔚蝠眢�＋�賸ㄐ"
+#define TRADE_POOR		"%sヴ祥劂ㄛ拸楊蝠眢ㄐ"
+#define	TRADE_RICH		"%s踢ヴ蝠眢③昦閉徹珨啃勀ㄐ"
+#define TRADE_TOORICH		"%s踢ヴ蔚頗閉徹珨啃勀ㄐ"
+#define TRADE_POORLV		"%s脹撰祥劂ㄛ拸楊桽嘈蝠眢摽腔唾昜ㄐ"
+#define	TRADE_LOCK		"蝠眢坶隅﹞﹞﹞"
+#define	TRADE_SUCCESS		"蝠眢�洷芄�"
+#define	TRADE_FAILED		"蝠眢囮啖ㄐ"
+#define TRADE_FMPET		"模逜忐誘忤拸楊蝠眢ㄐ"
 
-#define TRADE_RDCANCEL	"交易取消！"
+#define TRADE_RDCANCEL	"蝠眢�＋�ㄐ"
 
 
 
@@ -75,11 +75,11 @@ BOOL TRADE_getSomeTradeList( int meindex, STradeList *temp);
 void TRADE_InitTradeList( void)
 {
 	int i;
-	print("初始化交易系统...");
+	print("場宎趙蝠眢炵苀...");
 	for( i=0; i<MAX_TRADELISTNUM; i++){
 		TRADE_ResetTradeList( i);
 	}
-	print("完成\n");
+	print("俇傖\n");
 }
 
 void TRADE_ResetTradeList( int ti)
@@ -223,19 +223,19 @@ BOOL TRADE_addSomeTradeList( int meindex, int usTi, int *num, int type)
 	case TRADE_ITEM:
 		{
 			int itemindex, MeMaxPile;
-			MeMaxPile = CHAR_getMyMaxPilenum( meindex);//最大堆叠数
+			MeMaxPile = CHAR_getMyMaxPilenum( meindex);//郔湮剽詁杅
 			if( usTi < CHAR_STARTITEMARRAY || usTi >= CHAR_MAXITEMHAVE ) return FALSE;
 			itemindex = CHAR_getItemIndex( meindex, usTi );
 			if( !ITEM_CHECKINDEX( itemindex))	return FALSE;
 
 			if( ITEM_getInt( itemindex, ITEM_VANISHATDROP) == 1 ){
 				char buf[256];
-				sprintf( buf, "%s无法交易。", ITEM_getChar( itemindex, ITEM_NAME) );
+				sprintf( buf, "%s拸楊蝠眢﹝", ITEM_getChar( itemindex, ITEM_NAME) );
 				CHAR_talkToCli( meindex, -1, buf, CHAR_COLORYELLOW);
 				return FALSE;
 			}
 
-			if( ITEM_getInt( itemindex, ITEM_CANBEPILE) == 1 ){//可堆叠
+			if( ITEM_getInt( itemindex, ITEM_CANBEPILE) == 1 ){//褫剽詁
 				int itemMaxPile = ITEM_getInt( itemindex, ITEM_USEPILENUMS);
 				if( itemMaxPile < 0  ) return FALSE;
 				//ITEM_USEPILENUMS
@@ -265,13 +265,13 @@ BOOL TRADE_addSomeTradeList( int meindex, int usTi, int *num, int type)
 			petindex = CHAR_getCharPet( meindex, usTi );
 			if( !CHAR_CHECKINDEX(petindex))	return FALSE;
 			if( CHAR_getInt( petindex, CHAR_PETFAMILY) == 1 ){
-				CHAR_talkToCli( meindex, -1, "家族守护兽无法交易。", CHAR_COLORYELLOW);
-				return FALSE;//家族守护兽
+				CHAR_talkToCli( meindex, -1, "模逜忐誘忤拸楊蝠眢﹝", CHAR_COLORYELLOW);
+				return FALSE;//模逜忐誘忤
 			}
 			if( CHAR_getWorkInt( toindex, CHAR_PickAllPet) != TRUE ){
 				if( CHAR_getInt( petindex, CHAR_LV) > (CHAR_getInt( toindex, CHAR_LV)+5) &&
 					(CHAR_getInt( toindex, CHAR_TRANSMIGRATION ) <= 0 ) ){
-					CHAR_talkToCli( meindex, -1, "对方无法照顾该宠物。", CHAR_COLORYELLOW);
+					CHAR_talkToCli( meindex, -1, "勤源拸楊桽嘈蜆唾昜﹝", CHAR_COLORYELLOW);
 					return FALSE;
 				}
 			}
@@ -331,7 +331,7 @@ BOOL TRADE_HandlePet( int meindex, int showindex, char *message, char *outmess);
 void CHAR_Trade(int fd, int index, char* message)
 {
    char		firstToken[64];
-   // shan 以下注掉是不必要的动作  2002/03/05
+   // shan 眕狟蛁裁岆祥斛猁腔雄釬  2002/03/05
    //char		messageeraseescape[512];
    char*	messagebody;
    
@@ -342,17 +342,17 @@ void CHAR_Trade(int fd, int index, char* message)
    	CHAR_getMessageBody( message, firstToken, sizeof(firstToken), &messagebody);
 
 	switch( tolower( firstToken[0]) ){
-	   case 'd':	// 寻找前方玩家
+	   case 'd':	// 扆梑ヶ源俙模
 		
 		TRADE_Search(fd, index, message);
 	   	break;
 /*	   case 'c':
 	   	TRADE_Will(fd, index, message);
 	   	break;
-*/	   case 't':	// 显示交易的物品、金钱、宠物
+*/	   case 't':	// 珆尨蝠眢腔昜こ﹜踢ヴ﹜唾昜
 	   	TRADE_ShowItem(fd, index, message);
 	   	break;
-	   case 'w':	// 关闭交易
+	   case 'w':	// 壽敕蝠眢
 		print(" TRADE_Close:%d ", index);
 		TRADE_Close(fd, index, message);
 	   	break;
@@ -374,27 +374,27 @@ BOOL TRADE_Search(int fd, int meindex, char* message)
    if (!CHAR_CHECKINDEX(meindex))	return FALSE;
 
 #if 0	// Robin fix
-//#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+//#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	{
 		char	msgbuf[512];
-		snprintf( msgbuf, sizeof( msgbuf), "跨星系家族PK，无法交易");
+		snprintf( msgbuf, sizeof( msgbuf), "輻陎炵模逜PKㄛ拸楊蝠眢");
 		CHAR_talkToCli( meindex, -1, msgbuf, CHAR_COLORWHITE);
 		return FALSE;
 	}
 #endif
 
-   // 若玩家状态为交易中或交易锁定中则不予处理
+   // �觷瞍眢棧疥直閡趼郅羷閡訬禷併俶繰閨韐池�
    if (CHAR_getWorkInt(meindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_TRADING
    	|| CHAR_getWorkInt(meindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_LOCK)
    		return FALSE;
 
-   // 若玩家状态为组队或战斗中则不予处理
+   // �觷瞍眢棧疥臥曊蚖藑蓿煦俶繰閨韐池�
    if ((CHAR_getWorkInt(meindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE)
    	|| (CHAR_getWorkInt(meindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE))
    		return FALSE;
 
 #ifdef _STREET_VENDOR
-	 // 若玩家在摆摊中不处理交易
+	 // �觷瞍眕痚确胱赲輕池簀閡�
 		if(CHAR_getWorkInt(meindex,CHAR_WORKSTREETVENDOR) > -1) return FALSE;
 #endif
 
@@ -402,7 +402,7 @@ BOOL TRADE_Search(int fd, int meindex, char* message)
 
    if (getStringFromIndexWithDelim(message, "|", 2, token,
 	sizeof(token)) == FALSE)	return FALSE;
-   // 设定状态交易请求中
+   // 扢隅袨怓蝠眢③⑴笢
 //   CHAR_setWorkInt(meindex, CHAR_WORKTRADEMODE, CHAR_TRADE_SENDING);
    
 #ifndef _ITEM_PILEFORTRADE
@@ -416,7 +416,7 @@ BOOL TRADE_Search(int fd, int meindex, char* message)
 
 	found_count = CHAR_getSameCoordinateObjects( objbuf, arraysizeof(objbuf),
 							CHAR_getInt(meindex, CHAR_FLOOR),front_x, front_y);
-	// 前方没有玩家或对方关闭交易选项
+	// ヶ源羶衄俙模麼勤源壽敕蝠眢恁砐
 	if (found_count == 0){
 		CHAR_talkToCli(meindex, -1, TRADE_NONE, CHAR_COLORYELLOW);
 		CHAR_setWorkInt(meindex, CHAR_WORKTRADEMODE, CHAR_TRADE_FREE);
@@ -453,7 +453,7 @@ BOOL TRADE_Search(int fd, int meindex, char* message)
 	}
 
 	if (cnt == 0){
-		// 前方没有玩家或对方关闭交易选项
+		// ヶ源羶衄俙模麼勤源壽敕蝠眢恁砐
 		if (found){
 			CHAR_talkToCli(meindex, -1, TRADE_NOWILL, CHAR_COLORYELLOW);
 		}else
@@ -463,7 +463,7 @@ BOOL TRADE_Search(int fd, int meindex, char* message)
 		CHAR_setWorkInt(meindex, CHAR_WORKTRADEMODE, CHAR_TRADE_FREE);
 		return FALSE;
 	}
-	// 前方有一位玩家
+	// ヶ源衄珨弇俙模
 	if (cnt == 1){
 #ifdef _ITEM_PILEFORTRADE
 		int ti;
@@ -476,7 +476,7 @@ BOOL TRADE_Search(int fd, int meindex, char* message)
 		if( (ti = TRADE_getTradeListIndex()) < 0 ||
 			TRADE_setTradeListIndex( ti, meindex, toindex) == FALSE ){
 
-			CHAR_talkToCli( meindex, -1, "系统忙碌中。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( meindex, -1, "炵苀疆繕笢﹝", CHAR_COLORYELLOW);
 			CHAR_setWorkInt( meindex, CHAR_WORKTRADEMODE, CHAR_TRADE_FREE);
 			TRADE_CheckTradeListUser();
 
@@ -501,7 +501,7 @@ BOOL TRADE_Search(int fd, int meindex, char* message)
         CHAR_sendTradeEffect(meindex, 1);
         CHAR_sendTradeEffect(toindex, 1);
         return TRUE;
-   }else if (cnt > 1){	// 前方不只一位玩家
+   }else if (cnt > 1){	// ヶ源祥硐珨弇俙模
 		CHAR_talkToCli(meindex, -1, TRADE_OVERPLAYER, CHAR_COLORYELLOW);
 //		sprintf(msgbuf, "C|%d|%s|0", tofd, tocharaname);
 		CHAR_setWorkInt(meindex, CHAR_WORKTRADEMODE, CHAR_TRADE_FREE);
@@ -645,7 +645,7 @@ void TRADE_ShowItem(int fd, int meindex, char* message)
 #endif
 
    if (!CHAR_CHECKINDEX(toindex))       return;
-   // 若玩家状态为组队或战斗中则不予处理
+   // �觷瞍眢棧疥臥曊蚖藑蓿煦俶繰閨韐池�
    if ((CHAR_getWorkInt(meindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE)
    	|| (CHAR_getWorkInt(meindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE))
    		return;
@@ -683,7 +683,7 @@ void TRADE_ShowItem(int fd, int meindex, char* message)
 				print(" TRADE_Close_Err4:%d,%d,%s,%s ", meindex, showindex, message, buf1);
 				TRADE_Close(fd, meindex, message);
 				return;
-			}else{// 将欲交易之金钱传给对方
+			}else{// 蔚郗蝠眢眳踢ヴ換跤勤源
 				snprintf(msg, sizeof(msg), "T|%d|%s|G|%d|%s", fd, mycharaname, showindex, buf1);
 				lssproto_TD_send( tofd, -1, msg);
 			}
@@ -705,14 +705,14 @@ void TRADE_ShowItem(int fd, int meindex, char* message)
 		break;
    	case 'k':
 	    if((CONNECT_get_confirm(fd)==TRUE) &&
-			(CONNECT_get_confirm(tofd)==TRUE) ){//当双方都按下 lock
+			(CONNECT_get_confirm(tofd)==TRUE) ){//絞邧源飲偌狟 lock
 			if( CHAR_getWorkInt(meindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_LOCK ){
 				//andy_log
-				print("ANDY err 防止第二次进入!!\n");
-				return;//防止第二次进入
+				print("ANDY err 滅砦菴媼棒輛��!!\n");
+				return;//滅砦菴媼棒輛��
 			}
 			CHAR_setWorkInt(meindex, CHAR_WORKTRADEMODE, CHAR_TRADE_LOCK);
-			//检查对方是否按下 ok
+			//潰脤勤源岆瘁偌狟 ok
 			if( CHAR_getWorkInt( toindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_LOCK )return;
 
 			snprintf(msg, sizeof(msg), "T|%d|%s|A", fd, mycharaname);
@@ -979,10 +979,10 @@ BOOL TRADE_HandleTrade( int meindex, STradeList *temp1, int toindex, STradeList 
 	int MePet[5], ToPet[5];
 	int MeGold=0, ToGold=0;
 	
-	MeMaxPile = CHAR_getMyMaxPilenum( meindex);//最大堆叠数
+	MeMaxPile = CHAR_getMyMaxPilenum( meindex);//郔湮剽詁杅
 	ToMaxPile = CHAR_getMyMaxPilenum( toindex);
-	//移除meindex
-	//移除toindex
+	//痄壺meindex
+	//痄壺toindex
 	{
 		char buf[256];
 
@@ -994,7 +994,7 @@ BOOL TRADE_HandleTrade( int meindex, STradeList *temp1, int toindex, STradeList 
 		LogTrade(buf);
 	}
 
-	//移除
+	//痄壺
 	if( (ret=TRADE_HandleTrade_DelItem( meindex, MeMaxPile, ToMaxPile, temp1->ItemTi, temp1->ItemNum, ToItem ))== -1 ) return FALSE;
 	if( (ret=TRADE_HandleTrade_DelItem( toindex, ToMaxPile, MeMaxPile, temp2->ItemTi, temp2->ItemNum, MeItem ))== -1 ) return FALSE;
 
@@ -1002,7 +1002,7 @@ BOOL TRADE_HandleTrade( int meindex, STradeList *temp1, int toindex, STradeList 
 	if( (ret=TRADE_HandleTrade_DelPet( toindex, temp2->PetTi, MePet)) == -1 ) return FALSE;
 	if( TRADE_HandleTrade_DelGold( meindex, temp1->Golds, &ToGold) == FALSE ) return FALSE;
 	if( TRADE_HandleTrade_DelGold( toindex, temp2->Golds, &MeGold) == FALSE ) return FALSE;
-	//加入
+	//樓��
 	if( TRADE_HandleTrade_AddItem( meindex, MeItem) == FALSE ) return FALSE;
 	if( TRADE_HandleTrade_AddItem( toindex, ToItem) == FALSE ) return FALSE;
 	if( TRADE_HandleTrade_AddPet( meindex, MePet) == FALSE) return FALSE;
@@ -1067,12 +1067,12 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	if( TradeList[Tradeti][0].use != 1 || TradeList[Tradeti][1].use != 1 ) return -1;
 	if( TRADE_getSomeTradeList( meindex, &TradeListTemp[0]) == FALSE ) return -1;
 	if( TRADE_getSomeTradeList( toindex, &TradeListTemp[1]) == FALSE ) return -1;
-	//确定空位
+	//�毓阮梉�
 	if( TRADE_CheckTradeList( meindex, &TradeListTemp[0], toindex, &TradeListTemp[1]) == FALSE ) return -1;
-	//移除人物身上
-	//加入人物身上
+	//痄壺�冼懭篽�
+	//樓�躽冼懭篽�
 	if( TRADE_HandleTrade( meindex, &TradeListTemp[0], toindex, &TradeListTemp[1] ) == FALSE )	return -1;
-	//交易结束动作
+	//蝠眢賦旰雄釬
 	return 1;
 }
 
@@ -1080,14 +1080,14 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 /*
 int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mycharaname, char* tocharaname)
 {
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-	int myItem[42] = { -1 } ;			//我方所有的交易内容编号
-	int oppItem[42] = { -1 };			//对方所有的交易内容编号
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+	int myItem[42] = { -1 } ;			//扂源垀衄腔蝠眢囀�搊鉭�
+	int oppItem[42] = { -1 };			//勤源垀衄腔蝠眢囀�搊鉭�
 	int ii , jj; 
-	int Iitem1[15] = { 0 } ;			//我方道具的index
-	int Iitem2[15] = { 0 } ;			//对方道具的index
-	int ppet1[5] = { 0 } ;				//我方宠物的index
-	int ppet2[5] = { 0 } ;				//对方宠物的index
+	int Iitem1[15] = { 0 } ;			//扂源耋撿腔index
+	int Iitem2[15] = { 0 } ;			//勤源耋撿腔index
+	int ppet1[5] = { 0 } ;				//扂源唾昜腔index
+	int ppet2[5] = { 0 } ;				//勤源唾昜腔index
 	BOOL tradeflag = TRUE ;
 	int count = 0 ; 
 #endif
@@ -1107,19 +1107,19 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
    CONNECT_getTradeTmp(tofd, toitembuf, sizeof(toitembuf));
 
 
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-   //取得我方所有交易内容编号
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+   //�△襞珝誼齾郇閡袎硜搊鉭�
    for ( ii = 0  ; ii < 42 ; ii ++ ) {
 	   if (getStringFromIndexWithDelim(itembuf, "|", 6 + ii * 2 , token, sizeof(token)) == TRUE)
 		   myItem[ii] = atoi(token);
    }
-   //取得对方所有交易内容编号
+   //�△繹埸誼齾郇閡袎硜搊鉭�
    for ( ii = 0  ; ii < 42 ; ii ++ ) {
 	   if (getStringFromIndexWithDelim(toitembuf, "|", 6 + ii * 2 , token, sizeof(token)) == TRUE)
 		   oppItem[ii] = atoi(token);
    }
 #else
-   // 比对双方之最後交易协定
+   // 掀勤邧源眳郔摽蝠眢衪隅
    if (getStringFromIndexWithDelim(itembuf, "|", 5, token, sizeof(token)) == TRUE)
 	   	strcpy(a, token);
    if (getStringFromIndexWithDelim(itembuf, "|", 6, token, sizeof(token)) == TRUE)
@@ -1171,8 +1171,8 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		toitemindex6 = atoi(token);
 #endif 
 
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-   //检查有无重复交易的道具
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+   //潰脤衄拸笭葩蝠眢腔耋撿
    for ( ii = 0 ; ii < 15 ; ii ++ ) {
 	   for ( jj = ii + 1 ; jj < 15 ; jj ++ ) {
 		   if ( myItem[ii] == myItem[jj] )
@@ -1188,7 +1188,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	   }
    }
 #else
-   // shan hjj add 洗道具
+   // shan hjj add 炴耋撿
    if (itemindex1==itemindex2){
         if (itemindex1!=-1){
             return -1;
@@ -1202,8 +1202,8 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
    // End
 #endif
 
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-   //比对双方交易的物品是否都正确
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+   //掀勤邧源蝠眢腔昜こ岆瘁飲淏��
    for ( ii = 0 ; ii < 21 ; ii ++ ) {
 	   if ( myItem[ii] != oppItem[ii+21] ) {
 		   tradeflag = FALSE ; 
@@ -1216,9 +1216,9 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		   break;
 	   }
    }
-   //双方内容正确开始进行处理
+   //邧源囀�楙��滇羌播靇迡池�
    if ( tradeflag == TRUE ) {
-   //计算双方道具的加减
+   //數呾邧源耋撿腔樓熬
    for ( ii = 0 ; ii < 15 ; ii ++ ) {
 	   if ( myItem[ii] != -1 ) {
 		   swapitem1--;
@@ -1238,7 +1238,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
    	&& (itemindex3 == toitemindex6) && (itemindex4 == toitemindex1)
    	&& (itemindex5 == toitemindex2) && (itemindex6 == toitemindex3))
    {
-   	// 检验双方物品栏是否有空位
+   	// 潰桄邧源昜こ戲岆瘁衄諾弇
 	if ((strcmp(a, "I") == 0) && (itemindex1 != -1)){
 		swapitem1--;
 		swapitem2++;
@@ -1262,12 +1262,12 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	if (!CHAR_CHECKINDEX(toindex))       return -1;
 	if (swapitem2 > CHAR_findTotalEmptyItem(toindex))
 		return	-3;
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-	//取得交换的金钱
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+	//�△羸遙輓躅蟓�
 	if ( myItem[20] != -1 ) gold1 += myItem[20] ;
 	if ( myItem[41] != -1 ) gold2 += myItem[41] ; 
 #else
-	// 检查双方金钱
+	// 潰脤邧源踢ヴ
 	if ((strcmp(a, "G") == 0) && (itemindex1 != -1))	gold1 += itemindex1;
 	if ((strcmp(b, "G") == 0) && (itemindex2 != -1))	gold1 += itemindex2;
 	if ((strcmp(d, "G") == 0) && (itemindex4 != -1))	gold2 += itemindex4;
@@ -1280,8 +1280,8 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	if ((gold2 + CHAR_getInt(meindex, CHAR_GOLD) - gold1) > CHAR_getMaxHaveGold( meindex) )	return	-8;
 	if ((gold1 + CHAR_getInt(toindex, CHAR_GOLD) - gold2) > CHAR_getMaxHaveGold( toindex))	return	-9;
 
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-	//计算双方宠物的加减
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+	//數呾邧源唾昜腔樓熬
 	for ( ii = 15 ; ii < 20 ; ii ++ ) {
 		if ( myItem[ii] != -1 ) {
 			pet1--;	
@@ -1295,7 +1295,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		}
 	}
 #else
-	// 检查双方宠物	
+	// 潰脤邧源唾昜	
 	if ((strcmp(c, "P") == 0) && (itemindex3 != -1))
 	{
 		pet1--;	pet2++;
@@ -1306,9 +1306,9 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	}
 #endif
 
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
 	if ((pet1 > 5) || (pet2 > 5))	return	-10;
-	//取得双方身上能放的宠物数量
+	//�△襠奐褕篽狦傮霾議駘懮�講
 	for( ii = 0; ii < CHAR_MAXPETHAVE; ii ++ ) {
 		if( CHAR_getCharPet( meindex , ii ) == -1  ) count ++ ;
 	}
@@ -1323,8 +1323,8 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 	if ((pet1 == 1) && (CHAR_getCharPetElement( meindex) == -1))	return -10;
 	if ((pet2 == 1) && (CHAR_getCharPetElement( toindex) == -1))	return -11;
 #endif	
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-	//取得所有欲交易的道具index
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+	//�△襠齾倬�蝠眢腔耋撿index
 	for ( ii = 0 ; ii < 15 ; ii ++ ) {
 		if ( myItem[ii] != -1 ) 
 			Iitem1[ii] = CHAR_getItemIndex(meindex, myItem[ii]);
@@ -1349,8 +1349,8 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		item5 = CHAR_getItemIndex(toindex, itemindex5);
 	else	item5 = -1;
 #endif
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-	//取得欲交易宠物的index
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+	//�△譚�蝠眢唾昜腔index
 	for ( ii = 15 ; ii < 20 ; ii ++ ) {
 		if ( myItem[ii] != -1 ) {
 			if ( CHAR_getInt( meindex , CHAR_RIDEPET) == myItem[ii] )
@@ -1388,7 +1388,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 
 
 
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
 	for ( ii = 0 ; ii < 15 ; ii ++ ) {
 		if ( ITEM_getInt( Iitem1[ii] , ITEM_VANISHATDROP ) == 1 )
 			return -12 ; 
@@ -1404,8 +1404,8 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 #endif
 
 
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-	//宠物等级能否交易判断
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+	//唾昜脹撰夔瘁蝠眢瓚剿
 	if( CHAR_getWorkInt( meindex, CHAR_PickAllPet) != TRUE )	{
 		for ( ii = 0 ; ii < 5 ; ii ++ ) {
 			if ( (ppet2[ii] != -1 ) && ( CHAR_getInt( ppet2[ii] , CHAR_LV ) 
@@ -1438,8 +1438,8 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		 		return -14;
 	}
 #endif
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-	//是否为家族守护兽
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+	//岆瘁峈模逜忐誘忤
 	for ( ii = 0 ; ii < 5 ; ii ++ ) {
 		if ( ( ppet1[ii] != -1 ) && (CHAR_getInt(ppet1[ii], CHAR_PETFAMILY) == 1))
 			return -15;
@@ -1453,8 +1453,8 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		 	return -15;
 #endif
 
-#ifdef _TRADESYSTEM2	// (不可开) Syu ADD 新交易系统
-	// 交换玩家道具、金钱、宠物	
+#ifdef _TRADESYSTEM2	// (祥褫羲) Syu ADD 陔蝠眢炵苀
+	// 蝠遙俙模耋撿﹜踢ヴ﹜唾昜	
 	for ( ii = 0 ; ii < 15 ; ii ++ ) {
 		TRADE_ChangeItem(meindex, toindex, "I", "I", Iitem1[ii], Iitem2[ii],
 			myItem[ii], oppItem[ii]);
@@ -1474,7 +1474,7 @@ int TRADE_CheckItembuf(int fd, int meindex, int toindex, int tofd, char* mychara
 		itemindex3, itemindex6);
 #endif
 
-	// 写入 trade.log
+	// 迡�� trade.log
 	{
 		char petname1[256], petname2[256];
 		int pet1lv, pet2lv;
@@ -1532,10 +1532,10 @@ BOOL TRADE_ChangeItem(int meindex, int toindex, char *a, char *b,
    int gold1 = 0, gold2 = 0, eptitem = -1;
    if (CHAR_CHECKINDEX(meindex) == FALSE)	return FALSE;
    if (CHAR_CHECKINDEX(toindex) == FALSE)	return FALSE;
-   // 道具 <-> 道具
+   // 耋撿 <-> 耋撿
    if ((strcmp(a, "I") == 0) && (strcmp(b, "I") == 0))
    {
-   	// 无 <-> 道具
+   	// 拸 <-> 耋撿
    	if ((itemindex1 == -1) && (itemindex2 > 0))
    	{
    	   if (ITEM_CHECKINDEX(item2) == FALSE)	return FALSE;
@@ -1546,7 +1546,7 @@ BOOL TRADE_ChangeItem(int meindex, int toindex, char *a, char *b,
    	   ITEM_setWorkInt(item2, ITEM_WORKOBJINDEX, -1);
    	   CHAR_setItemIndex(toindex, itemindex2, -1);
    	}
-   	// 道具 <-> 无
+   	// 耋撿 <-> 拸
    	else if ((itemindex1 > 0) && (itemindex2 == -1))
    	{
    	   if (ITEM_CHECKINDEX(item1) == FALSE)	return FALSE;
@@ -1557,7 +1557,7 @@ BOOL TRADE_ChangeItem(int meindex, int toindex, char *a, char *b,
    	   ITEM_setWorkInt(item1, ITEM_WORKOBJINDEX, -1);
    	   CHAR_setItemIndex(meindex, itemindex1, -1);
    	}
-   	// 道具 <-> 道具
+   	// 耋撿 <-> 耋撿
    	else if (itemindex1 > 0 && itemindex2 > 0)
    	{
    	   if (ITEM_CHECKINDEX(item1) == FALSE)	return FALSE;
@@ -1570,7 +1570,7 @@ BOOL TRADE_ChangeItem(int meindex, int toindex, char *a, char *b,
    	   CHAR_setItemIndex(meindex, itemindex1, item2);
    	}
    }
-   // 道具 <-> 金钱
+   // 耋撿 <-> 踢ヴ
    else if ((strcmp(a, "I") == 0) && (strcmp(b, "G") == 0))
    {
    	if (itemindex1 > 0)
@@ -1591,7 +1591,7 @@ BOOL TRADE_ChangeItem(int meindex, int toindex, char *a, char *b,
    	gold2 -= itemindex2;
    	CHAR_setInt(toindex, CHAR_GOLD, gold2);
    }
-   // 金钱 <-> 道具
+   // 踢ヴ <-> 耋撿
    else if ((strcmp(a, "G") == 0) && (strcmp(b, "I") == 0))
    {
    	if (itemindex2 > 0)
@@ -1612,7 +1612,7 @@ BOOL TRADE_ChangeItem(int meindex, int toindex, char *a, char *b,
    	gold2 += itemindex1;
    	CHAR_setInt(toindex, CHAR_GOLD, gold2);
    }
-   // 金钱 <-> 金钱
+   // 踢ヴ <-> 踢ヴ
    else if ((strcmp(a, "G") == 0) && (strcmp(b, "G") == 0))
    {
    	if (itemindex1 < 0)	itemindex1 = 0;
@@ -1624,7 +1624,7 @@ BOOL TRADE_ChangeItem(int meindex, int toindex, char *a, char *b,
    	gold2 = gold2 + itemindex2 - itemindex1;
    	CHAR_setInt(meindex, CHAR_GOLD, gold2);
    }
-   // 宠物 <-> 宠物
+   // 唾昜 <-> 唾昜
    else if ((strcmp(a, "P") == 0) && (strcmp(b, "P") == 0))
    {
 	char category[8];
@@ -1726,7 +1726,7 @@ BOOL TRADE_HandleItem( int meindex, int showindex, char *message, char *outmess)
 #endif
 		strcpy( itemname, ITEM_getChar(itemindex, ITEM_SECRETNAME));//ITEM_NAME
 		crushe	= ITEM_getItemDamageCrusheED( itemindex);
-		sprintf( token, "不会损坏");
+		sprintf( token, "祥頗囷輓");
 
 		if( crushe >= 0 ) snprintf( token, sizeof(token), "%d%%", crushe );
 #ifdef _ITEM_PILENUMS
@@ -1836,12 +1836,12 @@ BOOL TRADE_CheckTradeList( int meindex, STradeList *temp1, int toindex, STradeLi
 	int ToSurplus=0, ToNeeds=0, ToMaxPile;
 
 
-	MeMaxPile = CHAR_getMyMaxPilenum( meindex);//最大堆叠数
+	MeMaxPile = CHAR_getMyMaxPilenum( meindex);//郔湮剽詁杅
 	ToMaxPile = CHAR_getMyMaxPilenum( toindex);
 
 	MeSurplus = CHAR_findSurplusItemBox( meindex);
 	ToSurplus = CHAR_findSurplusItemBox( toindex);
-	//道具
+	//耋撿
 	ToNeeds=0; MeNeeds=0;
 	for( i=0; i<15; i++ ){
 		int pilenum, itemindex;
@@ -1875,17 +1875,17 @@ BOOL TRADE_CheckTradeList( int meindex, STradeList *temp1, int toindex, STradeLi
 	}
 	
 	if( MeSurplus < MeNeeds ){
-		CHAR_talkToCli( meindex, -1, "交易後物品栏位不足。", CHAR_COLORYELLOW);
-		CHAR_talkToCli( toindex, -1, "对方交易後物品栏位不足。", CHAR_COLORYELLOW);
+		CHAR_talkToCli( meindex, -1, "蝠眢摽昜こ戲弇祥逋﹝", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "勤源蝠眢摽昜こ戲弇祥逋﹝", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	if( ToSurplus < ToNeeds ){
-		CHAR_talkToCli( toindex, -1, "交易後物品栏位不足。", CHAR_COLORYELLOW);
-		CHAR_talkToCli( meindex, -1, "对方交易後物品栏位不足。", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "蝠眢摽昜こ戲弇祥逋﹝", CHAR_COLORYELLOW);
+		CHAR_talkToCli( meindex, -1, "勤源蝠眢摽昜こ戲弇祥逋﹝", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 
-	//宠物
+	//唾昜
 	MeSurplus = CHAR_findSurplusPetBox( meindex);
 	ToSurplus = CHAR_findSurplusPetBox( toindex);
 	ToNeeds=0; MeNeeds=0;
@@ -1907,17 +1907,17 @@ BOOL TRADE_CheckTradeList( int meindex, STradeList *temp1, int toindex, STradeLi
 	}
 
 	if( MeSurplus < MeNeeds ){
-		CHAR_talkToCli( meindex, -1, "交易後宠物栏位不足。", CHAR_COLORYELLOW);
-		CHAR_talkToCli( toindex, -1, "对方交易後宠物栏位不足。", CHAR_COLORYELLOW);
+		CHAR_talkToCli( meindex, -1, "蝠眢摽唾昜戲弇祥逋﹝", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "勤源蝠眢摽唾昜戲弇祥逋﹝", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	if( ToSurplus < ToNeeds ){
-		CHAR_talkToCli( meindex, -1, "对方交易後宠物栏位不足。", CHAR_COLORYELLOW);
-		CHAR_talkToCli( toindex, -1, "交易後宠物栏位不足。", CHAR_COLORYELLOW);
+		CHAR_talkToCli( meindex, -1, "勤源蝠眢摽唾昜戲弇祥逋﹝", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "蝠眢摽唾昜戲弇祥逋﹝", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 
-	//金钱
+	//踢ヴ
 	MeMaxPile = CHAR_getMaxHaveGold( meindex);
 	ToMaxPile = CHAR_getMaxHaveGold( toindex);
 	MeSurplus = MeMaxPile - CHAR_getInt( meindex, CHAR_GOLD);
@@ -1928,13 +1928,13 @@ BOOL TRADE_CheckTradeList( int meindex, STradeList *temp1, int toindex, STradeLi
 	ToNeeds = temp1->Golds;
 	MeNeeds = temp2->Golds;
 	if( MeSurplus < MeNeeds ){
-		CHAR_talkToCli( meindex, -1, "交易後石币超过上限。", CHAR_COLORYELLOW);
-		CHAR_talkToCli( toindex, -1, "对方交易後石币超过上限。", CHAR_COLORYELLOW);
+		CHAR_talkToCli( meindex, -1, "蝠眢摽坒啟閉徹奻癹﹝", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "勤源蝠眢摽坒啟閉徹奻癹﹝", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	if( ToSurplus < ToNeeds ){
-		CHAR_talkToCli( meindex, -1, "对方交易後石币超过上限。", CHAR_COLORYELLOW);
-		CHAR_talkToCli( toindex, -1, "交易後石币超过上限。", CHAR_COLORYELLOW);
+		CHAR_talkToCli( meindex, -1, "勤源蝠眢摽坒啟閉徹奻癹﹝", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "蝠眢摽坒啟閉徹奻癹﹝", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	return TRUE;

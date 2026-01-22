@@ -24,10 +24,10 @@ typedef struct tagNPC_haveItem
 
 typedef enum
 {
-    NPC_TEMPLATENAME,           /*    件皿伊□玄及  蟆  */
-    NPC_TEMPLATECHARNAME,       /*    蟆    */
+    NPC_TEMPLATENAME,           /*    璃鏤畛↓哱摯  鞳  */
+    NPC_TEMPLATECHARNAME,       /*    鞳    */
 
-    NPC_TEMPLATEINITFUNC,       /*  CHAR_INITFUNC卞垫仁 */
+    NPC_TEMPLATEINITFUNC,       /*  CHAR_INITFUNC勗菜�� */
     NPC_TEMPLATEWALKPREFUNC,    /*  CHAR_WALKPREFUNC    */
     NPC_TEMPLATEWALKPOSTFUNC,   /*  CHAR_WALKPOSTFUNC   */
     NPC_TEMPLATEPREOVERFUNC,    /*  CHAR_PREOVERFUNC    */
@@ -56,10 +56,10 @@ typedef enum
 
 typedef enum
 {
-    NPC_TEMPLATEMAKEATNOBODY,           /* 簿手中卅中凛卞手综月井升丹井 */
-    NPC_TEMPLATEMAKEATNOSEE,            /* 苇尹卅中赭匹综月井升丹井    */
-    NPC_TEMPLATEIMAGENUMBER,            /*   飓  寞    */
-    NPC_TEMPLATETYPE,                   /*     瑁户月凛卞瑁户月        */
+    NPC_TEMPLATEMAKEATNOBODY,           /* 移忒笢埵笢鄹勗忒軘堎凝汔竣凝 */
+    NPC_TEMPLATEMAKEATNOSEE,            /* 峟窇埵笢鐎ぁ軘堎凝汔竣凝    */
+    NPC_TEMPLATEIMAGENUMBER,            /*   鴢  蠕    */
+    NPC_TEMPLATETYPE,                   /*     鋆誧堎鄹勗鋆誧堎        */
 
     NPC_TEMPLATEMINHP,                  /* HP   */
 
@@ -69,17 +69,17 @@ typedef enum
 
     NPC_TEMPLATEMINTOUGH,               /* TOUGH    */
 
-    NPC_TEMPLATEISFLYING,               /*  氏匹月井升丹井  */
+    NPC_TEMPLATEISFLYING,               /*  庌ぁ堎凝汔竣凝  */
 
-    NPC_TEMPLATEITEMNUM,                /*   切丹月失奶  丞及    醒    */
+    NPC_TEMPLATEITEMNUM,                /*   з竣堎囮騷  堜摯    倳    */
 
     NPC_TEMPLATELOOPFUNCTIME,           /*
-                                         * 窒立伉  仍午卞伙□皿楮醒
-                                         * 毛裟少井
+                                         * 笰蕾惉  �婠蝐撱鵅劗鵩�倳
+                                         * 禱蠙屾凝
                                          */
     NPC_TEMPLATEFUNCTIONINDEX,         /*
-                                        * fucntionSet 及窒    及
-                                        * 奶件犯永弁旦井
+                                        * fucntionSet 摯笰    摯
+                                        * 騷璃溢蚗袲筒凝
                                         */
 
     NPC_TEMPLATEINTNUM,
@@ -89,8 +89,8 @@ typedef struct tagNPC_Template
 {
     STRING64    chardata[NPC_TEMPLATECHARNUM];
     int         intdata[NPC_TEMPLATEINTNUM];
-    int         randomdata[NPC_TEMPLATEINTNUM]; /*  仿件母丞及  五今
-                                                    互  匀化中月  */
+    int         randomdata[NPC_TEMPLATEINTNUM]; /*  溘璃譫堜摯  拻踏
+                                                    誑  埱趙笢堎  */
     int         hash;
     NPC_haveItem*   haveitem;
 }NPC_Template;

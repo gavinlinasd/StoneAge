@@ -146,7 +146,7 @@ BOOL TcpIp_LS_accept()
 				Ls.errs = 1;
 				Ls.data[LS_LASTERROR] = LSMESS_READERROR;
 			} else {
-				Add_LS_WRMemBuffer( tmpbuf , rr, MEMREAD); //增加讯息
+				Add_LS_WRMemBuffer( tmpbuf , rr, MEMREAD); //崝樓捅洘
 			}
 		}
 	}
@@ -684,7 +684,7 @@ void saacproto_SAUCheck_send( char *Pcdkey, int flg)
 	}
 }
 
-void DefTimeC( char *buf, int flg)// 1 比较 2 秀时间 0 替换
+void DefTimeC( char *buf, int flg)// 1 掀誕 2 凅奀潔 0 杸遙
 {
 	static long int dTimes = 0;
 	time_t defLsTime;

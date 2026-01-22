@@ -24,12 +24,12 @@ int		 ATTMAGIC_magicnum;
 
 typedef struct tagMagic_MagicFunctionTable
 {
-	char			*functionname;		/*	热诸涩烂白央奶伙卞踏仁楮醒及  蟆 */
-	MAGIC_CALLFUNC	func;				/*    端卞裟太请今木月楮醒 */
+	char			*functionname;		/*	��絊优擭啞栝騷鳴勗怳�抌�倳摯  鞳 */
+	MAGIC_CALLFUNC	func;				/*    傷勗蠙怮③踏躂堎匴倳 */
 	int				hash;				/*  hash */
 }MAGIC_MagicFunctionTable;
 
-/* 热诸毛  支仄凶日仇仇卞瓒  允月仪 */
+/* ��絊禱  盓媃倜�梜薱藈樘�  埰堎痀 */
 static MAGIC_MagicFunctionTable MAGIC_functbl[] = {
 	{ "MAGIC_Recovery", 		MAGIC_Recovery,			0},
 	{ "MAGIC_OtherRecovery",	MAGIC_OtherRecovery,	0},
@@ -53,19 +53,19 @@ static MAGIC_MagicFunctionTable MAGIC_functbl[] = {
 #ifdef _ITEM_ATTSKILLMAGIC
 	//{ "MAGIC_AttSkill", 		MAGIC_AttSkill,	0},
 #endif
-#ifdef _MAGIC_WEAKEN       // vincent  精灵:虚弱
+#ifdef _MAGIC_WEAKEN       // vincent  儕鍾:剞��
 	{ "MAGIC_Weaken", 		  MAGIC_Weaken,	      0},
 #endif
-#ifdef _MAGIC_DEEPPOISON   // vincent  精灵:剧毒
+#ifdef _MAGIC_DEEPPOISON   // vincent  儕鍾:曄馮
 	{ "MAGIC_StatusChange2",  MAGIC_StatusChange2,0},
 #endif
-#ifdef _MAGIC_BARRIER      // vincent  精灵:魔障
+#ifdef _MAGIC_BARRIER      // vincent  儕鍾:藹梤
 	{ "MAGIC_Barrier", 		  MAGIC_Barrier,	  0},
 #endif
-#ifdef _MAGIC_NOCAST       // vincent  精灵:沉默
+#ifdef _MAGIC_NOCAST       // vincent  儕鍾:麥蘇
 	{ "MAGIC_Nocast", 		  MAGIC_Nocast,	      0},
 #endif
-#ifdef _MAGIC_TOCALL	// 奔龙阵
+#ifdef _MAGIC_TOCALL	// 掉韓淝
 	{ "MAGIC_ToCallDragon",	MAGIC_ToCallDragon,		0},
 #endif
 };
@@ -73,7 +73,7 @@ static MAGIC_MagicFunctionTable MAGIC_functbl[] = {
 /*----------------------------------------------------------------------*/
 
 
-/* 湘  民尼永弁］失弁本旦楮溢 */
+/* 盻  鏍攝蚗袲�楟抄舠噩抵�祛 */
 /*----------------------------------------------------------------------*/
 INLINE BOOL MAGIC_CHECKINDEX( int index )
 {
@@ -124,7 +124,7 @@ INLINE BOOL MAGIC_setChar( int index ,MAGIC_DATACHAR element, char* new )
     return TRUE;
 }
 /*----------------------------------------------------------------------
- *   芊及醒毛襞月［
+ *   傮摯倳禱蠐堎��
  *---------------------------------------------------------------------*/
 int MAGIC_getMagicNum( void)
 {
@@ -132,7 +132,7 @@ int MAGIC_getMagicNum( void)
 }
 
 /*----------------------------------------------------------------------
- *   芊及涩烂白央奶伙毛  戈
+ *   傮摯优擭啞栝騷鳴禱  資
  *---------------------------------------------------------------------*/
 BOOL MAGIC_initMagic( char *filename)
 {
@@ -147,20 +147,20 @@ BOOL MAGIC_initMagic( char *filename)
 
     f = fopen(filename,"r");
     if( f == NULL ){
-        print( "文件打开失败\n");
+        print( "恅璃湖羲囮啖\n");
         return FALSE;
     }
 
     MAGIC_magicnum=0;
 
-    /*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+    /*  竘囀  嗚埵菜誑笰菜堣堎凝汔竣凝ぅ迋堎    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-#ifdef _MAGIC_OPTIMUM // Robin 取出最大MAGIC ID
+#ifdef _MAGIC_OPTIMUM // Robin �○囆豱趭AGIC ID
 		if( getStringFromIndexWithDelim( line, ",", MAGIC_DATACHARNUM+MAGIC_ID+1,
 				token, sizeof(token)) == FALSE )
 			continue;
@@ -171,12 +171,12 @@ BOOL MAGIC_initMagic( char *filename)
     }
 
 #ifdef _MAGIC_OPTIMUM
-	print("有效魔法:%d 最大魔法:%d ...", MAGIC_magicnum, max_magicid);
+	print("衄虴藹楊:%d 郔湮藹楊:%d ...", MAGIC_magicnum, max_magicid);
 	MAGIC_magicnum = max_magicid +1;
 #endif
 
     if( fseek( f, 0, SEEK_SET ) == -1 ){
-        fprint( "搜索错误\n" );
+        fprint( "刲坰渣昫\n" );
         fclose(f);
         return FALSE;
     }
@@ -184,13 +184,13 @@ BOOL MAGIC_initMagic( char *filename)
     MAGIC_magic = allocateMemory( sizeof(struct tagMagic)
                                    * MAGIC_magicnum );
     if( MAGIC_magic == NULL ){
-        fprint( "无法分配内存 %d\n" ,
+        fprint( "拸楊煦饜囀湔 %d\n" ,
                 sizeof(struct tagMagic)*MAGIC_magicnum);
         fclose( f );
         return FALSE;
     }
 
-	/* 赓渝祭 */
+	/* 疐趵撬 */
     for( i = 0; i < MAGIC_magicnum; i ++ ) {
     	for( j = 0; j < MAGIC_DATAINTNUM; j ++ ) {
     		MAGIC_setInt( i,j,-1);
@@ -200,7 +200,7 @@ BOOL MAGIC_initMagic( char *filename)
     	}
     }
 
-    /*  引凶  心  允    */
+    /*  竘倜  陑  埰    */
     linenum = 0;
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
@@ -208,10 +208,10 @@ BOOL MAGIC_initMagic( char *filename)
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  垫毛帮溥允月    */
-        /*  引内 tab 毛 " " 卞  五晶尹月    */
+        /*  菜禱堆魠埰堎    */
+        /*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
         replaceString( line, '\t' , ' ' );
-        /* 燮  及旦矢□旦毛潸月［*/
+        /* 袸  摯筒妐↓筒禱噁堎��*/
 {
         char    buf[256];
         for( i = 0; i < strlen( line); i ++) {
@@ -237,17 +237,17 @@ BOOL MAGIC_initMagic( char *filename)
 
 		for( i = 0; i < MAGIC_DATACHARNUM; i ++ ) {
 
-	        /*    侬  迕玄□弁件毛苇月    */
+	        /*    棬  暵哱↓袲璃禱峟堎    */
 	        ret = getStringFromIndexWithDelim( line,",",
 	        									i + 1,
 	        									token,sizeof(token));
 	        if( ret==FALSE ){
-	            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+	            fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 	            break;
 	        }
 	        MAGIC_setChar( magic_readlen, i, token);
 		}
-        /* 4勾  动嫦反醒袄犯□正 */
+        /* 4僑  雄禢毀倳偯溢↓淏 */
 #define	MAGIC_STARTINTNUM		5
         for( i = MAGIC_STARTINTNUM; i < MAGIC_DATAINTNUM+MAGIC_STARTINTNUM; i ++ ) {
             ret = getStringFromIndexWithDelim( line,",",i,token,
@@ -267,7 +267,7 @@ BOOL MAGIC_initMagic( char *filename)
 #else
                                                
             if( ret==FALSE ){
-                fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
                 break;
             }
             if( strlen( token) != 0 ) {
@@ -288,7 +288,7 @@ BOOL MAGIC_initMagic( char *filename)
         	 continue;
         	 
 #endif
-		/* 切斤匀午尕称鼎分仃升仇丹允月［ */
+		/* з踝埱敁箾備隋煦崹汔喫竣埰堎�� */
 		if( MAGIC_getInt( magic_readlen, MAGIC_TARGET_DEADFLG) == 1 ) {
 			MAGIC_setInt( magic_readlen, MAGIC_TARGET,
 						MAGIC_getInt( magic_readlen, MAGIC_TARGET)+100);
@@ -302,9 +302,9 @@ BOOL MAGIC_initMagic( char *filename)
     MAGIC_magicnum = magic_readlen;
 
 
-    print( "有效魔法数是 %d...", MAGIC_magicnum );
+    print( "衄虴藹楊杅岆 %d...", MAGIC_magicnum );
 
-	/* hash 及瓒   */
+	/* hash 摯頞   */
 	for( i = 0; i < arraysizeof( MAGIC_functbl); i ++ ) {
 		MAGIC_functbl[i].hash = hashpjw( MAGIC_functbl[i].functionname);
 	}
@@ -323,7 +323,7 @@ BOOL MAGIC_initMagic( char *filename)
     return TRUE;
 }
 /*------------------------------------------------------------------------
- * Magic及涩烂白央奶伙  心  仄
+ * Magic摯优擭啞栝騷鳴  陑  媃
  *-----------------------------------------------------------------------*/
 BOOL MAGIC_reinitMagic( void )
 {
@@ -335,7 +335,7 @@ BOOL MAGIC_reinitMagic( void )
 #ifdef __ATTACK_MAGIC
 
 /*------------------------------------------------------------------------
- * AttMagic的初始化
+ * AttMagic腔場宎趙
  *-----------------------------------------------------------------------*/
 BOOL ATTMAGIC_initMagic( char *filename )
 {
@@ -356,7 +356,7 @@ BOOL ATTMAGIC_initMagic( char *filename )
 	ATTMAGIC_magicnum = ftell( file ) / sizeof( struct tagAttMagic );
 	if( ATTMAGIC_magicnum % 2 )
 	{
-		fprint( "打开文件失败\n" );
+		fprint( "湖羲恅璃囮啖\n" );
 		fclose( file );
 
 		return FALSE;
@@ -368,7 +368,7 @@ BOOL ATTMAGIC_initMagic( char *filename )
     ATTMAGIC_magic = allocateMemory( sizeof( struct tagAttMagic ) * ATTMAGIC_magicnum );
 	if( NULL == ATTMAGIC_magic )
 	{
-		fprint( "无法分配内存 %d\n" , sizeof( struct tagAttMagic ) * ATTMAGIC_magicnum );
+		fprint( "拸楊煦饜囀湔 %d\n" , sizeof( struct tagAttMagic ) * ATTMAGIC_magicnum );
 		fclose( file );
 
 		return FALSE;
@@ -382,7 +382,7 @@ BOOL ATTMAGIC_initMagic( char *filename )
 
 	ATTMAGIC_magicnum = ATTMAGIC_magicnum / 2;
 
-    print( "有效的攻击魔法数 %d\n" , ATTMAGIC_magicnum );
+    print( "衄虴腔馴僻藹楊杅 %d\n" , ATTMAGIC_magicnum );
 
 	return TRUE;
 }
@@ -390,7 +390,7 @@ BOOL ATTMAGIC_initMagic( char *filename )
 
 
 /*------------------------------------------------------------------------
- * AttMagic的再度初始化
+ * AttMagic腔婬僅場宎趙
  *-----------------------------------------------------------------------*/
 BOOL ATTMAGIC_reinitMagic( void )
 {
@@ -404,10 +404,10 @@ BOOL ATTMAGIC_reinitMagic( void )
 #endif
 
 /*------------------------------------------------------------------------
- * MAGIC_ID井日骄侬毛襞月楮醒
- * 忒曰袄
- * 岳  : 骄侬
- * 撩  : -1
+ * MAGIC_ID凝�桵撼紐拜籥鎔�倳
+ * 蒍堇偯
+ * 埬  : 蝨棬
+ * 謄  : -1
  *-----------------------------------------------------------------------*/
 int MAGIC_getMagicArray( int magicid)
 {
@@ -425,11 +425,11 @@ int MAGIC_getMagicArray( int magicid)
 	return -1;
 }
 /*------------------------------------------------------------
- * 热诸及楮醒  井日禾奶件正□毛忒允
- * 娄醒
- *  name        char*       热诸及  蟆
- * 忒曰袄
- *  楮醒尺及禾奶件正［卅中桦宁卞反NULL
+ * ��絊摯匴倳  凝�梣昉抯�淏↓禱蒍埰
+ * 礎倳
+ *  name        char*       ��絊摯  鞳
+ * 蒍堇偯
+ *  匴倳喜摯睽騷璃淏�訹聿剒踽�勗毀NULL
  ------------------------------------------------------------*/
 MAGIC_CALLFUNC MAGIC_getMagicFuncPointer(char* name)
 {
@@ -453,8 +453,8 @@ MAGIC_CALLFUNC MAGIC_getMagicFuncPointer(char* name)
 
 // Nuke start (08/23)
 /*
-  酱   Nuke 今氏及民尼永弁［
-    芊及躲绊  区毛民尼永弁允月［
+  蓬   Nuke 踏庌摯鏍攝蚗袲��
+    傮摯嗚堅  ⑹禱鏍攝蚗袲埰堎��
 
   Check the validity of the target of a magic.
   Return value:

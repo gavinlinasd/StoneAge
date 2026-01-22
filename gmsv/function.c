@@ -132,7 +132,7 @@
 #include "npc_petfusion.h"
 #endif
 
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 #include "npc_alldoman.h"
 #endif
 
@@ -140,7 +140,7 @@
 #include "npc_welfare.h"
 #endif
 
-#ifdef _NPC_WELFARE_2				// WON ADD 职业NPC-2
+#ifdef _NPC_WELFARE_2				// WON ADD 眥珛NPC-2
 #include "npc_welfare2.h"
 #endif
 
@@ -164,8 +164,8 @@ typedef struct tagCorrespondStringAndFunctionTable
 static CorrespondStringAndFunctionTable
 correspondStringAndFunctionTable[]=
 {
-    /* 动票反扔□田□    戊□玉匹烂聒今木化中月楮醒分［NPC手仇木
-     毛勾井丹午五互丐月*/
+    /* 雄き毀�荂懽鵅�    昡↓迶ぁ擭壛踏躂趙笢堎匴倳煦�腇PC忒喫躂
+     禱僑凝竣敁拻誑堣堎*/
     { {"core_PreWalk"},  			CHAR_allprewalk,   		0 },
     { {"core_PostWalk"},  			CHAR_allpostwalk,  		0 },
     { {"core_Loop"},				CHAR_loopFunc, 			0 },
@@ -174,7 +174,7 @@ correspondStringAndFunctionTable[]=
     { {"core_PlayerTalked"},		CHAR_playerTalkedfunc, 	0 },
 
 
-    /* 动票反失奶  丞毛银丹午五迕及楮醒分［ */
+    /* 雄き毀囮騷  堜禱窅竣敁拻暵摯匴倳煦�� */
     { {"MedicineInit"},   			ITEM_MedicineInit, 		0 },
     { {"MedicineUsed"},   			ITEM_MedicineUsed, 		0 },
     { {"SandClockDetach"},			ITEM_SandClockDetach, 	0 },
@@ -235,13 +235,13 @@ correspondStringAndFunctionTable[]=
 #ifdef _ITEM_FIRECRACKER	//Terry add 2001/12/21
 		{ {"ITEM_firecracker"}, ITEM_firecracker, 0 },
 #endif
-#ifdef _ITEM_CRACKER	//vincent 拉炮
+#ifdef _ITEM_CRACKER	//vincent 嶺蘿
 		{ {"ITEM_Cracker"}, ITEM_Cracker, 0 },
 #endif
-#ifdef _ITEM_ADDEXP	//vincent 经验提升
+#ifdef _ITEM_ADDEXP	//vincent 冪桄枑汔
 		{ {"ITEM_Addexp"}, ITEM_Addexp, 0 },
 #endif
-#ifdef _ITEM_REFRESH //vincent 解除异常状态道具
+#ifdef _ITEM_REFRESH //vincent 賤壺祑都袨怓耋撿
 		{ {"ITEM_Refresh"}, ITEM_Refresh, 0 },
 #endif
 
@@ -293,7 +293,7 @@ correspondStringAndFunctionTable[]=
 #ifdef _DEATH_CONTENDWATCH
 	{ {"ITEM_useWatchBattle"}, ITEM_useWatchBattle, 0 },
 #endif
-#ifdef _FEV_ADD_NEW_ITEM			// FEV ADD 增加复活守精
+#ifdef _FEV_ADD_NEW_ITEM			// FEV ADD 崝樓葩魂忐儕
 	{ {"ITEM_ResAndDef"} ,   ITEM_ResAndDef,        0 },
 #endif
 
@@ -322,7 +322,7 @@ correspondStringAndFunctionTable[]=
 	{ {"ITEM_MagicReResist"}, ITEM_MagicReResist, 0 },
 #endif
 
-#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 职业抗性装备    
+#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 眥珛蕨俶蚾掘    
 	{ {"ITEM_P_MagicEquitWear"},		ITEM_P_MagicEquitWear, 0 },
 	{ {"ITEM_P_MagicEquitReWear"},	ITEM_P_MagicEquitReWear, 0 },
 #endif
@@ -405,24 +405,24 @@ correspondStringAndFunctionTable[]=
 	{ {"NPCEnemyLoop"},				NPC_NPCEnemyLoop,		0 },
     { {"NPCEnemyWindowTalked"}, 	NPC_NPCEnemyWindowTalked, 0 },
 
-    /* 失弁扑亦件楝 */
+    /* 囮袲で砫璃擛 */
     { {"ActionInit"} ,				NPC_ActionInit ,		0 },
     { {"ActionTalked"} ,			NPC_ActionTalked ,		0 },
     { {"ActionWatch"} ,				NPC_ActionWatch ,		0 },
 
-    /* 它奴件玉它楝 */
+    /* 坳贖璃迶坳擛 */
     { {"WindowmanInit"} , 			NPC_WindowmanInit ,		0 },
     { {"WindowmanTalked"} , 		NPC_WindowmanTalked ,	0 },
     { {"WindowmanLooked"}, 			NPC_WindowmanLooked,	0 },
     { {"WindowmanWindowTalked"}, 	NPC_WindowmanWindowTalked, 0 },
 
-    /* 它奴件玉它甲□仿□ */
+    /* 坳贖璃迶坳樅↓溘↓ */
     { {"WindowHealerInit"} , 		NPC_WindowHealerInit ,	0 },
     { {"WindowHealerTalked"} , 		NPC_WindowHealerTalked,	0 },
     { {"WindowHealerLooked"} , 		NPC_WindowHealerLooked,	0 },
     { {"WindowHealerWindowTalked"}, NPC_WindowHealerWindowTalked, 0 },
 
-	/* 失奶  丞盒 */
+	/* 囮騷  堜碟 */
     { {"ItemShopInit"} ,			NPC_ItemShopInit ,		0 },
     { {"ItemShopTalked"} ,			NPC_ItemShopTalked ,	0 },
     { {"ItemShopWindowTalked"},		NPC_ItemShopWindowTalked, 0 },
@@ -432,31 +432,31 @@ correspondStringAndFunctionTable[]=
     { {"SysinfoLoop"},				NPC_SysinfoLoop,		0 },
     { {"SysinfoTalked"} ,			NPC_SysinfoTalked ,		0 },
 
-    /* Duel仿件平件弘  憎NPC */
+    /* Duel溘璃す璃精  崚NPC */
     { {"DuelrankingInit"} ,			NPC_DuelrankingInit ,	0 },
     { {"DuelrankingLooked"},		NPC_DuelrankingLooked,	0 },
     { {"DuelrankingWindowTalked"}, 	NPC_DuelrankingWindowTalked, 0 },
 #ifdef _DEATH_CONTEND
 	{ {"Duelrankingloop"}, 	NPC_Duelrankingloop, 0 },
 #endif
-    /* 它奴件玉它矢永玄及  盒 */
+    /* 坳贖璃迶坳妐蚗哱摯  碟 */
     { {"PetSkillShopInit"} ,		NPC_PetSkillShopInit ,	0 },
     { {"PetSkillShopTalked"} ,		NPC_PetSkillShopTalked,	0 },
     { {"PetSkillShopLooked"} ,		NPC_PetSkillShopLooked,	0 },
     { {"PetSkillShopWindowTalked"},	NPC_PetSkillShopWindowTalked, 0 },
 
-    /* 它奴件玉它矢永玄  中潸曰盒 */
+    /* 坳贖璃迶坳妐蚗哱  笢噁堇碟 */
     { {"PetShopInit"} ,				NPC_PetShopInit, 		0 },
     { {"PetShopTalked"} ,			NPC_PetShopTalked,		0 },
     { {"PetShopLooked"} ,			NPC_PetShopLooked,		0 },
     { {"PetShopWindowTalked"},		NPC_PetShopWindowTalked,0 },
 
-    /* 枣   */
+    /* 娹   */
     { {"SignBoardInit"} ,			NPC_SignBoardInit,		0 },
     { {"SignBoardLooked"} ,			NPC_SignBoardLooked,	0 },
     { {"SignBoardWindowTalked"},	NPC_SignBoardWindowTalked, 0 },
 
-    /*伐□皿穴件 */
+    /*極↓鏤悃璃 */
     { {"WarpManInit"},				NPC_WarpManInit,		0 },
     { {"WarpManTalked"},			NPC_WarpManTalked,		0 },
 	{ {"WarpManWatch"},				NPC_WarpManWatch,		0 },
@@ -464,42 +464,42 @@ correspondStringAndFunctionTable[]=
     { {"WarpManWindowTalked"},		NPC_WarpManWindowTalked,0 },
 
 
-    /*奶矛件玄楝  exchangeman) */
+    /*騷穫璃哱擛  exchangeman) */
     { {"ExChangeManInit"},				NPC_ExChangeManInit,		0 },
     { {"ExChangeManTalked"},			NPC_ExChangeManTalked,		0 },
     { {"ExChangeManWindowTalked"},		NPC_ExChangeManWindowTalked,0 },
 
-    /*正奶丞穴件 */
+    /*淏騷堜悃璃 */
     { {"TimeManInit"},				NPC_TimeManInit,		0 },
     { {"TimeManTalked"},			NPC_TimeManTalked,		0 },
     { {"TimeManWatch"} ,			NPC_TimeManWatch ,		0 },
 
-    /* 示犯奴仿件必□斥 */
+    /* 尨溢贖溘璃斛↓喇 */
     { {"BodyLanInit"},				NPC_BodyLanInit,		0 },
     { {"BodyLanTalked"},			NPC_BodyLanTalked,		0 },
     { {"BodyLanWatch"} ,			NPC_BodyLanWatch ,		0 },
     { {"BodyLanWindowTalked"} ,		NPC_BodyLanWindowTalked,0 },
 
-    /* 穴奶弁 */
+    /* 悃騷袲 */
     { {"MicInit"},				NPC_MicInit,		0 },
     { {"MicTalked"},			NPC_MicTalked,		0 },
 
-    /* 仿永平□穴件 */
+    /* 溘蚗す↓悃璃 */
     { {"LuckyManInit"} , 		NPC_LuckyManInit ,	0 },
     { {"LuckyManTalked"} , 		NPC_LuckyManTalked,	0 },
     { {"LuckyManWindowTalked"}, NPC_LuckyManWindowTalked, 0 },
 
-    /* 楝 */
+    /* 擛 */
     { {"BusInit"} ,				NPC_BusInit ,		0 },
     { {"BusTalked"} ,			NPC_BusTalked ,		0 },
     { {"BusLoop"} ,				NPC_BusLoop ,		0 },
 
-    /* 加美航空 */      // Arminius 7.7 Airplane
+    /* 樓藝瑤諾 */      // Arminius 7.7 Airplane
     { {"AirInit"} ,     NPC_AirInit ,           0 },
     { {"AirTalked"} ,   NPC_AirTalked ,         0 },
     { {"AirLoop"} ,     NPC_AirLoop ,           0 },
 
-    /*         楝 */
+    /*         擛 */
     { {"CharmInit"} , 		NPC_CharmInit ,	0 },
     { {"CharmTalked"} , 		NPC_CharmTalked,	0 },
     { {"CharmWindowTalked"}, NPC_CharmWindowTalked, 0 },
@@ -514,17 +514,17 @@ correspondStringAndFunctionTable[]=
     { {"QuizWindowTalked"}, NPC_QuizWindowTalked, 0 },
 	
 
-    /* 切之匀仁引氏 */
+    /* з眳埱�弅�庌 */
     { {"CheckManInit"} , 		NPC_CheckManInit ,	0 },
     { {"CheckManTalked"} , 		NPC_CheckManTalked,	0 },
     { {"CheckManWindowTalked"}, NPC_CheckManWindowTalked, 0 },
 
-    /* 元扎氏仃氏楝 */
+    /* 啋崨庌崹庌擛 */
     { {"JankenInit"} , 		NPC_JankenInit ,	0 },
     { {"JankenTalked"} , 		NPC_JankenTalked,	0 },
     { {"JankenWindowTalked"}, NPC_JankenWindowTalked, 0 },
 
-    /* 鳖戏谛 */
+    /* 梱牁硞 */
     { {"TransmigrationInit"} , 		NPC_TransmigrationInit ,	0 },
     { {"TransmigrationTalked"} , 		NPC_TransmigrationTalked,	0 },
     { {"TransmigrationWindowTalked"}, NPC_TransmigrationWindowTalked, 0 },
@@ -582,14 +582,14 @@ correspondStringAndFunctionTable[]=
     { {"FmLetterWindowTalked"}, NPC_FmLetterWindowTalked, 0 },
 #ifdef _SERVICE    
     // Terry 2001/08/31
-    // 石器服务员 StoneServiceMan
+    // 坒ん督昢埜 StoneServiceMan
     { {"StoneServiceManInit"},         NPC_StoneServiceManInit,0},
     { {"StoneServiceManLoop"},         NPC_StoneServiceManLoop,0},
     { {"StoneServiceManTalked"},       NPC_StoneServiceManTalked,0},
     { {"StoneServiceManWindowTalked"}, NPC_StoneServiceManWindowTalked,0},
 #endif 
 
-#ifdef _GAMBLE_BANK	//银行
+#ifdef _GAMBLE_BANK	//窅俴
 	{ {"GambleBankInit"},			NPC_GambleBankInit, 0},
 	{ {"GambleBankLoop"},			NPC_GambleBankLoop,0},
     { {"GambleBankTalked"},			NPC_GambleBankTalked,0},
@@ -602,7 +602,7 @@ correspondStringAndFunctionTable[]=
 #ifdef _ITEM_EDITBASES
 	{ {"ITEM_useFusionEditBase"}, ITEM_useFusionEditBase, 0},
 #endif
-#ifdef _GAMBLE_ROULETTE //赌场轮盘
+#ifdef _GAMBLE_ROULETTE //傭部謫攫
 	{ {"GambleRouletteInit"},			NPC_Gamble_RouletteInit, 0},
 	{ {"GambleRouletteLoop"},			NPC_Gamble_RouletteLoop, 0},
     { {"GambleRouletteTalked"},		NPC_Gamble_RouletteTalked, 0},
@@ -659,7 +659,7 @@ correspondStringAndFunctionTable[]=
     { {"FreePetSkillWindowTalked"},	NPC_FreePetSkillShopWindowTalked, 0 },
 #endif
 
-#ifdef _PETRACE // 宠物竞速
+#ifdef _PETRACE // 唾昜噥厒
 	{ {"PetRaceMasterInit"},			NPC_PetRaceMasterInit, 0},
 	{ {"PetRaceMasterLoop"},			NPC_PetRaceMasterLoop, 0},
     { {"PetRaceMasterTalked"},		NPC_PetRaceMasterTalked, 0},
@@ -697,7 +697,7 @@ correspondStringAndFunctionTable[]=
 	{ {"BlackMarketWindowTalked"},	   NPC_BlackMarketWindowTalked, 0},
 #endif
 
-#ifdef _ALLDOMAN   // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN   // (祥褫羲) Syu ADD 齬俴埤NPC
     { {"AlldomanInit"} ,                        NPC_AlldomanInit,        0 },
     { {"AlldomanTalked"} ,                      NPC_AlldomanTalked ,     0 },
     { {"AlldomanWindowTalked"},                 NPC_AlldomanWindowTalked , 0},
@@ -709,7 +709,7 @@ correspondStringAndFunctionTable[]=
     { {"WelfareWindowTalked"},                 NPC_WelfareWindowTalked , 0},
 #endif
 
-#ifdef _NPC_WELFARE_2				// WON ADD 职业NPC-2
+#ifdef _NPC_WELFARE_2				// WON ADD 眥珛NPC-2
     { {"WelfareInit2"} ,                        NPC_WelfareInit2,        0 },
     { {"WelfareTalked2"} ,                      NPC_WelfareTalked2,     0 },
     { {"WelfareWindowTalked2"},                 NPC_WelfareWindowTalked2, 0},
@@ -735,13 +735,13 @@ correspondStringAndFunctionTable[]=
     { {"RacemanWindowTalked"},NPC_RacemanWindowTalked ,0 },
 #endif
 
-#ifdef _ITEM_SETLOVER	// 结婚物品
+#ifdef _ITEM_SETLOVER	// 賦駁昜こ
 		{ {"ITEM_SetLoverUser"}, ITEM_SetLoverUser, 0 },
 		{ {"ITEM_LoverWarp"}, ITEM_LoverWarp, 0 },
 		{ {"ITEM_LoverUnmarry"}, ITEM_LoverUnmarry, 0 },
 #endif
 
-#ifdef _GM_ITEM	// GM命令物品
+#ifdef _GM_ITEM	// GM韜鍔昜こ
 		{ {"ITEM_GMFUNCTION"}, ITEM_GMFUNCTION, 0 },
 #endif
 };

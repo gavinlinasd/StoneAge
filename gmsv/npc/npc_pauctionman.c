@@ -15,7 +15,7 @@
 #include "npc_pauctionman.h"
 #include "saacproto_cli.h"
 
-//拍卖王 andy
+//鼴闖卼 andy
 #ifdef _PAUCTION_MAN
 enum {
 	WINDOW_START=5,
@@ -153,7 +153,7 @@ static void NPC_Pauctionman_selectWindow( int meindex, int toindex, int num, int
 	}
 
 	if( Action_PartyCheck( meindex, toindex) == FALSE)	{
-		CHAR_talkToCli( toindex, meindex, "请一个一个来！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, meindex, "③珨跺珨跺懂ㄐ", CHAR_COLORYELLOW);
 		return;
 	}
 
@@ -390,8 +390,8 @@ BOOL NPC_PAItemShop_BuyDo( int meindex, int toindex, char *npcarg, int select)
 	cost=ITEM_getInt( itemindex, ITEM_COST);
 	if( CHAR_DelGold( toindex, cost) == 0 ) return FALSE;
 
-	//汇整资料
-	saacproto_ACItemAuction_send( acfd, ITEM_getChar( itemindex, ITEM_NAME), "TEST嘿嘿嘿",
+	//颯淕訧蹋
+	saacproto_ACItemAuction_send( acfd, ITEM_getChar( itemindex, ITEM_NAME), "TEST稱稱稱",
 		ITEM_getInt( itemindex, ITEM_ID), ret,AUCTION_DEL);
 
 	ti = CHAR_addItemSpecificItemIndex( toindex, itemindex);
@@ -401,7 +401,7 @@ BOOL NPC_PAItemShop_BuyDo( int meindex, int toindex, char *npcarg, int select)
 		return FALSE;
 	}
 	CHAR_sendItemDataOne( toindex, ti);
-	sprintf( token,"拿到%s",ITEM_getChar( itemindex, ITEM_NAME));
+	sprintf( token,"鏽善%s",ITEM_getChar( itemindex, ITEM_NAME));
 	CHAR_talkToCli( toindex, -1, token, CHAR_COLORYELLOW);
 
 	return TRUE;
@@ -412,12 +412,12 @@ BOOL NPC_PAItemShop_SellDo( int meindex, int toindex, char *npcarg, int select)
 	int itemindex = CHAR_getItemIndex( toindex , select );
 	if( ITEM_CHECKINDEX( itemindex) ){
 		int cost = ITEM_getInt( itemindex, ITEM_COST);
-		saacproto_ACItemAuction_send( acfd, ITEM_getChar( itemindex, ITEM_NAME), "TEST嘿嘿嘿",
+		saacproto_ACItemAuction_send( acfd, ITEM_getChar( itemindex, ITEM_NAME), "TEST稱稱稱",
 			ITEM_getInt( itemindex, ITEM_ID), 0/*ret*/,AUCTION_ADD);
 		CHAR_DelItem( toindex, select);
 		CHAR_AddGold( toindex, cost);	
 	}else	{
-		CHAR_talkToCli( toindex, -1, "没有这样物品！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "羶衄涴欴昜こㄐ", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	return TRUE;

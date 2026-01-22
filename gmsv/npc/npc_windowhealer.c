@@ -9,13 +9,13 @@
 
 
 
-/*--怂    ---*/
+/*--佫    ---*/
 #define RATE  1000
 
 
 /* 
- * 涩烂今木凶它奴件玉它毛请允NPC
- * 棵哑  平旦玄失玉矛件民乓□仁日中卅日综木月井手［
+ * 优擭踏躂倜坳贖璃迶坳禱③埰NPC
+ * 螢挳  す筒哱囮迶穫璃鏍籤↓�岓欶倠牟欳裗戰職晉痑�
  *
  */
 
@@ -38,7 +38,7 @@ int NPC_WindowCostCheckMp(int meindex,int talker);
 
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_WindowHealerInit( int meindex )
 {
@@ -52,15 +52,15 @@ BOOL NPC_WindowHealerInit( int meindex )
 
     npcarg = CHAR_getChar(meindex,CHAR_NPCARGUMENT);
 
-	/*--荚汊允月午五及云嗯毛潸月伊矛伙毛筏盛--*/
-	/*--  仃木壬综日木卅中--*/
+	/*--樊蜾埰堎敁拻摯堁鉣禱噁堎畛穫鳴禱楔呏--*/
+	/*--  崹躂�屺袾桫撻聿�--*/
 	if(getStringFromIndexWithDelim(npcarg,"|",1,buf2,sizeof(buf2))!=FALSE){
 		CHAR_setWorkInt(meindex,CHAR_WORK_LEVEL,atoi(buf2));
 
 	}else{
 		return FALSE;
 	}
-	/*--觐菁  伊□玄--*/
+	/*--膰敯  畛↓哱--*/
 	if(getStringFromIndexWithDelim(npcarg, "|", 2, buf2, sizeof( buf2)) != FALSE ){
 		drate = atof(buf2);
 		if(drate==0) {
@@ -137,17 +137,17 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	int windowtype=0;
 	int windowno=0;
 
-	/*--它奶件玉它正奶皿丢永本□斥互云云中及匹燮卞涩烂--*/
+	/*--坳騷璃迶坳淏騷鏤隍蚗掛↓喇誑堁堁笢摯ぁ袸勗优擭--*/
   	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 
 	switch( num){
 	  case 0:
-  		/*--蓟      --*/
-		sprintf(token," 　　　哎呀！你受伤了吗？　 \n\n "
-				  "　　　　　　 ＜ 耐久力回复＞　　　　　 \n"
-					" 　　　　　　＜  气力回复 ＞　　　　　 \n"
-					" 　　　　 ＜ 耐久力·气力回复 ＞　　 \n\n"
-				  " 　　　　　 ＜宠物回复(免费)＞　　　　 "
+  		/*--撒      --*/
+		sprintf(token," ﹛﹛﹛陞挼ㄐ斕忳夼賸鎘ˋ﹛ \n\n "
+				  "﹛﹛﹛﹛﹛﹛ ˉ 騵壅薯隙葩ˇ﹛﹛﹛﹛﹛ \n"
+					" ﹛﹛﹛﹛﹛﹛ˉ  ァ薯隙葩 ˇ﹛﹛﹛﹛﹛ \n"
+					" ﹛﹛﹛﹛ ˉ 騵壅薯﹞ァ薯隙葩 ˇ﹛﹛ \n\n"
+				  " ﹛﹛﹛﹛﹛ ˉ唾昜隙葩(轎煤)ˇ﹛﹛﹛﹛ "
 			);
 
 	  	buttontype=WINDOW_BUTTONTYPE_CANCEL;
@@ -160,14 +160,14 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 		if( CHAR_getInt(toindex,CHAR_HP) ==CHAR_getWorkInt( toindex, CHAR_WORKMAXHP)){
 			if(NPC_PetHealerCheck(toindex)==FALSE){
 				sprintf(token,
-				"　　　　　　 ＜　耐久力回复　＞"
-				"\n\n\n\n　　　　似乎没有必要回复唷！　");
+				"﹛﹛﹛﹛﹛﹛ ˉ﹛騵壅薯隙葩﹛ˇ"
+				"\n\n\n\n﹛﹛﹛﹛侔綱羶衄斛猁隙葩遄ㄐ﹛");
 		  	}else{
 		  		sprintf(token,
-				"　　　　　　 ＜　耐久力回复　＞"
-				"\n\n　　　　      似乎没有必要回复唷！　"
-					  "\n\n　　　因为宠物好像也受伤了！"
-					  "\n                            先帮他回复吧！");
+				"﹛﹛﹛﹛﹛﹛ ˉ﹛騵壅薯隙葩﹛ˇ"
+				"\n\n﹛﹛﹛﹛      侔綱羶衄斛猁隙葩遄ㄐ﹛"
+					  "\n\n﹛﹛﹛秪峈唾昜疑砉珩忳夼賸ㄐ"
+					  "\n                            珂堆坻隙葩勘ㄐ");
 		  	
 		  		NPC_WindowHealerAllHeal(toindex,0 );
 		  	}
@@ -176,16 +176,16 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 		  	windowno=CHAR_WINDOWTYPE_WINDOWHEALER_HPMSG; 
 			break;
 		}else if(NPC_WindowHealerLevelCheck(meindex,toindex)==TRUE){
-			sprintf(token,"　　　　　　 ＜　耐久力回复　＞"
-					"\n\n\n　　　　　　　是要回复耐久力没错吧！　　　 "
-					"\n\n　现在的等级可以免费帮你回复唷！");
+			sprintf(token,"﹛﹛﹛﹛﹛﹛ ˉ﹛騵壅薯隙葩﹛ˇ"
+					"\n\n\n﹛﹛﹛﹛﹛﹛﹛岆猁隙葩騵壅薯羶渣勘ㄐ﹛﹛﹛ "
+					"\n\n﹛珋婓腔脹撰褫眕轎煤堆斕隙葩遄ㄐ");
 		
 		}else{
 			int gold;
 			gold=NPC_WindowCostCheck(meindex,toindex);
-			sprintf(token,"　　　　　　 ＜　耐久力回复　＞"
-				"\n\n\n　　　　　　　是要回复耐久力没错吧！　　　 "
-				 "\n\n　　　　　收您%d的STONE 。"
+			sprintf(token,"﹛﹛﹛﹛﹛﹛ ˉ﹛騵壅薯隙葩﹛ˇ"
+				"\n\n\n﹛﹛﹛﹛﹛﹛﹛岆猁隙葩騵壅薯羶渣勘ㄐ﹛﹛﹛ "
+				 "\n\n﹛﹛﹛﹛﹛彶蠟%d腔STONE ﹝"
 				 ,gold);
 		}
 
@@ -196,13 +196,13 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	  case 2:
 		if( CHAR_getInt(toindex,CHAR_MP) ==CHAR_getWorkInt( toindex, CHAR_WORKMAXMP)){
 			if(NPC_PetHealerCheck(toindex)==FALSE){
-				sprintf(token,  "　　　　　　  ＜　气力回复　＞"
-					"\n\n\n\n　　　　似乎没有必要回复唷！　");
+				sprintf(token,  "﹛﹛﹛﹛﹛﹛  ˉ﹛ァ薯隙葩﹛ˇ"
+					"\n\n\n\n﹛﹛﹛﹛侔綱羶衄斛猁隙葩遄ㄐ﹛");
 			}else{
-			sprintf(token,  "　　　　　　  ＜　气力回复　＞"
-					"\n\n　　　　      似乎没有必要回复唷！　"
-					  "\n\n　　　因为宠物好像也受伤了！"
-					  "\n                            先帮他回复吧！");
+			sprintf(token,  "﹛﹛﹛﹛﹛﹛  ˉ﹛ァ薯隙葩﹛ˇ"
+					"\n\n﹛﹛﹛﹛      侔綱羶衄斛猁隙葩遄ㄐ﹛"
+					  "\n\n﹛﹛﹛秪峈唾昜疑砉珩忳夼賸ㄐ"
+					  "\n                            珂堆坻隙葩勘ㄐ");
 				NPC_WindowHealerAllHeal(toindex,0 );
 			}
 		  	buttontype=WINDOW_BUTTONTYPE_OK;
@@ -211,15 +211,15 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 		}
 
 		if(NPC_WindowHealerLevelCheck(meindex,toindex)==TRUE){
-			sprintf(token,"　　　　　　  ＜ 气力回复＞"
-					  "\n\n　　　　　　　是要回复气力没错吧！　　　　 "
-					  "\n\n 现在的等级可以免费帮你回复唷！");
+			sprintf(token,"﹛﹛﹛﹛﹛﹛  ˉ ァ薯隙葩ˇ"
+					  "\n\n﹛﹛﹛﹛﹛﹛﹛岆猁隙葩ァ薯羶渣勘ㄐ﹛﹛﹛﹛ "
+					  "\n\n 珋婓腔脹撰褫眕轎煤堆斕隙葩遄ㄐ");
 		}else{
 			int cost;
 			cost=NPC_WindowCostCheckMp(meindex,toindex);
-			sprintf(token,"　　　　　　  ＜ 气力回复＞"
-					"\n\n\n　　　　　　　是要回复气力没错吧！ "
- 					  "\n\n　　　　收您%d的STONE 。",
+			sprintf(token,"﹛﹛﹛﹛﹛﹛  ˉ ァ薯隙葩ˇ"
+					"\n\n\n﹛﹛﹛﹛﹛﹛﹛岆猁隙葩ァ薯羶渣勘ㄐ "
+ 					  "\n\n﹛﹛﹛﹛彶蠟%d腔STONE ﹝",
 					cost);
 		}
 	  	buttontype=WINDOW_BUTTONTYPE_YESNO;
@@ -228,11 +228,11 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	  case 3:
-		sprintf(token,	    "\n　　　　　　＜耐久力已回复＞"
-						    "\n　　  ＜宠物也已回复一般状态＞"
-						"\n\n\n　　　　　  这样子就没问题了！　　　　");
+		sprintf(token,	    "\n﹛﹛﹛﹛﹛﹛ˉ騵壅薯眒隙葩ˇ"
+						    "\n﹛﹛  ˉ唾昜珩眒隙葩珨啜袨怓ˇ"
+						"\n\n\n﹛﹛﹛﹛﹛  涴欴赽憩羶恀枙賸ㄐ﹛﹛﹛﹛");
 
-		/*--觐菁  及心荚汊今六月--*/
+		/*--膰敯  摯陑樊蜾踏鞠堎--*/
 	  	NPC_WindowHealerAllHeal( toindex ,1 );
 	  	buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowno=CHAR_WINDOWTYPE_WINDOWHEALER_OKHPMSG; 
@@ -240,10 +240,10 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	  case 4:
-		sprintf(token,	    "\n　　　　　　＜气力已回复＞"
-						    "\n　　 ＜宠物也已回复一般状态＞"
-						"\n\n\n　　　　　 这样子就没问题了！ 　　　");
-		/*--竣  及心荚汊今六月---*/
+		sprintf(token,	    "\n﹛﹛﹛﹛﹛﹛ˉァ薯眒隙葩ˇ"
+						    "\n﹛﹛ ˉ唾昜珩眒隙葩珨啜袨怓ˇ"
+						"\n\n\n﹛﹛﹛﹛﹛ 涴欴赽憩羶恀枙賸ㄐ ﹛﹛﹛");
+		/*--縈  摯陑樊蜾踏鞠堎---*/
 	  	NPC_WindowHealerAllHeal( toindex ,2 );
 	 	buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowno=CHAR_WINDOWTYPE_WINDOWHEALER_OKSPIRITMSG; 
@@ -267,13 +267,13 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 			if(cost==0) {
 				if(NPC_PetHealerCheck(toindex)==FALSE){
 				sprintf(token,
-						"　　　　  ＜　耐久力气力回复　＞"
-				"\n\n\n\n　　　　似乎没有必要回复唷！　");
+						"﹛﹛﹛﹛  ˉ﹛騵壅薯ァ薯隙葩﹛ˇ"
+				"\n\n\n\n﹛﹛﹛﹛侔綱羶衄斛猁隙葩遄ㄐ﹛");
 				}else{
-				sprintf(token,"　　　　  ＜　耐久力气力回复　＞"
-					"\n\n　　　　      似乎没有必要回复唷！　"
-					  "\n\n　　　因为宠物好像也受伤了！"
-					  "\n                            先帮他回复吧！");
+				sprintf(token,"﹛﹛﹛﹛  ˉ﹛騵壅薯ァ薯隙葩﹛ˇ"
+					"\n\n﹛﹛﹛﹛      侔綱羶衄斛猁隙葩遄ㄐ﹛"
+					  "\n\n﹛﹛﹛秪峈唾昜疑砉珩忳夼賸ㄐ"
+					  "\n                            珂堆坻隙葩勘ㄐ");
 				NPC_WindowHealerAllHeal(toindex,0 );
 			}
 		
@@ -285,16 +285,16 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 				break;
 
 			}else{
-				sprintf(token,"　　　  ＜　耐久力气力回复　＞"
-						"\n\n\n　　　　 是要回复耐久力气力没错吧！"
-						"\n\n　　　　　收您%d的STONE 。",cost);
+				sprintf(token,"﹛﹛﹛  ˉ﹛騵壅薯ァ薯隙葩﹛ˇ"
+						"\n\n\n﹛﹛﹛﹛ 岆猁隙葩騵壅薯ァ薯羶渣勘ㄐ"
+						"\n\n﹛﹛﹛﹛﹛彶蠟%d腔STONE ﹝",cost);
 			}
 		}
 
 		if(NPC_WindowHealerLevelCheck(meindex,toindex)==TRUE){
-			sprintf(token,"　　　　  ＜　耐久力气力回复　＞"
-					"\n\n\n　　　　 　是要回复耐久力气力没错吧！"
-					"\n\n　现在的等级可以免费帮你回复唷！");
+			sprintf(token,"﹛﹛﹛﹛  ˉ﹛騵壅薯ァ薯隙葩﹛ˇ"
+					"\n\n\n﹛﹛﹛﹛ ﹛岆猁隙葩騵壅薯ァ薯羶渣勘ㄐ"
+					"\n\n﹛珋婓腔脹撰褫眕轎煤堆斕隙葩遄ㄐ");
 		}
 	
 	  	buttontype=WINDOW_BUTTONTYPE_YESNO;
@@ -304,9 +304,9 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	  case 7:
-		sprintf(token,"　　　　 ＜耐久力气力已回复＞"
-				  "\n　　  ＜宠物也已回复一般状态＞"
-				  "\n\n\n　　　　这样一来就回复健康了！");
+		sprintf(token,"﹛﹛﹛﹛ ˉ騵壅薯ァ薯眒隙葩ˇ"
+				  "\n﹛﹛  ˉ唾昜珩眒隙葩珨啜袨怓ˇ"
+				  "\n\n\n﹛﹛﹛﹛涴欴珨懂憩隙葩翩艙賸ㄐ");
 	  	
 	  	NPC_WindowHealerAllHeal( toindex ,3 );
 		buttontype=WINDOW_BUTTONTYPE_OK;
@@ -316,7 +316,7 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	  case 8:
-		sprintf(token,"\n\n\n\n 　　真可惜似乎所带的金钱不够唷！");
+		sprintf(token,"\n\n\n\n ﹛﹛淩褫洇侔綱垀湍腔踢ヴ祥劂遄ㄐ");
 
 		buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
@@ -324,9 +324,9 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	  	break;
 
 	  case 9:
-		sprintf(token,"　　　　　　　＜宠物回复＞　　　　　　"
-				"\n\n\n　　　　　　　已经没问题了啦！　　　　　"
-				  "\n\n　　但是太勉强的话也不行唷！　　");
+		sprintf(token,"﹛﹛﹛﹛﹛﹛﹛ˉ唾昜隙葩ˇ﹛﹛﹛﹛﹛﹛"
+				"\n\n\n﹛﹛﹛﹛﹛﹛﹛眒冪羶恀枙賸徽ㄐ﹛﹛﹛﹛﹛"
+				  "\n\n﹛﹛筍岆怮辭Ч腔趕珩祥俴遄ㄐ﹛﹛");
 		NPC_WindowHealerAllHeal(toindex,0 );
 		buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
@@ -334,9 +334,9 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	  	break;
 
 	  case 10:
-		sprintf(token,"　　　　　　　＜宠物回复＞　　　　　　"
-				"\n\n\n　 似乎没有必要回复宠物的样子。　"
-				  "\n\n　　但是太勉强的话也不行唷！　　");
+		sprintf(token,"﹛﹛﹛﹛﹛﹛﹛ˉ唾昜隙葩ˇ﹛﹛﹛﹛﹛﹛"
+				"\n\n\n﹛ 侔綱羶衄斛猁隙葩唾昜腔欴赽﹝﹛"
+				  "\n\n﹛﹛筍岆怮辭Ч腔趕珩祥俴遄ㄐ﹛﹛");
 		buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 	  	windowno=CHAR_WINDOWTYPE_WINDOWHEALER_OKHPMSG; 
@@ -347,7 +347,7 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	makeEscapeString( token, escapedname, sizeof(escapedname));
-	/*-仇仇匹霜耨允月--*/
+	/*-喫喫ぁ邞嚭埰堎--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,
@@ -358,7 +358,7 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 /*-----------------------------------------
-弁仿奶失件玄井日忒匀化五凶凛卞裟太请今木月［
+袲溘騷囮璃哱凝�氪耽�趙拻倜鄹勗蠙怮③踏躂堎��
 -------------------------------------------*/
 void NPC_WindowHealerWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
@@ -368,38 +368,38 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 
 	switch( seqno){
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_STARTMSG:
-	  	if(atoi(data)==2)	/*--蓟  仄凶嫩   1--*/
+	  	if(atoi(data)==2)	/*--撒  媃倜囂   1--*/
 	  	{
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 1 );
 	  	
 	  	}else if(atoi(data)==3){
-	  		/*--蓟  仄凶嫩   2--*/
+	  		/*--撒  媃倜囂   2--*/
 	  		NPC_WindowHealer_selectWindow( meindex, talkerindex, 2 );
 	  	
 	  	}else if(atoi(data)==4){
-	  		/*--蓟  仄凶嫩   2--*/
+	  		/*--撒  媃倜囂   2--*/
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 6 );
 		
 		}else if(atoi(data)==6){
-			/*--蓟  仄凶嫩   2--*/
+			/*--撒  媃倜囂   2--*/
 	  		if(NPC_PetHealerCheck( talkerindex)==TRUE){
 		  		NPC_WindowHealer_selectWindow( meindex, talkerindex, 9 );
 			}else{
 				NPC_WindowHealer_selectWindow( meindex, talkerindex, 10 );
 			}
 		}else if(select==WINDOW_BUTTONTYPE_CANCEL){
-			  	/*--仇仇引匹仁月午蔽  卅及匹窒手仄卅中--*/
+			  	/*--喫喫竘ぁ�彸蟲蝐�  埵摯ぁ笰忒媃埵笢--*/
 	  	}
 	  	break;
 	  
 
-	  /*-----觐菁  荚汊毛云仇卅丹-----*/
+	  /*-----膰敯  樊蜾禱堁喫埵竣-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_HPMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
 		
 		}else if(select==WINDOW_BUTTONTYPE_YES){
-			/*--云嗯及民尼永弁--*/
+			/*--堁鉣摯鏍攝蚗袲--*/
 			if(NPC_WindowMoneyCheck(meindex,talkerindex,1)==TRUE){
 				NPC_WindowHealer_selectWindow( meindex, talkerindex, 3 );
 			}else{
@@ -412,13 +412,13 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 
 
-	  /*-----竣  荚汊毛云仇卅丹-----*/
+	  /*-----縈  樊蜾禱堁喫埵竣-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_SPIRITMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
 		
 		}else if(select==WINDOW_BUTTONTYPE_YES){
-			/*--云嗯及民尼永弁--*/
+			/*--堁鉣摯鏍攝蚗袲--*/
 			if(NPC_WindowMoneyCheck(meindex,talkerindex,2)==TRUE){
 				NPC_WindowHealer_selectWindow( meindex, talkerindex, 4 );
 			}else{
@@ -432,7 +432,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 
 
-	  /*-----觐菁  荚汊及瑛绊-----*/
+	  /*-----膰敯  樊蜾摯踕堅-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_OKHPMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -447,7 +447,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 	
 
-	  /*--蝈荚汊今六月--*/
+	  /*--蠈樊蜾踏鞠堎--*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_ALLMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -465,7 +465,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 	
 
-	  /*--蝈荚汊及瑛绊--*/
+	  /*--蠈樊蜾摯踕堅--*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_OKALLMSG:
 		if(select==WINDOW_BUTTONTYPE_YES){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -484,20 +484,20 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 }
 
 
-/*--辎勾中化中月及卅日｝TRUE毛忒允--*/
+/*--磝僑笢趙笢堎摯埵�掁�TRUE禱蒍埰--*/
 BOOL NPC_PetHealerCheck(int talker)
 {
 
 	int petindex;
 	int i;
 	
-	/*--矢永玄反云引仃匹荚汊仄化丐仆月--*/
+	/*--妐蚗哱毀堁竘崹ぁ樊蜾媃趙堣ど堎--*/
 	for(i=0;i<CHAR_MAXPETHAVE;i++){
     	petindex = CHAR_getCharPet(talker,i);
 
 		if( petindex == -1  )  continue;
 
-		/*  平乓仿及    民尼永弁    */
+		/*  す籤溘摯    鏍攝蚗袲    */
 		if( !CHAR_CHECKINDEX( talker ) )  continue;
 		
 		
@@ -513,7 +513,7 @@ BOOL NPC_PetHealerCheck(int talker)
 
 
 /*-------------------------------------
-	  端卞觐菁  午竣  毛荚汊今六月午仇欠
+	  傷勗膰敯  敁縈  禱樊蜾踏鞠堎敁喫Й
 ---------------------------------------*/
 void NPC_WindowHealerAllHeal( int talker,int mode )
 {
@@ -522,47 +522,47 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 	char petsend[64];	
 	char msgbuf[64];
 
-	/*--觐菁  及心荚汊--*/
+	/*--膰敯  摯陑樊蜾--*/
 	if(mode==1){
-		/*--HP互觐菁  卅及匹丐月--*/
+		/*--HP誑膰敯  埵摯ぁ堣堎--*/
     	CHAR_setInt( talker , CHAR_HP ,CHAR_getWorkInt( talker, CHAR_WORKMAXHP ) );
 	}else if(mode==2){
-		/*--竣  及心荚汊--*/
-		/*--MP互竣  卅及匹丐月--*/
+		/*--縈  摯陑樊蜾--*/
+		/*--MP誑縈  埵摯ぁ堣堎--*/
     	CHAR_setInt( talker , CHAR_MP ,CHAR_getWorkInt( talker, CHAR_WORKMAXMP ) );
 	}else if(mode==3){
-    	/*--蝈荚汊---*/
+    	/*--蠈樊蜾---*/
     	CHAR_setInt( talker , CHAR_HP ,CHAR_getWorkInt( talker, CHAR_WORKMAXHP ) );
     	CHAR_setInt( talker , CHAR_MP ,CHAR_getWorkInt( talker, CHAR_WORKMAXMP ) );
 	}
 
-	/*--矢永玄反云引仃匹荚汊仄化丐仆月--*/
+	/*--妐蚗哱毀堁竘崹ぁ樊蜾媃趙堣ど堎--*/
 	for(i=0;i<CHAR_MAXPETHAVE;i++){
     	petindex = CHAR_getCharPet(talker,i);
 
 		if( petindex == -1  )  continue;
 
-	   /*  平乓仿及    民尼永弁    */
+	   /*  す籤溘摯    鏍攝蚗袲    */
 		if( !CHAR_CHECKINDEX( talker ) )  continue;
 
-		/*--荚汊--*/
+		/*--樊蜾--*/
 		CHAR_setFlg( petindex,CHAR_ISDIE,0 );
 		CHAR_setInt( petindex , CHAR_HP ,CHAR_getWorkInt( petindex, CHAR_WORKMAXHP ) );
 		CHAR_setInt( petindex , CHAR_MP ,CHAR_getWorkInt( petindex, CHAR_WORKMAXMP ) );
 
-		/*--由仿丢□正譬帮--*/
+		/*--蚕溘隍↓淏ぅ堆--*/
 		CHAR_complianceParameter( petindex );
 		sprintf( petsend, "K%d", i );
 		CHAR_sendStatusString( talker , petsend );
 
 	}
 
-	/*--由仿丢□正霜曰--*/
+	/*--蚕溘隍↓淏邞堇--*/
 	CHAR_send_P_StatusString(talker,CHAR_P_STRING_HP);
 	CHAR_send_P_StatusString(talker,CHAR_P_STRING_MP);
 
 
-	/*---醮棉互中木壬醮棉卞手霜耨--*/
+	/*---黥蹬誑笢躂�朼棺瑄樀笵近�--*/
 	if(CHAR_getWorkInt( talker, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE )
 	{
 		int	topartyarray = -1;
@@ -571,7 +571,7 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 		if( CHAR_CHECKINDEX( oyaindex )) {
 			int		i;
 		
-			/* 愤坌午怂仄凶支勾及醮棉及    及桦赭毛潸   */
+			/* 猷覕敁佫媃倜盓僑摯黥蹬摯    摯鳹鐎禱噁   */
 			for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
 				int workindex = CHAR_getWorkInt( oyaindex, CHAR_WORKPARTYINDEX1 +i);
 		
@@ -586,7 +586,7 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 			for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
 				int otherindex = CHAR_getPartyIndex( talker, i);
 		
-				/* 醮棉由仿丢□正毛霜月 */
+				/* 黥蹬蚕溘隍↓淏禱邞堎 */
 				if( CHAR_CHECKINDEX( otherindex) ) {
 					snprintf( msgbuf, sizeof( msgbuf), "N%d", topartyarray);
 					if( otherindex != talker) {
@@ -601,11 +601,11 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 
 
 /*-------------------------------------
-伊矛伙民尼永弁
-伊矛伙毛苇化涩烂伊矛伙方曰斓仃木壬    卞允月
-  曰袄
-	涩烂伊矛伙    		TRUE
-	涩烂伊矛伙动晓卅日	FALSE
+畛穫鳴鏍攝蚗袲
+畛穫鳴禱峟趙优擭畛穫鳴源堇黖崹躂��    勗埰堎
+  堇偯
+	优擭畛穫鳴    		TRUE
+	优擭畛穫鳴雄窀埵��	FALSE
 ---------------------------------------*/
 BOOL NPC_WindowHealerLevelCheck(int meindex,int talker)
 {
@@ -623,10 +623,10 @@ BOOL NPC_WindowHealerLevelCheck(int meindex,int talker)
 
 
 /*-------------------------------------------
-云嗯  匀化月井民尼永弁
-娄醒
-meindex’’’      及奶件犯永弁旦
-talker’’’’平乓仿弁正□及奶件犯永弁旦
+堁鉣  埱趙堎凝鏍攝蚗袲
+礎倳
+meindex＊＊＊      摯騷璃溢蚗袲筒
+talker＊＊＊＊す籤溘袲淏↓摯騷璃溢蚗袲筒
 ---------------------------------------------*/
 BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 {
@@ -637,10 +637,10 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	
 	if(mode==1){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
-			/*---云嗯毛喃曰请允---*/
+			/*---堁鉣禱鄎堇③埰---*/
 			cost=NPC_WindowCostCheck(meindex,talker);
-			/*--蜇箕反移涩烂---*/
-			/*---云嗯互箫曰月井升丹井及民尼永弁---*/
+			/*--藯凜毀痄优擭---*/
+			/*---堁鉣誑鵿堇堎凝汔竣凝摯鏍攝蚗袲---*/
 			if(CHAR_getInt(talker,CHAR_GOLD) < cost){
 				return FALSE;
 			
@@ -650,11 +650,11 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	}
 	if(mode==2){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
-			/*---云嗯毛喃曰请允---*/
+			/*---堁鉣禱鄎堇③埰---*/
 			cost=NPC_WindowCostCheckMp(meindex,talker);
 	
-			/*--蜇箕反移涩烂---*/
-			/*---云嗯互箫曰月井升丹井及民尼永弁---*/
+			/*--藯凜毀痄优擭---*/
+			/*---堁鉣誑鵿堇堎凝汔竣凝摯鏍攝蚗袲---*/
 			if(CHAR_getInt(talker,CHAR_GOLD) < cost){
 				return FALSE;
 			}
@@ -665,24 +665,24 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	if(mode==3){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
 
-			/*--觐菁  及云嗯及煌遥--*/
+			/*--膰敯  摯堁鉣摯銓猀--*/
 			if( CHAR_getInt(talker,CHAR_HP) <CHAR_getWorkInt( talker, CHAR_WORKMAXHP))
 			{
 				cost=NPC_WindowCostCheck(meindex,talker);
 			}
 
-			/*--竣  及云嗯及煌遥--*/
+			/*--縈  摯堁鉣摯銓猀--*/
 			if( CHAR_getInt(talker,CHAR_MP) < CHAR_getWorkInt( talker, CHAR_WORKMAXMP))
 			{
 				cost=cost+NPC_WindowCostCheckMp(meindex,talker);
 			}
 		
-			/*--移涩烂--*/
+			/*--痄优擭--*/
 			if(CHAR_getInt(talker,CHAR_GOLD) < cost){
 				return FALSE;
 			}
 		
-			/*---云嗯毛蛹日允---*/
+			/*---堁鉣禱蚍�梊�---*/
 			CHAR_DelGold( talker, cost);
 		}
 		
@@ -697,7 +697,7 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 
 
 /*-----------------------------------------
-戊旦玄及煌遥
+昡筒哱摯銓猀
 ------------------------------------------*/
 int NPC_WindowCostCheck(int meindex,int talker)
 {
@@ -714,7 +714,7 @@ int NPC_WindowCostCheck(int meindex,int talker)
 }
 
 /*-----------------------------------------
-竣  戊旦玄及煌遥
+縈  昡筒哱摯銓猀
 ------------------------------------------*/
 int NPC_WindowCostCheckMp(int meindex,int talker)
 {

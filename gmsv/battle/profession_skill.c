@@ -1,7 +1,7 @@
 #include "version.h"
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
@@ -28,87 +28,87 @@ typedef struct tagProfessionskill_skillFunctionTable
 
 static PROFESSION_SKILL_skillFunctionTable PROFESSION_SKILL_functbl[] = {
 
-// 巫师技能
-	{ "PROFESSION_VOLCANO_SPRINGS", PROFESSION_volcano_springs, 0 },	// 火山泉
-	{ "PROFESSION_FIRE_BALL",		PROFESSION_fire_ball,		0 },	// 火星球
-	{ "PROFESSION_FIRE_SPEAR",		PROFESSION_fire_spear,		0 },	// 火龙枪
-	{ "PROFESSION_SUMMON_THUNDER",  PROFESSION_summon_thunder,  0 },	// 召雷术
-	{ "PROFESSION_CURRENT",			PROFESSION_current,			0 },	// 电流术
-	{ "PROFESSION_STORM",			PROFESSION_storm,			0 },	// 暴风雨
-	{ "PROFESSION_ICE_ARROW",		PROFESSION_ice_arrow,		0 },	// 冰箭术
-	{ "PROFESSION_ICE_CRACK",		PROFESSION_ice_crack,		0 },	// 冰爆术
-	{ "PROFESSION_ICE_MIRROR",		PROFESSION_ice_mirror,		0 },	// 冰镜术
-	{ "PROFESSION_DOOM",			PROFESSION_doom,			0 },	// 世界末日
-	{ "PROFESSION_BLOOD",			PROFESSION_blood,			0 },	// 嗜血成性
-	{ "PROFESSION_BLOOD_WORMS",		PROFESSION_blood_worms,		0 },	// 嗜血蛊
-	{ "PROFESSION_SIGN",			PROFESSION_sign,			0 },	// 一针见血
-	{ "PROFESSION_FIRE_ENCLOSE",	PROFESSION_fire_enclose,	0 },	// 火附体
-	{ "PROFESSION_ICE_ENCLOSE",		PROFESSION_ice_eclose,		0 },	// 冰附体
-	{ "PROFESSION_THUNDER_ENCLOSE",	PROFESSION_thunder_enclose, 0 },	// 雷附体
-	{ "PROFESSION_FIRE_PRACTICE",	PROFESSION_fire_practice,	0 },	// 火魔法熟练度
-	{ "PROFESSION_ICE_PRACTICE",	PROFESSION_ice_practice,	0 },	// 冰魔法熟练度
-	{ "PROFESSION_THUNDER_PRACTICE",PROFESSION_thunder_practice,0 },	// 雷魔法熟练度
-	{ "PROFESSION_ENCLOSE",			PROFESSION_enclose,			0 },	// 附身术
-	{ "PROFESSION_TRANSPOSE",		PROFESSION_transpose,		0 },	// 移形换位
-//	{ "PROFESSION_ALCHEMY",			PROFESSION_alchemy,			0 },	// 炼金术
+// 拵呇撮夔
+	{ "PROFESSION_VOLCANO_SPRINGS", PROFESSION_volcano_springs, 0 },	// 鳶刓��
+	{ "PROFESSION_FIRE_BALL",		PROFESSION_fire_ball,		0 },	// 鳶陎⑩
+	{ "PROFESSION_FIRE_SPEAR",		PROFESSION_fire_spear,		0 },	// 鳶韓Л
+	{ "PROFESSION_SUMMON_THUNDER",  PROFESSION_summon_thunder,  0 },	// 欸濘扲
+	{ "PROFESSION_CURRENT",			PROFESSION_current,			0 },	// 萇霜扲
+	{ "PROFESSION_STORM",			PROFESSION_storm,			0 },	// 惟瑞迾
+	{ "PROFESSION_ICE_ARROW",		PROFESSION_ice_arrow,		0 },	// 梨璋扲
+	{ "PROFESSION_ICE_CRACK",		PROFESSION_ice_crack,		0 },	// 梨惇扲
+	{ "PROFESSION_ICE_MIRROR",		PROFESSION_ice_mirror,		0 },	// 梨噩扲
+	{ "PROFESSION_DOOM",			PROFESSION_doom,			0 },	// 岍賜藺��
+	{ "PROFESSION_BLOOD",			PROFESSION_blood,			0 },	// 岓悛傖俶
+	{ "PROFESSION_BLOOD_WORMS",		PROFESSION_blood_worms,		0 },	// 岓悛嘍
+	{ "PROFESSION_SIGN",			PROFESSION_sign,			0 },	// 珨渀獗悛
+	{ "PROFESSION_FIRE_ENCLOSE",	PROFESSION_fire_enclose,	0 },	// 鳶蜇极
+	{ "PROFESSION_ICE_ENCLOSE",		PROFESSION_ice_eclose,		0 },	// 梨蜇极
+	{ "PROFESSION_THUNDER_ENCLOSE",	PROFESSION_thunder_enclose, 0 },	// 濘蜇极
+	{ "PROFESSION_FIRE_PRACTICE",	PROFESSION_fire_practice,	0 },	// 鳶藹楊抇褶僅
+	{ "PROFESSION_ICE_PRACTICE",	PROFESSION_ice_practice,	0 },	// 梨藹楊抇褶僅
+	{ "PROFESSION_THUNDER_PRACTICE",PROFESSION_thunder_practice,0 },	// 濘藹楊抇褶僅
+	{ "PROFESSION_ENCLOSE",			PROFESSION_enclose,			0 },	// 蜇旯扲
+	{ "PROFESSION_TRANSPOSE",		PROFESSION_transpose,		0 },	// 痄倛遙弇
+//	{ "PROFESSION_ALCHEMY",			PROFESSION_alchemy,			0 },	// 褻踢扲
 
-// 勇士技能
-	{ "PROFESSION_CHAIN_ATK",		PROFESSION_chain_atk,		0 },	// 连环攻击
-	{ "PROFESSION_AVOID",			PROFESSION_avoid,			0 },	// 回避
-	{ "PROFESSION_WEAPON_FOCUS",	PROFESSION_weapon_focus,	0 },	// 武器专精	
-	{ "PROFESSION_REBACK",			PROFESSION_reback,			0 },	// 状态回复
-	{ "PROFESSION_BRUST",			PROFESSION_brust,			0 },	// 爆击
-	{ "PROFESSION_CHAIN_ATK_2",		PROFESSION_chain_atk_2,		0 },	// 双重攻击
-	{ "PROFESSION_SCAPEGOAT",		PROFESSION_scapegoat,		0 },	// 舍已为友
-	{ "PROFESSION_ENRAGE",			PROFESSION_enrage,			0 },	// 激化攻击
-	{ "PROFESSION_ENERGY_COLLECT",	PROFESSION_energy_collect,	0 },	// 能量聚集
-	{ "PROFESSION_FOCUS",			PROFESSION_focus,			0 },	// 专注战斗
-	{ "PROFESSION_SHIELD_ATTACK",	PROFESSION_shield_attack,	0 },	// 盾击
-	{ "PROFESSION_DUAL_WEAPON",		PROFESSION_dual_weapon,		0 },	// 二刀流	
-	{ "PROFESSION_DEFLECT",			PROFESSION_deflect,			0 },	// 格档
-	{ "PROFESSION_THROUGH_ATTACK",	PROFESSION_through_attack,	0 },	// 贯穿攻击
-	{ "PROFESSION_CAVALRY",			PROFESSION_cavalry,			0 },	// 座骑攻击
-	{ "PROFESSION_DEAD_ATTACK",		PROFESSION_dead_attack,		0 },	// 濒死攻击
-	{ "PROFESSION_CONVOLUTE",		PROFESSION_convolute,		0 },	// 回旋攻击
-	{ "PROFESSION_CHAOS",			PROFESSION_chaos,			0 },	// 混乱攻击
+// 蚋尪撮夔
+	{ "PROFESSION_CHAIN_ATK",		PROFESSION_chain_atk,		0 },	// 蟀遠馴僻
+	{ "PROFESSION_AVOID",			PROFESSION_avoid,			0 },	// 隙旌
+	{ "PROFESSION_WEAPON_FOCUS",	PROFESSION_weapon_focus,	0 },	// 挕ん蚳儕	
+	{ "PROFESSION_REBACK",			PROFESSION_reback,			0 },	// 袨怓隙葩
+	{ "PROFESSION_BRUST",			PROFESSION_brust,			0 },	// 惇僻
+	{ "PROFESSION_CHAIN_ATK_2",		PROFESSION_chain_atk_2,		0 },	// 邧笭馴僻
+	{ "PROFESSION_SCAPEGOAT",		PROFESSION_scapegoat,		0 },	// 忔眒峈衭
+	{ "PROFESSION_ENRAGE",			PROFESSION_enrage,			0 },	// 慾趙馴僻
+	{ "PROFESSION_ENERGY_COLLECT",	PROFESSION_energy_collect,	0 },	// 夔講擄摩
+	{ "PROFESSION_FOCUS",			PROFESSION_focus,			0 },	// 蚳蛁桵須
+	{ "PROFESSION_SHIELD_ATTACK",	PROFESSION_shield_attack,	0 },	// 嗎僻
+	{ "PROFESSION_DUAL_WEAPON",		PROFESSION_dual_weapon,		0 },	// 媼絮霜	
+	{ "PROFESSION_DEFLECT",			PROFESSION_deflect,			0 },	// 跡紫
+	{ "PROFESSION_THROUGH_ATTACK",	PROFESSION_through_attack,	0 },	// 嫗援馴僻
+	{ "PROFESSION_CAVALRY",			PROFESSION_cavalry,			0 },	// 釱る馴僻
+	{ "PROFESSION_DEAD_ATTACK",		PROFESSION_dead_attack,		0 },	// 梭侚馴僻
+	{ "PROFESSION_CONVOLUTE",		PROFESSION_convolute,		0 },	// 隙唅馴僻
+	{ "PROFESSION_CHAOS",			PROFESSION_chaos,			0 },	// 髦觴馴僻
 
-// 猎人
-	{ "PROFESSION_TRACK",			PROFESSION_track,			0 },	// 追寻敌踪
-	{ "PROFESSION_ESCAPE",			PROFESSION_escape,			0 },	// 回避战斗
-	{ "PROFESSION_DOCILE",			PROFESSION_docile,			0 },	// 驯伏宠物
-	{ "PROFESSION_TRAP",			PROFESSION_trap,			0 },	// 陷阱
-	{ "PROFESSION_ENRAGE_PET",		PROFESSION_enrage_pet,		0 },	// 激怒宠物
-	{ "PROFESSION_DRAGNET",			PROFESSION_dragnet,			0 },	// 天罗地网
-	{ "PROFESSION_ENTWINE",			PROFESSION_entwine,			0 },	// 树根缠绕
-	{ "PROFESSION_AUTARKY",			PROFESSION_autarky,			0 },	// 自给自足
-	{ "PROFESSION_PLUNDER",			PROFESSION_plunder,			0 },	//   体掠夺
-	{ "PROFESSION_TOXIN_WEAPON",	PROFESSION_toxin_weapon,	0 },	// 毒素武器
-	{ "PROFESSION_RESIST_FIRE",		PROFESSION_resist_fire,		0 },	// 火抗性
-	{ "PROFESSION_RESIST_ICE",		PROFESSION_resist_ice,		0 },	// 冰抗性
-	{ "PROFESSION_RESIST_THUNDER",	PROFESSION_resist_thunder,	0 },	// 雷抗性
+// 轂��
+	{ "PROFESSION_TRACK",			PROFESSION_track,			0 },	// 袚扆菩趿
+	{ "PROFESSION_ESCAPE",			PROFESSION_escape,			0 },	// 隙旌桵須
+	{ "PROFESSION_DOCILE",			PROFESSION_docile,			0 },	// 拲睦唾昜
+	{ "PROFESSION_TRAP",			PROFESSION_trap,			0 },	// 疪筘
+	{ "PROFESSION_ENRAGE_PET",		PROFESSION_enrage_pet,		0 },	// 慾躑唾昜
+	{ "PROFESSION_DRAGNET",			PROFESSION_dragnet,			0 },	// 毞蹕華厙
+	{ "PROFESSION_ENTWINE",			PROFESSION_entwine,			0 },	// 攷跦莊��
+	{ "PROFESSION_AUTARKY",			PROFESSION_autarky,			0 },	// 赻跤赻逋
+	{ "PROFESSION_PLUNDER",			PROFESSION_plunder,			0 },	//   极謨嗤
+	{ "PROFESSION_TOXIN_WEAPON",	PROFESSION_toxin_weapon,	0 },	// 馮匼挕ん
+	{ "PROFESSION_RESIST_FIRE",		PROFESSION_resist_fire,		0 },	// 鳶蕨俶
+	{ "PROFESSION_RESIST_ICE",		PROFESSION_resist_ice,		0 },	// 梨蕨俶
+	{ "PROFESSION_RESIST_THUNDER",	PROFESSION_resist_thunder,	0 },	// 濘蕨俶
 #ifdef _PROFESSION_ADDSKILL
-    { "PROFESSION_RESIST_F_I_T",    PROFESSION_resist_f_i_t,    0 },    // 自然威能
-	{ "PROFESSION_CALL_NATURE",     PROFESSION_call_nature,     0 },    // 号召自然
-	{ "PROFESSION_BOUNDARY",        PROFESSION_boundary,     0 },       // 四属性结界
+    { "PROFESSION_RESIST_F_I_T",    PROFESSION_resist_f_i_t,    0 },    // 赻�銓�夔
+	{ "PROFESSION_CALL_NATURE",     PROFESSION_call_nature,     0 },    // 瘍欸赻��
+	{ "PROFESSION_BOUNDARY",        PROFESSION_boundary,     0 },       // 侐扽俶賦賜
 #endif
-	{ "PROFESSION_G_RESIST_FIRE",	PROFESSION_g_resist_fire,	0 },	// 团体火抗性
-	{ "PROFESSION_G_RESIST_ICE",	PROFESSION_g_resist_ice,	0 },	// 团体冰抗性
-	{ "PROFESSION_G_RESIST_THUNDER",PROFESSION_g_resist_thunder,0 },	// 团体雷抗性
-	{ "PROFESSION_ATTACK_WEAK",		PROFESSION_attack_weak,		0 },	// 弱点攻击
-	{ "PROFESSION_INSTIGATE",		PROFESSION_instigate,		0 },	// 挑拨
-	{ "PROFESSION_OBLIVION",		PROFESSION_oblivion,		0 },	// 遗忘
+	{ "PROFESSION_G_RESIST_FIRE",	PROFESSION_g_resist_fire,	0 },	// 芶极鳶蕨俶
+	{ "PROFESSION_G_RESIST_ICE",	PROFESSION_g_resist_ice,	0 },	// 芶极梨蕨俶
+	{ "PROFESSION_G_RESIST_THUNDER",PROFESSION_g_resist_thunder,0 },	// 芶极濘蕨俶
+	{ "PROFESSION_ATTACK_WEAK",		PROFESSION_attack_weak,		0 },	// �黤蓍本�
+	{ "PROFESSION_INSTIGATE",		PROFESSION_instigate,		0 },	// 泔畢
+	{ "PROFESSION_OBLIVION",		PROFESSION_oblivion,		0 },	// 疻咭
 
-// 共同技能
-	{ "PROFESSION_FULL_MP",			PROFESSION_full_mp,			0 },	// 气力充沛
-	{ "PROFESSION_STRONG_BACK",		PROFESSION_strong_back,		0 },	// 负重增加
-	{ "PROFESSION_STRENGTHEN",		PROFESSION_strengthen,		0 },	// 自我强化
+// 僕肮撮夔
+	{ "PROFESSION_FULL_MP",			PROFESSION_full_mp,			0 },	// ァ薯喃驛
+	{ "PROFESSION_STRONG_BACK",		PROFESSION_strong_back,		0 },	// 蛹笭崝樓
+	{ "PROFESSION_STRENGTHEN",		PROFESSION_strengthen,		0 },	// 赻扂Ч趙
 
 };
 
 
-static int profession_skill_num;				// 职业技能总数
+static int profession_skill_num;				// 眥珛撮夔軞杅
 
-// 将 profession.txt 载入
+// 蔚 profession.txt 婥��
 BOOL PROFESSION_initSkill( char *filename)
 {
 
@@ -136,7 +136,7 @@ BOOL PROFESSION_initSkill( char *filename)
         if( line[0] == '\n' )continue;
         chomp( line );
         profession_skill_num++;
-#ifdef _PROSKILL_OPTIMUM // Robin 取出最大职技ID
+#ifdef _PROSKILL_OPTIMUM // Robin �○囆豱鯡側嘹D
 		if( getStringFromIndexWithDelim( line, ",", 
 				PROFESSION_SKILL_DATACHARNUM+PROFESSION_SKILL_ID+1,
 				token, sizeof(token)) == FALSE )
@@ -151,16 +151,16 @@ BOOL PROFESSION_initSkill( char *filename)
         return FALSE;
     }
 
-#ifdef _PROSKILL_OPTIMUM // 职技Table数为 最大技能ID +1
+#ifdef _PROSKILL_OPTIMUM // 眥撮Table杅峈 郔湮撮夔ID +1
 	profession_skill_num = max_skillid +1;
-	print("最大职技ID = %d ...", max_skillid);
+	print("郔湮眥撮ID = %d ...", max_skillid);
 #endif
 
 	PROFESSION_skill = allocateMemory( sizeof(struct tagProfessionkill) * profession_skill_num + 1 );
 
 
 	if( PROFESSION_skill == NULL ){
-        fprint( "无法分配内存 %d\n", sizeof(struct tagProfessionkill)*profession_skill_num);
+        fprint( "拸楊煦饜囀湔 %d\n", sizeof(struct tagProfessionkill)*profession_skill_num);
         fclose( f );
         return FALSE;
     }
@@ -201,7 +201,7 @@ BOOL PROFESSION_initSkill( char *filename)
 			char    token[256];
 			int     ret;
 
-#ifdef _PROSKILL_OPTIMUM // 读取本行职技的ID, 直接以职技ID当Table index
+#ifdef _PROSKILL_OPTIMUM // 黍�§憶倗側撐鯧D, 眻諉眕眥撮ID絞Table index
 			ret = getStringFromIndexWithDelim( line, ",", PROFESSION_SKILL_DATACHARNUM+PROFESSION_SKILL_ID+1, token, sizeof(token));
 			if( ret==FALSE ){
 				fprint("Syntax Error file:%s line:%d\n",filename,linenum);
@@ -223,7 +223,7 @@ BOOL PROFESSION_initSkill( char *filename)
 				ret = getStringFromIndexWithDelim( line, ",", i+PROFESSION_SKILL_DATACHARNUM+1, token, sizeof(token));
 				
 				if( ret==FALSE ){
-					fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+					fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 					break;
 				} 
 				if( strlen( token) != 0 ) {
@@ -246,7 +246,7 @@ BOOL PROFESSION_initSkill( char *filename)
 }
 
 
-// 重新载入 profession.txt
+// 笭陔婥�� profession.txt
 void rePROFESSION_initSkill()
 {
 	freeMemory( PROFESSION_skill );
@@ -312,12 +312,12 @@ int PROFESSION_SKILL_getskillNum( void)
 
 int PROFESSION_SKILL_getskillArray( int skillid)
 {
-#ifdef _PROSKILL_OPTIMUM // 查询职技ID改为阵列式
+#ifdef _PROSKILL_OPTIMUM // 脤戙眥撮ID蜊峈淝蹈宒
 	if( skillid >= 0 && skillid < profession_skill_num )
 		return PROFESSION_skill[skillid].data[PROFESSION_SKILL_ID];
 #else
 	int		i;
-	for( i = 0; i <= profession_skill_num; i ++ ) { // 待优化
+	for( i = 0; i <= profession_skill_num; i ++ ) { // 渾蚥趙
 		if( PROFESSION_skill[i].data[PROFESSION_SKILL_ID] == skillid ) 
 			return i;
 	}
@@ -357,7 +357,7 @@ int _PROFESSION_SKILL_GetArray( char *file, int line, int charaindex, int skill 
 
 /*----------------------------------------------------------------------*/
 
-// 使用职业技能
+// 妏蚚眥珛撮夔
 int PROFESSION_SKILL_Use( int charaindex, int skill, int toNo, char *data )
 {
 	int		Pskillid, skillid;
@@ -370,38 +370,38 @@ int PROFESSION_SKILL_Use( int charaindex, int skill, int toNo, char *data )
 	Pskillid = PROFESSION_SKILL_getskillArray( skillid);
 	//print("\n skillid:%d Pskillid:%d ", skillid, Pskillid); // Robin log
 	if( Pskillid == -1 ) {
-		printf("\n 改封包??找不到该职技! ");
+		printf("\n 蜊猾婦??梑祥善蜆眥撮! ");
 		return ret;
 	}
 
-#ifdef _PROSKILL_OPTIMUM	// Robin fix 检查职业是否相符
+#ifdef _PROSKILL_OPTIMUM	// Robin fix 潰脤眥珛岆瘁眈睫
 	char_pskill = CHAR_getInt( charaindex, PROFESSION_CLASS );
 	profession_skill = PROFESSION_SKILL_getInt( Pskillid, PROFESSION_SKILL_PROFESSION_CLASS);
 	if( (char_pskill <=0) || (char_pskill != profession_skill) ) {
-		print("\n 改封包??职技的职业不正确!:%d:%d ", char_pskill, profession_skill);
+		print("\n 蜊猾婦??眥撮腔眥珛祥淏��!:%d:%d ", char_pskill, profession_skill);
 		return ret;
 	}
 #endif
 
-	// 找寻对应 function
+	// 梑扆勤茼 function
 	func = PROFESSION_SKILL_getskillFuncPointer( PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_FUNCNAME) );
 
-	// 判断是否为人物
+	// 瓚剿岆瘁峈�冼�
 	if( CHAR_getInt( charaindex, CHAR_WHICHTYPE) != CHAR_TYPEPLAYER )	return ret;
 
 
 	if( func ){
-		// 人物技能等级
+		// �冼嚗敵傿�撰
 		hskill = CHAR_getCharHaveSkill( charaindex, skill );
 		skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);
 	
-		// 耗损 MP 
+		// 瘧囷 MP 
 		if( PROFESSION_SKILL_DEC_COST_MP( charaindex, skill, Pskillid, skill_level ) != 1 )	{
-			print("\n Error:职技MP:%d:%d:%d ", skill, Pskillid, skill_level);
+			print("\n Error:眥撮MP:%d:%d:%d ", skill, Pskillid, skill_level);
 			return ret;
 		}
 
-		// 使用职业技能
+		// 妏蚚眥珛撮夔
 		ret = func( charaindex, toNo, Pskillid, data, skill_level );
 		if( ret == -1 ){
 			int rands = rand()%10;
@@ -410,21 +410,21 @@ int PROFESSION_SKILL_Use( int charaindex, int skill, int toNo, char *data )
 			if( rands > 5 ) return ret;
 		}
 
-		if( Pskillid == 57 //激怒宠物 选宠物才有经验值
+		if( Pskillid == 57 //慾躑唾昜 恁唾昜符衄冪桄硉
 			&& CHAR_getInt( BATTLE_No2Index( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX ), toNo ), CHAR_WHICHTYPE) != CHAR_TYPEPET ) 
 			return ret;
 
-		// 一般技能升级
+		// 珨啜撮夔汔撰
 		PROFESSION_NORMAL_SKILL_LEVLE_UP( &hskill->skill, Pskillid, charaindex );
 	}
 	else {
-		print("\n 错误!找不到职技func ");
+		print("\n 渣昫!梑祥善眥撮func ");
 	}
 
 	return ret;
 }
 
-// 特殊技能升级
+// 杻忷撮夔汔撰
 void PROFESSION_SKILL_LVEVEL_UP( int charaindex, char *name )
 {
 	int skill=-1;
@@ -434,12 +434,12 @@ void PROFESSION_SKILL_LVEVEL_UP( int charaindex, char *name )
 
 	for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
 			
-		// 技能ID
+		// 撮夔ID
 		skillid = CHAR_getCharSkill( charaindex, i);
 		Pskillid = PROFESSION_SKILL_getskillArray( skillid);		
 		if( Pskillid < 0 ) continue;
 
-		// 技能名称
+		// 撮夔靡備
 		skill_name = PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_FUNCNAME);
 		if( skill_name == NULL ) continue;
 			
@@ -454,16 +454,16 @@ void PROFESSION_SKILL_LVEVEL_UP( int charaindex, char *name )
 	Pskillid = PROFESSION_SKILL_getskillArray( skillid);
 	if( Pskillid == -1 )	return;
 
-	// 人物技能等级
+	// �冼嚗敵傿�撰
 	hskill = CHAR_getCharHaveSkill( charaindex, skill );
 	
-	// 一般技能升级
+	// 珨啜撮夔汔撰
 	PROFESSION_NORMAL_SKILL_LEVLE_UP( &hskill->skill, Pskillid, charaindex );
 
 	return;
 }
 
-// 二刀流技能升级
+// 媼絮霜撮夔汔撰
 void PROFESSION_SKILL_DUAL_WEAPON_LVEVEL_UP( int charaindex, char *name )
 {
 	int skill=-1, arm = 0, shield = 0;
@@ -471,7 +471,7 @@ void PROFESSION_SKILL_DUAL_WEAPON_LVEVEL_UP( int charaindex, char *name )
 	char *skill_name;
 	CHAR_HaveSkill* hskill;
 
-	// 检查左右手装备
+	// 潰脤酘衵忒蚾掘
 	for( i = 0 ; i < CHAR_EQUIPPLACENUM ; i ++ ){
 		int id = CHAR_getItemIndex(charaindex,i);
 		if( ITEM_CHECKINDEX(id) ){
@@ -484,12 +484,12 @@ void PROFESSION_SKILL_DUAL_WEAPON_LVEVEL_UP( int charaindex, char *name )
 
 	for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
 		
-		// 技能ID
+		// 撮夔ID
 		skillid = CHAR_getCharSkill( charaindex, i);
 		Pskillid = PROFESSION_SKILL_getskillArray( skillid);		
 		if( Pskillid < 0 ) continue;
 
-		// 技能名称
+		// 撮夔靡備
 		skill_name = PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_FUNCNAME);
 		if( skill_name == NULL ) continue;
 			
@@ -504,17 +504,17 @@ void PROFESSION_SKILL_DUAL_WEAPON_LVEVEL_UP( int charaindex, char *name )
 	Pskillid = PROFESSION_SKILL_getskillArray( skillid);
 	if( Pskillid == -1 )	return;
 
-	// 人物技能等级
+	// �冼嚗敵傿�撰
 	hskill = CHAR_getCharHaveSkill( charaindex, skill );
 	
-	// 一般技能升级
+	// 珨啜撮夔汔撰
 	PROFESSION_NORMAL_SKILL_LEVLE_UP( &hskill->skill, Pskillid, charaindex );
 
 	return;
 }
 
 
-// 武器专精技能升级
+// 挕ん蚳儕撮夔汔撰
 void PROFESSION_SKILL_WEAPON_FOCUS_LVEVEL_UP( int charaindex, char *name )
 {
 	int skill = -1;
@@ -524,39 +524,39 @@ void PROFESSION_SKILL_WEAPON_FOCUS_LVEVEL_UP( int charaindex, char *name )
 	CHAR_HaveSkill* hskill;
 
 	memset( diff, -1, sizeof(diff) );
-	// 装备武器
+	// 蚾掘挕ん
 	WeaponType = BATTLE_GetWepon( charaindex );
 
 	switch( WeaponType ){
 		case ITEM_AXE:		
-			sprintf( diff, "斧" ); break;
+			sprintf( diff, "葦" ); break;
 		case ITEM_CLUB:		
-			sprintf( diff, "棍" ); break;
+			sprintf( diff, "幔" ); break;
 		case ITEM_SPEAR:	
-			sprintf( diff, "枪" ); break;
+			sprintf( diff, "Л" ); break;
 		case ITEM_BOW:		
-			sprintf( diff, "弓" ); break;
-		case ITEM_BOOMERANG:	// 回旋标	
-			sprintf( diff, "镖" ); break;
-		case ITEM_BOUNDTHROW:	// 投掷斧头
-			sprintf( diff, "投" ); break;
-		case ITEM_BREAKTHROW:	// 投掷石
-			sprintf( diff, "石" ); break;
+			sprintf( diff, "僮" ); break;
+		case ITEM_BOOMERANG:	// 隙唅梓	
+			sprintf( diff, "曚" ); break;
+		case ITEM_BOUNDTHROW:	// 芘祣葦芛
+			sprintf( diff, "芘" ); break;
+		case ITEM_BREAKTHROW:	// 芘祣坒
+			sprintf( diff, "坒" ); break;
 		default: 
-			sprintf( diff, "无" ); break;
+			sprintf( diff, "拸" ); break;
 	}
 
 	for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
-		// 技能ID
+		// 撮夔ID
 		skillid = CHAR_getCharSkill( charaindex, i);
 		Pskillid = PROFESSION_SKILL_getskillArray( skillid);		
 		if( Pskillid < 0 ) continue;
 
-		// 技能名称
+		// 撮夔靡備
 		skill_name = PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_FUNCNAME);
 		if( skill_name == NULL ) continue;
 	
-		// 技能参数
+		// 撮夔統杅
 		pszOption = PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_OPTION);
 		if( pszOption == NULL ) continue;
 		
@@ -573,16 +573,16 @@ void PROFESSION_SKILL_WEAPON_FOCUS_LVEVEL_UP( int charaindex, char *name )
 	Pskillid = PROFESSION_SKILL_getskillArray( skillid);
 	if( Pskillid == -1 )	return;
 
-	// 人物技能等级
+	// �冼嚗敵傿�撰
 	hskill = CHAR_getCharHaveSkill( charaindex, skill );
 	
-	// 一般技能升级
+	// 珨啜撮夔汔撰
 	PROFESSION_NORMAL_SKILL_LEVLE_UP( &hskill->skill, Pskillid, charaindex );
 
 	return;
 }
 
-// 耗损 MP 
+// 瘧囷 MP 
 int PROFESSION_SKILL_DEC_COST_MP( int charaindex, int skill, int Pskillid, int skill_level )
 {	
 	
@@ -591,22 +591,22 @@ int PROFESSION_SKILL_DEC_COST_MP( int charaindex, int skill, int Pskillid, int s
 		int old_mp = CHAR_getInt( charaindex, CHAR_MP );
 		int mp=0;
 			
-		// 取出耗损 MP 
+		// �○鷅騰� MP 
 		if( (dec_mp = PROFESSION_MAGIC_COST_MP( charaindex, skill )) == -1 )
 			dec_mp = PROFESSION_SKILL_getInt( Pskillid, PROFESSION_SKILL_COST_MP );
 
-		// 检查 MP量			
+		// 潰脤 MP講			
 		if( old_mp < dec_mp ) return -1;
 		
-		// 嗜血成性 
+		// 岓悛傖俶 
 		if( Pskillid != 11 
 #ifdef _PROFESSION_ADDSKILL
-		//	&& Pskillid != 2 //针针相对不扣 MP
+		//	&& Pskillid != 2 //渀渀眈勤祥諶 MP
 #endif
 			)
 			if( dec_mp <= 0 ) return -1;
 		
-		// 扣掉人物 MP
+		// 諶裁�冼� MP
 		mp = old_mp - dec_mp;
 		if( mp < 0 ) mp = 0;
 		CHAR_setInt( charaindex , CHAR_MP , mp );
@@ -620,26 +620,26 @@ int PROFESSION_SKILL_DEC_COST_MP( int charaindex, int skill, int Pskillid, int s
 
 
 
-// 一般技能升级
+// 珨啜撮夔汔撰
 void PROFESSION_NORMAL_SKILL_LEVLE_UP(Skill *skill, int Pskillid, int charaindex )
 {
 	int skill_level = 0, up_fix_value = 0;
 	int rand_num = RAND( 0, 10000 ), rand_num2 = 0;
 	
-	// 技能等级到达上限不升级
+	// 撮夔脹撰善湛奻癹祥汔撰
 	skill_level = SKILL_getRealInt( skill, SKILL_LEVEL);
 	if( skill_level >= PROFESSION_SKILL_MAX_LEVEL * 100 ) return;
 
-	// 升级修正数值
+	// 汔撰党淏杅硉
 	up_fix_value = PROFESSION_SKILL_getInt( Pskillid, PROFESSION_SKILL_FIX_VALUE) * 100;
 	rand_num2 = RAND( 0, up_fix_value);
 
-	// 升级检定
+	// 汔撰潰隅
 #ifdef _75_TEST
 #else
 	if( rand_num > skill_level + rand_num2){
 #endif	
-		// 增加熟练度
+		// 崝樓抇褶僅
 		skill_level += PROFESSION_SKILL_ADD_POINT;	
 #ifdef _75_TEST
 		if( skill_level > 10000 )
@@ -649,12 +649,12 @@ void PROFESSION_NORMAL_SKILL_LEVLE_UP(Skill *skill, int Pskillid, int charaindex
 
 		if( ( skill_level % 100 ) == 0 ){
 			char msg[256];
-			sprintf( msg, "%s技能熟练度上升为%d", 	PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_NAME), skill_level/100 );
+			sprintf( msg, "%s撮夔抇褶僅奻汔峈%d", 	PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_NAME), skill_level/100 );
 			CHAR_talkToCli( charaindex, -1, msg, CHAR_COLORYELLOW);
 			CHAR_sendStatusString( charaindex , "S");	
 			
 		
-			// 职业经验值增加		
+			// 眥珛冪桄硉崝樓		
 			PROFESSION_LEVEL_CHECK_UP( charaindex );
 		}
 #ifdef _75_TEST
@@ -672,18 +672,18 @@ void PROFESSION_LEVEL_CHECK_UP( int charaindex )
 	int next_level_need_point = 9999999;
 	CHAR_HaveSkill* hskill;
 
-	// 下一级职业升级点数
+	// 狟珨撰眥珛汔撰萸杅
 	next_level_need_point = old_level * 70 * 100;
 		
 	for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
 		int skillID = -1;
 
-		// 技能等级
+		// 撮夔脹撰
 		hskill = CHAR_getCharHaveSkill( charaindex, i );
 		skillID = SKILL_getInt( &hskill->skill, SKILL_IDENTITY);
 		if( skillID <= 0 ) continue;
 
-		// 共通技能熟练度 50
+		// 僕籵撮夔抇褶僅 50
 		if( (skillID == 63) || (skillID == 64) || (skillID == 65) ){
 			skill_level_add = 50*100;	
 		}else{
@@ -693,15 +693,15 @@ void PROFESSION_LEVEL_CHECK_UP( int charaindex )
 		skill_level_sum += skill_level_add;	
 	}
 	
-	print("\n技能熟练度上升 ==> 当前熟练度点数(%d) 下一级熟练度升级点数(%d)", skill_level_sum, next_level_need_point );
+	print("\n撮夔抇褶僅奻汔 ==> 絞ヶ抇褶僅萸杅(%d) 狟珨撰抇褶僅汔撰萸杅(%d)", skill_level_sum, next_level_need_point );
 
-	// 技能熟练度达到下一级职业升级点数时，职业等级增加
+	// 撮夔抇褶僅湛善狟珨撰眥珛汔撰萸杅奀ㄛ眥珛脹撰崝樓
 	if(  skill_level_sum >= next_level_need_point ){
 		int old_skill_point = CHAR_getInt( charaindex, PROFESSION_SKILL_POINT );
 		int next_skill_point = old_skill_point+1;
 		char msg[64];
 
-		print("\n职业等级上升 ==> 当前职业等级点数(%d) 下一级职业等级升级点数(%d)", old_skill_point, next_skill_point );
+		print("\n眥珛脹撰奻汔 ==> 絞ヶ眥珛脹撰萸杅(%d) 狟珨撰眥珛脹撰汔撰萸杅(%d)", old_skill_point, next_skill_point );
 		
 		CHAR_setInt( charaindex, PROFESSION_LEVEL, old_level + 1 );
 		CHAR_setInt( charaindex, PROFESSION_SKILL_POINT, next_skill_point );
@@ -709,12 +709,12 @@ void PROFESSION_LEVEL_CHECK_UP( int charaindex )
 		
 		CHAR_sendCToArroundCharacter( CHAR_getWorkInt( charaindex , CHAR_WORKOBJINDEX ));
 
-		sprintf( msg, "职业等级上升为%d级，技能点数上升１点", old_level + 1 );
+		sprintf( msg, "眥珛脹撰奻汔峈%d撰ㄛ撮夔萸杅奻汔ㄠ萸", old_level + 1 );
 		CHAR_talkToCli( charaindex, -1, msg, CHAR_COLORYELLOW);
 	}
 }
 
-// 增加技能
+// 崝樓撮夔
 int PROFESSION_SKILL_ADDSK( int charaindex, int skill, int level )
 {
 	int i;
@@ -730,7 +730,7 @@ int PROFESSION_SKILL_ADDSK( int charaindex, int skill, int level )
 		pSkil = CHAR_getCharHaveSkill( charaindex, i );
 		skill_id = SKILL_getInt( &pSkil->skill, SKILL_IDENTITY);
 		if( skill == skill_id && skill_id != -1 ){
-			CHAR_talkToCli(charaindex,-1, "你已经学习过此技能", CHAR_COLORYELLOW);
+			CHAR_talkToCli(charaindex,-1, "斕眒冪悝炾徹森撮夔", CHAR_COLORYELLOW);
 			return -1;
 		}
 
@@ -739,7 +739,7 @@ int PROFESSION_SKILL_ADDSK( int charaindex, int skill, int level )
 		break;
 	}
 	if( i >= CHAR_SKILLMAXHAVE ){
-		CHAR_talkToCli(charaindex,-1, "技能数量已达上限", CHAR_COLORYELLOW);
+		CHAR_talkToCli(charaindex,-1, "撮夔杅講眒湛奻癹", CHAR_COLORYELLOW);
 		return -1;
 	}else{
 		level *= 100;
@@ -785,146 +785,146 @@ void profession_common_fun( int charaindex, int toNo, int skill_level, int array
 }
 
 /*----------------------------------------------------------------------*/
-// 以下为职业技能
+// 眕狟峈眥珛撮夔
 
-// 巫师技能-火山泉
+// 拵呇撮夔-鳶刓��
 int PROFESSION_volcano_springs( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_VOLCANO_SPRINGS );		
 	return TRUE;
 }
 
-// 巫师技能-火星球
+// 拵呇撮夔-鳶陎⑩
 int PROFESSION_fire_ball( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_FIRE_BALL );		
 	return TRUE;
 }
 
-// 巫师技能-火龙枪
+// 拵呇撮夔-鳶韓Л
 int PROFESSION_fire_spear( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_FIRE_SPEAR );		
 	return TRUE;
 }
 
-// 巫师技能-召雷术
+// 拵呇撮夔-欸濘扲
 int PROFESSION_summon_thunder( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_SUMMON_THUNDER );		
 	return TRUE;
 }
 
-// 巫师技能-电流术
+// 拵呇撮夔-萇霜扲
 int PROFESSION_current( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_CURRENT );		
 	return TRUE;
 }
 
-// 巫师技能-暴风雨
+// 拵呇撮夔-惟瑞迾
 int PROFESSION_storm( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_STORM );		
 	return TRUE;
 }
 
-// 巫师技能-冰箭术
+// 拵呇撮夔-梨璋扲
 int PROFESSION_ice_arrow( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ICE_ARROW );		
 	return TRUE;
 }
 
-// 巫师技能-冰爆术
+// 拵呇撮夔-梨惇扲
 int PROFESSION_ice_crack( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ICE_CRACK );		
 	return TRUE;
 }
 
-// 巫师技能-冰镜术
+// 拵呇撮夔-梨噩扲
 int PROFESSION_ice_mirror( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ICE_MIRROR );		
 	return TRUE;
 }
 
-// 巫师技能-世界末日
+// 拵呇撮夔-岍賜藺��
 int PROFESSION_doom( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_DOOM );		
 	return TRUE;
 }
 
-// 巫师技能-嗜血成性
+// 拵呇撮夔-岓悛傖俶
 int PROFESSION_blood( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_BLOOD );		
 	return TRUE;
 }
 
-// 巫师技能-嗜血蛊
+// 拵呇撮夔-岓悛嘍
 int PROFESSION_blood_worms( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_BLOOD_WORMS );		
 	return TRUE;
 }
 
-// 巫师技能-一针见血
+// 拵呇撮夔-珨渀獗悛
 int PROFESSION_sign( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_SIGN );		
 	return TRUE;
 }
 
-// 巫师技能-火附体
+// 拵呇撮夔-鳶蜇极
 int PROFESSION_fire_enclose( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_FIRE_ENCLOSE );		
 	return TRUE;
 }
 
-// 巫师技能-冰附体
+// 拵呇撮夔-梨蜇极
 int PROFESSION_ice_eclose( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ICE_ENCLOSE );		
 	return TRUE;
 }
 
-// 巫师技能-雷附体
+// 拵呇撮夔-濘蜇极
 int PROFESSION_thunder_enclose( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_THUNDER_ENCLOSE );		
 	return TRUE;
 }
 
-// 巫师技能-火魔法熟练度
+// 拵呇撮夔-鳶藹楊抇褶僅
 int PROFESSION_fire_practice( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;
 }
 
-// 巫师技能-冰魔法熟练度
+// 拵呇撮夔-梨藹楊抇褶僅
 int PROFESSION_ice_practice( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;
 }
 
-// 巫师技能-雷魔法熟练度
+// 拵呇撮夔-濘藹楊抇褶僅
 int PROFESSION_thunder_practice( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;
 }
 
-// 巫师技能-附身术
+// 拵呇撮夔-蜇旯扲
 int PROFESSION_enclose( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ENCLOSE );		
 	return TRUE;
 }
 
-// 巫师技能-移形换位
+// 拵呇撮夔-痄倛遙弇
 int PROFESSION_transpose( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_TRANSPOSE );		
@@ -934,131 +934,131 @@ int PROFESSION_transpose( int charaindex, int toNo, int array, char *data, int s
 
 /*----------------------------------------------------------------------*/
 
-// 勇士技能-爆击
+// 蚋尪撮夔-惇僻
 int PROFESSION_brust( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_BRUST );
 	return TRUE;
 }
 
-// 勇士技能-连环攻击
+// 蚋尪撮夔-蟀遠馴僻
 int PROFESSION_chain_atk( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_CHAIN_ATK );
 	return TRUE;
 }
 
-// 勇士技能-回避
+// 蚋尪撮夔-隙旌
 int PROFESSION_avoid( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_AVOID );
 	return TRUE;
 }
 
-// 勇士技能-补血
+// 蚋尪撮夔-硃悛
 int PROFESSION_recovery( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_RECOVERY );
 	return TRUE;
 }
 
-// 勇士技能-武器专精
+// 蚋尪撮夔-挕ん蚳儕
 int PROFESSION_weapon_focus( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;
 }
 
-// 勇士技能-状态回复
+// 蚋尪撮夔-袨怓隙葩
 int PROFESSION_reback( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_REBACK );		
 	return TRUE;
 }
 
-// 勇士技能-双重攻击
+// 蚋尪撮夔-邧笭馴僻
 int PROFESSION_chain_atk_2( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_CHAIN_ATK_2 );		
 	return TRUE;
 }
 
-// 勇士技能-舍已为友
+// 蚋尪撮夔-忔眒峈衭
 int PROFESSION_scapegoat( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_SCAPEGOAT );		
 	return TRUE;
 }
 
-// 勇士技能-激化攻击
+// 蚋尪撮夔-慾趙馴僻
 int PROFESSION_enrage( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ENRAGE );		
 	return TRUE;
 }
 
-// 勇士技能-能量聚集
+// 蚋尪撮夔-夔講擄摩
 int PROFESSION_energy_collect( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_COLLECT );		
 	return TRUE;
 }
 
-// 勇士技能-专注战斗
+// 蚋尪撮夔-蚳蛁桵須
 int PROFESSION_focus( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_FOCUS );		
 	return TRUE;
 }
 
-// 勇士技能-盾击
+// 蚋尪撮夔-嗎僻
 int PROFESSION_shield_attack( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_SHIELD_ATTACK );		
 	return TRUE;
 }
 
-// 勇士技能-二刀流
+// 蚋尪撮夔-媼絮霜
 int PROFESSION_dual_weapon( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;
 }
 
-// 勇士技能-格档
+// 蚋尪撮夔-跡紫
 int PROFESSION_deflect( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_DEFLECT );		
 	return TRUE;
 }
 
-// 勇士技能-贯穿攻击
+// 蚋尪撮夔-嫗援馴僻
 int PROFESSION_through_attack( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_THROUGH_ATTACK );		
 	return TRUE;
 }
 
-// 勇士技能-座骑攻击
+// 蚋尪撮夔-釱る馴僻
 int PROFESSION_cavalry( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_CAVALRY );		
 	return TRUE;
 }
 
-// 勇士技能-濒死攻击
+// 蚋尪撮夔-梭侚馴僻
 int PROFESSION_dead_attack( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_DEAD_ATTACK );		
 	return TRUE;
 }
 
-// 勇士技能-回旋攻击
+// 蚋尪撮夔-隙唅馴僻
 int PROFESSION_convolute( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_CONVOLUTE );		
 	return TRUE;
 }
 
-// 勇士技能-混乱攻击
+// 蚋尪撮夔-髦觴馴僻
 int PROFESSION_chaos( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_CHAOS );		
@@ -1067,76 +1067,76 @@ int PROFESSION_chaos( int charaindex, int toNo, int array, char *data, int skill
 
 /*----------------------------------------------------------------------*/
 
-// 猎人技能-陷阱
+// 轂�佷敵�-疪筘
 int PROFESSION_trap( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_TRAP );		
 	return TRUE;
 }
 
-// 猎人技能-驯伏宠物
+// 轂�佷敵�-拲睦唾昜
 int PROFESSION_docile( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_DOCILE );		
 	return TRUE;
 }
 
-// 猎人技能-激怒宠物
+// 轂�佷敵�-慾躑唾昜
 int PROFESSION_enrage_pet( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ENRAGE_PET );		
 	return TRUE;
 }
 
-// 猎人技能-天罗地网
+// 轂�佷敵�-毞蹕華厙
 int PROFESSION_dragnet( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_DRAGNET );		
 	return TRUE;
 }
 
-// 猎人技能-树根缠绕
+// 轂�佷敵�-攷跦莊��
 int PROFESSION_entwine( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ENTWINE );		
 	return TRUE;
 }
 
-// 猎人技能-自给自足
+// 轂�佷敵�-赻跤赻逋
 int PROFESSION_autarky( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;
 }
 
-// 猎人技能-  体掠夺
+// 轂�佷敵�-  极謨嗤
 int PROFESSION_plunder( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_PLUNDER );	
 	return TRUE;
 }
 
-// 猎人技能-毒素武器
+// 轂�佷敵�-馮匼挕ん
 int PROFESSION_toxin_weapon( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_TOXIN_WEAPON );	
 	return TRUE;
 }
 
-// 猎人技能-火抗性提升
+// 轂�佷敵�-鳶蕨俶枑汔
 int PROFESSION_resist_fire( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_RESIST_FIRE );	
 	return TRUE;
 }
 
-// 猎人技能-冰抗性提升
+// 轂�佷敵�-梨蕨俶枑汔
 int PROFESSION_resist_ice( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_RESIST_ICE );	
 	return TRUE;
 }
 
-// 猎人技能-雷抗性提升
+// 轂�佷敵�-濘蕨俶枑汔
 int PROFESSION_resist_thunder( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_RESIST_THUNDER );	
@@ -1144,19 +1144,19 @@ int PROFESSION_resist_thunder( int charaindex, int toNo, int array, char *data, 
 }
 
 #ifdef _PROFESSION_ADDSKILL
-// 猎人技能-自然威能
+// 轂�佷敵�-赻�銓�夔
 int PROFESSION_resist_f_i_t( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_RESIST_F_I_T );	
 	return TRUE;
 }
-// 猎人技能-号召自然
+// 轂�佷敵�-瘍欸赻��
 int PROFESSION_call_nature( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_CALL_NATURE );	
 	return TRUE;
 }
-// 猎人技能-四属性结界
+// 轂�佷敵�-侐扽俶賦賜
 int PROFESSION_boundary( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_BOUNDARY );	
@@ -1164,42 +1164,42 @@ int PROFESSION_boundary( int charaindex, int toNo, int array, char *data, int sk
 }
 #endif
 
-// 猎人技能-团体火抗性提升
+// 轂�佷敵�-芶极鳶蕨俶枑汔
 int PROFESSION_g_resist_fire( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_G_RESIST_FIRE );	
 	return TRUE;
 }
 
-// 猎人技能-团体冰抗性提升
+// 轂�佷敵�-芶极梨蕨俶枑汔
 int PROFESSION_g_resist_ice( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_G_RESIST_ICE );	
 	return TRUE;
 }
 
-// 猎人技能-团体雷抗性提升
+// 轂�佷敵�-芶极濘蕨俶枑汔
 int PROFESSION_g_resist_thunder( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_G_RESIST_THUNDER );	
 	return TRUE;
 }
 
-// 猎人技能-弱点攻击
+// 轂�佷敵�-�黤蓍本�
 int PROFESSION_attack_weak( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_ATTACK_WEAK );	
 	return TRUE;
 }
 
-// 猎人技能-挑拨
+// 轂�佷敵�-泔畢
 int PROFESSION_instigate( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_INSTIGATE );	
 	return TRUE;
 }
 
-// 猎人技能-遗忘
+// 轂�佷敵�-疻咭
 int PROFESSION_oblivion( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	profession_common_fun( charaindex, toNo, skill_level, array, BATTLE_COM_S_OBLIVION );	
@@ -1208,9 +1208,9 @@ int PROFESSION_oblivion( int charaindex, int toNo, int array, char *data, int sk
 
 
 /*----------------------------------------------------------------------*/
-// 非战斗技能
+// 準桵須撮夔
 
-// 猎人技能-追寻敌踪
+// 轂�佷敵�-袚扆菩趿
 int PROFESSION_track( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	char *pszP = NULL, *pszOption = NULL, msg[20];
@@ -1221,18 +1221,18 @@ int PROFESSION_track( int charaindex, int toNo, int array, char *data, int skill
 		ret = -1;
 	}
 
-	// 技能的参数
+	// 撮夔腔統杅
 	pszOption = PROFESSION_SKILL_getChar( array, PROFESSION_SKILL_OPTION);
 
-	// 技能等级 rate
-	if( (pszP = strstr( pszOption, "倍%" ) ) != NULL )	sscanf( pszP+3, "%d", &rate );
+	// 撮夔脹撰 rate
+	if( (pszP = strstr( pszOption, "捷%" ) ) != NULL )	sscanf( pszP+3, "%d", &rate );
 	per = skill_level * rate;
 
-	// 准备期的动画
+	// 袧掘ぶ腔雄賒
 	img1 = PROFESSION_SKILL_getInt( array, PROFESSION_SKILL_IMG_1 );
 
 	CHAR_setWorkInt( charaindex, CHAR_ENCOUNT_FIX, per);		
-	CHAR_talkToCli( charaindex, -1, "遇敌率上升",  CHAR_COLORRED);
+	CHAR_talkToCli( charaindex, -1, "郣菩薹奻汔",  CHAR_COLORRED);
 	CHAR_setWorkInt( charaindex, CHAR_ENCOUNT_NUM, (int)time(NULL) + (60 * 3) );
 
 	sprintf( msg, "%d", img1);
@@ -1241,7 +1241,7 @@ int PROFESSION_track( int charaindex, int toNo, int array, char *data, int skill
 	return ret;
 }
 
-// 猎人技能-回避战斗
+// 轂�佷敵�-隙旌桵須
 int PROFESSION_escape( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	char *pszP = NULL, *pszOption = NULL, msg[20];
@@ -1252,18 +1252,18 @@ int PROFESSION_escape( int charaindex, int toNo, int array, char *data, int skil
 		ret = -1;
 	}
 
-	// 技能的参数
+	// 撮夔腔統杅
 	pszOption = PROFESSION_SKILL_getChar( array, PROFESSION_SKILL_OPTION);
 
-	// 技能等级 rate
-	if( (pszP = strstr( pszOption, "倍%" ) ) != NULL )	sscanf( pszP+3, "%d", &rate );
+	// 撮夔脹撰 rate
+	if( (pszP = strstr( pszOption, "捷%" ) ) != NULL )	sscanf( pszP+3, "%d", &rate );
 	per = skill_level * rate;
 
-	// 准备期的动画
+	// 袧掘ぶ腔雄賒
 	img1 = PROFESSION_SKILL_getInt( array, PROFESSION_SKILL_IMG_1 );
 
 	CHAR_setWorkInt( charaindex, CHAR_ENCOUNT_FIX, (-1) * per);
-	CHAR_talkToCli( charaindex, -1, "遇敌率下降",  CHAR_COLORGREEN);
+	CHAR_talkToCli( charaindex, -1, "郣菩薹狟蔥",  CHAR_COLORGREEN);
 
 	CHAR_setWorkInt( charaindex, CHAR_ENCOUNT_NUM, (int)time(NULL) + (60 * 3) );
 
@@ -1275,17 +1275,17 @@ int PROFESSION_escape( int charaindex, int toNo, int array, char *data, int skil
 
 
 
-// 共同技能-气力充沛
+// 僕肮撮夔-ァ薯喃驛
 int PROFESSION_full_mp( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;
 }
-// 共同技能-负重增加
+// 僕肮撮夔-蛹笭崝樓
 int PROFESSION_strong_back( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;
 }
-// 共同技能-自我强化
+// 僕肮撮夔-赻扂Ч趙
 int PROFESSION_strengthen( int charaindex, int toNo, int array, char *data, int skill_level )
 {
 	return TRUE;

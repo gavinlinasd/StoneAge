@@ -18,7 +18,7 @@
 #include <string.h>
 
 void sasql_close( void );
-int sasql_save_nm( int idx, char *acc, char *data );//左右人物, 帐号, 资料
+int sasql_save_nm( int idx, char *acc, char *data );//酘衵�冼�, 梛瘍, 訧蹋
 int sasql_save_opt( int idx, char *acc, char *data );
 int sasql_save_int_info( int idx, char *acc, char *data );
 int sasql_save_char_info( int idx, char *acc, char *data );

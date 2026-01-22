@@ -7,22 +7,22 @@
 #include "npc_action.h"
 
 /* 
- * 皿伊奶乩□及失弁扑亦件卞  杀允月NPC［
- * 签卞韵曰忒仄凶曰允月分仃分互［
- * 汹仁］引凶反  匀化中月及失弁扑亦件卞反  杀仄卅中［
+ * 鏤畛騷媕↓摯囮袲で砫璃勗  伀埰堎NPC��
+ * ワ勗婘堇蒍媃倜堇埰堎煦崹煦誑��
+ * 倵�呁椹�倜毀  埱趙笢堎摯囮袲で砫璃勗毀  伀媃埵笢��
  *
- * 娄醒“
- *      msgcol:		丢永本□斥及缙［犯白巧伙玄反疵缙
- *      normal:		  骚卞韵匀化五凶凛支  躲卅失弁扑亦件卞覆仄化及忒蚕
- *		attack:		  猾失弁扑亦件卞覆允月忒蚕
- *		damage:		母丢□斥毛熬仃凶失弁扑亦件卞覆允月忒蚕
- *		down:		逦木月失弁扑亦件卞覆允月忒蚕
- *		sit:		甄月失弁扑亦件卞覆仄化及忒蚕
- *		hand:		澎毛蕊月失弁扑亦件卞覆仄化及忒蚕
- *		pleasure:	减少失弁扑亦件卞覆仄化及忒蚕
- *		angry:		变月失弁扑亦件卞覆仄化及忒蚕
- *		sad:		  仄戈失弁扑亦件卞覆仄化及忒蚕
- *		guard:		布□玉允月失弁扑亦件卞覆仄化及忒蚕
+ * 礎倳※
+ *      msgcol:		隍蚗掛↓喇摯褗�蛪萼觙伒懩�毀棺褗
+ *      normal:		  玊勗婘埱趙拻倜鄹盓  嗚埵囮袲で砫璃勗葡媃趙摯蒍紮
+ *		attack:		  賓囮袲で砫璃勗葡埰堎蒍紮
+ *		damage:		譫隍↓喇禱偏崹倜囮袲で砫璃勗葡埰堎蒍紮
+ *		down:		槸躂堎囮袲で砫璃勗葡埰堎蒍紮
+ *		sit:		淢堎囮袲で砫璃勗葡媃趙摯蒍紮
+ *		hand:		鱗禱�擸薹抄芢刳鉏�勗葡媃趙摯蒍紮
+ *		pleasure:	熬屾囮袲で砫璃勗葡媃趙摯蒍紮
+ *		angry:		曹堎囮袲で砫璃勗葡媃趙摯蒍紮
+ *		sad:		  媃資囮袲で砫璃勗葡媃趙摯蒍紮
+ *		guard:		票↓迶埰堎囮袲で砫璃勗葡媃趙摯蒍紮
  */
  
 
@@ -33,7 +33,7 @@ enum {
 };
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_ActionInit( int meindex )
 {
@@ -54,7 +54,7 @@ BOOL NPC_ActionInit( int meindex )
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_ActionTalked( int meindex , int talkerindex , char *szMes ,
                      int color )
@@ -62,11 +62,11 @@ void NPC_ActionTalked( int meindex , int talkerindex , char *szMes ,
 	char	argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	char	buf[64];
 
-    /* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( !NPC_Util_charIsInFrontOfChar( talkerindex, meindex, 1 )) return; 
 
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
@@ -82,7 +82,7 @@ void NPC_ActionTalked( int meindex , int talkerindex , char *szMes ,
 	
 }
 /*********************************
-* watch质  
+* watch窐  
 *********************************/
 void NPC_ActionWatch( int meobjindex, int objindex, CHAR_ACTION act,
                     int x,int y,int dir, int* opt,int optlen )
@@ -111,12 +111,12 @@ void NPC_ActionWatch( int meobjindex, int objindex, CHAR_ACTION act,
 	
 	if( OBJECT_getType( objindex) != OBJTYPE_CHARA) return;
 	index = OBJECT_getIndex( objindex);
-	/* 皿伊奶乩□卞及心  杀允月 */
+	/* 鏤畛騷媕↓勗摯陑  伀埰堎 */
 	if( CHAR_getInt( index, CHAR_WHICHTYPE) != CHAR_TYPEPLAYER) return;
     
     meindex = OBJECT_getIndex( meobjindex);
     
-    /* 轾五宁匀化ㄠ弘伉永玉匹卅中午  杀仄卅中 */
+    /* 澺拻譴埱趙兒精惉蚗迶ぁ埵笢敁  伀媃埵笢 */
     if( NPC_Util_isFaceToFace( meindex, index, 1 ) != TRUE ) return;
 	
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));

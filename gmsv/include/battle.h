@@ -12,16 +12,16 @@
 #define DUELPOINT_RATE	(0.1)
 
 enum{
-	BATTLE_MODE_NONE = 0,	// 无战斗状态
-	BATTLE_MODE_INIT,		// 战斗初始化
-	BATTLE_MODE_BATTLE,		// 战斗中
-	BATTLE_MODE_FINISH,		// 战斗结束
-	BATTLE_MODE_STOP,		// 战斗结束(未使用)
-	BATTLE_MODE_WATCHBC,	// 观战初始化
-	BATTLE_MODE_WATCHPRE,	// 观战(没作用)
-	BATTLE_MODE_WATCHWAIT,	// 观战(没作用)
-	BATTLE_MODE_WATCHMOVIE, // 观战(没作用)
-	BATTLE_MODE_WATCHAFTER, // 观战(没作用)
+	BATTLE_MODE_NONE = 0,	// 拸桵須袨怓
+	BATTLE_MODE_INIT,		// 桵須場宎趙
+	BATTLE_MODE_BATTLE,		// 桵須笢
+	BATTLE_MODE_FINISH,		// 桵須賦旰
+	BATTLE_MODE_STOP,		// 桵須賦旰(帤妏蚚)
+	BATTLE_MODE_WATCHBC,	// 夤桵場宎趙
+	BATTLE_MODE_WATCHPRE,	// 夤桵(羶釬蚚)
+	BATTLE_MODE_WATCHWAIT,	// 夤桵(羶釬蚚)
+	BATTLE_MODE_WATCHMOVIE, // 夤桵(羶釬蚚)
+	BATTLE_MODE_WATCHAFTER, // 夤桵(羶釬蚚)
 	BATTLE_MODE_END
 };
 
@@ -39,15 +39,15 @@ enum{
 
 
 enum{
-	BATTLE_CHARMODE_NONE = 0,		// 无战斗状态
-	BATTLE_CHARMODE_INIT,			// 战斗初始化
-	BATTLE_CHARMODE_C_WAIT,			// 等待战斗指令
-	BATTLE_CHARMODE_C_OK,			// 已输入战斗指令
-	BATTLE_CHARMODE_BATTLE,			// 未使用
-	BATTLE_CHARMODE_RESCUE,			// 由help状态进入的
-	BATTLE_CHARMODE_FINAL,			// 战斗结束
-	BATTLE_CHARMODE_WATCHINIT,		// 观战初始化
-	BATTLE_CHARMODE_COMMAND,		// 未使用
+	BATTLE_CHARMODE_NONE = 0,		// 拸桵須袨怓
+	BATTLE_CHARMODE_INIT,			// 桵須場宎趙
+	BATTLE_CHARMODE_C_WAIT,			// 脹渾桵須硌鍔
+	BATTLE_CHARMODE_C_OK,			// 眒怀�鄳蓿煦蜂�
+	BATTLE_CHARMODE_BATTLE,			// 帤妏蚚
+	BATTLE_CHARMODE_RESCUE,			// 蚕help袨怓輛�賮�
+	BATTLE_CHARMODE_FINAL,			// 桵須賦旰
+	BATTLE_CHARMODE_WATCHINIT,		// 夤桵場宎趙
+	BATTLE_CHARMODE_COMMAND,		// 帤妏蚚
 	BATTLE_CHARMODE_END
 };
 
@@ -109,14 +109,14 @@ typedef enum{
 	BATTLE_COM_S_CHARGE_OK,
 	BATTLE_COM_JYUJYUTU = 2000,
 
-	BATTLE_COM_COMPELESCAPE, //强制离开
+	BATTLE_COM_COMPELESCAPE, //Ч秶燭羲
 
 #ifdef __ATTACK_MAGIC
-  BATTLE_COM_S_ATTACK_MAGIC,		// 宠物魔法
+  BATTLE_COM_S_ATTACK_MAGIC,		// 唾昜藹楊
 #endif
 
 #ifdef _PSKILL_FALLGROUND
-	BATTLE_COM_S_FALLRIDE,			//落马术
+	BATTLE_COM_S_FALLRIDE,			//邈鎮扲
 #endif
 #ifdef _PETSKILL_EXPLODE
 	BATTLE_COM_S_EXPLODE,
@@ -139,53 +139,53 @@ typedef enum{
 #ifdef _BATTLE_LIGHTTAKE
 	BATTLE_COM_S_LIGHTTAKE,
 #endif
-#ifdef _BATTLE_ATTCRAZED		// ANDY 疯狂暴走
+#ifdef _BATTLE_ATTCRAZED		// ANDY 瑁遼惟軗
 	BATTLE_COM_S_ATTCRAZED,
 #endif
-#ifdef _SHOOTCHESTNUT			// Syu ADD 宠技：丢栗子
+#ifdef _SHOOTCHESTNUT			// Syu ADD 唾撮ㄩ隍璦赽
 	BATTLE_COM_S_ATTSHOOT,
 #endif
 #ifdef _BATTLESTEAL_FIX
 	BATTLE_COM_S_STEALMONEY,
 #endif
 #ifdef _PRO_BATTLEENEMYSKILL
-	BATTLE_COM_S_ENEMYRELIFE,		//NPC ENEMY 复活技能
-	BATTLE_COM_S_ENEMYREHP,			//NPC ENEMY 补血技能
-	BATTLE_COM_S_ENEMYHELP,			//NPC ENEMY 招人
+	BATTLE_COM_S_ENEMYRELIFE,		//NPC ENEMY 葩魂撮夔
+	BATTLE_COM_S_ENEMYREHP,			//NPC ENEMY 硃悛撮夔
+	BATTLE_COM_S_ENEMYHELP,			//NPC ENEMY 桸��
 #endif
 #ifdef _SKILL_DAMAGETOHP
-	BATTLE_COM_S_DAMAGETOHP,		//嗜血技
+	BATTLE_COM_S_DAMAGETOHP,		//岓悛撮
 #endif
 #ifdef _Skill_MPDAMAGE
-	BATTLE_COM_S_MPDAMAGE,			//MP伤害
+	BATTLE_COM_S_MPDAMAGE,			//MP夼漲
 #endif
 #ifdef _SKILL_WILDVIOLENT_ATT
-    BATTLE_COM_S_WILDVIOLENTATTACK, //狂暴攻击  vincent add 2002/05/16
+    BATTLE_COM_S_WILDVIOLENTATTACK, //遼惟馴僻  vincent add 2002/05/16
 #endif
 
 #ifdef _SKILL_SPEEDY_ATT
-    BATTLE_COM_S_SPEEDYATTACK,		//疾速攻击  vincent add 2002/05/20
+    BATTLE_COM_S_SPEEDYATTACK,		//撞厒馴僻  vincent add 2002/05/20
 #endif
 #ifdef _SKILL_GUARDBREAK2
-    BATTLE_COM_S_GBREAK2,			//破除防御2 vincent add 2002/05/20
+    BATTLE_COM_S_GBREAK2,			//ぢ壺滅郘2 vincent add 2002/05/20
 #endif
 #ifdef _SKILL_SACRIFICE
-    BATTLE_COM_S_SACRIFICE,			//救援		vincent add 2002/05/30
+    BATTLE_COM_S_SACRIFICE,			//寰堔		vincent add 2002/05/30
 #endif
 #ifdef _SKILL_WEAKEN  
-	    BATTLE_COM_S_WEAKEN,		//虚弱		vincent add 2002/07/11
+	    BATTLE_COM_S_WEAKEN,		//剞��		vincent add 2002/07/11
 #endif
 #ifdef _SKILL_DEEPPOISON  
-	    BATTLE_COM_S_DEEPPOISON,	//剧毒		vincent add 2002/07/16
+	    BATTLE_COM_S_DEEPPOISON,	//曄馮		vincent add 2002/07/16
 #endif
 #ifdef _SKILL_BARRIER  
-	    BATTLE_COM_S_BARRIER,		//魔障		vincent add 2002/07/16
+	    BATTLE_COM_S_BARRIER,		//藹梤		vincent add 2002/07/16
 #endif
 #ifdef _SKILL_NOCAST 
-	    BATTLE_COM_S_NOCAST,		//沉默		vincent add 2002/07/16
+	    BATTLE_COM_S_NOCAST,		//麥蘇		vincent add 2002/07/16
 #endif
 #ifdef _SKILL_ROAR 
-    BATTLE_COM_S_ROAR,			    //大吼		vincent add 2002/07/11
+    BATTLE_COM_S_ROAR,			    //湮綾		vincent add 2002/07/11
 #endif
 #ifdef _BATTLENPC_WARP_PLAYER
 	BATTLE_COM_WARP,                // npc warp player
@@ -214,77 +214,77 @@ typedef enum{
 #ifdef _MAGICPET_SKILL
 	BATTLE_COM_S_SETMAGICPET,
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 
-// 巫师
-	BATTLE_COM_S_VOLCANO_SPRINGS,	// 火山泉	
-	BATTLE_COM_S_FIRE_BALL,			// 火星球
-	BATTLE_COM_S_FIRE_SPEAR,		// 火龙枪
-	BATTLE_COM_S_SUMMON_THUNDER,	// 召雷术
-	BATTLE_COM_S_CURRENT,			// 电流术
-	BATTLE_COM_S_STORM,				// 暴风雨
-	BATTLE_COM_S_ICE_ARROW,			// 冰箭术
-	BATTLE_COM_S_ICE_CRACK,			// 冰爆术
-	BATTLE_COM_S_ICE_MIRROR,		// 冰镜术
-	BATTLE_COM_S_DOOM,				// 世界末日
-	BATTLE_COM_S_BLOOD,				// 嗜血成性
-	BATTLE_COM_S_BLOOD_WORMS,		// 嗜血蛊
-	BATTLE_COM_S_SIGN,				// 一针见血
-	BATTLE_COM_S_FIRE_ENCLOSE,		// 火附体	
-	BATTLE_COM_S_ICE_ENCLOSE,		// 冰附体
-	BATTLE_COM_S_THUNDER_ENCLOSE,	// 雷附体
-	BATTLE_COM_S_ENCLOSE,			// 附身术
-	BATTLE_COM_S_TRANSPOSE,			// 移形换位
-// 勇士
-	BATTLE_COM_S_BRUST,				// 爆击			
-	BATTLE_COM_S_CHAIN_ATK,			// 连环攻击
-	BATTLE_COM_S_AVOID,				// 回避
-	BATTLE_COM_S_RECOVERY,			// 补血
-	BATTLE_COM_S_WEAPON_FOCUS,		// 武器专精
-	BATTLE_COM_S_REBACK,			// 状态回复
-	BATTLE_COM_S_CHAIN_ATK_2,		// 双重攻击
-	BATTLE_COM_S_SCAPEGOAT,			// 舍已为友
-	BATTLE_COM_S_ENRAGE,			// 激化攻击
-	BATTLE_COM_S_COLLECT,			// 能量聚集
-	BATTLE_COM_S_FOCUS,				// 专注战斗
-	BATTLE_COM_S_SHIELD_ATTACK,		// 盾击
-	BATTLE_COM_S_DUAL_WEAPON,		// 二刀流
-	BATTLE_COM_S_DEFLECT,			// 格档
-	BATTLE_COM_S_THROUGH_ATTACK,	// 贯穿攻击
-	BATTLE_COM_S_CAVALRY,			// 座骑攻击
-	BATTLE_COM_S_DEAD_ATTACK,		// 濒死攻击
-	BATTLE_COM_S_CONVOLUTE,			// 回旋攻击
-	BATTLE_COM_S_CHAOS,				// 混乱攻击
-// 猎人
-	BATTLE_COM_S_TRAP,				// 陷阱			
-	BATTLE_COM_S_TRACK,				// 追寻敌踪
-	BATTLE_COM_S_DOCILE,			// 驯伏宠物	
-	BATTLE_COM_S_ENRAGE_PET,		// 激怒宠物	
-	BATTLE_COM_S_DRAGNET,			// 天罗地网
-	BATTLE_COM_S_ENTWINE,			// 树根缠绕
-	BATTLE_COM_S_AUTARKY,			// 自给自足
-	BATTLE_COM_S_PLUNDER,			//   体掠夺
-	BATTLE_COM_S_TOXIN_WEAPON,		// 毒素武器
-	BATTLE_COM_S_RESIST_FIRE,		// 火抗性提升
-	BATTLE_COM_S_RESIST_ICE,		// 冰抗性提升
-	BATTLE_COM_S_RESIST_THUNDER,	// 雷抗性提升
-	BATTLE_COM_S_G_RESIST_FIRE,		// 团体火抗性提升
-	BATTLE_COM_S_G_RESIST_ICE,		// 团体冰抗性提升
-	BATTLE_COM_S_G_RESIST_THUNDER,	// 团体雷抗性提升
-	BATTLE_COM_S_ATTACK_WEAK,		// 弱点攻击
-	BATTLE_COM_S_INSTIGATE,			// 挑拨
-	BATTLE_COM_S_OBLIVION,			// 遗忘
+// 拵呇
+	BATTLE_COM_S_VOLCANO_SPRINGS,	// 鳶刓��	
+	BATTLE_COM_S_FIRE_BALL,			// 鳶陎⑩
+	BATTLE_COM_S_FIRE_SPEAR,		// 鳶韓Л
+	BATTLE_COM_S_SUMMON_THUNDER,	// 欸濘扲
+	BATTLE_COM_S_CURRENT,			// 萇霜扲
+	BATTLE_COM_S_STORM,				// 惟瑞迾
+	BATTLE_COM_S_ICE_ARROW,			// 梨璋扲
+	BATTLE_COM_S_ICE_CRACK,			// 梨惇扲
+	BATTLE_COM_S_ICE_MIRROR,		// 梨噩扲
+	BATTLE_COM_S_DOOM,				// 岍賜藺��
+	BATTLE_COM_S_BLOOD,				// 岓悛傖俶
+	BATTLE_COM_S_BLOOD_WORMS,		// 岓悛嘍
+	BATTLE_COM_S_SIGN,				// 珨渀獗悛
+	BATTLE_COM_S_FIRE_ENCLOSE,		// 鳶蜇极	
+	BATTLE_COM_S_ICE_ENCLOSE,		// 梨蜇极
+	BATTLE_COM_S_THUNDER_ENCLOSE,	// 濘蜇极
+	BATTLE_COM_S_ENCLOSE,			// 蜇旯扲
+	BATTLE_COM_S_TRANSPOSE,			// 痄倛遙弇
+// 蚋尪
+	BATTLE_COM_S_BRUST,				// 惇僻			
+	BATTLE_COM_S_CHAIN_ATK,			// 蟀遠馴僻
+	BATTLE_COM_S_AVOID,				// 隙旌
+	BATTLE_COM_S_RECOVERY,			// 硃悛
+	BATTLE_COM_S_WEAPON_FOCUS,		// 挕ん蚳儕
+	BATTLE_COM_S_REBACK,			// 袨怓隙葩
+	BATTLE_COM_S_CHAIN_ATK_2,		// 邧笭馴僻
+	BATTLE_COM_S_SCAPEGOAT,			// 忔眒峈衭
+	BATTLE_COM_S_ENRAGE,			// 慾趙馴僻
+	BATTLE_COM_S_COLLECT,			// 夔講擄摩
+	BATTLE_COM_S_FOCUS,				// 蚳蛁桵須
+	BATTLE_COM_S_SHIELD_ATTACK,		// 嗎僻
+	BATTLE_COM_S_DUAL_WEAPON,		// 媼絮霜
+	BATTLE_COM_S_DEFLECT,			// 跡紫
+	BATTLE_COM_S_THROUGH_ATTACK,	// 嫗援馴僻
+	BATTLE_COM_S_CAVALRY,			// 釱る馴僻
+	BATTLE_COM_S_DEAD_ATTACK,		// 梭侚馴僻
+	BATTLE_COM_S_CONVOLUTE,			// 隙唅馴僻
+	BATTLE_COM_S_CHAOS,				// 髦觴馴僻
+// 轂��
+	BATTLE_COM_S_TRAP,				// 疪筘			
+	BATTLE_COM_S_TRACK,				// 袚扆菩趿
+	BATTLE_COM_S_DOCILE,			// 拲睦唾昜	
+	BATTLE_COM_S_ENRAGE_PET,		// 慾躑唾昜	
+	BATTLE_COM_S_DRAGNET,			// 毞蹕華厙
+	BATTLE_COM_S_ENTWINE,			// 攷跦莊��
+	BATTLE_COM_S_AUTARKY,			// 赻跤赻逋
+	BATTLE_COM_S_PLUNDER,			//   极謨嗤
+	BATTLE_COM_S_TOXIN_WEAPON,		// 馮匼挕ん
+	BATTLE_COM_S_RESIST_FIRE,		// 鳶蕨俶枑汔
+	BATTLE_COM_S_RESIST_ICE,		// 梨蕨俶枑汔
+	BATTLE_COM_S_RESIST_THUNDER,	// 濘蕨俶枑汔
+	BATTLE_COM_S_G_RESIST_FIRE,		// 芶极鳶蕨俶枑汔
+	BATTLE_COM_S_G_RESIST_ICE,		// 芶极梨蕨俶枑汔
+	BATTLE_COM_S_G_RESIST_THUNDER,	// 芶极濘蕨俶枑汔
+	BATTLE_COM_S_ATTACK_WEAK,		// �黤蓍本�
+	BATTLE_COM_S_INSTIGATE,			// 泔畢
+	BATTLE_COM_S_OBLIVION,			// 疻咭
 #ifdef _PROFESSION_ADDSKILL
-	BATTLE_COM_S_RESIST_F_I_T,      // 自然威能
-	BATTLE_COM_S_CALL_NATURE,       // 号召自然
-    BATTLE_COM_S_BOUNDARY,          // 四属性结界
+	BATTLE_COM_S_RESIST_F_I_T,      // 赻�銓�夔
+	BATTLE_COM_S_CALL_NATURE,       // 瘍欸赻��
+    BATTLE_COM_S_BOUNDARY,          // 侐扽俶賦賜
 #endif
 #endif	
 
-#ifdef _PET_SKILL_SARS				// WON ADD 毒煞蔓延
+#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
 	BATTLE_COM_S_SARS,
 #endif
-#ifdef _SONIC_ATTACK				// WON ADD 音波攻击
+#ifdef _SONIC_ATTACK				// WON ADD 秞疏馴僻
 	BATTLE_COM_S_SONIC,
 	BATTLE_COM_S_SONIC2,
 #endif
@@ -308,7 +308,7 @@ typedef enum{
     BATTLE_COM_S_FIREKILL,
 #endif
 #ifdef _PETSKILL_DAMAGETOHP
-	BATTLE_COM_S_DAMAGETOHP2, //暗月狂狼(嗜血技的变体) 
+	BATTLE_COM_S_DAMAGETOHP2, //做堎遼曖(岓悛撮腔曹极) 
 #endif
 #ifdef _PETSKILL_BECOMEFOX
     BATTLE_COM_S_BECOMEFOX,
@@ -320,11 +320,11 @@ typedef enum{
     BATTLE_COM_S_SHOWMERCY,
 #endif
 #ifdef _PETSKILL_LER
-		BATTLE_COM_S_BAT_FLY,					// 雷尔技 - 群蝠四窜
-		BATTLE_COM_S_DIVIDE_ATTACK,		// 雷尔技 - 分身地裂
+		BATTLE_COM_S_BAT_FLY,					// 濘嫌撮 - �緊螤譬�
+		BATTLE_COM_S_DIVIDE_ATTACK,		// 濘嫌撮 - 煦旯華蹊
 #endif
 #ifdef _PETSKILL_BATTLE_MODEL
-		BATTLE_COM_S_BATTLE_MODEL,		// 宠物技能战斗模组
+		BATTLE_COM_S_BATTLE_MODEL,		// 唾昜撮夔桵須耀郪
 #endif
 
 	BATTLE_COM_END
@@ -356,41 +356,41 @@ enum{
 #define BC_FLG_HIDE			(1<<9)
 #define BC_FLG_REVERSE		(1<<10)
 #ifdef _MAGIC_WEAKEN
-#define BC_FLG_WEAKEN		(1<<11) // 虚弱
+#define BC_FLG_WEAKEN		(1<<11) // 剞��
 #endif
 #ifdef _MAGIC_DEEPPOISON
-#define BC_FLG_DEEPPOISON	(1<<12) // 剧毒
+#define BC_FLG_DEEPPOISON	(1<<12) // 曄馮
 #endif
 #ifdef _MAGIC_BARRIER
-#define BC_FLG_BARRIER		(1<<13) // 魔障
+#define BC_FLG_BARRIER		(1<<13) // 藹梤
 #endif
 #ifdef _MAGIC_NOCAST
-#define BC_FLG_NOCAST		(1<<14) // 沉默
+#define BC_FLG_NOCAST		(1<<14) // 麥蘇
 #endif
 
-#ifdef _PET_SKILL_SARS			// WON ADD 毒煞蔓延
-#define BC_FLG_SARS			(1<<15) // 毒煞
+#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
+#define BC_FLG_SARS			(1<<15) // 馮伢
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
-#define BC_FLG_DIZZY		(1<<16)	// 晕眩	
-#define BC_FLG_ENTWINE		(1<<17)	// 树根缠绕
-#define BC_FLG_DRAGNET		(1<<18)	// 天罗地网	
-#define BC_FLG_ICECRACK	    (1<<19)	// 冰爆术	
-#define BC_FLG_OBLIVION  	(1<<20)	// 遗忘
-#define BC_FLG_ICEARROW		(1<<21)	// 冰箭
-#define BC_FLG_BLOODWORMS 	(1<<22)	// 嗜血蛊
-#define BC_FLG_SIGN 		(1<<23)	// 一针见血
-#define BC_FLG_CARY			(1<<24) // 挑拨
-#define BC_FLG_F_ENCLOSE	(1<<25) // 火附体
-#define BC_FLG_I_ENCLOSE	(1<<26) // 冰附体
-#define BC_FLG_T_ENCLOSE	(1<<27) // 雷附体
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#define BC_FLG_DIZZY		(1<<16)	// 婠悈	
+#define BC_FLG_ENTWINE		(1<<17)	// 攷跦莊��
+#define BC_FLG_DRAGNET		(1<<18)	// 毞蹕華厙	
+#define BC_FLG_ICECRACK	    (1<<19)	// 梨惇扲	
+#define BC_FLG_OBLIVION  	(1<<20)	// 疻咭
+#define BC_FLG_ICEARROW		(1<<21)	// 梨璋
+#define BC_FLG_BLOODWORMS 	(1<<22)	// 岓悛嘍
+#define BC_FLG_SIGN 		(1<<23)	// 珨渀獗悛
+#define BC_FLG_CARY			(1<<24) // 泔畢
+#define BC_FLG_F_ENCLOSE	(1<<25) // 鳶蜇极
+#define BC_FLG_I_ENCLOSE	(1<<26) // 梨蜇极
+#define BC_FLG_T_ENCLOSE	(1<<27) // 濘蜇极
 #ifdef _PROFESSION_ADDSKILL
-#define BC_FLG_WATER	    (1<<28) // 水附体
-#define BC_FLG_FEAR			(1<<29) // 恐惧
+#define BC_FLG_WATER	    (1<<28) // 阨蜇极
+#define BC_FLG_FEAR			(1<<29) // 謁曉
 #endif
 #ifdef _PETSKILL_LER
-#define BC_FLG_CHANGE			(1<<30) // 雷尔变身
+#define BC_FLG_CHANGE			(1<<30) // 濘嫌曹旯
 #endif
 #endif
 
@@ -447,21 +447,21 @@ typedef struct
 
 typedef struct _Battle
 {
-	BOOL	use;	/* 银匀化中月井升丹井 */
-	int		battleindex; /* 田玄伙  寞 */
-	int		mode;	/* 蜇箕及爵  乒□玉 */
-	int		type;	/* 爵  正奶皿 (0:骚橘)(1:DUEL)(2:示旦爵) */
-	int		dpbattle;	/* DP田玄伙井＂ */
-	int		norisk;	/* 韶氏匹手伉旦弁及  中田玄伙井＂ */
-	int		turn;	/* 正□件醒 */
-	int		timer;	/* 它巨奶玄羁卞银丹正奶穴 */
-	int		leaderindex; /* 巨件市它件玄毛粟仇仄凶平乓仿及奶件犯永弁旦 */
-	int		winside; /*   厍仄凶扔奶玉 */
-	int		field_att;	/* 白奴□伙玉及箪岭 */
-	int		att_count;	/* 白奴□伙玉及箪岭  祭  及正奶穴 */
-	int		att_pow;	/* 白奴□伙玉及箪岭  祭  及由伐□ */
+	BOOL	use;	/* 窅埱趙笢堎凝汔竣凝 */
+	int		battleindex; /* 泬哱鳴  蠕 */
+	int		mode;	/* 藯凜摯橋  さ↓迶 */
+	int		type;	/* 橋  淏騷鏤 (0:玊橖)(1:DUEL)(2:尨筒橋) */
+	int		dpbattle;	/* DP泬哱鳴凝ㄑ */
+	int		norisk;	/* 屻庌ぁ忒惉筒袲摯  笢泬哱鳴凝ㄑ */
+	int		turn;	/* 淏↓璃倳 */
+	int		timer;	/* 坳操騷哱蹇勗窅竣淏騷悃 */
+	int		leaderindex; /* 操璃庈坳璃哱禱厔喫媃倜す籤溘摯騷璃溢蚗袲筒 */
+	int		winside; /*   媋媃倜�蚅枅� */
+	int		field_att;	/* 啞贖↓鳴迶摯鶂鍛 */
+	int		att_count;	/* 啞贖↓鳴迶摯鶂鍛  撬  摯淏騷悃 */
+	int		att_pow;	/* 啞贖↓鳴迶摯鶂鍛  撬  摯蚕極↓ */
 	int		field_no;
-	int		flg;		/* 备潘白仿弘 */
+	int		flg;		/* 掘攣啞溘精 */
 	BATTLE_SIDE		Side[2];
 #ifdef _BATTLE_TIMESPEED
 	unsigned int CreateTime;
@@ -472,12 +472,12 @@ typedef struct _Battle
 #endif
 
 #ifdef _PROFESSION_ADDSKILL
-	//冰爆术存放
-	int ice_count;//暂存数量
-	int ice_bout[20];//回合计数
-	BOOL ice_use[20];//是否使用
-	int ice_toNo[20];//对象
-	int ice_level[20];//攻击力
+	//梨惇扲湔溫
+	int ice_count;//婃湔杅講
+	int ice_bout[20];//隙磁數杅
+	BOOL ice_use[20];//岆瘁妏蚚
+	int ice_toNo[20];//勤砓
+	int ice_level[20];//馴僻薯
 	int ice_array[20];
 	int ice_charaindex[20];
 	int ice_attackNo[20];
@@ -491,29 +491,29 @@ typedef struct _Battle
 #ifdef _ACTION_BULLSCR
 	int enemynum;
 #endif
-	int		iEntryBack[BATTLE_ENTRY_MAX*2];		// 蟆正□件瓒  今木化中凶丢件田□
-	int		iEntryBack2[BATTLE_ENTRY_MAX*2];		// 蟆正□件瓒  今木化中凶丢件田□
-	int		createindex;	/* 仇及爵  毛综曰请仄凶平乓仿奶件犯永弁旦(NPC卅升) */
+	int		iEntryBack[BATTLE_ENTRY_MAX*2];		// 鞳淏↓璃頞  踏躂趙笢倜隍璃泬↓
+	int		iEntryBack2[BATTLE_ENTRY_MAX*2];		// 鞳淏↓璃頞  踏躂趙笢倜隍璃泬↓
+	int		createindex;	/* 喫摯橋  禱軘堇③媃倜す籤溘騷璃溢蚗袲筒(NPC埵汔) */
 	int    (*WinFunc)( int battleindex, int charaindex );
-#ifdef _DEATH_CONTEND//计算胜败func
+#ifdef _DEATH_CONTEND//數呾吨啖func
 	int    (*PkFunc)( int menum, int tonum, int winside, int battlemap);
 	int battlemap;
 #endif
-	struct _Battle *pNext;		// 戚及棋爵弘伙□皿
-	struct _Battle *pBefore;	// 蟆及棋爵弘伙□皿
+	struct _Battle *pNext;		// べ摯め橋精鳴↓鏤
+	struct _Battle *pBefore;	// 鞳摯め橋精鳴↓鏤
 }BATTLE;
 
-#define BATTLE_FLG_FREEDP ( 1 << 0 )	//   仆化手    蛹日卅中
-#define BATTLE_FLG_CHARALOST   ( 1 << 1 )	// 平乓仿互韶氏分曰  仃凶曰仄化中月
+#define BATTLE_FLG_FREEDP ( 1 << 0 )	//   ど趙忒    蚍�欷聿�
+#define BATTLE_FLG_CHARALOST   ( 1 << 1 )	// す籤溘誑屻庌煦堇  崹倜堇媃趙笢堎
 
 
 
-enum{	// 晓及field_att 卞  木月袄
-	BATTLE_ATTR_NONE = 0,	//   箪岭
-	BATTLE_ATTR_EARTH,		// 哗
+enum{	// 窀摯field_att 勗  躂堎偯
+	BATTLE_ATTR_NONE = 0,	//   鶂鍛
+	BATTLE_ATTR_EARTH,		// 貍
 	BATTLE_ATTR_WATER,		//   
-	BATTLE_ATTR_FIRE,		// 绍
-	BATTLE_ATTR_WIND,		// 氘
+	BATTLE_ATTR_FIRE,		// 庄
+	BATTLE_ATTR_WIND,		// 諿
 	BATTLE_ATTR_END
 };
 
@@ -521,36 +521,36 @@ enum{	// 晓及field_att 卞  木月袄
 //krynn 2001/12/28
 enum
 {
-	BATTLE_SIDE_RIGHT,		// 战斗中右侧	right side of battle
-	BATTLE_SIDE_LEFT,		// 战斗中左侧	left side of battle
-	BATTLE_SIDE_WATCH,		// 观战			watch battle player
+	BATTLE_SIDE_RIGHT,		// 桵須笢衵耜	right side of battle
+	BATTLE_SIDE_LEFT,		// 桵須笢酘耜	left side of battle
+	BATTLE_SIDE_WATCH,		// 夤桵			watch battle player
 };
 //krynn end
 
-#define TARGET_SIDE_0	20	// 惘础  扔奶玉ㄟ  隙烂
-#define TARGET_SIDE_1	21	// 尔础  扔奶玉ㄠ  隙烂
-#define TARGET_ALL	22	// 蝈  隙烂
+#define TARGET_SIDE_0	20	// 蒟插  �蚅枅顐�  炩擭
+#define TARGET_SIDE_1	21	// 嫌插  �蚅枅顐�  炩擭
+#define TARGET_ALL	22	// 蠈  炩擭
 
 #ifdef __ATTACK_MAGIC
 
-#define TARGET_SIDE_0_B_ROW     26      // 右下後一列
-#define TARGET_SIDE_0_F_ROW     25      // 右下前一列
-#define TARGET_SIDE_1_F_ROW     24      // 左上前一列
-#define TARGET_SIDE_1_B_ROW     23      // 左上後一列
+#define TARGET_SIDE_0_B_ROW     26      // 衵狟摽珨蹈
+#define TARGET_SIDE_0_F_ROW     25      // 衵狟ヶ珨蹈
+#define TARGET_SIDE_1_F_ROW     24      // 酘奻ヶ珨蹈
+#define TARGET_SIDE_1_B_ROW     23      // 酘奻摽珨蹈
 
 // won add
 #define	TARGER_THROUGH			27
 
 #endif
 
-extern int	gItemCrushRate;		//   莽  犯白巧伙玄
-extern BATTLE *BattleArray; 	/* 爵  正旦弁     */
-extern int BATTLE_battlenum;	/*     及醒 */
-extern char szAllBattleString[BATTLE_STRING_MAX];	/* 爵  卞银丹戊穴件玉  侬   */
-extern char *pszBattleTop, *pszBattleLast;	/* 爵  卞银丹  侬  及匏   */
-extern char szBadStatusString[];	// 旦  □正旦唱橘迕  侬  
-extern int gWeponType;	// 蜇箕及  湛及潘  
-extern float gDamageDiv;	// 母丢□斥坌喃
+extern int	gItemCrushRate;		//   癟  溢啞б鳴哱
+extern BATTLE *BattleArray; 	/* 橋  淏筒袲     */
+extern int BATTLE_battlenum;	/*     摯倳 */
+extern char szAllBattleString[BATTLE_STRING_MAX];	/* 橋  勗窅竣昡悃璃迶  棬   */
+extern char *pszBattleTop, *pszBattleLast;	/* 橋  勗窅竣  棬  摯痾   */
+extern char szBadStatusString[];	// 筒  ↓淏筒釭橖暵  棬  
+extern int gWeponType;	// 藯凜摯  梲摯攣  
+extern float gDamageDiv;	// 譫隍↓喇覕鄎
 
 #define BATTLE_CHECKINDEX( a ) ( ((a)>=BATTLE_battlenum || (a)<0 )?(FALSE):(TRUE) )
 #define BATTLE_CHECKSIDE( a ) ( ((a)>=2 || (a)<0)?(FALSE):( TRUE) )
@@ -565,23 +565,23 @@ extern float gDamageDiv;	// 母丢□斥坌喃
 
 #define BATTLE_MAP_MAX 219
 
-#define CH_FIX_PLAYERLEVELUP	(+2)	// 皿伊奶乩□及伊矛伙互失永皿
-#define CH_FIX_PLAYERDEAD		(-2)	// 皿伊奶乩□互骚橘韶
-#define CH_FIX_PLAYEULTIMATE	(-4)	// 皿伊奶乩□互失伙  奴丢永玄韶
-#define CH_FIX_PETESCAPE		(-1)	// 矢永玄互  仆凶
+#define CH_FIX_PLAYERLEVELUP	(+2)	// 鏤畛騷媕↓摯畛穫鳴誑囮蚗鏤
+#define CH_FIX_PLAYERDEAD		(-2)	// 鏤畛騷媕↓誑玊橖屻
+#define CH_FIX_PLAYEULTIMATE	(-4)	// 鏤畛騷媕↓誑囮鳴  贖隍蚗哱屻
+#define CH_FIX_PETESCAPE		(-1)	// 妐蚗哱誑  ど倜
 
-#define AI_FIX_PETLEVELUP		(+5*100)	// 矢永玄互伊矛伙失永皿
-#define AI_FIX_PETWIN			(+1)		// 矢永玄互衬毛逦仄凶
-#define AI_FIX_PETGOLDWIN		(+2*10)	// 矢永玄互伊矛伙及嫖中衬毛逦仄凶
-#define AI_FIX_PETRECOVERY		(+10)		// 爵    卞荚汊仄化手日匀凶
-#define AI_FIX_PETRESSURECT		(+3*100)	// 爵    卞汊唾仄化手日匀凶
-//#define AI_FIX_PETRECOVERY	(+50)		// 爵    卞荚汊仄化手日匀凶
+#define AI_FIX_PETLEVELUP		(+5*100)	// 妐蚗哱誑畛穫鳴囮蚗鏤
+#define AI_FIX_PETWIN			(+1)		// 妐蚗哱誑傍禱槸媃倜
+#define AI_FIX_PETGOLDWIN		(+2*10)	// 妐蚗哱誑畛穫鳴摯禜笢傍禱槸媃倜
+#define AI_FIX_PETRECOVERY		(+10)		// 橋    勗樊蜾媃趙忒�梊�倜
+#define AI_FIX_PETRESSURECT		(+3*100)	// 橋    勗蜾阽媃趙忒�梊�倜
+//#define AI_FIX_PETRECOVERY	(+50)		// 橋    勗樊蜾媃趙忒�梊�倜
 
-#define AI_FIX_SEKKAN 			(-2*100)	// 愤坌及矢永玄毛  猾
-#define AI_FIX_PLAYERULTIMATE	(-10*100)	// 愤坌及潜谛互失伙  奴丢永玄韶
-#define AI_FIX_PETULTIMATE		(-10*100)	// 矢永玄互失伙  奴丢永玄韶
-#define AI_FIX_PLAYERDEAD		(-1*100)	// 愤坌及潜谛互竣濮
-#define AI_FIX_PETDEAD			(-5*100)	// 矢永玄互竣濮
+#define AI_FIX_SEKKAN 			(-2*100)	// 猷覕摯妐蚗哱禱  賓
+#define AI_FIX_PLAYERULTIMATE	(-10*100)	// 猷覕摯Д硞誑囮鳴  贖隍蚗哱屻
+#define AI_FIX_PETULTIMATE		(-10*100)	// 妐蚗哱誑囮鳴  贖隍蚗哱屻
+#define AI_FIX_PLAYERDEAD		(-1*100)	// 猷覕摯Д硞誑縈憪
+#define AI_FIX_PETDEAD			(-5*100)	// 妐蚗哱誑縈憪
 
 
 #ifdef _Item_ReLifeAct
@@ -620,8 +620,8 @@ int BATTLE_RescueEntry( int charaindex, int toindex);
 int BATTLE_PetDefaultExit( int charaindex, int battleindex);
 
 int	BATTLE_PetDefaultEntry(
-	int charaindex,	// 矢永玄毛  匀化中月皿伊奶乩□及          
-	int battleindex,// 田玄伙奶件犯永弁旦
+	int charaindex,	// 妐蚗哱禱  埱趙笢堎鏤畛騷媕↓摯          
+	int battleindex,// 泬哱鳴騷璃溢蚗袲筒
 	int side
 );
 
@@ -674,7 +674,7 @@ int Battle_getTotalBattleNum();
 void CHAR_ComToxicationHp( int charaindex);
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 void BATTLE_ProfessionStatus_init( int battleindex, int charaindex );
 void BATTLE_ProfessionStatusSeq( int battleindex, int charaindex);
 #endif

@@ -7,7 +7,7 @@
 #include "util.h"
 #include "char.h"
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
 #include "battle.h"
 #include "profession_skill.h"
 #endif
@@ -115,7 +115,7 @@ BOOL SKILL_makeSkillFromStringToArg( char* src, Skill* sk )
     return TRUE;
 }
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
 INLINE int SKILL_getRealInt( Skill* skill, int element)
 {
     return skill->data[element];
@@ -139,7 +139,7 @@ INLINE int SKILL_setInt( Skill* skill, int element, int new)
     return buf;
 }
 
-#ifndef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifndef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 static void SKILL_setitemlimit( int charaindex, Skill* sk );
 static void SKILL_setmerchant( int charaindex, Skill* sk );
 static void SKILL_setlevel( int charaindex, Skill* sk );
@@ -147,7 +147,7 @@ static void SKILL_setlevel( int charaindex, Skill* sk );
 
 static SKILL_table  SKILL_tbl[]={
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	{ 100,	NULL},		// 1
 	{ 100,	NULL},
 	{ 100,	NULL},
@@ -179,7 +179,7 @@ static SKILL_table  SKILL_tbl[]={
 };
 
 
-#ifndef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifndef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 static void SKILL_setitemlimit( int charaindex, Skill* sk )
 {
     static int itemlimit[9]={
@@ -265,17 +265,17 @@ static void SKILL_setlevel( int charaindex, Skill* sk )
 static char    ITEM_statusStringBuffer[SKILLSTRINGBUFSIZ];
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
 char* SKILL_makeSkillStatusString( Skill* skill, int charaindex, int skill_num )
 {
 	  int skillindex=SKILL_getInt( skill,SKILL_IDENTITY);
 	  int Pskill=PROFESSION_SKILL_getskillArray( skillindex);
 	  int skill_level=0, cost_mp=0;
 		
-	  // 人物技能等级
+	  // �冼嚗敵傿�撰
 	  skill_level = SKILL_getInt( skill, SKILL_LEVEL);
 	
-	  // 耗费MP
+	  // 瘧煤MP
 	  if( (cost_mp = PROFESSION_MAGIC_COST_MP( charaindex, skill_num )) == -1 )
 		cost_mp = PROFESSION_SKILL_getInt( Pskill, PROFESSION_SKILL_COST_MP);
 
@@ -409,8 +409,8 @@ void SKILL_skillEffect( int charaindex )
 
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
-// 取使用魔法耗费MP
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+// �﹋墓藥孚那譟埒P
 int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 {
 	int skill_level=0, dec_mp=0;
@@ -418,40 +418,40 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 	char *skill_name;
 	CHAR_HaveSkill* hskill;
 		
-	// 人物技能
+	// �冼嚗敵�
 	skillid = CHAR_getCharSkill( charaindex, skill_num);
 	Pskillid = PROFESSION_SKILL_getskillArray( skillid);
 	if( Pskillid == -1 )	return FALSE;
 
-	// 技能名称
+	// 撮夔靡備
 	skill_name = PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_FUNCNAME);
 
-	// 技能等级
+	// 撮夔脹撰
 	hskill = CHAR_getCharHaveSkill( charaindex, skill_num );
 	skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);
 	skill_level = PROFESSION_CHANGE_SKILL_LEVEL_M( skill_level );	
 
-	if( (strcmp( skill_name, "PROFESSION_VOLCANO_SPRINGS" )) == 0 ){	// 火山泉
+	if( (strcmp( skill_name, "PROFESSION_VOLCANO_SPRINGS" )) == 0 ){	// 鳶刓��
 				if( skill_level >= 10 )		dec_mp = 35;
 				else if( skill_level >= 7 )	dec_mp = 30;
 				else if( skill_level >= 5 )	dec_mp = 20;
 				else if( skill_level >= 3 )	dec_mp = 15;
 				else						dec_mp = 10;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_FIRE_BALL" )) == 0 ){			// 火星球
+	if( (strcmp( skill_name, "PROFESSION_FIRE_BALL" )) == 0 ){			// 鳶陎⑩
 				if( skill_level >= 9 )		dec_mp = 50;
 				else if( skill_level >= 7 )	dec_mp = 45;
 				else if( skill_level >= 5 )	dec_mp = 40;
 				else if( skill_level >= 3 )	dec_mp = 35;
 				else						dec_mp = 30;
 	}else 
-	if( (strcmp( skill_name, "PROFESSION_SUMMON_THUNDER" )) == 0 ){		// 召雷术
+	if( (strcmp( skill_name, "PROFESSION_SUMMON_THUNDER" )) == 0 ){		// 欸濘扲
 				if( skill_level >= 8 )		dec_mp = 30;
 				else if( skill_level >= 5 )	dec_mp = 25;
 				else if( skill_level >= 3)	dec_mp = 20;	
 				else						dec_mp = 10;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_CURRENT" )) == 0 ){			// 电流术
+	if( (strcmp( skill_name, "PROFESSION_CURRENT" )) == 0 ){			// 萇霜扲
 #ifdef _PROFESSION_ADDSKILL
                 if( skill_level >= 10 )		dec_mp = 100;
 				else if( skill_level > 9 )	dec_mp = 90;
@@ -469,7 +469,7 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else						dec_mp = 30;
 #endif
 	}else
-	if( (strcmp( skill_name, "PROFESSION_STORM" )) == 0 ){				// 暴风雨
+	if( (strcmp( skill_name, "PROFESSION_STORM" )) == 0 ){				// 惟瑞迾
 #ifdef _PROFESSION_ADDSKILL
                 if( skill_level > 8 )		dec_mp = 50;
 				else if( skill_level > 6 )	dec_mp = 45;
@@ -483,12 +483,12 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else						dec_mp = 50;
 #endif
 	}else
-	if( (strcmp( skill_name, "PROFESSION_ICE_ARROW" )) == 0 ){			// 冰箭术
+	if( (strcmp( skill_name, "PROFESSION_ICE_ARROW" )) == 0 ){			// 梨璋扲
 				if( skill_level >= 8)		dec_mp = 20;
 				else if( skill_level >= 4 )	dec_mp = 15;
 				else						dec_mp = 10;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_ICE_CRACK" )) == 0 ){			// 冰爆术
+	if( (strcmp( skill_name, "PROFESSION_ICE_CRACK" )) == 0 ){			// 梨惇扲
 #ifdef _PROFESSION_ADDSKILL
                 if( skill_level >= 10 )		dec_mp = 80;
 				else if( skill_level > 8 )  dec_mp = 70;
@@ -504,61 +504,61 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else						dec_mp = 30;
 #endif
 	}else
-	if( (strcmp( skill_name, "PROFESSION_DOOM" )) == 0 ){				// 世界末日	
+	if( (strcmp( skill_name, "PROFESSION_DOOM" )) == 0 ){				// 岍賜藺��	
 				if( skill_level > 8 )		dec_mp = 150;
 				else if( skill_level > 4 )  dec_mp = 100;
 				else						dec_mp = 50;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_FIRE_SPEAR" )) == 0 ){			// 火龙枪
+	if( (strcmp( skill_name, "PROFESSION_FIRE_SPEAR" )) == 0 ){			// 鳶韓Л
 				if( skill_level > 8 )		dec_mp = 80;
 				else if( skill_level > 6 )	dec_mp = 70;			
 				else if( skill_level > 4 )	dec_mp = 60;
 				else if( skill_level > 2 )	dec_mp = 40;
 				else						dec_mp = 30;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_BLOOD_WORMS" )) == 0 ){		// 嗜血蛊
+	if( (strcmp( skill_name, "PROFESSION_BLOOD_WORMS" )) == 0 ){		// 岓悛嘍
 				if( skill_level >= 10 )		dec_mp = 15;
 				else if( skill_level >= 5 ) dec_mp = 10;
 				else						dec_mp = 5;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_SIGN" )) == 0 ){				// 一针见血
+	if( (strcmp( skill_name, "PROFESSION_SIGN" )) == 0 ){				// 珨渀獗悛
 
 				if( skill_level >= 8 )		dec_mp = 10;
 				else						dec_mp = 5;
 
 	}else
-	if( (strcmp( skill_name, "PROFESSION_ENCLOSE" )) == 0 ){			// 附身术
+	if( (strcmp( skill_name, "PROFESSION_ENCLOSE" )) == 0 ){			// 蜇旯扲
 				if( skill_level >= 10 )		dec_mp = 80;
 				else if( skill_level >= 8 ) dec_mp = 70;
 				else if( skill_level >= 5)  dec_mp = 60;
 				else						dec_mp = 50;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_ICE_MIRROR" )) == 0 ){			// 冰镜术
+	if( (strcmp( skill_name, "PROFESSION_ICE_MIRROR" )) == 0 ){			// 梨噩扲
 				if( skill_level >= 9 )		dec_mp = 40;
 				else if( skill_level >= 7 )	dec_mp = 35;			
 				else if( skill_level >= 5 )	dec_mp = 30;
 				else if( skill_level >= 3 )	dec_mp = 25;
 				else						dec_mp = 20;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_FIRE_ENCLOSE" )) == 0 ){		// 火附体		
+	if( (strcmp( skill_name, "PROFESSION_FIRE_ENCLOSE" )) == 0 ){		// 鳶蜇极		
 				if( skill_level >= 10 )		dec_mp = 50;
 				else if( skill_level >= 7 )	dec_mp = 40;			
 				else if( skill_level >= 4 )	dec_mp = 30;
 				else						dec_mp = 20;
 	}else	
-	if( (strcmp( skill_name, "PROFESSION_ICE_ENCLOSE" )) == 0 ){		// 冰附体		
+	if( (strcmp( skill_name, "PROFESSION_ICE_ENCLOSE" )) == 0 ){		// 梨蜇极		
 				if( skill_level >= 10 )		dec_mp = 50;
 				else if( skill_level >= 7 )	dec_mp = 40;			
 				else if( skill_level >= 4 )	dec_mp = 30;
 				else						dec_mp = 20;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_THUNDER_ENCLOSE" )) == 0 ){	// 雷附体
+	if( (strcmp( skill_name, "PROFESSION_THUNDER_ENCLOSE" )) == 0 ){	// 濘蜇极
 				if( skill_level >= 10 )		dec_mp = 50;
 				else if( skill_level >= 7 )	dec_mp = 40;			
 				else if( skill_level >= 4 )	dec_mp = 30;
 				else						dec_mp = 20;
 	}else	
-	if( (strcmp( skill_name, "PROFESSION_TRANSPOSE" )) == 0 ){			// 移形换位		
+	if( (strcmp( skill_name, "PROFESSION_TRANSPOSE" )) == 0 ){			// 痄倛遙弇		
 				if( skill_level >= 10 )		dec_mp = 50;
 				else if( skill_level >= 9 )	dec_mp = 40;			
 				else if( skill_level >= 7 )	dec_mp = 30;
@@ -566,13 +566,13 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else						dec_mp = 10;
 	}else
 #ifdef _PROFESSION_ADDSKILL
-	if( (strcmp( skill_name, "PROFESSION_RESIST_F_I_T" )) == 0 ){  // 自然威能
+	if( (strcmp( skill_name, "PROFESSION_RESIST_F_I_T" )) == 0 ){  // 赻�銓�夔
 	            if( skill_level >= 10 )		dec_mp = 20;
 				else if( skill_level >= 9 )	dec_mp = 15;			
 				else if( skill_level >= 6 )	dec_mp = 10;		
 				else						dec_mp = 5;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_CALL_NATURE" )) == 0 ){  // 号召自然
+	if( (strcmp( skill_name, "PROFESSION_CALL_NATURE" )) == 0 ){  // 瘍欸赻��
 		        
 		/*skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);
 	            if( skill_level >= 100 )	dec_mp = 50;
@@ -586,13 +586,13 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else dec_mp = 50;*/
 		dec_mp = 50;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_BOUNDARY" )) == 0 ){  // 四属性结界
+	if( (strcmp( skill_name, "PROFESSION_BOUNDARY" )) == 0 ){  // 侐扽俶賦賜
 	            char *pszP=NULL; 
 		        if( skill_level > 9 )	dec_mp = 20;
 				else if( skill_level > 6 )	dec_mp = 15;			
 				else dec_mp = 10;
-				//破除结界耗损mp与其他结界不同
-				if( (pszP = strstr( PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_OPTION), "破结界" ) ) != NULL ){// 技能的参数
+				//ぢ壺賦賜瘧囷mp迵む坻賦賜祥肮
+				if( (pszP = strstr( PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_OPTION), "ぢ賦賜" ) ) != NULL ){// 撮夔腔統杅
                     if( skill_level >= 9 )	dec_mp = 20;
 				    else if( skill_level > 4 )	dec_mp = 15;	
 				    else if( skill_level > 2 )  dec_mp = 10;

@@ -4,36 +4,36 @@
 #include "buf.h"
 
 /*
- *  伉件弁及  卞勾仃月
- * 娄醒
- *      top         玄永皿用□玉
- *      add         尥仃笛尹月用□玉及    毛忡  允月用□玉尺及禾奶件正□
- * 忒曰袄
- *      TRUE(1)     岳  
- *      FALSE(0)    撩  
+ *  惉璃袲摯  勗僑崹堎
+ * 礎倳
+ *      top         哱蚗鏤蚚↓迶
+ *      add         痹崹萃窇堎蚚↓迶摯    禱瞀  埰堎蚚↓迶喜摯睽騷璃淏↓
+ * 蒍堇偯
+ *      TRUE(1)     埬  
+ *      FALSE(0)    謄  
  */
 BOOL Nodeappendtail( Node** top  , Node* add )
 {
-    Node* c;        /*伙□皿迕*/
-    Node* next;     /*蕙仄仁综月用□玉迕*/
+    Node* c;        /*鳴↓鏤暵*/
+    Node* next;     /*犍媃�忑觚謨獺灃鼫�*/
 
-    /*玄永皿互NULL井升丹井及民尼永弁*/
+    /*哱蚗鏤誑NULL凝汔竣凝摯鏍攝蚗袲*/
     if( *top == NULL ){
         *top = allocateMemory( sizeof( Node  ) );
         if( *top== NULL ) return FALSE;
-        (*top)->next    = NULL;            /*粮五反  中*/
-        (*top)->size    = add->size;   /*赢今及忡栋*/
-        (*top)->val     = add->val;         /*禾奶件正□及戊疋□*/
+        (*top)->next    = NULL;            /*襄拻毀  笢*/
+        (*top)->size    = add->size;   /*荇踏摯瞀集*/
+        (*top)->val     = add->val;         /*睽騷璃淏↓摯昡鼀↓*/
         return TRUE;
     }
 
-    for( c = *top ; c->next ; c = c->next ); /* c及匏  毛内日允 */
+    for( c = *top ; c->next ; c = c->next ); /* c摯痾  禱囀�梊� */
     next = allocateMemory( sizeof(Node) );
     if( next == NULL )return FALSE;
-    c->next = next;                         /* next卞袄毛涩烂允月 */
-    next->next  = NULL;                      /*粮五反  中*/
-    next->val   = add->val;                   /*禾奶件正□及戊疋□*/
-    next->size  = add->size;             /*赢今及忡栋*/
+    c->next = next;                         /* next勗偯禱优擭埰堎 */
+    next->next  = NULL;                      /*襄拻毀  笢*/
+    next->val   = add->val;                   /*睽騷璃淏↓摯昡鼀↓*/
+    next->size  = add->size;             /*荇踏摯瞀集*/
     return TRUE;
 }
 
@@ -41,32 +41,32 @@ BOOL Nodeappendtail( Node** top  , Node* add )
 
 
 /*
- *  伉件弁及蟆卞勾仃月
- * 娄醒
- *      top         玄永皿用□玉
- *      add         尥仃笛尹月用□玉及    毛忡  允月用□玉尺及禾奶件正□
- * 忒曰袄
- *      TRUE(1)     岳  
- *      FALSE(0)    撩  
+ *  惉璃袲摯鞳勗僑崹堎
+ * 礎倳
+ *      top         哱蚗鏤蚚↓迶
+ *      add         痹崹萃窇堎蚚↓迶摯    禱瞀  埰堎蚚↓迶喜摯睽騷璃淏↓
+ * 蒍堇偯
+ *      TRUE(1)     埬  
+ *      FALSE(0)    謄  
  */
 BOOL Nodeappendhead( Node** nowtop  , Node* add )
 {
-    Node* newtop;       /*蕙仄中燮  迕*/
+    Node* newtop;       /*犍媃笢袸  暵*/
 
-    /*玄永皿互NULL井升丹井及民尼永弁*/
+    /*哱蚗鏤誑NULL凝汔竣凝摯鏍攝蚗袲*/
     if( *nowtop == NULL ){
         *nowtop = allocateMemory( sizeof( Node  ) );
         if( *nowtop == NULL ) return FALSE;
-        (*nowtop)->next = NULL;             /*粮五反  中*/
-        (*nowtop)->size = add->size;        /*赢今及忡栋*/
-        (*nowtop)->val  = add->val;         /*禾奶件正□及戊疋□*/
+        (*nowtop)->next = NULL;             /*襄拻毀  笢*/
+        (*nowtop)->size = add->size;        /*荇踏摯瞀集*/
+        (*nowtop)->val  = add->val;         /*睽騷璃淏↓摯昡鼀↓*/
         return TRUE;
     }
 
     /*
-     * 蕙仄中用□玉毛域勾综月
-     * next 互犒允手及毛 nowtop 卞允月［
-     * nowtop 卞反 割忡仄凶 newtop 毛医  允月［
+     * 犍媃笢蚚↓迶禱郖僑軘堎
+     * next 誑蕍埰忒摯禱 nowtop 勗埰堎��
+     * nowtop 勗毀 賃瞀媃倜 newtop 禱瓟  埰堎��
      */
     newtop = allocateMemory( sizeof(Node) );
     newtop->next    = *nowtop;
@@ -80,17 +80,17 @@ BOOL Nodeappendhead( Node** nowtop  , Node* add )
 
 
 /*
- * 域    赓及用□玉毛娄醒卞戊疋□仄化潸曰轮仁
- * 娄醒
- *          top         用□玉及燮  
- *          ret         潸曰轮中凶用□玉及戊疋□
- * 忒曰袄
- *      TRUE(1)         岳  
- *      FALSE(0)        撩      用□玉及燮  互NULL
+ * 郖    疐摯蚚↓迶禱礎倳勗昡鼀↓媃趙噁堇謫��
+ * 礎倳
+ *          top         蚚↓迶摯袸  
+ *          ret         噁堇謫笢倜蚚↓迶摯昡鼀↓
+ * 蒍堇偯
+ *      TRUE(1)         埬  
+ *      FALSE(0)        謄      蚚↓迶摯袸  誑NULL
  */
 BOOL  Noderemovehead( Node** top , Node* ret)
 {
-    Node* newtop;         /*蕙仄仁燮  卞卅月用□玉*/
+    Node* newtop;         /*犍媃�忮�  勗埵堎蚚↓迶*/
 
     if( *top == NULL )return FALSE;
 
@@ -108,27 +108,27 @@ BOOL  Noderemovehead( Node** top , Node* ret)
 
 
 /*
- * 域      及用□玉毛娄醒卞戊疋□仄化潸曰轮仁
- * 娄醒
- *          top         用□玉及燮  
- *          ret         潸曰轮中凶用□玉及戊疋□
- * 忒曰袄
- *      TRUE(1)         岳  
- *      FALSE(0)        撩      用□玉及燮  互NULL
+ * 郖      摯蚚↓迶禱礎倳勗昡鼀↓媃趙噁堇謫��
+ * 礎倳
+ *          top         蚚↓迶摯袸  
+ *          ret         噁堇謫笢倜蚚↓迶摯昡鼀↓
+ * 蒍堇偯
+ *      TRUE(1)         埬  
+ *      FALSE(0)        謄      蚚↓迶摯袸  誑NULL
  */
 BOOL  Noderemovetail( Node** top , Node* ret)
 {
-    Node* c;             /*伙□皿迕*/
-    Node* c1;            /*伙□皿迕 中勾匹手 c->next毛隙允*/
+    Node* c;             /*鳴↓鏤暵*/
+    Node* c1;            /*鳴↓鏤暵 笢僑ぁ忒 c->next禱炩埰*/
 
     if( *top == NULL )return FALSE;
 
-    c = *top;           /*赓渝袄涩烂*/
-    c1 = c->next;       /*赓渝袄涩烂*/
+    c = *top;           /*疐趵偯优擭*/
+    c1 = c->next;       /*疐趵偯优擭*/
     while(1){
         if( c1->next == NULL )
             /*
-             * 仇及凛鳔匹          c1
+             * 喫摯鄹鬻ぁ          c1
              *                      |
              *  c ---> +------+       
              *         | next |---->+------+
@@ -136,14 +136,14 @@ BOOL  Noderemovetail( Node** top , Node* ret)
              *         |      |     +------+
              *         +------+     |      |
              *                      +------+
-             *午卅匀化中月
+             *敁埵埱趙笢堎
              */
             break;
         c=c->next;
         c1=c->next;
     }
-    c->next = NULL;     /*c1卞丐凶月手及毛绰轮允月及匹next反NULL午允月*/
-    /*戊疋□*/
+    c->next = NULL;     /*c1勗堣倜堎忒摯禱朝謫埰堎摯ぁnext毀NULL敁埰堎*/
+    /*昡鼀↓*/
     ret->val    = c1->val;
     ret->size   = c1->size;
 

@@ -19,8 +19,8 @@ char subbuf[128];
 int i, j;
 
 /* 
- * 涩烂今木凶它奴件玉它毛请允NPC
- * 棵哑  平旦玄失玉矛件民乓□仁日中卅日综木月井手［
+ * 优擭踏躂倜坳贖璃迶坳禱③埰NPC
+ * 螢挳  す筒哱囮迶穫璃鏍籤↓�岓欶倠牟欳裗戰職晉痑�
  *
  */
  
@@ -43,7 +43,7 @@ struct	{
 	int		warp;
 	int		battle;
 	int		gotowin;
-}buttonproc[13];		/* ok,cancel, yes,no,prev,next 及凛及质   */
+}buttonproc[13];		/* ok,cancel, yes,no,prev,next 摯鄹摯窐   */
 
 
 
@@ -58,7 +58,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg);
 static int NPC_FmLetter_restoreButtontype( char *data );
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_FmLetterInit( int meindex )
 {
@@ -75,10 +75,10 @@ BOOL NPC_FmLetterInit( int meindex )
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", buf, sizeof( buf))
 		== NULL )
 	{
-		print( "fmletter:没有指定设定的档案 。\n");
+		print( "fmletter:羶衄硌隅扢隅腔紫偶 ﹝\n");
 		return FALSE;
 	}
-	/* 赓渝凛卞涩烂犯□正毛民尼永弁仄化支月 */
+	/* 疐趵鄹勗优擭溢↓淏禱鏍攝蚗袲媃趙盓堎 */
 	if( !NPC_FmLetter_readData( meindex, -1, TRUE) ) {
 		return FALSE;
 	}
@@ -92,7 +92,7 @@ BOOL NPC_FmLetterInit( int meindex )
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_FmLetterTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
@@ -123,12 +123,12 @@ void NPC_FmLetterTalked( int meindex , int talkerindex , char *szMes ,int color 
 		lssproto_WN_send( getfdFromCharaIndex( talkerindex ), WINDOW_MESSAGETYPE_MESSAGE,
 			WINDOW_BUTTONTYPE_OK,
 			-1, -1,
-			makeEscapeString( "\n只有本庄园的族长才能制作邀请函及同意书！", buf, sizeof(buf)));
+			makeEscapeString( "\n硐衄掛蚽埶腔逜酗符夔秶釬肂③滲摯肮砩抎ㄐ", buf, sizeof(buf)));
 
 
 }
 /*********************************
-* 苇日木凶凛及质  
+* 峟�桫憶袬敯啄�  
 *********************************/
 void NPC_FmLetterLooked( int meindex , int lookedindex)
 {
@@ -144,11 +144,11 @@ static void NPC_FmLetter_selectWindow( int meindex, int toindex, int num)
 	int		fd;
 	char	buf[256];
 	
-	/* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
 	if( CHAR_getInt( toindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( !NPC_Util_charIsInFrontOfChar( toindex, meindex, 1 )) return; 
 
 	if( !NPC_FmLetter_readData( meindex, num, FALSE) ) {
@@ -175,15 +175,15 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 	int		button = -1;
 	char	buf[512];
 
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	
-	/* 仇及它奴件玉它  寞及犯□正毛  心  戈 */	
+	/* 喫摯坳贖璃迶坳  蠕摯溢↓淏禱  陑  資 */	
 	if( !NPC_FmLetter_readData( meindex, seqno - 100, FALSE) ) {
 		print( "fmletter:readdata error\n");
 		return;
 	}
-	/* 瓷仄凶示正件毛譬屯月 */
+	/* 棟媃倜尨淏璃禱ぅ迋堎 */
 	if( w.windowtype == WINDOW_MESSAGETYPE_SELECT ) {
 		button = atoi( data)+5;
 		if( button > 12 ) {
@@ -207,7 +207,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 	
 		fd = getfdFromCharaIndex( talkerindex);
 		
-		/* 示正件卞方匀化质  毛孔曰歹仃月 */
+		/* 尨淏璃勗源埱趙窐  禱謂堇渦崹堎 */
 		if( newwin == -1 ) {
 			newwin = buttonproc[button].gotowin;
 		}
@@ -223,19 +223,19 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 			if( itemindex != -1 ){
 				char    msgbuf[128];
 				CHAR_setItemIndex( talkerindex, emptyitemindexinchara, itemindex );
-				/*  Work犯□正毛涩烂    */
+				/*  Work溢↓淏禱优擭    */
 				ITEM_setWorkInt(itemindex, ITEM_WORKOBJINDEX,-1);
 				ITEM_setWorkInt(itemindex, ITEM_WORKCHARAINDEX, talkerindex);
 				CHAR_sendItemDataOne( talkerindex, emptyitemindexinchara);
 				LogItem(
-					CHAR_getChar( talkerindex, CHAR_NAME ), /* 平乓仿   */
+					CHAR_getChar( talkerindex, CHAR_NAME ), /* す籤溘   */
 					CHAR_getChar( talkerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 					itemindex,
 #else
-					ITEM_getInt( itemindex, ITEM_ID ),  /* 失奶  丞  寞 */
+					ITEM_getInt( itemindex, ITEM_ID ),  /* 囮騷  堜  蠕 */
 #endif
-					"AddLetter(制作邀请函)",
+					"AddLetter(秶釬肂③滲)",
 					CHAR_getInt( talkerindex,CHAR_FLOOR),
 					CHAR_getInt( talkerindex,CHAR_X ),
 					CHAR_getInt( talkerindex,CHAR_Y ),
@@ -243,7 +243,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 					ITEM_getChar( itemindex, ITEM_NAME),
 					ITEM_getInt( itemindex, ITEM_ID)
 				);
-				snprintf( msgbuf, sizeof( msgbuf), "制作%s成功\。",
+				snprintf( msgbuf, sizeof( msgbuf), "秶釬%s傖髡\﹝",
 					ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( talkerindex, -1,msgbuf, CHAR_COLORWHITE);
 			}
@@ -259,19 +259,19 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 			if( itemindex != -1 ){
 				char    msgbuf[128];
 				CHAR_setItemIndex( talkerindex, emptyitemindexinchara, itemindex );
-				/*  Work犯□正毛涩烂    */
+				/*  Work溢↓淏禱优擭    */
 				ITEM_setWorkInt(itemindex, ITEM_WORKOBJINDEX,-1);
 				ITEM_setWorkInt(itemindex, ITEM_WORKCHARAINDEX, talkerindex);
 				CHAR_sendItemDataOne( talkerindex, emptyitemindexinchara);
 				LogItem(
-					CHAR_getChar( talkerindex, CHAR_NAME ), /* 平乓仿   */
+					CHAR_getChar( talkerindex, CHAR_NAME ), /* す籤溘   */
 					CHAR_getChar( talkerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 					itemindex,
 #else
-					ITEM_getInt( itemindex, ITEM_ID ),  /* 失奶  丞  寞 */
+					ITEM_getInt( itemindex, ITEM_ID ),  /* 囮騷  堜  蠕 */
 #endif
-					"AddLetter(制作邀请函)",
+					"AddLetter(秶釬肂③滲)",
 					CHAR_getInt( talkerindex,CHAR_FLOOR),
 					CHAR_getInt( talkerindex,CHAR_X ),
 					CHAR_getInt( talkerindex,CHAR_Y ),
@@ -279,7 +279,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 					ITEM_getChar( itemindex, ITEM_NAME),
 					ITEM_getInt( itemindex, ITEM_ID)
 				);
-				snprintf( msgbuf, sizeof( msgbuf), "制作%s成功\。",
+				snprintf( msgbuf, sizeof( msgbuf), "秶釬%s傖髡\﹝",
 					ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( talkerindex, -1,msgbuf, CHAR_COLORWHITE);
 			}
@@ -305,11 +305,11 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 	}
 }
 /* 
- * 涩烂白央奶伙毛  氏匹隙烂今木凶windowno及犯□正毛本永玄允月
+ * 优擭啞栝騷鳴禱  庌ぁ炩擭踏躂倜windowno摯溢↓淏禱掛蚗哱埰堎
  * 
- * 娄醒“
- *		meindex		int		仇及NPC及charaindex
- *		windowno	int		它奴件玉它  寞
+ * 礎倳※
+ *		meindex		int		喫摯NPC摯charaindex
+ *		windowno	int		坳贖璃迶坳  蠕
  *		
  */
 static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
@@ -334,10 +334,10 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 	char	firstToken[1024];
 	char	secondToken[1024];
 	
-	/* 它奴件玉它及涩烂毛  曰  戈厌瞻   */
+	/* 坳贖璃迶坳摯优擭禱  堇  資栖桹   */
 	
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
-	/* 涩烂白央奶伙  潸   */
+	/* 优擭啞栝騷鳴  噁   */
 	NPC_Util_GetStrFromStrWithDelim( argstr, "conff", filename, sizeof( filename));
 
 	sprintf( opfile, "%s/", getNpcdir( ) );
@@ -359,7 +359,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 		b_mode = -1;
 		errflg = FALSE;
 
-		/* 赓渝祭 */
+		/* 疐趵撬 */
 		w.windowno = -1;
 		w.windowtype = -1;
 		w.buttontype = -1;
@@ -388,15 +388,15 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 			
 			linenum ++;
 			
-			/* 戊丢件玄反  骰 */
+			/* 昡隍璃哱毀  鷋 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 荼垫潸月 */
+			/* 搊菜噁堎 */
 			chomp( line );
 			
-			/*  垫毛帮溥允月    */
-			/*  引内 tab 毛 " " 卞  五晶尹月    */
+			/*  菜禱堆魠埰堎    */
+			/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
 			replaceString( line, '\t' , ' ' );
-			/* 燮  及旦矢□旦毛潸月［*/
+			/* 袸  摯筒妐↓筒禱噁堎��*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;
@@ -405,7 +405,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 			}
 			if( i != 0 ) strcpy( line, buf);
 
-			/* delim "=" 匹  赓(1)及玄□弁件毛  月*/
+			/* delim "=" ぁ  疐(1)摯哱↓袲璃禱  堎*/
 			ret = getStringFromIndexWithDelim( line, "=",  1, firstToken,
 											   sizeof( firstToken ) );
 			if( ret == FALSE ){
@@ -413,7 +413,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 					   filename , linenum);
 				continue;
 			}
-			/* delim "=" 匹2    及玄□弁件毛  月*/
+			/* delim "=" ぁ2    摯哱↓袲璃禱  堎*/
 			ret = getStringFromIndexWithDelim( line, "=", 2, secondToken,
 											   sizeof( secondToken ) );
 			if( ret == FALSE ){
@@ -424,27 +424,27 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 			
 			if( strcasecmp( firstToken, "winno") == 0 ) {
 				if( winno != -1 ) {
-					print( "fmletter:已有winno却重新定义winno\n");
+					print( "fmletter:眒衄winno�棉寪繞例徲inno\n");
 					print( "filename:[%s] line[%d]\n", filename, linenum);
 					errflg = TRUE;
 					readflg = FALSE;
 					break;
 				}
-				/* 它奴件玉它No毛忡绣 */
+				/* 坳贖璃迶坳No禱瞀凎 */
 				winno = atoi( secondToken);
 				continue;
 			}
 			
-			/* 它奴件玉它No 互瑁引匀化中卅中凛及垫反  骰允月 */
+			/* 坳贖璃迶坳No 誑鋆竘埱趙笢埵笢鄹摯菜毀  鷋埰堎 */
 			if( winno == -1 ) {
-				print( "fmletter:winno 尚未定义，资料却已设定。\n");
+				print( "fmletter:winno 奾帤隅砱ㄛ訧蹋�棍挸頞芋αn");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				readflg = FALSE;
 				errflg = FALSE;
 				break;
 			}
-			/* 它奴件玉它No 互域谯仄凶凛反椭瘀毛  戈［
-			 * 公木动陆反  骰允月 */
+			/* 坳贖璃迶坳No 誑郖窙媃倜鄹毀邳贀禱  資��
+			 * 鼠躂雄翻毀  鷋埰堎 */
 			if( (chkflg == FALSE && winno == windowno )||
 				chkflg == TRUE) 
 			{
@@ -472,7 +472,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 								errflg = TRUE;
 							}
 							else {
-								/* 升匀切井井凶匀吊分仃匹手涩烂今木化中木壬     */
+								/* 汔埱з凝凝倜埱裂煦崹ぁ忒优擭踏躂趙笢躂��     */
 								if( !((buttonproc[b_mode].checkhaveitem != -1 && 
 									   buttonproc[b_mode].checkhaveitemgotowin != -1)
 									 || (buttonproc[b_mode].checkdonthaveitem != -1 && 
@@ -484,7 +484,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 						}
 						
 						if( errflg == TRUE) {
-							print( "fmletter: 找不到gotowin\n");
+							print( "fmletter: 梑祥善gotowin\n");
 							print( "filename:[%s] line[%d]\n", filename, linenum);
 							readflg = FALSE;
 							errflg = TRUE;
@@ -501,19 +501,19 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 					
 					sprintf( buf, "letter%d", CHAR_getInt( meindex, CHAR_FMINDEX) );
 					
-					/* 它奴件玉它正奶皿及涩烂 */
+					/* 坳贖璃迶坳淏騷鏤摯优擭 */
 					if( strcasecmp( firstToken, "wintype") == 0 ) {
 						w.windowtype = atoi( secondToken);
 					}
-					/* 示正件正奶皿及涩烂 */
+					/* 尨淏璃淏騷鏤摯优擭 */
 					else if( strcasecmp( firstToken, "buttontype") == 0 ) {
 						w.buttontype = NPC_FmLetter_restoreButtontype( secondToken);
 					}
-					/* getitem及涩烂 */
+					/* getitem摯优擭 */
 					else if( strcasecmp( firstToken, "takeitem") == 0 ) {
 						w.takeitem = atoi( secondToken);
 					}
-					/* giveitem及涩烂 */
+					/* giveitem摯优擭 */
 					else if( strcasecmp( firstToken, "giveitem") == 0 ) {
 						w.giveitem = atoi( secondToken);
 					}
@@ -521,7 +521,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 						w.letter = atoi( secondToken);
 					}
 					
-					/* message及涩烂 */
+					/* message摯优擭 */
 					else if( strcasecmp( firstToken, "message") == 0 ) {
 						if( messagepos == 0 ) {
 							strcpy(  w.message, secondToken);
@@ -534,7 +534,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 							messagepos+=strlen(secondToken);
 						}
 					}
-					/* 示正件毛瓷仄凶凛及涩烂 */
+					/* 尨淏璃禱棟媃倜鄹摯优擭 */
 					else if( strcasecmp( firstToken, "okpressed") == 0 ) {
 						buttonconfmode = TRUE;
 						b_mode = 0;
@@ -571,7 +571,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 						buttonendflg = FALSE;
 						selectnum ++;
 					}
-					/* 涩烂蔽歹曰 */
+					/* 优擭敖渦堇 */
 					else if( strcasecmp( firstToken, "endwin") == 0 ) {
 						endflg = TRUE;
 						if( chkflg == FALSE) {
@@ -580,7 +580,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 						break;
 					}
 					else {
-						//print( "fmletter:设定是不可能的参数\n");
+						//print( "fmletter:扢隅岆祥褫夔腔統杅\n");
 						//print( "filename:[%s] line[%d]\n", filename, linenum);
 					}
 				}
@@ -592,26 +592,26 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 			}
 		}
 		if( buttonendflg == FALSE) {
-			print( "fmletter: 找不到endbutton\n");
+			print( "fmletter: 梑祥善endbutton\n");
 			print( "filename:[%s] line[%d]\n", filename, linenum);
 			errflg = TRUE;
 			break;
 		}
 		if( winno != -1 ) {
 			if( w.windowtype == -1 ) {
-				print( "fmletter: 找不到wintype\n");
+				print( "fmletter: 梑祥善wintype\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
 			}
 			if( w.buttontype == -1 ) {
-				print( "fmletter: 找不到button\n");
+				print( "fmletter: 梑祥善button\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
 			}
 			if( strlen( w.message) == 0 ) {
-				print( "fmletter: 找不到message\n");
+				print( "fmletter: 梑祥善message\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
@@ -621,12 +621,12 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 	fclose( fp);
 	
 	if( chkflg == FALSE && w.windowno == -1 ) {
-		print( "fmletter: 找不到所指定的windowno\n");
+		print( "fmletter: 梑祥善垀硌隅腔windowno\n");
 		print( "filename:[%s] line[%d]\n", filename, linenum);
 		return FALSE;
 	}
 	if( winno != -1 && endflg == FALSE) {
-		print( "fmletter: 找不到endwin\n");
+		print( "fmletter: 梑祥善endwin\n");
 		print( "filename:[%s] line[%d]\n", filename, linenum);
 		return FALSE;
 	}
@@ -635,7 +635,7 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 	return TRUE;
 }
 /*
- * buttontype=匹隙烂仄凶  侬  毛醒袄卞  晶允月［
+ * buttontype=ぁ炩擭媃倜  棬  禱倳偯勗  儒埰堎��
  *
  */
 static int NPC_FmLetter_restoreButtontype( char *data )

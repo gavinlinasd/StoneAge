@@ -3,15 +3,15 @@
 
 typedef struct NPC_Quiz{
 
-	int 	no;				//  锁及  寞
-	int 	type;			//  锁及正奶皿  必□丞    ｝旦禾□汁)	
-	int		level;  		//  锁及伊矛伙
-	int 	answertype;		//蚕尹及蓟太井凶(ㄡ  ｝ㄢ  ｝签贿穴永民  
-	int 	answerNo;		//  锁及蚕尹
-	char	question[512]; 	//  锁
-	char	select1[128]; 	//蓟  靼1
-	char	select2[128]; 	//蓟  靼2
-	char	select3[128]; 	//蓟  靼3
+	int 	no;				//  坶摯  蠕
+	int 	type;			//  坶摯淏騷鏤  斛↓堜    ��筒睽↓眴)	
+	int		level;  		//  坶摯畛穫鳴
+	int 	answertype;		//紮窇摯撒怮凝倜(兕  ��兩  ��ワ鞅悃蚗鏍  
+	int 	answerNo;		//  坶摯紮窇
+	char	question[512]; 	//  坶
+	char	select1[128]; 	//撒  鱁1
+	char	select2[128]; 	//撒  鱁2
+	char	select3[128]; 	//撒  鱁3
 
 }NPC_QUIZ;
 

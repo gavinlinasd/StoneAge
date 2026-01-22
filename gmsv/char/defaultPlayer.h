@@ -2,7 +2,7 @@
 
 static Char    player=
 {
-    FALSE,      /*  use     どうでもいい*/
+    FALSE,      /*  use     升丹匹手中中*/
     {
 		0,		/*  CHAR_DATAPLACENUMBER */
         0,      /*  CHAR_BASEIMAGENUMBER */
@@ -11,7 +11,7 @@ static Char    player=
         0,      /*  CHAR_FLOOR  */
         0,      /*  CHAR_X */
         0,      /*  CHAR_Y  */
-        5,      /*  CHAR_DIR 12箕を0に箕纷件りに */
+        5,      /*  CHAR_DIR 12凜毛0卞凜煌璃曰卞 */
         1,      /*  CHAR_LV  */
         0,      /*  CHAR_GOLD    */
         1,      /*  CHAR_HP  */
@@ -27,10 +27,10 @@ static Char    player=
     	0,		/*  CHAR_CHARM	*/
     	0,		/*  CHAR_LUCK	*/
 
-		0,		/* 孟掳拉 */
-		0,		/* 垮掳拉 */
-		0,		/* 残掳拉 */
-		0,		/* 慎掳拉 */
+		0,		/* 譁簞嶺 */
+		0,		/* 踹簞嶺 */
+		0,		/* 紹簞嶺 */
+		0,		/* 氘簞嶺 */
 
 		0,		/* CHAR_SLOT*/
 		0,		/* CHAR_CRITIAL */
@@ -122,19 +122,19 @@ static Char    player=
 //#endif
 
 		0,	//CHAR_SILENT,				/* char shutup time */    
-		0,	//    CHAR_FMINDEX,				// 產壁 index
+		0,	//    CHAR_FMINDEX,				// 家族 index
 		0,	//    CHAR_FMLEADERFLAG,			
-								/* 產壁Θ贺摸
-    							 * FMMEMBER_NONE	:⊿Τヴ︙產壁
-    							 * FMMEMBER_APPLY	:ビ叫產壁い
-    							 * FMMEMBER_LEADER	:壁
-    							 * FMMEMBER_MEMBER	:Θ
-    							 * FMMEMBER_ELDER	:ρ    
-    							 * FMMEMBER_INVITE	:步			// 既ぃノ
-    							 * FMMEMBER_BAILEE	:癩叭			// 既ぃノ
-    							 * FMMEMBER_VICELEADER  :捌壁		// 既ぃノ
+								/* 家族成員種類
+    							 * FMMEMBER_NONE	:沒有加入任何家族
+    							 * FMMEMBER_APPLY	:申請加入家族中
+    							 * FMMEMBER_LEADER	:族長
+    							 * FMMEMBER_MEMBER	:一般成員
+    							 * FMMEMBER_ELDER	:長老    
+    							 * FMMEMBER_INVITE	:祭司			// 暫時不用
+    							 * FMMEMBER_BAILEE	:財務長			// 暫時不用
+    							 * FMMEMBER_VICELEADER  :副族長		// 暫時不用
     							*/
-		0,	//    CHAR_FMSPRITE,		// 產壁臔弘艶
+		0,	//    CHAR_FMSPRITE,		// 家族守護精靈
 
 		0,	//    CHAR_BANKGOLD,
 		0,	//    CHAR_RIDEPET,
@@ -144,11 +144,11 @@ static Char    player=
 #endif
  		0,	//   CHAR_LIMITLEVEL,
 #ifdef _PET_FUSION
-		0,	//	CHAR_FUSIONCODE,		//贺絪絏
-		0,	//	CHAR_FUSIONINDEX,		//瑰て胐絪腹
-		0,	//	CHAR_FUSIONRAISE,		//笼緄Ω计
-		0,	//	CHAR_FUSIONBEIT,		//胐矹篨夹
-		0,	//	CHAR_FUSIONTIMELIMIT,	//笼緄丁
+		0,	//	CHAR_FUSIONCODE,		//物種編碼
+		0,	//	CHAR_FUSIONINDEX,		//孵化寵物編號
+		0,	//	CHAR_FUSIONRAISE,		//餵養次數
+		0,	//	CHAR_FUSIONBEIT,		//寵蛋旗標
+		0,	//	CHAR_FUSIONTIMELIMIT,	//餵養時間
 #endif
 
 #ifdef _DEATH_CONTEND
@@ -156,7 +156,7 @@ static Char    player=
 		0,	//	CHAR_PKLISTLEADER,
 #endif
 
-#ifdef _PERSONAL_FAME	// Arminius 8.30: 產壁羘辨
+#ifdef _PERSONAL_FAME	// Arminius 8.30: 家族個人聲望
 		0,	//    CHAR_FAME,
 #endif
 
@@ -165,36 +165,36 @@ static Char    player=
 #endif
  
 #ifdef __ATTACK_MAGIC
-		0,	//		CHAR_EARTH_EXP,						// 產臸猭剪絤
-		0,	//		CHAR_WATER_EXP,						// 產臸猭剪絤
-		0,	//		CHAR_FIRE_EXP,						// 產臸猭剪絤
-		0,	//		CHAR_WIND_EXP,						// 產臸猭剪絤
-		0,	//		CHAR_EARTH_RESIST,					// 產臸猭к┦
-		0,	//		CHAR_WATER_RESIST,					// 產臸猭к┦
-		0,	//		CHAR_FIRE_RESIST,					// 產臸猭к┦
-		0,	//		CHAR_WIND_RESIST,					// 產臸猭к┦
-		0,	//		CHAR_EARTH_ATTMAGIC_EXP,			// 產臸猭剪絤竒喷
-		0,	//		CHAR_WATER_ATTMAGIC_EXP,			// 產臸猭剪絤竒喷
-		0,	//		CHAR_FIRE_ATTMAGIC_EXP,				// 產臸猭剪絤竒喷
-		0,	//		CHAR_WIND_ATTMAGIC_EXP,				// 產臸猭剪絤竒喷
-		0,	//	 	CHAR_EARTH_DEFMAGIC_EXP,			// 產臸猭к┦竒喷
-		0,	//		CHAR_WATER_DEFMAGIC_EXP,			// 產臸猭к┦竒喷
-		0,	//		CHAR_FIRE_DEFMAGIC_EXP,				// 產臸猭к┦竒喷
-		0,	//		CHAR_WIND_DEFMAGIC_EXP,				// 產臸猭к┦竒喷
+		0,	//		CHAR_EARTH_EXP,						// 玩家的地魔法熟練度
+		0,	//		CHAR_WATER_EXP,						// 玩家的水魔法熟練度
+		0,	//		CHAR_FIRE_EXP,						// 玩家的火魔法熟練度
+		0,	//		CHAR_WIND_EXP,						// 玩家的風魔法熟練度
+		0,	//		CHAR_EARTH_RESIST,					// 玩家的地魔法抗性
+		0,	//		CHAR_WATER_RESIST,					// 玩家的水魔法抗性
+		0,	//		CHAR_FIRE_RESIST,					// 玩家的火魔法抗性
+		0,	//		CHAR_WIND_RESIST,					// 玩家的風魔法抗性
+		0,	//		CHAR_EARTH_ATTMAGIC_EXP,			// 玩家的地魔法熟練度經驗值
+		0,	//		CHAR_WATER_ATTMAGIC_EXP,			// 玩家的水魔法熟練度經驗值
+		0,	//		CHAR_FIRE_ATTMAGIC_EXP,				// 玩家的火魔法熟練度經驗值
+		0,	//		CHAR_WIND_ATTMAGIC_EXP,				// 玩家的風魔法熟練度經驗值
+		0,	//	 	CHAR_EARTH_DEFMAGIC_EXP,			// 玩家的地魔法抗性經驗值
+		0,	//		CHAR_WATER_DEFMAGIC_EXP,			// 玩家的水魔法抗性經驗值
+		0,	//		CHAR_FIRE_DEFMAGIC_EXP,				// 玩家的火魔法抗性經驗值
+		0,	//		CHAR_WIND_DEFMAGIC_EXP,				// 玩家的風魔法抗性經驗值
 #endif
 
 
 #ifdef _GAMBLE_BANK
-		0,	//		CHAR_PERSONAGOLD,	//戒初蝗︽
+		0,	//		CHAR_PERSONAGOLD,	//賭場個人銀行
 #endif
 #ifdef _DROPSTAKENEW
-		0,	//		CHAR_GAMBLENUM,		//戒初縩だ
+		0,	//		CHAR_GAMBLENUM,		//賭場積分
 #endif
-#ifdef _ADD_ACTION          //npc笆
+#ifdef _ADD_ACTION          //npc動作
 		0,	//		CHAR_ACTIONSTYLE,
 #endif
 #ifdef _AUCTIONEER
-		0,	//		CHAR_AUCGOLD,		// ╃芥┮眔
+		0,	//		CHAR_AUCGOLD,		// 拍賣所得
 #endif
 #ifdef _PET_EVOLUTION
 		0,	//		CHAR_EVOLUTIONBASEVTL,
@@ -215,34 +215,34 @@ static Char    player=
 #endif
 
 #ifdef _FAMILYBANKSTONELOG
-		0,	//		CHAR_FMBANKGOLD, //產壁蝗︽蹿
+		0,	//		CHAR_FMBANKGOLD, //家族銀行存款
 #endif
 
 #ifdef _FM_JOINLIMIT
 		0,	//		CHAR_FMTIMELIMIT,
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD 戮穨
-		0,	//		PROFESSION_CLASS,			// 戮穨
-		0,	//		PROFESSION_LEVEL,			// 戮穨单
-//		0,	//		PROFESSION_EXP,				// 戮穨竒喷
-		0,	//		PROFESSION_SKILL_POINT,		// м翴计
-		0,	//		ATTACHPILE,					// 糤帮舼
-		0,	//		PROFESSION_FIRE_P,			// 剪絤
-		0,	//		PROFESSION_ICE_P,			// 剪絤		
-		0,	//		PROFESSION_THUNDER_P,		// 筽剪絤
-		0,	//		PROFESSION_FIRE_R,			// к┦
-		0,	//		PROFESSION_ICE_R,			// к┦	
-		0,	//		PROFESSION_THUNDER_R,		// 筽к┦
+#ifdef _CHAR_PROFESSION			// WON ADD 人物職業
+		0,	//		PROFESSION_CLASS,			// 職業別
+		0,	//		PROFESSION_LEVEL,			// 職業等級
+//		0,	//		PROFESSION_EXP,				// 職業經驗值
+		0,	//		PROFESSION_SKILL_POINT,		// 技能點數
+		0,	//		ATTACHPILE,					// 增加堆疊
+		0,	//		PROFESSION_FIRE_P,			// 火熟練度
+		0,	//		PROFESSION_ICE_P,			// 冰熟練度		
+		0,	//		PROFESSION_THUNDER_P,		// 雷熟練度
+		0,	//		PROFESSION_FIRE_R,			// 火抗性
+		0,	//		PROFESSION_ICE_R,			// 冰抗性	
+		0,	//		PROFESSION_THUNDER_R,		// 雷抗性
 #endif
-#ifdef _ALLDOMAN // (ぃ秨) Syu ADD 逼︽篯NPC
+#ifdef _ALLDOMAN // (不可開) Syu ADD 排行榜NPC
 		0,	//		CHAR_HEROFLOOR, 
 #endif
 #ifdef _PETSKILL_BECOMEPIG
 		-1,	//		CHAR_BECOMEPIG,
 		100250, //CHAR_BECOMEPIG_BBI
 #endif
-		0,	//		CHAR_LASTLEAVETIME, // Robin add 程瞒絬丁
+		0,	//		CHAR_LASTLEAVETIME, // Robin add 最後離線時間
 
 #ifdef _NEW_MANOR_LAW
 		0,	//		CHAR_MOMENTUM,
@@ -254,12 +254,12 @@ static Char    player=
 #endif
 
 #ifdef _ANGEL_SUMMON
-		0,	//		CHAR_HEROCNT, // ЧΘ玦ヴ叭Ω计
+		0,	//		CHAR_HEROCNT, // 完成勇者任務的次數
 #endif
 
 #ifdef _RACEMAN
-		0,	//		CHAR_CHECKIN,	//胐琌祅癘
-		0,	//		CHAR_CATCHCNT,  //聐胐Ω计
+		0,	//		CHAR_CHECKIN,	//寵物是否登記
+		0,	//		CHAR_CATCHCNT,  //獵寵次數
 		0,
 		0,
 		0,

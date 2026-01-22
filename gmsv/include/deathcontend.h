@@ -2,14 +2,14 @@
 
 #ifdef _DEATH_CONTEND
 
-//团队人物名单
+//芶勦�冼屪�等
 typedef struct 
 {
 	int use;
 	char cdkey[64];
 	char name[64];
 }PkTeamMans;
-//战斗纪录
+//桵須槨翹
 typedef struct 
 {
 	int use;
@@ -17,26 +17,26 @@ typedef struct
 	int flg;	//0 1
 }BattleHistorys;
 
-#define MAXTEAMMANNUM 5		//队伍最高人数
-#define MAXBATTLENUM 100	//队伍最高战斗纪录
+#define MAXTEAMMANNUM 5		//勦斪郔詢�侕�
+#define MAXBATTLENUM 100	//勦斪郔詢桵須槨翹
 #define MAXTEAMNUM 1000
 
-#define DEFMAXBATTLENUM 50 //最高决斗场次
+#define DEFMAXBATTLENUM 50 //郔詢樵須部棒
 #define DEFWINSCORE 90
 #define DEFLOSERATE 0.4
-//决斗参赛队伍info
+//樵須統��勦斪info
 typedef struct _tagPkTeamLists
 {
 	int use;					//flg
-	int teamnum;				//队伍序号
-	char teamname[64];			//队伍名称
-	char pathdir[64];			//队伍资料目录
-	char leadercdkey[64];		//队长CDKEY
-	int win;					//胜
-	int lost;					//负
-	int battleplay;				//总场次
+	int teamnum;				//勦斪唗瘍
+	char teamname[64];			//勦斪靡備
+	char pathdir[64];			//勦斪訧蹋醴翹
+	char leadercdkey[64];		//勦酗CDKEY
+	int win;					//吨
+	int lost;					//蛹
+	int battleplay;				//軞部棒
 	int score;
-	int inside;					//录取旗标
+	int inside;					//翹�﹉麇�
 	int read;
 	PkTeamMans MyTeamMans[MAXTEAMMANNUM];
 	BattleHistorys BHistory[MAXBATTLENUM];
@@ -63,33 +63,33 @@ typedef struct _tagPKProcedureRow
 }PKProcedures;
 
 enum{
-	PKTYPE_NONE=0,		//无
-	PKTYPE_WAIT,		//等待其他队伍加入
-	PKTYPE_STANDBY,		//准备对战等待时间
-	PKTYPE_PK,			//对战中
+	PKTYPE_NONE=0,		//拸
+	PKTYPE_WAIT,		//脹渾む坻勦斪樓��
+	PKTYPE_STANDBY,		//袧掘勤桵脹渾奀潔
+	PKTYPE_PK,			//勤桵笢
 };
 
 void del_rn( char *s );
-void PKLIST_ResetOneTeamMan( int ti ); //重置队员名单
-void PKLIST_ResetOneBHistory( int ti ); //重置对战名单
-void PKLIST_ResetOnePkTeamList( int ti ); //重置参赛队伍资料
-int PKLIST_InitPkTeamList( int teamnum ); //重置
+void PKLIST_ResetOneTeamMan( int ti ); //笭离勦埜靡等
+void PKLIST_ResetOneBHistory( int ti ); //笭离勤桵靡等
+void PKLIST_ResetOnePkTeamList( int ti ); //笭离統��勦斪訧蹋
+int PKLIST_InitPkTeamList( int teamnum ); //笭离
 
 int PKLIST_GetPkTeamListArray( int teamnum, char *cdkey);
 int PKLIST_GetPkTeamListArrayFromNum( int teamnum);
-//确认重复约战
+//�溜珋婺椒槳�
 BOOL PKLIST_CHECKPkTeamSame( int teamnum, int charaindex, char *cdkey, int toteamnum );
-//确认对战场数
+//�溜炩婭蔔﹋�
 int PKLIST_CHECKPkTeamNew( int teamnum, int charaindex, char *cdkey );
 
 //LOAD DATA
 BOOL PKLIST_LoadPkTeamListDataSub( int ti, char *data);
 BOOL PKLIST_LoadPkTeamListDataMyTeamMans( int ti, char *data);
 BOOL PKLIST_LoadPkTeamListDataBHistory( int ti, char *data);
-//BOOL PKLIST_LoadPkTeamListData( char *data); //处理ac送来的 pklist
-BOOL PKLIST_LoadPkTeamListData(void); // 改成读档
+//BOOL PKLIST_LoadPkTeamListData( char *data); //揭燴ac冞懂腔 pklist
+BOOL PKLIST_LoadPkTeamListData(void); // 蜊傖黍紫
 void PKLIST_SavePkTeamListData(void);
-void PKLIST_LoadInitPkTeamListData(void);	// 读取最原始的参赛名单
+void PKLIST_LoadInitPkTeamListData(void);	// 黍�＝鍘倚撐觸恛�靡等
 void PKLIST_UpData(char *mycdkey,char *tocdkey,int menum,int tonum,int winer,int flg);
 int PKLIST_GetOneBHistory( int ti );
 int PKLIST_SetOneBHistory( int ti, int hi, int use, int teamnum, int flg );
@@ -117,7 +117,7 @@ void PKLIST_CheckPKProcedures_PKTYPEWAIT( int ti);
 void PKLIST_CheckPKProcedures_PKTYPESTANDBY( int ti);
 */
 
-//赛程
+//��最
 void PKLIST_DelPKProcedures( int ti, int side, int type);
 BOOL PKLIST_CheckPklistInServerMap( int ti, int side);
 BOOL PKLIST_CheckPKSameTeam( int charaindex );
@@ -133,7 +133,7 @@ void PKLIST_LOCKTeam( int menum);
 void PKLIST_UNLOCKTeam( int menum);
 void PKLIST_Sort_PKListSort( void);
 
-//正式赛
+//淏宒��
 typedef struct _tagArrangeBattle
 {
 	int use;
@@ -162,23 +162,23 @@ void ABATTLE_ShowBattlefromFl( int ti, int fl);
 ArrangeBattleC *ArrangeBattleC_getNew( void);
 
 
-BOOL ABATTLE_InsertBattle( ArrangeBattleC *aB); //排入赛程
-void ABATTLE_EnterBattle( ArrangeBattleC *aB); //入围
-void ABATTLE_EliminateBattlefromFl( ArrangeBattleC *aB);//剔除
+BOOL ABATTLE_InsertBattle( ArrangeBattleC *aB); //齬�躽�最
+void ABATTLE_EnterBattle( ArrangeBattleC *aB); //�輷�
+void ABATTLE_EliminateBattlefromFl( ArrangeBattleC *aB);//枌壺
 
-BOOL ABATTLE_CheckInABattle( int ti);//确认赛程战斗状态 包含时间
-int ABATTLE_FindBattlefromFl( int ti, int fl); //找寻可加入赛程队伍组合
+BOOL ABATTLE_CheckInABattle( int ti);//�溜珂�最桵須袨怓 婦漪奀潔
+int ABATTLE_FindBattlefromFl( int ti, int fl); //梑扆褫樓�躽�最勦斪郪磁
 
-void ABATTLE_CheckBattlefromFl(int charindex, int ti,int battleindex); //确认层次是否完成 且 排置赛程
-int ABATTLE_CheckBattlefromFl_sub(int charindex, int ti, int fl,int battleindex); //确认层次是否完成
+void ABATTLE_CheckBattlefromFl(int charindex, int ti,int battleindex); //�溜炰蒮恀Й鮹窸� й 齬离��最
+int ABATTLE_CheckBattlefromFl_sub(int charindex, int ti, int fl,int battleindex); //�溜炰蒮恀Й鮹窸�
 
 
-ArrangeBattleC *ABATTLE_getInBattle( int teamnum); //取得赛程head form teamnum
+ArrangeBattleC *ABATTLE_getInBattle( int teamnum); //�△蠍�最head form teamnum
 
-void ABATTLE_MakeInABattleString( void); //制作赛程字串
+void ABATTLE_MakeInABattleString( void); //秶釬��最趼揹
 
 BOOL PKLIST_GetABattlelistDataString( int ti, int *tindex, int *stime,
-									 char *buf1, char *buf2, char *buf3, int flg);//取得赛程字串
+									 char *buf1, char *buf2, char *buf3, int flg);//�△蠍�最趼揹
 
 ArrangeBattleC *ArrangeBattleC_getInBattleArray( int ti);
 

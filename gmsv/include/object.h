@@ -5,10 +5,10 @@
 
 typedef enum
 {
-    OBJTYPE_NOUSE,      /*  仇及奶件犯永弁旦反银匀化中卅中午中丹仪毛憎允*/
-    OBJTYPE_CHARA,      /*  平乓仿弁正 CHAR_chara尺及奶件犯永弁旦   */
-    OBJTYPE_ITEM,       /*  失奶  丞    ITEM_item 尺及奶件犯永弁旦  */
-    OBJTYPE_GOLD,       /*  打□伙玉    云嗯及汹互index卞  匀化中月 */
+    OBJTYPE_NOUSE,      /*  喫摯騷璃溢蚗袲筒毀窅埱趙笢埵笢敁笢竣痀禱崚埰*/
+    OBJTYPE_CHARA,      /*  す籤溘袲淏 CHAR_chara喜摯騷璃溢蚗袲筒   */
+    OBJTYPE_ITEM,       /*  囮騷  堜    ITEM_item 喜摯騷璃溢蚗袲筒  */
+    OBJTYPE_GOLD,       /*  湖↓鳴迶    堁鉣摯倵誑index勗  埱趙笢堎 */
 #ifdef _NPCSERVER_NEW
 	OBJTYPE_NPCSCHARA,
 #endif

@@ -13,9 +13,9 @@
 
 /*
  *
- * 夫弘白央奶伙及潘  反append 允月手及午仄卅中手及互丐月［
- * append允月手及反  赓卞白央奶伙毛夫日中化云仁［
- * 公丹匹卅中手及反踏五仇心及凶太卞fopen(..,"w")允月
+ * 痲精啞栝騷鳴摯攣  毀append 埰堎忒摯敁媃埵笢忒摯誑堣堎��
+ * append埰堎忒摯毀  疐勗啞栝騷鳴禱痲�欶郅耽つ呁�
+ * 鼠竣ぁ埵笢忒摯毀怳拻喫陑摯倜怮勗fopen(..,"w")埰堎
  * by ringo
  */
 
@@ -24,7 +24,7 @@ struct tagLogconf{
     char*   entry;
     char    filename[256];
     FILE*   f;
-    BOOL    append;             /* append 允月井｝踏五仇心及凶太卞SEEK_SET允月井 */
+    BOOL    append;             /* append 埰堎凝��怳拻喫陑摯倜怮勗SEEK_SET埰堎凝 */
 }LogConf[LOG_TYPE_NUM]={
     { "TALK: ", "talklog" ,"", NULL , TRUE},
     { "PROC: ", "proc" , "" , NULL , FALSE},
@@ -58,10 +58,10 @@ struct tagLogconf{
 #endif
 	{ "LOGIN: ", "loginlog", "", NULL, TRUE},
 	{ "", "pettranslog", "", NULL, TRUE},
-//Syu 增加庄园战胜负Log
+//Syu 崝樓蚽埶桵吨蛹Log
 	{ "FMPKRESULT: ", "fmpkresultlog" ,"", NULL , TRUE},
 
-// Syu ADD 新增家族个人银行存取Log (不含家族银行)
+// Syu ADD 陔崝模逜跺�刳靇迡磃‥og (祥漪模逜窅俴)
 	{ "BANKSTONELOG: ", "bankstonelog" ,"", NULL , TRUE},
 
 	{ "ACMESSAGE: ", "acmessagelog" ,"", NULL , TRUE},
@@ -85,11 +85,11 @@ tagWarplog warplog[MAXMAPNUM];
 tagWarpCount warpCount[MAXMAPLINK];
 
 /*------------------------------------------------------------
- * 夫弘涩烂白央奶伙毛  氏匹 file 毛钒仁
- * 娄醒
- *  filename        char*       夫弘涩烂白央奶伙  
- * 忒曰袄
- *  FALSE   反褐  卅撩  匹丐月［
+ * 痲精优擭啞栝騷鳴禱  庌ぁ file 禱楣��
+ * 礎倳
+ *  filename        char*       痲精优擭啞栝騷鳴  
+ * 蒍堇偯
+ *  FALSE   毀福  埵謄  ぁ堣堎��
  ------------------------------------------------------------*/
 static BOOL readLogConfFile( char* filename )
 {
@@ -213,7 +213,7 @@ BOOL initLog( char* filename )
     return TRUE;
 }
 
-//Syu 增加庄园战胜负Log
+//Syu 崝樓蚽埶桵吨蛹Log
 void Logfmpk(
 			 char *winner, int winnerindex, int num1,
 			 char *loser, int loserindex, int num2,
@@ -226,7 +226,7 @@ void Logfmpk(
 			char buf[256];
 			memcpy( &tm1, localtime( (time_t *)&NowTime.tv_sec), sizeof( tm1));
 			sprintf( buf, " (%d:%d)", tm1.tm_hour, tm1.tm_min);
-			printl( LOG_FMPKRESULT, "\nFMPK: [%s]地点:%s %s(%d) 约战要求 %s(%d) time:%s",
+			printl( LOG_FMPKRESULT, "\nFMPK: [%s]華萸:%s %s(%d) 埮桵猁⑴ %s(%d) time:%s",
 				buf1, buf2,
 				winner, winnerindex, loser, loserindex, buf);
 		}
@@ -243,7 +243,7 @@ void Logfmpk(
 void LogFMPKGetMomey(char *szFMName,char *szID,char *szCharName,int iMomentum,int iGetMoney,int iDest)
 {
 	struct  tm tm1;
-	char szDest[3][6] = {"身上","银行","错误"};
+	char szDest[3][6] = {"旯奻","窅俴","渣昫"};
 
 	if(iDest < 0 || iDest > 1) iDest = 2;
 	memcpy(&tm1,localtime((time_t*)&NowTime.tv_sec),sizeof(tm1));
@@ -270,11 +270,11 @@ void LogAcMess(	int fd, char *type, char *mess )
 }
 
 void LogItem(
-	char *CharName, /* 平乓仿弁正   */
-        char *CharID, /* 平乓仿弁正ID */	
-	int ItemNo, 	/* 失奶  丞  寞 */
-	char *Key, 		/* 平□伐□玉 */
-	int floor,		/* 甄   */
+	char *CharName, /* す籤溘袲淏   */
+        char *CharID, /* す籤溘袲淏ID */	
+	int ItemNo, 	/* 囮騷  堜  蠕 */
+	char *Key, 		/* す↓極↓迶 */
+	int floor,		/* 淢   */
 	int x,
 	int y,
 	char *uniquecode, // shan 2001/12/14
@@ -300,7 +300,7 @@ void LogPkContend( char *teamname1, char *teamname2,
 	memcpy( &tm1, localtime( (time_t *)&NowTime.tv_sec), sizeof( tm1));
 
 	if( flg == 0 ) {
- 		printl( LOG_PKCONTEND, "[%32s 胜 %32s],(%5d,%4d,%4d)(%d:%d)" ,
+ 		printl( LOG_PKCONTEND, "[%32s 吨 %32s],(%5d,%4d,%4d)(%d:%d)" ,
 			teamname1, teamname2, 
 			floor, x, y, tm1.tm_hour, tm1.tm_min);
 	}else{
@@ -328,16 +328,16 @@ void LogPetTrans(
 }                                                                                        
 /*------------------------------------------------------------
  *
- * 矢永玄夫弘毛潸月
+ * 妐蚗哱痲精禱噁堎
  *
 -------------------------------------------------------------*/
 void LogPet(
-	char *CharName, /* 平乓仿弁正   */
+	char *CharName, /* す籤溘袲淏   */
 	char *CharID,
 	char *PetName,
 	int  PetLv,
-	char *Key, 		/* 平□伐□玉 */
-	int floor,		/* 甄   */
+	char *Key, 		/* す↓極↓迶 */
+	int floor,		/* 淢   */
 	int x,
 	int y,
 	char *uniquecode  // shan 2001/12/14	
@@ -362,7 +362,7 @@ void LogStreetVendor(
 	char *BuyName,
 	char *BuyID,
 	char *ItemPetName,
-	int PetLv, //若是道具此值为 -1
+	int PetLv, //�襣З擰葧匊舒� -1
 	int iPrice,
 	char *Key,
 	int Sfloor,
@@ -381,12 +381,12 @@ void LogStreetVendor(
 #endif
 
 void LogBankStone(
-        char *CharName, /* 平乓仿弁正   */
-        char *CharId, /* 交□扒□ID */
+        char *CharName, /* す籤溘袲淏   */
+        char *CharId, /* 蝠↓勒↓ID */
 		int	meindex,
-        int Gold,               /* 嗯喊 */
-        char *Key,              /* 平□伐□玉 */
-        int floor,              /* 甄   */
+        int Gold,               /* 鉣滌 */
+        char *Key,              /* す↓極↓迶 */
+        int floor,              /* 淢   */
         int x,
         int y,
 		int my_gold,
@@ -430,27 +430,27 @@ void LogPetPointChange(
 
 /*------------------------------------------------------------
  *
- * 鳖戏夫弘毛潸月
+ * 梱牁痲精禱噁堎
  *
 -------------------------------------------------------------*/
 void LogTensei(
-	char *CharName, /* 平乓仿弁正   */
+	char *CharName, /* す籤溘袲淏   */
 	char *CharID,
-	char *Key, 		/* 平□伐□玉 */
-	int level,		//伊矛伙
-	int transNum,	//鳖戏荚醒
-	int quest,		//弁巨旦玄醒
-	int home,		//请褥哗
-	int item,		//  笛失奶  丞  井曰醒
-	int pet,		//  笛矢永玄  井曰醒
-	int vital,		//  祭蟆Vital
-	int b_vital,	//  祭  vital
-	int str,		//  祭蟆str
-	int b_str,		//  祭  str
-	int tgh,		//  祭蟆      
-	int b_tgh,		//  祭        
-	int dex,		//  祭蟆      
-	int b_dex		//  祭        
+	char *Key, 		/* す↓極↓迶 */
+	int level,		//畛穫鳴
+	int transNum,	//梱牁樊倳
+	int quest,		//袲操筒哱倳
+	int home,		//③�儢�
+	int item,		//  萃囮騷  堜  凝堇倳
+	int pet,		//  萃妐蚗哱  凝堇倳
+	int vital,		//  撬鞳Vital
+	int b_vital,	//  撬  vital
+	int str,		//  撬鞳str
+	int b_str,		//  撬  str
+	int tgh,		//  撬鞳      
+	int b_tgh,		//  撬        
+	int dex,		//  撬鞳      
+	int b_dex		//  撬        
 ){
 	struct  tm tm1;
 	memcpy( &tm1, localtime( (time_t *)&NowTime.tv_sec), sizeof( tm1));
@@ -478,9 +478,9 @@ void LogTensei(
 
 // LOG_TALK
 void LogTalk(
-	char *CharName, /* 平乓仿弁正   */
+	char *CharName, /* す籤溘袲淏   */
 	char *CharID,
-	int floor,		/* 甄   */
+	int floor,		/* 淢   */
 	int x,
 	int y,
 	char *message
@@ -523,12 +523,12 @@ void backupTempLogFile( char *buf, char *entryname, int Num)
 }
 #endif
 /*------------------------------------------------------------
- * 涩烂卞仄凶互匀化允屯化及白央奶伙毛田永弁失永皿
- * 白央奶伙反弁夫□术今木化中卅仃木壬弁夫□术允月
- * 娄醒  struct tm
- *  卅仄
- * 忒曰袄
- *  左□皿件仄凶白央奶伙及醒
+ * 优擭勗媃倜誑埱趙埰迋趙摯啞栝騷鳴禱泬蚗袲囮蚗鏤
+ * 啞栝騷鳴毀袲痲↓扲踏躂趙笢埵崹躂�幵芛礡巏灄彸�
+ * 礎倳  struct tm
+ *  埵媃
+ * 蒍堇偯
+ *  酘↓鏤璃媃倜啞栝騷鳴摯倳
  ------------------------------------------------------------*/
 void backupAllLogFile( struct tm *ptm )
 {
@@ -536,25 +536,25 @@ void backupAllLogFile( struct tm *ptm )
     char szBuffer[256];
 
     for( i=0 ; i<arraysizeof(LogConf) ; i++ ){
-        /* append 匹卅中手及反仄卅中 */
+        /* append ぁ埵笢忒摯毀媃埵笢 */
         if( ! LogConf[i].append )continue;
 
-		/* 田永弁失永皿白央奶伙  综岳 */
+		/* 泬蚗袲囮蚗鏤啞栝騷鳴  軘埬 */
 		sprintf( szBuffer, "%s.%4d%02d%02d", LogConf[i].filename,
 			ptm->tm_year+1900, ptm->tm_mon+1, ptm->tm_mday );
 
 		if( LogConf[i].f != NULL ){
-			/* 左□皿件今木化中凶日弁夫□术 */
+			/* 酘↓鏤璃踏躂趙笢倜�殏芛礡巏� */
 			fclose( LogConf[i].f );
-			/* 伉生□丞 */
+			/* 惉汜↓堜 */
 			rename( LogConf[i].filename, szBuffer );
-			/* 疯太左□皿件 */
+			/* 瑁怮酘↓鏤璃 */
 	        LogConf[i].f = fopen( LogConf[i].filename , "a" );
 
 		}else{
-			/* 伉生□丞 */
+			/* 惉汜↓堜 */
 			rename( LogConf[i].filename, szBuffer );
-			/* 疯太左□皿件 */
+			/* 瑁怮酘↓鏤璃 */
 	        LogConf[i].f = fopen( LogConf[i].filename , "a" );
 
 		}
@@ -562,10 +562,10 @@ void backupAllLogFile( struct tm *ptm )
 }
 /*------------------------------------------------------------
 *
-* 云嗯毛胶丹
+* 堁鉣禱蝶竣
 *
 -------------------------------------------------------------*/
-// Syu ADD 新增家族个人银行存取Log (不含家族银行)
+// Syu ADD 陔崝模逜跺�刳靇迡磃‥og (祥漪模逜窅俴)
 void LogFamilyBankStone(
         char *CharName,
         char *CharId, 
@@ -587,12 +587,12 @@ void LogFamilyBankStone(
 
 void LogStone(
 				int TotalGold,
-        char *CharName, /* 平乓仿弁正   */
-        char *CharId, /* 交□扒□ID */
-        int Gold,               /* 嗯喊 */
+        char *CharName, /* す籤溘袲淏   */
+        char *CharId, /* 蝠↓勒↓ID */
+        int Gold,               /* 鉣滌 */
 		int MyGold,
-        char *Key,              /* 平□伐□玉 */
-        int floor,              /* 甄   */
+        char *Key,              /* す↓極↓迶 */
+        int floor,              /* 淢   */
         int x,
         int y
 ){
@@ -640,11 +640,11 @@ void LogFMPOP(char *message)
 
 // Arminius 2001/6/14
 char hackmsg[HACK_TYPE_NUM][4096]=
-	{ "??? 什麽事也没有发生",
-	  "无法取得通讯协定码",
-	  "收到无法辨识的通讯协定码",
-	  "检查码错误",
-      "人物的HP为负",  
+	{ "??? 妦欒岈珩羶衄楷汜",
+	  "拸楊�△襖供剷頁阬�",
+	  "彶善拸楊望妎腔籵捅衪隅鎢",
+	  "潰脤鎢渣昫",
+      "�冼齔鯨P峈蛹",  
 	};
 
 void logHack(int fd, int errcode)
@@ -694,9 +694,9 @@ void logSpeed(int fd)
 
 // Shan 
 void LogGM(
-        char *CharName,    //角色名称
-        char *CharID,      //玩家ID
-        char *Message,     //指令内容
+        char *CharName,    //褒伎靡備
+        char *CharID,      //俙模ID
+        char *Message,     //硌鍔囀��
         int  floor,
         int  x,
         int  y
@@ -729,10 +729,10 @@ void LogFamily(
 // Terry 2001/09/28
 #ifdef _SERVICE
 void LogService(
-        char *CharName, //角色名称
-        char *CharID,   //玩家ID
-        int  itemid,    //物品ID
-        char *Key,      //说明
+        char *CharName, //褒伎靡備
+        char *CharID,   //俙模ID
+        int  itemid,    //昜こID
+        char *Key,      //佽隴
         int floor,
         int x,
         int y
@@ -773,17 +773,17 @@ void LogCreatPet(
 
 #ifdef _GAMBLE_ROULETTE
 void LogGamble(
-        char *CharName, //角色名称
-        char *CharID,   //玩家ID
-        char *Key,      //说明
+        char *CharName, //褒伎靡備
+        char *CharID,   //俙模ID
+        char *Key,      //佽隴
         int floor,
         int x,
         int y,
-		int player_stone,	//所拥有金钱
-		int Gamble_stone,	//下注本金
-		int get_stone,		//获得
+		int player_stone,	//垀茧衄踢ヴ
+		int Gamble_stone,	//狟蛁掛踢
+		int get_stone,		//鳳腕
 		int Gamble_num,
-		int flg	//flg = 1 玩家 2 庄家
+		int flg	//flg = 1 俙模 2 蚽模
 )
 {
   struct  tm tm1;
@@ -801,8 +801,8 @@ void LogGamble(
 #endif
 
 void LogLogin(
-        char *CharID,   //玩家ID
-        char *CharName, //角色名称
+        char *CharID,   //俙模ID
+        char *CharName, //褒伎靡備
 		int  saveIndex,
 		char *ipadress
 )
@@ -900,7 +900,7 @@ void LogPetFeed(
 	struct tm tm1;
 
 	memcpy( &tm1, localtime( (time_t *)&NowTime.tv_sec), sizeof( tm1));
- 	printl( LOG_PET, "%s\t%s\t%s:%d   蛋=%s (%d,%d,%d)(%d:%d) %s " , 
+ 	printl( LOG_PET, "%s\t%s\t%s:%d   粥=%s (%d,%d,%d)(%d:%d) %s " , 
 		CharName, CharID, PetName, PetLv, Key, floor, x, y, tm1.tm_hour, tm1.tm_min, ucode);
 }
 

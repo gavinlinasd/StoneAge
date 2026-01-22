@@ -50,25 +50,25 @@ enum {
 };
 /*
 char UserBBIs[12][256]={
-	"小矮子",	"赛亚人",	"辫子男孩",	"酷哥",			"熊皮男",	"大个",
-	"小矮妹",	"熊皮妹",	"帽子妹",	"短法发夹妹",	"手套女",	"辣妹" };
-char PetBBIs[4][256]={//格鲁西斯 贝鲁卡 金格萨贝鲁 贝鲁伊卡
-	"格鲁西斯-红虎",	"贝鲁卡-绿虎",	"金格萨贝鲁-金虎",	"贝鲁伊卡-黄虎" };
+	"苤鬥赽",	"��捚��",	"梯赽鹹滯",	"蹄貊",			"倱々鹹",	"湮跺",
+	"苤鬥藤",	"倱々藤",	"簽赽藤",	"傻楊楷標藤",	"忒杶躓",	"彌藤" };
+char PetBBIs[4][256]={//跡糧昹佴 探糧縐 踢跡�爣朝� 探糧畛縐
+	"跡糧昹佴-綻誥",	"探糧縐-蟯誥",	"踢跡�爣朝�-踢誥",	"探糧畛縐-酴誥" };
 
 int PlayerBBI[6*2][4]={
-		{ 100000, 100005, 100010, 100015 },	//小矮子
-		{ 100025, 100030, 100035, 100020 },	//赛亚人
-		{ 100055, 100050, 100045, 100040 },	//辫子男孩
-		{ 100060, 100065, 100070, 100075 },	//酷哥
-		{ 100095, 100085, 100090, 100080 },	//熊皮男
-		{ 100100, 100115, 100110, 100115 },	//大个
+		{ 100000, 100005, 100010, 100015 },	//苤鬥赽
+		{ 100025, 100030, 100035, 100020 },	//��捚��
+		{ 100055, 100050, 100045, 100040 },	//梯赽鹹滯
+		{ 100060, 100065, 100070, 100075 },	//蹄貊
+		{ 100095, 100085, 100090, 100080 },	//倱々鹹
+		{ 100100, 100115, 100110, 100115 },	//湮跺
 
-		{ 100135, 100120, 100125, 100130 },	//小矮妹
-		{ 100145, 100140, 100150, 100155 },	//熊皮妹
-		{ 100165, 100170, 100160, 100175 },	//帽子妹
-		{ 100190, 100195, 100185, 100180 },	//短发发夹妹
-		{ 100200, 100210, 100215, 100205 },	//手套女
-		{ 100230, 100225, 100220, 100235 }	//辣妹
+		{ 100135, 100120, 100125, 100130 },	//苤鬥藤
+		{ 100145, 100140, 100150, 100155 },	//倱々藤
+		{ 100165, 100170, 100160, 100175 },	//簽赽藤
+		{ 100190, 100195, 100185, 100180 },	//傻楷楷標藤
+		{ 100200, 100210, 100215, 100205 },	//忒杶躓
+		{ 100230, 100225, 100220, 100235 }	//彌藤
 	};
 */
 
@@ -76,12 +76,12 @@ static int checkPc[48][3];
 
 static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int flg);
 
-void NPC_reCheckMyPetUnusual( int meindex, int toindex);//检查宠物异常
+void NPC_reCheckMyPetUnusual( int meindex, int toindex);//潰脤唾昜祑都
 
-BOOL CHECK_ReplacePET( int toindex); //更换宠物
-void NPC_reCheckItemPilenum( int meindex, int toindex);//还原铁枪叁堆叠
-BOOL CHECK_ITEMEQUIT( int toindex);//更换灵力铠
-BOOL CHECK_PETBBI( int toindex);//修正宠物图号
+BOOL CHECK_ReplacePET( int toindex); //載遙唾昜
+void NPC_reCheckItemPilenum( int meindex, int toindex);//遜埻沺Л��剽詁
+BOOL CHECK_ITEMEQUIT( int toindex);//載遙鍾薯霟
+BOOL CHECK_PETBBI( int toindex);//党淏唾昜芞瘍
 
 #ifdef _PET_LOSTPET
 BOOL NPC_reFindMyLostPet( int meindex, int toindex, char *buf);
@@ -175,14 +175,14 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 		windowno = NPC_PROGRAMEGINEER_DEFIND;
 		break;
 	case WINDOW_SELECT1:
-		sprintf(token,"              请选择"
-			      "\n             《修正宠物异常》"
-				  "\n             《修正宠物图号》"
-			      "\n              《更换灵力铠》"
+		sprintf(token,"              ③恁寁"
+			      "\n             ▲党淏唾昜祑都◎"
+				  "\n             ▲党淏唾昜芞瘍◎"
+			      "\n              ▲載遙鍾薯霟◎"
 #ifdef _PET_LOSTPET
-				  "\n             《领回遗失宠物》"
+				  "\n             ▲鍰隙疻囮唾昜◎"
 #endif
-//				  "\n            《还原铁枪叁堆叠》"
+//				  "\n            ▲遜埻沺Л��剽詁◎"
 
 				  );
 		windowtype = WINDOW_MESSAGETYPE_SELECT;
@@ -191,18 +191,18 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 		break;
 	case WINDOW_SELECT2:
 		switch( flg){
-		case 1://修正宠物异常
+		case 1://党淏唾昜祑都
 			NPC_reCheckMyPetUnusual( meindex, toindex);
-			CHAR_talkToCli( toindex, -1, "身上宠物检查完毕!", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "旯奻唾昜潰脤俇救!", CHAR_COLORYELLOW);
 			return;
 			break;
-		case 2://修正宠物图号
+		case 2://党淏唾昜芞瘍
 			CHECK_PETBBI( toindex);
 			return;
 			break;
-		case 3://更换灵力铠
+		case 3://載遙鍾薯霟
 			if( CHECK_ITEMEQUIT( toindex) == TRUE ){
-				CHAR_talkToCli( toindex, -1, "检查完毕!", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "潰脤俇救!", CHAR_COLORYELLOW);
 			}
 			return;
 			break;
@@ -210,7 +210,7 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 		case 4:
 #ifdef _PET_LOSTPET
 			if( NPC_reFindMyLostPet( meindex, toindex, token) == FALSE ){
-				CHAR_talkToCli( toindex, -1, "查无资料！", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "脤拸訧蹋ㄐ", CHAR_COLORYELLOW);
 				return;
 			}
 			windowtype = WINDOW_MESSAGETYPE_SELECT;
@@ -218,7 +218,7 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 			windowno = NPC_PROGRAMEGINEER_SELECTLOSTPET;
 #endif
 			break;
-		case 5: //还原铁枪叁堆叠
+		case 5: //遜埻沺Л��剽詁
 //			NPC_reCheckItemPilenum( meindex, toindex);
 			return;
 			break;
@@ -246,16 +246,16 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 			int havepetelement = CHAR_getCharPetElement( toindex);
 			ti = flg;
 			if( havepetelement < 0 ){
-				CHAR_talkToCli( toindex, -1, "宠物栏位已满！", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "唾昜戲弇眒雛ㄐ", CHAR_COLORYELLOW);
 				return;
 			}
 			if( NPC_getLostPetString( meindex, toindex) == FALSE ) {
-				CHAR_talkToCli( toindex, -1, "领取宠物失败！", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "鍰�○駘懮妍隀�", CHAR_COLORYELLOW);
 				return;
 			}
 
 			if( getStringFromIndexWithDelim( petstring[ti-1], "#", 2, petstring1, sizeof( petstring1)) == FALSE ){
-				CHAR_talkToCli( toindex, -1, "领取宠物失败！", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "鍰�○駘懮妍隀�", CHAR_COLORYELLOW);
 				return;	
 			}else{
 				char buf1[256];
@@ -265,14 +265,14 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 					ltime = ltime/(60*60*24);
 				if( getStringFromIndexWithDelim( petstring[ti-1], "|", 4, buf1, sizeof( buf1)) == FALSE ) return;
 					cost = atoi( buf1);
-#if 0	// 修正保释金
+#if 0	// 党淏悵庋踢
 				cost = cost + (ltime*100);
 				cost = (cost>10000)?10000:cost;
 #else
 				cost = cost + (ltime*10000);
 #endif
 				if( CHAR_getInt( toindex, CHAR_GOLD) < cost ) {
-					sprintf( buf1, "宠物已寄放%d天，共需%d石币才可领回。", ltime, cost);
+					sprintf( buf1, "唾昜眒敵溫%d毞ㄛ僕剒%d坒啟符褫鍰隙﹝", ltime, cost);
 					CHAR_talkToCli( toindex, meindex, buf1, CHAR_COLORYELLOW);
 					return;	
 				}
@@ -285,7 +285,7 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 				char buf1[256];
 				int petindex = PET_initCharOneArray( &ch );
 				if( !CHAR_CHECKINDEX( petindex) ){
-					CHAR_talkToCli( toindex, -1, "领取宠物失败！", CHAR_COLORYELLOW);
+					CHAR_talkToCli( toindex, -1, "鍰�○駘懮妍隀�", CHAR_COLORYELLOW);
 					return;
 				}
 				print("ANDY petindex:%d[%s]\n", petindex, CHAR_getChar( petindex, CHAR_NAME) );
@@ -316,7 +316,7 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 					CHAR_getInt( toindex,CHAR_Y ),
 					CHAR_getChar( petindex, CHAR_UNIQUECODE)   // shan 2001/12/14
 				);
-				sprintf( buf1, "领取宠物%s。", CHAR_getUseName( petindex));
+				sprintf( buf1, "鍰�○駘�%s﹝", CHAR_getUseName( petindex));
 				CHAR_talkToCli( toindex, meindex, buf1, CHAR_COLORYELLOW);
 				for( i = 0; i < CHAR_MAXPETHAVE; i++){
 					int petindex = CHAR_getCharPet( toindex, i);
@@ -330,7 +330,7 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 				}
 				CHAR_DelGold( toindex, cost);
 			}else{
-					CHAR_talkToCli( toindex, -1, "领取宠物失败！", CHAR_COLORYELLOW);
+					CHAR_talkToCli( toindex, -1, "鍰�○駘懮妍隀�", CHAR_COLORYELLOW);
 					return;
 			}
 			return;
@@ -432,7 +432,7 @@ BOOL CHECK_ITEMEQUIT( int toindex)
 					ITEM_endExistItemsOne( itemindex);
 					continue;
 				}
-				sprintf( token,"拿到%s", ITEM_getChar( itemindex, ITEM_NAME));
+				sprintf( token,"鏽善%s", ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( toindex, -1, token, CHAR_COLORYELLOW );
 				CHAR_sendItemDataOne( toindex, ret);
 				continue;
@@ -443,20 +443,20 @@ BOOL CHECK_ITEMEQUIT( int toindex)
 
 			ITEM_setInt( itemindex, ITEM_MAXDAMAGECRUSHE, 0);
 			ITEM_setInt( itemindex, ITEM_DAMAGECRUSHE, 0);
-			sprintf(token,"修正%s损坏度", ITEM_getChar( itemindex, ITEM_NAME));
+			sprintf(token,"党淏%s囷輓僅", ITEM_getChar( itemindex, ITEM_NAME));
 			CHAR_sendItemDataOne( toindex, i);
 			CHAR_talkToCli( toindex, -1, token, CHAR_COLORYELLOW);
 		}
 	}	
 
-	// 寄放店
+	// 敵溫虛
 	for (i = 0; i < CHAR_MAXPOOLITEMHAVE; i++) {
 		if( ITEM_getInt( itemindex, ITEM_ID) == 1292 &&
 			ITEM_getInt( itemindex, ITEM_MAXDAMAGECRUSHE) > 0 ){
 
 			ITEM_setInt( itemindex, ITEM_MAXDAMAGECRUSHE, 0);
 			ITEM_setInt( itemindex, ITEM_DAMAGECRUSHE, 0);
-			sprintf(token,"修正寄放店中%s损坏度", ITEM_getChar( itemindex, ITEM_NAME));
+			sprintf(token,"党淏敵溫虛笢%s囷輓僅", ITEM_getChar( itemindex, ITEM_NAME));
 			CHAR_talkToCli( toindex, -1, token, CHAR_COLORYELLOW);
 		}
 	}
@@ -484,7 +484,7 @@ BOOL CHECK_PETBBI( int toindex)
 			CHAR_getInt( petindex, CHAR_BASEIMAGENUMBER) != PetBBI ){
 			CHAR_setInt( petindex, CHAR_BASEBASEIMAGENUMBER, PetBBI);
 			CHAR_setInt( petindex, CHAR_BASEIMAGENUMBER, PetBBI);
-			sprintf( token, "修正%s图号", CHAR_getUseName( petindex));
+			sprintf( token, "党淏%s芞瘍", CHAR_getUseName( petindex));
 			CHAR_talkToCli( toindex, -1, token, CHAR_COLORYELLOW);
 			Finds = TRUE;
 		}
@@ -504,13 +504,13 @@ BOOL CHECK_PETBBI( int toindex)
 		CHAR_sendStatusString( toindex, szPet );
 	}
 	if( Finds == FALSE ){
-		sprintf( token, "没有错误图号的宠物");
+		sprintf( token, "羶衄渣昫芞瘍腔唾昜");
 		CHAR_talkToCli( toindex, -1, token, CHAR_COLORYELLOW);
 	}
 	return Finds;
 }
 
-void NPC_reCheckMyPetUnusual( int meindex, int toindex)//检查宠物异常
+void NPC_reCheckMyPetUnusual( int meindex, int toindex)//潰脤唾昜祑都
 {
 	char *buf=NULL;
 	int petindex,i;
@@ -557,7 +557,7 @@ void NPC_reCheckMyPetUnusual( int meindex, int toindex)//检查宠物异常
 		CHAR_sendStatusString( toindex, szPet );
 	}
 }
-//更换宠物
+//載遙唾昜
 BOOL CHECK_ReplacePET( int toindex)
 {
 	int i, petindex;
@@ -580,7 +580,7 @@ BOOL CHECK_ReplacePET( int toindex)
 			lssproto_KS_send( fd, -1, TRUE);
 		}
 
-		snprintf( szPet,sizeof( szPet), "交出%s。", CHAR_getUseName( petindex) );
+		snprintf( szPet,sizeof( szPet), "蝠堤%s﹝", CHAR_getUseName( petindex) );
 		CHAR_talkToCli( toindex, -1, szPet, CHAR_COLORYELLOW);
 		LogPet(
 			CHAR_getChar( toindex, CHAR_NAME ),
@@ -603,7 +603,7 @@ BOOL CHECK_ReplacePET( int toindex)
 		ret = ENEMY_createPetFromEnemyIndex( toindex, array);
 		if( !CHAR_CHECKINDEX( ret ) ) continue;
 
-		snprintf( szPet, sizeof( szPet), "拿到%s。", CHAR_getUseName( ret) );
+		snprintf( szPet, sizeof( szPet), "鏽善%s﹝", CHAR_getUseName( ret) );
 		CHAR_talkToCli( toindex, -1, szPet,  CHAR_COLORWHITE);
 
 		LogPet(
@@ -632,7 +632,7 @@ BOOL CHECK_ReplacePET( int toindex)
 
 	return Finds;
 }
-//还原铁枪叁堆叠
+//遜埻沺Л��剽詁
 void NPC_reCheckItemPilenum( int meindex, int toindex)
 {
 	int i, itemindex;
@@ -651,7 +651,7 @@ void NPC_reCheckItemPilenum( int meindex, int toindex)
 				int ti = CHAR_findEmptyItemBox( toindex);
 				if( ti == -1 ){
 					CHAR_sendItemDataOne( toindex, i);
-					CHAR_talkToCli( toindex, -1, "道具栏位已满。", CHAR_COLORYELLOW);
+					CHAR_talkToCli( toindex, -1, "耋撿戲弇眒雛﹝", CHAR_COLORYELLOW);
 					return;
 				}
 				newindex = ITEM_makeItemAndRegist( itemID);
@@ -666,13 +666,13 @@ void NPC_reCheckItemPilenum( int meindex, int toindex)
 			CHAR_sendItemDataOne( toindex, i);
 		}
 	}
-	CHAR_talkToCli( toindex, -1, "铁枪叁处理完毕。", CHAR_COLORYELLOW);
+	CHAR_talkToCli( toindex, -1, "沺Л��揭燴俇救﹝", CHAR_COLORYELLOW);
 }
 
 #ifdef _PET_LOSTPET
 BOOL NPC_reFindMyLostPet( int meindex, int toindex, char *buf)
 {
-	//地上0 溜宠 1 宠邮 2
+	//華奻0 闊唾 1 唾蚘 2
 	FILE *fp = NULL;
 	char *CdKey=NULL;
 	int lv=0, cost, ltime, count=0, i, type;
@@ -683,7 +683,7 @@ BOOL NPC_reFindMyLostPet( int meindex, int toindex, char *buf)
 	CdKey = CHAR_getChar( toindex, CHAR_CDKEY );
 	if( CdKey == NULL ) return FALSE;
 	sprintf( filename, "lostpet/%s.txt", CdKey);
-	strcpy( buf, "==宠物遗失纪录==\n");
+	strcpy( buf, "==唾昜疻囮槨翹==\n");
 	if( (fp=fopen( filename, "r")) == NULL ) return FALSE;
 
 	while( fgets( line , sizeof( line ) , fp ) && count < 7){
@@ -694,7 +694,7 @@ BOOL NPC_reFindMyLostPet( int meindex, int toindex, char *buf)
 			ltime = atoi(buf1);
 			ltime = time( NULL) - ltime;
 			ltime = ltime/(60*60*24);
-			if( ltime > 14 ) continue;//续放14天
+			if( ltime > 14 ) continue;//哿溫14毞
 
 		if( getStringFromIndexWithDelim( line, "|", 2, petname, sizeof( petname)) == FALSE ) continue;
 		if( getStringFromIndexWithDelim( line, "|", 3, buf1, sizeof( buf1)) == FALSE ) continue;
@@ -705,14 +705,14 @@ BOOL NPC_reFindMyLostPet( int meindex, int toindex, char *buf)
 		if( getStringFromIndexWithDelim( line, "#", 3, buf1, sizeof( buf1)) == FALSE ) continue;
 		type = atoi( buf1);
 		if( type == 1 ){
-			strcpy( typebuf, "溜宠");
+			strcpy( typebuf, "闊唾");
 		}else if( type == 2 ){
-			strcpy( typebuf, "宠邮");
+			strcpy( typebuf, "唾蚘");
 		}else{
-			strcpy( typebuf, "地上");
+			strcpy( typebuf, "華奻");
 		}
 
-		sprintf( buf2[count++], "%s LV:%d石币:%d(%d天%s)\n", petname, lv, cost, ltime, typebuf);
+		sprintf( buf2[count++], "%s LV:%d坒啟:%d(%d毞%s)\n", petname, lv, cost, ltime, typebuf);
 	}
 	fclose( fp);
 	for( i=0; i<7; i++){
@@ -740,12 +740,12 @@ BOOL NPC_getLostPetString( int meindex, int toindex)
 	while( fgets( line , sizeof( line ) , fp ) && count < 7){
 		if(strlen( line) <= 0 ) continue;
 //		if( getStringFromIndexWithDelim( line, "#", 2, buf1, sizeof( buf1)) == FALSE ) return FALSE;
-// Terry fix 读取时没有判断时间 2004/09/22
+// Terry fix 黍�﹋掙閨陓迠珅掉� 2004/09/22
 		if(getStringFromIndexWithDelim(line,"|",6,buf1,sizeof(buf1)) == FALSE) continue;
 		ltime = atoi(buf1);
 		ltime = time( NULL) - ltime;
 		ltime = ltime/(60*60*24);
-		if(ltime > 14) continue;//续放14天
+		if(ltime > 14) continue;//哿溫14毞
 // Terry end
 		strcpy( petstring[count++], line);
 	}
@@ -810,7 +810,7 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 int NPC_NewNpcManDelPet(int meindex,int talker, int petsel);
 BOOL NPC_NewNpcManAddPet(int meindex, int talker, int petid);
 
-//可换四种宠
+//褫遙侐笱唾
 static	int Re_Pet[4];
 // shan
 char uStr[128]="";
@@ -893,7 +893,7 @@ void NPC_NewNpcManTalked( int meindex , int talkerindex , char *msg , int color 
 	}    
 
 	if( CHAR_getWorkInt( meindex , NPC_WORK_INDEX) >= 0 )	{
-			sprintf( buf1,"%s","我正忙着呢！");
+			sprintf( buf1,"%s","扂淏疆覂儸ㄐ");
 			print("\n NPC_WORK_INDEX = %d ", CHAR_getWorkInt( meindex , NPC_WORK_INDEX));
 			CHAR_talkToCli( talkerindex, meindex, buf1,  CHAR_COLORYELLOW);
 		return;
@@ -923,7 +923,7 @@ static void NPC_NewNpcMan_selectWindow( int meindex, int toindex, int num, int f
 	}
 
 	if( CHAR_getWorkInt( meindex , NPC_WORK_INDEX) != toindex )	{
-		sprintf( token,"%s","我正忙着呢！");
+		sprintf( token,"%s","扂淏疆覂儸ㄐ");
 		CHAR_talkToCli( toindex, meindex, token,  CHAR_COLORYELLOW);
 		return;
 	}
@@ -1052,7 +1052,7 @@ int NPC_NewNpcManDelPet(int meindex,int talker, int petsel)
 		CHAR_setInt( talker, CHAR_DEFAULTPET, -1);
 		lssproto_KS_send( fd, -1, TRUE);
 	}
-	snprintf( msgbuf,sizeof( msgbuf), "交出%s。", CHAR_getChar( petindex, CHAR_NAME));
+	snprintf( msgbuf,sizeof( msgbuf), "蝠堤%s﹝", CHAR_getChar( petindex, CHAR_NAME));
 	
 	// shan
 	if(CHAR_getChar( petindex, CHAR_UNIQUECODE)!=NULL){
@@ -1090,7 +1090,7 @@ BOOL NPC_NewNpcManAddPet(int meindex, int talker, int petid)
 	int	i,j;
 	int petindex, petindex2;
 
-	//检查宠物栏是否有空位
+	//潰脤唾昜戲岆瘁衄諾弇
 	for( i = 0 ;i < CHAR_MAXPETHAVE ; i++) {
 		petindex = CHAR_getCharPet( talker, i);
 		if( petindex == -1  )
@@ -1098,7 +1098,7 @@ BOOL NPC_NewNpcManAddPet(int meindex, int talker, int petid)
 	}
 
     if( i == CHAR_MAXPETHAVE )      {
-		snprintf( msgbuf,sizeof( msgbuf), "宠物已满！！");
+		snprintf( msgbuf,sizeof( msgbuf), "唾昜眒雛ㄐㄐ");
 		CHAR_talkToCli( talker, -1, msgbuf,  CHAR_COLORWHITE);
 		return FALSE;
 	}
@@ -1129,7 +1129,7 @@ BOOL NPC_NewNpcManAddPet(int meindex, int talker, int petid)
 	petindex2 = CHAR_getCharPet(talker, i);
 	if( !CHAR_CHECKINDEX( petindex2) )
 		return FALSE;
-	snprintf( msgbuf,sizeof( msgbuf), "拿到%s。", CHAR_getChar(petindex2,CHAR_NAME));
+	snprintf( msgbuf,sizeof( msgbuf), "鏽善%s﹝", CHAR_getChar(petindex2,CHAR_NAME));
 	CHAR_talkToCli( talker, -1, msgbuf,  CHAR_COLORWHITE);
 	for(j = 0; j < CHAR_MAXPETHAVE; j++){
 		petindex = CHAR_getCharPet(talker, j);

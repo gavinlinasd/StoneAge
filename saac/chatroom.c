@@ -45,7 +45,7 @@ int CHATROOM_CreateChatRoom( int fd, char *cdkey, char *data,
 	int chat=-1;
 	char buf1[256];
 	if( (chat=CHATROOM_getfreeChatRoom()) == -1 ){
-		sprintf( message, "频道已满！");
+		sprintf( message, "け耋眒雛ㄐ");
 		return -1;
 	}
 	CHATROOM_resetChat( chat);
@@ -139,7 +139,7 @@ extern gmsv gs[MAXCONNECTION];
 	UniChatRoom[chat].charanum--;
 	{
 		int mti = UniChatRoom[chat].masindex;
-		if( mti == uti ){ //室长离开
+		if( mti == uti ){ //弅酗燭羲
 			for( i=0; i<MAX_PPLINROOM; i++){
 				if( UniChatRoom[chat].charalist[i].use == 0 ) continue;
 				UniChatRoom[chat].masindex = i;
@@ -446,7 +446,7 @@ extern gmsv gs[MAXCONNECTION];
 			);
 		strcat( token, buf);
 	}
-	//更新.
+	//載陔.
 	if( fd == -1 ){
 		for( i=0; i<MAXCONNECTION; i++) {
 			if( !gs[i].use ) continue;
@@ -469,27 +469,27 @@ void CHATROOM_RecvAll( int fd, char *cdkey, char *data, int userindex, int clifd
 
 	easyGetTokenFromBuf( data, '|', 1, comm, sizeof(comm) );
 
-	if( !strcmp( comm, "C") ){//建立频道
+	if( !strcmp( comm, "C") ){//膘蕾け耋
 		if( CHATROOM_CreateChatRoom( fd, cdkey, data, token, userindex, clifdid) >= 0 ){
 		}else{
 			saacproto_ACUniChatroom_send( fd, cdkey, FAILED, data, userindex, clifdid );
 		}
-	}else if( !strcmp( comm, "D") ) {//删除频道
+	}else if( !strcmp( comm, "D") ) {//刉壺け耋
 		CHATROOM_DelChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "L") ) {//离开频道
+	}else if( !strcmp( comm, "L") ) {//燭羲け耋
 		CHATROOM_LeaveChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "T") ) {//频道讯息
+	}else if( !strcmp( comm, "T") ) {//け耋捅洘
 		CHATROOM_MessageChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "K") ) {//踢出频道
+	}else if( !strcmp( comm, "K") ) {//杺堤け耋
 		CHATROOM_KickChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "J") ) {//申请加入频道
+	}else if( !strcmp( comm, "J") ) {//扠③樓�踰紫�
 		CHATROOM_AgreeJoinCR( fd, data, userindex, clifdid);
 		//CHATROOM_JoinChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "A") ) {//同意加入
+	}else if( !strcmp( comm, "A") ) {//肮砩樓��
 		CHATROOM_AgreeChatRoom( cdkey, data);
-	}else if ( strcmp ( comm , "M" ) == 0 ) { // 更换室长
+	}else if ( strcmp ( comm , "M" ) == 0 ) { // 載遙弅酗
 		CHATROOM_MasterChatRoom( cdkey, data);
-	}else if( !strcmp( comm, "U") ) {//更新频道
+	}else if( !strcmp( comm, "U") ) {//載陔け耋
 		easyGetTokenFromBuf( data, '|', 2, buf1, sizeof(buf1) );
 		if( atoi( buf1) == -1 ){
 			for( i=0; i<MAX_CHATROOM; i++){

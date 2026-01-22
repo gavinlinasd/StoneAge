@@ -3,27 +3,27 @@
 
 #ifdef _AUCTIONEER
 
-// 以下这两个常数要跟 saac/auction.h 里面的定义一致
-#define MAX_AUCTION	100	// 最大的委托数
-#define MAX_OVERDUE	500	// 过期的委托单保留数 (最小设定=过期保留天数*最大委托数)
+// 眕狟涴謗跺都杅猁躲 saac/auction.h 爵醱腔隅砱珨祡
+#define MAX_AUCTION	100	// 郔湮腔巹迖杅
+#define MAX_OVERDUE	500	// 徹ぶ腔巹迖等悵隱杅 (郔苤扢隅=徹ぶ悵隱毞杅*郔湮巹迖杅)
 #define AUC_PET     1
 #define AUC_ITEM    2
 
 typedef struct tagAuctionTable {
-	int  flag;		      // 0=(null) 1=使用中 2=过期
-	char cdkey[32];		  // 委托人 cdkey
-	char customer[32];	// 委托人人物名称
-	int itemtype;		    // 1=宠物 2=道具 otherwise=error
-	char goods[4096];	  // 物品 (宠物 or 道具)
-	char description[256];	// 叙述
-  char listdata[512]; // 显示在表单的资料
-	int price;		      // 标价
+	int  flag;		      // 0=(null) 1=妏蚚笢 2=徹ぶ
+	char cdkey[32];		  // 巹迖�� cdkey
+	char customer[32];	// 巹迖�侒冼屪�備
+	int itemtype;		    // 1=唾昜 2=耋撿 otherwise=error
+	char goods[4096];	  // 昜こ (唾昜 or 耋撿)
+	char description[256];	// 唦扴
+  char listdata[512]; // 珆尨婓桶等腔訧蹋
+	int price;		      // 梓歎
   int onsaletime;
   int overduetime;
 } AuctionTable;
 
-extern AuctionTable onsale[MAX_AUCTION];	// 拍卖中的道具、宠物
-//extern AuctionTable overdue[MAX_OVERDUE];	// 过期的道具、宠物
+extern AuctionTable onsale[MAX_AUCTION];	// 鼴闖笢腔耋撿﹜唾昜
+//extern AuctionTable overdue[MAX_OVERDUE];	// 徹ぶ腔耋撿﹜唾昜
 
 BOOL NPC_AuctioneerInit(int meindex);
 void NPC_AuctioneerTalked(int meindex, int talkerindex, char *msg, int color);

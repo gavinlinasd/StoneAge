@@ -11,7 +11,7 @@
 #include "battle.h"
 #include "log.h"
 
-// WON ADD 增加族长召唤的限制
+// WON ADD 崝樓逜酗欸遢腔癹秶
 #include "npc_scheduleman.h"
 #include "handletime.h"
 
@@ -20,7 +20,7 @@ static void NPC_FMPKCallMan_selectWindow(int meindex, int toindex, int num, int 
 void NPC_CallFMMember(int meindex, int floor, int fmindex, char *fmname, int index);
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_FMPKCallManInit( int meindex )
 {
@@ -34,15 +34,15 @@ BOOL NPC_FMPKCallManInit( int meindex )
 		return FALSE;
 	}
 
-	/*--伐□皿互涩烂今木化中月井----*/
-	/*--伐□皿互涩烂今木化卅仃木壬NPC毛综日卅中仇午卞允月--*/
+	/*--極↓鏤誑优擭踏躂趙笢堎凝----*/
+	/*--極↓鏤誑优擭踏躂趙埵崹躂�冇PC禱軘�欷聿迣蠁蝐槬彸�--*/
 	if(NPC_Util_GetStrFromStrWithDelim( npcarg, "WARP", buf, sizeof( buf))==NULL){
 	        print("FMPKCallMan Err is %s",npcarg);
 		print("FMPKCallMan Err");
 		return FALSE;
 	}
 
-	/*--伐□皿互涩烂今木化中化手伐□皿燮互卅仃木壬手切欠氏NPC毛综日卅中--*/
+	/*--極↓鏤誑优擭踏躂趙笢趙忒極↓鏤袸誑埵崹躂�圴秷陎滔柶PC禱軘�欷聿�--*/
 	getStringFromIndexWithDelim(buf,",",1,buff2,sizeof(buff2));
 	fl=atoi(buff2);
 	getStringFromIndexWithDelim(buf,",",2,buff2,sizeof(buff2));
@@ -55,32 +55,32 @@ BOOL NPC_FMPKCallManInit( int meindex )
 		return FALSE;
 	}
 
-	/*--正奶皿涩烂--*/
+	/*--淏騷鏤优擭--*/
    	CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEWARPMAN );
 
     return TRUE;
 }
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_FMPKCallManTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
-    /* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
 	
-	/*--  及蟆卞中月井升丹井＂--*/
+	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace(talkerindex,meindex,2 )==FALSE){
-		/* ㄠ弘伉永玉动  及心 */
+		/* 兒精惉蚗迶雄  摯陑 */
 		if( NPC_Util_isFaceToChara( talkerindex, meindex, 1) == FALSE) return;
 	}
 
-	/*--伐□弁及赓渝祭--*/
+	/*--極↓袲摯疐趵撬--*/
 	CHAR_setWorkInt(talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 
-	/*-反元户及蓟      --*/
+	/*-毀啋誧摯撒      --*/
 	NPC_FMPKCallMan_selectWindow( meindex, talkerindex, 0, -1);
 }
 
@@ -102,7 +102,7 @@ static void NPC_FMPKCallMan_selectWindow( int meindex, int toindex,
 		print("GetArgStrErr");
 		return ;
 	}
-	/*--涩烂白央奶伙及  卞白夫失谛醒互隙烂今木化中月井今木化中木壬白夫失谛醒及喃曰请仄*/
+	/*--优擭啞栝騷鳴摯  勗啞痲囮硞倳誑炩擭踏躂趙笢堎凝踏躂趙笢躂�仱袚藡我俴捊啤帟鉸醓�*/
 	if(strstr(npcarg,"%4d")!=NULL){
 		int work;
 		NPC_Util_GetStrFromStrWithDelim( npcarg, "WARP", buf, sizeof( buf));
@@ -118,11 +118,11 @@ static void NPC_FMPKCallMan_selectWindow( int meindex, int toindex,
 	   	if (NPC_Util_GetStrFromStrWithDelim(npcarg, "MainMsg", buf,
 	   		sizeof(buf)) == NULL)
 	   			return;
-	   	sprintf(token, "3\n               ★家族ＰＫ场★\n"
+	   	sprintf(token, "3\n               ∴模逜�苺佼﹛駹n"
 	   			"%s"
-	   			"\n              《召唤家族成员》"
-	   			"\n               《返回记录点》"
-	   			"\n                  《取消》",
+	   			"\n              ▲欸遢模逜傖埜◎"
+	   			"\n               ▲殿隙暮翹萸◎"
+	   			"\n                  ▲�＋�◎",
 	   			buf);
 	   	lssproto_WN_send(fd, WINDOW_MESSAGETYPE_SELECT,
 	   		WINDOW_BUTTONTYPE_NONE,
@@ -154,24 +154,24 @@ static void NPC_FMPKCallMan_selectWindow( int meindex, int toindex,
 	   	      if (strstr(buf, "%s") != NULL)
 	   	      	 sprintf(token, buf, CHAR_getChar(toindex, CHAR_FMNAME));
 
-// WON ADD 增加族长召唤的限制
+// WON ADD 崝樓逜酗欸遢腔癹秶
 			  {
 					int fmindex, fmpk_pos=-1, j;
 					int now_time;
 					struct  tm tm1;
-// Terry add for 索引值为 0 的家族会有问题,所以多加判断家族名称
+// Terry add for 坰竘硉峈 0 腔模逜頗衄恀枙,垀眕嗣樓瓚剿模逜靡備
 					char szFMName[32];
 // end
 					
 					memcpy(&tm1,localtime((time_t *)&NowTime.tv_sec),sizeof(tm1));
 
 					fmindex = CHAR_getWorkInt(toindex, CHAR_WORKFMINDEXI);
-// Terry add for 索引值为 0 的家族会有问题,所以多加判断家族名称
+// Terry add for 坰竘硉峈 0 腔模逜頗衄恀枙,垀眕嗣樓瓚剿模逜靡備
 					strncpy(szFMName,CHAR_getChar(toindex,CHAR_FMNAME),sizeof(szFMName));
 // end
 
 					for( j=0; j <= MAX_SCHEDULEMAN*MAX_SCHEDULE; j++ ){
-// Terry fix for 索引值为 0 的家族会有问题,所以多加判断家族名称
+// Terry fix for 坰竘硉峈 0 腔模逜頗衄恀枙,垀眕嗣樓瓚剿模逜靡備
 //						if( (fmindex == fmpks[j].host_index ) || (fmindex == fmpks[j].guest_index ) ){
 						if((fmindex == fmpks[j].host_index && strcmp(szFMName,fmpks[j].host_name) == 0) || 
 							 (fmindex == fmpks[j].guest_index && strcmp(szFMName,fmpks[j].guest_name) == 0)){
@@ -193,13 +193,13 @@ static void NPC_FMPKCallMan_selectWindow( int meindex, int toindex,
 						if( (fmpks[fmpk_pos].flag != FMPKS_FLAG_SCHEDULED) &&
 							(fmpks[fmpk_pos].flag != FMPKS_FLAG_MANOR_PREPARE) )
 						{
-                            sprintf(token,"你没有家族约战，请先约战吧。");
+                            sprintf(token,"斕羶衄模逜埮桵ㄛ③珂埮桵勘﹝");
 	   						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 	   							WINDOW_BUTTONTYPE_OK, -1, -1, token);
 
 						}else if( now_time  < fmpks[fmpk_pos].dueltime ){
 	   	      		
-							sprintf(token,"请在对战前一小时再来召唤族员吧!");
+							sprintf(token,"③婓勤桵ヶ珨苤奀婬懂欸遢逜埜勘!");
 	   						lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 	   							WINDOW_BUTTONTYPE_OK, -1, -1, token);
 
@@ -210,7 +210,7 @@ static void NPC_FMPKCallMan_selectWindow( int meindex, int toindex,
 	   							CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX), token);
 						}
 					}else{
-                            sprintf(token,"你没有家族约战，请先约战吧。");
+                            sprintf(token,"斕羶衄模逜埮桵ㄛ③珂埮桵勘﹝");
                             lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
                                      WINDOW_BUTTONTYPE_OK, -1, -1, token);
 					}
@@ -238,7 +238,7 @@ static void NPC_FMPKCallMan_selectWindow( int meindex, int toindex,
 }
 
 /*-----------------------------------------
- * 弁仿奶失件玄井日忒匀化五凶凛卞裟太请今木月［
+ * 袲溘騷囮璃哱凝�氪耽�趙拻倜鄹勗蠙怮③踏躂堎��
  *
 -------------------------------------------*/
 void NPC_FMPKCallManWindowTalked( int meindex, int talkerindex, 
@@ -270,7 +270,7 @@ void NPC_FMPKCallManWindowTalked( int meindex, int talkerindex,
 	datanum = atoi( data);
 	switch( seqno){
 
-	/*--反元引曰及    --*/
+	/*--毀啋竘堇摯    --*/
 	  case CHAR_WINDOWTYPE_FMPKCALLMAN_START:
 	  	if (datanum == 1)
 	  		NPC_FMPKCallMan_selectWindow(meindex, talkerindex, 1, -1);
@@ -282,7 +282,7 @@ void NPC_FMPKCallManWindowTalked( int meindex, int talkerindex,
 	  	{
 	  	   	lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 	  	   		WINDOW_BUTTONTYPE_OK, -1, -1,
-	  	   		makeEscapeString("\n召唤中···请稍候！\n＠＃＄％↑＆＊···", buf, sizeof(buf)));
+	  	   		makeEscapeString("\n欸遢笢﹞﹞﹞③尕緊ㄐ\n�壓ㄐ蝤央�ㄕㄙ﹞﹞﹞", buf, sizeof(buf)));
 	  		NPC_CallFMMember(meindex,
 	  			CHAR_getInt(talkerindex, CHAR_FLOOR),
 	  			CHAR_getInt(talkerindex, CHAR_FMINDEX),
@@ -318,7 +318,7 @@ void NPC_FMPKCallManWindowTalked( int meindex, int talkerindex,
 	  		{
 	  			lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 	  				WINDOW_BUTTONTYPE_OK, -1, -1,
-	  				makeEscapeString("\n无法以团队方式离开唷！\n请先解散团队！", buf, sizeof(buf)));
+	  				makeEscapeString("\n拸楊眕芶勦源宒燭羲遄ㄐ\n③珂賤汃芶勦ㄐ", buf, sizeof(buf)));
 	  			return;
 	  		}
 	  		for (i = 0; i < CHAR_MAXITEMHAVE; i++)
@@ -330,7 +330,7 @@ void NPC_FMPKCallManWindowTalked( int meindex, int talkerindex,
 	  			{
 	  				lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 	  					WINDOW_BUTTONTYPE_OK, -1, -1,
-	  					makeEscapeString("\n您身上有贵重物品喔！\n为了避免在传送途中不小心损坏，\n请先将这类物品卸下，\n谢谢您的合作！", buf, sizeof(buf)));
+	  					makeEscapeString("\n蠟旯奻衄幛笭昜こ鉊ㄐ\n峈賸旌轎婓換冞芴笢祥苤陑囷輓ㄛ\n③珂蔚涴濬昜こ迠狟ㄛ\n郅郅蠟腔磁釬ㄐ", buf, sizeof(buf)));
 	  				return;
 	  			}
 	  				
@@ -382,7 +382,7 @@ void NPC_CallFMMember(int meindex, int floor, int fmindex, char *fmname, int ind
 	            	lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 	            		WINDOW_BUTTONTYPE_YESNO, CHAR_WINDOWTYPE_FMPKCALLMAN_COME,
 	            		CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),
-	            		makeEscapeString("\n家族已经在ＰＫ罗～要不要加入呢？\n不过若是在组队状态中，将会脱离团队唷！", buf, sizeof(buf)));
+	            		makeEscapeString("\n模逜眒冪婓�苺侁煄帝玨閡盲蚧踽堧璞n祥徹�襣л稊曊衿棧盆苺狠姣慴挴輹韃豻﹝�", buf, sizeof(buf)));
 	         }
 	      }	 
 	      else

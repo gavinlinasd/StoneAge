@@ -2,13 +2,13 @@
 #define __PET_H__
 
 /*
- * 矢永玄楮  及涩烂匹允［
+ * 妐蚗哱匴  摯优擭ぁ埰��
  */
 #include "version.h"
 #include "common.h"
 
-#define PETFEEDTIME	60*60	// 宠物蛋  养时间(秒)
-//#define PETFEEDTIME	5	// 宠物蛋  养时间(秒)
+#define PETFEEDTIME	60*60	// 唾昜粥  欱奀潔(鏃)
+//#define PETFEEDTIME	5	// 唾昜粥  欱奀潔(鏃)
 
 int PET_DEBUG_initPetOne( int charaindex);
 int PET_dropPet( int charaindex, int havepetindex);

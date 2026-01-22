@@ -1123,7 +1123,7 @@ int lssproto_ServerDispatchMessage(int fd, char *encoded)
 		return 0;
 	}
 
-#ifdef _FIX_DEL_MAP           // WON ADD 玩家抽地图送监狱
+#ifdef _FIX_DEL_MAP           // WON ADD 俙模喲華芞冞潼郜
 	if (func==LSSPROTO_DM_RECV) {
 	    char buffer[2];
 	    buffer[0] = '\0';
@@ -1181,7 +1181,7 @@ int lssproto_ServerDispatchMessage(int fd, char *encoded)
 	}
 #endif
 
-#ifdef _CHATROOMPROTOCOL			// (不可开) Syu ADD 聊天室频道
+#ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋
 	if (func==LSSPROTO_CHATROOM_RECV) {
 		int checksum=0, checksumrecv;
 		char test[65500];
@@ -1199,7 +1199,7 @@ int lssproto_ServerDispatchMessage(int fd, char *encoded)
 	}
 #endif
 
-#ifdef _NEWREQUESTPROTOCOL			// (不可开) Syu ADD 新增Protocol要求细项
+#ifdef _NEWREQUESTPROTOCOL			// (祥褫羲) Syu ADD 陔崝Protocol猁⑴牉砐
 	if ( func==LSSPROTO_RESIST_RECV ) {
 	    char buffer[2];
 	    buffer[0] = '\0';
@@ -1208,7 +1208,7 @@ int lssproto_ServerDispatchMessage(int fd, char *encoded)
 		return 0;
 	}
 #endif
-#ifdef _OUTOFBATTLESKILL			// (不可开) Syu ADD 非战斗时技能Protocol
+#ifdef _OUTOFBATTLESKILL			// (祥褫羲) Syu ADD 準桵須奀撮夔Protocol
 	if(func==LSSPROTO_BATTLESKILL_RECV){
 		int checksum = 0, checksumrecv;
 		int iNum;
@@ -1293,7 +1293,7 @@ int lssproto_ServerDispatchMessage(int fd, char *encoded)
 
 /*
    servertoclient XYD( int x, int y, int dir );
- 	潜卞爵  蔽    卞皿伊奶乩□及匏  毛  譬帮允月凶户卞银丹［
+ 	Д勗橋  敖    勗鏤畛騷媕↓摯痾  禱  ぅ堆埰堎倜誧勗窅竣��
 */
 void lssproto_XYD_send(int fd,int x,int y,int dir)
 {
@@ -1561,110 +1561,110 @@ void lssproto_M_send(int fd,int fl,int x1,int y1,int x2,int y2,char* data)
 /*
    servertoclient C( string data );
        (Characters)
-       弁仿奶失件玄反 CA 互  化｝公及平乓仿卞勾中化譬卅井匀凶凛反｝ C 
-       匹仇及楮醒毛邰菲匹五月［扔□田反民尼永弁仄卅中［
+       袲溘騷囮璃哱毀 CA 誑  趙��鼠摯す籤溘勗僑笢趙ぅ埵凝埱倜鄹毀�� C 
+       ぁ喫摯匴倳禱菺滑ぁ拻堎�袾荂懽儱棺鯆慪濛阹ぴ聿苺�
        
  	string data
- 		  白巧□穴永玄反 动票及3潘  及嫩  毛戊件穴匹卅日屯凶
- 	    手及匹丐月.公木冗木及嫩  及  褥反今日卞凶化徇'|'匹仁亢日木
- 	    化中月［
+ 		  啞б↓悃蚗哱毀 雄き摯3攣  摯囂  禱昡璃悃ぁ埵�梠迖�
+ 	    忒摯ぁ堣堎.鼠躂�葸噯凰�  摯  �鼒晾鮵梇槱袘脊�'|'ぁ�尪瘓桫�
+ 	    趙笢堎��
  	    
- 	      凶化徇匹仁亢日木凶玄□弁件互12蜊及桦宁
- 		  玄□弁件及    反
+ 	      倜趙摲ぁ�尪瘓桫憶豝�↓袲璃誑12蠀摯鳹譴
+ 		  哱↓袲璃摯    毀
  
  		  WHICHTYPE|CHARINDEX|X|Y|DIR|BASEIMG|LEVEL|NAMECOLOR|NAME|SELFTITLE|WALKABLE|HEIGHT|POPUPNAMECOLOR
- 		  仇及左皮斥尼弁玄反平乓仿弁正□匹丐月午中丹仇午匹丐月［
+ 		  喫摯酘々喇攝袲哱毀す籤溘袲淏↓ぁ堣堎敁笢竣喫敁ぁ堣堎��
  		  
- 		  WHICHTYPE 反］仇及平乓仿弁正□互升丹中匀凶潘  及手及
- 		  匹丐月井［仇木反扔□田□匹反动票及方丹卞烂聒今木化中月［
+ 		  WHICHTYPE 毀�摀蟦副褐珝蹦邯�↓誑汔竣笢埱倜攣  摯忒摯
+ 		  ぁ堣堎凝�蛦蟤噸椅荂懽鵅嚾扑普紜掉健蔥仃敻鏍蠸鯆噱胱俶瞿�
  		  
  		typedef enum
  		{
- 		    CHAR_TYPENONE,          窒匹手卅中
- 		    CHAR_TYPEPLAYER,        皿伊奶乩□
- 		    CHAR_TYPEENEMY,         衬
- 		    CHAR_TYPEPET,           矢永玄
- 		    CHAR_TYPEDOOR,          玉失
+ 		    CHAR_TYPENONE,          笰ぁ忒埵笢
+ 		    CHAR_TYPEPLAYER,        鏤畛騷媕↓
+ 		    CHAR_TYPEENEMY,         傍
+ 		    CHAR_TYPEPET,           妐蚗哱
+ 		    CHAR_TYPEDOOR,          迶囮
  		    CHAR_TYPEBOX ,              
- 		    CHAR_TYPEMSG ,          枣  
- 		    CHAR_TYPEWARP ,         伐□皿札□件
- 		    CHAR_TYPESHOP ,         饕
- 		    CHAR_TYPEHEALER ,       甲□仿□
- 		    CHAR_TYPEOLDMAN ,       赢  
- 		    CHAR_TYPEROOMADMIN,     尕  遣盒
- 		    CHAR_TYPETOWNPEOPLE,    引切及夫午
- 		    CHAR_TYPEDENGON,        鳗蜕  
- 		    CHAR_TYPEADM,           鳗蜕  
+ 		    CHAR_TYPEMSG ,          娹  
+ 		    CHAR_TYPEWARP ,         極↓鏤崥↓璃
+ 		    CHAR_TYPESHOP ,         壨
+ 		    CHAR_TYPEHEALER ,       樅↓溘↓
+ 		    CHAR_TYPEOLDMAN ,       荇  
+ 		    CHAR_TYPEROOMADMIN,     箾  Е碟
+ 		    CHAR_TYPETOWNPEOPLE,    竘з摯痲敁
+ 		    CHAR_TYPEDENGON,        魕虭  
+ 		    CHAR_TYPEADM,           魕虭  
  		    CHAR_TYPETEMPLE,        Temple master
- 		    CHAR_TYPESTORYTELLER,   贿曰  
- 		    CHAR_TYPERANKING,       尕  遣仿件平件弘  憎      
- 		    CHAR_TYPEOTHERNPC,      公及职及腹绸覆擂卞卅日卅中NPC
- 		    CHAR_TYPEPRINTPASSMAN,  玉失及由旦伐□玉  憎允月NPC
- 		    CHAR_TYPENPCENEMY,      裔烂衬
- 		    CHAR_TYPEACTION,        失弁扑亦件卞  杀允月NPC
- 		    CHAR_TYPEWINDOWMAN,     它奴件玉它  憎允月NPC    旦玄井手)
- 		    CHAR_TYPESAVEPOINT,     本□皮禾奶件玄
- 		    CHAR_TYPEWINDOWHEALER,  它奶件玉它正奶皿及甲□仿□
- 		    CHAR_TYPEITEMSHOP,	    云饕
- 		    CHAR_TYPESTONESHOP,	    檗  盒  矢永玄及  盒  
- 		    CHAR_TYPEDUELRANKING,   DUEL仿件平件弘NPC
- 		    CHAR_TYPEWARPMAN,	    伐□皿穴件NPC
- 		    CHAR_TYPEEVENT,	    奶矛件玄NPC
- 		    CHAR_TYPEMIC,	    奶矛件玄NPC
- 		    CHAR_TYPELUCKYMAN,	    奶矛件玄NPC
- 		    CHAR_TYPEBUS,	    穴件乒旦田旦
- 		    CHAR_TYPECHARM,	    奶矛件玄NPC
+ 		    CHAR_TYPESTORYTELLER,   鞅堇  
+ 		    CHAR_TYPERANKING,       箾  Е溘璃す璃精  崚      
+ 		    CHAR_TYPEOTHERNPC,      鼠摯眥摯號喙葡濯勗埵�欷聿羑PC
+ 		    CHAR_TYPEPRINTPASSMAN,  迶囮摯蚕筒極↓迶  崚埰堎NPC
+ 		    CHAR_TYPENPCENEMY,      砡擭傍
+ 		    CHAR_TYPEACTION,        囮袲で砫璃勗  伀埰堎NPC
+ 		    CHAR_TYPEWINDOWMAN,     坳贖璃迶坳  崚埰堎NPC    筒哱凝忒)
+ 		    CHAR_TYPESAVEPOINT,     掛↓々睽騷璃哱
+ 		    CHAR_TYPEWINDOWHEALER,  坳騷璃迶坳淏騷鏤摯樅↓溘↓
+ 		    CHAR_TYPEITEMSHOP,	    堁壨
+ 		    CHAR_TYPESTONESHOP,	    歕  碟  妐蚗哱摯  碟  
+ 		    CHAR_TYPEDUELRANKING,   DUEL溘璃す璃精NPC
+ 		    CHAR_TYPEWARPMAN,	    極↓鏤悃璃NPC
+ 		    CHAR_TYPEEVENT,	    騷穫璃哱NPC
+ 		    CHAR_TYPEMIC,	    騷穫璃哱NPC
+ 		    CHAR_TYPELUCKYMAN,	    騷穫璃哱NPC
+ 		    CHAR_TYPEBUS,	    悃璃さ筒泬筒
+ 		    CHAR_TYPECHARM,	    騷穫璃哱NPC
  		    CHAR_TYPENUM,
  		}CHAR_TYPE;
  		  
- 		  公木反职及皿伊奶乩□支NPC支衬匹丐月［扔□田□互霜耨
- 		  允月午五反苇尹月  区卞勾中化蝈  霜耨允月［勾引
- 		  曰弁仿奶失件玄反｝仇及由弗永玄毛熬仃午匀凶午五卞仇及
- 		  由弗永玄卞踏井木化中卅中平乓仿毛  匀化中凶日壅仄化仄
- 		  引匀化方中午中丹仇午匹丐月［引凶｝穴它旦市□末伙毛丐
- 		  歹六凶午五卞  憎允月树  反仇及树  及心卞湘中化中月［
- 		  分井日｝穴它旦市□末伙毛丐歹六凶午五卞  憎允月仇午互
- 		    凳今木凶桦宁反｝扔□田□反｝仇及楮醒毛    读卞裟太
- 		  分今卅仃木壬卅日卅中［ SELFTITLE卞勾中化反｝犯伉立正
- 		  匹丐月凶化徇毛孔仁引卅中方丹卞巨旦弗□皿今木化中月［
- 		  弁仿奶失件玄反失弁扑亦件及戊穴件玉(CA)互仁月引匹反  
- 		  切匹  憎允月［CHARINDEX扔□田□  及域啦卞平乓仿毛  
- 		  烂匹五月  寞｝BASEIMG反  憎及凶户及  寞｝LEVEL反平乓
- 		  仿及伊矛伙(0卅日  憎仄卅中［仇及袄反NPC卅升卞银丹［)
- 		  WALKABLE反1及午五公及晓毛骚聊允月仇午互匹五｝0卅日骚
- 		  聊允月仇午互匹五卅中［HEIGHT反嫖今毛手勾手及井公丹匹
- 		  卅中及井及隙烂［
+ 		  鼠躂毀眥摯鏤畛騷媕↓盓NPC盓傍ぁ堣堎�袾荂懽鵅齠瓦近�
+ 		  埰堎敁拻毀峟窇堎  ⑹勗僑笢趙蠈  邞嚭埰堎�蛫棍�
+ 		  堇袲溘騷囮璃哱毀��喫摯蚕艇蚗哱禱偏崹敁埱倜敁拻勗喫摯
+ 		  蚕艇蚗哱勗怳凝躂趙笢埵笢す籤溘禱  埱趙笢倜�殏欷し胰�
+ 		  竘埱趙源笢敁笢竣喫敁ぁ堣堎�覗�倜��悃坳筒庈↓藺鳴禱堣
+ 		  渦鞠倜敁拻勗  崚埰堎攷  毀喫摯攷  摯陑勗盻笢趙笢堎��
+ 		  煦凝�掁�悃坳筒庈↓藺鳴禱堣渦鞠倜敁拻勗  崚埰堎喫敁誑
+ 		    脾踏躂倜鳹譴毀���荂懽鵅黦提�喫摯匴倳禱    黍勗蠙怮
+ 		  煦踏埵崹躂�屻牟欷聿苺� SELFTITLE勗僑笢趙毀��溢惉蕾淏
+ 		  ぁ堣堎倜趙摲禱謂�弅�埵笢源竣勗操筒艇↓鏤踏躂趙笢堎��
+ 		  袲溘騷囮璃哱毀囮袲で砫璃摯昡悃璃迶(CA)誑�彸觴�ぁ毀  
+ 		  зぁ  崚埰堎�羡HARINDEX�荂懽鵅�  摯郖徽勗す籤溘禱  
+ 		  擭ぁ拻堎  蠕��BASEIMG毀  崚摯倜誧摯  蠕��LEVEL毀す籤
+ 		  溘摯畛穫鳴(0埵��  崚媃埵笢�蛦蟦偽懋就PC埵汔勗窅竣��)
+ 		  WALKABLE毀1摯敁拻鼠摯窀禱玊謐埰堎喫敁誑ぁ拻��0埵�桾�
+ 		  謐埰堎喫敁誑ぁ拻埵笢�胾EIGHT毀禜踏禱忒僑忒摯凝鼠竣ぁ
+ 		  埵笢摯凝摯炩擭��
  		  
- 		  平乓仿弁正□及  蟆午愤  惫寞反｝<a href="#escaping">
- 		  巨旦弗□皿今木卅仃木壬卅日卅中［'|'匹玄□弁件毛
- 		  潸曰分仄化井日巨旦弗□皿毛荸轮允月［巨旦弗□皿允月午'
- 		  |'互幻井及  侬卞云五井歹月及匹｝  赓反签账卞'|'毛犯
- 		  伉立正午仄化方中［霜耨允月  手｝  蟆午愤  惫寞毛巨旦
-                   弗□皿仄化井日凶化徇匹勾卅中匹井日霜耨允月［
-                   引凶］矢永玄及桦宁反愤  惫寞及医歹曰卞交□扒□互涩烂
-                   仄凶矢永玄及  蟆互霜耨今木化仁月［
+ 		  す籤溘袲淏↓摯  鞳敁猷  措蠕毀��<a href="#escaping">
+ 		  操筒艇↓鏤踏躂埵崹躂�屻牟欷聿苺�'|'ぁ哱↓袲璃禱
+ 		  噁堇煦媃趙凝�桴瑑弩央劗鬊待怏笪彸瞿蛨瑑弩央劗鯥彸蟲�'
+ 		  |'誑酵凝摯  棬勗堁拻凝渦堎摯ぁ��  疐毀ワ梖勗'|'禱溢
+ 		  惉蕾淏敁媃趙源笢�袷近鵋彸�  忒��  鞳敁猷  措蠕禱操筒
+                   艇↓鏤媃趙凝�桸袘脊葅旦楮聿陊札旅梖近鵋彸瞿�
+                   竘倜�楟該檗�摯鳹譴毀猷  措蠕摯瓟渦堇勗蝠↓勒↓誑优擭
+                   媃倜妐蚗哱摯  鞳誑邞嚭踏躂趙�彸瞿�
  		  
- 	      凶化徇匹仁亢日木凶玄□弁件互6蜊及桦宁
- 		  玄□弁件及    反
+ 	      倜趙摲ぁ�尪瘓桫憶豝�↓袲璃誑6蠀摯鳹譴
+ 		  哱↓袲璃摯    毀
  		  INDEX|X|Y|BASEIMG|LEVEL|ITEM1LINEINFO
- 		  匹哗  卞  切化中月失奶  丞卞勾中化及树  匹丐月［
- 		  INDEX反平乓仿及奶件犯弁永旦午井少日卅中INDEX匹丐月［
- 		  公及失奶  丞毛壅允凛卞银迕允月［X,Y反失奶  丞及弘夫□
- 		  田伙匏  ［BASEIMG反  飓及  寞［ITEM1LINEINFO反1垫
- 		  info卞  憎允月凶户及树  匹丐月［失奶  丞它奶件玉它  
- 		  及  憎迕及树  反  及  芊匹迕啦允月［失奶  丞卞楮仄化
- 		  反CA反  卅中［ITEM1LINEINFO反<a href="#escape">巨旦弗□
- 		  皿今木月［仇及巨旦弗□皿及  芊反晓及嫩  毛辅寰［
+ 		  ぁ貍  勗  з趙笢堎囮騷  堜勗僑笢趙摯攷  ぁ堣堎��
+ 		  INDEX毀す籤溘摯騷璃溢袲蚗筒敁凝屾�欷聿粁NDEXぁ堣堎��
+ 		  鼠摯囮騷  堜禱觛埰鄹勗窅暵埰堎�舼,Y毀囮騷  堜摯精痲↓
+ 		  泬鳴痾  �羠ASEIMG毀  鴢摯  蠕�胔TEM1LINEINFO毀1菜
+ 		  info勗  崚埰堎倜誧摯攷  ぁ堣堎�袼岌�  堜坳騷璃迶坳  
+ 		  摯  崚暵摯攷  毀  摯  傮ぁ暵徽埰堎�袼岌�  堜勗匴媃趙
+ 		  毀CA毀  埵笢�胔TEM1LINEINFO毀<a href="#escape">操筒艇↓
+ 		  鏤踏躂堎�蛦蟦偏瑑弩央劗騧�  傮毀窀摯囂  禱落敺��
  
- 	      凶化徇匹仁亢日木凶玄□弁件互4蜊及桦宁
- 		  玄□弁件及    反
+ 	      倜趙摲ぁ�尪瘓桫憶豝�↓袲璃誑4蠀摯鳹譴
+ 		  哱↓袲璃摯    毀
  		  INDEX|X|Y|VALUE
- 		  匹哗  卞  切化中月云嗯卞勾中化及树  匹丐月［    反允
- 		  屯化醒侬［INDEX,X,Y 反失奶  丞午  元［VALUE 反升木分
- 		  仃及汹井午中丹仪匹丐月［失奶  丞卞勾中化及树  匹丐月［
- 	      凶化徇匹仁亢日木凶玄□弁件互1蜊及桦宁
+ 		  ぁ貍  勗  з趙笢堎堁鉣勗僑笢趙摯攷  ぁ堣堎��    毀埰
+ 		  迋趙倳棬�胔NDEX,X,Y 毀囮騷  堜敁  啋�臹ALUE 毀汔躂煦
+ 		  崹摯倵凝敁笢竣痀ぁ堣堎�袼岌�  堜勗僑笢趙摯攷  ぁ堣堎��
+ 	      倜趙摲ぁ�尪瘓桫憶豝�↓袲璃誑1蠀摯鳹譴
  		  INDEX
- 		  仇及平乓仿及C反项尹日木卅中［
+ 		  喫摯す籤溘摯C毀砐窇�桫撻聿苺�
 */
 void lssproto_C_send(int fd,char* data)
 {
@@ -1684,47 +1684,47 @@ void lssproto_C_send(int fd,char* data)
 /*
    servertoclient CA( string data );
        (CharacterAction)
-       苇尹月  区卞中月平乓仿及失弁扑亦件橇谪毛凳蕙允月［
-       扔□田□井日弁仿奶失件玄卞域  读卞霜耨允月［
-       备平乓仿及1失弁扑亦件仍午卞霜耨［扔□田□反失弁扑亦件毛匹五月分
-       仃做谅允月仇午［
+       峟窇堎  ⑹勗笢堎す籤溘摯囮袲で砫璃Щ稃禱脾犍埰堎��
+       �荂懽鵅齙旅殏芛薩昃尬�哱勗郖  黍勗邞嚭埰堎��
+       掘す籤溘摯1囮袲で砫璃�婠蝐樆近韗袾荂懽鵅黦棵抄芢刳鉏�禱ぁ拻堎煦
+       崹酕謝埰堎喫敁��
        
  	string data
- 	CHARINDEX|X|Y|ACTION|PARAM1|PARAM2|PARAM3|PARAM4|....毛戊
- 	    件穴匹仁亢匀凶手及卞允月［PARAM反失弁扑亦件仍午卞蜊醒手
- 	    银中井凶手仇午卅月［动票反失弁扑亦件域  ［X,Y反匏  匹升
- 	    及失弁扑亦件匹手｝丐凶日仄中匏  毛隙烂允月［
- 	    仇及  侬  反巨旦弗□皿今木卅中［
+ 	CHARINDEX|X|Y|ACTION|PARAM1|PARAM2|PARAM3|PARAM4|....禱昡
+ 	    璃悃ぁ�尪碣�倜忒摯勗埰堎�腍ARAM毀囮袲で砫璃�婠蝐殣覕捗�
+ 	    窅笢凝倜忒喫敁埵堎�蛚紜捧棵抄芢刳鉏�郖  �舼,Y毀痾  ぁ汔
+ 	    摯囮袲で砫璃ぁ忒��堣倜�欷ひ党�  禱炩擭埰堎��
+ 	    喫摯  棬  毀操筒艇↓鏤踏躂埵笢��
  	  
  	        ACTION  PARAM1  PARAM2 
  	       PARAM3  PARAM4  
- 	        Stand:0    轾0~7        
- 	        Walk:1    轾0~7        
- 	        Attack:2    轾0~7        
- 	        Throw:3    轾0~7        
- 	        Damage:4    轾0~7      
- 	        Dead:5    轾0~7        
- 	        UseMagic:6    轾0~7  
- 	        UseItem:7    轾0~7  
- 	        Effect:8    轾0~7  巨白尼弁玄  寞  
- 	        Down:10 (逦木月)    轾0~7  
- 	        Sit:11 (甄月)    轾0~7  
- 	        Hand:12 (澎毛蕊月)    轾0~7  
- 	        Pleasure:13 (减少)    轾0~7  
- 	        Angry:14 (变月)    轾0~7  
- 	        Sad:15 (  仄戈)    轾0~7  
- 	        Guard:16 (布□玉)    轾0~7  
- 	        actionwalk:17 (失弁扑亦件迕汹五)    轾0~7  
- 	        nod:18 (丹卅内仁)    轾0~7  
- 	        actionstand:19 (失弁扑亦件迕  切禾□术)    轾0~7  
- 	        Battle:20 (爵  树  )    轾0~7  BattleNo(-1 卅日  憎壅允    SideNo  HelpNo  ㄠ卅日踞仃毛裟少CA  憎］ㄟ卅日壅允］引凶反  仄    
- 	        Leader:21 (伉□母□树  )    轾0~7  0:  憎壅允 1:  憎  
- 	        Watch:22 (爵  棋爵)    轾0~7  0:  憎壅允 1:  憎  
- 	        namecolor:23(  蟆及缙树  )    轾0~7    蟆及缙  寞  
- 	        Turn:30(  轾  晶)    轾0~7    
- 	        Warp:31(伐□皿)    轾0~7    
+ 	        Stand:0    澺0~7        
+ 	        Walk:1    澺0~7        
+ 	        Attack:2    澺0~7        
+ 	        Throw:3    澺0~7        
+ 	        Damage:4    澺0~7      
+ 	        Dead:5    澺0~7        
+ 	        UseMagic:6    澺0~7  
+ 	        UseItem:7    澺0~7  
+ 	        Effect:8    澺0~7  操啞攝袲哱  蠕  
+ 	        Down:10 (槸躂堎)    澺0~7  
+ 	        Sit:11 (淢堎)    澺0~7  
+ 	        Hand:12 (鱗禱�擸�)    澺0~7  
+ 	        Pleasure:13 (熬屾)    澺0~7  
+ 	        Angry:14 (曹堎)    澺0~7  
+ 	        Sad:15 (  媃資)    澺0~7  
+ 	        Guard:16 (票↓迶)    澺0~7  
+ 	        actionwalk:17 (囮袲で砫璃暵倵拻)    澺0~7  
+ 	        nod:18 (竣埵囀��)    澺0~7  
+ 	        actionstand:19 (囮袲で砫璃暵  з睽↓扲)    澺0~7  
+ 	        Battle:20 (橋  攷  )    澺0~7  BattleNo(-1 埵��  崚觛埰    SideNo  HelpNo  兒埵�桴戫篜拜馨愅A  崚�搢萶牟殏梊呁椹�倜毀  媃    
+ 	        Leader:21 (惉↓譫↓攷  )    澺0~7  0:  崚觛埰 1:  崚  
+ 	        Watch:22 (橋  め橋)    澺0~7  0:  崚觛埰 1:  崚  
+ 	        namecolor:23(  鞳摯褗攷  )    澺0~7    鞳摯褗  蠕  
+ 	        Turn:30(  澺  儒)    澺0~7    
+ 	        Warp:31(極↓鏤)    澺0~7    
  	      
- 	ACTION及袄反帮醒匹｝    反晓及  及尔羹及嫩  匹丐月［
+ 	ACTION摯偯毀堆倳ぁ��    毀窀摯  摯嫌輊摯囂  ぁ堣堎��
 */
 void lssproto_CA_send(int fd,char* data)
 {
@@ -1744,10 +1744,10 @@ void lssproto_CA_send(int fd,char* data)
 /*
    servertoclient CD( string data );
        (CharacterDelete)
- 	data 反犯伉立正  ,  匹嗉濠日木凶奶件犯永弁旦［
- 	  醒瘀霜月仪互请  月［
-       仇及ID毛  匀化中月平乓仿弁正互壅尹凶凛卞扔□田井日弁仿奶失件玄尺
-       午鳗歹月［
+ 	data 毀溢惉蕾淏  ,  ぁ鉏憍�桫憶袎抯�溢蚗袲筒��
+ 	  倳贀邞堎痀誑③  堎��
+       喫摯ID禱  埱趙笢堎す籤溘袲淏誑觛窇倜鄹勗�荂懽嚝旅殏芛薩昃尬�哱喜
+       敁魕渦堎��
 */
 void lssproto_CD_send(int fd,char* data)
 {
@@ -1767,27 +1767,27 @@ void lssproto_CD_send(int fd,char* data)
 /*
    <a name="R">servertoclient R( string data );
        (Radar)
-       伊□母□及    毛弁仿奶失件玄卞霜耨允月［弁仿奶失件玄反仇及霜耨毛
-       邰菲允月仇午反卅中［扔□田□互赝癫卅正奶立件弘匹霜耨允月［
-       凶午尹壬10汹丐月仁仍午午井｝1坌仍午午井［
+       畛↓譫↓摯    禱袲溘騷囮璃哱勗邞嚭埰堎�詗芛薩昃尬�哱毀喫摯邞嚭禱
+       菺滑埰堎喫敁毀埵笢�袾荂懽鵅齠目剉紲耳�騷蕾璃精ぁ邞嚭埰堎��
+       倜敁窇��10倵堣堎�岓婠覢蝢恐�1覕�婠覢蝢恐�
  
  	string data
- 	x ,y, kind ,及赐卞袄毛'|'匹仁亢匀化卅日屯凶手及毛
- 	    今日卞'|'匹卅日屯凶手及［
- 	    x,y反平乓仿井日及濮覆匏  ［kind反动票卞仄户允醒袄匹反卅中
- 	    筏寞［伊□母□卞丹勾月  及潘  毛隙烂允月［霜日木化仁月手及
- 	    及潘  反｝公木引匹卞儒尹凶  芊午井｝旦平伙匹  祭仄｝公木反
- 	    扔□田□互哔尹月［
+ 	x ,y, kind ,摯棹勗偯禱'|'ぁ�尪碣�趙埵�梠迖訧祤冕�
+ 	    踏�梇�'|'ぁ埵�梠迖訧祤除�
+ 	    x,y毀す籤溘凝�梩啣孛翎�  �菣ind毀雄き勗媃誧埰倳偯ぁ毀埵笢
+ 	    楔蠕�覗薄囃腹麙撋允椒�  摯攣  禱炩擭埰堎�袷糾桫噱紙彸薹祤�
+ 	    摯攣  毀��鼠躂竘ぁ勗�樠�倜  傮敁凝��筒す鳴ぁ  撬媃��鼠躂毀
+ 	    �荂懽鵅齠立棴�堎��
  	 
- 	        kind及袄        
- 	        E  衬  
- 	        P  皿伊奶乩□  
- 	        S  熔  
- 	        G  云嗯  
- 	        I  失奶  丞(熔动陆)  
+ 	        kind摯偯        
+ 	        E  傍  
+ 	        P  鏤畛騷媕↓  
+ 	        S  ��  
+ 	        G  堁鉣  
+ 	        I  囮騷  堜(�蛚純�)  
    
-   data及  “"12|22|E|13|24|P|14|28|P"
-   仇及  侬  反巨旦弗□皿今木卅中［
+   data摯  ※"12|22|E|13|24|P|14|28|P"
+   喫摯  棬  毀操筒艇↓鏤踏躂埵笢��
 */
 void lssproto_R_send(int fd,char* data)
 {
@@ -1807,317 +1807,317 @@ void lssproto_R_send(int fd,char* data)
 /*
    servertoclient S( string data );
        (Status)
-       平乓仿及旦  □正旦毛霜耨允月［
-       犯□正反 市  打伉筏寞  侬(域  侬)     午卅匀化中月［勾引曰  赓及
-       1  侬毛苇木壬窒及旦  □正旦井坌月［    反2  侬  井日匹丐月［
-           反动票及白巧□穴永玄卞仄凶互丹［凶化徇筏寞'|'互犯伉立正匹丐月［
-       2蜊  动嫦及玄□弁件互    匹丐月［
+       す籤溘摯筒  ↓淏筒禱邞嚭埰堎��
+       溢↓淏毀 庈  湖惉楔蠕  棬(郖  棬)     敁埵埱趙笢堎�蛫棍�堇  疐摯
+       1  棬禱峟躂�屼牳做�  ↓淏筒凝覕堎��    毀2  棬  凝�梪目夭瞿�
+           毀雄き摯啞б↓悃蚗哱勗媃倜誑竣�覕袘脊葽勾�'|'誑溢惉蕾淏ぁ堣堎��
+       2蠀  雄禢摯哱↓袲璃誑    ぁ堣堎��
        
- 	P 蝈由仿丢□正
+ 	P 蠈蚕溘隍↓淏
  	    kubun hp maxhp mp maxmp str tough exp maxexp exp 
  	    level attackpower deffencepower 
  	    fixdex fixcharm fixluck fixfireat fixwaterat fixearthat fixwindat
- 	    gold 尥仃化中月
- 	    惫寞及index   蟆 愤裘惫寞 
+ 	    gold 痹崹趙笢堎
+ 	    措蠕摯index   鞳 猷藽措蠕 
  
- 	    犯伉立正反 '|' 匹丐月［引凶  蟆午愤裘惫寞反｝
- 	    <a href="#escaping">巨旦弗□皿仄凶手及毛
- 	    凶化徇匹勾卅仆凶手及互骚耨今木月［
- 	    公木冗木及袄及滇反动票［
- 	    kubun 卞ㄠ互  匀化中月午蟆由仿丢□正毛霜耨］
- 	    ㄡ动晓分午］备申永玄及  匀化中月手及及由仿丢□正互赐  卞  匀化霜耨今木化中月［
- 	     尹壬］ㄢ互  凶日hp午Maxhp互kubun 动嫦及玄□弁件卞  户日木化中月［
+ 	    溢惉蕾淏毀 '|' ぁ堣堎�覗�倜  鞳敁猷藽措蠕毀��
+ 	    <a href="#escaping">操筒艇↓鏤媃倜忒摯禱
+ 	    倜趙摲ぁ僑埵ど倜忒摯誑玊嚭踏躂堎��
+ 	    鼠躂�葸噯偽擘做廗普紜悵�
+ 	    kubun 勗兒誑  埱趙笢堎敁鞳蚕溘隍↓淏禱邞嚭��
+ 	    兕雄窀煦敁�搊補縎檗�摯  埱趙笢堎忒摯摯蚕溘隍↓淏誑棹  勗  埱趙邞嚭踏躂趙笢堎��
+ 	     窇�氿搢熐�  倜�掊p敁Maxhp誑kubun 雄禢摯哱↓袲璃勗  誧�桫噱胱俶瞿�
  	    
  	        kunun  int  
  	        Hp(    )hp  int  
  	        MaxHp  int  
- 	        Mp(热诸由伐□)  int  
+ 	        Mp(��絊蚕極↓)  int  
  	        MaxMp  int  
  	        Vital(    )  int  
  	        Str(    )  int  
- 	        Tough(暹屺今)  int  
- 	        Dex(豳镀今)  int  
- 	        Exp(烦董袄)exp  int  
- 	        MaxExp(戚引匹及烦董袄)  int  
- 	        Level(伊矛伙)  int  
- 	        Attack(  猾  )  int  
-      	        Defense(潮    )  int  
- 	        fQuick(  蔽豳镀今)  int  
+ 	        Tough(橀嶁踏)  int  
+ 	        Dex(搫傲踏)  int  
+ 	        Exp(歲雁偯)exp  int  
+ 	        MaxExp(べ竘ぁ摯歲雁偯)  int  
+ 	        Level(畛穫鳴)  int  
+ 	        Attack(  賓  )  int  
+      	        Defense(陰    )  int  
+ 	        fQuick(  敖搫傲踏)  int  
  	        fCharm(    )  int  
- 	        fLuck(扪)  int  
- 	        fEarth(哗)fixearthat  int  
+ 	        fLuck(痶)  int  
+ 	        fEarth(貍)fixearthat  int  
  	        fWater(  )  int  
- 	        fFire(绍)  int  
- 	        fWid(氘)fixwindat  int  
- 	        Gold(云嗯)  int  
- 	        惫寞及index  int  
- 	        犯亘巨伙禾奶件玄  int  
- 	        鳖戏荚醒  int  
- 	          蟆    侬    
- 	        愤裘惫寞    侬    
+ 	        fFire(庄)  int  
+ 	        fWid(諿)fixwindat  int  
+ 	        Gold(堁鉣)  int  
+ 	        措蠕摯index  int  
+ 	        溢堥操鳴睽騷璃哱  int  
+ 	        梱牁樊倳  int  
+ 	          鞳    棬    
+ 	        猷藽措蠕    棬    
  	    
- 	    填    ( char 及    公及引引踏仁 )
+ 	    沓    ( char 摯    鼠摯竘竘怳�� )
  	    
- 	    P10|20|10|20|10|10|10|1|2|13|13|1|100|10|尺氏天|abc|def
+ 	    P10|20|10|20|10|10|10|1|2|13|13|1|100|10|喜庌毞|abc|def
  	
- 	C 甄  
+ 	C 淢  
  	    floor maxx maxy x y
- 	    毛  | 匹嗉濠匀化霜月［
- 	    填    ( char 及    公及引引踏仁 )
+ 	    禱  | ぁ鉏憍埱趙邞堎��
+ 	    沓    ( char 摯    鼠摯竘竘怳�� )
  	    
  	    C1024|100|100|10|20
  	    
- 	    晓筏及  匹反｝白夫失ID1024, 扔奶术100x100 X 10,Y 20及午仇
- 	    欠卞平乓仿弁正□互中月午中丹    卞卅月［仇及穴奶平乓仿及白
- 	    夫失手孔仁户凶甄  毛弁仿奶失件玄互襞月仇午互匹五月及反仇及
- 	    戊穴件玉及心匹丐月［汹五及瑛绊反白夫失  及匏  仄井歹井日卅
- 	    中［方匀化｝必□丞钒铵凛｝闭蟾银迕及午五｝伐□皿及午五卅升
- 	    反｝仇及戊穴件玉毛勾井匀化恳仄中袄毛霜耨仄卅仁化反卅日卅中［
+ 	    窀楔摯  ぁ毀��啞痲囮ID1024, �蚅昃�100x100 X 10,Y 20摯敁喫
+ 	    Й勗す籤溘袲淏↓誑笢堎敁笢竣    勗埵堎�蛦蟦參乖昄褐珝翹偽�
+ 	    痲囮忒謂�妡役赹�  禱袲溘騷囮璃哱誑蠐堎喫敁誑ぁ拻堎摯毀喫摯
+ 	    昡悃璃迶摯陑ぁ堣堎�覕硩撘啁灠窾敦袚藡�  摯痾  媃凝渦凝�欷�
+ 	    笢�蛪諂�趙��斛↓堜楣鴽鄹��敕騤窅暵摯敁拻��極↓鏤摯敁拻埵汔
+ 	    毀��喫摯昡悃璃迶禱僑凝埱趙諜媃笢偯禱邞嚭媃埵�妡窈楮牟欷聿苺�
  	    
- 	I 蝈失奶  丞
- 	    (失奶  丞1)|(失奶  丞2)...(失奶  丞n)
- 	    失奶  丞及    反动票及  芊匹由永弁允月［
- 	    夫午勾及失奶  丞反｝井卅日内动票及6勾及玄□弁件及本永玄匹
- 	    霜耨今木月［夫午勾夫午勾及    反｝
+ 	I 蠈囮騷  堜
+ 	    (囮騷  堜1)|(囮騷  堜2)...(囮騷  堜n)
+ 	    囮騷  堜摯    毀雄き摯  傮ぁ蚕蚗袲埰堎��
+ 	    痲敁僑摯囮騷  堜毀��凝埵�桫痗紜掉�6僑摯哱↓袲璃摯掛蚗哱ぁ
+ 	    邞嚭踏躂堎�蛪藬蝜晰藬蝜智�    毀��
  	    
- 	      蟆|  蟆2|旦  □斥|失奶  丞及    |失瓦丢  寞|银迕第  桦赭|银迕覆擂|失奶  丞伊矛伙|白仿弘  
+ 	      鞳|  鞳2|筒  ↓喇|囮騷  堜摯    |囮俓隍  蠕|窅暵菴  鳹鐎|窅暵葡濯|囮騷  堜畛穫鳴|啞溘精  
  	    
- 	      失奶  丞  反摹  伊矛伙匹愤  读卞  凳今木月［
- 	        蟆2反摹  伊矛伙卞方匀化｝失奶  丞及    互  月  烂［
- 		  弁仿奶失件玄及失奶  丞  及2垫  卞  木月仪［
- 	      旦  □斥反  蟆及缙毛赘月及卞银丹［
- 	      失奶  丞及    ［
- 	      失瓦丢  寞反｝  飓  寞［
- 	      银迕第  桦赭午反］仇及失奶  丞互升仇匹银迕允月仪互第  井互  匀化中月［
- 	          仇木反］扔□田□匹反动票及方丹卞烂聒今木化中月［
+ 	      囮騷  堜  毀纂  畛穫鳴ぁ猷  黍勗  脾踏躂堎��
+ 	        鞳2毀纂  畛穫鳴勗源埱趙��囮騷  堜摯    誑  堎  擭��
+ 		  袲溘騷囮璃哱摯囮騷  堜  摯2菜  勗  躂堎痀��
+ 	      筒  ↓喇毀  鞳摯褗禱袑堎摯勗窅竣��
+ 	      囮騷  堜摯    ��
+ 	      囮俓隍  蠕毀��  鴢  蠕��
+ 	      窅暵菴  鳹鐎敁毀�摀蟦動岌�  堜誑汔喫ぁ窅暵埰堎痀誑菴  凝誑  埱趙笢堎��
+ 	          喫躂毀�朠荂懽鵅嚾扑普紜掉健蔥仃敻鏍蠸鯆噱胱俶瞿�
  	          
  			typedef enum
  			{
- 				ITEM_FIELD_ALL,			允屯化及桦赭匹银尹月
- 				ITEM_FIELD_BATTLE,		爵    及心
- 				ITEM_FIELD_MAP,			骚橘穴永皿晓及心
+ 				ITEM_FIELD_ALL,			埰迋趙摯鳹鐎ぁ窅窇堎
+ 				ITEM_FIELD_BATTLE,		橋    摯陑
+ 				ITEM_FIELD_MAP,			玊橖悃蚗鏤窀摯陑
  
  			}ITEM_FIELDTYPE;
  	          
- 	      银迕覆擂午反］仇及失奶  丞毛银迕允月仇午及请  月覆擂互  匀化中月［
- 	          扔□田□匹反动票及方丹卞烂聒今木化中月［
+ 	      窅暵葡濯敁毀�摀蟦動岌�  堜禱窅暵埰堎喫敁摯③  堎葡濯誑  埱趙笢堎��
+ 	          �荂懽鵅嚾扑普紜掉健蔥仃敻鏍蠸鯆噱胱俶瞿�
  	          
  			typedef enum
  			{
- 				ITEM_TARGET_MYSELF,		愤坌及心
- 				ITEM_TARGET_OTHER,		职及谛  愤坌殖戈)
- 				ITEM_TARGET_ALLMYSIDE,		    蝈  
- 				ITEM_TARGET_ALLOTHERSIDE,	锹澎础蝈  
- 				ITEM_TARGET_ALL,		蝈化
+ 				ITEM_TARGET_MYSELF,		猷覕摯陑
+ 				ITEM_TARGET_OTHER,		眥摯硞  猷覕硈資)
+ 				ITEM_TARGET_ALLMYSIDE,		    蠈  
+ 				ITEM_TARGET_ALLOTHERSIDE,	Ъ鱗插蠈  
+ 				ITEM_TARGET_ALL,		蠈趙
  			}ITEM_TARGETTYPE;
  		
-   	        <font size=+1>仇及醒侬卞100毛箫允午］韶氏匹中月樊手覆擂午卅月［
- 	      失奶  丞伊矛伙［仇及伊矛伙动晓及樊匹卅中午隶  请  卅中［
- 	      白仿弘  ［缙氏卅白仿弘毛霜耨允月［备申永玄及覆杀反动票及骚曰［
+   	        <font size=+1>喫摯倳棬勗100禱鵿埰敁�楦婽玅皮俶繚晉硌窕痸諑耒瞿�
+ 	      囮騷  堜畛穫鳴�蛦蟦曼謄牴龠耆�摯榆ぁ埵笢敁薔  ③  埵笢��
+ 	      啞溘精  �貀て瓮旭袚繙踼屎近鵋彸瞿蛘補縎檗�摯葡伀毀雄き摯玊堇��
 
- 		      0bit    矢永玄丢□伙匹霜耨第  卅失奶  丞井升丹井［霜耨第  分午ㄠ［ㄟ分午霜耨匹五卅中［  
- 		      1Bit    仇及失奶  丞互宁岳请  月井升丹井［  
- 		      2Bit    仇及失奶  丞互    井升丹井［1分午    匹丐月［  
+ 		      0bit    妐蚗哱隍↓鳴ぁ邞嚭菴  埵囮騷  堜凝汔竣凝�袷近騊�  煦敁兒�菬葽笥褑近鮿用槾聿苺�  
+ 		      1Bit    喫摯囮騷  堜誑譴埬③  堎凝汔竣凝��  
+ 		      2Bit    喫摯囮騷  堜誑    凝汔竣凝��1煦敁    ぁ堣堎��  
  	    
- 	    仇仇及  匹反<a href="#escaping">巨旦弗□皿允月［
- 	    填    ( char 及    公及引引踏仁 )
+ 	    喫喫摯  ぁ毀<a href="#escaping">操筒艇↓鏤埰堎��
+ 	    沓    ( char 摯    鼠摯竘竘怳�� )
  	    
- 	    I丐幻 卅 阂|str+2|1|丐幻\|中元|10|2|0
+ 	    I堣酵 埵 碳|str+2|1|堣酵\|笢啋|10|2|0
  	    
- 	    旦  □斥及袄及啦  反｝帮醒袄匹
+ 	    筒  ↓喇摯偯摯徽  毀��堆倳偯ぁ
  	    
- 	        1  旦  □斥A  
- 	        2  旦  □斥B  	      
- 	        3  旦  □斥C  
- 	        4  旦  □斥D  
+ 	        1  筒  ↓喇A  
+ 	        2  筒  ↓喇B  	      
+ 	        3  筒  ↓喇C  
+ 	        4  筒  ↓喇D  
  	    
- 	    午允月［引凶｝失奶  丞  及坞及  坌卞勾中化反｝5蜊及玄□弁件互
- 	    坞匹｝勾引曰凶化徇互卅日氏分橇谪匹霜耨今木化仁月［
+ 	    敁埰堎�覗�倜��囮騷  堜  摯昶摯  覕勗僑笢趙毀��5蠀摯哱↓袲璃誑
+ 	    昶ぁ��僑竘堇倜趙摲誑埵�梛牁秷邁媃瓦近鬅鯆噱紙彸瞿�
  	
- 	S 蝈旦平伙
- 	    (旦平伙0)|(旦平伙1)|(旦平伙2) ... (旦平伙n)
- 	    惫寞午  元匹｝平乓仿互手化月    旦平伙醒坌毛霜耨允月［勾引
- 	    曰卅中手及反 ||| 午卅月及匹丐月［
- 	    备巨件玄伉及    反｝
- 	    旦平伙及潘  戊□玉|伊矛伙
- 	    匹丐月［
- 	    填    ( char 及    公及引引踏仁 )
+ 	S 蠈筒す鳴
+ 	    (筒す鳴0)|(筒す鳴1)|(筒す鳴2) ... (筒す鳴n)
+ 	    措蠕敁  啋ぁ��す籤溘誑忒趙堎    筒す鳴倳覕禱邞嚭埰堎�蛫棍�
+ 	    堇埵笢忒摯毀 ||| 敁埵堎摯ぁ堣堎��
+ 	    掘操璃哱惉摯    毀��
+ 	    筒す鳴摯攣  昡↓迶|畛穫鳴
+ 	    ぁ堣堎��
+ 	    沓    ( char 摯    鼠摯竘竘怳�� )
  	    
  	    S10|2|20|2|||
  	
- 	T 惫寞
- 	    (惫寞0)|(惫寞1)|(惫寞2) ... (惫寞n)
- 	    惫寞及巨件玄伉互坞及桦宁反 '|' 互  粮允月及匹｝  粮仄凶手
- 	    及毛    仄化旦平乓件仄化反卅日卅中［井卅日内    蜊醒坌霜耨
- 	    允月［
- 	    夫午勾｝夫午勾及    反｝
- 	      蟆
- 	    及心匹丐月［
- 	    填    ( 霜日木化仁月 char 及    公及引引匹丐月 )
+ 	T 措蠕
+ 	    (措蠕0)|(措蠕1)|(措蠕2) ... (措蠕n)
+ 	    措蠕摯操璃哱惉誑昶摯鳹譴毀 '|' 誑  襄埰堎摯ぁ��  襄媃倜忒
+ 	    摯禱    媃趙筒す籤璃媃趙毀埵�欷聿苺蛨框牟桫�    蠀倳覕邞嚭
+ 	    埰堎��
+ 	    痲敁僑��痲敁僑摯    毀��
+ 	      鞳
+ 	    摯陑ぁ堣堎��
+ 	    沓    ( 邞�桫噱紙彸� char 摯    鼠摯竘竘ぁ堣堎 )
  	    
- 	    T丐幻|方匀天日中
+ 	    T堣酵|源埱毞�欶�
  	    
- 	    仇木手<a href="#escaping">巨旦弗□皿允月［
+ 	    喫躂忒<a href="#escaping">操筒艇↓鏤埰堎��
  
- 	M   坌由仿丢□正
- 	    平乓仿弁正□及旦  □正旦及丹切｝    卞  凳今木月手及(蜇箕
- 	    袄)午公丹匹卅中手及(    袄卅升)互丐月［升木井及旦  □正旦
- 	    互  凳今木月凶太卞  荚蝈  及由仿丢□正毛霜耨允月及反生永玄
- 	    伐□弁玄仿白奴永弁毛  蛲卞银丹仇午卞卅月及匹｝  卞HP ,
- 	    MP,EXP及袄分仃卞仄廿匀凶由仿丢□正霜耨戊穴件玉毛迕啦允月［
- 	    公木互仇及M戊穴件玉匹丐月［2  侬  动嫦及  域玄□弁件反HP及
- 	    蜇箕袄 ,     玄□弁件反MP｝  赶玄□弁件反EXP匹丐月［
- 	    动票卞填    毛仄户允［
+ 	M   覕蚕溘隍↓淏
+ 	    す籤溘袲淏↓摯筒  ↓淏筒摯竣з��    勗  脾踏躂堎忒摯(藯凜
+ 	    偯)敁鼠竣ぁ埵笢忒摯(    偯埵汔)誑堣堎�袶�躂凝摯筒  ↓淏筒
+ 	    誑  脾踏躂堎倜怮勗  樊蠈  摯蚕溘隍↓淏禱邞嚭埰堎摯毀汜蚗哱
+ 	    極↓袲哱溘啞贖蚗袲禱  藗勗窅竣喫敁勗埵堎摯ぁ��  勗HP ,
+ 	    MP,EXP摯偯煦崹勗媃堨埱倜蚕溘隍↓淏邞嚭昡悃璃迶禱暵徽埰堎��
+ 	    鼠躂誑喫摯M昡悃璃迶ぁ堣堎��2  棬  雄禢摯  郖哱↓袲璃毀HP摯
+ 	    藯凜偯 ,     哱↓袲璃毀MP��  裒哱↓袲璃毀EXPぁ堣堎��
+ 	    雄き勗沓    禱媃誧埰��
  	    
  	    M54|210|8944909
  	    
- 	    仇及  匹反HP及蜇箕袄互54｝MP及蜇箕袄互210｝烦董袄互8944909
- 	    卞卅匀化中月及分［仇及3潘  反  卞  凳  蘸互嫖中午  歹木月
- 	    凶户    仄凶戊穴件玉祭仄凶互｝手切欠氏仇及M戊穴件玉及井歹
- 	    曰卞P戊穴件玉匹蝈由仿丢□正毛霜耨仄化手方中［凶分仄｝  赝
- 	    卞生永玄伐□弁毛银丹凶户卞反｝仇及戊穴件玉毛银丹仇午互蹂俦
- 	    今木月［
+ 	    喫摯  ぁ毀HP摯藯凜偯誑54��MP摯藯凜偯誑210��歲雁偯誑8944909
+ 	    勗埵埱趙笢堎摯煦�蛦蟦�3攣  毀  勗  脾  梣誑禜笢敁  渦躂堎
+ 	    倜誧    媃倜昡悃璃迶撬媃倜誑��忒зЙ庌喫摯M昡悃璃迶摯凝渦
+ 	    堇勗P昡悃璃迶ぁ蠈蚕溘隍↓淏禱邞嚭媃趙忒源笢�覕袚笭ゞ�  媏
+ 	    勗汜蚗哱極↓袲禱窅竣倜誧勗毀��喫摯昡悃璃迶禱窅竣喫敁誑籓棱
+ 	    踏躂堎��
  	    
-         D 平乓仿及ID
- 	    夫弘奶件凛卞分仃霜月平乓仿及index］公木午凛棉毛霜月［
- 	    D1000|912766409午井匹霜日木月［
+         D す籤溘摯ID
+ 	    痲精騷璃鄹勗煦崹邞堎す籤溘摯index�搮孩憊衚暋甝屎肴瞿�
+ 	    D1000|912766409敁凝ぁ邞�桫戰瞿�
  	
- 	E 巨件市它件玄割    票蜃)|(晓蜃)
- 	    巨件市它件玄  毛霜耨允月［割  反n/100
- 	    弁仿奶失件玄反］票蜃及袄井日旦正□玄仄化］ㄠ汹汹仁  卞+1仄凶割  匹巨件市它件玄允月井毛  蝇允月［
- 	    凶分仄］晓蜃及袄毛旋尹卅中方丹卞允月［
- 	    戚荚卞仇木互霜日木化仁月引匹仇及割  匹巨件市它件玄毛煌遥允月仪［
+ 	E 操璃庈坳璃哱賃    き藦)|(窀藦)
+ 	    操璃庈坳璃哱  禱邞嚭埰堎�蛝�  毀n/100
+ 	    袲溘騷囮璃哱毀�暔梃袧偽擰旅桮拌�↓哱媃趙�搢閛硞硜�  勗+1媃倜賃  ぁ操璃庈坳璃哱埰堎凝禱  茯埰堎��
+ 	    倜煦媃�椿�藦摯偯禱唅窇埵笢源竣勗埰堎��
+ 	    べ樊勗喫躂誑邞�桫噱紙彸觴�ぁ喫摯賃  ぁ操璃庈坳璃哱禱銓猀埰堎痀��
  	
- 	J0   J6 银尹月热诸及    
- 	    银尹月热诸及    毛霜耨允月［
- 	    0   6 反公木冗木失奶  丞及隶  组赭卞覆杀仄化中月［域  及隶  组赭    ］  ］澎］隶澡    
- 	    仄井隶  请  卅中  烂分互］漆  傀舰及啃卞蝈化及隶  组赭及树  毛霜月
+ 	J0   J6 窅窇堎��絊摯    
+ 	    窅窇堎��絊摯    禱邞嚭埰堎��
+ 	    0   6 毀鼠躂�葸彊岌�  堜摯薔  郪鐎勗葡伀媃趙笢堎�觝�  摯薔  郪鐎    ��  �暙鴥暕疋�    
+ 	    媃凝薔  ③  埵笢  擭煦誑�暔�  錚耦摯諱勗蠈趙摯薔  郪鐎摯攷  禱邞堎
  	    J0|kubun|mp|field|target|name|comment
- 	    午中丹白巧□穴永玄卞卅匀化中月［
- 	    kubun 反公及  互丐月井  中井［ㄟ分午  中［公木动嫦卞玄□弁件允日卅中［ㄠ分午丐月［
- 	    mp反壅  竣  毛  允［
- 	    field反升及桦赭匹银尹月井［扔□田□匹反动票及  卞烂聒今木化中月［
+ 	    敁笢竣啞б↓悃蚗哱勗埵埱趙笢堎��
+ 	    kubun 毀鼠摯  誑堣堎凝  笢凝�菬葽笥�  笢�蛫孩噤舀炱槱�↓袲璃埰�欷聿苺菬鈮笥諑夭瞿�
+ 	    mp毀觛  縈  禱  埰��
+ 	    field毀汔摯鳹鐎ぁ窅窇堎凝�袾荂懽鵅嚾扑普紜掉�  勗擭壛踏躂趙笢堎��
  	    
  		typedef enum
  		{
- 			MAGIC_FIELD_ALL,		允屯化及桦赭匹银尹月
- 			MAGIC_FIELD_BATTLE,		爵    及心
- 			MAGIC_FIELD_MAP,		骚橘穴永皿晓及心
+ 			MAGIC_FIELD_ALL,		埰迋趙摯鳹鐎ぁ窅窇堎
+ 			MAGIC_FIELD_BATTLE,		橋    摯陑
+ 			MAGIC_FIELD_MAP,		玊橖悃蚗鏤窀摯陑
  			
  		}MAGIC_FIELDTYPE;
  	    
- 	    target反升木毛覆擂卞请  月井［扔□田□匹反动票及方丹卞烂聒今木化中月［
+ 	    target毀汔躂禱葡濯勗③  堎凝�袾荂懽鵅嚾扑普紜掉健蔥仃敻鏍蠸鯆噱胱俶瞿�
  	    
  		typedef enum
  		{
- 			MAGIC_TARGET_MYSELF,		愤坌及心
- 			MAGIC_TARGET_OTHER,		职及谛  愤坌殖戈)
- 			MAGIC_TARGET_ALLMYSIDE,		    蝈  
- 			MAGIC_TARGET_ALLOTHERSIDE,	锹澎础蝈  
- 			MAGIC_TARGET_ALL,		蝈化
- 			MAGIC_TARGET_NONE,		簿手蓟  请  卅中［  豢支凶户及凛
- 			MAGIC_TARGET_OTHERWITHOUTMYSELF,职及谛  愤坌殖引卅中)
- 			MAGIC_TARGET_WITHOUTMYSELFANDPET, 愤坌午矢永玄动陆
- 			MAGIC_TARGET_WHOLEOTHERSIDE,        及扔奶玉蝈  
+ 			MAGIC_TARGET_MYSELF,		猷覕摯陑
+ 			MAGIC_TARGET_OTHER,		眥摯硞  猷覕硈資)
+ 			MAGIC_TARGET_ALLMYSIDE,		    蠈  
+ 			MAGIC_TARGET_ALLOTHERSIDE,	Ъ鱗插蠈  
+ 			MAGIC_TARGET_ALL,		蠈趙
+ 			MAGIC_TARGET_NONE,		移忒撒  ③  埵笢��  遛盓倜誧摯鄹
+ 			MAGIC_TARGET_OTHERWITHOUTMYSELF,眥摯硞  猷覕硈竘埵笢)
+ 			MAGIC_TARGET_WITHOUTMYSELFANDPET, 猷覕敁妐蚗哱雄翻
+ 			MAGIC_TARGET_WHOLEOTHERSIDE,        摯�蚅枅嚦�  
  		}MAGIC_TARGETTYPE;
  	    
- 	    <font size=+1>仇及醒侬卞100毛箫允午］韶氏匹中月樊手覆擂午卅月［
+ 	    <font size=+1>喫摯倳棬勗100禱鵿埰敁�楦婽玅皮俶繚晉硌窕痸諑耒瞿�
  	    
- 	    name反热诸  ［
- 	    comment反仇及热诸及    ［
+ 	    name毀��絊  ��
+ 	    comment毀喫摯��絊摯    ��
  	
- 	N0    N3 醮棉及由仿丢□正
- 	    醮棉卞卅匀化中月谛及树  毛霜耨允月［
+ 	N0    N3 黥蹬摯蚕溘隍↓淏
+ 	    黥蹬勗埵埱趙笢堎硞摯攷  禱邞嚭埰堎��
  	    N0|kubun|level|charaindex|maxhp|hp|mp|name
  	    
- 	    kubun 反公及  互丐月井  中井［ㄟ分午  中［公木动嫦卞玄□弁件允日卅中［ㄠ蝈由仿丢□正［
- 	    2动晓分午］备申永玄及  匀化中月手及及由仿丢□正  1bit    level 2bit   charaindex卅升  
- 	    互霜耨今木月［
- 	    charaindex 反醮棉及charaindex
- 	    level反公及谛及伊矛伙［
- 	    maxhp反公及谛及MAXHP
- 	    hp反公及谛及蜇箕及HP
- 	    mp反公及谛及竣  
- 	    name 反公及谛及  蟆［
+ 	    kubun 毀鼠摯  誑堣堎凝  笢凝�菬葽笥�  笢�蛫孩噤舀炱槱�↓袲璃埰�欷聿苺菬僗槿伢繞炕灊���
+ 	    2雄窀煦敁�搊補縎檗�摯  埱趙笢堎忒摯摯蚕溘隍↓淏  1bit    level 2bit   charaindex埵汔  
+ 	    誑邞嚭踏躂堎��
+ 	    charaindex 毀黥蹬摯charaindex
+ 	    level毀鼠摯硞摯畛穫鳴��
+ 	    maxhp毀鼠摯硞摯MAXHP
+ 	    hp毀鼠摯硞摯藯凜摯HP
+ 	    mp毀鼠摯硞摯縈  
+ 	    name 毀鼠摯硞摯  鞳��
  	
- 	K0  K4 雯  由仿丢□正
+ 	K0  K4 鰫  蚕溘隍↓淏
  	    hp maxhp mp maxmp str tough exp 
  	    level attackpower deffencepower 
  	    fixdex fixcharm fixluck fixfireat fixwaterat fixearthat fixwindat
- 	      蟆 status
- 	    K及  卞0  4毛隙烂仄化｝升及雯  井毛隙烂允月仇午［
- 	    公及戚及玄□弁件卞0互  凶日公及矢永玄  反  中午蜕丹仪［
- 	    丐月桦宁反ㄠ匹丐月［1分午蝈由仿丢□正［
- 	    2动晓分午］备申永玄及  匀化中月手及及由仿丢□正  1bit    hp  2bit   maxhp卅升  
- 	    互霜耨今木月［
- 	    犯伉立正反 '|' 匹丐月［引凶  蟆午愤裘惫寞反｝
- 	    <a href="#escaping">巨旦弗□皿仄凶手及毛
- 	    凶化徇匹勾卅仆凶手及互骚耨今木月［
- 	    公木冗木及袄及滇反动票［
+ 	      鞳 status
+ 	    K摯  勗0  4禱炩擭媃趙��汔摯鰫  凝禱炩擭埰堎喫敁��
+ 	    鼠摯べ摯哱↓袲璃勗0誑  倜�桯姨動該檗�  毀  笢敁虭竣痀��
+ 	    堣堎鳹譴毀兒ぁ堣堎��1煦敁蠈蚕溘隍↓淏��
+ 	    2雄窀煦敁�搊補縎檗�摯  埱趙笢堎忒摯摯蚕溘隍↓淏  1bit    hp  2bit   maxhp埵汔  
+ 	    誑邞嚭踏躂堎��
+ 	    溢惉蕾淏毀 '|' ぁ堣堎�覗�倜  鞳敁猷藽措蠕毀��
+ 	    <a href="#escaping">操筒艇↓鏤媃倜忒摯禱
+ 	    倜趙摲ぁ僑埵ど倜忒摯誑玊嚭踏躂堎��
+ 	    鼠躂�葸噯偽擘做廗普紜悵�
  	    
- 	        No.(  寞)  int  
- 	        islive(戏韶)  int  
- 	        GRA(  飓  寞)  int  
- 	        Hp(觐菁  )  int  
- 	        MaxHp(    觐菁  )  int  
+ 	        No.(  蠕)  int  
+ 	        islive(牁屻)  int  
+ 	        GRA(  鴢  蠕)  int  
+ 	        Hp(膰敯  )  int  
+ 	        MaxHp(    膰敯  )  int  
  	        Mp  int  
  	        MapMp  int  
- 	        Exp(烦董袄)  int  
- 	        MaxExp(戚引匹及烦董袄)  int  
- 	        Level(伊矛伙)  int  
- 	        Attack(  猾  )  int  
- 	        Defense(潮    )  int  
- 	        Quick(豳镀今)  int  
- 	        Ai(镝擦蘸)  int  
- 	        fEarth(哗)  int  
+ 	        Exp(歲雁偯)  int  
+ 	        MaxExp(べ竘ぁ摯歲雁偯)  int  
+ 	        Level(畛穫鳴)  int  
+ 	        Attack(  賓  )  int  
+ 	        Defense(陰    )  int  
+ 	        Quick(搫傲踏)  int  
+ 	        Ai(櫆笠梣)  int  
+ 	        fEarth(貍)  int  
  	        fWater(  )  int  
- 	        fFire(绍)  int  
- 	        fWid(氘)  int  
- 	        Slot(    檗  醒)  int  
- 	          蟆  凳袱第白仿弘  int  
- 	          蟆    侬    
- 	        交□扒□矢永玄      侬    
+ 	        fFire(庄)  int  
+ 	        fWid(諿)  int  
+ 	        Slot(    歕  倳)  int  
+ 	          鞳  脾舅菴啞溘精  int  
+ 	          鞳    棬    
+ 	        蝠↓勒↓妐蚗哱      棬    
  	    
- 	      蟆  凳袱第白仿弘午反］仇及矢永玄及  蟆毛  凳仄化方中井升丹井及白仿弘匹］
- 	    1 分午  凳    ］ㄟ分午  凳尕第午卅月［
+ 	      鞳  脾舅菴啞溘精敁毀�摀蟦動該檗�摯  鞳禱  脾媃趙源笢凝汔竣凝摯啞溘精ぁ��
+ 	    1 煦敁  脾    �搢葽笥�  脾箾菴敁埵堎��
  	    
- 	    填    ( char 及    公及引引踏仁 )
+ 	    沓    ( char 摯    鼠摯竘竘怳�� )
  	    
- 	    P10|20|10|20|10|10|10|1|2|13|13|1|100|10|尺氏天|PC
+ 	    P10|20|10|20|10|10|10|1|2|13|13|1|100|10|喜庌毞|PC
  
- 	W0  W4 矢永玄及  犯□正
+ 	W0  W4 妐蚗哱摯  溢↓淏
  	  W0|skillid|field|target|name|comment| x 7
- 	  W0    W4 反公木冗木及矢永玄卞覆杀仄化中月［
- 	  petskillid 反］矢永玄及  及  寞［pet_skillinfo.h卞烂聒今木化中月［
- 	  field 反公及  互升仇匹银迕匹五月井［扔□田□匹反动票及方丹卞烂聒今木化中月［
+ 	  W0    W4 毀鼠躂�葸噯動該檗�勗葡伀媃趙笢堎��
+ 	  petskillid 毀�楟該檗�摯  摯  蠕�菘et_skillinfo.h勗擭壛踏躂趙笢堎��
+ 	  field 毀鼠摯  誑汔喫ぁ窅暵ぁ拻堎凝�袾荂懽鵅嚾扑普紜掉健蔥仃敻鏍蠸鯆噱胱俶瞿�
  	  
  		typedef enum
  		{
- 			PETSKILL_FIELD_ALL,		允屯化及桦赭匹银尹月
- 			PETSKILL_FIELD_BATTLE,		爵    及心
- 			PETSKILL_FIELD_MAP,		骚橘穴永皿晓及心
+ 			PETSKILL_FIELD_ALL,		埰迋趙摯鳹鐎ぁ窅窇堎
+ 			PETSKILL_FIELD_BATTLE,		橋    摯陑
+ 			PETSKILL_FIELD_MAP,		玊橖悃蚗鏤窀摯陑
  
  		}PETSKILL_FIELDTYPE;
  	  
- 	  target 反公及  及覆擂互升丹中丹手及井［扔□田□匹反戚及方丹卞烂聒今木化中月［
+ 	  target 毀鼠摯  摯葡濯誑汔竣笢竣忒摯凝�袾荂懽鵅嚾扑棘敯健蔥仃敻鏍蠸鯆噱胱俶瞿�
  	  
  		typedef enum
  		{
- 			PETSKILL_TARGET_MYSELF,		愤坌及心
- 			PETSKILL_TARGET_OTHER,		职及谛  愤坌殖戈)
- 			PETSKILL_TARGET_ALLMYSIDE,	    蝈  
- 			PETSKILL_TARGET_ALLOTHERSIDE,	锹澎础蝈  
- 			PETSKILL_TARGET_ALL,		蝈化
- 			PETSKILL_TARGET_NONE,		簿手蓟  请  卅中［  豢支凶户及凛
- 			PETSKILL_TARGET_OTHERWITHOUTMYSELF,职及谛  愤坌殖引卅中) 
- 			PETSKILL_TARGET_WITHOUTMYSELFANDPET, 愤坌午矢永玄动陆
+ 			PETSKILL_TARGET_MYSELF,		猷覕摯陑
+ 			PETSKILL_TARGET_OTHER,		眥摯硞  猷覕硈資)
+ 			PETSKILL_TARGET_ALLMYSIDE,	    蠈  
+ 			PETSKILL_TARGET_ALLOTHERSIDE,	Ъ鱗插蠈  
+ 			PETSKILL_TARGET_ALL,		蠈趙
+ 			PETSKILL_TARGET_NONE,		移忒撒  ③  埵笢��  遛盓倜誧摯鄹
+ 			PETSKILL_TARGET_OTHERWITHOUTMYSELF,眥摯硞  猷覕硈竘埵笢) 
+ 			PETSKILL_TARGET_WITHOUTMYSELFANDPET, 猷覕敁妐蚗哱雄翻
  		}PETSKILL_TARGETTYPE;
  	  
- 	  name 反  及  蟆［
- 	  comment反公及  卞覆允月    ［
- 	  target|name|comment| 反  及醒及坌ㄠ垫匹霜日木化仁月［
- 	    反域杀ㄦ勾引匹［    匹  互  仃化中月  "|"及心互粮仁  桦宁
- 	  反弁仿奶失件玄匹腴户化  憎允月仪［
+ 	  name 毀  摯  鞳��
+ 	  comment毀鼠摯  勗葡埰堎    ��
+ 	  target|name|comment| 毀  摯倳摯覕兒菜ぁ邞�桫噱紙彸瞿�
+ 	    毀郖伀冽僑竘ぁ��    ぁ  誑  崹趙笢堎  "|"摯陑誑襄��  鳹譴
+ 	  毀袲溘騷囮璃哱ぁ錁誧趙  崚埰堎痀��
 */
 void lssproto_S_send(int fd,char* data)
 {
@@ -2137,28 +2137,28 @@ void lssproto_S_send(int fd,char* data)
 /*
    servertoclient D( int category , int dx , int dy , string data );
        (Display)
-           卞窒井  憎允月隙  ［
+           勗笰凝  崚埰堎炩  ��
  
        
  	int category
- 	窒毛  憎允月井［
+ 	笰禱  崚埰堎凝��
  	    
- 	        袄        
- 	        1  愤坌动陆卞芨尹凶母丢□斥［data反  侬
- 		    卞卅匀凶袄［  
- 		    2  愤坌互丹仃凶母丢□斥［data反  侬  卞
- 		      卅匀凶袄  
+ 	        偯        
+ 	        1  猷覕雄翻勗僄窇倜譫隍↓喇�菤ata毀  棬
+ 		    勗埵埱倜偯��  
+ 		    2  猷覕誑竣崹倜譫隍↓喇�菤ata毀  棬  勗
+ 		      埵埱倜偯  
  		
  	int dx
- 	穴奶平乓仿井日及弘伉永玉锹覆匏  X［域  读卞反奶矛件玄互  戏
- 	    仄凶匏  ［弁仿奶失件玄反仇及袄井日赝给赝濠卅匏  毛煌遥仄化
- 	        允月［
+ 	悃騷す籤溘凝�梩偕醓驞歜鯁繡翎�  X�觝�  黍勗毀騷穫璃哱誑  牁
+ 	    媃倜痾  �詗芛薩昃尬�哱毀喫摯偯凝�欷芵鱦俜拂舌�  禱銓猀媃趙
+ 	        埰堎��
  	int dy
- 	锹覆匏  Y
+ 	Ъ葡痾  Y
  	string data 
- 	  憎允月    ［    反category卞方匀化瑁引月［
- 	    仇及  侬  反<a href="#escaping">巨旦弗□皿今木卅仃木壬
- 	    卅日卅中［
+ 	  崚埰堎    ��    毀category勗源埱趙鋆竘堎��
+ 	    喫摯  棬  毀<a href="#escaping">操筒艇↓鏤踏躂埵崹躂��
+ 	    埵�欷聿苺�
 */
 void lssproto_D_send(int fd,int category,int dx,int dy,char* data)
 {
@@ -2180,14 +2180,14 @@ void lssproto_D_send(int fd,int category,int dx,int dy,char* data)
 
 /*
    servertoclient FS( int flg);
-       (FlgSet)PS及及杀蚕［引凶反夫弘奶件凛卅升卞愤坌及橇谪午仄化霜日木化仁月［
+       (FlgSet)PS摯摯伀紮�覗�倜毀痲精騷璃鄹埵汔勗猷覕摯Щ稃敁媃趙邞�桫噱紙彸瞿�
        
          int flg
-          0 bit  0: 醮棉Off                  1: 醮棉On
-                蜇箕  银迕  1 bit  0: 爵      辅笛off          1: 爵      辅笛On    
+          0 bit  0: 黥蹬Off                  1: 黥蹬On
+                藯凜  窅暵  1 bit  0: 橋      落萃off          1: 橋      落萃On    
               2 bit  0: DUEL off                 1: DUEL On
-              3 bit  0:   骚及民乓永玄乒□玉     1: 由□  奴卞仄井民乓永玄互  壬卅中乒□玉
-              4 bit  0:   铜跟晶OK               1:   铜跟晶蛐  
+              3 bit  0:   玊摯鏍籤蚗哱さ↓迶     1: 蚕↓  贖勗媃凝鏍籤蚗哱誑  �屻聿陊飽灃�
+              4 bit  0:   肣躲儒OK               1:   肣躲儒藸  
 */
 void lssproto_FS_send(int fd,int flg)
 {
@@ -2206,10 +2206,10 @@ void lssproto_FS_send(int fd,int flg)
 
 /*
    servertoclient HL( int flg);
-       (HeLp)HL及及杀蚕［引凶反由□  奴及醮棉互爵  及云踞仃乒□玉毛  凳仄凶桦宁卞霜日木化仁月［
+       (HeLp)HL摯摯伀紮�覗�倜毀蚕↓  贖摯黥蹬誑橋  摯堁擔崹さ↓迶禱  脾媃倜鳹譴勗邞�桫噱紙彸瞿�
        
          int flg
-          0: 云踞仃乒□玉Off                  1: 云踞仃乒□玉On
+          0: 堁擔崹さ↓迶Off                  1: 堁擔崹さ↓迶On
 */
 void lssproto_HL_send(int fd,int flg)
 {
@@ -2228,13 +2228,13 @@ void lssproto_HL_send(int fd,int flg)
 
 /*
    servertoclient PR( int request, int result);
-       (PartyRequest)醮棉邰菲及杀蚕［PR毛弁仿奶失件玄互霜匀化中卅仁化手仇木毛熬仃潸月凛互丐月［
-        由□  奴互  螺荸辣  褪互  仃凶  卅升及凛［
+       (PartyRequest)黥蹬菺滑摯伀紮�腍R禱袲溘騷囮璃哱誑邞埱趙笢埵�妡缺硈蟤壅城撻翯�堎鄹誑堣堎��
+        蚕↓  贖誑  蹟搣彌  虮誑  崹倜  埵汔摯鄹��
        
        	int request
-       	0: 轮迩 1:  迩
+       	0: 謫暷 1:  暷
          int result
-         0: 撩   1: 岳  
+         0: 謄   1: 埬  
 */
 void lssproto_PR_send(int fd,int request,int result)
 {
@@ -2304,23 +2304,23 @@ void lssproto_SPET_send(int fd, int standbypet, int result)
 
 /*
    servertoclient PS( int result, int havepetindex, int havepetskill, int toindex);
-       (PetSkill use result)矢永玄及  毛银匀凶瑛绊弁仿奶失件玄及PS卞覆杀仄化霜日木化仁月［
-       result 动陆反弁仿奶失件玄及PS卞覆杀仄化中月［白奴□伙玉晓井日仄井裟壬木卅中［
+       (PetSkill use result)妐蚗哱摯  禱窅埱倜踕堅袲溘騷囮璃哱摯PS勗葡伀媃趙邞�桫噱紙彸瞿�
+       result 雄翻毀袲溘騷囮璃哱摯PS勗葡伀媃趙笢堎�菾覂哄齠擽鵜�凝�欷ず氤饑厊撻聿苺�
        
  	int result
- 	瑛绊［0: 撩   1:岳  
+ 	踕堅��0: 謄   1:埬  
          int havepetindex
-         窒    及矢永玄互银迕仄凶井［
+         笰    摯妐蚗哱誑窅暵媃倜凝��
          int havepetskill
-         窒    及  毛银迕仄凶井［
+         笰    摯  禱窅暵媃倜凝��
  	int toindex
- 	 簿卞  芊毛银迕仄凶井［仇木反左皮斥尼弁玄支平乓仿及index匹反卅中［动票及  卞卅匀化中月［
+ 	 移勗  傮禱窅暵媃倜凝�蛦蟤噸棚鬷仇熗摛迖�盓す籤溘摯indexぁ毀埵笢�蛚紜掉�  勗埵埱趙笢堎��
  	
- 	  愤坌    = 0
- 	  矢永玄  = 1   5
- 	  醮棉    = 6   10   S N 及0  4卞覆杀［愤坌愤褥手殖引木化中月  
+ 	  猷覕    = 0
+ 	  妐蚗哱  = 1   5
+ 	  黥蹬    = 6   10   S N 摯0  4勗葡伀�蛪葾郱菙壖笱勞�躂趙笢堎  
  	
- 	覆擂互蝈够］午井坌井日卅中］午井及桦宁反-1匹霜耨允月［
+ 	葡濯誑蠈劂�楱蝢桂郋旅欷聿苺楱蝢挺啗踽�毀-1ぁ邞嚭埰堎��
 */
 void lssproto_PS_send(int fd,int result,int havepetindex,int havepetskill,int toindex)
 {
@@ -2343,7 +2343,7 @@ void lssproto_PS_send(int fd,int result,int havepetindex,int havepetskill,int to
 /*
    servertoclient SKUP( int point );
        (SKillUP)
-       旦平伙失永皿互匹五月仪毛扔□田互骚襞允月［中仁勾晓仆日木月井毛隙烂允月［
+       筒す鳴囮蚗鏤誑ぁ拻堎痀禱�荂懽嚜玉束籥彸瞿詎倞妏棲�ど�桫戰職捌峙黃譎彸瞿�
 */
 void lssproto_SKUP_send(int fd,int point)
 {
@@ -2363,32 +2363,32 @@ void lssproto_SKUP_send(int fd,int point)
 /*
    servertoclient WN( int windowtype, int buttontype, int seqno, int objindex, string data );
        (Window)
-       它奴件玉它毛  憎六方午扔□田□互弁仿奶失件玄卞骚襞允月［
+       坳贖璃迶坳禱  崚鞠源敁�荂懽鵅齠石芛薩昃尬�哱勗玊蠐埰堎��
        
          int windowtype
-         它奴件玉它正奶皿［升及方丹卅溥挚及它奴件玉它毛  憎允月井［仇木午buttontype 及赚心宁歹六匹
-             它奴件玉它互瑁烂允月［
-             扔□田□匹反动票及  卞涩烂今木化中月［
+         坳贖璃迶坳淏騷鏤�袶�摯源竣埵魠祪摯坳贖璃迶坳禱  崚埰堎凝�蛦蟤憊蓫uttontype 摯蚻陑譴渦鞠ぁ
+             坳贖璃迶坳誑鋆擭埰堎��
+             �荂懽鵅嚾扑普紜掉�  勗优擭踏躂趙笢堎��
            
  		typedef enum
  		{
- 			WINDOW_MESSAGETYPE_MESSAGE,			丢永本□斥及心
- 			WINDOW_MESSAGETYPE_MESSAGEANDLINEINPUT,		丢永本□斥午域垫    
- 			WINDOW_MESSAGETYPE_SELECT,			蓟  它奴件玉它
- 			WINDOW_MESSAGETYPE_PETSELECT,			矢永玄蓟  它奴件玉它
- 			WINDOW_MESSAGETYPE_PARTYSELECT,			醮棉蓟  它奴件玉它
- 			WINDOW_MESSAGETYPE_PETANDPARTYSELECT,		矢永玄］醮棉蓟  它奴件玉它
- 			WINDOW_MESSAGETYPE_ITEMSHOPMENU,		云饕及丢瓦亘□它奶件玉它
- 			WINDOW_MWSSAGETYPE_ITEMSHOPYMAIN,		云饕及丢奶件它奶件玉它
- 			WINDOW_MESSAGETYPE_LIMITITEMSHOPMAIN,		  中潸曰毁  失奶  丞盒及丢奶件它奶件玉它
- 			WINDOW_MESSAGETYPE_PETSKILLSHOP,		矢永玄及  盒今氏它奶件玉它
- 			WINDOW_MESSAGETYPE_WIDEMESSAGE,			丢永本□斥及心    五中    
- 			WINDOW_MESSAGETYPE_WIDEMESSAGEANDLINEINPUT,	丢永本□斥午域垫        五中    
+ 			WINDOW_MESSAGETYPE_MESSAGE,			隍蚗掛↓喇摯陑
+ 			WINDOW_MESSAGETYPE_MESSAGEANDLINEINPUT,		隍蚗掛↓喇敁郖菜    
+ 			WINDOW_MESSAGETYPE_SELECT,			撒  坳贖璃迶坳
+ 			WINDOW_MESSAGETYPE_PETSELECT,			妐蚗哱撒  坳贖璃迶坳
+ 			WINDOW_MESSAGETYPE_PARTYSELECT,			黥蹬撒  坳贖璃迶坳
+ 			WINDOW_MESSAGETYPE_PETANDPARTYSELECT,		妐蚗哱�歆棺瑆�  坳贖璃迶坳
+ 			WINDOW_MESSAGETYPE_ITEMSHOPMENU,		堁壨摯隍俓堥↓坳騷璃迶坳
+ 			WINDOW_MWSSAGETYPE_ITEMSHOPYMAIN,		堁壨摯隍騷璃坳騷璃迶坳
+ 			WINDOW_MESSAGETYPE_LIMITITEMSHOPMAIN,		  笢噁堇障  囮騷  堜碟摯隍騷璃坳騷璃迶坳
+ 			WINDOW_MESSAGETYPE_PETSKILLSHOP,		妐蚗哱摯  碟踏庌坳騷璃迶坳
+ 			WINDOW_MESSAGETYPE_WIDEMESSAGE,			隍蚗掛↓喇摯陑    拻笢    
+ 			WINDOW_MESSAGETYPE_WIDEMESSAGEANDLINEINPUT,	隍蚗掛↓喇敁郖菜        拻笢    
  
  		}WINDOW_MESSAGETYPE;
  
          int buttontype
-         示正件及溥挚毛隙烂允月［扔□田□匹反动票及迕卞烂聒今木化中月［
+         尨淏璃摯魠祪禱炩擭埰堎�袾荂懽鵅嚾扑普紜掉啣簽敻鏍蠸鯆噱胱俶瞿�
              
  		#define		WINDOW_BUTTONTYPE_NONE		(0)
  		#define		WINDOW_BUTTONTYPE_OK		(1 << 0)
@@ -2398,76 +2398,76 @@ void lssproto_SKUP_send(int fd,int point)
  		#define		WINDOW_BUTTONTYPE_PREV		(1 << 4)
  		#define		WINDOW_BUTTONTYPE_NEXT		(1 << 5)
              
-             仇木日及赚心宁歹六匹霜耨允月［  尹壬］YES示正件午NO示正件互  仄中凛反
+             喫躂�梩啞疣闡�渦鞠ぁ邞嚭埰堎��  窇�氿幎ES尨淏璃敁NO尨淏璃誑  媃笢鄹毀
              WINDOW_BUTTONTYPE_YES | WINDOW_BUTTONTYPE_NO   (=12)
-             匹霜月［
+             ぁ邞堎��
              
          int seqno
-         仇及它奴件玉它及  寞毛憎允［扔□田□互栋  允月［
-             弁仿奶失件玄反WN卞化仇及它奴件玉它及丑综瑛绊毛忒允及卞］仇及  寞毛骄尹化忒蚕允月［
-             仇木卞方匀化扔□田□反升及NPC及升及桦  匹及它奴件玉它井毛  蝇请  月方丹卞允月［
+         喫摯坳贖璃迶坳摯  蠕禱崚埰�袾荂懽鵅齠扒�  埰堎��
+             袲溘騷囮璃哱毀WN勗趙喫摯坳贖璃迶坳摯堯軘踕堅禱蒍埰摯勗�摀蟦�  蠕禱蝨窇趙蒍紮埰堎��
+             喫躂勗源埱趙�荂懽鵅黦棟�摯NPC摯汔摯鳹  ぁ摯坳贖璃迶坳凝禱  茯③  堎源竣勗埰堎��
          int objindex
-         仇及它奴件玉它毛请六午蜕匀凶NPC卅升及index互伞  今木化中月［
-             扑旦  丞互请六午蜕匀凶桦宁反-1卅升互  匀化中月［
-             弁仿奶失件玄反］它奴件玉它      及WN皿夫玄戊伙匹仇及醒袄毛公及引引忒六壬  中［
+         喫摯坳贖璃迶坳禱③鞠敁虭埱倜NPC埵汔摯index誑氶  踏躂趙笢堎��
+             で筒  堜誑③鞠敁虭埱倜鳹譴毀-1埵汔誑  埱趙笢堎��
+             袲溘騷囮璃哱毀�椸�贖璃迶坳      摯WN鏤痲哱昡鳴ぁ喫摯倳偯禱鼠摯竘竘蒍鞠��  笢��
          string data
-         丢永本□斥    毛憎允［    反巨旦弗□皿允月［"\n"匹嗉濠月午荼垫午中丹啦  午允月［
-             引凶］弁仿奶失件玄及它奴件玉它匹  憎请  月产汔毛旋尹凶端反愤  读卞荼垫今木月［
-             蓟  饷及丐月它奴件玉它匹反］"\n"匹嗉濠日木凶  赓及玄□弁件互丢永本□斥及垫醒
-             午卅曰］戚卞丢永本□斥及玄□弁件互  赓及玄□弁件匹隙烂今木凶蜊醒粮五］
-             公及丐午及玄□弁件  互ㄠ勾内勾及蓟  饷午卅月［引凶蟆井日赐卞 1 井日
-               寞毛喃曰癫化］蓟  仄凶桦宁及WN匹及忒蚕及凛卞忒允［
-         string data(云饕迕  
-         丢永本□斥    毛憎允［    反巨旦弗□皿允月［"\n"匹嗉濠月午荼垫午中丹啦  午允月［
-             引凶］弁仿奶失件玄及它奴件玉它匹  憎请  月产汔毛旋尹凶端反愤  读卞荼垫今木月［
-             犯□正  反嫩    卞"  "匹嗉濠日木化中引允［
-    Ｕ  丹Ｖ
-  	  中  月白仿弘    丹ㄟ“  月ㄠ    蟆及犯□正银丹井白仿弘  银丹ㄟ“银歹卅中“1    
- 		饕及  蟆  丢永本□斥  饕丢永本□斥  蜊醒蓟  丢永本□斥  伊矛伙箫曰卅中丢永本□斥  割  丢永本□斥  
- 		失奶  丞互中匀天中丢永本□斥  失奶  丞      尹月  尹卅中白仿弘    尹月“ㄟ  尹卅中“ㄠ    失奶  丞伊矛伙  
- 		袄蟾    飓  寞        失奶  丞      尹月  尹卅中白仿弘  失奶  丞伊矛伙  袄蟾    飓  寞      
+         隍蚗掛↓喇    禱崚埰��    毀操筒艇↓鏤埰堎��"\n"ぁ鉏憍堎敁搊菜敁笢竣徽  敁埰堎��
+             竘倜�椳芛薩昃尬�哱摯坳贖璃迶坳ぁ  崚③  堎莉蜬禱唅窇倜傷毀猷  黍勗搊菜踏躂堎��
+             撒  熁摯堣堎坳贖璃迶坳ぁ毀��"\n"ぁ鉏憍�桫憶�  疐摯哱↓袲璃誑隍蚗掛↓喇摯菜倳
+             敁埵堇�暔搊撊肩彌鴃麚熉匾�↓袲璃誑  疐摯哱↓袲璃ぁ炩擭踏躂倜蠀倳襄拻��
+             鼠摯堣敁摯哱↓袲璃  誑兒僑囀僑摯撒  熁敁埵堎�覗�倜鞳凝�桭舠� 1 凝��
+               蠕禱鄎堇騍趙�敯�  媃倜鳹譴摯WNぁ摯蒍紮摯鄹勗蒍埰��
+         string data(堁壨暵  
+         隍蚗掛↓喇    禱崚埰��    毀操筒艇↓鏤埰堎��"\n"ぁ鉏憍堎敁搊菜敁笢竣徽  敁埰堎��
+             竘倜�椳芛薩昃尬�哱摯坳贖璃迶坳ぁ  崚③  堎莉蜬禱唅窇倜傷毀猷  黍勗搊菜踏躂堎��
+             溢↓淏  毀囂    勗"  "ぁ鉏憍�桫噱胱倷�埰��
+    ��  竣��
+  	  笢  堎啞溘精    竣兔※  堎兒    鞳摯溢↓淏窅竣凝啞溘精  窅竣兔※窅渦埵笢※1    
+ 		壨摯  鞳  隍蚗掛↓喇  壨隍蚗掛↓喇  蠀倳撒  隍蚗掛↓喇  畛穫鳴鵿堇埵笢隍蚗掛↓喇  賃  隍蚗掛↓喇  
+ 		囮騷  堜誑笢埱毞笢隍蚗掛↓喇  囮騷  堜      窇堎  窇埵笢啞溘精    窇堎※兔  窇埵笢※兒    囮騷  堜畛穫鳴  
+ 		偯騤    鴢  蠕        囮騷  堜      窇堎  窇埵笢啞溘精  囮騷  堜畛穫鳴  偯騤    鴢  蠕      
        		
-       		0|1|扔丞幼伙及  湛盒|中日匀仄扎中｝窒及方丹分中|中日匀仄扎中升木卞允月|窒蜊  邰分中|公木毛隶  允月卞反伊矛伙互
-       		箫曰卅中仃升中中及井中|  癫卞中中氏分友|云中云中失奶  丞互中匀天中元扎友尹井″  皮□丢仿件|
-       		ㄟ|ㄠㄟㄟ|ㄠㄥㄟㄟㄟ|产域  卞  猾\n躲绊  歇|泔阕|ㄟ|ㄤㄟ|ㄠㄥㄟㄟㄡ|    ㄡㄟ荚汊\n  莴卞反勾五  \n兜中  
+       		0|1|�衯承袘嚗�  梲碟|笢�梊�媃崨笢��笰摯源竣煦笢|笢�梊�媃崨笢汔躂勗埰堎|笰蠀  菺煦笢|鼠躂禱薔  埰堎勗毀畛穫鳴誑
+       		鵿堇埵笢崹汔笢笢摯凝笢|  騍勗笢笢庌煦衭|堁笢堁笢囮騷  堜誑笢埱毞笢啋崨衭窇凝∪  々↓隍溘璃|
+       		兔|兒兔兔|兒典兔兔兔|莉郖  勗  賓\n嗚堅  衁|蜧蜨|兔|其兔|兒典兔兔兕|    兕兔樊蜾\n  搦勗毀僑拻  \n項笢  
  
-         Ｕ  月Ｖ
- 		  中  月白仿弘    丹ㄟ“  月ㄠ    蟆及犯□正银丹井白仿弘  银丹ㄟ“银歹卅中“1    
- 		饕及  蟆  丢永本□斥  饕丢永本□斥  云嗯互中匀天中卞卅匀切扎丹丢永本□斥|割  丢永本□斥  
- 		失奶  丞      木月  木卅中白仿弘  袄蟾    飓  寞        失奶  丞      木月  木卅中白仿弘  
- 		袄蟾    飓  寞        
+         ��  堎��
+ 		  笢  堎啞溘精    竣兔※  堎兒    鞳摯溢↓淏窅竣凝啞溘精  窅竣兔※窅渦埵笢※1    
+ 		壨摯  鞳  隍蚗掛↓喇  壨隍蚗掛↓喇  堁鉣誑笢埱毞笢勗埵埱з崨竣隍蚗掛↓喇|賃  隍蚗掛↓喇  
+ 		囮騷  堜      躂堎  躂埵笢啞溘精  偯騤    鴢  蠕        囮騷  堜      躂堎  躂埵笢啞溘精  
+ 		偯騤    鴢  蠕        
        
-       		ㄠ|1|扔丞幼伙及  填盒|中日匀仄扎中｝升月允月＂  中日匀仄扎中升木毛  匀化仁木月［|  癫卞中中氏分友|
-       		公木分午｝云嗯互左□田□仄切扎丹友  皮□丢仿件|ㄟ|ㄡㄟ|ㄠㄥㄟㄟㄟ|
-       		产域  卞  猾\n躲绊  歇|泔阕|ㄟ|ㄠㄟ|ㄠㄥㄟㄟㄡ|    ㄡㄟ荚汊\n  莴卞反勾五  \n兜中  
-         Ｕ失奶  丞  仃月Ｖ
- 		白仿弘    月=ㄟ    丐午窒蜊  仃日木月井  
- 		饕及  蟆  
- 		  仃月丢永本□斥  仇木动晓  仃日木卅中丢永本□斥  割  丢永本□斥  
- 		  蟆    仃日木月井白仿弘  第  ＞ㄟ］尕第＞ㄠ    袄蟾    飓  寞  域垫奶件白巧  失奶  丞    寞  ㄠ井日  
- 		  蟆    仃日木月井白仿弘  第  ＞ㄟ］尕第＞ㄠ    袄蟾    飓  寞  域垫奶件白巧  失奶  丞    寞  ㄠ井日  
-         Ｕ失奶  丞娄五潸月Ｖ
- 		白仿弘  娄五潸月=ㄠ    
- 		饕及  蟆  娄五请允丢永本□斥  失奶  丞互域  及凛及丢永本□斥|割  丢永本□斥  
- 		  蟆  娄五请六月井升丹井白仿弘  第  ＞ㄟ］尕第＞ㄠ    失奶  丞伊矛伙  袄蟾    飓  寞  域垫奶件白巧  
- 		  蟆  娄五请六月井升丹井白仿弘  第  ＞ㄟ］尕第＞ㄠ    失奶  丞伊矛伙  袄蟾    飓  寞  域垫奶件白巧  
+       		兒|1|�衯承袘嚗�  沓碟|笢�梊�媃崨笢��汔堎埰堎ㄑ  笢�梊�媃崨笢汔躂禱  埱趙�岉戰瞿萆  騍勗笢笢庌煦衭|
+       		鼠躂煦敁��堁鉣誑酘↓泬↓媃з崨竣衭  々↓隍溘璃|兔|兕兔|兒典兔兔兔|
+       		莉郖  勗  賓\n嗚堅  衁|蜧蜨|兔|兒兔|兒典兔兔兕|    兕兔樊蜾\n  搦勗毀僑拻  \n項笢  
+         �梛岌�  堜  崹堎��
+ 		啞溘精    堎=兔    堣敁笰蠀  崹�桫戰職�  
+ 		壨摯  鞳  
+ 		  崹堎隍蚗掛↓喇  喫躂雄窀  崹�桫撻聿迠肩彌鴃麚�  賃  隍蚗掛↓喇  
+ 		  鞳    崹�桫戰職扇袚繙�  菴  ˇ兔�楘媯琭儘�    偯騤    鴢  蠕  郖菜騷璃啞б  囮騷  堜    蠕  兒凝��  
+ 		  鞳    崹�桫戰職扇袚繙�  菴  ˇ兔�楘媯琭儘�    偯騤    鴢  蠕  郖菜騷璃啞б  囮騷  堜    蠕  兒凝��  
+         �梛岌�  堜礎拻噁堎��
+ 		啞溘精  礎拻噁堎=兒    
+ 		壨摯  鞳  礎拻③埰隍蚗掛↓喇  囮騷  堜誑郖  摯鄹摯隍蚗掛↓喇|賃  隍蚗掛↓喇  
+ 		  鞳  礎拻③鞠堎凝汔竣凝啞溘精  菴  ˇ兔�楘媯琭儘�    囮騷  堜畛穫鳴  偯騤    鴢  蠕  郖菜騷璃啞б  
+ 		  鞳  礎拻③鞠堎凝汔竣凝啞溘精  菴  ˇ兔�楘媯琭儘�    囮騷  堜畛穫鳴  偯騤    鴢  蠕  郖菜騷璃啞б  
  
-         Ｕ公及职Ｖ
- 		饕及  蟆  丢永本□斥
+         �桯姨啄除�
+ 		壨摯  鞳  隍蚗掛↓喇
        
-       		扔丞幼伙及  填盒|中日匀仄扎中｝升月允月＂
+       		�衯承袘嚗�  沓碟|笢�梊�媃崨笢��汔堎埰堎ㄑ
  	
-         string data(矢永玄及  盒今氏迕  
-         丢永本□斥    毛憎允［    反巨旦弗□皿允月［"\n"匹嗉濠月午荼垫午中丹啦  午允月［
-             引凶］弁仿奶失件玄及它奴件玉它匹  憎请  月产汔毛旋尹凶端反愤  读卞荼垫今木月［
-             犯□正  反嫩    卞"  "匹嗉濠日木化中引允［
- 	   Ｕ矢永玄及  潸  Ｖ
- 		蟆及树  银丹井升丹井＂  银丹“0｛银歹卅中“1    饕及  蟆  丢奶件丢永本□斥  
- 		      袄蟾                袄蟾        
+         string data(妐蚗哱摯  碟踏庌暵  
+         隍蚗掛↓喇    禱崚埰��    毀操筒艇↓鏤埰堎��"\n"ぁ鉏憍堎敁搊菜敁笢竣徽  敁埰堎��
+             竘倜�椳芛薩昃尬�哱摯坳贖璃迶坳ぁ  崚③  堎莉蜬禱唅窇倜傷毀猷  黍勗搊菜踏躂堎��
+             溢↓淏  毀囂    勗"  "ぁ鉏憍�桫噱胱倷�埰��
+ 	   �梛該檗�摯  噁  ��
+ 		鞳摯攷  窅竣凝汔竣凝ㄑ  窅竣※0��窅渦埵笢※1    壨摯  鞳  隍騷璃隍蚗掛↓喇  
+ 		      偯騤                偯騤        
  	
- 		1  扔丞幼伙及  湛盒  中日匀仄扎中引匀六［允壬日仄中  壬匀井匹允方  
- 		    及讽公及迭  500    猾  ㄢㄟ⊙    ｛  豢  ㄢㄟ⊙          
- 		哗萄域葱  1000  蕙仄中  苇互丐月井手  赝癫    	
+ 		1  �衯承袘嚗�  梲碟  笢�梊�媃崨笢竘埱鞠�觚岓圮欷ひ�  �尕�凝ぁ埰源  
+ 		    摯當鼠摯詞  500    賓  兩兔×    ��  遛  兩兔×          
+ 		貍曶郖棣  1000  犍媃笢  峟誑堣堎凝忒  媏騍    	
 */
 void lssproto_WN_send(int fd,int windowtype,int buttontype,int seqno,int objindex,char* data)
 {
@@ -2499,23 +2499,23 @@ void lssproto_WN_send(int fd,int windowtype,int buttontype,int seqno,int objinde
 /*
    servertoclient EF( int effect, int level, string option );
        (EFfect)
-       湿支惚毛嫦日仄凶曰［弁仿奶失件玄卞蝈  读卅躲绊  蜇六方午霜月［
+       坁盓蓎禱禢�欷ぬ赻誨詗芛薩昃尬�哱勗蠈  黍埵嗚堅  藯鞠源敁邞堎��
        
          int effect
-         躲绊  寞［公木冗木毛箫仄遥允月午］    午手及躲绊互  日木引允［ㄢ卞允月午惚午湿互嫦匀凶曰午井仄引允［
+         嗚堅  蠕�蛫孩寰葸壅扁斔の�埰堎敁��    敁忒摯嗚堅誑  �桫懊�埰�菬漹槬彸蟲誽敖褖盂交珆�倜堇敁凝媃竘埰��
            
-             1:惚
-             2:湿
-             4:饼蹄湿    烂  
+             1:蓎
+             2:坁
+             4:欲枃坁    擭  
            
          int level
-         躲绊及雄今［ㄟ反壅允［ㄠ  ㄤ反  蜇及雄今毛  允［
+         嗚堅摯倯踏�菬葽欺梊呁菬�  其毀  藯摯倯踏禱  埰��
          string option
-         漆  傀舰迕
+         ぽ  錚耦暵
 */
 /* Arminius
-  新增给丢骰子的动画
-  int effect = 10   丢骰子
+  陔崝跤隍鷋赽腔雄賒
+  int effect = 10   隍鷋赽
       level dont care
       option = "pet1x|pet1y|dice1|pet2x|pet2y|dice2" (no makeEscapeString)
 */
@@ -2539,17 +2539,17 @@ void lssproto_EF_send(int fd,int effect,int level,char* option)
 /*
    servertoclient SE( int x, int y, int senumber, int sw );
        (SoundEffect)
- 	弁仿奶失件玄卞SE毛  日允方丹卞隙憎允月［
+ 	袲溘騷囮璃哱勗SE禱  �梊妢蔥仃樕勤奲彸瞿�
        
          int x,y
-         SE毛  耨葭及甄  ［
+         SE禱  嚭楁摯淢  ��
          int senumber
-             及  寞
+             摯  蠕
          int sw
-             毛  日允井鞅户月井［
+             禱  �梊尨涕掩忍職恐�
            
-             0:鞅户月
-             1:  日允
+             0:鰼誧堎
+             1:  �梊�
 */
 void lssproto_SE_send(int fd,int x,int y,int senumber,int sw)
 {
@@ -2571,10 +2571,10 @@ void lssproto_SE_send(int fd,int x,int y,int senumber,int sw)
 
 /*
    servertoclient ClientLogin(string result);
-       ClientLogin及忒蚕［
+       ClientLogin摯蒍紮��
        
  	string result
- 	"ok" 午中丹  侬  ［仇及  侬  反巨旦弗□皿今木卅中［
+ 	"ok" 敁笢竣  棬  �蛦蟦�  棬  毀操筒艇↓鏤踏躂埵笢��
 */
 void lssproto_ClientLogin_send(int fd,char* result)
 {
@@ -2593,21 +2593,21 @@ void lssproto_ClientLogin_send(int fd,char* result)
 
 /*
    servertoclient CreateNewChar(string result,string data);
-       CreateNewChar及忒蚕［
+       CreateNewChar摯蒍紮��
        
  	string result
- 	"successful" 井 "failed" 及中内木井［仇及  侬  反巨旦弗□
- 	    皿仄卅中［
+ 	"successful" 凝 "failed" 摯笢囀躂凝�蛦蟦�  棬  毀操筒艇↓
+ 	    鏤媃埵笢��
  	string data
- 	"failed" 及凛反    毛憎允谛棉及苇化坌月  侬
- 	      匹丐月［失市它件玄扔□田井日及忒蚕公及引引匹丐月［
- 	    动票及  侬  
+ 	"failed" 摯鄹毀    禱崚埰硞蹬摯峟趙覕堎  棬
+ 	      ぁ堣堎�袼廷倓�璃哱�荂懽嚝旅梩唯租牊姨曼�竘ぁ堣堎��
+ 	    雄き摯  棬  
 
  	    "failed bad parameter"
 
- 	    及桦宁反｝平乓仿综岳及午五卞筋烂及由仿丢□正及  区毛旋尹化
- 	    中月午中丹午毛啦  允月［仇木反必□丞扔□田□互请  允月丢永
- 	    本□斥匹丐月［仇及  侬  反巨旦弗□皿仄卅中［
+ 	    摯鳹譴毀��す籤溘軘埬摯敁拻勗踐擭摯蚕溘隍↓淏摯  ⑹禱唅窇趙
+ 	    笢堎敁笢竣敁禱徽  埰堎�蛦蟤噸敢堙灅怕荂懽鵅齠犯�  埰堎隍蚗
+ 	    掛↓喇ぁ堣堎�蛦蟦�  棬  毀操筒艇↓鏤媃埵笢��
 */
 void lssproto_CreateNewChar_send(int fd,char* result,char* data)
 {
@@ -2627,14 +2627,14 @@ void lssproto_CreateNewChar_send(int fd,char* result,char* data)
 
 /*
    servertoclient CharDelete(string result,string data);
-       CharDelete 及忒蚕［
+       CharDelete 摯蒍紮��
        
  	string result
- 	"successful" 井 "failed" 及中内木井［巨旦弗□皿仄卅中［
+ 	"successful" 凝 "failed" 摯笢囀躂凝�蛨瑑弩央劗鵷ぴ聿苺�
  	string data
- 	"failed" 及凛反    毛憎允谛棉及苇化坌月  侬
- 	      匹丐月［失市它件玄扔□田井日及忒蚕公及引引匹丐月［
- 	    犯伉立正毛孔仁引卅中及匹｝巨旦弗□皿仄卅中［
+ 	"failed" 摯鄹毀    禱崚埰硞蹬摯峟趙覕堎  棬
+ 	      ぁ堣堎�袼廷倓�璃哱�荂懽嚝旅梩唯租牊姨曼�竘ぁ堣堎��
+ 	    溢惉蕾淏禱謂�弅�埵笢摯ぁ��操筒艇↓鏤媃埵笢��
 */
 void lssproto_CharDelete_send(int fd,char* result,char* data)
 {
@@ -2654,12 +2654,12 @@ void lssproto_CharDelete_send(int fd,char* result,char* data)
 
 /*
    servertoclient CharLogin(string result,string data);
-       CharaLogin及忒蚕［
+       CharaLogin摯蒍紮��
        
  	string result
- 	"successful" 井 "failed" 及中内木井［巨旦弗□皿仄卅中［
+ 	"successful" 凝 "failed" 摯笢囀躂凝�蛨瑑弩央劗鵷ぴ聿苺�
  	string data
- 	"failed" 及凛反 公及    及  侬  ［巨旦弗□皿仄卅中［
+ 	"failed" 摯鄹毀 鼠摯    摯  棬  �蛨瑑弩央劗鵷ぴ聿苺�
 */
 void lssproto_CharLogin_send(int fd,char* result,char* data)
 {
@@ -2679,38 +2679,38 @@ void lssproto_CharLogin_send(int fd,char* result,char* data)
 
 /*
    servertoclient CharList(string result,string data);
-       CharList及忒蚕［
+       CharList摯蒍紮��
        
  	string result
- 	"successful" 井 "failed" 及中内木井［巨旦弗□皿仄卅中
+ 	"successful" 凝 "failed" 摯笢囀躂凝�蛨瑑弩央劗鵷ぴ聿�
  	string data
- 	result互"successful"及凛反｝失市它件玄扔□田□卞忡绣今木化
- 	    中月允屯化及平乓仿及  蟆｝左皿扑亦件毛毛旦矢□旦匹嗉濠匀凶
- 	    域蜊及  侬  ［仇及  侬  毛综匀化中月及反｝失市它件玄扔□田［
- 	    result 互 "failed" 及凛反    毛憎允谛棉及苇化坌月  侬  匹
- 	    丐月［岳  及凛及左皿扑亦件及  褥反动票及午云曰匹丐月［
+ 	result誑"successful"摯鄹毀��囮庈坳璃哱�荂懽鵅麙槻覣敶鯆噱�
+ 	    笢堎埰迋趙摯す籤溘摯  鞳��酘鏤で砫璃禱禱筒妐↓筒ぁ鉏憍埱倜
+ 	    郖蠀摯  棬  �蛦蟦�  棬  禱軘埱趙笢堎摯毀��囮庈坳璃哱�荂懽鵃�
+ 	    result 誑 "failed" 摯鄹毀    禱崚埰硞蹬摯峟趙覕堎  棬  ぁ
+ 	    堣堎�觚�  摯鄹摯酘鏤で砫璃摯  �鼒普紜掉匿諏ば酴目夭瞿�
  	    dataplace|faceimage|level|maxhp|atk|def|quick|charm|earth|water|fire|wind|logincount|name|place
  	    
  	      dataplace
- 	      本□皮犯□正及窒    井［仇木匹平乓仿弁正□伉旦玄及窒    井毛瑁烂允月［
+ 	      掛↓々溢↓淏摯笰    凝�蛦蟤嬴氾褐珝蹦邯�↓惉筒哱摯笰    凝禱鋆擭埰堎��
  	      faceimage
- 	      涌及  飓  寞
+ 	      蚇摯  鴢  蠕
  	      level
- 	      平乓仿及伊矛伙
+ 	      す籤溘摯畛穫鳴
  	      maxhp,atk,def,quick,charm
- 	      备由仿丢□正［
+ 	      掘蚕溘隍↓淏��
  	      earth.water,fire,wind
- 	      备箪岭袄
+ 	      掘鶂鍛偯
  	      logincount
- 	      夫弘奶件市它件玄
+ 	      痲精騷璃庈坳璃哱
  	      name
- 	      平乓仿及  蟆
+ 	      す籤溘摯  鞳
  	      place
- 	      平乓仿及中月桦赭
+ 	      す籤溘摯笢堎鳹鐎
  	    
- 	    "|" 匹嗉濠日木化中月［ 公木冗木及嫩  反｝<a
- 	    href="#escaping">巨旦弗□皿今木化中月［公及丐午凶化徇
- 	    匹勾卅仆月［
+ 	    "|" ぁ鉏憍�桫噱胱俶瞿� 鼠躂�葸噯凰�  毀��<a
+ 	    href="#escaping">操筒艇↓鏤踏躂趙笢堎�蛫姨啡及覣袘脊�
+ 	    ぁ僑埵ど堎��
 */
 void lssproto_CharList_send(int fd,char* result,char* data)
 {
@@ -2730,13 +2730,13 @@ void lssproto_CharList_send(int fd,char* result,char* data)
 
 /*
    servertoclient CharLogout(string result , string data);
-       Logout卞覆允月忒蚕［
+       Logout勗葡埰堎蒍紮��
        
  	string result
- 	"successful" 井 "failed" 及中内木井［巨旦弗□皿仄卅中［
+ 	"successful" 凝 "failed" 摯笢囀躂凝�蛨瑑弩央劗鵷ぴ聿苺�
  	string data
- 	"failed" 及凛卞及心啦  互丐曰｝撩  及    (橇谪)毛憎允谛棉
- 	    及苇化坌月  侬  匹丐月［巨旦弗□皿仄卅中［
+ 	"failed" 摯鄹勗摯陑徽  誑堣堇��謄  摯    (Щ稃)禱崚埰硞蹬
+ 	    摯峟趙覕堎  棬  ぁ堣堎�蛨瑑弩央劗鵷ぴ聿苺�
 */
 void lssproto_CharLogout_send(int fd,char* result,char* data)
 {
@@ -2756,10 +2756,10 @@ void lssproto_CharLogout_send(int fd,char* result,char* data)
 
 /*
    servertoclient ProcGet( string data);
- 	ProcGet及忒蚕［
+ 	ProcGet摯蒍紮��
        
  	string data
- 	巨旦弗□皿允月［必□丞扔□田□及    树  毛霜耨允月［    反log/proc白央奶伙卞踏井木月    午  元［
+ 	操筒艇↓鏤埰堎�蛘堙灅怕荂懽鵅齞�    攷  禱邞嚭埰堎��    毀log/proc啞栝騷鳴勗怳凝躂堎    敁  啋��
 */
 void lssproto_ProcGet_send(int fd,char* data)
 {
@@ -2779,7 +2779,7 @@ void lssproto_ProcGet_send(int fd,char* data)
 
 /*
    servertoclient PlayerNumGet( int logincount, int player);
- 	PlayerNumGet及忒蚕［
+ 	PlayerNumGet摯蒍紮��
        
  	int logincount,player
 */
@@ -2801,10 +2801,10 @@ void lssproto_PlayerNumGet_send(int fd,int logincount,int player)
 
 /*
    servertoclient Echo( string test );
-       Echo卞覆允月忒蚕［
+       Echo勗葡埰堎蒍紮��
        
  	string test
- 	今五幻升    今木凶  侬  ［巨旦弗□皿仄卅中［
+ 	踏拻酵汔    踏躂倜  棬  �蛨瑑弩央劗鵷ぴ聿苺�
 */
 void lssproto_Echo_send(int fd,char* test)
 {
@@ -2837,7 +2837,7 @@ void lssproto_TD_send(int fd, int index, char* message)
 	util_mkint(buffer, checksum);
 	util_SendMesg(fd, LSSPROTO_TD_SEND, buffer);
 }
-#ifdef _CHATROOMPROTOCOL			// (不可开) Syu ADD 聊天室频道
+#ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋
 void lssproto_CHATROOM_send ( int fd , char* message )
 {
 	char buffer[65500];
@@ -2853,7 +2853,7 @@ void lssproto_CHATROOM_send ( int fd , char* message )
 	util_SendMesg(fd, LSSPROTO_CHATROOM_SEND, buffer);
 }
 #endif
-#ifdef _NEWREQUESTPROTOCOL			// (不可开) Syu ADD 新增Protocol要求细项
+#ifdef _NEWREQUESTPROTOCOL			// (祥褫羲) Syu ADD 陔崝Protocol猁⑴牉砐
 void lssproto_RESIST_send ( int fd , char* message )
 {
 	char buffer[65500];
@@ -2869,7 +2869,7 @@ void lssproto_RESIST_send ( int fd , char* message )
 	util_SendMesg(fd, LSSPROTO_RESIST_SEND, buffer);
 }
 #endif
-#ifdef _OUTOFBATTLESKILL			// (不可开) Syu ADD 非战斗时技能Protocol
+#ifdef _OUTOFBATTLESKILL			// (祥褫羲) Syu ADD 準桵須奀撮夔Protocol
 void lssproto_BATTLESKILL_send ( int fd , char* message )
 {
 	char buffer[65500];
@@ -2948,7 +2948,7 @@ void lssproto_IC_send(int fd, int x, int y)
 	util_SendMesg(fd, LSSPROTO_IC_SEND, buffer);
 }
 #endif
-#ifdef _MAGIC_NOCAST             // 精灵:沉默
+#ifdef _MAGIC_NOCAST             // 儕鍾:麥蘇
 void lssproto_NC_send(int fd,int flg)
 {
 	char buffer[65500];

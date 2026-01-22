@@ -24,20 +24,20 @@
 #define IS_2BYTEWORD( _a_ ) ( (char)(0x80) <= (_a_) && (_a_) <= (char)(0xFF) )
 
 /*-----------------------------------------
-  仃勾及荼垫毛仇欠允
-  娄醒“ 手午及  侬  ［  涛  凳今木月冗
+  崹僑摯搊菜禱喫Й埰
+  礎倳※ 忒敁摯  棬  ��  旽  脾踏躂堎��
 
-  windows , macintosh , unix及升及垫手覆杀匹五月［
+  windows , macintosh , unix摯汔摯菜忒葡伀ぁ拻堎��
 
   windows : \r\n
   macintosh : \n\r
   unix : \n
 
-  分匀凶井卅
+  煦埱倜凝埵
   macintosh : \r
-  匹允［
-  公木午仇及皿夫弘仿丞分午仃勾及  侬元扎卅仁化手
-  荼垫壅允仃升中中氏匹允井
+  ぁ埰��
+  鼠躂敁喫摯鏤痲精溘堜煦敁崹僑摯  棬啋崨埵�妡缺�
+  搊菜觛埰崹汔笢笢庌ぁ埰凝
   -----------------------------------------*/
 void chompex( char *buf )
 {
@@ -52,14 +52,14 @@ void chompex( char *buf )
 
 
 /*----------------------------------------
- * 仃勾及1  侬毛潸曰轮仁
- * 娄醒
- *  src           凳允月  侬  
+ * 崹僑摯1  棬禱噁堇謫��
+ * 礎倳
+ *  src           脾埰堎  棬  
  ----------------------------------------*/
 void chop( char* src )
 {
     /*
-     * 凶分凶氏卞    及  侬毛潸曰轮仁
+     * 倜煦倜庌勗    摯  棬禱噁堇謫��
      */
     int length = strlen( src );
     if( length == 0 ) return;
@@ -68,10 +68,10 @@ void chop( char* src )
 
 
 /*----------------------------------------
- * 仃勾及  侬毛潸月［公及  侬毛  醒隙烂匹五月［
- * 娄醒
- *  src     葭及  侬  
- *  delim   绰轮允月  侬及    ［    反NULL  侬匹蔽匀化中月仪
+ * 崹僑摯  棬禱噁堎�蛫姨�  棬禱  倳炩擭ぁ拻堎��
+ * 礎倳
+ *  src     楁摯  棬  
+ *  delim   朝謫埰堎  棬摯    ��    毀NULL  棬ぁ敖埱趙笢堎痀
  ----------------------------------------*/
 void dchop( char* src , char* del)
 {
@@ -80,8 +80,8 @@ void dchop( char* src , char* del)
     BOOL delete=FALSE;
 
     /*
-     * src及  欠井日譬屯化中仁［1  侬卞勾五 del 允屯化毛伙□皿仄化
-     * 域谯允木壬壅允［公仄化戚及  侬卞中仁［
+     * src摯  Й凝�梪怛芼胱倞呁�1  棬勗僑拻 del 埰迋趙禱鳴↓鏤媃趙
+     * 郖窙埰躂�幵梊呁蛫建し紜敯�  棬勗笢�呁�
      */
 
     srclen = strlen( src );
@@ -95,16 +95,16 @@ void dchop( char* src , char* del)
         }
     }
 
-    /*  濠曰潸曰    */
+    /*  憍堇噁堇    */
     if( delete )src[srclen - 1] = '\0';
 }
 
 
 /*----------------------------------------
- * dchop及菅［  赓及  侬毛潸月［公及  侬毛  醒隙烂匹五月［
- * 娄醒
- *  src     葭及  侬  
- *  delim   绰轮允月  侬及    ［    反NULL  侬匹蔽匀化中月仪
+ * dchop摯楪��  疐摯  棬禱噁堎�蛫姨�  棬禱  倳炩擭ぁ拻堎��
+ * 礎倳
+ *  src     楁摯  棬  
+ *  delim   朝謫埰堎  棬摯    ��    毀NULL  棬ぁ敖埱趙笢堎痀
  ----------------------------------------*/
 void pohcd( char* src , char* del)
 {
@@ -113,8 +113,8 @@ void pohcd( char* src , char* del)
     BOOL delete=FALSE;
 
     /*
-     * src及蟆井日譬屯化中仁［1  侬卞勾五 del 允屯化毛伙□皿仄化
-     * 域谯允木壬壅允［公仄化戚及  侬卞中仁［
+     * src摯鞳凝�梪怛芼胱倞呁�1  棬勗僑拻 del 埰迋趙禱鳴↓鏤媃趙
+     * 郖窙埰躂�幵梊呁蛫建し紜敯�  棬勗笢�呁�
      */
 
     srclen = strlen( src );
@@ -128,22 +128,22 @@ void pohcd( char* src , char* del)
         }
     }
 
-    /*  绰轮    */
+    /*  朝謫    */
     if( delete )
-        /*  仇及戊疋□匹 NULL  侬手戊疋□今木月 */
+        /*  喫摯昡鼀↓ぁ NULL  棬忒昡鼀↓踏躂堎 */
         for( i = 0 ; i < srclen ; i ++ )
             src[i] = src[i+1];
 }
 
 
 /*----------------------------------------
- *   侬  卞  侬互殖引木化中月井升丹井譬屯月［
- * 娄醒
- *  src     char*   譬屯月  侬  
- *  include char*   殖引木化中月井升丹井及  侬  ［
- * 忒曰袄
- *  岳        赓卞殖引木化中凶src及桦赭
- *  撩      -1
+ *   棬  勗  棬誑硈竘躂趙笢堎凝汔竣凝ぅ迋堎��
+ * 礎倳
+ *  src     char*   ぅ迋堎  棬  
+ *  include char*   硈竘躂趙笢堎凝汔竣凝摯  棬  ��
+ * 蒍堇偯
+ *  埬        疐勗硈竘躂趙笢倜src摯鳹鐎
+ *  謄      -1
  ----------------------------------------*/
 int charInclude( char* src, char* include )
 {
@@ -163,16 +163,16 @@ int charInclude( char* src, char* include )
 
 
 /*------------------------------------------------------------
- * EUC及2田奶玄  分仃毛戊疋□仄卅中strncpy
- * freeBSD 及仿奶皮仿伉井日 strncpy 毛潸匀化五化｝
- * 公木毛手午卞荼瞻［*dest++ 午井银中凶中仃升｝瑛宁赐辆卞愤褥互
- * 卅中及匹｝银匀化中卅中［井歹曰卞    分仃升｝禾奶件正手银匀化化
- * 井卅曰  卅皿夫弘仿丞
- * 娄醒
- *  dest        char*   戊疋□燮
- *  src         char*   末□旦
- *  n           size_t  赢今
- * 忒曰袄
+ * EUC摯2泬騷哱  煦崹禱昡鼀↓媃埵笢strncpy
+ * freeBSD 摯溘騷々溘惉凝�� strncpy 禱噁埱趙拻趙��
+ * 鼠躂禱忒敁勗搊桹��*dest++ 敁凝窅笢倜笢崹汔��踕譴棹謙勗猷�儢�
+ * 埵笢摯ぁ��窅埱趙笢埵笢�蛨捎灄跼�    煦崹汔��睽騷璃淏忒窅埱趙趙
+ * 凝埵堇  埵鏤痲精溘堜
+ * 礎倳
+ *  dest        char*   昡鼀↓袸
+ *  src         char*   藺↓筒
+ *  n           size_t  荇踏
+ * 蒍堇偯
  *  dest
  ------------------------------------------------------------*/
 char* strncpy2( char* dest, const char* src, size_t n )
@@ -183,7 +183,7 @@ char* strncpy2( char* dest, const char* src, size_t n )
         int i;
         for( i=0; i<n ; i++ ){
             if( *(s+i) == 0 ){
-                /*  戊疋□仄云歹匀凶日 NULL   侬毛  木月   */
+                /*  昡鼀↓媃堁渦埱倜�� NULL   棬禱  躂堎   */
                 *(d+i) = '\0';
                 return dest;
             }
@@ -203,25 +203,25 @@ char* strncpy2( char* dest, const char* src, size_t n )
 }
 
 /*----------------------------------------
- * src 井日 dest 卞戊疋□允月［ 戊疋□燮及扔奶术毛譬屯月［
- * 娄醒
- *      dest        戊疋□燮
- *      n           扔奶术
- *      src         葭及  侬  
+ * src 凝�� dest 勗昡鼀↓埰堎�� 昡鼀↓袸摯�蚅昃劗宦怛邴瞿�
+ * 礎倳
+ *      dest        昡鼀↓袸
+ *      n           �蚅昃�
+ *      src         楁摯  棬  
  ----------------------------------------*/
 void strcpysafe( char* dest ,size_t n ,const char* src )
 {
     /*
-     * src 井日 dest 尺戊疋□允月.
-     * strcpy, strncpy 匹反 dest 方曰 戊疋□允月汹互
-     *   五中凛卞裟少午,丢乒伉陆失弁本旦互粟月.
-     * 仇木毛  什啃卞, strncpy 互丐月互 strlen( src ) 互 n 方曰
-     *   五中凛卞反, dest 及    互 NULL   侬午反卅日卅中.
+     * src 凝�� dest 喜昡鼀↓埰堎.
+     * strcpy, strncpy ぁ毀 dest 源堇 昡鼀↓埰堎倵誑
+     *   拻笢鄹勗蠙屾敁,隍さ惉翻囮袲掛筒誑厔堎.
+     * 喫躂禱  妦諱勗, strncpy 誑堣堎誑 strlen( src ) 誑 n 源堇
+     *   拻笢鄹勗毀, dest 摯    誑 NULL   棬敁毀埵�欷聿�.
      *
-     * 仄凶互匀化 dest 及  五今方曰 src 及幻丹互赢中凛卞反
-     * n-1 匹 strncpy 毛允月. 凝今中凛反公及引引戊疋□允月
+     * 媃倜誑埱趙 dest 摯  拻踏源堇 src 摯酵竣誑荇笢鄹勗毀
+     * n-1 ぁ strncpy 禱埰堎. 覽踏笢鄹毀鼠摯竘竘昡鼀↓埰堎
      *
-     * n 互  及凛反云井仄仁卅月及匹  及凛反 窒手仄卅中［
+     * n 誑  摯鄹毀堁凝媃�忐耒翹副�  摯鄹毀 笰忒媃埵笢��
      *
      */
     // Nuke +1 (08/25): Danger if src=0
@@ -229,15 +229,15 @@ void strcpysafe( char* dest ,size_t n ,const char* src )
         *dest = '\0';
         return;
     }
-    if( n <= 0 )        /* 窒手仄卅中   */
+    if( n <= 0 )        /* 笰忒媃埵笢   */
         return;
 
-    /*  仇及凛鳔匹｝ n >= 1 动晓互瑁烂  */
-    /*  NULL  侬毛哔  仄化  胜允月  */
+    /*  喫摯鄹鬻ぁ�� n >= 1 雄窀誑鋆擭  */
+    /*  NULL  棬禱萳  媃趙  吨埰堎  */
     else if( n < strlen( src ) + 1 ){
         /*
-         * 田永白央互箫曰卅中及匹 n - 1(NULL  侬)
-         * 匹 strncpy 毛裟少
+         * 泬蚗啞栝誑鵿堇埵笢摯ぁ n - 1(NULL  棬)
+         * ぁ strncpy 禱蠙屾
          */
         strncpy2( dest , src , n-1 );
         dest[n-1]='\0';
@@ -247,33 +247,33 @@ void strcpysafe( char* dest ,size_t n ,const char* src )
 }
 
 /*----------------------------------------
- * src 井日 length 掏允［   戊疋□燮及  五今毛譬屯月［
- * 娄醒
- *          dest        戊疋□燮
- *          n           戊疋□燮及扔奶术
- *          src         戊疋□葭
- *          length      窒  侬戊疋□允月井
+ * src 凝�� length 昅埰��   昡鼀↓袸摯  拻踏禱ぅ迋堎��
+ * 礎倳
+ *          dest        昡鼀↓袸
+ *          n           昡鼀↓袸摯�蚅昃�
+ *          src         昡鼀↓楁
+ *          length      笰  棬昡鼀↓埰堎凝
  ----------------------------------------*/
 void strncpysafe( char* dest , const size_t n ,
                   const char* src ,const int length )
 {
     /*
-     * src 井日 dest 卞 length 戊疋□允月
-     * strcpy, strncpy 匹反 dest 方曰 戊疋□允月汹互
-     *   五中凛卞裟少午,丢乒伉陆失弁本旦互粟月.
-     * 仇及楮醒匹反｝strlen( src ) 午 length 及凝今中幻丹
-     * (  端卞戊疋□允月汹) 午 dest 及扔奶术毛  屯化｝
-     * strcpysafe 午  元仪毛允月［
+     * src 凝�� dest 勗 length 昡鼀↓埰堎
+     * strcpy, strncpy ぁ毀 dest 源堇 昡鼀↓埰堎倵誑
+     *   拻笢鄹勗蠙屾敁,隍さ惉翻囮袲掛筒誑厔堎.
+     * 喫摯匴倳ぁ毀��strlen( src ) 敁 length 摯覽踏笢酵竣
+     * (  傷勗昡鼀↓埰堎倵) 敁 dest 摯�蚅昃劗�  迋趙��
+     * strcpysafe 敁  啋痀禱埰堎��
      */
 
     int Short;
     Short = min( strlen( src ) , length );
 
-    /* NULL  侬 毛哔  仄凶  胜 */
+    /* NULL  棬 禱萳  媃倜  吨 */
     if( n < Short + 1 ){
         /*
-         * 田永白央互箫曰卅中及匹 n - 1(NULL  侬)
-         * 匹 strncpy 毛裟少
+         * 泬蚗啞栝誑鵿堇埵笢摯ぁ n - 1(NULL  棬)
+         * ぁ strncpy 禱蠙屾
          */
         strncpy2( dest , src , n-1 );
         dest[n-1]='\0';
@@ -282,9 +282,9 @@ void strncpysafe( char* dest , const size_t n ,
         return;
     }else{
         /*
-         * 田永白央反蜗坌卞丐月及匹 Short 匹strncpy毛裟少
-         * 卅云 src 卞反 Short 及赢今  卞 NULL 互卅中及匹｝
-         * dest 卞反 馨笛仄化云仁［
+         * 泬蚗啞栝毀恘覕勗堣堎摯ぁ Short ぁstrncpy禱蠙屾
+         * 埵堁 src 勗毀 Short 摯荇踏  勗 NULL 誑埵笢摯ぁ��
+         * dest 勗毀 黹萃媃趙堁�呁�
          */
 
         strncpy2( dest , src , Short );
@@ -294,14 +294,14 @@ void strncpysafe( char* dest , const size_t n ,
 }
 
 /*------------------------------------------------------------
- * strcat毛兜蝈卞  蜇允月［赞中及匹｝    卅桦宁毛轮中化银歹卅中仪［
- * 娄醒
- *  src     char*       葭卞卅月  侬  
- *  size    int         src 及扔奶术(   欠卞升木分仃酸匀化中月井匹反
- *                          卅仁化田永白央蝈   )
- *  ap      char*       尥仃笛尹月  
- * 忒曰袄
- *  src     (  木阂迕)
+ * strcat禱項蠈勗  藯埰堎�觚皵邾副奴�    埵鳹譴禱謫笢趙窅渦埵笢痀��
+ * 礎倳
+ *  src     char*       楁勗埵堎  棬  
+ *  size    int         src 摯�蚅昃�(   Й勗汔躂煦崹呫埱趙笢堎凝ぁ毀
+ *                          埵�妡羔擽幫豽錓�   )
+ *  ap      char*       痹崹萃窇堎  
+ * 蒍堇偯
+ *  src     (  躂碳暵)
  ------------------------------------------------------------*/
 char* strcatsafe( char* src, int size, char* ap )
 {
@@ -310,12 +310,12 @@ char* strcatsafe( char* src, int size, char* ap )
 }
 
 /*----------------------------------------
- *   侬  及    毛  胜允月［  元井升丹井仄井  烂仄卅中 by ringo
- * char *s1 , *s2 :   胜允月  侬  
- * 忒曰袄
- * 0 “ 云卅元
- * 1 : 仇午卅月
- * 仇木反NPC及  平旦玄荸  卞支仁分勾［
+ *   棬  摯    禱  吨埰堎��  啋凝汔竣凝媃凝  擭媃埵笢 by ringo
+ * char *s1 , *s2 :   吨埰堎  棬  
+ * 蒍堇偯
+ * 0 ※ 堁埵啋
+ * 1 : 喫敁埵堎
+ * 喫躂毀NPC摯  す筒哱搣  勗盓�妢砦提�
  ----------------------------------------*/
 int strcmptail( char *s1 , char *s2 )
 {
@@ -334,20 +334,20 @@ int strcmptail( char *s1 , char *s2 )
 
 
 /*----------------------------------------
- *   侬  及    卞踏井木化中月帮醒毛必永玄允月［
- * NPC及  平旦玄荸  卞支仁分勾［
- * 凶分仄    卞中日氏  侬互丐月桦宁  骰允月［
- * 耨痊互  切卅中失伙打伉术丞卞  凳［
- * 娄醒
- *  hoge    char*   荸  允月  侬  
- * 忒曰袄
- *  荸  仄凶帮醒［
+ *   棬  摯    勗怳凝躂趙笢堎堆倳禱斛蚗哱埰堎��
+ * NPC摯  す筒哱搣  勗盓�妢砦提�
+ * 倜煦媃    勗笢�梛�  棬誑堣堎鳹譴  鷋埰堎��
+ * 嚭�牴�  з埵笢囮鳴湖惉扲堜勗  脾��
+ * 礎倳
+ *  hoge    char*   搣  埰堎  棬  
+ * 蒍堇偯
+ *  搣  媃倜堆倳��
  *
- *   “
- * "ringo ( 吧噗吧噗星人 ) ： 100"
- *      及桦宁反100互井尹月［
- * "ringo ( 吧噗吧噗星人 ) ： 是100"
- *      手100卞卅月［幻氏引卞NPC迕卅曰友［
+ *   ※
+ * "ringo ( 勘靷勘靷陎�� ) ㄩ 100"
+ *      摯鳹譴毀100誑凝窇堎��
+ * "ringo ( 勘靷勘靷陎�� ) ㄩ 岆100"
+ *      忒100勗埵堎�蛬蟾玾�勗NPC暵埵堇衭��
  ----------------------------------------*/
 #define DECIMALCHARNUM 10
 #define FIGURECHARNUM 3
@@ -359,17 +359,17 @@ char *UTIL_figurechar[FIGURECHARNUM] = {"","",""};
 char *UTIL_specialchar[SPECIALCHARNUM] = {"",""};
 
 /*
- *   侬  井日｝醒袄毛  允午  歹木月  坌毛  五请允［燮  及幻丹井日
- * 茧仄化  五请允［euc迕［
+ *   棬  凝�掁�倳偯禱  埰敁  渦躂堎  覕禱  拻③埰�詗�  摯酵竣凝��
+ * 潺媃趙  拻③埰�菼uc暵��
  *
- *    : in "这本书七万册300美金吗？"
- *      out "7万"
- * 娄醒
- * char *in:      侬  
- * char *out:请    侬  
- * int outsiz:请    侬  及田永白央扔奶术
- * 忒曰袄
- * 醒袄毛  允  坌互丐匀凶日公及  侬  及赢今｝卅井匀凶日ㄟ
+ *    : in "涴掛抎ほ勀聊300藝踢鎘ˋ"
+ *      out "7勀"
+ * 礎倳
+ * char *in:      棬  
+ * char *out:③    棬  
+ * int outsiz:③    棬  摯泬蚗啞栝�蚅昃�
+ * 蒍堇偯
+ * 倳偯禱  埰  覕誑堣埱倜�桯姨�  棬  摯荇踏��埵凝埱倜�旍�
  */
 static int findNumberString( char *in, char *out, int outsiz )
 {
@@ -384,12 +384,12 @@ static int findNumberString( char *in, char *out, int outsiz )
     for( i=0,j=0;in[i]!='\0'&& j<outsiz-2;i++ ){
         findflag = 0;
         if( in[i] & 0x80 ){
-            /* EUC及桦宁 */
+            /* EUC摯鳹譴 */
             tmp[0] = in[i];
             tmp[1] = in[i+1];
             tmp[2] = '\0';
         }else{
-            /* ASCII及桦宁 */
+            /* ASCII摯鳹譴 */
             tmp[0] = in[i];
             tmp[1] = '\0';
         }
@@ -442,7 +442,7 @@ static int findNumberString( char *in, char *out, int outsiz )
 
 
 /*
- *   侬  毛int卞  晶［
+ *   棬  禱int勗  儒��
  *
  */
 int numstrIsKanji( char *str );
@@ -460,11 +460,11 @@ int textToInt( char *str )
 }
 
 /*
- * 醒袄毛  允  侬  互｝    贿挚卅及井壑钗挚卅及井毛    
- * 娄醒     允月  侬  ［醒侬毛  允  侬  动陆反殖氏匹反中仃卅中［
- * 忒曰袄     贿挚卅日ㄠ｝壑钗挚卅日ㄟ
- *    str 互"一亿四千万。"及午五｛忒曰袄1
- *    str 互"123"及午五｛忒曰袄ㄟ
+ * 倳偯禱  埰  棬  誑��    鞅祪埵摯凝詎鎃祪埵摯凝禱    
+ * 礎倳     埰堎  棬  �覕栟紐�  埰  棬  雄翻毀硈庌ぁ毀笢崹埵笢��
+ * 蒍堇偯     鞅祪埵�旍逽�詎鎃祪埵�旍�
+ *    str 誑"珨砬侐ロ勀﹝"摯敁拻��蒍堇偯1
+ *    str 誑"123"摯敁拻��蒍堇偯兔
  *
  */
 int numstrIsKanji( char *str )
@@ -498,9 +498,9 @@ int numstrIsKanji( char *str )
 }
 
 /*
- * 蜗褡芊匹醒袄毛  仄凶  侬  毛int卞  晶
- * char *str   侬  
- * 忒曰袄   侬  互  允醒袄
+ * 恘鵌傮ぁ倳偯禱  媃倜  棬  禱int勗  儒
+ * char *str   棬  
+ * 蒍堇偯   棬  誑  埰倳偯
  */
 int decimalstrToInt( char *str )
 {
@@ -534,11 +534,11 @@ int decimalstrToInt( char *str )
 
 
 /*
- *     挚匹  仄凶醒袄毛帮醒卞  晶
- * char *str 醒袄毛  允  侬  
- * 忒曰袄 醒袄
+ *     祪ぁ  媃倜倳偯禱堆倳勗  儒
+ * char *str 倳偯禱  埰  棬  
+ * 蒍堇偯 倳偯
  *   
- * str互"一亿4千万？"及午五忒曰袄 140000000
+ * str誑"珨砬4ロ勀ˋ"摯敁拻蒍堇偯 140000000
  */
 int kanjistrToInt( char *str )
 {
@@ -602,31 +602,31 @@ nextchar:
 
 
 /*----------------------------------------
- *   侬  及    卞踏井木化中月帮醒毛必永玄允月［
- * NPC及  平旦玄荸  卞支仁分勾［
- * 凶分仄    卞中日氏  侬互丐月桦宁  骰允月［
- * 耨痊互  切卅中失伙打伉术丞卞  凳［
- * 娄醒
- *  hoge    char*   荸  允月  侬  
- * 忒曰袄
- *  荸  仄凶帮醒［
+ *   棬  摯    勗怳凝躂趙笢堎堆倳禱斛蚗哱埰堎��
+ * NPC摯  す筒哱搣  勗盓�妢砦提�
+ * 倜煦媃    勗笢�梛�  棬誑堣堎鳹譴  鷋埰堎��
+ * 嚭�牴�  з埵笢囮鳴湖惉扲堜勗  脾��
+ * 礎倳
+ *  hoge    char*   搣  埰堎  棬  
+ * 蒍堇偯
+ *  搣  媃倜堆倳��
  *
- *   “
- * "ringo ( 吧噗吧噗星人 ) ： 100"
- *      及桦宁反100互井尹月［
- * "ringo ( 吧噗吧噗星人 ) ： 是100"
- *      手100卞卅月［幻氏引卞NPC迕卅曰友［
+ *   ※
+ * "ringo ( 勘靷勘靷陎�� ) ㄩ 100"
+ *      摯鳹譴毀100誑凝窇堎��
+ * "ringo ( 勘靷勘靷陎�� ) ㄩ 岆100"
+ *      忒100勗埵堎�蛬蟾玾�勗NPC暵埵堇衭��
  ----------------------------------------*/
 int texttoiTail( char *hoge)
 {
-    return 0; /* 壬什匀化凶及匹仇丹仄凶［公及丹切楮醒仍午壅允［ */
+    return 0; /* �圴紳�趙倜摯ぁ喫竣媃倜�蛫姨做匹剒�倳�婠誻梊呁� */
 
 
 #if 0
     int len = strlen(hoge);
 
     if( len == 0 )return atoi(hoge);
-    /*    井日茧仄化  赓卞醒侬毛苇勾仃月    */
+    /*    凝�梩醓し�  疐勗倳棬禱峟僑崹堎    */
     while(--len && len >= 0){
         if( isdigit(hoge[len]) )
             break;
@@ -653,17 +653,17 @@ int texttoiTail( char *hoge)
 }
 
 /*----------------------------------------
- *   侬  毛醒侬井升丹井民尼永弁仄化｝醒侬分匀凶日
- *  娄醒卞  木化忒允
- * 娄醒
- *      arg               晶葭
- *      number            晶  毛医  允月赭
- *      base            湘醒
- *      type            娄醒及滇( CTYPE 反 common.h 卞烛蜕今木化中月 )
- * 忒曰袄
- *      TRUE(1)    岳  
- *      FALSE(0)   strtol互敦僬卞反岳  仄卅井匀凶
- *                  仇及凛及number反strtol及忒曰袄匹丐月
+ *   棬  禱倳棬凝汔竣凝鏍攝蚗袲媃趙��倳棬煦埱倜��
+ *  礎倳勗  躂趙蒍埰
+ * 礎倳
+ *      arg               儒楁
+ *      number            儒  禱瓟  埰堎鐎
+ *      base            盻倳
+ *      type            礎倳摯菲( CTYPE 毀 common.h 勗羕虭踏躂趙笢堎 )
+ * 蒍堇偯
+ *      TRUE(1)    埬  
+ *      FALSE(0)   strtol誑嗟棔勗毀埬  媃埵凝埱倜
+ *                  喫摯鄹摯number毀strtol摯蒍堇偯ぁ堣堎
  ----------------------------------------*/
 BOOL strtolchecknum( char* arg , void* number,int base ,CTYPE type)
 {
@@ -692,7 +692,7 @@ BOOL strtolchecknum( char* arg , void* number,int base ,CTYPE type)
 
     if( strlen( buf ) >= 1 )
         /*
-         * 酸曰  侬互丐月午中丹仪反  晶仄五木化卅中午中丹仪卅及分［
+         * 呫堇  棬誑堣堎敁笢竣痀毀  儒媃拻躂趙埵笢敁笢竣痀埵摯煦��
          */
         return FALSE;
 
@@ -704,28 +704,28 @@ BOOL strtolchecknum( char* arg , void* number,int base ,CTYPE type)
 
 
 /*----------------------------------------
- * src 井日 dels 匹隙烂仄凶  侬毛潸曰轮仁
- * 田永弁旦仿永扑亘反巨旦弗□皿匹丐月仪卞镗啦［
- * 勾引曰田永弁旦仿永扑亘反绰轮匹五卅中［
- * 娄醒
- *  src      凳今木月  侬  
- *  char*  绰轮允月  侬(  侬  匹隙烂第)
- * 忒曰袄
- *  卅仄
+ * src 凝�� dels ぁ炩擭媃倜  棬禱噁堇謫��
+ * 泬蚗袲筒溘蚗で堥毀操筒艇↓鏤ぁ堣堎痀勗曛徽��
+ * 僑竘堇泬蚗袲筒溘蚗で堥毀朝謫ぁ拻埵笢��
+ * 礎倳
+ *  src      脾踏躂堎  棬  
+ *  char*  朝謫埰堎  棬(  棬  ぁ炩擭菴)
+ * 蒍堇偯
+ *  埵媃
  ----------------------------------------*/
 void deleteCharFromString( char* src , char* dels )
 {
-    int index=0;    /* 匹五丐互曰及  侬  匹及 index */
-    int delength;   /* dels 及赢今毛涩烂允月(剂仄反簧蘸失永皿及啃 */
-    int i=0,j;/* i 反 src 毛伙□皿允月  醒 j 反 dels 毛伙□皿允月  醒 */
+    int index=0;    /* ぁ拻堣誑堇摯  棬  ぁ摯 index */
+    int delength;   /* dels 摯荇踏禱优擭埰堎(撙媃毀銅梣囮蚗鏤摯諱 */
+    int i=0,j;/* i 毀 src 禱鳴↓鏤埰堎  倳 j 毀 dels 禱鳴↓鏤埰堎  倳 */
 
     delength= strlen( dels );
 
     while( src[i] != '\0' ){
         if( src[i] == BACKSLASH  )
             /*
-             * 田永弁旦仿永扑亘卅及匹巨旦弗□皿允月
-             * 勾引曰戚及  侬反  椭瘀卞啖  允月
+             * 泬蚗袲筒溘蚗で堥埵摯ぁ操筒艇↓鏤埰堎
+             * 僑竘堇べ摯  棬毀  邳贀勗遉  埰堎
              */
             src[index++] = src[++i];         /* substitute next char */
 
@@ -733,12 +733,12 @@ void deleteCharFromString( char* src , char* dels )
             for( j = 0 ; j < delength ; j ++ ){
                 if( src[i] == dels[j] )
                     /*
-                     * 绰轮允月  侬分［方匀化 i 卞 1 毛凶允
+                     * 朝謫埰堎  棬煦�蛪諂�趙 i 勗 1 禱倜埰
                      */
                     goto incrementi;
             }
             /*
-             * 壅允  卞隙烂今木化中卅中及匹戊疋□允月［
+             * 觛埰  勗炩擭踏躂趙笢埵笢摯ぁ昡鼀↓埰堎��
              */
             src[index++] =  src[i];
         }
@@ -752,19 +752,19 @@ void deleteCharFromString( char* src , char* dels )
 
 
 /*----------------------------------------
- * src 井日 dels 匹隙烂仄凶  侬毛潸曰轮仁
- * 巨旦弗□皿反卅中
- * 娄醒
- *  src      凳今木月  侬  
- *  char*  绰轮允月  侬(  侬  匹隙烂第)
- * 忒曰袄
- *  卅仄
+ * src 凝�� dels ぁ炩擭媃倜  棬禱噁堇謫��
+ * 操筒艇↓鏤毀埵笢
+ * 礎倳
+ *  src      脾踏躂堎  棬  
+ *  char*  朝謫埰堎  棬(  棬  ぁ炩擭菴)
+ * 蒍堇偯
+ *  埵媃
  ----------------------------------------*/
 void deleteCharFromStringNoEscape( char* src , char* dels )
 {
-    int index=0;    /* 匹五丐互曰及  侬  匹及 index */
-    int delength;   /* dels 及赢今毛涩烂允月(剂仄反簧蘸失永皿及啃 */
-    int i=0,j;/* i 反 src 毛伙□皿允月  醒 j 反 dels 毛伙□皿允月  醒 */
+    int index=0;    /* ぁ拻堣誑堇摯  棬  ぁ摯 index */
+    int delength;   /* dels 摯荇踏禱优擭埰堎(撙媃毀銅梣囮蚗鏤摯諱 */
+    int i=0,j;/* i 毀 src 禱鳴↓鏤埰堎  倳 j 毀 dels 禱鳴↓鏤埰堎  倳 */
 
     delength= strlen( dels );
 
@@ -772,12 +772,12 @@ void deleteCharFromStringNoEscape( char* src , char* dels )
         for( j = 0 ; j < delength ; j ++ ){
             if( src[i] == dels[j] )
                 /*
-                 * 绰轮允月  侬分［方匀化 i 卞 1 毛凶允
+                 * 朝謫埰堎  棬煦�蛪諂�趙 i 勗 1 禱倜埰
                  */
                 goto incrementi;
         }
         /*
-         * 壅允  卞隙烂今木化中卅中及匹戊疋□允月［
+         * 觛埰  勗炩擭踏躂趙笢埵笢摯ぁ昡鼀↓埰堎��
          */
         src[index++] =  src[i];
     incrementi:
@@ -788,12 +788,12 @@ void deleteCharFromStringNoEscape( char* src , char* dels )
 }
 
 /*------------------------------------------------------------
- * 隙烂今木凶  侬毛隙烂今木凶  侬匹  五井尹月
- * 娄醒
- *  src     char*         凳今木月  侬  
- *  oldc    char          凳今木月  侬
- *  newc    char          凳允月  侬
- * 忒曰袄
+ * 炩擭踏躂倜  棬禱炩擭踏躂倜  棬ぁ  拻凝窇堎
+ * 礎倳
+ *  src     char*         脾踏躂堎  棬  
+ *  oldc    char          脾踏躂堎  棬
+ *  newc    char          脾埰堎  棬
+ * 蒍堇偯
  *  src
  ------------------------------------------------------------*/
 char*   replaceString( char* src, char oldc ,char newc )
@@ -835,11 +835,11 @@ char makeCharFromEscaped( char c )//add this function,because the second had it
         return c;
 }
 /*----------------------------------------
- * makeEscapeString匹综岳今木凶  侬  毛葭卞  允
- * 娄醒
- *  src             char*       葭卞卅月  侬  ［仇木互踏五赘月［
- * 忒曰袄
- *  src    毛忒允［(楮醒毛  木仇卞仄支允中方丹卞)
+ * makeEscapeStringぁ軘埬踏躂倜  棬  禱楁勗  埰
+ * 礎倳
+ *  src             char*       楁勗埵堎  棬  �蛦蟤噱甘及樝詳瞿�
+ * 蒍堇偯
+ *  src    禱蒍埰��(匴倳禱  躂喫勗媃盓埰笢源竣勗)
  ----------------------------------------*/
 char   *makeStringFromEscaped( char* src )
 {//ttom this function all change,beside copy from the second
@@ -863,7 +863,7 @@ char   *makeStringFromEscaped( char* src )
     }else
             if( src[i] == '\\' )
             {	
-                // 戚及  侬卞垫仁
+                // べ摯  棬勗菜��
                 i++;
                 src[searchindex++] = makeCharFromEscaped( src[i] );
             }
@@ -933,96 +933,96 @@ char * ScanOneByte( char *src, char delim ){
 	// Nuke
 	if (!src) return NULL;
 
-        //   侬  互卅仁卅月引匹腹绸
+        //   棬  誑埵�忐耒觴�ぁ號喙
         for( ;src[0] != '\0'; src ++ ){
-             // 蝈剩及ㄠ田奶玄  井升丹井毛民尼永弁
+             // 蠈呁摯兒泬騷哱  凝汔竣凝禱鏍攝蚗袲
           if( IS_2BYTEWORD( src[0] ) ){
-              // 蝈剩分［公及桦宁反ㄠ田奶玄芴坌卞褡引六月［
-              // 凶分仄ㄠ田奶玄仄井卅中桦宁反公丹仄卅中
+              // 蠈呁煦�蛫姨啗踽�毀兒泬騷哱嗌覕勗鵌竘鞠堎��
+              // 倜煦媃兒泬騷哱媃凝埵笢鳹譴毀鼠竣媃埵笢
               if( src[1] != 0 ){
                   src ++;
               }
               continue;
           }
-          //   剩分匀凶［仇仇匹覆擂及  侬午  胜
+          //   呁煦埱倜�蛦薱蟜斥窕瑆�  棬敁  吨
           if( src[0] == delim ){
               return src;
           }
         }
-        // 伙□皿  仃凶日苇勾井日卅井匀凶［
+        // 鳴↓鏤  崹倜�梉食晷旅欷汙朗�倜��
         return NULL;
 }
                                                                                                                                                                                                                                                                                                                 
 
 
 /*----------------------------------------
- * delim 匹隙烂今木凶  侬  毛嗉濠曰  侬午仄化
- * index     及  毛  月［index反1匹反元引月［
- *   侬  酷  ［
- * 娄醒
- *  src     葭及  侬  
- *  delim   犯伉立正午卅月  侬  ［    反NULL  侬匹蔽匀化中月仪
- *  index   窒    及  毛潸月井
- *  buf     瑛绊  侬  毛伞  允月桦赭尺及禾奶件正□
- *  buflen  瑛绊  侬  毛伞  允月桦赭及扔奶术
- * 忒曰袄
- *  丐匀凶日 TRUE(1);
- *  卅井匀凶日 FALSE(0);
+ * delim ぁ炩擭踏躂倜  棬  禱鉏憍堇  棬敁媃趙
+ * index     摯  禱  堎�菈ndex毀1ぁ毀啋竘堎��
+ *   棬  蹄  ��
+ * 礎倳
+ *  src     楁摯  棬  
+ *  delim   溢惉蕾淏敁埵堎  棬  ��    毀NULL  棬ぁ敖埱趙笢堎痀
+ *  index   笰    摯  禱噁堎凝
+ *  buf     踕堅  棬  禱氶  埰堎鳹鐎喜摯睽騷璃淏↓
+ *  buflen  踕堅  棬  禱氶  埰堎鳹鐎摯�蚅昃�
+ * 蒍堇偯
+ *  堣埱倜�� TRUE(1);
+ *  埵凝埱倜�� FALSE(0);
  *  ex
  *      getStringFromIndexWithDelim( "aho=hoge","=",1,buf,sizeof(buf) );
  *      buf ... aho
  *
  *      getStringFromIndexWithDelim( "aho=hoge","=",2,buf,sizeof(buf) );
  *      buf ... hoge
- *      仇木手  户日木月［
+ *      喫躂忒  誧�桫戰瞿�
  *
  *      getStringFromIndexWithDelim( "aho=hoge","=",3,buf,sizeof(buf) );
- *      忒曰袄 FALSE
+ *      蒍堇偯 FALSE
  ----------------------------------------*/
 BOOL getStringFromIndexWithDelim_body( char* src ,char* delim ,int index,
                                  char* buf , int buflen ,
                                        char *file, int line )
 {//ttom this function all change,copy from the second
-    int i;          /* 伙□皿  醒 */
-    int length =0;  /* 潸曰请仄凶  侬  及赢今 */
-    int addlen=0;   /* 箫今木月赢今 */
-    int oneByteMode = 0; /* ㄠ田奶玄乒□玉井＂ */
+    int i;          /* 鳴↓鏤  倳 */
+    int length =0;  /* 噁堇③媃倜  棬  摯荇踏 */
+    int addlen=0;   /* 鵿踏躂堎荇踏 */
+    int oneByteMode = 0; /* 兒泬騷哱さ↓迶凝ㄑ */
 
-    if( strlen( delim ) == 1 ){ // 腹绸互ㄠ田奶玄卅日ㄠ田奶玄乒□玉卞允月
-        oneByteMode = 1;// 公及端ㄡ田奶玄  侬反民尼永弁仄卅中
+    if( strlen( delim ) == 1 ){ // 號喙誑兒泬騷哱埵�旍鈲巀昐�さ↓迶勗埰堎
+        oneByteMode = 1;// 鼠摯傷兕泬騷哱  棬毀鏍攝蚗袲媃埵笢
     }
     for( i =  0 ; i < index ; i ++ ){
          char* last;
-         src += addlen;/* 心勾井匀凶赢今毛箫允 */
+         src += addlen;/* 陑僑凝埱倜荇踏禱鵿埰 */
       
          if( oneByteMode ){
-             // ㄠ田奶玄乒□玉分匀凶日仇切日匹腹绸
+             // 兒泬騷哱さ↓迶煦埱倜�梜蟓倞梪斥像�
              last = ScanOneByte( src, delim[0] );
          }else{
-                 last  = strstr( src , delim );  /* 苇尥仃月 */
+                 last  = strstr( src , delim );  /* 峟痹崹堎 */
          }
          if( last == NULL ){
             /*
-             * 心勾井日卅井匀凶及匹允屯化戊疋□仄化 return［
+             * 陑僑凝�欷汙朗�倜摯ぁ埰迋趙昡鼀↓媃趙 return��
             */
             strcpysafe( buf , buflen, src );
 
             if( i == index - 1 )
-                /*切斤丹升心勾井匀凶*/
+                /*з踝竣汔陑僑凝埱倜*/
                 return TRUE;
                                                                                                            
-                /*心勾井日卅井匀凶*/
+                /*陑僑凝�欷汙朗�倜*/
              return FALSE;
           }
           
           /*
-           * 心勾井匀凶赭午  赓及匏  及犒毛菲户月
-           * 勾引曰嗉濠日木化中月  侬  及赢今
+           * 陑僑凝埱倜鐎敁  疐摯痾  摯蕍禱滑誧堎
+           * 僑竘堇鉏憍�桫噱胱俶�  棬  摯荇踏
           */
           length = last - src;
                                            
           /*
-           * 戚及伙□皿及啃卞心勾井匀凶赢今午 delim 及赢今毛箫仄化云仁
+           * べ摯鳴↓鏤摯諱勗陑僑凝埱倜荇踏敁 delim 摯荇踏禱鵿媃趙堁��
           */
           addlen= length + strlen( delim );
        }
@@ -1033,16 +1033,16 @@ BOOL getStringFromIndexWithDelim_body( char* src ,char* delim ,int index,
 
 
 /*------------------------------------------------------------
- *   侬   "a,b,c,d" 毛娄醒卞医  允月［犯白巧伙玄反 0 卞允月［
- * 井卅曰及  溃楮醒［蜇箕反切斤匀午赞中［
- * 娄醒
- *  src         char*   葭及  侬  
- *  int1        int*    int及禾奶件正［(a毛医  允月)
- *  int2        int*    int及禾奶件正［(b毛医  允月)
- *  int3        int*    int及禾奶件正［(c毛医  允月)
- *  int4        int*    int及禾奶件正［(d毛医  允月)
- * 忒曰袄
- *  卅仄
+ *   棬   "a,b,c,d" 禱礎倳勗瓟  埰堎�蛪萼觙伒懩�毀 0 勗埰堎��
+ * 凝埵堇摯  壓匴倳�跍婸�毀з踝埱敁婝笢��
+ * 礎倳
+ *  src         char*   楁摯  棬  
+ *  int1        int*    int摯睽騷璃淏��(a禱瓟  埰堎)
+ *  int2        int*    int摯睽騷璃淏��(b禱瓟  埰堎)
+ *  int3        int*    int摯睽騷璃淏��(c禱瓟  埰堎)
+ *  int4        int*    int摯睽騷璃淏��(d禱瓟  埰堎)
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void getFourIntsFromString(char* src,int* int1,int* int2,int* int3,
                            int* int4)
@@ -1070,36 +1070,36 @@ void getFourIntsFromString(char* src,int* int1,int* int2,int* int3,
 
 
 /*----------------------------------------------
- * src 及  匹dels匹隙烂仄凶  侬互  粮仄化中凶日
- * 1勾卞引午户月［
- * 田永弁旦仿永扑亘反巨旦弗□皿扑□弗件旦午卅月［
- * 仄凶互匀化  粮仄凶田永弁旦仿永扑亘毛壅允仪反匹五卅中［
- * 娄醒
- *  src      祭允月  侬  
- *  dels   壅允  侬(  侬  匹隙烂第)
- * 忒曰袄
- *  卅仄
+ * src 摯  ぁdelsぁ炩擭媃倜  棬誑  襄媃趙笢倜��
+ * 1僑勗竘敁誧堎��
+ * 泬蚗袲筒溘蚗で堥毀操筒艇↓鏤で↓艇璃筒敁埵堎��
+ * 媃倜誑埱趙  襄媃倜泬蚗袲筒溘蚗で堥禱觛埰痀毀ぁ拻埵笢��
+ * 礎倳
+ *  src      撬埰堎  棬  
+ *  dels   觛埰  棬(  棬  ぁ炩擭菴)
+ * 蒍堇偯
+ *  埵媃
  ---------------------------------------------*/
 void deleteSequentChar( char* src , char* dels )
 {
-    int length;         /* src 及赢今 */
-    int delength;       /* dels 及赢今 */
-    int i,j;            /* 伙□皿  醒 */
-    int index=0;        /* 割烂  侬  及 index */
-    char backchar='\0';   /* 绰轮允月  侬 */
+    int length;         /* src 摯荇踏 */
+    int delength;       /* dels 摯荇踏 */
+    int i,j;            /* 鳴↓鏤  倳 */
+    int index=0;        /* 賃擭  棬  摯 index */
+    char backchar='\0';   /* 朝謫埰堎  棬 */
 
     length = strlen( src );
     delength = strlen( dels );
 
     /*
-     * 伙□皿允月仍午卞戊疋□允月
+     * 鳴↓鏤埰堎�婠蝐槸旚漶灄彸�
      */
     for( i = 0 ; i < length ; i ++ ){
         if( src[i] == BACKSLASH ){
             /*
-             * 田永弁旦仿永扑亘分匀凶日
-             * 雄孺读卞  勾( BACKSLASH愤褥午｝戚及  侬 )
-             * 褡户月
+             * 泬蚗袲筒溘蚗で堥煦埱倜��
+             * 倯�瘨螫�  僑( BACKSLASH猷�嬭蝤�べ摯  棬 )
+             * 鵌誧堎
              */
             src[index++]=src[i++];
             if( i >= length ){
@@ -1107,26 +1107,26 @@ void deleteSequentChar( char* src , char* dels )
                 break;
             }
             src[index++]=src[i];
-            /*   粮互鞅匀凶仪卞允月 */
+            /*   襄誑鰼埱倜痀勗埰堎 */
             backchar = '\0';
             continue;
         }
         if( src[i] == backchar )
             /*
-             * 绰轮允月手元分匀凶日窒手仄卅中［勾引曰绰轮卞卅月［
+             * 朝謫埰堎忒啋煦埱倜�欶珅笭ぴ聿苺蛫棍�堇朝謫勗埵堎��
              */
             continue;
 
         /*
-         *   粮及绰轮允月  侬互卅仁卅匀凶及匹 backchar 反 NULL   侬卞允月
-         * 仇木互井氏元氏
+         *   襄摯朝謫埰堎  棬誑埵�忐耒�倜摯ぁ backchar 毀 NULL   棬勗埰堎
+         * 喫躂誑凝庌啋庌
          */
         backchar = '\0';
         for( j = 0 ; j < delength ; j ++ ){
             if( src[i] == dels[j] ){
                 /*
-                 * 绰轮允月  侬  分［ 仇仇匹 continue 仄卅中仪卞方曰
-                 * 域  侬反绰轮仄卅中仪互忡据匹五月［
+                 * 朝謫埰堎  棬  煦�� 喫喫ぁ continue 媃埵笢痀勗源堇
+                 * 郖  棬毀朝謫媃埵笢痀誑瞀擂ぁ拻堎��
                  */
                 backchar=src[i];
                 break;
@@ -1138,13 +1138,13 @@ void deleteSequentChar( char* src , char* dels )
 }
 
 /*----------------------------------------
- * hash袄毛忒允［  侬  卞及心银丹仇午
- * 仇木反  公及引引卅及匹失伙打伉术丞反方丹歹井日氏互
- * 中中失伙打伉术丞日仄中［
- * 娄醒
- *  s     侬  
- * 忒曰袄
- *  int 甩永扑亘袄
+ * hash偯禱蒍埰��  棬  勗摯陑窅竣喫敁
+ * 喫躂毀  鼠摯竘竘埵摯ぁ囮鳴湖惉扲堜毀源竣渦凝�梛牰�
+ * 笢笢囮鳴湖惉扲堜�欷ひ苺�
+ * 礎倳
+ *  s     棬  
+ * 蒍堇偯
+ *  int 辿蚗で堥偯
  *----------------------------------------*/
 #define PRIME 211
 int hashpjw ( char* s )
@@ -1162,22 +1162,22 @@ int hashpjw ( char* s )
 }
 
 /*----------------------------------------
- * 夫□市伙卞田奶件玉仄凶末弗永玄毛忒允( TCP )
- * 娄醒
- *          port        夫□市伙禾□玄
- * 忒曰袄
- *          -1      巨仿□
- *                      1. socket扑旦  丞戊□伙及巨仿□
- *                      2. bind扑旦  丞戊□伙及巨仿□
- *                      3. listen扑旦  丞戊□伙及巨仿□
+ * 痲↓庈鳴勗泬騷璃迶媃倜藺艇蚗哱禱蒍埰( TCP )
+ * 礎倳
+ *          port        痲↓庈鳴睽↓哱
+ * 蒍堇偯
+ *          -1      操溘↓
+ *                      1. socketで筒  堜昡↓鳴摯操溘↓
+ *                      2. bindで筒  堜昡↓鳴摯操溘↓
+ *                      3. listenで筒  堜昡↓鳴摯操溘↓
  ----------------------------------------*/
 int bindlocalhost( int port )
 {
-    struct sockaddr_in sin;         /*夫□市伙失玉伊旦迕*/
-    int sfd;                        /*末弗永玄犯奴旦弁伉皿正*/
-    int rc;                         /*夫□市伙伉正□件戊□玉*/
+    struct sockaddr_in sin;         /*痲↓庈鳴囮迶畛筒暵*/
+    int sfd;                        /*藺艇蚗哱溢贖筒袲惉鏤淏*/
+    int rc;                         /*痲↓庈鳴惉淏↓璃昡↓迶*/
 
-    /*AF_INET皿夫玄戊伙 及 SOCK_STREAM */
+    /*AF_INET鏤痲哱昡鳴 摯 SOCK_STREAM */
     sfd = socket( AF_INET, SOCK_STREAM, 0 );
     if( sfd == -1 ){
         print( "%s\n" , strerror(errno ) );
@@ -1186,12 +1186,12 @@ int bindlocalhost( int port )
     
     if( getReuseaddr() ) {
 		int sendbuff;
-	    /* 夫□市伙失玉伊旦及疯厍迕 */
+	    /* 痲↓庈鳴囮迶畛筒摯瑁媋暵 */
 		setsockopt( sfd, SOL_SOCKET, SO_REUSEADDR, 
 						(char *)&sendbuff, sizeof( sendbuff));
 	}
 	
-    /*0弁伉失仄化袄毛医  */
+    /*0袲惉囮媃趙偯禱瓟  */
     memset( &sin ,0, sizeof( struct sockaddr_in ) );
     sin.sin_family=AF_INET;
     sin.sin_port = htons( port );
@@ -1215,35 +1215,35 @@ int bindlocalhost( int port )
 
 
 /*----------------------------------------
- * 戊生弁玄允月［( TCP )
- * 娄醒
- *      hostname    涛粮允月石旦玄  
- *                      (xx.xxx.xxx.xxx匹手中中仄xxx.co.jp午井匹手中中)
- *      port        涛粮允月石旦玄及禾□玄  
- * 忒曰袄
- *      犯奴旦弁伉皿正( -1 及凛反巨仿□ )
+ * 昡汜袲哱埰堎��( TCP )
+ * 礎倳
+ *      hostname    旽襄埰堎坒筒哱  
+ *                      (xx.xxx.xxx.xxxぁ忒笢笢媃xxx.co.jp敁凝ぁ忒笢笢)
+ *      port        旽襄埰堎坒筒哱摯睽↓哱  
+ * 蒍堇偯
+ *      溢贖筒袲惉鏤淏( -1 摯鄹毀操溘↓ )
  ----------------------------------------*/
 int connectHost( char* hostname , unsigned short port )
 {
-    struct sockaddr_in sock;        /*connect及凛卞银丹*/
-    struct hostent* hoste;          /*hostname及hostent*/
-    int     fd;                     /*戊生弁玄仄凶末弗永玄犯奴旦弁伉皿正*/
-    int     lr;                     /*夫□市伙伉正□件戊□玉*/
+    struct sockaddr_in sock;        /*connect摯鄹勗窅竣*/
+    struct hostent* hoste;          /*hostname摯hostent*/
+    int     fd;                     /*昡汜袲哱媃倜藺艇蚗哱溢贖筒袲惉鏤淏*/
+    int     lr;                     /*痲↓庈鳴惉淏↓璃昡↓迶*/
 
     memset( &sock ,  0 , sizeof( struct sockaddr_in ) );
     sock.sin_family = AF_INET;
     sock.sin_port = htons( port );
 
-    /* dot notation 井升丹井毛譬屯月 */
+    /* dot notation 凝汔竣凝禱ぅ迋堎 */
     sock.sin_addr.s_addr = inet_addr( hostname );
     if( sock.sin_addr.s_addr == -1 ){
         /*
-         *巨仿□ dot notation 匹反卅中［仄凶互匀化  骚及  蟆荸瑁互  邰分［
-         * dns毛夫井卅仃木壬卅日卅中凛反夫五卞中仁及手仇仇匹支匀化仁木月［
+         *操溘↓ dot notation ぁ毀埵笢�訹ぬ袘疋�趙  玊摯  鞳搣鋆誑  菺煦��
+         * dns禱痲凝埵崹躂�屻牟欷聿釓揧晰藬撅樛倞宎動硈薱蟜皮忍�趙�岉戰瞿�
          */
         hoste = gethostbyname( hostname );
         if( hoste == NULL ){
-            print( "获取主机名: %s\n", hostname);
+            print( "鳳�＞鷋�靡: %s\n", hostname);
             return -1;
         }
 
@@ -1251,14 +1251,14 @@ int connectHost( char* hostname , unsigned short port )
                hoste->h_addr , sizeof(struct in_addr) );
     }
 
-    /*末弗永玄毛综月*/
+    /*藺艇蚗哱禱軘堎*/
     fd = socket( AF_INET, SOCK_STREAM , 0 );
     if( fd == -1 ){
         print("Cannot Create Socket(%s errno:%d)\n"
               ,strerror( errno ) ,errno );
         return -1;
     }
-    /*戊生弁玄允月*/
+    /*昡汜袲哱埰堎*/
     lr = connect(fd,(struct sockaddr*)&sock,sizeof(struct sockaddr_in));
     if( lr != 0 ){
         print("Cannot connect. (%s errno:%d)\n"
@@ -1271,16 +1271,16 @@ int connectHost( char* hostname , unsigned short port )
 
 
 /*----------------------------------------
- * 田永白央及  卞荼垫筏寞互丐月井升丹井［
- * 剂仄镀中失伙打伉术丞卞  凳［
- * 娄醒
- *  char*   譬屯月  侬  
- * 忒曰袄
- *    赓卞苇勾井凶荼垫筏寞及匏       失弁本旦仄凶凛卞中中袄［
- *  升丹中丹仪井午中丹午｝
+ * 泬蚗啞栝摯  勗搊菜楔蠕誑堣堎凝汔竣凝��
+ * 撙媃傲笢囮鳴湖惉扲堜勗  脾��
+ * 礎倳
+ *  char*   ぅ迋堎  棬  
+ * 蒍堇偯
+ *    疐勗峟僑凝倜搊菜楔蠕摯痾       囮袲掛筒媃倜鄹勗笢笢偯��
+ *  汔竣笢竣痀凝敁笢竣敁��
  *      existsNewLinwCharacter( "aho\nhoge\n" )
- *  分午｝忒曰袄反 3 卞卅月［仇木卞镗啦允月仪［
- *  -1      卅井匀凶
+ *  煦敁��蒍堇偯毀 3 勗埵堎�蛦蟤勳樖衈紳彸觴ラ�
+ *  -1      埵凝埱倜
  *
  ----------------------------------------*/
 int existsNewLineCharacter( char* line )
@@ -1291,8 +1291,8 @@ int existsNewLineCharacter( char* line )
         if( *line == NEWLINE)return line-old;
     }while( *(line++) );
 #else
-    int i;                          /*伙□皿  醒*/
-    int length = strlen( line );    /*譬屯月  侬  及赢今*/
+    int i;                          /*鳴↓鏤  倳*/
+    int length = strlen( line );    /*ぅ迋堎  棬  摯荇踏*/
     for( i = 0 ; i < length ; i ++ ){
         if( line[i] == NEWLINE )
             return i;
@@ -1305,23 +1305,23 @@ int existsNewLineCharacter( char* line )
 
 
 /*----------------------------------------
- *    侬    卞  侬互  歹木月桦赭毛井尹允［窒    井毛瑁户木月［
- *  nindex( string , c , 1 ) 午 index( string , c ) 反 equivalent 匹丐月［
- *  number互  引凶反0及凛反忒曰袄反｝string午  元匹丐月［
+ *    棬    勗  棬誑  渦躂堎鳹鐎禱凝窇埰�詎�    凝禱鋆誧躂堎��
+ *  nindex( string , c , 1 ) 敁 index( string , c ) 毀 equivalent ぁ堣堎��
+ *  number誑  竘倜毀0摯鄹毀蒍堇偯毀��string敁  啋ぁ堣堎��
  *
- *  娄醒
- *      string  char*   譬屯月  侬  
- *      c       int     譬屯月  侬
- *      number  int       歹月  寞
- *  忒曰袄
- *      域谯仄凶  侬及禾奶件正□
- *      NULL    心勾井日卅井匀凶［
+ *  礎倳
+ *      string  char*   ぅ迋堎  棬  
+ *      c       int     ぅ迋堎  棬
+ *      number  int       渦堎  蠕
+ *  蒍堇偯
+ *      郖窙媃倜  棬摯睽騷璃淏↓
+ *      NULL    陑僑凝�欷汙朗�倜��
  ----------------------------------------*/
 char* nindex( char* string, int c , int number )
 {
-    int i;                          /*伙□皿  醒*/
+    int i;                          /*鳴↓鏤  倳*/
     int num=0;
-    int length = strlen( string );  /*譬屯月  侬  及赢今*/
+    int length = strlen( string );  /*ぅ迋堎  棬  摯荇踏*/
     if( number <= 0 )return string;
     for( i = 0 ; i < length ; i ++ ){
         if( string[i] == c )num++;
@@ -1352,7 +1352,7 @@ BOOL rrd( char* dirname , STRING64* buf ,int bufsize, int* index)
                 break;
         }
 
-        /*  . 匹铵引月白央奶伙反  引卅中    */
+        /*  . ぁ鴽竘堎啞栝騷鳴毀  竘埵笢    */
         if(  dent->d_name[0] == '.' )continue;
 
         snprintf(dirn, sizeof(dirn), "%s/%s" , dirname,dent->d_name );
@@ -1477,11 +1477,11 @@ void easyGetTokenFromString( char *src,int count,char*output,int len )
 }
 
 /*------------------------------------------------------------
- * 瞬滇匹  坌鳔毛手午户月［ by ringo
- * 蔷及啖  迕
+ * 侘菲ぁ  覕鬻禱忒敁誧堎�� by ringo
+ * Ц摯遉  暵
  *
- * double val1 , val2 : 仇及袄及丐中分毛午月
- * double d :   坌  
+ * double val1 , val2 : 喫摯偯摯堣笢煦禱敁堎
+ * double d :   覕  
  *
  *
  *  -d<0----- val1 ---0<d<1------- val2 ------d>1----
@@ -1495,12 +1495,12 @@ float  linearDiv( float val1 , float val2 , float d )
 
 
 /*------------------------------------------------------------
- *   侬  及卅井井日  啦卅  侬毛len  侬午曰分仄化仿件母丞卅
- *   侬  毛勾仁月［NPC及仿件母丞由旦伐□玉戏岳卞勾井匀化月
+ *   棬  摯埵凝凝��  徽埵  棬禱len  棬敁堇煦媃趙溘璃譫堜埵
+ *   棬  禱僑�彸瞿腇PC摯溘璃譫堜蚕筒極↓迶牁埬勗僑凝埱趙堎
  *
- * char *cand : 仇仇井日蓟少［跳  及  侬［
- * char *out : 请  田永白央
- * int len : 请  及赢今
+ * char *cand : 喫喫凝�梩銅晻袽�  摯  棬��
+ * char *out : ③  泬蚗啞栝
+ * int len : ③  摯荇踏
  ------------------------------------------------------------*/
 void makeRandomString( char *cand , char *out , int len )
 {
@@ -1515,16 +1515,16 @@ void makeRandomString( char *cand , char *out , int len )
 
 
 /*------------------------------------------------------------
- * 娄醒卞隙烂今木凶白央奶伙互白央奶伙井升丹毛譬屯月
- * 娄醒
- *  filename        char*        白央奶伙  
- * 忒曰袄
- *  白央奶伙        TRUE(1)
- *  白央奶伙匹卅中  FALSE(0)
+ * 礎倳勗炩擭踏躂倜啞栝騷鳴誑啞栝騷鳴凝汔竣禱ぅ迋堎
+ * 礎倳
+ *  filename        char*        啞栝騷鳴  
+ * 蒍堇偯
+ *  啞栝騷鳴        TRUE(1)
+ *  啞栝騷鳴ぁ埵笢  FALSE(0)
  ------------------------------------------------------------*/
 BOOL isExistFile( char* filename )
 {
-    /*  fopen 匹譬屯月  */
+    /*  fopen ぁぅ迋堎  */
     FILE*   fp;
     fp = fopen( filename, "w" );
     if( fp ){
@@ -1534,14 +1534,14 @@ BOOL isExistFile( char* filename )
         return FALSE;
 }
 /*------------------------------------------------------------
- * 10褡  62褡  晶
- * 娄醒
- * a        int     葭及ㄠㄟ褡
- * out      char *  伞  田永白央□
- * outlen   int     伞  田永白央及  五今
- *   曰袄
- *          岳      out及失玉伊旦
- *          撩      NULL
+ * 10鵌  62鵌  儒
+ * 礎倳
+ * a        int     楁摯兒兔鵌
+ * out      char *  氶  泬蚗啞栝↓
+ * outlen   int     氶  泬蚗啞栝摯  拻踏
+ *   堇偯
+ *          埬      out摯囮迶畛筒
+ *          謄      NULL
  ------------------------------------------------------------*/
 char *cnv10to62( int a, char *out, int outlen )
 {
@@ -1594,7 +1594,7 @@ char *cnv10to62( int a, char *out, int outlen )
 	*(out+j) = '\0';
     return( out);
 #else
-/* 衙中   */
+/* 捙笢   */
 #define     CNV_NUMBER  62
 	int		i, j;
     char    base[] = { "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
@@ -1623,15 +1623,15 @@ char *cnv10to62( int a, char *out, int outlen )
 #endif
 }
 /* 
- * 芨尹日木凶    及  匹］醒袄互褐  仄化中月井譬屯月楮醒
- * -1 反覆擂陆午中丹  卅楮醒
+ * 僄窇�桫憶�    摯  ぁ�楅扆擊朮�  媃趙笢堎凝ぅ迋堎匴倳
+ * -1 毀葡濯翻敁笢竣  埵匴倳
  *
- * 娄醒
- * src		*int		譬屯月葭及    
- * srclen	int			src 及  五今
+ * 礎倳
+ * src		*int		ぅ迋堎楁摯    
+ * srclen	int			src 摯  拻踏
  *
- *   曰袄   褐  丐曰	TRUE
- *				卅仄	FALSE
+ *   堇偯   福  堣堇	TRUE
+ *				埵媃	FALSE
  */
 BOOL checkRedundancy( int *src, int srclen)
 {
@@ -1666,7 +1666,7 @@ shuffle_ints( int num, int *a, int t )
 }
 
 
-static unsigned char BitTable[] =	/*	申永玄及岈太赐毛菅卞允月  □皮伙	*/
+static unsigned char BitTable[] =	/*	扠蚗哱摯嶈怮棹禱楪勗埰堎  ↓々鳴	*/
 {
 		0x00 , 0x80 , 0x40 , 0xC0 , 0x20 , 0xA0 , 0x60 , 0xE0 , 
 		0x10 , 0x90 , 0x50 , 0xD0 , 0x30 , 0xB0 , 0x70 , 0xF0 , 
@@ -1701,7 +1701,7 @@ static unsigned char BitTable[] =	/*	申永玄及岈太赐毛菅卞允月  □�
 		0x0F , 0x8F , 0x4F , 0xCF , 0x2F , 0xAF , 0x6F , 0xEF , 
 		0x1F , 0x9F , 0x5F , 0xDF , 0x3F , 0xBF , 0x7F , 0xFF
 };
-static unsigned short crctab16[] =	/*	crc｛及煌遥  □皮伙		*/
+static unsigned short crctab16[] =	/*	crc��摯銓猀  ↓々鳴		*/
 {
 		0x0000,  0x1021,  0x2042,  0x3063,  0x4084,  0x50a5,  0x60c6,  0x70e7,
 		0x8108,  0x9129,  0xa14a,  0xb16b,  0xc18c,  0xd1ad,  0xe1ce,  0xf1ef,

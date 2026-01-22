@@ -15,14 +15,14 @@ void NPC_PrintpassmanTalked( int meindex , int talkerindex , char *msg ,int colo
 #if 0
 typedef struct roomadmin_tag
 {
-    int index;              /*   盒及index */
+    int index;              /*   碟摯index */
     
-    char doorname[256];     /* 公及  盒及玉失及  蟆 */
+    char doorname[256];     /* 鼠摯  碟摯迶囮摯  鞳 */
     char explanation[256];  /*      */
-    char passwd[256];       /* 由旦伐□玉 */
-    int expire_time_mod;    /* 匏锹 */
-    time_t expire_time;     /* 渝蜃濠木及凛棉 */
-    int least_cost;         /*   斓嗯喊 */
+    char passwd[256];       /* 蚕筒極↓迶 */
+    int expire_time_mod;    /* 痾Ъ */
+    time_t expire_time;     /* 趵藦憍躂摯鄹蹬 */
+    int least_cost;         /*   黖鉣滌 */
     
 }NPC_ROOMINFO;
 #endif
@@ -35,11 +35,11 @@ typedef struct npc_roomadminnew_tag {
 }NPC_ROOMINFO;
 
 typedef struct npc_roomadminnew_ranking_tag {
-	int		gold;				/*   诳嗯喊 */
-	int		biddate;			/*   诳凛棉 */
-	char	cdkey[CDKEYLEN];	/*   午仄凶谛及    平□ */
-	char	charaname[32];		/*   午仄凶谛及  蟆 */
-	char	owntitle[32];		/* 惫寞*/
+	int		gold;				/*   睊鉣滌 */
+	int		biddate;			/*   睊鄹蹬 */
+	char	cdkey[CDKEYLEN];	/*   敁媃倜硞摯    す↓ */
+	char	charaname[32];		/*   敁媃倜硞摯  鞳 */
+	char	owntitle[32];		/* 措蠕*/
 	
 }NPC_RANKING_INFO;
 

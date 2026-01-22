@@ -36,7 +36,7 @@ static int makeSaveCharString( char *out , int outlen ,
 static int findBlankCharIndex( char *id  );
 
 static int unlinkCharFile( char *id , int num );
-#ifdef _SLEEP_CHAR // 取得非活跃人物档名
+#ifdef _SLEEP_CHAR // �△繩У鍘寰冼齔腕�
 static void makeSleepCharFileName( char *id,char *output, int outlen, int num);
 static void makeSleepCharPoolItemFileName( char *id,char *output, int outlen);
 #endif
@@ -68,16 +68,16 @@ struct MissionTable missiontable[MAXMISSIONTABLE];
 /*
 
 	
-		仇及白央奶伙匹烂聒今木化中月楮醒反兮氏少  据毛勾井丹［
+		喫摯啞栝騷鳴ぁ擭壛踏躂趙笢堎匴倳毀殽庌屾  擂禱僑凝竣��
 		
 			
 				char *c0 : ID
-				char *c1 : Passwd  手丹  据允氏匹月井日银歹卅中
+				char *c1 : Passwd  忒竣  擂埰庌ぁ堎凝�梑矕灅聿�
 				char *c2 : Charname
 				char *c3 : opt
 				Spock fixed, opt change to process
 				char *c3 : process
-				char *c4 : 勾井歹氏
+				char *c4 : 僑凝渦庌
 				int i0 : lock  
 				int i1 : mesgid 
 */
@@ -120,21 +120,21 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 #endif
 		
 		
-#ifdef _FIX_MESSAGE             // WON ADD 修改WORKER封包内容
-		// 同一星系重覆登入送 game end
+#ifdef _FIX_MESSAGE             // WON ADD 党蜊WORKER猾婦囀��
+		// 肮珨陎炵笭葡腎�輵� game end
 		if( auth == 204 ){
 #ifdef _WAEI_KICK		
-			log("\n (%s) AP同一星系重覆登入，踢人!! ", id );
-			saacproto_ACKick_recv( ti, id, 7, -1);	//踢人
+			log("\n (%s) AP肮珨陎炵笭葡腎�諴疫菙�!! ", id );
+			saacproto_ACKick_recv( ti, id, 7, -1);	//杺��
 #ifdef _UNLOCKPOOL
-			addUnlockPool( ti, id, "", process, ""); // AP解锁
+			addUnlockPool( ti, id, "", process, ""); // AP賤坶
 #else
 			addWorkerTask( id , "dummy" , "3" , dummyCallback , ti ,
 				id , "dummy" , charname , process ,"", mesgid , 0 );
 #endif
 #endif
 		}else 
-			log("\n  (%s) 登入异常!!:%d ", id, auth );
+			log("\n  (%s) 腎�遻麭�!!:%d ", id, auth );
 #endif
 		
 		return;
@@ -152,9 +152,9 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 #else
 			saacproto_ACCharLoad_send( ti , FAILED , "locked" , mesgid );
 #endif
-			//DeleteMemLock(getHash(id) & 0xff, id, &process); // 如果AP无锁则AC解锁
-			log("\n (%s) AC同一星系重覆登入，踢人!! ", id );
-			saacproto_ACKick_recv( ti, id, 7, -1);	//踢人
+			//DeleteMemLock(getHash(id) & 0xff, id, &process); // �蝜�AP拸坶寀AC賤坶
+			log("\n (%s) AC肮珨陎炵笭葡腎�諴疫菙�!! ", id );
+			saacproto_ACKick_recv( ti, id, 7, -1);	//杺��
 			
 			//		checkGSUCheck( id);
 			return;
@@ -171,7 +171,7 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 		
     charindex = getCharIndexByName( id , charname );
 #ifdef _NewSave
-    //log("\n档案装载序号:%d 账号:%s 名字:%s\n", charindex, id, charname);
+    //log("\n紫偶蚾婥唗瘍:%d 梖瘍:%s 靡趼:%s\n", charindex, id, charname);
 #endif
 
 #ifdef _SQL_BACKGROUND
@@ -179,7 +179,7 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 #endif
 		
     if( charindex < 0 ){
-			/* 平乓仿互绣箕仄卅中及匹巨仿□卅及分 */
+			/* す籤溘誑凎凜媃埵笢摯ぁ操溘↓埵摯煦 */
 #ifdef _NewSave
 			saacproto_ACCharLoad_send( ti , FAILED ,
 				"char nonexistent" , mesgid , charindex );
@@ -251,10 +251,10 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 		makeStringFromEscaped( infobuf );
     
 		
-#ifdef _BAD_PLAYER            // WON ADD 送坏玩家去关
+#ifdef _BAD_PLAYER            // WON ADD 冞輓俙模�旦�
 		{
 			extern int MAX_BAD_PLAYER;
-			extern char BadPlayerList[500][20];			// 定义最大 500 名
+			extern char BadPlayerList[500][20];			// 隅砱郔湮 500 靡
 			int i;
 			
 			for( i=0; i<=MAX_BAD_PLAYER; i++){	
@@ -276,7 +276,7 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 #endif
 		
 #ifdef _WAEI_KICK
-		saacproto_ACKick_recv( ti, id, 10, -1);	//踢其他星系
+		saacproto_ACKick_recv( ti, id, 10, -1);	//杺む坻陎炵
 #endif
 		
 		
@@ -357,7 +357,7 @@ int charSave( int ti ,  char *id ,
 		}
 	}
 	
-	log( "账号:[%s] 人物:[%s]\n", id, charname );
+	log( "梖瘍:[%s] �冼�:[%s]\n", id, charname );
 	if( saveCharOne( id , charindex , savebuf ) < 0 ){
 		log("\n ACCharSave:disk I/O error or a bug  ");
 		saacproto_ACCharSave_send( ti , FAILED , "disk I/O error or a bug", mesgid );
@@ -386,7 +386,7 @@ void  charListCallback( int ti , int auth , char *c0 , char *c1 ,
 	char *id = c0;
 	int mesgid = i0;
 	
-	//log(" 档案列表回溯:%s:%d \n", id, auth);
+	//log(" 紫偶蹈桶隙咁:%s:%d \n", id, auth);
 	
 	if( auth != 0 ){
 		char data[100];
@@ -401,13 +401,13 @@ if (!sasql_query(c0,c1)){
 		if(!sasql_register(c0,c1))
 #endif
 			{
-	    log("密码错误或没有注册\n");
+	    log("躇鎢渣昫麼羶衄蛁聊\n");
 	    saacproto_ACCharList_send( ti , FAILED , "Password error" , mesgid);
 	    return;}}
 
 
-	// 取消下列 unlock 动作
-#ifndef _FIX_MESSAGE             // WON ADD 修改WORKER封包内容
+	// �＋�狟蹈 unlock 雄釬
+#ifndef _FIX_MESSAGE             // WON ADD 党蜊WORKER猾婦囀��
 #ifdef _DELAY_UNLOCK
 	if( UNlockM_isBe( id ) ){
 		saacproto_ACCharList_send( ti , FAILED , "locked" , mesgid );
@@ -431,13 +431,13 @@ if (!sasql_query(c0,c1)){
 		}
 #else
 		
-#ifdef _SLEEP_CHAR // 如果无新档, 将旧档移至新档
+#ifdef _SLEEP_CHAR // �蝜�拸陔紫, 蔚導紫痄祫陔紫
 		{
 			char fn_old[256], fn_new[256];
 			FILE *fp_old, *fp_new;
 			int i;
 			
-			// 移人物档
+			// 痄�冼齔�
 			for( i=0; i<MAXCHAR_PER_USER; i++) {
 				makeCharFileName( id, fn_new, sizeof(fn_new), i);
 				fp_new = fopen( fn_new, "r");
@@ -446,9 +446,9 @@ if (!sasql_query(c0,c1)){
 					fp_old = fopen( fn_old, "r");
 					if( fp_old != NULL ) {
 						fclose( fp_old);
-						rename( fn_old, fn_new); // 搬移
-						//filecopy( fn_old, fn_new); // 复制
-						log(" 移档_%s ", fn_new);
+						rename( fn_old, fn_new); // 唸痄
+						//filecopy( fn_old, fn_new); // 葩秶
+						log(" 痄紫_%s ", fn_new);
 					}
 				}
 				else {
@@ -456,7 +456,7 @@ if (!sasql_query(c0,c1)){
 				}
 			}
 			
-			// 移仓库档
+			// 痄累踱紫
 			makeCharPoolItemFileName( id, fn_new, sizeof(fn_new));
 			fp_new = fopen( fn_new, "r");
 			if( fp_new == NULL ) {
@@ -464,9 +464,9 @@ if (!sasql_query(c0,c1)){
 				fp_old = fopen( fn_old, "r");
 				if( fp_old != NULL ) {
 					fclose( fp_old);
-					rename( fn_old, fn_new); // 搬移
-					//filecopy( fn_old, fn_new); // 复制
-					log(" 移档_%s ", fn_new);
+					rename( fn_old, fn_new); // 唸痄
+					//filecopy( fn_old, fn_new); // 葩秶
+					log(" 痄紫_%s ", fn_new);
 				}
 			}
 			else {
@@ -476,14 +476,14 @@ if (!sasql_query(c0,c1)){
 		}
 #endif
 		
-#ifdef _DEATH_FAMILY_LOGIN_CHECK//无法读取人物资料
+#ifdef _DEATH_FAMILY_LOGIN_CHECK//拸楊黍�﹍冼擼岏�
 		if( loadCharNameAndOption( id , listbuf,sizeof(listbuf)) == 0 ){
 			saacproto_ACCharList_send( ti , FAILED , "locked" , mesgid );
 			return;
 		}
 #endif
 		
-#ifdef _DEATH_CONTEND //无法读取人物资料
+#ifdef _DEATH_CONTEND //拸楊黍�﹍冼擼岏�
 		if( loadCharNameAndOption( id , listbuf,sizeof(listbuf)) == 0 ){
 			saacproto_ACCharList_send( ti , FAILED , "locked" , mesgid );
 			return;
@@ -594,7 +594,7 @@ static void getCharNameFromString(char*str ,char *out )
 	for(c=0;;c++){
 		if( IS_2BYTEWORD( str[c] ) ){
 			out[c] = str[c];
-			c ++ ;	// 戚及  侬尺
+			c ++ ;	// べ摯  棬喜
 			out[c] = str[c];
 			continue;
 		}
@@ -618,7 +618,7 @@ static void getCharOptionFromString( char *str , char *out )
 		if( str[c]=='\0')break;
 		if( IS_2BYTEWORD( str[c] ) ){
 			c++;
-			if( str[c] == '\0' )break;	// 公及  侬互允匹卞NULL卅日蔽  
+			if( str[c] == '\0' )break;	// 鼠摯  棬誑埰ぁ勗NULL埵�梇�  
 			continue;
 		}
 		
@@ -626,23 +626,23 @@ static void getCharOptionFromString( char *str , char *out )
 			c++;
 			for(;;c++){
 				
-				if( str[c] == '\0' ){	// 蔽  分匀凶日 NULL   木化蔽歹月
+				if( str[c] == '\0' ){	// 敖  煦埱倜�� NULL   躂趙敖渦堎
 					out[outc] = '\0';
 					break;	
 				}
 				
-				// 仇仇手ㄡ田奶玄  侬及ㄠ田奶玄  卅日手丹域田奶玄戊疋□允月
+				// 喫喫忒兕泬騷哱  棬摯兒泬騷哱  埵�梛硉太藚巀昐�昡鼀↓埰堎
 				//----   For 2Byte Code ----
 				if( IS_2BYTEWORD( str[c] ) ){
-					out[outc++] = str[c++];		// ㄠ田奶玄  戊疋□
-					out[outc++] = str[c];		// ㄡ田奶玄  戊疋□
-					if( str[c] == '\0' )break;	// 公及  侬互允匹卞NULL卅日蔽  
+					out[outc++] = str[c++];		// 兒泬騷哱  昡鼀↓
+					out[outc++] = str[c];		// 兕泬騷哱  昡鼀↓
+					if( str[c] == '\0' )break;	// 鼠摯  棬誑埰ぁ勗NULL埵�梇�  
 					continue;
 				}
 				
-				// 骚橘  侬反ㄠ田奶玄戊疋□
-				out[outc] = str[c];			// 引内戊疋□
-				if( str[c] == '\0' )break;	// 蔽  分匀凶日蔽歹月
+				// 玊橖  棬毀兒泬騷哱昡鼀↓
+				out[outc] = str[c];			// 竘囀昡鼀↓
+				if( str[c] == '\0' )break;	// 敖  煦埱倜�梇帤灄�
 				
 				if( str[c] == SPACE ){
 					out[outc] = '\0';
@@ -705,7 +705,7 @@ static void makeCharFileName( char *id,char *output, int outlen, int num)
 	makeDirFilename(output , outlen, chardir , getHash(id) ,body);
 }
 
-#ifdef _SLEEP_CHAR // 取得非活跃人物档名
+#ifdef _SLEEP_CHAR // �△繩У鍘寰冼齔腕�
 static void makeSleepCharFileName( char *id,char *output, int outlen, int num)
 {
 	char body[1024];
@@ -840,7 +840,7 @@ int saveCharOne( char *id , int num , char *input )
 	char fn[1024];
 	FILE *fp;
 	char *strp;
-	char *strp1;     // Won 修正 hp 为负的人
+	char *strp1;     // Won 党淏 hp 峈蛹腔��
 	
 	makeCharFileName( id , fn , sizeof(fn),num );
 	fp= fopen( fn , "w" );
@@ -849,7 +849,7 @@ int saveCharOne( char *id , int num , char *input )
 		return -1;
 	}
 	
-	// Won 修正 hp 为负的人
+	// Won 党淏 hp 峈蛹腔��
 	if ((strp=strstr(input,"\\nhp=-"))!=NULL) {
 		strp1=strstr(input,"\\nmp="); 
 		*(strp+5)='1';
@@ -862,7 +862,7 @@ int saveCharOne( char *id , int num , char *input )
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-#if 0 //_SLEEP_CHAR // 旧档也存
+#if 0 //_SLEEP_CHAR // 導紫珩湔
 	{
 		char fn1[1024], fn2[1024];
 		makeSleepCharFileName( id , fn1 , sizeof(fn1),num );
@@ -872,7 +872,7 @@ int saveCharOne( char *id , int num , char *input )
 			fclose(fp);
 		}
 		
-		// 复制新仓库档到旧档
+		// 葩秶陔累踱紫善導紫
 		makeCharPoolItemFileName( id, fn1, sizeof(fn));
 		makeSleepCharPoolItemFileName( id, fn2, sizeof(fn));
 		filecopy( fn1, fn2);
@@ -882,7 +882,7 @@ int saveCharOne( char *id , int num , char *input )
 	sasql_update(id,fn);
 	sasql_online(id,NULL);
 #endif
-	log( "写入 %s 档案文件:%s\n",id , fn );
+	log( "迡�� %s 紫偶恅璃:%s\n",id , fn );
 	return 0;
 	
 }
@@ -897,7 +897,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	char *nmwork_p , *optwork_p , *infowork_p;
 	int l;
 	
-	/* 戊疋□仄化 */
+	/* 昡鼀↓媃趙 */
 	
 	strncpy( nmwork , nm , sizeof( nmwork ));
 	nmwork[strlen( nm)]=0;
@@ -908,7 +908,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	strncpy( infowork , info , sizeof( infowork ));
 	infowork[strlen(info)]=0;
 	
-	/* 巨旦弗□皿仄 */
+	/* 操筒艇↓鏤媃 */
 	/*    if ( esc ) {
 	nmwork_p = makeEscapeString1( nm , nmwork ,sizeof( nmwork ));
 	optwork_p = makeEscapeString1( opt , optwork , sizeof( optwork ));
@@ -943,7 +943,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	}
 #endif
 	//    }
-	/* 勾卅仆月［赞中互巨仿□腹请及凶户卞域荚伐□弁卞中木月［ */
+	/* 僑埵ど堎�觚皵郅札瑀癒鼰嘎趧匾袘妤槿羆埸央爚舠樛陑戰瞿� */
 	snprintf( outwork ,sizeof( outwork ) ,
 		"%s" SPACESTRING "%s" SPACESTRING "%s" ,
 		nmwork_p , optwork_p , infowork_p );
@@ -953,7 +953,7 @@ static int makeSaveCharString( char *out , int outlen ,
 		return -1;
 	}
 	
-	/* NULL   侬互    卞丐月井日0毛中木氏午中井氏及分［ */
+	/* NULL   棬誑    勗堣堎凝��0禱笢躂庌敁笢凝庌摯煦�� */
 	memcpy( out , outwork , l + 1);
 	
 	return 0;
@@ -965,14 +965,14 @@ int getCharIndexByName( char *id , char *charname )
 	for(i=0;i<MAXCHAR_PER_USER;i++){
 		char output[CHARDATASIZE];
 		if( loadCharOne( id , i , output , sizeof( output )) < 0 ){
-			/* 丐中化中月″ */
+			/* 堣笢趙笢堎∪ */
 			continue;
 		} else {
-			/* 平乓仿互绣箕仄凶 */
+			/* す籤溘誑凎凜媃倜 */
 			char cn[CHARDATASIZE];
 			getCharNameFromString( output , cn );
 			
-			/* Escape毛荸仁 */
+			/* Escape禱搣�� */
 			if( strcmp( charname , makeStringFromEscaped(cn) ) == 0 ){
 				return i;
 			}else{
@@ -984,13 +984,13 @@ int getCharIndexByName( char *id , char *charname )
 
 /*
 
-  平乓仿及丐中化中月旦夫永玄毛腹绸允月
+  す籤溘摯堣笢趙笢堎筒痲蚗哱禱號喙埰堎
 	
-		  卅日丐中化中卅中［0动晓卅日丐五旦夫永玄及index.
+		  埵�欷少郅胱倠聿苺�0雄窀埵�欷及撋弧藣檗�摯index.
 		
 			
-				签卞夫□玉匹五卅井匀凶日公木毛井尹允分仃［
-				手匀午切扎氏午匹五月支欠仃升手［
+				ワ勗痲↓迶ぁ拻埵凝埱倜�桯孩壅姥朔�埰煦崹��
+				忒埱敁з崨庌敁ぁ拻堎盓Й崹汔忒��
 				
 */
 static int findBlankCharIndex( char *id  )
@@ -1008,7 +1008,7 @@ static int findBlankCharIndex( char *id  )
 static int unlinkCharFile( char *id , int num )
 {
 	char fname[1024];
-#ifdef _SLEEP_CHAR //删除人物时旧档也删
+#ifdef _SLEEP_CHAR //刉壺�冼懮掛伂菸粒�
 	makeSleepCharFileName( id, fname, sizeof(fname),num );
 	unlink( fname );
 #endif
@@ -1044,7 +1044,7 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 		if (isLocked(id)) {
 			snprintf( result , resultlen, FAILED );
 			snprintf( retdata , retdatalen, "already locked" );
-			log( "写入内存信息: 用户:%x/%s 已经同意锁定 !!\n", getHash(id), id);
+			log( "迡�踽痟禛欐�: 蚚誧:%x/%s 眒冪肮砩坶隅 !!\n", getHash(id), id);
 			return -1;
 		} else {
 #ifdef _LOCK_ADD_NAME
@@ -1058,7 +1058,7 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 		}
 	} else {
 		if( !isLocked( id) ) {
-			log( "删除内存信息: 用户:%x/%s 没有锁定!!\n", getHash(id), id);
+			log( "刉壺囀湔陓洘: 蚚誧:%x/%s 羶衄坶隅!!\n", getHash(id), id);
 		}
 		if( DeleteMemLock( getHash(id) & 0xff, id, &ret) ) {
 			snprintf( result , resultlen, SUCCESSFUL );
@@ -1066,9 +1066,9 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 			return ret;
 		} else {
 			snprintf( result , resultlen, FAILED );
-			snprintf( retdata , retdatalen, "不能移除锁定" );
+			snprintf( retdata , retdatalen, "祥夔痄壺坶隅" );
 			
-			log( "不能解锁 %x:%s !\n", getHash(id), id);
+			log( "祥夔賤坶 %x:%s !\n", getHash(id), id);
 			return ret;
 		}
 	}
@@ -1099,7 +1099,7 @@ static void makeCharPoolItemFileName( char *id,char *output, int outlen)
 	makeDirFilename(output , outlen, chardir , getHash(id) ,poolitem);
 }
 
-#ifdef _SLEEP_CHAR // 取得非活跃人物仓库档名
+#ifdef _SLEEP_CHAR // �△繩У鍘寰冼鼤祪漟腕�
 static void makeSleepCharPoolItemFileName( char *id,char *output, int outlen)
 {
 	char poolitem[256];
@@ -1151,7 +1151,7 @@ int saveCharPoolItem( char *id , char *input, int sizes)
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-	log( "写入 %s 道具档案文件:%s\n", id , fn );
+	log( "迡�� %s 耋撿紫偶恅璃:%s\n", id , fn );
 	return sizes;
 }
 
@@ -1214,7 +1214,7 @@ static void makeCharPoolPetFileName( char *id,char *output, int outlen)
 	makeDirFilename(output , outlen, chardir , getHash(id) ,poolpet);
 }
 
-#ifdef _SLEEP_CHAR // 取得非活跃人物仓库档名
+#ifdef _SLEEP_CHAR // �△繩У鍘寰冼鼤祪漟腕�
 static void makeSleepCharPoolPetFileName( char *id,char *output, int outlen)
 {
 	char poolpet[256];
@@ -1266,7 +1266,7 @@ int saveCharPoolPet( char *id , char *input, int sizes)
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-	log( "写入 %s 宠物档案文件:%s\n", id , fn );
+	log( "迡�� %s 唾昜紫偶恅璃:%s\n", id , fn );
 	return sizes;
 }
 

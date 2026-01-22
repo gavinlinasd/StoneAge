@@ -15,10 +15,10 @@
 #include "family.h"
 #include "errno.h"
 
-#define FMWARPMAN_INIT_LOOPTIME		600	// 0.1秒
-#define FMWARPMAN_FREE_LOOPTIME		9000	// 1.5秒
-#define FMWARPMAN_BUSY_LOOPTIME		3000	// 0.5秒
-#define FMWARPMAN_WAIT_LOOPTIME		18000	// 3秒
+#define FMWARPMAN_INIT_LOOPTIME		600	// 0.1鏃
+#define FMWARPMAN_FREE_LOOPTIME		9000	// 1.5鏃
+#define FMWARPMAN_BUSY_LOOPTIME		3000	// 0.5鏃
+#define FMWARPMAN_WAIT_LOOPTIME		18000	// 3鏃
 #define FMWARPMAN_CLEANPLACE		59
 //#define FMWARPMAN_CLEANPLACE		9
 #define	TRUE	1
@@ -65,7 +65,7 @@ void CHECK_FMPknumInFloor( int meindex)
 	int fmpks_pos;
 
 	fmpks_pos = CHAR_getWorkInt(meindex, NPC_WORK_ID) * MAX_SCHEDULE;
-	// Nuke 20040920: Bug fix 庄园人数满时要检查总人数
+	// Nuke 20040920: Bug fix 蚽埶�侕�雛奀猁潰脤軞�侕�
 	//print("<<%d %d>>",fmpks_pos,MAX_SCHEDULEMAN);
 	//if( fmpks_pos < 0 || fmpks_pos >= MAX_SCHEDULEMAN ) return;
 	if( fmpks_pos < 0 || fmpks_pos >= MAX_SCHEDULEMAN * MAX_SCHEDULE ) return;
@@ -139,7 +139,7 @@ BOOL NPC_FMWarpManInit( int meindex )
 		return FALSE;
 	}
 
-	/*--正奶皿涩烂--*/
+	/*--淏騷鏤优擭--*/
 	CHAR_setInt(meindex, CHAR_LOOPINTERVAL, FMWARPMAN_INIT_LOOPTIME);
    	CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEWARPMAN );
 	CHAR_setWorkInt(meindex, NPC_WORK_MODEFLAG, NPC_STATEINIT);
@@ -188,19 +188,19 @@ void NPC_FMWarpManLoop(int meindex)
 	struct tm *tm2;
 	int fmpks_pos = CHAR_getWorkInt(meindex, NPC_WORK_ID) * MAX_SCHEDULE;
 	int floor = CHAR_getWorkInt(meindex, NPC_WORK_WARPFLOOR);
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	int i;
 	int playernum = CHAR_getPlayerMaxNum();
 #endif
 	
-	// WON ADD 修正snprintf会导致当机的bug
+	// WON ADD 党淏snprintf頗絳祡絞儂腔bug
 	if( (tm2=localtime((time_t *)&NowTime.tv_sec) ) == NULL ){
 		print("\n won ==> time err !! ");
 		return;
 	}
 	memcpy(&tm1, localtime((time_t *)&NowTime.tv_sec), sizeof(tm1));
 	
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	{
 		static int next_time[5] = {10,20,30,40,50}, flag[5] = {0};
 		int now_time = time(NULL);
@@ -223,7 +223,7 @@ void NPC_FMWarpManLoop(int meindex)
 					char msg[128] = {0};
 					int pk_min = fmpks[fmpks_pos + i ].prepare_time;
 					 
-					sprintf(msg, "[%s] VS [%s] 於(%d:%d) 在场地 %d 开打", 				
+					sprintf(msg, "[%s] VS [%s] 黺(%d:%d) 婓部華 %d 羲湖", 				
 									fmpks[ fmpks_pos + i ].host_name,
 									fmpks[ fmpks_pos + i ].guest_name,
 									tm1.tm_hour + i, pk_min,  
@@ -251,16 +251,16 @@ void NPC_FMWarpManLoop(int meindex)
 	}
 	if (CHAR_getWorkInt(meindex, NPC_WORK_MODEFLAG) == NPC_STATEFREE)
 	{
-		// 取得目前系统时间，若目前时间 >= 准备时间则设定ＢＵＳＹ状态
+		// �△藥褲區腴傘掉銫畏蠙褲動掉� >= 袧掘奀潔寀扢隅�瞿掁茛椕棧�
 		
 		if (tm1.tm_min > CHAR_getWorkInt(meindex, NPC_WORK_TALKFLAG)
 			&& tm1.tm_min == 0)
 		{
-			// 通知成员进场
+			// 籵眭傖埜輛部
 			if (fmpks[fmpks_pos].flag == FMPKS_FLAG_SCHEDULED)
 				NPC_talkToFloor(CHAR_getInt(meindex, CHAR_FLOOR),
 				fmpks[fmpks_pos].host_index,
-				fmpks[fmpks_pos].guest_index, "可以准备进场了！");
+				fmpks[fmpks_pos].guest_index, "褫眕袧掘輛部賸ㄐ");
 			CHAR_setWorkInt(meindex, NPC_WORK_TALKFLAG, tm1.tm_min);
 		}
 		if ((fmpks[fmpks_pos].prepare_time > 0) && (fmpks[fmpks_pos].flag == FMPKS_FLAG_SCHEDULED))
@@ -278,7 +278,7 @@ void NPC_FMWarpManLoop(int meindex)
 			{
 				
 				NPC_talkToFloor(floor, fmpks[fmpks_pos].host_index,
-					fmpks[fmpks_pos].guest_index, "开战罗～！！");
+					fmpks[fmpks_pos].guest_index, "羲桵蹕‵ㄐㄐ");
 				CHAR_setWorkInt(meindex, NPC_WORK_MODEFLAG, NPC_STATEBUSY);
 				CHAR_setInt(meindex, CHAR_LOOPINTERVAL, FMWARPMAN_BUSY_LOOPTIME);
 				NPC_FMBATTLESET(floor, fmpks[fmpks_pos].host_index,
@@ -287,7 +287,7 @@ void NPC_FMWarpManLoop(int meindex)
 				print("\n won ==> set fmwaperman state busy !!");
 				
 				
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 				{
 					int num1 = 0, num2 = 0;
 					int winflag = 0;
@@ -302,11 +302,11 @@ void NPC_FMWarpManLoop(int meindex)
 							CHAR_getInt(meindex, CHAR_FLOOR),
 							CHAR_getInt(meindex, CHAR_X),
 							CHAR_getInt(meindex, CHAR_Y));
-						NPC_talkToFloor( floor,  -1, fmpks[fmpks_pos].guest_index, "因未满二十人而离场" );
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+						NPC_talkToFloor( floor,  -1, fmpks[fmpks_pos].guest_index, "秪帤雛媼坋�侀衋貐�" );
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 						{
 							char out[256];
-							sprintf( out, "[%s](%d) 因未满二十人弃权",  fmpks[fmpks_pos].guest_name, num2 );
+							sprintf( out, "[%s](%d) 秪帤雛媼坋�侔���",  fmpks[fmpks_pos].guest_name, num2 );
 							saacproto_FM_PK_STRUCT_send( acfd, out );
 						}
 #endif
@@ -318,11 +318,11 @@ void NPC_FMWarpManLoop(int meindex)
 							CHAR_getInt(meindex, CHAR_FLOOR),
 							CHAR_getInt(meindex, CHAR_X),
 							CHAR_getInt(meindex, CHAR_Y));
-						NPC_talkToFloor( floor,  fmpks[fmpks_pos].host_index, -1, "因未满二十人而离场" );
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+						NPC_talkToFloor( floor,  fmpks[fmpks_pos].host_index, -1, "秪帤雛媼坋�侀衋貐�" );
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 						{
 							char out[256];
-							sprintf( out, "[%s](%d) 因未满二十人弃权",  fmpks[fmpks_pos].host_name/* .host_index*/, num1 );
+							sprintf( out, "[%s](%d) 秪帤雛媼坋�侔���",  fmpks[fmpks_pos].host_name/* .host_index*/, num1 );
 							saacproto_FM_PK_STRUCT_send( acfd, out );
 						}
 #endif		
@@ -337,13 +337,13 @@ void NPC_FMWarpManLoop(int meindex)
 				CHAR_setWorkInt(meindex, NPC_WORK_TIMEFLAG, tm1.tm_min);
 				clock = ((fmpks[fmpks_pos].dueltime % 100) + fmpks[fmpks_pos].prepare_time) - tm1.tm_min;
 				if (clock >= 60)	clock = clock - 60;
-				sprintf(buf, "距离对战时间还剩下：%4d分钟", clock);
+				sprintf(buf, "擒燭勤桵奀潔遜呁狟ㄩ%4d煦笘", clock);
 				NPC_talkToFloor(floor, fmpks[fmpks_pos].host_index,
 					fmpks[fmpks_pos].guest_index, buf);
 			}
 		}
 	}else if (CHAR_getWorkInt(meindex, NPC_WORK_MODEFLAG) == NPC_STATEBUSY){
-		// 检查场内人数、判断胜负
+		// 潰脤部囀�侕�﹜瓚剿吨蛹
 		int num1 = 0, num2 = 0;
 		int winflag = 0;
 		int floor = CHAR_getWorkInt(meindex, NPC_WORK_WARPFLOOR);
@@ -360,18 +360,18 @@ void NPC_FMWarpManLoop(int meindex)
 		
 		if (meid > MANORNUM){
 			if (tm1.tm_min == FMWARPMAN_CLEANPLACE){
-				// 判断胜负、WARP离场、设定ＮＰＣ状态
+				// 瓚剿吨蛹﹜WARP燭部﹜扢隅�峉苺譙棧�
 				NPC_BattleOut(fmpks[fmpks_pos].host_index, fmpks[fmpks_pos].guest_index);
 				NPC_FMBATTLESET(floor, fmpks[fmpks_pos].host_index,
 					fmpks[fmpks_pos].guest_index, -1);
-				if (fmpks[fmpks_pos].win == 0){// 生存战
+				if (fmpks[fmpks_pos].win == 0){// 汜湔桵
 					if (num1 > num2)
 						winflag = 1;
 					else if(num1 < num2)
 						winflag = 2;
 					else
 						winflag = 3;
-				}else if (fmpks[fmpks_pos].win == 1){ // 打飞战
+				}else if (fmpks[fmpks_pos].win == 1){ // 湖滄桵
 					if ((CHAR_getWorkInt(meindex, NPC_WORK_FMNUMI) - num1) < (CHAR_getWorkInt(meindex, NPC_WORK_FMNUMII) - num2))
 						winflag = 1;
 					else if ((CHAR_getWorkInt(meindex, NPC_WORK_FMNUMI) - num1) > (CHAR_getWorkInt(meindex, NPC_WORK_FMNUMII) - num2))
@@ -392,7 +392,7 @@ void NPC_FMWarpManLoop(int meindex)
 #ifdef _MANOR_PKRULE      
 			if(meid > MANORNUM){
 #endif
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 				{
 					int i, win_index = -1, loser_index = -1;
 					char *win_name, *loser_name, msg[256] = {0}, token[256] = {0};
@@ -424,14 +424,14 @@ void NPC_FMWarpManLoop(int meindex)
 					memcpy( &tm1, localtime( (time_t *)&NowTime.tv_sec), sizeof( tm1));
 					
 					if(winflag == 1 || winflag == 2){
-						sprintf( msg, "[%s](%d)人 胜 [%s](%d)人", win_name, n1, loser_name, n2 );
-						sprintf( token, "战况播报： %s", msg );
+						sprintf( msg, "[%s](%d)�� 吨 [%s](%d)��", win_name, n1, loser_name, n2 );
+						sprintf( token, "桵錶畦惆ㄩ %s", msg );
 					}else if( winflag == 3 ){				
-						sprintf( msg, "[%s] 平手 [%s]", win_name, loser_name );
-						sprintf( token, "战况播报： %s", msg );
+						sprintf( msg, "[%s] す忒 [%s]", win_name, loser_name );
+						sprintf( token, "桵錶畦惆ㄩ %s", msg );
 					}
 					
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 					{
 						char out[256] = {0};
 						sprintf( out, "%d/%d/%d:%d %s", tm1.tm_mon+1, tm1.tm_mday, tm1.tm_hour, tm1.tm_min, msg );
@@ -453,7 +453,7 @@ void NPC_FMWarpManLoop(int meindex)
 					*/
 				}
 #else
-				// 流浪家族pk 过声望
+				// 霜檢模逜pk 徹汒咡
 				if (winflag == 1){	 		 
 					saacproto_ACFixFMPK_send(acfd,
 						fmpks[fmpks_pos].host_name,
@@ -495,7 +495,7 @@ void NPC_FMWarpManLoop(int meindex)
 							fmpks[fmpks_pos].guest_name,
 							fmpks[fmpks_pos].guest_index + 1,
 							fmpks[fmpks_pos].guest_index, meid);
-						//Syu 增加庄园战胜负Log
+						//Syu 崝樓蚽埶桵吨蛹Log
 						Logfmpk(
 							fmpks[fmpks_pos].host_name,
 							fmpks[fmpks_pos].host_index,
@@ -504,19 +504,19 @@ void NPC_FMWarpManLoop(int meindex)
 							fmpks[fmpks_pos].guest_index,
 							num2, token, "", "", 2);
 #ifdef _NEW_MANOR_LAW
-						// 原家族守住了庄园,家族成员可得到石币
+						// 埻模逜忐蛂賸蚽埶,模逜傖埜褫腕善坒啟
 						iFmIndex1 = fmpks[fmpks_pos].host_index;
 						for(i=0;i<FAMILY_MAXMEMBER;i++){
 							iCharindex = familyMemberIndex[iFmIndex1][i];
-							// 若在线上才给钱
+							// �譧硨葋炰顫醾�
 							if(iCharindex >= 0 && CHAR_getCharUse(iCharindex)){
-								// 获得金钱 = 个人气势 * 5000
+								// 鳳腕踢ヴ = 跺�侔鑫� * 5000
 								int iAddGold = ((float)CHAR_getInt(iCharindex,CHAR_MOMENTUM)/100.0f) * 5000.0f;
 								int iGold = CHAR_getInt(iCharindex,CHAR_BANKGOLD),iMaxGold;
-								// 先放入个人银行
+								// 珂溫�賳鶲刳靇�
 								if(iGold + iAddGold > CHAR_MAXBANKGOLDHAVE){
 									CHAR_setInt(iCharindex,CHAR_BANKGOLD,CHAR_MAXBANKGOLDHAVE);
-									// 个人银行放不下了,放到个人身上
+									// 跺�刳靇郱鑑銨臏�,溫善跺�侂篽�
 									iAddGold = iGold + iAddGold - CHAR_MAXBANKGOLDHAVE;
 									iGold = CHAR_getInt(iCharindex,CHAR_GOLD);
 									iMaxGold = CHAR_getMaxHaveGold(iCharindex);
@@ -534,7 +534,7 @@ void NPC_FMWarpManLoop(int meindex)
 																	CHAR_getChar(iCharindex,CHAR_NAME),
 																	CHAR_getInt(iCharindex,CHAR_MOMENTUM),iAddGold,1);
 								}
-								CHAR_talkToCli(iCharindex,-1,"辛苦了!守护住庄园的奖金已汇入你的个人银行",CHAR_COLORRED);
+								CHAR_talkToCli(iCharindex,-1,"釓賴賸!忐誘蛂蚽埶腔蔣踢眒颯�踽蒫譫鶲刳靇�",CHAR_COLORRED);
 							}
 						}
 #endif
@@ -551,7 +551,7 @@ void NPC_FMWarpManLoop(int meindex)
 							fmpks[fmpks_pos].host_name,
 							fmpks[fmpks_pos].host_index + 1,
 							fmpks[fmpks_pos].host_index, meid);
-						//Syu 增加庄园战胜负Log
+						//Syu 崝樓蚽埶桵吨蛹Log
 						Logfmpk(
 							fmpks[fmpks_pos].guest_name,
 							fmpks[fmpks_pos].guest_index,
@@ -564,20 +564,20 @@ void NPC_FMWarpManLoop(int meindex)
 					CHAR_setInt(meindex, CHAR_LOOPINTERVAL, FMWARPMAN_FREE_LOOPTIME);
 					print("FMWarpMan State:%d\n", CHAR_getWorkInt(meindex, NPC_WORK_MODEFLAG));
 #ifdef _NEW_MANOR_LAW
-					// 双方的个人及家族气势都要归零
+					// 邧源腔跺�佷側眢暲鑫げ模疚橧�
 					iFmIndex1 = fmpks[fmpks_pos].host_index;
 					iFmIndex2 = fmpks[fmpks_pos].guest_index;
 					for(i=0;i<FAMILY_MAXMEMBER;i++){
 						iCharindex = familyMemberIndex[iFmIndex1][i];
-						// 若有在线上则清除,不在线上的在登入游戏时清除
+						// �譥俶硨葋珆藱撜�,祥婓盄奻腔婓腎�邆恘滔掏撜�
 						if(iCharindex >= 0 && CHAR_getCharUse(iCharindex)){
 							CHAR_setInt(iCharindex,CHAR_MOMENTUM,0);
-							CHAR_talkToCli(iCharindex,-1,"庄园战後个人及家族气势归零",CHAR_COLORRED);
+							CHAR_talkToCli(iCharindex,-1,"蚽埶桵摽跺�佷側眢暲鑫さ橧�",CHAR_COLORRED);
 						}
 						iCharindex = familyMemberIndex[iFmIndex2][i];
 						if(iCharindex >= 0 && CHAR_getCharUse(iCharindex)){
 							CHAR_setInt(iCharindex,CHAR_MOMENTUM,0);
-							CHAR_talkToCli(iCharindex,-1,"庄园战後个人及家族气势归零",CHAR_COLORRED);
+							CHAR_talkToCli(iCharindex,-1,"蚽埶桵摽跺�佷側眢暲鑫さ橧�",CHAR_COLORRED);
 						}
 					}
 #endif
@@ -606,7 +606,7 @@ void NPC_FMWarpManLoop(int meindex)
 					
 					fmpks[fmpks_pos + 1].flag = FMPKS_FLAG_MANOR_BATTLEEND;
 				NPC_talkToFloor(floor, fmpks[fmpks_pos].host_index,
-         	fmpks[fmpks_pos].guest_index, "双方平手，不分胜负！！");
+         	fmpks[fmpks_pos].guest_index, "邧源す忒ㄛ祥煦吨蛹ㄐㄐ");
 				NPC_WarpFamily(floor, fmpks[fmpks_pos].host_index,
          	fmpks[fmpks_pos].guest_index,
          	CHAR_getInt(meindex, CHAR_FLOOR),
@@ -628,7 +628,7 @@ void NPC_FMWarpManLoop(int meindex)
 			 // shan add
 			 NPC_FMBATTLESET(floor, fmpks[fmpks_pos].host_index, fmpks[fmpks_pos].guest_index, -1);
 			 CHAR_setInt(meindex, CHAR_LOOPINTERVAL, FMWARPMAN_FREE_LOOPTIME);
-			 // 将 fmwarpman 初始化
+			 // 蔚 fmwarpman 場宎趙
 			 CHAR_setWorkInt(meindex, NPC_WORK_FMNUMI, 0);
 			 CHAR_setWorkInt(meindex, NPC_WORK_FMNUMII, 0);
 			 CHAR_setWorkInt(meindex, NPC_WORK_TIMEFLAG, 0);
@@ -673,7 +673,7 @@ void NPC_FMWarpManWindowTalked( int meindex, int talkerindex,
 			return;
 		}
 	}else{
-		CHAR_talkToCli( talkerindex, meindex, "你并非对战双方所属任一家族成员！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( talkerindex, meindex, "斕甜準勤桵邧源垀扽�扂遞眢撜尕悵�", CHAR_COLORYELLOW);
 		return;
 	}
 	getStringFromIndexWithDelim(buf,",",1,buff2,sizeof(buff2));
@@ -689,7 +689,7 @@ void NPC_FMWarpManWindowTalked( int meindex, int talkerindex,
 		if(select==WINDOW_BUTTONTYPE_YES){
 			if( CHAR_getWorkInt( talkerindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) return;
 			if(CHAR_getWorkInt(talkerindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE){
-				CHAR_talkToCli( talkerindex, meindex, "请解散团队！", CHAR_COLORYELLOW);
+				CHAR_talkToCli( talkerindex, meindex, "③賤汃芶勦ㄐ", CHAR_COLORYELLOW);
 				return;
 			}
 
@@ -703,7 +703,7 @@ void NPC_FMWarpManWindowTalked( int meindex, int talkerindex,
 			     		int tmpnum2 = CHAR_getWorkInt(meindex, NPC_WORK_FMNUMII) + 1;
 				   		CHAR_setWorkInt(meindex, NPC_WORK_FMNUMII, tmpnum2);
 						}else{
-							CHAR_talkToCli( talkerindex, meindex, "你并非对战双方所属任一家族成员！", CHAR_COLORYELLOW);
+							CHAR_talkToCli( talkerindex, meindex, "斕甜準勤桵邧源垀扽�扂遞眢撜尕悵�", CHAR_COLORYELLOW);
 						}
 	         	CHAR_setWorkInt(talkerindex, CHAR_WORKFMPKFLAG, 1);
 		       	CHAR_setWorkInt(talkerindex, CHAR_WORKFMMANINDEX, meindex);
@@ -739,12 +739,12 @@ void NPC_FMWarpManWindowTalked( int meindex, int talkerindex,
 						memcpy(&tm1, localtime((time_t *)&NowTime.tv_sec), sizeof(tm1));
 						clock = ((fmpks[fmpks_pos].dueltime % 100) + fmpks[fmpks_pos].prepare_time) - tm1.tm_min;
 						if (clock >= 60)	clock = clock - 60;
-						sprintf(tmpbuf, "\n请等候双方准备完毕後再开战！"
-							"\n战斗时请不要随意登出或离开。"
-							"\n赢得胜利的家族也请先稍後一下，"
-							"\n等待裁判的宣布後再离场！"
-							"\n谢谢您的合作！"
-							"\n距离对战时间还剩下：%4d分钟",
+						sprintf(tmpbuf, "\n③脹緊邧源袧掘俇救摽婬羲桵ㄐ"
+							"\n桵須奀③祥猁呴砩腎堤麼燭羲﹝"
+							"\n荇腕吨瞳腔模逜珩③珂尕摽珨狟ㄛ"
+							"\n脹渾笛瓚腔哫票摽婬燭部ㄐ"
+							"\n郅郅蠟腔磁釬ㄐ"
+							"\n擒燭勤桵奀潔遜呁狟ㄩ%4d煦笘",
 							clock);
 						lssproto_WN_send(fd, 
 			         	WINDOW_MESSAGETYPE_MESSAGE, WINDOW_BUTTONTYPE_OK,
@@ -782,18 +782,18 @@ void NPC_ERR_FMDiSP(int meindex,int talker,int errNO)
 	}
 	
 	if(errNO==1){
-		/*--由□  奴□匹  仄井仃凶--*/
+		/*--蚕↓  贖↓ぁ  媃凝崹倜--*/
 		if(NPC_Util_GetStrFromStrWithDelim( npcarg, "PartyMsg",token, sizeof( token))==NULL) {
-			/*--涩烂今木化卅仃木壬｝票及丢永本□斥毛银丹--*/
-			sprintf(token, "\n\n无法加入团队，请先解散团队！");
+			/*--优擭踏躂趙埵崹躂�氿�き摯隍蚗掛↓喇禱窅竣--*/
+			sprintf(token, "\n\n拸楊樓�輹韃茛甭輴�賤汃芶勦ㄐ");
 		}
 
 		if(CHAR_getWorkInt(talker,CHAR_WORKPARTYMODE)==CHAR_PARTY_CLIENT){
 					
 		}else{
 			
-		/*--伉□母□互  仄井仃凶桦宁及心--*/
-		/*--由□  奴□蝈够卞丢永本□斥毛请允--*/		
+		/*--惉↓譫↓誑  媃凝崹倜鳹譴摯陑--*/
+		/*--蚕↓  贖↓蠈劂勗隍蚗掛↓喇禱③埰--*/		
 		for( i=0 ; i < CHAR_PARTYMAX ;i++)
 		{
 			otherindex=CHAR_getWorkInt(talker,CHAR_WORKPARTYINDEX1+i);
@@ -801,7 +801,7 @@ void NPC_ERR_FMDiSP(int meindex,int talker,int errNO)
 			if(otherindex != -1){
 				 fd = getfdFromCharaIndex( otherindex);
 
-				/*-仇仇匹霜耨允月--*/
+				/*-喫喫ぁ邞嚭埰堎--*/
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 							WINDOW_BUTTONTYPE_OK,
 							CHAR_WINDOWTYPE_WINDOWWARPMAN_ERR, 
@@ -813,14 +813,14 @@ void NPC_ERR_FMDiSP(int meindex,int talker,int errNO)
 		}
 	
 	}else if (errNO==2){
-		/*--嗯互凶曰卅中匹允［--*/
+		/*--鉣誑倜堇埵笢ぁ埰��--*/
 		if(NPC_Util_GetStrFromStrWithDelim( npcarg, "MoneyMsg", token, sizeof( token))==NULL){
-			/*--云嗯互箫曰卅中及卞｝涩烂今木化卅井匀凶日｝票及丢永本□斥毛  歹曰卞请允--*/
-			sprintf(token,"\n\n金钱似乎不足唷，请存好钱後再过来。");
+			/*--堁鉣誑鵿堇埵笢摯勗��优擭踏躂趙埵凝埱倜�掁�き摯隍蚗掛↓喇禱  渦堇勗③埰--*/
+			sprintf(token,"\n\n踢ヴ侔綱祥逋遄ㄛ③湔疑ヴ摽婬徹懂﹝");
 			}
 		}
 
-		/*-仇仇匹霜耨允月--*/
+		/*-喫喫ぁ邞嚭埰堎--*/
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 						WINDOW_BUTTONTYPE_OK,
 						CHAR_WINDOWTYPE_WINDOWWARPMAN_ERR, 
@@ -848,7 +848,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 		print("GetArgStrErr");
 		return ;
 	}
-	/*--涩烂白央奶伙及  卞白夫失谛醒互隙烂今木化中月井今木化中木壬白夫失谛醒及喃曰请仄*/
+	/*--优擭啞栝騷鳴摯  勗啞痲囮硞倳誑炩擭踏躂趙笢堎凝踏躂趙笢躂�仱袚藡我俴捊啤帟鉸醓�*/
 	if(strstr(npcarg,"%4d")!=NULL){
 		NPC_Util_GetStrFromStrWithDelim( npcarg, "WARP1", buf, sizeof( buf));
 		getStringFromIndexWithDelim(buf,",",1,buf3,sizeof(buf3));
@@ -868,7 +868,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 			if ((fmpks[fmpks_pos].host_index != -1)
 		      && (CHAR_getWorkInt(toindex, CHAR_WORKFMINDEXI) == fmpks[fmpks_pos].host_index))
 			{
-				// WON ADD 修正家族pk场的约战问题
+				// WON ADD 党淏模逜pk部腔埮桵恀枙
 				
 				if(fmpks[fmpks_pos].flag == -1)		return;
 				
@@ -877,7 +877,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 				{
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 						WINDOW_BUTTONTYPE_OK, -1, -1,
-						makeEscapeString("\n这场战斗对方好像还没同意呢！\n下次请记得先邀约对方後再来登记吧～", token, sizeof(token)));
+						makeEscapeString("\n涴部桵須勤源疑砉遜羶肮砩儸ㄐ\n狟棒③暮腕珂肂埮勤源摽婬懂腎暮勘‵", token, sizeof(token)));
 					return;
 				}
 #ifdef _FMVER21		   	
@@ -887,7 +887,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 #endif		   	
 				{	
 					char	tmpbuf[256];
-					sprintf(tmpbuf, "\n你还没有正式加入%s家族，所以不能进场！", fmpks[fmpks_pos].host_name);
+					sprintf(tmpbuf, "\n斕遜羶衄淏宒樓��%s模逜ㄛ垀眕祥夔輛部ㄐ", fmpks[fmpks_pos].host_name);
 					lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 						WINDOW_BUTTONTYPE_OK, -1, -1,
 						makeEscapeString(tmpbuf, token, sizeof(token)));
@@ -897,14 +897,14 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 				CHECK_FMPknumInFloor( meindex);
 				if (CHAR_getWorkInt(meindex, NPC_WORK_FMNUMI) > (fmpks[fmpks_pos].max_player - 1)){
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
-						WINDOW_BUTTONTYPE_OK, -1, -1, makeEscapeString("\n已经不能再进去罗～！\n家族进场人数已经到达设定上限了！", token, sizeof(token)));
+						WINDOW_BUTTONTYPE_OK, -1, -1, makeEscapeString("\n眒冪祥夔婬輛�氐煄咯﹏n模逜輛部�侕�眒冪善湛扢隅奻癹賸ㄐ", token, sizeof(token)));
 					return;
 				}
 			}
 			else if ((fmpks[fmpks_pos].guest_index != -1)
 		      && (CHAR_getWorkInt(toindex, CHAR_WORKFMINDEXI) == fmpks[fmpks_pos].guest_index))
 			{
-				// WON ADD 修正家族pk场的约战问题
+				// WON ADD 党淏模逜pk部腔埮桵恀枙
 				
 				if(fmpks[fmpks_pos].flag == -1)		return;
 				
@@ -913,7 +913,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 				{
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 						WINDOW_BUTTONTYPE_OK, -1, -1,
-						makeEscapeString("\n这场战斗你好像还没同意呢！\n下次请记得提早来跟我确认～", token, sizeof(token)));
+						makeEscapeString("\n涴部桵須斕疑砉遜羶肮砩儸ㄐ\n狟棒③暮腕枑婌懂躲扂�溜洁�", token, sizeof(token)));
 					return;
 				}
 #ifdef _FMVER21		   	
@@ -923,7 +923,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 #endif		   	
 				{
 					char	tmpbuf[256];
-					sprintf(tmpbuf, "\n你还没有正式加入%s家族，所以不能进场！", fmpks[fmpks_pos].guest_name);
+					sprintf(tmpbuf, "\n斕遜羶衄淏宒樓��%s模逜ㄛ垀眕祥夔輛部ㄐ", fmpks[fmpks_pos].guest_name);
 					lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 						WINDOW_BUTTONTYPE_OK, -1, -1,
 						makeEscapeString(tmpbuf, token, sizeof(token)));
@@ -934,7 +934,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 				if( CHAR_getWorkInt( meindex, NPC_WORK_FMNUMII) > (fmpks[fmpks_pos].max_player - 1)){
 					lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 						WINDOW_BUTTONTYPE_OK, -1, -1,
-						makeEscapeString("已经不能再进去罗～！\n家族进场人数已经到达设定上限了！", token, sizeof(token)));
+						makeEscapeString("眒冪祥夔婬輛�氐煄咯﹏n模逜輛部�侕�眒冪善湛扢隅奻癹賸ㄐ", token, sizeof(token)));
 					return;
 				}
 			}
@@ -973,7 +973,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 			sprintf(token, buf2, fmpks[fmpks_pos].guest_name, fmpks[fmpks_pos].host_name);
 		}
 	}
-	else if (CHAR_getWorkInt(meindex, NPC_WORK_MODEFLAG) == NPC_STATEBUSY) // 两家族战斗中
+	else if (CHAR_getWorkInt(meindex, NPC_WORK_MODEFLAG) == NPC_STATEBUSY) // 謗模逜桵須笢
 	{
 		if (((CHAR_getWorkInt(toindex, CHAR_WORKFMINDEXI) == fmpks[fmpks_pos].host_index)
 			&& (strcmp(CHAR_getChar(toindex, CHAR_FMNAME), fmpks[fmpks_pos].host_name) == 0))
@@ -1009,7 +1009,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 		CONNECT_set_pass(fd, FALSE);
 		CONNECT_set_first_warp(fd, FALSE);
 	}
-	else if (CHAR_getWorkInt(meindex, NPC_WORK_MODEFLAG) == NPC_STATEWAIT) // 两家族战斗结束
+	else if (CHAR_getWorkInt(meindex, NPC_WORK_MODEFLAG) == NPC_STATEWAIT) // 謗模逜桵須賦旰
 	{
 		if (((CHAR_getWorkInt(toindex, CHAR_WORKFMINDEXI) == fmpks[fmpks_pos].host_index)
 			&& (strcmp(CHAR_getChar(toindex, CHAR_FMNAME), fmpks[fmpks_pos].host_name) == 0))
@@ -1026,8 +1026,8 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 				fmpks[fmpks_pos].guest_index,
 				&num1, &num2);
 			if (strcmp(CHAR_getWorkChar(meindex, NPC_WORK_WINFMNAME), "") == 0)
-				sprintf(tmpbuf, "双方平手！");
-			else sprintf(tmpbuf, "%s获胜了！！", CHAR_getWorkChar(meindex, NPC_WORK_WINFMNAME));
+				sprintf(tmpbuf, "邧源す忒ㄐ");
+			else sprintf(tmpbuf, "%s鳳吨賸ㄐㄐ", CHAR_getWorkChar(meindex, NPC_WORK_WINFMNAME));
 			sprintf(token, buf2,  fmpks[fmpks_pos].guest_name,
 				fmpks[fmpks_pos].host_name, tmpbuf);
 		} else if ((((CHAR_getWorkInt(toindex, CHAR_WORKFMINDEXI) == fmpks[fmpks_pos + 1].host_index)
@@ -1047,7 +1047,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 		CONNECT_set_pass(fd, FALSE);
 		CONNECT_set_first_warp(fd, FALSE);
 	}
-	/*-仇仇匹霜耨允月--*/
+	/*-喫喫ぁ邞嚭埰堎--*/
 	lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 		WINDOW_BUTTONTYPE_YESNO,
 		CHAR_WINDOWTYPE_WINDOWWARPMAN_MAIN, 
@@ -1062,7 +1062,7 @@ int NPC_FMFloorUse(int floor)
 	int	players = 0;
 	int     playernum = CHAR_getPlayerMaxNum();
 
-	/* 皿伊奶乩□民尼永弁 */
+	/* 鏤畛騷媕↓鏍攝蚗袲 */
 	for( i=0 ; i< playernum ; i++ ){
 		if( CHAR_getCharUse(i) == FALSE )continue;
 			if(CHAR_getInt(i,CHAR_FLOOR)==floor){
@@ -1078,7 +1078,7 @@ void NPC_GetPKFMNum(int floor, int index1, int index2, int *num1, int *num2)
 
 	*num1 = 0; *num2 = 0;
 
-	/* 皿伊奶乩□民尼永弁 */
+	/* 鏤畛騷媕↓鏍攝蚗袲 */
 	for (i = 0 ; i < FAMILY_MAXMEMBER; i++ ){
 		charindex = familyMemberIndex[ index1][i];
 		if( CHAR_getCharUse( charindex) ){
@@ -1249,7 +1249,7 @@ void CheckLeavePK(int npcindex, int floor, int index1, int index2)
 	            CHAR_setWorkInt(charindex, CHAR_WORKWARPCHECK, FALSE);
 	            CHAR_setWorkInt(charindex, CHAR_WORKBATTLEFLAG, FALSE);
 	            CHAR_warpToSpecificPoint(charindex, fl, x, y);
-	            CHAR_talkToCli(charindex, -1, "战败离场", CHAR_COLORRED);
+	            CHAR_talkToCli(charindex, -1, "桵啖燭部", CHAR_COLORRED);
 	         }
 	      }
 	   }else
@@ -1263,7 +1263,7 @@ void CheckLeavePK(int npcindex, int floor, int index1, int index2)
 	            CHAR_setWorkInt(charindex, CHAR_WORKWARPCHECK, FALSE);
 	            CHAR_setWorkInt(charindex, CHAR_WORKBATTLEFLAG, FALSE);
 	            CHAR_warpToSpecificPoint(charindex, fl, x, y);
-	            CHAR_talkToCli(charindex, -1, "战败离场", CHAR_COLORRED);
+	            CHAR_talkToCli(charindex, -1, "桵啖燭部", CHAR_COLORRED);
 	         }
 	      }
 	   }else

@@ -30,7 +30,7 @@ enum	{
 
 enum {
 	NPC_WORK_INDEX = CHAR_NPCWORKINT1,
-	NPC_WORK_WORKTYPE = CHAR_NPCWORKINT2,	// 0,-1 = NULL 2 = 银行 3 = 换币 4 = BOTH
+	NPC_WORK_WORKTYPE = CHAR_NPCWORKINT2,	// 0,-1 = NULL 2 = 窅俴 3 = 遙啟 4 = BOTH
 	NPC_WORK_CURRENTTIME = CHAR_NPCWORKINT3,
 	NPC_WORK_PAGE = CHAR_NPCWORKINT4,
 /*
@@ -45,11 +45,11 @@ enum {
 	NPC_WORK_SEFLG = CHAR_NPCWORKINT10,
 */
 };
-#define _GAMBLEBANK_U_NOLOCK	//同时对多人
+#define _GAMBLEBANK_U_NOLOCK	//肮奀勤嗣��
 
 #define GAMBLEBANK_LOOPTIME 80
 #define GAMBLEBANK_STANDBY	5000 
-#define GAMBLEBANK_DEF		3	//手续费 / 100
+#define GAMBLEBANK_DEF		3	//忒哿煤 / 100
 #define GAMBLEBANK_GETMAX	1000000
 #define GAMBLEBANK_GETMIN	100
 #define LIST_PAGE 7
@@ -127,7 +127,7 @@ void NPC_GambleBankTalked( int meindex , int talkerindex , char *szMes ,int colo
 
 
 	if( work_type < 1 || work_type > 4 )	{	// 0 or -1
-		strcpy( buf1,"暂时停止服务。");
+		strcpy( buf1,"婃奀礿砦督昢﹝");
 		CHAR_talkToCli( talkerindex, meindex, buf1,  CHAR_COLORYELLOW);
 		CHAR_setWorkInt( meindex , NPC_WORK_INDEX, -1);
 		return;
@@ -136,7 +136,7 @@ void NPC_GambleBankTalked( int meindex , int talkerindex , char *szMes ,int colo
 
 #else
 	if( CHAR_getWorkInt( meindex , NPC_WORK_INDEX) >= 0 )	{
-			strcpy( buf1,"我正忙着！");
+			strcpy( buf1,"扂淏疆覂ㄐ");
 			CHAR_talkToCli( talkerindex, meindex, buf1,  CHAR_COLORYELLOW);
 		return;
 	}else	{
@@ -157,8 +157,8 @@ static void NPC_GambleBank_selectWindow( int meindex, int toindex, int num, int 
 	int fd = getfdFromCharaIndex( toindex);
 	int i;
 	int page=-1;
-	//flg <= 0 错误 1 正常 flg = 2 钱不够  3 = 个人存款将满
-	//		4 = 个人银行将满 5 = 提领上限 6 = 提领下限
+	//flg <= 0 渣昫 1 淏都 flg = 2 ヴ祥劂  3 = 跺�侅瞈蹐威�
+	//		4 = 跺�刳靇郇威� 5 = 枑鍰奻癹 6 = 枑鍰狟癹
 	char Gamble_End[][56] = {
 		"error_msg", "end_msg", "money_msg", "full_msg1",
 		"full_msg2","getmax_msg","getmin_msg",
@@ -198,33 +198,33 @@ static void NPC_GambleBank_selectWindow( int meindex, int toindex, int num, int 
 	  	windowno = NPC_GambleBank_SELECT; 
 		break;
 	
-	case GAMBLE_MAN_BANK:	//银行
+	case GAMBLE_MAN_BANK:	//窅俴
 		sprintf( token,"%d", CHAR_getInt( toindex, CHAR_PERSONAGOLD ) );
 		windowtype = WINDOW_MESSAGETYPE_BANK;
 		windowno = NPC_GambleBank_BANK;
 	break;
 
-	case GAMBLE_MAN_CHANG1:	//换物	
+	case GAMBLE_MAN_CHANG1:	//遙昜	
 		{
 			char snum[256];
 			page = CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT);
-			strcpy( token, "换物");
-			sprintf( token, "你有%d积分，想换哪一个奖品呢？\n", CHAR_getInt( toindex, CHAR_GAMBLENUM));
+			strcpy( token, "遙昜");
+			sprintf( token, "斕衄%d儅煦ㄛ砑遙闡珨跺蔣こ儸ˋ\n", CHAR_getInt( toindex, CHAR_GAMBLENUM));
 			for( i=(page*LIST_PAGE);i<(page*LIST_PAGE+LIST_PAGE);i++)	{
 				if( i>=arraysizeof( GB_ITEMS))	{
 					break;
 				}
 				if( !strcmp( GB_ITEMS[i].name,"NEXT") )	{
-					strcat( token, "               下一页");
+					strcat( token, "               狟珨珜");
 					break;
 				}
 				if( !strcmp( GB_ITEMS[i].name,"END") )	{
-					strcat( token, "               取消\n");
+					strcat( token, "               �＋�\n");
 					break;
 				}
 
 				sprintf( snum,"%s%d\t%s",
-								"积分：", GB_ITEMS[i].Gnum,
+								"儅煦ㄩ", GB_ITEMS[i].Gnum,
 								GB_ITEMS[i].name);
 				snum[36] = 0;
 				strcat( token, snum);
@@ -286,7 +286,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 	{
 		char buf1[256];
 		if( CHAR_getWorkInt( meindex , NPC_WORK_INDEX) != talkerindex )	{
-			strcpy( buf1,"我正忙着呢！");
+			strcpy( buf1,"扂淏疆覂儸ㄐ");
 			CHAR_talkToCli( talkerindex, meindex, buf1,  CHAR_COLORYELLOW);
 			CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, -1);
 			return;
@@ -310,10 +310,10 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 		  }
 	  	break;
 	  case NPC_GambleBank_SELECT:
-		  if( type == 1 )	{	//银行
+		  if( type == 1 )	{	//窅俴
 			CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 2);
 			NPC_GambleBank_selectWindow( meindex, talkerindex, GAMBLE_MAN_BANK, flg);
-		  }else if( type == 2 )	{	//换物
+		  }else if( type == 2 )	{	//遙昜
 			CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 			NPC_GambleBank_selectWindow( meindex, talkerindex, GAMBLE_MAN_CHANG1, flg);
 		  }else	{
@@ -321,7 +321,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 		  }
 	  break;
 	  case NPC_GambleBank_BANK:	//2
-			if( CHAR_getWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT) != 2 )	//错误程序
+			if( CHAR_getWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT) != 2 )	//渣昫最唗
 				return;
 			if( work_type != 2 && work_type != 4 )	{
 				CHAR_setWorkInt( meindex , NPC_WORK_INDEX, -1);
@@ -330,7 +330,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 			if( select == 4 && atoi( data) != 0 )	{
 				stone_gold = atoi( data);
 				flg = NPC_GambleBank_DoGold( meindex, talkerindex, stone_gold, select);
-				//flg = 1 正常 flg = 2 钱不够 flg <= 0 错误
+				//flg = 1 淏都 flg = 2 ヴ祥劂 flg <= 0 渣昫
 				if( flg == 1 )	{
 					CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, -1);
 					CHAR_setWorkInt( meindex , NPC_WORK_INDEX, -1);
@@ -339,7 +339,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 			}
 			NPC_GambleBank_selectWindow( meindex, talkerindex, GAMBLE_END, flg);
 		break;
-	  case NPC_GambleBank_CHANG1:	//换物
+	  case NPC_GambleBank_CHANG1:	//遙昜
 		  {
 			  int page,ItemID;
 			  int count;
@@ -350,7 +350,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 					return;
 			  }
 
-			  if( page < 0 )	//错误对话程序
+			  if( page < 0 )	//渣昫勤趕最唗
 				  return;
 			  if( (page+type) < 0 || (page+type) >= arraysizeof( GB_ITEMS) )	{
 				NPC_GambleBank_selectWindow( meindex, talkerindex, GAMBLE_END, flg);
@@ -368,7 +368,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 							  !strcmp( GB_ITEMS[page+type].name, "\0") )	{
 						  }else	{
 							  ItemID = GB_ITEMS[page+type].ItemId;	//ID
-							  count = GB_ITEMS[page+type].Gnum;	//积分
+							  count = GB_ITEMS[page+type].Gnum;	//儅煦
 							  NPC_GambleBank_AddItem( meindex, talkerindex, ItemID, count);
 						  }
 						  CHAR_setWorkInt( meindex , NPC_WORK_INDEX, -1);
@@ -386,19 +386,19 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 
 int NPC_GambleBank_DoGold( int meindex, int toindex, int Gold, int flg)
 {
-	//flg = 1 正常 flg = 2 钱不够 flg <= 0 错误 3 = 个人存款将满 4 = 个人银行将满 5 = 单次最高金额
+	//flg = 1 淏都 flg = 2 ヴ祥劂 flg <= 0 渣昫 3 = 跺�侅瞈蹐威� 4 = 跺�刳靇郇威� 5 = 等棒郔詢踢塗
 	char buf1[256];
 	int player_gold = CHAR_getInt( toindex, CHAR_GOLD );
-	int stone_def = 0; //手续费
+	int stone_def = 0; //忒哿煤
 //	int def = GAMBLEBANK_DEF;
-	//不作无意义的存取款
+	//祥釬拸砩砱腔湔�▼�
 	if( flg != 4 )
 		return 0;
 	if( Gold == 0 )	{
 		return 0;
 	}
 	
-	if( Gold < 0 )	{	//取款
+	if( Gold < 0 )	{	//�▼�
 		Gold *=-1;
 		//stone_def = (Gold * def) /100;
 		stone_def = 300;
@@ -408,8 +408,8 @@ int NPC_GambleBank_DoGold( int meindex, int toindex, int Gold, int flg)
 			return 6;
 		}
 		if( ( player_gold + Gold ) > CHAR_getMaxHaveGold(toindex) )	{
-			return 3;	//取款後将超过个人金额
-		}else	if( (Gold + stone_def)> CHAR_getInt( toindex, CHAR_PERSONAGOLD ) )	{	//银行存款不够
+			return 3;	//�▼鍕廔奕牲�跺�佌蘤�
+		}else	if( (Gold + stone_def)> CHAR_getInt( toindex, CHAR_PERSONAGOLD ) )	{	//窅俴湔遴祥劂
 			return 2;
 		}
 		
@@ -417,18 +417,18 @@ int NPC_GambleBank_DoGold( int meindex, int toindex, int Gold, int flg)
 
 		CHAR_AddGold( toindex, Gold);
 
-		sprintf( buf1,"取款：%d ，手续费：%d，银行剩馀：%d 。", Gold, stone_def, CHAR_getInt( toindex, CHAR_PERSONAGOLD ));
+		sprintf( buf1,"�▼謑�%d ㄛ忒哿煤ㄩ%dㄛ窅俴呁牄ㄩ%d ﹝", Gold, stone_def, CHAR_getInt( toindex, CHAR_PERSONAGOLD ));
 		CHAR_talkToCli( toindex, meindex, buf1,  CHAR_COLORYELLOW);
 		LogBankStone(    CHAR_getChar( toindex, CHAR_NAME ), CHAR_getChar( toindex, CHAR_CDKEY ),
 					toindex, Gold, 
-					"GB_Bank_Get(银行取款)", 
+					"GB_Bank_Get(窅俴�▼�)", 
 					CHAR_getInt( toindex, CHAR_FLOOR),
 		            CHAR_getInt( toindex, CHAR_X ), CHAR_getInt( toindex, CHAR_Y ) ,
 					CHAR_getInt( toindex, CHAR_GOLD ),
 					CHAR_getInt( toindex, CHAR_PERSONAGOLD )
 					);
 		return 1;
-	}else if( Gold > 0 )	{	//存款
+	}else if( Gold > 0 )	{	//湔遴
 		if( Gold > player_gold )	{
 			return 2;
 		}else if( (Gold + CHAR_getInt( toindex, CHAR_PERSONAGOLD ) ) > CHAR_MAXPERSONAGOLD )  {
@@ -438,11 +438,11 @@ int NPC_GambleBank_DoGold( int meindex, int toindex, int Gold, int flg)
 		CHAR_DelGold( toindex, Gold );
 
 		CHAR_setInt( toindex, CHAR_PERSONAGOLD, (CHAR_getInt( toindex, CHAR_PERSONAGOLD ) + Gold ) );
-		sprintf( buf1,"存款：%d ，银行剩馀：%d 。", Gold, CHAR_getInt( toindex, CHAR_PERSONAGOLD ));
+		sprintf( buf1,"湔遴ㄩ%d ㄛ窅俴呁牄ㄩ%d ﹝", Gold, CHAR_getInt( toindex, CHAR_PERSONAGOLD ));
 		CHAR_talkToCli( toindex, meindex, buf1,  CHAR_COLORYELLOW);
 		LogBankStone(    CHAR_getChar( toindex, CHAR_NAME ), CHAR_getChar( toindex, CHAR_CDKEY ),
 					toindex, Gold, 
-					"GB_Bank_save(银行存款)", 
+					"GB_Bank_save(窅俴湔遴)", 
 					CHAR_getInt( toindex, CHAR_FLOOR),
 		            CHAR_getInt( toindex, CHAR_X ), CHAR_getInt( toindex, CHAR_Y ),
 					CHAR_getInt( toindex, CHAR_GOLD ),
@@ -463,7 +463,7 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 		return FALSE;
 
 	if( CHAR_getInt( toindex, CHAR_GAMBLENUM) < count )	{
-		sprintf( token,"游乐场积分不足！");
+		sprintf( token,"蚔氈部儅煦祥逋ㄐ");
 		CHAR_talkToCli( toindex, -1,token,CHAR_COLORWHITE);
 		return FALSE;
 	}
@@ -474,7 +474,7 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 		}
 	}
 	if( i == CHAR_MAXITEMHAVE )	{
-		snprintf( token,sizeof( token), "物品栏空间不足！！");
+		snprintf( token,sizeof( token), "昜こ戲諾潔祥逋ㄐㄐ");
 		CHAR_talkToCli( toindex, -1, token,  CHAR_COLORWHITE);
 		return FALSE;
 	}
@@ -489,12 +489,12 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 		LogItem(
 				CHAR_getChar( toindex, CHAR_NAME ),
 				CHAR_getChar( toindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 				itemindex,
 #else
 				ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-				"G_BANK(游乐场积分兑换道具)",
+				"G_BANK(蚔氈部儅煦募遙耋撿)",
 				CHAR_getInt( toindex,CHAR_FLOOR),
 				CHAR_getInt( toindex,CHAR_X ),
 				CHAR_getInt( toindex,CHAR_Y ),
@@ -502,11 +502,11 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 				ITEM_getChar( itemindex, ITEM_NAME),
 				ITEM_getInt( itemindex, ITEM_ID)
 		);
-	sprintf( token,"拿到%s",ITEM_getChar( itemindex, ITEM_NAME));
+	sprintf( token,"鏽善%s",ITEM_getChar( itemindex, ITEM_NAME));
 	CHAR_talkToCli( toindex, -1,token,CHAR_COLORWHITE);
 	CHAR_sendItemDataOne( toindex, ret);
 	CHAR_setInt( toindex, CHAR_GAMBLENUM, CHAR_getInt( toindex, CHAR_GAMBLENUM) - count);
-	sprintf( token,"游乐场积分剩馀： %d", CHAR_getInt( toindex, CHAR_GAMBLENUM));
+	sprintf( token,"蚔氈部儅煦呁牄ㄩ %d", CHAR_getInt( toindex, CHAR_GAMBLENUM));
 	CHAR_talkToCli( toindex, -1,token,CHAR_COLORWHITE);
 	return TRUE;
 }

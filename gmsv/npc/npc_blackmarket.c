@@ -21,7 +21,7 @@ void NPC_BlackMarketTalked( int meindex, int talker, char *msg, int color)
 	if(CHAR_getInt( talker, CHAR_WHICHTYPE)!=CHAR_TYPEPLAYER) return;    
     if(NPC_Util_isFaceToFace( talker, meindex, 1)!=TRUE) return;
 		
-	sprintf( tBuf, "嘿嘿．．．．\n在我这边有各式各样的武器、防具及道具，你想要跟我交换吗？换好了可就不能反悔喔～");
+	sprintf( tBuf, "稱稱ㄝㄝㄝㄝ\n婓扂涴晚衄跪宒跪欴腔挕ん﹜滅撿摯耋撿ㄛ斕砑猁躲扂蝠遙鎘ˋ遙疑賸褫憩祥夔毀際鉊‵");
 
 	lssproto_WN_send(getfdFromCharaIndex( talker), 
 	                 WINDOW_MESSAGETYPE_MESSAGE,

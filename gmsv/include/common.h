@@ -21,7 +21,7 @@
 #define TAB '\t'
 #define SPACE ' '
 
-/*票及 define 方曰兜蝈卞允月    */
+/*蟡典�� define ��寞�啣��������������    */
 /*#define min( x,y ) ((x)>(y)?(y):(x))
   #define max( x,y ) ((x)>(y)?(x):(y))*/
 #define min( x,y ) ({typeof(x) __x=(x),__y=(y);(__x < __y) ? __x : __y; })
@@ -30,7 +30,7 @@
 #define SUCCESSFUL "successful"
 #define FAILED "failed"
 
-#ifdef _BAD_PLAYER             // WON ADD 送坏玩家去关
+#ifdef _BAD_PLAYER             // WON ADD ��������拙振��餃��
 #define BADPLAYER "badplayer"
 #endif
 

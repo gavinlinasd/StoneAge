@@ -158,6 +158,6 @@
 
 //--------------------------------------------------------
 //by longzoro
-// #define _SQL_BACKGROUND   // Disabled - requires _SASQL1
+// #define _SQL_BACKGROUND   //网页后台功能   需同时开放_SASQL1
 
-// #define _SQL_REGISTER     // Disabled - requires _SASQL1
+// #define _SQL_REGISTER     //自动注册功能   需同时开放_SASQL1

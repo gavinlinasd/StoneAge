@@ -52,37 +52,37 @@
 #define PETSKILL_MPDAMAGE ( 504)
 #endif
 #ifdef _SKILL_WILDVIOLENT_ATT
-#define PETSKILL_WILDVIOLENTATTACK ( 540)//狂暴 vincent add 2002/05/16
+#define PETSKILL_WILDVIOLENTATTACK ( 540)//遼惟 vincent add 2002/05/16
 #endif
 #ifdef _SKILL_SPEEDY_ATT
-#define PETSKILL_SPEEDYATTACK ( 541)     //疾速 vincent add 2002/05/16
+#define PETSKILL_SPEEDYATTACK ( 541)     //撞厒 vincent add 2002/05/16
 #endif
 #ifdef _SKILL_GUARDBREAK2
-#define PETSKILL_GUARDBREAK2 ( 542)      //破除防御2 vincent add 2002/05/20
+#define PETSKILL_GUARDBREAK2 ( 542)      //ぢ壺滅郘2 vincent add 2002/05/20
 #endif
 #ifdef _SKILL_SACRIFICE
-#define PETSKILL_SACRIFICE ( 543)		 //救援 vincent add 2002/05/30
+#define PETSKILL_SACRIFICE ( 543)		 //寰堔 vincent add 2002/05/30
 #endif
 
 #ifdef _SKILL_WEAKEN 
-#define PETSKILL_WEAKEN ( 544)           //虚弱 vincent add 2002/07/11
+#define PETSKILL_WEAKEN ( 544)           //剞�� vincent add 2002/07/11
 #endif
 
 #ifdef _SKILL_DEEPPOISON  
-#define PETSKILL_DEEPPOISON ( 545)       //剧毒 vincent add 2002/07/16
+#define PETSKILL_DEEPPOISON ( 545)       //曄馮 vincent add 2002/07/16
 #endif
 
 #ifdef _SKILL_BARRIER  
-#define PETSKILL_BARRIER ( 546)          //魔障 vincent add 2002/07/16
+#define PETSKILL_BARRIER ( 546)          //藹梤 vincent add 2002/07/16
 #endif
 
 #ifdef _SKILL_NOCAST 
-#define PETSKILL_NOCAST ( 547)           //沉默 vincent add 2002/07/16
+#define PETSKILL_NOCAST ( 547)           //麥蘇 vincent add 2002/07/16
 #endif
 
 
 #ifdef _SKILL_ROAR 
-#define PETSKILL_ROAR ( 548)             //大吼 vincent add 2002/07/11
+#define PETSKILL_ROAR ( 548)             //湮綾 vincent add 2002/07/11
 #endif
 
 #ifdef _ITEM_INSLAY
@@ -121,7 +121,7 @@
 #define PETSKILL_AttCrazed ( 608)
 #endif
 
-#ifdef _SHOOTCHESTNUT	// Syu ADD 宠技：丢栗子
+#ifdef _SHOOTCHESTNUT	// Syu ADD 唾撮ㄩ隍璦赽
 #define PETSKILL_AttShoot ( 609 ) 
 #endif
 

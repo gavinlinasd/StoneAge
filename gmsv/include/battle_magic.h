@@ -80,7 +80,7 @@ void BATTLE_MultiRecovery(
 	int power,
 	int per,
 	int UseEffect,
-#ifdef _CHANGEITEMUSE	 // Syu ADD 调整战斗中使用料理设定
+#ifdef _CHANGEITEMUSE	 // Syu ADD 覃淕桵須笢妏蚚蹋燴扢隅
 	int RecevEffect,
 	int power1
 #else
@@ -206,74 +206,74 @@ void BATTLE_MultiCaptureUp(
 
 //****************************************************************
 //
-// 竣濮井日汊唾允月热诸
+// 縈憪凝�涳獌椆彸薰�絊
 //
 int	MAGIC_Ressurect_Battle(
-	int charaindex, // 井仃月谛及奶件犯永弁旦
-	int toNo, 		// 井仃日木月谛及奶件犯永弁旦
+	int charaindex, // 凝崹堎硞摯騷璃溢蚗袲筒
+	int toNo, 		// 凝崹�桫戰蹣邾凰抯�溢蚗袲筒
 	int marray, 	// magicindex
 	int mp 			// MP
 );
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  埬  媃倜�� TRUE
+//  謄  媃倜�� FALSE
 //****************************************************************
 
 //****************************************************************
 //
-// 箪岭及  鳖毛允月热诸
+// 鶂鍛摯  梱禱埰堎��絊
 //
 int	MAGIC_AttReverse_Battle(
-	int charaindex, // 井仃月谛及奶件犯永弁旦
-	int toNo, 		// 井仃日木月谛及奶件犯永弁旦
+	int charaindex, // 凝崹堎硞摯騷璃溢蚗袲筒
+	int toNo, 		// 凝崹�桫戰蹣邾凰抯�溢蚗袲筒
 	int marray, 	// magicindex
 	int mp 			// MP
 );
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  埬  媃倜�� TRUE
+//  謄  媃倜�� FALSE
 //****************************************************************
 //****************************************************************
 //
-//   凯    祭允月热诸
+//   翮    撬埰堎��絊
 //
 int	MAGIC_CaptureUp_Battle(
-	int charaindex, // 井仃月谛及奶件犯永弁旦
-	int toNo, 		// 井仃日木月谛及奶件犯永弁旦
+	int charaindex, // 凝崹堎硞摯騷璃溢蚗袲筒
+	int toNo, 		// 凝崹�桫戰蹣邾凰抯�溢蚗袲筒
 	int marray, 	// magicindex
 	int mp 			// MP
 );
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  埬  媃倜�� TRUE
+//  謄  媃倜�� FALSE
 //****************************************************************
 
 //***********************************************************
 //
-//    芊羁匹  醒及平乓仿弁正□毛汊唾今六月今日卞  芊  豢毛馨笛
+//    傮蹇ぁ  倳摯す籤溘袲淏↓禱蜾阽踏鞠堎踏�梇�  傮  遛禱黹萃
 //
 void BATTLE_MultiResAndDef( 
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
-	int toNo,			// 井仃日木月谛  寞
-	int power,			// 湘  荚汊袄
-	int per,			// ⊙井＂
-	int kind, 			//   芊  豢及潘  
-	int count, 			// 窒荚  什井
-	int UseEffect,		// 银丹谛及巨白尼弁玄
-	int RecevEffect		// 井仃日木月谛及巨白尼弁玄
+	int battleindex, 	// 泬哱鳴騷璃溢蚗袲筒
+	int attackNo,		// 凝崹堎硞  蠕
+	int toNo,			// 凝崹�桫戰蹣�  蠕
+	int power,			// 盻  樊蜾偯
+	int per,			// ×凝ㄑ
+	int kind, 			//   傮  遛摯攣  
+	int count, 			// 笰樊  妦凝
+	int UseEffect,		// 窅竣硞摯操啞攝袲哱
+	int RecevEffect		// 凝崹�桫戰蹣邾偏獉袎摛迖�
 );
 //
 //***********************************************************
 //****************************************************************
 //
-// 汊唾≈  芊  豢毛芨尹月热诸
+// 蜾阽＞  傮  遛禱僄窇堎��絊
 //
 int	MAGIC_ResAndDef_Battle(
-	int charaindex, // 井仃月谛及奶件犯永弁旦
-	int toNo, 		// 井仃日木月谛及奶件犯永弁旦
+	int charaindex, // 凝崹堎硞摯騷璃溢蚗袲筒
+	int toNo, 		// 凝崹�桫戰蹣邾凰抯�溢蚗袲筒
 	int marray, 	// magicindex
 	int mp 			// MP
 );
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  埬  媃倜�� TRUE
+//  謄  媃倜�� FALSE
 //****************************************************************
 
 #ifdef __ATTACK_MAGIC
@@ -310,7 +310,7 @@ int BATTLE_MagicEffect(	int battleindex,int attackNo,int ToList[],int MyEffect,i
 
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 void PROFESSION_MAGIC_ATTAIC( int battleindex, int attackNo, int toNo, int attIdx, int FieldAttr, int skill);
 int PROFESSION_MAGIC_ATTAIC_Effect( int battleindex, int attackNo, int ToList[], int AttackMgcNo );
 int analysis_profession_parameter( int attIdx, int skill, int toNo, int charaindex );

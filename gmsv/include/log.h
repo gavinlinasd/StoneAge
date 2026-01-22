@@ -29,10 +29,10 @@ typedef enum
 
 	LOG_LOGIN,
 	PETTRANS,
-//Syu 增加庄园战胜负Log
+//Syu 崝樓蚽埶桵吨蛹Log
 	LOG_FMPKRESULT,
 
-// Syu ADD 新增家族个人银行存取Log (不含家族银行)
+// Syu ADD 陔崝模逜跺�刳靇迡磃‥og (祥漪模逜窅俴)
 	LOG_BANKSTONELOG,
 
 	LOG_ACMESS,
@@ -64,11 +64,11 @@ void printl( LOG_TYPE logtype, char* format , ... );
 void LogAcMess( int fd, char *type, char *mess );
 
 void LogItem(
-	char *CharName, /* 平乓仿弁正   */
+	char *CharName, /* す籤溘袲淏   */
 	char *CharID,
-	int ItemNo, 	/* 失奶  丞  寞 */
-	char *Key, 		/* 平□伐□玉 */
-	int floor,		/* 甄   */
+	int ItemNo, 	/* 囮騷  堜  蠕 */
+	char *Key, 		/* す↓極↓迶 */
+	int floor,		/* 淢   */
 	int x,
 	int y,
     char *uniquecode, // shan 2001/12/14
@@ -85,12 +85,12 @@ void LogPetTrans(
 );
 
 void LogPet(
-	char *CharName, /* 平乓仿弁正   */
+	char *CharName, /* す籤溘袲淏   */
 	char *CharID,
 	char *PetName,
 	int PetLv,
-	char *Key, 		/* 平□伐□玉 */
-	int floor,		/* 甄   */
+	char *Key, 		/* す↓極↓迶 */
+	int floor,		/* 淢   */
 	int x,
 	int y,
 	char *uniquecode  // shan 2001/12/14
@@ -103,7 +103,7 @@ void LogStreetVendor(
 	char *BuyName,
 	char *BuyID,
 	char *ItemPetName,
-	int PetLv,	//若是道具此值为 -1
+	int PetLv,	//�襣З擰葧匊舒� -1
 	int iPrice,
 	char *Key,
 	int Sfloor,
@@ -117,25 +117,25 @@ void LogStreetVendor(
 #endif
 
 void LogTensei(
-	char *CharName, /* 平乓仿弁正   */
+	char *CharName, /* す籤溘袲淏   */
 	char *CharID,
-	char *Key, 		/* 平□伐□玉 */
-	int level,		//伊矛伙
-	int transNum,	//鳖戏荚醒
-	int quest,		//弁巨旦玄醒
-	int home,		//请褥哗
-	int item,		//  笛失奶  丞  井曰醒
-	int pet,		//  笛矢永玄  井曰醒
-	int vital,		//  祭蟆Vital
-	int b_vital,	//  祭  vital
-	int str,		//  祭蟆str
-	int b_str,		//  祭  str
-	int tgh,		//  祭蟆      
-	int b_tgh,		//  祭        
-	int dex,		//  祭蟆      
-	int b_dex		//  祭        
+	char *Key, 		/* す↓極↓迶 */
+	int level,		//畛穫鳴
+	int transNum,	//梱牁樊倳
+	int quest,		//袲操筒哱倳
+	int home,		//③�儢�
+	int item,		//  萃囮騷  堜  凝堇倳
+	int pet,		//  萃妐蚗哱  凝堇倳
+	int vital,		//  撬鞳Vital
+	int b_vital,	//  撬  vital
+	int str,		//  撬鞳str
+	int b_str,		//  撬  str
+	int tgh,		//  撬鞳      
+	int b_tgh,		//  撬        
+	int dex,		//  撬鞳      
+	int b_dex		//  撬        
 );
-// Syu ADD 新增家族个人银行存取Log (不含家族银行)
+// Syu ADD 陔崝模逜跺�刳靇迡磃‥og (祥漪模逜窅俴)
 void LogFamilyBankStone(
         char *CharName,
         char *CharId,  
@@ -150,20 +150,20 @@ void LogFamilyBankStone(
 
 void LogStone(
 				int TotalGold,
-        char *CharName, /* 平乓仿弁正   */
-        char *CharId,   /* 交□扒□ID */
-        int Gold,               /* 嗯喊 */
+        char *CharName, /* す籤溘袲淏   */
+        char *CharId,   /* 蝠↓勒↓ID */
+        int Gold,               /* 鉣滌 */
 		int MyGold,
-        char *Key,              /* 平□伐□玉 */
-        int floor,              /* 甄   */
+        char *Key,              /* す↓極↓迶 */
+        int floor,              /* 淢   */
         int x,
         int y
 );
 
 void LogTalk(
-	char *CharName, /* 平乓仿弁正   */
+	char *CharName, /* す籤溘袲淏   */
 	char *CharID,
-	int floor,		/* 甄   */
+	int floor,		/* 淢   */
 	int x,
 	int y,
 	char *message
@@ -172,10 +172,10 @@ void LogTalk(
 // Terry 2001/09/28
 #ifdef _SERVICE
 void LogService(
-     char *CharName,    //角色名称
-     char *CharID,      //玩家ID
-     int  itemid,       //物品ID
-     char *Key,         //说明
+     char *CharName,    //褒伎靡備
+     char *CharID,      //俙模ID
+     int  itemid,       //昜こID
+     char *Key,         //佽隴
      int floor,
      int x,
      int y
@@ -223,17 +223,17 @@ void LogFamily(
 
 // Shan 11/02
 void LogGM(
-        char *CharName,    //角色名称
-        char *CharID,      //玩家ID
-        char *Message,     //指令内容
+        char *CharName,    //褒伎靡備
+        char *CharID,      //俙模ID
+        char *Message,     //硌鍔囀��
         int  floor,
         int  x,
         int  y
 );
 
 void LogLogin(
-        char *CharID,   //玩家ID
-        char *CharName, //角色名称
+        char *CharID,   //俙模ID
+        char *CharName, //褒伎靡備
 		int  saveIndex,
 		char *ipadress
 );
@@ -254,34 +254,34 @@ void LogCreatFUPet(
 #ifdef _GAMBLE_ROULETTE
 
 void LogGamble(
-        char *CharName, //角色名称
-        char *CharID,   //玩家ID
-        char *Key,      //说明
+        char *CharName, //褒伎靡備
+        char *CharID,   //俙模ID
+        char *Key,      //佽隴
         int floor,
         int x,
         int y,
-		int player_stone,	//所拥有金钱
-		int Gamble_stone,	//下注本金
-		int get_stone,		//获得
+		int player_stone,	//垀茧衄踢ヴ
+		int Gamble_stone,	//狟蛁掛踢
+		int get_stone,		//鳳腕
 		int Gamble_num,
-		int flg	//flg = 1 玩家 2 庄家
+		int flg	//flg = 1 俙模 2 蚽模
 );
 #endif
 
 void LogBankStone(
-        char *CharName, /* 平乓仿弁正   */
-        char *CharId, /* 交□扒□ID */
+        char *CharName, /* す籤溘袲淏   */
+        char *CharId, /* 蝠↓勒↓ID */
 		int	meindex,
-        int Gold,               /* 嗯喊 */
-        char *Key,              /* 平□伐□玉 */
-        int floor,              /* 甄   */
+        int Gold,               /* 鉣滌 */
+        char *Key,              /* す↓極↓迶 */
+        int floor,              /* 淢   */
         int x,
         int y,
 		int my_gold,
 		int my_personagold
 );
 
-//Syu 增加庄园战胜负Log
+//Syu 崝樓蚽埶桵吨蛹Log
 void Logfmpk(
 			 char *winner, int winnerindex, int num1,
 			 char *loser, int loserindex, int num2, char *date, char *buf1, char *buf2, int flg);

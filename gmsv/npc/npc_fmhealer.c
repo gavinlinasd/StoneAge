@@ -2,7 +2,7 @@
 /*----------  Shan (BEGIN) ----------*/
 /*---------  AD 2001/05/28  ---------*/
 // 
-//            家族医疗 
+//            模逜瓟谿 
 // 
 /*----------   Shan(END)   ----------*/
 #include <stdio.h>
@@ -56,7 +56,7 @@ void NPC_FmHealerTalked( int meindex , int talker , char *msg ,int color )
         //print("\n npc floor->%d player floor->%d",CHAR_getInt(meindex, CHAR_FLOOR),
         //       CHAR_getWorkInt(talker, CHAR_WORKFMFLOOR));
     //    CHAR_talkToCli(talker, meindex,
-    //             "抱歉！你不是本家族人员，无法帮你回复。",CHAR_COLORWHITE);
+    //             "惕Кㄐ斕祥岆掛模逜�刱悵疥瑀辰巀蒚婺插�",CHAR_COLORWHITE);
     //    return;
     //}
      
@@ -65,10 +65,10 @@ void NPC_FmHealerTalked( int meindex , int talker , char *msg ,int color )
 	NPC_FmHealerAllHeal( talker);
 	if(msgNo == 1) {
 	    CHAR_talkToCli( talker, meindex,
-		    "已经全部回复。请小心自己的身体唷！",CHAR_COLORWHITE);
+		    "眒冪�垓蕃婺插�③苤陑赻撩腔旯极遄ㄐ",CHAR_COLORWHITE);
 	}else if(msgNo == 2){
 	    CHAR_talkToCli( talker, meindex,
-	       	   "由於你是本家族人员，请让我帮你回复吧！",CHAR_COLORWHITE);
+	       	   "蚕黺斕岆掛模逜�刱悵甭躽襞珧巀蒚婺敦氿�",CHAR_COLORWHITE);
 	}
     }else{
 	int i = 0;
@@ -79,10 +79,10 @@ void NPC_FmHealerTalked( int meindex , int talker , char *msg ,int color )
 	    	NPC_FmHealerAllHeal( otherindex);
 		if(msgNo == 1){
                     CHAR_talkToCli( otherindex, meindex,
-		       	"已经全部回复。请小心自己的身体唷！",CHAR_COLORWHITE);
+		       	"眒冪�垓蕃婺插�③苤陑赻撩腔旯极遄ㄐ",CHAR_COLORWHITE);
 		}else if(msgNo == 2){
 		    CHAR_talkToCli( otherindex, meindex, 
-			"由於你是本家族人员，请让我帮你回复吧！",CHAR_COLORWHITE);
+			"蚕黺斕岆掛模逜�刱悵甭躽襞珧巀蒚婺敦氿�",CHAR_COLORWHITE);
 		}
             }
         }

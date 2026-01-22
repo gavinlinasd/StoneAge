@@ -1,14 +1,14 @@
 #include "version.h"
 
 #ifdef _DEATH_CONTEND
-//团队人物名单
+//芶勦�冼屪�等
 typedef struct 
 {
 	int use;
 	char cdkey[64];
 	char name[64];
 }PkTeamMans;
-//战斗纪录
+//桵須槨翹
 typedef struct 
 {
 	int use;
@@ -16,33 +16,33 @@ typedef struct
 	int flg;	//0 1
 }BattleHistorys;
 
-#define MAXTEAMMANNUM 5		//队伍最高人数
-#define MAXBATTLENUM 100	//队伍最高战斗纪录
+#define MAXTEAMMANNUM 5		//勦斪郔詢�侕�
+#define MAXBATTLENUM 100	//勦斪郔詢桵須槨翹
 
-#define DEFMAXBATTLENUM 50 //最高决斗场次
+#define DEFMAXBATTLENUM 50 //郔詢樵須部棒
 #define DEFWINSCORE 90
 #define DEFLOSERATE 0.4
-//决斗参赛队伍info
+//樵須統��勦斪info
 typedef struct _tagPkTeamLists
 {
 	int use;					//flg
-	int teamnum;				//队伍序号
-	char teamname[64];			//队伍名称
-	char pathdir[64];			//队伍资料目录
-	char leadercdkey[64];		//队长CDKEY
-	int win;					//胜
-	int lost;					//负
-	int battleplay;				//总场次
+	int teamnum;				//勦斪唗瘍
+	char teamname[64];			//勦斪靡備
+	char pathdir[64];			//勦斪訧蹋醴翹
+	char leadercdkey[64];		//勦酗CDKEY
+	int win;					//吨
+	int lost;					//蛹
+	int battleplay;				//軞部棒
 	int score;
-	int inside;					//录取旗标
+	int inside;					//翹�﹉麇�
 
-	int updata;					//更新时间
+	int updata;					//載陔奀潔
 
 	PkTeamMans MyTeamMans[MAXTEAMMANNUM];
 	BattleHistorys BHistory[MAXBATTLENUM];
 }PkTeamLists;
 
-//勿动-------------------------------------------------------
+//昦雄-------------------------------------------------------
 int PKLIST_getStringPkTeamData( int ti, char *data, int sizes);
 int PKLIST_SetOneBHistory( int ti, int hi, int use, int teamnum, int flg );
 int PKLIST_GetOneBHistory( int ti );
@@ -58,7 +58,7 @@ void PKLIST_GetPkTeamListDataOne( int fd, int ti);
 //-----------------------------------------------------------
 int PKLIST_LoadPkTeamListfromFile( char *dirpath, char *listfilename );
 int PKLIST_BackupPkTeamListfromFile( char *dirpath, char *listfilename );
-void PKLIST_SortTheCharts( int ti);//排行榜处理
+void PKLIST_SortTheCharts( int ti);//齬俴埤揭燴
 void PKLIST_TheCharts( int fd, int type, int flg);
 
 int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename );

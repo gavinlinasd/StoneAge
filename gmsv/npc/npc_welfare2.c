@@ -1,7 +1,7 @@
 #include "version.h"
 
-#ifdef _NPC_WELFARE_2				// WON ADD 职业NPC-2
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _NPC_WELFARE_2				// WON ADD 眥珛NPC-2
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 
 #include <string.h>
 #include "char.h"
@@ -19,15 +19,15 @@
 
 static void NPC_Welfare_selectWindow2(int meindex, int toindex, int num, int select);
 
-//载入好康NPC的初始化
+//婥�赮藩煮PC腔場宎趙
 BOOL NPC_WelfareInit2( int meindex )
 {
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEWELFARE);
-    print("名称:%s\n",CHAR_getChar( meindex, CHAR_NAME));
+    print("靡備:%s\n",CHAR_getChar( meindex, CHAR_NAME));
     return TRUE;
 }
 
-//对话时的处理
+//勤趕奀腔揭燴
 void NPC_WelfareTalked2( int meindex , int talkerindex , char *szMes ,int color )
 {
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
@@ -104,7 +104,7 @@ void NPC_WelfareWindowTalked2( int meindex, int talkerindex,
 	getStringFromIndexWithDelim(data,"|",1,buf,sizeof(buf));
 	skill=atoi(buf);
 	
-	// 技能id
+	// 撮夔id
 	skillid = CHAR_getCharSkill( talkerindex, skill - 1 );	
 	skillID = skillid;
 
@@ -116,16 +116,16 @@ void NPC_WelfareWindowTalked2( int meindex, int talkerindex,
 		rate = atof( msg);
 	}
 
-	// 不扣钱
+	// 祥諶ヴ
 	CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 
 	skillarray = PROFESSION_SKILL_getskillArray( skillID );
 
-	// 检查是否有不能删除的技能
+	// 潰脤岆瘁衄祥夔刉壺腔撮夔
 	for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
 		int limit = -1, skillid = -1, skillarray_temp = -1;
 
-		// 技能ID
+		// 撮夔ID
 		skillid = CHAR_getCharSkill( talkerindex, i);
 		if( skillid <= 0 ) continue;
 	
@@ -137,14 +137,14 @@ void NPC_WelfareWindowTalked2( int meindex, int talkerindex,
 			if( limit > 0 && limit == skillID ){
 				char token[256] = {0};
 
-				sprintf( token, "需先遗忘%s，才可删除此技能", PROFESSION_SKILL_getChar( skillarray_temp, PROFESSION_SKILL_NAME ) );
+				sprintf( token, "剒珂疻咭%sㄛ符褫刉壺森撮夔", PROFESSION_SKILL_getChar( skillarray_temp, PROFESSION_SKILL_NAME ) );
 				CHAR_talkToCli( talkerindex, -1, token, CHAR_COLORYELLOW);
 				return;
 			}
 		}
 	}
 
-	// 遗忘技能
+	// 疻咭撮夔
 	{
 
 		int skill_level = -1;
@@ -152,18 +152,18 @@ void NPC_WelfareWindowTalked2( int meindex, int talkerindex,
 		int skill_id[CHAR_SKILLMAXHAVE] = {0};
 		int skill_temp[CHAR_SKILLMAXHAVE] = {0};
 		
-		// 取熟练度
+		// �﹋嚌毓�
 		for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
 			int skillid = -1;
 
-			// 技能ID
+			// 撮夔ID
 			skillid = CHAR_getCharSkill( talkerindex, i);
 
-			// 不储存需遗忘的技能
+			// 祥揣湔剒疻咭腔撮夔
 			if( skillid <= 0 || skillid == skillID ) continue;
 
 
-			// 技能等级
+			// 撮夔脹撰
 			hskill = CHAR_getCharHaveSkill( talkerindex, i );
 			skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);
 			
@@ -172,10 +172,10 @@ void NPC_WelfareWindowTalked2( int meindex, int talkerindex,
 			count++;
 		}
 
-		// 删除所有技能
+		// 刉壺垀衄撮夔
 		CHAR_CHAT_DEBUG_delsk( talkerindex, "all" );
 
-		// 还原技能
+		// 遜埻撮夔
 		for( i=0; i<count; i++ ){
 			PROFESSION_SKILL_ADDSK( talkerindex, skill_id[i], skill_temp[i] );
 		}
@@ -185,7 +185,7 @@ void NPC_WelfareWindowTalked2( int meindex, int talkerindex,
 		
 	}
 
-	// 传送讯息
+	// 換冞捅洘
 	{
 		char token[256];
 		int next_profession_skill_point = 0;
@@ -194,7 +194,7 @@ void NPC_WelfareWindowTalked2( int meindex, int talkerindex,
 		CHAR_setInt( talkerindex, PROFESSION_SKILL_POINT, next_profession_skill_point );
 		
 		memset(token, -1, sizeof(token) );
-		sprintf( token, "您遗忘了 %s，剩馀学习点数增加一点"
+		sprintf( token, "蠟疻咭賸 %sㄛ呁牄悝炾萸杅崝樓珨萸"
 				,PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME ) );
 
 		CHAR_talkToCli( talkerindex, -1, token, CHAR_COLORYELLOW);
@@ -242,21 +242,21 @@ void NPC_WelfareMakeStr2(int meindex,int toindex,int select)
 
 
 	for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
-		// 技能ID
+		// 撮夔ID
 		skillid = CHAR_getCharSkill( toindex, i);
 		if( skillid <= 0 ) continue;
 
 		skillarray = PROFESSION_SKILL_getskillArray( skillid );
 
-		// 技能等级
+		// 撮夔脹撰
 		hskill = CHAR_getCharHaveSkill( toindex, i );
 		skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);
 				
 		sprintf(token2,"|%s|%d|%s|%d",
-			PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME ),	// 技能名称
-			skill_level,													// 熟练度
-			PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_TXT ),	// 说明
-			PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_ICON )	// 图示
+			PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME ),	// 撮夔靡備
+			skill_level,													// 抇褶僅
+			PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_TXT ),	// 佽隴
+			PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_ICON )	// 芞尨
 		);
 
 		strcat(token,token2);

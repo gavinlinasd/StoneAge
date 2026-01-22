@@ -4,15 +4,15 @@
 #include "common.h"
 
 /*
- * 伉旦玄厌瞻毛烂聒允月  ［
- * 仇及伉旦玄反val反    读卞反窒手仄卅中［勾引曰禾奶件正□及戊疋□及心
- * 垫丹［
+ * 惉筒哱栖桹禱擭壛埰堎  ��
+ * 喫摯惉筒哱毀val毀    黍勗毀笰忒媃埵笢�蛫棍�堇睽騷璃淏↓摯昡鼀↓摯陑
+ * 菜竣��
  */
 typedef struct tagNode
 {
-    struct tagNode* next;           /*戚及用□玉尺及禾奶件正□*/
-    char* val;                      /*忡  允月  侬  */
-    int size;                       /*val及扔奶术*/
+    struct tagNode* next;           /*べ摯蚚↓迶喜摯睽騷璃淏↓*/
+    char* val;                      /*瞀  埰堎  棬  */
+    int size;                       /*val摯�蚅昃�*/
 }Node;
 
 BOOL Nodeappendhead( Node** top  , Node* add );

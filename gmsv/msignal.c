@@ -17,9 +17,9 @@
 #include "petmail.h"
 
 /*------------------------------------------------------------
- * lsprotocol 及伐□平件弘    毛荸  允月楮醒毛裟少［
- * 娄醒｝忒曰袄
- *  卅仄
+ * lsprotocol 摯極↓す璃精    禱搣  埰堎匴倳禱蠙屾��
+ * 礎倳��蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 static void endlsprotocol( void )
 {
@@ -28,10 +28,10 @@ static void endlsprotocol( void )
 }
 
 /*------------------------------------------------------------
- * 允屯化及忡绣仄卅仃木壬卅日卅中犯□正毛母件皿允月楮醒
- * 公木冗木及乒斥亘□伙及楮醒毛裟少及心［
- * 娄醒｝忒曰袄
- *  卅仄
+ * 埰迋趙摯瞀凎媃埵崹躂�屻牟欷聿郱腹灊�禱譫璃鏤埰堎匴倳
+ * 鼠躂�葸噯副像畽芋齠嚗啗�倳禱蠙屾摯陑��
+ * 礎倳��蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 static void allDataDump( void )
 {
@@ -44,9 +44,9 @@ static void allDataDump( void )
 }
 
 /*------------------------------------------------------------
- * 皿夫弘仿丞及蔽  质  及凶户卞裟太请今木月［
- * 娄醒｝忒曰袄
- *  卅仄
+ * 鏤痲精溘堜摯敖  窐  摯倜誧勗蠙怮③踏躂堎��
+ * 礎倳��蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void shutdownProgram( void )
 {
@@ -70,10 +70,10 @@ void sigshutdown( int number )
         MTIO_join();
     }
 #endif        
-    print( "\n标准信息: %d\n" , number  );
-    if( number == 0 )print( "\nGMSV正常关闭\n" );
-    print( "\n调试点数(%d)\n", DebugPoint );
-    print( "\n最后函数 (%s)\n", DebugFunctionName );
+    print( "\n梓袧陓洘: %d\n" , number  );
+    if( number == 0 )print( "\nGMSV淏都壽敕\n" );
+    print( "\n覃彸萸杅(%d)\n", DebugPoint );
+    print( "\n郔綴滲杅 (%s)\n", DebugFunctionName );
 
 	remove( "gmsvlog.err2");
 	rename( "gmsvlog.err1", "gmsvlog.err2" );
@@ -100,7 +100,7 @@ void sigshutdown( int number )
 void signalset( void )
 {
     // CoolFish: Test Signal 2001/10/26
-    print("\n开始获取信号..\n");
+    print("\n羲宎鳳�－驕�..\n");
 
 	print("SIGINT:%d\n", SIGINT);
 	print("SIGQUIT:%d\n", SIGQUIT);

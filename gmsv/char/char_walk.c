@@ -65,23 +65,23 @@ static CHAR_WALKRET CHAR_walk_turn( int index, int dir )
 
 
 /*------------------------------------------------------------
- * n 汹 汹中凶map毛霜月
- * 娄醒
- *  index       int     平乓仿及奶件犯永弁旦
- *  fl          int     白夫失ID
- *  ox          int     蟆及橇谪及x
- *  oy          int     蟆及橇谪及y
- *  fx          int     汹中凶  及x
- *  fy          int     汹中凶  及y
- * 忒曰袄
- *  卅仄
+ * n 倵 倵笢倜map禱邞堎
+ * 礎倳
+ *  index       int     す籤溘摯騷璃溢蚗袲筒
+ *  fl          int     啞痲囮ID
+ *  ox          int     鞳摯Щ稃摯x
+ *  oy          int     鞳摯Щ稃摯y
+ *  fx          int     倵笢倜  摯x
+ *  fy          int     倵笢倜  摯y
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 static void CHAR_sendMapAtWalk( int index, int fl ,int ox ,int oy,
 								int fx, int fy )
 {
     /*
-     *  蜇箕及袄午｝蟆引匹及袄及犒毛苇月
-     *  仇丹允月午｝伐□皿NPC手棵签分［
+     *  藯凜摯偯敁��鞳竘ぁ摯偯摯蕍禱峟堎
+     *  喫竣埰堎敁��極↓鏤NPC忒螢ワ煦��
      */
     int     vx,vy;
     const int     seesiz = MAP_CHAR_DEFAULTSEESIZ;
@@ -91,8 +91,8 @@ static void CHAR_sendMapAtWalk( int index, int fl ,int ox ,int oy,
     vx = fx - ox;
     vy = fy - oy;
 
-    if( ABS(vx) >= seesiz/2 ||       /*  犒互  五中  */
-        ABS(vy) >= seesiz/2 ){       /*  犒互  五中  */
+    if( ABS(vx) >= seesiz/2 ||       /*  蕍誑  拻笢  */
+        ABS(vy) >= seesiz/2 ){       /*  蕍誑  拻笢  */
         return;
 
     }else{
@@ -103,12 +103,12 @@ static void CHAR_sendMapAtWalk( int index, int fl ,int ox ,int oy,
         int absx = ABS(vx);
         int absy = ABS(vy);
         /*
-         * 夫午勾聂户卞旦正□玄毛潸月及午｝vx , vy 井日1夫仁及互禾奶件玄
-         * 蟆午井今卅日卅中方丹卞｝
-         * clipRect 反 w,h 0 毛心午户化中月
+         * 痲敁僑蘗誧勗筒淏↓哱禱噁堎摯敁��vx , vy 凝��1痲�宎偵朮昉抯�哱
+         * 鞳敁凝踏埵�欷聿郱蔥仃憯�
+         * clipRect 毀 w,h 0 禱陑敁誧趙笢堎
          */
 
-        /*  == 0 及凛反霜日卅仁化方中   */
+        /*  == 0 摯鄹毀邞�欷牟妡窈誰�   */
         if( vx != 0 ){
             if( vx > 0 ){
                 send.x     = oldlux + seesiz;
@@ -143,7 +143,7 @@ static void CHAR_sendMapAtWalk( int index, int fl ,int ox ,int oy,
 }
         }
 
-        /*  == 0 及凛反霜日卅仁化方中   */
+        /*  == 0 摯鄹毀邞�欷牟妡窈誰�   */
         if( vy != 0 ){
             if( vy > 0 ){
                 send.y      = oldluy + seesiz;
@@ -182,11 +182,11 @@ static void CHAR_sendMapAtWalk( int index, int fl ,int ox ,int oy,
 }
 static CHAR_WALKRET CHAR_walk_move( int charaindex, int dir );
 /*------------------------------------------------------------
- * 啖  允月［
- * 娄醒
- *  index       int     平乓仿及奶件犯永弁旦
- *  dir         int       轾
- * 忒曰袄
+ * 遉  埰堎��
+ * 礎倳
+ *  index       int     す籤溘摯騷璃溢蚗袲筒
+ *  dir         int       澺
+ * 蒍堇偯
  *  CHAR_WALKRET
  ------------------------------------------------------------*/
 static CHAR_WALKRET CHAR_walk_move( int charaindex, int dir )
@@ -334,7 +334,7 @@ static CHAR_WALKRET CHAR_walk_move( int charaindex, int dir )
             ox = OBJECT_setX(objindex,CHAR_getInt(charaindex,CHAR_X));
             oy = OBJECT_setY(objindex,CHAR_getInt(charaindex,CHAR_Y));
             if( !MAP_objmove( objindex, of,ox,oy,ff,fx,fy ) ){
-                /*  仇氏卅氏升丹仄方丹手卅中    */
+                /*  喫庌埵庌汔竣媃源竣忒埵笢    */
                 fprint( "ERROR MAP_OBJMOVE objindex=%d(%s)\n",objindex,
                 	CHAR_getUseName( charaindex ) );
             }
@@ -376,10 +376,10 @@ static CHAR_WALKRET CHAR_walk_move( int charaindex, int dir )
                 ofunc = (OFFFUNC)CHAR_getFunctionPointer( OBJECT_getIndex(objindex), CHAR_OFFFUNC);
                 break;
             case OBJTYPE_ITEM:
-                /*    卞窒手仄卅中  */
+                /*    勗笰忒媃埵笢  */
                 break;
             case OBJTYPE_GOLD:
-                /*    卞窒手仄卅中  */
+                /*    勗笰忒媃埵笢  */
                 break;
             default:
                 break;
@@ -427,7 +427,7 @@ CHAR_AFTERWALK:
 		if( count > 0 ) {
 			CHAR_setWorkInt( charaindex, CHAR_WORK_TOHELOS_COUNT, count -1);
 			if( count -1 == 0 ) {
-				CHAR_talkToCli( charaindex, -1, "道具的效力已到。", CHAR_COLORWHITE);
+				CHAR_talkToCli( charaindex, -1, "耋撿腔虴薯眒善﹝", CHAR_COLORWHITE);
 			}
 		}
 		par = ENCOUNT_getEncountPercentMin( charaindex, of,ox,oy);
@@ -466,7 +466,7 @@ CHAR_AFTERWALK:
 
           // Arminius 7.31 cursed stone
           if (getStayEncount(enfd)>0) {
-#ifdef _ESCAPE_RESET // 恶宝解除後逃跑时间重新归零
+#ifdef _ESCAPE_RESET // 填惘賤壺摽枅變奀潔笭陔寥錨
 			  CHAR_setWorkInt( charaindex, CHAR_WORKLASTESCAPE, 0);
 #endif
 			  clearStayEncount(enfd);
@@ -491,12 +491,12 @@ CHAR_AFTERWALK:
 		    int minep = CHAR_getWorkInt(charaindex, CHAR_WORKENCOUNTPROBABILITY_MIN);
 		    int cep = CONNECT_get_CEP(enfd);
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 			int temp=0;
 			int p_cep = CHAR_getWorkInt(charaindex, CHAR_ENCOUNT_FIX);
 			if( p_cep != 0 ){
 				if( CHAR_getWorkInt( charaindex, CHAR_ENCOUNT_NUM) < (int)time(NULL) ){
-					CHAR_talkToCli( charaindex, -1, "技能效用结束。", CHAR_COLORYELLOW);
+					CHAR_talkToCli( charaindex, -1, "撮夔虴蚚賦旰﹝", CHAR_COLORYELLOW);
 					CHAR_setWorkInt( charaindex, CHAR_ENCOUNT_FIX, 0);
 					CHAR_setWorkInt( charaindex, CHAR_ENCOUNT_NUM, 0);
 				}
@@ -539,7 +539,7 @@ CHAR_AFTERWALK:
 				}
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 			  if( rand()%120 < temp ){
 #else			
 		      if (rand()%120<cep){	// Arminius 6.28 lower encounter prob.
@@ -608,12 +608,12 @@ CHAR_AFTERWALK:
 }
 
 /*------------------------------------------------------------
- * 平乓仿互汹仁［
- * 娄醒
- *  index   int     Char匹及index
- *  dir     int       轾
- *  mode    int     0卅日汹仁［1卅日  轾鳖晶［
- * 忒曰袄
+ * す籤溘誑倵�呁�
+ * 礎倳
+ *  index   int     Charぁ摯index
+ *  dir     int       澺
+ *  mode    int     0埵�桸硜呁�1埵��  澺梱儒��
+ * 蒍堇偯
  *  CHAR_WALKRET
  ------------------------------------------------------------*/
 CHAR_WALKRET CHAR_walk( int index, int dir, int mode)
@@ -649,11 +649,11 @@ CHAR_WALKRET CHAR_walk( int index, int dir, int mode)
 
 
 /*------------------------------------------------------------
- * 汹井六月蟆赏  ［
- * 娄醒
- *  index       int         平乓仿奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 倵凝鞠堎鞳奼  ��
+ * 礎倳
+ *  index       int         す籤溘騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void CHAR_walkcall( int index )
 {
@@ -668,8 +668,8 @@ void CHAR_walkcall( int index )
                 CHAR_getWorkChar(index,CHAR_WORKWALKARRAY));
 
     CHAR_ctodirmode( tmp[0], &dir ,&mode );
-	/* 褪卅日仪蟆卞桦赭毛筏盛仄化云仁
-	 * 褪及  仁蟆及桦赭毛    卞阂互啖  允月啃
+	/* 虮埵�梑⑴§樘鋷鷖奐卅Ｊし耽つ�
+	 * 虮摯  �扷□啗鋷鷖�    勗碳誑遉  埰堎諱
 	 */
 	if( CHAR_getInt( index, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ) {
 		if( CHAR_getWorkInt( index, CHAR_WORKPARTYMODE ) == CHAR_PARTY_LEADER ) {
@@ -678,11 +678,11 @@ void CHAR_walkcall( int index )
 		}
 	}
 
-	/* 汹仁 */
+	/* 倵�� */
     ret = CHAR_walk( index , dir ,mode );
 
 	if( mode == 0 && ret == CHAR_WALKSUCCESSED ) {
-		/* 愤坌互褪卅日醮棉毛汹井六月 */
+		/* 猷覕誑虮埵�淴棺甝峒睅挨齉� */
 		if( CHAR_getInt( index, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ) {
 		
 
@@ -692,13 +692,13 @@ void CHAR_walkcall( int index )
 					int toindex = CHAR_getWorkInt( index, i + CHAR_WORKPARTYINDEX1);
 					if( CHAR_CHECKINDEX(toindex) ) {
 						int		parent_dir;
-						/* 阂及匏  午］褪及汹五蟆及匏  井日  轾毛菲户月 */
-						/* 汹仁 */
+						/* 碳摯痾  敁�楢宎匾硩殢□啕�  凝��  澺禱滑誧堎 */
+						/* 倵�� */
 						start.x = CHAR_getInt( toindex, CHAR_X);
 						start.y = CHAR_getInt( toindex, CHAR_Y);
 						parent_dir = NPC_Util_getDirFromTwoPoint( &start,&end );
-						/* 弘仿犯奴它旦左皿扑亦件汹五毛  蜇允月啃卞］
-						 * 戚及阂反蟆及阂及  毛馨丹方丹卞允月
+						/* 精溘溢贖坳筒酘鏤で砫璃倵拻禱  藯埰堎諱勗��
+						 * べ摯碳毀鞳摯碳摯  禱黹竣源竣勗埰堎
 						 */
 						end = start;
 						if( parent_dir != -1 ) {
@@ -710,8 +710,8 @@ void CHAR_walkcall( int index )
 					int petindex = CHAR_getWorkInt( toindex, CHAR_WORKPETFOLLOW);
 					if( CHAR_CHECKINDEX(petindex) ) {
 						int		parent_dir;
-						/* 阂及匏  午］褪及汹五蟆及匏  井日  轾毛菲户月 */
-						/* 汹仁 */
+						/* 碳摯痾  敁�楢宎匾硩殢□啕�  凝��  澺禱滑誧堎 */
+						/* 倵�� */
 						end.x = CHAR_getInt( toindex, CHAR_X);
 						end.y = CHAR_getInt( toindex, CHAR_Y);						
 						start.x = CHAR_getInt( petindex, CHAR_X);
@@ -746,7 +746,7 @@ void CHAR_walkcall( int index )
 						}
 					}
 					else {
-						/* 赓渝祭仄卅云允 */
+						/* 疐趵撬媃埵堁埰 */
 						CHAR_setWorkInt( index, i+CHAR_WORKPARTYINDEX1, -1);
 					}
 				}
@@ -757,8 +757,8 @@ void CHAR_walkcall( int index )
 					int petindex = CHAR_getWorkInt( index, CHAR_WORKPETFOLLOW);
 					if( CHAR_CHECKINDEX(petindex) ) {
 						int		parent_dir;
-						/* 阂及匏  午］褪及汹五蟆及匏  井日  轾毛菲户月 */
-						/* 汹仁 */
+						/* 碳摯痾  敁�楢宎匾硩殢□啕�  凝��  澺禱滑誧堎 */
+						/* 倵�� */
 						end.x = CHAR_getInt( index, CHAR_X);
 						end.y = CHAR_getInt( index, CHAR_Y);						
 						start.x = CHAR_getInt( petindex, CHAR_X);
@@ -774,8 +774,8 @@ void CHAR_walkcall( int index )
 						//if( (end.x == start.x) && (end.x == start.y) )
 						//	parent_dir = -1;						
 
-						/* 弘仿犯奴它旦左皿扑亦件汹五毛  蜇允月啃卞］
-						 * 戚及阂反蟆及阂及  毛馨丹方丹卞允月
+						/* 精溘溢贖坳筒酘鏤で砫璃倵拻禱  藯埰堎諱勗��
+						 * べ摯碳毀鞳摯碳摯  禱黹竣源竣勗埰堎
 						 */
 						//print(" pdir:%d sx:%d sy:%d ex:%d ey:%d ", 
 						//	parent_dir, start.x, start.y, end.x, end.y ); 
@@ -799,7 +799,7 @@ void CHAR_walkcall( int index )
 						}
 					}
 					else {
-						/* 赓渝祭仄卅云允 */
+						/* 疐趵撬媃埵堁埰 */
 						CHAR_setWorkInt( index, CHAR_WORKPETFOLLOW, -1);
 					}
 				
@@ -811,8 +811,8 @@ void CHAR_walkcall( int index )
     }
 
     /* 99/03/09 By Kawata */
-    /* walk及瑛绊｝WALKARRAY互弁伉失今木化中月桦宁互丐月及匹
-     * 潸曰  仄化戊疋月
+    /* walk摯踕堅��WALKARRAY誑袲惉囮踏躂趙笢堎鳹譴誑堣堎摯ぁ
+     * 噁堇  媃趙昡鼀堎
      */
     strcpysafe( tmp ,sizeof(tmp),
                 CHAR_getWorkChar(index,CHAR_WORKWALKARRAY));
@@ -820,7 +820,7 @@ void CHAR_walkcall( int index )
         CHAR_setWorkChar(index,CHAR_WORKWALKARRAY,&tmp[1]);
     }
 
-    /*  凛棉毛褡户月    */
+    /*  鄹蹬禱鵌誧堎    */
     CHAR_setWorkInt( index, CHAR_WORKWALKSTARTSEC , NowTime.tv_sec );
     CHAR_setWorkInt( index, CHAR_WORKWALKSTARTMSEC , NowTime.tv_usec );
 }
@@ -828,13 +828,13 @@ void CHAR_walkcall( int index )
 
 
 /*------------------------------------------------------------
- * 汹五铵户毛瓒  允月［
- * 娄醒
- *  index           int         平乓仿    匹及奶件犯永弁旦
- *  dir             char*         轾  侬  
+ * 倵拻鴽誧禱頞  埰堎��
+ * 礎倳
+ *  index           int         す籤溘    ぁ摯騷璃溢蚗袲筒
+ *  dir             char*         澺  棬  
  *  id              int         ID
- * 忒曰袄
- *  卅仄
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void CHAR_walk_start(int index, int x, int y, char* dir, BOOL mapsendmode )
 {
@@ -849,7 +849,7 @@ void CHAR_walk_start(int index, int x, int y, char* dir, BOOL mapsendmode )
        ox = CHAR_getInt(index,CHAR_X);
        oy = CHAR_getInt(index,CHAR_Y);
        if ( ABS(x - ox) > seesiz || ABS(y - oy) > seesiz ) {
-          CHAR_talkToCli(index, -1, "因座标错误而断线。", CHAR_COLORYELLOW);
+          CHAR_talkToCli(index, -1, "秪釱梓渣昫奧剿盄﹝", CHAR_COLORYELLOW);
           CONNECT_setCloseRequest(getfdFromCharaIndex(index) , 1);
           return;
        }
@@ -897,13 +897,13 @@ void CHAR_walk_start(int index, int x, int y, char* dir, BOOL mapsendmode )
     if( strlen( dir ) >= 1 ) CHAR_walkcall( index );
 }
 /*------------------------------------------------------------
- * 汹五及  赓
- * 娄醒
- *  index           int         平乓仿    匹及奶件犯永弁旦
- *  dir             char*         轾  侬  
+ * 倵拻摯  疐
+ * 礎倳
+ *  index           int         す籤溘    ぁ摯騷璃溢蚗袲筒
+ *  dir             char*         澺  棬  
  *  id              int         ID
- * 忒曰袄
- *  卅仄
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void CHAR_walk_init( int fd, int x, int y, char *direction, BOOL mapsendmode)
 {
@@ -927,7 +927,7 @@ void CHAR_walk_init( int fd, int x, int y, char *direction, BOOL mapsendmode)
 		int		dir, mode;
 	    CHAR_ctodirmode( direction[0], &dir ,&mode );
 		if( mode == 0 ) {
-			//print( "玩家并非领队也非单人玩家。\n");
+			//print( "俙模甜準鍰勦珩準等�冞瞍牷αn");
 		}else {
 	    	CHAR_walk_start( CONNECT_getCharaindex(fd),
                              x,y,direction, FALSE );
@@ -1035,7 +1035,7 @@ void CHAR_sendCharaAtWalk( int charaindex, int of,int ox,int  oy,int xflg, int y
 									//print(" %s[%d]: BATTLE_CHECKINDEX( %d) err!!\n", __FILE__, __LINE__, battleno);
 								}else	{
 									helpno = (BattleArray[ battleno].Side[ sideno].flg & BSIDE_FLG_HELP_OK) ? TRUE:FALSE;
-									/* HelpNo = 1 反移 */
+									/* HelpNo = 1 毀痄 */
 									if( CHAR_makeCAOPT3String( objindex, cabuf, sizeof( cabuf),
 																CHAR_ACTBATTLE,	battleno,sideno,helpno )){
 										CONNECT_appendCAbuf( fd,cabuf,strlen(cabuf));
@@ -1219,9 +1219,9 @@ static void CHAR_sendCDCharaAtWalk( int charaindex, int of, int ox, int oy,	 int
 	x = CHAR_getInt( charaindex, CHAR_X);
 	y = CHAR_getInt( charaindex, CHAR_Y);
 
-	if( of !=  fl ||  /*  白夫失互啜丹    */
-		ABS(x - ox) > seesiz/2 ||       /*  犒互  五中  */
-		ABS(y - oy) > seesiz/2 )        /*  犒互  五中  */
+	if( of !=  fl ||  /*  啞痲囮誑鄖竣    */
+		ABS(x - ox) > seesiz/2 ||       /*  蕍誑  拻笢  */
+		ABS(y - oy) > seesiz/2 )        /*  蕍誑  拻笢  */
 		return;
 
 	fd = getfdFromCharaIndex( charaindex );

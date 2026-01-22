@@ -14,7 +14,7 @@ void NPC_DoorLooked( int meindex , int lookedindex );
 BOOL NPC_DoorRefreshOverFlg( int meind );
 
 
-/* 职及NPC井日丑综今木月迕［NPC棉皿夫玄戊伙卞勾中化反 npc_stepswitch.c毛心欠 */
+/* 眥摯NPC凝�梜鯚蛗鯆戰醫瓊腇PC蹬鏤痲哱昡鳴勗僑笢趙毀 npc_stepswitch.c禱陑Й */
 int NPC_DoorSetPasswd( int meindex, char *pas );
 int NPC_DoorGetPasswd( int meindex, char *out , int len );
 void NPC_DoorFlip(int meindex , int doindex);

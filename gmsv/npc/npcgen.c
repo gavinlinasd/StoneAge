@@ -21,29 +21,29 @@ typedef struct tagNPC_searchPoint
 }NPC_searchPoint;
 
 
-/*  窒荚NPC毛综月井 */
+/*  笰樊NPC禱軘堎凝 */
 #define NPC_CREATECHALLENGETIME    1
-int all_nosee = 0;		/* ㄠ及凛｛蝈化及衬毛 no_see 卞 */
-int all_nobody = 0;		/* ㄠ及凛｛蝈化及衬毛 no_body 卞 */
-int one_loop_born = 1;	/* ㄠ伙□皿匹  嫖戏心请允醒 oneloop_born */
+int all_nosee = 0;		/* 兒摯鄹��蠈趙摯傍禱 no_see 勗 */
+int all_nobody = 0;		/* 兒摯鄹��蠈趙摯傍禱 no_body 勗 */
+int one_loop_born = 1;	/* 兒鳴↓鏤ぁ  禜牁陑③埰倳 oneloop_born */
 
 /*------------------------------------------------------------
- * 衬毛丹心分允桦赭毛瑁烂允月
- * 娄醒
- *  cr      NPC_Create*         甄  及汔互瑁匀化中月NPC_Create及禾奶件正
- *  nobody  int                 1 及凛反簿手中卅中凛卞勾仁月
- *                                          (簿井中化手综月)
- *                              0 及凛反簿手中卅中凛反综日卅中［
- *                                          (簿井中凶凛及心综月)
- *  nosee   int                 1 及凛反皿伊奶乩□及骰钗及  匹手综月［
- *                              0 及凛反皿伊奶乩□及骰钗及陆匹综月［
- *  point   NPC_searchPoint*    请蜇今六月桦赭毛医  允月
- *  isflying    BOOL              氏匹中月井升丹井［  氏匹中月卅日 TRUE 匹
- *                                  请蜇匏  氏及及穴永皿午及癫曰  烂
- *                                  毛仄卅仁卅月
- * 忒曰袄
- *  综木月凛反  TRUE
- *  综木卅中凛反  FALSE
+ * 傍禱竣陑煦埰鳹鐎禱鋆擭埰堎
+ * 礎倳
+ *  cr      NPC_Create*         淢  摯蜬誑鋆埱趙笢堎NPC_Create摯睽騷璃淏
+ *  nobody  int                 1 摯鄹毀移忒笢埵笢鄹勗僑�彸�
+ *                                          (移凝笢趙忒軘堎)
+ *                              0 摯鄹毀移忒笢埵笢鄹毀軘�欷聿苺�
+ *                                          (移凝笢倜鄹摯陑軘堎)
+ *  nosee   int                 1 摯鄹毀鏤畛騷媕↓摯鷋鎃摯  ぁ忒軘堎��
+ *                              0 摯鄹毀鏤畛騷媕↓摯鷋鎃摯翻ぁ軘堎��
+ *  point   NPC_searchPoint*    ③藯踏鞠堎鳹鐎禱瓟  埰堎
+ *  isflying    BOOL              庌ぁ笢堎凝汔竣凝��  庌ぁ笢堎埵�� TRUE ぁ
+ *                                  ③藯痾  庌摯摯悃蚗鏤敁摯騍堇  擭
+ *                                  禱媃埵�忐耒�
+ * 蒍堇偯
+ *  軘躂堎鄹毀  TRUE
+ *  軘躂埵笢鄹毀  FALSE
  ------------------------------------------------------------*/
 static BOOL NPC_searchCreatePoint( NPC_Create* cr,int  nobody,int nosee,
                             NPC_searchPoint* point, BOOL isflying )
@@ -97,7 +97,7 @@ static BOOL NPC_searchCreatePoint( NPC_Create* cr,int  nobody,int nosee,
         if( width == 0 ){
             return FALSE;
         }else{
-            /*  甄  瑁户藉切卅及匹  */
+            /*  淢  鋆誧賢з埵摯ぁ  */
             crx = startpoint%width + x;
             cry = startpoint/width + y;
         }
@@ -181,12 +181,12 @@ static NPC_Correspondfunction   correspondfunction[]={
 #endif
 };
 /*------------------------------------------------------------
- * 楮醒戊疋□允月
- * 娄醒
- *  ch      Char*           平乓仿犯□正
- *  temp    NPC_template*     件皿伊□玄及禾奶件正□
- * 忒曰袄
- *  卅仄
+ * 匴倳昡鼀↓埰堎
+ * 礎倳
+ *  ch      Char*           す籤溘溢↓淏
+ *  temp    NPC_template*     璃鏤畛↓哱摯睽騷璃淏↓
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 static void NPC_copyFunction( Char* ch, NPC_Template*   temp )
 {
@@ -355,7 +355,7 @@ void NPC_generateLoop( BOOL checkall )
     int     i,j;
     int    CreateOk=0;
     int enemynum ;
-    static int  createcount = 0;        /* create及窒    井日蔺爵允月井 */
+    static int  createcount = 0;        /* create摯笰    凝�殎�橋埰堎凝 */
     static struct timeval _store_npc_generateloop_time;
 	if( checkall == FALSE) {
 	    if( time_diff_us( NowTime, _store_npc_generateloop_time ) < (1000*1000)){

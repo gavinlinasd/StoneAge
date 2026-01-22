@@ -24,7 +24,7 @@ BOOL NPC_ActionClearEvent( int toindex, char * buf);
 BOOL NPC_ActionCheckTrans(int meindex,int talker,int trans,int flg);
 BOOL NPC_ActionLevelCheck(int meindex,int talker,int level,int flg);
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 BOOL NPC_ActionClassCheck( int meindex,int talker,int p_class,int flg);
 
 BOOL NPC_ActionSkillCheck( int meindex,int talker,int skillId,int flg);
@@ -109,15 +109,15 @@ BOOL NPC_DelItem( int toindex, int ti, int num);
 void NPC_ActionDoPileClearItem( int toindex, int itemID);
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 int PROFESSION_RESTORE_POINT( int charaindex );
 #endif
 
 
 #ifdef _NPC_ADDWARPMAN1
 BOOL NPC_ActionPartyCountCheck( int toindex, int nums, int flg);
-BOOL NPC_ActionManCountCheck( int toindex, int nums, int flg);//检查男生人数
-BOOL NPC_ActionWomanCountCheck( int toindex, int nums, int flg);//检查女生人数
+BOOL NPC_ActionManCountCheck( int toindex, int nums, int flg);//潰脤鹹汜�侕�
+BOOL NPC_ActionWomanCountCheck( int toindex, int nums, int flg);//潰脤躓汜�侕�
 #endif
 
 #endif

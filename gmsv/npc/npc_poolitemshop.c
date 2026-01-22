@@ -44,13 +44,13 @@ typedef struct {
 }NPC_POOLITEMSHOP_MSG;
 
 NPC_POOLITEMSHOP_MSG		poolshopmsg[] = {
-	{ "main_msg",		"欢迎"},
-	{ "pool_main",		"要寄放什麽呢"},
-	{ "draw_main",		"要领养什麽呢"},
-	{ "realy_msg",		"真的要那个吗"},
-	{ "stone_msg",		"钱不够喔!"},
-	{ "poolfull_msg",	"超过的无法处理喔"},
-	{ "itemfull_msg",	"项目有很多"}
+	{ "main_msg",		"辣茩"},
+	{ "pool_main",		"猁敵溫妦欒儸"},
+	{ "draw_main",		"猁鍰欱妦欒儸"},
+	{ "realy_msg",		"淩腔猁饒跺鎘"},
+	{ "stone_msg",		"ヴ祥劂鉊!"},
+	{ "poolfull_msg",	"閉徹腔拸楊揭燴鉊"},
+	{ "itemfull_msg",	"砐醴衄竭嗣"}
 };
 
 static BOOL NPC_PoolItemShop_DrawItem( int meindex, int talkerindex, int num);
@@ -134,7 +134,7 @@ void NPC_PoolItemShopWindowTalked( int meindex, int talkerindex,
 		  case 3:
 			if( !CHAR_CheckDepotItem( talkerindex) ){
 				CHAR_GetDepotItem( meindex, talkerindex);
-				CHAR_talkToCli( talkerindex, -1, "取得道具，请稍後！", CHAR_COLORYELLOW);
+				CHAR_talkToCli( talkerindex, -1, "�△繭擰舝甭輶婛嶂�", CHAR_COLORYELLOW);
 			}else{
 				NPC_PoolItemShop_DepotItem_Menu( meindex, talkerindex);
 			}
@@ -176,30 +176,30 @@ void NPC_PoolItemShopWindowTalked( int meindex, int talkerindex,
 	  case CHAR_WINDOWTYPE_DEPOTITEMSHOP_HANDLE:
 		  if( !CHAR_CheckDepotItem( talkerindex) ) return ;
 		  switch( atoi( data)) {
-		  case 1://放入
+		  case 1://溫��
 				if( CHAR_findEmptyDepotItem( talkerindex) == -1 ){
-					CHAR_talkToCli( talkerindex, -1, "仓库已满！", CHAR_COLORYELLOW);
+					CHAR_talkToCli( talkerindex, -1, "累踱眒雛ㄐ", CHAR_COLORYELLOW);
 					return;
 				}
 				NPC_DepotItem_Item_printWindow( meindex, talkerindex);
 			  break;
 		  case 2:
 				if( CHAR_findEmptyItemBox( talkerindex) == -1 ) {
-					CHAR_talkToCli( talkerindex, -1, "身上道具栏位已满！", CHAR_COLORYELLOW);
+					CHAR_talkToCli( talkerindex, -1, "旯奻耋撿戲弇眒雛ㄐ", CHAR_COLORYELLOW);
 					return;
 				}
 				NPC_DepotItem_Depot_printWindow( meindex, talkerindex);
 			  break;
 		  }
 		  break;
-	  case CHAR_WINDOWTYPE_DEPOTITEMSHOP_ADD://放入
+	  case CHAR_WINDOWTYPE_DEPOTITEMSHOP_ADD://溫��
 			if( !CHAR_CheckDepotItem( talkerindex) ) return ;
 			if( atoi( data) == 0){
 				NPC_PoolItemShop_DepotItem_Menu( meindex, talkerindex);
 			}else {
 				if( NPC_DepotItem_InsertItem( meindex, talkerindex, atoi( data)-1) == FALSE ){
 					NPC_PoolItemShop_DepotItem_Menu( meindex, talkerindex);
-					CHAR_talkToCli( talkerindex, -1, "存放道具失败，请稍後再试！", CHAR_COLORYELLOW);
+					CHAR_talkToCli( talkerindex, -1, "湔溫耋撿囮啖ㄛ③尕摽婬彸ㄐ", CHAR_COLORYELLOW);
 				}
 			}
 		  break;
@@ -210,7 +210,7 @@ void NPC_PoolItemShopWindowTalked( int meindex, int talkerindex,
 			}else {
 				if( NPC_DepotItem_gettItem( meindex, talkerindex, atoi( data)-1) == FALSE ){
 					NPC_PoolItemShop_DepotItem_Menu( meindex, talkerindex);
-					CHAR_talkToCli( talkerindex, -1, "取出道具失败，请稍後再试！", CHAR_COLORYELLOW);
+					CHAR_talkToCli( talkerindex, -1, "�○鷁擰萯妍隀甭輶婛慡椋啥�", CHAR_COLORYELLOW);
 				}
 			}
 		  break;
@@ -233,19 +233,19 @@ void NPC_PoolItemShop_printWindow_Start( int meindex, int talkerindex)
 #ifdef _NPC_DEPOTITEM
 		strcpy( message, 
 			"3\n\n"
-			"            欢迎光临\n\n"
-			"          ＜寄放道具＞\n"
-			"          ＜取回道具＞\n"
-			"          ＜使用仓库＞\n\n"
-			"          ＜  离开  ＞"
+			"            辣茩嫖還\n\n"
+			"          ˉ敵溫耋撿ˇ\n"
+			"          ˉ�◆媯擰舝閱n"
+			"          ˉ妏蚚累踱ˇ\n\n"
+			"          ˉ  燭羲  ˇ"
 		);
 #else
 		strcpy( message, 
 			"3\n\n"
-			"            欢迎光临\n\n"
-			"          ＜寄放道具＞\n"
-			"          ＜取回道具＞\n\n\n"
-			"          ＜  离开  ＞"
+			"            辣茩嫖還\n\n"
+			"          ˉ敵溫耋撿ˇ\n"
+			"          ˉ�◆媯擰舝閱n\n\n"
+			"          ˉ  燭羲  ˇ"
 		);
 #endif
 
@@ -269,9 +269,9 @@ void NPC_PoolItemShop_DepotItem_Menu( int meindex, int talkerindex)
 
 		strcpy( message, 
 			"3\n\n"
-			"          使用道具仓库\n\n"
-			"          ＜存放道具＞\n"
-			"          ＜取回道具＞\n"
+			"          妏蚚耋撿累踱\n\n"
+			"          ˉ湔溫耋撿ˇ\n"
+			"          ˉ�◆媯擰舝閱n"
 		);
 
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT, 
@@ -425,7 +425,7 @@ void NPC_DepotItem_Depot_printWindow( int meindex, int talkerindex)
 void NPC_DepotItem_CheckRepeat_Del( int charaindex, int ti, int itemindex)
 {
 	char token[256];
-	sprintf( token, "仓库道具%s，编码重复！(系统清除)",
+	sprintf( token, "累踱耋撿%sㄛ晤鎢笭葩ㄐ(炵苀ь壺)",
 					ITEM_getChar( itemindex, ITEM_NAME));
 	CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 	LogItem(
@@ -436,7 +436,7 @@ void NPC_DepotItem_CheckRepeat_Del( int charaindex, int ti, int itemindex)
 #else
 			ITEM_getInt( itemindex, ITEM_ID),
 #endif
-			"repeat(仓库道具重复)",
+			"repeat(累踱耋撿笭葩)",
 			0, 0, 0,
 			ITEM_getChar( itemindex, ITEM_UNIQUECODE),
 			ITEM_getChar( itemindex, ITEM_NAME),
@@ -480,11 +480,11 @@ BOOL NPC_DepotItem_InsertItem( int meindex, int talkerindex, int num)
 	if( (emptyindex=CHAR_findEmptyDepotItem( talkerindex) ) == -1 ) return FALSE;
 	itemindex = CHAR_getItemIndex( talkerindex, num);
 	if( !ITEM_CHECKINDEX( itemindex) )return FALSE;
-#if 1 // 共同仓库不可存的物品
-	if( ITEM_getInt( itemindex, ITEM_DROPATLOGOUT) || // 登出後消失
-			ITEM_getInt( itemindex, ITEM_VANISHATDROP) || // 丢弃後消失
-			!ITEM_getInt( itemindex, ITEM_CANPETMAIL)) { // 不可宠邮寄
-		print("\n 改封包!!非法存放道具:%s ", CHAR_getChar( talkerindex, CHAR_CDKEY) );
+#if 1 // 僕肮累踱祥褫湔腔昜こ
+	if( ITEM_getInt( itemindex, ITEM_DROPATLOGOUT) || // 腎堤摽秏囮
+			ITEM_getInt( itemindex, ITEM_VANISHATDROP) || // 隍ィ摽秏囮
+			!ITEM_getInt( itemindex, ITEM_CANPETMAIL)) { // 祥褫唾蚘敵
+		print("\n 蜊猾婦!!準楊湔溫耋撿:%s ", CHAR_getChar( talkerindex, CHAR_CDKEY) );
 		return FALSE;
 	}
 #endif
@@ -505,7 +505,7 @@ BOOL NPC_DepotItem_InsertItem( int meindex, int talkerindex, int num)
 #else
 		ITEM_getInt( itemindex, ITEM_ID),
 #endif
-		"Depot(存放道具)",
+		"Depot(湔溫耋撿)",
 		CHAR_getInt( talkerindex,CHAR_FLOOR),
 		CHAR_getInt( talkerindex,CHAR_X ),
  		CHAR_getInt( talkerindex,CHAR_Y ),
@@ -543,7 +543,7 @@ BOOL NPC_DepotItem_gettItem( int meindex, int talkerindex, int num)
 #else
 		ITEM_getInt( itemindex, ITEM_ID),
 #endif
-		"Depot(取出道具)",
+		"Depot(�○鷁擰�)",
 		CHAR_getInt( talkerindex,CHAR_FLOOR),
 		CHAR_getInt( talkerindex,CHAR_X ),
  		CHAR_getInt( talkerindex,CHAR_Y ),
@@ -582,7 +582,7 @@ static void NPC_PoolItemShop_printWindow_Full( int meindex, int talkerindex)
 		char	buf[2048];
 		
 		strcpy( message, 
-			"\n\n    超过的无法处理喔"
+			"\n\n    閉徹腔拸楊揭燴鉊"
 				);
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE, 
 						WINDOW_BUTTONTYPE_OK,
@@ -603,7 +603,7 @@ static void NPC_PoolItemShop_printWindow_HaveItemFull( int meindex, int talkerin
 		char	buf[2048];
 		
 		strcpy( message, 
-			"\n\n    道具不是已经满了吗"
+			"\n\n    耋撿祥岆眒冪雛賸鎘"
 				);
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE, 
 						WINDOW_BUTTONTYPE_OK,
@@ -811,14 +811,14 @@ static BOOL NPC_PoolItemShop_PoolItem( int meindex, int talkerindex, int num)
 
 	CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 	LogItem(
-		CHAR_getChar( talkerindex, CHAR_NAME ), /* 平乓仿   */
+		CHAR_getChar( talkerindex, CHAR_NAME ), /* す籤溘   */
 		CHAR_getChar( talkerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 		itemindex,
 #else
-		ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+		ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-		"pool(寄放道具)",
+		"pool(敵溫耋撿)",
 		CHAR_getInt( talkerindex,CHAR_FLOOR),
 		CHAR_getInt( talkerindex,CHAR_X ),
  		CHAR_getInt( talkerindex,CHAR_Y ),
@@ -865,12 +865,12 @@ static BOOL NPC_PoolItemShop_DrawItem( int meindex, int talkerindex, int num)
 	LogItem(
 		CHAR_getChar( talkerindex, CHAR_NAME ),
 		CHAR_getChar( talkerindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 		itemindex,
 #else
 		ITEM_getInt( itemindex, ITEM_ID),
 #endif
-		"draw(领取道具)",
+		"draw(鍰�△擰�)",
 		CHAR_getInt( talkerindex,CHAR_FLOOR),
 		CHAR_getInt( talkerindex,CHAR_X ),
  		CHAR_getInt( talkerindex,CHAR_Y ),

@@ -13,7 +13,7 @@
 #include "function.h"
 #include "magic_base.h"
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 #include "profession_skill.h"
 #endif
 
@@ -217,7 +217,7 @@ static ITEM_intDataSetting ITEM_setintdata[ITEM_DATAINTNUM]={
 	{"arr",  0},					/*ITEM_MODIFYARRANGE*/
 	{"seqce",  0},					//ITEM_MODIFYSEQUENCE,
 	{"iapi", 0},					//ITEM_ATTACHPILE
-	{"hirt", 0},					//ITEM_HITRIGHT		//额外命中
+	{"hirt", 0},					//ITEM_HITRIGHT		//塗俋韜笢
 #endif
 
 #ifdef _ITEMSET6_TXT
@@ -544,7 +544,7 @@ int _ITEM_initExistItemsOne( char *file, int line, ITEM_Item* itm )
 			return Sindex;
 		}
 	}
-	fprint( "错误:物品已满\n" );
+	fprint( "渣昫:昜こ眒雛\n" );
 	return -1;
 }
 
@@ -692,7 +692,7 @@ void* ITEM_getFunctionPointer( int itemindex, int functype )
 {
 	if( !ITEM_CHECKINDEX(itemindex) )return NULL;
 	if( functype < ITEM_FIRSTFUNCTION  || functype >= ITEM_LASTFUNCTION ){
-		print( "类型错误:%d\n", functype);
+		print( "濬倰渣昫:%d\n", functype);
 		return NULL;
 	}
 	return ITEM_item[itemindex].itm.
@@ -1042,7 +1042,7 @@ BOOL ITEM_readItemConfFile( char* filename )
 
 	f = fopen(filename,"r");
 	if( f == NULL ){
-		print( "不能打开文件\n");
+		print( "祥夔湖羲恅璃\n");
 		return FALSE;
 	}
 #ifdef _ITEMSET2_ITEM
@@ -1064,7 +1064,7 @@ BOOL ITEM_readItemConfFile( char* filename )
 
 		ret = getStringFromIndexWithDelim( line, ",", ITEM_ID_TOKEN_INDEX, token, sizeof(token));
 		if( ret == FALSE ){
-			fprint("文件秩序错误:%s 第:%d行\n",filename,linenum);
+			fprint("恅璃窏唗渣昫:%s 菴:%d俴\n",filename,linenum);
 			continue;
 		}
 		itemid = atoi( token);
@@ -1074,19 +1074,19 @@ BOOL ITEM_readItemConfFile( char* filename )
 	}
 
 	if( maxid <=0 ) {
-		print( "最大ID错误\n");
+		print( "郔湮ID渣昫\n");
 		fclose(f);
 		return FALSE;
 	}
 	
 	if( fseek( f, 0, SEEK_SET ) == -1 ){
-		fprint( "搜索错误\n" );
+		fprint( "刲坰渣昫\n" );
 		fclose(f);
 		return FALSE;
 	}
 #ifdef _IMPOROVE_ITEMTABLE
 	ITEM_tblen = linenum+1;
-	print( "物品数 %d - 大小:%d\n", linenum, sizeof(ITEM_table));
+	print( "昜こ杅 %d - 湮苤:%d\n", linenum, sizeof(ITEM_table));
 	if( ITEM_TransformList != NULL )
 		freeMemory( ITEM_TransformList);
 	defitemtbls = (maxid+1);
@@ -1095,7 +1095,7 @@ BOOL ITEM_readItemConfFile( char* filename )
 		ITEM_TransformList[i].use = FALSE;
 	}
 #else
-	print( "物品最大ID %d", maxid);
+	print( "昜こ郔湮ID %d", maxid);
 	ITEM_tblen = maxid + 1;
 #endif
 
@@ -1109,7 +1109,7 @@ BOOL ITEM_readItemConfFile( char* filename )
 	ITEM_tbl = allocateMemory( sizeof(ITEM_table) * ITEM_tblen );
 
 	if( ITEM_tbl == NULL ){
-		fprint( "无法分配内存 %d\n" , sizeof(ITEM_table)*ITEM_tblen );
+		fprint( "拸楊煦饜囀湔 %d\n" , sizeof(ITEM_table)*ITEM_tblen );
 		fclose( f );
 		return FALSE;
 	}
@@ -1275,23 +1275,23 @@ CHAR_EquipPlace ITEM_getEquipPlace( int charaindex, int itmid )
 	case ITEM_BREAKTHROW:
 	case ITEM_BOUNDTHROW:
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 		{	
 			int i=0;
 
-			// 勇士职业技能二刀流
+			// 蚋尪眥珛撮夔媼絮霜
 			for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
 				char *skill_name;
-				// 技能ID
+				// 撮夔ID
 				int skillid = CHAR_getCharSkill( charaindex, i);
 				int Pskillid = PROFESSION_SKILL_getskillArray( skillid);		
 				if( Pskillid <= 0 ) continue;
 
-				// 技能名称
+				// 撮夔靡備
 				skill_name = PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_FUNCNAME);
 				if( skill_name == NULL ) continue;
 	
-				// 二刀流
+				// 媼絮霜
 				if( (strcmp( skill_name , "PROFESSION_DUAL_WEAPON" )) == 0 ){
 					int get_item = BATTLE_GetWepon( charaindex );
 
@@ -1402,7 +1402,7 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 				char    tmpbuf[128];
 				value = ITEM_getInt(itemindex,showparamint[i].intindex);
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 				
 				
 
@@ -1474,18 +1474,18 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 	strcpy( INGNAME0, ITEM_getChar( itemindex, ITEM_INGNAME0) );
 	strcpy( INGNAME1, ITEM_getChar( itemindex, ITEM_INGNAME1) );
 	if( (INGNAME0[0] != NULL && INGNAME1[0] != NULL) || (INGNAME0[0] == NULL) ) {
-		strcpy( INGNAME0, "杂" );
+		strcpy( INGNAME0, "娸" );
 	}
 #endif
 
 	if( haveitemindex == -1 ) {
-#ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 显示物品耐久度
+#ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 珆尨昜こ騵壅僅
 		char buff1[256];
 		int crushe	= ITEM_getInt( itemindex, ITEM_DAMAGECRUSHE);
 		int maxcrushe = ITEM_getInt( itemindex, ITEM_MAXDAMAGECRUSHE);
 		if(crushe < 1) crushe = 1;
 		if(maxcrushe < 1){
-			sprintf(buff1, "不会损坏");
+			sprintf(buff1, "祥頗囷輓");
 		}else{
 			maxcrushe = maxcrushe/1000;
 			crushe = crushe/1000;
@@ -1533,13 +1533,13 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 				  );
 #endif
 	}else {
-#ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 显示物品耐久度
+#ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 珆尨昜こ騵壅僅
 		char buff1[256];
 		int crushe	= ITEM_getInt( itemindex, ITEM_DAMAGECRUSHE);
 		int maxcrushe = ITEM_getInt( itemindex, ITEM_MAXDAMAGECRUSHE);
 		if(crushe < 1) crushe = 1;
 		if(maxcrushe < 1){
-			sprintf(buff1, "不会损坏");
+			sprintf(buff1, "祥頗囷輓");
 		}else{
 			maxcrushe = maxcrushe/1000;
 			crushe = crushe/1000;
@@ -1595,7 +1595,7 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 char*   ITEM_makeItemFalseString( void )
 {
 
-#ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 显示物品耐久度
+#ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 珆尨昜こ騵壅僅
 	strcpysafe( ITEM_itemStatusStringBuffer,
 				sizeof( ITEM_itemStatusStringBuffer),
 #ifdef _ITEM_PILENUMS
@@ -1619,7 +1619,7 @@ char*   ITEM_makeItemFalseString( void )
 
 char*   ITEM_makeItemFalseStringWithNum( int haveitemindex )
 {
-#ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 显示物品耐久度
+#ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 珆尨昜こ騵壅僅
 	snprintf(  ITEM_itemStatusStringBuffer, sizeof( ITEM_itemStatusStringBuffer),
 
 #ifdef _ITEM_PILENUMS
@@ -1698,7 +1698,7 @@ void ITEM_equipEffect( int index )
 		{ ITEM_MODIFYDEFENCE,	CHAR_WORKDEFENCEPOWER,	-100,	0,	EQUIP_FIX_MAX,	0},
 		{ ITEM_MODIFYQUICK,		CHAR_WORKQUICK,			-100,	0,	EQUIP_FIX_MAX,	0},
 		{ ITEM_MODIFYHP,		CHAR_WORKMAXHP,			0,	0,	EQUIP_FIX_MAX,	0},
-		{ ITEM_MODIFYMP,        CHAR_WORKMAXMP,			0,	0,	1000,	0}, // MP 反100引匹
+		{ ITEM_MODIFYMP,        CHAR_WORKMAXMP,			0,	0,	1000,	0}, // MP 毀100竘ぁ
 
 		{ ITEM_MODIFYLUCK,       CHAR_WORKFIXLUCK,	0,	1,	5,	0},
 		{ ITEM_MODIFYCHARM,      CHAR_WORKFIXCHARM,	0,	0,	100,	0},
@@ -1741,38 +1741,38 @@ void ITEM_equipEffect( int index )
 			int     j;
 			int		attrib = 0;
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 			if( i == CHAR_ARM )
 					CHAR_sendStatusString( index , "S");
 #endif
 
 			for( j=0; j < arraysizeof( itemEffect ); j ++ ) {
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 
 				if( i == CHAR_EQSHIELD ){
 					int item_type = ITEM_FIST;
 					item_type = ITEM_getInt( id, ITEM_TYPE );
 
-					// 当左手装备武器的时候									
+					// 絞酘忒蚾掘挕ん腔奀緊									
 					if( item_type != ITEM_WSHIELD ){
 						int k;
-						// 勇士职业技能二刀流
+						// 蚋尪眥珛撮夔媼絮霜
 						for( k=0; k<CHAR_SKILLMAXHAVE; k++ ){
 							char *skill_name;
-							// 技能ID
+							// 撮夔ID
 							int skillid = CHAR_getCharSkill( index, k);
 							int Pskillid = PROFESSION_SKILL_getskillArray( skillid);		
 							if( Pskillid <= 0 ) continue;
 
-							// 技能名称
+							// 撮夔靡備
 							skill_name = PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_FUNCNAME);
 							if( skill_name == NULL ) continue;
 	
-							// 二刀流
+							// 媼絮霜
 							if( (strcmp( skill_name , "PROFESSION_DUAL_WEAPON" )) == 0 ){
 								int skill=k, skill_level=0, rate=0, value=0;
 								CHAR_HaveSkill* hskill;
-								// 人物技能等级
+								// �冼嚗敵傿�撰
 								hskill = CHAR_getCharHaveSkill( index, skill );
 								skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);
 								skill_level = PROFESSION_CHANGE_SKILL_LEVEL_A( skill_level );
@@ -1796,7 +1796,7 @@ void ITEM_equipEffect( int index )
 #ifdef _ANGEL_SUMMON
 			//if( !strcmp( ITEM_getChar( id, ITEM_USEFUNC), "ITEM_AngelToken") ) {
 			if( ITEM_getInt( id, ITEM_ID) == ANGELITEM ) {
-				//print(" 使者信物装备中 ");
+				//print(" 妏氪陓昜蚾掘笢 ");
 				angelequip = TRUE;
 			}
 #endif
@@ -1809,13 +1809,13 @@ void ITEM_equipEffect( int index )
 	if( angelmode == TRUE && angelequip == FALSE ) {
 		CHAR_setWorkInt( index, CHAR_WORKANGELMODE, FALSE);
 		CHAR_sendAngelMark( CHAR_getWorkInt( index, CHAR_WORKOBJINDEX), 0);
-		print(" 卸下使者信物 ");
+		print(" 迠狟妏氪陓昜 ");
 	}
 	if( angelmode == FALSE && angelequip == TRUE ) {
 		CHAR_setWorkInt( index, CHAR_WORKANGELMODE, TRUE);
 		CHAR_sendAngelMark( CHAR_getWorkInt( index, CHAR_WORKOBJINDEX), 1);
-		CHAR_talkToCli( index, -1, "你受到了精灵保护，不会被敌人攻击。", CHAR_COLORYELLOW );
-		print(" 装备使者信物 ");
+		CHAR_talkToCli( index, -1, "斕忳善賸儕鍾悵誘ㄛ祥頗掩菩�佴本驉�", CHAR_COLORYELLOW );
+		print(" 蚾掘妏氪陓昜 ");
 	}
 #endif
 
@@ -1894,7 +1894,7 @@ void Other_DefcharWorkInt( int index)
 #endif
 #endif//_SUIT_ITEM
 
-#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 职业抗性装备
+#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 眥珛蕨俶蚾掘
 	/*{
 		int f_res = -1, i_res = -1, t_res = -1;
 		f_res = CHAR_getWorkInt( index, CHAR_WORK_F_RESIST );
@@ -1910,7 +1910,7 @@ void Other_DefcharWorkInt( int index)
 
 #ifdef _PETSKILL_SETDUCK
 	//profession fix
-	//使用回避招式时,会将防值减去30%然後设定成回避值,奇怪的设定,也造成原本设定的回避值跟没设一样,因此我(Change)先把整段拿掉
+	//妏蚚隙旌桸宒奀,頗蔚滅硉熬��30%�頗慓頞迅伒堭嗒�,も墅腔扢隅,珩婖傖埻掛扢隅腔隙旌硉躲羶扢珨欴,秪森扂(Change)珂參淕僇鏽裁
 	/*if( CHAR_getWorkInt( index, CHAR_MYSKILLDUCK) > 0 ){
 		int mtgh = CHAR_getWorkInt( index, CHAR_WORKFIXTOUGH);
 		mtgh -= (mtgh*30)/100;
@@ -1945,7 +1945,7 @@ void Other_DefcharWorkInt( int index)
 	}
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( CHAR_getWorkInt( index, CHAR_MYSKILLHIT) > 0 ){
 		int mpower, mdef;
 		mpower = CHAR_getWorkInt( index, CHAR_MYSKILLHIT);
@@ -1954,7 +1954,7 @@ void Other_DefcharWorkInt( int index)
 		if( mtgh < 0 ) mtgh=0;
 		CHAR_setWorkInt( index, CHAR_MYSKILLHIT, mpower);
 	}
-	if( CHAR_getWorkInt( index, CHAR_WORK_WEAPON) > 0 ){	// 武器专精
+	if( CHAR_getWorkInt( index, CHAR_WORK_WEAPON) > 0 ){	// 挕ん蚳儕
 		int mpower, mdef;
 		mpower = CHAR_getWorkInt( index, CHAR_WORKFIXSTR);
 		mdef = CHAR_getWorkInt( index, CHAR_WORKMOD_WEAPON);
@@ -1995,7 +1995,7 @@ void Other_DefcharWorkInt( int index)
             CHAR_setWorkInt( index, CHAR_WORKWEAKEN, CHAR_getWorkInt( index, CHAR_WORKWEAKEN)-1);
 	}
 #endif
-#ifdef _MAGIC_BARRIER// vincent  精灵:魔障
+#ifdef _MAGIC_BARRIER// vincent  儕鍾:藹梤
 	if( CHAR_getWorkInt( index, CHAR_WORKBARRIER) > 0){
             CHAR_setWorkInt( index, CHAR_WORKBARRIER, CHAR_getWorkInt( index, CHAR_WORKBARRIER) - 1);
 	}
@@ -2097,13 +2097,13 @@ int ITEM_isTargetValid( int charaindex, int itemindex, int toindex)
 	Myside = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLESIDE );
 	if ((toindex >= 0x0) && (toindex <= 0x13)) return 0;
 
-	if (toindex == 0x14) {//20 右下全 0
+	if (toindex == 0x14) {//20 衵狟�� 0
 		if (itemtarget == ITEM_TARGET_ALLMYSIDE){
 			if( Myside == 0 )return 0;
 		}else if(itemtarget == ITEM_TARGET_ALLOTHERSIDE ){
 			if( Myside == 1 )return 0;
 		}
-	}else if (toindex == 0x15) {//21 左上全 1
+	}else if (toindex == 0x15) {//21 酘奻�� 1
 		if (itemtarget == ITEM_TARGET_ALLMYSIDE){
 			if( Myside == 1 )return 0;
 		}else if( itemtarget == ITEM_TARGET_ALLOTHERSIDE ){
@@ -2131,7 +2131,7 @@ BOOL CHAR_CheckInItemForWares( int charaindex, int flg)
 			if( flg == 0 ){
 				return FALSE;
 			}
-			sprintf(token,"交出%s",ITEM_getChar( itemindex, ITEM_NAME));
+			sprintf(token,"蝠堤%s",ITEM_getChar( itemindex, ITEM_NAME));
 			CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 
 			CHAR_setItemIndex( charaindex, i ,-1);
@@ -2253,7 +2253,7 @@ void ITEM_reChangeItemToPile( int itemindex)
 		ITEM_setInt( itemindex, ITEM_USEPILENUMS, 1);
 	itemID = ITEM_getInt( itemindex, ITEM_ID);
 	if( !ITEM_CHECKITEMTABLE( itemID) ) return;
-	if( itemID == 20284 ) return;//铁枪叁另外处理
+	if( itemID == 20284 ) return;//沺Л��鍚俋揭燴
 	if( ITEM_getInt( itemindex, ITEM_CANBEPILE) != ITEMTBL_getInt( itemID, ITEM_CANBEPILE) )
 		ITEM_setInt( itemindex, ITEM_CANBEPILE, ITEMTBL_getInt( itemID, ITEM_CANBEPILE) );
 }
@@ -2311,7 +2311,7 @@ void ITEM_checkItemModify( int charaindex, int itemindex)
 		if( nowData > baseData + randData ) {
 			char szBuffer[1024];
 			ITEM_setInt( itemindex, checkList[i], baseData); 
-			sprintf( szBuffer, " 修正异常道具: id=%d a=%d now=%d base=%d rand=%d ",
+			sprintf( szBuffer, " 党淏祑都耋撿: id=%d a=%d now=%d base=%d rand=%d ",
 				item_ID, checkList[i], nowData, baseData, randData );
 			print( szBuffer);
 			if( CHAR_CHECKINDEX(charaindex) ) {

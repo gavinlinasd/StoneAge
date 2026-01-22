@@ -49,7 +49,7 @@ int WGSPort = -1;
 int zap=0;
 int additional_process=0;
 
-#ifdef _ADD_AC_IP				 // WON ADD 加AC_IP至通讯协定中
+#ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
 char AC_IP[20];
 #endif
 
@@ -100,7 +100,7 @@ static int checkCSconnect( void)
 	}
 	if( csd <= 0 ){
 		char buf[256];
-		sprintf( buf, "无法连接到 %s:%d !\n", WGSAddress, WGSPort);
+		sprintf( buf, "拸楊蟀諉善 %s:%d !\n", WGSAddress, WGSPort);
 		Log( buf);
 		return -1;
 	}
@@ -152,9 +152,9 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 		switch (*flag) {
 		case '1': // Login
 		
-#ifdef _FIX_MESSAGE                // WON ADD 修改封包内容		
+#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��		
 
-#ifdef _ADD_AC_IP				 // WON ADD 加AC_IP至通讯协定中
+#ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
 			sprintf(buffer,"&;5;6;%s;%s;0;%s;",idbuf,pasbuf, AC_IP);
 #else
 			sprintf(buffer,"&;5;6;%s;%s;0;",idbuf,pasbuf);
@@ -168,12 +168,12 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			break;
 		case '4': // Delete
 
-#ifdef _FIX_MESSAGE                // WON ADD 修改封包内容		
+#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��		
 
-#ifdef _ADD_AC_IP				 // WON ADD 加AC_IP至通讯协定中
-			sprintf(buffer,"删除人物：%s %s %s\n",idbuf,pasbuf, AC_IP);
+#ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
+			sprintf(buffer,"刉壺�冼鵃�%s %s %s\n",idbuf,pasbuf, AC_IP);
 #else
-			sprintf(buffer,"删除人物：%s %s\n",idbuf,pasbuf);
+			sprintf(buffer,"刉壺�冼鵃�%s %s\n",idbuf,pasbuf);
 #endif
 
 #else		
@@ -187,12 +187,12 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 		case '5': // recheck WGS deadline
 #endif
 
-#ifdef _FIX_MESSAGE                // WON ADD 修改封包内容		
+#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��		
 
-#ifdef _ADD_AC_IP				 // WON ADD 加AC_IP至通讯协定中
-			sprintf(buffer,"进入游戏：%s %s %s\n",idbuf,pasbuf, AC_IP);
+#ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
+			sprintf(buffer,"輛�邆恘楠�%s %s %s\n",idbuf,pasbuf, AC_IP);
 #else
-			sprintf(buffer,"进入游戏：%s %s\n",idbuf,pasbuf);
+			sprintf(buffer,"輛�邆恘楠�%s %s\n",idbuf,pasbuf);
 #endif
 
 #else				
@@ -203,12 +203,12 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			break;
 		case '3': // Game End
 		
-#ifdef _FIX_MESSAGE                // WON ADD 修改封包内容		
+#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��		
 
-#ifdef _ADD_AC_IP				 // WON ADD 加AC_IP至通讯协定中
-			sprintf(buffer,"退出游戏：%s %s\n",idbuf, AC_IP);
+#ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
+			sprintf(buffer,"豖堤蚔牁ㄩ%s %s\n",idbuf, AC_IP);
 #else
-			sprintf(buffer,"退出游戏：%s\n",idbuf);
+			sprintf(buffer,"豖堤蚔牁ㄩ%s\n",idbuf);
 #endif
 
 #else				
@@ -262,7 +262,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 
 			int payType;
 
-#ifndef _FIX_MESSAGE                // WON ADD 修改封包内容	
+#ifndef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��	
 			if (atoi(ptr+1)!=baka){
 				char buff1[256];
 				sprintf( buff1, "%d != %d\n", atoi(ptr+1), baka);
@@ -280,23 +280,23 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			}
 			
 			if( strcmp( strtok(0,";"), idbuf)) {  // get PlayerAccount
-				//Log(" 回传帐号不符! ");
+				//Log(" 隙換梛瘍祥睫! ");
 				//return(-106);
 			}
 
 			switch( payType) {
-			case 1: // 包月制
+			case 1: // 婦堎秶
 				strcpy( deadline ,"0");
-				Log(" 包月 ");
+				Log(" 婦堎 ");
 				break;
-			case 2: // 时段制
+			case 2: // 奀僇秶
 				//strtok(0,";"); // get PlayerAccount
 				strcpy( deadline ,strtok(0,";"));
-				Log(" 时段 ");
+				Log(" 奀僇 ");
 				break;
 			case 0:
 				strcpy( deadline ,"0");
-				Log(" 结束 ");
+				Log(" 賦旰 ");
 				break;
 			}
 
@@ -304,16 +304,16 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 
 			switch (*flag) {
 			case '1': // List
-				Log("用户登陆\n");
+				Log("蚚誧腎翻\n");
 				break;
 			case '4': // Delete
-				Log("删除人物\n");
+				Log("刉壺�冼駹n");
 				break;
 			case '2':
-				Log("进入游戏\n");
+				Log("輛�邆恘愧n");
 				break;
 			case '3':
-				Log("退出游戏\n");	
+				Log("豖堤蚔牁\n");	
 				break;
 #ifdef _TIMEOUTKICK
 			case '5':
@@ -327,8 +327,8 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			return(0); // Authencation passed
 		}
 
-#ifdef _FIX_MESSAGE                // WON ADD 修改封包内容
-		// 回传错误码
+#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��
+		// 隙換渣昫鎢
 		else if (ptr[0]=='E'){
 			char err_code[10];
 			int i, err_num=0, login_star=-1;
@@ -337,7 +337,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 				strtok(0,";"); // Get 1
 			if( *flag != '1' && *flag != '4') {
 				if( strcmp( strtok(0,";"), idbuf)) {  // get PlayerAccount
-					//Log(" 回传帐号不符! ");
+					//Log(" 隙換梛瘍祥睫! ");
 					//return(-106);
 				}
 			}
@@ -352,17 +352,17 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 
 			err_num=atoi(err_code);
 
-			if( err_num == 203 ){			// 203 不同星系
+			if( err_num == 203 ){			// 203 祥肮陎炵
 					login_star=atoi(ptr+i);
 					Log("203");
-					// 回传已登入的星系代码
+					// 隙換眒腎�賮鹹ж絕�鎢
 					if(login_star != -1)
 						return(login_star+2030);
 			}
-			else if( err_num == 204 ){		// 204 同星系	
+			else if( err_num == 204 ){		// 204 肮陎炵	
 					Log("204");
 					if( *flag == '5')
-						Log(" 时段未到 ");
+						Log(" 奀僇帤善 ");
 					return(204);
 			}else{
 				char msg[256];
@@ -395,7 +395,7 @@ static int createMainSocket( int port )
     sin.sin_addr.s_addr = htonl(INADDR_ANY);
 
     if( (r = bind( s , (struct sockaddr*) &sin , sizeof( sin )) ) <0 ){
-        fprintf(stderr, "绑定失败" );
+        fprintf(stderr, "堂隅囮啖" );
         return r;
     }
     listen( s , 5 );
@@ -500,7 +500,7 @@ static void workerMainLoop( void )
     }
 #endif
 
-	//确认CS可连线
+	//�溜柘S褫蟀盄
 	if( checkCSconnect() == -1 ) return;
 #ifdef _FIX_WORKS
 	if( !LoginToAC() )	//login to ac
@@ -547,12 +547,12 @@ while( fgets( linebuf,sizeof(linebuf), fp)){
         }else{
        		switch (i_flag) {  //Arminius && ttom
 
-#ifdef _FIX_MESSAGE                // WON ADD 修改封包内容	
+#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��	
 
 #ifdef _TIMEOUTKICK
 
 			case  1: // List
-#ifdef _AP_CHECK_3_TIMES           // WON ADD 减少认证次数
+#ifdef _AP_CHECK_3_TIMES           // WON ADD 熬屾�珋仍恀�
 				knret = 0;
 #else
 				knret = doKN( id, pas, flag, "", deadline);
@@ -574,7 +574,7 @@ while( fgets( linebuf,sizeof(linebuf), fp)){
 #else
 
 			case  1: // List
-#ifdef _AP_CHECK_3_TIMES           // WON ADD 减少认证次数
+#ifdef _AP_CHECK_3_TIMES           // WON ADD 熬屾�珋仍恀�
 				knret = 0;
 #else
 				knret = doKN( id, pas, flag, "");
@@ -645,7 +645,7 @@ while( fgets( linebuf,sizeof(linebuf), fp)){
 #endif
 	//if( AcLogFile != NULL)
 	//	fclose( AcLogFile);
-    Log( "SAAC已关闭. 异常终止.\n" );
+    Log( "SAAC眒壽敕. 祑都笝砦.\n" );
 }
 
 static void parseOpt( int argc , char **argv )
@@ -653,7 +653,7 @@ static void parseOpt( int argc , char **argv )
     int c;
     int option_index;
 
-#ifdef _ADD_AC_IP                // WON ADD 修改封包内容
+#ifdef _ADD_AC_IP                // WON ADD 党蜊猾婦囀��
 	memset( AC_IP, -1 , sizeof( AC_IP) );
 #endif
 
@@ -671,13 +671,13 @@ static void parseOpt( int argc , char **argv )
             {"logdir", 1, 0, 'l' },
             {"csaddr", 1, 0, 'a' },
             {"csport", 1, 0, 'c' },
-#ifdef _ADD_AC_IP                // WON ADD 修改封包内容
+#ifdef _ADD_AC_IP                // WON ADD 党蜊猾婦囀��
 			{"acaddr", 1, 0, 'w' },
 #endif
             {0,0,0,0}
         };
 
-#ifdef _FIX_MESSAGE                // WON ADD 修改封包内容
+#ifdef _FIX_MESSAGE                // WON ADD 党蜊猾婦囀��
         c = getopt_long ( argc, argv, "p:dhl:a:c:w:", long_options, &option_index );
 #else
         c = getopt_long ( argc, argv, "p:dhl:a:c:", long_options, &option_index );
@@ -690,7 +690,7 @@ static void parseOpt( int argc , char **argv )
             if( optarg){
                 snprintf( logdir, sizeof( logdir), "%s", optarg );
             } else{
-                fprintf( stderr , "-l 后面需要日录名.\n" );
+                fprintf( stderr , "-l 綴醱剒猁�梒撳�.\n" );
             }
             break;
         case 'p' :
@@ -701,10 +701,10 @@ static void parseOpt( int argc , char **argv )
             break;
         case 'h':
             fprintf( stderr,
-                     "使用方法: acwk [-d|--调试模试] [-p 端口|--端口 端口] [-h|--帮助] [-l 日志日录]\n"
-                     "            [-a CS地址] [-c CS端口]\n"
-                     "默认调试模试为0.\n"
-                     "\nCopyright 2003 龙zoro工作室 / Longzoro system supply\n"
+                     "妏蚚源楊: acwk [-d|--覃彸耀彸] [-p 傷諳|--傷諳 傷諳] [-h|--堆翑] [-l �欶寰梒奭\n"
+                     "            [-a CS華硊] [-c CS傷諳]\n"
+                     "蘇�炵鼳堐�彸峈0.\n"
+                     "\nCopyright 2003 韓zoro馱釬弅 / Longzoro system supply\n"
                      );
             exit(0);
             break;
@@ -716,7 +716,7 @@ static void parseOpt( int argc , char **argv )
             WGSPort = atoi( optarg );
             break;
         // Spock end
-#ifdef _ADD_AC_IP				 // WON ADD 加AC_IP至通讯协定中
+#ifdef _ADD_AC_IP				 // WON ADD 樓AC_IP祫籵捅衪隅笢
 		case 'w':
 			strcpy( AC_IP, optarg ); 
 			Log( AC_IP );
@@ -741,15 +741,15 @@ int main( int argc , char ** argv )
 #endif
     // Spock 2000/12/5
     if( strlen(WGSAddress) < 8 || strlen(WGSAddress) > 16 ){
-    	fprintf( stderr , "你指定CS的IP地址不正确.\n");
+    	fprintf( stderr , "斕硌隅CS腔IP華硊祥淏��.\n");
     	exit(1);
     }
     if( WGSPort < 0 ){
-    	fprintf( stderr , "你指定CS的端口不正确.\n");
+    	fprintf( stderr , "斕硌隅CS腔傷諳祥淏��.\n");
     	exit(1);
     }
 #ifndef _FIX_WORKS    	
-    fprintf( stderr , "\n端口:[%d] 调试模式:[%d] CS地址:[%s] CS端口:[%d]\n" ,
+    fprintf( stderr , "\n傷諳:[%d] 覃彸耀宒:[%d] CS華硊:[%s] CS傷諳:[%d]\n" ,
     	port , debug , WGSAddress , WGSPort );
     // Spock end
     if( (mainsockfd = createMainSocket( port ))<0){
@@ -758,7 +758,7 @@ int main( int argc , char ** argv )
         return 1;
     }
 #else
-    fprintf( stderr , "\n调试模式:[%d] CS地址:[%s] CS端口:[%d]\n" ,
+    fprintf( stderr , "\n覃彸耀宒:[%d] CS華硊:[%s] CS傷諳:[%d]\n" ,
     	debug , WGSAddress , WGSPort );
 #endif
 // Nuke +1
@@ -815,7 +815,7 @@ void Log( char *msg )
 #ifdef _FIX_WORKS
 int LoginToAC()
 {
-	Log( "\n连接 SAAC ");
+	Log( "\n蟀諉 SAAC ");
 	usleep( 80*10000);
 	Log( ".");
 	afd = TCPconnect( WGSAddress, ACPORT);
@@ -823,7 +823,7 @@ int LoginToAC()
 		close( afd);
 		return 0; 
 	}
-	Log( ".成功\n");
+	Log( ".傖髡\n");
 	usleep( 40*10000);
 	return 1;
 }

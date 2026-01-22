@@ -2,8 +2,8 @@
 #define __PET_EVENT_H__
 
 /*
- * 矢永玄楮  及涩烂匹允［
- * 矢永玄奶矛件玄楮  
+ * 妐蚗哱匴  摯优擭ぁ埰��
+ * 妐蚗哱騷穫璃哱匴  
  */
 
 void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color);

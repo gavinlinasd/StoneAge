@@ -16,16 +16,16 @@
 #include "npc_eventaction.h"
 
 enum {
-	CHAR_WORK_ENCOUNTTYPE	= CHAR_NPCWORKINT1,	/* 巨件市它件玄及酷   */
-	CHAR_WORK_DIEACT		= CHAR_NPCWORKINT2,	/* 韶氏分凛升丹允月井 */
-	CHAR_WORK_WARP_FLOOR	= CHAR_NPCWORKINT3,	/* 伐□皿允月白夫失*/
-	CHAR_WORK_WARP_X		= CHAR_NPCWORKINT4,	/* 伐□皿允月X */
-	CHAR_WORK_WARP_Y		= CHAR_NPCWORKINT5,	/* 伐□皿允月Y */
-	CHAR_WORK_ONEBATTLE 	= CHAR_NPCWORKINT6,	/* 域勾仄井爵  仄卅中 */
+	CHAR_WORK_ENCOUNTTYPE	= CHAR_NPCWORKINT1,	/* 操璃庈坳璃哱摯蹄   */
+	CHAR_WORK_DIEACT		= CHAR_NPCWORKINT2,	/* 屻庌煦鄹汔竣埰堎凝 */
+	CHAR_WORK_WARP_FLOOR	= CHAR_NPCWORKINT3,	/* 極↓鏤埰堎啞痲囮*/
+	CHAR_WORK_WARP_X		= CHAR_NPCWORKINT4,	/* 極↓鏤埰堎X */
+	CHAR_WORK_WARP_Y		= CHAR_NPCWORKINT5,	/* 極↓鏤埰堎Y */
+	CHAR_WORK_ONEBATTLE 	= CHAR_NPCWORKINT6,	/* 郖僑媃凝橋  媃埵笢 */
 	NPC_TIME_MODE			= CHAR_NPCWORKINT7, 
-	CHAR_WORK_BASEIMGBAK	= CHAR_NPCWORKINT8, /* 手午及  飓  寞 */
-	CHAR_WORK_DIETIME		= CHAR_NPCWORKINT9, /* 韶氏分凛棉 */
-	CHAR_WORK_REVIVALTIME	= CHAR_NPCWORKINT10, /* 戏五忒月凛棉 */
+	CHAR_WORK_BASEIMGBAK	= CHAR_NPCWORKINT8, /* 忒敁摯  鴢  蠕 */
+	CHAR_WORK_DIETIME		= CHAR_NPCWORKINT9, /* 屻庌煦鄹蹬 */
+	CHAR_WORK_REVIVALTIME	= CHAR_NPCWORKINT10, /* 牁拻蒍堎鄹蹬 */
 	CHAR_WORK_BATTLETYPE	= CHAR_NPCWORKINT11,
 };
 
@@ -106,7 +106,7 @@ BOOL NPC_NPCEnemyInit( int meindex )
 	
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "steal", buf, sizeof( buf)) != NULL ) {
 		if( NPC_Util_GetStrFromStrWithDelim( argstr, "item", buf, sizeof( buf)) == NULL ) {
-			print( "NPCEnemy:有指定steal而没有指定item，很奇怪\n");
+			print( "NPCEnemy:衄硌隅steal奧羶衄硌隅itemㄛ竭も墅\n");
 			return FALSE;
 		}
 	}
@@ -354,11 +354,11 @@ int NPC_NPCEnemy_Encount( int meindex, int charaindex, int mode)
 	}
 
 	if( flg ) {
-		/* 阂及凛反  骰允月 */
+		/* 碳摯鄹毀  鷋埰堎 */
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_CLIENT) {
 			char	config[32];
 			snprintf( config, sizeof( config), "askbattlemsg1");
-			/* 爵  互铵引月蟆卞撙  丢永本□斥 */
+			/* 橋  誑鴽竘堎鞳勗艉  隍蚗掛↓喇 */
 			
 			
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, config,  buf, sizeof( buf))
@@ -368,7 +368,7 @@ int NPC_NPCEnemy_Encount( int meindex, int charaindex, int mode)
 				char	escapebuf[1024];
 				int fd = getfdFromCharaIndex( charaindex);
 				char	buf2[256];
-				/* askbattlemsg? 互丐木壬  醒垫卞允月  "\n"戊□玉毛  木月)*/
+				/* askbattlemsg? 誑堣躂��  倳菜勗埰堎  "\n"昡↓迶禱  躂堎)*/
 				for( i = 2; i < 7; i ++ ) {
 					snprintf( config, sizeof( config), "askbattlemsg%d", i);
 					if( NPC_Util_GetStrFromStrWithDelim( argstr, config, buf2, sizeof( buf2))
@@ -400,10 +400,10 @@ int NPC_NPCEnemy_Encount( int meindex, int charaindex, int mode)
 									CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX),
 									makeEscapeString( buf, escapebuf,sizeof(escapebuf)));
 				}
-				/* 仇仇分仃    卞伉正□件 */
+				/* 喫喫煦崹    勗惉淏↓璃 */
 				return FALSE;
 			}else {
-				/* 爵  卞  日六月 */
+				/* 橋  勗  �桷齉� */
 				flg = NPC_NPCEnemy_BattleIn( meindex, charaindex);
 			}
 		}
@@ -434,10 +434,10 @@ int NPC_NPCEnemy_Dying( int battleindex, int meindex )
 	if( strstr( argstr, "NEWNPCENEMY") )    {
 	}else	{
 #endif
-	/* 蝇    及陲太 */
+	/* 茯    摯絖怮 */
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "endmsg", buf, sizeof( buf)) != NULL ) {
 		for( i = 0; i < 5; i ++ ) {
-			/* 爵  卞辅笛仄化中月蝈够卞丢永本□斥 */
+			/* 橋  勗落萃媃趙笢堎蠈劂勗隍蚗掛↓喇 */
 			int toindex = BattleArray[battleindex].Side[0].Entry[i].charaindex;
 			if( CHAR_CHECKINDEX( toindex) )	{
 				CHAR_talkToCli( toindex, meindex ,buf , CHAR_COLORYELLOW );
@@ -456,7 +456,7 @@ int NPC_NPCEnemy_Dying( int battleindex, int meindex )
 		}
 		
 	}
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "herobattlefield", buf, sizeof( buf)) != NULL ) {
 			int charaindex = BattleArray[battleindex].Side[0].Entry[0].charaindex;
 			CHAR_setWorkInt ( charaindex , CHAR_WORKHEROFLOOR , atoi ( buf ) ) ;
@@ -511,7 +511,7 @@ int NPC_NPCEnemy_Dying( int battleindex, int meindex )
 						continue;
 					}
 				}
-				CHAR_DischargeParty( toindex, 0); // 拆队
+				CHAR_DischargeParty( toindex, 0); // 莞勦
 				CHAR_warpToSpecificPoint( toindex,
 					CHAR_getWorkInt( meindex, CHAR_WORK_WARP_FLOOR),
 					CHAR_getWorkInt( meindex, CHAR_WORK_WARP_X),
@@ -651,7 +651,7 @@ static int NPC_NPCEnemy_StealItem( char *argstr, int meindex, int charaindex)
 		CHAR_sendItemData( charaindex, delitemgroup, found);
 	}
 	else {
-		print( "NPCENEMY:奇怪\n");
+		print( "NPCENEMY:も墅\n");
 		return FALSE;
 	}
 	return TRUE;
@@ -703,7 +703,7 @@ static BOOL NPC_NPCEnemy_CheckFree( int  meindex, int toindex, BOOL *Party)
 	  if( NPC_Util_GetStrFromStrWithDelim( buf1, "endmsg", token, sizeof( token)) != NULL ) {
 		CHAR_talkToCli( toindex, meindex ,token , CHAR_COLORYELLOW );
 	  }
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 	  if( NPC_Util_GetStrFromStrWithDelim( buf1, "herobattlefield", token, sizeof( token)) != NULL ) {
 		  CHAR_setWorkInt ( toindex , CHAR_WORKHEROFLOOR , atoi ( token ) ) ;
 		  if ( atoi ( token ) > CHAR_getInt ( toindex , CHAR_HEROFLOOR ) )
@@ -790,7 +790,7 @@ BOOL NPCEnemy_BSCheck(int meindex,int talker,char* buf)
 	int kosuu,temp=-1,flg=0;
 	char buff1[128],buff3[128];
 	if(strstr( buf, "-") != NULL)	{
-		//buff3为抓宠物ID
+		//buff3峈蚰唾昜ID
 		getStringFromIndexWithDelim( buf, "-", 2, buff3, sizeof(buff3));
 		temp = atoi( buff3);
 		getStringFromIndexWithDelim( buf, "-", 1, buff1, sizeof(buff1));
@@ -974,7 +974,7 @@ BOOL NPCEnemy_CheckMyPet( int meindex, int talker, int petLv, int flg, int petid
 	}
 	if( petsel  == CHAR_MAXPETHAVE )	{
 		return FALSE;
-	}else	{	//找到条件宠
+	}else	{	//梑善沭璃唾
 		switch( flg)	{
 		case 0:
 			if( CHAR_getInt( petindex, CHAR_LV) != petLv )

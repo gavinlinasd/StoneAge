@@ -10,14 +10,14 @@
 typedef struct
 {
     int use;
-    BOOL online;					/* 锹澎平乓仿互扔□田  卞中凶日TRUE,
-                                		公丹匹卅井匀凶日FALSE */
-    int level;               		/* 锹澎平乓仿及伊矛伙 */
+    BOOL online;					/* Ъ鱗す籤溘誑�荂懽�  勗笢倜�悾RUE,
+                                		鼠竣ぁ埵凝埱倜�帴ALSE */
+    int level;               		/* Ъ鱗す籤溘摯畛穫鳴 */
 	int	duelpoint;					/* duelpoint*/
-    int graphicsno;					/* 锹澎平乓仿及  飓  寞 */
-    char cdkey[CDKEYLEN];			/* CD 瓜件田□ */
-    char charname[CHARNAMELEN];		/* 锹澎平乓仿及  蟆 */
-	int transmigration;             /* 鳖戏荚醒 */
+    int graphicsno;					/* Ъ鱗す籤溘摯  鴢  蠕 */
+    char cdkey[CDKEYLEN];			/* CD 圖璃泬↓ */
+    char charname[CHARNAMELEN];		/* Ъ鱗す籤溘摯  鞳 */
+	int transmigration;             /* 梱牁樊倳 */
 	
 } ADDRESSBOOK_entry;
 

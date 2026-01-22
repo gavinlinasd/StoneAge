@@ -13,16 +13,16 @@ static void NPC_SignBoard_Window( int meindex, int toindex, int num,int select);
 
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_SignBoardInit( int meindex )
 {
 
 	char npcarg[NPC_UTIL_GETARGSTR_BUFSIZE];
-	/*--正奶皿涩烂--*/
+	/*--淏騷鏤优擭--*/
    	CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEMSG );
 
-	/*--白央奶伙互卅仃木壬准憎  毛涩  今六卅中--*/
+	/*--啞栝騷鳴誑埵崹躂�屺樊�  禱优  踏鞠埵笢--*/
 	if(NPC_Util_GetArgStr( meindex, npcarg, sizeof(npcarg))==NULL){
 		print("GetArgStrErr");
 		return FALSE;
@@ -36,17 +36,17 @@ BOOL NPC_SignBoardInit( int meindex )
 
 
 /*********************************
-* 苇日木凶凛及质  
+* 峟�桫憶袬敯啄�  
 *********************************/
 void NPC_SignBoardLooked( int meindex , int lookedindex)
 {
 
-    /* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
     if( CHAR_getInt( lookedindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
 
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( NPC_Util_CharDistance( lookedindex, meindex ) > 1) return;
 
 
@@ -82,7 +82,7 @@ static void NPC_SignBoard_Window( int meindex, int toindex, int num,int select)
   	      q[0]='\0';
  	      p[0]='\0';
 	      a=atoi(p+9);
-#ifdef _FAMILY_MANORNUM_CHANGE	// CoolFish 用来修改装园数量
+#ifdef _FAMILY_MANORNUM_CHANGE	// CoolFish 蚚懂党蜊蚾埶杅講
 	      if ((a>=1) && (a<=MANORNUM)) {		  
 #else
 	      if ((a>=1) && (a<=4)) {
@@ -93,7 +93,7 @@ static void NPC_SignBoard_Window( int meindex, int toindex, int num,int select)
   	          sprintf(tmp,"%s%s%s",npcarg,token,q+1);
 	          strcpy(npcarg, tmp);
 	        } else {
-	          sprintf(tmp,"%s没有任何家族%s",npcarg,q+1);
+	          sprintf(tmp,"%s羶衄�庥弮眢�%s",npcarg,q+1);
 	          strcpy(npcarg, tmp);
 	        }
 	      }
@@ -101,9 +101,9 @@ static void NPC_SignBoard_Window( int meindex, int toindex, int num,int select)
 	  }
 	}
 
-	sprintf(token, "　　　　　　＜　看板　＞\n%s",npcarg);
+	sprintf(token, "﹛﹛﹛﹛﹛﹛ˉ﹛艘啣﹛ˇ\n%s",npcarg);
 	
-	/*--霜耨--*/
+	/*--邞嚭--*/
 	lssproto_WN_send( fd,WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK,
 					CHAR_WINDOWTYPE_WINDOWPETSHOP_START,
@@ -114,7 +114,7 @@ static void NPC_SignBoard_Window( int meindex, int toindex, int num,int select)
 
 
 /*-----------------------------------------
- * 弁仿奶失件玄井日忒匀化五凶凛卞裟太请今木月［
+ * 袲溘騷囮璃哱凝�氪耽�趙拻倜鄹勗蠙怮③踏躂堎��
  *
 -------------------------------------------*/
 void NPC_SignBoardWindowTalked( int meindex, int talkerindex, 

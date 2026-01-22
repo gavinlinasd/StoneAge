@@ -19,12 +19,12 @@ BOOL Raceman_EventAddItem( int meindex,int talker );
 BOOL Raceman_CheckItem(int meindex,int talker);
 BOOL Raceman_ItemFullCheck(int meindex, int talker);
 BOOL Raceman_checkpet( int meindex, int talker , int select , char *token );
-BOOL Raceman_petcheckin ( int meindex , int talker );	//限定种类
+BOOL Raceman_petcheckin ( int meindex , int talker );	//癹隅笱濬
 BOOL Raceman_checkprize( int meindex , int talker ,char *token);
 void Raceman_awardprize( int meindex , int talker );
 int  Raceman_CheckGameType(int meindex , int talker );
 int  Raceman_readmode( int meindex , int talkerindex );
-void Raceman_countrank( int meindex, int talker ); // 目前没用到
+void Raceman_countrank( int meindex, int talker ); // 醴ヶ羶蚚善
 void Raceman_renewrank( int meindex , int talker , int select );
 int	 Raceman_CheckSelectRank( int meindex , int talkerindex , int datanum);
 void Raceman_GetQuestion( int meindex ,int talker , char *token);
@@ -54,22 +54,22 @@ struct RANKTABLE history5[DEFMAXRANK];
 
 struct ASKTABLE asktable[400];
 
-int petflgtable[640];  //可抓宠的table
+int petflgtable[640];  //褫蚰唾腔table
 
 char  rankname[5][64] = {
-	"『新手赛--惊为天人排行榜』",
-	"『高手赛--惊为天人排行榜』",
-	"『家族赛--惊为天人排行榜』",
-	"『高手赛--无奇不有排行榜』",
-	"『家族赛--无奇不有排行榜』"
+	"◇陔忒��--儐峈毞�侜瓚訄鞢�",
+	"◇詢忒��--儐峈毞�侜瓚訄鞢�",
+	"◇模逜��--儐峈毞�侜瓚訄鞢�",
+	"◇詢忒��--拸も祥衄齬俴埤◆",
+	"◇模逜��--拸も祥衄齬俴埤◆"
 };
 
 char  historyrank[5][64] = {
-	"『新手历史惊为天人排行榜』",
-	"『高手历史惊为天人排行榜』",
-	"『家族历史惊为天人排行榜』",
-	"『高手历史无奇不有排行榜』",
-	"『家族历史无奇不有排行榜』"
+	"◇陔忒盪妢儐峈毞�侜瓚訄鞢�",
+	"◇詢忒盪妢儐峈毞�侜瓚訄鞢�",
+	"◇模逜盪妢儐峈毞�侜瓚訄鞢�",
+	"◇詢忒盪妢拸も祥衄齬俴埤◆",
+	"◇模逜盪妢拸も祥衄齬俴埤◆"
 };
 
 
@@ -106,7 +106,7 @@ BOOL NPC_RacemanInit( int meindex)
 	NPC_Util_GetStrFromStrWithDelim( npcarg , "RankNum", buf1, sizeof( buf1));
 	ranknum = atoi(buf1);
 
-	CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_RACEMAN);  //制作一只npc
+	CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_RACEMAN);  //秶釬珨硐npc
 
 	if( RTIME1 == 0 || RTIME2 == 0 || RTIME3 == 0 || RTIME4 == 0 || RTIME5 == 0){
 	    RTIME1 = NowTime.tv_sec+DEF_READ_WAITTIME,
@@ -115,7 +115,7 @@ BOOL NPC_RacemanInit( int meindex)
 		RTIME4 = NowTime.tv_sec+DEF_READ_WAITTIME;
 		RTIME5 = NowTime.tv_sec+DEF_READ_WAITTIME;
 		
-		//把5种比赛记录读取进来
+		//參5笱掀��暮翹黍�■衋�
 		for( i = 0 ; i < 10 ; i++){
 			NPC_Util_GetStrFromStrWithDelim( npcarg , file[i] , buf1, sizeof( buf1));
 			if(strlen(buf1) == 0) continue;
@@ -157,17 +157,17 @@ void Raceman_SelectWindow( int meindex, int talker, int num,int select)
 		 	
 	switch( num) {
 		
-		  case 0:	//选单
+		  case 0:	//恁等
 		  
 		  	Raceman_MsgDisp( meindex, talker, 0 , -1 );
 			break;
 
-		  case 1:	//比赛题目
+		  case 1:	//掀��枙醴
 		  
 	  		Raceman_MsgDisp( meindex, talker, 1 , -1 );
 		  	break;
 
-		  case 2:	//领猎宠证
+		  case 2:	//鍰轂唾痐
 			
 			ret = Raceman_CheckGameType(meindex,talker);
 			if(ret == 0)
@@ -182,40 +182,40 @@ void Raceman_SelectWindow( int meindex, int talker, int num,int select)
 				Raceman_MsgDisp( meindex, talker, 92 , -1 );
 			break;
 
-		  case 3:	//猎宠登记
+		  case 3:	//轂唾腎暮
 
 			ret = Raceman_CheckGameType(meindex,talker);
 			if(ret == 1)	
-				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//族长身分不合
+				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//逜酗旯煦祥磁
 			else if(ret == 4)
-				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//家族没有正式成立
+				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//模逜羶衄淏宒傖蕾
 			else
 				Raceman_MsgDisp( meindex, talker, 3 , -1 );
 			break;
 
-		  case 4:	//猎宠排行榜
+		  case 4:	//轂唾齬俴埤
 			
 			Raceman_MsgDisp( meindex, talker, 4 , -1 );
 			break;
 
-		  case 5:	//猎宠战利品
+		  case 5:	//轂唾桵瞳こ
 
 			ret = Raceman_CheckGameType(meindex,talker);
 			if(ret == 1)	
-				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//族长身分不合
+				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//逜酗旯煦祥磁
 			else if(ret == 4)
-				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//家族没有正式成立
+				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//模逜羶衄淏宒傖蕾
 			else
 				Raceman_MsgDisp( meindex, talker, 5 , -1 );
 			break;
 
-		  case 6:   //通关密语
+		  case 6:   //籵壽躇逄
 
 			ret = Raceman_CheckGameType(meindex,talker);
 			if(ret == 1)	
-				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//族长身分不合
+				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//逜酗旯煦祥磁
 			else if(ret == 4)
-				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//家族没有正式成立
+				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//模逜羶衄淏宒傖蕾
 			else
 				Raceman_MsgDisp( meindex, talker, 6 , -1 );
 			break;
@@ -243,16 +243,16 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 	datanum = atoi( data);
 	switch( seqno){
 	case CHAR_WINDOWTYPE_RACE_START:
-		if(datanum == 2){	// 比赛题目
+		if(datanum == 2){	// 掀��枙醴
 			Raceman_SelectWindow( meindex, talkerindex,1,-1);
-		}else if(datanum == 3){ // 领取猎宠证
+		}else if(datanum == 3){ // 鍰�℅堀髲�
 			Raceman_SelectWindow( meindex, talkerindex,2,-1);
-		}else if(datanum == 4){ // 猎宠登记处
-			//Raceman_SelectWindow( meindex, talkerindex,3,-1);修改  加入通关密语才能登记
+		}else if(datanum == 4){ // 轂唾腎暮揭
+			//Raceman_SelectWindow( meindex, talkerindex,3,-1);党蜊  樓�輹邦媄嗄鼤鼴傿Ф�
 			Raceman_SelectWindow( meindex, talkerindex,6,-1);	
-		}else if(datanum == 5){ // 猎宠排行榜
+		}else if(datanum == 5){ // 轂唾齬俴埤
 			Raceman_SelectWindow( meindex, talkerindex,4,-1);
-		}else if(datanum == 6){	// 猎宠战利品
+		}else if(datanum == 6){	// 轂唾桵瞳こ
 			Raceman_SelectWindow( meindex, talkerindex,5,-1);
 		}
 		break;
@@ -264,7 +264,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 	case CHAR_WINDOWTYPE_RACE_TICKET:
 		if(select == WINDOW_BUTTONTYPE_OK)
 		{
-			if(Raceman_CheckItem(meindex,talkerindex)==TRUE){ //TRUE:有证了
+			if(Raceman_CheckItem(meindex,talkerindex)==TRUE){ //TRUE:衄痐賸
 				Raceman_MsgDisp( meindex, talkerindex,22,-1);
 			}else{
 				if(Raceman_EventAddItem(meindex, talkerindex)==TRUE){
@@ -274,7 +274,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 		}
 		break;
 	case CHAR_WINDOWTYPE_RACE_PETSELECT:
-		if(Raceman_CheckItem(meindex,talkerindex)==FALSE){ //FALSE:没有证
+		if(Raceman_CheckItem(meindex,talkerindex)==FALSE){ //FALSE:羶衄痐
 			Raceman_MsgDisp( meindex, talkerindex,32,-1);
 		}else{
 			if(select == WINDOW_BUTTONTYPE_CANCEL){
@@ -286,7 +286,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 		break;
 	case CHAR_WINDOWTYPE_RACE_CHECKIN:
 		if(select == WINDOW_BUTTONTYPE_YES){
-			ret = Raceman_petcheckin( meindex, talkerindex );   //登记
+			ret = Raceman_petcheckin( meindex, talkerindex );   //腎暮
 			if(ret == TRUE)
 				Raceman_SelectWindow( meindex, talkerindex,0,-1);	
 			else
@@ -301,7 +301,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 		{
 		case 1:
 			if( NowTime.tv_sec > RTIME1 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //更新
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //載陔
 				RTIME1 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable1[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -309,7 +309,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			break;
 		case 2:
 			if( NowTime.tv_sec > RTIME2 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //更新
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //載陔
 				RTIME2 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable2[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -317,7 +317,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			break;
 		case 3:
 			if( NowTime.tv_sec > RTIME3 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //更新
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //載陔
 				RTIME3 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable3[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -325,7 +325,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			break;
 		case 4:
 			if( NowTime.tv_sec > RTIME4 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //更新
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //載陔
 				RTIME4 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable4[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -333,7 +333,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			break;
 		case 5:
 			if( NowTime.tv_sec > RTIME5 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //更新
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //載陔
 				RTIME5 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable5[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -401,8 +401,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料
-					strcpy(listbuf,"『新手惊为天人排行榜』 "); 
+					//彶摩訧蹋
+					strcpy(listbuf,"◇陔忒儐峈毞�侜瓚訄鞢� "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(ranktable1[i].rank == 0 || strlen(ranktable1[i].name) == 0 || ranktable1[i].catchcnt == 0) break;
@@ -448,8 +448,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料					
-					strcpy(listbuf,"『高手惊为天人排行榜』 "); 
+					//彶摩訧蹋					
+					strcpy(listbuf,"◇詢忒儐峈毞�侜瓚訄鞢� "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(ranktable2[i].rank == 0 || strlen(ranktable2[i].name) == 0 || ranktable2[i].catchcnt == 0) break;
@@ -495,8 +495,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料
-					strcpy(listbuf,"『家族惊为天人排行榜』 "); 
+					//彶摩訧蹋
+					strcpy(listbuf,"◇模逜儐峈毞�侜瓚訄鞢� "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(ranktable3[i].rank == 0 || strlen(ranktable3[i].name) == 0 || ranktable3[i].catchcnt == 0) break;
@@ -542,8 +542,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料					
-					strcpy(listbuf,"『高手无奇不有排行榜』 "); 
+					//彶摩訧蹋					
+					strcpy(listbuf,"◇詢忒拸も祥衄齬俴埤◆ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(ranktable4[i].rank == 0 || strlen(ranktable4[i].name) == 0 || ranktable4[i].catchcnt == 0) break;
@@ -564,7 +564,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			}
 		break;
 	case CHAR_WINDOWTYPE_RACE_SHOWRANK5:
-		//目前秀到哪一笔		
+		//醴ヶ凅善闡珨捩		
 		switch(select){
 			case WINDOW_BUTTONTYPE_NEXT:
 			case WINDOW_BUTTONTYPE_PREV:
@@ -576,7 +576,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 					Pageindex += 10 * (( select == WINDOW_BUTTONTYPE_NEXT) ? 1 : -1);
 
 					if(ranktable5[Pageindex].catchcnt==0)  {
-						//Pageindex = Pageindex - 10;	无下一页一率回首页
+						//Pageindex = Pageindex - 10;	拸狟珨珜珨薹隙忑珜
 						Raceman_SelectWindow( meindex, talkerindex,0,-1);
 						return;
 					}
@@ -591,8 +591,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料
-					strcpy(listbuf,"『家族无奇不有排行榜』 "); 					
+					//彶摩訧蹋
+					strcpy(listbuf,"◇模逜拸も祥衄齬俴埤◆ "); 					
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{						
 						if(ranktable5[i].rank == 0 || strlen(ranktable5[i].name) == 0 || ranktable5[i].catchcnt == 0) break;
@@ -638,8 +638,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料
-					strcpy(listbuf,"『新手历史惊为天人排行榜』 "); 
+					//彶摩訧蹋
+					strcpy(listbuf,"◇陔忒盪妢儐峈毞�侜瓚訄鞢� "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(history1[i].rank == 0 || strlen(history1[i].name) == 0 || history1[i].catchcnt == 0) break;
@@ -685,8 +685,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料					
-					strcpy(listbuf,"『高手历史惊为天人排行榜』 "); 
+					//彶摩訧蹋					
+					strcpy(listbuf,"◇詢忒盪妢儐峈毞�侜瓚訄鞢� "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(history2[i].rank == 0 || strlen(history2[i].name) == 0 || history2[i].catchcnt == 0) break;
@@ -732,8 +732,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料
-					strcpy(listbuf,"『家族历史惊为天人排行榜』 "); 
+					//彶摩訧蹋
+					strcpy(listbuf,"◇模逜盪妢儐峈毞�侜瓚訄鞢� "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(history3[i].rank == 0 || strlen(history3[i].name) == 0 || history3[i].catchcnt == 0) break;
@@ -779,8 +779,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料					
-					strcpy(listbuf,"『高手历史无奇不有排行榜』 "); 
+					//彶摩訧蹋					
+					strcpy(listbuf,"◇詢忒盪妢拸も祥衄齬俴埤◆ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(history4[i].rank == 0 || strlen(history4[i].name) == 0 || history4[i].catchcnt == 0) break;
@@ -801,7 +801,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			}
 		break;
 	case CHAR_WINDOWTYPE_RACE_SHOWRANK15:
-		//目前秀到哪一笔		
+		//醴ヶ凅善闡珨捩		
 		switch(select){
 			case WINDOW_BUTTONTYPE_NEXT:
 			case WINDOW_BUTTONTYPE_PREV:
@@ -813,7 +813,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 					Pageindex += 10 * (( select == WINDOW_BUTTONTYPE_NEXT) ? 1 : -1);
 
 					if(history5[Pageindex].catchcnt==0)  {
-						//Pageindex = Pageindex - 10;	无下一页一率回首页
+						//Pageindex = Pageindex - 10;	拸狟珨珜珨薹隙忑珜
 						Raceman_SelectWindow( meindex, talkerindex,0,-1);
 						return;
 					}
@@ -828,8 +828,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//收集资料
-					strcpy(listbuf,"『家族历史无奇不有排行榜』 "); 					
+					//彶摩訧蹋
+					strcpy(listbuf,"◇模逜盪妢拸も祥衄齬俴埤◆ "); 					
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{						
 						if(history5[i].rank == 0 || strlen(history5[i].name) == 0 || history5[i].catchcnt == 0) break;
@@ -852,9 +852,9 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 	case CHAR_WINDOWTYPE_RACE_QUIZ:
 		ret = Raceman_CheckAnswer( meindex , talkerindex , data );
 		if(ret == TRUE)		
-			Raceman_SelectWindow( meindex, talkerindex,3,-1); //答对了
+			Raceman_SelectWindow( meindex, talkerindex,3,-1); //湘勤賸
 		else
-			Raceman_MsgDisp( meindex, talkerindex,94,-1);//答错了
+			Raceman_MsgDisp( meindex, talkerindex,94,-1);//湘渣賸
 		break;
 	default: break;
 		}
@@ -871,37 +871,37 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 	int  i;
 
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return ;
 	}
 	switch( num) {
 		case 0:
-			// 空白处请勿更动
-			strcpy( token, "                    ☆猎宠大会☆\n\n");
-				strcat( token, "                 《 猎宠比赛题目 》\n");
-				strcat( token, "                  《 领取猎宠证 》\n");
-				strcat( token, "                   《 猎宠登记 》\n");
-				strcat( token, "                  《 猎宠排行榜 》\n");
-				strcat( token, "                  《 猎宠战利品 》\n\n");
-				strcat( token, "                     《 离开 》\n");
+			// 諾啞揭③昦載雄
+			strcpy( token, "                    ∵轂唾湮頗∵\n\n");
+				strcat( token, "                 ▲ 轂唾掀��枙醴 ◎\n");
+				strcat( token, "                  ▲ 鍰�℅堀髲� ◎\n");
+				strcat( token, "                   ▲ 轂唾腎暮 ◎\n");
+				strcat( token, "                  ▲ 轂唾齬俴埤 ◎\n");
+				strcat( token, "                  ▲ 轂唾桵瞳こ ◎\n\n");
+				strcat( token, "                     ▲ 燭羲 ◎\n");
 			buttontype=WINDOW_BUTTONTYPE_NONE;
 			windowtype=WINDOW_MESSAGETYPE_SELECT;
 			windowno=CHAR_WINDOWTYPE_RACE_START; 
 			break;
 
-		case 1:	//比赛题目
-			strcpy( token, "                  ☆猎宠大会报告☆\n\n");
+		case 1:	//掀��枙醴
+			strcpy( token, "                  ∵轂唾湮頗惆豢∵\n\n");
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, "subject_msg",
 														buf,sizeof(buf))!= NULL)
 			{
-				sprintf( buf2 ,"比赛题目：%s\n\n",buf);
+				sprintf( buf2 ,"掀��枙醴ㄩ%s\n\n",buf);
 			}
 			strcat( token , buf2 );
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, "time_msg", 
 														buf, sizeof( buf)) != NULL){
-				sprintf( buf2 ,"时间限制：%s\n\n",buf);
+				sprintf( buf2 ,"奀潔癹秶ㄩ%s\n\n",buf);
 			}
 			strcat( token , buf2 );
 			buttontype=WINDOW_BUTTONTYPE_OK;
@@ -909,13 +909,13 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowno=CHAR_WINDOWTYPE_RACE_SUBJECT; 
 			break;
 
-		case 2:	//领猎宠证
-			strcpy( token, "                  ☆猎宠证核发处☆\n\n");
+		case 2:	//鍰轂唾痐
+			strcpy( token, "                  ∵轂唾痐瞄楷揭∵\n\n");
 			NPC_Util_GetStrFromStrWithDelim( argstr, "EndFlag",buf, sizeof( buf) );
 			if( strcmp(buf,"on")==0){   
 				NPC_Util_GetStrFromStrWithDelim( argstr , "ending_msg", buf, sizeof( buf));
 				strcat( token , buf );
-				//strcat(token,"\n	比赛已经结束，无法再领取猎宠证！");   	
+				//strcat(token,"\n	掀��眒冪賦旰ㄛ拸楊婬鍰�℅堀髲不�");   	
 				windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 	
 			}else{
 				if( NPC_Util_GetStrFromStrWithDelim( argstr, "card_msg",buf, sizeof( buf) ) != NULL)
@@ -925,29 +925,29 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;			
 			break;
-		case 21://道具已满讯息
+		case 21://耋撿眒雛捅洘
 		  	if( NPC_Util_GetStrFromStrWithDelim( argstr, "itemfull_msg",buf, sizeof( buf) ) != NULL)
 				strcpysafe(token, sizeof( buf), buf);
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			break;
-		case 22://已经有猎宠证讯息
+		case 22://眒冪衄轂唾痐捅洘
 		  	if( NPC_Util_GetStrFromStrWithDelim( argstr, "haditem_msg",buf, sizeof( buf) ) != NULL)
 				strcpysafe(token, sizeof( buf), buf);
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			break;
-		case 3:	//猎宠登记			
-			strcpy( token, "                   ☆猎宠登记处☆\n\n");
+		case 3:	//轂唾腎暮			
+			strcpy( token, "                   ∵轂唾腎暮揭∵\n\n");
 			buttontype=WINDOW_BUTTONTYPE_CANCEL;
 	  		windowtype=WINDOW_MESSAGETYPE_PETSELECT;
 			windowno=CHAR_WINDOWTYPE_RACE_PETSELECT;
 			break;
-		case 31://检查宠物
+		case 31://潰脤唾昜
 			//CHAR_getWorkInt( meindex , CHAR_WORKPETSELECT );
-			if(Raceman_checkpet( meindex, talker , select , token ) == FALSE){    // false 表示已登记
+			if(Raceman_checkpet( meindex, talker , select , token ) == FALSE){    // false 桶尨眒腎暮
 				buttontype=WINDOW_BUTTONTYPE_OK;
 		  		windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 				windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
@@ -955,14 +955,14 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 				//PetSelect = select-1;
 				CHAR_setWorkInt( talker , CHAR_WORK_PETSELECT, select-1 );
 				if( NPC_Util_GetStrFromStrWithDelim( argstr, "DelFlag",buf, sizeof( buf) ) != NULL){
-					if( strcmp(buf,"on")==0)	strcat(token,"\n\n	请注意，您必须交出宠物才能登记唷!");
+					if( strcmp(buf,"on")==0)	strcat(token,"\n\n	③蛁砩ㄛ蠟斛剕蝠堤唾昜符夔腎暮遄!");
 				}
 				buttontype = WINDOW_BUTTONTYPE_YESNO;
 				windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 				windowno=CHAR_WINDOWTYPE_RACE_CHECKIN; 
 			}
 			break;
-		case 32://无猎宠证讯息
+		case 32://拸轂唾痐捅洘
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, "nonitem_msg",buf, sizeof( buf) ) != NULL){
 				strcpysafe(token, sizeof( buf), buf);
 			}
@@ -970,8 +970,8 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			break;
-		case 4:	//猎宠排行榜
-			strcpy( token, "                  ☆猎宠排行榜☆\n\n");
+		case 4:	//轂唾齬俴埤
+			strcpy( token, "                  ∵轂唾齬俴埤∵\n\n");
 				NPC_Util_GetStrFromStrWithDelim( argstr, "EndFlag",buf, sizeof( buf) );
 				if(strcmp(buf,"off")==0){
 					NPC_Util_GetStrFromStrWithDelim( argstr, "HasGame",buf, sizeof( buf) );
@@ -991,23 +991,23 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_SELECT;
 			windowno=CHAR_WINDOWTYPE_RACE_RANK; 
 			break;
-		case 41: //新手的比赛 限定种类比数量
+		case 41: //陔忒腔掀�� 癹隅笱濬掀杅講
 			token[0]='\0';				
-			strcpy(token,"『新手惊为天人排行榜』 ");
+			strcpy(token,"◇陔忒儐峈毞�侜瓚訄鞢� ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable1[i].rank == 0 || strlen(ranktable1[i].name) == 0 || ranktable1[i].catchcnt == 0) break;
 				sprintf(tmp_buffer,"%d %s %d ",ranktable1[i].rank , ranktable1[i].name , ranktable1[i].catchcnt);
 				strcat(token,tmp_buffer);
 			}
-			Pageindex = 0;  //回到第一页
+			Pageindex = 0;  //隙善菴珨珜
 			buttontype=WINDOW_BUTTONTYPE_OK|WINDOW_BUTTONTYPE_NEXT;
 			windowtype=WINDOW_MESSAGETYPE_RACEMAN_RANK;
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK1;
 			break;
-		case 42://个人同种类排名 
+		case 42://跺�冞盆祣鉣鷗� 
 			token[0]='\0';
-			strcpy(token,"『高手惊为天人排行榜』 ");
+			strcpy(token,"◇詢忒儐峈毞�侜瓚訄鞢� ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable2[i].rank == 0 || strlen(ranktable2[i].name) == 0 || ranktable2[i].catchcnt == 0) break;
@@ -1019,9 +1019,9 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_RACEMAN_RANK;
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK2;
 			break;
-		case 43://家族不同种类排名 
+		case 43://模逜祥肮笱濬齬靡 
 			token[0]='\0';
-			strcpy(token,"『家族惊为天人排行榜』 ");
+			strcpy(token,"◇模逜儐峈毞�侜瓚訄鞢� ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable3[i].rank == 0 || strlen(ranktable3[i].name) == 0 || ranktable3[i].catchcnt == 0) break;
@@ -1033,9 +1033,9 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_RACEMAN_RANK;
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK3;
 			break;
-		case 44://个人同种类排名 
+		case 44://跺�冞盆祣鉣鷗� 
 			token[0]='\0';
-			strcpy(token,"『高手无奇不有排行榜』 ");
+			strcpy(token,"◇詢忒拸も祥衄齬俴埤◆ ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable4[i].rank == 0 || strlen(ranktable4[i].name) == 0 || ranktable4[i].catchcnt == 0) break;
@@ -1047,9 +1047,9 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_RACEMAN_RANK;
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK4;
 			break;
-		case 45://家族不同种类排名 
+		case 45://模逜祥肮笱濬齬靡 
 			token[0]='\0';
-			strcpy(token,"『家族无奇不有排行榜』 ");
+			strcpy(token,"◇模逜拸も祥衄齬俴埤◆ ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable5[i].rank == 0 || strlen(ranktable5[i].name) == 0 || ranktable5[i].catchcnt == 0) break;
@@ -1063,7 +1063,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 411:
 			token[0]='\0';
-			strcpy(token,"『新手历史惊为天人排行榜』 ");
+			strcpy(token,"◇陔忒盪妢儐峈毞�侜瓚訄鞢� ");
 			for (i=0;i<10;i++)
 			{
 				if(history1[i].rank == 0 || strlen(history1[i].name) == 0 || history1[i].catchcnt == 0) break;
@@ -1077,7 +1077,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 412:
 			token[0]='\0';
-			strcpy(token,"『高手历史惊为天人排行榜』 ");
+			strcpy(token,"◇詢忒盪妢儐峈毞�侜瓚訄鞢� ");
 			for (i=0;i<10;i++)
 			{
 				if(history2[i].rank == 0 || strlen(history2[i].name) == 0 || history2[i].catchcnt == 0) break;
@@ -1091,7 +1091,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 413:
 			token[0]='\0';
-			strcpy(token,"『家族历史惊为天人排行榜』 ");
+			strcpy(token,"◇模逜盪妢儐峈毞�侜瓚訄鞢� ");
 			for (i=0;i<10;i++)
 			{
 				if(history3[i].rank == 0 || strlen(history3[i].name) == 0 || history3[i].catchcnt == 0) break;
@@ -1105,7 +1105,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 414:
 			token[0]='\0';
-			strcpy(token,"『高手历史无奇不有排行榜』 ");
+			strcpy(token,"◇詢忒盪妢拸も祥衄齬俴埤◆ ");
 			for (i=0;i<10;i++)
 			{
 				if(history4[i].rank == 0 || strlen(history4[i].name) == 0 || history4[i].catchcnt == 0) break;
@@ -1119,7 +1119,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 415:
 			token[0]='\0';
-			strcpy(token,"『家族历史无奇不有排行榜』 ");
+			strcpy(token,"◇模逜盪妢拸も祥衄齬俴埤◆ ");
 			for (i=0;i<10;i++)
 			{
 				if(history5[i].rank == 0 || strlen(history5[i].name) == 0 || history5[i].catchcnt == 0) break;
@@ -1132,29 +1132,29 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK15;
 			break;
 		case 46:
-			strcpy( token, "                   ☆猎宠排行榜☆\n\n\n");
-				strcat( token, "              排行榜目前没有资料\n");
+			strcpy( token, "                   ∵轂唾齬俴埤∵\n\n\n");
+				strcat( token, "              齬俴埤醴ヶ羶衄訧蹋\n");
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			break;
-		case 5:	//猎宠战利品
+		case 5:	//轂唾桵瞳こ
 			if(Raceman_checkprize( meindex , talker , token )==FALSE){
 				windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			}else{
-				Raceman_renewrank( meindex , talker , Raceman_readmode( meindex , talker ) );   //读取排名
+				Raceman_renewrank( meindex , talker , Raceman_readmode( meindex , talker ) );   //黍�ˍ鷗�
 				windowno=CHAR_WINDOWTYPE_RACE_PRIZE; 
 			}
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			break;
-		case 6: //通关密语
-			Raceman_GetQuestion( meindex , talker , token );   //要处理随机读出题目 和秀出题目
+		case 6: //籵壽躇逄
+			Raceman_GetQuestion( meindex , talker , token );   //猁揭燴呴儂黍堤枙醴 睿凅堤枙醴
 			buttontype = WINDOW_BUTTONTYPE_OK;
 			windowtype = WINDOW_MESSAGETYPE_MESSAGEANDLINEINPUT;
 			windowno = CHAR_WINDOWTYPE_RACE_QUIZ;
 			break;
-		case 9:	// 家族赛 非族长讯息
+		case 9:	// 模逜�� 準逜酗捅洘
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, "fmleader_msg",buf, sizeof( buf) ) != NULL){
 				strcpysafe(token, sizeof( buf), buf);
 			}
@@ -1179,13 +1179,13 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL;
 			break;
 		case 92:
-			strcpy(token,"您的家族还没有正式成立...");
+			strcpy(token,"蠟腔模逜遜羶衄淏宒傖蕾...");
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL;
 			break;
 		case 93:	
-			strcpy(token,"目前登记人数过多请稍後再试...");
+			strcpy(token,"醴ヶ腎暮�侕�徹嗣③尕摽婬彸...");
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL;
@@ -1209,14 +1209,14 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 
 }
 
-//return 0: OK  1:族长身分不合 2:新手等级不合 3:新手转身不合 4:非正式家族
+//return 0: OK  1:逜酗旯煦祥磁 2:陔忒脹撰祥磁 3:陔忒蛌旯祥磁 4:準淏宒模逜
 int Raceman_CheckGameType(int meindex , int talker )
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	char buf[64];
 	int  gmode;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1224,13 +1224,13 @@ int Raceman_CheckGameType(int meindex , int talker )
 
 	NPC_Util_GetStrFromStrWithDelim( argstr, "GameMode", buf, sizeof( buf) ); 
 	gmode = atoi(buf);
-	if( gmode == 3 || gmode == 5){	//家族赛
+	if( gmode == 3 || gmode == 5){	//模逜��
 		if (CHAR_getWorkInt(talker, CHAR_WORKFMSETUPFLAG)!=1)	
 			return 4;
-		if (CHAR_getInt(talker,CHAR_FMLEADERFLAG)!=FMMEMBER_LEADER)   //是族长吗
+		if (CHAR_getInt(talker,CHAR_FMLEADERFLAG)!=FMMEMBER_LEADER)   //岆逜酗鎘
 			return 1;
 	}
-	if( gmode == 1 ){  //检查新人身分
+	if( gmode == 1 ){  //潰脤陔�侂窾�
 		NPC_Util_GetStrFromStrWithDelim( argstr, "FornewLv", buf, sizeof( buf) ); 
 		//sprintf(buuf,"fornewlv:%s   talkerLV:%d", buf , CHAR_getInt(  talker , CHAR_LV));
 		//CHAR_talkToCli( talker, -1,buuf, CHAR_COLORYELLOW);
@@ -1245,14 +1245,14 @@ int Raceman_CheckGameType(int meindex , int talker )
 	}
 	return 0;   
 }
-//检查有无猎宠证
+//潰脤衄拸轂唾痐
 BOOL Raceman_CheckItem(int meindex,int talker)
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	int item,i,itemindex,id;
 	char buf[128];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1287,7 +1287,7 @@ BOOL Raceman_ItemFullCheck(int meindex, int talker)
 	return TRUE;
 }
 
-//发放猎宠证
+//楷溫轂唾痐
 BOOL Raceman_EventAddItem( int meindex,int talker )
 {
 	int itemindex,ret,i,fd;
@@ -1302,7 +1302,7 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		return FALSE;
 	}
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1332,15 +1332,15 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 	if( CHAR_getInt( talker, CHAR_CATCHCNT1+gmode-1 )!=0){
 		
 		for(i=0;i<10;i++)	CHAR_setInt( talker, CHAR_KINDCNT1 + i , 0 );	
-		CHAR_setInt( talker,CHAR_CATCHCNT1+gmode-1, 0 );  //清除记录
+		CHAR_setInt( talker,CHAR_CATCHCNT1+gmode-1, 0 );  //ь壺暮翹
 
-		if(gmode==3||gmode==5){  //家族赛
-			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//家族名称
-			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//家族id
-		}else{	//个人赛
+		if(gmode==3||gmode==5){  //模逜��
+			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//模逜靡備
+			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//模逜id
+		}else{	//跺�侒�
 			fd = getfdFromCharaIndex(talker);
-			CONNECT_getCharname( fd, name, sizeof( name ) );  //人物名称
-			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //帐号		
+			CONNECT_getCharname( fd, name, sizeof( name ) );  //�冼屪�備
+			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //梛瘍		
 		}
 
 		switch(gmode)
@@ -1353,10 +1353,10 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		}
 		saacproto_ACRaceRecordandSort_send( acfd , talker , buf1 , id , name,9,0,0);
 	}
-	if(gmode < 4 )	//限定种类
-		sprintf( buf1, "目前猎宠记录%d只。", CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+	if(gmode < 4 )	//癹隅笱濬
+		sprintf( buf1, "醴ヶ轂唾暮翹%d硐﹝", CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 	else{	
-		//random一各题目给他
+		//random珨跪枙醴跤坻
 		askno = rand() % asktotal; 
 		asklv = asktable[askno].lowlv + rand()%((asktable[askno].highlv+1)-asktable[askno].lowlv);
 		temp = (askno << 22) & 0x7FC00000;
@@ -1368,21 +1368,21 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		//	CHAR_getInt( talker ,CHAR_CHECKIN),askno,asktable[askno].petname,asklv,asktable[askno].bbi);		
 		//CHAR_talkToCli( talker, -1,buf1, CHAR_COLORYELLOW);
 		if( asktable[askno].highlv == 0 )
-			sprintf( buf1,"请抓给我等级%d『以上』的%s好吗。您目前记录%d种", asktable[askno].lowlv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+			sprintf( buf1,"③蚰跤扂脹撰%d◇眕奻◆腔%s疑鎘﹝蠟醴ヶ暮翹%d笱", asktable[askno].lowlv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 		else
-			sprintf( buf1,"请抓给我『只能』等级%d的%s好吗。您目前记录%d种", asklv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+			sprintf( buf1,"③蚰跤扂◇硐夔◆脹撰%d腔%s疑鎘﹝蠟醴ヶ暮翹%d笱", asklv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 	}
 	ITEM_setChar( itemindex, ITEM_EFFECTSTRING, buf1);
 	if(itemindex != -1) {
 		LogItem(
-		CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+		CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 		CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 		itemindex,
 #else
-   		ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+   		ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-		"EventAddItem(任务需求所得到的道具)",
+		"EventAddItem(�恄鵓駍鯤驧繭蔥警擰�)",
 		CHAR_getInt( talker, CHAR_FLOOR),
 		CHAR_getInt( talker, CHAR_X ),
  		CHAR_getInt( talker, CHAR_Y ),
@@ -1391,14 +1391,14 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		ITEM_getInt( itemindex, ITEM_ID)
 		);
 	}
-	sprintf(token,"拿到%s。", ITEM_getChar( itemindex, ITEM_NAME));
+	sprintf(token,"鏽善%s﹝", ITEM_getChar( itemindex, ITEM_NAME));
 	CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 	CHAR_sendItemDataOne( talker, ret);
 
 	return TRUE;
 }
 
-// 检查是否为比赛的宠物和是否登记过           
+// 潰脤岆瘁峈掀��腔唾昜睿岆瘁腎暮徹           
 BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 {
 	int	 petindex,checkpetID,petimgnum;
@@ -1408,7 +1408,7 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	int  index,gmode;
 	unsigned int  askno,asklv,askbbi;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
@@ -1422,7 +1422,7 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	}
 
 	if(CHAR_getInt( talker,CHAR_CATCHCNT5 ) >= asktotal ){
-		strcpy( token ,"恭喜你已经达到猎宠大赛终极目标，感谢您的参与并祝您抽中大奖");
+		strcpy( token ,"鳩炰斕眒冪湛善轂唾湮��笝憤醴梓ㄛ覜郅蠟腔統迵甜蛅蠟喲笢湮蔣");
 		return FALSE;
 	}
 
@@ -1431,24 +1431,24 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	if( !CHAR_CHECKINDEX(petindex) ) return FALSE;
   
 	if (CHAR_getInt(petindex, CHAR_PETFAMILY) == 1){
-		strcpy(token,"\n	家族守护兽无法登记！");   	
+		strcpy(token,"\n	模逜忐誘忤拸楊腎暮ㄐ");   	
     	return	FALSE;
     }
 
     if (CHAR_getInt( talker , CHAR_RIDEPET) == select-1 ){
-		strcpy(token,"\n	骑乘中的宠物无法登记！");	
+		strcpy(token,"\n	る傚笢腔唾昜拸楊腎暮ㄐ");	
     	return	FALSE;
     }    
 
 	NPC_Util_GetStrFromStrWithDelim( argstr , "GameCode", buf, sizeof( buf));
-	if( CHAR_getInt(petindex,CHAR_CHECKIN) == atoi(buf) ){   //这次比赛已登记过了
-		strcpy(token,"\n	这只宠物已经在本届比赛登记过了哦!");
+	if( CHAR_getInt(petindex,CHAR_CHECKIN) == atoi(buf) ){   //涴棒掀��眒腎暮徹賸
+		strcpy(token,"\n	涴硐唾昜眒冪婓掛趣掀��腎暮徹賸韃!");
 		return  FALSE;
 	}
 
 	NPC_Util_GetStrFromStrWithDelim( argstr , "GameMode", buf, sizeof( buf));
 	gmode = atoi(buf);
-	if(gmode==4||gmode==5)  //不限种类
+	if(gmode==4||gmode==5)  //祥癹笱濬
 	{			
 		petimgnum = CHAR_getInt( petindex , CHAR_BASEBASEIMAGENUMBER); 
 		askbbi = CHAR_getInt( talker ,CHAR_CHECKIN) & 0x00003FFF;
@@ -1461,58 +1461,58 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 		//CHAR_talkToCli( talker, -1,buf, CHAR_COLORYELLOW);
 
 		if( petimgnum != askbbi+100000 ){
-			strcpy(token,"\n	请确认宠物，这只不是我要的哦!");
+			strcpy(token,"\n	③�溜炡駘鵃盈甂輔銘ё眣玥霰�!");
 			return FALSE;
 		}
 		if( strcmp(petname,asktable[askno].petname)!=0) {
-			strcpy(token,"\n	请确认宠物，这只不是我要的哦!");
+			strcpy(token,"\n	③�溜炡駘鵃盈甂輔銘ё眣玥霰�!");
 			return FALSE;		
 		}
 		if( asktable[askno].highlv == 0 ){
 			if( CHAR_getInt(petindex , CHAR_LV) < asktable[askno].lowlv ){
-				strcpy(token,"\n	这只宠物等级不够哦！");   	
+				strcpy(token,"\n	涴硐唾昜脹撰祥劂韃ㄐ");   	
 				return  FALSE;
 			}
 		}else{
 			if( CHAR_getInt(petindex , CHAR_LV) != asklv ){
-				strcpy(token,"\n	请确认宠物等级，等级不对唷哦!");
+				strcpy(token,"\n	③�溜炡駘齔�撰ㄛ脹撰祥勤遄韃!");
 				return FALSE;		
 			}
 		}
 		
-		sprintf(token,"		＝＝＝         宠物登记         ＝＝＝"
-						"\n\n\n 您选择登记的宠物是    %s Lv:%d"
+		sprintf(token,"		ˊˊˊ         唾昜腎暮         ˊˊˊ"
+						"\n\n\n 蠟恁寁腎暮腔唾昜岆    %s Lv:%d"
 					,petname,CHAR_getInt( petindex, CHAR_LV));					
 		
 		/*
 		NPC_Util_GetStrFromStrWithDelim( argstr , "PetLevel", buf, sizeof( buf));
 		if (CHAR_getInt(petindex , CHAR_LV) < atoi(buf)){
-			strcpy(token,"\n	这只宠物等级不够！");   	
+			strcpy(token,"\n	涴硐唾昜脹撰祥劂ㄐ");   	
 			return  FALSE;
 		}
 
 		petimgnum = CHAR_getInt( petindex , CHAR_BASEBASEIMAGENUMBER); 
 		for(petNo=0;petNo<640;petNo++){
-			if(	 petimgnum == petflgtable[petNo] )  // 应该要一定在table内
+			if(	 petimgnum == petflgtable[petNo] )  // 茼蜆猁珨隅婓table囀
 				break;
 		}
 		if( petNo >= 640 ){
 			//sprintf(buuf2,"petimgnum:%d   pftable:%d   petNo:%d", petimgnum , petflgtable[2] , petNo);
 			//CHAR_talkToCli( talker, -1,buuf2, CHAR_COLORYELLOW);
-			strcpy(token,"\n	这只宠物怪怪的唷!");
+			strcpy(token,"\n	涴硐唾昜墅墅腔遄!");
 			//log
 			LogPet( CHAR_getChar( talker, CHAR_NAME ),
 					CHAR_getChar( talker, CHAR_CDKEY ),
 					CHAR_getChar( petindex, CHAR_NAME),
 					CHAR_getInt( petindex, CHAR_LV),
-					"raceman(猎宠大会非法宠记录)",
+					"raceman(轂唾湮頗準楊唾暮翹)",
 					CHAR_getInt( talker,CHAR_FLOOR),
 					CHAR_getInt( talker,CHAR_X ),
 					CHAR_getInt( talker,CHAR_Y ),
 					CHAR_getChar( petindex, CHAR_UNIQUECODE)   
 					);
 
-			return FALSE;// 出问题罗，玩家拿不能拥有的宠物来登记 
+			return FALSE;// 堤恀枙蹕ㄛ俙模鏽祥夔茧衄腔唾昜懂腎暮 
 		}
 
 		//sprintf(buuf2,"petimgnum:%d   pftable:%d   petNo:%d", petimgnum , petflgtable[petNo] , petNo);
@@ -1531,8 +1531,8 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 			sprintf(token,"\n	 %s",buf);
 			return FALSE; 
 		}else{
-			sprintf(token,"		＝＝＝         宠物登记         ＝＝＝"
-							"\n\n\n 您选择登记的宠物是    %s Lv:%d"
+			sprintf(token,"		ˊˊˊ         唾昜腎暮         ˊˊˊ"
+							"\n\n\n 蠟恁寁腎暮腔唾昜岆    %s Lv:%d"
 							,petname,CHAR_getInt( petindex, CHAR_LV)
 							);		
 		}
@@ -1547,7 +1547,7 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	//		sprintf(buuf2,"petindex:%d   checkpetID:%d  index:%d",petindex,checkpetID,index);
 	//		CHAR_talkToCli( talker, -1,buuf2, CHAR_COLORYELLOW);
 
-			/*保留gm指令dropmypet做法  结果同下段
+			/*悵隱gm硌鍔dropmypet酕楊  賦彆肮狟僇
 			petarray = ENEMY_getEnemyArrayFromId( checkpetID );
 			petindex2 = ENEMY_TEST_createPetIndex( petarray );
 			test5  = CHAR_getInt( petindex2 , CHAR_BASEBASEIMAGENUMBER);
@@ -1564,16 +1564,16 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 
 				NPC_Util_GetStrFromStrWithDelim( argstr , "PetLevel", buf, sizeof( buf));
 				if (CHAR_getInt(petindex , CHAR_LV) < atoi(buf)){
-					strcpy(token,"\n	这只宠物等级不够！");   	
+					strcpy(token,"\n	涴硐唾昜脹撰祥劂ㄐ");   	
 					return  FALSE;
 				}
 
-				sprintf(token,"		＝＝＝         宠物登记         ＝＝＝"
-								"\n\n\n 您选择登记的宠物是    %s Lv:%d"
+				sprintf(token,"		ˊˊˊ         唾昜腎暮         ˊˊˊ"
+								"\n\n\n 蠟恁寁腎暮腔唾昜岆    %s Lv:%d"
 								,petname,CHAR_getInt( petindex, CHAR_LV)
 								);		
 			}else{
-				strcpy(token,"\n	比赛的题目没有这只宠物哦!");
+				strcpy(token,"\n	掀��腔枙醴羶衄涴硐唾昜韃!");
 				return FALSE;
 			}
 		}
@@ -1588,7 +1588,7 @@ int Raceman_getokask( int talker, int random )
 	base = random / 32 ;
 	shift = random % 32 ;
 	i = 1 << shift ;
-	if(	CHAR_getInt( talker , CHAR_KINDCNT1 + base ) & i ){	//为真表示解过了
+	if(	CHAR_getInt( talker , CHAR_KINDCNT1 + base ) & i ){	//峈淩桶尨賤徹賸
 		random ++;
 		if( random >= asktotal ) random = 0;
 		return Raceman_getokask( talker , random );
@@ -1607,17 +1607,17 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 	int  base,intNo,shift,petNo,j;	
 	unsigned int  askno,asklv,temp;
 	
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
 	}
 	
-	//保险检查
+	//悵玸潰脤
 	for( i = 0 ; i < 5 ; i ++ ){
 		j = CHAR_getInt( talker,CHAR_CATCHCNT1 + i ) ;
 		if( j++ >= 0xFFFFFF ) {
-			CHAR_talkToCli( talker, -1, "很抱歉，您已经达到系统上限，无法再登记了", CHAR_COLORYELLOW);
+			CHAR_talkToCli( talker, -1, "竭惕Кㄛ蠟眒冪湛善炵苀奻癹ㄛ拸楊婬腎暮賸", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 	}
@@ -1626,21 +1626,21 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 	if( !CHAR_CHECKINDEX(petindex) ) return FALSE;
 	petname = CHAR_getUseName( petindex);
 
-	//写入宠物栏位
+	//迡�貐駘奰裕�
 	NPC_Util_GetStrFromStrWithDelim( argstr , "GameCode", buf, sizeof( buf));		
 	CHAR_setInt( petindex, CHAR_CHECKIN , atoi(buf) );  
 	LogPet( CHAR_getChar( talker, CHAR_NAME ),
 			CHAR_getChar( talker, CHAR_CDKEY ),
 			CHAR_getChar( petindex, CHAR_NAME),
 			CHAR_getInt( petindex, CHAR_LV),
-			"raceman(猎宠大会收宠时记录)",
+			"raceman(轂唾湮頗彶唾奀暮翹)",
 			CHAR_getInt( talker,CHAR_FLOOR),
 			CHAR_getInt( talker,CHAR_X ),
 			CHAR_getInt( talker,CHAR_Y ),
 			CHAR_getChar( petindex, CHAR_UNIQUECODE)   
 			);
 
-	//收宠
+	//彶唾
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "DelFlag",buf, sizeof( buf) ) != NULL){
 		if( strcmp(buf,"on")==0){
 			CHAR_endCharOneArray( petindex );
@@ -1654,7 +1654,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 					CHAR_getChar( talker, CHAR_CDKEY ),
 					CHAR_getChar( petindex, CHAR_NAME),
 					CHAR_getInt( petindex, CHAR_LV),
-					"raceman(猎宠大会收宠时记录)",
+					"raceman(轂唾湮頗彶唾奀暮翹)",
 					CHAR_getInt( talker,CHAR_FLOOR),
 					CHAR_getInt( talker,CHAR_X ),
 					CHAR_getInt( talker,CHAR_Y ),
@@ -1663,10 +1663,10 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		}
 	}	
 
-	//分限定种类还是不同种类
+	//煦癹隅笱濬遜岆祥肮笱濬
 	NPC_Util_GetStrFromStrWithDelim( argstr , "GameMode", buf, sizeof( buf));		
 	gmode = atoi(buf);
-	if(gmode==4||gmode==5)  //不同种类
+	if(gmode==4||gmode==5)  //祥肮笱濬
 	{
 		petNo = ( CHAR_getInt( talker ,CHAR_CHECKIN ) & 0x7FC00000 ) >> 22 ;	
 		//petNo -= 1; 
@@ -1677,38 +1677,38 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		//sprintf(buuf,"chkin data:%d", CHAR_getInt( talker , CHAR_KINDCNT1 + intNo ) );
 		//CHAR_talkToCli( talker, -1,buuf, CHAR_COLORYELLOW);
 
-		//分成个人还是家族赛
-		if(gmode == 5) //设定为家族赛
+		//煦傖跺�侄嘟Ф眢暪�
+		if(gmode == 5) //扢隅峈模逜��
 		{
 			CHAR_setInt( talker,CHAR_CATCHCNT5,CHAR_getInt( talker,CHAR_CATCHCNT5 ) +1 );
-			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//家族名称
-			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//家族id
+			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//模逜靡備
+			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//模逜id
 		}
 		else	// 4
 		{
-			//玩家抓宠次数加1
+			//俙模蚰唾棒杅樓1
 			fd = getfdFromCharaIndex(talker);
 			CHAR_setInt( talker,CHAR_CATCHCNT4,CHAR_getInt( talker,CHAR_CATCHCNT4 ) +1 );
-			CONNECT_getCharname( fd, name, sizeof( name ) );  //人物名称
-			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //帐号		
+			CONNECT_getCharname( fd, name, sizeof( name ) );  //�冼屪�備
+			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //梛瘍		
 		}
 	}
 	else	// 1 2 3
 	{
-		//分成个人还是家族赛
-		if(gmode == 3) //设定为家族赛
+		//煦傖跺�侄嘟Ф眢暪�
+		if(gmode == 3) //扢隅峈模逜��
 		{
-			//族长次数加1
+			//逜酗棒杅樓1
 			CHAR_setInt( talker,CHAR_CATCHCNT3,CHAR_getInt( talker,CHAR_CATCHCNT3 ) +1 );
-			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//家族名称
-			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//家族id
+			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//模逜靡備
+			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//模逜id
 		}
 		else
 		{
-			//玩家抓宠次数加1
+			//俙模蚰唾棒杅樓1
 			fd = getfdFromCharaIndex(talker);
-			CONNECT_getCharname( fd, name, sizeof( name ) );  //人物名称
-			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //帐号		
+			CONNECT_getCharname( fd, name, sizeof( name ) );  //�冼屪�備
+			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //梛瘍		
 			if(gmode == 1 )
 				CHAR_setInt( talker,CHAR_CATCHCNT1,CHAR_getInt( talker,CHAR_CATCHCNT1 ) +1 );
 			else
@@ -1716,7 +1716,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		}
 	}
 
-	//判断现在是比什麽
+	//瓚剿珋婓岆掀妦欒
 	switch(gmode)
 	{
 	case 1:NPC_Util_GetStrFromStrWithDelim( argstr , "Mode1", buf, sizeof( buf)); break;
@@ -1725,7 +1725,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 	case 4:NPC_Util_GetStrFromStrWithDelim( argstr , "Mode4", buf, sizeof( buf)); break;
 	case 5:NPC_Util_GetStrFromStrWithDelim( argstr , "Mode5", buf, sizeof( buf)); break;
 	}
-	//ac做一次记录跟排名 (fd,charaindex,id,name,limittime,racetype,catchcnt,ranknum)
+	//ac酕珨棒暮翹躲齬靡 (fd,charaindex,id,name,limittime,racetype,catchcnt,ranknum)
 	//sprintf(buuf,"acfd:%d talker:%d mode:%s id:%s name:%s catchcnt:%d",acfd,talker,buf,id,name,CHAR_getInt( talker,CHAR_CATCHCNT ) );
 	//CHAR_talkToCli( talker, -1, buuf, CHAR_COLORYELLOW);
 	if(gmode == 3 || gmode == 5){
@@ -1740,7 +1740,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		0 , CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) , 0 ) ;
 	
 
-	//猎宠证次数加1 或 决定下一个题目
+	//轂唾痐棒杅樓1 麼 樵隅狟珨跺枙醴
   	if( NPC_Util_GetStrFromStrWithDelim( argstr, "CheckItem",
 											 buf, sizeof( buf) ) != NULL)
 	{
@@ -1750,12 +1750,12 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 			if( ITEM_CHECKINDEX( itemindex) ) {
 				itemid=ITEM_getInt( itemindex ,ITEM_ID );
 				//print("itemindex:%d  itemid:%d  item:%d\n",itemindex,itemid,item);
-				if(itemid==item){	//找到猎宠证
+				if(itemid==item){	//梑善轂唾痐
 					if(gmode < 4)
-						sprintf( buf1, "目前猎宠记录%d只。", CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+						sprintf( buf1, "醴ヶ轂唾暮翹%d硐﹝", CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 					else{
 						if(CHAR_getInt( talker,CHAR_CATCHCNT5 ) >= asktotal ){
-							sprintf( buf1,"恭喜你达到猎宠大赛终极目标，祝您抽中大奖");
+							sprintf( buf1,"鳩炰斕湛善轂唾湮��笝憤醴梓ㄛ蛅蠟喲笢湮蔣");
 						}else{
 							askno = Raceman_getokask( talker , rand() % asktotal );
 							asklv = asktable[askno].lowlv + rand()%((asktable[askno].highlv+1)-asktable[askno].lowlv);
@@ -1764,9 +1764,9 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 							temp = temp | ((asktable[askno].bbi - 100000) & 0x00003FFF);
 							CHAR_setInt(  talker , CHAR_CHECKIN , temp );  		
 							if( asktable[askno].highlv == 0 )
-								sprintf( buf1,"请抓给我等级%d『以上』的%s好吗。您目前记录%d种", asktable[askno].lowlv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+								sprintf( buf1,"③蚰跤扂脹撰%d◇眕奻◆腔%s疑鎘﹝蠟醴ヶ暮翹%d笱", asktable[askno].lowlv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 							else
-								sprintf( buf1,"请抓给我『只能』等级%d的%s好吗。您目前记录%d种", asklv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+								sprintf( buf1,"③蚰跤扂◇硐夔◆脹撰%d腔%s疑鎘﹝蠟醴ヶ暮翹%d笱", asklv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 						}
 					}
 					ITEM_setChar( itemindex, ITEM_EFFECTSTRING, buf1);
@@ -1777,20 +1777,20 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		}
 	}
 
-	sprintf( buf,"%sLv:%d登记完成了，加油加油。",petname,CHAR_getInt( petindex, CHAR_LV ));
+	sprintf( buf,"%sLv:%d腎暮俇傖賸ㄛ樓蚐樓蚐﹝",petname,CHAR_getInt( petindex, CHAR_LV ));
 	CHAR_talkToCli( talker, -1, buf , CHAR_COLORWHITE);
 
 	return TRUE;
 }
 
-//读放在saac的排名资料,而且要是目前比赛的项目
+//黍溫婓saac腔齬靡訧蹋,奧й猁岆醴ヶ掀��腔砐醴
 void Raceman_countrank( int meindex, int talker )
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	int  ranknum = 0,gmode;
 	char buf[64],buf1[64];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -1822,7 +1822,7 @@ void Raceman_renewrank( int meindex , int talker , int select )
 	int  ranknum = 0;
 	char buf[64],buf1[64];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -1848,34 +1848,34 @@ void Raceman_renewrank( int meindex , int talker , int select )
 	}
 }
 
-//检查是否有资格领奖 
+//潰脤岆瘁衄訧跡鍰蔣 
 BOOL Raceman_checkprize( int meindex , int talker ,char *token)
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	char buf[256],buf1[64];
-	int  lowlevel;//最低标准  下限	
+	int  lowlevel;//郔腴梓袧  狟癹	
 	int  gmode;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
 	}
 
 	NPC_Util_GetStrFromStrWithDelim( argstr , "EndFlag", buf1, sizeof( buf1));
-	if( strcmp(buf1,"off")==0){   // 比赛没结束 所以不能领
+	if( strcmp(buf1,"off")==0){   // 掀��羶賦旰 垀眕祥夔鍰
 		NPC_Util_GetStrFromStrWithDelim( argstr , "notend_msg", buf, sizeof( buf));
-		strcpy( token, "                ☆猎宠战利品颁发☆\n\n");
+		strcpy( token, "                ∵轂唾桵瞳こ唬楷∵\n\n");
 		strcat( token , buf );
-			//strcat( token, "	比赛还在进行中唷...\n");			
+			//strcat( token, "	掀��遜婓輛俴笢遄...\n");			
 		return FALSE;
 	}
 
 	if(Raceman_CheckItem( meindex , talker ) == FALSE){		
 		NPC_Util_GetStrFromStrWithDelim( argstr , "nonitem_msg", buf, sizeof( buf));
-		strcpy( token, "                ☆猎宠战利品颁发☆\n\n");		
+		strcpy( token, "                ∵轂唾桵瞳こ唬楷∵\n\n");		
 		strcat( token , buf );
-			//strcat( token, "	很抱歉，您没有猎宠证无法领奖...\n");			
+			//strcat( token, "	竭惕Кㄛ蠟羶衄轂唾痐拸楊鍰蔣...\n");			
 		return FALSE;
 	}
 
@@ -1886,22 +1886,22 @@ BOOL Raceman_checkprize( int meindex , int talker ,char *token)
 
 	if( CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) < lowlevel ){
 		NPC_Util_GetStrFromStrWithDelim( argstr , "low_msg", buf, sizeof( buf));
-		strcpy( token, "                ☆猎宠战利品颁发☆\n\n");
-			//strcat( token, "	很抱歉，您没有达到最低标准...\n");			
+		strcpy( token, "                ∵轂唾桵瞳こ唬楷∵\n\n");
+			//strcat( token, "	竭惕Кㄛ蠟羶衄湛善郔腴梓袧...\n");			
 			strcat( token , buf );
 		return TRUE;
 	}	
 
-	//检查有无栏位
+	//潰脤衄拸戲弇
 	if(Raceman_ItemFullCheck( meindex , talker) == FALSE){
 		NPC_Util_GetStrFromStrWithDelim( argstr, "itemfull_msg",buf, sizeof( buf) );
-		strcpy( token, "                ☆猎宠战利品颁发☆\n\n		");
+		strcpy( token, "                ∵轂唾桵瞳こ唬楷∵\n\n		");
 		strcat( token, buf );			
 		return FALSE;
 	}
 
-	strcpy( token, "                ☆猎宠战利品颁发☆\n\n");
-		strcat( token, "	猎宠勇士，这是你应得的战利品...\n");			
+	strcpy( token, "                ∵轂唾桵瞳こ唬楷∵\n\n");
+		strcat( token, "	轂唾蚋尪ㄛ涴岆斕茼腕腔桵瞳こ...\n");			
 	return TRUE;
 }
 
@@ -1915,7 +1915,7 @@ void Raceman_awardprize( int meindex , int talker )
 
 	memset(prizebuf,0,sizeof(prizebuf));
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -1933,18 +1933,18 @@ void Raceman_awardprize( int meindex , int talker )
 
     if(gmode == 3 || gmode == 5) 
 	{
-		strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//家族名称
-		sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//家族id
+		strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//模逜靡備
+		sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//模逜id
 	}
-	else	// 1 2 4 个人
+	else	// 1 2 4 跺��
 	{
 		fd = getfdFromCharaIndex(talker);
 		CONNECT_getCharname( fd, name, sizeof( name ) );  
-		CONNECT_getCdkey( fd, id , sizeof( id ) );		  //帐号	
+		CONNECT_getCdkey( fd, id , sizeof( id ) );		  //梛瘍	
 	}
 
 	rank = 0; 
-	/*	取消 决定一二叁名
+	/*	�＋� 樵隅珨媼��靡
 	switch(gmode)
 	{
 	case 1:
@@ -2002,7 +2002,7 @@ void Raceman_awardprize( int meindex , int talker )
 	}else{
 		NPC_Util_GetStrFromStrWithDelim( argstr , "thanks_msg", buf, sizeof( buf));
 		NPC_Util_GetStrFromStrWithDelim( argstr , "Normal", buf3, sizeof( buf3));
-		//参加奖随机决定
+		//統樓蔣呴儂樵隅
 		i = 0;
 		while( getStringFromIndexWithDelim( buf3 , "," , i+1 , buf2 , sizeof(buf2) ))
 		{
@@ -2017,7 +2017,7 @@ void Raceman_awardprize( int meindex , int talker )
 	CHAR_talkToCli( talker, -1, buf, CHAR_COLORYELLOW);
 	prize = atoi(buf2);
 
-	//给奖品
+	//跤蔣こ
 	itemindex = ITEM_makeItemAndRegist( prize );
 	if(itemindex == -1) return;
 
@@ -2030,7 +2030,7 @@ void Raceman_awardprize( int meindex , int talker )
 	CHAR_sendItemDataOne( talker, ret);
 
 DELITEM:
-	//删除猎宠证
+	//刉壺轂唾痐
   	if( NPC_Util_GetStrFromStrWithDelim( argstr, "CheckItem", buf , sizeof( buf ) ) != NULL )
 	{
 		item = atoi(buf);
@@ -2038,16 +2038,16 @@ DELITEM:
 			itemindex=CHAR_getItemIndex( talker , i );
 			if( ITEM_CHECKINDEX( itemindex) ) {
 				itemid=ITEM_getInt( itemindex ,ITEM_ID );
-				if(itemid==item){	//找到猎宠证
+				if(itemid==item){	//梑善轂唾痐
 					LogItem(
 						CHAR_getChar( talker, CHAR_NAME ), 
 						CHAR_getChar( talker, CHAR_CDKEY ),
-			#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+			#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 						itemindex,
 			#else
        					ITEM_getInt( itemindex, ITEM_ID ),  
 			#endif
-						"因领奖而消失",
+						"秪鍰蔣奧秏囮",
 						CHAR_getInt( talker,CHAR_FLOOR),
 						CHAR_getInt( talker,CHAR_X ),
  	      				CHAR_getInt( talker,CHAR_Y ),
@@ -2057,7 +2057,7 @@ DELITEM:
 					);
 
 					CHAR_DelItem( talker , i );
-					CHAR_talkToCli( talker, -1, "猎宠证消失了", CHAR_COLORYELLOW);
+					CHAR_talkToCli( talker, -1, "轂唾痐秏囮賸", CHAR_COLORYELLOW);
 					break;
 				}					
 			}
@@ -2071,10 +2071,10 @@ DELITEM:
 int Raceman_readmode( int meindex , int talkerindex )
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
-	int  gmode;  // 1:新手限 2:个人限 3:团体限 4:个人不限 5:团体不限
+	int  gmode;  // 1:陔忒癹 2:跺�冾� 3:芶极癹 4:跺�侘銨� 5:芶极祥癹
 	char buf[10];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 	}
@@ -2094,7 +2094,7 @@ int Raceman_CheckSelectRank(meindex,talkerindex,datanum)
 	int  select = 0;
 
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //读参数
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //黍統杅
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 	}
@@ -2126,7 +2126,7 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 	if (fp == NULL)
 	{
 		print("racequiz File Open Error\n");
-		strcpy( token,"系统发生错误！");		
+		strcpy( token,"炵苀楷汜渣昫ㄐ");		
 		return ;
 	}
 	while(1){		
@@ -2139,11 +2139,11 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 	if (fp == NULL)
 	{
 		print("racequiz File Open Error\n");
-		strcpy( token,"系统发生错误！");		
+		strcpy( token,"炵苀楷汜渣昫ㄐ");		
 		return ;
 	}
 
-	quiz = rand() % (quiztotal) ; //乱数决定问题
+	quiz = rand() % (quiztotal) ; //觴杅樵隅恀枙
 
 	j = 0 ;
 	while(1){		
@@ -2154,7 +2154,7 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 		}
 		chop(line);
 
-		// #为注解
+		// #峈蛁賤
 		if( line[0] == '#' )
 			continue;
 		for( i=0; i<strlen(line); i++ ){
@@ -2165,8 +2165,8 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 		}
 
 		if( j == quiz ){
-			getStringFromIndexWithDelim(line, "|", 1, buf, sizeof(buf)); //读出某位玩家的题目	
-			CHAR_setWorkInt( talker , CHAR_WORK_RACEQUIZ , quiz );		 //记录某位玩家选的题目	
+			getStringFromIndexWithDelim(line, "|", 1, buf, sizeof(buf)); //黍堤議弇俙模腔枙醴	
+			CHAR_setWorkInt( talker , CHAR_WORK_RACEQUIZ , quiz );		 //暮翹議弇俙模恁腔枙醴	
 			break;
 		}
 		j++;
@@ -2182,10 +2182,10 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 		strcat( buf,"\n");
 	
 	}
-	sprintf( token,"脑筋动一动！答对了，你的宠物才能登记唷\n"
+	sprintf( token,"齟踐雄珨雄ㄐ湘勤賸ㄛ斕腔唾昜符夔腎暮遄\n"
 			"\n%s "
-			"\n↓写在这里\n"
-			"　(写完请按ＯＫ)",
+			"\n∣迡婓涴爵\n"
+			"﹛(迡俇③偌�洷�)",
 			buf);	
 
 	//sprintf(buuf,"j%d quiz:%d qtotal:%d setint:%d",j,quiz,quiztotal,CHAR_getWorkInt( talker , CHAR_WORK_RACEQUIZ ));
@@ -2217,7 +2217,7 @@ BOOL Raceman_CheckAnswer( int meindex , int talker , char *data )
 		}
 		chop(line);
 
-		// #为注解
+		// #峈蛁賤
 		if( line[0] == '#' )
 			continue;
 		for( i=0; i<strlen(line); i++ ){

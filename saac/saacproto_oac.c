@@ -76,7 +76,7 @@ int OAC_ConnectOacOne( int ti)
 	}
 	log( "connect OAC:%s", OAC_List[ti].addr);
 	OAC_List[ti].fd = tfd;
-	OAC_ACLogin_send( tfd, "测试机");
+	OAC_ACLogin_send( tfd, "聆彸儂");
 	return tfd;
 }
 
@@ -220,7 +220,7 @@ void OAC_ACLogin_send( int fd, char* data )
 	OAC_Send( fd , saacproto.work );
 }
 //---------------------------------------------------------------------------
-void OAC_ACCharLoad_recv( int fd, char *id, char *charname, int optti, int clifd, int gsfd)//要求
+void OAC_ACCharLoad_recv( int fd, char *id, char *charname, int optti, int clifd, int gsfd)//猁⑴
 {
 	int charindex;
 	char loadbuf[CHARDATASIZE];

@@ -1,7 +1,7 @@
 #ifndef __MAGIC_H__
 #define __MAGIC_H__
 
-/* 热诸 */
+/* ��絊 */
 int MAGIC_Use( int charaindex, int haveitemindex, int toindex);
 int MAGIC_Recovery( int charaindex, int toindex,int marray, int mp );
 int MAGIC_OtherRecovery( int charaindex, int toindex, int marray, int mp );
@@ -28,13 +28,13 @@ int MAGIC_Metamo( int charaindex, int toindex,int marray, int mp );
 #ifdef _ITEM_ATTSKILLMAGIC
 int MAGIC_AttSkill( int charaindex, int toindex,int marray, int mp );
 #endif
-#ifdef _MAGIC_WEAKEN// vincent  精灵:虚弱
+#ifdef _MAGIC_WEAKEN// vincent  儕鍾:剞��
 int	MAGIC_Weaken( int charaindex, int toindex, int marray, int mp );
 #endif
-#ifdef _MAGIC_BARRIER// vincent  精灵:魔障
+#ifdef _MAGIC_BARRIER// vincent  儕鍾:藹梤
 int	MAGIC_Barrier( int charaindex, int toindex, int marray, int mp );
 #endif
-#ifdef _MAGIC_NOCAST// vincent  精灵:沉默
+#ifdef _MAGIC_NOCAST// vincent  儕鍾:麥蘇
 int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp );
 #endif
 #ifdef _MAGIC_TOCALL
@@ -42,22 +42,22 @@ int MAGIC_ToCallDragon( int charaindex, int toindex,int marray, int mp );
 #endif
 
 //----------------------------------------------------------------------
-// 失奶  丞及匏  井日热诸  寞毛忒允
+// 囮騷  堜摯痾  凝�桱�絊  蠕禱蒍埰
 //
 int MAGIC_GetArrayNo(
-	int charaindex, 	// 平乓仿弁正奶件犯永弁旦
-	int haveitemindex   //    匀化月失奶  丞及匏  
+	int charaindex, 	// す籤溘袲淏騷璃溢蚗袲筒
+	int haveitemindex   //    埱趙堎囮騷  堜摯痾  
 );
 //
 //----------------------------------------------------------------------
 //-------------------------------------------------------------------
 //
-//  热诸毛  涛银丹
+//  ��絊禱  旽窅竣
 //
 int MAGIC_DirectUse(
-	int charaindex, // 银丹平乓仿及奶件犯永弁旦
-	int marray, 	// 银丹热诸及奶件犯永弁旦
-	int toindex, 	// 簿卞银丹＂
+	int charaindex, // 窅竣す籤溘摯騷璃溢蚗袲筒
+	int marray, 	// 窅竣��絊摯騷璃溢蚗袲筒
+	int toindex, 	// 移勗窅竣ㄑ
 	int itemnum
 );
 //

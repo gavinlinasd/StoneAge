@@ -60,7 +60,7 @@ BOOL MapTradeManInit( int meindex )
 	CHAR_setWorkInt( meindex, NPC_WORK_SELLINDEX, 0 );
 	CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 	CHAR_setWorkInt( meindex, NPC_WORK_INDEX, TRADE_getMaxNumInt());
-	InitMapTradeData( -1, 0);	//初始摊位资料
+	InitMapTradeData( -1, 0);	//場宎怉弇訧蹋
 	return TRUE;
 }
 
@@ -101,7 +101,7 @@ void MapTradeManLoop( int meindex)
 		buf2 = MAPTRADE_getCharSellName( i);
 		if( buf2 == NULL || !strcmp( buf2, "NULL"))
 			return;
-		sprintf( buf1, "%d号贩卖%s", i+TRADESTARTNUM, buf2);
+		sprintf( buf1, "%d瘍毽闖%s", i+TRADESTARTNUM, buf2);
 		showString( meindex, buf1, 0);
 	}
 /*
@@ -162,11 +162,11 @@ void NPC_MapTrade_selectWindow( int meindex, int toindex, int num,int select)
 			int num;
 			Msg_Type = 2;
 			if( CHAR_getWorkInt( toindex, CHAR_MAPTRADETYPE) > 0 )	{
-				sprintf(token , "你已经承租了%d号摊位了呀！",
+				sprintf(token , "斕眒冪創逤賸%d瘍怉弇賸挼ㄐ",
 					CHAR_getWorkInt( toindex, CHAR_MAPTRADETYPE));
 			}else	if( (num = TRADE_AddMasrerTrade( toindex)) != -1 )	{
 				CHAR_setWorkInt( toindex, CHAR_MAPTRADETYPE, num);
-				sprintf(token , "好了，%d号摊位暂时就租给你了。\n一旦下线离开後这摊位就必须归还了。", num);
+				sprintf(token , "疑賸ㄛ%d瘍怉弇婃奀憩逤跤斕賸﹝\n珨筒狟盄燭羲摽涴怉弇憩斛剕寥遜賸﹝", num);
 				//CHAR_talkToCli( i, -1, buff, CHAR_COLORYELLOW);
 				Msg_Type = 1;
 			}
@@ -185,7 +185,7 @@ void NPC_MapTrade_selectWindow( int meindex, int toindex, int num,int select)
 		if( NPC_Util_GetStrFromStrWithDelim( npcarg, message[Msg_Type], token, sizeof( token)) == NULL )
 			return;
 	}
-	//送讯息给 CLI						
+	//冞捅洘跤 CLI						
 	lssproto_WN_send( fd, windowtype, buttontype, windowno,
 			CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX), token	);																				
 }
@@ -212,7 +212,7 @@ void MapTradeManWindowTalked( int meindex, int talkerindex, int seqno, int selec
 			char buf1[256];
 			CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 
-			sprintf( buf1, "你已经是%d号摊位的主人了呀！", CHAR_getInt( talkerindex, CHAR_MAPTRADETYPE));
+			sprintf( buf1, "斕眒冪岆%d瘍怉弇腔翋�佹刲膛�", CHAR_getInt( talkerindex, CHAR_MAPTRADETYPE));
 			CHAR_talkToCli( talkerindex, -1, buf1, CHAR_COLORYELLOW);
 			return;
 		}

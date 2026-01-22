@@ -199,10 +199,10 @@ INLINE int OBJECT_setTime( int index, int newvalue )
 
 
 /*------------------------------------------------------------
- * index 毛  月
- * 娄醒
- *  index      int     奶件犯永弁旦
- * 忒曰袄
+ * index 禱  堎
+ * 礎倳
+ *  index      int     騷璃溢蚗袲筒
+ * 蒍堇偯
  *  int
  ------------------------------------------------------------*/
 INLINE int OBJECT_getIndex( int index )
@@ -210,12 +210,12 @@ INLINE int OBJECT_getIndex( int index )
     return obj[index].index;
 }
 /*------------------------------------------------------------
- * y 毛涩烂允月
- * 娄醒
- *  index      int     奶件犯永弁旦
- *  newvalue    int     蕙仄中袄
- * 忒曰袄
- *  int 樯及袄
+ * y 禱优擭埰堎
+ * 礎倳
+ *  index      int     騷璃溢蚗袲筒
+ *  newvalue    int     犍媃笢偯
+ * 蒍堇偯
+ *  int 橑摯偯
  ------------------------------------------------------------*/
 INLINE int OBJECT_setIndex( int index, int newvalue )
 {
@@ -227,10 +227,10 @@ INLINE int OBJECT_setIndex( int index, int newvalue )
 
 
 /*------------------------------------------------------------
- * 左皮斥尼弁玄及    醒毛菲户月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 酘々喇攝袲哱摯    倳禱滑誧堎
+ * 礎倳
+ *  埵媃
+ * 蒍堇偯
  *  int
  ------------------------------------------------------------*/
 INLINE int OBJECT_getNum( void )
@@ -239,17 +239,17 @@ INLINE int OBJECT_getNum( void )
 }
 
 /*------------------------------------------------------------
- *  左皮斥尼弁玄厌瞻  及丢件田毛蝈  娄醒卞  匀化
- *  左皮斥尼弁玄厌瞻  毛综曰请仄化｝瓒  允月［
+ *  酘々喇攝袲哱栖桹  摯隍璃泬禱蠈  礎倳勗  埱趙
+ *  酘々喇攝袲哱栖桹  禱軘堇③媃趙��頞  埰堎��
  *
- * 娄醒
- *  type    OBJTYPE     左皮斥尼弁玄及正奶皿
- *  index   int         公木冗木及    匹及index
- *  x       int         x甄  
- *  y       int         y甄  
+ * 礎倳
+ *  type    OBJTYPE     酘々喇攝袲哱摯淏騷鏤
+ *  index   int         鼠躂�葸噯�    ぁ摯index
+ *  x       int         x淢  
+ *  y       int         y淢  
  *  floor   int         floorid
- * 忒曰袄
- *   int  喃曰癫化木凶index, 撩  及凛反｝ -1
+ * 蒍堇偯
+ *   int  鄎堇騍趙躂倜index, 謄  摯鄹毀�� -1
  ------------------------------------------------------------*/
 int initObjectFromObjectMember(
     OBJTYPE type, int index, int x, int y , int floor )
@@ -455,7 +455,7 @@ BOOL restoreObjects( char* dirname )
 			    int objindex;
 		        int petindex = PET_initCharOneArray( &ch );
 		        if( petindex < 0 ) {
-		        	print( "宠物制作失败。\n");
+		        	print( "唾昜秶釬囮啖﹝\n");
 		        }
 			    object.type = OBJTYPE_CHARA;
 			    object.index = petindex;

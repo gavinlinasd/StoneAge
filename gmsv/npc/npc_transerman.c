@@ -14,7 +14,7 @@
 #include "handletime.h"
 #include "npc_eventaction.h"
 
-//特地从天堂高薪挖角来的"传送师"
+//杻華植毞斻詢郇阼褒懂腔"換冞呇"
 #ifdef _TRANSER_MAN
 enum {
 	WINDOW_START=1,
@@ -68,14 +68,14 @@ void NPC_TranserManTalked( int meindex, int talkerindex, char *msg, int color )
 	}
 #ifdef _ITEM_CHECKWARES
 	if( CHAR_CheckInItemForWares( talkerindex, 0) == FALSE ){
-		CHAR_talkToCli( talkerindex, meindex, "根据传送师工会规定，不能服务携带货物的人！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( talkerindex, meindex, "跦擂換冞呇馱頗寞隅ㄛ祥夔督昢觓湍億昜腔�芄�", CHAR_COLORYELLOW);
 		return;
 	}
 #endif
-// Syu ADD 天才传送师判断组队状态
+// Syu ADD 毞符換冞呇瓚剿郪勦袨怓
 	if( CHAR_getWorkInt ( talkerindex , CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE)
 	{
-		CHAR_talkToCli( talkerindex, meindex, "根据传送师工会规定，不能帮组队中的人传送！",CHAR_COLORYELLOW);
+		CHAR_talkToCli( talkerindex, meindex, "跦擂換冞呇馱頗寞隅ㄛ祥夔堆郪勦笢腔�侅屎礿�",CHAR_COLORYELLOW);
 		return;
 	}
 

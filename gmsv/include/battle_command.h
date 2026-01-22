@@ -14,8 +14,8 @@ BOOL BATTLE_CommandSend( int charaindex, char *pszCommand );
 
 BOOL BATTLE_MakeCharaString(
 	int battleindex,
-	char *pszCommand,	// 平乓仿弁正□树  请  燮
-	int	size 			// 扔奶术
+	char *pszCommand,	// す籤溘袲淏↓攷  ③  袸
+	int	size 			// �蚅昃�
 );
 
 void BATTLE_CharSendAll( int battleindex );

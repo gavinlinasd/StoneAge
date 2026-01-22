@@ -45,7 +45,7 @@ BOOL NPC_initCreateArray( int createnum )
     NPC_createnum = createnum;
     NPC_create  = (NPC_Create*)allocateMemory( sizeof( NPC_Create ) * NPC_createnum );
 
-	print( "开启大小:%d. 创建数量:%d.\n", sizeof( NPC_Create ), createnum);
+	print( "羲ゐ湮苤:%d. 斐膘杅講:%d.\n", sizeof( NPC_Create ), createnum);
     if( NPC_create == NULL ){
 		return FALSE;
 	}
@@ -106,7 +106,7 @@ BOOL NPC_IsNPCCreateFile( char* filename )
     char    line1[128];
     char*   ret;
 
-    /*  ~匹蔽月白央奶伙反卅仄卞允月 */
+    /*  ~ぁ敖堎啞栝騷鳴毀埵媃勗埰堎 */
     if( filename == NULL
         || strlen( filename ) < 1
         || filename[strlen(filename)-1] == '~'
@@ -147,22 +147,22 @@ static int NPC_readCreateFile( char* filename )
     {
         int w,h;
     }REC;
-    POINT   center[2]={{0,0},{0,0}};     /*  born 互 0 匹 move 互 1 */
-    REC     wh[2]    ={{0,0},{0,0}};      /*  born 互 0 匹 move 互 1 */
+    POINT   center[2]={{0,0},{0,0}};     /*  born 誑 0 ぁ move 誑 1 */
+    REC     wh[2]    ={{0,0},{0,0}};      /*  born 誑 0 ぁ move 誑 1 */
 
-    POINT   lu[2]    ={{0,0},{0,0}};     /*  born 互 0 匹 move 互 1 */
-    POINT   rd[2]    ={{0,0},{0,0}};     /*  born 互 0 匹 move 互 1 */
+    POINT   lu[2]    ={{0,0},{0,0}};     /*  born 誑 0 ぁ move 誑 1 */
+    POINT   rd[2]    ={{0,0},{0,0}};     /*  born 誑 0 ぁ move 誑 1 */
 
-    int     defborn=FALSE;              /*  born 毛涩烂仄凶井升丹井 */
-    int     defmove=FALSE;              /*  move 毛涩烂仄凶井升丹井 */
-    int     deflurd[2]={FALSE,FALSE};   /*  lu,rd 匹涩烂仄凶井升丹井 */
+    int     defborn=FALSE;              /*  born 禱优擭媃倜凝汔竣凝 */
+    int     defmove=FALSE;              /*  move 禱优擭媃倜凝汔竣凝 */
+    int     deflurd[2]={FALSE,FALSE};   /*  lu,rd ぁ优擭媃倜凝汔竣凝 */
     char*   ret;
 
 
     if( NPC_create_readindex >= NPC_createnum ){
-        print("创建超过配置缓冲\n" );
-        print("配置缓冲数目是 %d\n",NPC_createnum);
-        print("没用文件 %s\n",filename);
+        print("斐膘閉徹饜离遣喳\n" );
+        print("饜离遣喳杅醴岆 %d\n",NPC_createnum);
+        print("羶蚚恅璃 %s\n",filename);
         return FALSE;
     }
 
@@ -174,7 +174,7 @@ static int NPC_readCreateFile( char* filename )
     ret = fgets( line, sizeof( line ), f );
     if( ret == NULL )goto FCLOSERETURNFALSE;
     if( strcmp( NPC_CREATEFILEMAGIC, line ) != 0 ){
-        print( "这不是一个create文件.\n" );
+        print( "涴祥岆珨跺create恅璃.\n" );
         goto FCLOSERETURNFALSE;
     }
     linenum = 1;
@@ -192,7 +192,7 @@ static int NPC_readCreateFile( char* filename )
             if( start == ON ){
                 fprint( "Find {. But already START state. %s:%d\n",
                         filename, linenum);
-                fprint( "退出\n" );
+                fprint( "豖堤\n" );
                 goto FCLOSERETURNFALSE;
 
             }else{
@@ -205,16 +205,16 @@ static int NPC_readCreateFile( char* filename )
                 int     err = FALSE;
                 if( enemyreadindex == 0 ){
                     err = TRUE;
-                    print( "这不是遇敌数据  %s:%d\n",
+                    print( "涴祥岆郣菩杅擂  %s:%d\n",
                            filename,linenum);
                 }else if( MAP_IsThereSpecificFloorid(
                     cr.intdata[NPC_CREATEFLOORID]) == FALSE ){
                     err = TRUE;
-                    print( "地图ID号有毛病 %s:%d-floor:%d\n",
+                    print( "華芞ID瘍衄禱瓷 %s:%d-floor:%d\n",
                            filename,linenum, cr.intdata[NPC_CREATEFLOORID]);
                 }else if( defborn == FALSE ){
                     err = TRUE;
-                    print( "这些不是 born 安装 %s:%d\n",
+                    print( "涴虳祥岆 born 假蚾 %s:%d\n",
                            filename,linenum);
                 }
 
@@ -240,7 +240,7 @@ static int NPC_readCreateFile( char* filename )
                         cr.intdata[NPC_CREATEBORNRIGHTDOWNY] =
                             center[0].y+wh[0].h/2;
                     }
-					/* 99/01/21 扎鼹 [0]-->[1]卞膜恳 */
+					/* 99/01/21 崨蠳 [0]-->[1]勗臚諜 */
                     if( defmove ){
                         if( deflurd[0] ){
                             cr.intdata[NPC_CREATEMOVELEFTUPX] =
@@ -263,7 +263,7 @@ static int NPC_readCreateFile( char* filename )
                         }
 
                     }else{
-                        /*  born 毛戊疋□允月 */
+                        /*  born 禱昡鼀↓埰堎 */
                         cr.intdata[NPC_CREATEMOVELEFTUPX] =
                             cr.intdata[NPC_CREATEBORNLEFTUPX];
                         cr.intdata[NPC_CREATEMOVERIGHTDOWNX] =
@@ -281,15 +281,15 @@ static int NPC_readCreateFile( char* filename )
                     NPC_create_readindex++;
 
                     if( NPC_create_readindex >= NPC_createnum ){
-                        print("创建超过配置缓冲\n" );
-                        print("配置创建文件数目 %d\n",
+                        print("斐膘閉徹饜离遣喳\n" );
+                        print("饜离斐膘恅璃杅醴 %d\n",
                               NPC_createnum);
-                        print("没用文件:%s\n",filename);
+                        print("羶蚚恅璃:%s\n",filename);
                         goto FCLOSERETURNFALSE;
                     }
 
                 }
-                /*  赓渝袄卞  仄化云仁  */
+                /*  疐趵偯勗  媃趙堁��  */
                 NPC_setDefaultNPCCreate( &cr );
                 enemyreadindex=0;
                 defborn=FALSE;
@@ -299,7 +299,7 @@ static int NPC_readCreateFile( char* filename )
 
                 start = OFF;
             }else{
-                fprint( "未解决 '}' at %s:%d\n",filename,linenum);
+                fprint( "帤賤樵 '}' at %s:%d\n",filename,linenum);
                 goto FCLOSERETURNFALSE;
             }
             break;
@@ -384,25 +384,25 @@ static int NPC_readCreateFile( char* filename )
                 cr.intdata[NPC_CREATEFAMILY] = atoi( secondToken );
 
             }else if( strcasecmp("enemy", firstToken) == 0 ){
-                /*  娄醒毛  六月方丹卞允月  */
+                /*  礎倳禱  鞠堎源竣勗埰堎  */
                 int     templateindex;
                 char    enemyname[64];
 
-                /*  雁钗瞬民尼永弁  */
+                /*  栜鎃侘鏍攝蚗袲  */
                 if( enemyreadindex <= arraysizeof(cr.templateindex) )
                     /* OK */
                     ;
                 else
                     break;
 
-                /*  secondToken 毛  侬  卞坌荸允月    */
+                /*  secondToken 禱  棬  勗覕搣埰堎    */
                 getStringFromIndexWithDelim(secondToken,"|",1,enemyname,
                                             sizeof(enemyname) );
                 templateindex= NPC_templateGetTemplateIndex(enemyname);
                 if( templateindex != -1 ){
                     cr.templateindex[enemyreadindex] = templateindex;
                     {
-                        /*  娄醒毛质  允月  */
+                        /*  礎倳禱窐  埰堎  */
                         char    tmp[2];
                         int     ret;
                         ret = getStringFromIndexWithDelim( secondToken,
@@ -418,10 +418,10 @@ static int NPC_readCreateFile( char* filename )
                     }
                     enemyreadindex++;
                 }else
-                    fprint( "没有这种模块:\n[%s(%d)%s] enemy:%s\n",
+                    fprint( "羶衄涴笱耀輸:\n[%s(%d)%s] enemy:%s\n",
                             filename ,linenum,secondToken, enemyname);
             }else{
-                fprint( "没有这种登陆 %s %s:%d\n",firstToken,filename,
+                fprint( "羶衄涴笱腎翻 %s %s:%d\n",firstToken,filename,
                         linenum );
             }
         }
@@ -444,7 +444,7 @@ BOOL NPC_readNPCCreateFiles( char* topdirectory ,int createsize)
     filenames = (STRING64 *)allocateMemory( sizeof( STRING64 ) *
                                               (int)getFilesearchnum( ) );
 	if( filenames == NULL ){
-	    print( "读取NPC创建文件... 内存错误\n" );
+	    print( "黍�､PC斐膘恅璃... 囀湔渣昫\n" );
 		return FALSE;
 	}
     filenum = rgetFileName( topdirectory ,filenames ,getFilesearchnum( ) );
@@ -453,23 +453,23 @@ BOOL NPC_readNPCCreateFiles( char* topdirectory ,int createsize)
     	return FALSE;
     }
 	if( filenum >= getFilesearchnum( ) ){
-		print( "文件搜索数目失败 %d\n", getFilesearchnum( ) );
+		print( "恅璃刲坰杅醴囮啖 %d\n", getFilesearchnum( ) );
 		while( 1 );
 	}
     if( !NPC_initCreateArray( createsize ) ){
-        fprint( "开启创建数组错误\n" );
+        fprint( "羲ゐ斐膘杅郪渣昫\n" );
 	    freeMemory( filenames );
         return FALSE;
     }
-    print( "读取NPC创建文件..." );
+    print( "黍�､PC斐膘恅璃..." );
     for( i = 0 ; i < filenum ; i ++ )
         if( NPC_IsNPCCreateFile( filenames[i].string ))
             if( NPC_readCreateFile( filenames[i].string ) == -1 )
                 break;
-    print( "正确创建NPC %d ..." , NPC_create_readindex );
+    print( "淏�毀晾沐PC %d ..." , NPC_create_readindex );
      NPC_createnum=NPC_create_readindex;
 #ifdef DEBUG
-	/* 99/4/8 By Kawata csv溥挚卞仄化支月 */
+	/* 99/4/8 By Kawata csv魠祪勗媃趙盓堎 */
 	print( "Npc_Create's\n");
     for( i = 0 ; i < NPC_createnum ; i ++ ){
         int     j;
@@ -496,12 +496,12 @@ BOOL NPC_readNPCCreateFiles( char* topdirectory ,int createsize)
 
 
 /*------------------------------------------------------------
- * createindex 井日 boundary 互涩烂今木化中月井升丹井毛苇月
- * 娄醒
- *  createindex         int         create及奶件犯永弁旦
- * 忒曰袄
- *  涩烂今木化中月          TRUE(1)
- *  涩烂今木化中卅中        FALSE(0)
+ * createindex 凝�� boundary 誑优擭踏躂趙笢堎凝汔竣凝禱峟堎
+ * 礎倳
+ *  createindex         int         create摯騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  优擭踏躂趙笢堎          TRUE(1)
+ *  优擭踏躂趙笢埵笢        FALSE(0)
  ------------------------------------------------------------*/
 BOOL NPC_isBoundarySet( int createindex )
 {
@@ -509,13 +509,13 @@ BOOL NPC_isBoundarySet( int createindex )
     return NPC_create[createindex].intdata[NPC_CREATEBOUNDARY];
 }
 /*------------------------------------------------------------
- * createindex 井日  仃月  区及RECT 毛菲户月［
- * 娄醒
- *  createindex         int           件皿伊□玄及奶件犯永弁旦
- *  r                   RECT*       袄毛熬仃午月RECT 及禾奶件正
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ * createindex 凝��  崹堎  ⑹摯RECT 禱滑誧堎��
+ * 礎倳
+ *  createindex         int           璃鏤畛↓哱摯騷璃溢蚗袲筒
+ *  r                   RECT*       偯禱偏崹敁堎RECT 摯睽騷璃淏
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  ------------------------------------------------------------*/
 BOOL NPC_createGetRECT( int createindex,RECT*   r )
 {
@@ -535,12 +535,12 @@ BOOL NPC_createGetRECT( int createindex,RECT*   r )
 
 
 /*------------------------------------------------------------
- * 凛棉井日综匀化手中中井升丹井民尼永弁允月［
- * 娄醒
- *  cindex      int     奶件犯永弁旦
- * 忒曰袄
- *  BOOL    综匀化中中桦宁  TRUE(1)
- *  BOOL    综匀化中仃卅中桦宁  FALSE(0)
+ * 鄹蹬凝�欳觚�趙忒笢笢凝汔竣凝鏍攝蚗袲埰堎��
+ * 礎倳
+ *  cindex      int     騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  BOOL    軘埱趙笢笢鳹譴  TRUE(1)
+ *  BOOL    軘埱趙笢崹埵笢鳹譴  FALSE(0)
  ------------------------------------------------------------*/
 BOOL NPC_createCheckGenerateFromTime( int cindex )
 {
@@ -570,26 +570,26 @@ BOOL NPC_createCheckGenerateFromTime( int cindex )
 
 
 /*------------------------------------------------------------
- * 综月凛及凛棉及涩烂毛赓渝祭允月［
- * 娄醒
- *  tindex      int     奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 軘堎鄹摯鄹蹬摯优擭禱疐趵撬埰堎��
+ * 礎倳
+ *  tindex      int     騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void NPC_createInitTime( int index )
 {
-    /*  综月仪卞卅匀凶井日袄毛涩烂  */
+    /*  軘堎痀勗埵埱倜凝�桹擭宥珊�  */
     NPC_create[index].workdata[NPC_CREATEWORKMAKESTARTSEC] =
         NowTime.tv_sec;
     NPC_create[index].workdata[NPC_CREATEWORKMAKESTARTUSEC] =
         NowTime.tv_usec;
 }
 /*------------------------------------------------------------
- * 衬毛综匀凶  卞市它件玄醒毛  支允楮醒
- * 娄醒
- *  index       int         奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 傍禱軘埱倜  勗庈坳璃哱倳禱  盓埰匴倳
+ * 礎倳
+ *  index       int         騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void NPC_createIncreaseEnemynum( int index )
 {
@@ -597,11 +597,11 @@ void NPC_createIncreaseEnemynum( int index )
     NPC_create[index].workdata[NPC_CREATEWORKENEMYNUM] ++;
 }
 /*------------------------------------------------------------
- * 衬互韶氏匹市它件玄醒毛蛹日允楮醒
- * 娄醒
- *  index       int         奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 傍誑屻庌ぁ庈坳璃哱倳禱蚍�梊抌�倳
+ * 礎倳
+ *  index       int         騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void NPC_createDecreaseEnemynum( int index )
 {
@@ -609,11 +609,11 @@ void NPC_createDecreaseEnemynum( int index )
     NPC_create[index].workdata[NPC_CREATEWORKENEMYNUM] --;
 }
 /*------------------------------------------------------------
- * 市它件玄醒互漆    井譬屯月楮醒
- * 娄醒
- *  index       int         奶件犯永弁旦
- * 忒曰袄
- *  TRUE:MAX  FALSE:啜丹
+ * 庈坳璃哱倳誑ぽ    凝ぅ迋堎匴倳
+ * 礎倳
+ *  index       int         騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  TRUE:MAX  FALSE:鄖竣
  ------------------------------------------------------------*/
 BOOL NPC_createCheckMaxEnemynum( int index )
 {

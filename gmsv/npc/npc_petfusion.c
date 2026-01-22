@@ -24,8 +24,8 @@ enum {
 	WINDOW_START=10,
 	WINDOW_SELECT,
 	WINDOW_FUSION,
-	WINDOW_WARP,	//跳跃
-	WINDOW_END,		//结束
+	WINDOW_WARP,	//泐埲
+	WINDOW_END,		//賦旰
 
 	WINDOW_TALKSTART=20,
 	WINDOW_TALKSELECT,
@@ -73,7 +73,7 @@ void NPC_PetFusionManTalked( int meindex, int talkerindex, char *msg, int color 
 	}
 #ifdef _ITEM_CHECKWARES
 	if( CHAR_CheckInItemForWares( talkerindex, 0) == FALSE ){
-		CHAR_talkToCli( talkerindex, meindex, "无法服务携带货物的人！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( talkerindex, meindex, "拸楊督昢觓湍億昜腔�芄�", CHAR_COLORYELLOW);
 		return;
 	}
 #endif
@@ -90,7 +90,7 @@ static void NPC_PetFusion_selectWindow( int meindex, int toindex, int num,int se
 	int fd = getfdFromCharaIndex( toindex);
 	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 	if( Action_PartyCheck( meindex, toindex) == FALSE)	{
-		CHAR_talkToCli( toindex, meindex, "请一个一个来！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, meindex, "③珨跺珨跺懂ㄐ", CHAR_COLORYELLOW);
 		return;
 	}
 	memset( npcarg, 0, sizeof( npcarg));
@@ -122,7 +122,7 @@ static void NPC_PetFusion_selectWindow( int meindex, int toindex, int num,int se
 		}
 		break;
 	case WINDOW_FUSION:
-		//融合处理
+		//�睆炴池�
 		break;
 	case WINDOW_WARP:
 		break;
@@ -195,11 +195,11 @@ BOOL NPC_DoPetFusion( int meindex, int toindex, char *data, int sizes)
 	}
 
 	if( PETFUSION_getIndexForChar( toindex, &MainIndex, &Subindex1, &Subindex2, buf) == FALSE ){
-		CHAR_talkToCli( toindex, -1, "宠物融合失败！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "唾昜�睆珅妍隀�", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	if( (flg=PETFUSION_FusionPetSub( toindex, Subindex1, Subindex2, work, skill2)) == 0 ){
-		CHAR_talkToCli( toindex, -1, "宠物融合失败！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "唾昜�睆珅妍隀�", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 
@@ -209,7 +209,7 @@ BOOL NPC_DoPetFusion( int meindex, int toindex, char *data, int sizes)
 	}
 
 	if( PETFUSION_FusionPetMain( toindex, MainIndex, work, skill1) == FALSE )	{
-		CHAR_talkToCli( toindex, -1, "宠物融合失败！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "唾昜�睆珅妍隀�", CHAR_COLORYELLOW);
 		return FALSE;
 	}else	{
 		int Eggindex=-1, petNo=0, petID, newpetindex=-1;
@@ -217,7 +217,7 @@ BOOL NPC_DoPetFusion( int meindex, int toindex, char *data, int sizes)
 		int PetCode=-1;
 		flg++;
 		if( (PetCode = NPC_getFusionTableForBase( toindex, MainIndex, Subindex1 )) < 0 ){
-			CHAR_talkToCli( toindex, -1, "宠物融合失败！", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "唾昜�睆珅妍隀�", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 		petNo = NPC_getPetArrayForNo( PetCode);

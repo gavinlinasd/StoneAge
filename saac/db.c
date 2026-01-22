@@ -1,9 +1,9 @@
 /*
-  仿件平件弘窗  勾五犯□正矛□旦及  隶［
+  溘璃す璃精敦  僑拻溢↓淏穫↓筒摯  薔��
 
   1999 Aug 14 Created by ringo
 
-  犯□正矛□旦反1  及伉件弁及溥匹忡绣今木月［
+  溢↓淏穫↓筒毀1  摯惉璃袲摯魠ぁ瞀凎踏躂堎��
   
   
  */
@@ -21,32 +21,32 @@
 #include <string.h>
 #include <sys/stat.h>
 
-/*   侬  巨件玄伉及    length */
+/*   棬  操璃哱惉摯    length */
 //#define CHARVALUE_MAX 1024
 #define MAXTABLE 16
 // Spock 2000/10/12
-#define CHARVALUE_MAX 256	// DB 字串资料的buffer大小
-#define KEY_MAX 64		// DB Key字串的buffer大小
-#define HASH_SIZE 65536		// Hash table 一次增加的Entry数量
-#define HASH_PRIME 65521	// Hash function 使用的质数
-#define DBINIT_SIZE 16384	// DB 每次配置Entry的数量
+#define CHARVALUE_MAX 256	// DB 趼揹訧蹋腔buffer湮苤
+#define KEY_MAX 64		// DB Key趼揹腔buffer湮苤
+#define HASH_SIZE 65536		// Hash table 珨棒崝樓腔Entry杅講
+#define HASH_PRIME 65521	// Hash function 妏蚚腔窐杅
+#define DBINIT_SIZE 16384	// DB 藩棒饜离Entry腔杅講
 // Spock end
 
-/* 犯□正矛□旦及伉件弁及邰豳1蜊毛丐日歹允［ */
+/* 溢↓淏穫↓筒摯惉璃袲摯菺搫1蠀禱堣�桭灄呁� */
 struct dbentry
 {
     int use;
-//    unsigned int keyhash;       /* 腹绸平□及甩永扑亘戊□玉 */
-    int ivalue;                  /* 旦戊失［玄永皿 NODE 反  -1 匹｝
-                                 允屯化及旦戊失反 0 动晓匹卅中午中仃卅中*/
-//    int nextind;                /* -1 分匀凶日    毛啦  允月 */
+//    unsigned int keyhash;       /* 號喙す↓摯辿蚗で堥昡↓迶 */
+    int ivalue;                  /* 筒昡囮�覕�蚗鏤 NODE 毀  -1 ぁ��
+                                 埰迋趙摯筒昡囮毀 0 雄窀ぁ埵笢敁笢崹埵笢*/
+//    int nextind;                /* -1 煦埱倜��    禱徽  埰堎 */
     // Spock 2000/10/12
-    int prev;	// 前一个dbentry, -1表示此项为head
-    int next;	// 下一个dbentry, -1表示此项为tail
+    int prev;	// ヶ珨跺dbentry, -1桶尨森砐峈head
+    int next;	// 狟珨跺dbentry, -1桶尨森砐峈tail
     char key[KEY_MAX];
     char charvalue[CHARVALUE_MAX];
-//    char key[64];               /* 腹绸平□午卅月  侬   */
-//    int charvalue_index;        /*   侬  田永白央毛今允index */
+//    char key[64];               /* 號喙す↓敁埵堎  棬   */
+//    int charvalue_index;        /*   棬  泬蚗啞栝禱踏埰index */
     // Spock end
 };
 
@@ -54,11 +54,11 @@ struct dbentry
 // Database hashtable
 struct hashentry
 {
-    char key[KEY_MAX];	// 索引key值
-    int use;		// 是否已被使用
-    int dbind;		// 指向 dbentry 的 index
-    int prev;		// 同一key值的上一个 hashentry, -1为head
-    int next;		// 同一key值的下一个 hashentry, -1为tail
+    char key[KEY_MAX];	// 坰竘key硉
+    int use;		// 岆瘁眒掩妏蚚
+    int dbind;		// 硌砃 dbentry 腔 index
+    int prev;		// 肮珨key硉腔奻珨跺 hashentry, -1峈head
+    int next;		// 肮珨key硉腔狟珨跺 hashentry, -1峈tail
 };
 // Spock end
 
@@ -68,24 +68,24 @@ typedef enum
     DB_STRING,
 }DBTYPE;
 
-/* 1蜊及犯□正矛□旦毛丐日歹允 */
+/* 1蠀摯溢↓淏穫↓筒禱堣�桭灄� */
 struct table
 {
-    int use;		// 0:未使用 1:已使用
-    DBTYPE type;                    /* DB及潘   */
-    char name[32];                  /* 犯□正矛□旦及  蟆 */
-    int num;                        /* 巨件玄伉及醒 */
+    int use;		// 0:帤妏蚚 1:眒妏蚚
+    DBTYPE type;                    /* DB摯攣   */
+    char name[32];                  /* 溢↓淏穫↓筒摯  鞳 */
+    int num;                        /* 操璃哱惉摯倳 */
     int toplinkindex;
     // Spock 2000/10/12
     struct hashentry *hashtable;
     int hashsize;
-    int updated;	// 0:dbflush後未更新 1:已更新
-    int ent_finder;	// 指向最後一次配置的 hashentry
+    int updated;	// 0:dbflush摽帤載陔 1:眒載陔
+    int ent_finder;	// 硌砃郔摽珨棒饜离腔 hashentry
     // Spock end
 };
 
-struct dbentry *master_buf;     /* 巨件玄伉筏盛迕 */
-int dbsize = 0;                 /*   赓0匹｝1,2,4,8,16...*/
+struct dbentry *master_buf;     /* 操璃哱惉楔呏暵 */
+int dbsize = 0;                 /*   疐0ぁ��1,2,4,8,16...*/
 static int dbent_finder = 0;
 
 struct table dbt[MAXTABLE];
@@ -119,7 +119,7 @@ int charvaluesize=0;
 */
 
 /*
-    侬  田永白央□毛傀舰允月
+    棬  泬蚗啞栝↓禱錚耦埰堎
  */
 /* Spock deleted 2000/10/12
 int
@@ -157,8 +157,8 @@ reallocCharValue(void)
 */
 
 /*
-    侬  田永白央□毛1蜊歹曰丐化月［
-  凶曰卅仁卅匀凶日realloc允月［
+    棬  泬蚗啞栝↓禱1蠀渦堇堣趙堎��
+  倜堇埵�忐耒�倜�捯ealloc埰堎��
   
 */
 /* Spock deleted 2000/10/12
@@ -188,7 +188,7 @@ dbAllocCharValue( void )
 */
 
 /*
-  charvalue 井日/卞袄毛必永玄/本永玄允月
+  charvalue 凝��/勗偯禱斛蚗哱/掛蚗哱埰堎
   int index : charvalue index
   
  */
@@ -209,8 +209,8 @@ dbSetString( int index , char *data )
 */
 
 /*
-  DB及云云五今互凶日氏仁卅匀凶日歹曰丐化卅云允［中引及扔奶术及2  卞允月
-  0分匀凶日1卞允月
+  DB摯堁堁拻踏誑倜�梛珂忐耒�倜�桭灄隙六胰耒ば呁詎倷�摯�蚅昃齞�2  勗埰堎
+  0煦埱倜��1勗埰堎
  */
 static int
 reallocDB( void )
@@ -230,20 +230,20 @@ reallocDB( void )
     
     newbuf = (struct dbentry* ) calloc( 1, new_dbsize *
                                          sizeof( struct dbentry) );
-    /* 丢乒伉凶曰卅中   */
+    /* 隍さ惉倜堇埵笢   */
     if( newbuf == NULL ){
-        log( "重新分配数据: 内存不足!!! 新数据大小: %d\n", new_dbsize );
+        log( "笭陔煦饜杅擂: 囀湔祥逋!!! 陔杅擂湮苤: %d\n", new_dbsize );
         return -1;
     }
 
-    /* 衙中幻丹井日蕙仄中  卞戊疋□仄化 */
+    /* 捙笢酵竣凝�殌目ひ�  勗昡鼀↓媃趙 */
 
     memset( newbuf , 0 , new_dbsize * sizeof( struct dbentry ) );
     /* Spock deleted 2000/10/19
     if( previous )memcpy( (char*)newbuf, (char*)previous,
             dbsize * sizeof( struct dbentry ));
 
-    // 衙中幻丹毛荸  仄
+    // 捙笢酵竣禱搣  媃
     free( previous );
     */
     // Spock 2000/10/19
@@ -254,11 +254,11 @@ reallocDB( void )
     }
     // Spock end
 
-    dbent_finder = dbsize;	// 将 dbent_finder 指向未使用的 entry
+    dbent_finder = dbsize;	// 蔚 dbent_finder 硌砃帤妏蚚腔 entry
     dbsize = new_dbsize;
     master_buf = newbuf;
     
-    log( "重新分配数据: 新数据大小:%d 旧地址: %x 新地址:%x\n",
+    log( "笭陔煦饜杅擂: 陔杅擂湮苤:%d 導華硊: %x 陔華硊:%x\n",
          new_dbsize , (unsigned int)previous, (unsigned int)newbuf );
 
     return 0;
@@ -283,11 +283,11 @@ dbAllocNode()
         if( master_buf[dbent_finder].use == 0 ){
             master_buf[dbent_finder].use = 1;
             /* Spock deleted 2000/10/12
-            // int 匹手尥笛树  及啃卞stringbuffer毛  勾仪卞允月 kawata
+            // int ぁ忒痹萃攷  摯諱勗stringbuffer禱  僑痀勗埰堎 kawata
             if( type == DB_STRING || type == DB_INT_SORTED){
                 if( ( master_buf[dbent_finder].charvalue_index =
                       dbAllocCharValue() ) < 0 ){
-                    //   侬  田永白央□互凶曰卅中冗
+                    //   棬  泬蚗啞栝↓誑倜堇埵笢��
                     return -1;
                 }
             }
@@ -295,14 +295,14 @@ dbAllocNode()
             return dbent_finder;
         }
     }
-    log( "数据进入队列失败. 重新分配中....\n" );
+    log( "杅擂輛�賱蚆倇妍�. 笭陔煦饜笢....\n" );
     if( reallocDB() < 0 ){
-        log( "重新分配失败\n" );
+        log( "笭陔煦饜囮啖\n" );
     } else {
         //return dbAllocNode( type );
         // Spock 2000/10/13
         master_buf[dbent_finder].use = 1;
-        log( "数据探测=%d\n" , dbent_finder );
+        log( "杅擂抻聆=%d\n" , dbent_finder );
         return dbent_finder;
         // Spock end
     }
@@ -329,7 +329,7 @@ dbShowLink( int topind )
 {
     int cur = topind;
 
-    log( "开始从 %d 链接数据\n", cur );
+    log( "羲宎植 %d 蟈諉杅擂\n", cur );
     
     /* Spock deleted 2000/10/19
     for(;;){
@@ -363,7 +363,7 @@ reallocHash( int dbi )
     newbuf = (struct hashentry* ) calloc( 1, new_hashsize *
                                          sizeof( struct hashentry) );
     if( newbuf == NULL ){
-        log( "重新分配无用信息: 内存不足!!! 新无用信息大小: %d\n", new_hashsize );
+        log( "笭陔煦饜拸蚚陓洘: 囀湔祥逋!!! 陔拸蚚陓洘湮苤: %d\n", new_hashsize );
         return -1;
     }
 
@@ -382,7 +382,7 @@ reallocHash( int dbi )
     dbt[dbi].hashsize = new_hashsize;
     dbt[dbi].hashtable = newbuf;
     
-    log( "重新分配无用信息: 新无用信息大小:%d 旧地址: %x 新地址:%x\n",
+    log( "笭陔煦饜拸蚚陓洘: 陔拸蚚陓洘湮苤:%d 導華硊: %x 陔華硊:%x\n",
          new_hashsize , (unsigned int)previous, (unsigned int)newbuf );
 
     return 0;
@@ -474,8 +474,8 @@ tableReleaseNode( int dbi , int ind )
 }
 // Spock end
 /*
-  伉件弁及玄永皿毛芨尹日木凶日｝平□毛  曰卞用□玉毛腹绸允月［
-  心勾井日卅中桦宁反巨仿□匹反卅中及匹0
+  惉璃袲摯哱蚗鏤禱僄窇�桫憶觕掁�す↓禱  堇勗蚚↓迶禱號喙埰堎��
+  陑僑凝�欷聿剒踽�毀操溘↓ぁ毀埵笢摯ぁ0
 
  */
 /* Spock deleted 2000/10/13
@@ -486,20 +486,20 @@ dbExtractNodeByKey( int topind , char *k  )
     int prev = -1;
     unsigned int h = hashpjw( k );
 
-    // 伉件弁互坞匹手心勾井日卅中分仃卅及匹0毛井尹允
+    // 惉璃袲誑昶ぁ忒陑僑凝�欷聿郱笭縋汝副�0禱凝窇埰
     if( topind == -1 ) return 0;
 
     for(;;){
         if( cur == -1 )break;
         if( master_buf[cur].keyhash == h
             && strcmp( master_buf[cur].key , k ) == 0 ){
-            // prev 及 戚互 cur 及戚卞卅月方丹卞允月
+            // prev 摯 べ誑 cur 摯べ勗埵堎源竣勗埰堎
             if( prev == -1 ){
-                // 燮  分匀凶及匹伉件弁反中元日卅中
+                // 袸  煦埱倜摯ぁ惉璃袲毀笢啋�欷聿�
             } else {                
                 master_buf[prev].nextind = master_buf[cur].nextind;
             }
-            // 公木匹愤坌互伉旦玄井日陆木月及匹荸  允月
+            // 鼠躂ぁ猷覕誑惉筒哱凝�梒衝戰翹副禾�  埰堎
             dbReleaseNode( cur );
             log( "find key %s deleted\n", k );
             return 0;
@@ -554,9 +554,9 @@ dbGetEntryByKey( int topind , char *k )
 */
 
 /*
-  伉件弁及玄永皿毛芨尹日木凶日｝袄毛  曰卞用□玉毛腹绸仄化
-  赝濠卅午仇欠卞 Insert 允月［切中今中  井日云云五中  卞卅日氏匹中月午
-  移烂
+  惉璃袲摯哱蚗鏤禱僄窇�桫憶觕掁�偯禱  堇勗蚚↓迶禱號喙媃趙
+  媏憍埵敁喫Й勗 Insert 埰堎�裀倗郇鵖�  凝�梊ばな樛�  勗埵�梛玅皮俶蟲�
+  痄擭
 
  */
 /* Spock deleted 2000/10/13
@@ -570,7 +570,7 @@ dbInsertNodeByIValue( int topind , int ins )
     
     for(;;){
         if( cur == -1 ){
-            //     引匹中匀凶及匹馨笛允月
+            //     竘ぁ笢埱倜摯ぁ黹萃埰堎
             master_buf[prev].nextind = ins;
             master_buf[ins].nextind = -1;
             return 0;
@@ -647,10 +647,10 @@ dbAppendNode( int topind , int ins )
 // Spock end
 
 /*
-  犯□正矛□旦及  蟆毛  月［db反醒互剂卅中及匹  骚卞strcmp仄化方中
-  DBTYPE :潘  ［
+  溢↓淏穫↓筒摯  鞳禱  堎�菤b毀倳誑撙埵笢摯ぁ  玊勗strcmp媃趙源笢
+  DBTYPE :攣  ��
 
-  云卅元卅引尹及  反｝帮醒午  侬  及    卞绣箕允月仇午互匹五月［
+  堁埵啋埵竘窇摯  毀��堆倳敁  棬  摯    勗凎凜埰堎喫敁誑ぁ拻堎��
   
  */
 static int
@@ -665,7 +665,7 @@ dbGetTableIndex( char *tname , DBTYPE type )
         }
     }
 
-    /* 心勾井日卅井匀凶及匹蕙筋分 */
+    /* 陑僑凝�欷汙朗�倜摯ぁ犍踐煦 */
     for(i=0;i<MAXTABLE;i++){
         if( dbt[i].use == 0 ){
             int topind;
@@ -675,7 +675,7 @@ dbGetTableIndex( char *tname , DBTYPE type )
             // Spock 2000/10/16
             if ( reallocHash( i ) < 0 )
             {
-            	log( "重新分配无用信息失败\n");
+            	log( "笭陔煦饜拸蚚陓洘囮啖\n");
             	return -2;
             }
             dbt[i].ent_finder = HASH_PRIME;
@@ -685,7 +685,7 @@ dbGetTableIndex( char *tname , DBTYPE type )
             // Spock +1 2000/10/16
             topind = dbAllocNode();
             if( topind < 0 ){
-                log( "数据分配节点失败\n" );
+                log( "杅擂煦饜誹萸囮啖\n" );
                 return -2;
             }
             /* Spock deleted 2000/10/16
@@ -695,9 +695,9 @@ dbGetTableIndex( char *tname , DBTYPE type )
             master_buf[topind].nextind = -1;
             */
             
-            /* 玄永皿及用□玉毛赓渝祭允月卅曰［
-               侬  及桦宁手帮醒及桦宁手云卅元匹方中［
-             0x7fffffff午中丹袄反｝  侬  及桦宁反今幻升啦  毛手凶卅中及分［*/
+            /* 哱蚗鏤摯蚚↓迶禱疐趵撬埰堎埵堇��
+               棬  摯鳹譴忒堆倳摯鳹譴忒堁埵啋ぁ源笢��
+             0x7fffffff敁笢竣偯毀��  棬  摯鳹譴毀踏酵汔徽  禱忒倜埵笢摯煦��*/
             master_buf[topind].ivalue = 0x7fffffff;    
             /* Spock deleted 2000/10/16
             if( type == DB_INT_SORTED ){
@@ -718,7 +718,7 @@ dbGetTableIndex( char *tname , DBTYPE type )
         }
     }
 
-    /*   互中匀天中分［ */
+    /*   誑笢埱毞笢煦�� */
     log( "dbGetTableIndex: table full. now tables are:\n" );
     dbShowAllTable();
 
@@ -727,11 +727,11 @@ dbGetTableIndex( char *tname , DBTYPE type )
 
 /*
 
-  午曰丐尹内 strtol 匹五月袄仄井扔禾□玄仄卅中方
+  敁堇堣窇囀 strtol ぁ拻堎偯媃凝�蚨怴欃�媃埵笢源
 
-  腹绸仄化苇勾仃凶用□玉卞覆仄化｝
-  伉件弁井日  五午匀化井日｝漆蘸反末□玄允月及卞银丹袄毛凶方曰卞
-  腹绸仄化｝中中桦赭毛心勾仃凶日｝公仇卞犒仄仇戈［
+  號喙媃趙峟僑崹倜蚚↓迶勗葡媃趙��
+  惉璃袲凝��  拻敁埱趙凝�掁�ぽ梣毀藺↓哱埰堎摯勗窅竣偯禱倜源堇勗
+  號喙媃趙��笢笢鳹鐎禱陑僑崹倜�掁�鼠喫勗蕍媃喫資��
   
  */
 /* Spock deleted 2000/10/16
@@ -758,7 +758,7 @@ int dbUpdateEntryInt( char *table , char *key , int value, char *info )
     master_buf[entind].keyhash = hashpjw( master_buf[entind].key );
     master_buf[entind].nextind = -1; 
 	
-	// 尥笛树  毛本永玄允月
+	// 痹萃攷  禱掛蚗哱埰堎
     dbSetString( master_buf[entind].charvalue_index, info );
 	
 	
@@ -919,7 +919,7 @@ dbShowAllTable(void)
     
 }
 
-/* 犯□正毛1蜊潸曰分允［
+/* 溢↓淏禱1蠀噁堇煦埰��
  */
 int
 dbGetEntryInt( char *table, char *key, int *output )
@@ -949,19 +949,19 @@ dbGetEntryInt( char *table, char *key, int *output )
     	log( "dbGetEntryInt: Invalid dbind in hashtable of %s\n" , table );
     	return -1;
     }
-    /* 心勾井匀凶及匹袄毛请  卞  木化忒允 */
+    /* 陑僑凝埱倜摯ぁ偯禱③  勗  躂趙蒍埰 */
     *output = master_buf[entind].ivalue;
 
     return 0;
 }
 
 /*
-  巨仿□及桦宁反  ［0分匀凶日岳  ［
+  操溘↓摯鳹譴毀  ��0煦埱倜�梊�  ��
 
-  int *rank_out : 仿件弁及请  
-  int *count_out : 晓井日窒蜊  井及请  
+  int *rank_out : 溘璃袲摯③  
+  int *count_out : 窀凝�欶砃�  凝摯③  
 
-  int 犯□正矛□旦毁迕友
+  int 溢↓淏穫↓筒障暵衭
   
  */
 
@@ -972,7 +972,7 @@ dbGetEntryRank( char *table, char *key , int *rank_out, int *count_out)
     // Spock deleted 2000/10/19
     //unsigned int hash = hashpjw(key);
     int cur;
-    int now_score = 0x7fffffff;     /*int 匹中切壬氏匹井中袄 */
+    int now_score = 0x7fffffff;     /*int ぁ笢з�圴玅札核訄� */
     int r = -1 , i=0;
 
     // Spock 2000/10/23
@@ -1021,14 +1021,14 @@ dbGetEntryRank( char *table, char *key , int *rank_out, int *count_out)
 }
 
 /*
-  int 毁迕友
+  int 障暵衭
  */
 int
 dbGetEntryRankRange( char *table,
                      int start, int end, char *output, int outlen )
 {
-#define MAXHITS 1024        /* 赝癫支卅丐［匹手仇木匹蜗坌日仄中冗 ringo */
-    struct hitent{          /* 仇及厌瞻  卞甲永玄仄凶支勾毛凶户化中仁 */
+#define MAXHITS 1024        /* 媏騍盓埵堣�袸瓜硈蟤嬴用畈倞欷ひ倞� ringo */
+    struct hitent{          /* 喫摯栖桹  勗樅蚗哱媃倜盓僑禱倜誧趙笢�� */
         int entind;
         int rank;
     };
@@ -1163,11 +1163,11 @@ int dbRead( char *dir )
         char tmp[1024];
         snprintf( tmp, sizeof( tmp ), "%s/int" , dir );
         if( mkdir( tmp, 0755 )==0){
-            log( "创建 %s\n", tmp );
+            log( "斐膘 %s\n", tmp );
         }
         snprintf( tmp, sizeof( tmp ), "%s/string" , dir );
         if( mkdir( tmp, 0755 )==0){
-            log( "创建 %s\n", tmp );
+            log( "斐膘 %s\n", tmp );
         }        
     }
         
@@ -1175,7 +1175,7 @@ int dbRead( char *dir )
               "%s/int" , dir );
     d = opendir(dirname);
     if( d == NULL ){
-        log( "不能打开文件 %s\n", dirname );
+        log( "祥夔湖羲恅璃 %s\n", dirname );
         return -1;
     }
 
@@ -1187,7 +1187,7 @@ int dbRead( char *dir )
             FILE *fp;
             struct stat s;
             snprintf( filename, sizeof(filename),"%s/%s",dirname, de->d_name );
-			log( "读取数据:%s\n..", filename);
+			log( "黍�﹋�擂:%s\n..", filename);
             if( stat( filename, &s ) < 0 ){
                 continue;
             }
@@ -1197,7 +1197,7 @@ int dbRead( char *dir )
             
             fp = fopen( filename, "r" );            
             if( fp == NULL ){
-                log( "不能打开文件 %s %s\n",
+                log( "祥夔湖羲恅璃 %s %s\n",
                          filename, strerror( errno ));
                 continue;
             }
@@ -1221,7 +1221,7 @@ int dbRead( char *dir )
     snprintf( dirname, sizeof( dirname), "%s/string" , dir );
     d = opendir( dirname );
     if( d == NULL ){
-        log( "不能打开文件 %s\n", dirname );
+        log( "祥夔湖羲恅璃 %s\n", dirname );
         return -1;
     }
     while(1){
@@ -1232,7 +1232,7 @@ int dbRead( char *dir )
             FILE *fp;
             struct stat s;
             snprintf( filename, sizeof( filename),"%s/%s",dirname,de->d_name );
-			log( "读取数据:%s\n..", filename);
+			log( "黍�﹋�擂:%s\n..", filename);
 
             if( stat( filename, &s ) < 0 ){
                 continue;
@@ -1242,7 +1242,7 @@ int dbRead( char *dir )
             }
             fp = fopen( filename, "r" );
             if( fp == NULL ){
-                log( "不能打开文件 %s %s\n",
+                log( "祥夔湖羲恅璃 %s %s\n",
                      filename, strerror(errno ));
                 continue;
             }
@@ -1264,11 +1264,11 @@ int dbRead( char *dir )
     return 0;
 }
 
-/* 隙烂仄凶匏  井日隙烂仄凶蜊醒潸曰分允［
- 撩  仄凶日  ｝岳  仄凶日0［岳  仄化手坞及请  及午五互丐月冗［
-   “num互0及午五午井｝竟癫允月巨件玄伉互卅中午五［
+/* 炩擭媃倜痾  凝�梤黃贈ぬ酖覕栵�堇煦埰��
+ 謄  媃倜��  ��埬  媃倜��0�觚�  媃趙忒昶摯③  摯敁拻誑堣堎�舝�
+   ※num誑0摯敁拻敁凝��器騍埰堎操璃哱惉誑埵笢敁拻��
 
- int 犯□正矛□旦毁迕分冗
+ int 溢↓淏穫↓筒障暵煦��
 
  */
 int dbGetEntryCountRange( char *table, int count_start, int  num,
@@ -1321,7 +1321,7 @@ int dbGetEntryCountRange( char *table, int count_start, int  num,
 
 
 /*
-    侬  犯□正矛□旦及质  
+    棬  溢↓淏穫↓筒摯窐  
  */
 /* Spock deleted 2000/10/19
 int

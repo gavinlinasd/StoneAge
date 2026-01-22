@@ -12,36 +12,36 @@
 #endif
 #define MIN_MEMBERNUM           10              // 10
 
-#ifdef _FIX_9_FMPOINT		// WON ADD 九大庄园
+#ifdef _FIX_9_FMPOINT		// WON ADD 嬝湮蚽埶
 #define MAX_FMPOINT             10  
 #else
 #define MAX_FMPOINT             4               // 4
 #endif
 
-#define PREDEL_TIME             60*60*24*7      // 七天 60*60*24*3
-#define PREDELMEMBER_TIME       60*60*24*30     // 30天 60*60*24*30
-#define FAMILY_MEMONUM          35              // 家族留言板最大留言数量
+#define PREDEL_TIME             60*60*24*7      // ほ毞 60*60*24*3
+#define PREDELMEMBER_TIME       60*60*24*30     // 30毞 60*60*24*30
+#define FAMILY_MEMONUM          35              // 模逜隱晟啣郔湮隱晟杅講
 #define FAMILY_MEMOLEN          256
-#define FMSMEMOINDEX            10000           // 家族之间留言板 index
+#define FMSMEMOINDEX            10000           // 模逜眳潔隱晟啣 index
 #define FMSMEMONUM              140
-#define TOPFMLISTNUM            10              // 家族排行榜数量
+#define TOPFMLISTNUM            10              // 模逜齬俴埤杅講
 #define MINFMPOPNUM             -20000000
 // shan 20011207
 #define MAXFMPOPNUM             100000000
 //#define MAXFMPOPNUM           5000000
-#define MINAPPLYPNUM            30              // 申请家族最低人数
+#define MINAPPLYPNUM            30              // 扠③模逜郔腴�侕�
 #define FMMEMBERINDEX           "fmmember"
 #define FMMEMOLIST              "memo"
-#define FMELDERNUM		4		// 长老数量
+#define FMELDERNUM		4		// 酗橾杅講
 #ifdef _EVERYONE_RIDE
-	#define FMMAXGOLD			100000000	// 家族基金上限
+	#define FMMAXGOLD			100000000	// 模逜價踢奻癹
 #else
-	#define FMMAXGOLD			10000000	// 家族基金上限
+	#define FMMAXGOLD			10000000	// 模逜價踢奻癹
 #endif
 // shan 20011207
-#define MAXRECVPOP				50000000	// 家族声望转移上限
+#define MAXRECVPOP				50000000	// 模逜汒咡蛌痄奻癹
 // CoolFish: 2001/11/26
-//#define MAXRECVPOP			2500000		// 家族声望转移上限
+//#define MAXRECVPOP			2500000		// 模逜汒咡蛌痄奻癹
                 
 typedef enum
 {
@@ -145,7 +145,7 @@ int ACAddFM(int fd, int *workindex, char *fmname, char *fmleadername,
 	char *fmleaderid, int fmleaderlv, char *petname, char *petattr,
 	char *fmrule, int fmsprite, int fmleadergrano, int charfdid);
 #endif
-#ifdef _PERSONAL_FAME	// Arminius: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
 int ACJoinFM(int fd, int index, char *fmname, int fmindex,
         char *charname, char *charid, int charlv, int fame, int charfdid);
 #else
@@ -185,7 +185,7 @@ int ACFMCharLogin(int fd, int index, char *fmname, int fmindex,
 	#endif
 	);
 #else
-	#ifdef _PERSONAL_FAME   // Arminius: 家族个人声望
+	#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
 	int ACFMCharLogin(int fd, int index, char *fmname, int fmindex,
 		char *charname, char *charid, int charlv, int *floor, int *fmpopular,
 		int *joinflag, int *fmsetupflag, int *charindex, int charfdid,
@@ -245,7 +245,7 @@ int FMPK_SetData( int ti, int Pkflg, char *Data, int sizes);
 
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 void saacproto_ACRELOADFM_recv( int fd, int charindex );
 char *get_fm_leader_index( int fm_index );
 #endif
@@ -253,7 +253,7 @@ char *get_fm_leader_index( int fm_index );
 
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 
 #define fm_pk_max 200
 

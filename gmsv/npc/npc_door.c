@@ -17,30 +17,30 @@
 static int NPC_Door_isOpen( int meindex );
 
 /*
- * 玉失毛  蜇允月凶户及NPC卞  邰卅楮醒及烂聒［
- * 正奶皿  “ Door
+ * 迶囮禱  藯埰堎倜誧摯NPC勗  菺埵匴倳摯擭壛��
+ * 淏騷鏤  ※ Door
  *
- * NPCARGUMENT及袄反｝
+ * NPCARGUMENT摯偯毀��
  *
  * og|cg|idname|swcount|closetime_sec|soonflg0/1|passflg0/1/2
  *
- * passflg 反｝1分匀凶日天允歹□升勾五匹丐月啦  卞卅月［2分匀凶日
- * 濮覆夫日井卅中［ 0分匀凶日由旦伐□玉匹卅中［
+ * passflg 毀��1煦埱倜�梋嬦妠鶠巋�僑拻ぁ堣堎徽  勗埵堎��2煦埱倜��
+ * 憪葡痲�桴框聿苺� 0煦埱倜�梌伂弧央灃鮿目聿苺�
  *
- * 毛隙烂允月［  引月引匹及凛棉反犯白巧伙玄匹反1凛棉［
- * 涩烂毛踏仁午五卞反  飓  寞互褐邰卅躲绊毛手勾井日镗啦互  邰匹丐月［
+ * 禱炩擭埰堎��  竘堎竘ぁ摯鄹蹬毀溢啞б鳴哱ぁ毀1鄹蹬��
+ * 优擭禱怳�庉覢撅撌�  鴢  蠕誑福菺埵嗚堅禱忒僑凝�淖衈祥�  菺ぁ堣堎��
  *
- * 愤坌及引歹曰卞C毛霜耨允月楮醒互丐月井日｝1垫info,  飓  寞
- * 毛  凳仄化井日公及楮醒毛方屯壬弁仿奶失件玄及    卞  憎今木化中月
- * 橇谪互  蕙卞卅月［
+ * 猷覕摯竘渦堇勗C禱邞嚭埰堎匴倳誑堣堎凝�掁�1菜info,  鴢  蠕
+ * 禱  脾媃趙凝�桯姨啗�倳禱源迋�幵芛薩昃尬�哱摯    勗  崚踏躂趙笢堎
+ * Щ稃誑  犍勗埵堎��
  */
 
-#define NPC_DOOR_OPENMSG "玉失互｝夫日中凶!"
-#define NPC_DOOR_CLOSEMSG "玉失毛｝仄户凶!"
-#define NPC_DOOR_CANTOPENMSG "井亢互丐歹卅中及匹｝玉失毛夫日仁仇午互\
-匹五卅中!"
+#define NPC_DOOR_OPENMSG "迶囮誑��痲�欶俴�!"
+#define NPC_DOOR_CLOSEMSG "迶囮禱��媃誧倜!"
+#define NPC_DOOR_CANTOPENMSG "凝蕩誑堣渦埵笢摯ぁ��迶囮禱痲�桱妘蠁蝏功
+ぁ拻埵笢!"
 
-#define ROPEGRAPHIC 9259        /* 蔷  卞丐月骚木卅中夫□皿 */
+#define ROPEGRAPHIC 9259        /* Ц  勗堣堎玊躂埵笢痲↓鏤 */
 
 enum{
 	NPC_DOOR_FLG_SOONCLOSE = 1,
@@ -49,8 +49,8 @@ enum{
 
 
 /*
- * 玉失日仄中涩烂毛允月卞反｝仇仇匹
- * maxhp , maxmp , level , str , tough 毛0卞允月午方中［
+ * 迶囮�欷ひ倅珊藤帟彸簣撌提�喫喫ぁ
+ * maxhp , maxmp , level , str , tough 禱0勗埰堎敁源笢��
  *
  */
 BOOL NPC_DoorInit( int meindex )
@@ -129,45 +129,45 @@ BOOL NPC_DoorInit( int meindex )
         int closeg = CHAR_getWorkInt( meindex , CHAR_WORKDOORCLOSEG );
         int dir = -1;
         switch( closeg ){
-        case 11900: dir = 6; break;  /* 霁及玉失 夫分曰仄凶 */
-        case 11902: dir = 0; break;  /*          夫分曰丹尹 */
-        case 11904: dir = 2; break;  /*          心亢丹尹 */
-        case 11906: dir = 4; break;  /*          心亢仄凶 */
+        case 11900: dir = 6; break;  /* 鰜摯迶囮 痲煦堇媃倜 */
+        case 11902: dir = 0; break;  /*          痲煦堇竣窇 */
+        case 11904: dir = 2; break;  /*          陑蕩竣窇 */
+        case 11906: dir = 4; break;  /*          陑蕩媃倜 */
 
-        case 11908: dir = 6; break;  /* 赢中霁及玉失 夫分曰仄凶 */
-        case 11910: dir = 0; break;  /*              夫分曰丹尹 */
-        case 11912: dir = 2; break;  /*              心亢丹尹 */
-        case 11914: dir = 4; break;  /*              心亢仄凶 */
+        case 11908: dir = 6; break;  /* 荇笢鰜摯迶囮 痲煦堇媃倜 */
+        case 11910: dir = 0; break;  /*              痲煦堇竣窇 */
+        case 11912: dir = 2; break;  /*              陑蕩竣窇 */
+        case 11914: dir = 4; break;  /*              陑蕩媃倜 */
 
-        case 11916: dir = 6; break;  /* 嗡及玉失 夫分曰仄凶 */
-        case 11918: dir = 0; break;  /*          夫分曰丹尹 */
-        case 11920: dir = 2; break;  /*          心亢丹尹 */
-        case 11922: dir = 4; break;  /*          心亢仄凶 */
+        case 11916: dir = 6; break;  /* 恂摯迶囮 痲煦堇媃倜 */
+        case 11918: dir = 0; break;  /*          痲煦堇竣窇 */
+        case 11920: dir = 2; break;  /*          陑蕩竣窇 */
+        case 11922: dir = 4; break;  /*          陑蕩媃倜 */
 
-        case 11924: dir = 6; break;  /* 赢中嗡及玉失 夫分曰仄凶 */
-        case 11926: dir = 0; break;  /*              夫分曰丹尹 */
-        case 11928: dir = 2; break;  /*              心亢丹尹 */
-        case 11930: dir = 4; break;  /*              心亢仄凶 */
+        case 11924: dir = 6; break;  /* 荇笢恂摯迶囮 痲煦堇媃倜 */
+        case 11926: dir = 0; break;  /*              痲煦堇竣窇 */
+        case 11928: dir = 2; break;  /*              陑蕩竣窇 */
+        case 11930: dir = 4; break;  /*              陑蕩媃倜 */
 
-        case 11958: dir = 2; break;  /* 赢中  及玉失 心亢丹尹 */
-        case 11960: dir = 4; break;  /*              心亢仄凶 */
-        case 11962: dir = 6; break;  /*              夫分曰仄凶 */
-        case 11964: dir = 0; break;  /*              夫分曰丹尹 */
+        case 11958: dir = 2; break;  /* 荇笢  摯迶囮 陑蕩竣窇 */
+        case 11960: dir = 4; break;  /*              陑蕩媃倜 */
+        case 11962: dir = 6; break;  /*              痲煦堇媃倜 */
+        case 11964: dir = 0; break;  /*              痲煦堇竣窇 */
 
-        case 11966: dir = 2; break;  /*   及玉失 心亢丹尹 */
-        case 11968: dir = 4; break;  /*          心亢仄凶 */
-        case 11970: dir = 6; break;  /*          夫分曰仄凶 */
-        case 11972: dir = 0; break;  /*          夫分曰丹尹 */
+        case 11966: dir = 2; break;  /*   摯迶囮 陑蕩竣窇 */
+        case 11968: dir = 4; break;  /*          陑蕩媃倜 */
+        case 11970: dir = 6; break;  /*          痲煦堇媃倜 */
+        case 11972: dir = 0; break;  /*          痲煦堇竣窇 */
 
-        case 11978: dir = 2; break;  /* 赢中嗯及玉失 心亢丹尹 */
-        case 11980: dir = 4; break;  /*              心亢仄凶 */
-        case 11982: dir = 6; break;  /*              夫分曰仄凶 */
-        case 11984: dir = 0; break;  /*              夫分曰丹尹 */
+        case 11978: dir = 2; break;  /* 荇笢鉣摯迶囮 陑蕩竣窇 */
+        case 11980: dir = 4; break;  /*              陑蕩媃倜 */
+        case 11982: dir = 6; break;  /*              痲煦堇媃倜 */
+        case 11984: dir = 0; break;  /*              痲煦堇竣窇 */
 
-        case 11986: dir = 2; break;  /* 嗯及玉失 心亢丹尹 */
-        case 11988: dir = 4; break;  /*          心亢仄凶 */
-        case 11990: dir = 6; break;  /*          夫分曰仄凶 */
-        case 11992: dir = 0; break;  /*          夫分曰丹尹 */
+        case 11986: dir = 2; break;  /* 鉣摯迶囮 陑蕩竣窇 */
+        case 11988: dir = 4; break;  /*          陑蕩媃倜 */
+        case 11990: dir = 6; break;  /*          痲煦堇媃倜 */
+        case 11992: dir = 0; break;  /*          痲煦堇竣窇 */
 
         default: break;
         }
@@ -285,7 +285,7 @@ void NPC_DoorPostOver( int meindex , int movedindex )
 {
     if( CHAR_getWorkInt( meindex , CHAR_WORKDOORSOONFLG )){
 		CHAR_setInt( meindex , CHAR_TALKCOUNT, 1 );
-        CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );	/* 骚木卅仁允月 */
+        CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );	/* 玊躂埵�彸彸� */
     }
 }
 
@@ -346,7 +346,7 @@ void NPC_DoorLooked( int meindex , int lookedindex )
             NPC_DoorFlip( meindex , lookedindex );
             return;
         }
-#define		NPC_DOOR_EXPIRE_MSG		"%s 的房间有效期限至 %d/%d %d:%d"
+#define		NPC_DOOR_EXPIRE_MSG		"%s 腔滇潔衄虴ぶ癹祫 %d/%d %d:%d"
         else {
 			if( CHAR_getWorkInt( meindex, CHAR_WORKDOOREXPIRETIME)
 				!= 0xffffffff ){
@@ -355,7 +355,7 @@ void NPC_DoorLooked( int meindex , int lookedindex )
 				char	msgbuf[128];
 
 				NPC_ROOMINFO roominfo;
-				/* 由旦午  躲渝蜃毛本永玄允月 */
+				/* 蚕筒敁  嗚趵藦禱掛蚗哱埰堎 */
 				NPC_RoomAdminNew_ReadFile(
 								CHAR_getWorkChar( meindex, CHAR_WORKDOORNAME),
 										&roominfo);
@@ -380,7 +380,7 @@ void NPC_DoorLooked( int meindex , int lookedindex )
     } else if( needkey == -1 ){
         NPC_DoorFlip(meindex , lookedindex );
     } else {
-        CHAR_talkToCli( lookedindex , -1 , "这扇门似乎怎麽也打不开！" , CHAR_COLORWHITE);
+        CHAR_talkToCli( lookedindex , -1 , "涴圮藷侔綱崋欒珩湖祥羲ㄐ" , CHAR_COLORWHITE);
     }
 }
 void NPC_DoorTalked( int meindex , int talkerindex , char *msg , int color )
@@ -401,7 +401,7 @@ void NPC_DoorTalked( int meindex , int talkerindex , char *msg , int color )
     if( strcmp( m , msg ) == 0 ){
         NPC_DoorFlip( meindex , talkerindex );
     }else {
-        CHAR_talkToCli( talkerindex , -1 , "密码不正确啦！", CHAR_COLORWHITE );
+        CHAR_talkToCli( talkerindex , -1 , "躇鎢祥淏�滅產�", CHAR_COLORWHITE );
     }
 }
 

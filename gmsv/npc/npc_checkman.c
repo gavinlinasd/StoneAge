@@ -7,11 +7,11 @@
 #include "lssproto_serv.h"
 
 
-//蜇箕及银迕匹五月白仿弘及醒
+//藯凜摯窅暵ぁ拻堎啞溘精摯倳
 #define MAXEVENTFLG 96
 
 /*
- * 奶矛件玄及白仿弘毛民尼永弁允月      
+ * 騷穫璃哱摯啞溘精禱鏍攝蚗袲埰堎      
  *
  */
  
@@ -21,11 +21,11 @@ int NPC_EndFlgCheck(int meindex,int talker ,int nowflg[MAXEVENTFLG]);
 BOOL NPC_FlgCheckMain( int meindex,int talker,int nowindex,int now[MAXEVENTFLG],char *work2);
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_CheckManInit( int meindex )
 {
-	/*--平乓仿及正奶皿毛涩烂--*/
+	/*--す籤溘摯淏騷鏤禱优擭--*/
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPECHECKMAN);
 
 	return TRUE;
@@ -33,31 +33,31 @@ BOOL NPC_CheckManInit( int meindex )
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_CheckManTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
 
-    /* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )
     {
     	return;
     }
 
-	/*--  及蟆卞中月井升丹井＂--*/
+	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex , 2) == FALSE) {
-		/* ㄠ弘伉永玉动  及心 */
+		/* 兒精惉蚗迶雄  摯陑 */
 		if(NPC_Util_isFaceToChara( talkerindex, meindex, 1) == FALSE) return;
 	}
 
-	//  赓及它奶件玉它卞
+	//  疐摯坳騷璃迶坳勗
 	NPC_CheckMan_selectWindow( meindex, talkerindex, 0);
 
 }
 
 
 /*
- * 备质  卞坌仃月
+ * 掘窐  勗覕崹堎
  */
 static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 {
@@ -82,7 +82,7 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 
 	now[0] =0;
 	
-	/*--它奶件玉它正奶皿丢永本□斥互云云中及匹燮卞涩烂--*/
+	/*--坳騷璃迶坳淏騷鏤隍蚗掛↓喇誑堁堁笢摯ぁ袸勗优擭--*/
   	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 
 	switch( num) {
@@ -91,14 +91,14 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 		CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANT,0);
 		CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC,0);
 		
-  		/*--蓟      --*/
-		sprintf(token,"3\n ｛｛｛｛＞＞｛民尼永弁穴件｛＞＞ "
-				  "\n｛｛｛蜇箕及白仿弘民尼永弁毛仄引□允"
+  		/*--撒      --*/
+		sprintf(token,"3\n ��������ˇˇ��鏍攝蚗袲悃璃��ˇˇ "
+				  "\n������藯凜摯啞溘精鏍攝蚗袲禱媃竘↓埰"
 				  "\n"
-				  "\n｛｛｛｛ Ｕ｛NOW白仿弘民尼永弁｛Ｖ "
-				  "\n｛｛｛｛ Ｕ｛END白仿弘民尼永弁｛Ｖ "
-				  "\n\n｛｛ Ｕ｛NOW白仿弘民尼永弁  择称  Ｖ "
-				  "\n｛｛ Ｕ｛END白仿弘民尼永弁  择称  Ｖ "
+				  "\n�������� �掁�NOW啞溘精鏍攝蚗袲���� "
+				  "\n�������� �掁�END啞溘精鏍攝蚗袲���� "
+				  "\n\n���� �掁�NOW啞溘精鏍攝蚗袲  寁備  �� "
+				  "\n���� �掁�END啞溘精鏍攝蚗袲  寁備  �� "
 		);
 
 	  	buttontype = WINDOW_BUTTONTYPE_CANCEL;
@@ -106,13 +106,13 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 	  	windowno = CHAR_WINDOWTYPE_CHECKMAN_START; 
 	  	break;
 
-	//NOW白仿弘及棵签  憎
+	//NOW啞溘精摯螢ワ  崚
 	  case 1:
 	  	
-	  	//NOW白仿弘及民尼永弁
+	  	//NOW啞溘精摯鏍攝蚗袲
 		nowindex = NPC_NowFlgCheck( meindex, talker, now);
 
-		//窒矢□斥  井
+		//笰妐↓喇  凝
 		page = CHAR_getWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC) ;
 		
 		if(page == 0 || page == 1){
@@ -121,23 +121,23 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 			i = 83;
 		}
 		
-		//矢□斥
+		//妐↓喇
 		for(; i < nowindex ; i++)
 		{
 			sprintf(work,"%d,",now[ i]);
 			strcat(work2,work);
 		}
 		
-		sprintf(token,"｛｛｛｛｛＞＞｛民尼永弁穴件｛＞＞ "
-					"\n｛｛蜇箕及筑  及  匀化中月 NOW奶矛件玄"
+		sprintf(token,"����������ˇˇ��鏍攝蚗袲悃璃��ˇˇ "
+					"\n����藯凜摯耟  摯  埱趙笢堎 NOW騷穫璃哱"
 					"\n%s"
 			 	,work2);	
 	  	
 	  	if(page != 2 && nowindex > 83)
 	  	{
-	  		//乒□玉
+	  		//さ↓迶
 	  		CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANT,1);
-	  		//矢□斥
+	  		//妐↓喇
 	  		CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC,2);
 
 			buttontype = WINDOW_BUTTONTYPE_NEXT;
@@ -152,12 +152,12 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 		break;
 
 
-	//END白仿弘及棵签  憎
+	//END啞溘精摯螢ワ  崚
 	  case 2:
-		//蔽  白仿弘及民尼永弁
+		//敖  啞溘精摯鏍攝蚗袲
 		nowindex = NPC_EndFlgCheck( meindex, talker, now);
 		
-		//窒矢□斥  井
+		//笰妐↓喇  凝
 		page = CHAR_getWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC) ;
 		
 		if(page == 0 || page == 1){
@@ -167,22 +167,22 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 		}
 		work2[0]=0;
 		
-		//矢□斥
+		//妐↓喇
 		for(; i < nowindex ; i++)
 		{
 			sprintf(work,"%d,",now[ i]);
 			strcat(work2,work);
 		}
-		sprintf(token,"｛｛｛｛｛＞＞｛民尼永弁穴件｛＞＞ "
-					"\n｛｛蜇箕及筑  及  匀化中月 END奶矛件玄"
+		sprintf(token,"����������ˇˇ��鏍攝蚗袲悃璃��ˇˇ "
+					"\n����藯凜摯耟  摯  埱趙笢堎 END騷穫璃哱"
 					"\n%s"
 			 	,work2);	
 	  	
 	  	if(page != 2 && nowindex > 83)
 	  	{
-	  		//乒□玉
+	  		//さ↓迶
 	  		CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANT,2);
-	  		//矢□斥
+	  		//妐↓喇
 	  		CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC,2);
 
 			buttontype = WINDOW_BUTTONTYPE_NEXT;
@@ -197,11 +197,11 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 		break;
 		
 	
-	// NOW白仿弘及择称  憎
+	// NOW啞溘精摯寁備  崚
 	  case 4:
 		{
 			
-			//NOW白仿弘民尼永弁
+			//NOW啞溘精鏍攝蚗袲
 			nowindex = NPC_NowFlgCheck( meindex, talker, now);
 
 			if(NPC_FlgCheckMain( meindex, talker, nowindex,now,work2)
@@ -211,8 +211,8 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 			 }
 			
 
-			sprintf(token,"｛｛｛｛｛＞＞｛民尼永弁穴件｛＞＞ "
-						"\n｛｛蜇箕及筑  及  匀化中月 NOW奶矛件玄"
+			sprintf(token,"����������ˇˇ��鏍攝蚗袲悃璃��ˇˇ "
+						"\n����藯凜摯耟  摯  埱趙笢堎 NOW騷穫璃哱"
 						"\n%s"
 				 	,work2);	
 
@@ -221,9 +221,9 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 
 		  	if(page != 16 &&  nowindex != 0)
 		  	{
-		  		//乒□玉
+		  		//さ↓迶
 		  		CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANT,4);
-		  		//矢□斥
+		  		//妐↓喇
 		  		page = CHAR_getWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC);
 		  		page++;
 		  		CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC,page);
@@ -239,10 +239,10 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 		}
 	break;
 
-	// END白仿弘及择称  憎
+	// END啞溘精摯寁備  崚
 	  case 5:
 		{
-			//END白仿弘及民尼永弁
+			//END啞溘精摯鏍攝蚗袲
 			nowindex = NPC_EndFlgCheck( meindex, talker, now);
 			
 			
@@ -252,8 +252,8 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 			 	return;
 			 }
 
-			sprintf(token,"｛｛｛｛｛＞＞｛民尼永弁穴件｛＞＞ "
-						"\n｛｛蜇箕及筑  及  匀化中月 END奶矛件玄"
+			sprintf(token,"����������ˇˇ��鏍攝蚗袲悃璃��ˇˇ "
+						"\n����藯凜摯耟  摯  埱趙笢堎 END騷穫璃哱"
 						"\n%s"
 				 	,work2);	
 
@@ -263,9 +263,9 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 
 		  	if(page != 16 &&  nowindex != 0)
 		  	{
-		  		//乒□玉
+		  		//さ↓迶
 		  		CHAR_setWorkInt(talker, CHAR_WORKSHOPRELEVANT, 5);
-		  		//矢□斥
+		  		//妐↓喇
 		  		page = CHAR_getWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC);
 		  		page++;
 		  		CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, page);
@@ -282,7 +282,7 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 	}
 	
 	makeEscapeString( token, escapedname, sizeof( escapedname));
-	/*-仇仇匹霜耨允月--*/
+	/*-喫喫ぁ邞嚭埰堎--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,
@@ -293,7 +293,7 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 
 
 /*-----------------------------------------
-弁仿奶失件玄井日忒匀化五凶凛卞裟太请今木月［
+袲溘騷囮璃哱凝�氪耽�趙拻倜鄹勗蠙怮③踏躂堎��
 -------------------------------------------*/
 void NPC_CheckManWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
@@ -361,7 +361,7 @@ void NPC_CheckManWindowTalked( int meindex, int talkerindex,
 }
 
 /*
- *｛奶矛件玄  白仿弘毛民尼永弁允月
+ *��騷穫璃哱  啞溘精禱鏍攝蚗袲埰堎
  */
 int NPC_NowFlgCheck(int meindex,int talker ,int nowflg[MAXEVENTFLG])
 {
@@ -380,7 +380,7 @@ int NPC_NowFlgCheck(int meindex,int talker ,int nowflg[MAXEVENTFLG])
 }
 
 /*
- *｛奶矛件玄蔽  白仿弘毛民尼永弁允月
+ *��騷穫璃哱敖  啞溘精禱鏍攝蚗袲埰堎
  */
 int NPC_EndFlgCheck(int meindex,int talker ,int nowflg[MAXEVENTFLG])
 {
@@ -400,7 +400,7 @@ int NPC_EndFlgCheck(int meindex,int talker ,int nowflg[MAXEVENTFLG])
 }
 
 /*
- * 择称
+ * 寁備
  *
  */
 BOOL NPC_FlgCheckMain( int meindex,int talker,int nowindex,int now[MAXEVENTFLG],char *work2)
@@ -415,7 +415,7 @@ BOOL NPC_FlgCheckMain( int meindex,int talker,int nowindex,int now[MAXEVENTFLG],
 	char buf[40];
 	char buf2[42];
 	
-	//窒矢□斥  井
+	//笰妐↓喇  凝
 	page = CHAR_getWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC) ;
 
 	if(page == 0) {
@@ -442,7 +442,7 @@ BOOL NPC_FlgCheckMain( int meindex,int talker,int nowindex,int now[MAXEVENTFLG],
 		}
 	}
 			
-	//奶矛件玄及择称互踏井木化中月白央奶伙毛  心仇戈
+	//騷穫璃哱摯寁備誑怳凝躂趙笢堎啞栝騷鳴禱  陑喫資
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {
 		print("NPC_CheckMan:GetArgStrErr");
 		return FALSE;
@@ -451,7 +451,7 @@ BOOL NPC_FlgCheckMain( int meindex,int talker,int nowindex,int now[MAXEVENTFLG],
 	work[0] = 0;
 	work2[0] = 0;
 
-	//矢□斥
+	//妐↓喇
 	for(; i < max ; i++)
 	{
 		sprintf(work,"#%d:",now[ i]);

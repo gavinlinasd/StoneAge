@@ -14,7 +14,7 @@
 #include "deathcontend.h"
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 #include "family.h"
 #endif
 
@@ -120,7 +120,7 @@ void NPC_DuelrankingLooked( int meindex , int lookedindex)
 	}
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	NPC_Duelranking_selectWindow( meindex, lookedindex, 2, -1);
 #endif
 
@@ -145,10 +145,10 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			char	buf[2048];
 			strcpy( message, 
 				"1\n"
-				"             要看哪一个？              \n\n\n"
-				"             ＜强者们＞              \n\n"
-				"             ＜ 自己 ＞              \n\n"
-				"             ＜都不看＞              \n\n" );
+				"             猁艘闡珨跺ˋ              \n\n\n"
+				"             ˉЧ氪蠅ˇ              \n\n"
+				"             ˉ 赻撩 ˇ              \n\n"
+				"             ˉ飲祥艘ˇ              \n\n" );
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT, 
 							WINDOW_BUTTONTYPE_NONE,
 							CHAR_WINDOWTYPE_DUELRANKING_START,
@@ -163,12 +163,12 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			char	buf[2048];
 			strcpy( message, 
 				"1\n"
-				"             要看哪一个？           \n\n"
-//				"           ＜资格赛排行＞              \n"
-				"          ＜ 正式赛程表 ＞   \n"
-				"           ＜ 队伍资料 ＞  \n"
-//				"           ＜ 参加赛程 ＞   \n"
-				"           ＜ 赛程纪录 ＞   \n" );
+				"             猁艘闡珨跺ˋ           \n\n"
+//				"           ˉ訧跡��齬俴ˇ              \n"
+				"          ˉ 淏宒��最桶 ˇ   \n"
+				"           ˉ 勦斪訧蹋 ˇ  \n"
+//				"           ˉ 統樓��最 ˇ   \n"
+				"           ˉ ��最槨翹 ˇ   \n" );
 
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT,
 							WINDOW_BUTTONTYPE_CANCEL,
@@ -201,8 +201,8 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			if( page == 39 ) button = WINDOW_BUTTONTYPE_OK | WINDOW_BUTTONTYPE_PREV;
 			CHAR_setWorkInt( toindex, CHAR_WORKSHOPRELEVANT, page);
 			snprintf( token, sizeof( token), 
-				"                 资格赛排行榜\n\n"
-				"排名    队伍               胜  负  场 积分\n\n" );
+				"                 訧跡��齬俴埤\n\n"
+				"齬靡    勦斪               吨  蛹  部 儅煦\n\n" );
 
 			for( i=0; i<pagecount; i++ ){
 				if( PKLIST_GetChartsListData( (page*pagecount)+1+i, buf, sizeof(buf) ) == FALSE )continue;
@@ -217,8 +217,8 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 				if( !getStringFromIndexWithDelim( buf, "|", 5, buf1, sizeof( buf1)) ) continue;
 				score =atoi( buf1);
 
-				strcpy( buf2, "－");
-				if( battle>= 30 && score > 0 ) strcpy( buf2, "★");
+				strcpy( buf2, "ㄜ");
+				if( battle>= 30 && score > 0 ) strcpy( buf2, "∴");
 				sprintf( buf1, "%4dth %-18s %3d %3d %3d %3d %s\n", (page*pagecount)+1+i,
 					teamname, win, lose, battle, score, buf2);
 
@@ -230,8 +230,8 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 		}
 		break;
 */
-	case 5://晋级队伍
-	case 3://正式赛程
+	case 5://輩撰勦斪
+	case 3://淏宒��最
 		{
 			char token[4096], buf1[256];
 			char teamname1[256], teamname2[256], typestring[256];
@@ -260,12 +260,12 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			switch( num){
 			case 3:
 				snprintf( token, sizeof( token), 
-					"         赛程表\n\n"
-					"场次  队伍                         剩馀时间 状态\n\n" );
+					"         ��最桶\n\n"
+					"部棒  勦斪                         呁牄奀潔 袨怓\n\n" );
 				break;
 			case 5:
-				snprintf( token, sizeof( token),	"  队伍名单&赛程纪录\n\n"
-													"纪录  \n\n" );
+				snprintf( token, sizeof( token),	"  勦斪靡等&��最槨翹\n\n"
+													"槨翹  \n\n" );
 				winno = WINDOWTYPE_PKLIST_SELECT2;
 				break;
 			}
@@ -281,7 +281,7 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 				case 3:
 					dtimes = (stimes-(int)time(NULL));
 					if( dtimes<1 ) dtimes = 1;
-					sprintf( buf1, "场%2d %-12s VS %-12s %2d分%2d秒 %s \n", tindex,
+					sprintf( buf1, "部%2d %-12s VS %-12s %2d煦%2d鏃 %s \n", tindex,
 						teamname1, teamname2, (int)(dtimes/60), dtimes%60, typestring);
 					break;
 				case 5:
@@ -311,7 +311,7 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 				CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX), token );
 		}
 		break;
-/*	case 6://加入赛程
+/*	case 6://樓�躽�最
 		{
 			int teamnum;
 			{
@@ -332,11 +332,11 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 				return;
 			}
 			if( CHAR_getInt( toindex, CHAR_PKLISTLEADER) != 1 ) {
-				CHAR_talkToCli( toindex, -1, "只有队长可以代表队伍加入赛程。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "硐衄勦酗褫眕測桶勦斪樓�躽�最﹝", CHAR_COLORYELLOW);
 				return;
 			}
 			if( PKLIST_JoinPKProcedures( toindex) == FALSE ){
-				CHAR_talkToCli( toindex, -1, "加入赛程失败！。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "樓�躽�最囮啖ㄐ﹝", CHAR_COLORYELLOW);
 			}
 
 		}
@@ -351,9 +351,9 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			char	buf[2048];
 			strcpy( message, 
 				"1\n"
-				"             要看哪一个？           \n\n"
-				"          ＜家族资格排行＞              \n"
-				"       ＜ 跨星系家族战报名 ＞   \n" );
+				"             猁艘闡珨跺ˋ           \n\n"
+				"          ˉ模逜訧跡齬俴ˇ              \n"
+				"       ˉ 輻陎炵模逜桵惆靡 ˇ   \n" );
 
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT,
 							WINDOW_BUTTONTYPE_CANCEL,
@@ -389,8 +389,8 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 
 			CHAR_setWorkInt( toindex, CHAR_WORKSHOPRELEVANT, page);
 			snprintf( token, sizeof( token), 
-				"          跨星系家族赛资格排行榜\n\n"
-				"排名    家族名称          家族族长名称\n\n" );
+				"          輻陎炵模逜��訧跡齬俴埤\n\n"
+				"齬靡    模逜靡備          模逜逜酗靡備\n\n" );
 			for( i=0; i<pagecount; i++ ){
 				joinE = 0;
 
@@ -406,7 +406,7 @@ print("FPKList[%d]:%s\n", i, buf);
 				joinE = atoi( buf1);
 
 				sprintf( buf1, "%2dth %-18s %-24s %s\n", (page*pagecount)+1+i,
-					familyname, mname, (joinE == 1)?"★":"");
+					familyname, mname, (joinE == 1)?"∴":"");
 
 
 				strcat( token, buf1);
@@ -417,21 +417,21 @@ print("FPKList[%d]:%s\n", i, buf);
 		}
 		break;
 
-	case 4:	//报名
+	case 4:	//惆靡
 		NPC_CheckJoin_FamilyPK_List( meindex, toindex);
 		break;
 #endif
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	case 2:
 		{
 			char	message[1024] = {0};
 			char	buf[2048]= {0};
 			strcpy( message, 
 				"1\n"
-				"             要看哪一个？           \n\n"
-				"       ＜ 跨星系家族战排行 ＞   \n" );
+				"             猁艘闡珨跺ˋ           \n\n"
+				"       ˉ 輻陎炵模逜桵齬俴 ˇ   \n" );
 
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT,
 							WINDOW_BUTTONTYPE_CANCEL,
@@ -466,7 +466,7 @@ print("FPKList[%d]:%s\n", i, buf);
 			if( page == 39 ) button = WINDOW_BUTTONTYPE_OK | WINDOW_BUTTONTYPE_PREV;
 			CHAR_setWorkInt( toindex, CHAR_WORKSHOPRELEVANT, page);
 			snprintf( token, sizeof( token), 
-				"          跨星系家族战排行榜\n\n" );			
+				"          輻陎炵模逜桵齬俴埤\n\n" );			
 
 
 			for( i=0; i<40*10; i++){
@@ -559,19 +559,19 @@ void NPC_DuelrankingWindowTalked( int meindex, int talkerindex, int seqno, int s
 	case WINDOWTYPE_PKLIST_START:
 		{
 			switch( atoi( data)){
-			case 2://资格赛排行
+			case 2://訧跡��齬俴
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 3, select);
 				break;
-			case 3://正式赛程
+			case 3://淏宒��最
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 4, select);
 				break;
-			case 4://队伍资料
+			case 4://勦斪訧蹋
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 5, select);
 				break;
-			case 5://加入赛程
+			case 5://樓�躽�最
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 6, -1);
 				break;
-			case 6://晋级队伍
+			case 6://輩撰勦斪
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 7, select);
 				break;
 			}
@@ -591,10 +591,10 @@ void NPC_DuelrankingWindowTalked( int meindex, int talkerindex, int seqno, int s
 	case WINDOWTYPE_FAMILYCONTENDSTART:
 		{
 			switch( atoi( data)){
-			case 2://资格排行
+			case 2://訧跡齬俴
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 3, select);
 				break;
-			case 3://报名
+			case 3://惆靡
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 4, select);
 				break;
 			}
@@ -605,7 +605,7 @@ void NPC_DuelrankingWindowTalked( int meindex, int talkerindex, int seqno, int s
 		break;
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	case WINDOWTYPE_PKLIST_START:
 		{
 			switch( atoi( data ) ){
@@ -635,7 +635,7 @@ void NPC_Duelranking_PrintRanking( char *data, int count_start, int fdid, int ms
 	if( fd == -1 ) return;
 	message[0] = '\0';
 	snprintf( message, sizeof( message), 
-			"                        世界的强者们\n\n"
+			"                        岍賜腔Ч氪蠅\n\n"
 			"      Rank       DuelPoint      Lv     Name\n\n" );
 	for( i = 1; ; i ++ ) {
 		char	rankdata[256];
@@ -677,9 +677,9 @@ void NPC_Duelranking_PrintRanking( char *data, int count_start, int fdid, int ms
 			if( dsprank > 3) dsprank = 3;
 			if( mycdkey != NULL && myname != NULL && strcmp( cdkey, mycdkey) == 0 && 
 				strcmp( charaname, myname) == 0 ) {
-				strcpy( hosi, "★");
+				strcpy( hosi, "∴");
 			}else {
-				strcpy( hosi, "　");
+				strcpy( hosi, "﹛");
 			}
 			snprintf( msgbuf, sizeof( msgbuf), "%s %5d%s      %10s     %3s     %s\n",
 											hosi,
@@ -691,7 +691,7 @@ void NPC_Duelranking_PrintRanking( char *data, int count_start, int fdid, int ms
 		cnt ++;
 	}
 	if( cnt == 0 ) {
-		strcpy( message, "\n      没有其他的资料了。");
+		strcpy( message, "\n      羶衄む坻腔訧蹋賸﹝");
 		button = WINDOW_BUTTONTYPE_PREV|WINDOW_BUTTONTYPE_OK;
 	}else if( cnt < NPC_DUELRANKING_WINDOWLINENUM ) {
 		if( count_start >= NPC_DUELRANKING_WINDOWLINENUM) {
@@ -879,16 +879,16 @@ BOOL NPC_CheckJoin_FamilyPK_List( int meindex, int toindex)
 		}
 
 		if( JoinFamilyList[i].join == 1 ){
-			CHAR_talkToCli( toindex, -1, "已经报名参加了。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "眒冪惆靡統樓賸﹝", CHAR_COLORYELLOW);
 			return FALSE;
 		}else{
-			CHAR_talkToCli( toindex, -1, "报名完成。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "惆靡俇傖﹝", CHAR_COLORYELLOW);
 			JoinFamilyList[i].join = 1;
 			NPC_BackupFamilyPK_List();
 			return TRUE;
 		}
 	}
-	CHAR_talkToCli( toindex, -1, "无法报名，请确认你是否为资格名单上之家族族长。", CHAR_COLORYELLOW);
+	CHAR_talkToCli( toindex, -1, "拸楊惆靡ㄛ③�溜狦蒘Й鮽臥妐鯇�等奻眳模逜逜酗﹝", CHAR_COLORYELLOW);
 	return FALSE;
 }
 //CHAR_FMINDEX 

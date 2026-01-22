@@ -50,10 +50,10 @@ void ITEM_SexMetamo( int charaindex, int toindex, int haveitemindex);
 #ifdef _ITEM_CRACKER
 void ITEM_Cracker(int charaindex,int toindex,int haveitemindex);
 #endif
-#ifdef _ITEM_ADDEXP	//vincent 经验提升
+#ifdef _ITEM_ADDEXP	//vincent 冪桄枑汔
 void ITEM_Addexp(int charaindex,int toindex,int haveitemindex);
 #endif
-#ifdef _ITEM_REFRESH //vincent 解除异常状态道具
+#ifdef _ITEM_REFRESH //vincent 賤壺祑都袨怓耋撿
 void ITEM_Refresh(int charaindex,int toindex,int haveitemindex);
 #endif
 //Terry 2001/12/21
@@ -111,7 +111,7 @@ void ITEM_MagicResist( int charaindex, int itemindex);
 void ITEM_MagicReResist( int charaindex, int itemindex);
 #endif
 
-#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 职业抗性装备    
+#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 眥珛蕨俶蚾掘    
 void ITEM_P_MagicEquitWear( int charaindex, int itemindex );
 void ITEM_P_MagicEquitReWear( int charaindex, int itemindex );
 #endif
@@ -125,7 +125,7 @@ void ITEM_UseDeathCounter( int charaindex, int toindex, int haveitemindex);
 void ITEM_useWatchBattle( int charaindex, int toindex, int haveitemindex);
 #endif
 
-#ifdef _FEV_ADD_NEW_ITEM			// FEV ADD 增加复活守精
+#ifdef _FEV_ADD_NEW_ITEM			// FEV ADD 崝樓葩魂忐儕
 void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex );
 #endif
 
@@ -226,7 +226,7 @@ enum{
 	BD_KIND_CURSE,
 	BD_KIND_BESTOW,
 	BD_KIND_WISHES,
-#ifdef _CHANGEITEMUSE	 // Syu ADD 调整战斗中使用料理设定
+#ifdef _CHANGEITEMUSE	 // Syu ADD 覃淕桵須笢妏蚚蹋燴扢隅
 	BD_KIND_HP_MP,
 #endif
 #ifdef _ITEM_UNBECOMEPIG

@@ -1,4 +1,4 @@
-/* 衬涩烂楮   */
+/* 傍优擭匴   */
 #include "version.h"
 #include <stdio.h>
 #include <string.h>
@@ -18,7 +18,7 @@
 #include "anim_tbl.h"
 #include "log.h"
 
-#ifdef _ADD_ENCOUNT           // WON ADD 增加敌遭遇触发修件
+#ifdef _ADD_ENCOUNT           // WON ADD 崝樓菩婈郣揖楷党璃
 #include "encount.h"
 #include "npcutil.h"
 #endif
@@ -220,20 +220,20 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 #endif
     f = fopen(filename,"r");
     if( f == NULL ){
-        print( "文件打开失败\n");
+        print( "恅璃湖羲囮啖\n");
         return FALSE;
     }
 
     ENEMYTEMP_enemynum=0;
 
-    /*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+    /*  竘囀  嗚埵菜誑笰菜堣堎凝汔竣凝ぅ迋堎    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-#ifdef _ENEMYTEMP_OPTIMUM // Robin 取出最大ENEMYTEMP ID
+#ifdef _ENEMYTEMP_OPTIMUM // Robin �○囆豱豷NEMYTEMP ID
 		if( getStringFromIndexWithDelim( line, ",", E_T_DATACHARNUM+E_T_TEMPNO+1,
 				token, sizeof(token)) == FALSE )
 			continue;
@@ -250,20 +250,20 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
     }
 
 #ifdef _ENEMYTEMP_OPTIMUM
-	print("\n 有效EBT:%d 最大EBT:%d \n", ENEMYTEMP_enemynum, max_enemytempid);
+	print("\n 衄虴EBT:%d 郔湮EBT:%d \n", ENEMYTEMP_enemynum, max_enemytempid);
 	ENEMYTEMP_enemynum = max_enemytempid +1;
 #endif
 
     ENEMYTEMP_enemy = allocateMemory( sizeof(struct tagENEMYTEMP_Table)
                                    * ENEMYTEMP_enemynum );
     if( ENEMYTEMP_enemy == NULL ){
-        fprint( "无法分配内存 %d\n" ,
+        fprint( "拸楊煦饜囀湔 %d\n" ,
                 sizeof(struct tagENEMYTEMP_Table)*ENEMYTEMP_enemynum);
         fclose( f );
         return FALSE;
     }
 
-	/* 赓渝祭 */
+	/* 疐趵撬 */
     for( i = 0; i < ENEMYTEMP_enemynum; i ++ ) {
     	for( j = 0; j < E_T_DATAINTNUM; j ++ ) {
     		ENEMYTEMP_setInt( i,j,-1);
@@ -303,7 +303,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
         ret = getStringFromIndexWithDelim( line,",",1,token,
                                            sizeof(token));
         if( ret==FALSE ){
-            fprint("文件语法错误:%s 第%行\n",filename,linenum);
+            fprint("恅璃逄楊渣昫:%s 菴%俴\n",filename,linenum);
             continue;
         }
         ENEMYTEMP_setChar( enemytemp_readlen, E_T_NAME, token);
@@ -312,7 +312,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 	        ret = getStringFromIndexWithDelim( line,",",i+1,token,
 	                                           sizeof(token));
 	        if( ret==FALSE ){
-	            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+	            fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 	            continue;
 	        }
 	        ENEMYTEMP_setChar( enemytemp_readlen, E_T_NAME + i, token);
@@ -323,7 +323,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
             ret = getStringFromIndexWithDelim( line,",",i,token,
                                                sizeof(token));
             if( ret==FALSE ){
-                fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
                 break;
             }
             if( strlen( token) != 0 ) {
@@ -340,7 +340,7 @@ BOOL ENEMYTEMP_initEnemy( char* filename )
 
     ENEMYTEMP_enemynum = enemytemp_readlen;
 
-    print( "有效宠物基本状态数是 %d...", ENEMYTEMP_enemynum );
+    print( "衄虴唾昜價掛袨怓杅岆 %d...", ENEMYTEMP_enemynum );
 
 #if 0
 
@@ -410,7 +410,7 @@ BOOL ENEMY_initEnemy( char* filename )
 
     f = fopen(filename,"r");
     if( f == NULL ){
-        print( "文件打开失败\n");
+        print( "恅璃湖羲囮啖\n");
         return FALSE;
     }
 
@@ -421,7 +421,7 @@ BOOL ENEMY_initEnemy( char* filename )
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-#ifdef _ENEMY_OPTIMUM // Robin 取出最大ENEMY ID
+#ifdef _ENEMY_OPTIMUM // Robin �○囆豱豷NEMY ID
 		if( getStringFromIndexWithDelim( line, ",", ENEMY_DATACHARNUM+ENEMY_ID+1,
 				token, sizeof(token)) == FALSE )
 			continue;
@@ -432,20 +432,20 @@ BOOL ENEMY_initEnemy( char* filename )
     }
 
     if( fseek( f, 0, SEEK_SET ) == -1 ){
-        fprint( "寻找失败\n" );
+        fprint( "扆梑囮啖\n" );
         fclose(f);
         return FALSE;
     }
 
 #ifdef _ENEMY_OPTIMUM
-	print("\n 有效ET:%d 最大ET:%d \n", ENEMY_enemynum, max_enemyid);
+	print("\n 衄虴ET:%d 郔湮ET:%d \n", ENEMY_enemynum, max_enemyid);
 	ENEMY_enemynum = max_enemyid +1;
 #endif
 
     ENEMY_enemy = allocateMemory( sizeof(struct tagENEMY_EnemyTable)
                                    * ENEMY_enemynum );
     if( ENEMY_enemy == NULL ){
-        fprint( "无法分配内存 %d\n" ,
+        fprint( "拸楊煦饜囀湔 %d\n" ,
                 sizeof(struct tagENEMY_EnemyTable)*ENEMY_enemynum);
         fclose( f );
         return FALSE;
@@ -487,20 +487,20 @@ BOOL ENEMY_initEnemy( char* filename )
 
         ret = getStringFromIndexWithDelim( line,",",1,token,sizeof(token));
         if( ret==FALSE ){
-            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+            fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
             continue;
         }
         ENEMY_setChar( enemy_readlen, ENEMY_NAME, token);
         ret = getStringFromIndexWithDelim( line,",",2,token,sizeof(token));
         if( ret==FALSE ){
-            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+            fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
             continue;
         }
         ENEMY_setChar( enemy_readlen, ENEMY_TACTICSOPTION, token);
 #ifdef _BATTLENPC_WARP_PLAYER
 	    ret = getStringFromIndexWithDelim( line, ",", 3, token, sizeof(token));
         if(ret==FALSE){
-            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+            fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
             continue;
         }
         ENEMY_setChar( enemy_readlen, ENEMY_ACT_CONDITION, token);
@@ -515,7 +515,7 @@ BOOL ENEMY_initEnemy( char* filename )
         for( i = ENEMY_STARTINTNUM; i < ENEMY_DATAINTNUM+ENEMY_STARTINTNUM; i ++ ) {
             ret = getStringFromIndexWithDelim( line,",",i,token,sizeof(token));
             if( ret==FALSE ){
-                fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
                 break;
             }
             ENEMY_setInt( enemy_readlen, i - ENEMY_STARTINTNUM, atoi( token));
@@ -527,7 +527,7 @@ BOOL ENEMY_initEnemy( char* filename )
 			}
 		}
 		if( i == ENEMYTEMP_enemynum) {
-            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+            fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 			continue;
 		}
 		ENEMY_enemy[enemy_readlen].enemytemparray = i;
@@ -546,7 +546,7 @@ BOOL ENEMY_initEnemy( char* filename )
     }
     fclose(f);
     ENEMY_enemynum = enemy_readlen;
-    print( "有效宠物数是 %d..", ENEMY_enemynum );
+    print( "衄虴唾昜杅岆 %d..", ENEMY_enemynum );
 
 #if 0
     {
@@ -564,7 +564,7 @@ BOOL ENEMY_initEnemy( char* filename )
     return TRUE;
 }
 /*------------------------------------------------------------------------
- * ENEMY_enemy及涩烂白央奶伙  心  仄
+ * ENEMY_enemy摯优擭啞栝騷鳴  陑  媃
  *-----------------------------------------------------------------------*/
 BOOL ENEMY_reinitEnemy( void )
 {
@@ -573,7 +573,7 @@ BOOL ENEMY_reinitEnemy( void )
 }
 
 /*------------------------------------------------------------------------
- ENEMY_Enemy及骄侬毛襞月
+ ENEMY_Enemy摯蝨棬禱蠐堎
  *-----------------------------------------------------------------------*/
 int ENEMY_getEnemyArrayFromIndex( int groupindex, int index)
 {
@@ -582,7 +582,7 @@ int ENEMY_getEnemyArrayFromIndex( int groupindex, int index)
 	return GROUP_group[groupindex].enemyarray[index];
 }
 /*------------------------------------------------------------------------
- * ENEMY_ID 井日ENEMY_Enemy及骄侬毛襞月
+ * ENEMY_ID 凝�帾NEMY_Enemy摯蝨棬禱蠐堎
  *-----------------------------------------------------------------------*/
 int ENEMY_getEnemyArrayFromId( int EnemyId)
 {
@@ -639,7 +639,7 @@ int ENEMY_getEnemyTempNoFromId( int EnemyId)
 }
 
 /*------------------------------------------------------------------------
- * 弘伙□皿涩烂白央奶伙毛  戈
+ * 精鳴↓鏤优擭啞栝騷鳴禱  資
  *-----------------------------------------------------------------------*/
 BOOL GROUP_initGroup( char* filename )
 {
@@ -651,13 +651,13 @@ BOOL GROUP_initGroup( char* filename )
 
     f = fopen(filename,"r");
     if( f == NULL ){
-        print( "文件打开失败\n");
+        print( "恅璃湖羲囮啖\n");
         return FALSE;
     }
 
     GROUP_groupnum=0;
 
-    /*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+    /*  竘囀  嗚埵菜誑笰菜堣堎凝汔竣凝ぅ迋堎    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
@@ -668,7 +668,7 @@ BOOL GROUP_initGroup( char* filename )
     }
 
     if( fseek( f, 0, SEEK_SET ) == -1 ){
-        fprint( "寻找失败\n" );
+        fprint( "扆梑囮啖\n" );
         fclose(f);
         return FALSE;
     }
@@ -676,12 +676,12 @@ BOOL GROUP_initGroup( char* filename )
     GROUP_group = allocateMemory( sizeof(struct tagGROUP_Table)
                                    * GROUP_groupnum );
     if( GROUP_group == NULL ){
-        fprint( "无法分配内存 %d\n" ,
+        fprint( "拸楊煦饜囀湔 %d\n" ,
                 sizeof(struct tagGROUP_Table)*GROUP_groupnum);
         fclose( f );
         return FALSE;
     }
-	/* 赓渝祭 */
+	/* 疐趵撬 */
     for( i = 0; i < GROUP_groupnum; i ++ ) {
     	for( j = 0; j < GROUP_DATAINTNUM; j ++ ) {
     		GROUP_setInt( i,j,-1);
@@ -691,7 +691,7 @@ BOOL GROUP_initGroup( char* filename )
 		}
     }
 
-    /*  引凶  心  允    */
+    /*  竘倜  陑  埰    */
     linenum = 0;
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
@@ -699,10 +699,10 @@ BOOL GROUP_initGroup( char* filename )
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  垫毛帮溥允月    */
-        /*  引内 tab 毛 " " 卞  五晶尹月    */
+        /*  菜禱堆魠埰堎    */
+        /*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
         replaceString( line, '\t' , ' ' );
-        /* 燮  及旦矢□旦毛潸月［*/
+        /* 袸  摯筒妐↓筒禱噁堎��*/
 {
         char    buf[256];
         for( i = 0; i < strlen( line); i ++) {
@@ -720,7 +720,7 @@ BOOL GROUP_initGroup( char* filename )
         int     ret;
         int		loop;
 
-		/* 手仄手ㄡ蘸户及伙□皿卞  匀凶凛及凶户卞赓渝祭仄化云仁 */
+		/* 忒媃忒兕梣誧摯鳴↓鏤勗  埱倜鄹摯倜誧勗疐趵撬媃趙堁�� */
     	for( j = 0; j < GROUP_DATAINTNUM; j ++ ) {
     		GROUP_setInt( group_readlen,j,-1);
     	}
@@ -728,22 +728,22 @@ BOOL GROUP_initGroup( char* filename )
 			GROUP_group[group_readlen].enemyarray[j] = -1;
 		}
 
-        /*  夫午勾户及玄□弁件毛苇月    */
+        /*  痲敁僑誧摯哱↓袲璃禱峟堎    */
         ret = getStringFromIndexWithDelim( line,",",1,token,
                                            sizeof(token));
         if( ret==FALSE ){
-            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+            fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
             continue;
         }
         GROUP_setChar( group_readlen, GROUP_NAME, token);
 
-        /* 2勾  动嫦反醒袄犯□正 */
+        /* 2僑  雄禢毀倳偯溢↓淏 */
 #define	GROUP_STARTINTNUM		2
         for( i = GROUP_STARTINTNUM; i < GROUP_DATAINTNUM+GROUP_STARTINTNUM; i ++ ) {
             ret = getStringFromIndexWithDelim( line,",",i,token,
                                                sizeof(token));
             if( ret==FALSE ){
-                fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
                 break;
             }
             if( strlen( token) != 0 ) {
@@ -774,13 +774,13 @@ BOOL GROUP_initGroup( char* filename )
 				}
 			}
 			if( enemycnt == 0 ) {
-                fprint("团队设定中敌人尚未设定 文件:%s 第%d行\n",filename,linenum);
+                fprint("芶勦扢隅笢菩�侂倛棟頞� 恅璃:%s 菴%d俴\n",filename,linenum);
 				continue;;
 			}
             if( checkRedundancy( &GROUP_group[group_readlen].intdata[ENEMY_ID1],
             			CREATEPROB1 - ENEMY_ID1))
             {
-                fprint("团队设定中敌人重复设定 文件:%s 第%d行\n",filename,linenum);
+                fprint("芶勦扢隅笢菩�匊婺棟頞� 恅璃:%s 菴%d俴\n",filename,linenum);
 				continue;;
 			}
 
@@ -794,7 +794,7 @@ BOOL GROUP_initGroup( char* filename )
 
     GROUP_groupnum = group_readlen;
 
-    print( "有效遇敌组群数是 %d...", GROUP_groupnum );
+    print( "衄虴郣菩郪�監�岆 %d...", GROUP_groupnum );
 
 #if 0
 
@@ -813,7 +813,7 @@ BOOL GROUP_initGroup( char* filename )
 	return TRUE;
 }
 /*------------------------------------------------------------------------
- * 弘伙□皿及涩烂白央奶伙  心  仄
+ * 精鳴↓鏤摯优擭啞栝騷鳴  陑  媃
  *-----------------------------------------------------------------------*/
 BOOL GROUP_reinitGroup( void )
 {
@@ -821,7 +821,7 @@ BOOL GROUP_reinitGroup( void )
 	return( GROUP_initGroup( getGroupfile()));
 }
 /*------------------------------------------------------------------------
- * GROUP_ID 井日GROUP_Group及骄侬毛襞月
+ * GROUP_ID 凝�庱ROUP_Group摯蝨棬禱蠐堎
  *-----------------------------------------------------------------------*/
 int GROUP_getGroupArray( int groupid)
 {
@@ -834,7 +834,7 @@ int GROUP_getGroupArray( int groupid)
 	return -1;
 }
 /*------------------------------------------------------------------------
- * 潸  烦董袄毛综岳允月［
+ * 噁  歲雁偯禱軘埬埰堎��
  *-----------------------------------------------------------------------*/
 static int ENEMY_getExp( int array,int tarray, int level, int rank )
 {
@@ -860,7 +860,7 @@ static int ENEMY_getExp( int array,int tarray, int level, int rank )
     p  = ENEMY_enemy[array].intdata;
     tp = ENEMYTEMP_enemy[tarray].intdata;
 
-	// 仿件弁井日    毛潸  
+	// 溘璃袲凝��    禱噁  
 	if( rank < 0 || rank > 5 ) rank = 0;
 	ranknum = ranktbl[rank].rank;
 
@@ -869,7 +869,7 @@ static int ENEMY_getExp( int array,int tarray, int level, int rank )
 			  + *( tp + E_T_STONE)    + *( tp + E_T_DRUNK)     + *(tp + E_T_CONFUSION)
 			) / 100.0
 			+ *( tp + E_T_RARE);
-	/* EXP＞湘  EXP≈－  仿件弁≈汐  ←伊矛伙×*/
+	/* EXPˇ盻  EXP＞ㄜ  溘璃袲＞洢  ↘畛穫鳴℅*/
 	//return enemybaseexptbl[*(p+ENEMY_LV)] + (ranknum + alpha)*(*(tp+ENEMY_LV));
 	ret = enemybaseexptbl[level] + (ranknum + alpha)*(level+1);
 	return ( ret < 1 ) ? 1 : ret;
@@ -888,7 +888,7 @@ int ENEMY_getRank( int array, int tarray ){
     	int		num;
     	float	rank;
     }ranktbl[] = {
-    	{ 100, 2.5}, //总成长率 >= 100 petrank=0
+    	{ 100, 2.5}, //軞傖酗薹 >= 100 petrank=0
     	{ 95, 2.0},
     	{ 90, 1.5},
     	{ 85, 1.0},
@@ -898,14 +898,14 @@ int ENEMY_getRank( int array, int tarray ){
 
     p  = ENEMY_enemy[array].intdata;
     tp = ENEMYTEMP_enemy[tarray].intdata;
-	/* 仿件弁毛煌遥允月 */
-	/* 仇及  及酷  反酷  踏毛辅哔及仪［ */
+	/* 溘璃袲禱銓猀埰堎 */
+	/* 喫摯  摯蹄  毀蹄  怳禱落萳摯痀�� */
 	paramsum  = *( tp + E_T_BASEVITAL) +
 		   		*( tp + E_T_BASESTR) +
 		   		*( tp + E_T_BASETGH) +
 		   		*( tp + E_T_BASEDEX);
 
-	ranknum = 0;	// 犯白巧伙玄反ㄟ
+	ranknum = 0;	// 溢啞б鳴哱毀兔
 	for( i = 0; i < arraysizeof( ranktbl); i ++ ) {
 		if(  paramsum >= ranktbl[i].num ) {
 			ranknum = i;
@@ -919,69 +919,69 @@ int ENEMY_getRank( int array, int tarray ){
 
 
 //*********************************************************
-// 仿件母丞卅  
+// 溘璃譫堜埵  
 //*********************************************************
 static int EnemyGymSkill[] = {
-	PETSKILL_GUARDBREAK, 			// ㄢ“布□玉旰仄(3)
-	PETSKILL_CONTINUATIONATTACK1, 	// ㄠㄟ“  粮  猾(10)
-	PETSKILL_CONTINUATIONATTACK2, 	// ㄠㄠ“  粮  猾(11)
-	PETSKILL_CONTINUATIONATTACK3, 	// ㄠㄡ“  粮  猾(12)
-	PETSKILL_CHARGE1,				// ㄢㄟ“民乓□斥ㄠ(30)
-	PETSKILL_CHARGE2,				// ㄢㄠ“民乓□斥ㄡ(31)
-	PETSKILL_MIGHTY1,				// ㄣㄟ“域猾  诮(40)
-	PETSKILL_MIGHTY2,				// ㄣㄠ“域猾  诮(41)
-	PETSKILL_POWERBALANCE1,			// ㄤㄟ“    及讽ㄠ(50)
-	PETSKILL_POWERBALANCE2,			// ㄤㄠ“    及讽ㄡ(51)
-	PETSKILL_POWERBALANCE3,			// ㄤㄡ“    及讽ㄢ(52)
-	PETSKILL_POISON_ATTACK1,		// ㄥㄟ“    猾(60)
-	PETSKILL_POISON_ATTACK2,		// ㄥㄠ“    猾(61)
-	PETSKILL_STONE,					// ㄧㄟ“檗祭  猾(80)
-	PETSKILL_CONFUSION_ATTACK,		// ㄨㄟ“渔刭  猾(90)
-	PETSKILL_DRUNK_ATTACK,			// ㄠㄟㄟ“听办  猾(100)
-	PETSKILL_SLEEP_ATTACK,			// ㄠㄠㄟ“戽曰  猾(110)
-	PETSKILL_NOGUARD1,				// ㄠㄤㄟ“用□布□玉ㄠ(150)
-	PETSKILL_NOGUARD2,				// ㄠㄤㄠ“用□布□玉ㄡ(151)
-	PETSKILL_NOGUARD3,				// ㄠㄤㄡ“用□布□玉ㄢ(152)
+	PETSKILL_GUARDBREAK, 			// 兩※票↓迶篝媃(3)
+	PETSKILL_CONTINUATIONATTACK1, 	// 兒兔※  襄  賓(10)
+	PETSKILL_CONTINUATIONATTACK2, 	// 兒兒※  襄  賓(11)
+	PETSKILL_CONTINUATIONATTACK3, 	// 兒兕※  襄  賓(12)
+	PETSKILL_CHARGE1,				// 兩兔※鏍籤↓喇兒(30)
+	PETSKILL_CHARGE2,				// 兩兒※鏍籤↓喇兕(31)
+	PETSKILL_MIGHTY1,				// 具兔※郖賓  睍(40)
+	PETSKILL_MIGHTY2,				// 具兒※郖賓  睍(41)
+	PETSKILL_POWERBALANCE1,			// 其兔※    摯當兒(50)
+	PETSKILL_POWERBALANCE2,			// 其兒※    摯當兕(51)
+	PETSKILL_POWERBALANCE3,			// 其兕※    摯當兩(52)
+	PETSKILL_POISON_ATTACK1,		// 典兔※    賓(60)
+	PETSKILL_POISON_ATTACK2,		// 典兒※    賓(61)
+	PETSKILL_STONE,					// 函兔※歕撬  賓(80)
+	PETSKILL_CONFUSION_ATTACK,		// 刻兔※趷崷  賓(90)
+	PETSKILL_DRUNK_ATTACK,			// 兒兔兔※泭域  賓(100)
+	PETSKILL_SLEEP_ATTACK,			// 兒兒兔※懨堇  賓(110)
+	PETSKILL_NOGUARD1,				// 兒其兔※蚚↓票↓迶兒(150)
+	PETSKILL_NOGUARD2,				// 兒其兒※蚚↓票↓迶兕(151)
+	PETSKILL_NOGUARD3,				// 兒其兕※蚚↓票↓迶兩(152)
 #ifdef _PSKILL_FALLGROUND
-	PETSKILL_FALLGROUND,			//落马术
+	PETSKILL_FALLGROUND,			//邈鎮扲
 #endif
 #ifdef _SKILL_DAMAGETOHP
-	PETSKILL_DAMAGETOHP,		//嗜血技
+	PETSKILL_DAMAGETOHP,		//岓悛撮
 #endif
 #ifdef _Skill_MPDAMAGE
-	PETSKILL_MPDAMAGE,		//MP伤害
+	PETSKILL_MPDAMAGE,		//MP夼漲
 #endif
 
 #ifdef _SKILL_WILDVIOLENT_ATT
-    PETSKILL_WILDVIOLENTATTACK,   //(540)狂暴攻击  vincent add 2002/05/16
+    PETSKILL_WILDVIOLENTATTACK,   //(540)遼惟馴僻  vincent add 2002/05/16
 #endif
 #ifdef _SKILL_SPEEDY_ATT
-    PETSKILL_SPEEDYATTACK,        //(541)疾速攻击  vincent add 2002/05/16
+    PETSKILL_SPEEDYATTACK,        //(541)撞厒馴僻  vincent add 2002/05/16
 #endif
 #ifdef _SKILL_GUARDBREAK2
-    PETSKILL_GUARDBREAK2,         //(542)破除防御2 vincent add 2002/05/20
+    PETSKILL_GUARDBREAK2,         //(542)ぢ壺滅郘2 vincent add 2002/05/20
 #endif
 #ifdef _SKILL_SACRIFICE
-    PETSKILL_SACRIFICE,           //(543)救援      vincent add 2002/05/30
+    PETSKILL_SACRIFICE,           //(543)寰堔      vincent add 2002/05/30
 #endif
 #ifdef _SKILL_WEAKEN  
-    PETSKILL_WEAKEN,              //(544)救援      vincent add 2002/07/11
+    PETSKILL_WEAKEN,              //(544)寰堔      vincent add 2002/07/11
 #endif
 #ifdef _SKILL_DEEPPOISON  
-    PETSKILL_DEEPPOISON,          //(545)救援      vincent add 2002/07/16
+    PETSKILL_DEEPPOISON,          //(545)寰堔      vincent add 2002/07/16
 #endif
 #ifdef _SKILL_BARRIER  
-    PETSKILL_BARRIER,             //(546)魔障      vincent add 2002/07/16
+    PETSKILL_BARRIER,             //(546)藹梤      vincent add 2002/07/16
 #endif
 #ifdef _SKILL_NOCAST  
-    PETSKILL_NOCAST,              //(547)沉默      vincent add 2002/07/16
+    PETSKILL_NOCAST,              //(547)麥蘇      vincent add 2002/07/16
 #endif
 #ifdef _SKILL_ROAR 
-    PETSKILL_ROAR,                //(548)大吼      vincent add 2002/07/11
+    PETSKILL_ROAR,                //(548)湮綾      vincent add 2002/07/11
 #endif
 
 #ifdef _SKILL_REFRESH
-    PETSKILL_REFRESH,           //(550)救援      vincent add 2002/08/08
+    PETSKILL_REFRESH,           //(550)寰堔      vincent add 2002/08/08
 #endif
 #ifdef _VARY_WOLF
 	PETSKILL_VARY,
@@ -1021,29 +1021,29 @@ static int gymbody[] = {
 
 
 /*------------------------------------------------------------------------
- * ENEMY｛卞仿件母丞卅    毛芨尹月
+ * ENEMY��勗溘璃譫堜埵    禱僄窇堎
  *-----------------------------------------------------------------------*/
 int ENEMY_RandomChange( int enemyindex, int tempno )
 {
 	int work, work2, iRet = 0;
 
-	// 仿件母丞平乓仿井升丹井民尼永弁
+	// 溘璃譫堜す籤溘凝汔竣凝鏍攝蚗袲
 	if( ( 564 <= tempno && tempno <= 580 )
 	||  ( 739 <= tempno && tempno <= 750 )
 	||  ( 895 <= tempno && tempno <= 906 )
 	){
 		//********************************************
-		// 皿伊奶乩□及涌
+		// 鏤畛騷媕↓摯蚇
 		//********************************************
 		iRet = 1;
 	}else
-	// 仿件母丞平乓仿井升丹井民尼永弁
+	// 溘璃譫堜す籤溘凝汔竣凝鏍攝蚗袲
 	if( ( 655 <= tempno && tempno <= 720 )
 	||  ( 859 <= tempno && tempno <= 894 )
 	||  ( 907 <= tempno && tempno <= 940 )
 	){
 		//********************************************
-		// 矢永玄及涌
+		// 妐蚗哱摯蚇
 		//********************************************
 		iRet = 2;
 	}else{
@@ -1054,15 +1054,15 @@ int ENEMY_RandomChange( int enemyindex, int tempno )
 	if( iRet == 1 ){
 		//********************************************
 		//
-		// 皿伊奶乩□及涌仄凶衬卅及匹｝箪岭手仿件母丞
+		// 鏤畛騷媕↓摯蚇媃倜傍埵摯ぁ��鶂鍛忒溘璃譫堜
 		//
 		//********************************************
-		// 铣手仿件母丞
+		// 炡忒溘璃譫堜
 		CHAR_setInt( enemyindex, CHAR_BASEBASEIMAGENUMBER,
 			gymbody[RAND( 0, arraysizeof( gymbody ) - 1)] );
 		CHAR_setInt( enemyindex, CHAR_BASEIMAGENUMBER,
 			CHAR_getInt( enemyindex, CHAR_BASEBASEIMAGENUMBER ) );
-		// 箪岭反赝癫
+		// 鶂鍛毀媏騍
 		work = ( RAND( 0, 20 ) - 10 ) * 10;
 		work2 = 100 - ABS( work );
 		CHAR_setInt( enemyindex, CHAR_EARTHAT, work );
@@ -1073,28 +1073,28 @@ int ENEMY_RandomChange( int enemyindex, int tempno )
 		CHAR_setInt( enemyindex, CHAR_WATERAT, work2 );
 		CHAR_setInt( enemyindex, CHAR_WINDAT,  -work2 );
 
-		// 仿件母丞卅  湛毛  凶六月
+		// 溘璃譫堜埵  梲禱  倜鞠堎
 		if( DoujyouRandomWeponSet( enemyindex ) ){
-			//   溃  湛及桦宁反骚橘  猾毛勾仃月
+			//   壓  梲摯鳹譴毀玊橖  賓禱僑崹堎
 			CHAR_setPetSkill( enemyindex, 0, PETSKILL_NORMALATTACK );
 			CHAR_setPetSkill( enemyindex, 1, PETSKILL_NORMALATTACK );
 		}else{
-			//   溃  湛元扎卅中及匹  勾仃月
-			//   毛尥仃月
+			//   壓  梲啋崨埵笢摯ぁ  僑崹堎
+			//   禱痹崹堎
 			CHAR_setPetSkill( enemyindex, 0,
 				EnemyGymSkill[RAND( 0, arraysizeof( EnemyGymSkill ) - 1 )] );
-			//   毛尥仃月
+			//   禱痹崹堎
 			CHAR_setPetSkill( enemyindex, 1,
 				EnemyGymSkill[RAND( 0, arraysizeof( EnemyGymSkill ) - 1 )] );
 		}
 
 	}else
 	if( iRet == 2 ){
-		//   溃  湛元扎卅中及匹  勾仃月
-		//   毛尥仃月
+		//   壓  梲啋崨埵笢摯ぁ  僑崹堎
+		//   禱痹崹堎
 		CHAR_setPetSkill( enemyindex, 0,
 			EnemyGymSkill[RAND( 0, arraysizeof( EnemyGymSkill ) - 1 )] );
-		//   毛尥仃月
+		//   禱痹崹堎
 		CHAR_setPetSkill( enemyindex, 1,
 			EnemyGymSkill[RAND( 0, arraysizeof( EnemyGymSkill ) - 1 )] );
 	}
@@ -1105,7 +1105,7 @@ int ENEMY_RandomChange( int enemyindex, int tempno )
 
 
 /*------------------------------------------------------------------------
- * ENEMY_enemy井日平乓仿弁正□毛综岳允月［
+ * ENEMY_enemy凝�梪褐珝蹦邯�↓禱軘埬埰堎��
  *-----------------------------------------------------------------------*/
 int ENEMY_createEnemy( int array, int baselevel )
 {
@@ -1124,50 +1124,50 @@ int ENEMY_createEnemy( int array, int baselevel )
     tarray = ENEMYTEMP_getEnemyTempArray( array);
 	if( !ENEMYTEMP_CHECKINDEX( tarray)) return -1;
 //    tp = ENEMYTEMP_enemy[tarray].intdata;
-	// 犯□正戊疋□
+	// 溢↓淏昡鼀↓
 	for( i = 0; i < E_T_DATAINTNUM; i ++ ){
 	    tp[i] = ENEMYTEMP_enemy[tarray].intdata[i];
 	}
 
-    //     赓渝祭
+    //     疐趵撬
     memset( &CharNew, 0, sizeof( Char ) );
 
     if( !CHAR_getDefaultChar( &CharNew,31010 ) )return -1;
 
-    /*    飓  寞    */
+    /*    鴢  蠕    */
     CharNew.data[CHAR_BASEBASEIMAGENUMBER]
         = CharNew.data[CHAR_BASEIMAGENUMBER] = *(tp+E_T_IMGNUMBER);
-    /*  衬匹丐月午涩烂允月   */
+    /*  傍ぁ堣堎敁优擭埰堎   */
     CharNew.data[CHAR_WHICHTYPE] = CHAR_TYPEENEMY;
-    /*     毛壅允 */
+    /*     禱觛埰 */
     CharNew.data[CHAR_DUELPOINT] = 0;
 
-	/* 伊矛伙毛瑁烂允月［ */
+	/* 畛穫鳴禱鋆擭埰堎�� */
 	if( baselevel > 0 ){
-		level = baselevel;	// 伊矛伙裔烂
+		level = baselevel;	// 畛穫鳴砡擭
 	}else{
 		level = RAND( (*(p + ENEMY_LV_MIN)), (*(p+ ENEMY_LV_MAX)));
 	}
 #define		E_PAR( a)		(*(p + (a)))
 #define		ET_PAR( a)		(*(tp + (a)))
-/* 由仿丢□正隙醒井日  端及湘  由仿丢□正尺及煌遥挚 */
+/* 蚕溘隍↓淏炩倳凝��  傷摯盻  蚕溘隍↓淏喜摯銓猀祪 */
 #if 1
 #define		PARAM_CAL( l) 	( ( level -1)*ET_PAR( E_T_LVUPPOINT)+ ET_PAR(E_T_INITNUM)) * ET_PAR( (l))
 #else
 #define		PARAM_CAL( l) 	( (E_PAR(ENEMY_LV) -1)*ET_PAR( E_T_LVUPPOINT)+ ET_PAR(E_T_INITNUM)) * ET_PAR( (l))
 #endif
-	/* 燮内湘  喃曰蕊曰禾奶件玄卞＋ㄡ毛仿件母丞匹垫丹 */
+	/* 袸囀盻  鄎堇�擸遣昉抯�哱勗ㄚ兕禱溘璃譫堜ぁ菜竣 */
 	tp[E_T_BASEVITAL] += RAND( 0, 4 ) - 2;
 	tp[E_T_BASESTR] += RAND( 0, 4 ) - 2;
 	tp[E_T_BASETGH] += RAND( 0, 4 ) - 2;
 	tp[E_T_BASEDEX] += RAND( 0, 4 ) - 2;
-	/* 仇及凛鳔匹喃曰蕊曰禾奶件玄毛忡绣仄化云仁 */
+	/* 喫摯鄹鬻ぁ鄎堇�擸遣昉抯�哱禱瞀凎媃趙堁�� */
     CharNew.data[CHAR_ALLOCPOINT]
     = ( tp[E_T_BASEVITAL] << 24 )
     + ( tp[E_T_BASESTR] << 16 )
     + ( tp[E_T_BASETGH] << 8 )
     + ( tp[E_T_BASEDEX] << 0 );
-	/* 公及  ｝仿件母丞匹禾奶件玄毛ㄠ勿勾笛遥［仇木毛ㄠㄟ荚楞曰忒允［*/
+	/* 鼠摯  ��溘璃譫堜ぁ睽騷璃哱禱兒昦僑萃猀�蛦蟤壅咧鄖葝埬虡鞅耽呁�*/
 	for( i = 0; i < 10; i ++ ){
 		int work = RAND( 0, 3 );
 		if( work == 0 )tp[E_T_BASEVITAL]++;
@@ -1176,7 +1176,7 @@ int ENEMY_createEnemy( int array, int baselevel )
 		if( work == 3 )tp[E_T_BASEDEX]++;
 	}
 
-    /* 由仿丢□正本永玄 */
+    /* 蚕溘隍↓淏掛蚗哱 */
     CharNew.data[CHAR_VITAL]    = PARAM_CAL(E_T_BASEVITAL);
     CharNew.data[CHAR_STR]      = PARAM_CAL(E_T_BASESTR);
     CharNew.data[CHAR_TOUGH]    = PARAM_CAL(E_T_BASETGH);
@@ -1245,12 +1245,12 @@ int ENEMY_createEnemy( int array, int baselevel )
 		style = (*(p + ENEMY_STYLE));
 		switch( style ){
 		case 1:		wepon = 0;break;	//   
-		case 2:		wepon = 100;break;  // 轺徇
-		case 3:		wepon = 200;break;	// 键
-		case 4:		wepon = 400;break;	// 菰
-		case 5:		wepon = 500;break;	// 皮□丢仿件
-		case 6:		wepon = 700;break;  // 髑仆檗
-		case 7:		wepon = 600;break;	// 髑仆  
+		case 2:		wepon = 100;break;  // 澥摲
+		case 3:		wepon = 200;break;	// 瑩
+		case 4:		wepon = 400;break;	// 楗
+		case 5:		wepon = 500;break;	// 々↓隍溘璃
+		case 6:		wepon = 700;break;  // 麶ど歕
+		case 7:		wepon = 600;break;	// 麶ど  
 		default:break;
 		}
 		if( wepon >= 0 ){
@@ -1286,7 +1286,7 @@ int ENEMY_createEnemy( int array, int baselevel )
 		}
 	}
 #endif
-#ifdef _PETSKILL_BECOMEFOX //将媚惑术中招时间清除为-1
+#ifdef _PETSKILL_BECOMEFOX //蔚藥鼻扲笢桸奀潔ь壺峈-1
      CHAR_setWorkInt( newindex, CHAR_WORKFOXROUND, -1 ); 
 #endif
     return newindex;
@@ -1351,35 +1351,35 @@ static RANDOMENEMY RandomEnemyTbl[] = {
 
 
 /*------------------------------------------------------------
- * 衬    涩烂及摹    寞互  溃卅袄卅日仿件母丞卞涩烂允月
+ * 傍    优擭摯纂    蠕誑  壓埵偯埵�梫翹�譫堜勗优擭埰堎
  ------------------------------------------------------------*/
 int ENEMY_RandomEnemyArray( int e_array, int *pNew )
 {
 	int i = 0, randwork, work;
 //	RANDOMENEMY *pRandomEnemy;
 	*pNew = -1;
-	// 仇及  区反仿件母丞
+	// 喫摯  ⑹毀溘璃譫堜
 	if(
 		( RANDOMENEMY_TOP <= e_array && e_array <= RANDOMENEMY_END )
 	||	( 964 <= e_array && e_array <= 969 )
 	){
-		// 升及母立□井譬屯月
+		// 汔摯譫蕾↓凝ぅ迋堎
 		for( i = 0; i < arraysizeof( RandomEnemyTbl ); i ++ ){
 			if( RandomEnemyTbl[i].num == e_array ){
 				break;
 			}
 		}
-		//   区毛译尹化中凶日巨仿□匹  仃月
+		//   ⑹禱祒窇趙笢倜�桴瑀癒嚾�  崹堎
 		if( i >= arraysizeof( RandomEnemyTbl ) ) return 0;
 
-		// 仿件母丞涩烂
+		// 溘璃譫堜优擭
 		randwork = RAND( 0, RandomEnemyTbl[i].arraysize - 1 );
-		//     井日蕙仄中  寞毛潸  
+		//     凝�殌目ひ�  蠕禱噁  
 		work = RandomEnemyTbl[i].pTbl[randwork];
 		*pNew = ENEMY_getEnemyArrayFromId( work );
 		return 1;
 	}else{
-		// 窒仪手卅中
+		// 笰痀忒埵笢
 		return 0;
 	}
 }
@@ -1478,7 +1478,7 @@ int *ENEMY_getEnemy( int charaindex, int x, int y)
 		int newarray, enemywork;
 		e_array = ENEMY_getEnemyArrayFromIndex( g_array, i - ENEMY_ID1 );
 
-#ifdef _ADD_ENCOUNT           // WON ADD 增加敌遭遇触发修件
+#ifdef _ADD_ENCOUNT           // WON ADD 崝樓菩婈郣揖楷党璃
 		{	
 		int char_event_now = -1, char_event_end = -1;
 		if(ENCOUNT_table[array].event_now != -1){
@@ -1630,7 +1630,7 @@ int ENEMY_createPetFromEnemyIndex( int charaindex, int array)
 		if( work == 2 )tp[E_T_BASETGH]++;
 		if( work == 3 )tp[E_T_BASEDEX]++;
 	}
-    /* 由仿丢□正本永玄 */
+    /* 蚕溘隍↓淏掛蚗哱 */
     CharNew.data[CHAR_VITAL]    = PARAM_CAL(E_T_BASEVITAL);
     CharNew.data[CHAR_STR]      = PARAM_CAL(E_T_BASESTR);
     CharNew.data[CHAR_TOUGH]    = PARAM_CAL(E_T_BASETGH);
@@ -1819,7 +1819,7 @@ BOOL PETFUSION_getIndexForChar( int toindex, int *MainIndex, int *Subindex1, int
 		if( !CHAR_CHECKINDEX( petindex) ) continue;
 #ifdef _PET_2TRANS
 		if( CHAR_getInt( petindex, CHAR_TRANSMIGRATION ) > 1 ) {
-			CHAR_talkToCli( toindex, -1, "二转宠物不能融合。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "媼蛌唾昜祥夔�睆洁�", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 #endif
@@ -1850,7 +1850,7 @@ int NPC_getPetArrayForNo( int PetCode)
 }
 int NPC_getFusionTableForBase( int charaindex, int petindex1, int petindex2 )
 {
-	int base1, base2;// 属性,PETCODE
+	int base1, base2;// 扽俶,PETCODE
 	if( !CHAR_CHECKINDEX( petindex1) ) return -1;
 	if( !CHAR_CHECKINDEX( petindex2) ) return -1;
 #ifdef _PET_EVOLUTION
@@ -1934,7 +1934,7 @@ int EVOLUTION_createPetFromEnemyIndex( int charaindex, int baseindex, int flg)
 	int		level, enemyrank, array;
 	int		petskill[7]={-1,-1,-1,-1,-1,-1,-1};
 	int		base[4]={0,0,0,0};
-	int		illegalpetskill[15] = {41,52,600,601,602,603,604,614,617,628,630,631,635,638,641};//不可遗传的宠技
+	int		illegalpetskill[15] = {41,52,600,601,602,603,604,614,617,628,630,631,635,638,641};//祥褫疻換腔唾撮
 #define		E_PAR( a)		(*(p + (a)))
 #define		ET_PAR( a)		(*(tp + (a)))
 #define		PARAM_CAL( l) 	(( level -1)*ET_PAR( E_T_LVUPPOINT)+ ET_PAR(E_T_INITNUM)) * ET_PAR( (l))
@@ -1975,9 +1975,9 @@ int EVOLUTION_createPetFromEnemyIndex( int charaindex, int baseindex, int flg)
 			return -1;
 		}
 		if( PET_getEvolutionAns( baseindex, base) == FALSE ) return -1;
-		for( i=0; i < CHAR_MAXPETSKILLHAVE; i ++ ) {//宠技
+		for( i=0; i < CHAR_MAXPETSKILLHAVE; i ++ ) {//唾撮
 			int j;
-			for( j=0; j<15; j++)	{	//检查非法技能
+			for( j=0; j<15; j++)	{	//潰脤準楊撮夔
 				if( illegalpetskill[j] == petskill[i] ){
 					petskill[i] = -1;
 					break;
@@ -1990,7 +1990,7 @@ int EVOLUTION_createPetFromEnemyIndex( int charaindex, int baseindex, int flg)
 		}
 	}
 	if( flg == 1 ){
-		havepetelement = CHAR_getCharPetElement( charaindex);//找出宠物空位
+		havepetelement = CHAR_getCharPetElement( charaindex);//梑堤唾昜諾弇
 		if( havepetelement < 0 ) return -1;
 	}
 //------------------------------------------------------
@@ -2089,7 +2089,7 @@ int PET_CheckIncubate( int charaindex)
 		int petindex = CHAR_getCharPet( charaindex, i);
 		if( !CHAR_CHECKINDEX( petindex) ) continue;
 		if( CHAR_getInt( petindex, CHAR_FUSIONBEIT) != 1 ||
-			CHAR_getInt( petindex, CHAR_FUSIONRAISE) <= 0 )return;//检查是否为融合宠
+			CHAR_getInt( petindex, CHAR_FUSIONRAISE) <= 0 )return;//潰脤岆瘁峈�睆炡�
 
 		time_l = CHAR_getInt( petindex, CHAR_FUSIONTIMELIMIT);
 		if( time_l < 0 || time_l > checkeage ){
@@ -2101,7 +2101,7 @@ int PET_CheckIncubate( int charaindex)
 			char buf[256];
 			int levelup, vital, str, tgh, dex;
 			int raise = CHAR_getInt( petindex, CHAR_FUSIONRAISE);
-			//  养次数
+			//  欱棒杅
 			raise++;
 			CHAR_setInt( petindex, CHAR_FUSIONTIMELIMIT, (int)time(NULL)+anhour-1);
 			if( raise < 0 ) raise = 0;
@@ -2116,10 +2116,10 @@ int PET_CheckIncubate( int charaindex)
 			if( str < 0 ) str = 0;
 			if( tgh < 0 ) tgh = 0;
 			if( dex < 0 ) dex = 0;
-			//扣属性
+			//諶扽俶
 			levelup = (vital<<24) + (str<<16) + (tgh<<8) + (dex<<0);
 			CHAR_setInt( petindex, CHAR_ALLOCPOINT, levelup);
-			sprintf( buf, "蛋〈%s〉的品质变差了。", CHAR_getUseName( petindex ));
+			sprintf( buf, "粥●%s△腔こ窐曹船賸﹝", CHAR_getUseName( petindex ));
 			CHAR_talkToCli( charaindex, -1, buf, CHAR_COLORYELLOW);
 
 			LogPetFeed(
@@ -2128,7 +2128,7 @@ int PET_CheckIncubate( int charaindex)
 				CHAR_getChar( petindex, CHAR_NAME),
 				petindex,
 				CHAR_getInt( petindex, CHAR_LV),
-				"品质变差", // Key
+				"こ窐曹船", // Key
 				CHAR_getInt( charaindex, CHAR_FLOOR),
 				CHAR_getInt( charaindex, CHAR_X),
 				CHAR_getInt( charaindex, CHAR_Y),
@@ -2137,7 +2137,7 @@ int PET_CheckIncubate( int charaindex)
 		}else if( (int)checkeage > (time_l+anhour)  ){
 
 			char buf[256];
-			sprintf( buf, "蛋〈%s〉呈现可  食状态。", CHAR_getUseName( petindex ));
+			sprintf( buf, "粥●%s△傘珋褫  妘袨怓﹝", CHAR_getUseName( petindex ));
 			CHAR_talkToCli( charaindex, -1, buf, CHAR_COLORYELLOW);
 		}
 	}
@@ -2152,7 +2152,7 @@ int PET_CheckIncubate( int charaindex)
 		if( !CHAR_CHECKINDEX( masterindex) )return 0;
 
 		if( CHAR_getInt( charaindex, CHAR_FUSIONBEIT) != 1 ||
-			CHAR_getInt( charaindex, CHAR_FUSIONRAISE) <= 0 ) return 0;//检查是否为融合宠
+			CHAR_getInt( charaindex, CHAR_FUSIONRAISE) <= 0 ) return 0;//潰脤岆瘁峈�睆炡�
 
 		for(i=0 ; i < CHAR_MAXPETHAVE ; i++)	{
 			if( charaindex != CHAR_getCharPet( masterindex, i) ) continue;
@@ -2171,10 +2171,10 @@ int PET_CheckIncubate( int charaindex)
 				if( charaindex != CHAR_getCharPet( masterindex, i) ) continue;
 				deftime = anhour - ( checkeage - oldtime);
 				if( deftime >= 0 ){
-					sprintf( caname, "宠物蛋(%d)", (int)(deftime/60));
+					sprintf( caname, "唾昜粥(%d)", (int)(deftime/60));
 				}else{
 					deftime =  ( checkeage - oldtime) - anhour;
-					sprintf( caname, "宠物蛋(饿%d)", (int)(deftime/60));
+					sprintf( caname, "唾昜粥(塒%d)", (int)(deftime/60));
 				}
 				CHAR_setChar( charaindex, CHAR_USERPETNAME, caname);
 				snprintf( msgbuf, sizeof( msgbuf ), "K%d", i );
@@ -2210,10 +2210,10 @@ int PET_CheckIncubate( int charaindex)
 			if( str < 0 ) str = 0;
 			if( tgh < 0 ) tgh = 0;
 			if( dex < 0 ) dex = 0;
-			//扣属性
+			//諶扽俶
 			levelup = (vital<<24) + (str<<16) + (tgh<<8) + (dex<<0);
 			CHAR_setInt( charaindex, CHAR_ALLOCPOINT, levelup);
-			sprintf( buf, "蛋〈%s〉的品质变差了。", CHAR_getUseName( charaindex ));
+			sprintf( buf, "粥●%s△腔こ窐曹船賸﹝", CHAR_getUseName( charaindex ));
 			CHAR_talkToCli( masterindex, -1, buf, CHAR_COLORYELLOW);
 
 			LogPetFeed(
@@ -2222,7 +2222,7 @@ int PET_CheckIncubate( int charaindex)
 				CHAR_getChar( charaindex, CHAR_NAME),
 				charaindex,
 				CHAR_getInt( charaindex, CHAR_LV),
-				"品质变差", // Key
+				"こ窐曹船", // Key
 				CHAR_getInt( masterindex, CHAR_FLOOR),
 				CHAR_getInt( masterindex, CHAR_X),
 				CHAR_getInt( masterindex, CHAR_Y),
@@ -2230,7 +2230,7 @@ int PET_CheckIncubate( int charaindex)
 
 		}else if( (int)checkeage > (time_l+anhour) ){
 			char buf[256];
-			sprintf( buf, "蛋〈%s〉呈现可  食状态。", CHAR_getUseName( charaindex ));
+			sprintf( buf, "粥●%s△傘珋褫  妘袨怓﹝", CHAR_getUseName( charaindex ));
 			CHAR_talkToCli( masterindex, -1, buf, CHAR_COLORYELLOW);
 		}
 		return 1;
@@ -2311,7 +2311,7 @@ int PETFUSION_SetNewEgg( int toindex , int petindex, int array, int *work, int *
 	CHAR_setMaxExp( petindex, 0);
 	CHAR_setInt( petindex, CHAR_LV, level);
 
-	//宠物技能设为七技
+	//唾昜撮夔扢峈ほ撮
 	CHAR_setInt( petindex, CHAR_SLOT, 7);
 	{
 		int j;
@@ -2320,7 +2320,7 @@ int PETFUSION_SetNewEgg( int toindex , int petindex, int array, int *work, int *
 			if( RAND( 0, 1 ) == 0 )	{
 				skill1[i] = skill2[i];
 			}
-			for( j=0; j<15; j++)	{	//检查非法技能
+			for( j=0; j<15; j++)	{	//潰脤準楊撮夔
 				if( illegalpetskill[j] == skill1[i] ){
 					skill1[i] = -1;
 					break;
@@ -2393,14 +2393,14 @@ BOOL PETFUSION_AddEgg( int toindex, int petID, int PetCode)
 	int	i,j;
 	int petindex, petindex2;
 	
-	//检查宠物栏是否有空位
+	//潰脤唾昜戲岆瘁衄諾弇
 	for( i = 0 ;i < CHAR_MAXPETHAVE ; i++) {
 		petindex = CHAR_getCharPet( toindex, i);
 		if( petindex == -1  )
 			break;
 	}
 	if( i == CHAR_MAXPETHAVE )      {
-		snprintf( msgbuf,sizeof( msgbuf), "宠物已满！！");
+		snprintf( msgbuf,sizeof( msgbuf), "唾昜眒雛ㄐㄐ");
 		CHAR_talkToCli( toindex, -1, msgbuf,  CHAR_COLORYELLOW);
 		return -1;
 	}
@@ -2430,7 +2430,7 @@ BOOL PETFUSION_AddEgg( int toindex, int petID, int PetCode)
 		return -1;
 	}
 	CHAR_setInt( petindex2, CHAR_FUSIONINDEX, PetCode);
-	snprintf( msgbuf,sizeof( msgbuf), "拿到%s。", CHAR_getChar(petindex2,CHAR_NAME));
+	snprintf( msgbuf,sizeof( msgbuf), "鏽善%s﹝", CHAR_getChar(petindex2,CHAR_NAME));
 	CHAR_talkToCli( toindex, -1, msgbuf,  CHAR_COLORYELLOW);
 	for(j = 0; j < CHAR_MAXPETHAVE; j++){
 		petindex = CHAR_getCharPet(toindex, j);
@@ -2532,7 +2532,7 @@ int GetNewPet( int toindex , int petindex, int array, int *work)
     CHAR_setInt( petindex, CHAR_DEX , ( PARAM_CAL(E_T_BASEDEX) * work[3] ));
 	CHAR_setMaxExp( petindex, 0);
 	CHAR_setInt( petindex, CHAR_LV, level);
-	//宠物技能设为七技
+	//唾昜撮夔扢峈ほ撮
 	CHAR_setInt( petindex, CHAR_SLOT, 7);
 /*	for( i=0; i<CHAR_MAXPETSKILLHAVE; i++)	{
 		petskill = CHAR_getPetSkill( petindex, i);

@@ -20,7 +20,7 @@
 #define MAXLSRPCARGS ( 7 + 1 )
 #endif
 
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 void saacproto_UpdataStele_send( int fd , char *cdkey , char *name , char *title , int level , int trns , int time , int floor) ;
 void saacproto_UpdataStele_recv( int fd , char *token) ;
 void saacproto_S_UpdataStele_recv( int i , char *ocdkey , char *oname , char *ncdkey , 
@@ -82,7 +82,7 @@ void saacproto_SetClientLogFiles( char *read , char *write);
 void saacproto_CleanupClient(void);
 int saacproto_ClientDispatchMessage(int fd ,char*line);
 
-// 成立家族
+// 傖蕾模逜
 #ifdef _PERSONAL_FAME
 void saacproto_ACAddFM_send(int fd, char *fmname, char *fmleadername,
 	char *fmleaderid, int fmleaderlv, char *petname, char *petarrt,
@@ -94,8 +94,8 @@ void saacproto_ACAddFM_send(int fd, char *fmname, char *fmleadername,
 #endif
 void saacproto_ACAddFM_recv(int fd, char *result, int fmindex, int index,
 	int charfdid);
-// 加入家族
-// #ifdef _PERSONAL_FAME	// Arminius: 家族个人声望
+// 樓�趧眢�
+// #ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
 void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
         char *charid, int charlv, int index, int fame, int charfdid);
 // #else
@@ -103,27 +103,27 @@ void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
 //        char *charid, int charlv, int index, int charfdid);
 // #endif
 void saacproto_ACJoinFM_recv(int fd, char *result, int recv, int charfdid);
-// 退出家族
+// 豖堤模逜
 void saacproto_ACLeaveFM_send(int fd, char *fmname, int fmindex, char *charname,
         char *charid, int index, int charfdid);
 void saacproto_ACLeaveFM_recv(int fd, char *result, int resultflag, int charfdid);
-// 解散家族
+// 賤汃模逜
 void saacproto_ACDelFM_send(int fd, char *fmname, int fmindex, int index,
 	char *charname, char *charid, int charfdid);
 
 void saacproto_ACDelFM_recv(int fd, char *result, int charfdid);
-// 列出家族列表
+// 蹈堤模逜蹈桶
 void saacproto_ACShowFMList_send(int fd);
 void saacproto_ACShowFMList_recv(int fd, char *result, int num, char *data);
-// 列出成员列表
+// 蹈堤傖埜蹈桶
 void saacproto_ACShowMemberList_send(int fd, int index);
 void saacproto_ACShowMemberList_recv(int fd, char *result, int index, int num,
 	int fmacceptflag, int fmjoinnum, char *data);
-// 列出家族详细资料
+// 蹈堤模逜砆牉訧蹋
 void saacproto_ACFMDetail_send(int fd, char *fmname, int fmindex,
 	int index, int charfdid);
 void saacproto_ACFMDetail_recv(int fd, char *result, char *data, int charfdid);
-//族长审核成员加入家族、修改家族成员职位
+//逜酗机瞄傖埜樓�趧眢憛Ｂ瑏躁眢撜尕敔匿�
 #ifdef _FMVER21
 void saacproto_ACMemberJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
 	int charindex, int index, int result, int meindex, int charfdid);
@@ -132,7 +132,7 @@ void saacproto_ACMemberJoinFM_send(int fd, char *fmname, int fmindex, char *char
 	int charindex, int index, int result, int charfdid);
 #endif
 void saacproto_ACMemberJoinFM_recv(int fd, char *result, char *data, int charfdid);
-//族长审核成员离开家族
+//逜酗机瞄傖埜燭羲模逜
 #ifdef _FMVER21
 void saacproto_ACMemberLeaveFM_send(int fd, char *fmname, int fmindex, char *charname,
 	int charindex, int index, int meindex, int charfdid);
@@ -141,7 +141,7 @@ void saacproto_ACMemberLeaveFM_send(int fd, char *fmname, int fmindex, char *cha
 	int charindex, int index, int charfdid);
 #endif
 void saacproto_ACMemberLeaveFM_recv(int fd, char *result, char *data, int charfdid);
-//玩家 Login
+//俙模 Login
 #ifdef _FM_MODIFY
 void saacproto_ACFMCharLogin_send(int fd, char *fmname, int fmindex, char *charname,
 		      char *charid, int charlv, int eventflag, int charfdid,int gsnum);
@@ -154,7 +154,7 @@ void saacproto_ACFMCharLogin_send(int fd, char *fmname, int fmindex, char *charn
 		char *charid, int result, int charfdid);
 	#endif
 #endif
-#ifdef _PERSONAL_FAME   // Arminius: 家族个人声望
+#ifdef _PERSONAL_FAME   // Arminius: 模逜跺�侂驫�
 void saacproto_ACFMCharLogin_recv(int fd, char *result, int index, int floor,
 	int fmdp, int joinflag, int fmsetupflag, int flag, int charindex,
 	int charfame, int charfdid
@@ -167,48 +167,48 @@ void saacproto_ACFMCharLogin_recv(int fd, char *result, int index, int floor,
 	int fmdp, int joinflag, int fmsetupflag, int flag, int charindex,
 	int charfdid);
 #endif
-// 玩家 Logout
+// 俙模 Logout
 void saacproto_ACFMCharLogout_send(int fd, char *fmname, int fmindex, char *charname,
 	char *charid, int result, int index, int charfdid);
 void saacproto_ACFMCharLogout_recv(int fd, char *result, int charfdid);
-// 列出家族留言板
+// 蹈堤模逜隱晟啣
 void saacproto_ACFMReadMemo_send(int fd, int index);
 void saacproto_ACFMReadMemo_recv(int fd, char *result, int index, int num,
         int dataindex, char *data);
-// 写入家族留言板
+// 迡�趧眢斲譨埶�
 void saacproto_ACFMWriteMemo_send(int fd, char *fmname, int fmindex,
         char *data, int index);
 void saacproto_ACFMWriteMemo_recv(int fd, char *result, int index);
-// 列出家族据点
+// 蹈堤模逜擂萸
 void saacproto_ACFMPointList_send(int fd);
 void saacproto_ACFMPointList_recv(int fd, char *result, char *data);
 
 
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 计算线上人数
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 數呾盄奻�侕�
 void saacproto_GS_PLAYER_COUNT_SEND( int acfd, int num );
 #endif
 
-// 申请家族据点
+// 扠③模逜擂萸
 void saacproto_ACSetFMPoint_send(int fd, char* fmname, int fmindex, int index,
 	int fmpointindex, int fl, int x, int y, int charfdid);
 void saacproto_ACSetFMPoint_recv(int fd, char *result, int r, int charfdid);
-// 设定家族据点
+// 扢隅模逜擂萸
 void saacproto_ACFixFMPoint_send(int fd, char *winfmname, int winfmindex,
         int winindex, char *losefmname, int losefmindex, int loseindex,
         int village);
 void saacproto_ACFixFMPoint_recv(int fd, char *result, int r);
-// 族长对星系家族成员广播
-// kindflag 1:族长广播 2:家族被系统删除 3:系统通知讯息
+// 逜酗勤陎炵模逜傖埜嫘畦
+// kindflag 1:逜酗嫘畦 2:模逜掩炵苀刉壺 3:炵苀籵眭捅洘
 void saacproto_ACFMAnnounce_send(int fd, char *fmname, int fmindex, int index,
 	char *data, int color);
 void saacproto_ACFMAnnounce_recv(int fd, char *result, char *fmname,
 	int fmindex, int index, int kindflag, char *data, int color);
-// 列出 TOP 50 家族列表
+// 蹈堤 TOP 50 模逜蹈桶
 void saacproto_ACShowTopFMList_send(int fd, int kindflag);
 void saacproto_ACShowTopFMList_recv(int fd, char *result, int kindflag,
 	int num, char *data);
-// 修正家族资料(是否招收成员)
+// 党淏模逜訧蹋(岆瘁桸彶傖埜)
 // flag 1:acceptjoinflag 2:dpchanged 3:change fmpet 4:change fminfo 5:predel FM Time
 void saacproto_ACFixFMData_send(int fd, char *fmname, int fmindex, int index,
 	int kindflag,char *data1,char *data2,int charindex, int charfdid);
@@ -222,22 +222,22 @@ void saacproto_ACgetFMBankgold_recv(int fd,int charfdid,int r);
 void saacproto_ACFixFMData_recv(int fd, char *result, int kindflag, char *data1,
 	char *data2, int charfdid);
 
-// ＰＫ後更新家族声望
+// �苺呫廎�陔模逜汒咡
 void saacproto_ACFixFMPK_send(int fd, char *winfmname, int winfmindex,
         int winindex, char *losefmname, int losefmindex, int loseindex);
 void saacproto_ACFixFMPK_recv(int fd, char *result, int data, int winindex,
 	int loseindex);
-// 取得家族资料
-// kindflag 1:家族银行
+// �△羹眢樝岏�
+// kindflag 1:模逜窅俴
 void saacproto_ACGetFMData_send(int fd, char *fmname, int fmindex, int index,
         int kindflag, int charfdid);
 void saacproto_ACGetFMData_recv(int fd, char *result, int kindflag, int data,
 	int charfdid);
-// ＧＭ修正家族资料
+// �ラ迖皙�模逜訧蹋
 void saacproto_ACGMFixFMData_send(int fd, int index, char *charid, char *cmd,
 	char *data, int charfdid);
 void saacproto_ACGMFixFMData_recv(int fd, char *result, char *fmindex, int charfdid);
-// 删除家族後清除对战排程
+// 刉壺模逜摽ь壺勤桵齬最
 void saacproto_ACFMClearPK_recv(int fd, char *result, char *fmname, int fmindex,
         int index);
 
@@ -254,7 +254,7 @@ void saacproto_ACSendFmPk_recv( int fd, int toindex, int flg);
 void saacproto_ACSendFmPk_send(int fd, int toindex, int PkFlg, int fmpks_pos, char *msg);
 #endif
 
-#ifdef _RECAL_ASK_PLAYER			// WON 要求人物资料
+#ifdef _RECAL_ASK_PLAYER			// WON 猁⑴�冼擼岏�
 void saacproto_Recal_Player_send(int acfd, char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, int backup_flag);
 void saacproto_ACRecalPlayer_recv(char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, char *char_data);	
 void saacproto_ACRecalBackupPlayer_recv(char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, char *char_data);	
@@ -267,7 +267,7 @@ void saacproto_Recal_Backup_send(int acfd, char *uid, int userfdid, int GmCliId,
 void saacproto_ACAuctionSold_send(int fd, char *data);
 void saacproto_ACAuctionSold_recv(int fd, char *data);
 
-#ifdef _WAEI_KICK	//跨星球踢人
+#ifdef _WAEI_KICK	//輻陎⑩杺��
 void saacproto_ACKick_send( int fd, char* kickid,int kickfd, int flg);
 void saacproto_ACKick_recv(int fd , int act, char* data ,int retfd);
 #endif
@@ -331,19 +331,19 @@ void saacproto_ACCharGetPoolPet_send( int acfd, int meindex, int charaindex, int
 
 
 
-#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 家族战登入检查
+#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 模逜桵腎�趧麮�
 void saacproto_new_ACFM_Login_send( int acfd, int charaindex, char *char_id, char *char_name );
 void saacproto_ACSendMember_recv(int fd, char *result, char *data, int charindex );
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 void saacproto_ReloadFamily_send( int acfd, int charaindex );
 void saacproto_ACRELOADFMOK_recv( int fd, int charindex );
 void saacproto_ACShowMemberList_2_send( int fd, int charaindex, int fm1, int fm2, int time, int id );
 void saacproto_ACSHOWMEMBERLIST2_recv( int fd, int charaindex, int fm1, char *fm1_id, int fm2, char *fm2_id, int time, int id );
 #endif
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 家族战存放胜负资料
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD 模逜桵湔溫吨蛹訧蹋
 void saacproto_Init_FM_PK_STRUC_send( int fd );
 void saacproto_FM_PK_STRUCT_send( int fd, char *msg );
 void saacproto_ACSendFmPkStruct_recv( int fd, char *data );

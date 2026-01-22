@@ -14,7 +14,7 @@
 #include "chatmagic.h"
 #include "log.h"
 
-#define EVFLG 118                 // 58->白虎  118->青龙
+#define EVFLG 118                 // 58->啞誥  118->ч韓
   
 void pet_make( int charaindex, char* message );
   
@@ -52,34 +52,34 @@ void NPC_PetMakerTalked( int meindex , int talker , char *msg ,int color )
         	return;
     }
     
-    //translv = CHAR_getInt( talker, CHAR_TRANSMIGRATION);    // 白虎
+    //translv = CHAR_getInt( talker, CHAR_TRANSMIGRATION);    // 啞誥
     
     for(i=0; i<CHAR_MAXPETHAVE; i++)
         if(CHAR_getCharPet(talker, i) != -1) 
             num++;
 
-    // 白虎
+    // 啞誥
     /*if( translv < 5 || CHAR_getInt( talker, CHAR_LV ) < 125){
-        sprintf(tmpbuf, "抱歉哦～等到转生５次及等级１２５级时再来找我吧！");
+        sprintf(tmpbuf, "惕К韃‵脹善蛌汜ㄤ棒摯脹撰ㄠㄡㄤ撰奀婬懂梑扂勘ㄐ");
         CHAR_talkToCli( talker, meindex,
                         tmpbuf,CHAR_COLORWHITE);
         return;
     }*/   
-	// 青龙	
+	// ч韓	
     if( CHAR_getInt( talker, CHAR_FAME) < 200000){
-        sprintf(tmpbuf, "抱歉哦～你目前个人声望 %d 点，请等到超过二千点时再来找我吧！", (CHAR_getInt( talker, CHAR_FAME)/100));
+        sprintf(tmpbuf, "惕К韃‵斕醴ヶ跺�侂驫� %d 萸ㄛ③脹善閉徹媼ロ萸奀婬懂梑扂勘ㄐ", (CHAR_getInt( talker, CHAR_FAME)/100));
         CHAR_talkToCli( talker, meindex,
                         tmpbuf,CHAR_COLORWHITE);
         return;
     }
     else if( ckpoint & (1 << shift) ){
-        sprintf(tmpbuf, "哦～我记得我好像给过你了吧！");
+        sprintf(tmpbuf, "韃‵扂暮腕扂疑砉跤徹斕賸勘ㄐ");
         CHAR_talkToCli( talker, meindex,
                         tmpbuf,CHAR_COLORWHITE);
         return;
     }    
     else if( num>=CHAR_MAXPETHAVE ){
-        sprintf(tmpbuf, "抱歉～没多馀的空间可放置宠物。");
+        sprintf(tmpbuf, "惕К‵羶嗣牄腔諾潔褫溫离唾昜﹝");
         CHAR_talkToCli( talker, meindex,
                         tmpbuf,CHAR_COLORWHITE);
         return;    
@@ -110,7 +110,7 @@ void pet_make( int charaindex, char* message )
     if(i==enemynum) return;
 
     ret = ENEMY_createPetFromEnemyIndex( charaindex, i);
-    snprintf( msgbuf, sizeof( msgbuf), "哦～以你的能力足以配得上一只传说宠物，好吧！就是你了。");
+    snprintf( msgbuf, sizeof( msgbuf), "韃‵眕斕腔夔薯逋眕饜腕奻珨硐換佽唾昜ㄛ疑勘ㄐ憩岆斕賸﹝");
     CHAR_talkToCli( charaindex, -1, msgbuf, CHAR_COLORYELLOW);
                 
     for( i=0; i<CHAR_MAXPETHAVE; i++ ){
@@ -133,9 +133,9 @@ void pet_make( int charaindex, char* message )
 			CHAR_send_K_StatusString(charaindex, i, CHAR_K_STRING_HP|CHAR_K_STRING_AI);
 	
 	LogPet(
-		CHAR_getChar( charaindex, CHAR_NAME ), /* 平乓仿   */
+		CHAR_getChar( charaindex, CHAR_NAME ), /* す籤溘   */
 		CHAR_getChar( charaindex, CHAR_CDKEY ),
-		"凯恩",1,"PetMaker",
+		"翮塋",1,"PetMaker",
 		CHAR_getInt( charaindex,CHAR_FLOOR),
 		CHAR_getInt( charaindex,CHAR_X ),
 		CHAR_getInt( charaindex,CHAR_Y ),

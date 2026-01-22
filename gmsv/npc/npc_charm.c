@@ -7,21 +7,21 @@
 #include "lssproto_serv.h"
 #include "npc_charm.h"
 
-//    医毛  仁煌遥挚反
+//    瓟禱  �妡迗�祪毀
 
-//伊矛伙←        ←  蜇箕及    /          
+//畛穫鳴↘        ↘  藯凜摯    /          
 
-//荚汊汹反｛ㄤ匹允［
+//樊蜾倵毀��其ぁ埰��
 /*
-#define RATE  4		//伊□玄＂
-#define CHARMHEAL 5 //    及荚汊汹
-#define WARU	3	//    毛喃月袄
+#define RATE  4		//畛↓哱ㄑ
+#define CHARMHEAL 5 //    摯樊蜾倵
+#define WARU	3	//    禱鄎堎偯
 
 */
 
-#define RATE  10	//伊□玄＂
-#define CHARMHEAL 5 //    及荚汊汹
-#define WARU	3	//    毛喃月袄
+#define RATE  10	//畛↓哱ㄑ
+#define CHARMHEAL 5 //    摯樊蜾倵
+#define WARU	3	//    禱鄎堎偯
 
 
 static void NPC_Charm_selectWindow( int meindex, int toindex, int num);
@@ -30,11 +30,11 @@ void NPC_CharmUp(int meindex,int talker);
 
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_CharmInit( int meindex )
 {
-	/*--平乓仿及正奶皿毛涩烂--*/
+	/*--す籤溘摯淏騷鏤禱优擭--*/
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPECHARM );
 	return TRUE;
 
@@ -42,20 +42,20 @@ BOOL NPC_CharmInit( int meindex )
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_CharmTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
 
-    /* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )
     {
     	return;
     }
 	
-	/*--  及蟆卞中月井升丹井＂--*/
+	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace( meindex ,talkerindex , 2) == FALSE) {
-		/* ㄠ弘伉永玉动  及心 */
+		/* 兒精惉蚗迶雄  摯陑 */
 		if(NPC_Util_isFaceToChara( talkerindex, meindex, 1) == FALSE) return;
 	}
 
@@ -64,7 +64,7 @@ void NPC_CharmTalked( int meindex , int talkerindex , char *szMes ,int color )
 
 
 /*
- * 备质  卞坌仃月
+ * 掘窐  勗覕崹堎
  */
 static void NPC_Charm_selectWindow( int meindex, int toindex, int num)
 {
@@ -78,17 +78,17 @@ static void NPC_Charm_selectWindow( int meindex, int toindex, int num)
 	int cost = 0;
 	int chartype;
 	
-	/*--它奶件玉它正奶皿丢永本□斥互云云中及匹燮卞涩烂--*/
+	/*--坳騷璃迶坳淏騷鏤隍蚗掛↓喇誑堁堁笢摯ぁ袸勗优擭--*/
   	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 
 	switch( num) {
 	  case 0:
-  		/*--蓟      --*/
-		sprintf(token,"4\n 　　　   = = 美容师 = = "
-				     "\n\n 　欢迎光临，今天要做什麽呢？"
+  		/*--撒      --*/
+		sprintf(token,"4\n ﹛﹛﹛   = = 藝�楟� = = "
+				     "\n\n ﹛辣茩嫖還ㄛ踏毞猁酕妦欒儸ˋ"
 				  "\n "
-				  "\n\n　　　　《　给我魅力　》 "
-				  "\n\n　　　　《 什麽也不做 》 "
+				  "\n\n﹛﹛﹛﹛▲﹛跤扂黰薯﹛◎ "
+				  "\n\n﹛﹛﹛﹛▲ 妦欒珩祥酕 ◎ "
 		);
 
 	  	buttontype = WINDOW_BUTTONTYPE_NONE;
@@ -99,17 +99,17 @@ static void NPC_Charm_selectWindow( int meindex, int toindex, int num)
 	case 1:
 		cost = NPC_CharmCost( meindex, toindex);
 		if(cost == -1){
-			sprintf(token,"　　　　     = = 美容师 = =  "
-				      "\n\n　　　　你的魅力真是完美"
-				      "\n\n　　　请永远保持你的魅力唷。"
+			sprintf(token,"﹛﹛﹛﹛     = = 藝�楟� = =  "
+				      "\n\n﹛﹛﹛﹛斕腔黰薯淩岆俇藝"
+				      "\n\n﹛﹛﹛③蚗堈悵厥斕腔黰薯遄﹝"
 			);
 		  	buttontype = WINDOW_BUTTONTYPE_OK;
 		}else{
-			sprintf(token,"　　　　     = = 美容师 = =  "
-				 	    "\n　佮齵在,千禧特惠价实施中�"
-					  "\n\n 要将你的魅力上升五点的话"
-					  "\n　　　　需要%6d的stone唷！"
-						"\n\n　　　即使这样也可以吗？",cost
+			sprintf(token,"﹛﹛﹛﹛     = = 藝�楟� = =  "
+				 	    "\n﹛�僣{婓,ロ檞杻需歎妗囥笢�1�7"
+					  "\n\n 猁蔚斕腔黰薯奻汔拻萸腔趕"
+					  "\n﹛﹛﹛﹛剒猁%6d腔stone遄ㄐ"
+						"\n\n﹛﹛﹛撈妏涴欴珩褫眕鎘ˋ",cost
 			);
 		  	buttontype = WINDOW_BUTTONTYPE_YESNO;
 
@@ -124,49 +124,49 @@ static void NPC_Charm_selectWindow( int meindex, int toindex, int num)
 		chartype = CHAR_getInt( toindex, CHAR_IMAGETYPE);
 		
 		if(cost > CHAR_getInt( toindex, CHAR_GOLD)) {
-			sprintf(token,"　　　　     = = 美容师 = =  "
-					  "\n\n　　 哎呀!你的钱不够唷！"
-				        "\n　　    先去存好钱下次再来吧！"
+			sprintf(token,"﹛﹛﹛﹛     = = 藝�楟� = =  "
+					  "\n\n﹛﹛ 陞挼!斕腔ヴ祥劂遄ㄐ"
+				        "\n﹛﹛    珂�打皞蠅晅織拏梴敦氿�"
 			);
 
 		}else{
 			NPC_CharmUp( meindex, toindex);
 
-			/*--平乓仿及正奶皿卞方匀化丢永本□斥毛  尹化心凶--*/
+			/*--す籤溘摯淏騷鏤勗源埱趙隍蚗掛↓喇禱  窇趙陑倜--*/
 			switch( chartype) {
 			  case CHAR_IMAGETYPE_GIRL:
-				sprintf(token,"　　　　     = = 美容师 = =  "
-					  "\n\n 　嗯,这样你的魅力就上升罗！"
-					  "\n\n　　　愈来愈可爱了呢！"
+				sprintf(token,"﹛﹛﹛﹛     = = 藝�楟� = =  "
+					  "\n\n ﹛鉣,涴欴斕腔黰薯憩奻汔蹕ㄐ"
+					  "\n\n﹛﹛﹛郛懂郛褫乾賸儸ㄐ"
 				);
 
 				break;
 			  case CHAR_IMAGETYPE_BOY:
-				sprintf(token,"　　　　     = = 美容师 = =  "
-					  "\n\n 　嗯,这样你的魅力就上升罗！"
-					  "\n\n　　是不是比刚才要帅多了呢？"
+				sprintf(token,"﹛﹛﹛﹛     = = 藝�楟� = =  "
+					  "\n\n ﹛鉣,涴欴斕腔黰薯憩奻汔蹕ㄐ"
+					  "\n\n﹛﹛岆祥岆掀試符猁邟嗣賸儸ˋ"
 				);
 			  	break;
 			  	
 			  case CHAR_IMAGETYPE_CHILDBOY:
 			  case CHAR_IMAGETYPE_CHILDGIRL:
-				sprintf(token,"　　　　     = = 美容师 = =  "
-					  "\n\n 　嗯,这样你的魅力就上升罗！"
-					  "\n\n　　  真的变得好可爱唷！"
+				sprintf(token,"﹛﹛﹛﹛     = = 藝�楟� = =  "
+					  "\n\n ﹛鉣,涴欴斕腔黰薯憩奻汔蹕ㄐ"
+					  "\n\n﹛﹛  淩腔曹腕疑褫乾遄ㄐ"
 				);
 			 	break;
 			 	
 			   case CHAR_IMAGETYPE_MAN:
-				sprintf(token,"　　　　     = = 美容师 = =  "
-					  "\n\n 　嗯,这样你的魅力就上升罗！"
-					  "\n\n 　　　变得更酷了呢！"
+				sprintf(token,"﹛﹛﹛﹛     = = 藝�楟� = =  "
+					  "\n\n ﹛鉣,涴欴斕腔黰薯憩奻汔蹕ㄐ"
+					  "\n\n ﹛﹛﹛曹腕載蹄賸儸ㄐ"
 				);
 			 	break;
 			 	
 			   case CHAR_IMAGETYPE_WOMAN:
-				sprintf(token,"　　　　     = = 美容师 = =  "
-				  "\n\n 　嗯,这样你的魅力就上升罗！"
-				  "\n\n    可真是变得愈来愈美了呢！"
+				sprintf(token,"﹛﹛﹛﹛     = = 藝�楟� = =  "
+				  "\n\n ﹛鉣,涴欴斕腔黰薯憩奻汔蹕ㄐ"
+				  "\n\n    褫淩岆曹腕郛懂郛藝賸儸ㄐ"
 				);
 			 	break;
 			 
@@ -180,7 +180,7 @@ static void NPC_Charm_selectWindow( int meindex, int toindex, int num)
 	}
 	
 	makeEscapeString( token, escapedname, sizeof( escapedname));
-	/*-仇仇匹霜耨允月--*/
+	/*-喫喫ぁ邞嚭埰堎--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,
@@ -191,7 +191,7 @@ static void NPC_Charm_selectWindow( int meindex, int toindex, int num)
 
 
 /*-----------------------------------------
-弁仿奶失件玄井日忒匀化五凶凛卞裟太请今木月［
+袲溘騷囮璃哱凝�氪耽�趙拻倜鄹勗蠙怮③踏躂堎��
 -------------------------------------------*/
 void NPC_CharmWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
@@ -224,36 +224,36 @@ void NPC_CharmUp(int meindex,int talker)
 	int petindex;
 	char petsend[64];	
 
-	/*--云嗯毛蛹日仄引仄斤丹--*/
+	/*--堁鉣禱蚍�欷の�媃踝竣--*/
 	cost = NPC_CharmCost( meindex, talker);
 	CHAR_setInt( talker, CHAR_GOLD,
 			CHAR_getInt( talker, CHAR_GOLD) - cost);
 	CHAR_send_P_StatusString( talker, CHAR_P_STRING_GOLD);
 
-	/*--    互ㄠㄟㄟ动晓卞卅月桦宁反雄娄卞ㄠㄟㄟ卞允月--*/
+	/*--    誑兒兔兔雄窀勗埵堎鳹譴毀倯礎勗兒兔兔勗埰堎--*/
 	if(CHAR_getInt( talker, CHAR_CHARM) + CHARMHEAL >= 100) {
 		CHAR_setInt( talker, CHAR_CHARM, 100);
 	}else{
-		/*--    毛本永玄--*/
+		/*--    禱掛蚗哱--*/
 		CHAR_setInt(talker, CHAR_CHARM,
 	 			(CHAR_getInt( talker, CHAR_CHARM) + CHARMHEAL));
 	}
 	
-	/*--旦  □正旦及凳蕙--*/
+	/*--筒  ↓淏筒摯脾犍--*/
 	CHAR_complianceParameter( talker );
 	CHAR_send_P_StatusString( talker, CHAR_P_STRING_CHARM);
 
 
-	/*--矢永玄及由仿丢□正毛凳蕙--*/
+	/*--妐蚗哱摯蚕溘隍↓淏禱脾犍--*/
 	for( i = 0 ; i < CHAR_MAXPETHAVE ; i++){
     	petindex = CHAR_getCharPet( talker, i);
 
 		if( petindex == -1  )  continue;
 
-	   /*  平乓仿及    民尼永弁    */
+	   /*  す籤溘摯    鏍攝蚗袲    */
 		if( !CHAR_CHECKINDEX( talker ) )  continue;
 
-		/*--由仿丢□正譬帮--*/
+		/*--蚕溘隍↓淏ぅ堆--*/
 		CHAR_complianceParameter( petindex );
 		sprintf( petsend, "K%d", i );
 		CHAR_sendStatusString( talker , petsend );
@@ -261,7 +261,7 @@ void NPC_CharmUp(int meindex,int talker)
 }
 
 
-/*--云嗯及煌遥--*/
+/*--堁鉣摯銓猀--*/
 int NPC_CharmCost(int meindex,int talker)
 {
 	int cost;
@@ -277,7 +277,7 @@ int NPC_CharmCost(int meindex,int talker)
 	
 	if(charm <= 1) charm = WARU;
 	
-	/*-- 煌遥挚 --*/
+	/*-- 銓猀祪 --*/
 	cost = level * RATE * (charm / WARU) * (trans+1);
 
 	return cost;

@@ -14,7 +14,7 @@
 #include "anim_tbl.h"
 #include "configfile.h"
 
-/*涩烂毛棵签卞允月凶户卞楮醒烂聒本永玄毛综月    */
+/*优擭禱螢ワ勗埰堎倜誧勗匴倳擭壛掛蚗哱禱軘堎    */
 typedef struct tagFunctionNameSet
 {
     char*   id;
@@ -42,108 +42,108 @@ static FunctionNameSet  functionSet[]={
     { "Sample" , "", "", "",  "", "", "", "SampleLoop",
       "SampleDying" ,"","", "","","","","",""},
 
-	/* 玉失 */
+	/* 迶囮 */
     { "Door" , "DoorInit" , "","",
       "","DoorPostOver","DoorWatch","",
       "","DoorTalked","", "",
       "DoorOff","DoorLooked","","",""},
 
-	/* 饕 */
+	/* 壨 */
     { "SimpleShop" ,"SimpleShopInit","","",
       "","","","","",
       "SimpleShopTalked" , "","",
       "","","" ,"SimpleShopSpecialTalked" ,""},
 
-	/* 丢永本□斥 */
+	/* 隍蚗掛↓喇 */
     { "Msg" , "MsgInit" , "","",
       "","","","",
       "","","", "",
       "","MsgLooked","","",""},
 
-	/* 伐□皿札□件 */
+	/* 極↓鏤崥↓璃 */
     { "Warp","WarpInit","","",
       "","","","",
       "","","","",
       "","", "","",""},
 
-	/*   及谛 */
+	/*   摯硞 */
     { "TownPeople" ,"TownPeopleInit","","",
       "","","","",
       "", "TownPeopleTalked" ,"","",
       "","","","",""},
 
-	/* 赢   */
+	/* 荇   */
     { "Oldman","OldmanInit","","",
       "","","","",
       "","OldmanTalked","","",
       "","", "","",""},
 
 
-	/* 本□皮禾奶件玄 */
+	/* 掛↓々睽騷璃哱 */
     { "SavePoint","SavePointInit","","",
       "","","","",
       "","SavePointTalked","","",
       "","", "","","SavePointWindowTalked"},
 
-	/* 甲□仿□ */
+	/* 樅↓溘↓ */
     { "Healer","HealerInit","","",
       "","","","",
       "","HealerTalked","","",
       "","", "","",""},
 
-        /* 家族Healer add code by shan */  
+        /* 模逜Healer add code by shan */  
     { "FmHealer","FmHealerInit","","",
       "","","","",
       "","FmHealerTalked","","",
       "","", "","",""},
     
-        /* 白虎给予者 add code by shan */  
+        /* 啞誥跤軑氪 add code by shan */  
     { "PetMaker","PetMakerInit","","",
       "","","","",
       "","PetMakerTalked","","",
       "","", "","",""},    
     
-	/* 贿曰   */
+	/* 鞅堇   */
     { "StoryTeller","StoryTellerInit","","",
       "","","","",
       "","StoryTellerTalked","","",
       "","", "","",""},
 
-	/* 尕  遣盒 */
+	/* 箾  Е碟 */
     { "RoomAdminNew","RoomAdminNewInit","","",
       "","","","RoomAdminNewLoop",
       "","RoomAdminNewTalked","","",
       "","", "","",""},
 
-	/* 鳗蜕   */
+	/* 魕虭   */
     {"Dengon",
      "DengonInit", "", "", "", "", "", "", "", "",
      "", "", "", "DengonLooked", "", "","DengonWindowTalked"},
      
-     	/* 家族留言板 add code by shan */
+     	/* 模逜隱晟啣 add code by shan */
     {"FmDengon",
      "FmDengonInit", "", "", "", "", "", "", "", "",
      "", "", "", "FmDengonLooked", "", "","FmDengonWindowTalked"},
 
-	/*煽沓馨笛失奶  丞宁岳*/
+	/*刐穖黹萃囮騷  堜譴埬*/
     { "ItemCompo" , "ItemCompoInit", "", "",
       "", "", "", "",
       "" ,"ItemCompoTalked","",""
 	  ,"","","" , "",""},
 
-	/* 裔烂衬 */
+	/* 砡擭傍 */
     { "NPCEnemy","NPCEnemyInit","","",
       "","","NPCEnemyWatch","",
       "","NPCEnemyTalked","","",
       "","", "","","NPCEnemyWindowTalked"},
 
-	/* 失弁扑亦件楝 */
+	/* 囮袲で砫璃擛 */
     { "Action","ActionInit","","",
       "","","ActionWatch","",
       "","ActionTalked","","",
       "","", "","",""},
 
-	/*   迕它奴件玉它NPC */
+	/*   暵坳贖璃迶坳NPC */
     { "Windowman","WindowmanInit","","",
       "","","","",
       "","WindowmanTalked","","",
@@ -168,7 +168,7 @@ static FunctionNameSet  functionSet[]={
      "", "SysinfoTalked","", "",
      "", "", "", "",""},
 
-	/* Duel仿件平件弘  憎NPC */
+	/* Duel溘璃す璃精  崚NPC */
     { "Duelranking","DuelrankingInit","","",
       "","","",
 #ifdef _DEATH_CONTEND
@@ -219,67 +219,67 @@ static FunctionNameSet  functionSet[]={
       "","TimeManTalked","","",
       "","", "","",""},
 
-	/* 示犯奴仿件必□斥 */
+	/* 尨溢贖溘璃斛↓喇 */
     { "BodyLan","BodyLanInit","","",
       "","","BodyLanWatch","",
       "","BodyLanTalked","","",
       "","", "","","BodyLanWindowTalked"},
 
-	/* 示犯奴仿件必□斥 */
+	/* 尨溢贖溘璃斛↓喇 */
     { "Mic","MicInit","","",
       "","","","",
       "","MicTalked","","",
       "","", "","",""},
 
-	/* 仿永平□穴件 */
+	/* 溘蚗す↓悃璃 */
     { "LuckyMan","LuckyManInit","","",
       "","","","",
       "","LuckyManTalked","","",
       "","", "","","LuckyManWindowTalked"},
 
-	/* 穴件乒旦田旦楝 */
+	/* 悃璃さ筒泬筒擛 */
     { "Bus","BusInit","","",
       "","","","BusLoop",
       "","BusTalked","","",
       "","", "","",""},
 
-	/* 加美航空 */	// Arminius 7.7 Ariplane
+	/* 樓藝瑤諾 */	// Arminius 7.7 Ariplane
     { "Airplane","AirInit","","",
       "","","","AirLoop",
       "","AirTalked","","",
       "","", "","",""},
 	
-	/*         楝 */
+	/*         擛 */
     { "Charm","CharmInit","","",
       "","","","",
       "","CharmTalked","","",
       "","", "","","CharmWindowTalked"},
 
-	/* 弁奶术楝 */
+	/* 袲騷扲擛 */
     { "Quiz","QuizInit","","",
       "","","","",
       "","QuizTalked","","",
       "","", "","","QuizWindowTalked"},
 
-	/* 失奶  丞  曰盒今氏  */
+	/* 囮騷  堜  堇碟踏庌  */
     { "PoolItemShop","PoolItemShopInit","","",
       "","","","PoolItemShopLoop",
       "","PoolItemShopTalked","","",
       "","", "","","PoolItemShopWindowTalked"},
 
-	/* 奶矛件玄民尼永弁穴件 */
+	/* 騷穫璃哱鏍攝蚗袲悃璃 */
     { "CheckMan","CheckManInit","","",
       "","","","",
       "","CheckManTalked","","",
       "","", "","","CheckManWindowTalked"},
 
-	/* 元扎氏仃氏楝 */
+	/* 啋崨庌崹庌擛 */
     { "Janken","JankenInit","","",
       "","","","",
       "","JankenTalked","","",
       "","", "","","JankenWindowTalked"},
 
-	/* 鳖戏谛 */
+	/* 梱牁硞 */
     { "Transmigration","TransmigrationInit","","",
       "","","","",
       "","TransmigrationTalked","","",
@@ -338,7 +338,7 @@ static FunctionNameSet  functionSet[]={
       "","FmLetterTalked","","",
       "","FmLetterLooked", "","","FmLetterWindowTalked"}
     // Terry 2001/08/30
-    // 石器服务员 StoneSreviceMan
+    // 坒ん督昢埜 StoneSreviceMan
 #ifdef _SERVICE    
     ,{
       "StoneServiceMan","StoneServiceManInit","","","","","",
@@ -363,7 +363,7 @@ static FunctionNameSet  functionSet[]={
       "GambleRouletteTalked","","","","","","",
 	  "GambleRouletteWindowTalked"
 	}
-	//主持人
+	//翋厥��
 	,{
       "NPC_GambleMaster","GambleMasterInit","","","","","",
       "GambleMasterLoop","",
@@ -435,14 +435,14 @@ static FunctionNameSet  functionSet[]={
 #endif
 
 #ifdef _PETRACE
-	//主持人
+	//翋厥��
 	,{
       "PetRaceMaster","PetRaceMasterInit","","","","","",
       "PetRaceMasterLoop","",
       "PetRaceMasterTalked","","","","","","",
 	  "PetRaceMasterWindowTalked"
 	}
-	// 宠物
+	// 唾昜
 	,{
       "PetRacePet","PetRacePetInit","","","","","",
       "PetRacePetLoop","",
@@ -476,7 +476,7 @@ static FunctionNameSet  functionSet[]={
 	}
 #endif
 
-#ifdef _ALLDOMAN   // (不可开) Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN   // (祥褫羲) Syu ADD 齬俴埤NPC
 	,{
 		"Alldoman","AlldomanInit","","",
       "","","","","","AlldomanTalked","","","","","","",
@@ -497,7 +497,7 @@ static FunctionNameSet  functionSet[]={
       "","", "","","VeryWelfareWindowTalked"}
 #endif
 
-#ifdef _NPC_WELFARE_2				// WON ADD 职业NPC-2
+#ifdef _NPC_WELFARE_2				// WON ADD 眥珛NPC-2
 	,{ "Welfare2","WelfareInit2","","",
       "","","","",
       "","WelfareTalked2","","",
@@ -609,10 +609,10 @@ typedef enum
 }NPC_TYPECATEGORYATREADFILE;
 
 /*------------------------------------------------------------
- * Template index 午仄化恳仄中井升丹井check允月
- * 娄醒
+ * Template index 敁媃趙諜媃笢凝汔竣凝check埰堎
+ * 礎倳
  *  index       int             index
- * 忒曰袄
+ * 蒍堇偯
  *  valid       TRUE
  *  invalid     FALSE
  ------------------------------------------------------------*/
@@ -622,10 +622,10 @@ INLINE int NPC_CHECKTEMPLATEINDEX(int index)
     return TRUE;
 }
 /*------------------------------------------------------------
- * Template intdata index 午仄化恳仄中井升丹井check允月
- * 娄醒
+ * Template intdata index 敁媃趙諜媃笢凝汔竣凝check埰堎
+ * 礎倳
  *  index     int             index
- * 忒曰袄
+ * 蒍堇偯
  *  valid       TRUE
  *  invalid     FALSE
  ------------------------------------------------------------*/
@@ -635,10 +635,10 @@ static INLINE int NPC_CHECKTEMPLATEINTINDEX(int index)
     return TRUE;
 }
 /*------------------------------------------------------------
- * Template chardata index 午仄化恳仄中井升丹井check允月
- * 娄醒
+ * Template chardata index 敁媃趙諜媃笢凝汔竣凝check埰堎
+ * 礎倳
  *  index     int             index
- * 忒曰袄
+ * 蒍堇偯
  *  valid       TRUE
  *  invalid     FALSE
  ------------------------------------------------------------*/
@@ -651,12 +651,12 @@ static INLINE int NPC_CHECKTEMPLATECHARINDEX(int index)
 
 
 /*------------------------------------------------------------
- * NPC_Template毛赓渝祭允月［
- * 娄醒
- *  filenum    int      白央奶伙醒
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ * NPC_Template禱疐趵撬埰堎��
+ * 礎倳
+ *  filenum    int      啞栝騷鳴倳
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  ------------------------------------------------------------*/
 BOOL NPC_initTemplateArray( int templatenum )
 {
@@ -669,11 +669,11 @@ BOOL NPC_initTemplateArray( int templatenum )
 }
 
 /*------------------------------------------------------------
- * 犯白巧伙玄及NPC  件皿伊□玄毛医  允月［
- * 娄醒
- *  temp    NPC_Template*     件皿伊□玄及禾奶件正□
- * 忒曰袄
- *  卅仄
+ * 溢啞б鳴哱摯NPC  璃鏤畛↓哱禱瓟  埰堎��
+ * 礎倳
+ *  temp    NPC_Template*     璃鏤畛↓哱摯睽騷璃淏↓
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void NPC_setDefaultNPCTemplate( NPC_Template*  temp )
 {
@@ -739,7 +739,7 @@ void NPC_templateallocitemdata( NPC_Template* one )
     int     itemnum = one->intdata[NPC_TEMPLATEITEMNUM];
     if( itemnum > 8 ) itemnum = 8;
     else if( itemnum <= 0 ) itemnum = 0;
-    /*  袄及  凳    */
+    /*  偯摯  脾    */
     one->intdata[NPC_TEMPLATEITEMNUM] = itemnum;
     one->haveitem = allocateMemory( sizeof( NPC_haveItem ) * itemnum );
 
@@ -747,12 +747,12 @@ void NPC_templateallocitemdata( NPC_Template* one )
 
 
 /*------------------------------------------------------------
- * NPC_getRandomValue 午及娄醒及询晶岭及凶户及楮醒
- * 娄醒
- *  string      char*         侬  
- *  unuse       int*        银歹卅中［
- * 忒曰袄
- *  仿件母丞及  斓及袄  汔及涩烂反｝2    及娄醒卞忡绣允月［
+ * NPC_getRandomValue 敁摯礎倳摯戙儒鍛摯倜誧摯匴倳
+ * 礎倳
+ *  string      char*         棬  
+ *  unuse       int*        窅渦埵笢��
+ * 蒍堇偯
+ *  溘璃譫堜摯  黖摯偯  蜬摯优擭毀��2    摯礎倳勗瞀凎埰堎��
  ------------------------------------------------------------*/
 static int NPC_seekGraphicNumberFromString( char* string, int* unuse )
 {
@@ -760,12 +760,12 @@ static int NPC_seekGraphicNumberFromString( char* string, int* unuse )
 
 }
 /*------------------------------------------------------------
- * 仿件母丞袄毛  戈
- * 娄醒
- *  string      char*         侬  
- *  randomvalue int*        仿件母丞及  五今
- * 忒曰袄
- *  仿件母丞及  斓及袄  汔及涩烂反｝2    及娄醒卞忡绣允月［
+ * 溘璃譫堜偯禱  資
+ * 礎倳
+ *  string      char*         棬  
+ *  randomvalue int*        溘璃譫堜摯  拻踏
+ * 蒍堇偯
+ *  溘璃譫堜摯  黖摯偯  蜬摯优擭毀��2    摯礎倳勗瞀凎埰堎��
  ------------------------------------------------------------*/
 static int NPC_getRandomValue( char*  string,int* randomwidth )
 {
@@ -776,11 +776,11 @@ static int NPC_getRandomValue( char*  string,int* randomwidth )
     minvalue = atoi( string );
     startmax = index( string,',' );
     if( startmax != NULL ){
-        /*  仿件母丞涩烂互今木化中月    */
-        /*  +1 反 ","及凶户  */
+        /*  溘璃譫堜优擭誑踏躂趙笢堎    */
+        /*  +1 毀 ","摯倜誧  */
         maxvalue = atoi(startmax+1);
 
-        /*  切扎氏午仄凶涩烂分  */
+        /*  з崨庌敁媃倜优擭煦  */
         *randomwidth = ABS(maxvalue - minvalue);
         return min(minvalue,maxvalue);
     }
@@ -790,13 +790,13 @@ static int NPC_getRandomValue( char*  string,int* randomwidth )
 
 
 /*------------------------------------------------------------
- * NPCTemplate 白央奶伙毛夫午勾  戈［
- * 娄醒
- *  filename   char*       涩烂白央奶伙毛  心铵户月玄永皿犯奴伊弁玄伉
- * 忒曰袄
- *  岳      TRUE(1)
- *  分户(仇木动晓白央奶伙毛  氏匹反中仃卅中)
- *  撩      FALSE(0)
+ * NPCTemplate 啞栝騷鳴禱痲敁僑  資��
+ * 礎倳
+ *  filename   char*       优擭啞栝騷鳴禱  陑鴽誧堎哱蚗鏤溢贖畛袲哱惉
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  煦誧(喫躂雄窀啞栝騷鳴禱  庌ぁ毀笢崹埵笢)
+ *  謄      FALSE(0)
  ------------------------------------------------------------*/
 BOOL    NPC_readTemplateFile( char* filename )
 {
@@ -811,8 +811,8 @@ BOOL    NPC_readTemplateFile( char* filename )
     int     i;
 
     if( NPC_template_readindex >= NPC_templatenum ){
-        print("模块超过配置数目\n" );
-        print("配置模块数目 %d\n", NPC_templatenum);
+        print("耀輸閉徹饜离杅醴\n" );
+        print("饜离耀輸杅醴 %d\n", NPC_templatenum);
         return FALSE;
     }
 
@@ -827,7 +827,7 @@ BOOL    NPC_readTemplateFile( char* filename )
     ret = fgets( line, sizeof( line ), f );
     if( ret == NULL )goto FCLOSERETURNFALSE;
     if( strcmp( NPC_TEMPLATEFILEMAGIC, line ) != 0 ){
-        print( "这不是模块文件.\n" );
+        print( "涴祥岆耀輸恅璃.\n" );
         goto FCLOSERETURNFALSE ;
     }
     linenum = 1;
@@ -839,7 +839,7 @@ BOOL    NPC_readTemplateFile( char* filename )
         switch( line[0] ){
         case '{':
             if( start == ON ){
-                fprint( "Find {. 已经开始声明. %s:%d\n",
+                fprint( "Find {. 眒冪羲宎汒隴. %s:%d\n",
                         filename, linenum);
                 goto FCLOSERETURNFALSE;
 
@@ -851,7 +851,7 @@ BOOL    NPC_readTemplateFile( char* filename )
                 int err=FALSE;
                 if( strcmp(temp.chardata[NPC_TEMPLATENAME].string ,"")
                     == 0 ){
-                    fprint( "这些没有名字 %s:%d\n",
+                    fprint( "涴虳羶衄靡趼 %s:%d\n",
                             filename, linenum );
                     err  = TRUE;
                 }else if( temp.intdata[NPC_TEMPLATETYPE] == -1 ){
@@ -873,8 +873,8 @@ BOOL    NPC_readTemplateFile( char* filename )
                             &temp, sizeof( NPC_Template ) );
                     NPC_template_readindex++;
                     if( NPC_template_readindex >= NPC_templatenum ){
-                        print("模块超过配置数目\n" );
-                        print("配置模块数目是 %d\n",
+                        print("耀輸閉徹饜离杅醴\n" );
+                        print("饜离耀輸杅醴岆 %d\n",
                               NPC_templatenum);
                         goto FCLOSERETURNFALSE;
                     }
@@ -883,7 +883,7 @@ BOOL    NPC_readTemplateFile( char* filename )
                 itmreadindex=0;
                 start=OFF;
             }else{
-                fprint( "未解决 '}' at %s:%d\n",filename,linenum);
+                fprint( "帤賤樵 '}' at %s:%d\n",filename,linenum);
                 goto FCLOSERETURNFALSE;
             }
             break;
@@ -1078,31 +1078,31 @@ BOOL NPC_readNPCTemplateFiles( char* topdirectory ,int templatesize)
     filenames = (STRING64 *)allocateMemory( sizeof( STRING64 ) *
                                                (int)getFilesearchnum( ) );
 	if( filenames == NULL ){
-	    print( "读取NPC创建文件... 内存出错\n" );
+	    print( "黍�､PC斐膘恅璃... 囀湔堤渣\n" );
 		return FALSE;
 	}
     filenum = rgetFileName( topdirectory ,filenames ,getFilesearchnum( ) );
     if( filenum == -1 ){
-        fprint("无法从 %s 递归获取文件名\n",topdirectory);
+        fprint("拸楊植 %s 菰寥鳳�﹡躁�靡\n",topdirectory);
 	    freeMemory( filenames );
         return FALSE;
     }
 	if( filenum >= getFilesearchnum( ) ){
-		print( "文件搜索数目失败 %d\n", getFilesearchnum( ) );
+		print( "恅璃刲坰杅醴囮啖 %d\n", getFilesearchnum( ) );
 		while( 1 );
 	}else{
-		print( "搜索到文件 = %d\n", filenum );
+		print( "刲坰善恅璃 = %d\n", filenum );
 	}
     if( !NPC_initTemplateArray( templatesize ) ){
-        fprint( "开启模块数组错误\n" );
+        fprint( "羲ゐ耀輸杅郪渣昫\n" );
 	    freeMemory( filenames );
         return FALSE;
     }
-    print( "读取文件模块数组错误...." );
+    print( "黍�﹡躁�耀輸杅郪渣昫...." );
     for( i = 0 ; i < filenum ; i ++ )
         if( NPC_IsNPCTemplateFile( filenames[i].string ))
             NPC_readTemplateFile( filenames[i].string );
-    print( "正确模块 %d ...\n" , NPC_template_readindex );
+    print( "淏�溺ˋ� %d ...\n" , NPC_template_readindex );
     NPC_templatenum=NPC_template_readindex;
     freeMemory( filenames );
     return TRUE;
@@ -1111,11 +1111,11 @@ BOOL NPC_readNPCTemplateFiles( char* topdirectory ,int templatesize)
 
 
 /*------------------------------------------------------------
- *   侬  卞覆杀允月 template 及 index 毛忒允［
- * 娄醒
- *  templatename        char*         件皿伊□玄及  蟆
- * 忒曰袄
- *  -1  及凛巨仿□
+ *   棬  勗葡伀埰堎 template 摯 index 禱蒍埰��
+ * 礎倳
+ *  templatename        char*         璃鏤畛↓哱摯  鞳
+ * 蒍堇偯
+ *  -1  摯鄹操溘↓
  ------------------------------------------------------------*/
 int NPC_templateGetTemplateIndex( char* templatename )
 {

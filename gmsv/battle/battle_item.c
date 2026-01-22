@@ -27,12 +27,12 @@ int BATTLE_ItemUseDelete(
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-			"BattleUse(战斗中使用掉的道具)",
+			"BattleUse(桵須笢妏蚚裁腔耋撿)",
 	       	CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
         	CHAR_getInt( charaindex,CHAR_Y ),
@@ -59,7 +59,7 @@ void ITEM_useImprecate( int charaindex, int toNo, int haveitemindex )
 		int intfun;
 	};
 	struct tagImprecate ImList[3] ={
-		{"咒",BD_KIND_CURSE},{"恩",BD_KIND_BESTOW},{"祝",BD_KIND_WISHES} };
+		{"紸",BD_KIND_CURSE},{"塋",BD_KIND_BESTOW},{"蛅",BD_KIND_WISHES} };
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return;
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
@@ -122,7 +122,7 @@ void ITEM_useMRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 	turn = atoi( buf1);
 	if( getStringFromIndexWithDelim( arg, ":", 1, buf1, sizeof(buf1)) ==FALSE ) return;
 
-	if( strstr( buf1, "全" ) != NULL ){
+	if( strstr( buf1, "��" ) != NULL ){
 	}else{
 	}
 
@@ -134,15 +134,15 @@ void ITEM_useMRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 	if( IsBATTLING( charaindex ) == TRUE ){
 		int i, status=-1;
 		char *magicarg=NULL, *pszP=NULL;
-#ifdef _PREVENT_TEAMATTACK //光镜守..不得使用敌方
+#ifdef _PREVENT_TEAMATTACK //嫖噩忐..祥腕妏蚚菩源
 		int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER
 			//&& BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P 
 			){
-			if( BATTLE_CheckSameSide( charaindex, toNo) == 0 ){//不同边
+			if( BATTLE_CheckSameSide( charaindex, toNo) == 0 ){//祥肮晚
 				int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 				BATTLE_NoAction( battleindex, BATTLE_Index2No( battleindex, charaindex) );
-				CHAR_talkToCli( charaindex, -1, "光镜守..不得施予非玩家敌方。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( charaindex, -1, "嫖噩忐..祥腕囥軑準俙模菩源﹝", CHAR_COLORYELLOW);
 				return;
 			}
 		}
@@ -167,12 +167,12 @@ void ITEM_useMRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-			"BattleUse(战斗中使用掉的道具)",
+			"BattleUse(桵須笢妏蚚裁腔耋撿)",
 	       	CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
         	CHAR_getInt( charaindex,CHAR_Y ),
@@ -215,12 +215,12 @@ void ITEM_useMagic_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-			"BattleUse(战斗中使用掉的道具)",
+			"BattleUse(桵須笢妏蚚裁腔耋撿)",
 	       	CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
         	CHAR_getInt( charaindex,CHAR_Y ),
@@ -236,7 +236,7 @@ void ITEM_useMagic_Battle( int charaindex, int toNo, int haveitemindex )
 
 void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 {
-#ifdef _CHANGEITEMUSE	 // Syu ADD 调整战斗中使用料理设定
+#ifdef _CHANGEITEMUSE	 // Syu ADD 覃淕桵須笢妏蚚蹋燴扢隅
 	int power1 = 0;
 #endif
 	int power = 0, per = 0, HealedEffect=0;
@@ -245,33 +245,33 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
-#ifdef _CHANGEITEMUSE	 // Syu ADD 调整战斗中使用料理设定
-	if( ((p = strstr( arg, "体" )) != NULL) && ((p = strstr( arg,"气")) != NULL))
+#ifdef _CHANGEITEMUSE	 // Syu ADD 覃淕桵須笢妏蚚蹋燴扢隅
+	if( ((p = strstr( arg, "极" )) != NULL) && ((p = strstr( arg,"ァ")) != NULL))
 	{
 		kind = BD_KIND_HP_MP;
-		p = strstr( arg,"气");
+		p = strstr( arg,"ァ");
 		if( sscanf( p+2, "%d", &power1 ) != 1 )
 		{
 			power1 = 0;
 		}
-		p = strstr( arg,"体");
+		p = strstr( arg,"极");
 	}
-	else if( (p = strstr( arg, "体" )) != NULL )
+	else if( (p = strstr( arg, "极" )) != NULL )
 #else
-	if( (p = strstr( arg, "体" )) != NULL )
+	if( (p = strstr( arg, "极" )) != NULL )
 #endif
 	{
 		kind = BD_KIND_HP;
 	}
-	else if( (p = strstr( arg, "气" )) != NULL )
+	else if( (p = strstr( arg, "ァ" )) != NULL )
 	{
 		kind = BD_KIND_MP;
 	}
 	else
 #ifdef _ITEM_UNBECOMEPIG
-    if( (p = strstr( arg, "解猪" )) != NULL ){
+    if( (p = strstr( arg, "賤紿" )) != NULL ){
         kind = BD_KIND_UNBECOMEPIG;
-		HealedEffect = 100608; //特效编号
+		HealedEffect = 100608; //杻虴晤瘍
 	}
 	else
 #endif
@@ -284,7 +284,7 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 #ifdef _ITEM_PROPERTY
     if( (p = strstr( arg, "PROPERTY" )) != NULL ){
 	    kind = BD_KIND_PROPERTY;
-		HealedEffect = 100608; //特效编号
+		HealedEffect = 100608; //杻虴晤瘍
 		if( strstr( arg, "+" ) )
 			power = 1;
 		else if( strstr( arg, "-" ) )
@@ -319,7 +319,7 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 	if( attackNo < 0 )return;
 
-#ifdef _CHANGEITEMUSE	 // Syu ADD 调整战斗中使用料理设定
+#ifdef _CHANGEITEMUSE	 // Syu ADD 覃淕桵須笢妏蚚蹋燴扢隅
 	BATTLE_MultiRecovery( battleindex, attackNo, toNo,
 		kind, power, per, SPR_item3, HealedEffect , power1);
 #else
@@ -330,12 +330,12 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-			"BattleUse(战斗中使用掉的道具)",
+			"BattleUse(桵須笢妏蚚裁腔耋撿)",
 	       	CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
         	CHAR_getInt( charaindex,CHAR_Y ),
@@ -357,7 +357,7 @@ void ITEM_useStatusChange_Battle(
 	int ReceveEffect;
 	char *pszP = NULL, *arg;
 	char szTurn[] = "turn";
-	char szSuccess[] = "成";
+	char szSuccess[] = "傖";
 
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
@@ -396,28 +396,28 @@ void ITEM_useStatusChange_Battle(
 }
 
 void ITEM_useStatusRecovery_Battle(
-	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
-	int toNo, 			// 银歹木月谛及  寞
-	int haveitemindex 	// 银丹谛及失奶  丞及    寞
+	int charaindex, 	// 窅埱倜硞摯騷璃溢蚗袲筒
+	int toNo, 			// 窅渦躂堎硞摯  蠕
+	int haveitemindex 	// 窅竣硞摯囮騷  堜摯    蠕
 ){
 	int i;
 	int battleindex, attackNo,itemindex, status = -1;
 	int ReceveEffect;
 	char *pszP = NULL, *arg;
 
-	// 失奶  丞互丐月井升丹井
+	// 囮騷  堜誑堣堎凝汔竣凝
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	// 由仿丢□正毛潸  
+	// 蚕溘隍↓淏禱噁  
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
 	pszP = arg;
-	// 躲绊毛潸  
+	// 嗚堅禱噁  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
-		// 蝈莒手丐月及匹ㄟ井日腹绸
+		// 蠈塙忒堣堎摯ぁ兔凝�楖像�
 		for( i = 0; i < BATTLE_ST_END; i ++ ){
-			// 躲绊疋永正伉井＂
+			// 嗚堅鼀蚗淏惉凝ㄑ
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -425,21 +425,21 @@ void ITEM_useStatusRecovery_Battle(
 			}
 		}
 	}
-	// 躲绊卅中及匹撩  
+	// 嗚堅埵笢摯ぁ謄  
 	if( status == -1 ) return ;
 
-	//------- 仇仇井日荚汊质   -----------
+	//------- 喫喫凝�梩媎甂�   -----------
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 
-	ReceveEffect = SPR_tyusya;	//   月午五反仇木
+	ReceveEffect = SPR_tyusya;	//   堎敁拻毀喫躂
 
-	// 蝈够
+	// 蠈劂
 	BATTLE_MultiStatusRecovery( battleindex, attackNo, toNo,
 		status, SPR_item3, ReceveEffect );
 
-	// 爵    卞失奶  丞互壅尹凶桦宁及隋骚质  
+	// 橋    勗囮騷  堜誑觛窇倜鳹譴摯呬玊窐  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 }
@@ -503,13 +503,13 @@ void ITEM_useMagicDef_Battle(
 
 
 //--------------------------------------------------------------
-//  由仿丢□正  凳失奶  丞毛银匀凶桦宁及质  
+//  蚕溘隍↓淏  脾囮騷  堜禱窅埱倜鳹譴摯窐  
 //--------------------------------------------------------------
-// 爵    及桦宁
+// 橋    摯鳹譴
 void ITEM_useParamChange_Battle(
-	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
-	int toNo, 			// 银歹木月谛及  寞
-	int haveitemindex 	// 银丹谛及失奶  丞及    寞
+	int charaindex, 	// 窅埱倜硞摯騷璃溢蚗袲筒
+	int toNo, 			// 窅渦躂堎硞摯  蠕
+	int haveitemindex 	// 窅竣硞摯囮騷  堜摯    蠕
 )
 {
 	int i;
@@ -518,18 +518,18 @@ void ITEM_useParamChange_Battle(
 	int kind = -1;
 	char *pszP = NULL, *arg;
 
-	// 失奶  丞互丐月井升丹井
+	// 囮騷  堜誑堣堎凝汔竣凝
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	// 由仿丢□正毛潸  
+	// 蚕溘隍↓淏禱噁  
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
 	pszP = arg;
-	// 躲绊毛潸  
+	// 嗚堅禱噁  
 	for( ;kind == -1 && pszP[0] != 0; pszP++ ){
 		for( i = 1; i < BATTLE_MD_END; i ++ ){
-			// 躲绊疋永正伉井＂
+			// 嗚堅鼀蚗淏惉凝ㄑ
 			if( strncmp( pszP, aszParamChange[i], 2 ) == 0 ){
 				kind = i;
 				pszP +=2;
@@ -537,30 +537,30 @@ void ITEM_useParamChange_Battle(
 			}
 		}
 	}
-	// 躲绊卅中及匹撩  
+	// 嗚堅埵笢摯ぁ謄  
 	if( kind == -1 ) return ;
 
 
-	if( strstr( pszP, "%" ) ){	// 仇及桦宁反⊙煌遥
+	if( strstr( pszP, "%" ) ){	// 喫摯鳹譴毀×銓猀
 		par = 1;
 	}
 
 	if( sscanf( pszP, "%d", &pow ) != 1 ){
-		// 窒禾奶件玄丐仆月井
+		// 笰睽騷璃哱堣ど堎凝
 		pow = 30;
 	}
 
-	//------- 仇仇井日质   -----------
+	//------- 喫喫凝�欶�   -----------
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 
-	// 蝈够
+	// 蠈劂
 	BATTLE_MultiParamChange( battleindex, attackNo, toNo,
 		kind, pow, par, SPR_item3, SPR_hoshi );
 
 
-	// 爵    卞失奶  丞互壅尹凶桦宁及隋骚质  
+	// 橋    勗囮騷  堜誑觛窇倜鳹譴摯呬玊窐  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 
@@ -572,64 +572,64 @@ void ITEM_useParamChange_Battle(
 
 
 //--------------------------------------------------------------
-//  白奴□伙玉箪岭  凳失奶  丞毛银匀凶桦宁及质  
+//  啞贖↓鳴迶鶂鍛  脾囮騷  堜禱窅埱倜鳹譴摯窐  
 //--------------------------------------------------------------
-// 爵    及桦宁
+// 橋    摯鳹譴
 void ITEM_useFieldChange_Battle(
-	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
-	int toNo, 			// 银歹木月谛及  寞
-	int haveitemindex 	// 银丹谛及失奶  丞及    寞
+	int charaindex, 	// 窅埱倜硞摯騷璃溢蚗袲筒
+	int toNo, 			// 窅渦躂堎硞摯  蠕
+	int haveitemindex 	// 窅竣硞摯囮騷  堜摯    蠕
 )
 {
 	int itemindex;
 	char *pArg;
 
-	// 失奶  丞互丐月井升丹井
+	// 囮騷  堜誑堣堎凝汔竣凝
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	//------- 仇仇井日质   -----------
-	// 由仿丢□正毛潸  
+	//------- 喫喫凝�欶�   -----------
+	// 蚕溘隍↓淏禱噁  
 	pArg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	// 由仿丢□正  中及匹撩  
+	// 蚕溘隍↓淏  笢摯ぁ謄  
 	if( pArg == NULL )return ;
 
 	BATTLE_FieldAttChange( charaindex, pArg );
 
-	// 爵    卞失奶  丞互壅尹凶桦宁及隋骚质  
+	// 橋    勗囮騷  堜誑觛窇倜鳹譴摯呬玊窐  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 }
 
 
 //--------------------------------------------------------------
-//  箪岭  鳖失奶  丞毛银匀凶桦宁及质  
+//  鶂鍛  梱囮騷  堜禱窅埱倜鳹譴摯窐  
 //--------------------------------------------------------------
-// 爵    及桦宁
+// 橋    摯鳹譴
 void ITEM_useAttReverse_Battle(
-	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
-	int toNo, 			// 银歹木月谛及  寞
-	int haveitemindex 	// 银丹谛及失奶  丞及    寞
+	int charaindex, 	// 窅埱倜硞摯騷璃溢蚗袲筒
+	int toNo, 			// 窅渦躂堎硞摯  蠕
+	int haveitemindex 	// 窅竣硞摯囮騷  堜摯    蠕
 )
 {
 	int itemindex, battleindex, attackNo;
 
 
-	// 失奶  丞互丐月井升丹井
+	// 囮騷  堜誑堣堎凝汔竣凝
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	//------- 仇仇井日质   -----------
+	//------- 喫喫凝�欶�   -----------
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 
-	// 蝈够
+	// 蠈劂
 	BATTLE_MultiAttReverse( battleindex, attackNo, toNo,
 		SPR_item3, SPR_kyu );
 
-	// 爵    卞失奶  丞互壅尹凶桦宁及隋骚质  
+	// 橋    勗囮騷  堜誑觛窇倜鳹譴摯呬玊窐  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 
@@ -637,33 +637,33 @@ void ITEM_useAttReverse_Battle(
 
 
 //--------------------------------------------------------------
-//  竣濮井日汊唾毛银匀凶桦宁及质  
+//  縈憪凝�涳獌棆帝髕�倜鳹譴摯窐  
 //--------------------------------------------------------------
-// 爵    及桦宁
+// 橋    摯鳹譴
 void ITEM_useRessurect(
-	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
-	int toNo, 			// 银歹木月谛及  寞
-	int haveitemindex 	// 银丹谛及失奶  丞及    寞
+	int charaindex, 	// 窅埱倜硞摯騷璃溢蚗袲筒
+	int toNo, 			// 窅渦躂堎硞摯  蠕
+	int haveitemindex 	// 窅竣硞摯囮騷  堜摯    蠕
 )
 {
 	int itemindex, battleindex, attackNo, par = 0, pow = 0, ReceveEffect;
 	char *pszP = NULL;
 
 
-	// 失奶  丞互丐月井升丹井
+	// 囮騷  堜誑堣堎凝汔竣凝
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	//------- 仇仇井日质   -----------
+	//------- 喫喫凝�欶�   -----------
 	pszP = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	if( strstr( pszP, "%" ) ){	// 仇及桦宁反⊙煌遥
+	if( strstr( pszP, "%" ) ){	// 喫摯鳹譴毀×銓猀
 		par = 1;
 	}
 
 	if( sscanf( pszP, "%d", &pow ) != 1 ){
-		// 窒禾奶件玄荚汊允月井＂
-		pow = 0;	// ㄟ及桦宁反敦蝈荚汊
+		// 笰睽騷璃哱樊蜾埰堎凝ㄑ
+		pow = 0;	// 兔摯鳹譴毀嗟蠈樊蜾
 	}
 
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
@@ -682,12 +682,12 @@ void ITEM_useRessurect(
 		ReceveEffect = SPR_fukkatu3;
 	}
 
-	// 蝈够
+	// 蠈劂
 	BATTLE_MultiRessurect( battleindex, attackNo, toNo,
 		pow, par, SPR_item3, ReceveEffect );
 
 
-	// 爵    卞失奶  丞互壅尹凶桦宁及隋骚质  
+	// 橋    勗囮騷  堜誑觛窇倜鳹譴摯呬玊窐  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 }
@@ -695,31 +695,31 @@ void ITEM_useRessurect(
 
 
 //--------------------------------------------------------------
-//    凯  膜恳毛银匀凶桦宁及质  
+//    翮  臚諜禱窅埱倜鳹譴摯窐  
 //--------------------------------------------------------------
-// 爵    及桦宁
+// 橋    摯鳹譴
 void ITEM_useCaptureUp_Battle(
-	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
-	int toNo, 			// 银歹木月谛及  寞
-	int haveitemindex 	// 银丹谛及失奶  丞及    寞
+	int charaindex, 	// 窅埱倜硞摯騷璃溢蚗袲筒
+	int toNo, 			// 窅渦躂堎硞摯  蠕
+	int haveitemindex 	// 窅竣硞摯囮騷  堜摯    蠕
 )
 {
 	int itemindex, battleindex, attackNo, pow = 5, ReceveEffect;
 	char *pArg;
 
-	// 失奶  丞互丐月井升丹井
+	// 囮騷  堜誑堣堎凝汔竣凝
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	//------- 仇仇井日质   -----------
-	// 由仿丢□正毛潸  
+	//------- 喫喫凝�欶�   -----------
+	// 蚕溘隍↓淏禱噁  
 	pArg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	// 由仿丢□正  中及匹撩  
+	// 蚕溘隍↓淏  笢摯ぁ謄  
 	if( pArg == NULL )return ;
 
 	if( sscanf( pArg, "%d", &pow ) != 1 ){
-		// 窒禾奶件玄荚汊允月井＂
+		// 笰睽騷璃哱樊蜾埰堎凝ㄑ
 		pow = 5;
 	}
 
@@ -729,11 +729,11 @@ void ITEM_useCaptureUp_Battle(
 
 	ReceveEffect = SPR_hoshi;
 
-	// 蝈够
+	// 蠈劂
 	BATTLE_MultiCaptureUp( battleindex, attackNo, toNo,
 		pow, SPR_item3, ReceveEffect );
 
-	// 爵    卞失奶  丞互壅尹凶桦宁及隋骚质  
+	// 橋    勗囮騷  堜誑觛窇倜鳹譴摯呬玊窐  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 }
@@ -743,7 +743,7 @@ void ITEM_useCracker_Effect( charaindex, toindex, haveitemindex)
 	int itemindex,x,y,tofd;
 
 	itemindex = CHAR_getItemIndex(charaindex,haveitemindex);
-	// 检查物品
+	// 潰脤昜こ
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 
     x = CHAR_getInt( charaindex, CHAR_X);
@@ -755,13 +755,13 @@ void ITEM_useCracker_Effect( charaindex, toindex, haveitemindex)
 	//to client
 	tofd = getfdFromCharaIndex( charaindex );
 	lssproto_IC_send(tofd, x, y);
-	//清除道具
+	//ь壺耋撿
 	BATTLE_ItemUseDelete(charaindex,haveitemindex);
-	CHAR_talkToCli(charaindex,-1,"道具消失了。",CHAR_COLORYELLOW);
+	CHAR_talkToCli(charaindex,-1,"耋撿秏囮賸﹝",CHAR_COLORYELLOW);
 
 }
 #endif
-#ifdef _ITEM_REFRESH //vincent 解除异常状态道具
+#ifdef _ITEM_REFRESH //vincent 賤壺祑都袨怓耋撿
 void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 {
 	int i,itemindex,ReceveEffect;
@@ -772,16 +772,16 @@ void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 	char *pszP;
 
 //print("\nvincent--ITEM_useRefresh_Effect");
-	// 检查物品
+	// 潰脤昜こ
 	itemindex = CHAR_getItemIndex(charaindex,haveitemindex);
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 	pszP = arg;
-	// 躲绊毛潸  
+	// 嗚堅禱噁  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
-		// ㄠ井日腹绸
+		// 兒凝�楖像�
 		for( i = 1; i < BATTLE_ST_END; i ++ ){
-			// 躲绊疋永正伉井＂
+			// 嗚堅鼀蚗淏惉凝ㄑ
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -790,28 +790,28 @@ void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 		}
 	}
 //print("\nvincent-->status:%d",status);
-	// 躲绊卅中及匹撩  
+	// 嗚堅埵笢摯ぁ謄  
 	if( status == -1 ) return;
 
-	// 田玄伙  寞
+	// 泬哱鳴  蠕
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
-	index2 = BATTLE_No2Index( battleindex, toindex);//被击中目标之index
+	index2 = BATTLE_No2Index( battleindex, toindex);//掩僻笢醴梓眳index
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 //    defNo = BATTLE_Index2No( battleindex, index2 );
 //print("\nvincent-->charaindex:%d,attackNo:%d,index2:%d,defNo:%d,",charaindex,attackNo,index2,defNo);
 
-    /* 平乓仿弁正□及赭    伉旦玄井日壅蛔 */
+    /* す籤溘袲淏↓摯鐎    惉筒哱凝�殏梬� */
     CHAR_setItemIndex(charaindex, haveitemindex ,-1);
-	CHAR_sendItemDataOne( charaindex, haveitemindex);/* 失奶  丞凳蕙 */
+	CHAR_sendItemDataOne( charaindex, haveitemindex);/* 囮騷  堜脾犍 */
 //	if( CHAR_getWorkInt( charaindex, StatusTbl[status] ) > 0 ){
 //		ReceveEffect = SPR_tyusya;
 //	}else{
 //		ReceveEffect = SPR_hoshi;
 //	}
-	ReceveEffect = SPR_tyusya;//打针
+	ReceveEffect = SPR_tyusya;//湖渀
 	BATTLE_MultiStatusRecovery( battleindex, attackNo, toindex,
 		status, MAGIC_EFFECT_USER, ReceveEffect );
-	/* 壅允 */
+	/* 觛埰 */
 	ITEM_endExistItemsOne( itemindex );
 //////////////////////////
 //	BATTLE_MultiList( battleindex, defNo, ToList );
@@ -825,7 +825,7 @@ void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 ////////////////////////////
 }
 #endif
-#ifdef _ITEM_ADDEXP	//vincent 经验提升
+#ifdef _ITEM_ADDEXP	//vincent 冪桄枑汔
 void ITEM_useAddexp_Effect( charaindex, toindex, haveitemindex)
 {
 	int itemindex,power,vtime;
@@ -835,31 +835,31 @@ void ITEM_useAddexp_Effect( charaindex, toindex, haveitemindex)
 
 	itemindex = CHAR_getItemIndex(charaindex,haveitemindex);
 
-	// 检查物品
+	// 潰脤昜こ
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	if( (p = strstr( arg, "增" )) != NULL ){
+	if( (p = strstr( arg, "崝" )) != NULL ){
         sscanf( p+2, "%d", &power );
 	}
-	if( (p = strstr( arg, "分" )) != NULL ){
+	if( (p = strstr( arg, "煦" )) != NULL ){
 		sscanf( p+2, "%d", &vtime );
 	}
 	if( p == NULL )return;
-#ifdef _ITEM_ADDEXP2 // 智果时间可以累加
+#ifdef _ITEM_ADDEXP2 // 秷彆奀潔褫眕濛樓
 	{
 		int point;
 		point = CHAR_getWorkInt( charaindex, CHAR_WORKITEM_ADDEXP)
 					* (int)(CHAR_getWorkInt( charaindex, CHAR_WORKITEM_ADDEXPTIME)/60);
 		if( point >= 72000) {
-			CHAR_talkToCli( charaindex, -1, "智慧之果累计时间及效果已达上限。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "秷雌眳彆濛數奀潔摯虴彆眒湛奻癹﹝", CHAR_COLORYELLOW);
 			return;
 		}
 		point += (power * vtime);
 		point = min( point, 72000);
 		vtime = (int)(point / power);
 #ifdef _LOG_OTHER
-		sprintf( szBuffer, "使用智慧之果 %d\t累积效果= 分数%d 能力%d％ 时间%d分 ",
+		sprintf( szBuffer, "妏蚚秷雌眳彆 %d\t濛儅虴彆= 煦杅%d 夔薯%dㄔ 奀潔%d煦 ",
 				ITEM_getInt( itemindex, ITEM_ID ), point, power, vtime);
 		LogOther( 
 			CHAR_getChar( charaindex, CHAR_CDKEY),
@@ -869,17 +869,17 @@ void ITEM_useAddexp_Effect( charaindex, toindex, haveitemindex)
 		//CHAR_setInt( charaindex, CHAR_ADDEXPPOWER, power);
 		//CHAR_setInt( charaindex, CHAR_ADDEXPTIME,vtime*60 );
 
-		//sprintf(szBuffer, "测试讯息：目前分数%d 时间%d秒。", point, vtime*60);
+		//sprintf(szBuffer, "聆彸捅洘ㄩ醴ヶ煦杅%d 奀潔%d鏃﹝", point, vtime*60);
 		//CHAR_talkToCli(charaindex,-1,szBuffer,CHAR_COLORRED);
 	}
 #endif
 	CHAR_setWorkInt( charaindex, CHAR_WORKITEM_ADDEXP, power);
 	CHAR_setWorkInt( charaindex, CHAR_WORKITEM_ADDEXPTIME,vtime*60 );
 
-	//清除道具
+	//ь壺耋撿
 	BATTLE_ItemUseDelete(charaindex,haveitemindex);
-	//sprintf(szBuffer, "学习经验的能力提升了%d％", power);
-	sprintf(szBuffer, "学习经验的能力提升了%d％，时效剩馀%d分钟。", power, vtime);
+	//sprintf(szBuffer, "悝炾冪桄腔夔薯枑汔賸%dㄔ", power);
+	sprintf(szBuffer, "悝炾冪桄腔夔薯枑汔賸%dㄔㄛ奀虴呁牄%d煦笘﹝", power, vtime);
 	CHAR_talkToCli(charaindex,-1,szBuffer,CHAR_COLORYELLOW);
 
 }
@@ -901,7 +901,7 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 #endif
 
 	itemindex = CHAR_getItemIndex(charaindex,haveitemindex);
-	// 检查物品
+	// 潰脤昜こ
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 
 	battleindex = CHAR_getWorkInt(charaindex,CHAR_WORKBATTLEINDEX);
@@ -918,24 +918,24 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 		MySide_start = safeSide*SIDE_OFFSET;
 		MySide_end = ((safeSide*SIDE_OFFSET) + SIDE_OFFSET);
 
-		if( (toindex >= MySide_start) && (toindex<MySide_end) ){	//同边
+		if( (toindex >= MySide_start) && (toindex<MySide_end) ){	//肮晚
 			return;
 		}
 	}
 
 	if( BATTLE_Index2No( battleindex, charaindex ) == toindex ){
-		BATTLE_ItemUseDelete(charaindex,haveitemindex);//用在自身
+		BATTLE_ItemUseDelete(charaindex,haveitemindex);//蚚婓赻旯
 		return;
 	}
 
 	if( CHAR_getInt( index2, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ) {
-		petid = -1;//作用在人物
+		petid = -1;//釬蚚婓�冼�
 	}else if( CHAR_getInt( index2, CHAR_WHICHTYPE) == CHAR_TYPEPET ) {
-		masteridx = BATTLE_No2Index(battleindex,toindex-5);//作用在宠物
+		masteridx = BATTLE_No2Index(battleindex,toindex-5);//釬蚚婓唾昜
 
 		if( !CHAR_CHECKINDEX( masteridx) ) return;
 
-		petid = CHAR_getInt(index2,CHAR_PETID);//宠物id
+		petid = CHAR_getInt(index2,CHAR_PETID);//唾昜id
 	}else if( CHAR_getInt( index2, CHAR_WHICHTYPE) == CHAR_TYPEENEMY ) {
 		petid = CHAR_getInt(index2,CHAR_PETID);
 	}
@@ -952,48 +952,48 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 	while( getStringFromIndexWithDelim( token,"_", i, buf1, sizeof( buf1)) != FALSE )	{
 	//while( getStringFromIndexWithDelim( token,"|", i, buf1, sizeof( buf1)) != FALSE )	{
 		i++;
-		if( petid == atoi( buf1) ){//年兽判别
+		if( petid == atoi( buf1) ){//爛忤瓚梗
 			FINDPET = TRUE;
 			break;
 		}
 	}
 
 	sprintf(szWork,"BB|a%X|w3|r%X|f0|d0|p0|FF|",BATTLE_Index2No(battleindex,charaindex),toindex);
-	BATTLESTR_ADD(szWork);//丢出鞭炮的动画
-//送讯息至玩家
-	if( FINDPET == TRUE )	{//若为年兽
+	BATTLESTR_ADD(szWork);//隍堤晝蘿腔雄賒
+//冞捅洘祫俙模
+	if( FINDPET == TRUE )	{//�譠秈糐�
 		char buf4[255];
-		sprintf( buf4, "%s被吓跑了！", CHAR_getChar( index2, CHAR_NAME));
+		sprintf( buf4, "%s掩狣變賸ㄐ", CHAR_getChar( index2, CHAR_NAME));
 
-		BATTLE_Exit(index2,battleindex);//离开战斗
+		BATTLE_Exit(index2,battleindex);//燭羲桵須
 		if( CHAR_CHECKINDEX( masteridx) ){
-			CHAR_setInt(masteridx,CHAR_DEFAULTPET,-1);//无参战宠
+			CHAR_setInt(masteridx,CHAR_DEFAULTPET,-1);//拸統桵唾
 			CHAR_talkToCli( masteridx,-1, buf4, CHAR_COLORYELLOW);
 		}
 
-		sprintf(szWork,"BQ|e%X|",toindex);//逃跑动画
+		sprintf(szWork,"BQ|e%X|",toindex);//枅變雄賒
 		BATTLESTR_ADD(szWork);
 		CHAR_talkToCli( charaindex,-1, buf4, CHAR_COLORYELLOW);
 	}else	{
-		CHAR_talkToCli( charaindex, -1, "什麽事都没发生。", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "妦欒岈飲羶楷汜﹝", CHAR_COLORYELLOW);
 	}
-	BATTLE_ItemUseDelete( charaindex, haveitemindex);//删除鞭炮
+	BATTLE_ItemUseDelete( charaindex, haveitemindex);//刉壺晝蘿
 #else
 
 	index2 = BATTLE_No2Index(battleindex,toindex);
-	// 被炸到的是否为宠物
+	// 掩旍善腔岆瘁峈唾昜
 	if(CHAR_getInt(index2,CHAR_WHICHTYPE) == CHAR_TYPEPET) {
-		// 如果被炸的是年兽
+		// �蝜�掩旍腔岆爛忤
 		if(CHAR_getInt(index2,CHAR_PETID) >= 901 && CHAR_getInt(index2,CHAR_PETID) <= 904){
-			// 取得目标的正後方的角色的index
+			// �△藥膨窱齣�摽源腔褒伎腔index
 			masteridx = BATTLE_No2Index(battleindex,toindex-5);
-			// 如果对战的是玩家
+			// �蝜�勤桵腔岆俙模
 			if(CHAR_getInt(masteridx,CHAR_WHICHTYPE) == CHAR_TYPEPLAYER) PetEscape = 1;
-			else																									       print("\n年兽在遇敌时出现");
+			else																									       print("\n爛忤婓郣菩奀堤珋");
 		}
 	}
 	
-	// 如果不是炸自己
+	// �蝜�祥岆旍赻撩
 	if(BATTLE_Index2No(battleindex,charaindex) != toindex)
 	{
 		sprintf(szWork,"BB|a%X|w3|r%X|f0|d0|p0|FF|",BATTLE_Index2No(battleindex,charaindex),toindex);
@@ -1004,13 +1004,13 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 			CHAR_setInt(masteridx,CHAR_DEFAULTPET,-1);
 			sprintf(szWork,"BQ|e%X|",toindex);
 			BATTLESTR_ADD(szWork);
-			CHAR_talkToCli(masteridx,-1,"年兽被吓跑了！",CHAR_COLORWHITE);
-			CHAR_talkToCli(charaindex,-1,"年兽被吓跑了！",CHAR_COLORWHITE);
+			CHAR_talkToCli(masteridx,-1,"爛忤掩狣變賸ㄐ",CHAR_COLORWHITE);
+			CHAR_talkToCli(charaindex,-1,"爛忤掩狣變賸ㄐ",CHAR_COLORWHITE);
 		}
 	}
-	CHAR_talkToCli(charaindex,-1,"什麽事都没发生。",CHAR_COLORWHITE);
-	CHAR_talkToCli(charaindex,-1,"道具消失了。",CHAR_COLORWHITE);
-	// 使用後道具消失
+	CHAR_talkToCli(charaindex,-1,"妦欒岈飲羶楷汜﹝",CHAR_COLORWHITE);
+	CHAR_talkToCli(charaindex,-1,"耋撿秏囮賸﹝",CHAR_COLORWHITE);
+	// 妏蚚摽耋撿秏囮
 	BATTLE_ItemUseDelete(charaindex,haveitemindex);
 #endif
 }
@@ -1021,9 +1021,9 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 
 
 
-//气绝状态回复耐力,复加复活(光,镜,守)精灵 参数同魔法(光,镜,守)精灵,但只能在战斗之使用,用完就没了 
-//参数 例如:耐力值 吸 turn 1
-#ifdef  _FEV_ADD_NEW_ITEM			// FEV ADD 增加复活守精
+//ァ橈袨怓隙葩騵薯,葩樓葩魂(嫖,噩,忐)儕鍾 統杅肮藹楊(嫖,噩,忐)儕鍾,筍硐夔婓桵須眳妏蚚,蚚俇憩羶賸 
+//統杅 瞰��:騵薯硉 柲 turn 1
+#ifdef  _FEV_ADD_NEW_ITEM			// FEV ADD 崝樓葩魂忐儕
 void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 {
 	int itemindex, battleindex, attackNo, par = 0, pow = 0, ReceveEffect;
@@ -1034,37 +1034,37 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 	char magicarg4[200];
 
     char *pszP = NULL; 
-	char delim[] = " ";//协助分解字串的区隔字元
+	char delim[] = " ";//衪翑煦賤趼揹腔⑹路趼啋
 
 	int status = -1, i, turn = 3;
 	char szTurn[] = "turn";
 
-	// 失奶  丞互丐月井升丹井
+	// 囮騷  堜誑堣堎凝汔竣凝
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	buffer = ITEM_getChar(itemindex, ITEM_ARGUMENT );//整串字串
-	pszP = strtok(buffer, delim);//第一个参数
-    magicarg = strtok(NULL, delim);//第二个参数
-	magicarg2 = strtok(NULL, delim);//第叁个参数
-	magicarg3 = strtok(NULL, delim);//第四个参数
+	buffer = ITEM_getChar(itemindex, ITEM_ARGUMENT );//淕揹趼揹
+	pszP = strtok(buffer, delim);//菴珨跺統杅
+    magicarg = strtok(NULL, delim);//菴媼跺統杅
+	magicarg2 = strtok(NULL, delim);//菴��跺統杅
+	magicarg3 = strtok(NULL, delim);//菴侐跺統杅
     sprintf(magicarg4,"%s %s %s",magicarg,magicarg2,magicarg3);
 	magicarg = (char*)magicarg4;
 
-	//光镜守..不得使用敌方
+	//嫖噩忐..祥腕妏蚚菩源
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER
 		//&& BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P 
 		){
-		if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//不同边
+		if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//祥肮晚
 			battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 			BATTLE_NoAction( battleindex, BATTLE_Index2No( battleindex, charaindex) );
-			CHAR_talkToCli( charaindex, -1, "光镜守..不得施予非玩家敌方。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "嫖噩忐..祥腕囥軑準俙模菩源﹝", CHAR_COLORYELLOW);
 			return;
 		}
 	}
 
-	//在气绝状态回复耐力
+	//婓ァ橈袨怓隙葩騵薯
 	if( strstr( pszP, "%" ) ){
 		par = 1;
 	}
@@ -1075,7 +1075,7 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
       
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
    
-	//选择代表的特效
+	//恁寁測桶腔杻虴
 	if( pow <= 0 ){
 		ReceveEffect = SPR_fukkatu3;
 	}else
@@ -1092,12 +1092,12 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 		pow, par, SPR_item3, ReceveEffect );
     
 
-	//(光,镜,守)精灵
+	//(嫖,噩,忐)儕鍾
 
-	// 躲绊毛潸  
+	// 嗚堅禱噁  
 	for( ;status == -1 && magicarg[0] != 0; magicarg++ ){
 		for( i = 1; i < BATTLE_MD_END; i ++ ){
-			// 躲绊疋永正伉井＂
+			// 嗚堅鼀蚗淏惉凝ㄑ
 			if( strncmp( magicarg, aszMagicDef[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -1105,22 +1105,22 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 			}
 		}
 	}
-	// 躲绊卅中及匹撩  
+	// 嗚堅埵笢摯ぁ謄  
 	if( status == -1 ) return;
 
-	// 窒荚  凳今六月井＂
+	// 笰樊  脾踏鞠堎凝ㄑ
 	if( ( magicarg = strstr( magicarg, szTurn ) ) != NULL){
 		magicarg += sizeof( szTurn );
 		sscanf( magicarg, "%d", &turn );
 	}
 
-	//print("次数:%d",turn);
+	//print("棒杅:%d",turn);
 
-	// 田玄伙  寞
+	// 泬哱鳴  蠕
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 
-	// 蝈够
+	// 蠈劂
 	BATTLE_MultiMagicDef( battleindex, attackNo, toindex,
 		status, turn, MAGIC_EFFECT_USER, SPR_difence );
 

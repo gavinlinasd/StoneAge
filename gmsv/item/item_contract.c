@@ -40,12 +40,12 @@ BOOL ITEM_initContractTable( )
 	char data[2048];
 	int i;
 
-	print("\读取 contract.txt ....");
+	print("\黍�� contract.txt ....");
 
     ITEM_contractTbl = (ITEM_contractTable *)allocateMemory( sizeof(struct tagITEM_contract) * MAX_CONTRACTTABLE );
 
     if( ITEM_contractTbl == NULL ){
-        fprint( "无法分配内存 %d\n" ,
+        fprint( "拸楊煦饜囀湔 %d\n" ,
                 sizeof(struct tagITEM_contract)*MAX_CONTRACTTABLE);
         fclose( fp );
         return FALSE;
@@ -55,7 +55,7 @@ BOOL ITEM_initContractTable( )
 
 	fp = fopen("data/contract.txt", "r");
 	if( fp == NULL ) {
-		print("\n无法读取 contract.txt!! ");
+		print("\n拸楊黍�� contract.txt!! ");
 		return FALSE;
 	}
 
@@ -89,7 +89,7 @@ BOOL ITEM_initContractTable( )
 
 		ITEM_contractTbl[i].used = TRUE;
 
-		print("\n契约[%d] %d %s", index, ITEM_contractTbl[index].argnum, ITEM_contractTbl[index].detail);
+		print("\nゑ埮[%d] %d %s", index, ITEM_contractTbl[index].argnum, ITEM_contractTbl[index].detail);
 	}
 
 	fclose( fp);
@@ -179,7 +179,7 @@ void ITEM_contractSign( int fd, int itemindex, int signindex)
 	strcpy( contractSign[signindex].fmname, CHAR_getChar( charaindex, CHAR_FMNAME) );
 	contractSign[signindex].used = TRUE;
 
-	// 检查是否完成契约
+	// 潰脤岆瘁俇傖ゑ埮
 	for( i =0; i<4; i++) {
 		if( contractSign[i].used == TRUE)
 			complete++;
@@ -187,7 +187,7 @@ void ITEM_contractSign( int fd, int itemindex, int signindex)
 	if( complete >= ITEM_contractTbl[conIndex].argnum ) {
 		char buf[512];
 		if( CHAR_findEmptyItemBoxNo( charaindex ) < ITEM_contractTbl[conIndex].argnum -1 ) {
-			sprintf( buf, "要完成这个契约，请先准备%d个空道具栏位。", ITEM_contractTbl[conIndex].argnum -1);
+			sprintf( buf, "猁俇傖涴跺ゑ埮ㄛ③珂袧掘%d跺諾耋撿戲弇﹝", ITEM_contractTbl[conIndex].argnum -1);
 			CHAR_talkToCli( charaindex, -1, buf, CHAR_COLORYELLOW);
 			return;
 		}
@@ -203,22 +203,22 @@ void ITEM_contractSign( int fd, int itemindex, int signindex)
 	}
 	ITEM_setChar( itemindex, ITEM_CONTRACTARG, contractSignData);
 
-	CHAR_talkToCli( charaindex, -1, "完成契约签名。", CHAR_COLORYELLOW);
+	CHAR_talkToCli( charaindex, -1, "俇傖ゑ埮ワ靡﹝", CHAR_COLORYELLOW);
 
 
-	// 完成契约
+	// 俇傖ゑ埮
 	if( complete >= ITEM_contractTbl[conIndex].argnum ) {
 		struct tm *nowtime;
 		char timebuf[512];
 
-		// 纪录日期
+		// 槨翹�梪�
 		nowtime = localtime( (time_t *)&NowTime.tv_sec );
-		sprintf( timebuf, "%04d年%02d月%02d日",
+		sprintf( timebuf, "%04d爛%02d堎%02d��",
 			nowtime->tm_year +1900, nowtime->tm_mon+1, nowtime->tm_mday);
 		ITEM_setChar( itemindex, ITEM_CONTRACTTIME, timebuf);
 
-		CHAR_talkToCli( charaindex, -1, "完成所有签名，契约成立！", CHAR_COLORYELLOW);
-		// 复制契约
+		CHAR_talkToCli( charaindex, -1, "俇傖垀衄ワ靡ㄛゑ埮傖蕾ㄐ", CHAR_COLORYELLOW);
+		// 葩秶ゑ埮
 		item_id = ITEM_getInt( itemindex, ITEM_ID);
 		for( i =0 ; i < ITEM_contractTbl[conIndex].argnum -1 ; i++)
 		{
@@ -228,7 +228,7 @@ void ITEM_contractSign( int fd, int itemindex, int signindex)
 			emptyindex = CHAR_findEmptyItemBox( charaindex );
 			
 			if( emptyindex < 0 ){
-				CHAR_talkToCli( charaindex, -1, "空间栏位不足。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( charaindex, -1, "諾潔戲弇祥逋﹝", CHAR_COLORYELLOW);
 				break;
 			}
 			
@@ -243,7 +243,7 @@ void ITEM_contractSign( int fd, int itemindex, int signindex)
 				ITEM_setChar( newitemindex, ITEM_CONTRACTTIME, timebuf);
 			}
 			
-			CHAR_talkToCli( charaindex, -1, "复制契约书。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "葩秶ゑ埮抎﹝", CHAR_COLORYELLOW);
 		}
 	}
 }

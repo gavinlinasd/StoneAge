@@ -18,15 +18,15 @@
 #define BCF_ABSORB		(1 << 11)
 #define BCF_VANISH		(1 << 12)
 #define BCF_CRUSH		(1 << 13)
-#define BCF_FALL		(1 << 14)	//落马术
+#define BCF_FALL		(1 << 14)	//邈鎮扲
 #ifdef _SKILL_TOOTH
-#define BCF_TOOTH		(1 << 15)	//  齿
+#define BCF_TOOTH		(1 << 15)	//  喘
 #endif
 #ifdef _PSKILL_MODIFY
-#define BCF_ATTDOUBLE	(1 << 16)	//属性强化
+#define BCF_ATTDOUBLE	(1 << 16)	//扽俶Ч趙
 #endif
 #ifdef _SKILL_ROAR  
-#define BCF_ROAR		(1 << 17)	//宠技:大吼(克年兽)
+#define BCF_ROAR		(1 << 17)	//唾撮:湮綾(親爛忤)
 #endif 
 
 #ifdef _MAGIC_DEFMAGICATT
@@ -39,17 +39,17 @@
 #define BCF_MODIFY		(1 << 21)
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
-#define BCF_F_SKILLACT	(1 << 22)	//击中前秀图
-#define	BCF_TRAP		(1 << 25)	//陷阱
-#define BCF_NO_DAMAGE   (1 << 26)   //双重攻击
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+#define BCF_F_SKILLACT	(1 << 22)	//僻笢ヶ凅芞
+#define	BCF_TRAP		(1 << 25)	//疪筘
+#define BCF_NO_DAMAGE   (1 << 26)   //邧笭馴僻
 #endif
-#define BCF_B_SKILLACT	(1 << 23)	//击中後秀图
+#define BCF_B_SKILLACT	(1 << 23)	//僻笢摽凅芞
 
 
 
 #ifdef _EQUIT_ARRANGE
-#define BCF_B_ARRANGE	(1 << 24)	//格挡秀图
+#define BCF_B_ARRANGE	(1 << 24)	//跡結凅芞
 #endif
 
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -92,47 +92,47 @@ extern int	 gBattleStausChange;
 extern int	 gBattleStausTurn;
 
 enum{
-	BATTLE_ST_NONE,		 //  0 "正常",
-	BATTLE_ST_POISON,	 //  1 "毒",
-	BATTLE_ST_PARALYSIS, //  2 "麻",
-	BATTLE_ST_SLEEP,	 //  3 "眠",
-	BATTLE_ST_STONE,	 //  4 "石",
-	BATTLE_ST_DRUNK,	 //  5 "醉",
-	BATTLE_ST_CONFUSION, //  6 "乱",
-    BATTLE_ST_WEAKEN,    //  7 "虚"
-	BATTLE_ST_DEEPPOISON,//  8 "剧毒"
-	BATTLE_ST_BARRIER,   //  9 "魔障"
-	BATTLE_ST_NOCAST,    // 10 "沉默"
-#ifdef _PET_SKILL_SARS				// WON ADD 毒煞蔓延
-	BATTLE_ST_SARS,		 // 11 "煞"
+	BATTLE_ST_NONE,		 //  0 "淏都",
+	BATTLE_ST_POISON,	 //  1 "馮",
+	BATTLE_ST_PARALYSIS, //  2 "鎊",
+	BATTLE_ST_SLEEP,	 //  3 "蹺",
+	BATTLE_ST_STONE,	 //  4 "坒",
+	BATTLE_ST_DRUNK,	 //  5 "郳",
+	BATTLE_ST_CONFUSION, //  6 "觴",
+    BATTLE_ST_WEAKEN,    //  7 "剞"
+	BATTLE_ST_DEEPPOISON,//  8 "曄馮"
+	BATTLE_ST_BARRIER,   //  9 "藹梤"
+	BATTLE_ST_NOCAST,    // 10 "麥蘇"
+#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
+	BATTLE_ST_SARS,		 // 11 "伢"
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
-	BATTLE_ST_DIZZY,	 // 12 "晕"
-	BATTLE_ST_ENTWINE,	 // 13 "缠"
-	BATTLE_ST_DRAGNET,	 // 14 "天罗地网"
-	BATTLE_ST_ICECRACK,  // 15 "冰爆术"
-	BATTLE_ST_OBLIVION,	 // 16 "遗忘"
-	BATTLE_ST_ICEARROW,	 // 17 "冰箭"
-	BATTLE_ST_BLOODWORMS,// 18 "嗜血蛊"
-	BATTLE_ST_SIGN,		 // 19 "一针见血"
-	BATTLE_ST_INSTIGATE, // 20 "挑拨"
-	BATTLE_ST_F_ENCLOSE, // 21 "火附体"
-	BATTLE_ST_I_ENCLOSE, // 22 "冰附体"
-	BATTLE_ST_T_ENCLOSE, // 23 "雷附体"
-	BATTLE_ST_FOCUS,	 // 24 "专注战斗"	
-	BATTLE_ST_RESIST_F,	 // 25 "火抗"
-	BATTLE_ST_RESIST_I,	 // 26 "冰抗"
-	BATTLE_ST_RESIST_T,	 // 27 "雷抗"
-	BATTLE_ST_F_ENCLOSE2, // 28 "火附"
-	BATTLE_ST_I_ENCLOSE2, // 29 "冰附"
-	BATTLE_ST_T_ENCLOSE2, // 30 "雷附"
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
+	BATTLE_ST_DIZZY,	 // 12 "婠"
+	BATTLE_ST_ENTWINE,	 // 13 "莊"
+	BATTLE_ST_DRAGNET,	 // 14 "毞蹕華厙"
+	BATTLE_ST_ICECRACK,  // 15 "梨惇扲"
+	BATTLE_ST_OBLIVION,	 // 16 "疻咭"
+	BATTLE_ST_ICEARROW,	 // 17 "梨璋"
+	BATTLE_ST_BLOODWORMS,// 18 "岓悛嘍"
+	BATTLE_ST_SIGN,		 // 19 "珨渀獗悛"
+	BATTLE_ST_INSTIGATE, // 20 "泔畢"
+	BATTLE_ST_F_ENCLOSE, // 21 "鳶蜇极"
+	BATTLE_ST_I_ENCLOSE, // 22 "梨蜇极"
+	BATTLE_ST_T_ENCLOSE, // 23 "濘蜇极"
+	BATTLE_ST_FOCUS,	 // 24 "蚳蛁桵須"	
+	BATTLE_ST_RESIST_F,	 // 25 "鳶蕨"
+	BATTLE_ST_RESIST_I,	 // 26 "梨蕨"
+	BATTLE_ST_RESIST_T,	 // 27 "濘蕨"
+	BATTLE_ST_F_ENCLOSE2, // 28 "鳶蜇"
+	BATTLE_ST_I_ENCLOSE2, // 29 "梨蜇"
+	BATTLE_ST_T_ENCLOSE2, // 30 "濘蜇"
 #ifdef _PROFESSION_ADDSKILL
-    BATTLE_ST_RESIST_F_I_T, //31 "火冰雷抗"
-    //BATTLE_ST_BOUNDARY_F, //32 "火结界
-	BATTLE_ST_WATER, //32 "水附体"
-	BATTLE_ST_WORKANNEX, //33 "附身"
-	BATTLE_ST_FEAR, //34 "恐惧"
-	BATTLE_ST_ICECRACK2,  // 35 "冰爆术"
+    BATTLE_ST_RESIST_F_I_T, //31 "鳶梨濘蕨"
+    //BATTLE_ST_BOUNDARY_F, //32 "鳶賦賜
+	BATTLE_ST_WATER, //32 "阨蜇极"
+	BATTLE_ST_WORKANNEX, //33 "蜇旯"
+	BATTLE_ST_FEAR, //34 "謁曉"
+	BATTLE_ST_ICECRACK2,  // 35 "梨惇扲"
 	BATTLE_ST_ICECRACK3,  // 36
 	BATTLE_ST_ICECRACK4,  // 37
 	BATTLE_ST_ICECRACK5,  // 38
@@ -169,13 +169,13 @@ enum{
 	BATTLE_MD_VANISH,
 	BATTLE_MD_TRAP,
 #ifdef _PETSKILL_ACUPUNCTURE
-    BATTLE_MD_ACUPUNCTURE, //针刺外皮
+    BATTLE_MD_ACUPUNCTURE, //渀棧俋々
 #endif
 	BATTLE_MD_END 
 };
 
 #ifdef _PETSKILL_RETRACE
-    //存放BATTLE_Attack函式执行後的攻击模式   
+    //湔溫BATTLE_Attack滲宒硒俴摽腔馴僻耀宒   
 typedef struct tagBattle_Attack_ReturnData_x1
 {
     int Battle_Attack_ReturnData;
@@ -214,7 +214,7 @@ int BATTLE_Magic( int battleindex, int attackNo );
 
 int BATTLE_S_GBreak( int battleindex, int attackNo, int defNo );
 
-#ifdef _SKILL_GUARDBREAK2//破除防御2 vincent add 2002/05/20
+#ifdef _SKILL_GUARDBREAK2//ぢ壺滅郘2 vincent add 2002/05/20
 int BATTLE_S_GBreak2( int battleindex, int attackNo, int defNo );
 #endif
 
@@ -226,23 +226,23 @@ int BATTLE_S_Sacrifice( int battleindex, int attackNo, int defNo );
 int BATTLE_S_Refresh( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_WEAKEN  //vincent宠技:虚弱
+#ifdef _SKILL_WEAKEN  //vincent唾撮:剞��
 int BATTLE_S_Weaken( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_DEEPPOISON  //vincent宠技:剧毒 
+#ifdef _SKILL_DEEPPOISON  //vincent唾撮:曄馮 
 int BATTLE_S_Deeppoison( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_BARRIER  //vincent宠技:魔障
+#ifdef _SKILL_BARRIER  //vincent唾撮:藹梤
 int BATTLE_S_Barrier( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_NOCAST  //vincent宠技:沉默
+#ifdef _SKILL_NOCAST  //vincent唾撮:麥蘇
 int BATTLE_S_Nocast( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_ROAR //vincent宠技:大吼
+#ifdef _SKILL_ROAR //vincent唾撮:湮綾
 int BATTLE_S_Roar( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
@@ -254,12 +254,12 @@ int BATTLE_StatusAttackCheck(
 	int attackindex,
 	int defindex,
 	int status,
-	//BATTLE_ST_POISON,	    1 "毒",
-	//BATTLE_ST_PARALYSIS,  2 "麻",
-	//BATTLE_ST_SLEEP,	    3 "眠",
-	//BATTLE_ST_STONE,	    4 "石",
-	//BATTLE_ST_DRUNK,	    5 "醉",
-	//BATTLE_ST_CONFUSION,  6 "乱"
+	//BATTLE_ST_POISON,	    1 "馮",
+	//BATTLE_ST_PARALYSIS,  2 "鎊",
+	//BATTLE_ST_SLEEP,	    3 "蹺",
+	//BATTLE_ST_STONE,	    4 "坒",
+	//BATTLE_ST_DRUNK,	    5 "郳",
+	//BATTLE_ST_CONFUSION,  6 "觴"
 	int PerOffset,
 	int Range,
 	float Bai,
@@ -308,7 +308,7 @@ float BATTLE_adjustRidePet3A( int charaindex, int petindex, int workindex, int a
 
 int BATTLE_getRidePet( int charaindex );
 
-#ifdef _PSKILL_FALLGROUND	//落马术
+#ifdef _PSKILL_FALLGROUND	//邈鎮扲
 int BATTLE_S_FallGround( int battleindex, int attackNo, int defNo, int skill_type );
 #endif
 #ifdef _PETSKILL_EXPLODE
@@ -352,14 +352,14 @@ int BATTLE_CheckSameSide( int charaindex, int toNo);
 #endif
 
 #ifdef _USER_CHARLOOPS
-int CHAR_BattleStayLoop( int charaindex);//原地遇敌
+int CHAR_BattleStayLoop( int charaindex);//埻華郣菩
 #endif
 
 #ifdef _PETSKILL_PROPERTY
 int PET_PetskillPropertyEvent( int Myindex, int defindex, int *damage, int *T_Pow, int size);
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 int battle_profession_attack_fun(int battleindex, int attackNo, int defNo, int charaindex);
 int battle_profession_attack_magic_fun(int battleindex, int attackNo, int defNo, int charaindex);
 int battle_profession_assist_fun(int battleindex, int attackNo, int defNo, int charaindex);
@@ -373,11 +373,11 @@ int BATTLE_PROFESSION_RANG_ATTACK_DAMAGE( int charaindex, int attackNo, int defN
 
 #endif
 
-#ifdef _PETSKILL_FIREKILL //火线猎杀专用
+#ifdef _PETSKILL_FIREKILL //鳶盄轂伀蚳蚚
 int BATTLE_Attack_FIREKILL( int battleindex, int attackNo, int defNo );
 #endif
 #ifdef _PROFESSION_ADDSKILL
-BOOL BATTLE_BattleUltimate( int battleindex, int bid ); //检查此位  上是否被打飞
+BOOL BATTLE_BattleUltimate( int battleindex, int bid ); //潰脤森弇  奻岆瘁掩湖滄
 #endif
 
 #endif

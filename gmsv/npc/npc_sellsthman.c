@@ -148,7 +148,7 @@ void NPC_SellsthManTalked( int meindex, int talkerindex, char *msg, int color )
 	}
 /*
 	if( CHAR_getWorkInt ( talkerindex , CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE){
-		CHAR_talkToCli( talkerindex, meindex, "！",CHAR_COLORYELLOW);
+		CHAR_talkToCli( talkerindex, meindex, "ㄐ",CHAR_COLORYELLOW);
 		return;
 	}
 */
@@ -200,7 +200,7 @@ void NPC_SellsthMan_selectWindow( int meindex, int toindex, int num,int select, 
 				print("SellSthMan err Can't Get MENU_HEAD string\n");
 				return;
 			}
-			sprintf( token, "%s：\n", buf1);
+			sprintf( token, "%sㄩ\n", buf1);
 			while( getStringFromIndexWithDelim( buf, ",", k, buf1, sizeof( buf1)) != FALSE ){
 				k++;
 				strcat( token, buf1);
@@ -211,7 +211,7 @@ void NPC_SellsthMan_selectWindow( int meindex, int toindex, int num,int select, 
 			windowno = NPC_WINDOW_MENU;
 		}
 		break;
-	case WINDOW_LOOK://看详细道具或宠物内容
+	case WINDOW_LOOK://艘砆牉耋撿麼唾昜囀��
 		{
 			int num;
 			int page = CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT);
@@ -236,7 +236,7 @@ void NPC_SellsthMan_selectWindow( int meindex, int toindex, int num,int select, 
 				NSellSthList[page][num].fd != getfdFromCharaIndex( NSellSthList[page][num].sellindex) )
 				return;
 
-			sprintf( token, "%s欲购买你拍卖(%d页,%d项)的物品，\n%s正在%s。", CHAR_getChar( toindex, CHAR_NAME),
+			sprintf( token, "%s郗劃鎗斕鼴闖(%d珜,%d砐)腔昜こㄛ\n%s淏婓%s﹝", CHAR_getChar( toindex, CHAR_NAME),
 				page, num, CHAR_getChar( toindex, CHAR_NAME), MAP_getFloorName( CHAR_getInt( toindex, CHAR_FLOOR)) );
 
 			if( CHAR_getWorkInt( NSellSthList[page][num].sellindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ){
@@ -266,10 +266,10 @@ void NPC_SellsthMan_selectWindow( int meindex, int toindex, int num,int select, 
 		break;
 	case WINDOW_SELLON:
 		if( CHAR_getWorkInt( toindex, CHAR_WORKSELLSTHNUM) >= 3 ){
-			CHAR_talkToCli( toindex, meindex, "最多只能登记叁次。", CHAR_COLORRED);
+			CHAR_talkToCli( toindex, meindex, "郔嗣硐夔腎暮��棒﹝", CHAR_COLORRED);
 			return;
 		}else if( CHAR_getInt( toindex, CHAR_GOLD) < 100 ){
-			CHAR_talkToCli( toindex, meindex, "需付100石币才能登记。", CHAR_COLORRED);
+			CHAR_talkToCli( toindex, meindex, "剒葆100坒啟符夔腎暮﹝", CHAR_COLORRED);
 			return;
 		}
 
@@ -335,18 +335,18 @@ void NPC_SellsthManWindowTalked( int meindex, int talkerindex, int seqno, int se
 		break;
 	case NPC_WINDOW_MENU:
 		switch( atoi( data)) {
-		  case 1://查看
+		  case 1://脤艘
 			  CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 			  NPC_SellsthMan_selectWindow( meindex, talkerindex, WINDOW_FIND, 0, NULL);
 			  break;
-		  case 2://登记
+		  case 2://腎暮
 			  NPC_SellsthMan_selectWindow( meindex, talkerindex, WINDOW_SELLON, select, NULL);
 			  break;
 		}
 		break;
 	case NPC_WINDOW_LOOK:
 		break;
-	case NPC_WINDOW_FIND://包含买
+	case NPC_WINDOW_FIND://婦漪鎗
 		break;
 	case NPC_WINDOW_NEXT:
 		{
@@ -357,8 +357,8 @@ void NPC_SellsthManWindowTalked( int meindex, int talkerindex, int seqno, int se
 				page = ((page-1)<0)?0:page-1;
 			}else if( select == WINDOW_BUTTONTYPE_NEXT ){
 				page = ((page+1)>=MAX_LISTPAGE)?(MAX_LISTPAGE-1):(page+1);
-			}else if( select == WINDOW_BUTTONTYPE_OK ){ //买
-			}else if( select == WINDOW_BUTTONTYPE_YES ){ //买
+			}else if( select == WINDOW_BUTTONTYPE_OK ){ //鎗
+			}else if( select == WINDOW_BUTTONTYPE_YES ){ //鎗
 				NPC_SellsthMan_selectWindow( meindex, talkerindex, WINDOW_CALL, select, data);
 				return;
 			}else if( select == 0 ){
@@ -414,20 +414,20 @@ void NPC_SellsthManLoop( int meindex)
 	CHAR_setWorkInt( meindex, NPC_WORK_CALLPAGE, page);
 	CHAR_setWorkInt( meindex, NPC_WORK_CALLNUM, num);
 	if( i >= MAX_LISTNUM )return;
-	sprintf( headmsg, "拍卖频道(%d页%d项)：%s (拍卖者：%s)。",
+	sprintf( headmsg, "鼴闖け耋(%d珜%d砐)ㄩ%s (鼴闖氪ㄩ%s)﹝",
 		page, num, NSellSthList[page][num].headmess,
 		CHAR_getChar( NSellSthList[page][num].sellindex, CHAR_NAME) );
 	if( NSellSthList[page][num].selltype==1 ){
-		sprintf( token, "拍卖道具：%s。",
+		sprintf( token, "鼴闖耋撿ㄩ%s﹝",
 			ITEM_getChar( NSellSthList[page][num].Iindex, ITEM_NAME) );
 	}else{
-		sprintf( token, "拍卖宠物：%s  LV:%d %s。",
+		sprintf( token, "鼴闖唾昜ㄩ%s  LV:%d %s﹝",
 			CHAR_getChar( NSellSthList[page][num].Iindex, CHAR_NAME),
 			CHAR_getInt( NSellSthList[page][num].Iindex, CHAR_LV),
 #ifdef _PET_2TRANS
-			CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 2 )?"二转":(CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 1 )?"一转":"")
+			CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 2 )?"媼蛌":(CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 1 )?"珨蛌":"")
 #else
-			( CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 1 )?"转":""
+			( CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 1 )?"蛌":""
 #endif			
 			);
 	}
@@ -436,12 +436,12 @@ void NPC_SellsthManLoop( int meindex)
 		if( !CHAR_CHECKINDEX( i)) continue;
 		if( CHAR_getInt( i, CHAR_FLOOR) != floor ) continue;
 		if( CHAR_getWorkInt( i, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ) continue;
-#ifdef _AUCPROTOCOL				// (不可开) Syu ADD 拍卖频道开关Protocol
+#ifdef _AUCPROTOCOL				// (祥褫羲) Syu ADD 鼴闖け耋羲壽Protocol
 		if ( CHAR_getFlg ( i , CHAR_ISAUC ) ){
 #endif
 			CHAR_talkToCli( i, meindex, headmsg, CHAR_COLORYELLOW);
 			CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW);
-#ifdef _AUCPROTOCOL				// (不可开) Syu ADD 拍卖频道开关Protocol
+#ifdef _AUCPROTOCOL				// (祥褫羲) Syu ADD 鼴闖け耋羲壽Protocol
 		}
 #endif
 	}
@@ -465,7 +465,7 @@ void NPC_SellsthManLoop( int meindex)
 					continue;
 				}
 
-				if( NSellSthList[i][j].selltype == 1 ){//道具
+				if( NSellSthList[i][j].selltype == 1 ){//耋撿
 					int itemindex = CHAR_getItemIndex( NSellSthList[i][j].sellindex , NSellSthList[i][j].uindex );
 					if( !ITEM_CHECKINDEX( itemindex) ||
 						NSellSthList[i][j].Iindex != itemindex ){
@@ -509,7 +509,7 @@ BOOL NPC_getSellSth_ListString( int page, int num, char *ListString, int slen )
 			NSellSthList[page][i].use = 0;
 			continue;
 		}
-		if( NSellSthList[page][i].selltype == 1 ){//道具
+		if( NSellSthList[page][i].selltype == 1 ){//耋撿
 			int itemindex = CHAR_getItemIndex( NSellSthList[page][i].sellindex , NSellSthList[page][i].uindex );
 			if( !ITEM_CHECKINDEX( itemindex) ||
 				NSellSthList[page][i].Iindex != itemindex ){
@@ -596,7 +596,7 @@ BOOL NPC_setSellSth_ListString( int meindex, int toindex, int *page, int *num, c
 
 //Iindex
 
-			if( NSellSthList[i][j].selltype == 1 ){//道具
+			if( NSellSthList[i][j].selltype == 1 ){//耋撿
 				int itemindex = CHAR_getItemIndex( toindex , NSellSthList[i][j].uindex );
 				if( !ITEM_CHECKINDEX( itemindex) ){
 					print("ANDY err5. item:%d\n", NSellSthList[i][j].uindex);
@@ -604,7 +604,7 @@ BOOL NPC_setSellSth_ListString( int meindex, int toindex, int *page, int *num, c
 				}
 				if( ITEM_getInt( itemindex, ITEM_VANISHATDROP) == 1 ){
 					char buf[256];
-					sprintf( buf, "%s无法交易。", ITEM_getChar( itemindex, ITEM_NAME) );
+					sprintf( buf, "%s拸楊蝠眢﹝", ITEM_getChar( itemindex, ITEM_NAME) );
 					CHAR_talkToCli( toindex, meindex, buf, CHAR_COLORYELLOW);
 					return FALSE;
 				}
@@ -643,7 +643,7 @@ BOOL NPC_getSellSth_ViewString( int page, int num, char *ListString, int slen )
 	if( !CHAR_CHECKINDEX( NSellSthList[page][num].sellindex ) )return FALSE;
 	sellindex = NSellSthList[page][num].sellindex;
 
-	if( NSellSthList[page][num].selltype == 1 ){//道具
+	if( NSellSthList[page][num].selltype == 1 ){//耋撿
 		int itemindex, crushe;
 		ti = NSellSthList[page][num].uindex;
 		itemindex = CHAR_getItemIndex( sellindex , ti);
@@ -656,12 +656,12 @@ BOOL NPC_getSellSth_ViewString( int page, int num, char *ListString, int slen )
 			crushe,
 			ITEM_getInt( itemindex, ITEM_USEPILENUMS),
 			ITEM_getChar( itemindex, ITEM_EFFECTSTRING) );
-	}else if( NSellSthList[page][num].selltype == 2 ){//宠物
+	}else if( NSellSthList[page][num].selltype == 2 ){//唾昜
 		int petindex, i;
 		ti = NSellSthList[page][num].uindex;
 		petindex = CHAR_getCharPet( sellindex, ti);
 		if( !CHAR_CHECKINDEX( petindex) ) return FALSE;
-		//TYPE|名|  |图|等级|转|  |攻|防|敏|技1|技2|技3|技4|技5|技6|技7
+		//TYPE|靡|  |芞|脹撰|蛌|  |馴|滅|鏗|撮1|撮2|撮3|撮4|撮5|撮6|撮7
 		sprintf( buff, "2|%s|%s|%d|%d|%d|%d|%d|%d|%d|",
 			makeEscapeString( CHAR_getChar( petindex, CHAR_NAME ), buf1, sizeof(buf1)),
 			makeEscapeString( CHAR_getUseName( petindex), buf2, sizeof(buf2)),

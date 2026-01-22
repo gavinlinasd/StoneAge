@@ -17,7 +17,7 @@
 #include "configfile.h"
 
 
-/*====================惫寞  ====================*/
+/*====================措蠕  ====================*/
 static int TITLE_IntCheck( int charaindex,int elem, int *data, int flg);
 static int TITLE_WorkIntCheck( int charaindex,int elem, int *data, int flg);
 static int TITLE_ItemCheck( int charaindex,int elem, int *data, int flg);
@@ -27,28 +27,28 @@ static int TITLE_SexCheck( int charaindex,int elem, int *data, int flg);
 
 typedef enum
 {
-	TITLE_FUNCTYPENONE,     /*  楮醒戏岳仄卅中  */
-	TITLE_FUNCTYPEUSERFUNC, /* definefunction 毛银匀化  蟆毛综月
-							 * 楮醒及娄醒反
-							 *  int     平乓仿奶件犯永弁旦
-							 *  buf       蟆尺及田永白央
-							 *  buflen  公及田永白央及赢今
+	TITLE_FUNCTYPENONE,     /*  匴倳牁埬媃埵笢  */
+	TITLE_FUNCTYPEUSERFUNC, /* definefunction 禱窅埱趙  鞳禱軘堎
+							 * 匴倳摯礎倳毀
+							 *  int     す籤溘騷璃溢蚗袲筒
+							 *  buf       鞳喜摯泬蚗啞栝
+							 *  buflen  鼠摯泬蚗啞栝摯荇踏
 							 */
 	TITLE_USEFUNCTYPENUM
 }TITLE_USEFUNCTYPE;
 
 typedef struct tagTITLE_Table
 {
-	int                 index;      /* 蛙犯□正午询晶毛潸月凶户［
-									 * 仇及  寞匹手匀化addtitle午井支月 
+	int                 index;      /* 陃溢↓淏敁戙儒禱噁堎倜誧��
+									 * 喫摯  蠕ぁ忒埱趙addtitle敁凝盓堎 
 									 */
 	char               name[32];
 	TITLE_USEFUNCTYPE   functype;
 	void                (*definefunction)(int,char* buf,int buflen);
 }TITLE_Table;
 
-/* 银尹月由仿丢□正
- * STR,TGH,MAXMP］ATK,DEF
+/* 窅窇堎蚕溘隍↓淏
+ * STR,TGH,MAXMP�嫀TK,DEF
  * LEVEL,CLASS,SKILL,ITEM,FIREREG,ICEREG,THUNDERREG
  * KANJILV,TALKCNT,WALKCNT,DEADCNT,LOGINCNT,BASEIMAGENUMBER
  * GOLD
@@ -68,11 +68,11 @@ typedef struct tagTITLE_PARAM
 
 TITLE_PARAM TITLE_param[] = 
 {
-	/**** 仇仇井日 ****/
+	/**** 喫喫凝�� ****/
 	{ -1,                     TITLE_ItemCheck,     "ITEM"         },
 	{ -1,                     TITLE_ItemEquipCheck,"EQUIPITEM"    },
 	{ -1,                     NULL,                "EQUIPEVENT"   },
-	/**** 仇仇引匹反  凳仄卅中匹仁分今中［ ****/
+	/**** 喫喫竘ぁ毀  脾媃埵笢ぁ�妢祧鵖苺� ****/
 	{ -1,                     TITLE_SkillCheck,    "SKILL"        },
 	{ CHAR_STR,               TITLE_IntCheck,      "STR"           },
 	{ CHAR_TOUGH,             TITLE_IntCheck,      "TGH"           },
@@ -92,13 +92,13 @@ TITLE_PARAM TITLE_param[] =
 #define     TITLE_PARAMSIZE     20
 typedef struct tagTITLE_configTable
 {
-	int     paramindex[20];         /* TITLE_param尺及骄侬 */
-	int     param[20][TITLE_PARAMSIZE];              /*   笠袄 */
-	int     compareflg[20];         /* ><=羁升丹允月井 */
+	int     paramindex[20];         /* TITLE_param喜摯蝨棬 */
+	int     param[20][TITLE_PARAMSIZE];              /*   鯜偯 */
+	int     compareflg[20];         /* ><=蹇汔竣埰堎凝 */
 	int     title;
 	BOOL    equipcheckflg;          /* 
-									 *  失奶  丞啖  奶矛件玄匹反仇及白仿弘及  匀化中月
-									 *  手及仄井腹绸仄卅中［
+									 *  囮騷  堜遉  騷穫璃哱ぁ毀喫摯啞溘精摯  埱趙笢堎
+									 *  忒摯媃凝號喙媃埵笢��
 									 */
 }TITLE_CONFIGTABLE;
 
@@ -115,7 +115,7 @@ static int                  TITLE_titlenum;
 static int                  TITLE_titlecfgnum;
 
 /*------------------------------------------------------------
- * index  寞井日TITLE_table及骄侬毛  月
+ * index  蠕凝�悾ITLE_table摯蝨棬禱  堎
  ------------------------------------------------------------*/
 int TITLE_getTitleIndex( int index)
 {
@@ -129,23 +129,23 @@ int TITLE_getTitleIndex( int index)
 	return -1;
 }
 
-/*  田永白央及扔奶术    */
+/*  泬蚗啞栝摯�蚅昃�    */
 #define TITLESTRINGBUFSIZ   256
-/*  弁仿奶失件玄卞苇六月旦平伙犯□正及  侬  及田永白央    */
+/*  袲溘騷囮璃哱勗峟鞠堎筒す鳴溢↓淏摯  棬  摯泬蚗啞栝    */
 static char    TITLE_statusStringBuffer[TITLESTRINGBUFSIZ];
 /*------------------------------------------------------------
- * 弁仿奶失件玄卞苇六月惫寞及  侬  毛综月
- * 娄醒
- *  title       Title*      旦平伙
- *  charaindex  int         仇及惫寞毛  匀化中月平乓仿及奶件犯永弁旦
- * 忒曰袄
+ * 袲溘騷囮璃哱勗峟鞠堎措蠕摯  棬  禱軘堎
+ * 礎倳
+ *  title       Title*      筒す鳴
+ *  charaindex  int         喫摯措蠕禱  埱趙笢堎す籤溘摯騷璃溢蚗袲筒
+ * 蒍堇偯
  *  char*
  ------------------------------------------------------------*/
 char* TITLE_makeTitleStatusString( int charaindex,int havetitleindex )
 {
 	int     attach;
 	int     index;
-	/*  楮醒  尺及奶件犯永弁旦井日犯□正毛综岳允月  */
+	/*  匴倳  喜摯騷璃溢蚗袲筒凝�梫腹灊�禱軘埬埰堎  */
 	index = CHAR_getCharHaveTitle( charaindex,havetitleindex );
 #if 0
 	if( TITLE_CHECKTABLEINDEX( index ) == FALSE ){
@@ -186,10 +186,10 @@ char* TITLE_makeTitleStatusString( int charaindex,int havetitleindex )
 }
 
 /*------------------------------------------------------------
- * 卅中惫寞及  侬  犯□正毛忒允
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 埵笢措蠕摯  棬  溢↓淏禱蒍埰
+ * 礎倳
+ *  埵媃
+ * 蒍堇偯
  *  char*
  ------------------------------------------------------------*/
 char* TITLE_makeSkillFalseString( void )
@@ -200,13 +200,13 @@ char* TITLE_makeSkillFalseString( void )
 
 
 /*------------------------------------------------------------
- * 隙烂今木凶  寞及惫寞毛馨笛允月［褐今卅匀化中凶日｝馨笛仄卅中
- * 娄醒
- *  charaindex      int     平乓仿奶件犯永弁旦
- *  titleindex      int     惫寞奶件犯永弁旦
- * 忒曰袄
- *  馨笛仄凶index       
- *  馨笛仄卅井匀凶      FALSE(0)
+ * 炩擭踏躂倜  蠕摯措蠕禱黹萃埰堎�蛜祧鵗耒�趙笢倜�掁�黹萃媃埵笢
+ * 礎倳
+ *  charaindex      int     す籤溘騷璃溢蚗袲筒
+ *  titleindex      int     措蠕騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  黹萃媃倜index       
+ *  黹萃媃埵凝埱倜      FALSE(0)
  ------------------------------------------------------------*/
 BOOL TITLE_addtitle( int charaindex, int titleindex )
 {
@@ -219,7 +219,7 @@ BOOL TITLE_addtitle( int charaindex, int titleindex )
 
 	for( i=0 ; i < CHAR_TITLEMAXHAVE ; i++ ){
 		if( CHAR_getCharHaveTitle( charaindex,i ) == titleindex )
-			/*  允匹卞  匀化中月井日窒手仄卅中  */
+			/*  埰ぁ勗  埱趙笢堎凝�欶珅笭ぴ聿�  */
 			return FALSE;
 		if( firstfindempty == -1
 			&& CHAR_getCharHaveTitle(charaindex,i) == -1 ){
@@ -231,14 +231,14 @@ BOOL TITLE_addtitle( int charaindex, int titleindex )
 
 
 /*------------------------------------------------------------
- * 隙烂今木凶  寞及惫寞互丐匀凶日绰轮允月［卅井匀凶日窒手仄卅中［
- *   醒蜊丐匀凶日蝈  壅允［
- * 娄醒
- *  charaindex      int     平乓仿奶件犯永弁旦
- *  titleindex      int     惫寞奶件犯永弁旦
- * 忒曰袄
- *  绰轮仄凶            TRUE(1)
- *  绰轮仄卅井匀凶      FALSE(0)
+ * 炩擭踏躂倜  蠕摯措蠕誑堣埱倜�桭舊笪彸瞿訹汙朗�倜�欶珅笭ぴ聿苺�
+ *   倳蠀堣埱倜�淜�  觛埰��
+ * 礎倳
+ *  charaindex      int     す籤溘騷璃溢蚗袲筒
+ *  titleindex      int     措蠕騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  朝謫媃倜            TRUE(1)
+ *  朝謫媃埵凝埱倜      FALSE(0)
  ------------------------------------------------------------*/
 BOOL TITLE_deltitle( int charaindex, int titleindex )
 {
@@ -252,11 +252,11 @@ BOOL TITLE_deltitle( int charaindex, int titleindex )
 
 	for( i=0 ; i < CHAR_TITLEMAXHAVE ; i++ )
 		if( CHAR_getCharHaveTitle( charaindex,i ) == titleindex ){
-			/*  愤坌互银匀化中凶支勾卅日壬｝公木手卅仄卞允月    */
+			/*  猷覕誑窅埱趙笢倜盓僑埵�桱氿�鼠躂忒埵媃勗埰堎    */
 			if( CHAR_getInt(charaindex, CHAR_INDEXOFEQTITLE) == i ){
 				CHAR_setInt(charaindex, CHAR_INDEXOFEQTITLE, -1 );
 			}
-			/*    匀化中月井日壅允  */
+			/*    埱趙笢堎凝�殏梊�  */
 			CHAR_setCharHaveTitle( charaindex,i,-1);
 			
 			del = TRUE;
@@ -265,12 +265,12 @@ BOOL TITLE_deltitle( int charaindex, int titleindex )
 	return del;
 }
 /*------------------------------------------------------------
- * 惫寞及赓渝祭毛允月［
- * 娄醒
- *  filename        char*       涩烂白央奶伙  
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ * 措蠕摯疐趵撬禱埰堎��
+ * 礎倳
+ *  filename        char*       优擭啞栝騷鳴  
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  *------------------------------------------------------------*/
 BOOL TITLE_initTitleName( char* filename )
 {
@@ -287,7 +287,7 @@ BOOL TITLE_initTitleName( char* filename )
 
 	TITLE_titlenum=0;
 
-	/*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+	/*  竘囀  嗚埵菜誑笰菜堣堎凝汔竣凝ぅ迋堎    */
 	while( fgets( line, sizeof( line ), f ) ){
 		linenum ++;
 		if( line[0] == '#' )continue;        /* comment */
@@ -298,7 +298,7 @@ BOOL TITLE_initTitleName( char* filename )
 	}
 
 	if( fseek( f, 0, SEEK_SET ) == -1 ){
-		fprint( "寻找错误\n" );
+		fprint( "扆梑渣昫\n" );
 		fclose(f);
 		return FALSE;
 	}
@@ -306,12 +306,12 @@ BOOL TITLE_initTitleName( char* filename )
 	TITLE_table = allocateMemory( sizeof(struct tagTITLE_Table)
 								   * TITLE_titlenum );
 	if( TITLE_table == NULL ){
-		fprint( "无法分配内存 %d\n" ,
+		fprint( "拸楊煦饜囀湔 %d\n" ,
 				sizeof(TITLE_table)*TITLE_titlenum);
 		fclose( f );
 		return FALSE;
 	}
-	/* 赓渝祭 */
+	/* 疐趵撬 */
 {
 	int     i;
 	for( i = 0; i < TITLE_titlenum; i ++ ) {
@@ -323,7 +323,7 @@ BOOL TITLE_initTitleName( char* filename )
 	
 }
 
-	/*  引凶  心  允    */
+	/*  竘倜  陑  埰    */
 	linenum = 0;
 	while( fgets( line, sizeof( line ), f ) ){
 		linenum ++;
@@ -331,10 +331,10 @@ BOOL TITLE_initTitleName( char* filename )
 		if( line[0] == '\n' )continue;       /* none    */
 		chomp( line );
 
-		/*  垫毛帮溥允月    */
-		/*  引内 tab 毛 " " 卞  五晶尹月    */
+		/*  菜禱堆魠埰堎    */
+		/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
 		replaceString( line, '\t' , ' ' );
-		/* 燮  及旦矢□旦毛潸月［*/
+		/* 袸  摯筒妐↓筒禱噁堎��*/
 {
 		int     i;
 		char    buf[256];
@@ -352,24 +352,24 @@ BOOL TITLE_initTitleName( char* filename )
 		char    token[256];
 		int     ret;
 
-		/*  夫午勾户及玄□弁件毛苇月    */
+		/*  痲敁僑誧摯哱↓袲璃禱峟堎    */
 		ret = getStringFromIndexWithDelim( line,",",1,token,
 										   sizeof(token));
 		if( ret==FALSE ){
-			fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+			fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 			continue;
 		}
 		TITLE_table[title_readlen].index = atoi(token);
 
-		/*  2勾户及玄□弁件毛苇月    */
+		/*  2僑誧摯哱↓袲璃禱峟堎    */
 		ret = getStringFromIndexWithDelim( line,",",2,token,
 										   sizeof(token));
 		if( ret==FALSE ){
-			fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+			fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 			continue;
 		}
 		if( strlen( token) > sizeof( TITLE_table[title_readlen].name)-1) {
-			fprint("警告! 头衔名称结束文件:%s 第%d行\n",
+			fprint("劑豢! 芛玴靡備賦旰恅璃:%s 菴%d俴\n",
 					filename, linenum);
 		}
 		strcpysafe( TITLE_table[title_readlen].name, 
@@ -383,14 +383,14 @@ BOOL TITLE_initTitleName( char* filename )
 
 	TITLE_titlenum = title_readlen;
 
-	print( "有效头衔名称数是 %d...", TITLE_titlenum );
+	print( "衄虴芛玴靡備杅岆 %d...", TITLE_titlenum );
 
 #ifdef DEBUG
 
 	{
 		int i;
 		for( i=0; i <TITLE_titlenum ; i++ )
-			print( "头衔索引[%d] 名称[%s] \n",
+			print( "芛玴坰竘[%d] 靡備[%s] \n",
 				   TITLE_table[i].index,
 				   TITLE_table[i].name);
 	}
@@ -398,12 +398,12 @@ BOOL TITLE_initTitleName( char* filename )
 	return TRUE;
 }
 /*------------------------------------------------------------
- * 惫寞及疯赓渝祭毛允月［
- * 娄醒
- *  filename        char*       涩烂白央奶伙  
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ * 措蠕摯瑁疐趵撬禱埰堎��
+ * 礎倳
+ *  filename        char*       优擭啞栝騷鳴  
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  *------------------------------------------------------------*/
 BOOL TITLE_reinitTitleName( void)
 {
@@ -411,12 +411,12 @@ BOOL TITLE_reinitTitleName( void)
 	return(TITLE_initTitleName( getTitleNamefile()));
 }
 /*------------------------------------------------------------
- * 惫寞涩烂及赓渝祭毛允月［
- * 娄醒
- *  filename        char*       涩烂白央奶伙  
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ * 措蠕优擭摯疐趵撬禱埰堎��
+ * 礎倳
+ *  filename        char*       优擭啞栝騷鳴  
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  *------------------------------------------------------------*/
 static void TITLE_initTitleData( int array)
 {
@@ -433,7 +433,7 @@ static void TITLE_initTitleData( int array)
 	
 }
 /*------------------------------------------------------------
- *   醒垫涩烂毛引午户化ㄠ垫卞仄化支月［  戈及手仇仇匹允月［
+ *   倳菜优擭禱竘敁誧趙兒菜勗媃趙盓堎��  資摯忒喫喫ぁ埰堎��
  *------------------------------------------------------------*/
 static int TITLE_getConfigOneLine( FILE *fp, char *line, int linelen)
 {
@@ -446,15 +446,15 @@ static int TITLE_getConfigOneLine( FILE *fp, char *line, int linelen)
 		linenum ++;
 		if( buf[0] == '#' )continue;        /* comment */
 		if( buf[0] == '\n' )continue;       /* none    */
-		/*  垫毛帮溥允月    */
-		/*  引内 tab 毛 " " 卞  五晶尹月    */
+		/*  菜禱堆魠埰堎    */
+		/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
 		replaceString( buf, '\t' , ' ' );
-		/* 旦矢□旦绰轮 */
+		/* 筒妐↓筒朝謫 */
 		deleteCharFromString( buf, " ");
 
 		if( buf[0] == '{' ) {
 			if( startflg == TRUE ) {
-				print( "titleconfig:明明没有关闭「{」却出现了: %d \n",linenum);
+				print( "titleconfig:隴隴羶衄壽敕☆{★�斑鼘祫�: %d \n",linenum);
 				/* } */
 				return -1;
 			}
@@ -462,25 +462,25 @@ static int TITLE_getConfigOneLine( FILE *fp, char *line, int linelen)
 		}
 		else if( buf[0] == '}' ) {
 			if( startflg == FALSE) {
-				print( "titleconfig:明明没有关闭「{」却出现了: %d \n",linenum);
+				print( "titleconfig:隴隴羶衄壽敕☆{★�斑鼘祫�: %d \n",linenum);
 				/* } */
 				return -1;
 			}
 			return 1;
 		}
 		else {
-			/* "{"匹湃卞铵引匀化中凶日 }*/
+			/* "{"ぁ囌勗鴽竘埱趙笢倜�� }*/
 			if( startflg == TRUE ) {
 				if( strlen( line) != 0 ) {
 					if( line[strlen(line) -1] != ',' ) {
 						strcatsafe( line, linelen, ",");
 					}
 				}
-				/* ㄠ垫卞引午户化中仁*/
+				/* 兒菜勗竘敁誧趙笢��*/
 				chompex( buf );
 				strcatsafe( line,linelen,  buf);
 			}
-			/*   躲垫分互"{"匹反元引匀化卅中桦宁反公及引引ㄠ垫匹忒允 }*/
+			/*   嗚菜煦誑"{"ぁ毀啋竘埱趙埵笢鳹譴毀鼠摯竘竘兒菜ぁ蒍埰 }*/
 			else {
 				chompex( buf );
 				strcatsafe( line,linelen,  buf);
@@ -488,7 +488,7 @@ static int TITLE_getConfigOneLine( FILE *fp, char *line, int linelen)
 			}
 		}
 	}
-	/* 仇仇卞仁月午蜕丹仪反EOF   驯五元扎卅中戊□玉分   */
+	/* 喫喫勗�彸蟲褉伂夫Й媧OF   拲拻啋崨埵笢昡↓迶煦   */
 	return 0;
 }
 static int TITLE_getParamData( int readarray, int array,char *src)
@@ -514,12 +514,12 @@ static int TITLE_getParamData( int readarray, int array,char *src)
 }
 
 /*------------------------------------------------------------
- * 惫寞涩烂及赓渝祭毛允月［
- * 娄醒
- *  filename        char*       涩烂白央奶伙  
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ * 措蠕优擭摯疐趵撬禱埰堎��
+ * 礎倳
+ *  filename        char*       优擭啞栝騷鳴  
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  *------------------------------------------------------------*/
 BOOL TITLE_initTitleConfig( char* filename )
 {
@@ -536,7 +536,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 
 	TITLE_titlecfgnum=0;
 
-	/*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+	/*  竘囀  嗚埵菜誑笰菜堣堎凝汔竣凝ぅ迋堎    */
 	/*while( fgets( line, sizeof( line ), f ) ){}*/
 	while( 1 ) {
 		int rc;
@@ -561,7 +561,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 		fclose( f );
 		return FALSE;
 	}
-	/* 赓渝祭 */
+	/* 疐趵撬 */
 {
 	int     i;
 	for( i = 0; i < TITLE_titlecfgnum; i ++ ) {
@@ -576,7 +576,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 		return FALSE;
 	}
 	
-	/*  引凶  心  允    */
+	/*  竘倜  陑  埰    */
 	linenum = 0;
 	/*while( fgets( line, sizeof( line ), f ) ){}*/
 	while( 1) {
@@ -594,23 +594,23 @@ BOOL TITLE_initTitleConfig( char* filename )
 		int     comppos;
 		BOOL    errflg =FALSE;
 		for( i = 1; ; i ++ ){
-			/*  玄□弁件毛苇月    */
+			/*  哱↓袲璃禱峟堎    */
 			ret = getStringFromIndexWithDelim( line,",",i,token,
 											   sizeof(token));
 			if( ret == FALSE ){
 				break;
 			}
-			/*     侬卞  晶 */
+			/*     棬勗  儒 */
 			for( j = 0; j < strlen( token); j ++ ) {
 				token[j] = toupper( token[j]);
 			}
-			/* 惫寞隙烂毛譬屯月 */
+			/* 措蠕炩擭禱ぅ迋堎 */
 			if( strncmp( "TITLE", token, 5) == 0 ) {
 				char    buf[64];
 				ret = getStringFromIndexWithDelim( token,"=",2,buf,
 												   sizeof(buf));
 				if( ret == FALSE) {
-					fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+					fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 					TITLE_initTitleData( titlecfg_readlen);
 					errflg = TRUE;
 					break;
@@ -618,7 +618,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 				TITLE_ConfigTable[titlecfg_readlen].title = atoi( buf);
 			}
 			else {
-				/* 由仿丢□正隙烂毛  戈 */
+				/* 蚕溘隍↓淏炩擭禱  資 */
 				for( j = 0; j < arraysizeof( TITLE_param); j ++ ) {
 					if( strncmp( TITLE_param[j].paramname, 
 								token, 
@@ -626,39 +626,39 @@ BOOL TITLE_initTitleConfig( char* filename )
 						== 0 )
 					{
 						TITLE_ConfigTable[titlecfg_readlen].paramindex[i-1] = j;
-						/* 隶  奶矛件玄匹惫寞毛民尼永弁允月白仿弘毛  化月［ */
+						/* 薔  騷穫璃哱ぁ措蠕禱鏍攝蚗袲埰堎啞溘精禱  趙堎�� */
 						if( j == 0 || j == 1 || j == 2) {
 							TITLE_ConfigTable[titlecfg_readlen].equipcheckflg = TRUE;
 						}
 						break;
 					}
 				}
-				/* 由仿丢□正互  卅及毛隙烂今木凶 */
+				/* 蚕溘隍↓淏誑  埵摯禱炩擭踏躂倜 */
 				if( j == arraysizeof( TITLE_param) ) {
-					fprint("文件语法错误:%s 第%d行\n",
+					fprint("恅璃逄楊渣昫:%s 菴%d俴\n",
 							filename,linenum);
 					TITLE_initTitleData( titlecfg_readlen);
 					errflg = TRUE;
 					break;
 				}
-				/* 羁寞］尕羁寞互绣箕允月井譬屯月 */
+				/* 蹇蠕�楘崲融粉田撱�埰堎凝ぅ迋堎 */
 				comppos = charInclude( token, "<>=");
 				if( comppos == -1 ) {
-					fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+					fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 					TITLE_initTitleData( titlecfg_readlen);
 					errflg = TRUE;
 					break;;
 				}
-				/* 羁寞］尕羁寞互ㄡ勾动晓  月午五 */
+				/* 蹇蠕�楘崲融粉巨廜普耆�  堎敁拻 */
 				if( charInclude( &token[comppos+1], "<>=") != -1 ) {
-					/* 升氏卅  胜井毛  戈 */
+					/* 汔庌埵  吨凝禱  資 */
 					for( j = 0; j < 3;  j ++ ) {
 						if( memcmp( TITLE_compare[j].compare, &token[comppos], 2 ) == 0 ) {
 							break;
 						}
 					}
 					if( j == 3 ) {
-						fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+						fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 						TITLE_initTitleData( titlecfg_readlen);
 						errflg = TRUE;
 						break;
@@ -666,7 +666,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 					else {
 						ret = TITLE_getParamData( titlecfg_readlen,i-1,&token[comppos+2]);
 						if( !ret ) {
-							fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+							fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 							TITLE_initTitleData( titlecfg_readlen);
 							errflg = TRUE;
 							break;
@@ -680,14 +680,14 @@ BOOL TITLE_initTitleConfig( char* filename )
 				else {
 					ret = TITLE_getParamData( titlecfg_readlen,i-1,&token[comppos+1]);
 					if( !ret ) {
-						fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+						fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 						TITLE_initTitleData( titlecfg_readlen);
 						errflg = TRUE;
 						break;
 					}
 					/*TITLE_ConfigTable[titlecfg_readlen].param[i-1] 
 							= atoi( &token[comppos+1]);*/
-					/* 升氏卅  胜井毛  戈 */
+					/* 汔庌埵  吨凝禱  資 */
 					for( j = 3; j < 6;  j ++ ) {
 						if( memcmp( TITLE_compare[j].compare, &token[comppos], 1 ) == 0 ) {
 							TITLE_ConfigTable[titlecfg_readlen].compareflg[i-1] = j;
@@ -697,9 +697,9 @@ BOOL TITLE_initTitleConfig( char* filename )
 				}
 			}
 		}
-		/* 惫寞  隙烂互  井匀凶 or 卅氏井仄日及巨仿□*/
+		/* 措蠕  炩擭誑  凝埱倜 or 埵庌凝媃�梩偏瑀癒�*/
 		if( errflg || TITLE_ConfigTable[titlecfg_readlen].title == -1 ) {
-			fprint("文件语法错误:%s 第%d行\n",filename,linenum);
+			fprint("恅璃逄楊渣昫:%s 菴%d俴\n",filename,linenum);
 			TITLE_initTitleData( titlecfg_readlen);
 		}
 		else {
@@ -711,14 +711,14 @@ BOOL TITLE_initTitleConfig( char* filename )
 
 	TITLE_titlecfgnum = titlecfg_readlen;
 
-	print( "有效头衔配置数是 %d...", TITLE_titlecfgnum );
+	print( "衄虴芛玴饜离杅岆 %d...", TITLE_titlecfgnum );
 
 #if 0
 
 	{
 		int i, j;
 		for( i=0; i < TITLE_titlecfgnum ; i++ ) {
-			print( "头衔队列[%d]\n", i);
+			print( "芛玴勦蹈[%d]\n", i);
 			for( j = 0; 
 				j < arraysizeof( TITLE_ConfigTable[i].param) && 
 				TITLE_ConfigTable[i].param[j] != -1 ; 
@@ -739,19 +739,19 @@ BOOL TITLE_initTitleConfig( char* filename )
 	return TRUE;
 }
 /*------------------------------------------------------------
- * 惫寞涩烂卞宁丹井譬屯化惫寞毛芨尹月［
- * 娄醒
- *  charaindex        int   平乓仿奶件犯永弁旦
- *  mode              BOOL  TRUE:item=及手及及心譬屯月 FALSE:蝈  
- * 忒曰袄
- *  TRUE: 惫寞卞  祭  曰［
- *  FALSE:窒手  井匀凶［
+ * 措蠕优擭勗譴竣凝ぅ迋趙措蠕禱僄窇堎��
+ * 礎倳
+ *  charaindex        int   す籤溘騷璃溢蚗袲筒
+ *  mode              BOOL  TRUE:item=摯忒摯摯陑ぅ迋堎 FALSE:蠈  
+ * 蒍堇偯
+ *  TRUE: 措蠕勗  撬  堇��
+ *  FALSE:笰忒  凝埱倜��
  *------------------------------------------------------------*/
 static BOOL TITLE_TitleCheck_Main( int charaindex, BOOL mode, int *addcnt, int *delcnt)
 {
 	int     i, j,k, ret;
 	
-	/* 赓渝祭 */
+	/* 疐趵撬 */
 {
 	int     i;
 	for( i = 0; i < TITLE_titlecfgnum && TITLE_configbuf[i].title != -1; i ++ ) {
@@ -786,8 +786,8 @@ static BOOL TITLE_TitleCheck_Main( int charaindex, BOOL mode, int *addcnt, int *
 				if( rc != TRUE ) break;
 			}
 		}
-		/*   醒椭瘀卞  元惫寞互喃曰癫化日木化中月凛及啃卞］
-		 * 域绎田永白央卞霪户化公及瑛绊井日add,deltile允月
+		/*   倳邳贀勗  啋措蠕誑鄎堇騍趙�桫噱胱俶臏敯倏訇憯�
+		 * 郖秠泬蚗啞栝勗鰩誧趙鼠摯踕堅凝�惊dd,deltile埰堎
 		 */
 		for( k = 0; k < TITLE_titlecfgnum; k ++ ) {
 			if( TITLE_configbuf[k].title == title ) { 
@@ -819,13 +819,13 @@ static BOOL TITLE_TitleCheck_Main( int charaindex, BOOL mode, int *addcnt, int *
 	
 }
 /*------------------------------------------------------------
- * 惫寞涩烂卞宁丹井譬屯化惫寞毛芨尹月［
- * 娄醒
- *  charaindex        int   平乓仿奶件犯永弁旦
- *  mode              BOOL  TRUE:item=及手及及心譬屯月 FALSE:蝈  
- * 忒曰袄
- *  TRUE: 惫寞卞  祭  曰［
- *  FALSE:窒手  井匀凶［
+ * 措蠕优擭勗譴竣凝ぅ迋趙措蠕禱僄窇堎��
+ * 礎倳
+ *  charaindex        int   す籤溘騷璃溢蚗袲筒
+ *  mode              BOOL  TRUE:item=摯忒摯摯陑ぅ迋堎 FALSE:蠈  
+ * 蒍堇偯
+ *  TRUE: 措蠕勗  撬  堇��
+ *  FALSE:笰忒  凝埱倜��
  *------------------------------------------------------------*/
 BOOL TITLE_TitleCheck( int charaindex, BOOL mode)
 {
@@ -838,13 +838,13 @@ BOOL TITLE_TitleCheck( int charaindex, BOOL mode)
 	if( rc ) {
 		if( delcnt > 0 ) {
 			snprintf( msgbuf, sizeof( msgbuf), 
-						"失去%d%s 称号！", delcnt,
+						"囮��%d%s 備瘍ㄐ", delcnt,
 						delcnt < 10 ?  TITLE_MSGUNIT1:TITLE_MSGUNIT2);
 			CHAR_talkToCli( charaindex, -1, msgbuf,  CHAR_COLORYELLOW);
 		}
 		if( addcnt > 0 ) {
 			snprintf( msgbuf, sizeof( msgbuf), 
-						"获得%d%s 称号！", addcnt,
+						"鳳腕%d%s 備瘍ㄐ", addcnt,
 						addcnt < 10 ?  TITLE_MSGUNIT1:TITLE_MSGUNIT2);
 			CHAR_talkToCli( charaindex, -1, msgbuf,  CHAR_COLORYELLOW);
 		}
@@ -852,13 +852,13 @@ BOOL TITLE_TitleCheck( int charaindex, BOOL mode)
 	return rc;
 }
 /*------------------------------------------------------------
- * 惫寞涩烂卞宁丹井譬屯化惫寞毛芨尹月［
- * 娄醒
- *  charaindex        int   平乓仿奶件犯永弁旦
- *  mode              BOOL  TRUE:item=及手及及心譬屯月 FALSE:蝈  
- * 忒曰袄
- *  TRUE: 惫寞卞  祭  曰［
- *  FALSE:窒手  井匀凶［
+ * 措蠕优擭勗譴竣凝ぅ迋趙措蠕禱僄窇堎��
+ * 礎倳
+ *  charaindex        int   す籤溘騷璃溢蚗袲筒
+ *  mode              BOOL  TRUE:item=摯忒摯摯陑ぅ迋堎 FALSE:蠈  
+ * 蒍堇偯
+ *  TRUE: 措蠕勗  撬  堇��
+ *  FALSE:笰忒  凝埱倜��
  *------------------------------------------------------------*/
 BOOL TITLE_TitleCheck_Nomsg( int charaindex, BOOL mode, int *addcnt, int *delcnt)
 {
@@ -931,7 +931,7 @@ static int TITLE_WorkIntCheck( int charaindex,int elem, int *data, int flg)
 	return rc;
 }
 /* --------------------------------------
- * 隙烂今木凶data午  匀化中月失奶  丞毛  胜允月［
+ * 炩擭踏躂倜data敁  埱趙笢堎囮騷  堜禱  吨埰堎��
  * -------------------------------------*/
 static int TITLE_ItemCheckMain( int charaindex, int itemhaveindex, int *data, int flg)
 {
@@ -960,9 +960,9 @@ static int TITLE_ItemCheckMain( int charaindex, int itemhaveindex, int *data, in
 				  case 5:       /* "=" */
 					if( ITEM_getInt( itemindex, ITEM_ID) == *(data +j)) rc = TRUE;
 					break;
-				  /* 仇木分仃    健中［
-				   * 失奶  丞蝈  毛苇化公木毛  匀化中卅井匀凶日蕞午允月［
-				   * 仇仇匹反  匀化中月仪毛絮午仄化民尼永弁
+				  /* 喫躂煦崹    翩笢��
+				   * 囮騷  堜蠈  禱峟趙鼠躂禱  埱趙笢埵凝埱倜�殌或諏彸瞿�
+				   * 喫喫ぁ毀  埱趙笢堎痀禱哳敁媃趙鏍攝蚗袲
 				   */
 				  case 2:       /* "<>" */
 					if( ITEM_getInt( itemindex, ITEM_ID) == *(data +j)) rc = FALSE;
@@ -1050,7 +1050,7 @@ static int TITLE_SkillCheck( int charaindex,int elem, int *data, int flg)
 	return rc;
 }
 /* --------------------------------------
- * 裆平乓仿井辉平乓仿井民尼永弁允月［
+ * 鮸す籤溘凝閩す籤溘凝鏍攝蚗袲埰堎��
  * -------------------------------------*/
 static int TITLE_SexCheck( int charaindex,int elem, int *data, int flg)
 {

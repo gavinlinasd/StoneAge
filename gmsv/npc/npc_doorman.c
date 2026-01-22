@@ -12,40 +12,40 @@
 #include "configfile.h"
 /*
  *
- *    曰卞玉失互丐月午五卞公及玉失毛窒日井及椭瘀卞方匀化钒仁NPC.
- *  玉失及午卅曰卞create允月分仃匹｝公及玉失毛丑综今六月仇午互匹五月［
- *  反卅仄井仃日木凶午五卞蝈平乓仿毛腹绸仄化｝引歹曰8穴旦卞玉失互中月
- *  桦宁反公及允屯化卞覆仄化排黍允月［孔凶勾及玉失互  凛卞钒仁仇午卞卅月［
+ *    堇勗迶囮誑堣堎敁拻勗鼠摯迶囮禱笰�桴挺匙紨鰡撌諂�趙楣�艿PC.
+ *  迶囮摯敁埵堇勗create埰堎煦崹ぁ��鼠摯迶囮禱堯軘踏鞠堎喫敁誑ぁ拻堎��
+ *  毀埵媃凝崹�桫憶谻覢撅殣暲褐珝藏姜像鵗し砠�竘渦堇8悃筒勗迶囮誑笢堎
+ *  鳹譴毀鼠摯埰迋趙勗葡媃趙齬抈埰堎�蛑豝袡智商鯓宏�  鄹勗楣�妘蠁蝐槾耒瞿�
  *
- *  奶件正□白尼奶旦反Talk匹
+ *  騷璃淏↓啞攝騷筒毀Talkぁ
  *
- * 玉失毛钒仁凶户卞
+ * 迶囮禱楣�庈袘妤�
  *
- * 1 云嗯毛蔼璋允月［蔼璋匹五凶日夫日仁     gold|100
- * 2 失奶  丞毛1蜊蔼璋允月 ［蔼璋匹五凶日夫日仁  item|45
- * 3 失奶  丞毛  匀化中月井升丹井譬屯月［   匀化中凶日钒仁［itemhave|44
- * 4 失奶  丞毛  匀化中卅中井升丹井譬屯月［  匀化中卅井匀凶日钒仁［
+ * 1 堁鉣禱高靚埰堎�菾芾副用槱觕梫藭桱�     gold|100
+ * 2 囮騷  堜禱1蠀高靚埰堎 �菾芾副用槱觕梫藭桱�  item|45
+ * 3 囮騷  堜禱  埱趙笢堎凝汔竣凝ぅ迋堎��   埱趙笢倜�梫務呁菈temhave|44
+ * 4 囮騷  堜禱  埱趙笢埵笢凝汔竣凝ぅ迋堎��  埱趙笢埵凝埱倜�梫務呁�
  *          itemnothave|333
- * 5 惫寞毛手匀化中月井升丹井譬屯月［  匀化中凶日钒仁［ titlehave|string
- * 6 惫寞毛手匀化中卅中井升丹井譬屯月［  匀化中卅井匀凶日钒仁［
+ * 5 措蠕禱忒埱趙笢堎凝汔竣凝ぅ迋堎��  埱趙笢倜�梫務呁� titlehave|string
+ * 6 措蠕禱忒埱趙笢埵笢凝汔竣凝ぅ迋堎��  埱趙笢埵凝埱倜�梫務呁�
  *      titlenothave|string
  *
- * 井卅日内撙  卞蚕尹月午钒仁［嗯及桦宁反｝
- *＞100打□伙玉中凶分五引允互中中匹允井＂＝匹＞反中＝午中丹午100打□伙玉
- * 午日木月［中五卅曰＞反中＝分仃蜕匀化手午日木月［匹｝＞100打□伙玉
- * 中凶分五引仄凶［＝午蜕歹木月［
+ * 凝埵�桫笻�  勗紮窇堎敁楣�呁詈髒啗踽�毀��
+ *ˇ100湖↓鳴迶笢倜煦拻竘埰誑笢笢ぁ埰凝ㄑˊぁˇ毀笢ˊ敁笢竣敁100湖↓鳴迶
+ * 敁�桫戰瞿詎倛槾耒誨噸棉苺蔆笭縡尕�趙忒敁�桫戰瞿袸奴�ˇ100湖↓鳴迶
+ * 笢倜煦拻竘媃倜�菇諄褉伝囃戰瞿�
  *
- * 失奶  丞蔼璋及桦宁反｝＞窒★毛域蜊中凶分五引允互中中匹允井＂＝午五仁［
- *  3井日6及桦宁反｝窒井反卅仄井仃化椭瘀互公欠匀化凶日钒仁［
+ * 囮騷  堜高靚摯鳹譴毀��ˇ笰∴禱郖蠀笢倜煦拻竘埰誑笢笢ぁ埰凝ㄑˊ敁拻�呁�
+ *  3凝��6摯鳹譴毀��笰凝毀埵媃凝崹趙邳贀誑鼠Й埱趙倜�梫務呁�
  *
  *
  *
- *    旦玄及  芊
+ *    筒哱摯  傮
  *
- *1  玉失毛化五午丹卞  仁
- *2  仇及NPC毛赝癫卞玉失及午卅曰卞  仁［娄醒毛 gold|100 卞允月
- *3  仇及NPC卞覆仄化｝100打□伙玉动晓手匀化中月橇谪匹＞反中＝午蜕丹
- *4  玉失互夫日中化嗯互蛹匀凶日岳  ［
+ *1  迶囮禱趙拻敁竣勗  ��
+ *2  喫摯NPC禱媏騍勗迶囮摯敁埵堇勗  �呁衕羽捙� gold|100 勗埰堎
+ *3  喫摯NPC勗葡媃趙��100湖↓鳴迶雄窀忒埱趙笢堎Щ稃ぁˇ毀笢ˊ敁虭竣
+ *4  迶囮誑痲�欶郅能驍申樊�倜�梊�  ��
  *
  */
 
@@ -56,7 +56,7 @@ BOOL NPC_DoormanInit( int meindex )
 	char	arg[NPC_UTIL_GETARGSTR_BUFSIZE];
     char dname[1024];
 
-	/* 奶矛件玄及正奶皿涩烂 */
+	/* 騷穫璃哱摯淏騷鏤优擭 */
 	CHAR_setWorkInt( meindex, CHAR_WORKEVENTTYPE,CHAR_EVENT_NPC);
 
     CHAR_setInt( meindex , CHAR_HP , 0 );
@@ -68,12 +68,12 @@ BOOL NPC_DoormanInit( int meindex )
 
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPETOWNPEOPLE );
     CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );
-    CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );  /*   猾今木卅中方氏 */
+    CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );  /*   賓踏躂埵笢源庌 */
 
 	NPC_Util_GetArgStr( meindex, arg, sizeof( arg));
 
     if(!getStringFromIndexWithDelim( arg, "|", 3, dname, sizeof(dname ))){
-        print("RINGO: 设定看门者时需要门的名字唷！:%s:\n",
+        print("RINGO: 扢隅艘藷氪奀剒猁藷腔靡趼遄ㄐ:%s:\n",
               arg );
         return FALSE;
     }
@@ -90,7 +90,7 @@ void NPC_DoormanTalked( int meindex , int talkerindex , char *msg ,
     char opt[256];
     char	arg[NPC_UTIL_GETARGSTR_BUFSIZE];
 
-    /* 皿伊奶乩□互玉失穴件及1弘伉永玉动  卅日反氏及丹 */
+    /* 鏤畛騷媕↓誑迶囮悃璃摯1精惉蚗迶雄  埵�梫棵牳做� */
     if(NPC_Util_CharDistance( talkerindex, meindex ) > 1)return;
 
 	NPC_Util_GetArgStr( meindex, arg, sizeof( arg));
@@ -109,53 +109,53 @@ void NPC_DoormanTalked( int meindex , int talkerindex , char *msg ,
 
         if( g > 0 && yn < 0 ){
             snprintf( msg ,sizeof( msg ) ,
-                      "打开门需要给我%d的金子这样可以吗？", g );
+                      "湖羲藷剒猁跤扂%d腔踢赽涴欴褫眕鎘ˋ", g );
             CHAR_talkToCli( talkerindex, meindex , msg, CHAR_COLORWHITE );
         } else if( g > 0 && yn == 0 ){
             snprintf( msg , sizeof( msg ),
-                      "打开门 %d的金子是必要的。", g );
+                      "湖羲藷 %d腔踢赽岆斛猁腔﹝", g );
         } else if( g > 0 && yn == 1 ){
             int now_g = CHAR_getInt( talkerindex, CHAR_GOLD );
             if( now_g < g ){
                 snprintf( msg , sizeof( msg ) ,
-                          "打开门 %d的金子是必要的。", g );
+                          "湖羲藷 %d腔踢赽岆斛猁腔﹝", g );
             	CHAR_talkToCli( talkerindex, meindex , msg, CHAR_COLORWHITE );
             } else {
                 snprintf( msg , sizeof( msg ),
-                          "%d 收到金子了。现在就来开门。", g );
+                          "%d 彶善踢赽賸﹝珋婓憩懂羲藷﹝", g );
             	CHAR_talkToCli( talkerindex, meindex , msg, CHAR_COLORWHITE );
 
-                /* 云嗯毛必永玄 */
+                /* 堁鉣禱斛蚗哱 */
                 now_g -= g;
                 CHAR_setInt( talkerindex , CHAR_GOLD , now_g );
-                /* 丐凶日仄中旦  □正旦毛霜耨 */
+                /* 堣倜�欷ひ迮�  ↓淏筒禱邞嚭 */
                 CHAR_send_P_StatusString(talkerindex, CHAR_P_STRING_GOLD);
 
-                /* 玉失夫日仁 */
+                /* 迶囮痲�桱� */
                 NPC_DoormanOpenDoor(
                     CHAR_getWorkChar( meindex, CHAR_WORKDOORMANDOORNAME));
             }
         }
     } else if( strcmp( mode , "item" ) == 0 ){
         CHAR_talkToCli( talkerindex, meindex ,
-                        "尚在未支援模式。",
+                        "奾婓帤盓堔耀宒﹝",
                         CHAR_COLORWHITE);
     } else if( strcmp( mode , "itemhave" ) == 0 ){
         CHAR_talkToCli( talkerindex, meindex ,
-                        "尚在未支援模式。",
+                        "奾婓帤盓堔耀宒﹝",
                         CHAR_COLORWHITE);
     } else if( strcmp( mode , "itemnothave" ) == 0 ){
         CHAR_talkToCli( talkerindex, meindex ,
-                        "尚在未支援模式。",
+                        "奾婓帤盓堔耀宒﹝",
                         CHAR_COLORWHITE);
     } else if( strcmp( mode , "titlehave" ) == 0 ){
         CHAR_talkToCli( talkerindex, meindex ,
-                        "尚在未支援模式。",
+                        "奾婓帤盓堔耀宒﹝",
                         CHAR_COLORWHITE);
 
     } else if( strcmp( mode , "roomlimit" ) == 0 ){
 
-		/*   盒及谛醒孺蜃互丐月桦宁 */
+		/*   碟摯硞倳�羬袘目夭鎔踽� */
 		char szOk[256], szNg[256], szBuf[32];
 		int checkfloor;
 		int maxnum, i, iNum;
@@ -163,31 +163,31 @@ void NPC_DoormanTalked( int meindex , int talkerindex , char *msg ,
 	    if( !getStringFromIndexWithDelim( arg, "|", 2, szBuf, sizeof( szBuf ) ))
     	    return;
 
-		/* 譬屯月白夫失午    谛醒 */
+		/* ぅ迋堎啞痲囮敁    硞倳 */
 		if( sscanf( szBuf, "%d:%d", &checkfloor, &maxnum ) != 2 ){
 			return;
 		}
 
 		for( iNum = 0,i = 0; i < getFdnum(); i ++ ){
-			/* 皿伊奶乩□动陆卞反饬  互  中 */
+			/* 鏤畛騷媕↓雄翻勗毀煻  誑  笢 */
 			if( CHAR_getCharUse( i ) == FALSE )continue;
 			if( CHAR_getInt( i, CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )continue;
-			/* 隙烂及白夫失动陆卞饬  互  中 */
+			/* 炩擭摯啞痲囮雄翻勗煻  誑  笢 */
 			if( CHAR_getInt( i, CHAR_FLOOR ) != checkfloor )continue;
 			iNum++;
 		}
 	    if( !getStringFromIndexWithDelim( arg, "|", 5, szNg, sizeof( szNg ))){
-   			strcpy( szNg, "。。。。" );	/* 凤伞卅仄及本伉白 */
+   			strcpy( szNg, "﹝﹝﹝﹝" );	/* 瘀氶埵媃摯掛惉啞 */
 		}
     	if( !getStringFromIndexWithDelim( arg, "|", 4, szOk, sizeof( szOk ))){
-   			strcpy( szOk, "开门吧。。。" );	/* 凤伞丐曰及本伉白 */
+   			strcpy( szOk, "羲藷勘﹝﹝﹝" );	/* 瘀氶堣堇摯掛惉啞 */
    		}
 
 		if( iNum >= maxnum ){
-			/*     毛译尹化中月桦宁 */
+			/*     禱祒窇趙笢堎鳹譴 */
 	        CHAR_talkToCli( talkerindex, meindex ,szNg, CHAR_COLORWHITE);
 		}else{
-			/*     卞  凶卅中桦宁 */
+			/*     勗  倜埵笢鳹譴 */
 	        CHAR_talkToCli( talkerindex, meindex ,szOk, CHAR_COLORWHITE);
             NPC_DoormanOpenDoor(
                     CHAR_getWorkChar( meindex, CHAR_WORKDOORMANDOORNAME));
@@ -195,13 +195,13 @@ void NPC_DoormanTalked( int meindex , int talkerindex , char *msg ,
 
     } else if( strcmp( mode , "titlenothave" ) == 0 ){
         CHAR_talkToCli( talkerindex, meindex ,
-                        "尚在未支援模式。",
+                        "奾婓帤盓堔耀宒﹝",
                         CHAR_COLORWHITE);
     }
 }
 
 /*
- *    蟆匹腹绸仄化甲永玄仄凶及毛允屯化钒仁［
+ *    鞳ぁ號喙媃趙樅蚗哱媃倜摯禱埰迋趙楣�呁�
  *
  */
 static void NPC_DoormanOpenDoor( char *nm)

@@ -166,7 +166,7 @@ void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color)
   if( CHAR_getInt( meindex, CHAR_LV ) >= CHAR_getInt( meindex, CHAR_LIMITLEVEL)  )	{
 	Type = 1;
   }
-	//设定为非主人不得与PET互动
+	//扢隅峈準翋�侘輓譚蕧ET誑雄
   if( strcmp( CHAR_getChar( meindex, CHAR_OWNERCDKEY), CHAR_getChar( talkerindex, CHAR_CDKEY) ) ||
       strcmp( CHAR_getChar( meindex, CHAR_OWNERCHARANAME), CHAR_getChar( talkerindex, CHAR_NAME) )){
 #ifdef _PET_TALKPRO
@@ -175,7 +175,7 @@ void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color)
   	if( NPC_Util_GetStrFromStrWithDelim( buf1, "NoPlayerMsg", buf3, sizeof( buf3)) != NULL )	{
 #endif
   	}else	{
-  		sprintf(buf3,"陌生人？我不认识你呀！你是坏人！");
+  		sprintf(buf3,"襤汜�芄諺珩銀珅傭蓛膛＿蒘У脹芄�");
   	}
   	CHAR_talkToCli( talkerindex, meindex, buf3, color);
   	return;	
@@ -189,25 +189,25 @@ void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color)
 #endif
 		talkNo++;
 		if( ( strstr( buf2, TalkType[Type]) == NULL ) && ( strstr( buf2, TalkType[2]) == NULL ) )continue;
-		if( NPC_Util_GetStrFromStrWithDelim( buf2, "FLOOR", buf3, sizeof( buf3)) != NULL )	{//判断房间号
+		if( NPC_Util_GetStrFromStrWithDelim( buf2, "FLOOR", buf3, sizeof( buf3)) != NULL )	{//瓚剿滇潔瘍
 			if( PetTalk_CheckMyFloor( meindex, talkerindex, buf3, 0) == FALSE )continue;
 		}
-		if( NPC_Util_GetStrFromStrWithDelim( buf2, "PET", buf3, sizeof( buf3)) != NULL )	{//判断宠物FREE条件
+		if( NPC_Util_GetStrFromStrWithDelim( buf2, "PET", buf3, sizeof( buf3)) != NULL )	{//瓚剿唾昜FREE沭璃
 			if( PetTalk_CheckFree( meindex, meindex, buf3) != TRUE ) continue;
 		}
 		if( NPC_Util_GetStrFromStrWithDelim( buf2, "FREE", buf3, sizeof( buf3) ) == NULL)continue;
-		if( NPC_ActionPassCheck( meindex, talkerindex, buf3) == FALSE )	continue;//判断玩家FREE条件
+		if( NPC_ActionPassCheck( meindex, talkerindex, buf3) == FALSE )	continue;//瓚剿俙模FREE沭璃
 
 //		if( ActionNpc_CheckFree( meindex, talkerindex, buf2, 0) == FALSE ) continue; 
 
 		if( PetTalk_CheckPetEvent( meindex, talkerindex, buf2) == FALSE )continue;
-		FREEs = TRUE;  //条件成立
+		FREEs = TRUE;  //沭璃傖蕾
 		strcpy( AllTalk[j++], buf2 );
 		if( j > PETTALK_MAXID-1 ) break;
 	}
 	talkNo = 0;
 
-	if( FREEs == FALSE)	{	//如果全部条件都不成立
+	if( FREEs == FALSE)	{	//�蝜��垓覦齞�飲祥傖蕾
 		j=0;
 #ifdef _PET_TALKPRO
 		while( getStringFromIndexWithDelim( pettalktext[tPage].DATA,"OVER",talkNo, buf2, sizeof( buf2) ) != FALSE ){
@@ -227,12 +227,12 @@ void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color)
   if( j > 0 )	{
   	strcpy( buf2, AllTalk[ RAND( 0, (j-1) ) ] );
 	if( PetTalk_RunEvent( meindex, talkerindex, buf2) == FALSE )	{
-		sprintf( buf3,"．．．．！");
+		sprintf( buf3,"ㄝㄝㄝㄝㄐ");
 		CHAR_talkToCli( talkerindex, meindex, buf3, color);
 		return;
 	}
 	if( NPC_Util_GetStrFromStrWithDelim( buf2, "TalkMsg", buf3, sizeof( buf3)) == NULL)     {
-		//sprintf( buf3,"主人，我们去逛逛吧！");
+		//sprintf( buf3,"翋�芄疥疰а旦銋銊氿�");
 		strcpy( buf3, buf2);
 	}
 
@@ -311,14 +311,14 @@ BOOL PetTalk_DelItem(int meindex,int talker,char *buf)
 						cnt++;
 						
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-							"WarpManDelItem(NPC收道具後传至某点)",
+							"WarpManDelItem(NPC彶耋撿摽換祫議萸)",
 							CHAR_getInt( talker, CHAR_FLOOR),
 							CHAR_getInt( talker, CHAR_X ),
  							CHAR_getInt( talker, CHAR_Y ),
@@ -336,21 +336,21 @@ BOOL PetTalk_DelItem(int meindex,int talker,char *buf)
 				}
 			}		
 		}else{
-			/*--蓟氏分  寞及失奶  丞毛蓟请---*/
+			/*--撒庌煦  蠕摯囮騷  堜禱撒③---*/
 			for( j = 0 ;  j < CHAR_MAXITEMHAVE ; j++){
 				itemindex = CHAR_getItemIndex( talker ,j);
 
 				if( ITEM_CHECKINDEX(itemindex) ){
 					if( atoi( buff3) == ITEM_getInt(itemindex,ITEM_ID)){
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-							"WarpManDelItem(NPC收道具後传至某点)",
+							"WarpManDelItem(NPC彶耋撿摽換祫議萸)",
 							CHAR_getInt( talker,CHAR_FLOOR),
 							CHAR_getInt( talker,CHAR_X ),
 							CHAR_getInt( talker,CHAR_Y ),
@@ -385,7 +385,7 @@ BOOL PetTalk_AddItem(int meindex, int talker, char *buf)
 			}
 		}                                                                                                                                                                                                                                                                                                                                      
 		if( i == CHAR_MAXITEMHAVE )	{
-			snprintf( msgbuf,sizeof( msgbuf), "主人，你的物品栏已经满了！！");
+			snprintf( msgbuf,sizeof( msgbuf), "翋�芄珀蒫鰓幮滅詫挩倦�賸ㄐㄐ");
 			CHAR_talkToCli( talker, meindex, msgbuf,  CHAR_COLORWHITE);
 			return FALSE;
 		}
@@ -404,7 +404,7 @@ BOOL PetTalk_AddItem(int meindex, int talker, char *buf)
 			print ("\n ret error!!");
 			return FALSE;
 		}
-		sprintf( token,"拿到%s",ITEM_getChar( itemindex, ITEM_NAME));
+		sprintf( token,"鏽善%s",ITEM_getChar( itemindex, ITEM_NAME));
 		CHAR_talkToCli( talker, -1,token,CHAR_COLORWHITE);
                                 
 		CHAR_sendItemDataOne( talker, ret);
@@ -488,7 +488,7 @@ BOOL PetTalk_BSCheck(int meindex,int talker,char* buf)
 	int kosuu,temp=-1,flg=0;
 	char buff1[128],buff3[128];
 	if(strstr( buf, "-") != NULL)	{
-		//buff3为抓宠物ID
+		//buff3峈蚰唾昜ID
 		getStringFromIndexWithDelim( buf, "-", 2, buff3, sizeof(buff3));
 		temp = atoi( buff3);
 		getStringFromIndexWithDelim( buf, "-", 1, buff1, sizeof(buff1));
@@ -669,7 +669,7 @@ BOOL PetTalk_CheckMyPet( int meindex, int talker, int petLv, int flg, int petid)
 	}
 	if( petsel  == CHAR_MAXPETHAVE )	{
 		return FALSE;
-	}else	{	//找到条件宠
+	}else	{	//梑善沭璃唾
 		if( PetTalk_BigSmallLastCheck( petLv, CHAR_getInt( petindex, CHAR_LV), flg ) == TRUE  )
 			return TRUE;
 	}
@@ -745,11 +745,11 @@ int PET_CleanPetdeletetime( int objmeindex)
 //		CHAR_CharSaveLostPet( pindex, 0);
 #endif
 		LogPet(
-			"系统",
+			"炵苀",
 			"Watchfunc",
 			CHAR_getChar( pindex, CHAR_NAME),
 			CHAR_getInt( pindex, CHAR_LV),
-			"timeout_lost(系统清除-地上自由宠)",
+			"timeout_lost(炵苀ь壺-華奻赻蚕唾)",
 			CHAR_getInt( pindex, CHAR_FLOOR),
 			CHAR_getInt( pindex,CHAR_X ),
 			CHAR_getInt( pindex,CHAR_Y ),
@@ -774,11 +774,11 @@ void PET_CHECKFreePetIsIt( int petindex)
 #endif
 
 	LogPet(
-			"系统",
+			"炵苀",
 			"Watchfunc",
 			CHAR_getChar( petindex, CHAR_NAME),
 			CHAR_getInt( petindex, CHAR_LV),
-			"timeout_lost(系统清除-地上自由宠)",
+			"timeout_lost(炵苀ь壺-華奻赻蚕唾)",
 			CHAR_getInt( petindex, CHAR_FLOOR),
 			CHAR_getInt( petindex,CHAR_X ),
 			CHAR_getInt( petindex,CHAR_Y ),
@@ -806,7 +806,7 @@ void PET_Watchfunc( int objmeindex, int objmoveindex, CHAR_ACTION act, int x, in
 	if( CHAR_getWorkInt( petindex, CHAR_WORKTRADETYP) != TRADETYPE_SELL)	{
 #endif
 		if( CHAR_getInt( petindex, CHAR_MAILMODE) != CHAR_PETMAIL_NONE) {
-			//宠邮不处理
+			//唾蚘祥揭燴
 		}else if( CHAR_getWorkInt( petindex, CHAR_WORKPETFOLLOWMODE) == CHAR_PETFOLLOW_NOW ){
 			if( NowTime.tv_sec >= (petputtime + 60*60) ) {
 				int	ownerindex = CHAR_getWorkInt( petindex, CHAR_WORKPLAYERINDEX);
@@ -814,22 +814,22 @@ void PET_Watchfunc( int objmeindex, int objmoveindex, CHAR_ACTION act, int x, in
 					if( CHAR_pickupFollowPet( ownerindex, petindex ) )	{
 						return;
 					}
-					CHAR_talkToCli( ownerindex, -1, "溜宠太久，宠物走失了！！", CHAR_COLORYELLOW );
+					CHAR_talkToCli( ownerindex, -1, "闊唾怮壅ㄛ唾昜軗囮賸ㄐㄐ", CHAR_COLORYELLOW );
 				}
 #ifdef _PET_LOSTPET
 				CHAR_CharSaveLostPet( petindex, 1);
 				LogPet(
-					"系统",
+					"炵苀",
 					"Watchfunc",
 					CHAR_getChar( petindex, CHAR_NAME),
 					CHAR_getInt( petindex, CHAR_LV),
-					"timeout_lost(系统扣留-溜宠自由宠)",
+					"timeout_lost(炵苀諶隱-闊唾赻蚕唾)",
 					CHAR_getInt( petindex, CHAR_FLOOR),
 					CHAR_getInt( petindex,CHAR_X ),
 					CHAR_getInt( petindex,CHAR_Y ),
 					CHAR_getChar( petindex, CHAR_UNIQUECODE)   // shan 2001/12/14
 				);
-				print("系统扣留-溜宠自由宠:%s\n", CHAR_getUseName( petindex));
+				print("炵苀諶隱-闊唾赻蚕唾:%s\n", CHAR_getUseName( petindex));
 				CHAR_CharaDelete( petindex);
 #else
 				CHAR_setInt( petindex, CHAR_PUTPETTIME, NowTime.tv_sec);
@@ -839,7 +839,7 @@ void PET_Watchfunc( int objmeindex, int objmoveindex, CHAR_ACTION act, int x, in
 					CHAR_getChar( pindex, CHAR_CDKEY ),
 					CHAR_getChar( petindex, CHAR_NAME),
 					CHAR_getInt( petindex, CHAR_LV),
-					"timeout_lost(溜宠太久，宠物走失))",
+					"timeout_lost(闊唾怮壅ㄛ唾昜軗囮))",
 					CHAR_getInt( pindex,CHAR_FLOOR),
 					CHAR_getInt( pindex,CHAR_X ),
 	 				CHAR_getInt( pindex,CHAR_Y ),

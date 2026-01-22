@@ -11,7 +11,7 @@
 #ifdef _GAMBLE_ROULETTE 
 #include "npc_gambleroulette.h"
 
-#define _OTHER_ROUND	//另一种跑法
+#define _OTHER_ROUND	//鍚珨笱變楊
 
 static void Gamble_Roulette_walk( int meindex);
 static int Gamble_RouletteSetPoint( int meindex );
@@ -31,7 +31,7 @@ enum {
 	NPC_WORK_ROUTEMAX = CHAR_NPCWORKINT7,
 	NPC_WORK_WAITTIME = CHAR_NPCWORKINT8,
 	NPC_WORK_CURRENTTIME = CHAR_NPCWORKINT9,
-	NPC_WORK_SEFLG = CHAR_NPCWORKINT10,	//记录主持人index
+	NPC_WORK_SEFLG = CHAR_NPCWORKINT10,	//暮翹翋厥�玗ndex
 };
 
 typedef struct tagRoulettePoint {
@@ -58,20 +58,20 @@ BOOL NPC_Gamble_RouletteInit( int meindex )
 
 	CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_GAMBLEROULETTE );
 	//CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, routenum);
-	//小猪要走几格才停
+	//苤紿猁軗撓跡符礿
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, 0);
 	CHAR_setWorkInt( meindex, NPC_WORK_SEFLG, -1);
-	// NPC_WORK_MODE 小猪的状态 0:等待 1:走(顺)
+	// NPC_WORK_MODE 苤紿腔袨怓 0:脹渾 1:軗(佼)
 	CHAR_setWorkInt( meindex, NPC_WORK_MODE, 0);
-	//第几个地图点
+	//菴撓跺華芞萸
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, 0);
-	//顺向 1  逆向  0
+	//佼砃 1  欄砃  0
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUNDTRIP, 1);
-	//第几个路线
+	//菴撓跺繚盄
 	CHAR_setWorkInt( meindex, NPC_WORK_CURRENTROUTE, 0);
-	//设定LOOP TIMER
+	//扢隅LOOP TIMER
 	CHAR_setInt( meindex, CHAR_LOOPINTERVAL, ROULETTE_STANDBY);
-	//用来记录时间点
+	//蚚懂暮翹奀潔萸
 	CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 	CHAR_sendCToArroundCharacter( CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX));
 	if( ReadPointData( meindex) == FALSE )
@@ -94,25 +94,25 @@ void NPC_Gamble_RouletteLoop( int meindex)
 	int	objmeindex = -1, index = 0, act = 0;
 	objmeindex = CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX);
 	switch( CHAR_getWorkInt( meindex, NPC_WORK_MODE )) {
-	  case 0:	//停止时等待	为等待主持人下命令
+	  case 0:	//礿砦奀脹渾	峈脹渾翋厥�冾藏�鍔
 		  
-		  //抓主持人index 检查主持人 是否喊开始
+		  //蚰翋厥�玗ndex 潰脤翋厥�� 岆瘁滌羲宎
 		  if( CHAR_getWorkInt( meindex, NPC_WORK_SEFLG) < 0 )	{
 			CHAR_setWorkInt( meindex, NPC_WORK_MODE,5);
 		  }else	{
 			index = CHAR_getWorkInt( meindex, NPC_WORK_SEFLG);
-			//CHAR_NPCWORKINT7 0 null 1 准备 2 跑 3 停
+			//CHAR_NPCWORKINT7 0 null 1 袧掘 2 變 3 礿
 			if( CHAR_getWorkInt( index, CHAR_NPCWORKINT7 ) == 2 )	{
 				CHAR_sendCToArroundCharacter( objmeindex);
 				CHAR_setWorkInt( meindex, NPC_WORK_MODE,1);
 				CHAR_setInt( meindex, CHAR_LOOPINTERVAL, ROULETTE_RUNTIME1);
-				//决定小猪走几格
+				//樵隅苤紿軗撓跡
 				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, RunRand( meindex, 0 ) );
-				ResetDataStart( meindex);//决定进点
+				ResetDataStart( meindex);//樵隅輛萸
 				if( CHAR_getInt( meindex, CHAR_X) == 14 &&
 					CHAR_getInt( meindex, CHAR_Y) == 8 )	{
 				}else	{
-					print("\n\n####################\n 小猪不在原点!![%d,%d]",
+					print("\n\n####################\n 苤紿祥婓埻萸!![%d,%d]",
 						CHAR_getInt( meindex, CHAR_X),
 						CHAR_getInt( meindex, CHAR_Y)
 					);
@@ -121,7 +121,7 @@ void NPC_Gamble_RouletteLoop( int meindex)
 			}else if( CHAR_getWorkInt( index, CHAR_NPCWORKINT7 ) == 1 ||
 				( CHAR_getWorkInt( index, CHAR_NPCWORKINT9) < 30 &&
 				CHAR_getWorkInt( index, CHAR_NPCWORKINT9) > 24 )
-				)	{	//准备
+				)	{	//袧掘
 				if( CHAR_getInt( meindex, CHAR_X) == 14 && CHAR_getInt( meindex, CHAR_Y) == 8 )	{
 				}else	{
 					CHAR_warpToSpecificPoint( meindex, CHAR_getInt( meindex, CHAR_FLOOR),
@@ -139,16 +139,16 @@ void NPC_Gamble_RouletteLoop( int meindex)
 	  case 2:
 		break;
 	  case 3:
-		  //点归零
+		  //萸寥錨
 		  CHAR_setWorkInt( meindex, NPC_WORK_MODE, 0);
-		  //动作 
+		  //雄釬 
 		  act = CHAR_ACTATTACK;
 		  CHAR_sendWatchEvent( objmeindex, act, NULL,0, FALSE);
 		  CHAR_setWorkInt( meindex, CHAR_WORKACTION, act);
 		  CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, 0);
 		  CHAR_setInt( meindex, CHAR_LOOPINTERVAL, ROULETTE_STANDBY);
 
-		  //送人物资料给视觉  围内的人
+		  //冞�冼擼岏牉鑫蚞�  峓囀腔��
 		  CHAR_sendCToArroundCharacter( objmeindex);
 		  if( SetEndPoint( meindex ) == FALSE )	{
 			print("\n not Set EndPoint !!");
@@ -157,11 +157,11 @@ void NPC_Gamble_RouletteLoop( int meindex)
 #else
 		  ReadPointData( meindex);	//load round data
 #endif
-		  //还原主持人
+		  //遜埻翋厥��
 		  index = CHAR_getWorkInt( meindex, NPC_WORK_SEFLG);
 		  CHAR_setWorkInt( index, CHAR_NPCWORKINT7, 3);
 		break;
-	  case 5:	//寻找主持人
+	  case 5:	//扆梑翋厥��
 			Find_Master( meindex);
 			if( CHAR_getWorkInt( meindex, NPC_WORK_SEFLG) < 0 )	{
 				CHAR_setInt( meindex, CHAR_LOOPINTERVAL, 0);
@@ -171,7 +171,7 @@ void NPC_Gamble_RouletteLoop( int meindex)
 			}
 		break;
 	  default:
-		  //重置 错误处理
+		  //笭离 渣昫揭燴
 		  Gamble_Roulette_Reset( meindex, 0);
 	    break;
 	}
@@ -190,13 +190,13 @@ static void Gamble_Roulette_walk( int meindex)
 	start.y = CHAR_getInt( meindex, CHAR_Y);
 	end.x = CHAR_getWorkInt( meindex, NPC_WORK_ROUTETOX);
 	end.y = CHAR_getWorkInt( meindex, NPC_WORK_ROUTETOY);
-	// loop timer分为两部分 1. 处理下一点 2. 走到下一点
+	// loop timer煦峈謗窒煦 1. 揭燴狟珨萸 2. 軗善狟珨萸
 
 	if( start.x == end.x && start.y == end.y ) {
 #ifdef _OTHER_ROUND
 #else
 		int add = 1;
-		//如果为 NPC_WORK_ROUNDTRIP != 1  逆向
+		//�蝜�峈 NPC_WORK_ROUNDTRIP != 1  欄砃
 		if( CHAR_getWorkInt( meindex, NPC_WORK_ROUNDTRIP ) != 1 ) {
 			add *= -1;
 		}
@@ -210,9 +210,9 @@ static void Gamble_Roulette_walk( int meindex)
 			return;
 #else
 			if( CHAR_getWorkInt( meindex, NPC_WORK_ROUNDTRIP ) != 1 ) {
-				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, arraysizeof( PointData) );	//逆向
+				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, arraysizeof( PointData) );	//欄砃
 			}else	{
-				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, -1);	//顺向
+				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, -1);	//佼砃
 			}
 			return;
 #endif
@@ -316,7 +316,7 @@ BOOL SetEndPoint( int meindex )
 
 void Gamble_Roulette_Reset( int meindex, int flg)
 {
-	//错误处理
+	//渣昫揭燴
 	int index;
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, 0);
 	CHAR_setWorkInt( meindex, NPC_WORK_MODE, 0);
@@ -435,7 +435,7 @@ static int Gamble_RouletteSetPoint( int meindex )
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTETOX, PointData[i].x );
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTETOY, PointData[i].y );
 #endif
-	{//检查路线
+	{//潰脤繚盄
 		struct tagWalkStartPoint{
 			int x;
 			int y;

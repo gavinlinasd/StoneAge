@@ -28,12 +28,12 @@
 
 #ifdef _NPCSERVER_NEW
 enum{
-	uEQUAL = 1, //等於
-	uBIGEQUALt,	//大於等於
-	uSMALLEQUALt, //小於等於
-	uBIGTHAN = 5,	//大於
-	uSMALLTHAN, //小於
-	uNEQUAL, //不等於
+	uEQUAL = 1, //脹黺
+	uBIGEQUALt,	//湮黺脹黺
+	uSMALLEQUALt, //苤黺脹黺
+	uBIGTHAN = 5,	//湮黺
+	uSMALLTHAN, //苤黺
+	uNEQUAL, //祥脹黺
 };
 BOOL NPCS_HandleCheckFreeMess( int npcobjindex, int charaindex, int charobjindex,
 				char *CheckfreeMess)
@@ -43,7 +43,7 @@ BOOL NPCS_HandleCheckFreeMess( int npcobjindex, int charaindex, int charobjindex
 	char buf1[1024], buf2[256];
 	int i=1;
 
-	//主条件判断
+	//翋沭璃瓚剿
 	while( getStringFromIndexWithDelim( CheckfreeMess, "OVER", i, buf1, sizeof( buf1)) != FALSE ){
 		i++;
 		if( NPC_Util_GetStrFromStrWithDelim( buf1, "FREE", buf2, sizeof( buf2)) == NULL  ) continue;
@@ -53,17 +53,17 @@ BOOL NPCS_HandleCheckFreeMess( int npcobjindex, int charaindex, int charobjindex
 			if( NPCS_RunDoEventAction( charaindex, buf1) == FALSE )
 				return FALSE;
 
-			//事件处理
+			//岈璃揭燴
 			NPCS_NpcstalkToCli( charaindex, npcobjindex, buf2, CHAR_COLORYELLOW);
 			break;
 		}
 	}
-	if( Enable == FALSE ){//所有条件不成立
-		NPCS_NpcstalkToCli( charaindex, npcobjindex, "条件不足！", CHAR_COLORYELLOW);
+	if( Enable == FALSE ){//垀衄沭璃祥傖蕾
+		NPCS_NpcstalkToCli( charaindex, npcobjindex, "沭璃祥逋ㄐ", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	if( ReCall == TRUE ){
-		//判断是否recall
+		//瓚剿岆瘁recall
 	}
 	return TRUE;
 }
@@ -140,29 +140,29 @@ BOOL NPCS_FreeBigSmallCheck( int charaindex,char* buf)
 }
 
 BOOL NPCS_ArgumentFreeCheck( int charaindex, char* Argument, int amount, int temp, int probjID)
-{//amount 数量 Argument 参数
+{//amount 杅講 Argument 統杅
 	int MyPoint=0, reAmount;
 	reAmount = 0;
-	if( strcmp( Argument, "LV") == 0)	{//等级
+	if( strcmp( Argument, "LV") == 0)	{//脹撰
 		MyPoint = CHAR_getInt( charaindex, CHAR_LV);
-	}else if( strcmp( Argument, "GOLD") == 0)	{//石币
+	}else if( strcmp( Argument, "GOLD") == 0)	{//坒啟
 		MyPoint = CHAR_getInt( charaindex, CHAR_GOLD);
-	}else if( strcmp( Argument, "TRANS") == 0)	{//转生次数
+	}else if( strcmp( Argument, "TRANS") == 0)	{//蛌汜棒杅
 		MyPoint = CHAR_getInt( charaindex, CHAR_TRANSMIGRATION);
-	}else if( strcmp( Argument, "PET") == 0)	{//宠物 ID 数量
+	}else if( strcmp( Argument, "PET") == 0)	{//唾昜 ID 杅講
 		MyPoint = NPCS_getUserPetAmount( charaindex, probjID, 1);
-	}else if( strcmp( Argument, "ITEM") == 0)	{//道具 ID 数量
+	}else if( strcmp( Argument, "ITEM") == 0)	{//耋撿 ID 杅講
 		MyPoint = NPCS_getUserItemAmount( charaindex, probjID, 1);
-	}else if( strcmp( Argument, "ENDEV") == 0)	{//结束旗标
+	}else if( strcmp( Argument, "ENDEV") == 0)	{//賦旰よ梓
 		return NPC_EventCheckFlg( charaindex, amount);
-	}else if( strcmp( Argument, "NOWEV") == 0)	{//开启旗标
+	}else if( strcmp( Argument, "NOWEV") == 0)	{//羲ゐよ梓
 		return NPC_NowEventCheckFlg( charaindex, amount);
-	}else if( strcmp( Argument, "PARTY") == 0)	{//检查团队人数
+	}else if( strcmp( Argument, "PARTY") == 0)	{//潰脤芶勦�侕�
 		MyPoint = NPCS_getUserPartyAmount( charaindex );
-	}else if( strcmp( Argument, "reITEM")== 0)	{//剩馀道具栏位
+	}else if( strcmp( Argument, "reITEM")== 0)	{//呁牄耋撿戲弇
 		NPCS_getUserItemAmount( charaindex, probjID, 0);
 		MyPoint = reAmount;
-	}else if( strcmp( Argument, "rePET") == 0)	{//剩馀宠物栏位
+	}else if( strcmp( Argument, "rePET") == 0)	{//呁牄唾昜戲弇
 		NPCS_getUserPetAmount( charaindex, probjID, 0);
 		MyPoint = reAmount;
 	}else {
@@ -174,22 +174,22 @@ BOOL NPCS_ArgumentFreeCheck( int charaindex, char* Argument, int amount, int tem
 BOOL NPCS_ArgumentBigSmallCheck( int point, int mypoint, int flg)
 {
 	switch( flg){
-	case uEQUAL: //等於
+	case uEQUAL: //脹黺
 		if( mypoint == point ) return TRUE;
 		break;
-	case uBIGEQUALt: //大於等於
+	case uBIGEQUALt: //湮黺脹黺
 		if( mypoint >= point ) return TRUE;
 		break;
-	case uSMALLEQUALt: //小於等於
+	case uSMALLEQUALt: //苤黺脹黺
 		if( mypoint <= point ) return TRUE;
 		break;
-	case uBIGTHAN: //大於
+	case uBIGTHAN: //湮黺
 		if( mypoint > point ) return TRUE;
 		break;
-	case uSMALLTHAN: //小於
+	case uSMALLTHAN: //苤黺
 		if( mypoint < point ) return TRUE;
 		break;
-	case uNEQUAL: //不等於
+	case uNEQUAL: //祥脹黺
 		if( mypoint != point ) return TRUE;
 		break;
 	}
@@ -273,7 +273,7 @@ BOOL NPCS_RunDoEventAction( int charaindex, char *buf1)
 	if( NPC_Util_GetStrFromStrWithDelim( buf1, "DelItem", buf2, sizeof( buf2)) != NULL ) {
 		//print("\n DelItem:%s:%d ", __FILE__, __LINE__);
 		if( NPC_ActionDelItem( charaindex, buf2) == FALSE ) {
-			//print("\n 改封包??NPC_ActionDelItem:%s:%s  ", CHAR_getChar(toindex, CHAR_CDKEY), buf2);
+			//print("\n 蜊猾婦??NPC_ActionDelItem:%s:%s  ", CHAR_getChar(toindex, CHAR_CDKEY), buf2);
 			return FALSE;
 		}
 	}

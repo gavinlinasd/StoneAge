@@ -12,7 +12,7 @@
 #include "magic_base.h"
 #include "handletime.h"
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 #include "profession_skill.h"
 #endif
 
@@ -25,21 +25,21 @@ int BATTLE_MpDown( int charaindex, int down )
 #else
 {
 	int mp, battleindex;
-	// 爵  反覆谛爵井｝???爵井
+	// 橋  毀葡硞橋凝��???橋凝
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return TRUE;
-	// 覆谛爵元扎卅井匀凶日??
+	// 葡硞橋啋崨埵凝埱倜��??
 	if( BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P ){
 		return TRUE;
 	}
 
-	// ??毛蛹日六月井＂
+	// ??禱蚍�桷齉職恐�
 	mp = CHAR_getInt( charaindex, CHAR_MP );
 	if( mp < down ){
-		// 蛹日六卅中及匹窒手仄卅中午允月
+		// 蚍�桷�埵笢摯ぁ笰忒媃埵笢敁埰堎
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_NONE );
-		// 戊穴件玉OK及隙烂
+		// 昡悃璃迶OK摯炩擭
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 		return FALSE;
 	}
@@ -56,7 +56,7 @@ void BattleCommandDispach( int fd,	char *command )
 	int EscapeFree = BATTLE_FLG_FREEDP;
 	int charaindex = CONNECT_getCharaindex(fd);
 	char szBuffer[256]="";
-#ifdef _FIXWOLF	 // Syu ADD 修正狼人变身Bug
+#ifdef _FIXWOLF	 // Syu ADD 党淏曖�丳韎檨ug
 	int i , j , pindex;
 	BATTLE_ENTRY	*pEntry;
 #endif
@@ -87,10 +87,10 @@ void BattleCommandDispach( int fd,	char *command )
 		EscapeFree = 0; 
 		if (CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEWATCH )!=TRUE){
 			CHAR_talkToCli( charaindex, -1,
-                "华义大魔王使出定身法，定定定定定定把你定在战斗里。", CHAR_COLORYELLOW );
+                "貌砱湮藹卼妏堤隅旯楊ㄛ隅隅隅隅隅隅參斕隅婓桵須爵﹝", CHAR_COLORYELLOW );
             CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_GUARD );
             CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-            //sprintf( szBuffer, "Command(%s)(防御)", CHAR_getUseName( charaindex ) );
+            //sprintf( szBuffer, "Command(%s)(滅郘)", CHAR_getUseName( charaindex ) );
             endFlg = 1;
 			BATTLE_MpDown( charaindex, 2 ); 
 		}else{
@@ -108,7 +108,7 @@ void BattleCommandDispach( int fd,	char *command )
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ESCAPE );
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-		//sprintf( szBuffer, "Command(%s)(逃跑)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(枅變)", CHAR_getUseName( charaindex ) );
 		endFlg = 1;
 
 		BATTLE_MpDown( charaindex, 20 );
@@ -142,12 +142,12 @@ void BattleCommandDispach( int fd,	char *command )
 				CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_BOOMERANG );
 #ifdef _PETSKILL_BECOMEFOX
 				if( CHAR_getInt( charaindex, CHAR_BASEIMAGENUMBER)==101749
-					|| CHAR_getWorkInt( charaindex, CHAR_WORKFOXROUND ) != -1 ){ //若是变成小狐狸不可以使用回力标
+					|| CHAR_getWorkInt( charaindex, CHAR_WORKFOXROUND ) != -1 ){ //�襣Д銙奾◇�燥祥褫眕妏蚚隙薯梓
 				    CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_NONE );
 				}
 #endif
 #ifdef _PETSKILL_BECOMEPIG
-				if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > -1 ){//变成乌力了
+				if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > -1 ){//曹傖拫薯賸
 				    CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ATTACK );
 				}
 #endif
@@ -158,7 +158,7 @@ void BattleCommandDispach( int fd,	char *command )
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
 		CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, 1 );
-		//sprintf( szBuffer, "Command(%s)(战斗)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(桵須)", CHAR_getUseName( charaindex ) );
 
 		endFlg = 1;
 
@@ -178,7 +178,7 @@ void BattleCommandDispach( int fd,	char *command )
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-		sprintf( szBuffer, "Command(%s)(防御)", CHAR_getUseName( charaindex ) );
+		sprintf( szBuffer, "Command(%s)(滅郘)", CHAR_getUseName( charaindex ) );
 		endFlg = 1;
 
 		BATTLE_MpDown( charaindex, 2 );
@@ -191,8 +191,8 @@ void BattleCommandDispach( int fd,	char *command )
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_WAIT );
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-//		sprintf( szBuffer, "Command(%s)(server托管)", CHAR_getUseName( charaindex ) );
-		//sprintf( szBuffer, "Command(%s)(待机)", CHAR_getUseName( charaindex ) );
+//		sprintf( szBuffer, "Command(%s)(server迖奪)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(渾儂)", CHAR_getUseName( charaindex ) );
 		endFlg = 1;
 
 	}else
@@ -218,7 +218,7 @@ void BattleCommandDispach( int fd,	char *command )
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-		//sprintf( szBuffer, "Command(%s)(捕获)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(眸鳳)", CHAR_getUseName( charaindex ) );
 		endFlg = 1;
 
 		BATTLE_MpDown( charaindex, 20 );
@@ -246,7 +246,7 @@ void BattleCommandDispach( int fd,	char *command )
 #ifdef _STANDBYPET
 		if( iNum >= 0) {
 			if( ! (CHAR_getWorkInt( charaindex, CHAR_WORKSTANDBYPET) & ( 1 << iNum)) ) {
-				print("\n 改封包!叫出非待机宠!!:%s ", CHAR_getChar( charaindex, CHAR_CDKEY) );
+				print("\n 蜊猾婦!請堤準渾儂唾!!:%s ", CHAR_getChar( charaindex, CHAR_CDKEY) );
 				iNum = -1;
 			}
 		}
@@ -255,10 +255,10 @@ void BattleCommandDispach( int fd,	char *command )
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, iNum );
 		if( iNum < 0 ){
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_PETIN );
-			//sprintf( szBuffer, "Command(%s)(唤回宠物)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(遢隙唾昜)", CHAR_getUseName( charaindex ) );
 		}else{
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_PETOUT );
-			//sprintf( szBuffer, "Command(%s)(叫出宠物)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(請堤唾昜)", CHAR_getUseName( charaindex ) );
 		}
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
@@ -287,18 +287,18 @@ void BattleCommandDispach( int fd,	char *command )
 				|| checkErrorStatus( petindex)
 				)
 			{
-				//sprintf( szBuffer, "Command(%s)(自动)", CHAR_getUseName( petindex ) );
+				//sprintf( szBuffer, "Command(%s)(赻雄)", CHAR_getUseName( petindex ) );
 				CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 #ifdef _PETSKILLBUG //Add By Syu 2002.0805
 			}else if ((CHAR_getInt(petindex, CHAR_TRANSMIGRATION)<1)
 				&& (  iNum>=CHAR_getInt(petindex, CHAR_SLOT) ) ) 
 				{
-				//sprintf( szBuffer, "Command(%s)(自动)", CHAR_getUseName( petindex ) );
+				//sprintf( szBuffer, "Command(%s)(赻雄)", CHAR_getUseName( petindex ) );
 				CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 #endif
 			}else{
 				petskillindex = PETSKILL_GetArray( petindex, iNum);
-#ifdef _FIXWOLF	 // Syu ADD 修正狼人变身Bug
+#ifdef _FIXWOLF	 // Syu ADD 党淏曖�丳韎檨ug
 				if( (CHAR_getPetSkill( petindex , iNum )== 600) && (ToNo == -1))
 				{
 					for( j = 0; j < 2; j ++ )
@@ -319,12 +319,12 @@ void BattleCommandDispach( int fd,	char *command )
 				if( petskillindex >= 0
 				&& PETSKILL_Use( petindex, iNum, ToNo, NULL ) == TRUE
 				){
-					//sprintf( szBuffer, "Command(%s)(石版)", CHAR_getUseName( petindex ) );
+					//sprintf( szBuffer, "Command(%s)(坒唳)", CHAR_getUseName( petindex ) );
 
 					EscapeFree = 0;
 
 				}else{
-					//sprintf( szBuffer, "Command(%s)(自动)", CHAR_getUseName( petindex ) );
+					//sprintf( szBuffer, "Command(%s)(赻雄)", CHAR_getUseName( petindex ) );
 					CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 				}
 			}
@@ -377,7 +377,7 @@ void BattleCommandDispach( int fd,	char *command )
 					CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, magicindex );
 					CHAR_SETWORKINT_HIGH( charaindex, CHAR_WORKBATTLECOM3, iNum );
 					CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-					//sprintf( szBuffer, "Command(%s)(咒术)", CHAR_getUseName( charaindex ) );
+					//sprintf( szBuffer, "Command(%s)(紸扲)", CHAR_getUseName( charaindex ) );
 #ifdef _ITEM_ATTSKILLMAGIC
 				}
 #endif
@@ -386,7 +386,7 @@ void BattleCommandDispach( int fd,	char *command )
 			EscapeFree = 0;
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_WAIT );
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-			//sprintf( szBuffer, "Command(%s)(待机)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(渾儂)", CHAR_getUseName( charaindex ) );
 		}
 		endFlg = 1;
 	}else
@@ -415,12 +415,12 @@ void BattleCommandDispach( int fd,	char *command )
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ITEM );
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM3, iNum );
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-			//sprintf( szBuffer, "Command(%s)(道具)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(耋撿)", CHAR_getUseName( charaindex ) );
 			endFlg = 1;
 		}
 	}else
 	if( strncmp( command, "@", 1 ) == 0 ){
-		//sprintf( szBuffer, "Command(%s)(通用)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(籵蚚)", CHAR_getUseName( charaindex ) );
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 		endFlg = 1;
@@ -429,7 +429,7 @@ void BattleCommandDispach( int fd,	char *command )
 			min( 100, CHAR_getInt( charaindex, CHAR_MP ) + 30 ) );
 
 	}else
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( strncmp( command, "P", 1 ) == 0 ){
 		int iNum=-1, ToNo=-1;
 		int skillindex=-1;
@@ -447,16 +447,16 @@ void BattleCommandDispach( int fd,	char *command )
 		}
 
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE ){
-			print("\n\n 非法封包(19001)(%s)(%s)\n\n", CHAR_getChar(charaindex, CHAR_CDKEY), CHAR_getChar(charaindex, CHAR_NAME) );
+			print("\n\n 準楊猾婦(19001)(%s)(%s)\n\n", CHAR_getChar(charaindex, CHAR_CDKEY), CHAR_getChar(charaindex, CHAR_NAME) );
 #ifdef _PROSKILL_ERR_KICK
 			saacproto_ACKick_send( acfd, CHAR_getChar(charaindex,CHAR_CDKEY), getFdidFromCharaIndex( charaindex), 1);
 #endif
 			return;
 		}
-#ifdef _PROSKILL_OPTIMUM	// Robin fix cancel 此处略过职业检查, 改在 PROFESSION_SKILL_Use 中检查
-		// 人物的职业
+#ifdef _PROSKILL_OPTIMUM	// Robin fix cancel 森揭謹徹眥珛潰脤, 蜊婓 PROFESSION_SKILL_Use 笢潰脤
+		// �冼齔齡曼�
 		char_pskill = CHAR_getInt( charaindex, PROFESSION_CLASS );
-		// 技能的职业
+		// 撮夔腔眥珛
 		skillindex = PROFESSION_SKILL_GetArray( charaindex, iNum);
 		Pskillid = PROFESSION_SKILL_getskillArray( skillindex);
 		profession_skill = PROFESSION_SKILL_getInt( Pskillid, PROFESSION_SKILL_PROFESSION_CLASS);
@@ -466,23 +466,23 @@ void BattleCommandDispach( int fd,	char *command )
 		if( 1 ) {
 #endif
 			if( PROFESSION_SKILL_Use( charaindex, iNum, ToNo, NULL ) == 1 ){
-				//sprintf( szBuffer, "Command(%s)(职业技能)", CHAR_getUseName( charaindex ) );
+				//sprintf( szBuffer, "Command(%s)(眥珛撮夔)", CHAR_getUseName( charaindex ) );
 				endFlg = 1;
 			}else{
-				print("\n职业技能失败!! ");
+				print("\n眥珛撮夔囮啖!! ");
 				CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_WAIT );
 				CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-				//sprintf( szBuffer, "Command(%s)(待机)", CHAR_getUseName( charaindex ) );		
+				//sprintf( szBuffer, "Command(%s)(渾儂)", CHAR_getUseName( charaindex ) );		
 #ifdef _PROSKILL_ERR_KICK
 			saacproto_ACKick_send( acfd, CHAR_getChar(charaindex,CHAR_CDKEY), getFdidFromCharaIndex( charaindex), 1);
 #endif
 			}
 		}else{
-			print("\n改封包??职业技能ID不正确:%s:%d:%d \n",
+			print("\n蜊猾婦??眥珛撮夔ID祥淏��:%s:%d:%d \n",
 					CHAR_getChar( charaindex, CHAR_CDKEY), char_pskill, profession_skill);
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_WAIT );
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-			//sprintf( szBuffer, "Command(%s)(待机)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(渾儂)", CHAR_getUseName( charaindex ) );
 #ifdef _PROSKILL_ERR_KICK
 			saacproto_ACKick_send( acfd, CHAR_getChar(charaindex,CHAR_CDKEY), getFdidFromCharaIndex( charaindex), 1);
 #endif
@@ -493,7 +493,7 @@ void BattleCommandDispach( int fd,	char *command )
 #endif
 
 	{
-		//sprintf( szBuffer, "Command(%s)(失败)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(囮啖)", CHAR_getUseName( charaindex ) );
 		endFlg = 2;
 	}
 
@@ -536,53 +536,53 @@ void BATTLE_ActSettingSend( int battleindex )
 		pEntry = BattleArray[battleindex].Side[j].Entry;
 		for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 			pindex = pEntry[i].charaindex;
-			// 戊穴件玉    匹五化中凶日
+			// 昡悃璃迶    ぁ拻趙笢倜��
 			if( CHAR_getWorkInt( pindex, CHAR_WORKBATTLEMODE )
 				== BATTLE_CHARMODE_C_OK
 			){
-				endBit |= 1 << k;	// 申永玄  化月
+				endBit |= 1 << k;	// 扠蚗哱  趙堎
 			}else
-			// 衬分匀凶日濮覆  井允
+			// 傍煦埱倜�涬孛�  凝埰
 			if( CHAR_getInt( pindex, CHAR_WHICHTYPE ) == CHAR_TYPEENEMY )
 			{
-				endBit |= 1 << k;	// 申永玄  化月
+				endBit |= 1 << k;	// 扠蚗哱  趙堎
 			}
 			k ++;
 		}
 	}
 	sprintf( szBA, "BA|%X|%X|", endBit, BattleArray[battleindex].turn );
 //	print( "%s\n", szBA );
-	//今日卞蝈够伙□皿仄化霜月
+	//踏�梇殣撟遙鵅劗鵷し罟肴�
 	for( j = 0; j < 2; j ++ ){
 		pEntry = BattleArray[battleindex].Side[j].Entry;
 		for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 			pindex = pEntry[i].charaindex;
 			if( CHAR_CHECKINDEX( pindex ) == FALSE )continue;
-			// 辅爵仄凶化及平乓仿卞反霜日卅中
+			// 落橋媃倜趙摯す籤溘勗毀邞�欷聿�
 			if( CHAR_getWorkInt( pindex, CHAR_WORKBATTLEMODE ) == BATTLE_CHARMODE_RESCUE )continue;
-			// 皿伊奶乩□分匀凶日
+			// 鏤畛騷媕↓煦埱倜��
 			if( CHAR_getInt( pindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER
-			){	// 戊穴件玉霜月
+			){	// 昡悃璃迶邞堎
 				BATTLE_CommandSend( pindex, szBA );
 			}
 		}
 	}
 
 
-	// 棋爵仄化中月谛卞手霜月
+	// め橋媃趙笢堎硞勗忒邞堎
 	pBattle = BattleArray[battleindex].pNext;
 	for( ; pBattle ; pBattle = pBattle->pNext ){
-		// 仇及失玉伊旦互恳仄中井民尼永弁
+		// 喫摯囮迶畛筒誑諜媃笢凝鏍攝蚗袲
 		if( BATTLE_CHECKADDRESS( pBattle ) == FALSE ){
-			fprint( "err:观战battle address错误(%p)\n", pBattle );
+			fprint( "err:夤桵battle address渣昫(%p)\n", pBattle );
 			break;
 		}
-		// 蝈够卞霜耨
+		// 蠈劂勗邞嚭
 		for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 			charaindex = pBattle->Side[0].Entry[i].charaindex;
 			if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
 			if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )continue;
-			// 戊穴件玉霜月
+			// 昡悃璃迶邞堎
 			BATTLE_CommandSend( pindex, szBA );
 		}
 	}
@@ -605,7 +605,7 @@ BOOL BATTLE_IsHide( int charaindex ){
 
 //*******************************************************
 //
-//  田玄伙及戊穴件玉毛弁仿奶失件玄卞霜月
+//  泬哱鳴摯昡悃璃迶禱袲溘騷囮璃哱勗邞堎
 //
 BOOL BATTLE_CommandSend( int charaindex, char *pszCommand )
 //
@@ -642,7 +642,7 @@ BOOL BATTLE_MakeCharaString(
 
 	for( j = 0; j < 2; j ++ ){
 		if( j == 1 ){
-			iOffset = SIDE_OFFSET;	// 轾仇丹础扔奶玉及桦宁反皿仿旦允月
+			iOffset = SIDE_OFFSET;	// 澺喫竣插�蚅枅鬄啗踽�毀鏤溘筒埰堎
 		}else{
 			iOffset = 0;
 		}
@@ -663,22 +663,22 @@ BOOL BATTLE_MakeCharaString(
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKPOISON ) > 0 ){
 				flg |= BC_FLG_POISON;
 			}else
-#ifdef _MAGIC_WEAKEN      //   虚弱			
+#ifdef _MAGIC_WEAKEN      //   剞��			
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKWEAKEN ) > 0 ){
 				flg |= BC_FLG_WEAKEN;
 			}else 
 #endif
-#ifdef _MAGIC_DEEPPOISON  //   剧毒
+#ifdef _MAGIC_DEEPPOISON  //   曄馮
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKDEEPPOISON ) > 0 ){
 				flg |= BC_FLG_DEEPPOISON;
 			}else
 #endif
-#ifdef _MAGIC_NOCAST     //   沉默
+#ifdef _MAGIC_NOCAST     //   麥蘇
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKNOCAST ) > 0 ){
 				flg |= BC_FLG_NOCAST;
 			}else
 #endif
-#ifdef _MAGIC_BARRIER	  //   魔障
+#ifdef _MAGIC_BARRIER	  //   藹梤
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKBARRIER ) > 0 ){
 				flg |= BC_FLG_BARRIER;
 			}else 
@@ -707,63 +707,63 @@ BOOL BATTLE_MakeCharaString(
 			if( BATTLE_IsHide( charaindex ) == TRUE ){
 				flg |= BC_FLG_HIDE;
 			}
-#ifdef _PET_SKILL_SARS			// WON ADD 毒煞蔓延
+#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKSARS ) > 0 ){
 				flg |= BC_FLG_SARS;
 			}
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKDIZZY ) > 0 ){
-				flg |= BC_FLG_DIZZY;			// 晕眩	
+				flg |= BC_FLG_DIZZY;			// 婠悈	
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKENTWINE ) > 0 ){
-				flg |= BC_FLG_ENTWINE;			// 树根缠绕
+				flg |= BC_FLG_ENTWINE;			// 攷跦莊��
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKDRAGNET ) > 0 ){
-				flg |= BC_FLG_DRAGNET;			// 天罗地网	
+				flg |= BC_FLG_DRAGNET;			// 毞蹕華厙	
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKICECRACK ) > 0 ){
-			//	flg |= BC_FLG_ICECRACK;			// 冰爆术	
+			//	flg |= BC_FLG_ICECRACK;			// 梨惇扲	
 			}			
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKOBLIVION ) > 0 ){
-				flg |= BC_FLG_OBLIVION;			// 遗忘
+				flg |= BC_FLG_OBLIVION;			// 疻咭
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKICEARROW ) > 0 ){
-				flg |= BC_FLG_ICEARROW;			// 冰箭
+				flg |= BC_FLG_ICEARROW;			// 梨璋
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKBLOODWORMS ) > 0 ){
-				flg |= BC_FLG_BLOODWORMS;		// 嗜血蛊
+				flg |= BC_FLG_BLOODWORMS;		// 岓悛嘍
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKSIGN ) > 0 ){
-				flg |= BC_FLG_SIGN;				// 一针见血
+				flg |= BC_FLG_SIGN;				// 珨渀獗悛
 			}		
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKINSTIGATE ) > 0 ){
-				flg |= BC_FLG_CARY;				// 挑拨
+				flg |= BC_FLG_CARY;				// 泔畢
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORK_F_ENCLOSE ) > 0 ){
-				flg |= BC_FLG_F_ENCLOSE;		// 火附体
+				flg |= BC_FLG_F_ENCLOSE;		// 鳶蜇极
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORK_I_ENCLOSE ) > 0 ){
-				flg |= BC_FLG_I_ENCLOSE;		// 冰附体
+				flg |= BC_FLG_I_ENCLOSE;		// 梨蜇极
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORK_T_ENCLOSE ) > 0 ){
-				flg |= BC_FLG_T_ENCLOSE;		// 雷附体
+				flg |= BC_FLG_T_ENCLOSE;		// 濘蜇极
 			}
 #endif
 #ifdef _PROFESSION_ADDSKILL
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKANNEX ) > 0 ){
-				flg |= BC_FLG_T_ENCLOSE;		// 附身术
+				flg |= BC_FLG_T_ENCLOSE;		// 蜇旯扲
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKWATER ) > 0 ){
-				flg |= BC_FLG_WATER;		// 水附体
+				flg |= BC_FLG_WATER;		// 阨蜇极
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKFEAR ) > 0 ){
-				flg |= BC_FLG_FEAR;		// 恐惧
+				flg |= BC_FLG_FEAR;		// 謁曉
 			}
 #endif
 #ifdef _PETSKILL_LER
 			if(CHAR_getWorkInt(charaindex,CHAR_WORK_RELIFE) > 0){
-				flg |= BC_FLG_CHANGE;		// 雷尔变身
+				flg |= BC_FLG_CHANGE;		// 濘嫌曹旯
 				CHAR_setWorkInt(charaindex,CHAR_WORK_RELIFE,0);
 			}
 #endif
@@ -787,13 +787,13 @@ BOOL BATTLE_MakeCharaString(
 			}else {
 				if( CHAR_getWorkInt( charaindex, CHAR_WORKPETFALL ) == 1 ){
 					rideflg = -1;
-#ifdef _PETSKILL_BECOMEFOX // 若中了媚惑术而落马时将讯息传给 Client
+#ifdef _PETSKILL_BECOMEFOX // �趮釓佸躉鯞黧讕鞃簆掃巷剿５姜� Client
 					if( CHAR_getWorkInt( charaindex, CHAR_WORKFOXROUND ) != -1 )
-						rideflg = -2; //client用来判断显示落马的文字 (对应的client变数为p_party[ BattleMyNo ]->onRide)
+						rideflg = -2; //client蚚懂瓚剿珆尨邈鎮腔恅趼 (勤茼腔client曹杅峈p_party[ BattleMyNo ]->onRide)
 #endif
-#ifdef _PETSKILL_BECOMEPIG // 若中了乌力化而落马时将讯息传给 Client
-					if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > 120 )//变成乌力了
-						rideflg = -3; //client用来判断显示落马的文字 (对应的client变数为p_party[ BattleMyNo ]->onRide)
+#ifdef _PETSKILL_BECOMEPIG // �趮釓冼睋氖窄讕鞃簆掃巷剿５姜� Client
+					if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > 120 )//曹傖拫薯賸
+						rideflg = -3; //client蚚懂瓚剿珆尨邈鎮腔恅趼 (勤茼腔client曹杅峈p_party[ BattleMyNo ]->onRide)
 #endif
 					 CHAR_setWorkInt( charaindex, CHAR_WORKPETFALL, 0 );
 				}
@@ -821,7 +821,7 @@ BOOL BATTLE_MakeCharaString(
 				petmaxhp
 			);
 			STRCPY_TAIL( pszTop, pszLast, szBuffer );
-			if( pszTop >= pszLast )return FALSE;// 译尹凶日撩  
+			if( pszTop >= pszLast )return FALSE;// 祒窇倜�桷�  
 		}
 	}
 
@@ -829,8 +829,8 @@ BOOL BATTLE_MakeCharaString(
 }
 
 void BATTLE_BpSendToWatch(
-	BATTLE *pBattle, 	// 棋爵田玄伙正旦弁及禾奶件正
-	char *pszBcString 	// BC  侬  
+	BATTLE *pBattle, 	// め橋泬哱鳴淏筒袲摯睽騷璃淏
+	char *pszBcString 	// BC  棬  
 )
 {
 
@@ -839,13 +839,13 @@ void BATTLE_BpSendToWatch(
 
 //	for( ; pBattle ; pBattle = pBattle->pNext ){
 	if( pBattle == NULL )return;
-	// 仇及失玉伊旦互恳仄中井民尼永弁
+	// 喫摯囮迶畛筒誑諜媃笢凝鏍攝蚗袲
 	if( BATTLE_CHECKADDRESS( pBattle ) == FALSE ){
-		fprint( "err:观战battle address错误(%p)\n", pBattle );
+		fprint( "err:夤桵battle address渣昫(%p)\n", pBattle );
 		return;
 	}
 
-	// 蝈够卞霜耨
+	// 蠈劂勗邞嚭
 	for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 		charaindex = pBattle->Side[0].Entry[i].charaindex;
 		if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
@@ -853,16 +853,16 @@ void BATTLE_BpSendToWatch(
 			!= CHAR_TYPEPLAYER ) continue;
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE )
 			== BATTLE_CHARMODE_WATCHINIT){
-			flg |= BP_FLG_JOIN;	// 蕙筋辅笛
+			flg |= BP_FLG_JOIN;	// 犍踐落萃
 		}
-		flg |= BP_FLG_PLAYER_MENU_OFF;	// 皿伊奶乩□丢瓦亘□请今卅中
-		// 皿伊奶乩□  寞霜月
+		flg |= BP_FLG_PLAYER_MENU_OFF;	// 鏤畛騷媕↓隍俓堥↓③踏埵笢
+		// 鏤畛騷媕↓  蠕邞堎
 		sprintf( szBp, "BP|%X|%X|%X", 20, flg, 0 );
 		BATTLE_CommandSend( charaindex, szBp );
-		// 蝈够隋骚树  霜月
+		// 蠈劂呬玊攷  邞堎
 		BATTLE_CommandSend( charaindex, pszBcString );
 	}
-	// 戊穴件玉谨切尺
+	// 昡悃璃迶輝з喜
 	pBattle->mode = BATTLE_MODE_WATCHPRE;
 //	}
 }
@@ -893,7 +893,7 @@ void BATTLE_CharSendAll( int battleindex )
 				}
 				if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE )
 					== BATTLE_CHARMODE_RESCUE){
-					flg |= BP_FLG_JOIN;		// 辅爵
+					flg |= BP_FLG_JOIN;		// 落橋
 				}
 			At_SoubiIndex = CHAR_getItemIndex( charaindex, CHAR_ARM );
 			if( ITEM_CHECKINDEX( At_SoubiIndex ) == FALSE ){
@@ -913,16 +913,16 @@ void BATTLE_CharSendAll( int battleindex )
 #ifdef _PETSKILL_DAMAGETOHP
 	{
 /*
-		让开,让开~~~~~~~
+		�藩�,�藩泠~~~~~~
                      
-               ΘΘ  
-             ⊙  ⊙  我来给你送月饼了
+               成成  
+             ×  ×  扂懂跤斕冞堎欲賸
 */
 		char msg[32]={0};
-		//print("\n宠物id:%d",CHAR_getInt( pindex, CHAR_PETID)); 
-		//print("\n宠物名:%s",CHAR_getChar( pindex, CHAR_NAME)); 
-		//if( CHAR_getInt( pindex, CHAR_PETID) == 777 ){//宠物ID 水双头狼
-		//	  || CHAR_getInt( pindex, CHAR_PETID) == 146 ) //火双头狼
+		//print("\n唾昜id:%d",CHAR_getInt( pindex, CHAR_PETID)); 
+		//print("\n唾昜靡:%s",CHAR_getChar( pindex, CHAR_NAME)); 
+		//if( CHAR_getInt( pindex, CHAR_PETID) == 777 ){//唾昜ID 阨邧芛曖
+		//	  || CHAR_getInt( pindex, CHAR_PETID) == 146 ) //鳶邧芛曖
 		//	&& CHAR_getInt( pindex, CHAR_HP) ){
 		    sprintf( msg, "o%d", pet );
 		    CHAR_sendStatusString( charaindex, msg );
@@ -931,9 +931,9 @@ void BATTLE_CharSendAll( int battleindex )
 	} 
 #endif
 
-#ifdef _PETSKILL_BECOMEFOX // 限制中了媚惑术的宠物的技能
+#ifdef _PETSKILL_BECOMEFOX // 癹秶笢賸藥鼻扲腔唾昜腔撮夔
 		    //if( CHAR_getInt( pindex, CHAR_BASEIMAGENUMBER) == 101749 ){
-	        if( CHAR_getWorkInt( pindex, CHAR_WORKFOXROUND ) != -1 ){ //若是变成小狐狸
+	        if( CHAR_getWorkInt( pindex, CHAR_WORKFOXROUND ) != -1 ){ //�襣Д銙奾◇�燥
 			    char msg[32]={0};
 				sprintf( msg, "a%d", pet );
 		        CHAR_sendStatusString( charaindex, msg );
@@ -976,9 +976,9 @@ void BATTLE_CharSendAll( int battleindex )
 	}
 	pBattle = BattleArray[battleindex].pNext;
 	for( ; pBattle ; pBattle = pBattle->pNext ){
-		// 仇及失玉伊旦互恳仄中井民尼永弁
+		// 喫摯囮迶畛筒誑諜媃笢凝鏍攝蚗袲
 		if( BATTLE_CHECKADDRESS( pBattle ) == FALSE ){
-			fprint( "err:观战battle address错误(%p)\n", pBattle );
+			fprint( "err:夤桵battle address渣昫(%p)\n", pBattle );
 			break;
 		}
 
@@ -1013,7 +1013,7 @@ void BattleEncountOut( int charaindex)
 		pmode = CHAR_getWorkInt( pindex, CHAR_WORKBATTLEMODE );
 		if( pmode > 0 && pmode != BATTLE_CHARMODE_FINAL ){
 				BATTLE_RescueParentTry( charaindex, pindex );
-				print( "较慢参加战斗(%s)\n", CHAR_getUseName( charaindex ) );
+				print( "誕鞣統樓桵須(%s)\n", CHAR_getUseName( charaindex ) );
 		}
 	}
 
@@ -1022,18 +1022,18 @@ void BattleEncountOut( int charaindex)
 
 //**************************************************
 //
-// 犯白巧伙玄及戊穴件玉毛  木月矢永玄迕
+// 溢啞б鳴哱摯昡悃璃迶禱  躂堎妐蚗哱暵
 //
 BOOL	BATTLE_PetDefaultCommand( int petindex )
 //
 //**************************************************
 {
 	if( CHAR_CHECKINDEX( petindex ) == FALSE )return FALSE;
-	// 锹澎及隙烂
+	// Ъ鱗摯炩擭
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLECOM2, -1 );
-	// 骚橘  猾及隙烂
+	// 玊橖  賓摯炩擭
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ATTACK );
-	// 戊穴件玉OK及隙烂
+	// 昡悃璃迶OK摯炩擭
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
 	return TRUE;
@@ -1046,28 +1046,28 @@ BOOL	BATTLE_PetDefaultCommand( int petindex )
 	Damage = ABS( LifeUp );
 
 	for( i = 0; i < ; i ++ ){
-	// (蕙滇)仇仇匹戊穴件玉毛中木月
+	// (犍菲)喫喫ぁ昡悃璃迶禱笢躂堎
 	snprintf( szCommand, sizeof(szCommand),	"BD|r%X|0|%X|d%X|", ToList[i], Sign, Damage );
 	BATTLESTR_ADD( szCommand );
 }
 
 #endif
 
-// Robin fix 检查石化昏睡不可战斗
+// Robin fix 潰脤坒趙餉阯祥褫桵須
 int checkErrorStatus( int charaindex)
 {
 	//if( BATTLE_CanMoveCheck( charaindex) == FALSE) {
 
 	if( 
-		CHAR_getWorkInt( charaindex, CHAR_WORKPARALYSIS ) > 0	// 麻痹
-		|| CHAR_getWorkInt( charaindex, CHAR_WORKSTONE ) > 0	// 石化
-		|| CHAR_getWorkInt( charaindex, CHAR_WORKSLEEP ) > 0	// 睡眠
-		//|| CHAR_getWorkInt( charaindex, CHAR_WORKBARRIER ) > 0	// 魔障
-		|| CHAR_getWorkInt( charaindex, CHAR_WORKDIZZY ) > 0	// 晕眩
-		|| CHAR_getWorkInt( charaindex, CHAR_WORKDRAGNET ) > 0	// 天罗地网
-		//|| CHAR_getWorkInt( charaindex, CHAR_WORK_T_ENCLOSE ) > 0 // 雷附体
+		CHAR_getWorkInt( charaindex, CHAR_WORKPARALYSIS ) > 0	// 鎊敘
+		|| CHAR_getWorkInt( charaindex, CHAR_WORKSTONE ) > 0	// 坒趙
+		|| CHAR_getWorkInt( charaindex, CHAR_WORKSLEEP ) > 0	// 阯蹺
+		//|| CHAR_getWorkInt( charaindex, CHAR_WORKBARRIER ) > 0	// 藹梤
+		|| CHAR_getWorkInt( charaindex, CHAR_WORKDIZZY ) > 0	// 婠悈
+		|| CHAR_getWorkInt( charaindex, CHAR_WORKDRAGNET ) > 0	// 毞蹕華厙
+		//|| CHAR_getWorkInt( charaindex, CHAR_WORK_T_ENCLOSE ) > 0 // 濘蜇极
 #ifdef _PROFESSION_ADDSKILL
-//		|| CHAR_getWorkInt( charaindex, CHAR_DOOMTIME ) > 0 //世界末日集气
+//		|| CHAR_getWorkInt( charaindex, CHAR_DOOMTIME ) > 0 //岍賜藺�梩紜�
 #endif
 	)
 	{
@@ -1078,7 +1078,7 @@ int checkErrorStatus( int charaindex)
 		else
 			strcpy( cdkey, CHAR_getChar( charaindex, CHAR_OWNERCDKEY) );
 	
-		print("\n 改封包!不可战斗的状态!!:%s ", cdkey );
+		print("\n 蜊猾婦!祥褫桵須腔袨怓!!:%s ", cdkey );
 
 		return 1;
 	}

@@ -18,35 +18,35 @@ typedef struct tagLevelUpPattern
         int origin;
         int multi;
     }exptbl[3];
-    int     hpupminpoint;   /*  hp 及丐互月   斓袄*/
-    int     hpupmaxpoint;   /*  hp 及丐互月   斓袄*/
+    int     hpupminpoint;   /*  hp 摯堣誑堎   黖偯*/
+    int     hpupmaxpoint;   /*  hp 摯堣誑堎   黖偯*/
 
-    int     needexp;        /*    邰卅烦董袄    */
+    int     needexp;        /*    菺埵歲雁偯    */
 #else
     int     uppoint[5];
 #endif
 }LevelUpPattern;
 
-/*====================赓渝袄｝伊皮伙失永皿楮溢====================*/
+/*====================疐趵偯��畛々鳴囮蚗鏤匴祛====================*/
 BOOL CHAR_getDefaultChar( Char*  nc, int imagenumber );
 
-/*====================隶    ｝  飓  寞赘尹楮溢====================*/
+/*====================薔    ��  鴢  蠕袑窇匴祛====================*/
 int CHAR_getNewImagenumberFromEquip( int basebaseimagenumber,
                                      ITEM_CATEGORY category );
-/*====================  飓  寞  侬   ->   寞楮溢====================*/
+/*====================  鴢  蠕  棬   ->   蠕匴祛====================*/
 void CHAR_initSeekGraphicNumberFromString();
 int CHAR_seekGraphicNumberFromString( char* string );
 
 
 
-/*====================平乓仿及赓渝袄楮溢====================*/
+/*====================す籤溘摯疐趵偯匴祛====================*/
 BOOL CHAR_getInitElderPosition( Char* ch,int hometown);
 BOOL CHAR_getElderPosition( int elderindex, int* fl, int* x, int* y );
 
 void CHAR_setInitValues( Char* ch );
 
 
-/*====================  衬匏  楮溢====================*/
+/*====================  傍痾  匴祛====================*/
 typedef enum
 {
     CHAR_INVAREA,
@@ -63,13 +63,13 @@ BOOL CHAR_isAppearPosition( int floor, int *x, int *y);
 BOOL CHAR_isCannotDropArea( int floor , int x, int y );
 
 
-/* 赢  楮溢 */
+/* 荇  匴祛 */
 BOOL CHAR_ElderSetPosition( int elderindex ,int fl,int x ,int y);
 
 
 
 /*************************************************
-酵烂伊矛伙失永皿质  
+談擭畛穫鳴囮蚗鏤窐  
 *************************************************/
 
 
@@ -86,8 +86,8 @@ int CHAR_PetLevelUp( int petindex );
 BOOL CHAR_checkFaceImageNumber( int imagenumber, int faceimagenumber);
 BOOL CHAR_checkPlayerImageNumber( int imagenumber);
 
-int CHAR_PetTakeLevelUp( int petindex, int lv);	//强制宠物升级
-int CHAR_PetTakeDrop( int petindex, int floor, int ox, int oy);	//强制丢弃宠物升级
+int CHAR_PetTakeLevelUp( int petindex, int lv);	//Ч秶唾昜汔撰
+int CHAR_PetTakeDrop( int petindex, int floor, int ox, int oy);	//Ч秶隍ィ唾昜汔撰
 
 #ifdef _NPC_FUSION
 int PETFUSION_FusionPetSub( int charaindex, int Subindex1, int Subindex2, int *work, int *skill);
@@ -106,7 +106,7 @@ int NPC_PetTransManGetAns( int total1, int total2, int LV, int rank);
 void CHAR_AutoChikulaStone( int charaindex, int Dflg);
 #endif
 
-#ifdef _STATUS_WATERWORD //水世界状态
+#ifdef _STATUS_WATERWORD //阨岍賜袨怓
 void CHAR_CheckWaterStatus( int charaindex);
 #endif
 

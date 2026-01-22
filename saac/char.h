@@ -2,7 +2,7 @@
 #define _CHAR_H_
 #include "version.h"
 
-/* 1交□扒丐凶曰及    平乓仿醒(白央奶伙醒) */
+/* 1蝠↓勒堣倜堇摯    す籤溘倳(啞栝騷鳴倳) */
 #define MAXCHAR_PER_USER 2
 
 int isLocked( char *id );

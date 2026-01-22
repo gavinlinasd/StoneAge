@@ -1,7 +1,7 @@
 #include "version.h"
 
 #ifdef _NPC_WELFARE
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 
 #include <string.h>
 #include "char.h"
@@ -20,15 +20,15 @@
 static void NPC_Welfare_selectWindow(int meindex, int toindex, int num, int select);
 
 
-//载入好康NPC的初始化
+//婥�赮藩煮PC腔場宎趙
 BOOL NPC_WelfareInit( int meindex )
 {
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEWELFARE);
-    //print("名称:%s\n",CHAR_getChar( meindex, CHAR_NAME));
+    //print("靡備:%s\n",CHAR_getChar( meindex, CHAR_NAME));
     return TRUE;
 }
 
-//对话时的处理
+//勤趕奀腔揭燴
 void NPC_WelfareTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
@@ -106,7 +106,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		return ;
 	}
 
-	// 判断职业
+	// 瓚剿眥珛
 	{
 		if( NPC_Util_GetStrFromStrWithDelim( argstr, "profession_class", msg, sizeof(msg) ) == NULL){
 			return ;
@@ -114,13 +114,13 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 			p_class = atoi(msg);	
 		}
 		
-		// 技能所需职业
+		// 撮夔垀剒眥珛
 		need_class = PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_PROFESSION_CLASS );
 
 		if( CHAR_getInt( talkerindex, PROFESSION_CLASS ) == 0 ){
 			char token[256];
 			memset(token, -1, sizeof(token) );
-			sprintf( token, "您尚未就职!" );
+			sprintf( token, "蠟奾帤憩眥!" );
 			CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORYELLOW);
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 			return;
@@ -130,7 +130,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		if( CHAR_getInt( talkerindex, PROFESSION_CLASS ) != need_class && need_class != 4 ){
 			char token[256];
 			memset(token, -1, sizeof(token) );
-			sprintf( token, "此技能你不能学喔!" );
+			sprintf( token, "森撮夔斕祥夔悝鉊!" );
 			CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORYELLOW);
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 			return;
@@ -139,20 +139,20 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 
 	}
 
-	// 判断剩馀点数
+	// 瓚剿呁牄萸杅
 	{
 		profession_skill_point = CHAR_getInt( talkerindex, PROFESSION_SKILL_POINT );
 		if( profession_skill_point <= 0 ){
 			char token[256];
 			memset(token, -1, sizeof(token) );
-			sprintf( token, "你目前没有学习点数!" );
+			sprintf( token, "斕醴ヶ羶衄悝炾萸杅!" );
 			CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORYELLOW);
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 			return;
 		}
 	}
 
-	// 判断是否达成学习的条件
+	// 瓚剿岆瘁湛傖悝炾腔沭璃
 	{
 		int temp[4] = {0}, count = 0, flag = -1 , need_percent = -1, need_count = 0;
 
@@ -172,7 +172,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 				}
 				if( j >=  PROFESSION_MAX_LEVEL ){
 					char token[256];	
-					sprintf( token, "需先学会任１种战斗技能才能学习！");
+					sprintf( token, "剒珂悝頗�峉敔笝蓿滂敵亄鼴嗀彷除�");
 					CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORYELLOW);
 					CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 					return;
@@ -180,7 +180,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 			}else{
 				flag = -1;
 				for( j=0; j<PROFESSION_MAX_LEVEL; j++ ){
-					// 判断技能
+					// 瓚剿撮夔
 					if( CHAR_getCharSkill( talkerindex, j) == limit ){
 						int skill_level = -1;
 						CHAR_HaveSkill* hskill;
@@ -188,28 +188,28 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 						hskill = CHAR_getCharHaveSkill( talkerindex, j );
 						skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);	
 						
-						// 判断熟练度
+						// 瓚剿抇褶僅
 						if( skill_level >= need_percent ){
 							flag = 1;	break;
 						}					
 					}
 				}
 				
-				// 未达成条件
+				// 帤湛傖沭璃
 				if( flag == -1 && need_percent == 0 ){
 						temp[count] = limit;
 						count ++;					
 				}else if( flag == -1 ){
 					char token[256];	
 					memset(token, -1, sizeof(token) );
-					sprintf( token, "尚未学会%s!", PROFESSION_SKILL_getChar( limit, PROFESSION_SKILL_NAME) );
+					sprintf( token, "奾帤悝頗%s!", PROFESSION_SKILL_getChar( limit, PROFESSION_SKILL_NAME) );
 					CHAR_talkToCli( talkerindex, -1, token, CHAR_COLORYELLOW);
 					CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 					return;
 				}else if( flag == -2 ){
 					char token[256];	
 					memset(token, -1, sizeof(token) );
-					sprintf( token, "%s熟练度不足%d!", PROFESSION_SKILL_getChar( limit, PROFESSION_SKILL_NAME), need_percent );
+					sprintf( token, "%s抇褶僅祥逋%d!", PROFESSION_SKILL_getChar( limit, PROFESSION_SKILL_NAME), need_percent );
 					CHAR_talkToCli( talkerindex, -1, token, CHAR_COLORYELLOW);
 					CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 					return;
@@ -220,7 +220,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		if( count == need_count &&  need_count != 0 ){
 			char msg[256] = {0};
 		
-			sprintf( msg, "需先学会 " );
+			sprintf( msg, "剒珂悝頗 " );
 			for( i = 0; i< count; i++ ){
 				if( temp[i] != 0 ){
 					char token[50] = {0};
@@ -228,7 +228,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 					strcat( msg, token );
 				}
 			}
-			sprintf( msg, "%s 任一种技能", msg );
+			sprintf( msg, "%s �扂閥祤敵�", msg );
 			CHAR_talkToCli( talkerindex, -1, msg, CHAR_COLORYELLOW);
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 
@@ -237,7 +237,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 
 	}
 
-	// 判断金钱	
+	// 瓚剿踢ヴ	
 	{
 		cost = PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_COST );
 		cost = cost * rate;
@@ -249,18 +249,18 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 	}
 
 #ifdef _NPC_ProfessionTrans
-	//判断转生
+	//瓚剿蛌汜
 	{
 		if( NPC_Util_GetStrFromStrWithDelim( argstr, "trans", msg, sizeof(msg) ) != NULL){
 		    int trans = atoi(msg);
-			print("\n转生要求:%d,%d",CHAR_getInt( talkerindex, CHAR_TRANSMIGRATION),trans);
+			print("\n蛌汜猁⑴:%d,%d",CHAR_getInt( talkerindex, CHAR_TRANSMIGRATION),trans);
 			if( CHAR_getInt( talkerindex, CHAR_TRANSMIGRATION) < trans){ 
 				if( NPC_Util_GetStrFromStrWithDelim( argstr, "trans_msg", msg, sizeof(msg) ) != NULL){
                     CHAR_talkToCli( talkerindex, meindex, msg, CHAR_COLORYELLOW);
 				    return;
 				}
 				else{
-                    CHAR_talkToCli( talkerindex, meindex, "您的转生次数不够哦。", CHAR_COLORYELLOW);
+                    CHAR_talkToCli( talkerindex, meindex, "蠟腔蛌汜棒杅祥劂韃﹝", CHAR_COLORYELLOW);
 				    return;
 				}
 			}
@@ -268,11 +268,11 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 	}
 #endif
 
-	// 增加技能
+	// 崝樓撮夔
 	{
 		int skill_level = 0;
 
-		// 共通技能熟练度给50，其馀给10
+		// 僕籵撮夔抇褶僅跤50ㄛむ牄跤10
 		if( (skillID == 63) || (skillID == 64) || (skillID == 65)  ){
 			int	Pskillid = -1;
 			skill_level = 50;
@@ -290,7 +290,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		NPC_Welfare_selectWindow( meindex, talkerindex,0,-1);
 	}
 
-	// 传送讯息
+	// 換冞捅洘
 	{
 		char token[256];
 		int next_profession_skill_point = profession_skill_point-1;
@@ -298,7 +298,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		CHAR_setInt( talkerindex, PROFESSION_SKILL_POINT, next_profession_skill_point );
 		
 		memset(token, -1, sizeof(token) );
-		sprintf( token, "您学习了 %s，剩馀学习点数 %d"
+		sprintf( token, "蠟悝炾賸 %sㄛ呁牄悝炾萸杅 %d"
 				,PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME )
 				,next_profession_skill_point );
 		CHAR_talkToCli( talkerindex, -1, token, CHAR_COLORYELLOW);
@@ -365,10 +365,10 @@ void NPC_WelfareMakeStr(int meindex,int toindex,int select)
 			cost = (int)cost*rate;
 
 			sprintf(token2,"|%s|%d|%s|%d",
-				PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME ),	// 技能名称
-				cost,															// 金额
-				PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_TXT ),	// 说明
-				PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_ICON )	// 图示
+				PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME ),	// 撮夔靡備
+				cost,															// 踢塗
+				PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_TXT ),	// 佽隴
+				PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_ICON )	// 芞尨
 			);
 			strcat(token,token2);
 		} 

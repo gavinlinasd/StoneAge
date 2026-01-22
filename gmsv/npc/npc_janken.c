@@ -13,7 +13,7 @@
 #include "log.h"
 
 /*
- *元扎氏仃氏
+ *啋崨庌崹庌
  */
 static void NPC_Janken_selectWindow( int meindex, int talker, int num);
 void NPC_JnakenJudge(int meindex,int talker,int sel);
@@ -23,12 +23,12 @@ void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge);
 
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_JankenInit( int meindex )
 {
 
-	//正奶皿毛本永玄
+	//淏騷鏤禱掛蚗哱
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEJANKEN );
 	
 	return TRUE;
@@ -37,17 +37,17 @@ BOOL NPC_JankenInit( int meindex )
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_JankenTalked( int meindex , int talkerindex , char *szMes ,
 					 int color )
 {
-	/* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
 	if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
 	
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 
 	NPC_Janken_selectWindow(meindex, talkerindex, 0);
@@ -60,7 +60,7 @@ void NPC_JankenTalked( int meindex , int talkerindex , char *szMes ,
 
 
 /******************************
- *	公木冗木及质  卞坌仃月
+ *	鼠躂�葸噯啄�  勗覕崹堎
  ******************************/
 static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 {
@@ -74,10 +74,10 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
    	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	
 
-	/*--它奶件玉它正奶皿丢永本□斥互云云中及匹燮卞涩烂--*/
+	/*--坳騷璃迶坳淏騷鏤隍蚗掛↓喇誑堁堁笢摯ぁ袸勗优擭--*/
   	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 
-	/*--涩烂白央奶伙毛  心  心--*/
+	/*--优擭啞栝騷鳴禱  陑  陑--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr))==NULL){
 		print("NPC_janken Init: GetArgStrErr");
 		return ;
@@ -88,7 +88,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	{
 	  case 0:
 
-	  	/*-- 旦正□玄及丢永本□斥互  仃木壬巨仿□  憎 --*/
+	  	/*-- 筒淏↓哱摯隍蚗掛↓喇誑  崹躂�刉瑀癒�  崚 --*/
 		if(NPC_Util_GetStrFromStrWithDelim( argstr, "MainMsg", token, sizeof( token))
 	 		== NULL)
 		{
@@ -96,7 +96,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 			return ;
 		}
 
-  		/*--蓟      --*/
+  		/*--撒      --*/
 	  	buttontype = WINDOW_BUTTONTYPE_YESNO;
 	  	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 	  	windowno = CHAR_WINDOWTYPE_JANKEN_START; 
@@ -105,7 +105,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	
 	case 1:
 		
-		//失奶  丞及民尼永弁
+		//囮騷  堜摯鏍攝蚗袲
 		if(NPC_Util_GetStrFromStrWithDelim( argstr, "EntryItem",
 		 buf, sizeof( buf))
 		!= NULL) {
@@ -115,18 +115,18 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 				NPC_Janken_selectWindow(meindex, talker, 3);
 			}
 
-			//巨件玄伉迕及失奶  丞毛绰轮
+			//操璃哱惉暵摯囮騷  堜禱朝謫
 			if(NPC_JankenEntryItemDel(talker,buf) == FALSE){
-				print("元扎氏仃氏ERR:失奶  丞壅仄卞仄匀天中");
+				print("啋崨庌崹庌ERR:囮騷  堜觛媃勗媃埱毞笢");
 			}
 		}
 
 
-		/*--蓟      --*/
-		sprintf(token,"              剪刀石头布！！\n"
-			      "\n\n               《  石头  》"
-			      "\n\n               《  剪刀  》"
-				  "\n\n               《  布  》"
+		/*--撒      --*/
+		sprintf(token,"              熟絮坒芛票ㄐㄐ\n"
+			      "\n\n               ▲  坒芛  ◎"
+			      "\n\n               ▲  熟絮  ◎"
+				  "\n\n               ▲  票  ◎"
 		);
 
 		buttontype=WINDOW_BUTTONTYPE_NONE;
@@ -135,12 +135,12 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	  break;
 
 	case 2:
-		/*--丐中仇蓟      --*/
-		//sprintf(token,"              丐中仇匹″″\n"
-		sprintf(token,"              平手再来！！\n"
-			      "\n\n               《  石头  》"
-			      "\n\n               《  剪刀  》"
-				  "\n\n               《  布  》"
+		/*--堣笢喫撒      --*/
+		//sprintf(token,"              堣笢喫ぁ∪∪\n"
+		sprintf(token,"              す忒婬懂ㄐㄐ\n"
+			      "\n\n               ▲  坒芛  ◎"
+			      "\n\n               ▲  熟絮  ◎"
+				  "\n\n               ▲  票  ◎"
 		);
 
 	  	buttontype=WINDOW_BUTTONTYPE_NONE;
@@ -149,7 +149,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	  	break;
 
   	case 3:
-	  	/*-- 旦正□玄及丢永本□斥互  仃木壬巨仿□  憎 --*/
+	  	/*-- 筒淏↓哱摯隍蚗掛↓喇誑  崹躂�刉瑀癒�  崚 --*/
 		NPC_Util_GetStrFromStrWithDelim( argstr, "NoItem", token, sizeof( token));
 
 	  	buttontype=WINDOW_BUTTONTYPE_OK;
@@ -162,7 +162,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 
 
 //	makeEscapeString( token, escapedname, sizeof(escapedname));
-	/*-仇仇匹霜耨允月--*/
+	/*-喫喫ぁ邞嚭埰堎--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,
@@ -176,12 +176,12 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 
 
 /*********************************
-* 它奴件玉它丢永本□斥卞覆允月质  
+* 坳贖璃迶坳隍蚗掛↓喇勗葡埰堎窐  
 *********************************/
 void NPC_JankenWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
 {
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 
 	switch( seqno){
@@ -202,22 +202,22 @@ void NPC_JankenWindowTalked( int meindex, int talkerindex,
 
 
 /*
- *斥乓件弗件及  烂
+ *喇籤璃艇璃摯  擭
  */
 void NPC_JnakenJudge(int meindex,int talker,int sel)
 {
 	int player=-1;
 	int jankenman;
-	char j_char[3][8]={" 石头 "," 剪刀 ","  布  "};
+	char j_char[3][8]={" 坒芛 "," 熟絮 ","  票  "};
 	char token[1024];
 	int shouhai = 0;
 	int fd = getfdFromCharaIndex( talker);
 	int fl=0,x=0,y=0;
 	
 	
-	if(sel == 3) player = 0; //弘□
-	if(sel == 5) player = 1; //民亦平
-	if(sel == 7) player = 2; //由□
+	if(sel == 3) player = 0; //精↓
+	if(sel == 5) player = 1; //鏍砫す
+	if(sel == 7) player = 2; //蚕↓
 
 	jankenman = rand()%3;
 
@@ -248,16 +248,16 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 	}
 
 	if(shouhai == 1){
-		//Change add 玩家猜胜了给的道具
+		//Change add 俙模笨吨賸跤腔耋撿
 		NPC_JankenItemGet( meindex, talker, "WinItem" );
 
 		 NPC_WarpPointGet(meindex, talker, &fl, &x, &y, 0);
 		
 		snprintf( token, sizeof( token ) ,
-						"              ～　结  果　～      \n\n"
+						"              ‵﹛賦  彆﹛‵      \n\n"
 						"  %16s      %-16s\n"
 						"        [%s]    VS    [%s]\n\n\n"
-						"      %-16s 胜利",
+						"      %-16s 吨瞳",
 						 CHAR_getChar(meindex,CHAR_NAME),CHAR_getChar(talker,CHAR_NAME),
 						 j_char[jankenman],j_char[player],
 						 CHAR_getChar(talker,CHAR_NAME)
@@ -265,47 +265,47 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 
 //			    CHAR_talkToCli( talker , -1 ,token , CHAR_COLORCYAN );
 
-				//伐□皿
+				//極↓鏤
 			    CHAR_warpToSpecificPoint(talker, fl, x, y);
 			    
-			    //  匀凶午五反＞减少＝及失弁扑亦件毛允月［
+			    //  埱倜敁拻毀ˇ熬屾ˊ摯囮袲で砫璃禱埰堎��
 			    CHAR_sendWatchEvent( CHAR_getWorkInt( talker, CHAR_WORKOBJINDEX),
 							CHAR_ACTPLEASURE,NULL,0,TRUE);
 				CHAR_setWorkInt( talker, CHAR_WORKACTION, CHAR_ACTPLEASURE);
 
 	}else if(shouhai == 2){
 
-		//Change add 玩家猜输了给的道具
+		//Change add 俙模笨怀賸跤腔耋撿
 		NPC_JankenItemGet( meindex, talker, "LoseItem" );
 
 		 NPC_WarpPointGet(meindex, talker, &fl, &x, &y, 1);
 		snprintf( token, sizeof( token ) ,
-						"              ～　结  果　～      \n\n"
+						"              ‵﹛賦  彆﹛‵      \n\n"
 						"  %16s      %-16s\n"
 						"        [%s]    VS    [%s]\n\n\n"
-						"      %-16s 输了",
+						"      %-16s 怀賸",
 						 CHAR_getChar(meindex,CHAR_NAME),CHAR_getChar(talker,CHAR_NAME),
 						 j_char[jankenman],j_char[player],
 						 CHAR_getChar(talker,CHAR_NAME)
 						);
 //			    CHAR_talkToCli( talker , -1 ,token , CHAR_COLORCYAN );
 
-				//伐□皿
+				//極↓鏤
 				CHAR_warpToSpecificPoint(talker, fl, x, y);
 
-				//  仃凶午五反＞  仄中＝失弁扑亦件毛允月
+				//  崹倜敁拻毀ˇ  媃笢ˊ囮袲で砫璃禱埰堎
 			    CHAR_sendWatchEvent( CHAR_getWorkInt( talker, CHAR_WORKOBJINDEX),
 							CHAR_ACTSAD,NULL,0,TRUE);
 				CHAR_setWorkInt( talker, CHAR_WORKACTION, CHAR_ACTSAD);
 
 
 	}else{
-		//仇仇卞仁月午丐中仇
+		//喫喫勗�彸蟲諑少迣�
 		NPC_Janken_selectWindow( meindex, talker, 2);
 		return;
 	}
 	
-	//霜耨
+	//邞嚭
 	lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE, 
 					WINDOW_BUTTONTYPE_OK, 
 					CHAR_WINDOWTYPE_JANKEN_END,
@@ -318,7 +318,7 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 
 
 /*
- *伐□皿燮毛GET允月［
+ *極↓鏤袸禱GET埰堎��
  */
 void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge)
 {
@@ -327,14 +327,14 @@ void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge)
 	char buf[64];
 	char buf2[32];
 
-	/*--涩烂白央奶伙毛  心  心--*/
+	/*--优擭啞栝騷鳴禱  陑  陑--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr))==NULL){
 		print("NPC_janken Init: GetArgStrErr");
 		return ;
 	}
 
 
-	/*--伐□皿燮毛潸  --*/
+	/*--極↓鏤袸禱噁  --*/
 	NPC_Util_GetStrFromStrWithDelim( argstr, strbuf[judge], buf, sizeof( buf));
 	getStringFromIndexWithDelim(buf,",",1,buf2,sizeof(buf2));
 	*fl=atoi(buf2);
@@ -347,7 +347,7 @@ void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge)
 }
 
 /*
- *--失奶  丞及民尼永弁分仃毛垫丹
+ *--囮騷  堜摯鏍攝蚗袲煦崹禱菜竣
  */
 BOOL NPC_JankenEntryItemCheck(int talker,char *buf)
 {
@@ -444,14 +444,14 @@ BOOL NPC_JankenEntryItemDel(int talker,char *buf)
 					if(itemno==id){
 						cnt++;
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-							"QuizDelItem(猜谜->交出道具)",
+							"QuizDelItem(笨譏->蝠堤耋撿)",
 							CHAR_getInt( talker, CHAR_FLOOR),
 							CHAR_getInt( talker, CHAR_X ),
  							CHAR_getInt( talker, CHAR_Y ),
@@ -467,21 +467,21 @@ BOOL NPC_JankenEntryItemDel(int talker,char *buf)
 				}
 			}		
 		}else{
-			/*--蓟氏分  寞及失奶  丞毛蓟请---*/
+			/*--撒庌煦  蠕摯囮騷  堜禱撒③---*/
 			for( j = 0 ;  j < CHAR_MAXITEMHAVE ; j++){
 				itemindex = CHAR_getItemIndex( talker ,j);
 
 				if( ITEM_CHECKINDEX(itemindex) ){
 					if( atoi( buff3) == ITEM_getInt(itemindex,ITEM_ID)){
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+							CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 囮騷  堜  蠕 */
 #endif
-							"QuizDelItem(猜谜->交出道具)",
+							"QuizDelItem(笨譏->蝠堤耋撿)",
 							CHAR_getInt( talker,CHAR_FLOOR),
 							CHAR_getInt( talker,CHAR_X ),
 							CHAR_getInt( talker,CHAR_Y ),
@@ -504,7 +504,7 @@ BOOL NPC_JankenItemGet(int meindex,int talker, char *wl)
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	char buf[64];
 
-	/*--涩烂白央奶伙毛  心  心--*/
+	/*--优擭啞栝騷鳴禱  陑  陑--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr))==NULL){
 		print("NPC_janken ItemGet: GetArgStrErr");
 		return ;

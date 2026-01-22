@@ -50,10 +50,10 @@
 #include "npc_checkman.h"
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业栏位
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼耋裕�
 #include "profession_skill.h"
 #endif
-#ifdef _CHATROOMPROTOCOL			// (不可开) Syu ADD 聊天室频道
+#ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋
 #include "chatroom.h"
 #endif
 
@@ -77,26 +77,26 @@ extern void selectAngel( int charaindex, int heroindex, int mission, int gm_cmd)
 
 extern void GOLD_DeleteTimeCheckOne( int objindex);
 
-// WON ADD 修正道具的设定问题
+// WON ADD 党淏耋撿腔扢隅恀枙
 void fix_item_bug(int charaindex, int i);
 
 
-/*====================平乓仿及综岳卞楮允月楮醒====================*/
+/*====================す籤溘摯軘埬勗匴埰堎匴倳====================*/
 /*------------------------------------------------------------
- * 综岳允月凛及左皿扑亦件及袄毛涩烂仄方丹午允月［
- * 娄醒
- *  ch      Char*       涩烂燮及平乓仿及犯□正
- *  option  char*       弁仿奶失件玄井日仁月犯□正
- * 忒曰袄
- *  岳      TRUE
- *  撩      FALSE
+ * 軘埬埰堎鄹摯酘鏤で砫璃摯偯禱优擭媃源竣敁埰堎��
+ * 礎倳
+ *  ch      Char*       优擭袸摯す籤溘摯溢↓淏
+ *  option  char*       袲溘騷囮璃哱凝�桱彸繚腹灊�
+ * 蒍堇偯
+ *  埬      TRUE
+ *  謄      FALSE
  ------------------------------------------------------------*/
 static BOOL CHAR_makeCharFromOptionAtCreate( Char* ch ,
 		int	vital, int str, int tgh, int dex,
 		int earth, int water, int fire, int wind)
 {
 
-	/*    躲岭及腹据毛垫丹  */
+	/*    嗚鍛摯號擂禱菜竣  */
 	int		para[4];
 	int		attr[4];
 	int		i;
@@ -117,21 +117,21 @@ static BOOL CHAR_makeCharFromOptionAtCreate( Char* ch ,
 #define PKMAXPARAMETER 300
 	parasum = 0;
 	/*
-	 * 允屯化及犯□正及  卞 - 反丐匀化反卅日卅中仄
-	 * 瑕丐孔木及仪毛哔尹化云中化    及袄手译尹卅中
+	 * 埰迋趙摯溢↓淏摯  勗 - 毀堣埱趙毀埵�欷聿倠�
+	 * 閬堣謂躂摯痀禱萳窇趙堁笢趙    摯偯忒祒窇埵笢
 	 */
 
 	for( i = 0; i < arraysizeof( para); i ++ ) {
 		if( para[i] < 0 || para[i] > MAXPARAMETER )return FALSE;
 		parasum += para[i];
 	}
-#ifdef _NEW_PLAYER_CF	//新手出生配置
+#ifdef _NEW_PLAYER_CF	//陔忒堤汜饜离
 	if( parasum > MAXPARAMETER ) return FALSE;
 #else
 	if( parasum != MAXPARAMETER ) return FALSE;
 #endif
 
-/*#ifdef _NEW_TESTSERVER	//测试伺服
+/*#ifdef _NEW_TESTSERVER	//聆彸侜督
 	if( parasum > MAXPARAMETER ) return FALSE;
 #else
 	if( parasum != MAXPARAMETER ) return FALSE;
@@ -144,25 +144,25 @@ static BOOL CHAR_makeCharFromOptionAtCreate( Char* ch ,
 #define MAXATTRIBUTE 10
 	cnt = 0;
 	attrsum = 0;
-	/* 箪岭及民尼永弁毛允月 */
+	/* 鶂鍛摯鏍攝蚗袲禱埰堎 */
 	for( i = 0; i < arraysizeof( para); i ++ ) {
 		if( attr[i] < 0 || attr[i] > MAXATTRIBUTE )return FALSE;
 		attrsum += attr[i];
 		if( attr[i] > 0 ) cnt ++;
 	}
-	/* 宁煌袄反10 */
+	/* 譴銓偯毀10 */
 	if( attrsum != MAXATTRIBUTE ) return FALSE;
 
-	/* 2勾方曰聂仁喃曰癫化日木化中凶日蛲   */
+	/* 2僑源堇蘗�忺帟鳳祥紙桫噱胱俴觕淜�   */
 	if( cnt > 2 ) return FALSE;
 
-	/* 菅箪岭反喃曰癫化日木卅中 */
+	/* 楪鶂鍛毀鄎堇騍趙�桫撻聿� */
 	if( attr[0] > 0 && attr[2] > 0 ) return FALSE;
 	if( attr[1] > 0 && attr[3] > 0 ) return FALSE;
 
 #undef MAXATTRIBUTE
 
-	/*  戊疋□  */
+	/*  昡鼀↓  */
 	ch->data[CHAR_VITAL] = vital*100;
 	ch->data[CHAR_STR]   = str*100;
 	ch->data[CHAR_TOUGH] = tgh*100;
@@ -178,7 +178,7 @@ static BOOL CHAR_makeCharFromOptionAtCreate( Char* ch ,
 	ch->data[CHAR_EXP] = 0;
 	
 	
-#ifdef _NEW_PLAYER_CF	//新手出生配置
+#ifdef _NEW_PLAYER_CF	//陔忒堤汜饜离
 	ch->data[CHAR_TRANSMIGRATION] = getNewplayertrans();
 	ch->data[CHAR_GOLD] = getNewplayergivegold();;
 	ch->data[CHAR_LV] = getNewplayerlv();//120;
@@ -193,7 +193,7 @@ static BOOL CHAR_makeCharFromOptionAtCreate( Char* ch ,
 #endif
 #endif
 
-/*#ifdef _NEW_TESTSERVER	//测试伺服
+/*#ifdef _NEW_TESTSERVER	//聆彸侜督
 	ch->data[CHAR_SKILLUPPOINT] = "";//600;
 	ch->data[CHAR_TRANSMIGRATION] = 5;
 	ch->data[CHAR_GOLD] = CHAR_MAXGOLDHAVE;
@@ -231,7 +231,7 @@ void CHAR_loginAddItemForNew( int charindex )
 	    emptyitemindexinchara = CHAR_findEmptyItemBox( charindex );
 
 		if( emptyitemindexinchara < 0 ){
-			sprintf( msgbuf, "空间栏位不足。" );
+			sprintf( msgbuf, "諾潔戲弇祥逋﹝" );
 
 			CHAR_talkToCli( charindex, -1, msgbuf, CHAR_COLORYELLOW);
 			return;
@@ -262,15 +262,15 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 	int		enemyarray;
 	char szKey[256];
 
-/*#ifdef _NEW_TESTSERVER	//测试伺服
+/*#ifdef _NEW_TESTSERVER	//聆彸侜督
 	int add_pet[]={0,0,0,0,0};
 #endif*/
 
-#ifdef _NEW_PLAYER_CF	//新手出生配置
+#ifdef _NEW_PLAYER_CF	//陔忒堤汜饜离
 	int add_pet[]={0,0,0,0,0};
 #endif
 
-#ifdef _DELBORNPLACE //Syu ADD 6.0 统一出生於新手村
+#ifdef _DELBORNPLACE //Syu ADD 6.0 苀珨堤汜黺陔忒游
 	int BornPet = hometown;
 	if( getMuseum() )
 		hometown = 1;
@@ -337,22 +337,22 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 		ch.data[CHAR_LOWRIDEPETS] = 0;
 #endif
 
-#ifdef _PERSONAL_FAME	// Arminius: 家族个人声望
+#ifdef _PERSONAL_FAME	// Arminius: 模逜跺�侂驫�
 	ch.data[CHAR_FAME] = 0;
 #endif
 #ifdef _NEW_MANOR_LAW
-	ch.data[CHAR_MOMENTUM] = 0;	// 个人气势
+	ch.data[CHAR_MOMENTUM] = 0;	// 跺�侔鑫�
 #endif
 #ifdef _TEACHER_SYSTEM
-	ch.data[CHAR_TEACHER_FAME] = 0;	// 导师领导声望
+	ch.data[CHAR_TEACHER_FAME] = 0;	// 絳呇鍰絳汒咡
 #endif
 #ifdef _RACEMAN
-	ch.data[CHAR_CHECKIN] = 0;  // 宠物登记
-	ch.data[CHAR_CATCHCNT1] = 0; // 新手限 猎宠次数
-	ch.data[CHAR_CATCHCNT2] = 0; // 老手限 猎宠次数
-	ch.data[CHAR_CATCHCNT3] = 0; // 家族限 猎宠次数
-	ch.data[CHAR_CATCHCNT4] = 0; // 老手不限 猎宠次数
-	ch.data[CHAR_CATCHCNT5] = 0; // 家族不限 猎宠次数
+	ch.data[CHAR_CHECKIN] = 0;  // 唾昜腎暮
+	ch.data[CHAR_CATCHCNT1] = 0; // 陔忒癹 轂唾棒杅
+	ch.data[CHAR_CATCHCNT2] = 0; // 橾忒癹 轂唾棒杅
+	ch.data[CHAR_CATCHCNT3] = 0; // 模逜癹 轂唾棒杅
+	ch.data[CHAR_CATCHCNT4] = 0; // 橾忒祥癹 轂唾棒杅
+	ch.data[CHAR_CATCHCNT5] = 0; // 模逜祥癹 轂唾棒杅
 	ch.data[CHAR_KINDCNT1] = 0;
 	ch.data[CHAR_KINDCNT2] = 0;
 	ch.data[CHAR_KINDCNT3] = 0;
@@ -364,7 +364,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 	ch.data[CHAR_KINDCNT9] = 0;
 	ch.data[CHAR_KINDCNT10] = 0;
 #endif
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
 	ch.data[PROFESSION_CLASS] = 0;
 	ch.data[PROFESSION_LEVEL] = 0;
 //	ch.data[PROFESSION_EXP] = 0;
@@ -373,7 +373,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 #endif
 
 #ifdef _GM_IDENTIFY
-  sprintf(ch.string[CHAR_GMIDENTIFY].string,"%s",""); //gm名称清为空字串
+  sprintf(ch.string[CHAR_GMIDENTIFY].string,"%s",""); //gm靡備ь峈諾趼揹
 #endif
 #ifdef _TEACHER_SYSTEM
 	memset(ch.string[CHAR_TEACHER_ID].string,0,sizeof(STRING128));
@@ -419,22 +419,22 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 		return;
 	}
 	
-/*#ifdef _NEW_TESTSERVER	//伊甸测试伺服
+/*#ifdef _NEW_TESTSERVER	//畛菟聆彸侜督
 	{
-		int petTemp[]={ 2258, 1610, 353, 2474, -1}; //朱雀、
+		int petTemp[]={ 2258, 1610, 353, 2474, -1}; //紾�腹�
 		int petNum=0;
 		int k=0;
 		int i=0,j=0;
 
 #ifdef _75_TEST
-		if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 1 )//玛丽娜丝
-			petTemp[4] = 2;//凯比
-		else if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 2 )//加加
-			petTemp[4]  = 3;//克克尔
-		else if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 3 )//卡鲁它那
-			petTemp[4]  = 4;//威伯
+		if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 1 )//鎖璨饑佪
+			petTemp[4] = 2;//翮掀
+		else if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 2 )//樓樓
+			petTemp[4]  = 3;//親親嫌
+		else if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 3 )//縐糧坳饒
+			petTemp[4]  = 4;//哏皎
 		else 
-			petTemp[4] = 1;//乌力
+			petTemp[4] = 1;//拫薯
 #else
 		j=2;
 		for( i=0; i< arraysizeof(ridePetTable) ; i++ ){
@@ -449,14 +449,14 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 
 		j=0;
 		for( petNum=0; petNum<arraysizeof( petTemp); petNum++)	{
-			enemyarray = ENEMY_getEnemyArrayFromId( petTemp[ petNum]); //白虎
+			enemyarray = ENEMY_getEnemyArrayFromId( petTemp[ petNum]); //啞誥
 			petindex = ENEMY_createPetFromEnemyIndex( charaindex, enemyarray);
 			if( petindex == -1 ) {
 				continue;
 			}
 			add_pet[j]=petindex;
 			j++;
-			for( k = 1; k < 140; k ++ ){	//升级
+			for( k = 1; k < 140; k ++ ){	//汔撰
 				CHAR_PetLevelUp( petindex );
 				CHAR_PetAddVariableAi( petindex, AI_FIX_PETLEVELUP );
 				CHAR_setInt( petindex, CHAR_LV, CHAR_getInt( petindex, CHAR_LV) +1 );
@@ -472,7 +472,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 //		CHAR_setInt( charaindex, CHAR_Y, 55);
 	}
 #else
-#ifdef _DELBORNPLACE //Syu ADD 6.0 统一出生於新手村
+#ifdef _DELBORNPLACE //Syu ADD 6.0 苀珨堤汜黺陔忒游
 	if( getMuseum() ) {
 		if ( BornPet > 3 ) BornPet = 3;
 		if ( BornPet < 0 ) BornPet = 0;
@@ -495,18 +495,18 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 
 #endif*/
 
-#ifdef _NEW_PLAYER_CF	//新手出生配置
-		int petTemp[]={ 2258, 1610, 353, 2474, -1}; //朱雀、
+#ifdef _NEW_PLAYER_CF	//陔忒堤汜饜离
+		int petTemp[]={ 2258, 1610, 353, 2474, -1}; //紾�腹�
 		int petNum=0;
 		int k=0;
 		int i=0,j=0;
 		int mylevel,level;
 		if(getNewplayergivepet(0)==-1){
-			if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 1 )//玛丽娜丝
+			if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 1 )//鎖璨饑佪
 				setNewplayergivepet(0,2);
-			else if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 2 )//加加
+			else if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 2 )//樓樓
 				setNewplayergivepet(0,3);
-			else if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 3 )//卡鲁它那
+			else if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 3 )//縐糧坳饒
 				setNewplayergivepet(0,4);
 			else 
 				setNewplayergivepet(0,1);
@@ -514,7 +514,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 		
 		for( petNum=0; petNum<5; petNum++)	{
 			if(getNewplayergivepet(petNum)==-1)continue;
-			enemyarray = ENEMY_getEnemyArrayFromId( getNewplayergivepet(petNum)); //白虎
+			enemyarray = ENEMY_getEnemyArrayFromId( getNewplayergivepet(petNum)); //啞誥
 			petindex = ENEMY_createPetFromEnemyIndex( charaindex, enemyarray);
 			if( petindex == -1 ) {
 				continue;
@@ -523,7 +523,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 			mylevel = CHAR_getInt( petindex, CHAR_LV);
 			level = getNewplayerpetlv()-mylevel;
 			if(level<1)level=1;
-			for( k = 1; k < level; k ++ ){	//升级
+			for( k = 1; k < level; k ++ ){	//汔撰
 				CHAR_PetLevelUp( petindex );
 				CHAR_PetAddVariableAi( petindex, AI_FIX_PETLEVELUP );
 				CHAR_setInt( petindex, CHAR_LV, CHAR_getInt( petindex, CHAR_LV) +1 );
@@ -574,13 +574,13 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
  			if( !CHAR_getFlg( i, CHAR_ISTRADECARD) ) continue;
 			if( oldnum < 3 && CHAR_getInt( i, CHAR_LV) > 100 ){
 				if( ADDRESSBOOK_AutoaddAddressBook( charaindex, i) == TRUE ){
-					sprintf( token, "新手-%s 加入石器，并与你交换名片。", CHAR_getUseName( charaindex));
+					sprintf( token, "陔忒-%s 樓�輮紜驐炬Ｅ踽蓐遙酵�え﹝", CHAR_getUseName( charaindex));
 					CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW);
 					oldnum++;
 				}
 			}else if( newnum < 5 && CHAR_getInt( i, CHAR_LV) < 30 ){
 				if( ADDRESSBOOK_AutoaddAddressBook( charaindex, i) == TRUE ){
-					sprintf( token, "新手-%s 加入石器，并与你交换名片。", CHAR_getUseName( charaindex));
+					sprintf( token, "陔忒-%s 樓�輮紜驐炬Ｅ踽蓐遙酵�え﹝", CHAR_getUseName( charaindex));
 					CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW);
 					newnum++;
 				}
@@ -591,7 +591,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 	}
 #endif
 
-#ifdef _NEW_PLAYER_CF	//新手出生配置
+#ifdef _NEW_PLAYER_CF	//陔忒堤汜饜离
 
 	CHAR_charSaveFromConnectAndChar( clifd,chwk ,FALSE );
 	CHAR_endCharData(&ch);
@@ -605,7 +605,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
     CONNECT_setState( clifd, WHILECREATE );
 #endif
 
-/*#ifdef _NEW_TESTSERVER	//伊甸测试伺服
+/*#ifdef _NEW_TESTSERVER	//畛菟聆彸侜督
 	{
 #ifdef _75_TEST
 		int event_end[] = { 4, 81, 48, 49, 50, 51, 52, 63, 69, 70, 71, 72, 81, 88, 89, 109, 110, 111, 112, 113, 114, 115, 116, 118, 122, 127, 131, 136, 158, 159, 174, 102};
@@ -630,7 +630,7 @@ void CHAR_createNewChar( int clifd, int dataplacenum, char* charname ,
 #endif
 
 
-//7.0测试机不设出生点
+//7.0聆彸儂祥扢堤汜萸
 		if( CHAR_getInt( charaindex, CHAR_LASTTALKELDER) == 35 )	{
 			CHAR_setInt( charaindex, CHAR_FLOOR, 7407);
 			CHAR_setInt( charaindex, CHAR_X, 27);
@@ -742,7 +742,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 {
 	typedef void (*ATTACHFUNC)(int,int);
 	int i, itemindex;
-	for( i=0; i<CHAR_STARTITEMARRAY; i++){ //检查装备中道具
+	for( i=0; i<CHAR_STARTITEMARRAY; i++){ //潰脤蚾掘笢耋撿
 		int ti;
 		itemindex = CHAR_getItemIndex( charaindex , i );
 		if( !ITEM_CHECKINDEX( itemindex)){
@@ -758,7 +758,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 		if( ITEM_getInt( itemindex, ITEM_ID) == ANGELITEM 
 			|| ITEM_getInt( itemindex, ITEM_ID) == HEROITEM ) {
 			int mindex, mission;
-			// 检查信物所有人是否任务中
+			// 潰脤陓昜垀衄�侕Й鮵恄鵖�
 			mindex = checkIfAngelByName( ITEM_getChar( itemindex, ITEM_ANGELINFO));
 			mission = atoi( ITEM_getChar( itemindex, ITEM_ANGELMISSION));
 			if( mindex < 0 || mission != missiontable[mindex].mission ) {
@@ -771,7 +771,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 			if( ITEM_getInt( itemindex, ITEM_ID) == ANGELITEM ) {
 				char nameinfo[128];
 				getMissionNameInfo( charaindex, nameinfo);
-				// 检查使者信物装备中
+				// 潰脤妏氪陓昜蚾掘笢
 				if( !strcmp( ITEM_getChar( itemindex, ITEM_ANGELINFO), nameinfo) ) {
 					//CHAR_setWorkInt( charaindex, CHAR_WORKANGELMODE, TRUE);
 					CHAR_sendAngelMark( CHAR_getWorkInt( charaindex, CHAR_WORKOBJINDEX), 1);
@@ -785,7 +785,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 #endif
 
 		//Change fix 2004/07/05
-		//与人物职业不合的道具拿下//////////////////
+		//迵�冼攃曼結遣炵警擰葸譁�//////////////////
 		if( ITEM_getInt( charaindex, ITEM_NEEDPROFESSION) != 0 ){
 			if( CHAR_getInt( charaindex, PROFESSION_CLASS ) != ITEM_getInt( itemindex, ITEM_NEEDPROFESSION) 
 				&& ITEM_getInt( itemindex, ITEM_NEEDPROFESSION) > 0 ){
@@ -815,7 +815,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 			CHAR_setItemIndex( charaindex , ti, itemindex);
 		}
 	}
-	for( i = CHAR_STARTITEMARRAY ; i < CHAR_MAXITEMHAVE ; i++ ){ //检查携带道具
+	for( i = CHAR_STARTITEMARRAY ; i < CHAR_MAXITEMHAVE ; i++ ){ //潰脤觓湍耋撿
 		itemindex = CHAR_getItemIndex( charaindex , i );
 		if( !ITEM_CHECKINDEX( itemindex)) continue;
 		ITEM_reChangeItemName( itemindex);
@@ -827,7 +827,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 		if( ITEM_getInt( itemindex, ITEM_ID) == ANGELITEM 
 			|| ITEM_getInt( itemindex, ITEM_ID) == HEROITEM ) {
 			int mindex, mission;
-			// 检查信物所有人是否任务中
+			// 潰脤陓昜垀衄�侕Й鮵恄鵖�
 			mindex = checkIfAngelByName( ITEM_getChar( itemindex, ITEM_ANGELINFO));
 			mission = atoi( ITEM_getChar( itemindex, ITEM_ANGELMISSION));
 			if( mindex < 0 || mission != missiontable[mindex].mission ) {
@@ -841,7 +841,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 
 		ITEM_setItemUniCode( itemindex);
 
-#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 家族战登入检查
+#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 模逜桵腎�趧麮�
 		if( ITEM_getInt( itemindex, ITEM_TYPE) == ITEM_WARES ||
 			ITEM_getInt( itemindex, ITEM_TYPE) == ITEM_DISH ||
 			ITEM_getInt( itemindex, ITEM_TYPE) == ITEM_OTHER ){
@@ -863,7 +863,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 #endif
 
 	}
-	//检查寄放店道具
+	//潰脤敵溫虛耋撿
 	for( i = 0 ; i < CHAR_MAXPOOLITEMHAVE ; i++ ){
 		itemindex = CHAR_getPoolItemIndex( charaindex , i );
 		if( !ITEM_CHECKINDEX( itemindex) ) continue;
@@ -877,7 +877,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 		if( ITEM_getInt( itemindex, ITEM_ID) == ANGELITEM 
 			|| ITEM_getInt( itemindex, ITEM_ID) == HEROITEM ) {
 			int mindex, mission;
-			// 检查信物所有人是否任务中
+			// 潰脤陓昜垀衄�侕Й鮵恄鵖�
 			mindex = checkIfAngelByName( ITEM_getChar( itemindex, ITEM_ANGELINFO));
 			mission = atoi( ITEM_getChar( itemindex, ITEM_ANGELMISSION));
 			if( mindex < 0 || mission != missiontable[mindex].mission ) {
@@ -890,7 +890,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 		
 		ITEM_setItemUniCode( itemindex);
 
-#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 家族战登入检查
+#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 模逜桵腎�趧麮�
 		if( ITEM_getInt( itemindex, ITEM_TYPE) == ITEM_WARES ||
 			ITEM_getInt( itemindex, ITEM_TYPE) == ITEM_DISH ||
 			ITEM_getInt( itemindex, ITEM_TYPE) == ITEM_OTHER ){
@@ -909,7 +909,7 @@ void CHAR_loginCheckUserItem( int charaindex)
 #endif
 	}
 
-	// WON ADD 修正道具的设定问题
+	// WON ADD 党淏耋撿腔扢隅恀枙
 	if(!NPC_EventCheckFlg( charaindex,134)){
 		for (i = 0; i < CHAR_MAXITEMHAVE; i ++) {
 			itemindex = CHAR_getItemIndex(charaindex, i);
@@ -961,7 +961,7 @@ void CHAR_LoginBesideSetWorkInt( int charaindex, int clifd)
 	CHAR_setWorkInt( charaindex, CHAR_WORKTALKCOUNT, 0 );
 	CHAR_setWorkInt( charaindex, CHAR_WORKTALKTIME, (int)NowTime.tv_sec);
 	CHAR_setWorkInt( charaindex, CHAR_WORKPETFOLLOW, -1);
-#ifdef _ITEM_ADDEXP	//vincent 经验提升
+#ifdef _ITEM_ADDEXP	//vincent 冪桄枑汔
 	CHAR_setWorkInt(charaindex,CHAR_WORKITEM_ADDEXP, 0);
 	CHAR_setWorkInt(charaindex,CHAR_WORKITEM_ADDEXPTIME, 0);
 #endif
@@ -974,7 +974,7 @@ void CHAR_LoginBesideSetWorkInt( int charaindex, int clifd)
 		NPC_NowEndEventSetFlgCls( charaindex, 130);
 	}
 #endif
-#ifdef _STATUS_WATERWORD //水世界状态
+#ifdef _STATUS_WATERWORD //阨岍賜袨怓
 	if( MAP_getMapFloorType( CHAR_getInt( charaindex, CHAR_FLOOR)) == 1 ){
 		CHAR_setWorkInt( charaindex, CHAR_WORKMAPFLOORTYPE, 1);
 	}else{
@@ -1019,7 +1019,7 @@ void CHAR_CheckProfessionSkill( int charaindex)
 
 	for( i=0; i<CHAR_SKILLMAXHAVE; i++ ){
 			
-		// 技能ID
+		// 撮夔ID
 		int skillID = CHAR_getCharSkill( charaindex, i);
 
 		if( skillID < 0 ) continue;
@@ -1113,14 +1113,14 @@ void CHAR_ResetPoolPetEgg( int charaindex)
 		if( str < 0 ) str = 0;
 		if( tgh < 0 ) tgh = 0;
 		if( dex < 0 ) dex = 0;
-		//扣属性
+		//諶扽俶
 		levelup = (vital<<24) + (str<<16) + (tgh<<8) + (dex<<0);
 		CHAR_setInt( petindex, CHAR_ALLOCPOINT, levelup);
 	}
 	NPC_EventSetFlg( charaindex, 157);
 }
 
-// Robin add 重设宠蛋  养时间
+// Robin add 笭扢唾粥  欱奀潔
 void CHAR_ResetPetEggFusionTime(int charaindex)
 {
 	int i, petindex;
@@ -1275,7 +1275,7 @@ static void CHAR_setLuck( int charaindex);
 extern int *piOccChannelMember;
 #endif
 
-#ifdef _BAD_PLAYER             // WON ADD 送坏玩家去关
+#ifdef _BAD_PLAYER             // WON ADD 冞輓俙模�旦�
 void CHAR_login( int clifd, char* data, int saveindex, int badplayer )
 #else
 void CHAR_login( int clifd, char* data, int saveindex )
@@ -1303,7 +1303,7 @@ DebugPoint=72;
 DebugPoint=80;
 #ifdef _NEWSAVE
 	CHAR_setInt( charaindex, CHAR_SAVEINDEXNUMBER, saveindex);
-	print("存档装载索引:%d\n", CHAR_getInt( charaindex, CHAR_SAVEINDEXNUMBER) );
+	print("湔紫蚾婥坰竘:%d\n", CHAR_getInt( charaindex, CHAR_SAVEINDEXNUMBER) );
 #endif
 	if( CHAR_getFlg( charaindex, CHAR_ISDIE)){
 		print( "?data? ISDIE flg is standing.\n");
@@ -1346,8 +1346,8 @@ DebugPoint=80;
 #if 1 
   {
     int lv,vi,str,tou,dx,skup,trn,teq,quest,level,total,max;
-    float table[]={437,490,521,550,578,620}; //各转最高点数(减10)
-    //float table[]={620,660,700,740,780,820}; //各转最高点数(减10)
+    float table[]={437,490,521,550,578,620}; //跪蛌郔詢萸杅(熬10)
+    //float table[]={620,660,700,740,780,820}; //跪蛌郔詢萸杅(熬10)
     lv = CHAR_getInt(charaindex,CHAR_LV);
   	vi = CHAR_getInt(charaindex,CHAR_VITAL);
 	str = CHAR_getInt(charaindex,CHAR_STR);
@@ -1359,15 +1359,15 @@ DebugPoint=80;
     quest=(teq >> 16)& 0xFFFF;
     level=teq & 0xFFFF;
     total=(vi+str+tou+dx)/100+skup;
-    max=(trn==0)?(lv-1)*3+20+10: // 0转447
+    max=(trn==0)?(lv-1)*3+20+10: // 0蛌447
       (lv-1)*3+table[trn-1]/12.0+quest/4.0+(level-trn*85)/4.0+10+1+10+trn*10;
 
 		
-/* 1转以上=升级点数+继承点术+历史任务+历史等级+转前祝福+误差1点+转後祝福+转生红利 */
-	if (trn==6) max=max-20; /* 六转时没有转前祝福与转後祝福 */
+/* 1蛌眕奻=汔撰萸杅+樟創萸扲+盪妢�恄�+盪妢脹撰+蛌ヶ蛅腦+昫船1萸+蛌摽蛅腦+蛌汜綻瞳 */
+	if (trn==6) max=max-20; /* 鞠蛌奀羶衄蛌ヶ蛅腦迵蛌摽蛅腦 */
   if (total>max)
   {
-	  print("\n重调点数[%s:%s]:%d->%d ",
+	  print("\n笭覃萸杅[%s:%s]:%d->%d ",
 	  		CHAR_getChar(charaindex,CHAR_CDKEY),
 			  CHAR_getChar(charaindex,CHAR_NAME),
 	  		total,max);
@@ -1377,10 +1377,10 @@ DebugPoint=80;
     CHAR_setInt(charaindex,CHAR_DEX,0);
     CHAR_setInt(charaindex,CHAR_SKILLUPPOINT,max-10);
   }
-	// 补足六转点数不足之玩家
+	// 硃逋鞠蛌萸杅祥逋眳俙模
 	if ((trn==6) && (total < max))
 	{
-   		print("\n补足点数[%s:%s]:%d->%d ",
+   		print("\n硃逋萸杅[%s:%s]:%d->%d ",
 		  CHAR_getChar(charaindex,CHAR_CDKEY),
 		  CHAR_getChar(charaindex,CHAR_NAME),
 		  total,max);
@@ -1402,11 +1402,11 @@ DebugPoint=80;
 
 		EQ_BI=CHAR_getNewImagenumberFromEquip( EQ_BBI, EQ_NUM);
 
-		if( CHAR_getInt( charaindex, CHAR_RIDEPET) != -1 )	{	//骑宠
+		if( CHAR_getInt( charaindex, CHAR_RIDEPET) != -1 )	{	//る唾
 
-		}else	{	//非骑宠
+		}else	{	//準る唾
 			if( EQ_BI != CH_BI )	{
-				print("\n 非骑宠形象 %d [%d=>%d]", charaindex,
+				print("\n 準る唾倛砓 %d [%d=>%d]", charaindex,
 					CHAR_getInt( charaindex, CHAR_BASEIMAGENUMBER),
 					EQ_BI );
 				CHAR_setInt( charaindex, CHAR_BASEIMAGENUMBER, EQ_BI);
@@ -1440,11 +1440,11 @@ DebugPoint=80;
 		CONNECT_getCdkey( clifd, cdkey, sizeof( cdkey ));
 		if( strlen(cdkey) > 0 ) {
 			if( strcmp( cdkey, CHAR_getChar( charaindex, CHAR_CDKEY) ) ){
-				print("账号错误 %s->%s\n", CHAR_getChar( charaindex, CHAR_CDKEY), cdkey);
+				print("梖瘍渣昫 %s->%s\n", CHAR_getChar( charaindex, CHAR_CDKEY), cdkey);
 				CHAR_setChar( charaindex, CHAR_CDKEY, cdkey);
 			}
 		}else{
-			print("账号错误:%d\n", clifd);
+			print("梖瘍渣昫:%d\n", clifd);
 		}
 	}
 	CHAR_setInt( charaindex, CHAR_PKLISTTEAMNUM, -1);
@@ -1468,31 +1468,31 @@ DebugPoint=80;
 				CHAR_getElderPosition(CHAR_getInt(charaindex, CHAR_LASTTALKELDER),
 					&exfloor, &ex_X, &ex_Y);
 			}
-			if( map_type >= 0 )	{	// map_type >= 0 优先回纪录点
-				if( exfloor == map_type && exfloor >= 0 )	{//回纪录点
+			if( map_type >= 0 )	{	// map_type >= 0 蚥珂隙槨翹萸
+				if( exfloor == map_type && exfloor >= 0 )	{//隙槨翹萸
 				}else	{
 					exfloor = (point>>16)&0xffffff;
 					ex_X = (point>>8)&0xff;
 					ex_Y = (point>>0)&0xff;
 				}
 			}
-			if( CHECKFLOORID( exfloor) )	{	//检查房间号
+			if( CHECKFLOORID( exfloor) )	{	//潰脤滇潔瘍
 				CHAR_setInt(charaindex, CHAR_FLOOR, exfloor);
 				CHAR_setInt(charaindex, CHAR_X, ex_X);
 				CHAR_setInt(charaindex, CHAR_Y, ex_Y);
 			}
 		}
 
-#ifdef _BAD_PLAYER             // WON ADD 送坏玩家去关
+#ifdef _BAD_PLAYER             // WON ADD 冞輓俙模�旦�
 
-		NPC_NowEndEventSetFlgCls( charaindex, 135);			      // 旗标
+		NPC_NowEndEventSetFlgCls( charaindex, 135);			      // よ梓
 		if( badplayer ){
-			NPC_EventSetFlg(charaindex, 135);					  // 旗标
+			NPC_EventSetFlg(charaindex, 135);					  // よ梓
 			CHAR_setInt(charaindex, CHAR_FLOOR, 887);
 			CHAR_setInt(charaindex, CHAR_X, 56);
 			CHAR_setInt(charaindex, CHAR_Y, 14);		
 		
-		}else if( CHAR_getInt(charaindex, CHAR_FLOOR) == 887 ){   // 如果在888，回记录点
+		}else if( CHAR_getInt(charaindex, CHAR_FLOOR) == 887 ){   // �蝜�婓888ㄛ隙暮翹萸
 			CHAR_getElderPosition(CHAR_getInt(charaindex, CHAR_LASTTALKELDER), &exfloor, &ex_X, &ex_Y);
 			CHAR_setInt(charaindex, CHAR_FLOOR, exfloor);
 			CHAR_setInt(charaindex, CHAR_X, ex_X);
@@ -1518,7 +1518,7 @@ DebugPoint=80;
 		CHAR_setInt(charaindex,CHAR_Y,1);
 	}
 #ifdef _MAP_TIME
-	// 如果登入的地图是这些编号的话,回到入口
+	// �蝜�腎�賮警媏暱м瑱店鉭霾躉�,隙善�踸�
 	if(CHAR_getInt(charaindex,CHAR_FLOOR) >= 30017 && CHAR_getInt(charaindex, CHAR_FLOOR) <= 30021){
 		CHAR_setInt(charaindex,CHAR_FLOOR,30008);
 		CHAR_setInt(charaindex,CHAR_X,39);
@@ -1540,7 +1540,7 @@ DebugPoint=80;
 	CONNECT_setCharaindex( clifd, charaindex );
 	CHAR_LoginBesideSetWorkInt( charaindex, clifd);
 
-#ifdef _CHANGEGOATMETAMO		// (不可开) Syu  羊年兽更换新图
+#ifdef _CHANGEGOATMETAMO		// (祥褫羲) Syu  栺爛忤載遙陔芞
 	if( NPC_EventCheckFlg( charaindex, 141 ) != TRUE )	{
 		int z;
 		int PETID1;
@@ -1580,7 +1580,7 @@ DebugPoint=80;
 #endif
 	
 	CHAR_complianceParameter( charaindex );
-	//检查人物身上
+	//潰脤�冼懭篽�
 	{
 		int i;
 //		char *petstring;
@@ -1595,18 +1595,18 @@ DebugPoint=80;
 					for( j=0;j<ENEMYTEMP_getEnemyNum();j++ ) {//ENEMY_getEnemyNum()
 						if( CHAR_getInt( petindex, CHAR_PETID) == ENEMYTEMP_getInt( j, E_T_TEMPNO ) ) {//ENEMY_getInt( j, ENEMY_TEMPNO)
 							if( ENEMYTEMP_getInt( j, E_T_PETFLG ) == 0 ){//ENEMY_getInt( j, ENEMY_PETFLG) 
-								CHAR_setCharPet( charaindex, i, -1);//清除不能当宠物的角色
+								CHAR_setCharPet( charaindex, i, -1);//ь壺祥夔絞唾昜腔褒伎
 								LogPet( CHAR_getChar( charaindex, CHAR_NAME ),
 										CHAR_getChar( charaindex, CHAR_CDKEY ),
 										CHAR_getChar( petindex, CHAR_NAME),
 										CHAR_getInt( petindex, CHAR_LV),
-										"login(清除不能当宠物的角色)",
+										"login(ь壺祥夔絞唾昜腔褒伎)",
 										CHAR_getInt( charaindex,CHAR_FLOOR),
 										CHAR_getInt( charaindex,CHAR_X ),
 										CHAR_getInt( charaindex,CHAR_Y ),
 										CHAR_getChar( petindex, CHAR_UNIQUECODE)   // shan 2001/12/14
 										);
-								 CHAR_talkToCli(charaindex,-1,"系统清除你身上的非法宠物",CHAR_COLORWHITE);
+								 CHAR_talkToCli(charaindex,-1,"炵苀ь壺斕旯奻腔準楊唾昜",CHAR_COLORWHITE);
 							}
 						}
 					}
@@ -1631,25 +1631,25 @@ DebugPoint=80;
 					print("PET:%s fix BBI\n", CHAR_getUseName(petindex));
 				}
 #endif
-				// WON ADD 修正白虎七技
+				// WON ADD 党淏啞誥ほ撮
 				if( ID1 == 777 )CHAR_setInt( petindex, CHAR_SLOT, 7);
 				CHAR_setWorkInt( petindex, CHAR_WORKPLAYERINDEX, charaindex);
-				// 修正宠技最大值变-1  Robin 20040803
+				// 党淏唾撮郔湮硉曹-1  Robin 20040803
 				if( CHAR_getInt( petindex, CHAR_SLOT) < 0 ) {
 					int j;
 					for( j=0; j<CHAR_MAXPETSKILLHAVE; j++) {
 						if( CHAR_getPetSkill( petindex, j) >= 0)
 							CHAR_setInt( petindex, CHAR_SLOT, j+1);
 					}
-					//print(" 宠技MAX变-1改6 ");
+					//print(" 唾撮MAX曹-1蜊6 ");
 				}
 
 				CHAR_complianceParameter( petindex );
-#ifdef _FIX_GP_PET_SKILL	 // WON ADD 修正gp宠会落马术
+#ifdef _FIX_GP_PET_SKILL	 // WON ADD 党淏gp唾頗邈鎮扲
 				if( ID1 == 1133){
 					int j;
 					for( j=0; j<CHAR_MAXPETSKILLHAVE; j++){
-						if( CHAR_getPetSkill( petindex, j) == 210 ){ // 落马术
+						if( CHAR_getPetSkill( petindex, j) == 210 ){ // 邈鎮扲
 							CHAR_setPetSkill( petindex, j, -1);
 						}
 					}
@@ -1677,18 +1677,18 @@ DebugPoint=80;
 					for( j=0;j<ENEMYTEMP_getEnemyNum();j++ ) {//ENEMY_getEnemyNum()
 						if( CHAR_getInt( petindex, CHAR_PETID) == ENEMYTEMP_getInt( j, E_T_TEMPNO ) ) {//ENEMY_getInt( j, ENEMY_TEMPNO)
 							if( ENEMYTEMP_getInt( j, E_T_PETFLG ) == 0 ){//ENEMY_getInt( j, ENEMY_PETFLG) 
-								CHAR_setCharPoolPet( charaindex, i, -1);//清除不能当宠物的角色
+								CHAR_setCharPoolPet( charaindex, i, -1);//ь壺祥夔絞唾昜腔褒伎
 								LogPet( CHAR_getChar( charaindex, CHAR_NAME ),
 										CHAR_getChar( charaindex, CHAR_CDKEY ),
 										CHAR_getChar( petindex, CHAR_NAME),
 										CHAR_getInt( petindex, CHAR_LV),
-										"login(清除不能当宠物的角色)",
+										"login(ь壺祥夔絞唾昜腔褒伎)",
 										CHAR_getInt( charaindex,CHAR_FLOOR),
 										CHAR_getInt( charaindex,CHAR_X ),
 										CHAR_getInt( charaindex,CHAR_Y ),
 										CHAR_getChar( petindex, CHAR_UNIQUECODE)   // shan 2001/12/14
 										);
-								 CHAR_talkToCli(charaindex,-1,"系统清除你身上的非法宠物",CHAR_COLORWHITE);
+								 CHAR_talkToCli(charaindex,-1,"炵苀ь壺斕旯奻腔準楊唾昜",CHAR_COLORWHITE);
 							}
 						}
 					}
@@ -1745,7 +1745,7 @@ DebugPoint=80;
 					1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 					3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,3,3,3,3,3,3,3};
 		//20040702 Change fix
-		//检查是否有职业不该有的技能并删除	
+		//潰脤岆瘁衄眥珛祥蜆衄腔撮夔甜刉壺	
 		for( i = CHAR_SKILLMAXHAVE-1; i >= 0; i -- ){
 			CHAR_HaveSkill *pSkil;
 			Skill*          skill;
@@ -1755,7 +1755,7 @@ DebugPoint=80;
 			if( pSkil == NULL )continue;
 			if( pSkil->use == 0 )continue;	
 			if( skidx[skill->data[SKILL_IDENTITY]] != CHAR_getInt( charaindex, PROFESSION_CLASS )
-				&& skidx[skill->data[SKILL_IDENTITY]] != 4 ){//共通技不删
+				&& skidx[skill->data[SKILL_IDENTITY]] != 4 ){//僕籵撮祥刉
 				SKILL_makeSkillData( &pSkil->skill, 0, 0 );
 				pSkil->use = 0;
 			}
@@ -1770,10 +1770,10 @@ DebugPoint=80;
 #endif
 	CHAR_complianceParameter( charaindex );
 
-	// Robin add 重设宠蛋  养时间
+	// Robin add 笭扢唾粥  欱奀潔
 	CHAR_ResetPetEggFusionTime( charaindex);
 
-#ifdef _PROFESSION_FIX_LEVEL		// WON ADD 修正职业经验值
+#ifdef _PROFESSION_FIX_LEVEL		// WON ADD 党淏眥珛冪桄硉
 	{
 		int i=0;
 		for( i = 0 ; i < CHAR_SKILLMAXHAVE ; i ++ ){
@@ -1794,12 +1794,12 @@ DebugPoint=80;
 #ifdef _CHANNEL_MODIFY
 	if(CHAR_getInt(charaindex,PROFESSION_CLASS) > 0){
 		int i,pclass = CHAR_getInt(charaindex,PROFESSION_CLASS) - 1,Empty = -1;
-		// 若旧的职业频道记录有记录在就留着,若没有加入频道
+		// �藶伂齡曼腑紫擘Ъ樓邾Ъ樊睅芩躆�,�藽閨邾蚧踰紫�
 		for(i=0;i<getFdnum();i++){
 			if(*(piOccChannelMember + (pclass * getFdnum()) + i) == charaindex) break;
 			else if(*(piOccChannelMember + (pclass * getFdnum()) + i) == -1 && Empty == -1) Empty = i;
 		}
-		// 找不到旧记录
+		// 梑祥善導暮翹
 		if(i == getFdnum()){
 			if(Empty != -1) *(piOccChannelMember + (pclass * getFdnum()) + Empty) = charaindex;
 		}
@@ -1823,7 +1823,7 @@ DebugPoint=80;
 	if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > -1 ){
         CHAR_setInt( charaindex, CHAR_BASEIMAGENUMBER, CHAR_getInt( charaindex, CHAR_BECOMEPIG_BBI ) );
 	}
-	//change fix 处理负很大的乌力时间
+	//change fix 揭燴蛹竭湮腔拫薯奀潔
 	else{
 		CHAR_setInt( charaindex, CHAR_BECOMEPIG, -1 );
 	}
@@ -1892,7 +1892,7 @@ DebugPoint=80;
 #endif
         // CoolFish: 2001/4/18
 		CHAR_setFlg( charaindex, CHAR_ISTRADE, 0);
-#ifdef _AUCPROTOCOL				// (不可开) Syu ADD 拍卖频道开关Protocol
+#ifdef _AUCPROTOCOL				// (祥褫羲) Syu ADD 鼴闖け耋羲壽Protocol
 		CHAR_setFlg( charaindex , CHAR_ISAUC , 0 ) ; 
 #endif
 		lssproto_FS_send( clifd, flg);
@@ -1912,18 +1912,18 @@ DebugPoint=80;
 		typedef int (*DYINGFUNC)(int);
 		DYINGFUNC   dyingfunc=NULL;
 		dyingfunc = (DYINGFUNC)CHAR_getFunctionPointer(charaindex, CHAR_DYINGFUNC );
-		CHAR_setInt(charaindex,CHAR_HP,1);    // HP 设为 1
+		CHAR_setInt(charaindex,CHAR_HP,1);    // HP 扢峈 1
 		logHack( CHAR_getWorkInt(charaindex,CHAR_WORKFD), HACK_HP);
 	}
 	if( CHAR_getInt( charaindex,CHAR_SKILLUPPOINT ) >=1 )
 		CHAR_Skillupsend(charaindex);
 	CHAR_checkEffect( charaindex);
 
-#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 家族战登入检查
+#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD 模逜桵腎�趧麮�
 //	if( NPC_EventCheckFlg( charaindex, 150 ) != TRUE )	{
 	{
 		char *char_id, *char_name;
-		// 清除家族旗标
+		// ь壺模逜よ梓
 		SetFMVarInit(charaindex);
 		char_id = CHAR_getChar( charaindex, CHAR_CDKEY );
 		char_name = CHAR_getChar( charaindex, CHAR_NAME );		
@@ -1940,7 +1940,7 @@ DebugPoint=80;
 	{
 #ifdef _FMVER21
 		int eventflag = 0;
-		// 是否符合族长得资格
+		// 岆瘁睫磁逜酗腕訧跡
 		if (CheckLeaderQ(charaindex) >= 0)
 			eventflag = 1;
 		if (CHAR_getInt(charaindex, CHAR_FMLEADERFLAG) != FMMEMBER_LEADER)
@@ -1978,13 +1978,13 @@ DebugPoint=80;
 				WINDOW_BUTTONTYPE_YESNO, 
 				CHAR_WINDOWTYPE_ANGEL_ASK,
 				-1,
-				"目前魔族肆虐，精灵们需要你的帮忙，前往寻找勇者来消灭这些魔族，你是否愿意帮忙？" );
+				"醴ヶ藹逜佹酈ㄛ儕鍾蠅剒猁斕腔堆疆ㄛヶ厘扆梑蚋氪懂秏鏢涴虳藹逜ㄛ斕岆瘁堋砩堆疆ˋ" );
 			}
 		}
 	}
 #endif
 
-	print("\n登陆人物名称:%s ", CHAR_getChar(charaindex, CHAR_NAME ) );
+	print("\n腎翻�冼屪�備:%s ", CHAR_getChar(charaindex, CHAR_NAME ) );
 	
 	{
 		unsigned long ip;
@@ -2005,7 +2005,7 @@ DebugPoint=80;
 	}
 
 #ifdef _TEACHER_SYSTEM
-	// 学生上线通知导师
+	// 悝汜奻盄籵眭絳呇
 	if(strlen(CHAR_getChar(charaindex,CHAR_TEACHER_ID)) > 0 && strlen(CHAR_getChar(charaindex,CHAR_TEACHER_NAME)) > 0){
 		int iPlayernum = CHAR_getPlayerMaxNum(),i;
 		char szMsg[128];
@@ -2014,7 +2014,7 @@ DebugPoint=80;
 			if(CHAR_getCharUse(i) == FALSE) continue;
 			if(strcmp(CHAR_getChar(charaindex,CHAR_TEACHER_ID),CHAR_getChar(i,CHAR_CDKEY)) == 0 &&
 				 strcmp(CHAR_getChar(charaindex,CHAR_TEACHER_NAME),CHAR_getChar(i,CHAR_NAME)) == 0){
-				sprintf(szMsg,"学生 %s 已上线",CHAR_getChar(charaindex,CHAR_NAME));
+				sprintf(szMsg,"悝汜 %s 眒奻盄",CHAR_getChar(charaindex,CHAR_NAME));
 				CHAR_talkToCli(i,-1,szMsg,CHAR_COLORYELLOW);
 				break;
 			}
@@ -2023,7 +2023,7 @@ DebugPoint=80;
 #endif
 
 #ifdef _ITEM_SETLOVER
-	// 夫妻上线通知对方
+	// 痲ぺ奻盄籵眭勤源
 		if(strlen( CHAR_getChar( charaindex, CHAR_LOVE)) > 0 &&
         strlen(CHAR_getChar(charaindex,CHAR_LOVERID))>0 &&
         strlen(CHAR_getChar(charaindex,CHAR_LOVERNAME))>0){
@@ -2034,7 +2034,7 @@ DebugPoint=80;
 			if(!strcmp( CHAR_getChar( i, CHAR_LOVE), "YES") &&
         	!strcmp(CHAR_getChar(charaindex,CHAR_LOVERID),CHAR_getChar(i,CHAR_CDKEY)) &&
         	!strcmp(CHAR_getChar(charaindex,CHAR_LOVERNAME),CHAR_getChar(i,CHAR_NAME))){
-				sprintf(szMsg,"你的爱人 %s 上线了",CHAR_getChar(charaindex,CHAR_NAME));
+				sprintf(szMsg,"斕腔乾�� %s 奻盄賸",CHAR_getChar(charaindex,CHAR_NAME));
 				CHAR_talkToCli(i,-1,szMsg,CHAR_COLORYELLOW);
 				break;
 			}
@@ -2111,12 +2111,12 @@ BOOL CHAR_charSaveFromConnect( int fd , BOOL unlock)
 
 
 /*------------------------------------------------------------
- * 夫弘失它玄允月凛卞  匀凶引引夫弘失它玄匹五卅中失奶  丞毛
- *   允
- * 娄醒
- *  charaindex  int     平乓仿弁正□及奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 痲精囮坳哱埰堎鄹勗  埱倜竘竘痲精囮坳哱ぁ拻埵笢囮騷  堜禱
+ *   埰
+ * 礎倳
+ *  charaindex  int     す籤溘袲淏↓摯騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 static void CHAR_dropItemAtLogout( int charaindex )
 {
@@ -2130,12 +2130,12 @@ static void CHAR_dropItemAtLogout( int charaindex )
 				LogItem(
 					CHAR_getChar( charaindex, CHAR_NAME ),
 					CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 					itemindex,
 #else
 		       		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-					"LogoutDel(登出後消失的道具)",
+					"LogoutDel(腎堤摽秏囮腔耋撿)",
 					CHAR_getInt( charaindex,CHAR_FLOOR),
 					CHAR_getInt( charaindex,CHAR_X ),
  		      		CHAR_getInt( charaindex,CHAR_Y ),
@@ -2207,26 +2207,26 @@ print("PlayerLogout_Exit()\n");
 		}
 	}
 
-#ifdef _CHATROOMPROTOCOL			// (不可开) Syu ADD 聊天室频道
+#ifdef _CHATROOMPROTOCOL			// (祥褫羲) Syu ADD 謐毞弅け耋
 	if ( CHAR_getWorkInt ( charindex , CHAR_WORKCHATROOMTYPE ) != 0 ) {
 		ChatRoom_Leave ( charindex ) ;
 	}
 #endif
 #ifdef _STREET_VENDOR
-	// 若玩家是卖方且正在交易中
+	// �觷瞍疺Ъ艩褒眙�婓蝠眢笢
 	if(CHAR_getWorkInt(charindex,CHAR_WORKSTREETVENDOR) == 2){
-		// 取出和他交易的人
+		// �○鷅豖�蝠眢腔��
 		toindex = CHAR_getWorkInt(charindex,CHAR_WORKSTREETVENDOR_WHO);
 		if(toindex > -1 && CHAR_CHECKINDEX(toindex)){
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,-1);
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR,-1);
 			lssproto_STREET_VENDOR_send(getfdFromCharaIndex(toindex),"C|");
-			CHAR_talkToCli(toindex,-1,"店家取消交易",CHAR_COLORYELLOW);
+			CHAR_talkToCli(toindex,-1,"虛模�＋�蝠眢",CHAR_COLORYELLOW);
 		}
 	}
-	// 玩家是买方
+	// 俙模岆鎗源
 	else if(CHAR_getWorkInt(charindex,CHAR_WORKSTREETVENDOR) == 3){
-		// 取出卖方
+		// �○鷈艩�
 		toindex = CHAR_getWorkInt(charindex,CHAR_WORKSTREETVENDOR_WHO);
 		if(toindex > -1 && CHAR_CHECKINDEX(toindex)){
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,-1);
@@ -2279,7 +2279,7 @@ print("PlayerLogout_Exit()\n");
 
 #ifdef _ITEM_ADDEXP2
 	if( CHAR_getWorkInt( charindex, CHAR_WORKITEM_ADDEXP) > 0 ) {
-		// 登入时智果效果自动减90秒
+		// 腎�輮敔Л�虴彆赻雄熬90鏃
 		CHAR_setWorkInt( charindex, CHAR_WORKITEM_ADDEXPTIME,
 			CHAR_getWorkInt( charindex, CHAR_WORKITEM_ADDEXPTIME) - 90 );
 		if( CHAR_getWorkInt( charindex, CHAR_WORKITEM_ADDEXPTIME) <= 0 ) {
@@ -2315,20 +2315,20 @@ print("PlayerLogout_Exit()\n");
 	return ret;
 }
 /*------------------------------------------------------------
- * watch奶矛件玄毛霜月井升丹井民尼永弁允月
- * 娄醒
- *  objindex    int             奶矛件玄毛云仇仄凶平乓仿及左皮斥尼弁玄
- *                                  奶件犯永弁旦
- *	index		int				奶矛件玄毛云仇仄凶平乓仿及奶件犯永弁旦
- *  recvindex   int				奶矛件玄毛熬仃午月平乓仿及index
- *	chac		int				失弁扑亦件及潘  
- * 忒曰袄 		TRUE:	霜匀化中中方
- *				FALSE: 	蛲  
+ * watch騷穫璃哱禱邞堎凝汔竣凝鏍攝蚗袲埰堎
+ * 礎倳
+ *  objindex    int             騷穫璃哱禱堁喫媃倜す籤溘摯酘々喇攝袲哱
+ *                                  騷璃溢蚗袲筒
+ *	index		int				騷穫璃哱禱堁喫媃倜す籤溘摯騷璃溢蚗袲筒
+ *  recvindex   int				騷穫璃哱禱偏崹敁堎す籤溘摯index
+ *	chac		int				囮袲で砫璃摯攣  
+ * 蒍堇偯 		TRUE:	邞埱趙笢笢源
+ *				FALSE: 	藗  
  ------------------------------------------------------------*/
 static BOOL CHAR_sendWatchEvent_sendCheck( int objindex, int index,
 											int recvindex, int chac)
 {
-	/* 愤坌互NPC匹锹澎手NPC及凛  仃月 */
+	/* 猷覕誑NPCぁЪ鱗忒NPC摯鄹  崹堎 */
 	if( OBJECT_getType( objindex) == OBJTYPE_CHARA &&
 		CHAR_getInt( index, CHAR_WHICHTYPE) != CHAR_TYPEPLAYER &&
 		CHAR_getInt(recvindex, CHAR_WHICHTYPE )
@@ -2336,29 +2336,29 @@ static BOOL CHAR_sendWatchEvent_sendCheck( int objindex, int index,
 	{
 		return FALSE;
 	}
-	/* 平乓仿动陆及watch 反民尼永弁  仄卞蕞 */
+	/* す籤溘雄翻摯watch 毀鏍攝蚗袲  媃勗犎 */
 	if( OBJECT_getType( objindex) != OBJTYPE_CHARA) {
 		return TRUE;
 	}
 	/*
-	 * 愤坌尺及汹五及    反  仄卞允月
+	 * 猷覕喜摯倵拻摯    毀  媃勗埰堎
 	 */
 	if( index == recvindex && chac == CHAR_ACTWALK ) {
 		return FALSE;
 	}
 
 	if( CHAR_getInt( recvindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER) {
-		/* 爵    及谛卞反  蛲分井日霜耨仄卅中 */
+		/* 橋    摯硞勗毀  藗煦凝�梖近鵗ぴ聿� */
 		if( CHAR_getWorkInt( recvindex,CHAR_WORKBATTLEMODE)
 			!= BATTLE_CHARMODE_NONE)
 		{
 			return FALSE;
 		}
-		/* 失弁扑亦件元扎  中凛 */
+		/* 囮袲で砫璃啋崨  笢鄹 */
 		if( CHAR_getWorkInt( index, CHAR_WORKACTION) == -1 ) {
 			if( OBJECT_getType(objindex) == OBJTYPE_CHARA) {
-				/*   元由□  奴分匀凶日
-				 * 褪动陆反职及丢件田□卞汹五毛霜耨仄卅中
+				/*   啋蚕↓  贖煦埱倜��
+				 * 虮雄翻毀眥摯隍璃泬↓勗倵拻禱邞嚭媃埵笢
 				 */
 				if( CHAR_getWorkInt( index, CHAR_WORKPARTYMODE )
 						== CHAR_PARTY_CLIENT &&
@@ -2368,10 +2368,10 @@ static BOOL CHAR_sendWatchEvent_sendCheck( int objindex, int index,
 				{
 					int found = FALSE;
 					int loop;
-					/* 阂毛譬屯月 */
+					/* 碳禱ぅ迋堎 */
 					for( loop = 1; loop < CHAR_PARTYMAX; loop ++ ) {
 						int partycharaindex = CHAR_getPartyIndex( recvindex, loop);
-						/*   中凶平乓仿互愤坌及由□  奴及阂分匀凶 */
+						/*   笢倜す籤溘誑猷覕摯蚕↓  贖摯碳煦埱倜 */
 						if( partycharaindex == index ) {
 							found = TRUE;
 							break;
@@ -2379,7 +2379,7 @@ static BOOL CHAR_sendWatchEvent_sendCheck( int objindex, int index,
 					}
 					if( found ) return FALSE;
 				}
-				/* 褪反阂及STAND毛霜耨仄卅中 */
+				/* 虮毀碳摯STAND禱邞嚭媃埵笢 */
 				if( CHAR_getWorkInt( index, CHAR_WORKPARTYMODE)
 					== CHAR_PARTY_CLIENT &&
 					CHAR_getWorkInt( recvindex, CHAR_WORKPARTYMODE)
@@ -2388,12 +2388,12 @@ static BOOL CHAR_sendWatchEvent_sendCheck( int objindex, int index,
 				{
 					int found = FALSE;
 					int loop;
-					/* 阂毛譬屯月 */
+					/* 碳禱ぅ迋堎 */
 					for( loop = 1; loop < CHAR_PARTYMAX; loop ++ ) {
 						int partycharaindex
 							= CHAR_getWorkInt( recvindex,
 											CHAR_WORKPARTYINDEX1+loop);
-						/* STAND仄凶平乓仿互愤坌及由□  奴及阂分匀凶 */
+						/* STAND媃倜す籤溘誑猷覕摯蚕↓  贖摯碳煦埱倜 */
 						if( partycharaindex == index ) {
 							found = TRUE;
 							break;
@@ -2460,11 +2460,11 @@ void CHAR_sendWatchEvent( int objindex, int chac, int* opt,
 
 				switch( OBJECT_getType(receiveobjindex) ){
 				  case OBJTYPE_CHARA:
-					/* 愤坌丐化匹反霜耨仄卅中白仿弘互  匀化中月凛  仃月 */
+					/* 猷覕堣趙ぁ毀邞嚭媃埵笢啞溘精誑  埱趙笢堎鄹  崹堎 */
 					if( index == recvindex && myflg == FALSE ) {
 						break;
 					}
-					/* watch 奶矛件玄毛粟仇允井升丹井职卞民尼永弁允月 */
+					/* watch 騷穫璃哱禱厔喫埰凝汔竣凝眥勗鏍攝蚗袲埰堎 */
 					if( !CHAR_sendWatchEvent_sendCheck( objindex,
 														index, recvindex ,
 														chac
@@ -2500,23 +2500,23 @@ void CHAR_sendWatchEvent( int objindex, int chac, int* opt,
 }
 
 
-/*====================旦平伙====================*/
+/*====================筒す鳴====================*/
 /*------------------------------------------------------------
- * 旦平伙失永皿匹五月方皿夫玄戊伙毛仄扎屯月［
- * 娄醒
- *  charaindex      int     平乓仿奶件犯永弁旦
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩  (  端卞霜日卅井匀凶日巨仿□手殖引木月)    FALSE(0)
+ * 筒す鳴囮蚗鏤ぁ拻堎源鏤痲哱昡鳴禱媃崨迋堎��
+ * 礎倳
+ *  charaindex      int     す籤溘騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄  (  傷勗邞�欷汙朗�倜�桴瑀癒巏笱勞�躂堎)    FALSE(0)
  ------------------------------------------------------------*/
 BOOL CHAR_Skillupsend(int charaindex )
 {
 #if 1
-	// 旦玄□件巨奶斥迕卞  凳仄凶手及
+	// 筒哱↓璃操騷喇暵勗  脾媃倜忒摯
 	int point;
 	int fd;
 	if( !CHAR_CHECKINDEX(charaindex) )return FALSE;
-	// 中仁勾禾奶件玄失永皿匹五月井
+	// 笢�妏景昉抯�哱囮蚗鏤ぁ拻堎凝
 	point = CHAR_getInt( charaindex, CHAR_SKILLUPPOINT );
 	fd = getfdFromCharaIndex(charaindex);
 	lssproto_SKUP_send(fd, point );
@@ -2524,7 +2524,7 @@ BOOL CHAR_Skillupsend(int charaindex )
 #else
 	char    sendbuf[128];
 
-	// 仇切日反LS2凛及手及
+	// 喫з�梫尊S2鄹摯忒摯
 	if(SKILL_getUpableSkillID(charaindex,sendbuf,sizeof(sendbuf))){
 		int fd;
 		fd = getfdFromCharaIndex(charaindex);
@@ -2538,18 +2538,18 @@ BOOL CHAR_Skillupsend(int charaindex )
 }
 
 /*------------------------------------------------------------
- * 旦平伙失永皿允月
- * 娄醒
- *  charaindex          int         平乓仿奶件犯永弁旦
- *  skillid             int         旦平伙ID
- * 忒曰袄
- *  卅仄
+ * 筒す鳴囮蚗鏤埰堎
+ * 礎倳
+ *  charaindex          int         す籤溘騷璃溢蚗袲筒
+ *  skillid             int         筒す鳴ID
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void CHAR_SkillUp(  int charaindex, int skillid )
 {
 	if( !CHAR_CHECKINDEX(charaindex) )return;
 
-	/*韶氏匹中凶日匹五卅中  */
+	/*屻庌ぁ笢倜�梪用槾聿�  */
 	if( CHAR_getFlg(charaindex,CHAR_ISDIE) )return;
 
 	{ 
@@ -2560,25 +2560,25 @@ void CHAR_SkillUp(  int charaindex, int skillid )
 						  CHAR_P_STRING_DEX|CHAR_P_STRING_MAXHP|CHAR_P_STRING_ATK|CHAR_P_STRING_QUICK
 						};
 		int cnt;
-		//   区民尼永弁
+		//   ⑹鏍攝蚗袲
 		if( skillid < 0 || skillid >= 4 ){
 			return;
 		}
-		// 引分由仿丢□正失永皿匹五月井＂
+		// 竘煦蚕溘隍↓淏囮蚗鏤ぁ拻堎凝ㄑ
 		cnt = CHAR_getInt(charaindex,CHAR_SKILLUPPOINT);
 		if( cnt <= 0 )return;
 
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业栏位
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼耋裕�
 		{
 			int p_class = CHAR_getInt( charaindex, PROFESSION_CLASS );
 			int fd=-1;
 
 			switch( p_class ){
 				case PROFESSION_CLASS_FIGHTER:
-					// 勇士锁敏200
+					// 蚋尪坶鏗200
 					if( SkUpTbl[skillid] == CHAR_DEX ){
 						if( CHAR_getInt( charaindex, SkUpTbl[skillid] ) >= 200 * 100 ){
-							CHAR_talkToCli(charaindex, -1, "你的能力值已达上限", CHAR_COLORYELLOW );
+							CHAR_talkToCli(charaindex, -1, "斕腔夔薯硉眒湛奻癹", CHAR_COLORYELLOW );
 							fd = getfdFromCharaIndex(charaindex);
 							if( fd != -1 )	lssproto_SKUP_send( fd, cnt );								
 							return;
@@ -2586,19 +2586,19 @@ void CHAR_SkillUp(  int charaindex, int skillid )
 					}						
 					break;
 				case PROFESSION_CLASS_WIZARD:
-					// 巫师锁攻200
+					// 拵呇坶馴200
 					if( SkUpTbl[skillid] == CHAR_STR ){
 						if( CHAR_getInt( charaindex, SkUpTbl[skillid] ) >= 200 * 100 ){
-							CHAR_talkToCli(charaindex, -1, "你的能力值已达上限", CHAR_COLORYELLOW );
+							CHAR_talkToCli(charaindex, -1, "斕腔夔薯硉眒湛奻癹", CHAR_COLORYELLOW );
 							fd = getfdFromCharaIndex(charaindex);
 							if( fd != -1 )	lssproto_SKUP_send( fd, cnt );										
 							return;
 						}
 					}
-					// 巫师锁防200
+					// 拵呇坶滅200
 					if( SkUpTbl[skillid] == CHAR_TOUGH ){
 						if( CHAR_getInt( charaindex, SkUpTbl[skillid] ) >= 200 * 100 ){
-							CHAR_talkToCli(charaindex, -1, "你的能力值已达上限", CHAR_COLORYELLOW );
+							CHAR_talkToCli(charaindex, -1, "斕腔夔薯硉眒湛奻癹", CHAR_COLORYELLOW );
 							fd = getfdFromCharaIndex(charaindex);
 							if( fd != -1 )	lssproto_SKUP_send( fd, cnt );										
 							return;
@@ -2606,28 +2606,28 @@ void CHAR_SkillUp(  int charaindex, int skillid )
 					}
 					break;
 				case PROFESSION_CLASS_HUNTER:
-					// 猎人锁攻200
+					// 轂�佫纗�200
 					if( SkUpTbl[skillid] == CHAR_STR ){
 						if( CHAR_getInt( charaindex, SkUpTbl[skillid] ) >= 200 * 100 ){
-							CHAR_talkToCli(charaindex, -1, "你的能力值已达上限", CHAR_COLORYELLOW );
+							CHAR_talkToCli(charaindex, -1, "斕腔夔薯硉眒湛奻癹", CHAR_COLORYELLOW );
 							fd = getfdFromCharaIndex(charaindex);
 							if( fd != -1 )	lssproto_SKUP_send( fd, cnt );										
 							return;
 						}
 					}
-					// 猎人锁防200
+					// 轂�佫禶�200
 					if( SkUpTbl[skillid] == CHAR_TOUGH ){
 						if( CHAR_getInt( charaindex, SkUpTbl[skillid] ) >= 200 * 100 ){
-							CHAR_talkToCli(charaindex, -1, "你的能力值已达上限", CHAR_COLORYELLOW );
+							CHAR_talkToCli(charaindex, -1, "斕腔夔薯硉眒湛奻癹", CHAR_COLORYELLOW );
 							fd = getfdFromCharaIndex(charaindex);
 							if( fd != -1 )	lssproto_SKUP_send( fd, cnt );										
 							return;
 						}
 					}
-					// 猎人锁敏400
+					// 轂�佫躞�400
 					if( SkUpTbl[skillid] == CHAR_DEX ){
 						if( CHAR_getInt( charaindex, SkUpTbl[skillid] ) >= 400 * 100 ){
-							CHAR_talkToCli(charaindex, -1, "你的能力值已达上限", CHAR_COLORYELLOW );
+							CHAR_talkToCli(charaindex, -1, "斕腔夔薯硉眒湛奻癹", CHAR_COLORYELLOW );
 							fd = getfdFromCharaIndex(charaindex);
 							if( fd != -1 )	lssproto_SKUP_send( fd, cnt );										
 							return;
@@ -2648,7 +2648,7 @@ void CHAR_SkillUp(  int charaindex, int skillid )
 		CHAR_complianceParameter(charaindex);
 		CHAR_send_P_StatusString( charaindex, SendTbl[skillid]);
 
-#ifdef _ANGEL_SUMMON // 加点时检查资格
+#ifdef _ANGEL_SUMMON // 樓萸奀潰脤訧跡
 		if( cnt-1 == 0 )
 			//selectAngel( charaindex);
 			selectAngel( charaindex, -1, -1 , FALSE);
@@ -2691,16 +2691,16 @@ INLINE int CHAR_getDY( int dir )
 }
 
 /*------------------------------------------------------------
- *   元穴旦及平乓仿弁正□毛  月［
- * 娄醒
- *  objbuf      int*        object     匹及 index 毛医  允月
- *                              田永白央
- *  siz         int         objbuf 及 扔奶术
- *  ff          int         白夫失
+ *   啋悃筒摯す籤溘袲淏↓禱  堎��
+ * 礎倳
+ *  objbuf      int*        object     ぁ摯 index 禱瓟  埰堎
+ *                              泬蚗啞栝
+ *  siz         int         objbuf 摯 �蚅昃�
+ *  ff          int         啞痲囮
  *  fx          int         x
  *  fy          int         y
- * 忒曰袄
- *  窒蜊平乓仿互中月井［
+ * 蒍堇偯
+ *  笰蠀す籤溘誑笢堎凝��
  ------------------------------------------------------------*/
 int CHAR_getSameCoordinateObjects(int* objbuf, int siz,int ff, int fx,
 								  int fy)
@@ -2720,18 +2720,18 @@ int CHAR_getSameCoordinateObjects(int* objbuf, int siz,int ff, int fx,
 }
 
 
-/*====================平乓仿及树  毛  月烟及楮醒====================*/
-/*左皿扑亦件犯□正及  侬  毛忡绣允月楮醒*/
+/*====================す籤溘摯攷  禱  堎捈摯匴倳====================*/
+/*酘鏤で砫璃溢↓淏摯  棬  禱瞀凎埰堎匴倳*/
 static char    CHAR_optiondataString[STRINGBUFSIZ];
 /*------------------------------------------------------------
- * 左皿扑亦件迕及  侬  毛综月［
- *  level, showstring , 熔及醒 ,   飓  寞｝ 窒荚夫弘奶件仄凶井［
- *  弁仿旦［
- * 娄醒
- *  ch      Char*       平乓仿犯□正
- * 忒曰袄
- *  char*   static 卅    毛忒允及匹戚荚及裟太请仄及凛卞反    互
- *    凳今木化中月［娄醒毛公及引引忡绣仄卅中仪［
+ * 酘鏤で砫璃暵摯  棬  禱軘堎��
+ *  level, showstring , �蛩匾� ,   鴢  蠕�� 笰樊痲精騷璃媃倜凝��
+ *  袲溘筒��
+ * 礎倳
+ *  ch      Char*       す籤溘溢↓淏
+ * 蒍堇偯
+ *  char*   static 埵    禱蒍埰摯ぁべ樊摯蠙怮③媃摯鄹勗毀    誑
+ *    脾踏躂趙笢堎�衕羽捙姘姨曼�竘瞀凎媃埵笢痀��
  ------------------------------------------------------------*/
 char* CHAR_makeOptionString( Char* ch )
 {
@@ -2742,7 +2742,7 @@ char* CHAR_makeOptionString( Char* ch )
 		return CHAR_optiondataString;
 	} else {
 
-#if 0  /* 动票反LS2酷  匹丐月 */
+#if 0  /* 雄き毀LS2蹄  ぁ堣堎 */
 		snprintf( CHAR_optiondataString,
 			  sizeof( CHAR_optiondataString ),
 			  "%d|%s|1|%d|%d",
@@ -2753,10 +2753,10 @@ char* CHAR_makeOptionString( Char* ch )
 			  ch->data[CHAR_LOGINCOUNT]);
 #endif
 
-        /* 动票反StoneAge 酷  匹丐月［
+        /* 雄き毀StoneAge 蹄  ぁ堣堎��
 
            dataplace|faceimg|level|hp|str|def|dex|charm|dp|earth|water|fire|wind|login|Name|Place
-           午卅月［
+           敁埵堎��
          */
         {
             snprintf( CHAR_optiondataString,
@@ -2906,12 +2906,12 @@ DebugPoint = 100;
 				big4fm = 0;
 		}
 #endif		
-#ifdef _FIX_FMNAME_RULE	 // WON ADD 家族未成立，不显示名称			
+#ifdef _FIX_FMNAME_RULE	 // WON ADD 模逜帤傖蕾ㄛ祥珆尨靡備			
 		if( CHAR_getWorkInt(index, CHAR_WORKFMSETUPFLAG)==1 ){
 			snprintf( CHAR_statusSendBuffer,
 				sizeof( CHAR_statusSendBuffer ),
 				"F%s|%d|%d|%d|%d",	
-				"(待审)",
+				"(渾机)",
 				CHAR_getInt( index, CHAR_FMLEADERFLAG),
 				CHAR_getWorkInt( index, CHAR_WORKFMCHANNEL),
 				CHAR_getInt( index, CHAR_FMSPRITE),	big4fm );		
@@ -2980,7 +2980,7 @@ DebugPoint = 100;
 			hskill = CHAR_getCharHaveSkill( index, i );
 
 			if( hskill != NULL && hskill->use == TRUE ){
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
 				snprintf( token , sizeof(token), "%s|", SKILL_makeSkillStatusString(&hskill->skill, index, i) );
 #else
 				snprintf( token , sizeof(token), "%s|", SKILL_makeSkillStatusString(&hskill->skill) );
@@ -3052,7 +3052,7 @@ DebugPoint = 100;
 		num = tolower( category[1] ) - '0';
 
 		if( num < 0 || num >= CHAR_PARTYMAX ){
-			print( "朋友模式失败 (%c)%d \n", num, num );
+			print( "攬衭耀宒囮啖 (%c)%d \n", num, num );
 			break;
 		}
 
@@ -3107,7 +3107,7 @@ DebugPoint = 100;
 		};
 		num = tolower( category[1] ) - '0';
 		if( num < 0 || num >= CHAR_MAXPETHAVE ){
-			print( "宠物模式失败 (%c)%d \n", num, num );
+			print( "唾昜耀宒囮啖 (%c)%d \n", num, num );
 			break;
 		}
 		pindex = CHAR_getCharPet( index, num );
@@ -3138,7 +3138,7 @@ DebugPoint = 100;
 				}
 			}
 			snprintf(CHAR_statusSendBuffer,sizeof(CHAR_statusSendBuffer),
-// Syu ADD 改变交易时宠物转生颜色
+// Syu ADD 蜊曹蝠眢奀唾昜蛌汜晇伎
 #ifdef _SHOW_FUSION
 				 "K%d|1|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|",
 #else
@@ -3162,7 +3162,7 @@ DebugPoint = 100;
 				 attr[2],
 				 attr[3],
 				 CHAR_getInt( pindex, CHAR_SLOT),
-// Syu ADD 改变交易时宠物转生颜色
+// Syu ADD 蜊曹蝠眢奀唾昜蛌汜晇伎
 				 changenameflg,
 				 CHAR_getInt( pindex,CHAR_TRANSMIGRATION)
 #ifdef _SHOW_FUSION
@@ -3261,7 +3261,7 @@ DebugPoint = 100;
 
 		num = tolower( category[1] ) - '0';
 		if( num < 0 || num >= CHAR_MAXPETHAVE ){
-			print( "宠物特技资料失败 (%c)%d \n", num, num );
+			print( "唾昜杻撮訧蹋囮啖 (%c)%d \n", num, num );
 			break;
 		}
 
@@ -3330,7 +3330,7 @@ DebugPoint = 100;
 		return CHAR_statusSendBuffer;
 }
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	case 'y':
 {
 		int num = 0, f_num = 0;
@@ -3343,7 +3343,7 @@ DebugPoint = 100;
 
 		num = tolower( category[1] ) - '0';
 		if( num < 0 || num >= CHAR_MAXPETHAVE ){
-			print( "宠物特技资料失败 (%c)%d \n", num, num );
+			print( "唾昜杻撮訧蹋囮啖 (%c)%d \n", num, num );
 			break;
 		}
 
@@ -3360,7 +3360,7 @@ DebugPoint = 100;
 		}
 
 		if( CHAR_getWorkInt( pindex, CHAR_WORKOBLIVION) > 0 )
-			f_num = CHAR_getWorkInt( pindex, CHAR_WORKMODOBLIVION ) + 1;// 遗忘宠技数量
+			f_num = CHAR_getWorkInt( pindex, CHAR_WORKMODOBLIVION ) + 1;// 疻咭唾撮杅講
 
 		for( petskillloop = 0; petskillloop < CHAR_MAXPETSKILLHAVE; petskillloop ++ ) {
 			int skillid = CHAR_getPetSkill( pindex, petskillloop);
@@ -3372,7 +3372,7 @@ DebugPoint = 100;
 				int p_id = PETSKILL_getInt( petskillindex, PETSKILL_ID);
 				int rand_num = RAND( 0, 100 );
 						
-				// 中了遗忘
+				// 笢賸疻咭
 				if( (oblivion > 0) && ( f_num > 0 ) && ( rand_num <= 60 ) && ( p_id != 1 ) ){
 					field = PETSKILL_FIELD_MAP;
 					target = PETSKILL_TARGET_NONE;
@@ -3443,7 +3443,7 @@ DebugPoint = 100;
 
 		num = tolower( category[1] ) - '0';
 		if( num < 0 || num >= CHAR_MAXPETHAVE ){
-			print( "宠物特技资料失败 (%c)%d \n", num, num );
+			print( "唾昜杻撮訧蹋囮啖 (%c)%d \n", num, num );
 			break;
 		}
 
@@ -3468,12 +3468,12 @@ DebugPoint = 100;
 				//int oblivion = CHAR_getWorkInt( pindex, CHAR_WORKOBLIVION );
 				int p_id = PETSKILL_getInt( petskillindex, PETSKILL_ID);
 			
-				//生命大於50%且技能名称若为 浴血狂袭 技能不能选
+				//汜韜湮黺50%й撮夔靡備�譠� 唌悛遼炷 撮夔祥夔恁
 				if( ( CHAR_getInt( pindex, CHAR_HP ) > CHAR_getWorkInt( pindex, CHAR_WORKMAXHP )*0.5 
-					&& strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"浴血狂袭" ) == 0 )
+					&& strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"唌悛遼炷" ) == 0 )
 #ifdef _PETSKILL_EXPLODE
 					|| ( CHAR_getInt( pindex, CHAR_HP ) < (CHAR_getWorkInt( pindex, CHAR_WORKMAXHP ) >> 1 )
-					&& strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"爆裂攻击" ) == 0 )
+					&& strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"惇蹊馴僻" ) == 0 )
 #endif
 					){
 					field = PETSKILL_FIELD_MAP;
@@ -3544,10 +3544,10 @@ DebugPoint = 100;
 
 		num = tolower( category[1] ) - '0';
 		if( num < 0 || num >= CHAR_MAXPETHAVE ){
-			print( "宠物特技资料失败 (%c)%d \n", num, num );
+			print( "唾昜杻撮訧蹋囮啖 (%c)%d \n", num, num );
 			break;
 		}
-		print( "宠物特技资料" );
+		print( "唾昜杻撮訧蹋" );
         pindex = CHAR_getCharPet( index, num );
 		if( !CHAR_CHECKINDEX(pindex)){
 			return NULL;
@@ -3569,11 +3569,11 @@ DebugPoint = 100;
 				//int oblivion = CHAR_getWorkInt( pindex, CHAR_WORKOBLIVION );
 				int p_id = PETSKILL_getInt( petskillindex, PETSKILL_ID);
 			
-				//技能名称若为 待机 攻击 防御 技能才能选
-				print("\n技能名称:%s",PETSKILL_getChar( petskillindex, PETSKILL_NAME));
-				if( strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"待机" ) == 0 
-					|| strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"攻击" ) == 0
-					|| strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"防御" ) == 0){
+				//撮夔靡備�譠� 渾儂 馴僻 滅郘 撮夔符夔恁
+				print("\n撮夔靡備:%s",PETSKILL_getChar( petskillindex, PETSKILL_NAME));
+				if( strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"渾儂" ) == 0 
+					|| strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"馴僻" ) == 0
+					|| strcmp(PETSKILL_getChar( petskillindex, PETSKILL_NAME),"滅郘" ) == 0){
 					field = PETSKILL_getInt( petskillindex, PETSKILL_FIELD);
 					target = PETSKILL_getInt( petskillindex, PETSKILL_TARGET);
 				}else{
@@ -3704,7 +3704,7 @@ void CHAR_deleteTitle( int index, int titleindex )
 	int title;
 
 	if( !CHAR_CHECKINDEX( index ) )return;
-	/* 韶氏匹中月凛反分户 */
+	/* 屻庌ぁ笢堎鄹毀煦誧 */
 	if( CHAR_getFlg( index,CHAR_ISDIE ) )return;
 
 	if( titleindex < 0 || titleindex >= CHAR_TITLEMAXHAVE )return;
@@ -3715,12 +3715,12 @@ void CHAR_deleteTitle( int index, int titleindex )
 	}
 	CHAR_setCharHaveTitle( index,titleindex,-1 );
 
-	/*  愤坌互银匀化中凶支勾卅日壬｝公木手卅仄卞允月    */
+	/*  猷覕誑窅埱趙笢倜盓僑埵�桱氿�鼠躂忒埵媃勗埰堎    */
 	if( CHAR_getInt(index, CHAR_INDEXOFEQTITLE) == titleindex )
 		CHAR_setInt(index, CHAR_INDEXOFEQTITLE, -1 );
 
 	/*
-	 * 旦  □正旦树  毛霜月［
+	 * 筒  ↓淏筒攷  禱邞堎��
 	 */
 	CHAR_sendStatusString( index, "T" );
 	CHAR_send_P_StatusString( index, CHAR_P_STRING_TITLE );
@@ -3764,9 +3764,9 @@ static void CHAR_initcharWorkInt( index )
 		}
 	}
 
-#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 职业抗性装备
+#ifdef _MAGIC_RESIST_EQUIT			// WON ADD 眥珛蕨俶蚾掘
 	{
-		// 火冰电抗性
+		// 鳶梨萇蕨俶
 		//for( i=0; i<3; i++)
 		//	CHAR_setWorkInt( index, CHAR_WORK_F_RESIST+i, CHAR_getInt( index, PROFESSION_FIRE_R+i ) );
 	}
@@ -3782,7 +3782,7 @@ static void CHAR_initcharWorkInt( index )
 		CHAR_getInt( index, CHAR_STR) * 0.01 * 1.0
 //#ifdef _BATTLE_NEWPOWER
 //		+ CHAR_getInt( index, CHAR_DEX) * 0.01 * 0.05
-//		+ CHAR_getInt( index, CHAR_VITAL) * 0.01 * 0.05	); // 耐力
+//		+ CHAR_getInt( index, CHAR_VITAL) * 0.01 * 0.05	); // 騵薯
 //#else
 		+ CHAR_getInt( index, CHAR_TOUGH) * 0.01 * 0.1
 		+ CHAR_getInt( index, CHAR_VITAL) * 0.01 * 0.1
@@ -3792,7 +3792,7 @@ static void CHAR_initcharWorkInt( index )
 		CHAR_getInt( index, CHAR_TOUGH) * 0.01 * 1.0
 //#ifdef _BATTLE_NEWPOWER
 //		+ CHAR_getInt( index, CHAR_DEX) * 0.01 * 0.05
-//		+ CHAR_getInt( index, CHAR_VITAL) * 0.01 * 0.05	);	// 力量
+//		+ CHAR_getInt( index, CHAR_VITAL) * 0.01 * 0.05	);	// 薯講
 //#else
 		+ CHAR_getInt(index,CHAR_STR) * 0.01 * 0.1
 		+ CHAR_getInt(index,CHAR_VITAL) * 0.01 * 0.1
@@ -3906,7 +3906,7 @@ int _CHAR_complianceParameter( int index, char *FILE, int LINE)
 			}
 		}
 		
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能		
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�		
 		{
 			int i, add_pile = 0;
 			int old_pile = CHAR_getWorkInt( index, CHAR_WORKATTACHPILE);
@@ -3916,7 +3916,7 @@ int _CHAR_complianceParameter( int index, char *FILE, int LINE)
 				
 				if( skillID <= 0 ) continue;
 				
-				// 负重增加
+				// 蛹笭崝樓
 				if( skillID == 65 ){
 					int p_class = CHAR_getInt( index, PROFESSION_CLASS );
 
@@ -3953,7 +3953,7 @@ int _CHAR_complianceParameter( int index, char *FILE, int LINE)
 			|| CHAR_getInt( index, CHAR_BECOMEPIG) > -1
 #endif
 			){
-			newimagenumber = oldimagenumber; //不恢复成原本的图
+			newimagenumber = oldimagenumber; //祥閥葩傖埻掛腔芞
 		}
 #endif
 		// Arminius 8.9 airplane
@@ -4075,24 +4075,24 @@ int _CHAR_complianceParameter( int index, char *FILE, int LINE)
 }
 
 /*======================================================================
-  平乓仿及失奶  丞毛健丹楮醒
+  す籤溘摯囮騷  堜禱翩竣匴倳
   ======================================================================*/
 
-/*====================苇月====================*/
+/*====================峟堎====================*/
 /*------------------------------------------------------------
- *   轾隙烂匹｝公及  轾及平乓仿弁正卞苇月奶矛件玄毛  戏今六月
- * 娄醒
- *  charaindex      int     平乓仿奶件犯永弁旦
- *  dir             int       轾
- * 忒曰袄
- *  卅仄
+ *   澺炩擭ぁ��鼠摯  澺摯す籤溘袲淏勗峟堎騷穫璃哱禱  牁踏鞠堎
+ * 礎倳
+ *  charaindex      int     す籤溘騷璃溢蚗袲筒
+ *  dir             int       澺
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void CHAR_Look( int charaindex, int dir )
 {
 	int fl ,x,y;
 	OBJECT  object;
 
-	/*  奶件犯永弁旦及民尼永弁  */
+	/*  騷璃溢蚗袲筒摯鏍攝蚗袲  */
 	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return;
 
 	if( dir < 0 ) {
@@ -4101,7 +4101,7 @@ void CHAR_Look( int charaindex, int dir )
 	VALIDATEDIR(dir);
 	if( CHAR_getInt( charaindex, CHAR_DIR) != dir ) {
 		CHAR_setInt(charaindex,CHAR_DIR,dir);
-		/*    轾  晶仄凶失弁扑亦件毛霜耨允月  */
+		/*    澺  儒媃倜囮袲で砫璃禱邞嚭埰堎  */
 		CHAR_sendWatchEvent(CHAR_getWorkInt(charaindex,CHAR_WORKOBJINDEX),
 							CHAR_ACTTURN,NULL,0,TRUE);
 	}
@@ -4112,7 +4112,7 @@ void CHAR_Look( int charaindex, int dir )
 							 CHAR_getInt(charaindex,CHAR_Y),
 							 1, &x, &y );
 
-	//CHAR_talkToCli( charaindex, -1, "调查四周环境。", CHAR_COLORWHITE );
+	//CHAR_talkToCli( charaindex, -1, "覃脤侐笚遠噫﹝", CHAR_COLORWHITE );
 
 	for( object=MAP_getTopObj(fl,x,y) ; object ;
 		 object = NEXT_OBJECT(object) ){
@@ -4147,10 +4147,10 @@ BOOL _CHAR_makeObjectCString( char *file, int line, int objindex,char* buf, int 
 #ifdef _TRANS_6
 #ifdef _TRANS_7
 		int namecolortbl[] = { CHAR_COLORWHITE, CHAR_COLORYELLOW, CHAR_COLORGREEN,
-					CHAR_COLORCYAN, CHAR_COLORRED, CHAR_COLORPURPLE, CHAR_COLORBLUE2,CHAR_COLORGRAY};//转生後的颜色
+					CHAR_COLORCYAN, CHAR_COLORRED, CHAR_COLORPURPLE, CHAR_COLORBLUE2,CHAR_COLORGRAY};//蛌汜摽腔晇伎
 #else
 		int namecolortbl[] = { CHAR_COLORWHITE, CHAR_COLORYELLOW, CHAR_COLORGREEN,
-					CHAR_COLORCYAN, CHAR_COLORRED, CHAR_COLORPURPLE, CHAR_COLORBLUE2};//转生後的颜色
+					CHAR_COLORCYAN, CHAR_COLORRED, CHAR_COLORPURPLE, CHAR_COLORBLUE2};//蛌汜摽腔晇伎
 #endif
 #else
 		int namecolortbl[] = { CHAR_COLORWHITE, CHAR_COLORYELLOW, CHAR_COLORGREEN,
@@ -4183,7 +4183,7 @@ BOOL _CHAR_makeObjectCString( char *file, int line, int objindex,char* buf, int 
 		if(strlen( CHAR_getChar( charaindex, CHAR_LOVE)) > 0 &&
         strlen(CHAR_getChar(charaindex,CHAR_LOVERID))>0 &&
         strlen(CHAR_getChar(charaindex,CHAR_LOVERNAME))>0)
-        	sprintf(tmp, "%s§♂%s♀",CHAR_getChar( charaindex, CHAR_FMNAME),CHAR_getChar( charaindex, CHAR_LOVERNAME));
+        	sprintf(tmp, "%s∫﹥%s﹦",CHAR_getChar( charaindex, CHAR_FMNAME),CHAR_getChar( charaindex, CHAR_LOVERNAME));
     else
     			sprintf(tmp, "%s",CHAR_getChar( charaindex, CHAR_FMNAME));
 #else
@@ -4194,7 +4194,7 @@ BOOL _CHAR_makeObjectCString( char *file, int line, int objindex,char* buf, int 
 		if(strlen( CHAR_getChar( charaindex, CHAR_LOVE)) > 0 &&
         strlen(CHAR_getChar(charaindex,CHAR_LOVERID))>0 &&
         strlen(CHAR_getChar(charaindex,CHAR_LOVERNAME))>0)
-        	sprintf(tmp, "♂%s♀",CHAR_getChar( charaindex, CHAR_LOVERNAME));
+        	sprintf(tmp, "﹥%s﹦",CHAR_getChar( charaindex, CHAR_LOVERNAME));
     else
     			strcpy(tmp, "");
 #else
@@ -4210,8 +4210,8 @@ BOOL _CHAR_makeObjectCString( char *file, int line, int objindex,char* buf, int 
 	   		petlevel = CHAR_getInt( ridepet, CHAR_LV);
 	   	}
 #ifdef _OBJSEND_C
-  #ifdef _CHAR_PROFESSION			// WON ADD 人物职业
-    #ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
+  #ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+    #ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
 		  snprintf( buf, buflen, "%d|%d|%s|%d|%d|%d|%d|%d|%d|%s|%s|%d|%d|%d|%s|%s|%d|%d|%d|%d|%d",
     #else
 		  snprintf( buf, buflen, "%d|%d|%s|%d|%d|%d|%d|%d|%d|%s|%s|%d|%d|%d|%s|%s|%d|%d|%d|%d",
@@ -4222,7 +4222,7 @@ BOOL _CHAR_makeObjectCString( char *file, int line, int objindex,char* buf, int 
 			OBJTYPE_CHARA,
 #else
   #ifdef _GM_IDENTIFY
-    snprintf( buf, buflen, "%d|%s|%d|%d|%d|%d|%d|%d|%s|%s|%d|%d|%d|%s|%s|%d|%s", //多出了gm名称这个栏位
+    snprintf( buf, buflen, "%d|%s|%d|%d|%d|%d|%d|%d|%s|%s|%d|%d|%d|%s|%s|%d|%s", //嗣堤賸gm靡備涴跺戲弇
   #else
 		snprintf( buf, buflen, "%d|%s|%d|%d|%d|%d|%d|%d|%s|%s|%d|%d|%d|%s|%s|%d",
   #endif
@@ -4243,17 +4243,17 @@ BOOL _CHAR_makeObjectCString( char *file, int line, int objindex,char* buf, int 
 				  tmp,
 				  makeEscapeString( petname, escapepetname, sizeof(escapepetname)),
 				  petlevel
-#ifdef _CHAR_PROFESSION			// WON ADD 人物职业
-				  ,CHAR_getInt( charaindex, PROFESSION_CLASS)	// 职业别
-				  ,CHAR_getInt( charaindex, PROFESSION_LEVEL)	// 职业等级
-//				  ,CHAR_getInt( charaindex, PROFESSION_EXP)		// 职业经验值
-				  ,CHAR_getInt( charaindex, PROFESSION_SKILL_POINT)	// 技能点数
+#ifdef _CHAR_PROFESSION			// WON ADD �冼攃曼�
+				  ,CHAR_getInt( charaindex, PROFESSION_CLASS)	// 眥珛梗
+				  ,CHAR_getInt( charaindex, PROFESSION_LEVEL)	// 眥珛脹撰
+//				  ,CHAR_getInt( charaindex, PROFESSION_EXP)		// 眥珛冪桄硉
+				  ,CHAR_getInt( charaindex, PROFESSION_SKILL_POINT)	// 撮夔萸杅
 #endif
-#ifdef _ALLDOMAN // (不可开) Syu ADD 排行榜NPC
-				  ,CHAR_getInt( charaindex, CHAR_HEROFLOOR )	// 英雄战场楼层
+#ifdef _ALLDOMAN // (祥褫羲) Syu ADD 齬俴埤NPC
+				  ,CHAR_getInt( charaindex, CHAR_HEROFLOOR )	// 荎倯桵部瞼脯
 #endif
 #ifdef _GM_IDENTIFY
-                  ,CHAR_getChar(charaindex, CHAR_GMIDENTIFY) //gm的名称
+                  ,CHAR_getChar(charaindex, CHAR_GMIDENTIFY) //gm腔靡備
 #endif
 #ifdef _PETSKILL_BECOMEPIG
     //              ,CHAR_getInt(charaindex, CHAR_BECOMEPIG)
@@ -4467,14 +4467,14 @@ void CHAR_sendArroundCharaData( int charaindex )
 				}
 				if( OBJECT_getType( objindex) == OBJTYPE_CHARA) {
 					if( CHAR_getInt( c_index, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER ){
-			 	   		/* 苇尹凶平乓仿互醮棉汹五及褪卅日壬伉□母□  憎CA毛霜月 */
+			 	   		/* 峟窇倜す籤溘誑黥蹬倵拻摯虮埵�桱屻齱囃腹�  崚CA禱邞堎 */
 						if( CHAR_getWorkInt( c_index, CHAR_WORKPARTYMODE )== CHAR_PARTY_LEADER ){
 							if( CHAR_makeCAOPT1String( objindex, cabuf, sizeof( cabuf),	CHAR_ACTLEADER,1 ))	{
 								CONNECT_appendCAbuf( fd,cabuf,strlen(cabuf));
 							}
 						}
 						// Robin 0611 trade
-						/* 角色交易中 */
+						/* 褒伎蝠眢笢 */
 						if( CHAR_getWorkInt( c_index, CHAR_WORKTRADEMODE ) != CHAR_TRADE_FREE )	{
 							if( CHAR_makeCAOPT1String( objindex, cabuf, sizeof( cabuf),	CHAR_ACTTRADE,1 )){
 								CONNECT_appendCAbuf( fd,cabuf,strlen(cabuf));
@@ -4627,7 +4627,7 @@ BOOL _CHAR_warpToSpecificPoint( char *file, int line, int charaindex, int floor,
 		CHAR_setWorkInt( charaindex, CHAR_WORKENCOUNTPROBABILITY_MAX, per);
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	CHAR_setWorkInt( charaindex, CHAR_ENCOUNT_FIX, 0);
 #endif
 
@@ -4680,7 +4680,7 @@ BOOL _CHAR_warpToSpecificPoint( char *file, int line, int charaindex, int floor,
           
 			CHAR_warpToSpecificPoint( petindex, floor, x, y );
 		}
-#ifdef _STATUS_WATERWORD //水世界状态
+#ifdef _STATUS_WATERWORD //阨岍賜袨怓
 		if( MAP_getMapFloorType( floor) == 1 ){
 			CHAR_setWorkInt( charaindex, CHAR_WORKMAPFLOORTYPE, 1);
 		}else {
@@ -4688,11 +4688,11 @@ BOOL _CHAR_warpToSpecificPoint( char *file, int line, int charaindex, int floor,
 		}
 #endif
 #ifdef _MAP_TIME
-		// 如果进入的地图是这些编号的话,设定倒数
+		// �蝜�輛�賮警媏暱м瑱店鉭霾躉�,扢隅給杅
 		if(floor >= 30017 && floor <= 30021){
 			if(CHAR_getWorkInt(charaindex,CHAR_WORK_MAP_TIME) <= 0) CHAR_setWorkInt(charaindex,CHAR_WORK_MAP_TIME,60);
 		}
-		// 如果进入正常的地图
+		// �蝜�輛�鄳�都腔華芞
 		else CHAR_setWorkInt(charaindex,CHAR_WORK_MAP_TIME,0);
 #endif
 
@@ -4775,28 +4775,28 @@ void CHAR_Loop( void )
 		charcnt = CHAR_getCharNum();
 	}
 
-	// 玩家用的loop
+	// 俙模蚚腔loop
 	for( i=0 ; i< playernum ; i++ ){
 		if( CHAR_getCharUse(i) == FALSE )continue;
 		CHAR_walk_check( i );
 		CHAR_callLoop( i );
 #ifdef _TEACHER_SYSTEM
-		// 有获得导师声望
+		// 衄鳳腕絳呇汒咡
 		if(CHAR_getWorkInt(i,CHAR_WORK_GET_TEACHER_FAME) > 0){
 			int iAddTFame = CHAR_getInt(i,CHAR_TEACHER_FAME) + CHAR_getWorkInt(i,CHAR_WORK_GET_TEACHER_FAME);
 			int iAddFame = CHAR_getInt(i,CHAR_FAME) + CHAR_getWorkInt(i,CHAR_WORK_GET_TEACHER_FAME);
 
-			// 加导师声望(导师声望最大值和个人声望最大值一样)
+			// 樓絳呇汒咡(絳呇汒咡郔湮硉睿跺�侂驫�郔湮硉珨欴)
 			if(iAddTFame > MAX_PERSONALFAME) iAddTFame = MAX_PERSONALFAME;
 			else if(iAddTFame < 0) iAddTFame = 0;
 			CHAR_setInt(i,CHAR_TEACHER_FAME,iAddTFame);
-			// 加声望
+			// 樓汒咡
 			if(iAddFame > MAX_PERSONALFAME) iAddFame = MAX_PERSONALFAME;
 			else if(iAddFame < 0) iAddFame = 0;
 			CHAR_setInt(i,CHAR_FAME,iAddFame);
-			// 清为 0
+			// ь峈 0
 			CHAR_setWorkInt(i,CHAR_WORK_GET_TEACHER_FAME,0);
-			// 若有家族,上传给ac保持二边资料同步
+			// �譥邾眢�,奻換跤ac悵厥媼晚訧蹋肮祭
 			if(CHAR_getInt(i,CHAR_FMLEADERFLAG) > 0 && CHAR_getInt(i,CHAR_FMLEADERFLAG) != FMMEMBER_APPLY){
 				char tmpbuf1[16];
 
@@ -4806,8 +4806,8 @@ void CHAR_Loop( void )
 					CHAR_getInt(i,CHAR_FMINDEX),
 					CHAR_getWorkInt(i,CHAR_WORKFMINDEXI),
 					FM_FIX_FMFEED,
-					"0",			// 只是为了同步资料,所以设为0,不动到家族的资料
-					tmpbuf1,	// 同步个人声望资料
+					"0",			// 硐岆峈賸肮祭訧蹋,垀眕扢峈0,祥雄善模逜腔訧蹋
+					tmpbuf1,	// 肮祭跺�侂驫�訧蹋
 					CHAR_getWorkInt(i,CHAR_WORKFMCHARINDEX),
 					CONNECT_getFdid(getfdFromCharaIndex(i))
 				);
@@ -4816,7 +4816,7 @@ void CHAR_Loop( void )
 #endif
 	}
 
-	// 玩家以外的Object用的loop
+	// 俙模眕俋腔Object蚚腔loop
 	for( i = 0, movecnt = 0 ; i < (petnum/2) ; i++, charcnt++ ){
 		if( charcnt >= charnum )charcnt = playernum ;
 		if( CHAR_getCharUse(charcnt) == FALSE )continue;
@@ -4836,10 +4836,10 @@ char* CHAR_appendNameAndTitle( int charaindex, char* src, char* buf,
 		else{
 			int titleindex = CHAR_getInt(charaindex,CHAR_INDEXOFEQTITLE);
 			if( titleindex == -1 )
-				snprintf( buf,buflen, "%s：%s",
+				snprintf( buf,buflen, "%sㄩ%s",
 						  CHAR_getChar(charaindex,CHAR_NAME), src );
 			else
-				snprintf( buf,buflen, "%s(%s)：%s",
+				snprintf( buf,buflen, "%s(%s)ㄩ%s",
 						  CHAR_getChar(charaindex,CHAR_NAME),
 						  TITLE_makeTitleStatusString(charaindex,
 													  titleindex), src );
@@ -4888,7 +4888,7 @@ BOOL CHAR_createCharacter( int type, int floor, int x, int y,int dir,
 	}
 	CHAR_setWorkInt( *charaindex,CHAR_WORKOBJINDEX,*objindex);
 
-	/*  生永玄伐□弁毛垫丹  */
+	/*  汜蚗哱極↓袲禱菜竣  */
 
 	CHAR_sendWatchEvent( *objindex,CHAR_ACTSTAND,NULL,0,TRUE);
 
@@ -4912,22 +4912,22 @@ void CHAR_ObjectDelete( int objindex )
 }
 
 /*------------------------------------------------------------
- * 平乓仿毛绰轮允月［左皮斥尼弁玄手绰轮允月［
- * 生永玄伐□弁及支曰酸仄毛卅仁允凶户及手及
- * 娄醒
- *  charaindex      int     平乓仿奶件犯永永弁旦
- * 忒曰袄
- *  卅仄
+ * す籤溘禱朝謫埰堎�詍鬷仇熗摛迖�忒朝謫埰堎��
+ * 汜蚗哱極↓袲摯盓堇呫媃禱埵�彸庈袘尬動祤�
+ * 礎倳
+ *  charaindex      int     す籤溘騷璃溢蚗蚗袲筒
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void CHAR_CharaDelete( int charaindex )
 {
-	/*  左皮斥尼弁玄毛绰轮  */
+	/*  酘々喇攝袲哱禱朝謫  */
 	CHAR_ObjectDelete( CHAR_getWorkInt( charaindex,CHAR_WORKOBJINDEX ) );
-	/*  平乓仿及绰轮    */
+	/*  す籤溘摯朝謫    */
 	CHAR_endCharOneArray( charaindex );
 }
 /*------------------------------------------------------------
- * 皿伊奶乩□及  匀化中月矢永玄毛壅允
+ * 鏤畛騷媕↓摯  埱趙笢堎妐蚗哱禱觛埰
  ------------------------------------------------------------*/
 void CHAR_CharaDeleteHavePet( int charaindex)
 {
@@ -4948,13 +4948,13 @@ void CHAR_CharaDeleteHavePet( int charaindex)
 	}
 }
 /*------------------------------------------------------------
- * 减变升啼卅升毛  蜇允月［
- * mode		int			0: 愤坌卞反CA霜日卅中
- *						1: 愤坌卞手CA霜月
+ * 熬曹汔杽埵汔禱  藯埰堎��
+ * mode		int			0: 猷覕勗毀CA邞�欷聿�
+ *						1: 猷覕勗忒CA邞堎
  ------------------------------------------------------------*/
 int CHAR_sendAction( int charaindex, int action, int mode)
 {
-	/* 霜日木化  凶失弁扑亦件午CA毛域谯今六月  □皮伙 */
+	/* 邞�桫噱�  倜囮袲で砫璃敁CA禱郖窙踏鞠堎  ↓々鳴 */
 	static int table[] = {
 		CHAR_ACTATTACK,CHAR_ACTDAMAGE,CHAR_ACTDOWN,CHAR_ACTACTIONSTAND,
 		CHAR_ACTACTIONWALK,CHAR_ACTSIT,CHAR_ACTHAND,CHAR_ACTPLEASURE,
@@ -4962,19 +4962,19 @@ int CHAR_sendAction( int charaindex, int action, int mode)
 	};
 	if( action < 0 || action >= arraysizeof( table)) return FALSE;
 
-	/* 璃曰卞失弁扑亦件毛霜耨允月 */
+	/* 薛堇勗囮袲で砫璃禱邞嚭埰堎 */
 	CHAR_sendWatchEvent(
 			CHAR_getWorkInt( charaindex, CHAR_WORKOBJINDEX),
 			table[action],
 			NULL,0,mode);
 
-	/* 失弁扑亦件及瓒   */
+	/* 囮袲で砫璃摯頞   */
 	CHAR_setWorkInt( charaindex, CHAR_WORKACTION, table[action]);
 
 	return TRUE;
 }
 /*------------------------------------------------------------
- * 愤坌互爵    匹丐月午中丹仪毛霜耨允月［
+ * 猷覕誑橋    ぁ堣堎敁笢竣痀禱邞嚭埰堎��
  ------------------------------------------------------------*/
 void CHAR_sendBattleEffect( int charaindex, int onoff)
 {
@@ -4999,7 +4999,7 @@ void CHAR_sendBattleEffect( int charaindex, int onoff)
 }
 
 /*------------------------------------------------------------
- * 交易中传送讯息      add code Shan 2001/06/30
+ * 蝠眢笢換冞捅洘      add code Shan 2001/06/30
  ------------------------------------------------------------*/
 void CHAR_sendTradeEffect( int charaindex, int onoff)
 {
@@ -5069,7 +5069,7 @@ void CHAR_inputUserPetName( int index , int havepetindex, char* name )
 	if( !CHAR_CHECKINDEX( petindex)) return;
 
 	if (CHAR_getInt(petindex, CHAR_PETFAMILY) == 1){
-		CHAR_talkToCli(index, -1, "家族守护兽无法修改名字！", CHAR_COLORYELLOW);
+		CHAR_talkToCli(index, -1, "模逜忐誘忤拸楊党蜊靡趼ㄐ", CHAR_COLORYELLOW);
 		return;
 	}
 
@@ -5083,7 +5083,7 @@ void CHAR_inputUserPetName( int index , int havepetindex, char* name )
 		}
 	}
 	if( !changenameflg) {
-		CHAR_talkToCli( index, -1, "无法为宠物命名。", CHAR_COLORYELLOW );
+		CHAR_talkToCli( index, -1, "拸楊峈唾昜韜靡﹝", CHAR_COLORYELLOW );
 		return;
 	}
 
@@ -5119,7 +5119,7 @@ static void CHAR_setLuck( int charaindex)
 	RealTimeToLSTime( NowTime.tv_sec, &nowlstime);
 	RealTimeToLSTime( CHAR_getInt( charaindex, CHAR_LASTTIMESETLUCK), &mylstime);
 
-	/* LS凛棉匹ㄠ  动晓烦匀化中木壬CHAR_LUCK毛凳蕙允月 */
+	/* LS鄹蹬ぁ兒  雄窀歲埱趙笢躂�匚HAR_LUCK禱脾犍埰堎 */
 	if( nowlstime.day != mylstime.day || nowlstime.year != mylstime.year ) {
 		int		i,r;
 		r = RAND( 0, 99);
@@ -5137,10 +5137,10 @@ void CHAR_JoinBattle_WindowResult( int charaindex, int select, char *data)
 	int	ret = FALSE;
 	int	fd = getfdFromCharaIndex( charaindex);
 
-#if 1	// 修正利用参战重复加入战斗	Robin
+#if 1	// 党淏瞳蚚統桵笭葩樓�鄳蓿�	Robin
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) {
-		CHAR_talkToCli( charaindex, -1, " 重复加入战斗! ", CHAR_COLORRED);
-		print("\n 改封包!!重复加入战斗!:%s ", CHAR_getChar( charaindex, CHAR_CDKEY) );
+		CHAR_talkToCli( charaindex, -1, " 笭葩樓�鄳蓿�! ", CHAR_COLORRED);
+		print("\n 蜊猾婦!!笭葩樓�鄳蓿�!:%s ", CHAR_getChar( charaindex, CHAR_CDKEY) );
 		//lssproto_EN_send( fd, FALSE, 0 );
 		return;
 	}
@@ -5180,7 +5180,7 @@ void CHAR_JoinBattle_WindowResult( int charaindex, int select, char *data)
 			}
 			if( BATTLE_RescueEntry( charaindex,
                                     CONNECT_getBattlecharaindex(fd,selected) )){
-	        	CHAR_talkToCli( charaindex, -1, "无法参战。",
+	        	CHAR_talkToCli( charaindex, -1, "拸楊統桵﹝",
 	        									CHAR_COLORYELLOW);
 			}else {
 				ret = TRUE;
@@ -5199,60 +5199,60 @@ void CHAR_JoinDuel_WindowResult( int charaindex, int select, char *data)
 {
 	int	ret = FALSE;
 	int	fd = getfdFromCharaIndex( charaindex);
-	/* 手丹域蘸民尼永弁允月 */
+	/* 忒竣郖梣鏍攝蚗袲埰堎 */
 	if( select != WINDOW_BUTTONTYPE_CANCEL &&
 	    CHAR_getWorkInt( charaindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_CLIENT )
 	{
-		/* 生旦玄互丹匀午云仄中及匹ㄠ蘸分仃伙□皿毛银丹 */
+		/* 汜筒哱誑竣埱敁堁媃笢摯ぁ兒梣煦崹鳴↓鏤禱窅竣 */
 		while( 1 ) {
 			int		selected;
 			int		enemyindex;
 
 			if( fd == -1 ) break;
 			selected  = atoi( data)-1;
-			/*   躲卅index井 */
+			/*   嗚埵index凝 */
 			if( !CHAR_CHECKINDEX( CONNECT_getDuelcharaindex(fd,selected)) ) {
 				break;
 			}
-        	/* 爵    井升丹井 */
+        	/* 橋    凝汔竣凝 */
         	if( CHAR_getWorkInt( CONNECT_getDuelcharaindex(fd,selected),
         						CHAR_WORKBATTLEMODE)
 				!= BATTLE_CHARMODE_NONE)
 			{
 				break;
 			}
-			/* duel第井 */
+			/* duel菴凝 */
 			if( !CHAR_getFlg( CONNECT_getDuelcharaindex(fd,selected),
                               CHAR_ISDUEL))
 			{
 				break;
 			}
-			/* ㄠ汹动  卞中月井(它奴件玉它匹  中宁歹六仄化月棉卞  仃月啃) */
+			/* 兒倵雄  勗笢堎凝(坳贖璃迶坳ぁ  笢譴渦鞠媃趙堎蹬勗  崹堎諱) */
 			if(NPC_Util_CharDistance( charaindex,
 									CONNECT_getDuelcharaindex(fd,selected) )
 				> 1)
 			{
 				break;
 			}
-			//   及蟆及平乓仿及奶件犯永弁旦
+			//   摯鞳摯す籤溘摯騷璃溢蚗袲筒
 			enemyindex = CONNECT_getDuelcharaindex( fd,selected);
-			// 锹澎互褪卅日公及引引巨件市它件玄今六月互
-			// 阂间卅日褪毛裟氏匹仁月
+			// Ъ鱗誑虮埵�桯姨曼�竘操璃庈坳璃哱踏鞠堎誑
+			// 碳潔埵�梠岋拜騫玅玄彸�
 			if( CHAR_getWorkInt( enemyindex, CHAR_WORKPARTYMODE )
 				== CHAR_PARTY_CLIENT )
 			{
 				enemyindex = CHAR_getWorkInt( enemyindex, CHAR_WORKPARTYINDEX1 );
-				// 卅兮井褪互中卅中
+				// 埵殽凝虮誑笢埵笢
 				if( enemyindex < 0 ) break;
 			}
-			/* 锹澎互皿伊奶乩□匹卅中仪手丐月 */
+			/* Ъ鱗誑鏤畛騷媕↓ぁ埵笢痀忒堣堎 */
 			if( CHAR_getWorkInt( enemyindex, CHAR_WHICHTYPE) != CHAR_TYPEPLAYER){
 				break;
 			}
 			ret = BATTLE_CreateVsPlayer( charaindex, enemyindex );
 			if( ret != 0 ){
 				CHAR_talkToCli( charaindex, -1,
-						"遭遇失败！", CHAR_COLORYELLOW);
+						"婈郣囮啖ㄐ", CHAR_COLORYELLOW);
 				ret = FALSE;
 			}
 			else {
@@ -5262,7 +5262,7 @@ void CHAR_JoinDuel_WindowResult( int charaindex, int select, char *data)
 		}
 	}
 	if( ret == FALSE ) {
-		/* 瑛绊霜耨 */
+		/* 踕堅邞嚭 */
 		if( fd != -1 ) {
 			lssproto_EN_send( fd, FALSE, 0 );
 		}
@@ -5306,12 +5306,12 @@ void CHAR_JoinParty_WindowResult( int charaindex , int select, char *data)
 {
 	int	ret = FALSE;
 	int	fd = getfdFromCharaIndex( charaindex);
-	/* 手丹域蘸民尼永弁允月 */
+	/* 忒竣郖梣鏍攝蚗袲埰堎 */
 	if( select != WINDOW_BUTTONTYPE_CANCEL &&
-	    /* 愤坌互由□  奴赚氏匹凶日蛲   */
+	    /* 猷覕誑蚕↓  贖蚻庌ぁ倜�淜�   */
 	    CHAR_getWorkInt( charaindex, CHAR_WORKPARTYMODE) == CHAR_PARTY_NONE )
 	{
-		/* 生旦玄互丹匀午云仄中及匹ㄠ蘸分仃伙□皿毛银丹 */
+		/* 汜筒哱誑竣埱敁堁媃笢摯ぁ兒梣煦崹鳴↓鏤禱窅竣 */
 		while( 1 ) {
 			int		parray;
 			int		selected;
@@ -5319,15 +5319,15 @@ void CHAR_JoinParty_WindowResult( int charaindex , int select, char *data)
 			if( fd == -1 ) break;
 			selected  = atoi( data)-1;
 
-			/*   躲卅index井
-			 * (褐邰“它奴件玉它匹  中宁歹六仄化月棉卞
-			 *    躲卅index卞卅月第  岭互丐月)
+			/*   嗚埵index凝
+			 * (福菺※坳贖璃迶坳ぁ  笢譴渦鞠媃趙堎蹬勗
+			 *    嗚埵index勗埵堎菴  鍛誑堣堎)
 			 */
 			if( !CHAR_CHECKINDEX(
                 CONNECT_getJoinpartycharaindex(fd,selected))) {
 				break;
 			}
-			/* 褪互中凶日娄匀舰曰请允 */
+			/* 虮誑笢倜�梒耒�耦堇③埰 */
 			if( CHAR_getWorkInt( CONNECT_getJoinpartycharaindex(
                 fd,selected),	CHAR_WORKPARTYMODE)
 			== CHAR_PARTY_NONE )
@@ -5342,22 +5342,22 @@ void CHAR_JoinParty_WindowResult( int charaindex , int select, char *data)
 					break;
 				}
 			}
-			/* ㄠ汹动  卞中月井(它奴件玉它匹  中宁歹六仄化月棉卞  仃月啃) */
+			/* 兒倵雄  勗笢堎凝(坳贖璃迶坳ぁ  笢譴渦鞠媃趙堎蹬勗  崹堎諱) */
 			if( NPC_Util_CharDistance( charaindex, toindex ) > 1) {
 				break;
 			}
-        	/* 爵    反分户 */
+        	/* 橋    毀煦誧 */
         	if( CHAR_getWorkInt( toindex, CHAR_WORKBATTLEMODE)
 				!= BATTLE_CHARMODE_NONE)
 			{
 				break;
 			}
-			/* 醮棉袱第乒□玉井 */
+			/* 黥蹬舅菴さ↓迶凝 */
 			if( !CHAR_getFlg( toindex, CHAR_ISPARTY)) {
 				break;
 			}
 
-			/* 锹澎由□  奴及谛醒反    井＂ */
+			/* Ъ鱗蚕↓  贖摯硞倳毀    凝ㄑ */
 			parray = CHAR_getEmptyPartyArray( toindex) ;
 			if( parray == -1 ) break;
 
@@ -5368,13 +5368,13 @@ void CHAR_JoinParty_WindowResult( int charaindex , int select, char *data)
 					CHAR_getInt(charaindex, CHAR_PKLISTTEAMNUM) < 0 ||
 					CHAR_getInt(toindex,CHAR_PKLISTTEAMNUM) != CHAR_getInt(charaindex,CHAR_PKLISTTEAMNUM) ||
 					CHAR_getInt(toindex,CHAR_WHICHTYPE) != CHAR_TYPEPLAYER){
-					CHAR_talkToCli( charaindex, -1, "队伍不同，无法加入团队。", CHAR_COLORYELLOW);
+					CHAR_talkToCli( charaindex, -1, "勦斪祥肮ㄛ拸楊樓�輹韃荂�", CHAR_COLORYELLOW);
 					ret = FALSE;
 					break;
 				}
 #endif
 
-			/* 由□  奴卞  日六月 */
+			/* 蚕↓  贖勗  �桷齉� */
 			CHAR_JoinParty_Main( charaindex, toindex);
 
 			ret = TRUE;
@@ -5383,10 +5383,10 @@ void CHAR_JoinParty_WindowResult( int charaindex , int select, char *data)
 		}
 	}
 	if( ret == FALSE ) {
-		CHAR_talkToCli( charaindex, -1, "无法加入团队。",
+		CHAR_talkToCli( charaindex, -1, "拸楊樓�輹韃荂�",
 						CHAR_COLORYELLOW);
 	}
-	/* 瑛绊霜耨 */
+	/* 踕堅邞嚭 */
 	if( fd != -1 ) {
 		lssproto_PR_send( fd, 1, ret);
 	}
@@ -5395,29 +5395,29 @@ void CHAR_JoinBattleWatch_WindowResult( int charaindex, int select, char *data)
 {
 	int	ret = FALSE;
 	int	fd = getfdFromCharaIndex( charaindex);
-	/* 手丹域蘸民尼永弁允月 */
+	/* 忒竣郖梣鏍攝蚗袲埰堎 */
 	if( select != WINDOW_BUTTONTYPE_CANCEL ) {
-		/* 生旦玄互丹匀午云仄中及匹ㄠ蘸分仃伙□皿毛银丹 */
+		/* 汜筒哱誑竣埱敁堁媃笢摯ぁ兒梣煦崹鳴↓鏤禱窅竣 */
 		while( 1 ) {
 			int		selected;
 			if( fd == -1 ) break;
 			selected  = atoi( data)-1;
 
-			/*   躲卅index井
-			 * (褐邰“它奴件玉它匹  中宁歹六仄化月棉卞
-			 *    躲卅index卞卅月第  岭互丐月)
+			/*   嗚埵index凝
+			 * (福菺※坳贖璃迶坳ぁ  笢譴渦鞠媃趙堎蹬勗
+			 *    嗚埵index勗埵堎菴  鍛誑堣堎)
 			 */
 			if( !CHAR_CHECKINDEX( CONNECT_getBattlecharaindex(fd,selected))) {
 				break;
 			}
-        	/* 爵    井升丹井 */
+        	/* 橋    凝汔竣凝 */
         	if( CHAR_getWorkInt( CONNECT_getBattlecharaindex(fd,selected),
         						CHAR_WORKBATTLEMODE)
 				== BATTLE_CHARMODE_NONE)
 			{
 				break;
 			}
-			/* ㄠ汹动  卞中月井(它奴件玉它匹  中宁歹六仄化月棉卞  仃月啃) */
+			/* 兒倵雄  勗笢堎凝(坳贖璃迶坳ぁ  笢譴渦鞠媃趙堎蹬勗  崹堎諱) */
 			if(NPC_Util_CharDistance( charaindex,
                                       CONNECT_getBattlecharaindex(
                                           fd,selected) )
@@ -5425,12 +5425,12 @@ void CHAR_JoinBattleWatch_WindowResult( int charaindex, int select, char *data)
 			{
 				break;
 			}
-			/* 巨件玄伉□今六月 */
+			/* 操璃哱惉↓踏鞠堎 */
 			if( BATTLE_WatchEntry( charaindex,
                                     CONNECT_getBattlecharaindex(fd,selected)
 					 ))
 			{
-	        	CHAR_talkToCli( charaindex, -1, "无法观战。",
+	        	CHAR_talkToCli( charaindex, -1, "拸楊夤桵﹝",
 	        									CHAR_COLORYELLOW);
 			}
 			else {
@@ -5441,7 +5441,7 @@ void CHAR_JoinBattleWatch_WindowResult( int charaindex, int select, char *data)
 		}
 	}
 	if( ret == FALSE ) {
-		/* 瑛绊霜耨 */
+		/* 踕堅邞嚭 */
 		if( fd != -1 ) {
 			lssproto_EN_send( fd, FALSE, 0 );
 		}
@@ -5549,7 +5549,7 @@ static int CHAR_getObjectByPosition( int myobjindex, int fl, int x, int y,
 				{
 					continue;
 				}
-				/* 愤坌反中中方 */
+				/* 猷覕毀笢笢源 */
 				if( objindex == myobjindex) continue;
 
 				objbuf[cnt] = objindex;
@@ -5634,7 +5634,7 @@ static void CHAR_setMyPosition_sendData( int charaindex,int prev_x, int prev_y, 
 				}
 				
 				// Robin 0611 trade
-				/* 角色交易中 */
+				/* 褒伎蝠眢笢 */
 				if( CHAR_getInt( c_index, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER &&
 					CHAR_getWorkInt( c_index, CHAR_WORKTRADEMODE ) != CHAR_TRADE_FREE )	{
 					if( CHAR_makeCAOPT1String( objindex, cabuf, sizeof( cabuf), CHAR_ACTTRADE,1 ))
@@ -5686,7 +5686,7 @@ static void CHAR_setMyPosition_sendData( int charaindex,int prev_x, int prev_y, 
 					}
 				}				
 #endif				
-				/* 愤坌互褪匹锹澎互爵    匹卅中卅日锹澎卞伉□母□  憎CA毛霜月 */
+				/* 猷覕誑虮ぁЪ鱗誑橋    ぁ埵笢埵�梀藍麇槾齱囃腹�  崚CA禱邞堎 */
 				if( CHAR_getInt( c_index, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER &&
 					CHAR_getWorkInt( charaindex, CHAR_WORKPARTYMODE )
 						== CHAR_PARTY_LEADER &&
@@ -5703,12 +5703,12 @@ static void CHAR_setMyPosition_sendData( int charaindex,int prev_x, int prev_y, 
 						}
 					}
 				}
-				/* 苇尹凶平乓仿互爵    卅日爵  失奶戊件  憎    毛霜月 */
+				/* 峟窇倜す籤溘誑橋    埵�桴�  囮騷昡璃  崚    禱邞堎 */
 				if( CHAR_getInt( c_index, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER &&
 					CHAR_getWorkInt( c_index, CHAR_WORKBATTLEMODE )
 					!= BATTLE_CHARMODE_NONE )
 				{
-					/* 棋爵CA */
+					/* め橋CA */
 					if( CHAR_getWorkInt( c_index, CHAR_WORKBATTLEWATCH) == TRUE ) {
 						if( CHAR_makeCAOPT1String( CurrentObjCollection[i], cabuf,
 													sizeof( cabuf),
@@ -5727,7 +5727,7 @@ static void CHAR_setMyPosition_sendData( int charaindex,int prev_x, int prev_y, 
 								CHAR_WORKBATTLEINDEX)].Side[
 								CHAR_getWorkInt( c_index,
 								CHAR_WORKBATTLESIDE)].flg & BSIDE_FLG_HELP_OK) ? TRUE:FALSE;
-						/* HelpNo = 1 反移 */
+						/* HelpNo = 1 毀痄 */
 						if( CHAR_makeCAOPT3String( CurrentObjCollection[i], cabuf, sizeof( cabuf),
 													CHAR_ACTBATTLE,
 													battleno,sideno,helpno
@@ -5737,7 +5737,7 @@ static void CHAR_setMyPosition_sendData( int charaindex,int prev_x, int prev_y, 
 						}
 					}
 				}
-	 	   		/* 苇尹凶平乓仿互窒井及失弁扑亦件毛仄化中木壬霜月［ */
+	 	   		/* 峟窇倜す籤溘誑笰凝摯囮袲で砫璃禱媃趙笢躂�夼肴瞿� */
 				if( ( CHAR_getInt( c_index, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER ||
 					  CHAR_getInt( c_index, CHAR_WHICHTYPE ) == CHAR_TYPEPET ) &&
 					CHAR_getWorkInt( c_index, CHAR_WORKACTION ) != -1 )
@@ -5756,13 +5756,13 @@ static void CHAR_setMyPosition_sendData( int charaindex,int prev_x, int prev_y, 
 		lssproto_C_send( fd, c_msg);
 	}
 
-	/* 愤坌及CD综岳 */
+	/* 猷覕摯CD軘埬 */
 	cnv10to62( objindex,cd_msg, sizeof(cd_msg));
 
 	for( i = 0 ; i < prevcnt; i ++ ) {
 		int	findflg = FALSE;
-		/* 蟆及匏  卞中月左皮斥尼弁玄匹］蜇箕及甄  卞中卅中
-		 * 左皮斥尼弁玄卅日壅允屯五左皮斥尼弁玄分
+		/* 鞳摯痾  勗笢堎酘々喇攝袲哱ぁ�椯婸�摯淢  勗笢埵笢
+		 * 酘々喇攝袲哱埵�殏梊庋迓樝鬷仇熗摛迖�煦
 		 */
 		for( j = 0; j < curcnt; j ++ ) {
 			if( PrevObjCollection[i] == CurrentObjCollection[j] ) {
@@ -5774,7 +5774,7 @@ static void CHAR_setMyPosition_sendData( int charaindex,int prev_x, int prev_y, 
 			cnv10to62( PrevObjCollection[i], buf, sizeof( buf));
 			CONNECT_appendCDbuf( fd, buf, strlen( buf));
 			
-			/* 锹澎卞手    霜月 */
+			/* Ъ鱗勗忒    邞堎 */
 			if( OBJECT_getType( PrevObjCollection[i]) == OBJTYPE_CHARA ) {
 				int tocharaindex = OBJECT_getIndex( PrevObjCollection[i]);
 				if( CHAR_getInt( tocharaindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER) {
@@ -6034,7 +6034,7 @@ static char *CHAR_make_P_StatusString( int charaindex, unsigned int indextable )
 				}
 			}
 			if( !found) {
-				print( "找不到指定的参数[%d]\n",indextable);
+				print( "梑祥善硌隅腔統杅[%d]\n",indextable);
 			}else {
 				strcpysafe( &CHAR_P_statusSendBuffer[ strlength],
 							sizeof( CHAR_P_statusSendBuffer) - strlength,
@@ -6080,10 +6080,10 @@ BOOL CHAR_send_P_StatusString( int charaindex, unsigned int indextable )
 }
 static char CHAR_N_statusSendBuffer[STRINGBUFSIZ];
 /*------------------------------------------------------------
- * 弁仿奶失件玄卞霜月  ｛  及  侬  毛综岳允月［
- * 娄醒
- *  charaindex      int     平乓仿奶件犯弁永旦
- *  indextable		int 	P 毛霜月由仿丢□正及螂宁  ［
+ * 袲溘騷囮璃哱勗邞堎  ��  摯  棬  禱軘埬埰堎��
+ * 礎倳
+ *  charaindex      int     す籤溘騷璃溢袲蚗筒
+ *  indextable		int 	P 禱邞堎蚕溘隍↓淏摯襛譴  ��
  *------------------------------------------------------------*/
 static char *CHAR_make_N_StatusString( int charaindex, int num, unsigned int indextable )
 {
@@ -6106,17 +6106,17 @@ static char *CHAR_make_N_StatusString( int charaindex, int num, unsigned int ind
 
 
 	};
-	/*  醮棉旦  □正旦犯□正    */
-	/*       凝民尼永弁 */
+	/*  黥蹬筒  ↓淏筒溢↓淏    */
+	/*       覽鏍攝蚗袲 */
 	if( num < 0 || num >= CHAR_PARTYMAX ){
-		print( "朋友模式失败 (%c)%d \n", num, num );
+		print( "攬衭耀宒囮啖 (%c)%d \n", num, num );
 		return NULL;
 	}
-	/* 醮棉及奶件犯永弁旦毛潸   */
+	/* 黥蹬摯騷璃溢蚗袲筒禱噁   */
 	nindex = CHAR_getPartyIndex( charaindex, num);
 
 	if( nindex == -1 ){
-		/*    鬼支仃升 snprintf 允月    */
+		/*    寤盓崹汔 snprintf 埰堎    */
 		snprintf( CHAR_N_statusSendBuffer,sizeof(CHAR_N_statusSendBuffer),
 			 "N%d|0|", num );
 		return  CHAR_N_statusSendBuffer;
@@ -6126,16 +6126,16 @@ static char *CHAR_make_N_StatusString( int charaindex, int num, unsigned int ind
 				"N%d|%s|", num,cnv10to62( indextable, buf,sizeof(buf)));
 	strlength = strlen( CHAR_N_statusSendBuffer );
 
-	/* indextable及  匹  匀化中月申永玄毛赐  卞譬屯月 */
+	/* indextable摯  ぁ  埱趙笢堎扠蚗哱禱棹  勗ぅ迋堎 */
 	for( i = 1; i < sizeof( int) * 8; i ++ ){
 		if( indextable & (1 << i) ) {
 			char	tmp[256];
 			BOOL	found = FALSE;
-			/*   匀化中月申永玄午］chk卞甲永玄允月井譬屯月 */
+			/*   埱趙笢堎扠蚗哱敁�徯hk勗樅蚗哱埰堎凝ぅ迋堎 */
 			for( j = 0; j < arraysizeof( chk); j ++ ) {
 				if( chk[j].kind ==  1 << i ) {
-					/* 域谯仄凶及匹袄毛潸  允月 */
-					/* 醒袄烟及犯□正 */
+					/* 郖窙媃倜摯ぁ偯禱噁  埰堎 */
+					/* 倳偯捈摯溢↓淏 */
 					if( chk[j].gettype == 0 ) {
 						ret = CHAR_getInt( nindex,chk[j].intdataindex);
 						snprintf( tmp, sizeof( tmp), "%d|", ret);
@@ -6153,7 +6153,7 @@ static char *CHAR_make_N_StatusString( int charaindex, int num, unsigned int ind
 						if( ret < 0) ret = 0;
 						snprintf( tmp, sizeof( tmp), "%d|", ret);
 					}
-					/*   侬  烟及犯□正 */
+					/*   棬  捈摯溢↓淏 */
 					else if( chk[j].gettype == 2 ) {
 						char    escapebuffer[128];
 						char *a = CHAR_getChar( nindex, chk[j].intdataindex);
@@ -6168,12 +6168,12 @@ static char *CHAR_make_N_StatusString( int charaindex, int num, unsigned int ind
 					break;
 				}
 			}
-			/* 职及正奶皿及犯□正井手仄木卅中 */
+			/* 眥摯淏騷鏤摯溢↓淏凝忒媃躂埵笢 */
 			if( !found) {
-				/* 仇仇井日反ㄠ勾ㄠ勾 */
+				/* 喫喫凝�梫捶鉆捶鉆� */
 			}
 			if( !found) {
-				print( "找不到指定的参数[%d]\n",indextable);
+				print( "梑祥善硌隅腔統杅[%d]\n",indextable);
 			}
 			else {
 				strcpysafe( &CHAR_N_statusSendBuffer[ strlength],
@@ -6190,14 +6190,14 @@ static char *CHAR_make_N_StatusString( int charaindex, int num, unsigned int ind
 	return CHAR_N_statusSendBuffer;
 }
 /*------------------------------------------------------------
- * S P 旦  □正旦毛霜月［民尼永弁允月及匹｝晓匹反民尼永弁仄卅仁化方中［
- * 娄醒
- *  charaindex      int     平乓仿奶件犯弁永旦
- *  num				int		醮棉  寞
- *  indextable		int 	P 毛霜月由仿丢□正及螂宁  ［
- * 忒曰袄
- *  霜匀凶［TRUE(1)
- *  霜木卅井匀凶［FALSE(0)
+ * S P 筒  ↓淏筒禱邞堎�袺鯆慪濛邴彸翹副奴�窀ぁ毀鏍攝蚗袲媃埵�妡窈誰苺�
+ * 礎倳
+ *  charaindex      int     す籤溘騷璃溢袲蚗筒
+ *  num				int		黥蹬  蠕
+ *  indextable		int 	P 禱邞堎蚕溘隍↓淏摯襛譴  ��
+ * 蒍堇偯
+ *  邞埱倜�臷RUE(1)
+ *  邞躂埵凝埱倜�聏ALSE(0)
  *------------------------------------------------------------*/
 BOOL CHAR_send_N_StatusString( int charaindex, int num, unsigned int indextable )
 {
@@ -6256,15 +6256,15 @@ static char *CHAR_make_K_StatusString( int charaindex, int num, unsigned int ind
 		{ CHAR_K_STRING_USERPETNAME, CHAR_USERPETNAME,  2 },
 
 	};
-	/*       凝民尼永弁 */
+	/*       覽鏍攝蚗袲 */
 	if( num < 0 || num >= CHAR_MAXPETHAVE ){
-		print( "宠物模式失败 (%c)%d \n", num, num );
+		print( "唾昜耀宒囮啖 (%c)%d \n", num, num );
 		return NULL;
 	}
-	/* 矢永玄及奶件犯永弁旦毛潸   */
+	/* 妐蚗哱摯騷璃溢蚗袲筒禱噁   */
 	pindex = CHAR_getCharPet( charaindex, num );
 	if( pindex == -1 ){
-		/*    鬼支仃升 snprintf 允月    */
+		/*    寤盓崹汔 snprintf 埰堎    */
 		snprintf(CHAR_K_statusSendBuffer,sizeof(CHAR_K_statusSendBuffer),
 			 "K%d|0|", num );
 		return  CHAR_K_statusSendBuffer;
@@ -6297,7 +6297,7 @@ static char *CHAR_make_K_StatusString( int charaindex, int num, unsigned int ind
 						if( ret < 0) ret = 0;
 						snprintf( tmp, sizeof( tmp), "%d|", ret);
 					}
-					/*   侬  烟及犯□正 */
+					/*   棬  捈摯溢↓淏 */
 					else if( chk[j].gettype == 2 ) {
 						char    escapebuffer[128];
 						char *a = CHAR_getChar( pindex, chk[j].intdataindex);
@@ -6338,7 +6338,7 @@ static char *CHAR_make_K_StatusString( int charaindex, int num, unsigned int ind
 				}
 			}
 			if( !found) {
-				print( "找不到指定的参数[%d]\n",indextable);
+				print( "梑祥善硌隅腔統杅[%d]\n",indextable);
 			}else {
 				strcpysafe( &CHAR_K_statusSendBuffer[ strlength],
 							sizeof( CHAR_K_statusSendBuffer) - strlength,
@@ -6354,13 +6354,13 @@ static char *CHAR_make_K_StatusString( int charaindex, int num, unsigned int ind
 	return CHAR_K_statusSendBuffer;
 }
 /*------------------------------------------------------------
- * S K 旦  □正旦毛霜月［民尼永弁允月及匹｝晓匹反民尼永弁仄卅仁化方中［
- * 娄醒
- *  charaindex      int     平乓仿奶件犯弁永旦
- *  indextable		int 	P 毛霜月由仿丢□正及螂宁  ［
- * 忒曰袄
- *  霜匀凶［TRUE(1)
- *  霜木卅井匀凶［FALSE(0)
+ * S K 筒  ↓淏筒禱邞堎�袺鯆慪濛邴彸翹副奴�窀ぁ毀鏍攝蚗袲媃埵�妡窈誰苺�
+ * 礎倳
+ *  charaindex      int     す籤溘騷璃溢袲蚗筒
+ *  indextable		int 	P 禱邞堎蚕溘隍↓淏摯襛譴  ��
+ * 蒍堇偯
+ *  邞埱倜�臷RUE(1)
+ *  邞躂埵凝埱倜�聏ALSE(0)
  *------------------------------------------------------------*/
 BOOL CHAR_send_K_StatusString( int charaindex, int num, unsigned int indextable )
 {
@@ -6389,19 +6389,19 @@ BOOL CHAR_send_K_StatusString( int charaindex, int num, unsigned int indextable 
 
 
 //------------------------------------------------------------
-// 皿伊奶乩□及    毛笛遥
+// 鏤畛騷媕↓摯    禱萃猀
 //------------------------------------------------------------
 void CHAR_AddCharm( int charaindex, int iValue )
 {
 	int iWork;
 	iWork = CHAR_getInt( charaindex, CHAR_CHARM ) + iValue;
-	iWork = max( 0, iWork );	//   凝ㄟ
-	iWork = min( 100, iWork );	//     ㄠㄟㄟ
+	iWork = max( 0, iWork );	//   覽兔
+	iWork = min( 100, iWork );	//     兒兔兔
 	CHAR_setInt( charaindex, CHAR_CHARM, iWork );
 }
 
 //------------------------------------------------------------
-// 矢永玄及镝擦蘸  祭袄毛笛遥允月［
+// 妐蚗哱摯櫆笠梣  撬偯禱萃猀埰堎��
 //------------------------------------------------------------
 void CHAR_PetAddVariableAi( int petindex, int iValue )
 {
@@ -6414,7 +6414,7 @@ void CHAR_PetAddVariableAi( int petindex, int iValue )
 }
 
 //------------------------------------------------------------
-// 犯□正矛□旦卞瓒  允月平□    蟆  毛综岳允月［
+// 溢↓淏穫↓筒勗頞  埰堎す↓    鞳  禱軘埬埰堎��
 //------------------------------------------------------------
 int CHAR_makeDBKey( int charaindex, char *pszBuffer, int size ){
 
@@ -6422,12 +6422,12 @@ int CHAR_makeDBKey( int charaindex, char *pszBuffer, int size ){
 	char buff[512];
 	char escapebuf[1024];
 
-	pszBuffer[0] = 0;	// 赓渝祭
+	pszBuffer[0] = 0;	// 疐趵撬
 	cdkey = CHAR_getChar( charaindex, CHAR_CDKEY);
-	if( cdkey == NULL )return FALSE; // 瓒  匹五卅中
+	if( cdkey == NULL )return FALSE; // 頞  ぁ拻埵笢
 	if( CHAR_CHECKINDEX( charaindex ) == FALSE )return FALSE;
 
-	// 平□反 cdkey_  蟆
+	// す↓毀 cdkey_  鞳
 	snprintf( buff, sizeof(buff),
 		"%s_%s", cdkey, CHAR_getChar( charaindex, CHAR_NAME ) );
 	makeEscapeString( buff, escapebuf, sizeof(escapebuf));
@@ -6439,9 +6439,9 @@ int CHAR_makeDBKey( int charaindex, char *pszBuffer, int size ){
 
 //------------------------------------------------------------
 //
-//  犯□正矛□旦及嫩  毛凳蕙
+//  溢↓淏穫↓筒摯囂  禱脾犍
 //
-// DuelPoint 及 DBUpdateEntry毛霜月
+// DuelPoint 摯 DBUpdateEntry禱邞堎
 //------------------------------------------------------------
 BOOL CHAR_send_DpDBUpdate( int charaindex )
 {
@@ -6455,7 +6455,7 @@ BOOL CHAR_send_DpDBUpdate( int charaindex )
 	if( fd != -1 ) {
 		char info[512];
 		//char escapebuff[1024];
-		/* "等级｜几战｜几胜｜几败｜几连胜｜最高连胜数" */
+		/* "脹撰��撓桵��撓吨��撓啖��撓蟀吨��郔詢蟀吨杅" */
 		snprintf( info, sizeof( info),
 					"%d,%d,%d,%d,%d,%d",
 					CHAR_getInt( charaindex, CHAR_LV),
@@ -6493,7 +6493,7 @@ char *CHAR_getUseName( int charaindex )
 char *CHAR_getUseID( int charaindex )
 {
 	char *pName;
-	// 矢永玄分匀凶日白伉□生□丞卞允月
+	// 妐蚗哱煦埱倜�桹趹齱巋�↓堜勗埰堎
 	if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPET ){
 		pName = "NO_USER";
 	}else{
@@ -6538,11 +6538,11 @@ void CHAR_sendBattleWatch( int objindex, int onoff)
 	CHAR_sendWatchEvent( objindex,CHAR_ACTBATTLEWATCH,opt,1,TRUE);
 }
 /*------------------------------------------------------------
- * 隙烂今木凶  毛莫曰及谛卞矢永玄丢□伙及梢请毛允月［
- * 娄醒
- * charaindex        int     chara 匹及奶件犯弁永旦
- * 忒曰袄
- *  卅仄
+ * 炩擭踏躂倜  禱蘆堇摯硞勗妐蚗哱隍↓鳴摯奿③禱埰堎��
+ * 礎倳
+ * charaindex        int     chara ぁ摯騷璃溢袲蚗筒
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void CHAR_sendPMEToArroundCharacterFLXY( int petindex, int fl, int x, int y,
 										int dir, int flg, int no )
@@ -6586,11 +6586,11 @@ void CHAR_sendPMEToArroundCharacterFLXY( int petindex, int fl, int x, int y,
 	}
 }
 /*------------------------------------------------------------
- * charaindex 匹隙烂今木凶  毛莫曰及谛卞矢永玄丢□伙及梢请毛允月［
- * 娄醒
- * charaindex        int     chara 匹及奶件犯弁永旦
- * 忒曰袄
- *  卅仄
+ * charaindex ぁ炩擭踏躂倜  禱蘆堇摯硞勗妐蚗哱隍↓鳴摯奿③禱埰堎��
+ * 礎倳
+ * charaindex        int     chara ぁ摯騷璃溢袲蚗筒
+ * 蒍堇偯
+ *  埵媃
  ------------------------------------------------------------*/
 void CHAR_sendPMEToArroundCharacter( int charaindex, int petindex, int flg, int no )
 {
@@ -6610,16 +6610,16 @@ void CHAR_sendPMEToArroundCharacter( int charaindex, int petindex, int flg, int 
     fl = CHAR_getInt( charaindex,CHAR_FLOOR );
 	dir = CHAR_getInt( charaindex, CHAR_DIR);
 
-    /*   仁  轾潸   */
+    /*   ��  澺噁   */
     for( i = 0 ; i < 9 ; i ++ ){
         int x = CHAR_getInt( charaindex, CHAR_X) + dirx[i];
         int y = CHAR_getInt( charaindex, CHAR_Y) + diry[i];
-        /* 矢永玄毛  仃月桦赭井譬屯月 */
+        /* 妐蚗哱禱  崹堎鳹鐎凝ぅ迋堎 */
         if( PET_isPutPoint( fl, x, y ) == TRUE ) {
             break;
         }
     }
-    /* 卅仃木壬箫葭 */
+    /* 埵崹躂�机櫅� */
     if( i == 9 ) i = 1;
 
     x = CHAR_getInt(charaindex,CHAR_X)+dirx[i];
@@ -6629,12 +6629,12 @@ void CHAR_sendPMEToArroundCharacter( int charaindex, int petindex, int flg, int 
 										fl, x, y, dir, flg, no);
 }
 /*------------------------------------------------------------
- * SE毛  日允［
- *   耨葭毛  艘卞］苇尹月  区坌霜耨允月
- * 娄醒
- * fl,x,y   耨葭及甄  
- * senumber     及  寞［sndcnf.h毛辅寰及仇午［
- * sw   日允井鞅户月井 0 : 鞅户月 1 :   日允
+ * SE禱  �梊呁�
+ *   嚭楁禱  刳勗�楱倡�堎  ⑹覕邞嚭埰堎
+ * 礎倳
+ * fl,x,y   嚭楁摯淢  
+ * senumber     摯  蠕�菋ndcnf.h禱落敺摯喫敁��
+ * sw   �梊尨涕掩忍職� 0 : 鰼誧堎 1 :   �梊�
  ------------------------------------------------------------*/
 void CHAR_sendSEoArroundCharacter( int fl, int x, int y, int senumber, int sw )
 {
@@ -6665,23 +6665,23 @@ void CHAR_sendSEoArroundCharacter( int fl, int x, int y, int senumber, int sw )
 		}
 	}
 }
-/*====================梢请涩烂====================*/
+/*====================奿③优擭====================*/
 
 
-#ifndef _SEND_EFFECT	   	        // WON ADD AC送下雪、下雨等特效
+#ifndef _SEND_EFFECT	   	        // WON ADD AC冞狟悕﹜狟迾脹杻虴
 
 #define		CHAR_EFFECT_SETTINGBUFFER	256
 typedef struct tagCHAR_effectsetting
 {
-    int     floor;								//	白夫失
-	int		effect;								//	梢请  寞
-	int		level;								//	梢请及伊矛伙［  蜇及雄今［
-	int		sendflg;							//	  憎巨白尼弁玄毛霜匀凶井升丹井［
-	char	month[CHAR_EFFECT_SETTINGBUFFER];	//	  垫允月畸
-	char	day[CHAR_EFFECT_SETTINGBUFFER];		//	  垫允月  
-	char	hour[CHAR_EFFECT_SETTINGBUFFER];	//	  垫允月凛棉
-	char	min[CHAR_EFFECT_SETTINGBUFFER];		//	  垫允月坌
-	char	expire[CHAR_EFFECT_SETTINGBUFFER];	//	  垫仄化中月赢今［(    
+    int     floor;								//	啞痲囮
+	int		effect;								//	奿③  蠕
+	int		level;								//	奿③摯畛穫鳴��  藯摯倯踏��
+	int		sendflg;							//	  崚操啞攝袲哱禱邞埱倜凝汔竣凝��
+	char	month[CHAR_EFFECT_SETTINGBUFFER];	//	  菜埰堎儈
+	char	day[CHAR_EFFECT_SETTINGBUFFER];		//	  菜埰堎  
+	char	hour[CHAR_EFFECT_SETTINGBUFFER];	//	  菜埰堎鄹蹬
+	char	min[CHAR_EFFECT_SETTINGBUFFER];		//	  菜埰堎覕
+	char	expire[CHAR_EFFECT_SETTINGBUFFER];	//	  菜媃趙笢堎荇踏��(    
 	
 }CHAR_effectsetting;
 
@@ -6693,12 +6693,12 @@ int                     CHAR_effectnum;
 
 
 /*------------------------------------------------------------
- * 梢请涩烂及赓渝祭毛允月［
- * 娄醒
- *  filename        char*       涩烂白央奶伙  
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ * 奿③优擭摯疐趵撬禱埰堎��
+ * 礎倳
+ *  filename        char*       优擭啞栝騷鳴  
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  *------------------------------------------------------------*/
 BOOL CHAR_initEffectSetting( char* filename )
 {
@@ -6716,7 +6716,7 @@ BOOL CHAR_initEffectSetting( char* filename )
 
     CHAR_effectnum=0;
 
-    /*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+    /*  竘囀  嗚埵菜誑笰菜堣堎凝汔竣凝ぅ迋堎    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
@@ -6740,7 +6740,7 @@ BOOL CHAR_initEffectSetting( char* filename )
         fclose( f );
         return FALSE;
     }
-    /* 赓渝祭 */
+    /* 疐趵撬 */
 {
     int     i;
     for( i = 0; i < CHAR_effectnum; i ++ ) {
@@ -6757,7 +6757,7 @@ BOOL CHAR_initEffectSetting( char* filename )
     }
 }
 
-    /*  引凶  心  允    */
+    /*  竘倜  陑  埰    */
     linenum = 0;
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
@@ -6765,98 +6765,98 @@ BOOL CHAR_initEffectSetting( char* filename )
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  垫毛帮溥允月    */
-        /*  引内 tab 毛 " " 卞  五晶尹月    */
+        /*  菜禱堆魠埰堎    */
+        /*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
         replaceString( line, '\t' , ' ' );
-        /*    粮仄凶 " " 毛夫午勾卞允月 */
+        /*    襄媃倜 " " 禱痲敁僑勗埰堎 */
         deleteSequentChar( line, " " );
 
-        /*  仇仇引匹帮溥仄化｝燮  互 旦矢□旦分匀凶日 */
-        /*    引卅中    */
+        /*  喫喫竘ぁ堆魠媃趙��袸  誑 筒妐↓筒煦埱倜�� */
+        /*    竘埵笢    */
         if( line[0] == ' ' )continue;
 
         {
             char    token[256];
             int     ret;
 
-            /*  夫午勾户及玄□弁件毛苇月    */
+            /*  痲敁僑誧摯哱↓袲璃禱峟堎    */
             ret = getStringFromIndexWithDelim( line," ",1,token,
                                                sizeof(token));
             if( ret==FALSE ){
-                fprint("文件秩序错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃窏唗渣昫:%s 菴%d俴\n",filename,linenum);
                 continue;
             }
             CHAR_effect[effectreadlen].floor = atoi(token);
 
-            /*  2勾户及玄□弁件毛苇月    */
+            /*  2僑誧摯哱↓袲璃禱峟堎    */
             ret = getStringFromIndexWithDelim( line," ",2,token,
                                                sizeof(token));
             if( ret==FALSE ){
-                fprint("文件秩序错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃窏唗渣昫:%s 菴%d俴\n",filename,linenum);
                 continue;
             }
 
             CHAR_effect[effectreadlen].effect = atoi( token );
 
-            /*  3勾户及玄□弁件毛苇月    */
+            /*  3僑誧摯哱↓袲璃禱峟堎    */
             ret = getStringFromIndexWithDelim( line," ",3,token,
                                                sizeof(token));
             if( ret ==FALSE){
-                fprint("文件秩序错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃窏唗渣昫:%s 菴%d俴\n",filename,linenum);
                 continue;
             }
 
             CHAR_effect[effectreadlen].level = atoi( token );
             
-            /*  4勾户及玄□弁件毛苇月    */
+            /*  4僑誧摯哱↓袲璃禱峟堎    */
             ret = getStringFromIndexWithDelim( line," ",4,token,
                                                sizeof(token));
             if( ret ==FALSE){
-                fprint("文件秩序错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃窏唗渣昫:%s 菴%d俴\n",filename,linenum);
                 continue;
             }
 			strcpysafe( CHAR_effect[effectreadlen].month, 
 						sizeof( CHAR_effect[effectreadlen].month),
 						token); 
             
-            /*  5勾户及玄□弁件毛苇月    */
+            /*  5僑誧摯哱↓袲璃禱峟堎    */
             ret = getStringFromIndexWithDelim( line," ",5,token,
                                                sizeof(token));
             if( ret ==FALSE){
-                fprint("文件秩序错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃窏唗渣昫:%s 菴%d俴\n",filename,linenum);
                 continue;
             }
 			strcpysafe( CHAR_effect[effectreadlen].day, 
 						sizeof( CHAR_effect[effectreadlen].day),
 						token); 
             
-            /*  6勾户及玄□弁件毛苇月    */
+            /*  6僑誧摯哱↓袲璃禱峟堎    */
             ret = getStringFromIndexWithDelim( line," ",6,token,
                                                sizeof(token));
             if( ret ==FALSE){
-                fprint("文件秩序错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃窏唗渣昫:%s 菴%d俴\n",filename,linenum);
                 continue;
             }
 			strcpysafe( CHAR_effect[effectreadlen].hour, 
 						sizeof( CHAR_effect[effectreadlen].hour),
 						token); 
 
-            /*  7勾户及玄□弁件毛苇月    */
+            /*  7僑誧摯哱↓袲璃禱峟堎    */
             ret = getStringFromIndexWithDelim( line," ",7,token,
                                                sizeof(token));
             if( ret ==FALSE){
-                fprint("文件秩序错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃窏唗渣昫:%s 菴%d俴\n",filename,linenum);
                 continue;
             }
 			strcpysafe( CHAR_effect[effectreadlen].min, 
 						sizeof( CHAR_effect[effectreadlen].min),
 						token); 
             
-            /*  8勾户及玄□弁件毛苇月    */
+            /*  8僑誧摯哱↓袲璃禱峟堎    */
             ret = getStringFromIndexWithDelim( line," ",8,token,
                                                sizeof(token));
             if( ret ==FALSE){
-                fprint("文件秩序错误:%s 第%d行\n",filename,linenum);
+                fprint("恅璃窏唗渣昫:%s 菴%d俴\n",filename,linenum);
                 continue;
             }
 			strcpysafe( CHAR_effect[effectreadlen].expire, 
@@ -6870,7 +6870,7 @@ BOOL CHAR_initEffectSetting( char* filename )
 
     CHAR_effectnum = effectreadlen;
 
-    print( "有效设置总数 %d...", CHAR_effectnum );
+    print( "衄虴扢离軞杅 %d...", CHAR_effectnum );
 #ifdef DEBUG
 
     {
@@ -6892,8 +6892,8 @@ BOOL CHAR_initEffectSetting( char* filename )
 }
 
 //-------------------------------------------------------------------------
-//	蜇箕凛对互］隙烂及椭瘀卞穴永民仄化中月井毛譬屯引允［
-//	宁匀化中木壬TRUE毛忒允［
+//	藯凜鄹勤誑�椿黃羹匙紨鰡槤來擭鵗し胱俶職捌宦怛迗�埰��
+//	譴埱趙笢躂�仈RUE禱蒍埰��
 //-------------------------------------------------------------------------
 static BOOL CHAR_checkEffectTime( int num)
 {
@@ -6907,9 +6907,9 @@ static BOOL CHAR_checkEffectTime( int num)
 		int ret;
 		char token[256];
 		
-		//	"*"反］蝈化毛隙允［
+		//	"*"毀�椯撱紐峙勤呁�
 		
-		// 畸互域谯仄化中月井
+		// 儈誑郖窙媃趙笢堎凝
 		if( strcmp( CHAR_effect[num].month, "*" ) != 0 ) {
 			BOOL flg = FALSE;
 			for( i = 1; ; i ++) {
@@ -6917,7 +6917,7 @@ static BOOL CHAR_checkEffectTime( int num)
 	            									",", i, 
 	            									token, sizeof( token));
 	            if( ret == FALSE ) break;
-				//	ㄠ勾匹手域谯仄化中木壬公木匹中中
+				//	兒僑ぁ忒郖窙媃趙笢躂�伄孩嬴皮倗�
 				if( t.tm_mon +1 == atoi( token)) {
 					flg = TRUE;
 					break;
@@ -6926,7 +6926,7 @@ static BOOL CHAR_checkEffectTime( int num)
 			if( !flg ) break;
 		}
 		
-		//   互域谯仄化中月井
+		//   誑郖窙媃趙笢堎凝
 		if( strcmp( CHAR_effect[num].day, "*" ) != 0 ) {
 			BOOL flg = FALSE;
 			for( i = 1; ; i ++) {
@@ -6934,7 +6934,7 @@ static BOOL CHAR_checkEffectTime( int num)
 	            									",", i, 
 	            									token, sizeof( token));
 	            if( ret == FALSE ) break;
-				//	ㄠ勾匹手域谯仄化中木壬公木匹中中
+				//	兒僑ぁ忒郖窙媃趙笢躂�伄孩嬴皮倗�
 				if( t.tm_mday == atoi( token)) {
 					flg = TRUE;
 					break;
@@ -6942,7 +6942,7 @@ static BOOL CHAR_checkEffectTime( int num)
 			}
 			if( !flg ) break;
 		}
-		// 凛棉互域谯仄化中月井
+		// 鄹蹬誑郖窙媃趙笢堎凝
 		if( strcmp( CHAR_effect[num].hour, "*" ) != 0 ) {
 			BOOL flg = FALSE;
 			for( i = 1; ; i ++) {
@@ -6950,7 +6950,7 @@ static BOOL CHAR_checkEffectTime( int num)
 	            									",", i, 
 	            									token, sizeof( token));
 	            if( ret == FALSE ) break;
-				//	ㄠ勾匹手域谯仄化中木壬公木匹中中
+				//	兒僑ぁ忒郖窙媃趙笢躂�伄孩嬴皮倗�
 				if( t.tm_hour == atoi( token)) {
 					flg = TRUE;
 					break;
@@ -6958,10 +6958,10 @@ static BOOL CHAR_checkEffectTime( int num)
 			}
 			if( !flg ) break;
 		}
-		// 坌互域谯仄化中月井
-		//	切斤匀午分仃  溃质  
+		// 覕誑郖窙媃趙笢堎凝
+		//	з踝埱敁煦崹  壓窐  
 		if( strcmp( CHAR_effect[num].min, "*" ) != 0 ) {
-			// 渝棉互←卅日手丹OK
+			// 趵蹬誑↘埵�梛硉力K
 			if( strcmp( CHAR_effect[num].expire, "*" ) != 0 ) {
 				BOOL flg = FALSE;
 				for( i = 1; ; i ++) {
@@ -6971,9 +6971,9 @@ static BOOL CHAR_checkEffectTime( int num)
 		            									",", i, 
 		            									token, sizeof( token));
 		            if( ret == FALSE ) break;
-					//	ㄠ勾匹手域谯仄化中木壬公木匹中中
+					//	兒僑ぁ忒郖窙媃趙笢躂�伄孩嬴皮倗�
 
-					//	涩烂仄凶坌井日］  躲渝棉及  区卞  匀化中月井＂
+					//	优擭媃倜覕凝�掁�  嗚趵蹬摯  ⑹勗  埱趙笢堎凝ㄑ
 					tm_work = t;
 					tm_work.tm_sec = 0;
 					tm_work.tm_min = atoi( token);
@@ -6987,7 +6987,7 @@ static BOOL CHAR_checkEffectTime( int num)
 				if( !flg ) break;
 			}
 		}
-		// 坌互隙烂  仄分匀凶日手丹OK
+		// 覕誑炩擭  媃煦埱倜�梛硉力K
 		
 		returnflg = TRUE;
 		break;
@@ -6995,8 +6995,8 @@ static BOOL CHAR_checkEffectTime( int num)
 	return returnflg;
 }
 //-------------------------------------------------------------------------
-//	平乓仿弁正□及匏  午凛棉毛葭卞］
-//	巨白尼弁玄毛霜月  邰互丐木壬霜月
+//	す籤溘袲淏↓摯痾  敁鄹蹬禱楁勗��
+//	操啞攝袲哱禱邞堎  菺誑堣躂�夼肴�
 //-------------------------------------------------------------------------
 void CHAR_checkEffect( int charaindex)
 {
@@ -7004,16 +7004,16 @@ void CHAR_checkEffect( int charaindex)
 	int fl = CHAR_getInt( charaindex, CHAR_FLOOR);
 	int fd = getfdFromCharaIndex( charaindex);
 	
-	// 巨白尼弁玄域绎壅允
+	// 操啞攝袲哱郖秠觛埰
 	lssproto_EF_send( fd, 0, 0, "");
 	CHAR_setWorkInt( charaindex, CHAR_WORKEFFECT, 0);
 
 	for( i = 0; i < CHAR_effectnum; i ++){
-		//	白夫失互域谯仄凶凛分仃
+		//	啞痲囮誑郖窙媃倜鄹煦崹
 		if( CHAR_effect[i].floor == fl) {
-			// 椭瘀毛譬屯引允［
+			// 邳贀禱ぅ迋竘埰��
 			if( CHAR_checkEffectTime( i)){
-				// 巨白尼弁玄毛霜月
+				// 操啞攝袲哱禱邞堎
 				lssproto_EF_send( fd, CHAR_effect[i].effect, CHAR_effect[i].level, "");
 				if( CHAR_effect[i].level == 0 ) {
 					CHAR_setWorkInt( charaindex, CHAR_WORKEFFECT, 
@@ -7194,7 +7194,7 @@ int storeCharaData( void ){
 	char outbuff[CHARDATASIZE];
 	Char*   ch;
 
-	print("\n保存运行中的数据\n");
+	print("\n悵湔堍俴笢腔杅擂\n");
 	
 	pLtime = localtime( &NowTime.tv_sec );
 
@@ -7208,7 +7208,7 @@ int storeCharaData( void ){
 		if( CHAR_getCharUse( i ) == FALSE )continue;
 
 		strcpy( charId, CHAR_getChar( i, CHAR_CDKEY ) );
-		print("账号:%s", charId);
+		print("梖瘍:%s", charId);
 		
 		hash = 0;
 		for( j=0; j<strlen(charId); j++) {
@@ -7218,7 +7218,7 @@ int storeCharaData( void ){
 
 //		sprintf( pathname, "%s/char/0x%x", getStoredir(), hash);
 		sprintf( pathname, "%s/0x%x", getStoredir(), hash);
-//		print("文件路径:%s\n", pathname);
+//		print("恅璃繚噤:%s\n", pathname);
 		dir = mkdir( pathname, -1);
 		
 		if( dir != 0 && errno != EEXIST )
@@ -7232,7 +7232,7 @@ int storeCharaData( void ){
 			CHAR_getInt( i, CHAR_SAVEINDEXNUMBER )
 		);
 		
-		print("\n存储:%s\n", szFileName);
+		print("\n湔揣:%s\n", szFileName);
 
 		fp = fopen( szFileName, "w" );
 		if( fp == NULL )continue;
@@ -7250,16 +7250,16 @@ int storeCharaData( void ){
 
 			fprintf( fp, outbuff );
 		}else{
-//			fprintf( fp, "本□皮撩  \n" );
+//			fprintf( fp, "掛↓々謄  \n" );
 		}
 
 		fclose( fp );
 #ifdef _CHAR_POOLITEM
 	{
-		if( !CHAR_CheckDepotItem( i) ) continue; //仓库未存在
+		if( !CHAR_CheckDepotItem( i) ) continue; //累踱帤湔婓
 		sprintf( szFileName, "%s/%s.item", pathname, CHAR_getChar( i, CHAR_CDKEY ));
 		if( (fp=fopen( szFileName, "w" )) == NULL )continue;
-		print(" 存储:%s\n", szFileName);
+		print(" 湔揣:%s\n", szFileName);
 		chardata = CHAR_makeDepotItemFromCharIndex( i);
 		fprintf( fp, chardata );
 		fclose( fp );
@@ -7269,10 +7269,10 @@ int storeCharaData( void ){
 
 #ifdef _CHAR_POOLPET
 	{
-		if( !CHAR_CheckDepotPet( i) ) continue; //仓库未存在
+		if( !CHAR_CheckDepotPet( i) ) continue; //累踱帤湔婓
 		sprintf( szFileName, "%s/%s.pet", pathname, CHAR_getChar( i, CHAR_CDKEY ));
 		if( (fp=fopen( szFileName, "w" )) == NULL )continue;
-		print(" 存储:%s\n", szFileName);
+		print(" 湔揣:%s\n", szFileName);
 		chardata = CHAR_makeDepotPetFromCharIndex( i);
 		fprintf( fp, chardata );
 		fclose( fp );
@@ -7339,7 +7339,7 @@ int storeCharaData( void ){
 
 			fprintf( fp, outbuff );
 		}else{
-			fprintf( fp, "本□皮撩  \n" );
+			fprintf( fp, "掛↓々謄  \n" );
 		}
 
 		fclose( fp );
@@ -7404,26 +7404,26 @@ BOOL CHAR_CHECKJOINENEMY( int index)
 }
 #endif
 
- // WON ADD 修正道具的设定问题
+ // WON ADD 党淏耋撿腔扢隅恀枙
 void fix_item_bug(int charaindex, int itemindex)
 {
 
 	if (ITEM_CHECKINDEX(itemindex)){		
 		switch( ITEM_getInt(itemindex,ITEM_ID) ){
-			case 19700:	ITEM_setChar( itemindex, ITEM_ARGUMENT, "KPET:901_902_903_904"); break; // 鞭炮
-			case 20242:	ITEM_setChar( itemindex, ITEM_ARGUMENT, "KPET:957_958_959_960"); break; // 雄黄酒
-			case 1292:  ITEM_setInt( itemindex, ITEM_MAXDAMAGECRUSHE, 0); ITEM_setInt( itemindex, ITEM_DAMAGECRUSHE, 0); break; // 灵力铠
-			case 19646: ITEM_setInt( itemindex, ITEM_MAXDAMAGECRUSHE, 0); ITEM_setInt( itemindex, ITEM_DAMAGECRUSHE, 0); break; // 灵力铠
-			case 1478:	ITEM_setChar( itemindex, ITEM_ARGUMENT, "HP:30");	break;  // 洛克服
-			case 20282: ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "攻+25 伤+25 敏-4 魅+5");	ITEM_setInt( itemindex, ITEM_MODIFYQUICK, -4 );		break;  // 铁枪1
-			case 20283: ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "攻+50 伤+50 敏-10 魅+10");   ITEM_setInt( itemindex, ITEM_MODIFYQUICK, -10 );	break;  // 铁枪2
-			case 20284: ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "攻+100 伤+100 敏-20 魅+15"); ITEM_setInt( itemindex, ITEM_MODIFYQUICK, -20 );	break;  // 铁枪3
-			case 1210:  ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "攻 +4 防 -4 敏 +4 魅 +2");		break;  // 碧玉的石手环
-			case 1203:  ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "攻 +2 防 +2 敏 -2 魅 +1");		break;  // 皮的手环(红)
-			case 1204:  ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "攻 -2 防 +2 敏 +2 魅 +1");		break;  // 皮的手环(绿)
-			case 1205:  ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "攻 +2 防 -2 敏 +2 魅 +1");		break;  // 皮的手环(青)
-			case 1483:  ITEM_setInt( itemindex, ITEM_MODIFYCHARM, 5);	break;  // 库沙达号角
-			case 20147: ITEM_setChar(itemindex,ITEM_INGNAME0,"木");	ITEM_setChar(itemindex,ITEM_INGNAME1,"骨");	ITEM_setInt(itemindex,ITEM_INGVALUE0, 1125 );	ITEM_setInt(itemindex,ITEM_INGVALUE1, 1125 );	break;  // 双头叉
+			case 19700:	ITEM_setChar( itemindex, ITEM_ARGUMENT, "KPET:901_902_903_904"); break; // 晝蘿
+			case 20242:	ITEM_setChar( itemindex, ITEM_ARGUMENT, "KPET:957_958_959_960"); break; // 倯酴嬴
+			case 1292:  ITEM_setInt( itemindex, ITEM_MAXDAMAGECRUSHE, 0); ITEM_setInt( itemindex, ITEM_DAMAGECRUSHE, 0); break; // 鍾薯霟
+			case 19646: ITEM_setInt( itemindex, ITEM_MAXDAMAGECRUSHE, 0); ITEM_setInt( itemindex, ITEM_DAMAGECRUSHE, 0); break; // 鍾薯霟
+			case 1478:	ITEM_setChar( itemindex, ITEM_ARGUMENT, "HP:30");	break;  // 醫親督
+			case 20282: ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "馴+25 夼+25 鏗-4 黰+5");	ITEM_setInt( itemindex, ITEM_MODIFYQUICK, -4 );		break;  // 沺Л1
+			case 20283: ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "馴+50 夼+50 鏗-10 黰+10");   ITEM_setInt( itemindex, ITEM_MODIFYQUICK, -10 );	break;  // 沺Л2
+			case 20284: ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "馴+100 夼+100 鏗-20 黰+15"); ITEM_setInt( itemindex, ITEM_MODIFYQUICK, -20 );	break;  // 沺Л3
+			case 1210:  ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "馴 +4 滅 -4 鏗 +4 黰 +2");		break;  // 捺迶腔坒忒遠
+			case 1203:  ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "馴 +2 滅 +2 鏗 -2 黰 +1");		break;  // 々腔忒遠(綻)
+			case 1204:  ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "馴 -2 滅 +2 鏗 +2 黰 +1");		break;  // 々腔忒遠(蟯)
+			case 1205:  ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "馴 +2 滅 -2 鏗 +2 黰 +1");		break;  // 々腔忒遠(ч)
+			case 1483:  ITEM_setInt( itemindex, ITEM_MODIFYCHARM, 5);	break;  // 踱伈湛瘍褒
+			case 20147: ITEM_setChar(itemindex,ITEM_INGNAME0,"躂");	ITEM_setChar(itemindex,ITEM_INGNAME1,"嘎");	ITEM_setInt(itemindex,ITEM_INGVALUE0, 1125 );	ITEM_setInt(itemindex,ITEM_INGVALUE1, 1125 );	break;  // 邧芛脫
 			default:
 				break;
 		}
@@ -7458,7 +7458,7 @@ BOOL NPCSERVER_CreateObjindexFromServer( int fd, int npcindex, char *Name, int i
 #endif
 
 #ifdef _PET_LOSTPET
-BOOL CHAR_CharSaveLostPet( int petindex, int type)//地上0 溜宠 1 宠邮 2
+BOOL CHAR_CharSaveLostPet( int petindex, int type)//華奻0 闊唾 1 唾蚘 2
 {
 	int lv, cost=0;
     char* CdKey=NULL;
@@ -7469,7 +7469,7 @@ BOOL CHAR_CharSaveLostPet( int petindex, int type)//地上0 溜宠 1 宠邮 2
 	char	*petstring;
 
 	if( !CHAR_CHECKINDEX( petindex) ) return FALSE;
-//存入
+//湔��
 	petstring = CHAR_makePetStringFromPetIndex( petindex);
 	if( petstring == NULL ) return FALSE;
 	CdKey = CHAR_getChar( petindex, CHAR_OWNERCDKEY);
@@ -7491,7 +7491,7 @@ BOOL CHAR_CharSaveLostPet( int petindex, int type)//地上0 溜宠 1 宠邮 2
 		CdKey, petname, lv, cost, Uniquecode, (int)time( NULL), petstring, 
 		type);
 
-	print("保存最后宠物:%s-%d\n", lostpetstring, strlen(lostpetstring));
+	print("悵湔郔綴唾昜:%s-%d\n", lostpetstring, strlen(lostpetstring));
 	{
 		char buf[10][2048]={"","","","","","","","","",""};
 		char line[2048];
@@ -7549,7 +7549,7 @@ while( fgets( line , sizeof( line ) , fp ) && count < 7){
 #ifdef _ALLDOMAN
 void InitHeroList( void)
 {
-	saacproto_UpdataStele_send ( acfd , "FirstLoad", "LoadHerolist" , "华义" , 0 , 0 , 0 , 999 ) ; 
+	saacproto_UpdataStele_send ( acfd , "FirstLoad", "LoadHerolist" , "貌砱" , 0 , 0 , 0 , 999 ) ; 
 }
 #endif
 
@@ -7561,22 +7561,22 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 	int ix,iy,iPlayerNum = 0,tofd = -1,objbuf[16];
 
 	if(!getStringFromIndexWithDelim(message,"|",1,szAction,sizeof(szAction))) return;
-	// 开启摆摊介面
+	// 羲ゐ啊怉賡醱
 	if(szAction[0] == 'O'){
 		CHAR_getCoordinationDir(CHAR_getInt(charaindex,CHAR_DIR),CHAR_getInt(charaindex,CHAR_X),
 														CHAR_getInt(charaindex,CHAR_Y),1,&ix,&iy);
-		// 取得前方玩家数量
+		// �△蠅健談瞍疺�講
 		iPlayerNum = CHAR_getSameCoordinateObjects(objbuf,arraysizeof(objbuf),CHAR_getInt(charaindex,CHAR_FLOOR),ix,iy);
-		// 没有人
+		// 羶衄��
 		if(iPlayerNum == 0){
-			// 检查自己站的座标有没有人也在摆摊
+			// 潰脤赻撩桴腔釱梓衄羶衄�刳紳痚确�
 			iPlayerNum = CHAR_getSameCoordinateObjects(objbuf,arraysizeof(objbuf),
 																								 CHAR_getInt(charaindex,CHAR_FLOOR),
 																								 CHAR_getInt(charaindex,CHAR_X),
 																								 CHAR_getInt(charaindex,CHAR_Y));
-			// 不只自己一个人
+			// 祥硐赻撩珨跺��
 			if(iPlayerNum > 1){
-				// 检查别人有没有摆摊
+				// 潰脤梗�剆陏閨訄确�
 				for(i=0;i<iPlayerNum;i++){
 					int	objindex = objbuf[i];
 					int	index = OBJECT_getIndex(objindex);
@@ -7584,33 +7584,33 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 					if(OBJECT_getType(objindex) != OBJTYPE_CHARA) continue;
 					if(CHAR_getInt(index,CHAR_WHICHTYPE) != CHAR_TYPEPLAYER) continue;
 					if(index == charaindex) continue;
-					// 对方有没有摆摊
+					// 勤源衄羶衄啊怉
 					if(CHAR_getWorkInt(index,CHAR_WORKSTREETVENDOR) != 1) continue;
-					// 有人在摆摊
+					// 衄�刱痚确�
 					else{
-						CHAR_talkToCli(charaindex,-1,"你所站的位置已经有人在摆\摊了",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"斕垀桴腔弇离眒冪衄�刱痚焮怉賸",CHAR_COLORYELLOW);
 						return;
 					}
 				}
 			}
-			// 玩家没有在交易
+			// 俙模羶衄婓蝠眢
 			if(CHAR_getWorkInt(charaindex,CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE) return;
-			// 玩家没有在战斗
+			// 俙模羶衄婓桵須
 			if(CHAR_getWorkInt(charaindex,CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) return;
-			// 玩家没有组队
+			// 俙模羶衄郪勦
 			if(CHAR_getWorkInt(charaindex,CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE) return;
 
 			if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) == -1){
 				sprintf(szMessage,"O|");
 				lssproto_STREET_VENDOR_send(getfdFromCharaIndex(charaindex),szMessage);
 			}
-			// 已摆摊但要修改摆摊内容
+			// 眒啊怉筍猁党蜊啊怉囀��
 			else if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) == 1){
-				// 修改内容中设成未摆摊
+				// 党蜊囀�楺倅鞈妅敦确�
 				CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,-1);
 				CHAR_sendStreetVendorDataToCli(charaindex,charaindex);
 			}
-			// 已在交易中但要改内容,关闭对方视窗
+			// 眒婓蝠眢笢筍猁蜊囀��,壽敕勤源弝敦
 			else if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) == 2){
 				int toindex = CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO);
 
@@ -7618,18 +7618,18 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 					CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR,-1);
 					CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,-1);
 					lssproto_STREET_VENDOR_send(getfdFromCharaIndex(toindex),"C|");
-					CHAR_talkToCli(toindex,-1,"店家取消交易",CHAR_COLORYELLOW);
+					CHAR_talkToCli(toindex,-1,"虛模�＋�蝠眢",CHAR_COLORYELLOW);
 					CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO,-1);
-					// 清除交易图示
+					// ь壺蝠眢芞尨
 					CHAR_sendTradeEffect(charaindex,0);
 					CHAR_sendTradeEffect(toindex,0);
 				}
-				// 修改内容中,设成未摆摊
+				// 党蜊囀�楺�,扢傖帤啊怉
 				CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,-1);
 				CHAR_sendStreetVendorDataToCli(charaindex,charaindex);
 			}
 		}
-		// 有人
+		// 衄��
 		else{
 			int	objindex,index,toindex;
 
@@ -7640,23 +7640,23 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 				if(OBJECT_getType(objindex) != OBJTYPE_CHARA) continue;
 				if(CHAR_getInt(index,CHAR_WHICHTYPE) != CHAR_TYPEPLAYER) continue;
 				if(index == charaindex) continue;
-				// 对方组队状态
+				// 勤源郪勦袨怓
 				if(CHAR_getWorkInt(index,CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE) continue;
-				// 对方交易状态
+				// 勤源蝠眢袨怓
 				if(CHAR_getWorkInt(index,CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE) continue;
 				tofd = getfdFromCharaIndex(index);
 				if(tofd == -1) continue;
 				toindex = CONNECT_getCharaindex(tofd);
-				// 对方有摆摊
+				// 勤源衄啊怉
 				if(CHAR_getWorkInt(toindex,CHAR_WORKSTREETVENDOR) == 1){
-					// 自己在摆摊中或摆摊交易中
+					// 赻撩婓啊怉笢麼啊怉蝠眢笢
 					if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) > 0){
 						if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) == 1){
-							// 修改内容中设成未摆摊
+							// 党蜊囀�楺倅鞈妅敦确�
 							CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,-1);
 							CHAR_sendStreetVendorDataToCli(charaindex,charaindex);
 						}
-						// 已在交易中但要改内容,关闭对方视窗
+						// 眒婓蝠眢笢筍猁蜊囀��,壽敕勤源弝敦
 						else if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) == 2){
 							int toindex = CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO);
 							
@@ -7664,48 +7664,48 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 								CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR,-1);
 								CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,-1);
 								lssproto_STREET_VENDOR_send(getfdFromCharaIndex(toindex),"C|");
-								CHAR_talkToCli(toindex,-1,"店家取消交易",CHAR_COLORYELLOW);
+								CHAR_talkToCli(toindex,-1,"虛模�＋�蝠眢",CHAR_COLORYELLOW);
 								CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO,-1);
-								// 清除交易图示
+								// ь壺蝠眢芞尨
 								CHAR_sendTradeEffect(charaindex,0);
 								CHAR_sendTradeEffect(toindex,0);
 							}
-							// 修改内容中,设成未摆摊
+							// 党蜊囀�楺�,扢傖帤啊怉
 							CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,-1);
 							CHAR_sendStreetVendorDataToCli(charaindex,charaindex);
 						}
 						return;
 					}
-					// 检查对方是否卖完
+					// 潰脤勤源岆瘁闖俇
 					for(j=0;j<MAX_SELL_ITEM;j++)
 						if(CHAR_getStreetVendor(toindex,j,SV_USAGE) == TRUE) break;
-					// 卖完了
+					// 闖俇賸
 					if(j == MAX_SELL_ITEM){
-						CHAR_talkToCli(charaindex,-1,"店家东西卖完了",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"虛模陲昹闖俇賸",CHAR_COLORYELLOW);
 						return;
 					}
-					// 双方设定为摆摊交易中(卖方交易中设为2,买方设为3)
+					// 邧源扢隅峈啊怉蝠眢笢(闖源蝠眢笢扢峈2,鎗源扢峈3)
 					CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,3);
 					CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR,2);
-					// 双方设定交易对象
+					// 邧源扢隅蝠眢勤砓
 					CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO,toindex);
 					CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,charaindex);
-					// 设定为交易图示
+					// 扢隅峈蝠眢芞尨
 					CHAR_sendTradeEffect(charaindex,1);
 					CHAR_sendTradeEffect(toindex,1);
-					// 把对方贩卖内容传给玩家
+					// 參勤源毽闖囀�搥姜雥瞍�
 					CHAR_sendStreetVendorDataToCli(charaindex,toindex);
 				}
-				// 对方没有摆摊或对方正在摆摊交易中
+				// 勤源羶衄啊怉麼勤源淏婓啊怉蝠眢笢
 				else{
-					// 自己在摆摊中或摆摊交易中
+					// 赻撩婓啊怉笢麼啊怉蝠眢笢
 					if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) > 0){
 						if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) == 1){
-							// 修改内容中设成未摆摊
+							// 党蜊囀�楺倅鞈妅敦确�
 							CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,-1);
 							CHAR_sendStreetVendorDataToCli(charaindex,charaindex);
 						}
-						// 已在交易中但要改内容,关闭对方视窗
+						// 眒婓蝠眢笢筍猁蜊囀��,壽敕勤源弝敦
 						else if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) == 2){
 							int toindex = CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO);
 							
@@ -7713,18 +7713,18 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 								CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR,-1);
 								CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,-1);
 								lssproto_STREET_VENDOR_send(getfdFromCharaIndex(toindex),"C|");
-								CHAR_talkToCli(toindex,-1,"店家取消交易",CHAR_COLORYELLOW);
+								CHAR_talkToCli(toindex,-1,"虛模�＋�蝠眢",CHAR_COLORYELLOW);
 								CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO,-1);
-								// 清除交易图示
+								// ь壺蝠眢芞尨
 								CHAR_sendTradeEffect(charaindex,0);
 								CHAR_sendTradeEffect(toindex,0);
 							}
-							// 修改内容中,设成未摆摊
+							// 党蜊囀�楺�,扢傖帤啊怉
 							CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,-1);
 							CHAR_sendStreetVendorDataToCli(charaindex,charaindex);
 						}
 					}
-					// 设定成摆摊
+					// 扢隅傖啊怉
 					else{
 						sprintf(szMessage,"O|");
 						lssproto_STREET_VENDOR_send(getfdFromCharaIndex(charaindex),szMessage);
@@ -7734,11 +7734,11 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 			}
 		}
 	}
-	// 摆摊
+	// 啊怉
 	else if(szAction[0] == 'S'){
 		int price;
 
-		// 清除所有旧资料
+		// ь壺垀衄導訧蹋
 		for(i=0;i<MAX_SELL_ITEM;i++) CHAR_clearStreetVendor(charaindex,i);
 
 		if(!getStringFromIndexWithDelim(message,"|",2,szTemp,sizeof(szTemp))) return;
@@ -7756,52 +7756,52 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 		}
 		if(!getStringFromIndexWithDelim(message,"|",6+(i-1)*3,szTemp,sizeof(szTemp))) return;
 
-		// 检查cli端送来的资料
+		// 潰脤cli傷冞懂腔訧蹋
 		for(i=0;i<MAX_SELL_ITEM;i++){
 			if(CHAR_getStreetVendor(charaindex,i,SV_USAGE) == TRUE){
-				// 若是道具
+				// �襣З擰�
 				if(CHAR_getStreetVendor(charaindex,i,SV_KIND) == 0){
 					iItemIndex = CHAR_getItemIndex(charaindex,CHAR_getStreetVendor(charaindex,i,SV_INDEX));
-					// 道具不存在
+					// 耋撿祥湔婓
 					if(!ITEM_CHECKINDEX(iItemIndex)){
 						CHAR_clearStreetVendor(charaindex,i);
-						printf("\nCHAR_sendStreetVendor(S):找不到道具!!!!!!!\n");
+						printf("\nCHAR_sendStreetVendor(S):梑祥善耋撿!!!!!!!\n");
 						continue;
 					}
-					// 丢在地上会消失的道具不可贩卖
+					// 隍婓華奻頗秏囮腔耋撿祥褫毽闖
 					if(ITEM_getInt(iItemIndex,ITEM_VANISHATDROP) == 1){
 						CHAR_clearStreetVendor(charaindex,i);
-						CHAR_talkToCli(charaindex,-1,"丢在地上会消失的道具不可贩卖，该选项取消",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"隍婓華奻頗秏囮腔耋撿祥褫毽闖ㄛ蜆恁砐�＋�",CHAR_COLORYELLOW);
 						continue;
 					}
 					iPileNum = ITEM_getInt(iItemIndex,ITEM_USEPILENUMS);
 					CHAR_setStreetVendor(charaindex,i,SV_PILE,iPileNum);
 				}
-				// 若是宠物
+				// �襣Ё駘�
 				else if(CHAR_getStreetVendor(charaindex,i,SV_KIND) == 1){
 					iPetIndex = CHAR_getCharPet(charaindex,CHAR_getStreetVendor(charaindex,i,SV_INDEX));
-					// 宠物不存在
+					// 唾昜祥湔婓
 					if(!CHAR_CHECKINDEX(iPetIndex)){
 						CHAR_clearStreetVendor(charaindex,i);
-						printf("\nCHAR_sendStreetVendor(S):找不到宠物!!!!!!!\n");
+						printf("\nCHAR_sendStreetVendor(S):梑祥善唾昜!!!!!!!\n");
 						continue;
 					}
 					if(CHAR_getInt(iPetIndex,CHAR_PETFAMILY) == 1){
-						CHAR_talkToCli(charaindex,-1,"家族守护兽无法贩卖，该选项取消",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"模逜忐誘忤拸楊毽闖ㄛ蜆恁砐�＋�",CHAR_COLORYELLOW);
 						CHAR_clearStreetVendor(charaindex,i);
 						continue;
 					}
 					if(CHAR_getInt(charaindex,CHAR_RIDEPET) == CHAR_getStreetVendor(charaindex,i,SV_INDEX)){
-						CHAR_talkToCli(charaindex,-1,"骑乘中的宠物无法贩卖，该选项取消",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"る傚笢腔唾昜拸楊毽闖ㄛ蜆恁砐�＋�",CHAR_COLORYELLOW);
 						CHAR_clearStreetVendor(charaindex,i);
 						continue;
 					}
 					CHAR_setStreetVendor(charaindex,i,SV_PILE,1);
 				}
-				// 错的内容
+				// 渣腔囀��
 				else{
 					CHAR_clearStreetVendor(charaindex,i);
-					printf("\nCHAR_sendStreetVendor(S):错的内容!!!!!!!\n");
+					printf("\nCHAR_sendStreetVendor(S):渣腔囀��!!!!!!!\n");
 				}
 			}
 		}
@@ -7810,18 +7810,18 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 		CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,1);
 		CHAR_sendWatchEvent(CHAR_getWorkInt(charaindex,CHAR_WORKOBJINDEX),CHAR_STREETVENDOR_OPEN,NULL,0,TRUE);
 	}
-	// 收摊
+	// 彶怉
 	else if(szAction[0] == 'E'){
 		int toindex = CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO);
 
-		// 收摊时若有人正在买,通知取消
+		// 彶怉奀�譥倞劼�婓鎗,籵眭�＋�
 		if(toindex != -1 && CHAR_CHECKINDEX(toindex)){
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR,-1);
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,-1);
 			lssproto_STREET_VENDOR_send(getfdFromCharaIndex(toindex),"C|");
-			CHAR_talkToCli(toindex,-1,"店家取消交易",CHAR_COLORYELLOW);
+			CHAR_talkToCli(toindex,-1,"虛模�＋�蝠眢",CHAR_COLORYELLOW);
 			CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO,-1);
-			// 清除交易图示
+			// ь壺蝠眢芞尨
 			CHAR_sendTradeEffect(charaindex,0);
 			CHAR_sendTradeEffect(toindex,0);
 		}
@@ -7830,24 +7830,24 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 		for(i=0;i<MAX_SELL_ITEM;i++) CHAR_clearStreetVendor(charaindex,i);
 		CHAR_sendWatchEvent(CHAR_getWorkInt(charaindex,CHAR_WORKOBJINDEX),CHAR_STREETVENDOR_CLOSE,NULL,0,TRUE);
 	}
-	// 买方不买了
+	// 鎗源祥鎗賸
 	else if(szAction[0] == 'N'){
 		int toindex = CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO);
 
 		if(toindex != -1 && CHAR_CHECKINDEX(toindex)){
 
-			// 对方设定为摆摊中
+			// 勤源扢隅峈啊怉笢
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR,1);
-			// 清除对方正在交易中的名单
+			// ь壺勤源淏婓蝠眢笢腔靡等
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,-1);
 			CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO,-1);
-			// 清除交易图示
+			// ь壺蝠眢芞尨
 			CHAR_sendTradeEffect(charaindex,0);
 			CHAR_sendTradeEffect(toindex,0);
 		}
 		CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,-1);
 	}
-	// 买方要看某个贩卖物的详细资料
+	// 鎗源猁艘議跺毽闖昜腔砆牉訧蹋
 	else if(szAction[0] == 'D'){
 		int toindex = CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO);
 
@@ -7859,11 +7859,11 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 		}
 		else printf("\nCHAR_sendStreetVendor():toindex error:%d",toindex);
 	}
-	// 买方送来要买的东西的项目
+	// 鎗源冞懂猁鎗腔陲昹腔砐醴
 	else if(szAction[0] == 'B'){
 		int toindex = CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO);
 
-		// 找到卖方
+		// 梑善闖源
 		if(toindex != -1 && CHAR_CHECKINDEX(toindex)){
 			int iBuyIndex = 0,iKind,iFieldIndex,iPrice,iRet;
 			char szMsg[64];
@@ -7878,37 +7878,37 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 				iFieldIndex = CHAR_getStreetVendor(toindex,iBuyIndex,SV_INDEX);
 				iPrice = CHAR_getStreetVendor(toindex,iBuyIndex,SV_PRICE);
 
-				// 检查玩家身上钱够不够
+				// 潰脤俙模旯奻ヴ劂祥劂
 				if(CHAR_getInt(charaindex,CHAR_GOLD) < iPrice){
-					CHAR_talkToCli(charaindex,-1,"你身上石币不够。",CHAR_COLORRED);
+					CHAR_talkToCli(charaindex,-1,"斕旯奻坒啟祥劂﹝",CHAR_COLORRED);
 					break;
 				}
 				bPutToBank = FALSE;
-				// 检查卖方身上钱够不够放
+				// 潰脤闖源旯奻ヴ劂祥劂溫
 				if(CHAR_getInt(toindex,CHAR_GOLD) + iPrice > CHAR_getMaxHaveGold(toindex)){
-					// 身上不够放,存入个人银行
+					// 旯奻祥劂溫,湔�賳鶲刳靇�
 					if(CHAR_getInt(toindex,CHAR_BANKGOLD) + iPrice > CHAR_MAXBANKGOLDHAVE){
-						CHAR_talkToCli(charaindex,-1,"店家放不下石币了，交易取消。",CHAR_COLORRED);
-						CHAR_talkToCli(toindex,-1,"你身上及个人银行存款已满",CHAR_COLORRED);
+						CHAR_talkToCli(charaindex,-1,"虛模溫祥狟坒啟賸ㄛ蝠眢�＋�﹝",CHAR_COLORRED);
+						CHAR_talkToCli(toindex,-1,"斕旯奻摯跺�刳靇迡瞈鍇捔�",CHAR_COLORRED);
 						break;
 					}
-					CHAR_talkToCli(toindex,-1,"贩卖所得已存入个人银行",CHAR_COLORRED);
+					CHAR_talkToCli(toindex,-1,"毽闖垀腕眒湔�賳鶲刳靇�",CHAR_COLORRED);
 					bPutToBank = TRUE;
 				}
-				// 若是道具
+				// �襣З擰�
 				if(iKind == 0){
 					iItemIndex = CHAR_getItemIndex(toindex,iFieldIndex);
-					// 道具不存在
+					// 耋撿祥湔婓
 					if(!ITEM_CHECKINDEX(iItemIndex)){
 						CHAR_clearStreetVendor(toindex,iBuyIndex);
-						printf("\nCHAR_sendStreetVendor(B):找不到道具!!!!!!!\n");
+						printf("\nCHAR_sendStreetVendor(B):梑祥善耋撿!!!!!!!\n");
 						continue;
 					}
-					// 丢在地上会消失的道具不可贩卖
+					// 隍婓華奻頗秏囮腔耋撿祥褫毽闖
 					if(ITEM_getInt(iItemIndex,ITEM_VANISHATDROP) == 1){
 						CHAR_clearStreetVendor(toindex,iBuyIndex);
-						CHAR_talkToCli(charaindex,-1,"丢在地上会消失的道具不可贩卖，该选项取消",CHAR_COLORYELLOW);
-						CHAR_talkToCli(toindex,-1,"侦测到有丢在地上会消失的道具在贩卖，帐号已记录！",CHAR_COLORRED);
+						CHAR_talkToCli(charaindex,-1,"隍婓華奻頗秏囮腔耋撿祥褫毽闖ㄛ蜆恁砐�＋�",CHAR_COLORYELLOW);
+						CHAR_talkToCli(toindex,-1,"淈聆善衄隍婓華奻頗秏囮腔耋撿婓毽闖ㄛ梛瘍眒暮翹ㄐ",CHAR_COLORRED);
 						LogStreetVendor(
 							CHAR_getUseName(toindex),
 							CHAR_getUseID(toindex),
@@ -7917,7 +7917,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							ITEM_getChar(iItemIndex,ITEM_NAME),
 							-1,
 							iPrice,
-							"StreetVendor(卖方改封包)",
+							"StreetVendor(闖源蜊猾婦)",
 							CHAR_getInt(toindex,CHAR_FLOOR),
 							CHAR_getInt(toindex,CHAR_X),
 							CHAR_getInt(toindex,CHAR_Y),
@@ -7926,7 +7926,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 						);
 						continue;
 					}
-					// 议价物品不能卖
+					// 祜歎昜こ祥夔闖
 					if(iPrice == 0){
 						LogStreetVendor(
 							CHAR_getUseName(toindex),
@@ -7936,7 +7936,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							ITEM_getChar(iItemIndex,ITEM_NAME),
 							-1,
 							iPrice,
-							"StreetVendor(买方改封包)",
+							"StreetVendor(鎗源蜊猾婦)",
 							CHAR_getInt(toindex,CHAR_FLOOR),
 							CHAR_getInt(toindex,CHAR_X),
 							CHAR_getInt(toindex,CHAR_Y),
@@ -7947,43 +7947,43 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							);
 						continue;
 					}
-					// 检查物品堆叠
+					// 潰脤昜こ剽詁
 					iPileNum = ITEM_getInt(iItemIndex,ITEM_USEPILENUMS);
-					// 买方最大堆叠数
+					// 鎗源郔湮剽詁杅
 					iMaxPileNum = CHAR_getMyMaxPilenum(charaindex);
-					// 若物品的堆叠数比身上的最大堆叠数少,把卖方的物品清掉,把物品新增至买方
+					// �譠幮殿譯捄�杅掀旯奻腔郔湮剽詁杅屾,參闖源腔昜こь裁,參昜こ陔崝祫鎗源
 					if(iPileNum - iMaxPileNum <= 0){
 						if(!ITEM_CHECKINDEX(iItemIndex)){
-							CHAR_talkToCli(charaindex,-1,"交易失败(1)。",CHAR_COLORRED);
+							CHAR_talkToCli(charaindex,-1,"蝠眢囮啖(1)﹝",CHAR_COLORRED);
 							break;
 						}
 #ifdef _ITEM_PILENUMS
-						// 道具数量为0
+						// 耋撿杅講峈0
 						if(ITEM_getInt(iItemIndex,ITEM_USEPILENUMS) <= 0){
-							CHAR_talkToCli(charaindex,-1,"交易失败(2)。",CHAR_COLORRED);
+							CHAR_talkToCli(charaindex,-1,"蝠眢囮啖(2)﹝",CHAR_COLORRED);
 							break;
 						}
 #endif
-						// 新增买方的
+						// 陔崝鎗源腔
 						if((iRet = CHAR_addItemSpecificItemIndex(charaindex,iItemIndex)) >= CHAR_MAXITEMHAVE){
-							CHAR_talkToCli(charaindex,-1,"道具栏满了。",CHAR_COLORRED);
+							CHAR_talkToCli(charaindex,-1,"耋撿戲雛賸﹝",CHAR_COLORRED);
 							break;
 						}
 						CHAR_sendItemDataOne(charaindex,iRet);
-						// 清掉卖方的
+						// ь裁闖源腔
 						CHAR_setItemIndex(toindex,iFieldIndex,-1);
 						CHAR_sendItemDataOne(toindex,iFieldIndex);
 						CHAR_clearStreetVendor(toindex,iBuyIndex);
-						// 扣钱
+						// 諶ヴ
 						CHAR_setInt(charaindex,CHAR_GOLD,CHAR_getInt(charaindex,CHAR_GOLD) - iPrice);
 						CHAR_send_P_StatusString(charaindex,CHAR_P_STRING_GOLD);
-						// 加钱
+						// 樓ヴ
 						if(bPutToBank) CHAR_setInt(toindex,CHAR_BANKGOLD,CHAR_getInt(toindex,CHAR_BANKGOLD) + iPrice);
 						else CHAR_setInt(toindex,CHAR_GOLD,CHAR_getInt(toindex,CHAR_GOLD) + iPrice);
 						CHAR_send_P_StatusString(toindex,CHAR_P_STRING_GOLD);
-						sprintf(szMsg,"道具 %s 交易完成",ITEM_getChar(iItemIndex,ITEM_NAME));
+						sprintf(szMsg,"耋撿 %s 蝠眢俇傖",ITEM_getChar(iItemIndex,ITEM_NAME));
 						CHAR_talkToCli(charaindex,-1,szMsg,CHAR_COLORWHITE);
-						sprintf(szMsg,"%s 买走了道具 %s",CHAR_getUseName(charaindex),ITEM_getChar(iItemIndex,ITEM_NAME));
+						sprintf(szMsg,"%s 鎗軗賸耋撿 %s",CHAR_getUseName(charaindex),ITEM_getChar(iItemIndex,ITEM_NAME));
 						CHAR_talkToCli(toindex,-1,szMsg,CHAR_COLORWHITE);
 						LogStreetVendor(
 							CHAR_getUseName(toindex),
@@ -7993,7 +7993,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							ITEM_getChar(iItemIndex,ITEM_NAME),
 							-1,
 							iPrice,
-							"StreetVendor(道具)",
+							"StreetVendor(耋撿)",
 							CHAR_getInt(toindex,CHAR_FLOOR),
 							CHAR_getInt(toindex,CHAR_X),
 							CHAR_getInt(toindex,CHAR_Y),
@@ -8003,21 +8003,21 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							ITEM_getChar(iItemIndex,ITEM_UNIQUECODE)
 							);
 					}
-					else CHAR_talkToCli(charaindex,-1,"身上堆叠数上限不足。",CHAR_COLORRED);
+					else CHAR_talkToCli(charaindex,-1,"旯奻剽詁杅奻癹祥逋﹝",CHAR_COLORRED);
 				}
-				// 若是宠物
+				// �襣Ё駘�
 				else if(iKind == 1){
 					int iEmptyPetField;
 
 					iPetIndex = CHAR_getCharPet(toindex,iFieldIndex);
-					// 宠物不存在
+					// 唾昜祥湔婓
 					if(!CHAR_CHECKINDEX(iPetIndex)){
 						CHAR_clearStreetVendor(toindex,iBuyIndex);
-						printf("\nCHAR_sendStreetVendor(B):找不到宠物!!!!!!!\n");
+						printf("\nCHAR_sendStreetVendor(B):梑祥善唾昜!!!!!!!\n");
 						continue;
 					}
 					if(CHAR_getInt(iPetIndex,CHAR_PETFAMILY) == 1){
-						CHAR_talkToCli(charaindex,-1,"家族守护兽无法贩卖，该选项取消",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"模逜忐誘忤拸楊毽闖ㄛ蜆恁砐�＋�",CHAR_COLORYELLOW);
 						CHAR_clearStreetVendor(toindex,iBuyIndex);
 						LogStreetVendor(
 							CHAR_getUseName(toindex),
@@ -8027,7 +8027,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							CHAR_getChar(iPetIndex,CHAR_NAME),
 							-1,
 							iPrice,
-							"StreetVendor(卖方改封包)",
+							"StreetVendor(闖源蜊猾婦)",
 							CHAR_getInt(toindex,CHAR_FLOOR),
 							CHAR_getInt(toindex,CHAR_X),
 							CHAR_getInt(toindex,CHAR_Y),
@@ -8037,7 +8037,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 						continue;
 					}
 					if(CHAR_getInt(toindex,CHAR_RIDEPET) == CHAR_getStreetVendor(toindex,iBuyIndex,SV_INDEX)){
-						CHAR_talkToCli(charaindex,-1,"骑乘中的宠物无法贩卖，该选项取消",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"る傚笢腔唾昜拸楊毽闖ㄛ蜆恁砐�＋�",CHAR_COLORYELLOW);
 						CHAR_clearStreetVendor(toindex,iBuyIndex);
 						LogStreetVendor(
 							CHAR_getUseName(toindex),
@@ -8047,7 +8047,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							CHAR_getChar(iPetIndex,CHAR_NAME),
 							-1,
 							iPrice,
-							"StreetVendor(卖方改封包)",
+							"StreetVendor(闖源蜊猾婦)",
 							CHAR_getInt(toindex,CHAR_FLOOR),
 							CHAR_getInt(toindex,CHAR_X),
 							CHAR_getInt(toindex,CHAR_Y),
@@ -8057,7 +8057,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 						continue;
 					}
 						
-					// 议价物品不能卖
+					// 祜歎昜こ祥夔闖
 					if(iPrice == 0){
 						LogStreetVendor(
 							CHAR_getUseName(toindex),
@@ -8067,7 +8067,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							CHAR_getChar(iPetIndex,CHAR_NAME),
 							-1,
 							iPrice,
-							"StreetVendor(买方改封包)",
+							"StreetVendor(鎗源蜊猾婦)",
 							CHAR_getInt(toindex,CHAR_FLOOR),
 							CHAR_getInt(toindex,CHAR_X),
 							CHAR_getInt(toindex,CHAR_Y),
@@ -8078,24 +8078,24 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							);
 						continue;
 					}
-					// 检查玩家有无装备驯兽戒指,检查玩家有没有转生过
+					// 潰脤俙模衄拸蚾掘拲忤賭硌,潰脤俙模衄羶衄蛌汜徹
 					if(CHAR_getWorkInt(charaindex,CHAR_PickAllPet) == FALSE && CHAR_getInt(charaindex,CHAR_TRANSMIGRATION) < 1){
-						// 检查玩家等级有没有比宠物高
+						// 潰脤俙模脹撰衄羶衄掀唾昜詢
 						if(CHAR_getInt(iPetIndex,CHAR_LV) > (CHAR_getInt(charaindex,CHAR_LV) + 5)){
-							CHAR_talkToCli(charaindex,-1,"你无法照顾该宠物。",CHAR_COLORRED);
+							CHAR_talkToCli(charaindex,-1,"斕拸楊桽嘈蜆唾昜﹝",CHAR_COLORRED);
 							continue;
 						}
 					}
-					// 以下是宠物交换
+					// 眕狟岆唾昜蝠遙
 					iEmptyPetField = CHAR_getCharPetElement(charaindex);
-					// 身上有空栏位
+					// 旯奻衄諾戲弇
 					if(iEmptyPetField > -1){
-						// 清卖方
+						// ь闖源
 						CHAR_setCharPet(toindex,iFieldIndex,-1);
 						CHAR_clearStreetVendor(toindex,iBuyIndex);
 						sprintf(szMsg,"K%d",iFieldIndex);
 						CHAR_sendStatusString(toindex,szMsg);
-						// 设定买方
+						// 扢隅鎗源
 						CHAR_setCharPet(charaindex,iEmptyPetField,iPetIndex);
 						CHAR_setWorkInt(iPetIndex,CHAR_WORKPLAYERINDEX,charaindex);
 						CHAR_setChar(iPetIndex,CHAR_OWNERCDKEY,CHAR_getChar(charaindex,CHAR_CDKEY));
@@ -8105,16 +8105,16 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 						CHAR_sendStatusString(charaindex,szMsg);
 						sprintf(szMsg,"W%d",iEmptyPetField);
 						CHAR_sendStatusString(charaindex,szMsg);
-						// 扣钱
+						// 諶ヴ
 						CHAR_setInt(charaindex,CHAR_GOLD,CHAR_getInt(charaindex,CHAR_GOLD) - iPrice);
 						CHAR_send_P_StatusString(charaindex,CHAR_P_STRING_GOLD);
-						// 加钱
+						// 樓ヴ
 						if(bPutToBank) CHAR_setInt(toindex,CHAR_BANKGOLD,CHAR_getInt(toindex,CHAR_BANKGOLD) + iPrice);
 						else CHAR_setInt(toindex,CHAR_GOLD,CHAR_getInt(toindex,CHAR_GOLD) + iPrice);
 						CHAR_send_P_StatusString(toindex,CHAR_P_STRING_GOLD);
-						sprintf(szMsg,"%s 买走了宠物 %s",CHAR_getUseName(charaindex),CHAR_getChar(iPetIndex,CHAR_NAME));
+						sprintf(szMsg,"%s 鎗軗賸唾昜 %s",CHAR_getUseName(charaindex),CHAR_getChar(iPetIndex,CHAR_NAME));
 						CHAR_talkToCli(charaindex,-1,szMsg,CHAR_COLORWHITE);
-						sprintf(szMsg,"宠物 %s 交易完成！",CHAR_getChar(iPetIndex,CHAR_NAME));
+						sprintf(szMsg,"唾昜 %s 蝠眢俇傖ㄐ",CHAR_getChar(iPetIndex,CHAR_NAME));
 						CHAR_talkToCli(toindex,-1,szMsg,CHAR_COLORWHITE);
 						LogStreetVendor(
 							CHAR_getUseName(toindex),
@@ -8124,7 +8124,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							CHAR_getChar(iPetIndex,CHAR_NAME),
 							CHAR_getInt(iPetIndex,CHAR_LV),
 							iPrice,
-							"StreetVendor(宠物)",
+							"StreetVendor(唾昜)",
 							CHAR_getInt(toindex,CHAR_FLOOR),
 							CHAR_getInt(toindex,CHAR_X),
 							CHAR_getInt(toindex,CHAR_Y),
@@ -8134,25 +8134,25 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 							CHAR_getChar(iPetIndex,CHAR_UNIQUECODE)
 							);
 					}
-					// 玩家宠物栏位满了
-					else CHAR_talkToCli(charaindex,-1,"身上宠物栏栏位不足！",CHAR_COLORRED);
+					// 俙模唾昜戲弇雛賸
+					else CHAR_talkToCli(charaindex,-1,"旯奻唾昜戲戲弇祥逋ㄐ",CHAR_COLORRED);
 				}
-				// 错的内容
+				// 渣腔囀��
 				else{
 					CHAR_clearStreetVendor(toindex,iBuyIndex);
-					printf("\nCHAR_sendStreetVendor(B):错的内容!!!!!!!\n");
+					printf("\nCHAR_sendStreetVendor(B):渣腔囀��!!!!!!!\n");
 				}
 			}
-			// 卖方设定为摆摊,清除买方状态
+			// 闖源扢隅峈啊怉,ь壺鎗源袨怓
 			CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR,-1);
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR,1);
-			// 清除交易图示
+			// ь壺蝠眢芞尨
 			CHAR_sendTradeEffect(charaindex,0);
 			CHAR_sendTradeEffect(toindex,0);
 			CHAR_setWorkInt(toindex,CHAR_WORKSTREETVENDOR_WHO,-1);
 			CHAR_setWorkInt(charaindex,CHAR_WORKSTREETVENDOR_WHO,-1);
 		}
-		else printf("StreetVendor交易找不到对方(%s)\n",CHAR_getChar(charaindex,CHAR_NAME));
+		else printf("StreetVendor蝠眢梑祥善勤源(%s)\n",CHAR_getChar(charaindex,CHAR_NAME));
 	}
 }
 
@@ -8160,7 +8160,7 @@ void CHAR_sendStreetVendorDataToCli(int charaindex,int toindex)
 {
 	int i,count = 0;
 
-	// 送贩卖内容给玩家自己,要修改贩卖内容
+	// 冞毽闖囀�搛雥瞍眢埮�,猁党蜊毽闖囀��
 	if(charaindex == toindex){
 		char szMsg[512],szTemp[512],szTemp1[16];
 
@@ -8178,7 +8178,7 @@ void CHAR_sendStreetVendorDataToCli(int charaindex,int toindex)
 		sprintf(szMsg,"S|%d|%s",count,szTemp);
 		lssproto_STREET_VENDOR_send(getfdFromCharaIndex(charaindex),szMsg);
 	}
-	// 送贩卖大项和第一个贩卖物的细项内容给买家
+	// 冞毽闖湮砐睿菴珨跺毽闖昜腔牉砐囀�搛讕羆�
 	else{
 		int kind,index,itempetindex,firstindex = -1;
 		char szName[32],szFreeName[32];
@@ -8189,35 +8189,35 @@ void CHAR_sendStreetVendorDataToCli(int charaindex,int toindex)
 			if(CHAR_getStreetVendor(toindex,i,SV_USAGE) == TRUE){
 				kind = CHAR_getStreetVendor(toindex,i,SV_KIND);
 				index = CHAR_getStreetVendor(toindex,i,SV_INDEX);
-				// 若是道具
+				// �襣З擰�
 				if(kind == 0){
 					itempetindex = CHAR_getItemIndex(toindex,index);
-					// 道具不存在
+					// 耋撿祥湔婓
 					if(!ITEM_CHECKINDEX(itempetindex)){
 						CHAR_clearStreetVendor(toindex,i);
-						printf("\nCHAR_sendStreetVendorDataToCli():找不到道具!!!!!!!\n");
+						printf("\nCHAR_sendStreetVendorDataToCli():梑祥善耋撿!!!!!!!\n");
 						continue;
 					}
 					sprintf(szName,"%s",ITEM_getChar(itempetindex,ITEM_NAME));
-					// szFreeName 在道具时是用来存贩卖的数量
+					// szFreeName 婓耋撿奀岆蚚懂湔毽闖腔杅講
 					sprintf(szFreeName,"%d",CHAR_getStreetVendor(toindex,i,SV_PILE));
 				}
-				// 宠物
+				// 唾昜
 				else if(kind == 1){
 					itempetindex = CHAR_getCharPet(toindex,index);
-					// 宠物不存在
+					// 唾昜祥湔婓
 					if(!CHAR_CHECKINDEX(itempetindex)){
 						CHAR_clearStreetVendor(toindex,i);
-						printf("\nCHAR_sendStreetVendorDataToCli():找不到宠物!!!!!!!\n");
+						printf("\nCHAR_sendStreetVendorDataToCli():梑祥善唾昜!!!!!!!\n");
 						continue;
 					}
 					sprintf(szName,"%s",CHAR_getChar(itempetindex,CHAR_NAME));
 					sprintf(szFreeName,"%s",CHAR_getChar(itempetindex,CHAR_USERPETNAME));
 				}
-				// 错的内容
+				// 渣腔囀��
 				else{
 					CHAR_clearStreetVendor(toindex,i);
-					printf("\nCHAR_sendStreetVendorDataToCli():错误内容!!!!!!!\n");
+					printf("\nCHAR_sendStreetVendorDataToCli():渣昫囀��!!!!!!!\n");
 					continue;
 				}
 				if(firstindex == -1) firstindex = i;
@@ -8245,21 +8245,21 @@ void CHAR_sendStreetVendorOneDataToCli(int charaindex,int toindex,int sendindex)
 
 		memset(szTemp,0,sizeof(szTemp));
 		memset(szTemp1,0,sizeof(szTemp1));
-		// 若是道具
+		// �襣З擰�
 		if(kind == 0){
 			int crushe,maxcrushe,itemcolor;
 
 			itempetindex = CHAR_getItemIndex(toindex,index);
 			if(ITEM_CHECKINDEX(itempetindex)){
-				// 说明
+				// 佽隴
 				sprintf(szTemp1,"%s|",ITEM_getChar(itempetindex,ITEM_EFFECTSTRING));
 				strcat(szTemp,szTemp1);
-				// 耐久度
+				// 騵壅僅
 				crushe = ITEM_getInt(itempetindex,ITEM_DAMAGECRUSHE);
 				maxcrushe = ITEM_getInt(itempetindex,ITEM_MAXDAMAGECRUSHE);
 				
 				if(crushe < 1) crushe = 1;
-				if(maxcrushe < 1) sprintf(szTemp1,"不会损坏|");
+				if(maxcrushe < 1) sprintf(szTemp1,"祥頗囷輓|");
 				else{
 					maxcrushe = maxcrushe/1000;
 					crushe = crushe/1000;
@@ -8267,30 +8267,30 @@ void CHAR_sendStreetVendorOneDataToCli(int charaindex,int toindex,int sendindex)
 					sprintf(szTemp1,"%d%%|",(int)((crushe*100)/maxcrushe));
 				}
 				strcat(szTemp,szTemp1);
-				// 文字颜色
+				// 恅趼晇伎
 				itemcolor = CHAR_COLORWHITE;
 				if(strlen(ITEM_getChar(itempetindex,ITEM_CDKEY)) != 0) itemcolor = CHAR_COLORGREEN;
 				else if(ITEM_getInt(itempetindex,ITEM_MERGEFLG)) itemcolor = CHAR_COLORYELLOW;
 				sprintf(szTemp1,"%d|",itemcolor);
 				strcat(szTemp,szTemp1);
-				// 图号
+				// 芞瘍
 				sprintf(szTemp1,"%d|",ITEM_getInt(itempetindex,ITEM_BASEIMAGENUMBER));
 				strcat(szTemp,szTemp1);
 			}
-			// 找不到道具
+			// 梑祥善耋撿
 			else{
 				CHAR_clearStreetVendor(toindex,sendindex);
-				printf("\nCHAR_sendStreetVendorOneDataToCli():找不到道具!!!!!!!\n");
+				printf("\nCHAR_sendStreetVendorOneDataToCli():梑祥善耋撿!!!!!!!\n");
 				return;
 			}
 		}
-		// 宠物
+		// 唾昜
 		else if(kind == 1){
 			int skillid,petskillindex;
 
 			itempetindex = CHAR_getCharPet(toindex,index);
 			if(CHAR_CHECKINDEX(itempetindex)){
-				// 宠技
+				// 唾撮
 				for(i=0;i<CHAR_MAXPETSKILLHAVE;i++){
 					skillid = CHAR_getPetSkill(itempetindex,i);
 					petskillindex = PETSKILL_getPetskillArray(skillid);
@@ -8301,21 +8301,21 @@ void CHAR_sendStreetVendorOneDataToCli(int charaindex,int toindex,int sendindex)
 					}
 				}
 				sprintf(szTemp,"%d|%s",count,szTemp1);
-				// 等级,血,攻,防,敏,四属性,忠诚度
+				// 脹撰,悛,馴,滅,鏗,侐扽俶,笳剴僅
 				sprintf(szTemp1,"%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|",
 					CHAR_getInt(itempetindex,CHAR_LV),CHAR_getWorkInt(itempetindex,CHAR_WORKMAXHP),CHAR_getWorkInt(itempetindex,CHAR_WORKATTACKPOWER),
 					CHAR_getWorkInt(itempetindex,CHAR_WORKDEFENCEPOWER),CHAR_getWorkInt(itempetindex,CHAR_WORKQUICK),CHAR_getInt(itempetindex,CHAR_EARTHAT),
 					CHAR_getInt(itempetindex,CHAR_WATERAT),CHAR_getInt(itempetindex,CHAR_FIREAT),CHAR_getInt(itempetindex,CHAR_WINDAT),
 					CHAR_getWorkInt(itempetindex,CHAR_WORKFIXAI));
 				strcat(szTemp,szTemp1);
-				// 图号
+				// 芞瘍
 				sprintf(szTemp1,"%d|",CHAR_getInt(itempetindex,CHAR_BASEBASEIMAGENUMBER));
 				strcat(szTemp,szTemp1);
 			}
-			// 找不到宠物
+			// 梑祥善唾昜
 			else{
 				CHAR_clearStreetVendor(toindex,sendindex);
-				printf("\nCHAR_sendStreetVendorOneDataToCli():找不到宠物!!!!!!!\n");
+				printf("\nCHAR_sendStreetVendorOneDataToCli():梑祥善唾昜!!!!!!!\n");
 				return;
 			}
 		}
@@ -8323,24 +8323,24 @@ void CHAR_sendStreetVendorOneDataToCli(int charaindex,int toindex,int sendindex)
 		lssproto_STREET_VENDOR_send(getfdFromCharaIndex(charaindex),szMsg);
 		printf("\nCHAR_sendStreetVendorOneDataToCli():%s",szMsg);
 	}
-	else printf("\nCHAR_sendStreetVendorOneDataToCli():空的内容!!!!!!!\n");
+	else printf("\nCHAR_sendStreetVendorOneDataToCli():諾腔囀��!!!!!!!\n");
 }
 #endif
 
 
-BOOL checkUnlawWarpFloor(int floor) // 检查禁止玩家互相传送地区
+BOOL checkUnlawWarpFloor(int floor) // 潰脤輦砦俙模誑眈換冞華⑹
 {
 	
-	if( floor == 887 // 招待所
-		|| floor == 117 // 监狱
+	if( floor == 887 // 桸渾垀
+		|| floor == 117 // 潼郜
 		|| floor == 1042 || floor == 2032 || floor == 3032
 		|| floor == 4032 || floor == 5032 || floor == 6032
-		|| floor == 7032 || floor == 8032 || floor == 9032 // 庄园战
+		|| floor == 7032 || floor == 8032 || floor == 9032 // 蚽埶桵
 		|| floor == 8015 || floor == 8027
-		|| floor == 8028 || floor == 8029 // 泪之海任务
+		|| floor == 8028 || floor == 8029 // 濡眳漆�恄�
 		|| floor == 154 || floor == 155 || floor == 156 || floor == 157
 		|| floor == 8519 || floor == 8520 
-		|| floor == 8513 //地牢 
+		|| floor == 8513 //華檣 
 #ifdef _TIME_TICKET
 		|| check_TimeTicketMap( floor)
 #endif
@@ -8363,7 +8363,7 @@ BOOL checkUnlawWarpFloor(int floor) // 检查禁止玩家互相传送地区
 int JobDailyEventCheck( int meindex, int talker, char *buff1);
 BOOL JobDailyRuleCheck(int talker, char* buf);
 DailyFileType dailyfile[MAXDAILYLIST];
-//开端
+//羲傷
 void CHAR_JobDaily(int charaindex,char *data)
 {
 	int nowflag[MAXMISSIONFLAG];
@@ -8383,7 +8383,7 @@ void CHAR_JobDaily(int charaindex,char *data)
 	memset(tmpbuf1,0,sizeof(tmpbuf1));
 
 	if(strcmp(data,"dyedye")!=0){
-		CHAR_talkToCli( charaindex, -1, "解码错误", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "賤鎢渣昫", CHAR_COLORYELLOW);
 		return;
 	}
 
@@ -8418,7 +8418,7 @@ void CHAR_JobDaily(int charaindex,char *data)
 	lssproto_JOBDAILY_send(getfdFromCharaIndex(charaindex),szMsg);
 }
 
-//读出条件式
+//黍堤沭璃宒
 int JobDailyEventCheck( int meindex, int talker, char *buff1)
 {
 	char buff2[512];
@@ -8457,7 +8457,7 @@ int JobDailyEventCheck( int meindex, int talker, char *buff1)
 	return -1;
 }
 
-//判断任务旗标有无
+//瓚剿�恄鮿麇縎倛�
 BOOL JobDailyRuleCheck(int talker, char* buf)
 {
 	char buf1[20]="";
@@ -8467,7 +8467,7 @@ BOOL JobDailyRuleCheck(int talker, char* buf)
 	getStringFromIndexWithDelim( buf, "=", 2, buf1, sizeof( buf1));
 	eventNo = atoi(buf1);
 	if(eventNo >= 256){
-		print("任务日志的任务旗标设定有误%d\n",eventNo);
+		print("�恄鮵欶噩饑恄鮿麇糗頞來倛�%d\n",eventNo);
 		return FALSE;
 	}
 	print("\n eventNo:%d ",eventNo);
@@ -8504,54 +8504,54 @@ void CHAR_Teacher_system(int charaindex,char *data)
 	switch(szAction[0]){
 		case 'P':
 			{
-				// 检查自己是否已经有导师了
+				// 潰脤赻撩岆瘁眒冪衄絳呇賸
 				if(strlen(CHAR_getChar(charaindex,CHAR_TEACHER_ID)) > 0 && strlen(CHAR_getChar(charaindex,CHAR_TEACHER_NAME)) > 0) bHasTeacher = TRUE;
-				// 检查正前方有没有人
+				// 潰脤淏ヶ源衄羶衄��
 				CHAR_getCoordinationDir(CHAR_getInt(charaindex,CHAR_DIR),CHAR_getInt(charaindex,CHAR_X),
 					CHAR_getInt(charaindex,CHAR_Y),1,&ix,&iy);
-				// 取得前方玩家数量
+				// �△蠅健談瞍疺�講
 				iPlayerNum = CHAR_getSameCoordinateObjects(objbuf,arraysizeof(objbuf),CHAR_getInt(charaindex,CHAR_FLOOR),ix,iy);
-				// 没有人
+				// 羶衄��
 				if(iPlayerNum == 0){
-					// 已有导师,显示导师资料
+					// 眒衄絳呇,珆尨絳呇訧蹋
 					if(bHasTeacher){
-						// 向 ac 要资料
+						// 砃 ac 猁訧蹋
 						saacproto_ACCheckCharacterOnLine_send(acfd,charaindex,CHAR_getChar(charaindex,CHAR_TEACHER_ID),
 																									CHAR_getChar(charaindex,CHAR_TEACHER_NAME),
 																									R_F_TEACHER_SYSTEM);
 					}
-					// 没有导师,显示说明
+					// 羶衄絳呇,珆尨佽隴
 					else lssproto_TEACHER_SYSTEM_send(getfdFromCharaIndex(charaindex),"M|");
 				}
-				// 有人
+				// 衄��
 				else{
-					// 已有导师
+					// 眒衄絳呇
 					if(bHasTeacher){
-						// 请玩家先取消原本的导师再进行找新导师动作
-						CHAR_talkToCli(charaindex,-1,"请先取消原本的导师再找其他人作为你的导师",CHAR_COLORRED);
+						// ③俙模珂�＋�埻掛腔絳呇婬輛俴梑陔絳呇雄釬
+						CHAR_talkToCli(charaindex,-1,"③珂�＋�埻掛腔絳呇婬梑む坻�匋龕秈蒫警暱�",CHAR_COLORRED);
 					}
 					else{
 						int	objindex,index;
 						char szFindName[256];
 						
 						if(iPlayerNum == 1){
-							// 询问是否要对方当你的导师
+							// 戙恀岆瘁猁勤源絞斕腔絳呇
 							objindex = objbuf[0];
 							index = OBJECT_getIndex(objindex);
 							
 							if(OBJECT_getType(objindex) != OBJTYPE_CHARA) break;
 							if(CHAR_getInt(index,CHAR_WHICHTYPE) != CHAR_TYPEPLAYER) break;
 							if(index == charaindex) break;
-							// 检查对方是否为自己的学生
+							// 潰脤勤源岆瘁峈赻撩腔悝汜
 							if(strcmp(CHAR_getChar(index,CHAR_TEACHER_ID),CHAR_getChar(charaindex,CHAR_CDKEY)) == 0 &&
 								 strcmp(CHAR_getChar(index,CHAR_TEACHER_NAME),CHAR_getChar(charaindex,CHAR_NAME)) == 0){
-								CHAR_talkToCli(charaindex,-1,"对方为你的学生，无法让对方成为你的导师",CHAR_COLORRED);
+								CHAR_talkToCli(charaindex,-1,"勤源峈斕腔悝汜ㄛ拸楊�繹埸蔔妅秈蒫警暱�",CHAR_COLORRED);
 								break;
 							}
 							sprintf(szMsg,"C|%s|%d",CHAR_getChar(index,CHAR_NAME),index);
 							lssproto_TEACHER_SYSTEM_send(getfdFromCharaIndex(charaindex),szMsg);
 						}
-						// 超过一人,询问要找谁当导师
+						// 閉徹珨��,戙恀猁梑阰絞絳呇
 						else{
 							int iGetNum = 0;
 							char szBuf[1024];
@@ -8575,7 +8575,7 @@ void CHAR_Teacher_system(int charaindex,char *data)
 				}
 			}
 			break;
-		// 确定某人为导师
+		// �毓乖傀冼玥暱�
 		case 'O':
 			{
 				char szBuf[16];
@@ -8585,26 +8585,26 @@ void CHAR_Teacher_system(int charaindex,char *data)
 				index = atoi(szBuf);
 				if(!CHAR_CHECKINDEX(index)){
 					printf("\nCHAR_Teacher_system:error index (%s:%d)\n",CHAR_getChar(charaindex,CHAR_NAME),index);
-					sprintf(szMsg,"该玩家不存在(%d)",index);
+					sprintf(szMsg,"蜆俙模祥湔婓(%d)",index);
 					CHAR_talkToCli(charaindex,-1,szMsg,CHAR_COLORRED);
 					break;
 				}
 				CHAR_setChar(charaindex,CHAR_TEACHER_ID,CHAR_getChar(index,CHAR_CDKEY));
 				CHAR_setChar(charaindex,CHAR_TEACHER_NAME,CHAR_getChar(index,CHAR_NAME));
-				sprintf(szMsg,"%s 已成为你的学生！",CHAR_getChar(charaindex,CHAR_NAME));
+				sprintf(szMsg,"%s 眒傖峈斕腔悝汜ㄐ",CHAR_getChar(charaindex,CHAR_NAME));
 				CHAR_talkToCli(index,-1,szMsg,CHAR_COLORWHITE);
-				sprintf(szMsg,"%s 已成为你的导师！",CHAR_getChar(index,CHAR_NAME));
+				sprintf(szMsg,"%s 眒傖峈斕腔絳呇ㄐ",CHAR_getChar(index,CHAR_NAME));
 				CHAR_talkToCli(charaindex,-1,szMsg,CHAR_COLORWHITE);
 			}
 			break;
-		// 取消导师资格
+		// �＋�絳呇訧跡
 		case 'C':
 			{
 				int iCharm = CHAR_getInt(charaindex,CHAR_CHARM) - 30;
 
 				CHAR_setChar(charaindex,CHAR_TEACHER_ID,"");
 				CHAR_setChar(charaindex,CHAR_TEACHER_NAME,"");
-				// 扣魅力值
+				// 諶黰薯硉
 				CHAR_setInt(charaindex,CHAR_CHARM,iCharm < 0 ? 0:iCharm);
 				CHAR_setWorkInt(charaindex,CHAR_WORKFIXCHARM,iCharm < 0 ? 0:iCharm);
 				CHAR_send_P_StatusString(charaindex,CHAR_P_STRING_CHARM);
@@ -8618,7 +8618,7 @@ void CHAR_Teacher_system_View(int charaindex,int iOnLine,char *data)
 {
 	char szMsg[1024];
 
-	// V|导师姓名|在不在线上|所在星系
+	// V|絳呇俷靡|婓祥婓盄奻|垀婓陎炵
 	sprintf(szMsg,"V|%s|%d|%s",CHAR_getChar(charaindex,CHAR_TEACHER_NAME),iOnLine,data);
 	lssproto_TEACHER_SYSTEM_send(getfdFromCharaIndex(charaindex),szMsg);
 }
@@ -8655,32 +8655,32 @@ void check_TimeTicket()
 		}
 		
 		tickettime = CHAR_getWorkInt( i, CHAR_WORKTICKETTIME);
-		// 刚入场
+		// 試�貐�
 		if( tickettime == 0 ) {
-			//CHAR_talkToCli( i, -1, "请在１０秒内使用门票。", CHAR_COLORYELLOW);
+			//CHAR_talkToCli( i, -1, "③婓ㄠㄟ鏃囀妏蚚藷き﹝", CHAR_COLORYELLOW);
 			//CHAR_setWorkInt( i, CHAR_WORKTICKETTIME, nowtime+10);
 		}
 		else
-		// 时限20秒以上
+		// 奀癹20鏃眕奻
 		if( tickettime > 0 && tickettime > nowtime+20 ) {
 			continue;
 		}
-		// 时限不到20秒
+		// 奀癹祥善20鏃
 		else if( tickettime < nowtime+20 && tickettime >= nowtime ) {
-			sprintf( msg, "时间票剩馀时间%d秒。", tickettime - nowtime);
+			sprintf( msg, "奀潔き呁牄奀潔%d鏃﹝", tickettime - nowtime);
 			CHAR_talkToCli( i, -1, msg, CHAR_COLORYELLOW);
 		}
 
-		// 超过时限
+		// 閉徹奀癹
 		else if( tickettime < nowtime ) {
 			int floor, x, y;
 			int totaltime;
 			char msg[1024];
 			if( CHAR_getWorkInt( i, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE) {
-				CHAR_talkToCli( i, -1, "时间已到，谢谢光顾。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( i, -1, "奀潔眒善ㄛ郅郅嫖嘈﹝", CHAR_COLORYELLOW);
 				if( CHAR_getWorkInt( i, CHAR_WORKTICKETTIMESTART) > 0 ) {
 					totaltime = nowtime - CHAR_getWorkInt( i, CHAR_WORKTICKETTIMESTART);
-					sprintf( msg, "总入场时间%d分%d秒。", totaltime/60, totaltime%60);
+					sprintf( msg, "軞�貐﹋掉�%d煦%d鏃﹝", totaltime/60, totaltime%60);
 					CHAR_talkToCli( i, -1, msg, CHAR_COLORYELLOW);
 				}
 				CHAR_setWorkInt( i, CHAR_WORKTICKETTIME, 0);
@@ -8696,8 +8696,8 @@ void check_TimeTicket()
 				CHAR_warpToSpecificPoint( i, 7001, 41, 6);
 			}
 			else {
-				CHAR_talkToCli( i, -1, "时间已到，将於战斗结束时离开。", CHAR_COLORYELLOW);
-				// 移至 BATTLE_Exit() 处理
+				CHAR_talkToCli( i, -1, "奀潔眒善ㄛ蔚黺桵須賦旰奀燭羲﹝", CHAR_COLORYELLOW);
+				// 痄祫 BATTLE_Exit() 揭燴
 			}
 		}
 	}

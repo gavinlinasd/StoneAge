@@ -31,19 +31,19 @@
 void set_nodelay( int sock );
 
 #define OK     0
-#define TCPSTRUCT_ENOMEM -1       /* malloc 撩   */
-#define TCPSTRUCT_ESOCK -2        /* socket 撩   */
-#define TCPSTRUCT_EBIND -3        /* bind 撩   */
-#define TCPSTRUCT_ELISTEN -4      /* listen 撩   */
-#define TCPSTRUCT_EBUG -6         /* 田弘匹丐月 */
-#define TCPSTRUCT_EINVCIND -7     /* con尺及index互云井仄中方 */
-#define TCPSTRUCT_EREADFIN -8     /* read 允月犯□正互卅仁化 closed by remote */
-#define TCPSTRUCT_EHOST -9        /* gethostbyname 撩   */
-#define TCPSTRUCT_ECONNECT -10    /* connect 撩   */
-#define TCPSTRUCT_ECFULL -11      /* con 互中匀天中 */
-#define TCPSTRUCT_ETOOLONG -12    /* 垫互卅互允亢 */
-#define TCPSTRUCT_EMBFULL -13     /* mb 互中匀天中  */
-#define TCPSTRUCT_ECLOSEAGAIN -14 /* close 互2荚今木凶 */
+#define TCPSTRUCT_ENOMEM -1       /* malloc 謄   */
+#define TCPSTRUCT_ESOCK -2        /* socket 謄   */
+#define TCPSTRUCT_EBIND -3        /* bind 謄   */
+#define TCPSTRUCT_ELISTEN -4      /* listen 謄   */
+#define TCPSTRUCT_EBUG -6         /* 泬精ぁ堣堎 */
+#define TCPSTRUCT_EINVCIND -7     /* con喜摯index誑堁凝媃笢源 */
+#define TCPSTRUCT_EREADFIN -8     /* read 埰堎溢↓淏誑埵�妡� closed by remote */
+#define TCPSTRUCT_EHOST -9        /* gethostbyname 謄   */
+#define TCPSTRUCT_ECONNECT -10    /* connect 謄   */
+#define TCPSTRUCT_ECFULL -11      /* con 誑笢埱毞笢 */
+#define TCPSTRUCT_ETOOLONG -12    /* 菜誑埵誑埰蕩 */
+#define TCPSTRUCT_EMBFULL -13     /* mb 誑笢埱毞笢  */
+#define TCPSTRUCT_ECLOSEAGAIN -14 /* close 誑2樊踏躂倜 */
 #define TCPSTRUCT_WORKERROR -16
 #define TCPSTRUCT_WORKEBIND -17
 

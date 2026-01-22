@@ -8,18 +8,18 @@
 #include "anim_tbl.h"
 
 /*#define MAPEDITORTROUBLE*/
-#define SPR_kmydamY CG_HIT_MARK_10 // anim_tbl.h 卞瓒  今木月引匹  及巨白尼弁玄
+#define SPR_kmydamY CG_HIT_MARK_10 // anim_tbl.h 勗頞  踏躂堎竘ぁ  摯操啞攝袲哱
 
 /*------------------------------------------------------------
- * 汹仃月井升丹井  蝇允月［平乓仿互  氏匹中月井升丹井娄醒互丐月［
- * 娄醒
+ * 倵崹堎凝汔竣凝  茯埰堎�袸褐珝罈�  庌ぁ笢堎凝汔竣凝礎倳誑堣堎��
+ * 礎倳
  *  ff          int     floor
- *  fx          int     x甄  
- *  fy          int     y甄  
- *  isfly       int       氏匹中月井升丹井
- * 忒曰袄
- *  汹仃月      TRUE(1)
- *  汹仃卅中    FALSE(0)
+ *  fx          int     x淢  
+ *  fy          int     y淢  
+ *  isfly       int       庌ぁ笢堎凝汔竣凝
+ * 蒍堇偯
+ *  倵崹堎      TRUE(1)
+ *  倵崹埵笢    FALSE(0)
  ------------------------------------------------------------*/
 BOOL MAP_walkAbleFromPoint( int ff, int fx, int fy, BOOL isfly )
 {
@@ -63,19 +63,19 @@ BOOL MAP_walkAbleFromPoint( int ff, int fx, int fy, BOOL isfly )
 
 
 /*------------------------------------------------------------
- * 汹仃月井升丹井  蝇允月［
- * 娄醒
- *  index       int     Char    匹及 Index
+ * 倵崹堎凝汔竣凝  茯埰堎��
+ * 礎倳
+ *  index       int     Char    ぁ摯 Index
  *  ff          int     floor id
- *  fx          int     x甄  
- *  fy          int     y甄  
- * 忒曰袄
- *  汹中化方中      TRUE(1)
- *  汹中化反母丢    FALSE(0)
+ *  fx          int     x淢  
+ *  fy          int     y淢  
+ * 蒍堇偯
+ *  倵笢趙源笢      TRUE(1)
+ *  倵笢趙毀譫隍    FALSE(0)
  ------------------------------------------------------------*/
 BOOL MAP_walkAble( int index,int ff, int fx, int fy)
 {
-    /*      平乓仿卅日OK    */
+    /*      す籤溘埵�徖K    */
     if( CHAR_getFlg( index, CHAR_ISTRANSPARENT ) )      return TRUE;
 
     // Arminius 7.9 Airplane ok
@@ -91,20 +91,20 @@ BOOL MAP_walkAble( int index,int ff, int fx, int fy)
 }
 
 /*------------------------------------------------------------
- * 甄  毛隙烂仄化｝公仇及左皮斥尼弁玄卞嫖今互丐月井升丹井
- * 娄醒
- *  fl              int     白夫失
- *  x               int     x 甄  
- *  y               int     y 甄  
- * 忒曰袄
- *  嫖今互丐月  TRUE
- *  嫖今互卅中  FALSE
+ * 淢  禱炩擭媃趙��鼠喫摯酘々喇攝袲哱勗禜踏誑堣堎凝汔竣凝
+ * 礎倳
+ *  fl              int     啞痲囮
+ *  x               int     x 淢  
+ *  y               int     y 淢  
+ * 蒍堇偯
+ *  禜踏誑堣堎  TRUE
+ *  禜踏誑埵笢  FALSE
  ------------------------------------------------------------*/
 BOOL MAP_haveHeight( int fl, int x, int y )
 {
     int     map[2];
 
-    /*  穴永皿犯□正毛  化仁月  */
+    /*  悃蚗鏤溢↓淏禱  趙�彸�  */
     if( !MAP_getTileAndObjData( fl,x,y, &map[0], &map[1] ) )
         return FALSE;
 
@@ -114,20 +114,20 @@ BOOL MAP_haveHeight( int fl, int x, int y )
 
 
 /*----------------------------------------
- * 旦  □正旦  祭烟及  凳毛允月
- * 娄醒
- *  index   int     平乓仿及奶件犯永弁旦
- *  map     int     穴永皿犯□正
- *  outof   BOOL    褡戈凛｝转仁凛井 TRUE 卅日壬 褡戈凛匹丐月［
- * 忒曰袄
- *  由仿丢□正  祭毛仄凶    TRUE
- *  由仿丢□正  祭毛仄卅井匀凶  FALSE
+ * 筒  ↓淏筒  撬捈摯  脾禱埰堎
+ * 礎倳
+ *  index   int     す籤溘摯騷璃溢蚗袲筒
+ *  map     int     悃蚗鏤溢↓淏
+ *  outof   BOOL    鵌資鄹��蛌�岏旓� TRUE 埵�桱� 鵌資鄹ぁ堣堎��
+ * 蒍堇偯
+ *  蚕溘隍↓淏  撬禱媃倜    TRUE
+ *  蚕溘隍↓淏  撬禱媃埵凝埱倜  FALSE
   ----------------------------------------*/
 static BOOL MAP_changeCharStatusFromMapDataAndTime( int index,
                                                     int map, BOOL outof)
 {
 #if 0
-// 旦玄□件巨奶斥匹反银歹卅中
+// 筒哱↓璃操騷喇ぁ毀窅渦埵笢
     int i;
     int offset;
     BOOL    change=FALSE;
@@ -158,7 +158,7 @@ static BOOL MAP_changeCharStatusFromMapDataAndTime( int index,
                                   mapdataindex);
         if( newdata > 0 ){
             change=TRUE;
-            /*  旦  □正旦及涩烂    */
+            /*  筒  ↓淏筒摯优擭    */
             CHAR_setInt( index,
                          statusInteraction[i+offset].charadataindex,
                          CHAR_getInt(index,
@@ -174,11 +174,11 @@ static BOOL MAP_changeCharStatusFromMapDataAndTime( int index,
 
 
 /*------------------------------------------------------------
- * Map 奶矛件玄及 pre post毛质  允月
- * 娄醒
- *  index       int     昙欠丹午仄化中月平乓仿及奶件犯永弁旦
- *  mode        BOOL    TRUE及凛反｝in  FALSE及凛反 out 卞覆杀
- * 忒曰袄卅仄
+ * Map 騷穫璃哱摯 pre post禱窐  埰堎
+ * 礎倳
+ *  index       int     篥Й竣敁媃趙笢堎す籤溘摯騷璃溢蚗袲筒
+ *  mode        BOOL    TRUE摯鄹毀��in  FALSE摯鄹毀 out 勗葡伀
+ * 蒍堇偯埵媃
  ------------------------------------------------------------*/
 static void MAP_dealprepostevent( int index, BOOL mode )
 {
@@ -187,7 +187,7 @@ static void MAP_dealprepostevent( int index, BOOL mode )
     int     damaged=FALSE,statuschange=FALSE;
 
     if( CHAR_getFlg(index,CHAR_ISFLYING) )
-        /*    氏匹月支勾卞反窒手仄卅中  */
+        /*    庌ぁ堎盓僑勗毀笰忒媃埵笢  */
         return;
 
     if( !MAP_getMapDataFromCharIndex( index  ,  map ) ) return;
@@ -198,13 +198,13 @@ static void MAP_dealprepostevent( int index, BOOL mode )
         damage = MAP_getImageInt(map[i],
                                  mode ? MAP_INTODAMAGE : MAP_OUTOFDAMAGE);
         if( damage != 0 ){
-            /*  母丢□斥汹毛恳匹  蜇允月及匹  寞  木赘尹    */
+            /*  譫隍↓喇倵禱諜ぁ  藯埰堎摯ぁ  蠕  躂袑窇    */
             int opt[2]={SPR_kmydamY,-damage};
             damaged=TRUE;
             CHAR_setInt(index, CHAR_HP,
                         CHAR_getInt(index,CHAR_HP) + damage );
             CHAR_complianceParameter(index);
-            /*  母丢□斥熬仃凶巨白尼弁玄请允    */
+            /*  譫隍↓喇偏崹倜操啞攝袲哱③埰    */
             CHAR_sendWatchEvent(CHAR_getWorkInt(index,CHAR_WORKOBJINDEX),
                                 CHAR_ACTDAMAGE,opt,2,TRUE);
         }
@@ -222,15 +222,15 @@ static void MAP_dealprepostevent( int index, BOOL mode )
 
 
 /*----------------------------------------
- * 公及正奶伙卞昙月蟆卞裟壬木月［仇仇匹公仇井日转仁午｝xxx烟及
- * 仪毛  蜇允月［
- * 娄醒
- *  index       int     昙欠丹午仄化中月平乓仿及奶件犯永弁旦
- *  flooor      int     白夫失ID
- *  fx          int     x甄  
- *  fy          int     y甄  
- * 忒曰袄
- *  卅仄
+ * 鼠摯淏騷鳴勗篥堎鞳勗蠙�厊戰瞿蛦薱蟜旦奕蟛旅欳糾庉蝤�xxx捈摯
+ * 痀禱  藯埰堎��
+ * 礎倳
+ *  index       int     篥Й竣敁媃趙笢堎す籤溘摯騷璃溢蚗袲筒
+ *  flooor      int     啞痲囮ID
+ *  fx          int     x淢  
+ *  fy          int     y淢  
+ * 蒍堇偯
+ *  埵媃
  ----------------------------------------*/
 void MAP_preovered( int index )
 {
@@ -238,11 +238,11 @@ void MAP_preovered( int index )
 }
 
 /*----------------------------------------
- * 公及正奶伙卞昙匀凶  卞裟壬木月［
- * 娄醒
- *  index       int     昙欠丹午仄化中月平乓仿及奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 鼠摯淏騷鳴勗篥埱倜  勗蠙�厊戰瞿�
+ * 礎倳
+ *  index       int     篥Й竣敁媃趙笢堎す籤溘摯騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埵媃
  ----------------------------------------*/
 void MAP_postovered( int index )
 {
@@ -251,13 +251,13 @@ void MAP_postovered( int index )
 
 
 /*----------------------------------------
- * 平乓仿及璃曰及穴永皿毛允屯化霜月
- * 娄醒
+ * す籤溘摯薛堇摯悃蚗鏤禱埰迋趙邞堎
+ * 礎倳
  *  fd          int
- *  charaindex  int     平乓仿及奶件犯永弁旦
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ *  charaindex  int     す籤溘摯騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  ----------------------------------------*/
 BOOL MAP_sendArroundCharNeedFD( int fd,int charaindex )
 {
@@ -301,12 +301,12 @@ BOOL MAP_sendArroundCharNeedFD( int fd,int charaindex )
 
 
 /*----------------------------------------
- * 穴永皿犯□正毛  月［
- * 娄醒
- *  charaindex      int     平乓仿及奶件犯永弁旦
- * 忒曰袄
- *  岳      TRUE(1)
- *  撩      FALSE(0)
+ * 悃蚗鏤溢↓淏禱  堎��
+ * 礎倳
+ *  charaindex      int     す籤溘摯騷璃溢蚗袲筒
+ * 蒍堇偯
+ *  埬      TRUE(1)
+ *  謄      FALSE(0)
  ----------------------------------------*/
 BOOL MAP_sendArroundChar(int charaindex)
 {

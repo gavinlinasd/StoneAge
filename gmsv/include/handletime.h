@@ -26,10 +26,10 @@ void ASSESS_getSysEfficacy_sub( float *TVsec, int loop);
 // WON REM
 //struct tm *localtime(const time_t *timep);
 
-/*仇仇井日票｝HiO［LS凛棉楮溢［*/
-/*    凛棉150(坌)*60=9000  =750*12 匹   LS1     */
-/*  LS1200凛棉  LS1     */
-/*  LS100  匹   LS1     */
+/*喫喫凝�梪悵�HiO�腒S鄹蹬匴祛��*/
+/*    鄹蹬150(覕)*60=9000  =750*12 ぁ   LS1     */
+/*  LS1200鄹蹬  LS1     */
+/*  LS100  ぁ   LS1     */
 typedef struct tagLSTIME
 {
 	int year;

@@ -4,7 +4,7 @@
 #include "main.h"
 #include "char.h"
 
-#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS断线自动送LOGOUT给WORKER
+#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS剿盄赻雄冞LOGOUT跤WORKER
 #include "recv.h"
 #endif
 
@@ -33,7 +33,7 @@ void Lock_Init(void)
 		memset( userlock[i]->name, 0, sizeof( userlock[i]->name) );
 #endif
 	}
-	log("存贮器初始化");
+	log("湔翏ん場宎趙");
 }
 
 LockNode *Creat_newNodes( void)
@@ -63,9 +63,9 @@ int InsertMemLock(int entry, char *cdkey, char *passwd, char *server, int proces
 	int j;
 	LockNode *ln = userlock[entry];
 #ifdef _LOCK_ADD_NAME
-		log("进入游戏:目录:char/0x%x 账号:%s 名称:%s 服务器:%s\n", entry, cdkey, name, server);
+		log("輛�邆恘�:醴翹:char/0x%x 梖瘍:%s 靡備:%s 督昢ん:%s\n", entry, cdkey, name, server);
 #else
-		log("进入游戏:目录:%x 账号:%s 服务器:%s\n", entry, cdkey, server);
+		log("輛�邆恘�:醴翹:%x 梖瘍:%s 督昢ん:%s\n", entry, cdkey, server);
 #endif
   
 	while( (ln!=NULL) && (ln->use!=0)) ln=ln->next;
@@ -105,12 +105,12 @@ int DeleteMemLock(int entry, char *cdkey, int *process)
 {
 	LockNode *ln = userlock[entry];
 
-	log("删除内存信息 位置=%x 账号=%s ..\n", entry, cdkey);
+	log("刉壺囀湔陓洘 弇离=%x 梖瘍=%s ..\n", entry, cdkey);
 
 	while (ln!=NULL) {
 		if( ln->use != 0) {
 #ifdef _CHANGEGALAXY
-			if( !strcmp( ln->cdkey, cdkey ) && strcmp( ln->server, "移民") ) break;
+			if( !strcmp( ln->cdkey, cdkey ) && strcmp( ln->server, "痄鏍") ) break;
 #else
 			if( strcmp( ln->cdkey, cdkey ) == 0 ) break;
 #endif
@@ -125,10 +125,10 @@ int DeleteMemLock(int entry, char *cdkey, int *process)
 		memset( ln->name, 0, sizeof( ln->name) );
 #endif
 		*process = ln->process;
-		log("删除成功\n");
+		log("刉壺傖髡\n");
 		return 1;
 	}
-	log("删除失败!!\n");
+	log("刉壺囮啖!!\n");
 	return 0;
 }
 
@@ -150,13 +150,13 @@ void DeleteMemLockServer(char *sname)
 }
 
 
-#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS断线自动送LOGOUT给WORKER
+#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS剿盄赻雄冞LOGOUT跤WORKER
 void Worker_auto_logout(int ti, char *sname)
 {
   int i;
   LockNode *ln;
   
-  log("\nGMSV 退出或工作站退出!! \n");
+  log("\nGMSV 豖堤麼馱釬桴豖堤!! \n");
 
   for (i=0; i<256; i++) {
     ln = userlock[i];
@@ -167,13 +167,13 @@ void Worker_auto_logout(int ti, char *sname)
 			if( addUnlockPool( ti, ln->cdkey, "", "", "") <0 ) {
 				char id[20];
 				strcpy(id ,ln->cdkey);
-				log("工作站发送退出 ==> ti(%d) 账号(%s) 序号(%d)\n", ti, id, iUnlockPoolAdd );
+				log("馱釬桴楷冞豖堤 ==> ti(%d) 梖瘍(%s) 唗瘍(%d)\n", ti, id, iUnlockPoolAdd );
 				Worker_send_logout(ti, id);
 			}
 #else
 			char id[20];
 			strcpy(id ,ln->cdkey);
-			log("工作站发送退出==>ti(%d) 账号(%s)\n", ti, id );
+			log("馱釬桴楷冞豖堤==>ti(%d) 梖瘍(%s)\n", ti, id );
 			Worker_send_logout(ti, id);
 #endif
         }
@@ -193,8 +193,8 @@ int isMemLocked(int entry, char *cdkey)
 	while (ln!=NULL) {
 		if (ln->use != 0) {
 			if (strcmp(ln->cdkey, cdkey)==0) {
-				if( !strcmp(ln->server, "星系移民"))
-					log(" 星系移民中 ");
+				if( !strcmp(ln->server, "陎炵痄鏍"))
+					log(" 陎炵痄鏍笢 ");
 				break;
 			}
 		}
@@ -210,13 +210,13 @@ int GetMemLockState(int entry, char *cdkey, char *result)
 	while (ln!=NULL) {
 		if (ln->use != 0) {
 			if (strcmp(ln->cdkey, cdkey)==0) {
-				sprintf(result, "%s 是在 %s 被锁的.",cdkey, ln->server);
+				sprintf(result, "%s 岆婓 %s 掩坶腔.",cdkey, ln->server);
 				return 1;
 			}
 		}
 		ln=ln->next;
 	}
-	sprintf(result, "%s 没有被锁.", cdkey);
+	sprintf(result, "%s 羶衄掩坶.", cdkey);
 	return 0;
 }
 
@@ -265,7 +265,7 @@ int DeleteGalaxyChangeLock( void)
 
 		while (ln!=NULL) {
 			if( ln->use != 0) {
-				if( strcmp( ln->server, "星系移民" ) == 0 ) {
+				if( strcmp( ln->server, "陎炵痄鏍" ) == 0 ) {
 					ln->use=0;
 					memset( ln->cdkey, 0, sizeof( ln->cdkey) );
 					memset( ln->server, 0, sizeof( ln->server) );
@@ -298,8 +298,8 @@ int isChangeGalaxyLocked( char *cdkey)
 
 	while (ln!=NULL) {
 		if (ln->use != 0) {
-			if( !strcmp(ln->cdkey, cdkey) && !strcmp(ln->server, "星系移民") ) {
-					log(" 星系移民中 ");
+			if( !strcmp(ln->cdkey, cdkey) && !strcmp(ln->server, "陎炵痄鏍") ) {
+					log(" 陎炵痄鏍笢 ");
 				break;
 			}
 		}
@@ -319,7 +319,7 @@ int ChangeMemDeadline(int entry, char *cdkey, char *deadline)
 	while (ln!=NULL) {
 		if (ln->use != 0) {
 			if (strcmp(ln->cdkey, cdkey)==0) {
-				log(" 修改Deadline ");
+				log(" 党蜊Deadline ");
 				strcpy( ln->deadline, deadline);
 				break;
 			}
@@ -338,7 +338,7 @@ void UnlockPoolProc( void)
 	int cleanCount =0;
 
 
-	if( sys_time < lastcheck + 3 ) // 每xx秒检查
+	if( sys_time < lastcheck + 3 ) // 藩xx鏃潰脤
 		return;
 	lastcheck = sys_time;
 
@@ -379,12 +379,12 @@ void UnlockPoolProc( void)
 
 			cleanCount++;
 
-			//if( cleanCount >=30) // 每次最多送X个logout
+			//if( cleanCount >=30) // 藩棒郔嗣冞X跺logout
 			//	break;
 		}
 	}
 
-	// 一次全清归零
+	// 珨棒�室撟橧�
 	iUnlockPoolAdd =0;
 	unlockindex =0;
 

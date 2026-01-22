@@ -1,7 +1,7 @@
 #ifndef __BATTLE_AI_H__
 #define __BATTLE_AI_H__
 
-/*   曰轼 */
+/*   堇澮 */
 int BATTLE_ai_all( int battleindex, int side, int turn);
 int BATTLE_ai_one( int charaindex, int battleindex, int side, int turn);
 #ifdef _ENEMY_ATTACK_AI

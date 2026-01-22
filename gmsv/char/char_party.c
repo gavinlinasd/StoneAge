@@ -19,12 +19,12 @@
 extern struct FM_PKFLOOR fmpkflnum[FAMILY_FMPKFLOOR];
 
 /*------------------------------------------------------------
- * 由□  奴楮  及末□旦
+ * 蚕↓  贖匴  摯藺↓筒
  ------------------------------------------------------------*/
 
 /*------------------------------------------------------------
- * 坞中化中月由□  奴  毛茧允
- * 卅仃木壬-1毛忒允［
+ * 昶笢趙笢堎蚕↓  贖  禱潺埰
+ * 埵崹躂��-1禱蒍埰��
  ------------------------------------------------------------*/
 int CHAR_getEmptyPartyArray( int charaindex)
 {
@@ -48,10 +48,10 @@ int CHAR_getEmptyPartyArray( int charaindex)
 	return( rc ? i: -1);
 }
 /*------------------------------------------------------------
- *   端卞由□  奴卞  月质  
+ *   傷勗蚕↓  贖勗  堎窐  
  *
- *  charaindex		int		愤坌
- *  targetindex		int		  月锹澎及谛
+ *  charaindex		int		猷覕
+ *  targetindex		int		  堎Ъ鱗摯硞
  ------------------------------------------------------------*/
 void CHAR_JoinParty_Main( int charaindex, int targetindex)
 {
@@ -62,7 +62,7 @@ void CHAR_JoinParty_Main( int charaindex, int targetindex)
 	int		toindex;
 	int		parray;
 
-	/* 褪互中凶日娄匀舰曰请允 */
+	/* 虮誑笢倜�梒耒�耦堇③埰 */
 	if( CHAR_getWorkInt( targetindex, CHAR_WORKPARTYMODE) == CHAR_PARTY_NONE ) {
 		toindex = targetindex;
 	}
@@ -75,17 +75,17 @@ void CHAR_JoinParty_Main( int charaindex, int targetindex)
 	}
 
 
-	/* 锹澎由□  奴及谛醒反    井＂ */
+	/* Ъ鱗蚕↓  贖摯硞倳毀    凝ㄑ */
 	parray = CHAR_getEmptyPartyArray( toindex) ;
 	if( parray == -1 ) {
 		print( "%s : %d err\n", __FILE__,__LINE__);
 		return;
 	}
-	/* 窒手  仄  褪及凛反褪卞卅匀凶CA毛霜耨允月 */
+	/* 笰忒  媃  虮摯鄹毀虮勗埵埱倜CA禱邞嚭埰堎 */
 	if( CHAR_getWorkInt( toindex, CHAR_WORKPARTYMODE) == CHAR_PARTY_NONE ) {
 		CHAR_sendLeader( CHAR_getWorkInt( toindex, CHAR_WORKOBJINDEX), 1);
-		/* 锹澎及橇谪及踏五晶尹 */
-		/* 褪卞卅月 */
+		/* Ъ鱗摯Щ稃摯怳拻儒窇 */
+		/* 虮勗埵堎 */
 		CHAR_setWorkInt( toindex, CHAR_WORKPARTYMODE, 1);
 		CHAR_setWorkInt( toindex, CHAR_WORKPARTYINDEX1, toindex);
 		firstflg = TRUE;
@@ -111,7 +111,7 @@ void CHAR_JoinParty_Main( int charaindex, int targetindex)
 		}
 	}
 
-	snprintf( buf,sizeof( buf), "%s 加入团队！",
+	snprintf( buf,sizeof( buf), "%s 樓�輹韃茛�",
 			  CHAR_getChar( charaindex, CHAR_NAME));
 
 	for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
@@ -123,13 +123,13 @@ void CHAR_JoinParty_Main( int charaindex, int targetindex)
 				CHAR_talkToCli( index, -1, buf, CHAR_COLORYELLOW);
 			}
 			else {
-				CHAR_talkToCli( index, -1, "加入团队！", CHAR_COLORYELLOW);
+				CHAR_talkToCli( index, -1, "樓�輹韃茛�", CHAR_COLORYELLOW);
 			}
 		}
 	}
 }
 /*------------------------------------------------------------
- * 由□  奴卞  欠丹午允月［
+ * 蚕↓  贖勗  Й竣敁埰堎��
  ------------------------------------------------------------*/
 BOOL CHAR_JoinParty( int charaindex )
 {
@@ -148,25 +148,25 @@ BOOL CHAR_JoinParty( int charaindex )
 		return FALSE;
 	}
 
-        /* 愤坌互由□  奴赚氏匹凶日蛲   */
+        /* 猷覕誑蚕↓  贖蚻庌ぁ倜�淜�   */
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE ) {
 		lssproto_PR_send( fd, 1, FALSE);
 		return FALSE;
 	}
 
-	/*   及蟆及甄  毛  月 */
+	/*   摯鞳摯淢  禱  堎 */
 	CHAR_getCoordinationDir( CHAR_getInt( charaindex, CHAR_DIR ) ,
 							 CHAR_getInt( charaindex , CHAR_X ),
 							 CHAR_getInt( charaindex , CHAR_Y ) ,
 							 1 , &x , &y );
 
-	/* 赓渝祭允月 */
+	/* 疐趵撬埰堎 */
 	for( i = 0; i < CONNECT_WINDOWBUFSIZE; i ++ ) {
         CONNECT_setJoinpartycharaindex(fd,i,-1);
     }
 	cnt = 0;
 
-	/*愤坌及  及蟆及平乓仿毛潸  允月 */
+	/*猷覕摯  摯鞳摯す籤溘禱噁  埰堎 */
 
 	for( object = MAP_getTopObj( CHAR_getInt( charaindex, CHAR_FLOOR),x,y) ;
 		 object ;
@@ -177,7 +177,7 @@ BOOL CHAR_JoinParty( int charaindex )
 		int objindex = GET_OBJINDEX(object);
 		int targetindex = -1;
 
-		/* 平乓仿弁正□元扎卅中 */
+		/* す籤溘袲淏↓啋崨埵笢 */
 		if( OBJECT_getType( objindex) != OBJTYPE_CHARA) continue;
 		toindex = OBJECT_getIndex( objindex);
 	
@@ -193,10 +193,10 @@ BOOL CHAR_JoinParty( int charaindex )
                 }
                 // shan end
 	
-		/* 皿伊奶乩□及凛 */
+		/* 鏤畛騷媕↓摯鄹 */
 		if( CHAR_getInt( toindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ){
 			found = TRUE;
-			/* 锹澎互阂分匀凶日褪毛娄匀舰曰请允 */
+			/* Ъ鱗誑碳煦埱倜�梠岋威耒�耦堇③埰 */
 			if( CHAR_getWorkInt( toindex, CHAR_WORKPARTYMODE) == CHAR_PARTY_CLIENT ) {
 				targetindex = CHAR_getWorkInt( toindex, CHAR_WORKPARTYINDEX1);
 				if( !CHAR_CHECKINDEX( targetindex) ) {
@@ -211,42 +211,42 @@ BOOL CHAR_JoinParty( int charaindex )
 				targetindex = toindex;
 			}
 
-			/*   褪午  ㄠ汹动  卞中月井 */
+			/*   虮敁  兒倵雄  勗笢堎凝 */
 			if( NPC_Util_CharDistance( charaindex, targetindex ) > 1) {
 				continue;
 			}
 
-			/* 爵    反匹卅中仪［*/
+			/* 橋    毀ぁ埵笢痀��*/
 			if( CHAR_getWorkInt( targetindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ){
 				continue;
 			}
-			/* 醮棉袱第乒□玉井 */
+			/* 黥蹬舅菴さ↓迶凝 */
 			if( !CHAR_getFlg( targetindex, CHAR_ISPARTY) ) continue;
 
 #ifdef _ANGEL_SUMMON
 			if( CHAR_getWorkInt( targetindex, CHAR_WORKANGELMODE) == TRUE) {
-				CHAR_talkToCli( charaindex, -1, "使者不可以当领队。", CHAR_COLORYELLOW);
+				CHAR_talkToCli( charaindex, -1, "妏氪祥褫眕絞鍰勦﹝", CHAR_COLORYELLOW);
 				continue;
 			}
 #endif
-#ifdef _ESCAPE_RESET // 使用恶宝逃跑後x分钟内不可与人组队
+#ifdef _ESCAPE_RESET // 妏蚚填惘枅變摽x煦笘囀祥褫迵�匋曊�
 			if( getStayEncount( getfdFromCharaIndex(targetindex) ) ) {
-				//print(" 恶宝中组队 ");
+				//print(" 填惘笢郪勦 ");
 				if( time(NULL) - CHAR_getWorkInt( targetindex, CHAR_WORKLASTESCAPE) < 5*60 ) {
-					//print(" 恶宝逃跑後组队 ");
-					CHAR_talkToCli( charaindex, -1, "此人暂时不可以当领队。", CHAR_COLORYELLOW);
+					//print(" 填惘枅變摽郪勦 ");
+					CHAR_talkToCli( charaindex, -1, "森�刱楟捲遛奿埽掄黺荂�", CHAR_COLORYELLOW);
 					continue;
 				}
 			}
 #endif
 		}
-		/* 穴件乒旦田旦互中月凛反］谛棉方曰穸燮允月［ */
+		/* 悃璃さ筒泬筒誑笢堎鄹毀�楬陏瑀諂鳳嗦ば彸瞿� */
 		else if( CHAR_getInt( toindex, CHAR_WHICHTYPE) == CHAR_TYPEBUS ) {
 			targetindex = toindex;
 			cnt = 0;
 			if( !NPC_BusCheckJoinParty( toindex, charaindex, TRUE)) {
-				/* 椭瘀毛  凶今卅井匀凶［醮棉  月及反蔽歹月［谛棉及质  手仄卅中［
-				 * 支支仇仄中及匹［
+				/* 邳贀禱  倜踏埵凝埱倜�跜棺�  堎摯毀敖渦堎�詀陏瑆啄�  忒媃埵笢��
+				 * 盓盓喫媃笢摯ぁ��
 				 */
 				break;
 			}
@@ -272,27 +272,27 @@ BOOL CHAR_JoinParty( int charaindex )
 		          }
 		        }
 		}
-		/* 皿伊奶乩□坭反穴件乒旦田旦动陆反  骰允月 */
+		/* 鏤畛騷媕↓貺毀悃璃さ筒泬筒雄翻毀  鷋埰堎 */
 		else {
 			continue;
 		}
-		/* 锹澎由□  奴及谛醒反    井＂ */
+		/* Ъ鱗蚕↓  贖摯硞倳毀    凝ㄑ */
 		parray = CHAR_getEmptyPartyArray( targetindex) ;
 		if( parray == -1 ) continue;
 
-		/* 仇仇引匹仁木壬     */
+		/* 喫喫竘ぁ�岉寰�     */
         CONNECT_setJoinpartycharaindex( fd,cnt,toindex);
 		cnt++;
 		if( cnt == CONNECT_WINDOWBUFSIZE ) break;
 		
-		/* 穴件乒旦田旦  苇仄分中］伙□皿毛  仃月［ */
+		/* 悃璃さ筒泬筒  峟媃煦笢�搎鵅劗鬊�  崹堎�� */
 		if( CHAR_getInt( targetindex, CHAR_WHICHTYPE) == CHAR_TYPEBUS ) break;
 
 	}
 
 	if( cnt == 0 ) {
 		if( found == TRUE) {
-			CHAR_talkToCli( charaindex, -1, "无法加入团队。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "拸楊樓�輹韃荂�", CHAR_COLORYELLOW);
 		}
 		result = FALSE;
 	}else if( cnt == 1 ) {
@@ -305,7 +305,7 @@ BOOL CHAR_JoinParty( int charaindex )
 			CHAR_getInt( toindex, CHAR_PKLISTTEAMNUM) != CHAR_getInt( charaindex, CHAR_PKLISTTEAMNUM) ||
 			CHAR_getInt(toindex,CHAR_WHICHTYPE) != CHAR_TYPEPLAYER){
 
-			CHAR_talkToCli( charaindex, -1, "队伍不同，无法加入团队。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "勦斪祥肮ㄛ拸楊樓�輹韃荂�", CHAR_COLORYELLOW);
 			result = FALSE;
 		}else{
 #endif
@@ -327,11 +327,11 @@ BOOL CHAR_JoinParty( int charaindex )
 			CHAR_getInt( toindex, CHAR_PKLISTTEAMNUM) != CHAR_getInt( charaindex, CHAR_PKLISTTEAMNUM) ||
 			CHAR_getInt(toindex,CHAR_WHICHTYPE) != CHAR_TYPEPLAYER){
 
-			CHAR_talkToCli( charaindex, -1, "队伍不同，无法加入团队。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "勦斪祥肮ㄛ拸楊樓�輹韃荂�", CHAR_COLORYELLOW);
 			result = FALSE;
 		}
 #endif
-		strcpy( msgbuf, "1\n和谁组成团队呢？\n");
+		strcpy( msgbuf, "1\n睿阰郪傖芶勦儸ˋ\n");
 		strlength = strlen( msgbuf);
 		for( i = 0;
              CONNECT_getJoinpartycharaindex( fd,i ) != -1
@@ -342,7 +342,7 @@ BOOL CHAR_JoinParty( int charaindex )
 			char	buf[256];
 			snprintf( buf, sizeof( buf),"%s\n", a);
 			if( strlength + strlen( buf) > arraysizeof( msgbuf)){
-				print( "%s:%d视窗讯息buffer不足。\n",
+				print( "%s:%d弝敦捅洘buffer祥逋﹝\n",
 						__FILE__,__LINE__);
 				break;
 			}
@@ -390,15 +390,15 @@ static BOOL CHAR_DischargePartySub( int charaindex, int msgflg)
 				CHAR_setWorkInt( pindex, CHAR_WORKPARTYINDEX1, -1);
 				CHAR_setWorkInt( pindex, CHAR_WORKPARTYMODE, CHAR_PARTY_NONE);
 				if( msgflg ){
-					CHAR_talkToCli( pindex, -1, "团队已解散！", CHAR_COLORYELLOW);
+					CHAR_talkToCli( pindex, -1, "芶勦眒賤汃ㄐ", CHAR_COLORYELLOW);
 #ifdef _ITEM_QUITPARTY
 					// won fix
 	                for( j=0;j<CHAR_MAXITEMHAVE;j++ ){
 						int del_item_index = CHAR_getItemIndex( pindex , j );
-                        if( ITEM_CHECKINDEX(del_item_index) ){ //格子内有道具
+                        if( ITEM_CHECKINDEX(del_item_index) ){ //跡赽囀衄耋撿
                             for( k=0;k<itemquitparty_num;k++ ){
-							    if( ITEM_getInt( del_item_index, ITEM_ID) == atoi(Disappear_Item[k].string) ){ //若等於所设定的道具ID
-			                        CHAR_setItemIndex( pindex, j, -1); //格子内道具消失
+							    if( ITEM_getInt( del_item_index, ITEM_ID) == atoi(Disappear_Item[k].string) ){ //�舋�黺垀扢隅腔耋撿ID
+			                        CHAR_setItemIndex( pindex, j, -1); //跡赽囀耋撿秏囮
 									ITEM_endExistItemsOne( del_item_index );
 				                    CHAR_sendItemDataOne( pindex, j);
 								}
@@ -479,22 +479,22 @@ static BOOL CHAR_DischargePartySub( int charaindex, int msgflg)
 			}
 		}
 		if( myarray == CHAR_PARTYMAX) {
-			print( "DischargeParty(): 真奇怪！");
+			print( "DischargeParty(): 淩も墅ㄐ");
 			return FALSE;
 		}
 		CHAR_setWorkInt( toindex, CHAR_WORKPARTYINDEX1 + myarray, -1);
-		snprintf( buf,sizeof( buf), "%s 脱离团队！",
+		snprintf( buf,sizeof( buf), "%s 迕燭芶勦ㄐ",
 				  CHAR_getChar( charaindex, CHAR_NAME));
 		if( msgflg ){
-			CHAR_talkToCli( charaindex, -1, "脱离团队！", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "迕燭芶勦ㄐ", CHAR_COLORYELLOW);
 #ifdef _ITEM_QUITPARTY
 			// won fix
 	        for( i=0;i<CHAR_MAXITEMHAVE;i++ ){
 				int del_item_index = CHAR_getItemIndex( charaindex , j );
-				if( ITEM_CHECKINDEX(del_item_index) ){ //格子内有道具
+				if( ITEM_CHECKINDEX(del_item_index) ){ //跡赽囀衄耋撿
                    for( j=0;j<itemquitparty_num;j++ ){
-					    if( ITEM_getInt( del_item_index, ITEM_ID) == atoi(Disappear_Item[j].string) ){ //若等於所设定的道具ID
-			                CHAR_setItemIndex( charaindex, i, -1); //格子内道具消失
+					    if( ITEM_getInt( del_item_index, ITEM_ID) == atoi(Disappear_Item[j].string) ){ //�舋�黺垀扢隅腔耋撿ID
+			                CHAR_setItemIndex( charaindex, i, -1); //跡赽囀耋撿秏囮
 							ITEM_endExistItemsOne( del_item_index );
 			                CHAR_sendItemDataOne( charaindex, i);
 						}
@@ -514,10 +514,10 @@ static BOOL CHAR_DischargePartySub( int charaindex, int msgflg)
 				// won fix
 	            for( j=0;j<CHAR_MAXITEMHAVE;j++ ){
 					int del_item_index = CHAR_getItemIndex( index , j );	
-                    if( ITEM_CHECKINDEX(del_item_index) ){ //格子内有道具
+                    if( ITEM_CHECKINDEX(del_item_index) ){ //跡赽囀衄耋撿
                         for( k=0;k<itemquitparty_num;k++ ){
-						    if( ITEM_getInt( del_item_index, ITEM_ID) == atoi(Disappear_Item[k].string) ){ //若等於所设定的道具ID
-			                    CHAR_setItemIndex( index, j, -1); //格子内道具消失
+						    if( ITEM_getInt( del_item_index, ITEM_ID) == atoi(Disappear_Item[k].string) ){ //�舋�黺垀扢隅腔耋撿ID
+			                    CHAR_setItemIndex( index, j, -1); //跡赽囀耋撿秏囮
 								ITEM_endExistItemsOne( del_item_index );
 						        CHAR_sendItemDataOne( index, j);
 							}
@@ -582,7 +582,7 @@ BOOL CHAR_DischargePartyNoMsg( int charaindex)
 
 
 /*------------------------------------------------------------
- * 愤坌互伉□母□井升丹井毛霜耨允月［
+ * 猷覕誑惉↓譫↓凝汔竣凝禱邞嚭埰堎��
  ------------------------------------------------------------*/
 void CHAR_sendLeader( int objindex, int leader)
 {
@@ -591,19 +591,19 @@ void CHAR_sendLeader( int objindex, int leader)
 	CHAR_sendWatchEvent( objindex,CHAR_ACTLEADER,opt,1,TRUE);
 }
 /*------------------------------------------------------------
- * 醮棉毛赐    CHAR_WORKPARTYINDEX)隙烂匹平乓仿index毛娄匀舰月［
- * 愤坌互褪匹手阂匹手    ［
+ * 黥蹬禱棹    CHAR_WORKPARTYINDEX)炩擭ぁす籤溘index禱礎埱耦堎��
+ * 猷覕誑虮ぁ忒碳ぁ忒    ��
  ------------------------------------------------------------*/
 int CHAR_getPartyIndex( int index, int num)
 {
 	int	nindex = -1;
 
-	/* 醮棉及奶件犯永弁旦毛潸   */
-	/* 褪及桦宁 */
+	/* 黥蹬摯騷璃溢蚗袲筒禱噁   */
+	/* 虮摯鳹譴 */
 	if( CHAR_getWorkInt( index, CHAR_WORKPARTYMODE) == CHAR_PARTY_LEADER ) {
 		nindex = CHAR_getWorkInt( index, CHAR_WORKPARTYINDEX1 + num );
 	}
-	/* 阂及桦宁 */
+	/* 碳摯鳹譴 */
 	else {
 		int oyaindex = CHAR_getWorkInt( index, CHAR_WORKPARTYINDEX1);
 		if( CHAR_CHECKINDEX( oyaindex)) {
@@ -613,14 +613,14 @@ int CHAR_getPartyIndex( int index, int num)
 	return nindex;
 }
 /*------------------------------------------------------------
- * 丢永本□斥毛霜耨允月［
- * 醮棉互中木壬公及醮棉卞手丢永本□斥毛霜耨允月［
+ * 隍蚗掛↓喇禱邞嚭埰堎��
+ * 黥蹬誑笢躂�伄姨執棺瑄樀硍肩彌鴃麚熁屎近鵋彸瞿�
  ------------------------------------------------------------*/
 void CHAR_talkToCliAndParty( int talkedcharaindex,int talkcharaindex,
 					 char* message, CHAR_COLOR color )
 {
 	int		i;
-	/* 引内愤坌 */
+	/* 竘囀猷覕 */
 	CHAR_talkToCli( talkedcharaindex, talkcharaindex, message, color);
 
 	for( i = 0; i < CHAR_PARTYMAX; i ++ ) {

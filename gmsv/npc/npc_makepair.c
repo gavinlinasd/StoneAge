@@ -22,12 +22,12 @@ PairMenu PairList[2][MAXPAIRNUMS];
 enum {
 	WINDOW_START=10,
 	WINDOW_USER,
-	WINDOW_SELECT,	//心理测验
-	WINDOW_PAIR,	//配对找对象
+	WINDOW_SELECT,	//陑燴聆桄
+	WINDOW_PAIR,	//饜勤梑勤砓
 	WINDOW_PAIROK,
 	WINDOW_PAIRNO,
-	WINDOW_WARP,	//跳跃
-	WINDOW_END,		//结束
+	WINDOW_WARP,	//泐埲
+	WINDOW_END,		//賦旰
 	WINDOW_TALKSTART=20,
 	WINDOW_TALKSELECT,
 	WINDOW_TALKPAIR,
@@ -92,7 +92,7 @@ void NPC_MakePairManTalked( int meindex, int talkerindex, char *msg, int color )
 	}
 #ifdef _ITEM_CHECKWARES
 	if( CHAR_CheckInItemForWares( talkerindex, 0) == FALSE ){
-		CHAR_talkToCli( talkerindex, meindex, "无法服务携带货物的人！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( talkerindex, meindex, "拸楊督昢觓湍億昜腔�芄�", CHAR_COLORYELLOW);
 		return;
 	}
 #endif
@@ -110,7 +110,7 @@ static void NPC_MakePair_selectWindow( int meindex, int toindex, int num,int sel
 	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 
 	if( Action_PartyCheck( meindex, toindex) == FALSE)	{
-		CHAR_talkToCli( toindex, meindex, "请一个一个来！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, meindex, "③珨跺珨跺懂ㄐ", CHAR_COLORYELLOW);
 		return;
 	}
 
@@ -127,7 +127,7 @@ static void NPC_MakePair_selectWindow( int meindex, int toindex, int num,int sel
 			char buf1[256];
 			if( NPC_Util_GetStrFromStrWithDelim( npcarg, "FREE", buf1, sizeof( buf1) ) != NULL)	{
 				if( NPC_ActionPassCheck( meindex, toindex, buf1) == FALSE ){
-					CHAR_talkToCli( toindex, meindex, "条件不足！", CHAR_COLORYELLOW);
+					CHAR_talkToCli( toindex, meindex, "沭璃祥逋ㄐ", CHAR_COLORYELLOW);
 					return;
 				}
 			}
@@ -146,13 +146,13 @@ static void NPC_MakePair_selectWindow( int meindex, int toindex, int num,int sel
 		{
 			int male=0, female=0;
 			CheckPairUsers( &male, &female);
-			sprintf( token, "目前登录急寻找对象的人数为：\n男生为 %d，女生为 %d。\n目前配对已有 %d对。",
+			sprintf( token, "醴ヶ腎翹摹扆梑勤砓腔�侕�峈ㄩ\n鹹汜峈 %dㄛ躓汜峈 %d﹝\n醴ヶ饜勤眒衄 %d勤﹝",
 				male, female, CHAR_getWorkInt( meindex, NPC_WORK_PAIRTEAMS));
 			buttontype = WINDOW_BUTTONTYPE_OKCANCEL;
 			windowno = WINDOW_RETURN;
 		}
 		break;
-	case WINDOW_SELECT://心理测验
+	case WINDOW_SELECT://陑燴聆桄
 		{
 			int title = CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT);
 			int type;
@@ -172,12 +172,12 @@ static void NPC_MakePair_selectWindow( int meindex, int toindex, int num,int sel
 		{
 			if( CHAR_getWorkInt( toindex, CHAR_MYPAIRFLG) > 0){
 				CHAR_setWorkInt( toindex, CHAR_MYPAIRINDEX, -1);
-				sprintf( token, "取消前一次的邀请。");
+				sprintf( token, "�＋�ヶ珨棒腔肂③﹝");
 			}else	{
 				char buf1[256];
 				if( NPC_Util_GetStrFromStrWithDelim( npcarg, "FREE", buf1, sizeof( buf1) ) != NULL)	{
 					if( NPC_ActionPassCheck( meindex, toindex, buf1) == FALSE ){
-						CHAR_talkToCli( toindex, meindex, "条件不足！", CHAR_COLORYELLOW);
+						CHAR_talkToCli( toindex, meindex, "沭璃祥逋ㄐ", CHAR_COLORYELLOW);
 						return;
 					}
 				}
@@ -187,25 +187,25 @@ static void NPC_MakePair_selectWindow( int meindex, int toindex, int num,int sel
 			windowno = WINDOW_TALKEND;
 		}
 		break;
-	case WINDOW_PAIROK:	//同意
+	case WINDOW_PAIROK:	//肮砩
 		if( CHAR_getWorkInt( toindex, CHAR_MYPAIRFLG) > 0){
 			int forindex = CHAR_getWorkInt( toindex, CHAR_MYPAIRINDEX);
 			NPC_PairUserAndWarp( meindex, toindex, forindex, npcarg);
 		}
 		return;
-	case WINDOW_PAIRNO://不同意
+	case WINDOW_PAIRNO://祥肮砩
 		{
 			int forindex = CHAR_getWorkInt( toindex, CHAR_MYPAIRINDEX);
 			if( CHAR_CHECKINDEX( forindex) ){
 				if( CHAR_getWorkInt( forindex, CHAR_MYPAIRFLG) > 0 ){
-					CHAR_talkToCli( forindex, meindex, "对方拒绝邀请。", CHAR_COLORYELLOW);
+					CHAR_talkToCli( forindex, meindex, "勤源擇橈肂③﹝", CHAR_COLORYELLOW);
 					CHAR_setWorkInt( forindex, CHAR_MYPAIRINDEX, -1);
 					CHAR_setWorkInt( forindex, CHAR_MYPAIRFLG, -1);
 				}
 			}
 			CHAR_setWorkInt( toindex, CHAR_MYPAIRINDEX, -1);
 			CHAR_setWorkInt( toindex, CHAR_MYPAIRFLG, -1);
-			CHAR_talkToCli( toindex, meindex, "拒绝对方邀请。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, meindex, "擇橈勤源肂③﹝", CHAR_COLORYELLOW);
 			return;
 		}
 		break;
@@ -236,13 +236,13 @@ void NPC_MakePairManWindowTalked( int meindex, int talkerindex, int seqno, int s
 			if( select == WINDOW_BUTTONTYPE_CANCEL || select == WINDOW_BUTTONTYPE_NO)
 				return;
 			switch( choose){
-			case 1://查人数
+			case 1://脤�侕�
 				NPC_MakePair_selectWindow( meindex, talkerindex, WINDOW_USER, 0);
 				break;
-			case 2://配对
+			case 2://饜勤
 				NPC_MakePair_selectWindow( meindex, talkerindex, WINDOW_PAIR, 0);
 				break;
-			case 3://心理测验
+			case 3://陑燴聆桄
 				NPC_MakePair_selectWindow( meindex, talkerindex, WINDOW_SELECT, 0);
 				break;
 			}
@@ -258,7 +258,7 @@ void NPC_MakePairManWindowTalked( int meindex, int talkerindex, int seqno, int s
 			NPC_MakePair_selectWindow( meindex, talkerindex, WINDOW_SELECT, select);
 		}
 		break;
-	case WINDOW_TALKPAIR://配对邀请回覆
+	case WINDOW_TALKPAIR://饜勤肂③隙葡
 		if( select == WINDOW_BUTTONTYPE_CANCEL || select == WINDOW_BUTTONTYPE_NO){
 			NPC_MakePair_selectWindow( meindex, talkerindex, WINDOW_PAIRNO, 0);
 		}else	{
@@ -352,7 +352,7 @@ BOOL NPC_PairForage( int meindex, int toindex, char *arg, char *token)
 			PairList[Psex][i].forindex = -1;
 			continue;
 		}
-		sprintf( token, "你的配对对象为： %s\n已送出邀请，请等候对方回应。", name);
+		sprintf( token, "斕腔饜勤勤砓峈ㄩ %s\n眒冞堤肂③ㄛ③脹緊勤源隙茼﹝", name);
 		if( NPC_Util_GetStrFromStrWithDelim( arg, "InviteMsg", buf1, sizeof( buf1) ) == NULL){
 			break;
 		}
@@ -365,7 +365,7 @@ BOOL NPC_PairForage( int meindex, int toindex, char *arg, char *token)
 		CHAR_setWorkInt( PairList[Psex][i].pindex, CHAR_MYPAIRINDEX, toindex);
 
 		name = CHAR_getChar( toindex, CHAR_NAME);
-		sprintf( buf, "%s：\n玩家%s\n%s", CHAR_getChar( meindex, CHAR_NAME),name, buf1);
+		sprintf( buf, "%sㄩ\n俙模%s\n%s", CHAR_getChar( meindex, CHAR_NAME),name, buf1);
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE, WINDOW_BUTTONTYPE_OKCANCEL, WINDOW_TALKPAIR,
 				CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX), buf);
 		break;
@@ -374,7 +374,7 @@ BOOL NPC_PairForage( int meindex, int toindex, char *arg, char *token)
 		if( NPC_Util_GetStrFromStrWithDelim( arg, "NoPairMsg", buf1, sizeof( buf1) ) != NULL){
 			sprintf( token, "%s",buf1);
 		}else	{
-			sprintf( token, "没有找到对象。");
+			sprintf( token, "羶衄梑善勤砓﹝");
 		}
 		if( CHAR_getWorkInt( toindex, CHAR_MYPAIRFLG) <= 0 )	{
 			NPC_PairRegister( toindex);
@@ -408,7 +408,7 @@ BOOL NPC_PairRegister( int toindex)
 			PairList[Psex][space].pindex = toindex;
 			PairList[Psex][space].code = CHAR_getWorkInt( toindex, CHAR_MYPAIRCODE);
 
-			CHAR_talkToCli( toindex, -1, "新增至配对名单。", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "陔崝祫饜勤靡等﹝", CHAR_COLORYELLOW);
 			return TRUE;
 		}
 	}
@@ -439,8 +439,8 @@ void NPC_PairUserAndWarp( int meindex, int toindex, int forindex, char *arg)
 		if( getStringFromIndexWithDelim( buf1,",",3,buf2,sizeof( buf2)) != FALSE )
 			y = atoi( buf2);
 	}
-	CHAR_DischargePartyNoMsg( toindex);//解散团队
-	CHAR_DischargePartyNoMsg( forindex);//解散团队
+	CHAR_DischargePartyNoMsg( toindex);//賤汃芶勦
+	CHAR_DischargePartyNoMsg( forindex);//賤汃芶勦
 	if( MAP_IsValidCoordinate( fl, x, y) != FALSE ){
 		CHAR_warpToSpecificPoint( toindex, fl, x, y);
 		CHAR_warpToSpecificPoint( forindex, fl, x, y);
@@ -478,7 +478,7 @@ int NPC_getPairCode( int toindex)
 		char buf1[256];
 		int itemindex = CHAR_getItemIndex( toindex, i);
 		if( !ITEM_CHECKINDEX( itemindex) ) continue;
-		arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );// 性别|个性编号|FLG
+		arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );// 俶梗|跺俶晤瘍|FLG
 		if( arg == NULL )continue;
 		if( NPC_Util_GetStrFromStrWithDelim( arg, "PAIRCODE", buf1, sizeof( buf1) ) == NULL) continue;
 		code = atoi( buf1);
@@ -514,7 +514,7 @@ int NPC_getTitleMsg( int meindex, int toindex, char *arg, char *token, int title
 
 	if( getStringFromIndexWithDelim( arg, "PSYCHOMETRICS", 2, buf, sizeof( buf)) == FALSE )
 		return -1;
-	//取得下一题
+	//�△譁觴鉻�
 	if( getStringFromIndexWithDelim( buf , "}", title, buf1, sizeof( buf1)) == FALSE )
 		return FALSE;
 	if( NPC_Util_GetStrFromStrWithDelim( buf1, "TITLEMSG", buf2, sizeof( buf2 )) == NULL){
@@ -522,11 +522,11 @@ int NPC_getTitleMsg( int meindex, int toindex, char *arg, char *token, int title
 			return -1;
 		}
 		if( NPC_ActionPassCheck( meindex, toindex, buf2) == FALSE )	{
-			CHAR_talkToCli( toindex, meindex, "条件不足", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, meindex, "沭璃祥逋", CHAR_COLORYELLOW);
 			return -1;
 		}
 		if( Action_RunDoEventAction( meindex, toindex, buf1) == FALSE ){
-			CHAR_talkToCli( toindex, meindex, "条件不足", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, meindex, "沭璃祥逋", CHAR_COLORYELLOW);
 			return -1;
 		}
 		if( NPC_Util_GetStrFromStrWithDelim( buf1, "ENDMSG", buf2, sizeof( buf2 )) == NULL){

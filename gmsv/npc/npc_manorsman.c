@@ -14,7 +14,7 @@
 #include "log.h"
 
 /*
- * 庄园 PK 登记员
+ * 蚽埶 PK 腎暮埜
  *
  */
 #define MAX_MANORSMAN 22
@@ -26,19 +26,19 @@ static int FMPK_ManorsmanList[MAX_MANORSMAN]={
 -1,-1 };
 
 enum {
-	NPC_WORK_ID = CHAR_NPCWORKINT1,		// 登记员 ID, 从 0 开始
-	NPC_WORK_MANORID = CHAR_NPCWORKINT2,	// 庄园编号
-	NPC_WORK_CHALLENGEWAIT = CHAR_NPCWORKINT3,	// 挑战等待时间
-	NPC_WORK_PEACEWAIT = CHAR_NPCWORKINT4,	// 休战时间
-	NPC_WORK_PREVLOOPTIME = CHAR_NPCWORKINT5,	// 前一次处理 Loop 的时间
+	NPC_WORK_ID = CHAR_NPCWORKINT1,		// 腎暮埜 ID, 植 0 羲宎
+	NPC_WORK_MANORID = CHAR_NPCWORKINT2,	// 蚽埶晤瘍
+	NPC_WORK_CHALLENGEWAIT = CHAR_NPCWORKINT3,	// 泔桵脹渾奀潔
+	NPC_WORK_PEACEWAIT = CHAR_NPCWORKINT4,	// 倎桵奀潔
+	NPC_WORK_PREVLOOPTIME = CHAR_NPCWORKINT5,	// ヶ珨棒揭燴 Loop 腔奀潔
 #ifdef _NEW_MANOR_LAW
-	NPC_WORK_BETTLETIME = CHAR_NPCWORKINT6	// 记录开打时的日期
+	NPC_WORK_BETTLETIME = CHAR_NPCWORKINT6	// 暮翹羲湖奀腔�梪�
 #endif
 };
 
 #define SCHEDULEFILEDIR		"./Schedule/"
 
-#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD 将可挑战庄园的由前十大改为前二十大
+#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD 蔚褫泔桵蚽埶腔蚕ヶ坋湮蜊峈ヶ媼坋湮
 #define PK_LIMIT	20	       
 #endif
 
@@ -73,7 +73,7 @@ BOOL NPC_ManorSmanInit( int meindex )
 
   CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_TYPEMANORSCHEDULEMAN );
 
-  // 参数
+  // 統杅
   NPC_Util_GetArgStr(meindex, argstr, sizeof(argstr));
   meid = NPC_Util_GetNumFromStrWithDelim(argstr, "id" );
   if ((meid<0) || (meid>=MAX_SCHEDULEMAN)) {
@@ -136,23 +136,23 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 
   switch (fmpks[fmpks_pos+1].flag) {
   case FMPKS_FLAG_NONE:
-    // 没有约定战斗，此时可以下战书
+    // 羶衄埮隅桵須ㄛ森奀褫眕狟桵抎
     saacproto_ACFMPointList_send(acfd);
 #ifdef _MANOR_PKRULE
-	sprintf(buf, "庄园所有权争夺战的挑战资格\n\n"
-                 "一、没有拥有庄园的家族\n"
-	#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD 将可挑战庄园的由前十大改为前二十大
-				 "二、家族排行必需为前二十大家族\n"
+	sprintf(buf, "蚽埶垀衄�佰鬤慖蔥騷譭論妐鎪n\n"
+                 "珨﹜羶衄茧衄蚽埶腔模逜\n"
+	#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD 蔚褫泔桵蚽埶腔蚕ヶ坋湮蜊峈ヶ媼坋湮
+				 "媼﹜模逜齬俴斛剒峈ヶ媼坋湮模逜\n"
 	#else
-                 "二、家族排行必需为前十大家族\n"
+                 "媼﹜模逜齬俴斛剒峈ヶ坋湮模逜\n"
 	#endif
-				 "叁、踢馆时间：下午六点至凌晨叁点\n\n"
-                 "请稍待，我将确认你的资格。");
+				 "��﹜杺奩奀潔ㄩ狟敁鞠萸祫錘鹵��萸\n\n"
+                 "③尕渾ㄛ扂蔚�溜狦蒫儷妐鞢�");
 #else
-    sprintf(buf, "庄园所有权争夺战的挑战资格\n\n"
-                 "一、没有拥有庄园的家族\n"
-                 "二、家族的声望高於庄园家族的声望\n\n"
-                 "请稍待，我将确认你的资格。");
+    sprintf(buf, "蚽埶垀衄�佰鬤慖蔥騷譭論妐鎪n\n"
+                 "珨﹜羶衄茧衄蚽埶腔模逜\n"
+                 "媼﹜模逜腔汒咡詢黺蚽埶模逜腔汒咡\n\n"
+                 "③尕渾ㄛ扂蔚�溜狦蒫儷妐鞢�");
 #endif
     lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 	    		WINDOW_BUTTONTYPE_YESNO,
@@ -161,7 +161,7 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
     			buf);
     break;
   case FMPKS_FLAG_MANOR_PREPARE:
-    // 目前已经定好战斗，准备中
+    // 醴ヶ眒冪隅疑桵須ㄛ袧掘笢
     {
       int timeleft=fmpks[fmpks_pos+1].dueltime-NowTime.tv_sec;
       int dd,hh,mm;
@@ -170,20 +170,20 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
       hh = /*fmpks[fmpks_pos+1].dueltime*/ timeleft / 3600 - dd*24;
       mm = /*fmpks[fmpks_pos+1].dueltime*/ timeleft / 60 - dd*24*60 - hh*60;
       memset(buf2,0,sizeof(buf2));
-      if (dd>0) sprintf(buf, " %d 天", dd); else strcpy(buf, "");
+      if (dd>0) sprintf(buf, " %d 毞", dd); else strcpy(buf, "");
       strcat(buf2, buf);
-      if (hh>0) sprintf(buf, " %d 小时", hh); else strcpy(buf, "");
+      if (hh>0) sprintf(buf, " %d 苤奀", hh); else strcpy(buf, "");
       strcat(buf2, buf);
-      if (mm>0) sprintf(buf, " %d 分锺", mm); else strcpy(buf, "");
+      if (mm>0) sprintf(buf, " %d 煦瀎", mm); else strcpy(buf, "");
       strcat(buf2, buf);
       if (strlen(buf2)==0)
-        sprintf(buf, "庄园所有权争夺战\n『%s ＶＳ %s』\n\n"
-                    "即将开始，请准备入场。",
+        sprintf(buf, "蚽埶垀衄�佰鬤慖穀n◇%s �痑� %s◆\n\n"
+                    "撈蔚羲宎ㄛ③袧掘�貐﹛�",
     		fmpks[fmpks_pos+1].guest_name,
     		fmpks[fmpks_pos+1].host_name);
       else
-        sprintf(buf, "庄园所有权争夺战\n『%s ＶＳ %s』\n\n"
-                    "预定将在%s後开始。",
+        sprintf(buf, "蚽埶垀衄�佰鬤慖穀n◇%s �痑� %s◆\n\n"
+                    "啎隅蔚婓%s摽羲宎﹝",
     		fmpks[fmpks_pos+1].guest_name,
     		fmpks[fmpks_pos+1].host_name,
     		buf2);
@@ -195,7 +195,7 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
     }
     break;
   case FMPKS_FLAG_MANOR_PEACE:
-    // 战斗已经结束的和平时期
+    // 桵須眒冪賦旰腔睿す奀ぶ
     {
       int timeleft=fmpks[fmpks_pos+1].dueltime-NowTime.tv_sec;
       int dd,hh,mm;
@@ -204,17 +204,17 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
       hh = /*fmpks[fmpks_pos+1].dueltime*/ timeleft / 3600 - dd*24;
       mm = /*fmpks[fmpks_pos+1].dueltime*/ timeleft / 60 - dd*24*60 - hh*60;
       strcpy(buf2,"");
-      if (dd>0) sprintf(buf, " %d 天", dd); else strcpy(buf, "");
+      if (dd>0) sprintf(buf, " %d 毞", dd); else strcpy(buf, "");
       strcat(buf2, buf);
-      if (hh>0) sprintf(buf, " %d 小时", hh); else strcpy(buf, "");
+      if (hh>0) sprintf(buf, " %d 苤奀", hh); else strcpy(buf, "");
       strcat(buf2, buf);
-      if (mm>0) sprintf(buf, " %d 分锺", mm); else strcpy(buf, "");
+      if (mm>0) sprintf(buf, " %d 煦瀎", mm); else strcpy(buf, "");
       strcat(buf2, buf);
 
       if (strlen(buf2)==0)
-        strcpy(buf, "请稍等，让我准备一下申请踢馆的表格。");
+        strcpy(buf, "③尕脹ㄛ�襞眢摹詫銨薺糒輲葙搧覺竀鞢�");
       else
-        sprintf(buf, "现在是休战时期，要踢馆的话\n请%s後再来申请。",buf2);
+        sprintf(buf, "珋婓岆倎桵奀ぶㄛ猁杺奩腔趕\n③%s摽婬懂扠③﹝",buf2);
       lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    	WINDOW_BUTTONTYPE_OK,
     			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -222,9 +222,9 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
     }
     break;
   case FMPKS_FLAG_MANOR_BATTLEBEGIN:
-    // 目前正在进行踢馆
-    sprintf(buf, "庄园所有权争夺战\n『%s ＶＳ %s』\n\n"
-                 "开～打～罗～\n还没进场的人赶快进场吧。",
+    // 醴ヶ淏婓輛俴杺奩
+    sprintf(buf, "蚽埶垀衄�佰鬤慖穀n◇%s �痑� %s◆\n\n"
+                 "羲‵湖‵蹕‵\n遜羶輛部腔�佶狤儠瓥※氶�",
     		fmpks[fmpks_pos+1].guest_name,
     		fmpks[fmpks_pos+1].host_name);
     lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
@@ -234,9 +234,9 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
     			buf);
     break;
   case FMPKS_FLAG_MANOR_OTHERPLANET:
-    // 在别的星球进行战斗
-    sprintf(buf, "庄园所有权争夺战\n『%s ＶＳ %s』\n\n"
-    		 "决斗地点在 %s 。",
+    // 婓梗腔陎⑩輛俴桵須
+    sprintf(buf, "蚽埶垀衄�佰鬤慖穀n◇%s �痑� %s◆\n\n"
+    		 "樵須華萸婓 %s ﹝",
               fmpks[fmpks_pos+1].guest_name,
               fmpks[fmpks_pos+1].host_name,
               fmpks[fmpks_pos+2].host_name);
@@ -268,16 +268,16 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 	if(fmpks[fmpks_pos+1].flag == FMPKS_FLAG_CHALLENGE) fmpks[fmpks_pos+1].flag = FMPKS_FLAG_NONE;
 
   switch(fmpks[fmpks_pos+1].flag){
-	// 挑战期 1800~2200
+	// 泔桵ぶ 1800~2200
   case FMPKS_FLAG_NONE:
 	case FMPKS_FLAG_WAIT:
     saacproto_ACFMPointList_send(acfd);
-		sprintf(buf,"庄园所有权争夺战的挑战资格\n\n"
-								"一、没有庄园的家族\n"
-								"二、家族的气势高於庄园家族的气势\n"
-								"叁、约战时间终止时，气势排名第一者获得挑战资格\n"
-								"四、气势相同者以最先报名者获得资格\n"
-								"按 OK 我将确认你的资格，按 NO 观看挑战排名");
+		sprintf(buf,"蚽埶垀衄�佰鬤慖蔥騷譭論妐鎪n\n"
+								"珨﹜羶衄蚽埶腔模逜\n"
+								"媼﹜模逜腔ァ岊詢黺蚽埶模逜腔ァ岊\n"
+								"��﹜埮桵奀潔笝砦奀ㄛァ岊齬靡菴珨氪鳳腕泔桵訧跡\n"
+								"侐﹜ァ岊眈肮氪眕郔珂惆靡氪鳳腕訧跡\n"
+								"偌 OK 扂蔚�溜狦蒫儷妐韗為� NO 夤艘泔桵齬靡");
     lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_YESNO,CHAR_WINDOWTYPE_CHECKMAN_START,
     								 CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),buf);
 		if(fmpointlist.fm_momentum[manorid-1] <= -1){
@@ -288,7 +288,7 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 			hadfmindex = atoi(token);
 			if(hadfmindex != -1){
 				for(index=0;index<FAMILY_MAXNUM;index++){
-					// 找出守庄家族的索引
+					// 梑堤忐蚽模逜腔坰竘
 					if(fmdptop.fmtopid[index] == (hadfmindex - 1)) break;
 				}
 				if(index >= FAMILY_MAXNUM){
@@ -296,15 +296,15 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 					printf("\nNPC_ManorSmanTalked():save fm_momentum error(%d:%s)",hadfmindex,token);
 					break;
 				}
-				// 记录这个时刻守庄家族的气势
+				// 暮翹涴跺奀覦忐蚽模逜腔ァ岊
 				else fmpointlist.fm_momentum[manorid-1] = fmdptop.fmMomentum[index];
 			}
 		}
 		SortManorSchedule();
     break;
-	// 挑战准备期 2200~取得挑战资格的家族当时挑战的时间(隔天的 1800~2200 之间)
+	// 泔桵袧掘ぶ 2200~�△襟譭論妐騊躁眢撋捩捺譭蔥騫掉�(路毞腔 1800~2200 眳潔)
   case FMPKS_FLAG_MANOR_PREPARE:
-    // 目前已经定好战斗，准备中
+    // 醴ヶ眒冪隅疑桵須ㄛ袧掘笢
     {
       int timeleft = fmpks[fmpks_pos+1].dueltime - NowTime.tv_sec;
       int mm,hh,dd;
@@ -314,23 +314,23 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 			hh = timeleft / 3600 - dd * 24;
       mm = timeleft / 60 - dd * 24 * 60 - hh * 60;
       memset(buf2,0,sizeof(buf2));
-			if(dd > 0) sprintf(buf," %d 天",dd); else strcpy(buf,"");
+			if(dd > 0) sprintf(buf," %d 毞",dd); else strcpy(buf,"");
       strcat(buf2,buf);
-			if(hh > 0) sprintf(buf," %d 小时",hh); else strcpy(buf,"");
+			if(hh > 0) sprintf(buf," %d 苤奀",hh); else strcpy(buf,"");
       strcat(buf2,buf);
-      if(mm > 0) sprintf(buf," %d 分锺",mm); else strcpy(buf,"");
+      if(mm > 0) sprintf(buf," %d 煦瀎",mm); else strcpy(buf,"");
       strcat(buf2,buf);
       if(strlen(buf2) == 0)
-        sprintf(buf,"庄园所有权争夺战\n『%s ＶＳ %s』\n\n即将开始，请准备入场。",
+        sprintf(buf,"蚽埶垀衄�佰鬤慖穀n◇%s �痑� %s◆\n\n撈蔚羲宎ㄛ③袧掘�貐﹛�",
     						fmpks[fmpks_pos+1].guest_name,fmpks[fmpks_pos+1].host_name);
       else
-				sprintf(buf,"庄园所有权争夺战\n『%s ＶＳ %s』\n\n预定将在%s後开始。",
+				sprintf(buf,"蚽埶垀衄�佰鬤慖穀n◇%s �痑� %s◆\n\n啎隅蔚婓%s摽羲宎﹝",
     						fmpks[fmpks_pos+1].guest_name,fmpks[fmpks_pos+1].host_name,buf2);
       lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
     									 CHAR_getWorkInt(meindex,CHAR_WORKOBJINDEX),buf);
     }
     break;
-	// 休战期及准备期,五天
+	// 倎桵ぶ摯袧掘ぶ,拻毞
   case FMPKS_FLAG_MANOR_PEACE:
 	case FMPKS_FLAG_MANOR_PEACE_SAVE:
     {
@@ -341,29 +341,29 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
       hh = timeleft / 3600 - dd*24;
       mm = timeleft / 60 - dd*24*60 - hh*60;
       memset(buf2,0,sizeof(buf2));
-      if(dd > 0) sprintf(buf," %d 天",dd); else strcpy(buf,"");
+      if(dd > 0) sprintf(buf," %d 毞",dd); else strcpy(buf,"");
       strcat(buf2,buf);
-      if(hh > 0) sprintf(buf," %d 小时",hh); else strcpy(buf,"");
+      if(hh > 0) sprintf(buf," %d 苤奀",hh); else strcpy(buf,"");
       strcat(buf2,buf);
-      if(mm > 0) sprintf(buf," %d 分锺",mm); else strcpy(buf,"");
+      if(mm > 0) sprintf(buf," %d 煦瀎",mm); else strcpy(buf,"");
       strcat(buf2,buf);
 
-      if(strlen(buf2) == 0) strcpy(buf, "请稍等，让我准备一下申请踢馆的表格。");
-      else sprintf(buf, "现在非挑战时期，要挑战的话\n请%s後再来申请。",buf2);
+      if(strlen(buf2) == 0) strcpy(buf, "③尕脹ㄛ�襞眢摹詫銨薺糒輲葙搧覺竀鞢�");
+      else sprintf(buf, "珋婓準泔桵奀ぶㄛ猁泔桵腔趕\n③%s摽婬懂扠③﹝",buf2);
       lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
 											 CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),buf);
     }
     break;
-	// 挑战中
+	// 泔桵笢
   case FMPKS_FLAG_MANOR_BATTLEBEGIN:
-    sprintf(buf,"庄园所有权争夺战\n『%s ＶＳ %s』\n\n开～打～罗～\n还没进场的人赶快进场吧。",
+    sprintf(buf,"蚽埶垀衄�佰鬤慖穀n◇%s �痑� %s◆\n\n羲‵湖‵蹕‵\n遜羶輛部腔�佶狤儠瓥※氶�",
     				fmpks[fmpks_pos+1].guest_name,fmpks[fmpks_pos+1].host_name);
     lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
     								 CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),buf);
     break;
   case FMPKS_FLAG_MANOR_OTHERPLANET:
-    // 在别的星球进行战斗
-    sprintf(buf,"庄园所有权争夺战\n『%s ＶＳ %s』\n\n决斗地点在 %s 。",
+    // 婓梗腔陎⑩輛俴桵須
+    sprintf(buf,"蚽埶垀衄�佰鬤慖穀n◇%s �痑� %s◆\n\n樵須華萸婓 %s ﹝",
             fmpks[fmpks_pos+1].guest_name,fmpks[fmpks_pos+1].host_name,fmpks[fmpks_pos+2].host_name);
     lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
     								 CHAR_getWorkInt(meindex,CHAR_WORKOBJINDEX),buf);
@@ -400,11 +400,11 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
   case CHAR_WINDOWTYPE_CHECKMAN_START:
     if (select==WINDOW_BUTTONTYPE_YES){
 #ifdef _ACFMPK_NOFREE
-		sprintf(buf, "庄园挑战会有一天的准备期\n"
-				"你可以随时询问我以得知剩下的时间\n"
-				"挑战结束後不论胜负将会有二天的休战期\n"
-				"休战期间不能挑战\n\n"
-				"你确定要挑战这个庄园吗？");
+		sprintf(buf, "蚽埶泔桵頗衄珨毞腔袧掘ぶ\n"
+				"斕褫眕呴奀戙恀扂眕腕眭呁狟腔奀潔\n"
+				"泔桵賦旰摽祥蹦吨蛹蔚頗衄媼毞腔倎桵ぶ\n"
+				"倎桵ぶ潔祥夔泔桵\n\n"
+				"斕�毓例者譭調漈囆耽兜艞�");
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 				WINDOW_BUTTONTYPE_YESNO,
 				CHAR_WINDOWTYPE_CHECKMAN_MAIN,
@@ -421,12 +421,12 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
         if (hadfmindex != -1) {
           if (hadfmindex-1 != tkfmindex){
             int check=0,i;
-            // Arminius 2.25 fix: fmpks 中第 1~"MANORNUM" 组一定要给 manorsman
-            for (i=0; i<=/*3*/MANORNUM-1; i++) {	// 9个庄园
+            // Arminius 2.25 fix: fmpks 笢菴 1~"MANORNUM" 郪珨隅猁跤 manorsman
+            for (i=0; i<=/*3*/MANORNUM-1; i++) {	// 9跺蚽埶
               getStringFromIndexWithDelim(fmpointlist.pointlistarray[i], "|", 5, token, sizeof(token));
               if (tkfmindex==atoi(token)-1) check=1;
             }
-            for (i=1; i<=/*4*/MANORNUM; i++) {	// 是否已经挑战其他庄园
+            for (i=1; i<=/*4*/MANORNUM; i++) {	// 岆瘁眒冪泔桵む坻蚽埶
               if ((fmpks[i*MAX_SCHEDULE+1].guest_index==tkfmindex) &&
 								(strcmp(fmpks[i*MAX_SCHEDULE+1].guest_name,
 								CHAR_getChar(talkerindex, CHAR_FMNAME))==0)
@@ -443,14 +443,14 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 							won1 = 1;
 
 							for(index=0;index<FAMILY_MAXNUM;index++){
-								// 找出挑战家族的索引
+								// 梑堤泔桵模逜腔坰竘
 								if(fmdptop.fmtopid[index] == tkfmindex) break;
 							}
 							if(index >= FAMILY_MAXNUM){
 								printf("\nNPC_ManorSmanWindowTalked():find tkfmIndex error (%d)",tkfmindex);
 							}
 							else
-							// 如果挑战家族气势不足守庄家族气势的九成,不能挑战
+							// �蝜�泔桵模逜ァ岊祥逋忐蚽模逜ァ岊腔嬝傖,祥夔泔桵
 							if(fmdptop.fmMomentum[index] < fmpointlist.fm_momentum[manorid-1]*0.9) won1 = 0;
 		//-----------------------------------------
 	#else
@@ -458,7 +458,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 							int i;
 							char won2[256];
 							won1 = 0;
-		#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD 将可挑战庄园的由前十大改为前二十大		
+		#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD 蔚褫泔桵蚽埶腔蚕ヶ坋湮蜊峈ヶ媼坋湮		
 							for(i=0; i< PK_LIMIT; i++){
 		#else
 							for(i=0; i<10; i++){
@@ -478,25 +478,25 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 							if(won1 == 1){		
 			// WON END
 	#ifdef _NEW_MANOR_LAW
-							sprintf(buf,"确定庄园挑战资格後会有一天的准备时间\n"
-													"你可以随时询问我以得知剩下的时间\n"
-													"挑战结束後至下次挑战期将会有一天的休战期\n"
-													"和四天的准备期，在这五天期间内不能挑战\n\n"
-													"你确定要挑战这个庄园吗？");
+							sprintf(buf,"�毓侈耽匏譭論妐鼁廙慪倷鉻黖儷摹裘掉踊n"
+													"斕褫眕呴奀戙恀扂眕腕眭呁狟腔奀潔\n"
+													"泔桵賦旰摽祫狟棒泔桵ぶ蔚頗衄珨毞腔倎桵ぶ\n"
+													"睿侐毞腔袧掘ぶㄛ婓涴拻毞ぶ潔囀祥夔泔桵\n\n"
+													"斕�毓例者譭調漈囆耽兜艞�");
 	#else
-							sprintf(buf,"庄园挑战会有一天的准备期\n"
-													"你可以随时询问我以得知剩下的时间\n"
-													"挑战结束後不论胜负将会有二天的休战期\n"
-													"休战期间不能挑战\n\n"
-													"你确定要挑战这个庄园吗？");
+							sprintf(buf,"蚽埶泔桵頗衄珨毞腔袧掘ぶ\n"
+													"斕褫眕呴奀戙恀扂眕腕眭呁狟腔奀潔\n"
+													"泔桵賦旰摽祥蹦吨蛹蔚頗衄媼毞腔倎桵ぶ\n"
+													"倎桵ぶ潔祥夔泔桵\n\n"
+													"斕�毓例者譭調漈囆耽兜艞�");
 	#endif
 #else
               if(tkfmdp >= hadfmpopular){
-								sprintf(buf,"庄园挑战会有一天的准备期\n"
-                            "你可以随时询问我以得知剩下的时间\n"
-												    "挑战结束後不论胜负将会有五天的休战期\n"
-														"休战期间不能挑战\n\n"
-														"你确定要挑战这个庄园吗？");
+								sprintf(buf,"蚽埶泔桵頗衄珨毞腔袧掘ぶ\n"
+                            "斕褫眕呴奀戙恀扂眕腕眭呁狟腔奀潔\n"
+												    "泔桵賦旰摽祥蹦吨蛹蔚頗衄拻毞腔倎桵ぶ\n"
+														"倎桵ぶ潔祥夔泔桵\n\n"
+														"斕�毓例者譭調漈囆耽兜艞�");
 #endif
                 lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    							WINDOW_BUTTONTYPE_YESNO,
@@ -506,17 +506,17 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
     					}
 							else{
 #ifdef _NEW_MANOR_LAW
-								sprintf(buf, "你的家族气势尚未到达庄园家族气势的九成，请再加油。");
+								sprintf(buf, "斕腔模逜ァ岊奾帤善湛蚽埶模逜ァ岊腔嬝傖ㄛ③婬樓蚐﹝");
 #else
 	#ifdef _MANOR_PKRULE
-		#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD 将可挑战庄园的由前十大改为前二十大
-                sprintf(buf, "你的家族声望尚未进入前二十大家族，请再加油。");
+		#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD 蔚褫泔桵蚽埶腔蚕ヶ坋湮蜊峈ヶ媼坋湮
+                sprintf(buf, "斕腔模逜汒咡奾帤輛�踿偉�坋湮模逜ㄛ③婬樓蚐﹝");
 		#else
-                sprintf(buf, "你的家族声望尚未进入前十大家族，请再加油。");
+                sprintf(buf, "斕腔模逜汒咡奾帤輛�踿動捎騧眢憯甭郺椇衶矷�");
 		#endif
 	#else
-                sprintf(buf, "你的家族声望尚不足以挑战\n"
-                             "拥有这个庄园的家族，请再加油。");
+                sprintf(buf, "斕腔模逜汒咡奾祥逋眕泔桵\n"
+                             "茧衄涴跺蚽埶腔模逜ㄛ③婬樓蚐﹝");
 	#endif
 #endif
                 lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
@@ -527,8 +527,8 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 		   	      }
             }
 						else if(check == 2){
-              sprintf(buf, "你的家族正在挑战其他庄园，\n"
-                           "请把机会留给其他家族吧！");
+              sprintf(buf, "斕腔模逜淏婓泔桵む坻蚽埶ㄛ\n"
+                           "③參儂頗隱跤む坻模逜勘ㄐ");
               lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 													    	WINDOW_BUTTONTYPE_OK,
 											    			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -536,9 +536,9 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 											    			buf);
             }
 						else{
-              sprintf(buf, "一个家族只能拥有一个庄园，\n"
-                           "如果庄园家族之间需要切磋\n"
-                           "请到家族ＰＫ场。");
+              sprintf(buf, "珨跺模逜硐夔茧衄珨跺蚽埶ㄛ\n"
+                           "�蝜�蚽埶模逜眳潔剒猁з渲\n"
+                           "③善模逜�苺佼﹛�");
               lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    						WINDOW_BUTTONTYPE_OK,
 											    			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -547,7 +547,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
             }
           }
 					else{
-            sprintf(buf, "这个庄园已经是你的家族的喔。");
+            sprintf(buf, "涴跺蚽埶眒冪岆斕腔模逜腔鉊﹝");
             lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               						  	WINDOW_BUTTONTYPE_OK,
 									    				CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -556,8 +556,8 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
           }
         }
 				else{
-          sprintf(buf, "现在并没有庄园家族，\n"
-                       "直接去申请迁入就可以了哟。");
+          sprintf(buf, "珋婓甜羶衄蚽埶模逜ㄛ\n"
+                       "眻諉�玉糒踿亞踾芨奿埡剆插�");
           lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 			              	    	WINDOW_BUTTONTYPE_OK,
     												CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -566,7 +566,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
         }
       }
 			else{
-        sprintf(buf, "只有族长可以下战书喔。");
+        sprintf(buf, "硐衄逜酗褫眕狟桵抎鉊﹝");
         lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    			WINDOW_BUTTONTYPE_OK,
 									   			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -579,9 +579,9 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 			int i,index,manorindex;
 			char szMsg[3072];
 
-			sprintf(buf,"              庄园挑战排名表\n名次 家族名称         时间          气势\n");
+			sprintf(buf,"              蚽埶泔桵齬靡桶\n靡棒 模逜靡備         奀潔          ァ岊\n");
 			manorindex = CHAR_getWorkInt(meindex,NPC_WORK_MANORID) - 1;
-			// 送出挑战排名
+			// 冞堤泔桵齬靡
 			for(i=0;i<10;i++){
 				index = ManorSchedule[manorindex].iSort[i];
 				if(ManorSchedule[manorindex].iFmIndex[index] != -1){
@@ -600,7 +600,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 #ifdef _ACFMPK_NOFREE
 	#ifndef _NEW_MANOR_LAW
 		NPC_ManorSavePKSchedule(meindex, talkerindex, 0);
-		sprintf( buf, "庄园挑战登陆确认中，请稍後。");
+		sprintf( buf, "蚽埶泔桵腎翻�溜珋苺甭輶婛寣�");
 		CHAR_talkToCli( talkerindex, meindex, buf, CHAR_COLORYELLOW);
 	#else
 		NPC_ManorAddToSchedule(meindex,talkerindex);
@@ -635,7 +635,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 		  else
 			  p->tm_hour = p->tm_hour+8;		 
 		  if(p->tm_hour<18 && p->tm_hour>2){
-			  sprintf(buf, "请於下午６：００至凌晨３：００再来约战吧！");
+			  sprintf(buf, "③黺狟敁ㄥㄩㄟㄟ祫錘鹵ㄢㄩㄟㄟ婬懂埮桵勘ㄐ");
 			  lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    	WINDOW_BUTTONTYPE_OK,
     			        CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -644,9 +644,9 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 			  break;
 		  }		  
 	#endif
-			// WON ADD 修正家族pk场的约战问题
+			// WON ADD 党淏模逜pk部腔埮桵恀枙
 			if( fmpks[fmpks_pos+1].flag != FMPKS_FLAG_NONE ){
-			     sprintf(buf, "这个庄园已经有人约战了喔。");
+			     sprintf(buf, "涴跺蚽埶眒冪衄�刱槳蝌咈腹�");
 					 lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 						 WINDOW_BUTTONTYPE_OK,
 						 CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -658,7 +658,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 #ifdef _ACFMPK_LIST
 	#ifndef _NEW_MANOR_LAW
 		NPC_ManorSavePKSchedule(meindex, talkerindex, 0);
-		sprintf( buf, "庄园挑战登陆确认中，请稍後。");
+		sprintf( buf, "蚽埶泔桵腎翻�溜珋苺甭輶婛寣�");
 		CHAR_talkToCli( talkerindex, meindex, buf, CHAR_COLORYELLOW);
 	#else
 		NPC_ManorAddToSchedule(meindex,talkerindex);
@@ -669,7 +669,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
         strcpy(hadfmname, token);
 
         fmpks[fmpks_pos+1].dueltime = CHAR_getWorkInt(meindex, NPC_WORK_CHALLENGEWAIT) + NowTime.tv_sec
-                                      - tm1.tm_min*60 + 1800; // Arminius 11.1 改成一律 xx:30 开打
+                                      - tm1.tm_min*60 + 1800; // Arminius 11.1 蜊傖珨薺 xx:30 羲湖
         fmpks[fmpks_pos+1].host_index = hadfmindex-1;
         strcpy(fmpks[fmpks_pos+1].host_name, hadfmname);
         fmpks[fmpks_pos+1].guest_index = tkfmindex;
@@ -682,7 +682,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 
 	#ifndef _NEW_MANOR_LAW
 		NPC_ManorSavePKSchedule(meindex, talkerindex, 0);
-		sprintf(buf, "庄园挑战已经设定完成，请好好准备。");
+		sprintf(buf, "蚽埶泔桵眒冪扢隅俇傖ㄛ③疑疑袧掘﹝");
         lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    	WINDOW_BUTTONTYPE_OK,
     			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -702,7 +702,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 
 void NPC_CleanPkList( int ti)
 {
-// Terry fix 要清为-1不能清为0
+// Terry fix 猁ь峈-1祥夔ь峈0
 /*	fmpks[ ti+1 ].host_index = 0;
 	fmpks[ ti+1].guest_index=0;
 	fmpks[ ti].host_index=0;
@@ -741,13 +741,13 @@ void NPC_ManorSmanLoop(int meindex)
 		{
 			int hadfmindex,index,manorid;
 			char token[256];
-			//此时可以开始挑战
+			//森奀褫眕羲宎泔桵
 			manorid = CHAR_getWorkInt(meindex,NPC_WORK_MANORID);
 			getStringFromIndexWithDelim(fmpointlist.pointlistarray[manorid-1],"|",5,token,sizeof(token));
 			hadfmindex = atoi(token);
 			if(hadfmindex != -1){
 				for(index=0;index<FAMILY_MAXNUM;index++){
-					// 找出守庄家族的索引
+					// 梑堤忐蚽模逜腔坰竘
 					if(fmdptop.fmtopid[index] == (hadfmindex - 1)) break;
 				}
 				if(index >= FAMILY_MAXNUM){
@@ -755,11 +755,11 @@ void NPC_ManorSmanLoop(int meindex)
 					printf("\nNPC_ManorSmanLoop():save fm_momentum error(%d:%s)",hadfmindex,token);
 					break;
 				}
-				// 记录这个时刻守庄家族的气势
+				// 暮翹涴跺奀覦忐蚽模逜腔ァ岊
 				else fmpointlist.fm_momentum[manorid-1] = fmdptop.fmMomentum[index];
-				// 进入下一个状态
+				// 輛�輴觴遘囆棧�
 				fmpks[fmpks_pos+1].flag = FMPKS_FLAG_WAIT;
-				// 挑战期共4小时(1800~2200)
+				// 泔桵ぶ僕4苤奀(1800~2200)
 				fmpks[fmpks_pos+1].dueltime = NowTime.tv_sec + 3600 * 4;
 				NPC_ManorSavePKSchedule(meindex, -1, FMPKS_FLAG_WAIT,fmpks[fmpks_pos+1].dueltime,tm1);
 			}
@@ -768,30 +768,30 @@ void NPC_ManorSmanLoop(int meindex)
 #endif    
     break;
 #ifdef _NEW_MANOR_LAW
-	// 进入挑战期,已记录家族气势,等待挑战排程
+	// 輛�輲譭複�,眒暮翹模逜ァ岊,脹渾泔桵齬最
 	case FMPKS_FLAG_WAIT:
 		{
 			int manorid,i,iPlayerNum = CHAR_getPlayerMaxNum();
 			char szMsg[256];
 
 			manorid = CHAR_getWorkInt(meindex,NPC_WORK_MANORID);
-			// 还没开打,气势改变要去向AC要即时资料
+			// 遜羶羲湖,ァ岊蜊曹猁�甩懻C猁撈奀訧蹋
 			fmpointlist.fm_inwar[manorid-1] = TRUE;
 			if(fmpks[fmpks_pos+1].dueltime <= NowTime.tv_sec){
-				// 挑战家族中气势最高的获得挑战权
+				// 泔桵模逜笢ァ岊郔詢腔鳳腕泔桵��
 				int manorindex = CHAR_getWorkInt(meindex,NPC_WORK_MANORID) - 1;
 				int iNo1FmIndexSort = ManorSchedule[manorindex].iSort[0];
 				int index = ManorSchedule[manorindex].iFmIndex[iNo1FmIndexSort],iFmIndex1,iCharindex;
 				char token[256],fmname[256];
-				// 没人挑战
+				// 羶�佮譭�
 				if(index < 0){
-					// 直接进入到挑战结束
+					// 眻諉輛�賮諒譭蝸慲�
 					fmpks[fmpks_pos+1].flag = FMPKS_FLAG_MANOR_BATTLEEND;
 					CHAR_setWorkInt(meindex,NPC_WORK_BETTLETIME,tm1.tm_mday);
-					// 通知所有人
+					// 籵眭垀衄��
 					for(i=0;i<iPlayerNum;i++){
 						if(CHAR_getCharUse(i) != FALSE){
-							CHAR_talkToCli(i,-1,"由於无家族挑战庄园，庄园进入休战时期",CHAR_COLORBLUE2);
+							CHAR_talkToCli(i,-1,"蚕黺拸模逜泔桵蚽埶ㄛ蚽埶輛�遶楙褊排�",CHAR_COLORBLUE2);
 						}
 					}
 					getStringFromIndexWithDelim(fmpointlist.pointlistarray[manorid-1],"|",5,token,sizeof(token));
@@ -800,21 +800,21 @@ void NPC_ManorSmanLoop(int meindex)
 						getStringFromIndexWithDelim(fmpointlist.pointlistarray[manorid-1],"|",6,fmname,sizeof(token));
 						saacproto_ACFixFMPoint_send(acfd,fmname,iFmIndex1 + 1,iFmIndex1,
 							fmname,iFmIndex1 + 1,iFmIndex1,CHAR_getWorkInt(meindex,NPC_WORK_ID));
-						// 增加庄园战胜负Log
+						// 崝樓蚽埶桵吨蛹Log
 						sprintf(token," (%d:%d) %d/%d/%d",tm1.tm_hour,tm1.tm_min,tm1.tm_year+1900,tm1.tm_mon+1,tm1.tm_mday);
-						Logfmpk(fmname,iFmIndex1,-1,"无人挑战",-1,-1,token,"","",2);
-						// 原家族守住了庄园,家族成员可得到石币
+						Logfmpk(fmname,iFmIndex1,-1,"拸�佮譭�",-1,-1,token,"","",2);
+						// 埻模逜忐蛂賸蚽埶,模逜傖埜褫腕善坒啟
 						for(i=0;i<FAMILY_MAXMEMBER;i++){
 							iCharindex = familyMemberIndex[iFmIndex1][i];
-							// 若在线上才给钱 
+							// �譧硨葋炰顫醾� 
 							if(iCharindex >= 0 && CHAR_getCharUse(iCharindex)){
-								// 获得金钱 = 个人气势 * 5000
+								// 鳳腕踢ヴ = 跺�侔鑫� * 5000
 								int iAddGold = ((float)CHAR_getInt(iCharindex,CHAR_MOMENTUM)/100.0f) * 5000.0f;
 								int iGold = CHAR_getInt(iCharindex,CHAR_BANKGOLD),iMaxGold;
-								// 先放入个人银行
+								// 珂溫�賳鶲刳靇�
 								if(iGold + iAddGold > CHAR_MAXBANKGOLDHAVE){
 									CHAR_setInt(iCharindex,CHAR_BANKGOLD,CHAR_MAXBANKGOLDHAVE);
-									// 个人银行放不下了,放到个人身上
+									// 跺�刳靇郱鑑銨臏�,溫善跺�侂篽�
 									iAddGold = iGold + iAddGold - CHAR_MAXBANKGOLDHAVE;
 									iGold = CHAR_getInt(iCharindex,CHAR_GOLD);
 									iMaxGold = CHAR_getMaxHaveGold(iCharindex);
@@ -832,21 +832,21 @@ void NPC_ManorSmanLoop(int meindex)
 																	CHAR_getChar(iCharindex,CHAR_NAME),
 																	CHAR_getInt(iCharindex,CHAR_MOMENTUM),iAddGold,1);
 								}
-								CHAR_talkToCli(iCharindex,-1,"辛苦了!守护住庄园的奖金已汇入你的个人银行",CHAR_COLORRED);
-								// 家族的个人及家族气势都要归零
+								CHAR_talkToCli(iCharindex,-1,"釓賴賸!忐誘蛂蚽埶腔蔣踢眒颯�踽蒫譫鶲刳靇�",CHAR_COLORRED);
+								// 模逜腔跺�佷側眢暲鑫げ模疚橧�
 								CHAR_setInt(iCharindex,CHAR_MOMENTUM,0);
-								CHAR_talkToCli(iCharindex,-1,"庄园战後个人及家族气势归零",CHAR_COLORRED);
+								CHAR_talkToCli(iCharindex,-1,"蚽埶桵摽跺�佷側眢暲鑫さ橧�",CHAR_COLORRED);
 							}
 						}
 					}
 				}
 				else{
-					// 挑战时间已过,选出的挑战家族和守庄家族有约一天的时间可以准备
+					// 泔桵奀潔眒徹,恁堤腔泔桵模逜睿忐蚽模逜衄埮珨毞腔奀潔褫眕袧掘
 					NPC_ManorSavePKSchedule(meindex,index,0,-1,ManorSchedule[manorindex].tm1[iNo1FmIndexSort]);
-					// 开打了,气势改变也不用去向AC要即时资料了
+					// 羲湖賸,ァ岊蜊曹珩祥蚚�甩懻C猁撈奀訧蹋賸
 					fmpointlist.fm_inwar[manorid-1] = FALSE;
-					// 通知所有人
-					sprintf(szMsg,"%s 家族获得挑战庄园资格",ManorSchedule[manorindex].szFmName[iNo1FmIndexSort]);
+					// 籵眭垀衄��
+					sprintf(szMsg,"%s 模逜鳳腕泔桵蚽埶訧跡",ManorSchedule[manorindex].szFmName[iNo1FmIndexSort]);
 					
 					for(i=0;i<iPlayerNum;i++){
 						if(CHAR_getCharUse(i) != FALSE){
@@ -866,7 +866,7 @@ void NPC_ManorSmanLoop(int meindex)
       fmpks[fmpks_pos+1].dueltime = 0;
       fmpks[fmpks_pos+1].flag = FMPKS_FLAG_MANOR_BATTLEBEGIN;
       NPC_talkToFloor(CHAR_getInt(meindex, CHAR_FLOOR) , fmpks[fmpks_pos].host_index,
-         	fmpks[fmpks_pos].guest_index, "庄园争夺战已经开始，请尽快入场！");
+         	fmpks[fmpks_pos].guest_index, "蚽埶淰嗤桵眒冪羲宎ㄛ③鴃辦�貐﹝�");
 #ifdef _NEW_MANOR_LAW
 			CHAR_setWorkInt(meindex,NPC_WORK_BETTLETIME,tm1.tm_mday);
 #endif
@@ -895,19 +895,19 @@ void NPC_ManorSmanLoop(int meindex)
 #ifndef _NEW_MANOR_LAW
 			fmpks[fmpks_pos+1].dueltime = CHAR_getWorkInt(meindex, NPC_WORK_PEACEWAIT) + NowTime.tv_sec;
 #else
-			// 打完後要再过五天才能再挑战
-			// 若开打的日期和结束战斗的日期不一样表示打超过了一天以上,以一天计
+			// 湖俇摽猁婬徹拻毞符夔婬泔桵
+			// �蘄玫繺饑梪睆芺慲魙蓿殿饑梪痦閡銑饡簆噹繷牲�賸珨毞眕奻,眕珨毞數
 			if(CHAR_getWorkInt(meindex,NPC_WORK_BETTLETIME) != tm1.tm_mday){
-				iOffsetTime = tm1.tm_hour * 3600 * -1;	// 扣回00:00
+				iOffsetTime = tm1.tm_hour * 3600 * -1;	// 諶隙00:00
 			}
-			else{	// 战斗结束时未超过一天
-				iOffsetTime = (24 - tm1.tm_hour) * 3600;	// 补成00:00
+			else{	// 桵須賦旰奀帤閉徹珨毞
+				iOffsetTime = (24 - tm1.tm_hour) * 3600;	// 硃傖00:00
 			}
 			//#ifdef _75_TEST
-			fmpks[fmpks_pos+1].dueltime = NowTime.tv_sec - tm1.tm_min*60 + iOffsetTime + 172800 + (18 * 3600);	// 二天
+			fmpks[fmpks_pos+1].dueltime = NowTime.tv_sec - tm1.tm_min*60 + iOffsetTime + 172800 + (18 * 3600);	// 媼毞
 			//#else
 			//	fmpks[fmpks_pos+1].dueltime = NowTime.tv_sec - tm1.tm_min*60 + iOffsetTime + 432000 + (18 * 3600);
-			//														|-----------取整点------------| |-补成00:00-| |-五天-|  |18:00开始报名|
+			//														|-----------�＜�萸------------| |-硃傖00:00-| |-拻毞-|  |18:00羲宎惆靡|
 			//#endif
 #endif
 			fmpks[fmpks_pos+1].flag = FMPKS_FLAG_MANOR_PEACE_SAVE;
@@ -916,7 +916,7 @@ void NPC_ManorSmanLoop(int meindex)
 			NPC_ManorSavePKSchedule(meindex, -1, FMPKS_FLAG_MANOR_PEACE_SAVE);
 #else
 			NPC_ManorSavePKSchedule(meindex, -1, FMPKS_FLAG_MANOR_PEACE_SAVE,fmpks[fmpks_pos+1].dueltime,tm1);
-			// 清空排程
+			// ь諾齬最
 			memset(&ManorSchedule[manorindex],0,sizeof(ManorSchedule[manorindex]));
 			{
 				int i;
@@ -973,43 +973,43 @@ void NPC_ManorLoadPKSchedule(int meindex)
 		fwrite(tmp, strlen(tmp), 1, f);
 	}
 
-	fseek(f, 0, SEEK_SET);	// 档案开头
+	fseek(f, 0, SEEK_SET);	// 紫偶羲芛
 	fgets(tmp, sizeof(tmp), f);
 	fmpks[fmpks_pos].flag=-1;
 
-	// 时间
+	// 奀潔
 	if (getStringFromIndexWithDelim(tmp,"|",1,token,sizeof(token))) {
 		fmpks[fmpks_pos+1].dueltime=atoi(token);
 	}
-	// 主队 familyindex
+	// 翋勦 familyindex
 	if (getStringFromIndexWithDelim(tmp,"|",2,token,sizeof(token))) {
 	    fmpks[fmpks_pos+1].host_index=atoi(token);
 	}
-	// 主队 家族名
+	// 翋勦 模逜靡
 	if (getStringFromIndexWithDelim(tmp,"|",3,token,sizeof(token))) {
 		strcpy(fmpks[fmpks_pos+1].host_name,makeStringFromEscaped(token));
 	}
-	// 客队 familyindex
+	// 諦勦 familyindex
 	if (getStringFromIndexWithDelim(tmp,"|",4,token,sizeof(token))) {
 	    fmpks[fmpks_pos+1].guest_index=atoi(token);
 	}
-	// 客队 家族名
+	// 諦勦 模逜靡
 	if (getStringFromIndexWithDelim(tmp,"|",5,token,sizeof(token))) {
 	    strcpy(fmpks[fmpks_pos+1].guest_name,makeStringFromEscaped(token));
 	}
-	// 准备时间
+	// 袧掘奀潔
 	if (getStringFromIndexWithDelim(tmp,"|",6,token,sizeof(token))) {
 		fmpks[fmpks_pos+1].prepare_time=atoi(token);
 	}
-	// 最大人数
+	// 郔湮�侕�
 	if (getStringFromIndexWithDelim(tmp,"|",7,token,sizeof(token))) {
 		fmpks[fmpks_pos+1].max_player=atoi(token);
 	}
-	// 旗标
+	// よ梓
 	if (getStringFromIndexWithDelim(tmp,"|",8,token,sizeof(token))) {
 		fmpks[fmpks_pos+1].flag=atoi(token);
 	}
-	// 对战星球
+	// 勤桵陎⑩
 	if (getStringFromIndexWithDelim(tmp,"|",9,token,sizeof(token))) {
 		strcpy(fmpks[fmpks_pos+2].host_name,makeStringFromEscaped(token));
 	}
@@ -1020,11 +1020,11 @@ void NPC_ManorLoadPKSchedule(int meindex)
 	if ((fmpks[fmpks_pos+1].flag==FMPKS_FLAG_MANOR_PREPARE) &&
 		  (fmpks[fmpks_pos+1].dueltime<NowTime.tv_sec)) {
 		fmpks[fmpks_pos].flag=-1;
-// Terry fix 要清为-1不能清为0
+// Terry fix 猁ь峈-1祥夔ь峈0
 //		fmpks[fmpks_pos].host_index=0;
 		fmpks[fmpks_pos].host_index=-1;
 		strcpy(fmpks[fmpks_pos].host_name,"");
-// Terry fix 要清为-1不能清为0
+// Terry fix 猁ь峈-1祥夔ь峈0
 //		fmpks[fmpks_pos].guest_index=0;
 		fmpks[fmpks_pos].guest_index=-1;
 		strcpy(fmpks[fmpks_pos].guest_name,"");
@@ -1066,7 +1066,7 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #ifndef _NEW_MANOR_LAW
 		tkfmindex = CHAR_getWorkInt(toindex, CHAR_WORKFMINDEXI);
 #else
-		// toindex 变成 家族的index
+		// toindex 曹傖 模逜腔index
 		tkfmindex = toindex;
 #endif
 		fmpks_pos = CHAR_getWorkInt(meindex, NPC_WORK_ID) * MAX_SCHEDULE;
@@ -1075,9 +1075,9 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #ifndef _NEW_MANOR_LAW
 		dueltime = CHAR_getWorkInt(meindex, NPC_WORK_CHALLENGEWAIT) + NowTime.tv_sec - tm1.tm_min*60 + 1800;
 #else
-		// 以挑战时的时间为开打的时间,中间所经过的时间为准备时间
+		// 眕泔桵奀腔奀潔峈羲湖腔奀潔,笢潔垀冪徹腔奀潔峈袧掘奀潔
 		dueltime = NowTime.tv_sec - tm1.tm_min * 60 + ((24 - tm1.tm_hour) * 3600) + 3600 * tm2.tm_hour;
-		//				|-------------取整点-------------|  |--------加到0000时-------|  |挑战时的时间(算整点)| 
+		//				|-------------�＜�萸-------------|  |--------樓善0000奀-------|  |泔桵奀腔奀潔(呾淕萸)| 
 #endif
 		getStringFromIndexWithDelim( fmpointlist.pointlistarray[manorid-1], "|", 5, token, sizeof(token));
 		hadfmindex = atoi( token);
@@ -1089,7 +1089,7 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #ifndef _NEW_MANOR_LAW
 		makeEscapeString( CHAR_getChar(toindex, CHAR_FMNAME), n2, sizeof(n2));		
 #else
-		// 找出挑战家族中气势最高家族索引
+		// 梑堤泔桵模逜笢ァ岊郔詢模逜坰竘
 		index = ManorSchedule[manorid-1].iSort[0];
 		makeEscapeString(ManorSchedule[manorid-1].szFmName[index],n2,sizeof(n2));
 #endif
@@ -1110,7 +1110,7 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #ifndef _NEW_MANOR_LAW
 	saacproto_ACSendFmPk_send( acfd, toindex, PkFlg, CHAR_getWorkInt( meindex, NPC_WORK_ID), msg);
 #else
-	// toindex 用不到设为 -1
+	// toindex 蚚祥善扢峈 -1
 	saacproto_ACSendFmPk_send( acfd, -1, PkFlg, CHAR_getWorkInt( meindex, NPC_WORK_ID), msg);
 #endif
 }
@@ -1118,105 +1118,105 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #endif
 
 #ifdef _NEW_MANOR_LAW
-// 加入挑战排程
+// 樓�輲譭褐鑒�
 void NPC_ManorAddToSchedule(int meindex,int charaindex)
 {
 	int i,j,iEmpty = -1,iFmIndex,manorindex = CHAR_getWorkInt(meindex,NPC_WORK_MANORID) - 1;
 	struct tm tm1;
 
 	iFmIndex = CHAR_getWorkInt(charaindex,CHAR_WORKFMINDEXI);
-	// 检查是否已排入排程,检查所有的庄园约战
+	// 潰脤岆瘁眒齬�蹁鑒�,潰脤垀衄腔蚽埶埮桵
 	for(j=0;j<MANORNUM;j++){
 		for(i=0;i<10;i++){
 			if(ManorSchedule[j].iFmIndex[i] != -1){
 				if(ManorSchedule[j].iFmIndex[i] == iFmIndex){
 					lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-						CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"你已经报名过挑战庄园了喔～");
+						CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"斕眒冪惆靡徹泔桵蚽埶賸鉊‵");
 					return;
 				}
 			}
 			else{
-				if(j == manorindex) iEmpty = i;	// 记录空的位置
+				if(j == manorindex) iEmpty = i;	// 暮翹諾腔弇离
 			}
 		}
 	}
-	// 如果程式执行到这里,表示没有加入排程,检查有没有空的位置
-	if(iEmpty != -1){ // 有空位置,把报名者加入
-		// 记录家族索引
+	// �蝜�最宒硒俴善涴爵,桶尨羶衄樓�蹁鑒�,潰脤衄羶衄諾腔弇离
+	if(iEmpty != -1){ // 衄諾弇离,參惆靡氪樓��
+		// 暮翹模逜坰竘
 		ManorSchedule[manorindex].iFmIndex[iEmpty] = iFmIndex;
-		// 记录家族名称
+		// 暮翹模逜靡備
 		sprintf(ManorSchedule[manorindex].szFmName[iEmpty],"%s",CHAR_getChar(charaindex,CHAR_FMNAME));
-		// 记录挑战时间
+		// 暮翹泔桵奀潔
 		memcpy(&tm1,localtime((time_t *)&NowTime.tv_sec),sizeof(tm1));
 		memset(ManorSchedule[manorindex].szMemo[iEmpty],0,sizeof(ManorSchedule[manorindex].szMemo[iEmpty]));
 		memcpy(&ManorSchedule[manorindex].tm1[iEmpty],&tm1,sizeof(tm1));
 		lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"加入挑战排程");
+				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"樓�輲譭褐鑒�");
 	}
-	// 满了,和挑战排程的最後一名作比较,如果後来的气势比最後一名高,替换掉最後一名,否则通知目前气势无法挤进排程
+	// 雛賸,睿泔桵齬最腔郔摽珨靡釬掀誕,�蝜�摽懂腔ァ岊掀郔摽珨靡詢,杸遙裁郔摽珨靡,瘁寀籵眭醴ヶァ岊拸楊撥輛齬最
 	else{
-		// 取得最後一名在ManorSchedule的位置
+		// �△譙鍕愻酵�婓ManorSchedule腔弇离
 		int index = ManorSchedule[manorindex].iSort[9];
 
 		for(i=0;i<FAMILY_MAXNUM;i++){
-			// 找出挑战家族的索引
+			// 梑堤泔桵模逜腔坰竘
 			if(fmdptop.fmtopid[i] == iFmIndex) break;
 		}
-		// 找不到此家族
+		// 梑祥善森模逜
 		if(i >= FAMILY_MAXNUM){
 			lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"抱歉，找不到你的家族气势资料");
+				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"惕Кㄛ梑祥善斕腔模逜ァ岊訧蹋");
 			return;
 		}
-		// 比较气势
+		// 掀誕ァ岊
 		if(ManorSchedule[manorindex].iFmMomentum[index] < fmdptop.fmMomentum[i]){
 			int fmpks_pos,iPlayerNum = CHAR_getPlayerMaxNum();
 			char szMsg[256];
 
-			// 通知所有人
+			// 籵眭垀衄��
 			fmpks_pos = CHAR_getWorkInt(meindex,NPC_WORK_ID) * MAX_SCHEDULE;
-			sprintf(szMsg,"%s 家族被 %s 家族挤下挑战排程",ManorSchedule[manorindex].szFmName[index],CHAR_getChar(charaindex,CHAR_FMNAME));
+			sprintf(szMsg,"%s 模逜掩 %s 模逜撥狟泔桵齬最",ManorSchedule[manorindex].szFmName[index],CHAR_getChar(charaindex,CHAR_FMNAME));
 			for(i=0;i<iPlayerNum;i++){
 				if(CHAR_getCharUse(i) != FALSE){
 					CHAR_talkToCli(i,-1,szMsg,CHAR_COLORBLUE2);
 				}
 			}
-			// 最後一名被挤掉
+			// 郔摽珨靡掩撥裁
 			ManorSchedule[manorindex].iFmIndex[index] = iFmIndex;
-			// 记录家族名称
+			// 暮翹模逜靡備
 			sprintf(ManorSchedule[manorindex].szFmName[index],"%s",CHAR_getChar(charaindex,CHAR_FMNAME));
-			// 记录挑战时间
+			// 暮翹泔桵奀潔
 			memcpy(&tm1,localtime((time_t *)&NowTime.tv_sec),sizeof(tm1));
 			memcpy(&ManorSchedule[manorindex].tm1[index],&tm1,sizeof(tm1));
 			lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"加入挑战排程");
+				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"樓�輲譭褐鑒�");
 		}
 		else{
 			lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"抱歉，你的家族气势不足以排进挑战排程");
+				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"惕Кㄛ斕腔模逜ァ岊祥逋眕齬輛泔桵齬最");
 			return;
 		}
 	}
-	// 排序
+	// 齬唗
 	SortManorSchedule();
 }
 
-// 排序挑战排程
+// 齬唗泔桵齬最
 void SortManorSchedule()
 {
 	int i,j,k;
 
-	// 先取得最新家族气势
+	// 珂�△譙鍤翹眢暲鑫�
 	for(k=0;k<MANORNUM;k++){
 		for(i=0;i<10;i++){
 			ManorSchedule[k].iSort[i] = i;
 			if(ManorSchedule[k].iFmIndex[i] != -1){
 				for(j=0;j<FAMILY_MAXNUM;j++){
-					// 找出挑战家族的索引
+					// 梑堤泔桵模逜腔坰竘
 					if(fmdptop.fmtopid[j] == ManorSchedule[k].iFmIndex[i]){
-						// 取得气势值
+						// �△蟻鑫ひ�
 						ManorSchedule[k].iFmMomentum[i] = fmdptop.fmMomentum[j];
-						// 作成memo
+						// 釬傖memo
 						sprintf(ManorSchedule[k].szMemo[i],"%-16s %2d:%2d %12d",
 							ManorSchedule[k].szFmName[i],ManorSchedule[k].tm1[i].tm_hour,ManorSchedule[k].tm1[i].tm_min,
 							ManorSchedule[k].iFmMomentum[i]/100);
@@ -1226,7 +1226,7 @@ void SortManorSchedule()
 			}
 		}
 	}
-	// 排序
+	// 齬唗
 	for(i=0;i<MANORNUM;i++){
 		g_iSortManor = i;
 		qsort(&ManorSchedule[g_iSortManor].iSort,10,sizeof(int),&SortManorScheduleMomentum);

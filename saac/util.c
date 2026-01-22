@@ -164,16 +164,16 @@ char*   makeStringFromEscaped( char* src )
         if( src[i] == '\\' ){
             int j;
 
-            /*  戚及  侬卞垫仁  */
+            /*  べ摯  棬勗菜��  */
             i++;
             for( j = 0; j<sizeof(escapeChar)/sizeof(escapeChar[0]); j++){
                 if( escapeChar[j].escapedchar == src[i] ){
-                    /*  戚互巨旦弗□皿平乓仿分  */
+                    /*  べ誑操筒艇↓鏤す籤溘煦  */
                     src[searchindex++] = escapeChar[j].escapechar;
                     goto NEXT;
                 }
             }
-            /*  巨仿□支仃升公及引引戊疋□仄化云仁  */
+            /*  操溘↓盓崹汔鼠摯竘竘昡鼀↓媃趙堁��  */
             src[searchindex++] = src[i];
         }else{
             src[searchindex++] = src[i];
@@ -217,7 +217,7 @@ char *   makeEscapeString( char* src , char* dest, int sizeofdest)
 				dest[destindex+1] = escapechar;
 				destindex+=2;
 				dirty=TRUE;
-				continue;       /*  戚及  侬卞褡戈  */
+				continue;       /*  べ摯  棬勗鵌資  */
 			}else{
 				dest[destindex] = '\0';
 				return dest;
@@ -243,14 +243,14 @@ char *   makeEscapeString1( char* src , char* dest, int sizeofdest)
         int     j;
         char    escapechar='\0';
         if( destindex + 1 >= sizeofdest )
-            /*  '\0'坌互箫曰卅中及匹仇仇匹蔽曰   */
+            /*  '\0'覕誑鵿堇埵笢摯ぁ喫喫ぁ敖堇   */
             break;
 
-	/*	// 蝈剩及ㄠ田奶玄  井升丹井毛民尼永弁
+	/*	// 蠈呁摯兒泬騷哱  凝汔竣凝禱鏍攝蚗袲
 		if( IS_2BYTEWORD( src[i] ) ){
-			// 蝈剩分［公及桦宁反ㄠ田奶玄芴坌卞褡引六月［
-			// 凶分仄ㄠ田奶玄仄井卅中桦宁反公丹仄卅中
-			// 公及引引ㄡ田奶玄鳖霜
+			// 蠈呁煦�蛫姨啗踽�毀兒泬騷哱嗌覕勗鵌竘鞠堎��
+			// 倜煦媃兒泬騷哱媃凝埵笢鳹譴毀鼠竣媃埵笢
+			// 鼠摯竘竘兕泬騷哱梱邞
 	        if( destindex + 2 >= sizeofdest )break;
 
             dest[destindex] = src[i];
@@ -268,17 +268,17 @@ char *   makeEscapeString1( char* src , char* dest, int sizeofdest)
             }
 
         if( dirty == TRUE ){
-            /*  巨旦弗□皿允月  侬分    */
+            /*  操筒艇↓鏤埰堎  棬煦    */
             if( destindex + 2 < sizeofdest ){
-                /*  +2 午中丹及反｝ '\\' 午 'n'及仪分   */
-                /*  酸曰  侬反蜗坌分    */
+                /*  +2 敁笢竣摯毀�� '\\' 敁 'n'摯痀煦   */
+                /*  呫堇  棬毀恘覕煦    */
                 dest[destindex] = '\\';
                 dest[destindex+1] = escapechar;
                 destindex+=2;
                 dirty=TRUE;
-                continue;       /*  戚及  侬卞褡戈  */
+                continue;       /*  べ摯  棬勗鵌資  */
             }else{
-                /*  酸曰田永白央互尕箫仄化中月  */
+                /*  呫堇泬蚗啞栝誑箾鵿媃趙笢堎  */
                 dest[destindex] = '\0';
                 return dest;
             }
@@ -297,7 +297,7 @@ char *   makeEscapeString1( char* src , char* dest, int sizeofdest)
 
 
 
-/* 赞中strcatsafe［田永白央互丐孔木月桦宁反窒手仄卅中［ */
+/* 婝笢strcatsafe�袽擽幫豽趥目凶袎戰鎔踽�毀笰忒媃埵笢�� */
 int
 strcatsafe( char *dest, int destlen , char *append )
 {

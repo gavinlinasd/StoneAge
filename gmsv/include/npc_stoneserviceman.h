@@ -1,11 +1,11 @@
 #ifndef __NPC_STONESERVICEMAN_H__
 #define __NPC_STONESERVICEMAN_H__
 
-// 资料串列
+// 訧蹋揹蹈
 typedef struct _List
 {
-  char Data[32];        // 资料
-  struct _List *Next;   // 指向下一个List
+  char Data[32];        // 訧蹋
+  struct _List *Next;   // 硌砃狟珨跺List
 }List,*LPList;    
 
 BOOL NPC_StoneServiceManInit(int meindex);

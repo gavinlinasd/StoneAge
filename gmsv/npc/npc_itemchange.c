@@ -163,7 +163,7 @@ void NPC_ItemchangeManLoop( int meindex)
 BOOL ItemchangeMan_GetMenuStr( int meindex, int toindex, char *npcarg, char *token)
 {
 	char buf1[1024], buf2[256], buf3[256];
-	char NullName[256] = {"未知的物品"};
+	char NullName[256] = {"帤眭腔昜こ"};
 	BOOL FINDS=FALSE;
 	int talkNo=1;
 	int addID;
@@ -204,7 +204,7 @@ BOOL ItemchangeMan_GetMenuStr( int meindex, int toindex, char *npcarg, char *tok
 BOOL ItemchangeMan_GetNeedStr( int meindex, int toindex, char *npcarg, char *token, int num )
 {
 	char buf1[1024], buf2[256], buf3[256];
-	char NullName[256] = {"未知的物品"};
+	char NullName[256] = {"帤眭腔昜こ"};
 	int talkNo=1, addID, i=0;
 	BOOL FINDS = FALSE;
 	if( npcarg == NULL ) return FALSE;
@@ -246,7 +246,7 @@ BOOL ItemchangeMan_GetNeedStr( int meindex, int toindex, char *npcarg, char *tok
 		char goldmess[256];
 		int gold = atoi( buf1);
 		if( gold > 0 )	{
-			sprintf( goldmess, "石币:%d \n", gold);
+			sprintf( goldmess, "坒啟:%d \n", gold);
 			strcat( token, goldmess);
 		}
 	}

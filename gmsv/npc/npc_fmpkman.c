@@ -23,7 +23,7 @@ BOOL NPC_PARTY_CHAECK1(int meindex,int talker);
 void NPC_ERR_DiSP1(int meindex,int talker,int errNO);
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_FMPKManInit( int meindex )
 {
@@ -38,15 +38,15 @@ BOOL NPC_FMPKManInit( int meindex )
 		return FALSE;
 	}
 
-	/*--伐□皿互涩烂今木化中月井----*/
-	/*--伐□皿互涩烂今木化卅仃木壬NPC毛综日卅中仇午卞允月--*/
+	/*--極↓鏤誑优擭踏躂趙笢堎凝----*/
+	/*--極↓鏤誑优擭踏躂趙埵崹躂�冇PC禱軘�欷聿迣蠁蝐槬彸�--*/
 	if(NPC_Util_GetStrFromStrWithDelim( npcarg, "WARP", buf, sizeof( buf))==NULL){
 	        print("FMPKMan Err is %s",npcarg);
 		print("FMPKMan Err");
 		return FALSE;
 	}
 
-	/*--伐□皿互涩烂今木化中化手伐□皿燮互卅仃木壬手切欠氏NPC毛综日卅中--*/
+	/*--極↓鏤誑优擭踏躂趙笢趙忒極↓鏤袸誑埵崹躂�圴秷陎滔柶PC禱軘�欷聿�--*/
 	getStringFromIndexWithDelim(buf,",",1,buff2,sizeof(buff2));
 	fl=atoi(buff2);
 	getStringFromIndexWithDelim(buf,",",2,buff2,sizeof(buff2));
@@ -67,7 +67,7 @@ BOOL NPC_FMPKManInit( int meindex )
 	}
 	CHAR_setWorkInt(meindex, NPC_WORK_ID, meid);
 
-	/*--正奶皿涩烂--*/
+	/*--淏騷鏤优擭--*/
    	CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEWARPMAN );
 
     return TRUE;
@@ -75,25 +75,25 @@ BOOL NPC_FMPKManInit( int meindex )
 }
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_FMPKManTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
-    /* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+    /* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
 	
-	/*--  及蟆卞中月井升丹井＂--*/
+	/*--  摯鞳勗笢堎凝汔竣凝ㄑ--*/
 	if(NPC_Util_isFaceToFace(talkerindex,meindex,2 )==FALSE){
-		/* ㄠ弘伉永玉动  及心 */
+		/* 兒精惉蚗迶雄  摯陑 */
 		if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	}
 
-	/*--伐□弁及赓渝祭--*/
+	/*--極↓袲摯疐趵撬--*/
 	CHAR_setWorkInt(talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 
-	/*-反元户及蓟      --*/
+	/*-毀啋誧摯撒      --*/
 	NPC_FMPKMan_selectWindow( meindex, talkerindex, 0, -1);
 }
 
@@ -115,7 +115,7 @@ static void NPC_FMPKMan_selectWindow( int meindex, int toindex, int num,int sele
 		print("GetArgStrErr");
 		return ;
 	}
-	/*--涩烂白央奶伙及  卞白夫失谛醒互隙烂今木化中月井今木化中木壬白夫失谛醒及喃曰请仄*/
+	/*--优擭啞栝騷鳴摯  勗啞痲囮硞倳誑炩擭踏躂趙笢堎凝踏躂趙笢躂�仱袚藡我俴捊啤帟鉸醓�*/
 	if(strstr(npcarg,"%4d")!=NULL){
 		int work;
 		NPC_Util_GetStrFromStrWithDelim( npcarg, "WARP", buf, sizeof( buf));
@@ -126,15 +126,15 @@ static void NPC_FMPKMan_selectWindow( int meindex, int toindex, int num,int sele
 	token[0] = '\0';
 	
 	switch(num){
-      //   赓及它奴件玉它
+      //   疐摯坳贖璃迶坳
 	  case 0:
 	  	if(NPC_Util_GetStrFromStrWithDelim( npcarg, "MainMsg", buf,
 	  		sizeof( buf)) == NULL)
 	  			return;
-			sprintf(token, "3\n　　    　　★家族ＰＫ场★\n"
+			sprintf(token, "3\n﹛﹛    ﹛﹛∴模逜�苺佼﹛駹n"
 				"%s"
-				"\n           《 察看双方人数 》"
-				"\n            《 离开ＰＫ场 》",
+				"\n           ▲ 舷艘邧源�侕� ◎"
+				"\n            ▲ 燭羲�苺佼� ◎",
 				buf);
 		buttontype = WINDOW_BUTTONTYPE_NONE;
 		windowtype = WINDOW_MESSAGETYPE_SELECT;
@@ -155,7 +155,7 @@ static void NPC_FMPKMan_selectWindow( int meindex, int toindex, int num,int sele
 	  		fmpks[fmpks_pos].host_index,
 	  		fmpks[fmpks_pos].guest_index);
 */
-	  	sprintf(token, "\n%s\n\n%s:%4d人\n\n%s:%4d人", buf,
+	  	sprintf(token, "\n%s\n\n%s:%4d�汻n\n%s:%4d��", buf,
 	  		fmpks[fmpks_pos].host_name, num1,
 	  		fmpks[fmpks_pos].guest_name, num2);
 	  	buttontype = WINDOW_BUTTONTYPE_OK;
@@ -175,11 +175,11 @@ static void NPC_FMPKMan_selectWindow( int meindex, int toindex, int num,int sele
 	  	break;
 	}
 	
-	/*--巨旦弗□皿--*/
+	/*--操筒艇↓鏤--*/
 	//makeEscapeString( token, escapedname, sizeof(escapedname));
 		
 		
-	/*--霜耨--*/
+	/*--邞嚭--*/
 	lssproto_WN_send( fd, windowtype, 
 				buttontype, 
 				windowno,
@@ -189,7 +189,7 @@ static void NPC_FMPKMan_selectWindow( int meindex, int toindex, int num,int sele
 }
 
 /*-----------------------------------------
- * 弁仿奶失件玄井日忒匀化五凶凛卞裟太请今木月［
+ * 袲溘騷囮璃哱凝�氪耽�趙拻倜鄹勗蠙怮③踏躂堎��
  *
 -------------------------------------------*/
 void NPC_FMPKManWindowTalked( int meindex, int talkerindex, 
@@ -219,7 +219,7 @@ void NPC_FMPKManWindowTalked( int meindex, int talkerindex,
 	datanum = atoi( data);
 	switch( seqno){
 
-	/*--反元引曰及    --*/
+	/*--毀啋竘堇摯    --*/
 	  case CHAR_WINDOWTYPE_FMPKMAN_START:
 	  	if (datanum == 1)
 	  		NPC_FMPKMan_selectWindow(meindex, talkerindex, 1, -1);
@@ -259,7 +259,7 @@ BOOL NPC_PARTY_CHAECK1(int meindex,int talker)
     return TRUE;
 }
 
-// shan add  errNO=1(组队)
+// shan add  errNO=1(郪勦)
 void NPC_ERR_DiSP1(int meindex,int talker,int errNO)
 {
     char token[1024];
@@ -275,7 +275,7 @@ void NPC_ERR_DiSP1(int meindex,int talker,int errNO)
          
     if(errNO==1){
        if(NPC_Util_GetStrFromStrWithDelim( npcarg, "PartyMsg",token, sizeof( token))==NULL){
-           sprintf(token, "无法以团队离场。\n\n请把团队解散之後再个别\n离场。");
+           sprintf(token, "拸楊眕芶勦燭部﹝\n\n③參芶勦賤汃眳摽婬跺梗\n燭部﹝");
        }
        
        if(CHAR_getWorkInt(talker,CHAR_WORKPARTYMODE)==CHAR_PARTY_CLIENT){

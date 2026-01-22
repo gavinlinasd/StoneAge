@@ -63,7 +63,7 @@ int PKLIST_GetOneBHistory( int ti )
 	log("return CODE_ERRBATTLEFULL err !! \n") ;
 	return CODE_ERRBATTLEFULL;
 }
-//勿动-------------------------------------------------------
+//昦雄-------------------------------------------------------
 void PKLIST_ResetOneTeamMan( int ti )
 {
 	int k;
@@ -147,14 +147,14 @@ int PKLIST_UpdateOnePkTeamData( int ti, int forti, int winerflg)
 	}else{
 		PkTeamList[ti].lost++;
 	}
-	PkTeamList[ti].battleplay++; //场次
-	PkTeamList[ti].score = (PkTeamList[ti].win*3) - (PkTeamList[ti].lost*1);//积分
+	PkTeamList[ti].battleplay++; //部棒
+	PkTeamList[ti].score = (PkTeamList[ti].win*3) - (PkTeamList[ti].lost*1);//儅煦
 
 	PkTeamList[ti].updata = (int)time(NULL);
 
 	if( PkTeamList[ti].score >= DEFWINSCORE ){
-		PkTeamList[ti].inside = 2; //录取
-	}else if( PkTeamList[ti].lost > DEFMAXBATTLENUM*DEFLOSERATE){// 0.7 = (1-胜率3成)*最高场次
+		PkTeamList[ti].inside = 2; //翹��
+	}else if( PkTeamList[ti].lost > DEFMAXBATTLENUM*DEFLOSERATE){// 0.7 = (1-吨薹3傖)*郔詢部棒
 		PkTeamList[ti].inside = 0;
 	}else {
 		PkTeamList[ti].inside = 1;
@@ -286,7 +286,7 @@ extern gmsv gs[MAXCONNECTION];
 	if( (toti = PKLIST_GetPkTeamListArray( tonum, tocdkey)) == -1 ) return;
 
 	//andy_log
-	log( "Update() [%d,%d] %s [%d,%d] ", meti, menum, (winer==0)?"胜":"负", toti, tonum);
+	log( "Update() [%d,%d] %s [%d,%d] ", meti, menum, (winer==0)?"吨":"蛹", toti, tonum);
 	if( PKLIST_UpdateCheckRepeatBHistory( meti, menum, toti, tonum ) == -1 ){
 		log( "  err Repeat !!\n");
 	}else{
@@ -300,13 +300,13 @@ extern gmsv gs[MAXCONNECTION];
 			log( "*UpdateOnePkTeamData( %d,%d,%d) err %d !!\n", toti, meti, (winer==1)?0:1, ret);
 			return;
 		}
-		for (i = 0 ; i < MAXCONNECTION ; i ++ ) { //送del到game server
+		for (i = 0 ; i < MAXCONNECTION ; i ++ ) { //冞del善game server
 			if ( gs[i].use && gs[i].name[0] ) {
 				PKLIST_GetPkTeamListDataOne( i, meti);
 				PKLIST_GetPkTeamListDataOne( i, toti);
 			}
 		}
-		//备份
+		//掘爺
 		PKLIST_BackupPkTeamListfromFile( "pklist", "pk_list_team.txt" );
 
 	}
@@ -346,10 +346,10 @@ void PKLIST_CheckRepeatBattleHistory( void)
 			if( PkTeamList[i].BHistory[j].flg == 0 ) PkTeamList[i].lost++;
 			PkTeamList[i].battleplay++;
 		}
-		PkTeamList[i].score = (PkTeamList[i].win*3) - (PkTeamList[i].lost*1);//积分
+		PkTeamList[i].score = (PkTeamList[i].win*3) - (PkTeamList[i].lost*1);//儅煦
 		if( PkTeamList[i].score >= DEFWINSCORE ){
-			PkTeamList[i].inside = 2; //录取
-		}else if( PkTeamList[i].lost > DEFMAXBATTLENUM*DEFLOSERATE){// 0.7 = (1-胜率3成)*最高场次
+			PkTeamList[i].inside = 2; //翹��
+		}else if( PkTeamList[i].lost > DEFMAXBATTLENUM*DEFLOSERATE){// 0.7 = (1-吨薹3傖)*郔詢部棒
 			PkTeamList[i].inside = 0;
 		}else {
 			PkTeamList[i].inside = 1;
@@ -357,7 +357,7 @@ void PKLIST_CheckRepeatBattleHistory( void)
 	}
 }
 
-//load档
+//load紫
 int PKLIST_LoadPkTeamListfromFile( char *dirpath, char *listfilename )
 {
 	char line[512], filename[256], buf1[64];
@@ -471,7 +471,7 @@ int PKLIST_LoadPkTeamListfromFile( char *dirpath, char *listfilename )
 					readfirst = 0;
 					continue;
 				}
-				if( bnum >= MAXBATTLENUM )break;//超过战斗场次
+				if( bnum >= MAXBATTLENUM )break;//閉徹桵須部棒
 				for( k=0; k<10; k++){
 					easyGetTokenFromBuf( bufarg, '|', k+1, buf1, sizeof( buf1 ));
 					if( strlen( buf1) <= 0 ) continue;
@@ -533,7 +533,7 @@ int PKLIST_LoadPkTeamListfromFile( char *dirpath, char *listfilename )
 	return 1;
 }
 
-//Backup档
+//Backup紫
 int PKLIST_BackupPkTeamListfromFile( char *dirpath, char *listfilename )
 {
 	char filename[256];
@@ -606,7 +606,7 @@ int PKLIST_BackupPkTeamListfromFile( char *dirpath, char *listfilename )
 	return 1;
 }
 //PKListSort[1000]
-void PKLIST_SortTheCharts( int ti) //排行榜处理
+void PKLIST_SortTheCharts( int ti) //齬俴埤揭燴
 {
 extern gmsv gs[MAXCONNECTION];
 	int i, k, last=-1;
@@ -639,7 +639,7 @@ extern gmsv gs[MAXCONNECTION];
 	log( "\nPKListSort[%d]=%d \n", PKListSort[last], ti);
 	PKListSort[last]=ti;
 
-	//更新所有伺服器
+	//載陔垀衄侜督ん
 	for (i=0; i<MAXCONNECTION; i++) {
 		if (gs[i].use && gs[i].name[0]) {
 			PKLIST_TheCharts( i, 2, 1);
@@ -662,7 +662,7 @@ extern gmsv gs[MAXCONNECTION];
 			PkTeamList[PKListSort[i]].battleplay, PkTeamList[PKListSort[i]].score,
 			PkTeamList[PKListSort[i]].inside, PkTeamList[PKListSort[i]].updata );
 /*
-			fprintf( fp, "%dth 队伍:%-32s 胜:%-4d 负:%-4d 场数:%-4d 积分:%-4d\n",
+			fprintf( fp, "%dth 勦斪:%-32s 吨:%-4d 蛹:%-4d 部杅:%-4d 儅煦:%-4d\n",
 				i, PkTeamList[PKListSort[i]].teamname,
 				PkTeamList[PKListSort[i]].win, PkTeamList[PKListSort[i]].lost,
 				PkTeamList[PKListSort[i]].battleplay, PkTeamList[PKListSort[i]].score );
@@ -681,13 +681,13 @@ extern gmsv gs[MAXCONNECTION];
 	log("PKLIST_TheCharts( %d, %d) \n", type, flg);
 	switch( type){
 	case 1:
-		for( i=0 ; i < MAXCONNECTION ; i ++ ) { //送del到game server
+		for( i=0 ; i < MAXCONNECTION ; i ++ ) { //冞del善game server
 			if ( gs[i].use && gs[i].name[0] ) {
 				PKLIST_GetPkTeamListDataOne( i, flg);
 			}
 		}
 		break;
-	case 2: //排行榜
+	case 2: //齬俴埤
 		memset( data, 0, sizeof(data));
 		for( i=0; i<550; i++){
 			if( PKListSort[i] == -1 ) continue;
@@ -730,10 +730,10 @@ extern gmsv gs[MAXCONNECTION];
 	}
 }
 
-//备份存档
+//掘爺湔紫
 
 
-//load档
+//load紫
 int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 {
 	char line[512], filename[256], buf1[64];
@@ -768,7 +768,7 @@ int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 		if( count >= maxteam )break;
 		del_rn( line);
 
-		//队伍名称 队伍序号
+		//勦斪靡備 勦斪唗瘍
 		easyGetTokenFromBuf( line, ',', 1, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( PkTeamList[count].teamname, "%s", buf1);
@@ -778,19 +778,19 @@ int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 		while( 1){
 			easyGetTokenFromBuf( line, ',', spoint++, buf1, sizeof( buf1 ));
 			if( strlen( buf1) <= 0 ) break;
-			sprintf( StartS, "%s", buf1); //星系
+			sprintf( StartS, "%s", buf1); //陎炵
 
 			easyGetTokenFromBuf( line, ',', spoint++, buf1, sizeof( buf1 ));
 			if( strlen( buf1) <= 0 ) break;
-			sprintf( PkTeamList[count].MyTeamMans[ManNum].cdkey, "%s", buf1); //帐号
+			sprintf( PkTeamList[count].MyTeamMans[ManNum].cdkey, "%s", buf1); //梛瘍
 
 			easyGetTokenFromBuf( line, ',', spoint++, buf1, sizeof( buf1 ));
 			if( strlen( buf1) <= 0 ) break;
-			sprintf( PkTeamList[count].MyTeamMans[ManNum].name, "%s", buf1); //人物名
+			sprintf( PkTeamList[count].MyTeamMans[ManNum].name, "%s", buf1); //�冼屪�
 
 			easyGetTokenFromBuf( line, ',', spoint++, buf1, sizeof( buf1 ));
 			if( strlen( buf1) <= 0 ) break;
-			leve = atoi( buf1); //人物等级
+			leve = atoi( buf1); //�冼齔�撰
 
 			sprintf( dData, "%s,%s,%s,%d\n",
 				StartS, PkTeamList[count].MyTeamMans[ManNum].cdkey,
@@ -825,7 +825,7 @@ int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 	fclose( bfp);
 	fclose( tfp);
 	fclose( fp);
-	//清除
+	//ь壺
 	sprintf( filename, "%s/%s", dirpath, listfilename);
 	remove( filename);
 
@@ -867,7 +867,7 @@ int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename )
 }
 
 
-//load档
+//load紫
 int PKLIST_CutStartUserfromFile( char *dirpath, char *listfilename )
 {
 	char line[512], filename[256], buf1[64];
@@ -898,28 +898,28 @@ int PKLIST_CutStartUserfromFile( char *dirpath, char *listfilename )
 			fprintf( bfp, "%s\n", line);
 			continue;
 		}
-		sprintf( StartS, "%s", buf1); //星系
+		sprintf( StartS, "%s", buf1); //陎炵
 
 		easyGetTokenFromBuf( line, ',', 2, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ){
 			fprintf( bfp, "%s\n", line);
 			continue;
 		}
-		sprintf( cdkey, "%s", buf1); //帐号
+		sprintf( cdkey, "%s", buf1); //梛瘍
 
 		easyGetTokenFromBuf( line, ',', 3, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ){
 			fprintf( bfp, "%s\n", line);
 			continue;
 		}
-		sprintf( name, "%s", buf1); //人物名
+		sprintf( name, "%s", buf1); //�冼屪�
 
 		easyGetTokenFromBuf( line, ',', 4, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ){
 			fprintf( bfp, "%s\n", line);
 			continue;
 		}
-		leve = atoi( buf1);		//人物等级
+		leve = atoi( buf1);		//�冼齔�撰
 
 		{
 			FILE *tfp=NULL;
@@ -938,7 +938,7 @@ int PKLIST_CutStartUserfromFile( char *dirpath, char *listfilename )
 	return 1;
 }
 
-//load档
+//load紫
 int PKLIST_alteUserfromFile( char *dirpath, char *listfilename )
 {
 	char line[512], filename[256], buf1[64];
@@ -966,22 +966,22 @@ extern gmsv gs[MAXCONNECTION];
 		if( strlen( line) <= 0 || line[0] == '#' ) continue;
 		del_rn( line);
 
-		//队伍
+		//勦斪
 		easyGetTokenFromBuf( line, ',', 1, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( TeamName, "%s", buf1);
 
-		//星系
+		//陎炵
 		easyGetTokenFromBuf( line, ',', 2, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( Star, "%s", buf1);
 
-		//帐号
+		//梛瘍
 		easyGetTokenFromBuf( line, ',', 3, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( Cdkey, "%s", buf1);
 
-		//人物名
+		//�冼屪�
 		easyGetTokenFromBuf( line, ',', 4, buf1, sizeof( buf1 ));
 		if( strlen( buf1) <= 0 ) continue;
 		sprintf( UserName, "%s", buf1);
@@ -1014,7 +1014,7 @@ extern gmsv gs[MAXCONNECTION];
 				}
 				break;
 			}
-			for( j=0 ; j < MAXCONNECTION ; j ++ ) { //送del到game server
+			for( j=0 ; j < MAXCONNECTION ; j ++ ) { //冞del善game server
 				if ( gs[j].use && gs[j].name[0] ) {
 					PKLIST_GetPkTeamListDataOne( j, i);
 				}
@@ -1024,7 +1024,7 @@ extern gmsv gs[MAXCONNECTION];
 	}
 	fclose( bfp);
 	fclose( fp);
-	//清除
+	//ь壺
 	sprintf( filename, "%s/%s", dirpath, listfilename);
 	remove( filename);
 	PKLIST_CheckAllUser();
@@ -1109,19 +1109,19 @@ void PKLIST_CheckAllUser( void)
 	fclose( ffp);
 }
 /*
-序号|队名|帐号_人物名|帐号_人物名|帐号_人物名|帐号_人物名|帐号_人物名|胜|败|0
+唗瘍|勦靡|梛瘍_�冼屪�|梛瘍_�冼屪�|梛瘍_�冼屪�|梛瘍_�冼屪�|梛瘍_�冼屪�|吨|啖|0
 
-#序号|目录|队名|帐号_人物名|胜|败|场|积分|0
+#唗瘍|醴翹|勦靡|梛瘍_�冼屪�|吨|啖|部|儅煦|0
 
-1|0x10|第1队|cdkey|胜|败|场|积分|0
-2|0x10|第2队|cdkey|胜|败|场|积分|0
-3|0x10|第3队|cdkey|胜|败|场|积分|0
-4|0x10|第4队|cdkey|胜|败|场|积分|0
-5|0x10|第5队|cdkey|胜|败|场|积分|0
-6|0x10|第6队|cdkey|胜|败|场|积分|0
-7|0x10|第7队|cdkey|胜|败|场|积分|0
-8|0x10|第8队|cdkey|胜|败|场|积分|0
-9|0x10|第9队|cdkey|胜|败|场|积分|0
-10|0x10|第10队|cdkey|胜|败|场|积分|0
+1|0x10|菴1勦|cdkey|吨|啖|部|儅煦|0
+2|0x10|菴2勦|cdkey|吨|啖|部|儅煦|0
+3|0x10|菴3勦|cdkey|吨|啖|部|儅煦|0
+4|0x10|菴4勦|cdkey|吨|啖|部|儅煦|0
+5|0x10|菴5勦|cdkey|吨|啖|部|儅煦|0
+6|0x10|菴6勦|cdkey|吨|啖|部|儅煦|0
+7|0x10|菴7勦|cdkey|吨|啖|部|儅煦|0
+8|0x10|菴8勦|cdkey|吨|啖|部|儅煦|0
+9|0x10|菴9勦|cdkey|吨|啖|部|儅煦|0
+10|0x10|菴10勦|cdkey|吨|啖|部|儅煦|0
 */
 #endif

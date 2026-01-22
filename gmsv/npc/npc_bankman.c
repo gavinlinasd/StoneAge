@@ -37,7 +37,7 @@ struct	{
 	int		warp;
 	int		battle;
 	int		gotowin;
-}buttonproc[13];		/* ok,cancel, yes,no,prev,next 及凛及质   */
+}buttonproc[13];		/* ok,cancel, yes,no,prev,next 摯鄹摯窐   */
 
 
 
@@ -57,10 +57,10 @@ BOOL NPC_BankmanInit( int meindex )
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", buf, sizeof( buf))== NULL ){
-		print( "familyman:没有指定设定的档案 。\n");
+		print( "familyman:羶衄硌隅扢隅腔紫偶 ﹝\n");
 		return FALSE;
 	}
-	/* 赓渝凛卞涩烂犯□正毛民尼永弁仄化支月 */
+	/* 疐趵鄹勗优擭溢↓淏禱鏍攝蚗袲媃趙盓堎 */
 	if( !NPC_Bankman_readData( meindex, -1, TRUE) ) {
 		return FALSE;
 	}
@@ -91,11 +91,11 @@ static void NPC_Bankman_selectWindow( int meindex, int toindex, int num)
 	int		fd;
 	char	buf[256];
 	
-	/* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
 	if( CHAR_getInt( toindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( !NPC_Util_charIsInFrontOfChar( toindex, meindex, 1 )) return; 
 
 	if( !NPC_Bankman_readData( meindex, num, FALSE) ) {
@@ -121,15 +121,15 @@ void NPC_BankmanWindowTalked( int meindex, int talkerindex,
 	int	button = -1;
 	char	buf[2048], buff[256];
 
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	
-	/* 仇及它奴件玉它  寞及犯□正毛  心  戈 */	
+	/* 喫摯坳贖璃迶坳  蠕摯溢↓淏禱  陑  資 */	
 	if( !NPC_Bankman_readData( meindex, seqno - 100, FALSE) ) {
 		print( "familyman:readdata error\n");
 		return;
 	}
-	/* 瓷仄凶示正件毛譬屯月 */
+	/* 棟媃倜尨淏璃禱ぅ迋堎 */
 	if( w.windowtype == WINDOW_MESSAGETYPE_SELECT ) {
 	//if( w.windowtype == WINDOW_MESSAGETYPE_MESSAGE ) {
 	// shan end
@@ -159,13 +159,13 @@ void NPC_BankmanWindowTalked( int meindex, int talkerindex,
 	
 		fd = getfdFromCharaIndex( talkerindex);
 		
-		/* 示正件卞方匀化质  毛孔曰歹仃月 */
+		/* 尨淏璃勗源埱趙窐  禱謂堇渦崹堎 */
 		if( newwin == -1 ) {
 			newwin = buttonproc[button].gotowin;
 		}
 		
 		// Robin
-		// 银行
+		// 窅俴
 		// shan begin
 		if( select == WINDOW_BUTTONTYPE_YES) {
 		        newwin = 5;
@@ -176,15 +176,15 @@ void NPC_BankmanWindowTalked( int meindex, int talkerindex,
 			    CHAR_getInt( talkerindex, CHAR_BANKGOLD) < 1 )
 			    	lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 			    		WINDOW_BUTTONTYPE_OK, -1, -1,
-			    		makeEscapeString("\n您的资格不符合！"
-			    				 "\n请先加入家族！", buff, sizeof(buff)));
+			    		makeEscapeString("\n蠟腔訧跡祥睫磁ㄐ"
+			    				 "\n③珂樓�趧眢憯�", buff, sizeof(buff)));
 			else {
 				sprintf(buf, "B|G|%d", CHAR_getInt( talkerindex, CHAR_BANKGOLD) );
 				lssproto_FM_send( fd, buf );
 			}
 			return;
 		}
-		// 家族帐户
+		// 模逜梛誧
 		if( newwin == 6 )
 		{
 			if( CHAR_getInt( talkerindex, CHAR_FMINDEX ) > 0 )
@@ -197,18 +197,18 @@ void NPC_BankmanWindowTalked( int meindex, int talkerindex,
 			else
 			    	lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 			    		WINDOW_BUTTONTYPE_OK, -1, -1,
-			    		makeEscapeString("\n您的资格不符合！"
-			    				 "\n请先加入家族！", buff, sizeof(buff)));
+			    		makeEscapeString("\n蠟腔訧跡祥睫磁ㄐ"
+			    				 "\n③珂樓�趧眢憯�", buff, sizeof(buff)));
 			return;
 		}
-		// 退出
+		// 豖堤
 		if( newwin == 7 )
 		{
 			if( CHAR_getInt( talkerindex, CHAR_FMINDEX ) == -1 ) {
 			    	lssproto_WN_send(fd, WINDOW_MESSAGETYPE_MESSAGE,
 			    		WINDOW_BUTTONTYPE_OK, -1, -1,
-			    		makeEscapeString("\n您的资格不符合！"
-			    				 "\n请先加入家族！", buff, sizeof(buff)));
+			    		makeEscapeString("\n蠟腔訧跡祥睫磁ㄐ"
+			    				 "\n③珂樓�趧眢憯�", buff, sizeof(buff)));
 				return;
 			}
 			
@@ -277,7 +277,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 		b_mode = -1;
 		errflg = FALSE;
 
-		/* 赓渝祭 */
+		/* 疐趵撬 */
 		w.windowno = -1;
 		w.windowtype = -1;
 		w.buttontype = -1;
@@ -306,15 +306,15 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			linenum ++;
 			
-			/* 戊丢件玄反  骰 */
+			/* 昡隍璃哱毀  鷋 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 荼垫潸月 */
+			/* 搊菜噁堎 */
 			chomp( line );
 			
-			/*  垫毛帮溥允月    */
-			/*  引内 tab 毛 " " 卞  五晶尹月    */
+			/*  菜禱堆魠埰堎    */
+			/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
 			replaceString( line, '\t' , ' ' );
-			/* 燮  及旦矢□旦毛潸月［*/
+			/* 袸  摯筒妐↓筒禱噁堎��*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;
@@ -323,7 +323,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 			}
 			if( i != 0 ) strcpy( line, buf);
 
-			/* delim "=" 匹  赓(1)及玄□弁件毛  月*/
+			/* delim "=" ぁ  疐(1)摯哱↓袲璃禱  堎*/
 			ret = getStringFromIndexWithDelim( line, "=",  1, firstToken,
 											   sizeof( firstToken ) );
 			if( ret == FALSE ){
@@ -331,7 +331,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 					   filename , linenum);
 				continue;
 			}
-			/* delim "=" 匹2    及玄□弁件毛  月*/
+			/* delim "=" ぁ2    摯哱↓袲璃禱  堎*/
 			ret = getStringFromIndexWithDelim( line, "=", 2, secondToken,
 											   sizeof( secondToken ) );
 			if( ret == FALSE ){
@@ -342,26 +342,26 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			if( strcasecmp( firstToken, "winno") == 0 ) {
 				if( winno != -1 ) {
-					print( "familyman:已有winno却重新定义winno\n");
+					print( "familyman:眒衄winno�棉寪繞例徲inno\n");
 					print( "filename:[%s] line[%d]\n", filename, linenum);
 					errflg = TRUE;
 					readflg = FALSE;
 					break;
 				}
-				/* 它奴件玉它No毛忡绣 */
+				/* 坳贖璃迶坳No禱瞀凎 */
 				winno = atoi( secondToken);
 				continue;
 			}
-			/* 它奴件玉它No 互瑁引匀化中卅中凛及垫反  骰允月 */
+			/* 坳贖璃迶坳No 誑鋆竘埱趙笢埵笢鄹摯菜毀  鷋埰堎 */
 			if( winno == -1 ) {
-				print( "familyman:winno 尚未定义，资料却已设定。\n");
+				print( "familyman:winno 奾帤隅砱ㄛ訧蹋�棍挸頞芋αn");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				readflg = FALSE;
 				errflg = FALSE;
 				break;
 			}
-			/* 它奴件玉它No 互域谯仄凶凛反椭瘀毛  戈［
-			 * 公木动陆反  骰允月 */
+			/* 坳贖璃迶坳No 誑郖窙媃倜鄹毀邳贀禱  資��
+			 * 鼠躂雄翻毀  鷋埰堎 */
 			if( (chkflg == FALSE && winno == windowno )||
 				chkflg == TRUE) 
 			{
@@ -389,7 +389,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 								errflg = TRUE;
 							}
 							else {
-								/* 升匀切井井凶匀吊分仃匹手涩烂今木化中木壬     */
+								/* 汔埱з凝凝倜埱裂煦崹ぁ忒优擭踏躂趙笢躂��     */
 								if( !((buttonproc[b_mode].checkhaveitem != -1 && 
 									   buttonproc[b_mode].checkhaveitemgotowin != -1)
 									 || (buttonproc[b_mode].checkdonthaveitem != -1 && 
@@ -401,7 +401,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 						}
 						
 						if( errflg == TRUE) {
-							print( "familyman: 找不到gotowin\n");
+							print( "familyman: 梑祥善gotowin\n");
 							print( "filename:[%s] line[%d]\n", filename, linenum);
 							readflg = FALSE;
 							errflg = TRUE;
@@ -415,23 +415,23 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 				else {
 					
 					w.windowno = winno;
-					/* 它奴件玉它正奶皿及涩烂 */
+					/* 坳贖璃迶坳淏騷鏤摯优擭 */
 					if( strcasecmp( firstToken, "wintype") == 0 ) {
 						w.windowtype = atoi( secondToken);
 					}
-					/* 示正件正奶皿及涩烂 */
+					/* 尨淏璃淏騷鏤摯优擭 */
 					else if( strcasecmp( firstToken, "buttontype") == 0 ) {
 						w.buttontype = NPC_Bankman_restoreButtontype( secondToken);
 					}
-					/* getitem及涩烂 */
+					/* getitem摯优擭 */
 					else if( strcasecmp( firstToken, "takeitem") == 0 ) {
 						w.takeitem = atoi( secondToken);
 					}
-					/* giveitem及涩烂 */
+					/* giveitem摯优擭 */
 					else if( strcasecmp( firstToken, "giveitem") == 0 ) {
 						w.giveitem = atoi( secondToken);
 					}
-					/* message及涩烂 */
+					/* message摯优擭 */
 					else if( strcasecmp( firstToken, "message") == 0 ) {
 						if( messagepos == 0 ) {
 							strcpy(  w.message, secondToken);
@@ -444,7 +444,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 							messagepos+=strlen(secondToken);
 						}
 					}
-					/* 示正件毛瓷仄凶凛及涩烂 */
+					/* 尨淏璃禱棟媃倜鄹摯优擭 */
 					else if( strcasecmp( firstToken, "okpressed") == 0 ) {
 						buttonconfmode = TRUE;
 						b_mode = 0;
@@ -481,7 +481,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 						buttonendflg = FALSE;
 						selectnum ++;
 					}
-					/* 涩烂蔽歹曰 */
+					/* 优擭敖渦堇 */
 					else if( strcasecmp( firstToken, "endwin") == 0 ) {
 						endflg = TRUE;
 						if( chkflg == FALSE) {
@@ -490,7 +490,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 						break;
 					}
 					else {
-						print( "familyman:设定是不可能的参数\n");
+						print( "familyman:扢隅岆祥褫夔腔統杅\n");
 						print( "filename:[%s] line[%d]\n", filename, linenum);
 					}
 				}
@@ -502,26 +502,26 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 			}
 		}
 		if( buttonendflg == FALSE) {
-			print( "familyman: 找不到endbutton\n");
+			print( "familyman: 梑祥善endbutton\n");
 			print( "filename:[%s] line[%d]\n", filename, linenum);
 			errflg = TRUE;
 			break;
 		}
 		if( winno != -1 ) {
 			if( w.windowtype == -1 ) {
-				print( "familyman: 找不到wintype\n");
+				print( "familyman: 梑祥善wintype\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
 			}
 			if( w.buttontype == -1 ) {
-				print( "familyman: 找不到button\n");
+				print( "familyman: 梑祥善button\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
 			}
 			if( strlen( w.message) == 0 ) {
-				print( "familyman: 找不到message\n");
+				print( "familyman: 梑祥善message\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
@@ -531,12 +531,12 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 	fclose( fp);
 	
 	if( chkflg == FALSE && w.windowno == -1 ) {
-		print( "familyman: 找不到所指定的windowno\n");
+		print( "familyman: 梑祥善垀硌隅腔windowno\n");
 		print( "filename:[%s] line[%d]\n", filename, linenum);
 		return FALSE;
 	}
 	if( winno != -1 && endflg == FALSE) {
-		print( "familyman: 找不到endwin\n");
+		print( "familyman: 梑祥善endwin\n");
 		print( "filename:[%s] line[%d]\n", filename, linenum);
 		return FALSE;
 	}
@@ -545,7 +545,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 	return TRUE;
 }
 /*
- * buttontype=匹隙烂仄凶  侬  毛醒袄卞  晶允月［
+ * buttontype=ぁ炩擭媃倜  棬  禱倳偯勗  儒埰堎��
  *
  */
 static int NPC_Bankman_restoreButtontype( char *data )

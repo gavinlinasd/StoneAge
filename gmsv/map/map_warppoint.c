@@ -86,15 +86,15 @@ int MAPPOINT_creatMapWarpObj( int pointindex, char *buf, int objtype)
 	obj.index= pointindex;
 	memset( obj.objname, 0, sizeof( obj.objname));
 	if( getStringFromIndexWithDelim( buf, ",", 1, buf1, sizeof(buf1)) ==FALSE ){
-		return -1;//原点
+		return -1;//埻萸
 	}
 	obj.floor   = atoi( buf1);
 	if( getStringFromIndexWithDelim( buf, ",", 2, buf1, sizeof(buf1)) ==FALSE ){
-		return -1;//原点
+		return -1;//埻萸
 	}
 	obj.x = atoi( buf1);
 	if( getStringFromIndexWithDelim( buf, ",", 3, buf1, sizeof(buf1)) ==FALSE ){
-		return -1;//原点
+		return -1;//埻萸
 	}
 	obj.y = atoi( buf1);
 	obj.type = OBJTYPE_WARPPOINT;
@@ -129,16 +129,16 @@ int  MAPPOINT_setMapWarpFrom( int ps, char *buf)
 	char buf1[256];
 
 	if( MAPPOINT_CHECKINDEX( ps) ){
-		print(" 放置传送点从 %s 获得!!\n", buf);
+		print(" 溫离換冞萸植 %s 鳳腕!!\n", buf);
 		return -1;
 	}
 
 	memset( buf1, 0, sizeof( buf1));
-	if( getStringFromIndexWithDelim( buf, ",", 1, buf1, sizeof(buf1)) ==FALSE ) return -1;//原点
+	if( getStringFromIndexWithDelim( buf, ",", 1, buf1, sizeof(buf1)) ==FALSE ) return -1;//埻萸
 	MapWarppoint[ps].ofloor = atoi( buf1);
-	if( getStringFromIndexWithDelim( buf, ",", 2, buf1, sizeof(buf1)) ==FALSE ) return -1;//原点
+	if( getStringFromIndexWithDelim( buf, ",", 2, buf1, sizeof(buf1)) ==FALSE ) return -1;//埻萸
 	MapWarppoint[ps].ox = atoi( buf1);
-	if( getStringFromIndexWithDelim( buf, ",", 3, buf1, sizeof(buf1)) ==FALSE ) return -1;//原点
+	if( getStringFromIndexWithDelim( buf, ",", 3, buf1, sizeof(buf1)) ==FALSE ) return -1;//埻萸
 	MapWarppoint[ps].oy = atoi( buf1);
 	return 1;
 }
@@ -147,16 +147,16 @@ int  MAPPOINT_setMapWarpGoal( int ps, char *buf)
 {
 	char buf1[256];
 	if( MAPPOINT_CHECKINDEX( ps) ){
-		print(" 放置传送点获得 :%s!!\n", buf);
+		print(" 溫离換冞萸鳳腕 :%s!!\n", buf);
 		return -1;
 	}
 
 	memset( buf1, 0, sizeof( buf1));
-	if( getStringFromIndexWithDelim( buf, ",", 1, buf1, sizeof(buf1)) ==FALSE ) return -1;//原点
+	if( getStringFromIndexWithDelim( buf, ",", 1, buf1, sizeof(buf1)) ==FALSE ) return -1;//埻萸
 	MapWarppoint[ps].floor = atoi( buf1);
-	if( getStringFromIndexWithDelim( buf, ",", 2, buf1, sizeof(buf1)) ==FALSE ) return -1;//原点
+	if( getStringFromIndexWithDelim( buf, ",", 2, buf1, sizeof(buf1)) ==FALSE ) return -1;//埻萸
 	MapWarppoint[ps].x = atoi( buf1);
-	if( getStringFromIndexWithDelim( buf, ",", 3, buf1, sizeof(buf1)) ==FALSE ) return -1;//原点
+	if( getStringFromIndexWithDelim( buf, ",", 3, buf1, sizeof(buf1)) ==FALSE ) return -1;//埻萸
 	MapWarppoint[ps].y = atoi( buf1);
 	return 1;
 }
@@ -164,18 +164,18 @@ int  MAPPOINT_setMapWarpGoal( int ps, char *buf)
 int MAPPOINT_getMapWarpGoal( int ps, int ofl, int ox, int oy, int *fl, int *x, int *y)
 {
 	if( !MAPPOINT_CHECKINDEX( ps) ){
-		print("获取传送点PS:%d 错误!!\n", ps);
+		print("鳳�●屎芚箊S:%d 渣昫!!\n", ps);
 		return -1;
 	}
 
 	if( MapWarppoint[ps].ofloor != ofl ||
 		MapWarppoint[ps].ox != ox || MapWarppoint[ps].oy != oy ){
-		print( "不正常传送点: 旧的有问题传送点 %d %d %d !!\n" , ofl,ox,oy );
+		print( "祥淏都換冞萸: 導腔衄恀枙換冞萸 %d %d %d !!\n" , ofl,ox,oy );
 		return -1;
 	}
-	//可加判断条件
+	//褫樓瓚剿沭璃
 	if( MAP_IsValidCoordinate( MapWarppoint[ps].floor, MapWarppoint[ps].x, MapWarppoint[ps].y)== FALSE ){
-		print( "不正常传送点:有问题 %d %d %d !!\n" ,
+		print( "祥淏都換冞萸:衄恀枙 %d %d %d !!\n" ,
 			MapWarppoint[ps].floor,MapWarppoint[ps].x, MapWarppoint[ps].y );
 		return -1;
 	}
@@ -204,7 +204,7 @@ int MAPPOINT_loadMapWarpPoint( )
 			if( !strcmp( buf1, PointType[i]) )break;
 		}
 		if( i >= arraysizeof( PointType) ){
-			print(" 1.map 传送点错误 %s \n", buf);
+			print(" 1.map 換冞萸渣昫 %s \n", buf);
 			continue;
 		}
 		MapWarppoint[ps].type = i;
@@ -222,25 +222,25 @@ int MAPPOINT_loadMapWarpPoint( )
 		if( getStringFromIndexWithDelim( buf, ":", 3, buf1, sizeof(buf1)) ==FALSE )continue;
 
 		if( MAPPOINT_setMapWarpFrom( ps, buf1) == -1){
-			print(" 2-1.map 传送点错误 %s [%s] \n", buf, buf1);
+			print(" 2-1.map 換冞萸渣昫 %s [%s] \n", buf, buf1);
 			continue;
 		}
 		if( MAPPOINT_creatMapWarpObj( ps, buf1, objtype) == -1 ){
-			print(" 2.map 传送点错误 %s [%s] \n", buf, buf1);
+			print(" 2.map 換冞萸渣昫 %s [%s] \n", buf, buf1);
 			continue;
 		}
 		memset( buf1, 0, sizeof(buf1));
 		if( getStringFromIndexWithDelim( buf, ":", 4, buf1, sizeof(buf1)) ==FALSE ){
-			print(" 3.map 传送点错误 %s [%s] \n", buf, buf1);
+			print(" 3.map 換冞萸渣昫 %s [%s] \n", buf, buf1);
 			continue;
 		}
 		if( MAPPOINT_setMapWarpGoal( ps, buf1) == -1 ){
-			print(" 4.map 传送点错误 %s \n", buf);
+			print(" 4.map 換冞萸渣昫 %s \n", buf);
 			continue;
 		}
 		memset( buf1, 0, sizeof(buf1));
 		if( getStringFromIndexWithDelim( buf, ":", 5, buf1, sizeof(buf1)) ==FALSE ){
-			print(" 5.map 传送点错误 %s [%s] \n", buf, buf1);
+			print(" 5.map 換冞萸渣昫 %s [%s] \n", buf, buf1);
 			continue;
 		}
 		MapWarppoint[ps].use = 1;
@@ -251,9 +251,9 @@ int MAPPOINT_loadMapWarpPoint( )
 		}
 	}
 	//andy_log
-	print("初始化 %d 地图传送点...", MapWarpPoints);
+	print("場宎趙 %d 華芞換冞萸...", MapWarpPoints);
 	fclose( fp);
-	print("完成\n");
+	print("俇傖\n");
 	return 1;
 }
 
@@ -262,7 +262,7 @@ void MAPPOINT_MapWarpHandle( int charaindex, int ps, int ofl, int ox, int oy )
 	int floor, x, y;
 	if( MAPPOINT_getMapWarpGoal( ps, ofl, ox, oy, &floor, &x, &y) == -1 ){
 		//andy_log
-		print( "获取传送点( %d, %d,%d,%d)错误!!\n", ps, ofl, ox, oy);
+		print( "鳳�●屎芚�( %d, %d,%d,%d)渣昫!!\n", ps, ofl, ox, oy);
 		return;
 	}
 	if( floor == 777 ) return;

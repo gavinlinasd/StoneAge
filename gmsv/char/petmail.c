@@ -21,10 +21,10 @@
 
 #define		PETMAIL_IDLE_RETURNOWNER	(60*30)
 //andy_edit
-//#define	PETMAIL_IDLEDISCARD	(60*60)  //Syu 修正宠邮等待时间为一小时
+//#define	PETMAIL_IDLEDISCARD	(60*60)  //Syu 党淏唾蚘脹渾奀潔峈珨苤奀
 #define	PETMAIL_IDLEDISCARD	(60*3)
 
-/* petmail 跨星系的等待时间  shan add */
+/* petmail 輻陎炵腔脹渾奀潔  shan add */
 #define         PETMAIL_JS_TIMEOUT              (2*60)
 
 static int PETMAIL_getIdleTime( int index);
@@ -54,7 +54,7 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 	int		itemindex =-1;
 	int tocharaindex,playernum,i;
 
-	//判断 人物 宠物 道具 对象名片
+	//瓚剿 �冼� 唾昜 耋撿 勤砓靡え
 	if( !CHAR_CHECKINDEX( cindex) )return FALSE;
 	if( haveitemindex != -1 ) {
 		itemindex = CHAR_getItemIndex( cindex, haveitemindex);
@@ -72,28 +72,28 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 	ae = CHAR_getAddressbookEntry( cindex , aindex );
 	if( ae == NULL )return FALSE;
 
-#ifdef _AVID_TRADETRYBUG  //宠物邮件
+#ifdef _AVID_TRADETRYBUG  //唾昜蚘璃
 	if( CHAR_getWorkInt( cindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE ){
-		CHAR_talkToCli( cindex, -1, "交易状态中无法传递宠物邮件。", CHAR_COLORYELLOW );
+		CHAR_talkToCli( cindex, -1, "蝠眢袨怓笢拸楊換菰唾昜蚘璃﹝", CHAR_COLORYELLOW );
 		return FALSE;
 	}
 #endif
-	//骑乘
+	//る傚
     if (CHAR_getInt( cindex, CHAR_RIDEPET) == havepetindex ){
-    	CHAR_talkToCli(cindex, -1, "骑乘中的宠物无法传递宠物邮件！", CHAR_COLORYELLOW);
+    	CHAR_talkToCli(cindex, -1, "る傚笢腔唾昜拸楊換菰唾昜蚘璃ㄐ", CHAR_COLORYELLOW);
     	return	FALSE;
     }
 	if( CHAR_getWorkInt( cindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE){
-		CHAR_talkToCli( cindex, -1, "战斗状态中无法传递宠物邮件。", CHAR_COLORYELLOW );
+		CHAR_talkToCli( cindex, -1, "桵須袨怓笢拸楊換菰唾昜蚘璃﹝", CHAR_COLORYELLOW );
 		return	FALSE;
 	}
     if (CHAR_getInt(petindex, CHAR_PETFAMILY) == 1){
-	   	CHAR_talkToCli(cindex, -1, "家族守护兽无法传递邮件喔！", CHAR_COLORYELLOW);
+	   	CHAR_talkToCli(cindex, -1, "模逜忐誘忤拸楊換菰蚘璃鉊ㄐ", CHAR_COLORYELLOW);
 	   	return	FALSE;
 	}
 // Terry add fix can send mail to offline character 2004/2/5
 	if(ae->online == 0){
-		CHAR_talkToCli(cindex, -1, "该玩家不在线上！", CHAR_COLORYELLOW);
+		CHAR_talkToCli(cindex, -1, "蜆俙模祥婓盄奻ㄐ", CHAR_COLORYELLOW);
    	return	FALSE;
 	}
 	playernum = CHAR_getPlayerMaxNum();
@@ -103,38 +103,38 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 			strcmp(CHAR_getChar(i,CHAR_NAME),ae->charname) == 0 ) break;
 	}
 	if(i == playernum){
-		CHAR_talkToCli(cindex, -1, "该玩家不在此星球上！", CHAR_COLORYELLOW);
+		CHAR_talkToCli(cindex, -1, "蜆俙模祥婓森陎⑩奻ㄐ", CHAR_COLORYELLOW);
    	return	FALSE;
 	}
 // end
 #ifdef _MAP_TIME
 	if((CHAR_getInt(cindex,CHAR_FLOOR) >= 30017 && CHAR_getInt(cindex,CHAR_FLOOR) <= 30021)){
 		char	msgbuf[512];
-		snprintf(msgbuf,sizeof(msgbuf),"此地区不得寄送道具！");
+		snprintf(msgbuf,sizeof(msgbuf),"森華⑹祥腕敵冞耋撿ㄐ");
 		CHAR_talkToCli(cindex,-1,msgbuf,CHAR_COLORWHITE);
 		return FALSE;
 	}
 	if((CHAR_getInt(i,CHAR_FLOOR) >= 30017 && CHAR_getInt(i,CHAR_FLOOR) <= 30021)){
 		char	msgbuf[512];
-		snprintf(msgbuf,sizeof(msgbuf),"对方所在地区不得收寄送道具！");
+		snprintf(msgbuf,sizeof(msgbuf),"勤源垀婓華⑹祥腕彶敵冞耋撿ㄐ");
 		CHAR_talkToCli(cindex,-1,msgbuf,CHAR_COLORWHITE);
 		return FALSE;
 	}
 #endif
 
-#ifdef _BAD_PLAYER             // WON ADD 送坏玩家去关
+#ifdef _BAD_PLAYER             // WON ADD 冞輓俙模�旦�
 	if( CHAR_getInt(cindex,CHAR_FLOOR)==887 ){
 		char	msgbuf[512];
-		snprintf( msgbuf, sizeof( msgbuf), "对不起，您在招待室中，无法寄送信件。");
+		snprintf( msgbuf, sizeof( msgbuf), "勤祥れㄛ蠟婓桸渾弅笢ㄛ拸楊敵冞陓璃﹝");
 		CHAR_talkToCli( cindex, -1, msgbuf, CHAR_COLORWHITE);
 		return FALSE;
 	}
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	{
 		char	msgbuf[512];
-		snprintf( msgbuf, sizeof( msgbuf), "跨星系家族PK，无法寄送信件。");
+		snprintf( msgbuf, sizeof( msgbuf), "輻陎炵模逜PKㄛ拸楊敵冞陓璃﹝");
 		CHAR_talkToCli( cindex, -1, msgbuf, CHAR_COLORWHITE);
 		return FALSE;
 	}
@@ -144,33 +144,33 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 	if( ( CHAR_getInt(cindex,CHAR_FLOOR) >= 8200 && CHAR_getInt(cindex,CHAR_FLOOR) <= 8213 ) ) 
 	{
 		char	msgbuf[512];
-		snprintf( msgbuf, sizeof( msgbuf), "英雄战场不得寄送道具！");
+		snprintf( msgbuf, sizeof( msgbuf), "荎倯桵部祥腕敵冞耋撿ㄐ");
 		CHAR_talkToCli( cindex, -1, msgbuf, CHAR_COLORWHITE);
 		return FALSE;
 	}
 
 #ifdef _PET_LIMITLEVEL
 		if( CHAR_getInt( petindex, CHAR_LIMITLEVEL) > 0 )	{
-			CHAR_talkToCli(cindex, -1, "特殊宠物不能传递邮件喔！", CHAR_COLORYELLOW);
+			CHAR_talkToCli(cindex, -1, "杻忷唾昜祥夔換菰蚘璃鉊ㄐ", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 #endif
 
 #ifdef _PETMAIL_DEFNUMS
 		if( CHAR_getWorkInt( cindex, CHAR_PETMAILNUMS) > 6 ){
-			CHAR_talkToCli(cindex, -1, "邮件中宠物过多，暂时无法传递宠物邮件！", CHAR_COLORYELLOW);
+			CHAR_talkToCli(cindex, -1, "蚘璃笢唾昜徹嗣ㄛ婃奀拸楊換菰唾昜蚘璃ㄐ", CHAR_COLORYELLOW);
 			return	FALSE;
 		}else if( PETMAIL_CheckIsMyOffmsg( cindex, ae->cdkey, ae->charname) > 5 ){
-			CHAR_talkToCli(cindex, -1, "收件者目前邮件宠物超过5封，暂时无法传递宠物邮件！", CHAR_COLORYELLOW);
+			CHAR_talkToCli(cindex, -1, "彶璃氪醴ヶ蚘璃唾昜閉徹5猾ㄛ婃奀拸楊換菰唾昜蚘璃ㄐ", CHAR_COLORYELLOW);
 			return	FALSE;
 		}else if( CHAR_getWorkInt( cindex, CHAR_PETMAILSENDTIME) > (int)time( NULL)){
 			char Mess1[256];
-			sprintf( Mess1,"需等待%d秒才能再次寄送宠物邮件！",
+			sprintf( Mess1,"剒脹渾%d鏃符夔婬棒敵冞唾昜蚘璃ㄐ",
 				(int)time( NULL) - CHAR_getWorkInt( cindex, CHAR_PETMAILSENDTIME));
 			CHAR_talkToCli( cindex, -1, Mess1, CHAR_COLORYELLOW);
 			return	FALSE;
 		}else if( PetMailTotalnums >= PETMAIL_DEFTOTALNUM ){
-			CHAR_talkToCli(cindex, -1, "目前系统邮件过多，请稍後再寄。", CHAR_COLORYELLOW);
+			CHAR_talkToCli(cindex, -1, "醴ヶ炵苀蚘璃徹嗣ㄛ③尕摽婬敵﹝", CHAR_COLORYELLOW);
 			return	FALSE;
 		}else{
 			int nums = CHAR_getWorkInt( cindex, CHAR_PETMAILNUMS);
@@ -191,9 +191,9 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 			return FALSE;
 		}
 
-#ifdef _FIX_PETMAIL2        // WON ADD 修正宠邮2
+#ifdef _FIX_PETMAIL2        // WON ADD 党淏唾蚘2
 		if( !PET_dropPetFLXY( cindex, havepetindex, PETMAIL_SPOOLFLOOR, PETMAIL_SPOOLX,PETMAIL_SPOOLY) ){
-			CHAR_talkToCli( cindex, -1, "宠物邮件失败", CHAR_COLORYELLOW);
+			CHAR_talkToCli( cindex, -1, "唾昜蚘璃囮啖", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 #endif
@@ -212,13 +212,13 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 		CHAR_setInt( petindex, CHAR_PETMAILFROMX, CHAR_getInt( cindex, CHAR_X));
 		CHAR_setInt( petindex, CHAR_PETMAILFROMY,CHAR_getInt( cindex, CHAR_Y));		
 
-#ifdef _WON_PET_MAIL_LOG   // WON ADD 增加寄宠邮的 LOG
+#ifdef _WON_PET_MAIL_LOG   // WON ADD 崝樓敵唾蚘腔 LOG
 		LogPet(
 			CHAR_getChar( cindex, CHAR_NAME ), 
 			CHAR_getChar( cindex, CHAR_CDKEY ),
 			CHAR_getChar( petindex, CHAR_NAME),
 			CHAR_getInt( petindex, CHAR_LV),
-			"Pet_Send_Mail(寄宠邮)",
+			"Pet_Send_Mail(敵唾蚘)",
 			CHAR_getInt( cindex,CHAR_FLOOR),
 			CHAR_getInt( cindex,CHAR_X ),
 			CHAR_getInt( cindex,CHAR_Y ),
@@ -233,7 +233,7 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 				CHAR_getChar( cindex, CHAR_NAME ),
 				CHAR_getChar( cindex, CHAR_CDKEY ),
 				itemindex,
-				"pm_have(宠邮->寄送的道具)",
+				"pm_have(唾蚘->敵冞腔耋撿)",
 				CHAR_getInt( cindex,CHAR_FLOOR),
 				CHAR_getInt( cindex,CHAR_X ),
 	 			CHAR_getInt( cindex,CHAR_Y ),
@@ -246,7 +246,7 @@ BOOL PETMAIL_sendPetMail( int cindex, int aindex,
 		{
 			char token[256];
 			tocharaindex = PETMAIL_CheckPlayerExist( petindex, 0);
-			sprintf( token, "寄送宠物邮件(%s)给%s。",
+			sprintf( token, "敵冞唾昜蚘璃(%s)跤%s﹝",
 				CHAR_getUseName( petindex), CHAR_getUseName( tocharaindex) );
 			CHAR_talkToCli( cindex, -1, token, CHAR_COLORYELLOW);
 		}
@@ -413,7 +413,7 @@ BOOL storePetmail( void)
 	char	escapebuf1[ 64],escapebuf2[ 64];
 	int		i;
 
-    /*  白央奶伙  毛菲户月  */
+    /*  啞栝騷鳴  禱滑誧堎  */
     snprintf( filename ,sizeof( filename ) ,"%s/%s" ,
     				getStoredir(), PETMAILOFFMSGFILE);
     fp = fopen( filename , "wt" );
@@ -475,16 +475,16 @@ void PETMAIL_Loopfunc( int index)
 	  case CHAR_PETMAIL_IDLE2:
 		PETMAIL_IdleProc2( index);
 		break;
-	  case CHAR_PETMAIL_RETURNWAIT://回来等待
+	  case CHAR_PETMAIL_RETURNWAIT://隙懂脹渾
 	  	PETMAIL_ReturnWait( index);
 	  	break;
 	  case CHAR_PETMAIL_IDLE3:
 		PETMAIL_IdleProc3( index);
 		break;
-	  case CHAR_PETMAIL_IDLE4://寻找主人
+	  case CHAR_PETMAIL_IDLE4://扆梑翋��
 		PETMAIL_IdleProc4( index);
 	  	break;
-	  case CHAR_PETMAIL_IDLE5: //超过时间无法找到主人
+	  case CHAR_PETMAIL_IDLE5: //閉徹奀潔拸楊梑善翋��
 		PETMAIL_IdleProc5( index);
 	  	break;
 	  default:
@@ -494,9 +494,9 @@ void PETMAIL_Loopfunc( int index)
 
 static int PETMAIL_getIdleTime( int index)
 {
-#define		PETMAIL_DIVRANGE		25		//	坌喃允月汹
-#define		PETMAIL_IDLELEVELRANGE	10		//	坌喃允月  区
-#define		PETMAIL_IDLEUNITTIME	3		//	棉厥
+#define		PETMAIL_DIVRANGE		25		//	覕鄎埰堎倵
+#define		PETMAIL_IDLELEVELRANGE	10		//	覕鄎埰堎  ⑹
+#define		PETMAIL_IDLEUNITTIME	3		//	蹬婽
 	int		d;
 	int		dex = CHAR_getWorkInt( index, CHAR_WORKQUICK) ;
 
@@ -519,10 +519,10 @@ static void PETMAIL_sendPetmail( int index, int tocharaindex)
 	index_to_my_info =  ADDRESSBOOK_getIndexInAddressbook( tocharaindex, 
 						CHAR_getChar( index, CHAR_OWNERCDKEY),
 						CHAR_getChar( index, CHAR_OWNERCHARANAME));
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 模逜桵GM硌鍔
 	{
 		char	msgbuf[512];
-		snprintf( msgbuf, sizeof( msgbuf), "跨星系家族PK，无法寄送信件。");
+		snprintf( msgbuf, sizeof( msgbuf), "輻陎炵模逜PKㄛ拸楊敵冞陓璃﹝");
 		CHAR_talkToCli( index, -1, msgbuf, CHAR_COLORWHITE);
 		return ;
 	}
@@ -533,18 +533,18 @@ static void PETMAIL_sendPetmail( int index, int tocharaindex)
 		char	msgbuf[512];
 
 		snprintf( msgbuf, sizeof( msgbuf), 
-					"%s的%s 终於来了！"
-					"由於对方没有您的名片，所以信件被退回了。",
+					"%s腔%s 笝黺懂賸ㄐ"
+					"蚕黺勤源羶衄蠟腔靡えㄛ垀眕陓璃掩豖隙賸﹝",
 					CHAR_getChar( index, CHAR_OWNERCHARANAME),
 					CHAR_getUseName( index));
 		CHAR_talkToCli( tocharaindex, -1, msgbuf, CHAR_COLORWHITE);
 	}
 
-#ifdef _BAD_PLAYER             // WON ADD 送坏玩家去关
+#ifdef _BAD_PLAYER             // WON ADD 冞輓俙模�旦�
 	else if( CHAR_getInt(tocharaindex,CHAR_FLOOR)==887 ){
 		char	msgbuf[512];
 		snprintf( msgbuf, sizeof( msgbuf), 					
-					"由於您在招待室中，无法接收信件，所以信件被退回了。" );
+					"蚕黺蠟婓桸渾弅笢ㄛ拸楊諉彶陓璃ㄛ垀眕陓璃掩豖隙賸﹝" );
 		CHAR_talkToCli( tocharaindex, -1, msgbuf, CHAR_COLORWHITE);
 	}
 #endif
@@ -554,7 +554,7 @@ static void PETMAIL_sendPetmail( int index, int tocharaindex)
 		CHAR_getInt(tocharaindex,CHAR_FLOOR) <= 8213 ){
 		char	msgbuf[512];
 		snprintf( msgbuf, sizeof( msgbuf), 					
-					"英雄战场不得寄送道具！" );
+					"荎倯桵部祥腕敵冞耋撿ㄐ" );
 		CHAR_talkToCli( tocharaindex, -1, msgbuf, CHAR_COLORWHITE);
 	}
 	else {
@@ -571,7 +571,7 @@ static void PETMAIL_sendPetmail( int index, int tocharaindex)
 				CHAR_getChar( tocharaindex, CHAR_NAME ), 
 				CHAR_getChar( tocharaindex, CHAR_CDKEY ),
 				itemindex,
-				"pm_putground(宠邮->道具栏已满，放置地上)",
+				"pm_putground(唾蚘->耋撿戲眒雛ㄛ溫离華奻)",
 				CHAR_getInt( index,CHAR_FLOOR),
 				CHAR_getInt( index,CHAR_X ),
 	 			CHAR_getInt( index,CHAR_Y ),
@@ -588,7 +588,7 @@ static void PETMAIL_sendPetmail( int index, int tocharaindex)
 				CHAR_getChar( tocharaindex, CHAR_NAME ),
 				CHAR_getChar( tocharaindex, CHAR_CDKEY ),
 				itemindex,
-				"pm_getitem(宠邮->收到的道具)",
+				"pm_getitem(唾蚘->彶善腔耋撿)",
 				CHAR_getInt( index,CHAR_FLOOR),
 				CHAR_getInt( index,CHAR_X ),
 	 			CHAR_getInt( index,CHAR_Y ),
@@ -636,9 +636,9 @@ static void PETMAIL_IdleProc1( int index)
 	if( !CHAR_CHECKINDEX( tocharaindex) ) {
 		warp = TRUE;
 	}else {
-		if( CHAR_getInt( tocharaindex, CHAR_FLOOR) == 8215 ){//客服活动 andy
+		if( CHAR_getInt( tocharaindex, CHAR_FLOOR) == 8215 ){//諦督魂雄 andy
 			warp = TRUE;
-		}else if( CHAR_getWorkInt( tocharaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE ){//交易中不收邮件
+		}else if( CHAR_getWorkInt( tocharaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE ){//蝠眢笢祥彶蚘璃
 			warp = TRUE;
 		}else if( CHAR_getWorkInt( tocharaindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ){		
 			int battleindex = CHAR_getWorkInt( tocharaindex, CHAR_WORKBATTLEINDEX );
@@ -693,8 +693,8 @@ static void PETMAIL_IdleProc2( int index)
 		int		cnt;
 		tocharaindex = PETMAIL_CheckPlayerExist( index, 0);
 		if( tocharaindex != -1 ) {
-			if( CHAR_getInt( tocharaindex, CHAR_FLOOR) == 8215 ){//客服活动 andy
-			}else if( CHAR_getWorkInt( tocharaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE ){//交易中不收邮件
+			if( CHAR_getInt( tocharaindex, CHAR_FLOOR) == 8215 ){//諦督魂雄 andy
+			}else if( CHAR_getWorkInt( tocharaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE ){//蝠眢笢祥彶蚘璃
 			}else if( CHAR_getWorkInt( tocharaindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE){
 			}else {
 				int		fl, x, y, ch_x, ch_y;
@@ -802,12 +802,12 @@ static void PETMAIL_IdleProc4( int index)
 	{
 		int		tocharaindex;
 		int		cnt;
-		tocharaindex = PETMAIL_CheckPlayerExist( index, 1);//寻找主人
+		tocharaindex = PETMAIL_CheckPlayerExist( index, 1);//扆梑翋��
 		if( tocharaindex != -1 ) {
 			if( CHAR_getWorkInt( tocharaindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE &&
 				CHAR_getWorkInt( tocharaindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_FREE ){
 
-				int		fl, x, y, ch_x, ch_y;//回到主人身边
+				int		fl, x, y, ch_x, ch_y;//隙善翋�侂穜�
 				
 				fl = CHAR_getInt( tocharaindex, CHAR_FLOOR);
 				ch_x = CHAR_getInt( tocharaindex, CHAR_X);
@@ -828,20 +828,20 @@ static void PETMAIL_IdleProc4( int index)
 				PETMAIL_returnMail( index, tocharaindex);
 			}
 		}else {
-			if( NowTime.tv_sec > t + PETMAIL_IDLE_RETURNOWNER ) {//检查等待主人时间
+			if( NowTime.tv_sec > t + PETMAIL_IDLE_RETURNOWNER ) {//潰脤脹渾翋�侕掉�
 				int itemindex;
-				CHAR_warpToSpecificPoint( index, //回到原先主人所在座标
+				CHAR_warpToSpecificPoint( index, //隙善埻珂翋�佫齉稊饡�
 									CHAR_getInt( index, CHAR_PETMAILFROMFLOOR),
 									CHAR_getInt( index, CHAR_PETMAILFROMX),
 									CHAR_getInt( index, CHAR_PETMAILFROMY));
 									
-				CHAR_setInt( index, CHAR_MAILMODE, CHAR_PETMAIL_IDLE5);//改变宠邮状态
+				CHAR_setInt( index, CHAR_MAILMODE, CHAR_PETMAIL_IDLE5);//蜊曹唾蚘袨怓
 				CHAR_setInt( index,	CHAR_LOOPINTERVAL, PETMAIL_LOOPINTERVAL2);
 				CHAR_setInt( index, CHAR_PETMAILIDLETIME, NowTime.tv_sec);
 				if( CHAR_getInt( index, CHAR_PETMAILIDLETIME) != -1 ) {
 					PETMAIL_deleteOffmsg( CHAR_getInt( index, CHAR_PETMAILBUFINDEX));
 				}
-				itemindex = CHAR_getItemIndex( index, CHAR_STARTITEMARRAY);//删除附带道具
+				itemindex = CHAR_getItemIndex( index, CHAR_STARTITEMARRAY);//刉壺蜇湍耋撿
 				if( ITEM_CHECKINDEX( itemindex ) ) {
 					CHAR_DropItem( index, CHAR_STARTITEMARRAY);
 
@@ -849,7 +849,7 @@ static void PETMAIL_IdleProc4( int index)
 						CHAR_getChar( index, CHAR_OWNERCHARANAME ),
 						CHAR_getChar( index, CHAR_OWNERCDKEY ),
 						itemindex,
-						"pm_returntimeout(宠邮->逾时删除道具)",
+						"pm_returntimeout(唾蚘->貣奀刉壺耋撿)",
 						CHAR_getInt( index,CHAR_FLOOR),
 						CHAR_getInt( index,CHAR_X ),
 			 			CHAR_getInt( index,CHAR_Y ),
@@ -872,11 +872,11 @@ static void PETMAIL_IdleProc5( int index)
 		CHAR_setInt( index, CHAR_MAILMODE, CHAR_PETMAIL_NONE);
 		CHAR_setInt( index, CHAR_PETMAILIDLETIME, 0);
 
-#ifdef _FIX_PETMAIL         // WON ADD 修正宠邮
+#ifdef _FIX_PETMAIL         // WON ADD 党淏唾蚘
 		CHAR_setInt( index, CHAR_PUTPETTIME, NowTime.tv_sec );
 #endif
 #ifdef _PETMAIL_DEFNUMS
-		PETMAIL_delPetMailTotalnums( 1); //M PET 变自由宠
+		PETMAIL_delPetMailTotalnums( 1); //M PET 曹赻蚕唾
 		if( PetMailTotalnums < 0 ) PetMailTotalnums = 0;
 #endif
 	    ch  = CHAR_getCharPointer( index);
@@ -888,17 +888,17 @@ static void PETMAIL_IdleProc5( int index)
 #ifdef _PET_LOSTPET
 		CHAR_CharSaveLostPet( index, 2);
 		LogPet(
-			"系统",
+			"炵苀",
 			"Watchfunc",
 			CHAR_getChar( index, CHAR_NAME),
 			CHAR_getInt( index, CHAR_LV),
-			"timeout_lost(系统扣留-宠邮自由宠)",
+			"timeout_lost(炵苀諶隱-唾蚘赻蚕唾)",
 			CHAR_getInt( index, CHAR_FLOOR),
 			CHAR_getInt( index,CHAR_X ),
 			CHAR_getInt( index,CHAR_Y ),
 			CHAR_getChar( index, CHAR_UNIQUECODE)   // shan 2001/12/14
 		);
-		print("系统扣留-宠邮自由宠:%s\n", CHAR_getUseName( index));
+		print("炵苀諶隱-唾蚘赻蚕唾:%s\n", CHAR_getUseName( index));
 		CHAR_CharaDelete( index);
 #else
 		LogPet(
@@ -906,7 +906,7 @@ static void PETMAIL_IdleProc5( int index)
 			CHAR_getChar( index, CHAR_OWNERCDKEY ),
 			CHAR_getChar( index, CHAR_NAME),
 			CHAR_getInt( index, CHAR_LV),
-			"FreePet(宠邮变回自由宠)",
+			"FreePet(唾蚘曹隙赻蚕唾)",
 			CHAR_getInt( index,CHAR_FLOOR),
 			CHAR_getInt( index,CHAR_X ),
 			CHAR_getInt( index,CHAR_Y ),
@@ -953,7 +953,7 @@ static void PETMAIL_returnMail( int index, int tocharaindex)
 				CHAR_getChar( tocharaindex, CHAR_NAME ), 
 				CHAR_getChar( tocharaindex, CHAR_CDKEY ),
 				itemindex,
-				"pm_returnputground(宠邮->道具已满将道具放置地上)",
+				"pm_returnputground(唾蚘->耋撿眒雛蔚耋撿溫离華奻)",
 				CHAR_getInt( index,CHAR_FLOOR),
 				CHAR_getInt( index,CHAR_X ),
 	 			CHAR_getInt( index,CHAR_Y ),
@@ -977,14 +977,14 @@ static void PETMAIL_returnMail( int index, int tocharaindex)
 #endif
 	if( CHAR_getInt( index, CHAR_PETMAILBUFINDEX) != -1 ) {
 		snprintf( msgbuf, sizeof( msgbuf), 
-					"%s 回来了！"
-					"似乎无法寄送信件。",
+					"%s 隙懂賸ㄐ"
+					"侔綱拸楊敵冞陓璃﹝",
 					CHAR_getUseName( index));
 		CHAR_talkToCli( tocharaindex, -1, msgbuf, CHAR_COLORWHITE);
 		PETMAIL_deleteOffmsg( CHAR_getInt( index, CHAR_PETMAILBUFINDEX));
 	}else {
 		snprintf( msgbuf, sizeof( msgbuf), 
-					"%s 回来了！", CHAR_getUseName( index));
+					"%s 隙懂賸ㄐ", CHAR_getUseName( index));
 		CHAR_talkToCli( tocharaindex, -1, msgbuf, CHAR_COLORWHITE);		
 	}
 
@@ -1003,9 +1003,9 @@ void CHAR_AutoPickupMailPet( int charaindex, int petindex )
 	char category[3];
 	Char 	*ch;
 	if( !CHAR_CHECKINDEX( charaindex ) ) return;
-#ifdef _AVID_TRADETRYBUG //丢出宠物
+#ifdef _AVID_TRADETRYBUG //隍堤唾昜
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE ){
-		CHAR_talkToCli( charaindex, -1, "交易状态中无法自动拾回邮件宠物！", CHAR_COLORYELLOW );
+		CHAR_talkToCli( charaindex, -1, "蝠眢袨怓笢拸楊赻雄夆隙蚘璃唾昜ㄐ", CHAR_COLORYELLOW );
 		return;
 	}
 #endif
@@ -1013,14 +1013,14 @@ void CHAR_AutoPickupMailPet( int charaindex, int petindex )
 	havepetindex = CHAR_getCharPetElement( charaindex);
 	if( havepetindex == -1 ) {
 
-		CHAR_talkToCli(charaindex,-1,"宠物栏已满！无法自动拾回邮件宠物！",CHAR_COLORYELLOW);
+		CHAR_talkToCli(charaindex,-1,"唾昜戲眒雛ㄐ拸楊赻雄夆隙蚘璃唾昜ㄐ",CHAR_COLORYELLOW);
 		// WON ADD
 		LogPet(
 			CHAR_getChar( charaindex, CHAR_NAME ), 
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
 			CHAR_getChar( petindex, CHAR_NAME),
 			CHAR_getInt( petindex, CHAR_LV),
-			"Pet_Full(宠物栏已满，无法拾起宠物)",
+			"Pet_Full(唾昜戲眒雛ㄛ拸楊夆れ唾昜)",
 			CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
 			CHAR_getInt( charaindex,CHAR_Y ),
@@ -1047,7 +1047,7 @@ void CHAR_AutoPickupMailPet( int charaindex, int petindex )
 	CHAR_setInt( petindex, CHAR_PUTPETTIME, 0);
 	CHAR_setWorkInt( petindex, CHAR_WORKOBJINDEX, -1);
 	CHAR_setInt( petindex, CHAR_MAILMODE, CHAR_PETMAIL_NONE);
-	PETMAIL_delPetMailTotalnums( 1); // M PET 自动捡起
+	PETMAIL_delPetMailTotalnums( 1); // M PET 赻雄潯れ
 
 	strcpysafe( ch->charfunctable[CHAR_LOOPFUNC].string,
 				sizeof( ch->charfunctable[CHAR_LOOPFUNC]),"");
@@ -1063,7 +1063,7 @@ void CHAR_AutoPickupMailPet( int charaindex, int petindex )
 		if( strlen( p) == 0 ) {
 			p = CHAR_getChar( petindex, CHAR_NAME);
 		}
-		snprintf( mesg,sizeof(mesg), "拾回邮件宠物 %s", p);
+		snprintf( mesg,sizeof(mesg), "夆隙蚘璃唾昜 %s", p);
 		CHAR_talkToCli(charaindex,-1,mesg,CHAR_COLORYELLOW);
 	}
 	LogPet(
@@ -1071,7 +1071,7 @@ void CHAR_AutoPickupMailPet( int charaindex, int petindex )
 		CHAR_getChar( charaindex, CHAR_CDKEY ),
 		CHAR_getChar( petindex, CHAR_NAME),
 		CHAR_getInt( petindex, CHAR_LV),
-		"PickupMailPet(自动收回邮宠)",
+		"PickupMailPet(赻雄彶隙蚘唾)",
 		CHAR_getInt( charaindex,CHAR_FLOOR),
 		CHAR_getInt( charaindex,CHAR_X ),
 		CHAR_getInt( charaindex,CHAR_Y ),

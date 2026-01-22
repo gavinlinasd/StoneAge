@@ -1,9 +1,9 @@
 #ifndef _PKSERVER_VERSION_H_
 #define _PKSERVER_VERSION_H_
 
-//#define _PKSEVER_VER				// (不可开) 跨星系pk伺服器
+//#define _PKSEVER_VER				// (祥褫羲) 輻陎炵pk侜督ん
 
-//赛程
-//排名
-//积分计算
+//��最
+//齬靡
+//儅煦數呾
 #endif

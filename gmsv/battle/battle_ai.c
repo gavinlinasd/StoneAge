@@ -8,8 +8,8 @@
 #include "pet_skill.h"
 
 struct B_AI_RESULT {
-	BATTLE_COM	command;		/* 窒毛允月井 */
-	int			target;			/* 簿卞 */
+	BATTLE_COM	command;		/* 笰禱埰堎凝 */
+	int			target;			/* 移勗 */
 };
 
 static int BATTLE_ai_normal( int, int, BATTLE_ENTRY *,struct B_AI_RESULT *);
@@ -38,7 +38,7 @@ int BATTLE_ai_all( int battleindex, int side, int turn)
 
 		mode = CHAR_getWorkInt( charaindex, CHAR_WORKTACTICS);
 		if( mode < 0 || mode >= arraysizeof( functbl)){
-			print( "BATTLE_ai_all 中,战斗逻辑模式很奇怪(%s)(%d)\n",
+			print( "BATTLE_ai_all 笢,桵須軀憮耀宒竭も墅(%s)(%d)\n",
 				CHAR_getUseName( charaindex ), mode );
 			mode = 1;
 		}
@@ -107,22 +107,22 @@ int BATTLE_ai_one( int charaindex, int battleindex, int side, int turn)
 	struct B_AI_RESULT	result;
 	int		mode;
 
-	/* 由仿丢□正民尼永弁 */
+	/* 蚕溘隍↓淏鏍攝蚗袲 */
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return BATTLE_ERR_BATTLEINDEX;
 	if( BATTLE_CHECKSIDE( side ) == FALSE )return BATTLE_ERR_PARAM;
 	if( BATTLE_CHECKSIDE( side ^1) == FALSE )return BATTLE_ERR_PARAM;
 
-	/*     及扔奶玉隋垫丹 */
-	/* 衬平乓仿动陆反  仃月 */
+	/*     摯�蚅枅鮶撋瘚� */
+	/* 傍す籤溘雄翻毀  崹堎 */
 	if( BattleArray[battleindex].Side[side].type != BATTLE_S_TYPE_ENEMY ) return 0;
 
-	/*   覆础扔奶玉 */
+	/*   葡插�蚅枅� */
 	pEntry = BattleArray[battleindex].Side[side^1].Entry;
 
 	mode = CHAR_getWorkInt( charaindex, CHAR_WORKTACTICS);
-	/* 质  毛蕊曰坌仃月 */
+	/* 窐  禱�擸雌倠縜� */
 	if( mode < 0 || mode >= arraysizeof( functbl)) return FALSE;
-	/* 质  毛蕊曰坌仃月 */
+	/* 窐  禱�擸雌倠縜� */
 	if( functbl[mode] != NULL ) {
 		rc = functbl[mode]( turn, charaindex, pEntry, &result);
 	}
@@ -137,13 +137,13 @@ int BATTLE_ai_one( int charaindex, int battleindex, int side, int turn)
 	return TRUE;
 }
 
-/*   骚卞锹澎毛瑁户月 */
+/*   玊勗Ъ鱗禱鋆誧堎 */
 
-#define B_AI_NORMAL_ATTACKOPTION	"at"	/*   猾左皿扑亦件 */
-#define B_AI_NORMAL_GUARDOPTION		"gu"	/*   豢左皿扑亦件 */
-#define B_AI_NORMAL_MAGICOPTION		"ma"	/* 热诸左皿扑亦件 */
-#define B_AI_NORMAL_ESCAPEOPTION	"es"	/*   仆月左皿扑亦件 */
-#define B_AI_NORMAL_WAZAOPTION		"wa"	/*   左皿扑亦件 */
+#define B_AI_NORMAL_ATTACKOPTION	"at"	/*   賓酘鏤で砫璃 */
+#define B_AI_NORMAL_GUARDOPTION		"gu"	/*   遛酘鏤で砫璃 */
+#define B_AI_NORMAL_MAGICOPTION		"ma"	/* ��絊酘鏤で砫璃 */
+#define B_AI_NORMAL_ESCAPEOPTION	"es"	/*   ど堎酘鏤で砫璃 */
+#define B_AI_NORMAL_WAZAOPTION		"wa"	/*   酘鏤で砫璃 */
 #ifdef _ENEMY_ATTACK_AI
 #define B_AI_NORMAL_RANDAOPTION		"rn"
 #define B_AI_NORMAL_RANDOMOPTIONNUM         1
@@ -155,7 +155,7 @@ int BATTLE_ai_one( int charaindex, int battleindex, int side, int turn)
 #define	B_AI_NORMAL_ESCAPESUBOPTIONNUM		1
 #define	B_AI_NORMAL_WAZASUBOPTIONNUM		7
 
-/* 左皿扑亦件娄醒及  侬及烂聒 */
+/* 酘鏤で砫璃礎倳摯  棬摯擭壛 */
 #define	B_AI_NORMAL_TARGET_ALL			1
 #define	B_AI_NORMAL_TARGET_PLAYER		2
 #define	B_AI_NORMAL_TARGET_PET			3
@@ -203,11 +203,11 @@ static int BATTLE_ai_normal( int turn, int charaindex,
 							BATTLE_ENTRY *pEntry,
 							struct B_AI_RESULT *result)
 {
-	int		at[B_AI_NORMAL_ATTACKSUBOPTIONNUM] = { 0,0,0}; 		/*   猾左皿扑亦件 */
-	int		gu[B_AI_NORMAL_GUARDSUBOPTIONNUM] = {0}; 		/* 左皿扑亦件 */
-	int		ma[B_AI_NORMAL_MAGICSUBOPTIONNUM] = {0}; 		/* 左皿扑亦件 */
-	int		es[B_AI_NORMAL_ESCAPESUBOPTIONNUM] = {0}; 			/* 左皿扑亦件 */
-	int		wa[B_AI_NORMAL_WAZASUBOPTIONNUM] = {0,0,0,0, 0,0,0};/* 左皿扑亦件 */
+	int		at[B_AI_NORMAL_ATTACKSUBOPTIONNUM] = { 0,0,0}; 		/*   賓酘鏤で砫璃 */
+	int		gu[B_AI_NORMAL_GUARDSUBOPTIONNUM] = {0}; 		/* 酘鏤で砫璃 */
+	int		ma[B_AI_NORMAL_MAGICSUBOPTIONNUM] = {0}; 		/* 酘鏤で砫璃 */
+	int		es[B_AI_NORMAL_ESCAPESUBOPTIONNUM] = {0}; 			/* 酘鏤で砫璃 */
+	int		wa[B_AI_NORMAL_WAZASUBOPTIONNUM] = {0,0,0,0, 0,0,0};/* 酘鏤で砫璃 */
 #ifdef _ENEMY_ATTACK_AI
     int		rn[B_AI_NORMAL_RANDOMOPTIONNUM] = {1};
 #endif
@@ -221,7 +221,7 @@ static int BATTLE_ai_normal( int turn, int charaindex,
 	char	buff2[256];
 
 	if( turn == 1 ) {
-		print( "应该没这回事。\n" );
+		print( "茼蜆羶涴隙岈﹝\n" );
 		return FALSE;
 	}
 	if( NPC_Util_GetStrFromStrWithDelim( CHAR_getWorkChar( charaindex, CHAR_WORKBATTLE_TACTICSOPTION),
@@ -322,7 +322,7 @@ static int BATTLE_ai_normal( int turn, int charaindex,
 			if( wa[i] != 0 )break;
 		}
 		if( i >= B_AI_NORMAL_WAZASUBOPTIONNUM ){
-			print( "无指定任何的攻击方式。\n" );
+			print( "拸硌隅�庥庰贏本鷛褊翩αn" );
 			return FALSE;
 		}
 	}
@@ -513,7 +513,7 @@ static int BATTLE_ai_normal( int turn, int charaindex,
 				result->command = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLECOM1 );
 				return TRUE;
 			}else{
-				print( "此项技能尚未设定(%s):(%d)\n",
+				print( "森砐撮夔奾帤扢隅(%s):(%d)\n",
 					CHAR_getUseName( charaindex), mode - B_AI_WAZAMODE0 );
 				return FALSE;
 			}

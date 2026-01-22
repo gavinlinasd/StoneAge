@@ -22,7 +22,7 @@
 #include "handletime.h"
 #include "chatmagic.h"
 
-#ifdef _RECAL_ASK_PLAYER			// WON 要求人物资料
+#ifdef _RECAL_ASK_PLAYER			// WON 猁⑴�冼擼岏�
 #include "saacproto_cli.h"
 #endif
 
@@ -109,7 +109,7 @@ int mproto_ClientDispatchMessage(int fd,char* data)
 		return 0;		
 	}
 
-#ifdef _GM_WARP_PLAYER				// WON 传送玩家
+#ifdef _GM_WARP_PLAYER				// WON 換冞俙模
 	if (func == MPROTO_WARP_RECV) {
 		int checksum=0, checksumrecv=0;
 		int userfdid,floor,x,y;
@@ -131,9 +131,9 @@ int mproto_ClientDispatchMessage(int fd,char* data)
 	}
 #endif
 
-#ifdef _RECAL_ASK_PLAYER			// WON 要求人物资料
+#ifdef _RECAL_ASK_PLAYER			// WON 猁⑴�冼擼岏�
 
-	// 线上人物资料
+	// 盄奻�冼擼岏�
 	if (func == MPROTO_RECALL_PLAYER_RECV) {
 		int checksum=0, checksumrecv=0, backup_flag=0;
 		int userfdid, char_num, date, GmCliId;
@@ -158,7 +158,7 @@ int mproto_ClientDispatchMessage(int fd,char* data)
 		util_DiscardMessage();
 		return 0;		
 	}
-	// 备份人物资料
+	// 掘爺�冼擼岏�
 	if (func == MPROTO_RECALL_BACKUP_RECV) {
 		int checksum=0, checksumrecv=0;
 		int userfdid, char_num, date, GmCliId, backup_flag;
@@ -238,7 +238,7 @@ int mproto_ClientDispatchMessage(int fd,char* data)
                 return 0;
 	}
 
-#ifdef _RECAL_SERVER_OFF			// WON MSERVER 关闭 GS	
+#ifdef _RECAL_SERVER_OFF			// WON MSERVER 壽敕 GS	
 	if (func == MPROTO_RECALL_SERVER_OFF_RECV) {
 		int checksum=0,checksumrecv=0;
 		char msg[10];
@@ -263,7 +263,7 @@ int mproto_ClientDispatchMessage(int fd,char* data)
             return -1;
         }
 		
-		// 关机
+		// 壽儂
 		if( strcmp(msg, "OFF") == 0){
 			print("\n\n\n\n\n GM server shoutdown GS !!  (%d:%d:%d)\n\n\n\n\n", HOUR, MIN, SEC);
 			system( "~/gmsvstop.sh" );
@@ -277,7 +277,7 @@ int mproto_ClientDispatchMessage(int fd,char* data)
 	util_DiscardMessage();
 	return 0;
 }
-//GM回覆问题
+//GM隙葡恀枙
 void mproto_Que_Recv(int fd,char* uid,int userfdid,char* ans)
 {
 	int fd_charaindex;
@@ -285,7 +285,7 @@ void mproto_Que_Recv(int fd,char* uid,int userfdid,char* ans)
 	int clifd=getfdFromFdid(userfdid);
 	if  (clifd == -1) return ;
 	if (ans == NULL || uid==NULL) return; 
-    	sprintf(sGM,"GM[%s]为你解答如下:",uid);
+    	sprintf(sGM,"GM[%s]峈斕賤湘�覤�:",uid);
     	fd_charaindex = CONNECT_getCharaindex( clifd );
 	if (!CHAR_CHECKINDEX(fd_charaindex)) return;
 	CHAR_talkToCli(fd_charaindex, -1, sGM, CHAR_COLORYELLOW);
@@ -293,7 +293,7 @@ void mproto_Que_Recv(int fd,char* uid,int userfdid,char* ans)
 
 	return;
 }
-//GM讯息
+//GM捅洘
 void mproto_Message_Recv(int fd,char* uid,int userfdid,char* ans)
 {
 	int fd_charaindex;
@@ -301,10 +301,10 @@ void mproto_Message_Recv(int fd,char* uid,int userfdid,char* ans)
 	int clifd=getfdFromFdid(userfdid);
 	if  (clifd == -1)	return ;
 	if (ans == NULL || uid==NULL)	return; 
-	if( !strcmp( uid, "无") )	{
+	if( !strcmp( uid, "拸") )	{
 		sprintf( sGM, "%s", ans);
 	}else{
-		sprintf( sGM, "GM[%s]讯息:%s", uid, ans);
+		sprintf( sGM, "GM[%s]捅洘:%s", uid, ans);
 	}
 
     fd_charaindex = CONNECT_getCharaindex( clifd );
@@ -313,7 +313,7 @@ void mproto_Message_Recv(int fd,char* uid,int userfdid,char* ans)
 	return;
 }
 
-//GM禁言
+//GM輦晟
 void mproto_NoTalk_Recv(int fd,char* uid,int userfdid,int nTime)
 {
 	int fd_charaindex;
@@ -325,12 +325,12 @@ void mproto_NoTalk_Recv(int fd,char* uid,int userfdid,int nTime)
 	if (!CHAR_CHECKINDEX(fd_charaindex)) return;
 	CHAR_setInt( fd_charaindex,CHAR_SILENT, nTime );
 	CHAR_setWorkInt( fd_charaindex, CHAR_WORKLOGINTIME, (int)NowTime.tv_sec );
-	CHAR_talkToCli( fd_charaindex, -1, "由於捣乱，被GM禁言10到30分钟", CHAR_COLORYELLOW);
+	CHAR_talkToCli( fd_charaindex, -1, "蚕黺絲觴ㄛ掩GM輦晟10善30煦笘", CHAR_COLORYELLOW);
 	CHAR_setWorkInt(fd_charaindex, CHAR_WORKTALKCOUNT, 0 );
 }
 
 
-#ifdef _GM_WARP_PLAYER				// WON 传送玩家
+#ifdef _GM_WARP_PLAYER				// WON 換冞俙模
 void mproto_WARP_Recv(int fd,char* uid,int userfdid,int floor, int x, int y)
 {
 	int fd_charaindex;
@@ -345,7 +345,7 @@ void mproto_WARP_Recv(int fd,char* uid,int userfdid,int floor, int x, int y)
 }
 #endif
 
-#ifdef _RECAL_ASK_PLAYER			// WON 要求人物资料
+#ifdef _RECAL_ASK_PLAYER			// WON 猁⑴�冼擼岏�
 void mproto_RECALL_ASK_PLAYER_Recv(int fd, char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, int backup_flag)
 {
 	extern int acfd;
@@ -371,11 +371,11 @@ void mproto_Jail_Recv(int fd,char* uid,int userfdid)
 	fd_charaindex = CONNECT_getCharaindex(clifd);
 	if (!CHAR_CHECKINDEX(fd_charaindex))
 		return;
-	CHAR_talkToCli( fd_charaindex, -1, "由於捣乱，被GM关入监牢", CHAR_COLORYELLOW);
+	CHAR_talkToCli( fd_charaindex, -1, "蚕黺絲觴ㄛ掩GM壽�趧鈶�", CHAR_COLORYELLOW);
 	CHAR_CHAT_DEBUG_jail( -1, CHAR_getChar( fd_charaindex, CHAR_CDKEY));
 }
 
-//GM踢人
+//GM杺��
 void mproto_WaeiKick_Recv(int fd,char* uid,int userfdid)
 {
 	int fd_charaindex;
@@ -385,10 +385,10 @@ void mproto_WaeiKick_Recv(int fd,char* uid,int userfdid)
 	fd_charaindex = CONNECT_getCharaindex(clifd);
 	if (!CHAR_CHECKINDEX(fd_charaindex))
 		return;
-	CHAR_talkToCli( fd_charaindex, -1, "由於捣乱，被GM踢除", CHAR_COLORYELLOW);
+	CHAR_talkToCli( fd_charaindex, -1, "蚕黺絲觴ㄛ掩GM杺壺", CHAR_COLORYELLOW);
 	CHAR_CHAT_DEBUG_gmkick( -1, CHAR_getChar( fd_charaindex, CHAR_CDKEY));
 }
-//GM广播
+//GM嫘畦
 void mproto_GMTalk_Recv(int fd,char* uid,int ntime,char* data)
 {
     char    message[65530];
@@ -413,7 +413,7 @@ void mproto_Que_Send( int fd, int uid, int index, char* question)
 	char *charname = CHAR_getChar( index, CHAR_NAME);
 
 	if( strlen( question) <= 0 ){
-		CHAR_talkToCli( index, -1, "字串长度不足！", CHAR_COLORYELLOW);
+		CHAR_talkToCli( index, -1, "趼揹酗僅祥逋ㄐ", CHAR_COLORYELLOW);
 		return;
 	}
 	memset( wheres, 0, sizeof( wheres));
@@ -433,9 +433,9 @@ void mproto_Que_Send( int fd, int uid, int index, char* question)
 	util_SendMesg(fd, MPROTO_QUE_SEND, buffer);
 }
 
-#ifdef _RECAL_ASK_PLAYER			// WON 要求人物资料
+#ifdef _RECAL_ASK_PLAYER			// WON 猁⑴�冼擼岏�
 
-// 线上人物资料
+// 盄奻�冼擼岏�
 void saacproto_ACRecalPlayer_recv(char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, char *char_data)
 {
 	char buffer[65500];
@@ -455,7 +455,7 @@ void saacproto_ACRecalPlayer_recv(char *uid, int userfdid, int GmCliId, char *id
 	util_SendMesg(mfd, MPROTO_RECALL_PLAYER_SEND, buffer);
 }
 
-// 备份人物资料
+// 掘爺�冼擼岏�
 void saacproto_ACRecalBackupPlayer_recv(char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, char *char_data)
 {
 	char buffer[65500];
@@ -475,7 +475,7 @@ void saacproto_ACRecalBackupPlayer_recv(char *uid, int userfdid, int GmCliId, ch
 	util_SendMesg(mfd, MPROTO_RECALL_BACKUP_SEND, buffer);
 }
 
-// 回溯ok
+// 隙咁ok
 void saacproto_ACRecalAllBackupOK_recv(char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, char *char_data)
 {
 	char buffer[65500];
@@ -494,7 +494,7 @@ void saacproto_ACRecalAllBackupOK_recv(char *uid, int userfdid, int GmCliId, cha
 	util_SendMesg(mfd, MPROTO_RECALL_BACKUP_OK_SEND, buffer);
 }
 
-// 取得备份日期
+// �△簽虞朠梪�
 void saacproto_ACRecalBackupDate_recv(char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, char *char_data)
 {
 	char buffer[65500];
@@ -544,7 +544,7 @@ int connectmServer(char* hostname,unsigned short port)
     if( sock.sin_addr.s_addr == -1 ){
         hoste = gethostbyname( hostname );
         if( hoste == NULL ){
-            print( "获取主机名: %s\n", hostname);
+            print( "鳳�＞鷋�靡: %s\n", hostname);
             return -1;
         }
 
@@ -610,7 +610,7 @@ int connectmServer(char* hostname,unsigned short port)
 
 #endif
 
-#ifdef _RECAL_SEND_COUNT		// WON 传送GS资讯 
+#ifdef _RECAL_SEND_COUNT		// WON 換冞GS訧捅 
 void recal_get_count()
 {
 	FILE *fp;
@@ -654,7 +654,7 @@ void recal_get_count()
 }
 #endif
 
-#ifdef _GSERVER_RUNTIME //传送GSERVER执行多少时间给MSERVER
+#ifdef _GSERVER_RUNTIME //換冞GSERVER硒俴嗣屾奀潔跤MSERVER
 void gserver_runtime()
 {
 	int checksum=0;
@@ -666,11 +666,11 @@ void gserver_runtime()
 	    gserver_runtime_starttime0_flag = FALSE;
 		gserver_runtime_starttime0 = time(NULL);
 	}
-	print("\nChange->传送时间给mserver\n");
+	print("\nChange->換冞奀潔跤mserver\n");
 	strcpy(buffer, "");
 	strcpy(PersonalKey, MSPERSIONALKEY);
     starttime1 = time(NULL);   
-	checksum += util_mkint(buffer, (int)difftime(starttime1,gserver_runtime_starttime0));//传送的单位为秒
+	checksum += util_mkint(buffer, (int)difftime(starttime1,gserver_runtime_starttime0));//換冞腔等弇峈鏃
 	util_mkint(buffer, checksum);
 	util_SendMesg(mfd, MPROTO_RECALL_GSERVER_RUNTIME, buffer);
 }

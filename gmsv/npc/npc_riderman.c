@@ -22,8 +22,8 @@ char subbuf[128];
 int i, j;
 
 /* 
- * 涩烂今木凶它奴件玉它毛请允NPC
- * 棵哑  平旦玄失玉矛件民乓□仁日中卅日综木月井手［
+ * 优擭踏躂倜坳贖璃迶坳禱③埰NPC
+ * 螢挳  す筒哱囮迶穫璃鏍籤↓�岓欶倠牟欳裗戰職晉痑�
  *
  */
  
@@ -47,7 +47,7 @@ struct	{
 	int		warp;
 	int		battle;
 	int		gotowin;
-}buttonproc[13];		/* ok,cancel, yes,no,prev,next 及凛及质   */
+}buttonproc[13];		/* ok,cancel, yes,no,prev,next 摯鄹摯窐   */
 
 
 
@@ -64,7 +64,7 @@ static int NPC_Riderman_restoreButtontype( char *data );
 // static BOOL checkLetter(int meindex,int talker );
 
 /*********************************
-* 赓渝质  
+* 疐趵窐  
 *********************************/
 BOOL NPC_RidermanInit( int meindex )
 {
@@ -81,10 +81,10 @@ BOOL NPC_RidermanInit( int meindex )
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "conff", buf, sizeof( buf))
 		== NULL ) 
 	{
-		print( "riderman:没有指定设定的档案 。\n");
+		print( "riderman:羶衄硌隅扢隅腔紫偶 ﹝\n");
 		return FALSE;
 	}
-	/* 赓渝凛卞涩烂犯□正毛民尼永弁仄化支月 */
+	/* 疐趵鄹勗优擭溢↓淏禱鏍攝蚗袲媃趙盓堎 */
 	if( !NPC_Riderman_readData( meindex, -1, TRUE) ) {
 		return FALSE;
 	}
@@ -98,7 +98,7 @@ BOOL NPC_RidermanInit( int meindex )
 
 
 /*********************************
-*   仄井仃日木凶凛及质  
+*   媃凝崹�桫憶袬敯啄�  
 *********************************/
 void NPC_RidermanTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
@@ -108,7 +108,7 @@ void NPC_RidermanTalked( int meindex , int talkerindex , char *szMes ,int color 
 	
 }
 /*********************************
-* 苇日木凶凛及质  
+* 峟�桫憶袬敯啄�  
 *********************************/
 void NPC_RidermanLooked( int meindex , int lookedindex)
 {
@@ -124,11 +124,11 @@ static void NPC_Riderman_selectWindow( int meindex, int toindex, int num)
 	int		fd;
 	char	buf[256];
 	
-	/* 皿伊奶乩□卞覆仄化分仃  杀允月 */
+	/* 鏤畛騷媕↓勗葡媃趙煦崹  伀埰堎 */
 	if( CHAR_getInt( toindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( !NPC_Util_charIsInFrontOfChar( toindex, meindex, 1 )) return; 
 
 	if( !NPC_Riderman_readData( meindex, num, FALSE) ) {
@@ -155,15 +155,15 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 	int		button = -1;
 	char	buf[512];
 
-	/* ㄠ弘伉永玉动  及心 */
+	/* 兒精惉蚗迶雄  摯陑 */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	
-	/* 仇及它奴件玉它  寞及犯□正毛  心  戈 */	
+	/* 喫摯坳贖璃迶坳  蠕摯溢↓淏禱  陑  資 */	
 	if( !NPC_Riderman_readData( meindex, seqno - 100, FALSE) ) {
 		print( "riderman:readdata error\n");
 		return;
 	}
-	/* 瓷仄凶示正件毛譬屯月 */
+	/* 棟媃倜尨淏璃禱ぅ迋堎 */
 	if( w.windowtype == WINDOW_MESSAGETYPE_SELECT ) {
 		button = atoi( data)+5;
 		if( button > 12 ) {
@@ -187,7 +187,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 	
 		fd = getfdFromCharaIndex( talkerindex);
 		
-		/* 示正件卞方匀化质  毛孔曰歹仃月 */
+		/* 尨淏璃勗源埱趙窐  禱謂堇渦崹堎 */
 		if( newwin == -1 ) {
 			newwin = buttonproc[button].gotowin;
 		}
@@ -196,7 +196,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 		//print(" takegold:%d ", w.takegold );
 		
 		// Robin
-		// 学习 Lv 40
+		// 悝炾 Lv 40
 		if( newwin == 6 )	{
 			
 			int charImg;
@@ -207,7 +207,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n你已经学会初级班了呀。\n不需要再学了。",
+					makeEscapeString( "\n\n斕眒冪悝頗場撰啤賸挼﹝\n祥剒猁婬悝賸﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -217,7 +217,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n很抱歉喔！\n学习骑乘宠物需要本庄园族长的同意书。",
+					makeEscapeString( "\n\n竭惕К鉊ㄐ\n悝炾る傚唾昜剒猁掛蚽埶逜酗腔肮砩抎﹝",
 							buf, sizeof(buf)));
 				return;					
 			}
@@ -248,7 +248,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n你身上没有适合骑乘的宠物。请先准备一只。",
+					makeEscapeString( "\n\n斕旯奻羶衄巠磁る傚腔唾昜﹝③珂袧掘珨硐﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -260,7 +260,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				char buf2[512];
 				
-				sprintf( buf2, "\n很抱歉喔！你的学费不足！\n学习骑乘宠物初级班需要%d石币。", w.takegold);
+				sprintf( buf2, "\n竭惕К鉊ㄐ斕腔悝煤祥逋ㄐ\n悝炾る傚唾昜場撰啤剒猁%d坒啟﹝", w.takegold);
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
 					makeEscapeString( buf2, buf, sizeof(buf)));
@@ -277,10 +277,10 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
 					makeEscapeString(
-						"\n\n恭喜你！你已经完成骑乘初级班了。\n可以骑乘 Lv40 以下的宠物，\n请小心骑乘喔！",
+						"\n\n鳩炰斕ㄐ斕眒冪俇傖る傚場撰啤賸﹝\n褫眕る傚 Lv40 眕狟腔唾昜ㄛ\n③苤陑る傚鉊ㄐ",
 						buf, sizeof(buf)));
 						
-			// 家族收入
+			// 模逜彶��
 			{
 			 int fmindex, fmindexi, village, i;
 			 char fmname[256], token[256], buf2[64];
@@ -309,7 +309,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			return;
 		}
 		
-		// 学习 Lv 80
+		// 悝炾 Lv 80
 		if( newwin == 7 )	{
 			
 			int charImg;
@@ -321,7 +321,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n你已经学会中级班了呀。\n不需要再学了。",
+					makeEscapeString( "\n\n斕眒冪悝頗笢撰啤賸挼﹝\n祥剒猁婬悝賸﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -329,7 +329,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n你必须先学过初级班才能来中级班唷。",
+					makeEscapeString( "\n\n斕斛剕珂悝徹場撰啤符夔懂笢撰啤遄﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -339,7 +339,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n很抱歉喔！\n学习骑乘宠物需要本庄园族长的同意书。",
+					makeEscapeString( "\n\n竭惕К鉊ㄐ\n悝炾る傚唾昜剒猁掛蚽埶逜酗腔肮砩抎﹝",
 							buf, sizeof(buf)));
 				return;					
 			}
@@ -368,7 +368,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n请先准备一只适合自己骑乘的宠物。",
+					makeEscapeString( "\n\n③珂袧掘珨硐巠磁赻撩る傚腔唾昜﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -380,7 +380,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				char buf2[512];
 				
-				sprintf( buf2, "\n很抱歉喔！你的学费不足！\n学习骑乘宠物中级班需要%d石币", w.takegold);
+				sprintf( buf2, "\n竭惕К鉊ㄐ斕腔悝煤祥逋ㄐ\n悝炾る傚唾昜笢撰啤剒猁%d坒啟", w.takegold);
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
 					makeEscapeString( buf2, buf, sizeof(buf)));
@@ -396,10 +396,10 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			//lssproto_FM_send( fd, buf );
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n恭喜你！你已经完成骑乘中级班了。\n可以骑乘 Lv80 以下的宠物，\n请小心骑乘喔！",
+					makeEscapeString( "\n\n鳩炰斕ㄐ斕眒冪俇傖る傚笢撰啤賸﹝\n褫眕る傚 Lv80 眕狟腔唾昜ㄛ\n③苤陑る傚鉊ㄐ",
 							buf, sizeof(buf)));
 
-			// 家族收入
+			// 模逜彶��
 			{
 			 int fmindex, fmindexi, village, i;
 			 char fmname[256], token[256], buf2[64];
@@ -428,7 +428,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			return;
 		}
 		
-		// 学习 Lv 120
+		// 悝炾 Lv 120
 		if( newwin == 8 )	{
 			
 			int charImg;
@@ -440,7 +440,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n你已经学会高级班了呀。\n不需要再学了。",
+					makeEscapeString( "\n\n斕眒冪悝頗詢撰啤賸挼﹝\n祥剒猁婬悝賸﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -448,7 +448,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n你必须先学过中级班才能来高级班唷。",
+					makeEscapeString( "\n\n斕斛剕珂悝徹笢撰啤符夔懂詢撰啤遄﹝",
 							buf, sizeof(buf)));
 				return;
 			}			
@@ -458,7 +458,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n很抱歉喔！\n学习骑乘宠物需要本庄园族长的同意书。",
+					makeEscapeString( "\n\n竭惕К鉊ㄐ\n悝炾る傚唾昜剒猁掛蚽埶逜酗腔肮砩抎﹝",
 							buf, sizeof(buf)));
 				return;					
 			}
@@ -487,7 +487,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n请先准备一只适合自己骑乘的宠物。",
+					makeEscapeString( "\n\n③珂袧掘珨硐巠磁赻撩る傚腔唾昜﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -499,7 +499,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				char buf2[512];
 				
-				sprintf( buf2, "\n很抱歉喔！你的学费不足！\n学习骑乘宠物高级班需要%d石币", w.takegold);
+				sprintf( buf2, "\n竭惕К鉊ㄐ斕腔悝煤祥逋ㄐ\n悝炾る傚唾昜詢撰啤剒猁%d坒啟", w.takegold);
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
 					makeEscapeString( buf2, buf, sizeof(buf)));
@@ -515,10 +515,10 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			//lssproto_FM_send( fd, buf );
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n恭喜你！你已经完成骑乘高级班了。\n可以骑乘 Lv120 以下的宠物，\n请小心骑乘喔！",
+					makeEscapeString( "\n\n鳩炰斕ㄐ斕眒冪俇傖る傚詢撰啤賸﹝\n褫眕る傚 Lv120 眕狟腔唾昜ㄛ\n③苤陑る傚鉊ㄐ",
 							buf, sizeof(buf)));						
 
-			// 家族收入
+			// 模逜彶��
 			{
 			 int fmindex, fmindexi, village, i;
 			 char fmname[256], token[256], buf2[64];
@@ -547,7 +547,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			return;
 		}
 		
-		// 学习  Lv All
+		// 悝炾  Lv All
 		if( newwin == 9 )	{
 			
 			int charImg;
@@ -558,7 +558,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n你已经学会特级班了呀。\n不需要再学了。",
+					makeEscapeString( "\n\n斕眒冪悝頗杻撰啤賸挼﹝\n祥剒猁婬悝賸﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -566,7 +566,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n你必须先学过高级班才能来特级班唷。",
+					makeEscapeString( "\n\n斕斛剕珂悝徹詢撰啤符夔懂杻撰啤遄﹝",
 							buf, sizeof(buf)));
 				return;
 			}			
@@ -576,7 +576,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n很抱歉喔！\n学习骑乘宠物需要本庄园族长的同意书。",
+					makeEscapeString( "\n\n竭惕К鉊ㄐ\n悝炾る傚唾昜剒猁掛蚽埶逜酗腔肮砩抎﹝",
 							buf, sizeof(buf)));
 				return;					
 			}
@@ -605,7 +605,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n请先准备一只适合自己骑乘的宠物。",
+					makeEscapeString( "\n\n③珂袧掘珨硐巠磁赻撩る傚腔唾昜﹝",
 							buf, sizeof(buf)));
 				return;
 			}
@@ -617,7 +617,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			{
 				char buf2[512];
 				
-				sprintf( buf2, "\n很抱歉喔！你的学费不足！\n学习骑乘宠物特级班需要%d石币", w.takegold);
+				sprintf( buf2, "\n竭惕К鉊ㄐ斕腔悝煤祥逋ㄐ\n悝炾る傚唾昜杻撰啤剒猁%d坒啟", w.takegold);
 				lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
 					makeEscapeString( buf2, buf, sizeof(buf)));
@@ -633,10 +633,10 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			//lssproto_FM_send( fd, buf );
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 					WINDOW_BUTTONTYPE_OK, -1, -1,
-					makeEscapeString( "\n\n恭喜你！你已经完成骑乘特级班了。\n可以骑乘所有等级的宠物，\n请小心骑乘喔！",
+					makeEscapeString( "\n\n鳩炰斕ㄐ斕眒冪俇傖る傚杻撰啤賸﹝\n褫眕る傚垀衄脹撰腔唾昜ㄛ\n③苤陑る傚鉊ㄐ",
 							buf, sizeof(buf)));
 
-			// 家族收入
+			// 模逜彶��
 			{
 			 int fmindex, fmindexi, village, i;
 			 char fmname[256], token[256], buf2[64];
@@ -665,7 +665,7 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 			return;
 		}
 		
-		// 说明 , 列表
+		// 佽隴 , 蹈桶
 		if( newwin == 5 )
 		{
 
@@ -699,11 +699,11 @@ void NPC_RidermanWindowTalked( int meindex, int talkerindex,
 	}
 }
 /* 
- * 涩烂白央奶伙毛  氏匹隙烂今木凶windowno及犯□正毛本永玄允月
+ * 优擭啞栝騷鳴禱  庌ぁ炩擭踏躂倜windowno摯溢↓淏禱掛蚗哱埰堎
  * 
- * 娄醒“
- *		meindex		int		仇及NPC及charaindex
- *		windowno	int		它奴件玉它  寞
+ * 礎倳※
+ *		meindex		int		喫摯NPC摯charaindex
+ *		windowno	int		坳贖璃迶坳  蠕
  *		
  */
 static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
@@ -728,10 +728,10 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 	char	firstToken[1024];
 	char	secondToken[1024];
 	
-	/* 它奴件玉它及涩烂毛  曰  戈厌瞻   */
+	/* 坳贖璃迶坳摯优擭禱  堇  資栖桹   */
 	
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
-	/* 涩烂白央奶伙  潸   */
+	/* 优擭啞栝騷鳴  噁   */
 	NPC_Util_GetStrFromStrWithDelim( argstr, "conff", filename, sizeof( filename));
 
 	sprintf( opfile, "%s/", getNpcdir( ) );
@@ -753,7 +753,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 		b_mode = -1;
 		errflg = FALSE;
 
-		/* 赓渝祭 */
+		/* 疐趵撬 */
 		w.windowno = -1;
 		w.windowtype = -1;
 		w.buttontype = -1;
@@ -783,15 +783,15 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			linenum ++;
 			
-			/* 戊丢件玄反  骰 */
+			/* 昡隍璃哱毀  鷋 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 荼垫潸月 */
+			/* 搊菜噁堎 */
 			chomp( line );
 			
-			/*  垫毛帮溥允月    */
-			/*  引内 tab 毛 " " 卞  五晶尹月    */
+			/*  菜禱堆魠埰堎    */
+			/*  竘囀 tab 禱 " " 勗  拻儒窇堎    */
 			replaceString( line, '\t' , ' ' );
-			/* 燮  及旦矢□旦毛潸月［*/
+			/* 袸  摯筒妐↓筒禱噁堎��*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;
@@ -800,7 +800,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 			}
 			if( i != 0 ) strcpy( line, buf);
 
-			/* delim "=" 匹  赓(1)及玄□弁件毛  月*/
+			/* delim "=" ぁ  疐(1)摯哱↓袲璃禱  堎*/
 			ret = getStringFromIndexWithDelim( line, "=",  1, firstToken,
 											   sizeof( firstToken ) );
 			if( ret == FALSE ){
@@ -808,7 +808,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 					   filename , linenum);
 				continue;
 			}
-			/* delim "=" 匹2    及玄□弁件毛  月*/
+			/* delim "=" ぁ2    摯哱↓袲璃禱  堎*/
 			ret = getStringFromIndexWithDelim( line, "=", 2, secondToken,
 											   sizeof( secondToken ) );
 			if( ret == FALSE ){
@@ -819,27 +819,27 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			if( strcasecmp( firstToken, "winno") == 0 ) {
 				if( winno != -1 ) {
-					print( "riderman:已有winno却重新定义winno\n");
+					print( "riderman:眒衄winno�棉寪繞例徲inno\n");
 					print( "filename:[%s] line[%d]\n", filename, linenum);
 					errflg = TRUE;
 					readflg = FALSE;
 					break;
 				}
-				/* 它奴件玉它No毛忡绣 */
+				/* 坳贖璃迶坳No禱瞀凎 */
 				winno = atoi( secondToken);
 				continue;
 			}
 			
-			/* 它奴件玉它No 互瑁引匀化中卅中凛及垫反  骰允月 */
+			/* 坳贖璃迶坳No 誑鋆竘埱趙笢埵笢鄹摯菜毀  鷋埰堎 */
 			if( winno == -1 ) {
-				print( "riderman:winno 尚未定义，资料却已设定。\n");
+				print( "riderman:winno 奾帤隅砱ㄛ訧蹋�棍挸頞芋αn");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				readflg = FALSE;
 				errflg = FALSE;
 				break;
 			}
-			/* 它奴件玉它No 互域谯仄凶凛反椭瘀毛  戈［
-			 * 公木动陆反  骰允月 */
+			/* 坳贖璃迶坳No 誑郖窙媃倜鄹毀邳贀禱  資��
+			 * 鼠躂雄翻毀  鷋埰堎 */
 			if( (chkflg == FALSE && winno == windowno )||
 				chkflg == TRUE) 
 			{
@@ -867,7 +867,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 								errflg = TRUE;
 							}
 							else {
-								/* 升匀切井井凶匀吊分仃匹手涩烂今木化中木壬     */
+								/* 汔埱з凝凝倜埱裂煦崹ぁ忒优擭踏躂趙笢躂��     */
 								if( !((buttonproc[b_mode].checkhaveitem != -1 && 
 									   buttonproc[b_mode].checkhaveitemgotowin != -1)
 									 || (buttonproc[b_mode].checkdonthaveitem != -1 && 
@@ -879,7 +879,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 						}
 						
 						if( errflg == TRUE) {
-							print( "riderman: 找不到gotowin\n");
+							print( "riderman: 梑祥善gotowin\n");
 							print( "filename:[%s] line[%d]\n", filename, linenum);
 							readflg = FALSE;
 							errflg = TRUE;
@@ -893,24 +893,24 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 				else {
 					
 					w.windowno = winno;
-					/* 它奴件玉它正奶皿及涩烂 */
+					/* 坳贖璃迶坳淏騷鏤摯优擭 */
 					if( strcasecmp( firstToken, "wintype") == 0 ) {
 						w.windowtype = atoi( secondToken);
 					}
-					/* 示正件正奶皿及涩烂 */
+					/* 尨淏璃淏騷鏤摯优擭 */
 					else if( strcasecmp( firstToken, "buttontype") == 0 ) {
 						w.buttontype = NPC_Riderman_restoreButtontype( secondToken);
 					}
-					/* getitem及涩烂 */
+					/* getitem摯优擭 */
 					else if( strcasecmp( firstToken, "takeitem") == 0 ) {
 						w.takeitem = atoi( secondToken);
 					}
-					/* giveitem及涩烂 */
+					/* giveitem摯优擭 */
 					else if( strcasecmp( firstToken, "giveitem") == 0 ) {
 						w.giveitem = atoi( secondToken);
 					}
 					
-					/* takegold 学费 */
+					/* takegold 悝煤 */
 					else if( strcasecmp( firstToken, "takegold") == 0 ) {
 						w.takegold = atoi( secondToken);
 					}
@@ -929,7 +929,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 						w.letter[3] = atoi( secondToken);
 					}
 					
-					/* message及涩烂 */
+					/* message摯优擭 */
 					else if( strcasecmp( firstToken, "message") == 0 ) {
 						if( messagepos == 0 ) {
 							strcpy(  w.message, secondToken);
@@ -942,7 +942,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 							messagepos+=strlen(secondToken);
 						}
 					}
-					/* 示正件毛瓷仄凶凛及涩烂 */
+					/* 尨淏璃禱棟媃倜鄹摯优擭 */
 					else if( strcasecmp( firstToken, "okpressed") == 0 ) {
 						buttonconfmode = TRUE;
 						b_mode = 0;
@@ -979,7 +979,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 						buttonendflg = FALSE;
 						selectnum ++;
 					}
-					/* 涩烂蔽歹曰 */
+					/* 优擭敖渦堇 */
 					else if( strcasecmp( firstToken, "endwin") == 0 ) {
 						endflg = TRUE;
 						if( chkflg == FALSE) {
@@ -988,7 +988,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 						break;
 					}
 					else {
-						print( "riderman:设定是不可能的参数\n");
+						print( "riderman:扢隅岆祥褫夔腔統杅\n");
 						print( "filename:[%s] line[%d]\n", filename, linenum);
 					}
 				}
@@ -1000,26 +1000,26 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 			}
 		}
 		if( buttonendflg == FALSE) {
-			print( "riderman: 找不到endbutton\n");
+			print( "riderman: 梑祥善endbutton\n");
 			print( "filename:[%s] line[%d]\n", filename, linenum);
 			errflg = TRUE;
 			break;
 		}
 		if( winno != -1 ) {
 			if( w.windowtype == -1 ) {
-				print( "riderman: 找不到wintype\n");
+				print( "riderman: 梑祥善wintype\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
 			}
 			if( w.buttontype == -1 ) {
-				print( "riderman: 找不到button\n");
+				print( "riderman: 梑祥善button\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
 			}
 			if( strlen( w.message) == 0 ) {
-				print( "riderman: 找不到message\n");
+				print( "riderman: 梑祥善message\n");
 				print( "filename:[%s] line[%d]\n", filename, linenum);
 				errflg = TRUE;
 				break;
@@ -1029,12 +1029,12 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 	fclose( fp);
 	
 	if( chkflg == FALSE && w.windowno == -1 ) {
-		print( "riderman: 找不到所指定的windowno\n");
+		print( "riderman: 梑祥善垀硌隅腔windowno\n");
 		print( "filename:[%s] line[%d]\n", filename, linenum);
 		return FALSE;
 	}
 	if( winno != -1 && endflg == FALSE) {
-		print( "riderman: 找不到endwin\n");
+		print( "riderman: 梑祥善endwin\n");
 		print( "filename:[%s] line[%d]\n", filename, linenum);
 		return FALSE;
 	}
@@ -1043,7 +1043,7 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 	return TRUE;
 }
 /*
- * buttontype=匹隙烂仄凶  侬  毛醒袄卞  晶允月［
+ * buttontype=ぁ炩擭媃倜  棬  禱倳偯勗  儒埰堎��
  *
  */
 static int NPC_Riderman_restoreButtontype( char *data )
@@ -1120,12 +1120,12 @@ static BOOL getLetter(int meindex,int talker )
 			if( itemNo == id )
 			{
 				LogItem(
-					CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
+					CHAR_getChar( talker, CHAR_NAME ), /* す籤溘   */
 					CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 					itemindex,
 #else
-					itemNo,  /* 失奶  丞  寞 */
+					itemNo,  /* 囮騷  堜  蠕 */
 #endif
 					"RiderManDelItem",
 					CHAR_getInt( talker, CHAR_FLOOR),
