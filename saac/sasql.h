@@ -18,7 +18,7 @@
 #include <string.h>
 
 void sasql_close( void );
-int sasql_save_nm( int idx, char *acc, char *data );//×óÓÒÈËÎï, ÕÊºÅ, ×ÊÁÏ
+int sasql_save_nm( int idx, char *acc, char *data );//å·¦å³äººç‰©, å¸å·, èµ„æ–™
 int sasql_save_opt( int idx, char *acc, char *data );
 int sasql_save_int_info( int idx, char *acc, char *data );
 int sasql_save_char_info( int idx, char *acc, char *data );

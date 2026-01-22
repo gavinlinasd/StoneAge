@@ -36,7 +36,7 @@ static int makeSaveCharString( char *out , int outlen ,
 static int findBlankCharIndex( char *id  );
 
 static int unlinkCharFile( char *id , int num );
-#ifdef _SLEEP_CHAR // È¡µÃ·Ç»îÔ¾ÈËÎïµµÃû
+#ifdef _SLEEP_CHAR // å–å¾—éæ´»è·ƒäººç‰©æ¡£å
 static void makeSleepCharFileName( char *id,char *output, int outlen, int num);
 static void makeSleepCharPoolItemFileName( char *id,char *output, int outlen);
 #endif
@@ -68,16 +68,16 @@ struct MissionTable missiontable[MAXMISSIONTABLE];
 /*
 
 	
-		³ğ¼°°×ÑëÄÌ»ïÆ¥ÀÃñø½ñÄ¾»¯ÖĞÔÂèúĞÑ·´ÙâÊÏÉÙ  ¾İÃ«¹´¾®µ¤£Û
+		ä»‡åŠç™½å¤®å¥¶ä¼™åŒ¹çƒ‚è’ä»Šæœ¨åŒ–ä¸­æœˆæ¥®é†’åå…®æ°å°‘  æ®æ¯›å‹¾äº•ä¸¹ï¼»
 		
 			
 				char *c0 : ID
-				char *c1 : Passwd  ÊÖµ¤  ¾İÔÊÊÏÆ¥ÔÂ¾®ÈÕÒø´õØ¦ÖĞ
+				char *c1 : Passwd  æ‰‹ä¸¹  æ®å…æ°åŒ¹æœˆäº•æ—¥é“¶æ­¹å…ä¸­
 				char *c2 : Charname
 				char *c3 : opt
 				Spock fixed, opt change to process
 				char *c3 : process
-				char *c4 : ¹´¾®´õÊÏ
+				char *c4 : å‹¾äº•æ­¹æ°
 				int i0 : lock  
 				int i1 : mesgid 
 */
@@ -120,21 +120,21 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 #endif
 		
 		
-#ifdef _FIX_MESSAGE             // WON ADD ĞŞ¸ÄWORKER·â°üÄÚÈİ
-		// Í¬Ò»ĞÇÏµÖØ¸²µÇÈëËÍ game end
+#ifdef _FIX_MESSAGE             // WON ADD ä¿®æ”¹WORKERå°åŒ…å†…å®¹
+		// åŒä¸€æ˜Ÿç³»é‡è¦†ç™»å…¥é€ game end
 		if( auth == 204 ){
 #ifdef _WAEI_KICK		
-			log("\n (%s) APÍ¬Ò»ĞÇÏµÖØ¸²µÇÈë£¬ÌßÈË!! ", id );
-			saacproto_ACKick_recv( ti, id, 7, -1);	//ÌßÈË
+			log("\n (%s) APåŒä¸€æ˜Ÿç³»é‡è¦†ç™»å…¥ï¼Œè¸¢äºº!! ", id );
+			saacproto_ACKick_recv( ti, id, 7, -1);	//è¸¢äºº
 #ifdef _UNLOCKPOOL
-			addUnlockPool( ti, id, "", process, ""); // AP½âËø
+			addUnlockPool( ti, id, "", process, ""); // APè§£é”
 #else
 			addWorkerTask( id , "dummy" , "3" , dummyCallback , ti ,
 				id , "dummy" , charname , process ,"", mesgid , 0 );
 #endif
 #endif
 		}else 
-			log("\n  (%s) µÇÈëÒì³£!!:%d ", id, auth );
+			log("\n  (%s) ç™»å…¥å¼‚å¸¸!!:%d ", id, auth );
 #endif
 		
 		return;
@@ -152,9 +152,9 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 #else
 			saacproto_ACCharLoad_send( ti , FAILED , "locked" , mesgid );
 #endif
-			//DeleteMemLock(getHash(id) & 0xff, id, &process); // Èç¹ûAPÎŞËøÔòAC½âËø
-			log("\n (%s) ACÍ¬Ò»ĞÇÏµÖØ¸²µÇÈë£¬ÌßÈË!! ", id );
-			saacproto_ACKick_recv( ti, id, 7, -1);	//ÌßÈË
+			//DeleteMemLock(getHash(id) & 0xff, id, &process); // å¦‚æœAPæ— é”åˆ™ACè§£é”
+			log("\n (%s) ACåŒä¸€æ˜Ÿç³»é‡è¦†ç™»å…¥ï¼Œè¸¢äºº!! ", id );
+			saacproto_ACKick_recv( ti, id, 7, -1);	//è¸¢äºº
 			
 			//		checkGSUCheck( id);
 			return;
@@ -171,7 +171,7 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 		
     charindex = getCharIndexByName( id , charname );
 #ifdef _NewSave
-    //log("\nµµ°¸×°ÔØĞòºÅ:%d ÕËºÅ:%s Ãû×Ö:%s\n", charindex, id, charname);
+    //log("\næ¡£æ¡ˆè£…è½½åºå·:%d è´¦å·:%s åå­—:%s\n", charindex, id, charname);
 #endif
 
 #ifdef _SQL_BACKGROUND
@@ -179,7 +179,7 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 #endif
 		
     if( charindex < 0 ){
-			/* Æ½ÅÒ·Â»¥Ğå»şØÆØ¦ÖĞ¼°Æ¥¾Ş·Â¡õØ¦¼°·Ö */
+			/* å¹³ä¹“ä»¿äº’ç»£ç®•ä»„å…ä¸­åŠåŒ¹å·¨ä»¿â–¡å…åŠåˆ† */
 #ifdef _NewSave
 			saacproto_ACCharLoad_send( ti , FAILED ,
 				"char nonexistent" , mesgid , charindex );
@@ -251,10 +251,10 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 		makeStringFromEscaped( infobuf );
     
 		
-#ifdef _BAD_PLAYER            // WON ADD ËÍ»µÍæ¼ÒÈ¥¹Ø
+#ifdef _BAD_PLAYER            // WON ADD é€åç©å®¶å»å…³
 		{
 			extern int MAX_BAD_PLAYER;
-			extern char BadPlayerList[500][20];			// ¶¨Òå×î´ó 500 Ãû
+			extern char BadPlayerList[500][20];			// å®šä¹‰æœ€å¤§ 500 å
 			int i;
 			
 			for( i=0; i<=MAX_BAD_PLAYER; i++){	
@@ -276,7 +276,7 @@ void charLoadCallback( int ti , int auth , char *c0, char* c1 ,
 #endif
 		
 #ifdef _WAEI_KICK
-		saacproto_ACKick_recv( ti, id, 10, -1);	//ÌßÆäËûĞÇÏµ
+		saacproto_ACKick_recv( ti, id, 10, -1);	//è¸¢å…¶ä»–æ˜Ÿç³»
 #endif
 		
 		
@@ -357,7 +357,7 @@ int charSave( int ti ,  char *id ,
 		}
 	}
 	
-	log( "ÕËºÅ:[%s] ÈËÎï:[%s]\n", id, charname );
+	log( "è´¦å·:[%s] äººç‰©:[%s]\n", id, charname );
 	if( saveCharOne( id , charindex , savebuf ) < 0 ){
 		log("\n ACCharSave:disk I/O error or a bug  ");
 		saacproto_ACCharSave_send( ti , FAILED , "disk I/O error or a bug", mesgid );
@@ -386,7 +386,7 @@ void  charListCallback( int ti , int auth , char *c0 , char *c1 ,
 	char *id = c0;
 	int mesgid = i0;
 	
-	//log(" µµ°¸ÁĞ±í»ØËİ:%s:%d \n", id, auth);
+	//log(" æ¡£æ¡ˆåˆ—è¡¨å›æº¯:%s:%d \n", id, auth);
 	
 	if( auth != 0 ){
 		char data[100];
@@ -401,13 +401,13 @@ if (!sasql_query(c0,c1)){
 		if(!sasql_register(c0,c1))
 #endif
 			{
-	    log("ÃÜÂë´íÎó»òÃ»ÓĞ×¢²á\n");
+	    log("å¯†ç é”™è¯¯æˆ–æ²¡æœ‰æ³¨å†Œ\n");
 	    saacproto_ACCharList_send( ti , FAILED , "Password error" , mesgid);
 	    return;}}
 
 
-	// È¡ÏûÏÂÁĞ unlock ¶¯×÷
-#ifndef _FIX_MESSAGE             // WON ADD ĞŞ¸ÄWORKER·â°üÄÚÈİ
+	// å–æ¶ˆä¸‹åˆ— unlock åŠ¨ä½œ
+#ifndef _FIX_MESSAGE             // WON ADD ä¿®æ”¹WORKERå°åŒ…å†…å®¹
 #ifdef _DELAY_UNLOCK
 	if( UNlockM_isBe( id ) ){
 		saacproto_ACCharList_send( ti , FAILED , "locked" , mesgid );
@@ -431,13 +431,13 @@ if (!sasql_query(c0,c1)){
 		}
 #else
 		
-#ifdef _SLEEP_CHAR // Èç¹ûÎŞĞÂµµ, ½«¾ÉµµÒÆÖÁĞÂµµ
+#ifdef _SLEEP_CHAR // å¦‚æœæ— æ–°æ¡£, å°†æ—§æ¡£ç§»è‡³æ–°æ¡£
 		{
 			char fn_old[256], fn_new[256];
 			FILE *fp_old, *fp_new;
 			int i;
 			
-			// ÒÆÈËÎïµµ
+			// ç§»äººç‰©æ¡£
 			for( i=0; i<MAXCHAR_PER_USER; i++) {
 				makeCharFileName( id, fn_new, sizeof(fn_new), i);
 				fp_new = fopen( fn_new, "r");
@@ -446,9 +446,9 @@ if (!sasql_query(c0,c1)){
 					fp_old = fopen( fn_old, "r");
 					if( fp_old != NULL ) {
 						fclose( fp_old);
-						rename( fn_old, fn_new); // °áÒÆ
-						//filecopy( fn_old, fn_new); // ¸´ÖÆ
-						log(" ÒÆµµ_%s ", fn_new);
+						rename( fn_old, fn_new); // æ¬ç§»
+						//filecopy( fn_old, fn_new); // å¤åˆ¶
+						log(" ç§»æ¡£_%s ", fn_new);
 					}
 				}
 				else {
@@ -456,7 +456,7 @@ if (!sasql_query(c0,c1)){
 				}
 			}
 			
-			// ÒÆ²Ö¿âµµ
+			// ç§»ä»“åº“æ¡£
 			makeCharPoolItemFileName( id, fn_new, sizeof(fn_new));
 			fp_new = fopen( fn_new, "r");
 			if( fp_new == NULL ) {
@@ -464,9 +464,9 @@ if (!sasql_query(c0,c1)){
 				fp_old = fopen( fn_old, "r");
 				if( fp_old != NULL ) {
 					fclose( fp_old);
-					rename( fn_old, fn_new); // °áÒÆ
-					//filecopy( fn_old, fn_new); // ¸´ÖÆ
-					log(" ÒÆµµ_%s ", fn_new);
+					rename( fn_old, fn_new); // æ¬ç§»
+					//filecopy( fn_old, fn_new); // å¤åˆ¶
+					log(" ç§»æ¡£_%s ", fn_new);
 				}
 			}
 			else {
@@ -476,14 +476,14 @@ if (!sasql_query(c0,c1)){
 		}
 #endif
 		
-#ifdef _DEATH_FAMILY_LOGIN_CHECK//ÎŞ·¨¶ÁÈ¡ÈËÎï×ÊÁÏ
+#ifdef _DEATH_FAMILY_LOGIN_CHECK//æ— æ³•è¯»å–äººç‰©èµ„æ–™
 		if( loadCharNameAndOption( id , listbuf,sizeof(listbuf)) == 0 ){
 			saacproto_ACCharList_send( ti , FAILED , "locked" , mesgid );
 			return;
 		}
 #endif
 		
-#ifdef _DEATH_CONTEND //ÎŞ·¨¶ÁÈ¡ÈËÎï×ÊÁÏ
+#ifdef _DEATH_CONTEND //æ— æ³•è¯»å–äººç‰©èµ„æ–™
 		if( loadCharNameAndOption( id , listbuf,sizeof(listbuf)) == 0 ){
 			saacproto_ACCharList_send( ti , FAILED , "locked" , mesgid );
 			return;
@@ -594,7 +594,7 @@ static void getCharNameFromString(char*str ,char *out )
 	for(c=0;;c++){
 		if( IS_2BYTEWORD( str[c] ) ){
 			out[c] = str[c];
-			c ++ ;	// Æİ¼°  Ù¯³ß
+			c ++ ;	// æˆšåŠ  ä¾¬å°º
 			out[c] = str[c];
 			continue;
 		}
@@ -618,7 +618,7 @@ static void getCharOptionFromString( char *str , char *out )
 		if( str[c]=='\0')break;
 		if( IS_2BYTEWORD( str[c] ) ){
 			c++;
-			if( str[c] == '\0' )break;	// ¹«¼°  Ù¯»¥ÔÊÆ¥±åNULLØ¦ÈÕ±Î  
+			if( str[c] == '\0' )break;	// å…¬åŠ  ä¾¬äº’å…åŒ¹åNULLå…æ—¥è”½  
 			continue;
 		}
 		
@@ -626,23 +626,23 @@ static void getCharOptionFromString( char *str , char *out )
 			c++;
 			for(;;c++){
 				
-				if( str[c] == '\0' ){	// ±Î  ·ÖÔÈĞ×ÈÕ NULL   Ä¾»¯±Î´õÔÂ
+				if( str[c] == '\0' ){	// è”½  åˆ†åŒ€å‡¶æ—¥ NULL   æœ¨åŒ–è”½æ­¹æœˆ
 					out[outc] = '\0';
 					break;	
 				}
 				
-				// ³ğ³ğÊÖ¨áÌïÄÌĞş  Ù¯¼°¨àÌïÄÌĞş  Ø¦ÈÕÊÖµ¤ÓòÌïÄÌĞşÎìñâ¡õÔÊÔÂ
+				// ä»‡ä»‡æ‰‹ã„¡ç”°å¥¶ç„  ä¾¬åŠã„ ç”°å¥¶ç„  å…æ—¥æ‰‹ä¸¹åŸŸç”°å¥¶ç„æˆŠç–‹â–¡å…æœˆ
 				//----   For 2Byte Code ----
 				if( IS_2BYTEWORD( str[c] ) ){
-					out[outc++] = str[c++];		// ¨àÌïÄÌĞş  Îìñâ¡õ
-					out[outc++] = str[c];		// ¨áÌïÄÌĞş  Îìñâ¡õ
-					if( str[c] == '\0' )break;	// ¹«¼°  Ù¯»¥ÔÊÆ¥±åNULLØ¦ÈÕ±Î  
+					out[outc++] = str[c++];		// ã„ ç”°å¥¶ç„  æˆŠç–‹â–¡
+					out[outc++] = str[c];		// ã„¡ç”°å¥¶ç„  æˆŠç–‹â–¡
+					if( str[c] == '\0' )break;	// å…¬åŠ  ä¾¬äº’å…åŒ¹åNULLå…æ—¥è”½  
 					continue;
 				}
 				
-				// É§éÙ  Ù¯·´¨àÌïÄÌĞşÎìñâ¡õ
-				out[outc] = str[c];			// ÒıÄÚÎìñâ¡õ
-				if( str[c] == '\0' )break;	// ±Î  ·ÖÔÈĞ×ÈÕ±Î´õÔÂ
+				// éªšæ©˜  ä¾¬åã„ ç”°å¥¶ç„æˆŠç–‹â–¡
+				out[outc] = str[c];			// å¼•å†…æˆŠç–‹â–¡
+				if( str[c] == '\0' )break;	// è”½  åˆ†åŒ€å‡¶æ—¥è”½æ­¹æœˆ
 				
 				if( str[c] == SPACE ){
 					out[outc] = '\0';
@@ -705,7 +705,7 @@ static void makeCharFileName( char *id,char *output, int outlen, int num)
 	makeDirFilename(output , outlen, chardir , getHash(id) ,body);
 }
 
-#ifdef _SLEEP_CHAR // È¡µÃ·Ç»îÔ¾ÈËÎïµµÃû
+#ifdef _SLEEP_CHAR // å–å¾—éæ´»è·ƒäººç‰©æ¡£å
 static void makeSleepCharFileName( char *id,char *output, int outlen, int num)
 {
 	char body[1024];
@@ -840,7 +840,7 @@ int saveCharOne( char *id , int num , char *input )
 	char fn[1024];
 	FILE *fp;
 	char *strp;
-	char *strp1;     // Won ĞŞÕı hp Îª¸ºµÄÈË
+	char *strp1;     // Won ä¿®æ­£ hp ä¸ºè´Ÿçš„äºº
 	
 	makeCharFileName( id , fn , sizeof(fn),num );
 	fp= fopen( fn , "w" );
@@ -849,7 +849,7 @@ int saveCharOne( char *id , int num , char *input )
 		return -1;
 	}
 	
-	// Won ĞŞÕı hp Îª¸ºµÄÈË
+	// Won ä¿®æ­£ hp ä¸ºè´Ÿçš„äºº
 	if ((strp=strstr(input,"\\nhp=-"))!=NULL) {
 		strp1=strstr(input,"\\nmp="); 
 		*(strp+5)='1';
@@ -862,7 +862,7 @@ int saveCharOne( char *id , int num , char *input )
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-#if 0 //_SLEEP_CHAR // ¾ÉµµÒ²´æ
+#if 0 //_SLEEP_CHAR // æ—§æ¡£ä¹Ÿå­˜
 	{
 		char fn1[1024], fn2[1024];
 		makeSleepCharFileName( id , fn1 , sizeof(fn1),num );
@@ -872,7 +872,7 @@ int saveCharOne( char *id , int num , char *input )
 			fclose(fp);
 		}
 		
-		// ¸´ÖÆĞÂ²Ö¿âµµµ½¾Éµµ
+		// å¤åˆ¶æ–°ä»“åº“æ¡£åˆ°æ—§æ¡£
 		makeCharPoolItemFileName( id, fn1, sizeof(fn));
 		makeSleepCharPoolItemFileName( id, fn2, sizeof(fn));
 		filecopy( fn1, fn2);
@@ -882,7 +882,7 @@ int saveCharOne( char *id , int num , char *input )
 	sasql_update(id,fn);
 	sasql_online(id,NULL);
 #endif
-	log( "Ğ´Èë %s µµ°¸ÎÄ¼ş:%s\n",id , fn );
+	log( "å†™å…¥ %s æ¡£æ¡ˆæ–‡ä»¶:%s\n",id , fn );
 	return 0;
 	
 }
@@ -897,7 +897,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	char *nmwork_p , *optwork_p , *infowork_p;
 	int l;
 	
-	/* Îìñâ¡õØÆ»¯ */
+	/* æˆŠç–‹â–¡ä»„åŒ– */
 	
 	strncpy( nmwork , nm , sizeof( nmwork ));
 	nmwork[strlen( nm)]=0;
@@ -908,7 +908,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	strncpy( infowork , info , sizeof( infowork ));
 	infowork[strlen(info)]=0;
 	
-	/* ¾Şµ©¸¥¡õÃóØÆ */
+	/* å·¨æ—¦å¼—â–¡çš¿ä»„ */
 	/*    if ( esc ) {
 	nmwork_p = makeEscapeString1( nm , nmwork ,sizeof( nmwork ));
 	optwork_p = makeEscapeString1( opt , optwork , sizeof( optwork ));
@@ -943,7 +943,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	}
 #endif
 	//    }
-	/* ¹´Ø¦ÆÍÔÂ£ÛÔŞÖĞ»¥¾Ş·Â¡õ¸¹Çë¼°Ğ×»§±åÓò¼Ô·¥¡õÛÍ±åÖĞÄ¾ÔÂ£Û */
+	/* å‹¾å…ä»†æœˆï¼»èµä¸­äº’å·¨ä»¿â–¡è…¹è¯·åŠå‡¶æˆ·ååŸŸèšä¼â–¡å¼åä¸­æœ¨æœˆï¼» */
 	snprintf( outwork ,sizeof( outwork ) ,
 		"%s" SPACESTRING "%s" SPACESTRING "%s" ,
 		nmwork_p , optwork_p , infowork_p );
@@ -953,7 +953,7 @@ static int makeSaveCharString( char *out , int outlen ,
 		return -1;
 	}
 	
-	/* NULL   Ù¯»¥    ±åØ¤ÔÂ¾®ÈÕ0Ã«ÖĞÄ¾ÊÏÎçÖĞ¾®ÊÏ¼°·Ö£Û */
+	/* NULL   ä¾¬äº’    åä¸æœˆäº•æ—¥0æ¯›ä¸­æœ¨æ°åˆä¸­äº•æ°åŠåˆ†ï¼» */
 	memcpy( out , outwork , l + 1);
 	
 	return 0;
@@ -965,14 +965,14 @@ int getCharIndexByName( char *id , char *charname )
 	for(i=0;i<MAXCHAR_PER_USER;i++){
 		char output[CHARDATASIZE];
 		if( loadCharOne( id , i , output , sizeof( output )) < 0 ){
-			/* Ø¤ÖĞ»¯ÖĞÔÂ¡å */
+			/* ä¸ä¸­åŒ–ä¸­æœˆâ€³ */
 			continue;
 		} else {
-			/* Æ½ÅÒ·Â»¥Ğå»şØÆĞ× */
+			/* å¹³ä¹“ä»¿äº’ç»£ç®•ä»„å‡¶ */
 			char cn[CHARDATASIZE];
 			getCharNameFromString( output , cn );
 			
-			/* EscapeÃ«İ©ÈÊ */
+			/* Escapeæ¯›è¸ä» */
 			if( strcmp( charname , makeStringFromEscaped(cn) ) == 0 ){
 				return i;
 			}else{
@@ -984,13 +984,13 @@ int getCharIndexByName( char *id , char *charname )
 
 /*
 
-  Æ½ÅÒ·Â¼°Ø¤ÖĞ»¯ÖĞÔÂµ©·òÓÀĞşÃ«¸¹³ñÔÊÔÂ
+  å¹³ä¹“ä»¿åŠä¸ä¸­åŒ–ä¸­æœˆæ—¦å¤«æ°¸ç„æ¯›è…¹ç»¸å…æœˆ
 	
-		  Ø¦ÈÕØ¤ÖĞ»¯ÖĞØ¦ÖĞ£Û0¶¯ÏşØ¦ÈÕØ¤Îåµ©·òÓÀĞş¼°index.
+		  å…æ—¥ä¸ä¸­åŒ–ä¸­å…ä¸­ï¼»0åŠ¨æ™“å…æ—¥ä¸äº”æ—¦å¤«æ°¸ç„åŠindex.
 		
 			
-				Ç©±å·ò¡õÓñÆ¥ÎåØ¦¾®ÔÈĞ×ÈÕ¹«Ä¾Ã«¾®ÒüÔÊ·ÖØê£Û
-				ÊÖÔÈÎçÇĞÔúÊÏÎçÆ¥ÎåÔÂÖ§Ç·ØêÉıÊÖ£Û
+				ç­¾åå¤«â–¡ç‰åŒ¹äº”å…äº•åŒ€å‡¶æ—¥å…¬æœ¨æ¯›äº•å°¹å…åˆ†ä»ƒï¼»
+				æ‰‹åŒ€åˆåˆ‡æ‰æ°åˆåŒ¹äº”æœˆæ”¯æ¬ ä»ƒå‡æ‰‹ï¼»
 				
 */
 static int findBlankCharIndex( char *id  )
@@ -1008,7 +1008,7 @@ static int findBlankCharIndex( char *id  )
 static int unlinkCharFile( char *id , int num )
 {
 	char fname[1024];
-#ifdef _SLEEP_CHAR //É¾³ıÈËÎïÊ±¾ÉµµÒ²É¾
+#ifdef _SLEEP_CHAR //åˆ é™¤äººç‰©æ—¶æ—§æ¡£ä¹Ÿåˆ 
 	makeSleepCharFileName( id, fname, sizeof(fname),num );
 	unlink( fname );
 #endif
@@ -1044,7 +1044,7 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 		if (isLocked(id)) {
 			snprintf( result , resultlen, FAILED );
 			snprintf( retdata , retdatalen, "already locked" );
-			log( "Ğ´ÈëÄÚ´æĞÅÏ¢: ÓÃ»§:%x/%s ÒÑ¾­Í¬ÒâËø¶¨ !!\n", getHash(id), id);
+			log( "å†™å…¥å†…å­˜ä¿¡æ¯: ç”¨æˆ·:%x/%s å·²ç»åŒæ„é”å®š !!\n", getHash(id), id);
 			return -1;
 		} else {
 #ifdef _LOCK_ADD_NAME
@@ -1058,7 +1058,7 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 		}
 	} else {
 		if( !isLocked( id) ) {
-			log( "É¾³ıÄÚ´æĞÅÏ¢: ÓÃ»§:%x/%s Ã»ÓĞËø¶¨!!\n", getHash(id), id);
+			log( "åˆ é™¤å†…å­˜ä¿¡æ¯: ç”¨æˆ·:%x/%s æ²¡æœ‰é”å®š!!\n", getHash(id), id);
 		}
 		if( DeleteMemLock( getHash(id) & 0xff, id, &ret) ) {
 			snprintf( result , resultlen, SUCCESSFUL );
@@ -1066,9 +1066,9 @@ int lockUser(  char *gmsvname , char *id , char *passwd , int lock ,
 			return ret;
 		} else {
 			snprintf( result , resultlen, FAILED );
-			snprintf( retdata , retdatalen, "²»ÄÜÒÆ³ıËø¶¨" );
+			snprintf( retdata , retdatalen, "ä¸èƒ½ç§»é™¤é”å®š" );
 			
-			log( "²»ÄÜ½âËø %x:%s !\n", getHash(id), id);
+			log( "ä¸èƒ½è§£é” %x:%s !\n", getHash(id), id);
 			return ret;
 		}
 	}
@@ -1099,7 +1099,7 @@ static void makeCharPoolItemFileName( char *id,char *output, int outlen)
 	makeDirFilename(output , outlen, chardir , getHash(id) ,poolitem);
 }
 
-#ifdef _SLEEP_CHAR // È¡µÃ·Ç»îÔ¾ÈËÎï²Ö¿âµµÃû
+#ifdef _SLEEP_CHAR // å–å¾—éæ´»è·ƒäººç‰©ä»“åº“æ¡£å
 static void makeSleepCharPoolItemFileName( char *id,char *output, int outlen)
 {
 	char poolitem[256];
@@ -1151,7 +1151,7 @@ int saveCharPoolItem( char *id , char *input, int sizes)
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-	log( "Ğ´Èë %s µÀ¾ßµµ°¸ÎÄ¼ş:%s\n", id , fn );
+	log( "å†™å…¥ %s é“å…·æ¡£æ¡ˆæ–‡ä»¶:%s\n", id , fn );
 	return sizes;
 }
 
@@ -1214,7 +1214,7 @@ static void makeCharPoolPetFileName( char *id,char *output, int outlen)
 	makeDirFilename(output , outlen, chardir , getHash(id) ,poolpet);
 }
 
-#ifdef _SLEEP_CHAR // È¡µÃ·Ç»îÔ¾ÈËÎï²Ö¿âµµÃû
+#ifdef _SLEEP_CHAR // å–å¾—éæ´»è·ƒäººç‰©ä»“åº“æ¡£å
 static void makeSleepCharPoolPetFileName( char *id,char *output, int outlen)
 {
 	char poolpet[256];
@@ -1266,7 +1266,7 @@ int saveCharPoolPet( char *id , char *input, int sizes)
 	fprintf( fp , "%s" , input );
 	fclose(fp);
 	
-	log( "Ğ´Èë %s ³èÎïµµ°¸ÎÄ¼ş:%s\n", id , fn );
+	log( "å†™å…¥ %s å® ç‰©æ¡£æ¡ˆæ–‡ä»¶:%s\n", id , fn );
 	return sizes;
 }
 

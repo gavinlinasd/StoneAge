@@ -148,7 +148,7 @@ void NPC_SellsthManTalked( int meindex, int talkerindex, char *msg, int color )
 	}
 /*
 	if( CHAR_getWorkInt ( talkerindex , CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE){
-		CHAR_talkToCli( talkerindex, meindex, "£¡",CHAR_COLORYELLOW);
+		CHAR_talkToCli( talkerindex, meindex, "ï¼",CHAR_COLORYELLOW);
 		return;
 	}
 */
@@ -200,7 +200,7 @@ void NPC_SellsthMan_selectWindow( int meindex, int toindex, int num,int select, 
 				print("SellSthMan err Can't Get MENU_HEAD string\n");
 				return;
 			}
-			sprintf( token, "%s£º\n", buf1);
+			sprintf( token, "%sï¼š\n", buf1);
 			while( getStringFromIndexWithDelim( buf, ",", k, buf1, sizeof( buf1)) != FALSE ){
 				k++;
 				strcat( token, buf1);
@@ -211,7 +211,7 @@ void NPC_SellsthMan_selectWindow( int meindex, int toindex, int num,int select, 
 			windowno = NPC_WINDOW_MENU;
 		}
 		break;
-	case WINDOW_LOOK://¿´ÏêÏ¸µÀ¾ß»ò³èÎïÄÚÈİ
+	case WINDOW_LOOK://çœ‹è¯¦ç»†é“å…·æˆ–å® ç‰©å†…å®¹
 		{
 			int num;
 			int page = CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT);
@@ -236,7 +236,7 @@ void NPC_SellsthMan_selectWindow( int meindex, int toindex, int num,int select, 
 				NSellSthList[page][num].fd != getfdFromCharaIndex( NSellSthList[page][num].sellindex) )
 				return;
 
-			sprintf( token, "%sÓû¹ºÂòÄãÅÄÂô(%dÒ³,%dÏî)µÄÎïÆ·£¬\n%sÕıÔÚ%s¡£", CHAR_getChar( toindex, CHAR_NAME),
+			sprintf( token, "%sæ¬²è´­ä¹°ä½ æ‹å–(%dé¡µ,%dé¡¹)çš„ç‰©å“ï¼Œ\n%sæ­£åœ¨%sã€‚", CHAR_getChar( toindex, CHAR_NAME),
 				page, num, CHAR_getChar( toindex, CHAR_NAME), MAP_getFloorName( CHAR_getInt( toindex, CHAR_FLOOR)) );
 
 			if( CHAR_getWorkInt( NSellSthList[page][num].sellindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ){
@@ -266,10 +266,10 @@ void NPC_SellsthMan_selectWindow( int meindex, int toindex, int num,int select, 
 		break;
 	case WINDOW_SELLON:
 		if( CHAR_getWorkInt( toindex, CHAR_WORKSELLSTHNUM) >= 3 ){
-			CHAR_talkToCli( toindex, meindex, "×î¶àÖ»ÄÜµÇ¼ÇÈş´Î¡£", CHAR_COLORRED);
+			CHAR_talkToCli( toindex, meindex, "æœ€å¤šåªèƒ½ç™»è®°åæ¬¡ã€‚", CHAR_COLORRED);
 			return;
 		}else if( CHAR_getInt( toindex, CHAR_GOLD) < 100 ){
-			CHAR_talkToCli( toindex, meindex, "Ğè¸¶100Ê¯±Ò²ÅÄÜµÇ¼Ç¡£", CHAR_COLORRED);
+			CHAR_talkToCli( toindex, meindex, "éœ€ä»˜100çŸ³å¸æ‰èƒ½ç™»è®°ã€‚", CHAR_COLORRED);
 			return;
 		}
 
@@ -335,18 +335,18 @@ void NPC_SellsthManWindowTalked( int meindex, int talkerindex, int seqno, int se
 		break;
 	case NPC_WINDOW_MENU:
 		switch( atoi( data)) {
-		  case 1://²é¿´
+		  case 1://æŸ¥çœ‹
 			  CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 			  NPC_SellsthMan_selectWindow( meindex, talkerindex, WINDOW_FIND, 0, NULL);
 			  break;
-		  case 2://µÇ¼Ç
+		  case 2://ç™»è®°
 			  NPC_SellsthMan_selectWindow( meindex, talkerindex, WINDOW_SELLON, select, NULL);
 			  break;
 		}
 		break;
 	case NPC_WINDOW_LOOK:
 		break;
-	case NPC_WINDOW_FIND://°üº¬Âò
+	case NPC_WINDOW_FIND://åŒ…å«ä¹°
 		break;
 	case NPC_WINDOW_NEXT:
 		{
@@ -357,8 +357,8 @@ void NPC_SellsthManWindowTalked( int meindex, int talkerindex, int seqno, int se
 				page = ((page-1)<0)?0:page-1;
 			}else if( select == WINDOW_BUTTONTYPE_NEXT ){
 				page = ((page+1)>=MAX_LISTPAGE)?(MAX_LISTPAGE-1):(page+1);
-			}else if( select == WINDOW_BUTTONTYPE_OK ){ //Âò
-			}else if( select == WINDOW_BUTTONTYPE_YES ){ //Âò
+			}else if( select == WINDOW_BUTTONTYPE_OK ){ //ä¹°
+			}else if( select == WINDOW_BUTTONTYPE_YES ){ //ä¹°
 				NPC_SellsthMan_selectWindow( meindex, talkerindex, WINDOW_CALL, select, data);
 				return;
 			}else if( select == 0 ){
@@ -414,20 +414,20 @@ void NPC_SellsthManLoop( int meindex)
 	CHAR_setWorkInt( meindex, NPC_WORK_CALLPAGE, page);
 	CHAR_setWorkInt( meindex, NPC_WORK_CALLNUM, num);
 	if( i >= MAX_LISTNUM )return;
-	sprintf( headmsg, "ÅÄÂôÆµµÀ(%dÒ³%dÏî)£º%s (ÅÄÂôÕß£º%s)¡£",
+	sprintf( headmsg, "æ‹å–é¢‘é“(%dé¡µ%dé¡¹)ï¼š%s (æ‹å–è€…ï¼š%s)ã€‚",
 		page, num, NSellSthList[page][num].headmess,
 		CHAR_getChar( NSellSthList[page][num].sellindex, CHAR_NAME) );
 	if( NSellSthList[page][num].selltype==1 ){
-		sprintf( token, "ÅÄÂôµÀ¾ß£º%s¡£",
+		sprintf( token, "æ‹å–é“å…·ï¼š%sã€‚",
 			ITEM_getChar( NSellSthList[page][num].Iindex, ITEM_NAME) );
 	}else{
-		sprintf( token, "ÅÄÂô³èÎï£º%s  LV:%d %s¡£",
+		sprintf( token, "æ‹å–å® ç‰©ï¼š%s  LV:%d %sã€‚",
 			CHAR_getChar( NSellSthList[page][num].Iindex, CHAR_NAME),
 			CHAR_getInt( NSellSthList[page][num].Iindex, CHAR_LV),
 #ifdef _PET_2TRANS
-			CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 2 )?"¶ş×ª":(CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 1 )?"Ò»×ª":"")
+			CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 2 )?"äºŒè½¬":(CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 1 )?"ä¸€è½¬":"")
 #else
-			( CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 1 )?"×ª":""
+			( CHAR_getInt( NSellSthList[page][num].Iindex , CHAR_TRANSMIGRATION) == 1 )?"è½¬":""
 #endif			
 			);
 	}
@@ -436,12 +436,12 @@ void NPC_SellsthManLoop( int meindex)
 		if( !CHAR_CHECKINDEX( i)) continue;
 		if( CHAR_getInt( i, CHAR_FLOOR) != floor ) continue;
 		if( CHAR_getWorkInt( i, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ) continue;
-#ifdef _AUCPROTOCOL				// (²»¿É¿ª) Syu ADD ÅÄÂôÆµµÀ¿ª¹ØProtocol
+#ifdef _AUCPROTOCOL				// (ä¸å¯å¼€) Syu ADD æ‹å–é¢‘é“å¼€å…³Protocol
 		if ( CHAR_getFlg ( i , CHAR_ISAUC ) ){
 #endif
 			CHAR_talkToCli( i, meindex, headmsg, CHAR_COLORYELLOW);
 			CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW);
-#ifdef _AUCPROTOCOL				// (²»¿É¿ª) Syu ADD ÅÄÂôÆµµÀ¿ª¹ØProtocol
+#ifdef _AUCPROTOCOL				// (ä¸å¯å¼€) Syu ADD æ‹å–é¢‘é“å¼€å…³Protocol
 		}
 #endif
 	}
@@ -465,7 +465,7 @@ void NPC_SellsthManLoop( int meindex)
 					continue;
 				}
 
-				if( NSellSthList[i][j].selltype == 1 ){//µÀ¾ß
+				if( NSellSthList[i][j].selltype == 1 ){//é“å…·
 					int itemindex = CHAR_getItemIndex( NSellSthList[i][j].sellindex , NSellSthList[i][j].uindex );
 					if( !ITEM_CHECKINDEX( itemindex) ||
 						NSellSthList[i][j].Iindex != itemindex ){
@@ -509,7 +509,7 @@ BOOL NPC_getSellSth_ListString( int page, int num, char *ListString, int slen )
 			NSellSthList[page][i].use = 0;
 			continue;
 		}
-		if( NSellSthList[page][i].selltype == 1 ){//µÀ¾ß
+		if( NSellSthList[page][i].selltype == 1 ){//é“å…·
 			int itemindex = CHAR_getItemIndex( NSellSthList[page][i].sellindex , NSellSthList[page][i].uindex );
 			if( !ITEM_CHECKINDEX( itemindex) ||
 				NSellSthList[page][i].Iindex != itemindex ){
@@ -596,7 +596,7 @@ BOOL NPC_setSellSth_ListString( int meindex, int toindex, int *page, int *num, c
 
 //Iindex
 
-			if( NSellSthList[i][j].selltype == 1 ){//µÀ¾ß
+			if( NSellSthList[i][j].selltype == 1 ){//é“å…·
 				int itemindex = CHAR_getItemIndex( toindex , NSellSthList[i][j].uindex );
 				if( !ITEM_CHECKINDEX( itemindex) ){
 					print("ANDY err5. item:%d\n", NSellSthList[i][j].uindex);
@@ -604,7 +604,7 @@ BOOL NPC_setSellSth_ListString( int meindex, int toindex, int *page, int *num, c
 				}
 				if( ITEM_getInt( itemindex, ITEM_VANISHATDROP) == 1 ){
 					char buf[256];
-					sprintf( buf, "%sÎŞ·¨½»Ò×¡£", ITEM_getChar( itemindex, ITEM_NAME) );
+					sprintf( buf, "%sæ— æ³•äº¤æ˜“ã€‚", ITEM_getChar( itemindex, ITEM_NAME) );
 					CHAR_talkToCli( toindex, meindex, buf, CHAR_COLORYELLOW);
 					return FALSE;
 				}
@@ -643,7 +643,7 @@ BOOL NPC_getSellSth_ViewString( int page, int num, char *ListString, int slen )
 	if( !CHAR_CHECKINDEX( NSellSthList[page][num].sellindex ) )return FALSE;
 	sellindex = NSellSthList[page][num].sellindex;
 
-	if( NSellSthList[page][num].selltype == 1 ){//µÀ¾ß
+	if( NSellSthList[page][num].selltype == 1 ){//é“å…·
 		int itemindex, crushe;
 		ti = NSellSthList[page][num].uindex;
 		itemindex = CHAR_getItemIndex( sellindex , ti);
@@ -656,12 +656,12 @@ BOOL NPC_getSellSth_ViewString( int page, int num, char *ListString, int slen )
 			crushe,
 			ITEM_getInt( itemindex, ITEM_USEPILENUMS),
 			ITEM_getChar( itemindex, ITEM_EFFECTSTRING) );
-	}else if( NSellSthList[page][num].selltype == 2 ){//³èÎï
+	}else if( NSellSthList[page][num].selltype == 2 ){//å® ç‰©
 		int petindex, i;
 		ti = NSellSthList[page][num].uindex;
 		petindex = CHAR_getCharPet( sellindex, ti);
 		if( !CHAR_CHECKINDEX( petindex) ) return FALSE;
-		//TYPE|Ãû|  |Í¼|µÈ¼¶|×ª|  |¹¥|·À|Ãô|¼¼1|¼¼2|¼¼3|¼¼4|¼¼5|¼¼6|¼¼7
+		//TYPE|å|  |å›¾|ç­‰çº§|è½¬|  |æ”»|é˜²|æ•|æŠ€1|æŠ€2|æŠ€3|æŠ€4|æŠ€5|æŠ€6|æŠ€7
 		sprintf( buff, "2|%s|%s|%d|%d|%d|%d|%d|%d|%d|",
 			makeEscapeString( CHAR_getChar( petindex, CHAR_NAME ), buf1, sizeof(buf1)),
 			makeEscapeString( CHAR_getUseName( petindex), buf2, sizeof(buf2)),

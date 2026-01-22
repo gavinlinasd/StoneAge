@@ -12,7 +12,7 @@
 #include "magic_base.h"
 #include "handletime.h"
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 #include "profession_skill.h"
 #endif
 
@@ -25,21 +25,21 @@ int BATTLE_MpDown( int charaindex, int down )
 #else
 {
 	int mp, battleindex;
-	// ¾ô  ·´¸²ÚĞ¾ô¾®£ı???¾ô¾®
+	// çˆµ  åè¦†è°›çˆµäº•ï½???çˆµäº•
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return TRUE;
-	// ¸²ÚĞ¾ôÔªÔúØ¦¾®ÔÈĞ×ÈÕ??
+	// è¦†è°›çˆµå…ƒæ‰å…äº•åŒ€å‡¶æ—¥??
 	if( BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P ){
 		return TRUE;
 	}
 
-	// ??Ã«Ó¼ÈÕÁùÔÂ¾®£¢
+	// ??æ¯›è›¹æ—¥å…­æœˆäº•ï¼‚
 	mp = CHAR_getInt( charaindex, CHAR_MP );
 	if( mp < down ){
-		// Ó¼ÈÕÁùØ¦ÖĞ¼°Æ¥ÖÏÊÖØÆØ¦ÖĞÎçÔÊÔÂ
+		// è›¹æ—¥å…­å…ä¸­åŠåŒ¹çª’æ‰‹ä»„å…ä¸­åˆå…æœˆ
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_NONE );
-		// ÎìÑ¨¼şÓñOK¼°Ï¶ÀÃ
+		// æˆŠç©´ä»¶ç‰OKåŠéš™çƒ‚
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 		return FALSE;
 	}
@@ -56,7 +56,7 @@ void BattleCommandDispach( int fd,	char *command )
 	int EscapeFree = BATTLE_FLG_FREEDP;
 	int charaindex = CONNECT_getCharaindex(fd);
 	char szBuffer[256]="";
-#ifdef _FIXWOLF	 // Syu ADD ĞŞÕıÀÇÈË±äÉíBug
+#ifdef _FIXWOLF	 // Syu ADD ä¿®æ­£ç‹¼äººå˜èº«Bug
 	int i , j , pindex;
 	BATTLE_ENTRY	*pEntry;
 #endif
@@ -87,10 +87,10 @@ void BattleCommandDispach( int fd,	char *command )
 		EscapeFree = 0; 
 		if (CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEWATCH )!=TRUE){
 			CHAR_talkToCli( charaindex, -1,
-                "»ªÒå´óÄ§ÍõÊ¹³ö¶¨Éí·¨£¬¶¨¶¨¶¨¶¨¶¨¶¨°ÑÄã¶¨ÔÚÕ½¶·Àï¡£", CHAR_COLORYELLOW );
+                "åä¹‰å¤§é­”ç‹ä½¿å‡ºå®šèº«æ³•ï¼Œå®šå®šå®šå®šå®šå®šæŠŠä½ å®šåœ¨æˆ˜æ–—é‡Œã€‚", CHAR_COLORYELLOW );
             CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_GUARD );
             CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-            //sprintf( szBuffer, "Command(%s)(·ÀÓù)", CHAR_getUseName( charaindex ) );
+            //sprintf( szBuffer, "Command(%s)(é˜²å¾¡)", CHAR_getUseName( charaindex ) );
             endFlg = 1;
 			BATTLE_MpDown( charaindex, 2 ); 
 		}else{
@@ -108,7 +108,7 @@ void BattleCommandDispach( int fd,	char *command )
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ESCAPE );
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-		//sprintf( szBuffer, "Command(%s)(ÌÓÅÜ)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(é€ƒè·‘)", CHAR_getUseName( charaindex ) );
 		endFlg = 1;
 
 		BATTLE_MpDown( charaindex, 20 );
@@ -142,12 +142,12 @@ void BattleCommandDispach( int fd,	char *command )
 				CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_BOOMERANG );
 #ifdef _PETSKILL_BECOMEFOX
 				if( CHAR_getInt( charaindex, CHAR_BASEIMAGENUMBER)==101749
-					|| CHAR_getWorkInt( charaindex, CHAR_WORKFOXROUND ) != -1 ){ //ÈôÊÇ±ä³ÉĞ¡ºüÀê²»¿ÉÒÔÊ¹ÓÃ»ØÁ¦±ê
+					|| CHAR_getWorkInt( charaindex, CHAR_WORKFOXROUND ) != -1 ){ //è‹¥æ˜¯å˜æˆå°ç‹ç‹¸ä¸å¯ä»¥ä½¿ç”¨å›åŠ›æ ‡
 				    CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_NONE );
 				}
 #endif
 #ifdef _PETSKILL_BECOMEPIG
-				if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > -1 ){//±ä³ÉÎÚÁ¦ÁË
+				if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > -1 ){//å˜æˆä¹ŒåŠ›äº†
 				    CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ATTACK );
 				}
 #endif
@@ -158,7 +158,7 @@ void BattleCommandDispach( int fd,	char *command )
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
 		CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, 1 );
-		//sprintf( szBuffer, "Command(%s)(Õ½¶·)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(æˆ˜æ–—)", CHAR_getUseName( charaindex ) );
 
 		endFlg = 1;
 
@@ -178,7 +178,7 @@ void BattleCommandDispach( int fd,	char *command )
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-		sprintf( szBuffer, "Command(%s)(·ÀÓù)", CHAR_getUseName( charaindex ) );
+		sprintf( szBuffer, "Command(%s)(é˜²å¾¡)", CHAR_getUseName( charaindex ) );
 		endFlg = 1;
 
 		BATTLE_MpDown( charaindex, 2 );
@@ -191,8 +191,8 @@ void BattleCommandDispach( int fd,	char *command )
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_WAIT );
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-//		sprintf( szBuffer, "Command(%s)(serverÍĞ¹Ü)", CHAR_getUseName( charaindex ) );
-		//sprintf( szBuffer, "Command(%s)(´ı»ú)", CHAR_getUseName( charaindex ) );
+//		sprintf( szBuffer, "Command(%s)(serveræ‰˜ç®¡)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(å¾…æœº)", CHAR_getUseName( charaindex ) );
 		endFlg = 1;
 
 	}else
@@ -218,7 +218,7 @@ void BattleCommandDispach( int fd,	char *command )
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
-		//sprintf( szBuffer, "Command(%s)(²¶»ñ)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(æ•è·)", CHAR_getUseName( charaindex ) );
 		endFlg = 1;
 
 		BATTLE_MpDown( charaindex, 20 );
@@ -246,7 +246,7 @@ void BattleCommandDispach( int fd,	char *command )
 #ifdef _STANDBYPET
 		if( iNum >= 0) {
 			if( ! (CHAR_getWorkInt( charaindex, CHAR_WORKSTANDBYPET) & ( 1 << iNum)) ) {
-				print("\n ¸Ä·â°ü!½Ğ³ö·Ç´ı»ú³è!!:%s ", CHAR_getChar( charaindex, CHAR_CDKEY) );
+				print("\n æ”¹å°åŒ…!å«å‡ºéå¾…æœºå® !!:%s ", CHAR_getChar( charaindex, CHAR_CDKEY) );
 				iNum = -1;
 			}
 		}
@@ -255,10 +255,10 @@ void BattleCommandDispach( int fd,	char *command )
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, iNum );
 		if( iNum < 0 ){
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_PETIN );
-			//sprintf( szBuffer, "Command(%s)(»½»Ø³èÎï)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(å”¤å›å® ç‰©)", CHAR_getUseName( charaindex ) );
 		}else{
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_PETOUT );
-			//sprintf( szBuffer, "Command(%s)(½Ğ³ö³èÎï)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(å«å‡ºå® ç‰©)", CHAR_getUseName( charaindex ) );
 		}
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
@@ -287,18 +287,18 @@ void BattleCommandDispach( int fd,	char *command )
 				|| checkErrorStatus( petindex)
 				)
 			{
-				//sprintf( szBuffer, "Command(%s)(×Ô¶¯)", CHAR_getUseName( petindex ) );
+				//sprintf( szBuffer, "Command(%s)(è‡ªåŠ¨)", CHAR_getUseName( petindex ) );
 				CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 #ifdef _PETSKILLBUG //Add By Syu 2002.0805
 			}else if ((CHAR_getInt(petindex, CHAR_TRANSMIGRATION)<1)
 				&& (  iNum>=CHAR_getInt(petindex, CHAR_SLOT) ) ) 
 				{
-				//sprintf( szBuffer, "Command(%s)(×Ô¶¯)", CHAR_getUseName( petindex ) );
+				//sprintf( szBuffer, "Command(%s)(è‡ªåŠ¨)", CHAR_getUseName( petindex ) );
 				CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 #endif
 			}else{
 				petskillindex = PETSKILL_GetArray( petindex, iNum);
-#ifdef _FIXWOLF	 // Syu ADD ĞŞÕıÀÇÈË±äÉíBug
+#ifdef _FIXWOLF	 // Syu ADD ä¿®æ­£ç‹¼äººå˜èº«Bug
 				if( (CHAR_getPetSkill( petindex , iNum )== 600) && (ToNo == -1))
 				{
 					for( j = 0; j < 2; j ++ )
@@ -319,12 +319,12 @@ void BattleCommandDispach( int fd,	char *command )
 				if( petskillindex >= 0
 				&& PETSKILL_Use( petindex, iNum, ToNo, NULL ) == TRUE
 				){
-					//sprintf( szBuffer, "Command(%s)(Ê¯°æ)", CHAR_getUseName( petindex ) );
+					//sprintf( szBuffer, "Command(%s)(çŸ³ç‰ˆ)", CHAR_getUseName( petindex ) );
 
 					EscapeFree = 0;
 
 				}else{
-					//sprintf( szBuffer, "Command(%s)(×Ô¶¯)", CHAR_getUseName( petindex ) );
+					//sprintf( szBuffer, "Command(%s)(è‡ªåŠ¨)", CHAR_getUseName( petindex ) );
 					CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 				}
 			}
@@ -377,7 +377,7 @@ void BattleCommandDispach( int fd,	char *command )
 					CHAR_SETWORKINT_LOW( charaindex, CHAR_WORKBATTLECOM3, magicindex );
 					CHAR_SETWORKINT_HIGH( charaindex, CHAR_WORKBATTLECOM3, iNum );
 					CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-					//sprintf( szBuffer, "Command(%s)(ÖäÊõ)", CHAR_getUseName( charaindex ) );
+					//sprintf( szBuffer, "Command(%s)(å’’æœ¯)", CHAR_getUseName( charaindex ) );
 #ifdef _ITEM_ATTSKILLMAGIC
 				}
 #endif
@@ -386,7 +386,7 @@ void BattleCommandDispach( int fd,	char *command )
 			EscapeFree = 0;
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_WAIT );
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-			//sprintf( szBuffer, "Command(%s)(´ı»ú)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(å¾…æœº)", CHAR_getUseName( charaindex ) );
 		}
 		endFlg = 1;
 	}else
@@ -415,12 +415,12 @@ void BattleCommandDispach( int fd,	char *command )
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ITEM );
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM3, iNum );
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-			//sprintf( szBuffer, "Command(%s)(µÀ¾ß)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(é“å…·)", CHAR_getUseName( charaindex ) );
 			endFlg = 1;
 		}
 	}else
 	if( strncmp( command, "@", 1 ) == 0 ){
-		//sprintf( szBuffer, "Command(%s)(Í¨ÓÃ)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(é€šç”¨)", CHAR_getUseName( charaindex ) );
 
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 		endFlg = 1;
@@ -429,7 +429,7 @@ void BattleCommandDispach( int fd,	char *command )
 			min( 100, CHAR_getInt( charaindex, CHAR_MP ) + 30 ) );
 
 	}else
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 	if( strncmp( command, "P", 1 ) == 0 ){
 		int iNum=-1, ToNo=-1;
 		int skillindex=-1;
@@ -447,16 +447,16 @@ void BattleCommandDispach( int fd,	char *command )
 		}
 
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE ){
-			print("\n\n ·Ç·¨·â°ü(19001)(%s)(%s)\n\n", CHAR_getChar(charaindex, CHAR_CDKEY), CHAR_getChar(charaindex, CHAR_NAME) );
+			print("\n\n éæ³•å°åŒ…(19001)(%s)(%s)\n\n", CHAR_getChar(charaindex, CHAR_CDKEY), CHAR_getChar(charaindex, CHAR_NAME) );
 #ifdef _PROSKILL_ERR_KICK
 			saacproto_ACKick_send( acfd, CHAR_getChar(charaindex,CHAR_CDKEY), getFdidFromCharaIndex( charaindex), 1);
 #endif
 			return;
 		}
-#ifdef _PROSKILL_OPTIMUM	// Robin fix cancel ´Ë´¦ÂÔ¹ıÖ°Òµ¼ì²é, ¸ÄÔÚ PROFESSION_SKILL_Use ÖĞ¼ì²é
-		// ÈËÎïµÄÖ°Òµ
+#ifdef _PROSKILL_OPTIMUM	// Robin fix cancel æ­¤å¤„ç•¥è¿‡èŒä¸šæ£€æŸ¥, æ”¹åœ¨ PROFESSION_SKILL_Use ä¸­æ£€æŸ¥
+		// äººç‰©çš„èŒä¸š
 		char_pskill = CHAR_getInt( charaindex, PROFESSION_CLASS );
-		// ¼¼ÄÜµÄÖ°Òµ
+		// æŠ€èƒ½çš„èŒä¸š
 		skillindex = PROFESSION_SKILL_GetArray( charaindex, iNum);
 		Pskillid = PROFESSION_SKILL_getskillArray( skillindex);
 		profession_skill = PROFESSION_SKILL_getInt( Pskillid, PROFESSION_SKILL_PROFESSION_CLASS);
@@ -466,23 +466,23 @@ void BattleCommandDispach( int fd,	char *command )
 		if( 1 ) {
 #endif
 			if( PROFESSION_SKILL_Use( charaindex, iNum, ToNo, NULL ) == 1 ){
-				//sprintf( szBuffer, "Command(%s)(Ö°Òµ¼¼ÄÜ)", CHAR_getUseName( charaindex ) );
+				//sprintf( szBuffer, "Command(%s)(èŒä¸šæŠ€èƒ½)", CHAR_getUseName( charaindex ) );
 				endFlg = 1;
 			}else{
-				print("\nÖ°Òµ¼¼ÄÜÊ§°Ü!! ");
+				print("\nèŒä¸šæŠ€èƒ½å¤±è´¥!! ");
 				CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_WAIT );
 				CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-				//sprintf( szBuffer, "Command(%s)(´ı»ú)", CHAR_getUseName( charaindex ) );		
+				//sprintf( szBuffer, "Command(%s)(å¾…æœº)", CHAR_getUseName( charaindex ) );		
 #ifdef _PROSKILL_ERR_KICK
 			saacproto_ACKick_send( acfd, CHAR_getChar(charaindex,CHAR_CDKEY), getFdidFromCharaIndex( charaindex), 1);
 #endif
 			}
 		}else{
-			print("\n¸Ä·â°ü??Ö°Òµ¼¼ÄÜID²»ÕıÈ·:%s:%d:%d \n",
+			print("\næ”¹å°åŒ…??èŒä¸šæŠ€èƒ½IDä¸æ­£ç¡®:%s:%d:%d \n",
 					CHAR_getChar( charaindex, CHAR_CDKEY), char_pskill, profession_skill);
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_WAIT );
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
-			//sprintf( szBuffer, "Command(%s)(´ı»ú)", CHAR_getUseName( charaindex ) );
+			//sprintf( szBuffer, "Command(%s)(å¾…æœº)", CHAR_getUseName( charaindex ) );
 #ifdef _PROSKILL_ERR_KICK
 			saacproto_ACKick_send( acfd, CHAR_getChar(charaindex,CHAR_CDKEY), getFdidFromCharaIndex( charaindex), 1);
 #endif
@@ -493,7 +493,7 @@ void BattleCommandDispach( int fd,	char *command )
 #endif
 
 	{
-		//sprintf( szBuffer, "Command(%s)(Ê§°Ü)", CHAR_getUseName( charaindex ) );
+		//sprintf( szBuffer, "Command(%s)(å¤±è´¥)", CHAR_getUseName( charaindex ) );
 		endFlg = 2;
 	}
 
@@ -536,53 +536,53 @@ void BATTLE_ActSettingSend( int battleindex )
 		pEntry = BattleArray[battleindex].Side[j].Entry;
 		for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 			pindex = pEntry[i].charaindex;
-			// ÎìÑ¨¼şÓñ    Æ¥Îå»¯ÖĞĞ×ÈÕ
+			// æˆŠç©´ä»¶ç‰    åŒ¹äº”åŒ–ä¸­å‡¶æ—¥
 			if( CHAR_getWorkInt( pindex, CHAR_WORKBATTLEMODE )
 				== BATTLE_CHARMODE_C_OK
 			){
-				endBit |= 1 << k;	// ÉêÓÀĞş  »¯ÔÂ
+				endBit |= 1 << k;	// ç”³æ°¸ç„  åŒ–æœˆ
 			}else
-			// ³Ä·ÖÔÈĞ×ÈÕå§¸²  ¾®ÔÊ
+			// è¡¬åˆ†åŒ€å‡¶æ—¥æ¿®è¦†  äº•å…
 			if( CHAR_getInt( pindex, CHAR_WHICHTYPE ) == CHAR_TYPEENEMY )
 			{
-				endBit |= 1 << k;	// ÉêÓÀĞş  »¯ÔÂ
+				endBit |= 1 << k;	// ç”³æ°¸ç„  åŒ–æœˆ
 			}
 			k ++;
 		}
 	}
 	sprintf( szBA, "BA|%X|%X|", endBit, BattleArray[battleindex].turn );
 //	print( "%s\n", szBA );
-	//½ñÈÕ±åòå¹»»ï¡õÃóØÆ»¯ËªÔÂ
+	//ä»Šæ—¥åèˆå¤Ÿä¼™â–¡çš¿ä»„åŒ–éœœæœˆ
 	for( j = 0; j < 2; j ++ ){
 		pEntry = BattleArray[battleindex].Side[j].Entry;
 		for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 			pindex = pEntry[i].charaindex;
 			if( CHAR_CHECKINDEX( pindex ) == FALSE )continue;
-			// ¸¨¾ôØÆĞ×»¯¼°Æ½ÅÒ·Â±å·´ËªÈÕØ¦ÖĞ
+			// è¾…çˆµä»„å‡¶åŒ–åŠå¹³ä¹“ä»¿ååéœœæ—¥å…ä¸­
 			if( CHAR_getWorkInt( pindex, CHAR_WORKBATTLEMODE ) == BATTLE_CHARMODE_RESCUE )continue;
-			// ÃóÒÁÄÌØÀ¡õ·ÖÔÈĞ×ÈÕ
+			// çš¿ä¼Šå¥¶ä¹©â–¡åˆ†åŒ€å‡¶æ—¥
 			if( CHAR_getInt( pindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER
-			){	// ÎìÑ¨¼şÓñËªÔÂ
+			){	// æˆŠç©´ä»¶ç‰éœœæœˆ
 				BATTLE_CommandSend( pindex, szBA );
 			}
 		}
 	}
 
 
-	// Æå¾ôØÆ»¯ÖĞÔÂÚĞ±åÊÖËªÔÂ
+	// æ£‹çˆµä»„åŒ–ä¸­æœˆè°›åæ‰‹éœœæœˆ
 	pBattle = BattleArray[battleindex].pNext;
 	for( ; pBattle ; pBattle = pBattle->pNext ){
-		// ³ğ¼°Ê§ÓñÒÁµ©»¥¿ÒØÆÖĞ¾®ÃñÄáÓÀÛÍ
+		// ä»‡åŠå¤±ç‰ä¼Šæ—¦äº’æ³ä»„ä¸­äº•æ°‘å°¼æ°¸å¼
 		if( BATTLE_CHECKADDRESS( pBattle ) == FALSE ){
-			fprint( "err:¹ÛÕ½battle address´íÎó(%p)\n", pBattle );
+			fprint( "err:è§‚æˆ˜battle addressé”™è¯¯(%p)\n", pBattle );
 			break;
 		}
-		// òå¹»±åËªññ
+		// èˆå¤Ÿåéœœè€¨
 		for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 			charaindex = pBattle->Side[0].Entry[i].charaindex;
 			if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
 			if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )continue;
-			// ÎìÑ¨¼şÓñËªÔÂ
+			// æˆŠç©´ä»¶ç‰éœœæœˆ
 			BATTLE_CommandSend( pindex, szBA );
 		}
 	}
@@ -605,7 +605,7 @@ BOOL BATTLE_IsHide( int charaindex ){
 
 //*******************************************************
 //
-//  ÌïĞş»ï¼°ÎìÑ¨¼şÓñÃ«ÛÍ·ÂÄÌÊ§¼şĞş±åËªÔÂ
+//  ç”°ç„ä¼™åŠæˆŠç©´ä»¶ç‰æ¯›å¼ä»¿å¥¶å¤±ä»¶ç„åéœœæœˆ
 //
 BOOL BATTLE_CommandSend( int charaindex, char *pszCommand )
 //
@@ -642,7 +642,7 @@ BOOL BATTLE_MakeCharaString(
 
 	for( j = 0; j < 2; j ++ ){
 		if( j == 1 ){
-			iOffset = SIDE_OFFSET;	// éù³ğµ¤´¡ÈÓÄÌÓñ¼°èëÄş·´Ãó·Âµ©ÔÊÔÂ
+			iOffset = SIDE_OFFSET;	// è½¾ä»‡ä¸¹ç¡€æ‰”å¥¶ç‰åŠæ¡¦å®åçš¿ä»¿æ—¦å…æœˆ
 		}else{
 			iOffset = 0;
 		}
@@ -663,22 +663,22 @@ BOOL BATTLE_MakeCharaString(
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKPOISON ) > 0 ){
 				flg |= BC_FLG_POISON;
 			}else
-#ifdef _MAGIC_WEAKEN      //   ĞéÈõ			
+#ifdef _MAGIC_WEAKEN      //   è™šå¼±			
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKWEAKEN ) > 0 ){
 				flg |= BC_FLG_WEAKEN;
 			}else 
 #endif
-#ifdef _MAGIC_DEEPPOISON  //   ¾ç¶¾
+#ifdef _MAGIC_DEEPPOISON  //   å‰§æ¯’
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKDEEPPOISON ) > 0 ){
 				flg |= BC_FLG_DEEPPOISON;
 			}else
 #endif
-#ifdef _MAGIC_NOCAST     //   ³ÁÄ¬
+#ifdef _MAGIC_NOCAST     //   æ²‰é»˜
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKNOCAST ) > 0 ){
 				flg |= BC_FLG_NOCAST;
 			}else
 #endif
-#ifdef _MAGIC_BARRIER	  //   Ä§ÕÏ
+#ifdef _MAGIC_BARRIER	  //   é­”éšœ
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKBARRIER ) > 0 ){
 				flg |= BC_FLG_BARRIER;
 			}else 
@@ -707,63 +707,63 @@ BOOL BATTLE_MakeCharaString(
 			if( BATTLE_IsHide( charaindex ) == TRUE ){
 				flg |= BC_FLG_HIDE;
 			}
-#ifdef _PET_SKILL_SARS			// WON ADD ¶¾É·ÂûÑÓ
+#ifdef _PET_SKILL_SARS			// WON ADD æ¯’ç…è”“å»¶
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKSARS ) > 0 ){
 				flg |= BC_FLG_SARS;
 			}
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKDIZZY ) > 0 ){
-				flg |= BC_FLG_DIZZY;			// ÔÎÑ£	
+				flg |= BC_FLG_DIZZY;			// æ™•çœ©	
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKENTWINE ) > 0 ){
-				flg |= BC_FLG_ENTWINE;			// Ê÷¸ù²øÈÆ
+				flg |= BC_FLG_ENTWINE;			// æ ‘æ ¹ç¼ ç»•
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKDRAGNET ) > 0 ){
-				flg |= BC_FLG_DRAGNET;			// ÌìÂŞµØÍø	
+				flg |= BC_FLG_DRAGNET;			// å¤©ç½—åœ°ç½‘	
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKICECRACK ) > 0 ){
-			//	flg |= BC_FLG_ICECRACK;			// ±ù±¬Êõ	
+			//	flg |= BC_FLG_ICECRACK;			// å†°çˆ†æœ¯	
 			}			
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKOBLIVION ) > 0 ){
-				flg |= BC_FLG_OBLIVION;			// ÒÅÍü
+				flg |= BC_FLG_OBLIVION;			// é—å¿˜
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKICEARROW ) > 0 ){
-				flg |= BC_FLG_ICEARROW;			// ±ù¼ı
+				flg |= BC_FLG_ICEARROW;			// å†°ç®­
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKBLOODWORMS ) > 0 ){
-				flg |= BC_FLG_BLOODWORMS;		// ÊÈÑª¹Æ
+				flg |= BC_FLG_BLOODWORMS;		// å—œè¡€è›Š
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKSIGN ) > 0 ){
-				flg |= BC_FLG_SIGN;				// Ò»Õë¼ûÑª
+				flg |= BC_FLG_SIGN;				// ä¸€é’ˆè§è¡€
 			}		
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKINSTIGATE ) > 0 ){
-				flg |= BC_FLG_CARY;				// Ìô²¦
+				flg |= BC_FLG_CARY;				// æŒ‘æ‹¨
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORK_F_ENCLOSE ) > 0 ){
-				flg |= BC_FLG_F_ENCLOSE;		// »ğ¸½Ìå
+				flg |= BC_FLG_F_ENCLOSE;		// ç«é™„ä½“
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORK_I_ENCLOSE ) > 0 ){
-				flg |= BC_FLG_I_ENCLOSE;		// ±ù¸½Ìå
+				flg |= BC_FLG_I_ENCLOSE;		// å†°é™„ä½“
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORK_T_ENCLOSE ) > 0 ){
-				flg |= BC_FLG_T_ENCLOSE;		// À×¸½Ìå
+				flg |= BC_FLG_T_ENCLOSE;		// é›·é™„ä½“
 			}
 #endif
 #ifdef _PROFESSION_ADDSKILL
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKANNEX ) > 0 ){
-				flg |= BC_FLG_T_ENCLOSE;		// ¸½ÉíÊõ
+				flg |= BC_FLG_T_ENCLOSE;		// é™„èº«æœ¯
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKWATER ) > 0 ){
-				flg |= BC_FLG_WATER;		// Ë®¸½Ìå
+				flg |= BC_FLG_WATER;		// æ°´é™„ä½“
 			}
 			if( CHAR_getWorkInt( charaindex, CHAR_WORKFEAR ) > 0 ){
-				flg |= BC_FLG_FEAR;		// ¿Ö¾å
+				flg |= BC_FLG_FEAR;		// ææƒ§
 			}
 #endif
 #ifdef _PETSKILL_LER
 			if(CHAR_getWorkInt(charaindex,CHAR_WORK_RELIFE) > 0){
-				flg |= BC_FLG_CHANGE;		// À×¶û±äÉí
+				flg |= BC_FLG_CHANGE;		// é›·å°”å˜èº«
 				CHAR_setWorkInt(charaindex,CHAR_WORK_RELIFE,0);
 			}
 #endif
@@ -787,13 +787,13 @@ BOOL BATTLE_MakeCharaString(
 			}else {
 				if( CHAR_getWorkInt( charaindex, CHAR_WORKPETFALL ) == 1 ){
 					rideflg = -1;
-#ifdef _PETSKILL_BECOMEFOX // ÈôÖĞÁËÃÄ»óÊõ¶øÂäÂíÊ±½«Ñ¶Ï¢´«¸ø Client
+#ifdef _PETSKILL_BECOMEFOX // è‹¥ä¸­äº†åªšæƒ‘æœ¯è€Œè½é©¬æ—¶å°†è®¯æ¯ä¼ ç»™ Client
 					if( CHAR_getWorkInt( charaindex, CHAR_WORKFOXROUND ) != -1 )
-						rideflg = -2; //clientÓÃÀ´ÅĞ¶ÏÏÔÊ¾ÂäÂíµÄÎÄ×Ö (¶ÔÓ¦µÄclient±äÊıÎªp_party[ BattleMyNo ]->onRide)
+						rideflg = -2; //clientç”¨æ¥åˆ¤æ–­æ˜¾ç¤ºè½é©¬çš„æ–‡å­— (å¯¹åº”çš„clientå˜æ•°ä¸ºp_party[ BattleMyNo ]->onRide)
 #endif
-#ifdef _PETSKILL_BECOMEPIG // ÈôÖĞÁËÎÚÁ¦»¯¶øÂäÂíÊ±½«Ñ¶Ï¢´«¸ø Client
-					if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > 120 )//±ä³ÉÎÚÁ¦ÁË
-						rideflg = -3; //clientÓÃÀ´ÅĞ¶ÏÏÔÊ¾ÂäÂíµÄÎÄ×Ö (¶ÔÓ¦µÄclient±äÊıÎªp_party[ BattleMyNo ]->onRide)
+#ifdef _PETSKILL_BECOMEPIG // è‹¥ä¸­äº†ä¹ŒåŠ›åŒ–è€Œè½é©¬æ—¶å°†è®¯æ¯ä¼ ç»™ Client
+					if( CHAR_getInt( charaindex, CHAR_BECOMEPIG) > 120 )//å˜æˆä¹ŒåŠ›äº†
+						rideflg = -3; //clientç”¨æ¥åˆ¤æ–­æ˜¾ç¤ºè½é©¬çš„æ–‡å­— (å¯¹åº”çš„clientå˜æ•°ä¸ºp_party[ BattleMyNo ]->onRide)
 #endif
 					 CHAR_setWorkInt( charaindex, CHAR_WORKPETFALL, 0 );
 				}
@@ -821,7 +821,7 @@ BOOL BATTLE_MakeCharaString(
 				petmaxhp
 			);
 			STRCPY_TAIL( pszTop, pszLast, szBuffer );
-			if( pszTop >= pszLast )return FALSE;// ÒëÒüĞ×ÈÕÁÃ  
+			if( pszTop >= pszLast )return FALSE;// è¯‘å°¹å‡¶æ—¥æ’©  
 		}
 	}
 
@@ -829,8 +829,8 @@ BOOL BATTLE_MakeCharaString(
 }
 
 void BATTLE_BpSendToWatch(
-	BATTLE *pBattle, 	// Æå¾ôÌïĞş»ïÕıµ©ÛÍ¼°ºÌÄÌ¼şÕı
-	char *pszBcString 	// BC  Ù¯  
+	BATTLE *pBattle, 	// æ£‹çˆµç”°ç„ä¼™æ­£æ—¦å¼åŠç¦¾å¥¶ä»¶æ­£
+	char *pszBcString 	// BC  ä¾¬  
 )
 {
 
@@ -839,13 +839,13 @@ void BATTLE_BpSendToWatch(
 
 //	for( ; pBattle ; pBattle = pBattle->pNext ){
 	if( pBattle == NULL )return;
-	// ³ğ¼°Ê§ÓñÒÁµ©»¥¿ÒØÆÖĞ¾®ÃñÄáÓÀÛÍ
+	// ä»‡åŠå¤±ç‰ä¼Šæ—¦äº’æ³ä»„ä¸­äº•æ°‘å°¼æ°¸å¼
 	if( BATTLE_CHECKADDRESS( pBattle ) == FALSE ){
-		fprint( "err:¹ÛÕ½battle address´íÎó(%p)\n", pBattle );
+		fprint( "err:è§‚æˆ˜battle addressé”™è¯¯(%p)\n", pBattle );
 		return;
 	}
 
-	// òå¹»±åËªññ
+	// èˆå¤Ÿåéœœè€¨
 	for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 		charaindex = pBattle->Side[0].Entry[i].charaindex;
 		if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
@@ -853,16 +853,16 @@ void BATTLE_BpSendToWatch(
 			!= CHAR_TYPEPLAYER ) continue;
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE )
 			== BATTLE_CHARMODE_WATCHINIT){
-			flg |= BP_FLG_JOIN;	// Ş¥½î¸¨µÑ
+			flg |= BP_FLG_JOIN;	// è•™ç­‹è¾…ç¬›
 		}
-		flg |= BP_FLG_PLAYER_MENU_OFF;	// ÃóÒÁÄÌØÀ¡õ¶ªÍßØ¨¡õÇë½ñØ¦ÖĞ
-		// ÃóÒÁÄÌØÀ¡õ  Ä¯ËªÔÂ
+		flg |= BP_FLG_PLAYER_MENU_OFF;	// çš¿ä¼Šå¥¶ä¹©â–¡ä¸¢ç“¦äº˜â–¡è¯·ä»Šå…ä¸­
+		// çš¿ä¼Šå¥¶ä¹©â–¡  å¯éœœæœˆ
 		sprintf( szBp, "BP|%X|%X|%X", 20, flg, 0 );
 		BATTLE_CommandSend( charaindex, szBp );
-		// òå¹»ËåÉ§Ê÷  ËªÔÂ
+		// èˆå¤Ÿéš‹éªšæ ‘  éœœæœˆ
 		BATTLE_CommandSend( charaindex, pszBcString );
 	}
-	// ÎìÑ¨¼şÓñ½÷ÇĞ³ß
+	// æˆŠç©´ä»¶ç‰è°¨åˆ‡å°º
 	pBattle->mode = BATTLE_MODE_WATCHPRE;
 //	}
 }
@@ -893,7 +893,7 @@ void BATTLE_CharSendAll( int battleindex )
 				}
 				if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE )
 					== BATTLE_CHARMODE_RESCUE){
-					flg |= BP_FLG_JOIN;		// ¸¨¾ô
+					flg |= BP_FLG_JOIN;		// è¾…çˆµ
 				}
 			At_SoubiIndex = CHAR_getItemIndex( charaindex, CHAR_ARM );
 			if( ITEM_CHECKINDEX( At_SoubiIndex ) == FALSE ){
@@ -913,16 +913,16 @@ void BATTLE_CharSendAll( int battleindex )
 #ifdef _PETSKILL_DAMAGETOHP
 	{
 /*
-		ÈÃ¿ª,ÈÃ¿ª~~~~~~~
+		è®©å¼€,è®©å¼€~~~~~~~
                      
-               ¦¨¦¨  
-             ¡Ñ  ¡Ñ  ÎÒÀ´¸øÄãËÍÔÂ±ıÁË
+               Î˜Î˜  
+             âŠ™  âŠ™  æˆ‘æ¥ç»™ä½ é€æœˆé¥¼äº†
 */
 		char msg[32]={0};
-		//print("\n³èÎïid:%d",CHAR_getInt( pindex, CHAR_PETID)); 
-		//print("\n³èÎïÃû:%s",CHAR_getChar( pindex, CHAR_NAME)); 
-		//if( CHAR_getInt( pindex, CHAR_PETID) == 777 ){//³èÎïID Ë®Ë«Í·ÀÇ
-		//	  || CHAR_getInt( pindex, CHAR_PETID) == 146 ) //»ğË«Í·ÀÇ
+		//print("\nå® ç‰©id:%d",CHAR_getInt( pindex, CHAR_PETID)); 
+		//print("\nå® ç‰©å:%s",CHAR_getChar( pindex, CHAR_NAME)); 
+		//if( CHAR_getInt( pindex, CHAR_PETID) == 777 ){//å® ç‰©ID æ°´åŒå¤´ç‹¼
+		//	  || CHAR_getInt( pindex, CHAR_PETID) == 146 ) //ç«åŒå¤´ç‹¼
 		//	&& CHAR_getInt( pindex, CHAR_HP) ){
 		    sprintf( msg, "o%d", pet );
 		    CHAR_sendStatusString( charaindex, msg );
@@ -931,9 +931,9 @@ void BATTLE_CharSendAll( int battleindex )
 	} 
 #endif
 
-#ifdef _PETSKILL_BECOMEFOX // ÏŞÖÆÖĞÁËÃÄ»óÊõµÄ³èÎïµÄ¼¼ÄÜ
+#ifdef _PETSKILL_BECOMEFOX // é™åˆ¶ä¸­äº†åªšæƒ‘æœ¯çš„å® ç‰©çš„æŠ€èƒ½
 		    //if( CHAR_getInt( pindex, CHAR_BASEIMAGENUMBER) == 101749 ){
-	        if( CHAR_getWorkInt( pindex, CHAR_WORKFOXROUND ) != -1 ){ //ÈôÊÇ±ä³ÉĞ¡ºüÀê
+	        if( CHAR_getWorkInt( pindex, CHAR_WORKFOXROUND ) != -1 ){ //è‹¥æ˜¯å˜æˆå°ç‹ç‹¸
 			    char msg[32]={0};
 				sprintf( msg, "a%d", pet );
 		        CHAR_sendStatusString( charaindex, msg );
@@ -976,9 +976,9 @@ void BATTLE_CharSendAll( int battleindex )
 	}
 	pBattle = BattleArray[battleindex].pNext;
 	for( ; pBattle ; pBattle = pBattle->pNext ){
-		// ³ğ¼°Ê§ÓñÒÁµ©»¥¿ÒØÆÖĞ¾®ÃñÄáÓÀÛÍ
+		// ä»‡åŠå¤±ç‰ä¼Šæ—¦äº’æ³ä»„ä¸­äº•æ°‘å°¼æ°¸å¼
 		if( BATTLE_CHECKADDRESS( pBattle ) == FALSE ){
-			fprint( "err:¹ÛÕ½battle address´íÎó(%p)\n", pBattle );
+			fprint( "err:è§‚æˆ˜battle addressé”™è¯¯(%p)\n", pBattle );
 			break;
 		}
 
@@ -1013,7 +1013,7 @@ void BattleEncountOut( int charaindex)
 		pmode = CHAR_getWorkInt( pindex, CHAR_WORKBATTLEMODE );
 		if( pmode > 0 && pmode != BATTLE_CHARMODE_FINAL ){
 				BATTLE_RescueParentTry( charaindex, pindex );
-				print( "½ÏÂı²Î¼ÓÕ½¶·(%s)\n", CHAR_getUseName( charaindex ) );
+				print( "è¾ƒæ…¢å‚åŠ æˆ˜æ–—(%s)\n", CHAR_getUseName( charaindex ) );
 		}
 	}
 
@@ -1022,18 +1022,18 @@ void BattleEncountOut( int charaindex)
 
 //**************************************************
 //
-// ·¸°×ÇÉ»ïĞş¼°ÎìÑ¨¼şÓñÃ«  Ä¾ÔÂÊ¸ÓÀĞşåÃ
+// çŠ¯ç™½å·§ä¼™ç„åŠæˆŠç©´ä»¶ç‰æ¯›  æœ¨æœˆçŸ¢æ°¸ç„è¿•
 //
 BOOL	BATTLE_PetDefaultCommand( int petindex )
 //
 //**************************************************
 {
 	if( CHAR_CHECKINDEX( petindex ) == FALSE )return FALSE;
-	// ÇÂÅì¼°Ï¶ÀÃ
+	// é”¹æ¾åŠéš™çƒ‚
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLECOM2, -1 );
-	// É§éÙ  »«¼°Ï¶ÀÃ
+	// éªšæ©˜  çŒ¾åŠéš™çƒ‚
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ATTACK );
-	// ÎìÑ¨¼şÓñOK¼°Ï¶ÀÃ
+	// æˆŠç©´ä»¶ç‰OKåŠéš™çƒ‚
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
 	return TRUE;
@@ -1046,28 +1046,28 @@ BOOL	BATTLE_PetDefaultCommand( int petindex )
 	Damage = ABS( LifeUp );
 
 	for( i = 0; i < ; i ++ ){
-	// (Ş¥µá)³ğ³ğÆ¥ÎìÑ¨¼şÓñÃ«ÖĞÄ¾ÔÂ
+	// (è•™æ»‡)ä»‡ä»‡åŒ¹æˆŠç©´ä»¶ç‰æ¯›ä¸­æœ¨æœˆ
 	snprintf( szCommand, sizeof(szCommand),	"BD|r%X|0|%X|d%X|", ToList[i], Sign, Damage );
 	BATTLESTR_ADD( szCommand );
 }
 
 #endif
 
-// Robin fix ¼ì²éÊ¯»¯»èË¯²»¿ÉÕ½¶·
+// Robin fix æ£€æŸ¥çŸ³åŒ–æ˜ç¡ä¸å¯æˆ˜æ–—
 int checkErrorStatus( int charaindex)
 {
 	//if( BATTLE_CanMoveCheck( charaindex) == FALSE) {
 
 	if( 
-		CHAR_getWorkInt( charaindex, CHAR_WORKPARALYSIS ) > 0	// Âé±Ô
-		|| CHAR_getWorkInt( charaindex, CHAR_WORKSTONE ) > 0	// Ê¯»¯
-		|| CHAR_getWorkInt( charaindex, CHAR_WORKSLEEP ) > 0	// Ë¯Ãß
-		//|| CHAR_getWorkInt( charaindex, CHAR_WORKBARRIER ) > 0	// Ä§ÕÏ
-		|| CHAR_getWorkInt( charaindex, CHAR_WORKDIZZY ) > 0	// ÔÎÑ£
-		|| CHAR_getWorkInt( charaindex, CHAR_WORKDRAGNET ) > 0	// ÌìÂŞµØÍø
-		//|| CHAR_getWorkInt( charaindex, CHAR_WORK_T_ENCLOSE ) > 0 // À×¸½Ìå
+		CHAR_getWorkInt( charaindex, CHAR_WORKPARALYSIS ) > 0	// éº»ç—¹
+		|| CHAR_getWorkInt( charaindex, CHAR_WORKSTONE ) > 0	// çŸ³åŒ–
+		|| CHAR_getWorkInt( charaindex, CHAR_WORKSLEEP ) > 0	// ç¡çœ 
+		//|| CHAR_getWorkInt( charaindex, CHAR_WORKBARRIER ) > 0	// é­”éšœ
+		|| CHAR_getWorkInt( charaindex, CHAR_WORKDIZZY ) > 0	// æ™•çœ©
+		|| CHAR_getWorkInt( charaindex, CHAR_WORKDRAGNET ) > 0	// å¤©ç½—åœ°ç½‘
+		//|| CHAR_getWorkInt( charaindex, CHAR_WORK_T_ENCLOSE ) > 0 // é›·é™„ä½“
 #ifdef _PROFESSION_ADDSKILL
-//		|| CHAR_getWorkInt( charaindex, CHAR_DOOMTIME ) > 0 //ÊÀ½çÄ©ÈÕ¼¯Æø
+//		|| CHAR_getWorkInt( charaindex, CHAR_DOOMTIME ) > 0 //ä¸–ç•Œæœ«æ—¥é›†æ°”
 #endif
 	)
 	{
@@ -1078,7 +1078,7 @@ int checkErrorStatus( int charaindex)
 		else
 			strcpy( cdkey, CHAR_getChar( charaindex, CHAR_OWNERCDKEY) );
 	
-		print("\n ¸Ä·â°ü!²»¿ÉÕ½¶·µÄ×´Ì¬!!:%s ", cdkey );
+		print("\n æ”¹å°åŒ…!ä¸å¯æˆ˜æ–—çš„çŠ¶æ€!!:%s ", cdkey );
 
 		return 1;
 	}

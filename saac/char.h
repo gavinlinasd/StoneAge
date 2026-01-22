@@ -2,7 +2,7 @@
 #define _CHAR_H_
 #include "version.h"
 
-/* 1╫╩║У╟гь╓пвт╩╪╟    ф╫ер╥бпя(╟вяКдл╩Опя) */
+/* 1Д╨╓Б√║Ф┴▓Д╦░Е┤╤Ф⌡╟Е▐┼    Е╧ЁД╧⌠Д╩©И├▓(Г≥╫Е╓╝Е╔╤Д╪≥И├▓) */
 #define MAXCHAR_PER_USER 2
 
 int isLocked( char *id );

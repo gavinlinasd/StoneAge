@@ -19,12 +19,12 @@ BOOL Raceman_EventAddItem( int meindex,int talker );
 BOOL Raceman_CheckItem(int meindex,int talker);
 BOOL Raceman_ItemFullCheck(int meindex, int talker);
 BOOL Raceman_checkpet( int meindex, int talker , int select , char *token );
-BOOL Raceman_petcheckin ( int meindex , int talker );	//ÏŞ¶¨ÖÖÀà
+BOOL Raceman_petcheckin ( int meindex , int talker );	//é™å®šç§ç±»
 BOOL Raceman_checkprize( int meindex , int talker ,char *token);
 void Raceman_awardprize( int meindex , int talker );
 int  Raceman_CheckGameType(int meindex , int talker );
 int  Raceman_readmode( int meindex , int talkerindex );
-void Raceman_countrank( int meindex, int talker ); // Ä¿Ç°Ã»ÓÃµ½
+void Raceman_countrank( int meindex, int talker ); // ç›®å‰æ²¡ç”¨åˆ°
 void Raceman_renewrank( int meindex , int talker , int select );
 int	 Raceman_CheckSelectRank( int meindex , int talkerindex , int datanum);
 void Raceman_GetQuestion( int meindex ,int talker , char *token);
@@ -54,22 +54,22 @@ struct RANKTABLE history5[DEFMAXRANK];
 
 struct ASKTABLE asktable[400];
 
-int petflgtable[640];  //¿É×¥³èµÄtable
+int petflgtable[640];  //å¯æŠ“å® çš„table
 
 char  rankname[5][64] = {
-	"¡ºĞÂÊÖÈü--¾ªÎªÌìÈËÅÅĞĞ°ñ¡»",
-	"¡º¸ßÊÖÈü--¾ªÎªÌìÈËÅÅĞĞ°ñ¡»",
-	"¡º¼Ò×åÈü--¾ªÎªÌìÈËÅÅĞĞ°ñ¡»",
-	"¡º¸ßÊÖÈü--ÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡»",
-	"¡º¼Ò×åÈü--ÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡»"
+	"ã€æ–°æ‰‹èµ›--æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€",
+	"ã€é«˜æ‰‹èµ›--æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€",
+	"ã€å®¶æ—èµ›--æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€",
+	"ã€é«˜æ‰‹èµ›--æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€",
+	"ã€å®¶æ—èµ›--æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€"
 };
 
 char  historyrank[5][64] = {
-	"¡ºĞÂÊÖÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡»",
-	"¡º¸ßÊÖÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡»",
-	"¡º¼Ò×åÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡»",
-	"¡º¸ßÊÖÀúÊ·ÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡»",
-	"¡º¼Ò×åÀúÊ·ÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡»"
+	"ã€æ–°æ‰‹å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€",
+	"ã€é«˜æ‰‹å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€",
+	"ã€å®¶æ—å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€",
+	"ã€é«˜æ‰‹å†å²æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€",
+	"ã€å®¶æ—å†å²æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€"
 };
 
 
@@ -106,7 +106,7 @@ BOOL NPC_RacemanInit( int meindex)
 	NPC_Util_GetStrFromStrWithDelim( npcarg , "RankNum", buf1, sizeof( buf1));
 	ranknum = atoi(buf1);
 
-	CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_RACEMAN);  //ÖÆ×÷Ò»Ö»npc
+	CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_RACEMAN);  //åˆ¶ä½œä¸€åªnpc
 
 	if( RTIME1 == 0 || RTIME2 == 0 || RTIME3 == 0 || RTIME4 == 0 || RTIME5 == 0){
 	    RTIME1 = NowTime.tv_sec+DEF_READ_WAITTIME,
@@ -115,7 +115,7 @@ BOOL NPC_RacemanInit( int meindex)
 		RTIME4 = NowTime.tv_sec+DEF_READ_WAITTIME;
 		RTIME5 = NowTime.tv_sec+DEF_READ_WAITTIME;
 		
-		//°Ñ5ÖÖ±ÈÈü¼ÇÂ¼¶ÁÈ¡½øÀ´
+		//æŠŠ5ç§æ¯”èµ›è®°å½•è¯»å–è¿›æ¥
 		for( i = 0 ; i < 10 ; i++){
 			NPC_Util_GetStrFromStrWithDelim( npcarg , file[i] , buf1, sizeof( buf1));
 			if(strlen(buf1) == 0) continue;
@@ -157,17 +157,17 @@ void Raceman_SelectWindow( int meindex, int talker, int num,int select)
 		 	
 	switch( num) {
 		
-		  case 0:	//Ñ¡µ¥
+		  case 0:	//é€‰å•
 		  
 		  	Raceman_MsgDisp( meindex, talker, 0 , -1 );
 			break;
 
-		  case 1:	//±ÈÈüÌâÄ¿
+		  case 1:	//æ¯”èµ›é¢˜ç›®
 		  
 	  		Raceman_MsgDisp( meindex, talker, 1 , -1 );
 		  	break;
 
-		  case 2:	//ÁìÁÔ³èÖ¤
+		  case 2:	//é¢†çŒå® è¯
 			
 			ret = Raceman_CheckGameType(meindex,talker);
 			if(ret == 0)
@@ -182,40 +182,40 @@ void Raceman_SelectWindow( int meindex, int talker, int num,int select)
 				Raceman_MsgDisp( meindex, talker, 92 , -1 );
 			break;
 
-		  case 3:	//ÁÔ³èµÇ¼Ç
+		  case 3:	//çŒå® ç™»è®°
 
 			ret = Raceman_CheckGameType(meindex,talker);
 			if(ret == 1)	
-				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//×å³¤Éí·Ö²»ºÏ
+				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//æ—é•¿èº«åˆ†ä¸åˆ
 			else if(ret == 4)
-				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//¼Ò×åÃ»ÓĞÕıÊ½³ÉÁ¢
+				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//å®¶æ—æ²¡æœ‰æ­£å¼æˆç«‹
 			else
 				Raceman_MsgDisp( meindex, talker, 3 , -1 );
 			break;
 
-		  case 4:	//ÁÔ³èÅÅĞĞ°ñ
+		  case 4:	//çŒå® æ’è¡Œæ¦œ
 			
 			Raceman_MsgDisp( meindex, talker, 4 , -1 );
 			break;
 
-		  case 5:	//ÁÔ³èÕ½ÀûÆ·
+		  case 5:	//çŒå® æˆ˜åˆ©å“
 
 			ret = Raceman_CheckGameType(meindex,talker);
 			if(ret == 1)	
-				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//×å³¤Éí·Ö²»ºÏ
+				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//æ—é•¿èº«åˆ†ä¸åˆ
 			else if(ret == 4)
-				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//¼Ò×åÃ»ÓĞÕıÊ½³ÉÁ¢
+				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//å®¶æ—æ²¡æœ‰æ­£å¼æˆç«‹
 			else
 				Raceman_MsgDisp( meindex, talker, 5 , -1 );
 			break;
 
-		  case 6:   //Í¨¹ØÃÜÓï
+		  case 6:   //é€šå…³å¯†è¯­
 
 			ret = Raceman_CheckGameType(meindex,talker);
 			if(ret == 1)	
-				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//×å³¤Éí·Ö²»ºÏ
+				Raceman_MsgDisp( meindex, talker, 9 , -1 );	//æ—é•¿èº«åˆ†ä¸åˆ
 			else if(ret == 4)
-				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//¼Ò×åÃ»ÓĞÕıÊ½³ÉÁ¢
+				Raceman_MsgDisp( meindex, talker, 92 , -1 );	//å®¶æ—æ²¡æœ‰æ­£å¼æˆç«‹
 			else
 				Raceman_MsgDisp( meindex, talker, 6 , -1 );
 			break;
@@ -243,16 +243,16 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 	datanum = atoi( data);
 	switch( seqno){
 	case CHAR_WINDOWTYPE_RACE_START:
-		if(datanum == 2){	// ±ÈÈüÌâÄ¿
+		if(datanum == 2){	// æ¯”èµ›é¢˜ç›®
 			Raceman_SelectWindow( meindex, talkerindex,1,-1);
-		}else if(datanum == 3){ // ÁìÈ¡ÁÔ³èÖ¤
+		}else if(datanum == 3){ // é¢†å–çŒå® è¯
 			Raceman_SelectWindow( meindex, talkerindex,2,-1);
-		}else if(datanum == 4){ // ÁÔ³èµÇ¼Ç´¦
-			//Raceman_SelectWindow( meindex, talkerindex,3,-1);ĞŞ¸Ä  ¼ÓÈëÍ¨¹ØÃÜÓï²ÅÄÜµÇ¼Ç
+		}else if(datanum == 4){ // çŒå® ç™»è®°å¤„
+			//Raceman_SelectWindow( meindex, talkerindex,3,-1);ä¿®æ”¹  åŠ å…¥é€šå…³å¯†è¯­æ‰èƒ½ç™»è®°
 			Raceman_SelectWindow( meindex, talkerindex,6,-1);	
-		}else if(datanum == 5){ // ÁÔ³èÅÅĞĞ°ñ
+		}else if(datanum == 5){ // çŒå® æ’è¡Œæ¦œ
 			Raceman_SelectWindow( meindex, talkerindex,4,-1);
-		}else if(datanum == 6){	// ÁÔ³èÕ½ÀûÆ·
+		}else if(datanum == 6){	// çŒå® æˆ˜åˆ©å“
 			Raceman_SelectWindow( meindex, talkerindex,5,-1);
 		}
 		break;
@@ -264,7 +264,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 	case CHAR_WINDOWTYPE_RACE_TICKET:
 		if(select == WINDOW_BUTTONTYPE_OK)
 		{
-			if(Raceman_CheckItem(meindex,talkerindex)==TRUE){ //TRUE:ÓĞÖ¤ÁË
+			if(Raceman_CheckItem(meindex,talkerindex)==TRUE){ //TRUE:æœ‰è¯äº†
 				Raceman_MsgDisp( meindex, talkerindex,22,-1);
 			}else{
 				if(Raceman_EventAddItem(meindex, talkerindex)==TRUE){
@@ -274,7 +274,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 		}
 		break;
 	case CHAR_WINDOWTYPE_RACE_PETSELECT:
-		if(Raceman_CheckItem(meindex,talkerindex)==FALSE){ //FALSE:Ã»ÓĞÖ¤
+		if(Raceman_CheckItem(meindex,talkerindex)==FALSE){ //FALSE:æ²¡æœ‰è¯
 			Raceman_MsgDisp( meindex, talkerindex,32,-1);
 		}else{
 			if(select == WINDOW_BUTTONTYPE_CANCEL){
@@ -286,7 +286,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 		break;
 	case CHAR_WINDOWTYPE_RACE_CHECKIN:
 		if(select == WINDOW_BUTTONTYPE_YES){
-			ret = Raceman_petcheckin( meindex, talkerindex );   //µÇ¼Ç
+			ret = Raceman_petcheckin( meindex, talkerindex );   //ç™»è®°
 			if(ret == TRUE)
 				Raceman_SelectWindow( meindex, talkerindex,0,-1);	
 			else
@@ -301,7 +301,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 		{
 		case 1:
 			if( NowTime.tv_sec > RTIME1 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //¸üĞÂ
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //æ›´æ–°
 				RTIME1 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable1[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -309,7 +309,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			break;
 		case 2:
 			if( NowTime.tv_sec > RTIME2 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //¸üĞÂ
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //æ›´æ–°
 				RTIME2 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable2[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -317,7 +317,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			break;
 		case 3:
 			if( NowTime.tv_sec > RTIME3 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //¸üĞÂ
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //æ›´æ–°
 				RTIME3 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable3[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -325,7 +325,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			break;
 		case 4:
 			if( NowTime.tv_sec > RTIME4 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //¸üĞÂ
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //æ›´æ–°
 				RTIME4 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable4[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -333,7 +333,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			break;
 		case 5:
 			if( NowTime.tv_sec > RTIME5 ){
-				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //¸üĞÂ
+				Raceman_renewrank( meindex , talkerindex , datanum-1 );  //æ›´æ–°
 				RTIME5 = NowTime.tv_sec+DEF_READ_WAITTIME;				
 			}
 			if(ranktable5[0].rank == 0) Raceman_MsgDisp( meindex, talkerindex,46,-1);
@@ -401,8 +401,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ
-					strcpy(listbuf,"¡ºĞÂÊÖ¾ªÎªÌìÈËÅÅĞĞ°ñ¡» "); 
+					//æ”¶é›†èµ„æ–™
+					strcpy(listbuf,"ã€æ–°æ‰‹æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(ranktable1[i].rank == 0 || strlen(ranktable1[i].name) == 0 || ranktable1[i].catchcnt == 0) break;
@@ -448,8 +448,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ					
-					strcpy(listbuf,"¡º¸ßÊÖ¾ªÎªÌìÈËÅÅĞĞ°ñ¡» "); 
+					//æ”¶é›†èµ„æ–™					
+					strcpy(listbuf,"ã€é«˜æ‰‹æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(ranktable2[i].rank == 0 || strlen(ranktable2[i].name) == 0 || ranktable2[i].catchcnt == 0) break;
@@ -495,8 +495,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ
-					strcpy(listbuf,"¡º¼Ò×å¾ªÎªÌìÈËÅÅĞĞ°ñ¡» "); 
+					//æ”¶é›†èµ„æ–™
+					strcpy(listbuf,"ã€å®¶æ—æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(ranktable3[i].rank == 0 || strlen(ranktable3[i].name) == 0 || ranktable3[i].catchcnt == 0) break;
@@ -542,8 +542,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ					
-					strcpy(listbuf,"¡º¸ßÊÖÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡» "); 
+					//æ”¶é›†èµ„æ–™					
+					strcpy(listbuf,"ã€é«˜æ‰‹æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(ranktable4[i].rank == 0 || strlen(ranktable4[i].name) == 0 || ranktable4[i].catchcnt == 0) break;
@@ -564,7 +564,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			}
 		break;
 	case CHAR_WINDOWTYPE_RACE_SHOWRANK5:
-		//Ä¿Ç°Ğãµ½ÄÄÒ»±Ê		
+		//ç›®å‰ç§€åˆ°å“ªä¸€ç¬”		
 		switch(select){
 			case WINDOW_BUTTONTYPE_NEXT:
 			case WINDOW_BUTTONTYPE_PREV:
@@ -576,7 +576,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 					Pageindex += 10 * (( select == WINDOW_BUTTONTYPE_NEXT) ? 1 : -1);
 
 					if(ranktable5[Pageindex].catchcnt==0)  {
-						//Pageindex = Pageindex - 10;	ÎŞÏÂÒ»Ò³Ò»ÂÊ»ØÊ×Ò³
+						//Pageindex = Pageindex - 10;	æ— ä¸‹ä¸€é¡µä¸€ç‡å›é¦–é¡µ
 						Raceman_SelectWindow( meindex, talkerindex,0,-1);
 						return;
 					}
@@ -591,8 +591,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ
-					strcpy(listbuf,"¡º¼Ò×åÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡» "); 					
+					//æ”¶é›†èµ„æ–™
+					strcpy(listbuf,"ã€å®¶æ—æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€ "); 					
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{						
 						if(ranktable5[i].rank == 0 || strlen(ranktable5[i].name) == 0 || ranktable5[i].catchcnt == 0) break;
@@ -638,8 +638,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ
-					strcpy(listbuf,"¡ºĞÂÊÖÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡» "); 
+					//æ”¶é›†èµ„æ–™
+					strcpy(listbuf,"ã€æ–°æ‰‹å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(history1[i].rank == 0 || strlen(history1[i].name) == 0 || history1[i].catchcnt == 0) break;
@@ -685,8 +685,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ					
-					strcpy(listbuf,"¡º¸ßÊÖÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡» "); 
+					//æ”¶é›†èµ„æ–™					
+					strcpy(listbuf,"ã€é«˜æ‰‹å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(history2[i].rank == 0 || strlen(history2[i].name) == 0 || history2[i].catchcnt == 0) break;
@@ -732,8 +732,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ
-					strcpy(listbuf,"¡º¼Ò×åÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡» "); 
+					//æ”¶é›†èµ„æ–™
+					strcpy(listbuf,"ã€å®¶æ—å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(history3[i].rank == 0 || strlen(history3[i].name) == 0 || history3[i].catchcnt == 0) break;
@@ -779,8 +779,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ					
-					strcpy(listbuf,"¡º¸ßÊÖÀúÊ·ÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡» "); 
+					//æ”¶é›†èµ„æ–™					
+					strcpy(listbuf,"ã€é«˜æ‰‹å†å²æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€ "); 
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{
 						if(history4[i].rank == 0 || strlen(history4[i].name) == 0 || history4[i].catchcnt == 0) break;
@@ -801,7 +801,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 			}
 		break;
 	case CHAR_WINDOWTYPE_RACE_SHOWRANK15:
-		//Ä¿Ç°Ğãµ½ÄÄÒ»±Ê		
+		//ç›®å‰ç§€åˆ°å“ªä¸€ç¬”		
 		switch(select){
 			case WINDOW_BUTTONTYPE_NEXT:
 			case WINDOW_BUTTONTYPE_PREV:
@@ -813,7 +813,7 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 					Pageindex += 10 * (( select == WINDOW_BUTTONTYPE_NEXT) ? 1 : -1);
 
 					if(history5[Pageindex].catchcnt==0)  {
-						//Pageindex = Pageindex - 10;	ÎŞÏÂÒ»Ò³Ò»ÂÊ»ØÊ×Ò³
+						//Pageindex = Pageindex - 10;	æ— ä¸‹ä¸€é¡µä¸€ç‡å›é¦–é¡µ
 						Raceman_SelectWindow( meindex, talkerindex,0,-1);
 						return;
 					}
@@ -828,8 +828,8 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 						buttontype |= WINDOW_BUTTONTYPE_PREV;
 						buttontype |= WINDOW_BUTTONTYPE_NEXT;
 					}
-					//ÊÕ¼¯×ÊÁÏ
-					strcpy(listbuf,"¡º¼Ò×åÀúÊ·ÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡» "); 					
+					//æ”¶é›†èµ„æ–™
+					strcpy(listbuf,"ã€å®¶æ—å†å²æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€ "); 					
 					for (i=Pageindex;i<Pageindex+10;i++)
 					{						
 						if(history5[i].rank == 0 || strlen(history5[i].name) == 0 || history5[i].catchcnt == 0) break;
@@ -852,9 +852,9 @@ void NPC_RacemanWindowTalked( int meindex , int talkerindex , int seqno, int sel
 	case CHAR_WINDOWTYPE_RACE_QUIZ:
 		ret = Raceman_CheckAnswer( meindex , talkerindex , data );
 		if(ret == TRUE)		
-			Raceman_SelectWindow( meindex, talkerindex,3,-1); //´ğ¶ÔÁË
+			Raceman_SelectWindow( meindex, talkerindex,3,-1); //ç­”å¯¹äº†
 		else
-			Raceman_MsgDisp( meindex, talkerindex,94,-1);//´ğ´íÁË
+			Raceman_MsgDisp( meindex, talkerindex,94,-1);//ç­”é”™äº†
 		break;
 	default: break;
 		}
@@ -871,37 +871,37 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 	int  i;
 
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return ;
 	}
 	switch( num) {
 		case 0:
-			// ¿Õ°×´¦ÇëÎğ¸ü¶¯
-			strcpy( token, "                    ¡îÁÔ³è´ó»á¡î\n\n");
-				strcat( token, "                 ¡¶ ÁÔ³è±ÈÈüÌâÄ¿ ¡·\n");
-				strcat( token, "                  ¡¶ ÁìÈ¡ÁÔ³èÖ¤ ¡·\n");
-				strcat( token, "                   ¡¶ ÁÔ³èµÇ¼Ç ¡·\n");
-				strcat( token, "                  ¡¶ ÁÔ³èÅÅĞĞ°ñ ¡·\n");
-				strcat( token, "                  ¡¶ ÁÔ³èÕ½ÀûÆ· ¡·\n\n");
-				strcat( token, "                     ¡¶ Àë¿ª ¡·\n");
+			// ç©ºç™½å¤„è¯·å‹¿æ›´åŠ¨
+			strcpy( token, "                    â˜†çŒå® å¤§ä¼šâ˜†\n\n");
+				strcat( token, "                 ã€Š çŒå® æ¯”èµ›é¢˜ç›® ã€‹\n");
+				strcat( token, "                  ã€Š é¢†å–çŒå® è¯ ã€‹\n");
+				strcat( token, "                   ã€Š çŒå® ç™»è®° ã€‹\n");
+				strcat( token, "                  ã€Š çŒå® æ’è¡Œæ¦œ ã€‹\n");
+				strcat( token, "                  ã€Š çŒå® æˆ˜åˆ©å“ ã€‹\n\n");
+				strcat( token, "                     ã€Š ç¦»å¼€ ã€‹\n");
 			buttontype=WINDOW_BUTTONTYPE_NONE;
 			windowtype=WINDOW_MESSAGETYPE_SELECT;
 			windowno=CHAR_WINDOWTYPE_RACE_START; 
 			break;
 
-		case 1:	//±ÈÈüÌâÄ¿
-			strcpy( token, "                  ¡îÁÔ³è´ó»á±¨¸æ¡î\n\n");
+		case 1:	//æ¯”èµ›é¢˜ç›®
+			strcpy( token, "                  â˜†çŒå® å¤§ä¼šæŠ¥å‘Šâ˜†\n\n");
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, "subject_msg",
 														buf,sizeof(buf))!= NULL)
 			{
-				sprintf( buf2 ,"±ÈÈüÌâÄ¿£º%s\n\n",buf);
+				sprintf( buf2 ,"æ¯”èµ›é¢˜ç›®ï¼š%s\n\n",buf);
 			}
 			strcat( token , buf2 );
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, "time_msg", 
 														buf, sizeof( buf)) != NULL){
-				sprintf( buf2 ,"Ê±¼äÏŞÖÆ£º%s\n\n",buf);
+				sprintf( buf2 ,"æ—¶é—´é™åˆ¶ï¼š%s\n\n",buf);
 			}
 			strcat( token , buf2 );
 			buttontype=WINDOW_BUTTONTYPE_OK;
@@ -909,13 +909,13 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowno=CHAR_WINDOWTYPE_RACE_SUBJECT; 
 			break;
 
-		case 2:	//ÁìÁÔ³èÖ¤
-			strcpy( token, "                  ¡îÁÔ³èÖ¤ºË·¢´¦¡î\n\n");
+		case 2:	//é¢†çŒå® è¯
+			strcpy( token, "                  â˜†çŒå® è¯æ ¸å‘å¤„â˜†\n\n");
 			NPC_Util_GetStrFromStrWithDelim( argstr, "EndFlag",buf, sizeof( buf) );
 			if( strcmp(buf,"on")==0){   
 				NPC_Util_GetStrFromStrWithDelim( argstr , "ending_msg", buf, sizeof( buf));
 				strcat( token , buf );
-				//strcat(token,"\n	±ÈÈüÒÑ¾­½áÊø£¬ÎŞ·¨ÔÙÁìÈ¡ÁÔ³èÖ¤£¡");   	
+				//strcat(token,"\n	æ¯”èµ›å·²ç»ç»“æŸï¼Œæ— æ³•å†é¢†å–çŒå® è¯ï¼");   	
 				windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 	
 			}else{
 				if( NPC_Util_GetStrFromStrWithDelim( argstr, "card_msg",buf, sizeof( buf) ) != NULL)
@@ -925,29 +925,29 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;			
 			break;
-		case 21://µÀ¾ßÒÑÂúÑ¶Ï¢
+		case 21://é“å…·å·²æ»¡è®¯æ¯
 		  	if( NPC_Util_GetStrFromStrWithDelim( argstr, "itemfull_msg",buf, sizeof( buf) ) != NULL)
 				strcpysafe(token, sizeof( buf), buf);
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			break;
-		case 22://ÒÑ¾­ÓĞÁÔ³èÖ¤Ñ¶Ï¢
+		case 22://å·²ç»æœ‰çŒå® è¯è®¯æ¯
 		  	if( NPC_Util_GetStrFromStrWithDelim( argstr, "haditem_msg",buf, sizeof( buf) ) != NULL)
 				strcpysafe(token, sizeof( buf), buf);
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			break;
-		case 3:	//ÁÔ³èµÇ¼Ç			
-			strcpy( token, "                   ¡îÁÔ³èµÇ¼Ç´¦¡î\n\n");
+		case 3:	//çŒå® ç™»è®°			
+			strcpy( token, "                   â˜†çŒå® ç™»è®°å¤„â˜†\n\n");
 			buttontype=WINDOW_BUTTONTYPE_CANCEL;
 	  		windowtype=WINDOW_MESSAGETYPE_PETSELECT;
 			windowno=CHAR_WINDOWTYPE_RACE_PETSELECT;
 			break;
-		case 31://¼ì²é³èÎï
+		case 31://æ£€æŸ¥å® ç‰©
 			//CHAR_getWorkInt( meindex , CHAR_WORKPETSELECT );
-			if(Raceman_checkpet( meindex, talker , select , token ) == FALSE){    // false ±íÊ¾ÒÑµÇ¼Ç
+			if(Raceman_checkpet( meindex, talker , select , token ) == FALSE){    // false è¡¨ç¤ºå·²ç™»è®°
 				buttontype=WINDOW_BUTTONTYPE_OK;
 		  		windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 				windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
@@ -955,14 +955,14 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 				//PetSelect = select-1;
 				CHAR_setWorkInt( talker , CHAR_WORK_PETSELECT, select-1 );
 				if( NPC_Util_GetStrFromStrWithDelim( argstr, "DelFlag",buf, sizeof( buf) ) != NULL){
-					if( strcmp(buf,"on")==0)	strcat(token,"\n\n	Çë×¢Òâ£¬Äú±ØĞë½»³ö³èÎï²ÅÄÜµÇ¼Çà¡!");
+					if( strcmp(buf,"on")==0)	strcat(token,"\n\n	è¯·æ³¨æ„ï¼Œæ‚¨å¿…é¡»äº¤å‡ºå® ç‰©æ‰èƒ½ç™»è®°å”·!");
 				}
 				buttontype = WINDOW_BUTTONTYPE_YESNO;
 				windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 				windowno=CHAR_WINDOWTYPE_RACE_CHECKIN; 
 			}
 			break;
-		case 32://ÎŞÁÔ³èÖ¤Ñ¶Ï¢
+		case 32://æ— çŒå® è¯è®¯æ¯
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, "nonitem_msg",buf, sizeof( buf) ) != NULL){
 				strcpysafe(token, sizeof( buf), buf);
 			}
@@ -970,8 +970,8 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			break;
-		case 4:	//ÁÔ³èÅÅĞĞ°ñ
-			strcpy( token, "                  ¡îÁÔ³èÅÅĞĞ°ñ¡î\n\n");
+		case 4:	//çŒå® æ’è¡Œæ¦œ
+			strcpy( token, "                  â˜†çŒå® æ’è¡Œæ¦œâ˜†\n\n");
 				NPC_Util_GetStrFromStrWithDelim( argstr, "EndFlag",buf, sizeof( buf) );
 				if(strcmp(buf,"off")==0){
 					NPC_Util_GetStrFromStrWithDelim( argstr, "HasGame",buf, sizeof( buf) );
@@ -991,23 +991,23 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_SELECT;
 			windowno=CHAR_WINDOWTYPE_RACE_RANK; 
 			break;
-		case 41: //ĞÂÊÖµÄ±ÈÈü ÏŞ¶¨ÖÖÀà±ÈÊıÁ¿
+		case 41: //æ–°æ‰‹çš„æ¯”èµ› é™å®šç§ç±»æ¯”æ•°é‡
 			token[0]='\0';				
-			strcpy(token,"¡ºĞÂÊÖ¾ªÎªÌìÈËÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€æ–°æ‰‹æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable1[i].rank == 0 || strlen(ranktable1[i].name) == 0 || ranktable1[i].catchcnt == 0) break;
 				sprintf(tmp_buffer,"%d %s %d ",ranktable1[i].rank , ranktable1[i].name , ranktable1[i].catchcnt);
 				strcat(token,tmp_buffer);
 			}
-			Pageindex = 0;  //»Øµ½µÚÒ»Ò³
+			Pageindex = 0;  //å›åˆ°ç¬¬ä¸€é¡µ
 			buttontype=WINDOW_BUTTONTYPE_OK|WINDOW_BUTTONTYPE_NEXT;
 			windowtype=WINDOW_MESSAGETYPE_RACEMAN_RANK;
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK1;
 			break;
-		case 42://¸öÈËÍ¬ÖÖÀàÅÅÃû 
+		case 42://ä¸ªäººåŒç§ç±»æ’å 
 			token[0]='\0';
-			strcpy(token,"¡º¸ßÊÖ¾ªÎªÌìÈËÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€é«˜æ‰‹æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable2[i].rank == 0 || strlen(ranktable2[i].name) == 0 || ranktable2[i].catchcnt == 0) break;
@@ -1019,9 +1019,9 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_RACEMAN_RANK;
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK2;
 			break;
-		case 43://¼Ò×å²»Í¬ÖÖÀàÅÅÃû 
+		case 43://å®¶æ—ä¸åŒç§ç±»æ’å 
 			token[0]='\0';
-			strcpy(token,"¡º¼Ò×å¾ªÎªÌìÈËÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€å®¶æ—æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable3[i].rank == 0 || strlen(ranktable3[i].name) == 0 || ranktable3[i].catchcnt == 0) break;
@@ -1033,9 +1033,9 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_RACEMAN_RANK;
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK3;
 			break;
-		case 44://¸öÈËÍ¬ÖÖÀàÅÅÃû 
+		case 44://ä¸ªäººåŒç§ç±»æ’å 
 			token[0]='\0';
-			strcpy(token,"¡º¸ßÊÖÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€é«˜æ‰‹æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable4[i].rank == 0 || strlen(ranktable4[i].name) == 0 || ranktable4[i].catchcnt == 0) break;
@@ -1047,9 +1047,9 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowtype=WINDOW_MESSAGETYPE_RACEMAN_RANK;
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK4;
 			break;
-		case 45://¼Ò×å²»Í¬ÖÖÀàÅÅÃû 
+		case 45://å®¶æ—ä¸åŒç§ç±»æ’å 
 			token[0]='\0';
-			strcpy(token,"¡º¼Ò×åÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€å®¶æ—æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(ranktable5[i].rank == 0 || strlen(ranktable5[i].name) == 0 || ranktable5[i].catchcnt == 0) break;
@@ -1063,7 +1063,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 411:
 			token[0]='\0';
-			strcpy(token,"¡ºĞÂÊÖÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€æ–°æ‰‹å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(history1[i].rank == 0 || strlen(history1[i].name) == 0 || history1[i].catchcnt == 0) break;
@@ -1077,7 +1077,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 412:
 			token[0]='\0';
-			strcpy(token,"¡º¸ßÊÖÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€é«˜æ‰‹å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(history2[i].rank == 0 || strlen(history2[i].name) == 0 || history2[i].catchcnt == 0) break;
@@ -1091,7 +1091,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 413:
 			token[0]='\0';
-			strcpy(token,"¡º¼Ò×åÀúÊ·¾ªÎªÌìÈËÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€å®¶æ—å†å²æƒŠä¸ºå¤©äººæ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(history3[i].rank == 0 || strlen(history3[i].name) == 0 || history3[i].catchcnt == 0) break;
@@ -1105,7 +1105,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 414:
 			token[0]='\0';
-			strcpy(token,"¡º¸ßÊÖÀúÊ·ÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€é«˜æ‰‹å†å²æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(history4[i].rank == 0 || strlen(history4[i].name) == 0 || history4[i].catchcnt == 0) break;
@@ -1119,7 +1119,7 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			break;
 		case 415:
 			token[0]='\0';
-			strcpy(token,"¡º¼Ò×åÀúÊ·ÎŞÆæ²»ÓĞÅÅĞĞ°ñ¡» ");
+			strcpy(token,"ã€å®¶æ—å†å²æ— å¥‡ä¸æœ‰æ’è¡Œæ¦œã€ ");
 			for (i=0;i<10;i++)
 			{
 				if(history5[i].rank == 0 || strlen(history5[i].name) == 0 || history5[i].catchcnt == 0) break;
@@ -1132,29 +1132,29 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowno=CHAR_WINDOWTYPE_RACE_SHOWRANK15;
 			break;
 		case 46:
-			strcpy( token, "                   ¡îÁÔ³èÅÅĞĞ°ñ¡î\n\n\n");
-				strcat( token, "              ÅÅĞĞ°ñÄ¿Ç°Ã»ÓĞ×ÊÁÏ\n");
+			strcpy( token, "                   â˜†çŒå® æ’è¡Œæ¦œâ˜†\n\n\n");
+				strcat( token, "              æ’è¡Œæ¦œç›®å‰æ²¡æœ‰èµ„æ–™\n");
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			break;
-		case 5:	//ÁÔ³èÕ½ÀûÆ·
+		case 5:	//çŒå® æˆ˜åˆ©å“
 			if(Raceman_checkprize( meindex , talker , token )==FALSE){
 				windowno=CHAR_WINDOWTYPE_RACE_NORMAL; 
 			}else{
-				Raceman_renewrank( meindex , talker , Raceman_readmode( meindex , talker ) );   //¶ÁÈ¡ÅÅÃû
+				Raceman_renewrank( meindex , talker , Raceman_readmode( meindex , talker ) );   //è¯»å–æ’å
 				windowno=CHAR_WINDOWTYPE_RACE_PRIZE; 
 			}
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			break;
-		case 6: //Í¨¹ØÃÜÓï
-			Raceman_GetQuestion( meindex , talker , token );   //Òª´¦ÀíËæ»ú¶Á³öÌâÄ¿ ºÍĞã³öÌâÄ¿
+		case 6: //é€šå…³å¯†è¯­
+			Raceman_GetQuestion( meindex , talker , token );   //è¦å¤„ç†éšæœºè¯»å‡ºé¢˜ç›® å’Œç§€å‡ºé¢˜ç›®
 			buttontype = WINDOW_BUTTONTYPE_OK;
 			windowtype = WINDOW_MESSAGETYPE_MESSAGEANDLINEINPUT;
 			windowno = CHAR_WINDOWTYPE_RACE_QUIZ;
 			break;
-		case 9:	// ¼Ò×åÈü ·Ç×å³¤Ñ¶Ï¢
+		case 9:	// å®¶æ—èµ› éæ—é•¿è®¯æ¯
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, "fmleader_msg",buf, sizeof( buf) ) != NULL){
 				strcpysafe(token, sizeof( buf), buf);
 			}
@@ -1179,13 +1179,13 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL;
 			break;
 		case 92:
-			strcpy(token,"ÄúµÄ¼Ò×å»¹Ã»ÓĞÕıÊ½³ÉÁ¢...");
+			strcpy(token,"æ‚¨çš„å®¶æ—è¿˜æ²¡æœ‰æ­£å¼æˆç«‹...");
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL;
 			break;
 		case 93:	
-			strcpy(token,"Ä¿Ç°µÇ¼ÇÈËÊı¹ı¶àÇëÉÔááÔÙÊÔ...");
+			strcpy(token,"ç›®å‰ç™»è®°äººæ•°è¿‡å¤šè¯·ç¨å¾Œå†è¯•...");
 			buttontype=WINDOW_BUTTONTYPE_OK;
 			windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 			windowno=CHAR_WINDOWTYPE_RACE_NORMAL;
@@ -1209,14 +1209,14 @@ void Raceman_MsgDisp(int meindex,int talker,int num ,int select)
 
 }
 
-//return 0: OK  1:×å³¤Éí·Ö²»ºÏ 2:ĞÂÊÖµÈ¼¶²»ºÏ 3:ĞÂÊÖ×ªÉí²»ºÏ 4:·ÇÕıÊ½¼Ò×å
+//return 0: OK  1:æ—é•¿èº«åˆ†ä¸åˆ 2:æ–°æ‰‹ç­‰çº§ä¸åˆ 3:æ–°æ‰‹è½¬èº«ä¸åˆ 4:éæ­£å¼å®¶æ—
 int Raceman_CheckGameType(int meindex , int talker )
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	char buf[64];
 	int  gmode;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1224,13 +1224,13 @@ int Raceman_CheckGameType(int meindex , int talker )
 
 	NPC_Util_GetStrFromStrWithDelim( argstr, "GameMode", buf, sizeof( buf) ); 
 	gmode = atoi(buf);
-	if( gmode == 3 || gmode == 5){	//¼Ò×åÈü
+	if( gmode == 3 || gmode == 5){	//å®¶æ—èµ›
 		if (CHAR_getWorkInt(talker, CHAR_WORKFMSETUPFLAG)!=1)	
 			return 4;
-		if (CHAR_getInt(talker,CHAR_FMLEADERFLAG)!=FMMEMBER_LEADER)   //ÊÇ×å³¤Âğ
+		if (CHAR_getInt(talker,CHAR_FMLEADERFLAG)!=FMMEMBER_LEADER)   //æ˜¯æ—é•¿å—
 			return 1;
 	}
-	if( gmode == 1 ){  //¼ì²éĞÂÈËÉí·Ö
+	if( gmode == 1 ){  //æ£€æŸ¥æ–°äººèº«åˆ†
 		NPC_Util_GetStrFromStrWithDelim( argstr, "FornewLv", buf, sizeof( buf) ); 
 		//sprintf(buuf,"fornewlv:%s   talkerLV:%d", buf , CHAR_getInt(  talker , CHAR_LV));
 		//CHAR_talkToCli( talker, -1,buuf, CHAR_COLORYELLOW);
@@ -1245,14 +1245,14 @@ int Raceman_CheckGameType(int meindex , int talker )
 	}
 	return 0;   
 }
-//¼ì²éÓĞÎŞÁÔ³èÖ¤
+//æ£€æŸ¥æœ‰æ— çŒå® è¯
 BOOL Raceman_CheckItem(int meindex,int talker)
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	int item,i,itemindex,id;
 	char buf[128];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1287,7 +1287,7 @@ BOOL Raceman_ItemFullCheck(int meindex, int talker)
 	return TRUE;
 }
 
-//·¢·ÅÁÔ³èÖ¤
+//å‘æ”¾çŒå® è¯
 BOOL Raceman_EventAddItem( int meindex,int talker )
 {
 	int itemindex,ret,i,fd;
@@ -1302,7 +1302,7 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		return FALSE;
 	}
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;  
@@ -1332,15 +1332,15 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 	if( CHAR_getInt( talker, CHAR_CATCHCNT1+gmode-1 )!=0){
 		
 		for(i=0;i<10;i++)	CHAR_setInt( talker, CHAR_KINDCNT1 + i , 0 );	
-		CHAR_setInt( talker,CHAR_CATCHCNT1+gmode-1, 0 );  //Çå³ı¼ÇÂ¼
+		CHAR_setInt( talker,CHAR_CATCHCNT1+gmode-1, 0 );  //æ¸…é™¤è®°å½•
 
-		if(gmode==3||gmode==5){  //¼Ò×åÈü
-			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//¼Ò×åÃû³Æ
-			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//¼Ò×åid
-		}else{	//¸öÈËÈü
+		if(gmode==3||gmode==5){  //å®¶æ—èµ›
+			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//å®¶æ—åç§°
+			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//å®¶æ—id
+		}else{	//ä¸ªäººèµ›
 			fd = getfdFromCharaIndex(talker);
-			CONNECT_getCharname( fd, name, sizeof( name ) );  //ÈËÎïÃû³Æ
-			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //ÕÊºÅ		
+			CONNECT_getCharname( fd, name, sizeof( name ) );  //äººç‰©åç§°
+			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //å¸å·		
 		}
 
 		switch(gmode)
@@ -1353,10 +1353,10 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		}
 		saacproto_ACRaceRecordandSort_send( acfd , talker , buf1 , id , name,9,0,0);
 	}
-	if(gmode < 4 )	//ÏŞ¶¨ÖÖÀà
-		sprintf( buf1, "Ä¿Ç°ÁÔ³è¼ÇÂ¼%dÖ»¡£", CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+	if(gmode < 4 )	//é™å®šç§ç±»
+		sprintf( buf1, "ç›®å‰çŒå® è®°å½•%dåªã€‚", CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 	else{	
-		//randomÒ»¸÷ÌâÄ¿¸øËû
+		//randomä¸€å„é¢˜ç›®ç»™ä»–
 		askno = rand() % asktotal; 
 		asklv = asktable[askno].lowlv + rand()%((asktable[askno].highlv+1)-asktable[askno].lowlv);
 		temp = (askno << 22) & 0x7FC00000;
@@ -1368,21 +1368,21 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		//	CHAR_getInt( talker ,CHAR_CHECKIN),askno,asktable[askno].petname,asklv,asktable[askno].bbi);		
 		//CHAR_talkToCli( talker, -1,buf1, CHAR_COLORYELLOW);
 		if( asktable[askno].highlv == 0 )
-			sprintf( buf1,"Çë×¥¸øÎÒµÈ¼¶%d¡ºÒÔÉÏ¡»µÄ%sºÃÂğ¡£ÄúÄ¿Ç°¼ÇÂ¼%dÖÖ", asktable[askno].lowlv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+			sprintf( buf1,"è¯·æŠ“ç»™æˆ‘ç­‰çº§%dã€ä»¥ä¸Šã€çš„%så¥½å—ã€‚æ‚¨ç›®å‰è®°å½•%dç§", asktable[askno].lowlv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 		else
-			sprintf( buf1,"Çë×¥¸øÎÒ¡ºÖ»ÄÜ¡»µÈ¼¶%dµÄ%sºÃÂğ¡£ÄúÄ¿Ç°¼ÇÂ¼%dÖÖ", asklv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+			sprintf( buf1,"è¯·æŠ“ç»™æˆ‘ã€åªèƒ½ã€ç­‰çº§%dçš„%så¥½å—ã€‚æ‚¨ç›®å‰è®°å½•%dç§", asklv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 	}
 	ITEM_setChar( itemindex, ITEM_EFFECTSTRING, buf1);
 	if(itemindex != -1) {
 		LogItem(
-		CHAR_getChar( talker, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+		CHAR_getChar( talker, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 		CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 		itemindex,
 #else
-   		ITEM_getInt( itemindex, ITEM_ID),  /* Ê§ÄÌ  Ø©  Ä¯ */
+   		ITEM_getInt( itemindex, ITEM_ID),  /* å¤±å¥¶  ä¸  å¯ */
 #endif
-		"EventAddItem(ÈÎÎñĞèÇóËùµÃµ½µÄµÀ¾ß)",
+		"EventAddItem(ä»»åŠ¡éœ€æ±‚æ‰€å¾—åˆ°çš„é“å…·)",
 		CHAR_getInt( talker, CHAR_FLOOR),
 		CHAR_getInt( talker, CHAR_X ),
  		CHAR_getInt( talker, CHAR_Y ),
@@ -1391,14 +1391,14 @@ BOOL Raceman_EventAddItem( int meindex,int talker )
 		ITEM_getInt( itemindex, ITEM_ID)
 		);
 	}
-	sprintf(token,"ÄÃµ½%s¡£", ITEM_getChar( itemindex, ITEM_NAME));
+	sprintf(token,"æ‹¿åˆ°%sã€‚", ITEM_getChar( itemindex, ITEM_NAME));
 	CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 	CHAR_sendItemDataOne( talker, ret);
 
 	return TRUE;
 }
 
-// ¼ì²éÊÇ·ñÎª±ÈÈüµÄ³èÎïºÍÊÇ·ñµÇ¼Ç¹ı           
+// æ£€æŸ¥æ˜¯å¦ä¸ºæ¯”èµ›çš„å® ç‰©å’Œæ˜¯å¦ç™»è®°è¿‡           
 BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 {
 	int	 petindex,checkpetID,petimgnum;
@@ -1408,7 +1408,7 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	int  index,gmode;
 	unsigned int  askno,asklv,askbbi;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
@@ -1422,7 +1422,7 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	}
 
 	if(CHAR_getInt( talker,CHAR_CATCHCNT5 ) >= asktotal ){
-		strcpy( token ,"¹§Ï²ÄãÒÑ¾­´ïµ½ÁÔ³è´óÈüÖÕ¼«Ä¿±ê£¬¸ĞĞ»ÄúµÄ²ÎÓë²¢×£Äú³éÖĞ´ó½±");
+		strcpy( token ,"æ­å–œä½ å·²ç»è¾¾åˆ°çŒå® å¤§èµ›ç»ˆæç›®æ ‡ï¼Œæ„Ÿè°¢æ‚¨çš„å‚ä¸å¹¶ç¥æ‚¨æŠ½ä¸­å¤§å¥–");
 		return FALSE;
 	}
 
@@ -1431,24 +1431,24 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	if( !CHAR_CHECKINDEX(petindex) ) return FALSE;
   
 	if (CHAR_getInt(petindex, CHAR_PETFAMILY) == 1){
-		strcpy(token,"\n	¼Ò×åÊØ»¤ÊŞÎŞ·¨µÇ¼Ç£¡");   	
+		strcpy(token,"\n	å®¶æ—å®ˆæŠ¤å…½æ— æ³•ç™»è®°ï¼");   	
     	return	FALSE;
     }
 
     if (CHAR_getInt( talker , CHAR_RIDEPET) == select-1 ){
-		strcpy(token,"\n	Æï³ËÖĞµÄ³èÎïÎŞ·¨µÇ¼Ç£¡");	
+		strcpy(token,"\n	éª‘ä¹˜ä¸­çš„å® ç‰©æ— æ³•ç™»è®°ï¼");	
     	return	FALSE;
     }    
 
 	NPC_Util_GetStrFromStrWithDelim( argstr , "GameCode", buf, sizeof( buf));
-	if( CHAR_getInt(petindex,CHAR_CHECKIN) == atoi(buf) ){   //Õâ´Î±ÈÈüÒÑµÇ¼Ç¹ıÁË
-		strcpy(token,"\n	ÕâÖ»³èÎïÒÑ¾­ÔÚ±¾½ì±ÈÈüµÇ¼Ç¹ıÁËÅ¶!");
+	if( CHAR_getInt(petindex,CHAR_CHECKIN) == atoi(buf) ){   //è¿™æ¬¡æ¯”èµ›å·²ç™»è®°è¿‡äº†
+		strcpy(token,"\n	è¿™åªå® ç‰©å·²ç»åœ¨æœ¬å±Šæ¯”èµ›ç™»è®°è¿‡äº†å“¦!");
 		return  FALSE;
 	}
 
 	NPC_Util_GetStrFromStrWithDelim( argstr , "GameMode", buf, sizeof( buf));
 	gmode = atoi(buf);
-	if(gmode==4||gmode==5)  //²»ÏŞÖÖÀà
+	if(gmode==4||gmode==5)  //ä¸é™ç§ç±»
 	{			
 		petimgnum = CHAR_getInt( petindex , CHAR_BASEBASEIMAGENUMBER); 
 		askbbi = CHAR_getInt( talker ,CHAR_CHECKIN) & 0x00003FFF;
@@ -1461,58 +1461,58 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 		//CHAR_talkToCli( talker, -1,buf, CHAR_COLORYELLOW);
 
 		if( petimgnum != askbbi+100000 ){
-			strcpy(token,"\n	ÇëÈ·ÈÏ³èÎï£¬ÕâÖ»²»ÊÇÎÒÒªµÄÅ¶!");
+			strcpy(token,"\n	è¯·ç¡®è®¤å® ç‰©ï¼Œè¿™åªä¸æ˜¯æˆ‘è¦çš„å“¦!");
 			return FALSE;
 		}
 		if( strcmp(petname,asktable[askno].petname)!=0) {
-			strcpy(token,"\n	ÇëÈ·ÈÏ³èÎï£¬ÕâÖ»²»ÊÇÎÒÒªµÄÅ¶!");
+			strcpy(token,"\n	è¯·ç¡®è®¤å® ç‰©ï¼Œè¿™åªä¸æ˜¯æˆ‘è¦çš„å“¦!");
 			return FALSE;		
 		}
 		if( asktable[askno].highlv == 0 ){
 			if( CHAR_getInt(petindex , CHAR_LV) < asktable[askno].lowlv ){
-				strcpy(token,"\n	ÕâÖ»³èÎïµÈ¼¶²»¹»Å¶£¡");   	
+				strcpy(token,"\n	è¿™åªå® ç‰©ç­‰çº§ä¸å¤Ÿå“¦ï¼");   	
 				return  FALSE;
 			}
 		}else{
 			if( CHAR_getInt(petindex , CHAR_LV) != asklv ){
-				strcpy(token,"\n	ÇëÈ·ÈÏ³èÎïµÈ¼¶£¬µÈ¼¶²»¶Ôà¡Å¶!");
+				strcpy(token,"\n	è¯·ç¡®è®¤å® ç‰©ç­‰çº§ï¼Œç­‰çº§ä¸å¯¹å”·å“¦!");
 				return FALSE;		
 			}
 		}
 		
-		sprintf(token,"		£½£½£½         ³èÎïµÇ¼Ç         £½£½£½"
-						"\n\n\n ÄúÑ¡ÔñµÇ¼ÇµÄ³èÎïÊÇ    %s Lv:%d"
+		sprintf(token,"		ï¼ï¼ï¼         å® ç‰©ç™»è®°         ï¼ï¼ï¼"
+						"\n\n\n æ‚¨é€‰æ‹©ç™»è®°çš„å® ç‰©æ˜¯    %s Lv:%d"
 					,petname,CHAR_getInt( petindex, CHAR_LV));					
 		
 		/*
 		NPC_Util_GetStrFromStrWithDelim( argstr , "PetLevel", buf, sizeof( buf));
 		if (CHAR_getInt(petindex , CHAR_LV) < atoi(buf)){
-			strcpy(token,"\n	ÕâÖ»³èÎïµÈ¼¶²»¹»£¡");   	
+			strcpy(token,"\n	è¿™åªå® ç‰©ç­‰çº§ä¸å¤Ÿï¼");   	
 			return  FALSE;
 		}
 
 		petimgnum = CHAR_getInt( petindex , CHAR_BASEBASEIMAGENUMBER); 
 		for(petNo=0;petNo<640;petNo++){
-			if(	 petimgnum == petflgtable[petNo] )  // Ó¦¸ÃÒªÒ»¶¨ÔÚtableÄÚ
+			if(	 petimgnum == petflgtable[petNo] )  // åº”è¯¥è¦ä¸€å®šåœ¨tableå†…
 				break;
 		}
 		if( petNo >= 640 ){
 			//sprintf(buuf2,"petimgnum:%d   pftable:%d   petNo:%d", petimgnum , petflgtable[2] , petNo);
 			//CHAR_talkToCli( talker, -1,buuf2, CHAR_COLORYELLOW);
-			strcpy(token,"\n	ÕâÖ»³èÎï¹Ö¹ÖµÄà¡!");
+			strcpy(token,"\n	è¿™åªå® ç‰©æ€ªæ€ªçš„å”·!");
 			//log
 			LogPet( CHAR_getChar( talker, CHAR_NAME ),
 					CHAR_getChar( talker, CHAR_CDKEY ),
 					CHAR_getChar( petindex, CHAR_NAME),
 					CHAR_getInt( petindex, CHAR_LV),
-					"raceman(ÁÔ³è´ó»á·Ç·¨³è¼ÇÂ¼)",
+					"raceman(çŒå® å¤§ä¼šéæ³•å® è®°å½•)",
 					CHAR_getInt( talker,CHAR_FLOOR),
 					CHAR_getInt( talker,CHAR_X ),
 					CHAR_getInt( talker,CHAR_Y ),
 					CHAR_getChar( petindex, CHAR_UNIQUECODE)   
 					);
 
-			return FALSE;// ³öÎÊÌâÂŞ£¬Íæ¼ÒÄÃ²»ÄÜÓµÓĞµÄ³èÎïÀ´µÇ¼Ç 
+			return FALSE;// å‡ºé—®é¢˜ç½—ï¼Œç©å®¶æ‹¿ä¸èƒ½æ‹¥æœ‰çš„å® ç‰©æ¥ç™»è®° 
 		}
 
 		//sprintf(buuf2,"petimgnum:%d   pftable:%d   petNo:%d", petimgnum , petflgtable[petNo] , petNo);
@@ -1531,8 +1531,8 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 			sprintf(token,"\n	 %s",buf);
 			return FALSE; 
 		}else{
-			sprintf(token,"		£½£½£½         ³èÎïµÇ¼Ç         £½£½£½"
-							"\n\n\n ÄúÑ¡ÔñµÇ¼ÇµÄ³èÎïÊÇ    %s Lv:%d"
+			sprintf(token,"		ï¼ï¼ï¼         å® ç‰©ç™»è®°         ï¼ï¼ï¼"
+							"\n\n\n æ‚¨é€‰æ‹©ç™»è®°çš„å® ç‰©æ˜¯    %s Lv:%d"
 							,petname,CHAR_getInt( petindex, CHAR_LV)
 							);		
 		}
@@ -1547,7 +1547,7 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 	//		sprintf(buuf2,"petindex:%d   checkpetID:%d  index:%d",petindex,checkpetID,index);
 	//		CHAR_talkToCli( talker, -1,buuf2, CHAR_COLORYELLOW);
 
-			/*±£ÁôgmÖ¸Áîdropmypet×ö·¨  ½á¹ûÍ¬ÏÂ¶Î
+			/*ä¿ç•™gmæŒ‡ä»¤dropmypetåšæ³•  ç»“æœåŒä¸‹æ®µ
 			petarray = ENEMY_getEnemyArrayFromId( checkpetID );
 			petindex2 = ENEMY_TEST_createPetIndex( petarray );
 			test5  = CHAR_getInt( petindex2 , CHAR_BASEBASEIMAGENUMBER);
@@ -1564,16 +1564,16 @@ BOOL Raceman_checkpet( int meindex, int talker , int select , char *token )
 
 				NPC_Util_GetStrFromStrWithDelim( argstr , "PetLevel", buf, sizeof( buf));
 				if (CHAR_getInt(petindex , CHAR_LV) < atoi(buf)){
-					strcpy(token,"\n	ÕâÖ»³èÎïµÈ¼¶²»¹»£¡");   	
+					strcpy(token,"\n	è¿™åªå® ç‰©ç­‰çº§ä¸å¤Ÿï¼");   	
 					return  FALSE;
 				}
 
-				sprintf(token,"		£½£½£½         ³èÎïµÇ¼Ç         £½£½£½"
-								"\n\n\n ÄúÑ¡ÔñµÇ¼ÇµÄ³èÎïÊÇ    %s Lv:%d"
+				sprintf(token,"		ï¼ï¼ï¼         å® ç‰©ç™»è®°         ï¼ï¼ï¼"
+								"\n\n\n æ‚¨é€‰æ‹©ç™»è®°çš„å® ç‰©æ˜¯    %s Lv:%d"
 								,petname,CHAR_getInt( petindex, CHAR_LV)
 								);		
 			}else{
-				strcpy(token,"\n	±ÈÈüµÄÌâÄ¿Ã»ÓĞÕâÖ»³èÎïÅ¶!");
+				strcpy(token,"\n	æ¯”èµ›çš„é¢˜ç›®æ²¡æœ‰è¿™åªå® ç‰©å“¦!");
 				return FALSE;
 			}
 		}
@@ -1588,7 +1588,7 @@ int Raceman_getokask( int talker, int random )
 	base = random / 32 ;
 	shift = random % 32 ;
 	i = 1 << shift ;
-	if(	CHAR_getInt( talker , CHAR_KINDCNT1 + base ) & i ){	//ÎªÕæ±íÊ¾½â¹ıÁË
+	if(	CHAR_getInt( talker , CHAR_KINDCNT1 + base ) & i ){	//ä¸ºçœŸè¡¨ç¤ºè§£è¿‡äº†
 		random ++;
 		if( random >= asktotal ) random = 0;
 		return Raceman_getokask( talker , random );
@@ -1607,17 +1607,17 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 	int  base,intNo,shift,petNo,j;	
 	unsigned int  askno,asklv,temp;
 	
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
 	}
 	
-	//±£ÏÕ¼ì²é
+	//ä¿é™©æ£€æŸ¥
 	for( i = 0 ; i < 5 ; i ++ ){
 		j = CHAR_getInt( talker,CHAR_CATCHCNT1 + i ) ;
 		if( j++ >= 0xFFFFFF ) {
-			CHAR_talkToCli( talker, -1, "ºÜ±§Ç¸£¬ÄúÒÑ¾­´ïµ½ÏµÍ³ÉÏÏŞ£¬ÎŞ·¨ÔÙµÇ¼ÇÁË", CHAR_COLORYELLOW);
+			CHAR_talkToCli( talker, -1, "å¾ˆæŠ±æ­‰ï¼Œæ‚¨å·²ç»è¾¾åˆ°ç³»ç»Ÿä¸Šé™ï¼Œæ— æ³•å†ç™»è®°äº†", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 	}
@@ -1626,21 +1626,21 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 	if( !CHAR_CHECKINDEX(petindex) ) return FALSE;
 	petname = CHAR_getUseName( petindex);
 
-	//Ğ´Èë³èÎïÀ¸Î»
+	//å†™å…¥å® ç‰©æ ä½
 	NPC_Util_GetStrFromStrWithDelim( argstr , "GameCode", buf, sizeof( buf));		
 	CHAR_setInt( petindex, CHAR_CHECKIN , atoi(buf) );  
 	LogPet( CHAR_getChar( talker, CHAR_NAME ),
 			CHAR_getChar( talker, CHAR_CDKEY ),
 			CHAR_getChar( petindex, CHAR_NAME),
 			CHAR_getInt( petindex, CHAR_LV),
-			"raceman(ÁÔ³è´ó»áÊÕ³èÊ±¼ÇÂ¼)",
+			"raceman(çŒå® å¤§ä¼šæ”¶å® æ—¶è®°å½•)",
 			CHAR_getInt( talker,CHAR_FLOOR),
 			CHAR_getInt( talker,CHAR_X ),
 			CHAR_getInt( talker,CHAR_Y ),
 			CHAR_getChar( petindex, CHAR_UNIQUECODE)   
 			);
 
-	//ÊÕ³è
+	//æ”¶å® 
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "DelFlag",buf, sizeof( buf) ) != NULL){
 		if( strcmp(buf,"on")==0){
 			CHAR_endCharOneArray( petindex );
@@ -1654,7 +1654,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 					CHAR_getChar( talker, CHAR_CDKEY ),
 					CHAR_getChar( petindex, CHAR_NAME),
 					CHAR_getInt( petindex, CHAR_LV),
-					"raceman(ÁÔ³è´ó»áÊÕ³èÊ±¼ÇÂ¼)",
+					"raceman(çŒå® å¤§ä¼šæ”¶å® æ—¶è®°å½•)",
 					CHAR_getInt( talker,CHAR_FLOOR),
 					CHAR_getInt( talker,CHAR_X ),
 					CHAR_getInt( talker,CHAR_Y ),
@@ -1663,10 +1663,10 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		}
 	}	
 
-	//·ÖÏŞ¶¨ÖÖÀà»¹ÊÇ²»Í¬ÖÖÀà
+	//åˆ†é™å®šç§ç±»è¿˜æ˜¯ä¸åŒç§ç±»
 	NPC_Util_GetStrFromStrWithDelim( argstr , "GameMode", buf, sizeof( buf));		
 	gmode = atoi(buf);
-	if(gmode==4||gmode==5)  //²»Í¬ÖÖÀà
+	if(gmode==4||gmode==5)  //ä¸åŒç§ç±»
 	{
 		petNo = ( CHAR_getInt( talker ,CHAR_CHECKIN ) & 0x7FC00000 ) >> 22 ;	
 		//petNo -= 1; 
@@ -1677,38 +1677,38 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		//sprintf(buuf,"chkin data:%d", CHAR_getInt( talker , CHAR_KINDCNT1 + intNo ) );
 		//CHAR_talkToCli( talker, -1,buuf, CHAR_COLORYELLOW);
 
-		//·Ö³É¸öÈË»¹ÊÇ¼Ò×åÈü
-		if(gmode == 5) //Éè¶¨Îª¼Ò×åÈü
+		//åˆ†æˆä¸ªäººè¿˜æ˜¯å®¶æ—èµ›
+		if(gmode == 5) //è®¾å®šä¸ºå®¶æ—èµ›
 		{
 			CHAR_setInt( talker,CHAR_CATCHCNT5,CHAR_getInt( talker,CHAR_CATCHCNT5 ) +1 );
-			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//¼Ò×åÃû³Æ
-			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//¼Ò×åid
+			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//å®¶æ—åç§°
+			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//å®¶æ—id
 		}
 		else	// 4
 		{
-			//Íæ¼Ò×¥³è´ÎÊı¼Ó1
+			//ç©å®¶æŠ“å® æ¬¡æ•°åŠ 1
 			fd = getfdFromCharaIndex(talker);
 			CHAR_setInt( talker,CHAR_CATCHCNT4,CHAR_getInt( talker,CHAR_CATCHCNT4 ) +1 );
-			CONNECT_getCharname( fd, name, sizeof( name ) );  //ÈËÎïÃû³Æ
-			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //ÕÊºÅ		
+			CONNECT_getCharname( fd, name, sizeof( name ) );  //äººç‰©åç§°
+			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //å¸å·		
 		}
 	}
 	else	// 1 2 3
 	{
-		//·Ö³É¸öÈË»¹ÊÇ¼Ò×åÈü
-		if(gmode == 3) //Éè¶¨Îª¼Ò×åÈü
+		//åˆ†æˆä¸ªäººè¿˜æ˜¯å®¶æ—èµ›
+		if(gmode == 3) //è®¾å®šä¸ºå®¶æ—èµ›
 		{
-			//×å³¤´ÎÊı¼Ó1
+			//æ—é•¿æ¬¡æ•°åŠ 1
 			CHAR_setInt( talker,CHAR_CATCHCNT3,CHAR_getInt( talker,CHAR_CATCHCNT3 ) +1 );
-			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//¼Ò×åÃû³Æ
-			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//¼Ò×åid
+			strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//å®¶æ—åç§°
+			sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//å®¶æ—id
 		}
 		else
 		{
-			//Íæ¼Ò×¥³è´ÎÊı¼Ó1
+			//ç©å®¶æŠ“å® æ¬¡æ•°åŠ 1
 			fd = getfdFromCharaIndex(talker);
-			CONNECT_getCharname( fd, name, sizeof( name ) );  //ÈËÎïÃû³Æ
-			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //ÕÊºÅ		
+			CONNECT_getCharname( fd, name, sizeof( name ) );  //äººç‰©åç§°
+			CONNECT_getCdkey( fd, id , sizeof( id ) );		  //å¸å·		
 			if(gmode == 1 )
 				CHAR_setInt( talker,CHAR_CATCHCNT1,CHAR_getInt( talker,CHAR_CATCHCNT1 ) +1 );
 			else
@@ -1716,7 +1716,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		}
 	}
 
-	//ÅĞ¶ÏÏÖÔÚÊÇ±ÈÊ²÷á
+	//åˆ¤æ–­ç°åœ¨æ˜¯æ¯”ä»€éº½
 	switch(gmode)
 	{
 	case 1:NPC_Util_GetStrFromStrWithDelim( argstr , "Mode1", buf, sizeof( buf)); break;
@@ -1725,7 +1725,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 	case 4:NPC_Util_GetStrFromStrWithDelim( argstr , "Mode4", buf, sizeof( buf)); break;
 	case 5:NPC_Util_GetStrFromStrWithDelim( argstr , "Mode5", buf, sizeof( buf)); break;
 	}
-	//ac×öÒ»´Î¼ÇÂ¼¸úÅÅÃû (fd,charaindex,id,name,limittime,racetype,catchcnt,ranknum)
+	//acåšä¸€æ¬¡è®°å½•è·Ÿæ’å (fd,charaindex,id,name,limittime,racetype,catchcnt,ranknum)
 	//sprintf(buuf,"acfd:%d talker:%d mode:%s id:%s name:%s catchcnt:%d",acfd,talker,buf,id,name,CHAR_getInt( talker,CHAR_CATCHCNT ) );
 	//CHAR_talkToCli( talker, -1, buuf, CHAR_COLORYELLOW);
 	if(gmode == 3 || gmode == 5){
@@ -1740,7 +1740,7 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		0 , CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) , 0 ) ;
 	
 
-	//ÁÔ³èÖ¤´ÎÊı¼Ó1 »ò ¾ö¶¨ÏÂÒ»¸öÌâÄ¿
+	//çŒå® è¯æ¬¡æ•°åŠ 1 æˆ– å†³å®šä¸‹ä¸€ä¸ªé¢˜ç›®
   	if( NPC_Util_GetStrFromStrWithDelim( argstr, "CheckItem",
 											 buf, sizeof( buf) ) != NULL)
 	{
@@ -1750,12 +1750,12 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 			if( ITEM_CHECKINDEX( itemindex) ) {
 				itemid=ITEM_getInt( itemindex ,ITEM_ID );
 				//print("itemindex:%d  itemid:%d  item:%d\n",itemindex,itemid,item);
-				if(itemid==item){	//ÕÒµ½ÁÔ³èÖ¤
+				if(itemid==item){	//æ‰¾åˆ°çŒå® è¯
 					if(gmode < 4)
-						sprintf( buf1, "Ä¿Ç°ÁÔ³è¼ÇÂ¼%dÖ»¡£", CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+						sprintf( buf1, "ç›®å‰çŒå® è®°å½•%dåªã€‚", CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 					else{
 						if(CHAR_getInt( talker,CHAR_CATCHCNT5 ) >= asktotal ){
-							sprintf( buf1,"¹§Ï²Äã´ïµ½ÁÔ³è´óÈüÖÕ¼«Ä¿±ê£¬×£Äú³éÖĞ´ó½±");
+							sprintf( buf1,"æ­å–œä½ è¾¾åˆ°çŒå® å¤§èµ›ç»ˆæç›®æ ‡ï¼Œç¥æ‚¨æŠ½ä¸­å¤§å¥–");
 						}else{
 							askno = Raceman_getokask( talker , rand() % asktotal );
 							asklv = asktable[askno].lowlv + rand()%((asktable[askno].highlv+1)-asktable[askno].lowlv);
@@ -1764,9 +1764,9 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 							temp = temp | ((asktable[askno].bbi - 100000) & 0x00003FFF);
 							CHAR_setInt(  talker , CHAR_CHECKIN , temp );  		
 							if( asktable[askno].highlv == 0 )
-								sprintf( buf1,"Çë×¥¸øÎÒµÈ¼¶%d¡ºÒÔÉÏ¡»µÄ%sºÃÂğ¡£ÄúÄ¿Ç°¼ÇÂ¼%dÖÖ", asktable[askno].lowlv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+								sprintf( buf1,"è¯·æŠ“ç»™æˆ‘ç­‰çº§%dã€ä»¥ä¸Šã€çš„%så¥½å—ã€‚æ‚¨ç›®å‰è®°å½•%dç§", asktable[askno].lowlv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 							else
-								sprintf( buf1,"Çë×¥¸øÎÒ¡ºÖ»ÄÜ¡»µÈ¼¶%dµÄ%sºÃÂğ¡£ÄúÄ¿Ç°¼ÇÂ¼%dÖÖ", asklv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
+								sprintf( buf1,"è¯·æŠ“ç»™æˆ‘ã€åªèƒ½ã€ç­‰çº§%dçš„%så¥½å—ã€‚æ‚¨ç›®å‰è®°å½•%dç§", asklv , asktable[askno].petname, CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) );
 						}
 					}
 					ITEM_setChar( itemindex, ITEM_EFFECTSTRING, buf1);
@@ -1777,20 +1777,20 @@ BOOL  Raceman_petcheckin( int meindex , int talker )
 		}
 	}
 
-	sprintf( buf,"%sLv:%dµÇ¼ÇÍê³ÉÁË£¬¼ÓÓÍ¼ÓÓÍ¡£",petname,CHAR_getInt( petindex, CHAR_LV ));
+	sprintf( buf,"%sLv:%dç™»è®°å®Œæˆäº†ï¼ŒåŠ æ²¹åŠ æ²¹ã€‚",petname,CHAR_getInt( petindex, CHAR_LV ));
 	CHAR_talkToCli( talker, -1, buf , CHAR_COLORWHITE);
 
 	return TRUE;
 }
 
-//¶Á·ÅÔÚsaacµÄÅÅÃû×ÊÁÏ,¶øÇÒÒªÊÇÄ¿Ç°±ÈÈüµÄÏîÄ¿
+//è¯»æ”¾åœ¨saacçš„æ’åèµ„æ–™,è€Œä¸”è¦æ˜¯ç›®å‰æ¯”èµ›çš„é¡¹ç›®
 void Raceman_countrank( int meindex, int talker )
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	int  ranknum = 0,gmode;
 	char buf[64],buf1[64];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -1822,7 +1822,7 @@ void Raceman_renewrank( int meindex , int talker , int select )
 	int  ranknum = 0;
 	char buf[64],buf1[64];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -1848,34 +1848,34 @@ void Raceman_renewrank( int meindex , int talker , int select )
 	}
 }
 
-//¼ì²éÊÇ·ñÓĞ×Ê¸ñÁì½± 
+//æ£€æŸ¥æ˜¯å¦æœ‰èµ„æ ¼é¢†å¥– 
 BOOL Raceman_checkprize( int meindex , int talker ,char *token)
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	char buf[256],buf1[64];
-	int  lowlevel;//×îµÍ±ê×¼  ÏÂÏŞ	
+	int  lowlevel;//æœ€ä½æ ‡å‡†  ä¸‹é™	
 	int  gmode;
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return FALSE;
 	}
 
 	NPC_Util_GetStrFromStrWithDelim( argstr , "EndFlag", buf1, sizeof( buf1));
-	if( strcmp(buf1,"off")==0){   // ±ÈÈüÃ»½áÊø ËùÒÔ²»ÄÜÁì
+	if( strcmp(buf1,"off")==0){   // æ¯”èµ›æ²¡ç»“æŸ æ‰€ä»¥ä¸èƒ½é¢†
 		NPC_Util_GetStrFromStrWithDelim( argstr , "notend_msg", buf, sizeof( buf));
-		strcpy( token, "                ¡îÁÔ³èÕ½ÀûÆ·°ä·¢¡î\n\n");
+		strcpy( token, "                â˜†çŒå® æˆ˜åˆ©å“é¢å‘â˜†\n\n");
 		strcat( token , buf );
-			//strcat( token, "	±ÈÈü»¹ÔÚ½øĞĞÖĞà¡...\n");			
+			//strcat( token, "	æ¯”èµ›è¿˜åœ¨è¿›è¡Œä¸­å”·...\n");			
 		return FALSE;
 	}
 
 	if(Raceman_CheckItem( meindex , talker ) == FALSE){		
 		NPC_Util_GetStrFromStrWithDelim( argstr , "nonitem_msg", buf, sizeof( buf));
-		strcpy( token, "                ¡îÁÔ³èÕ½ÀûÆ·°ä·¢¡î\n\n");		
+		strcpy( token, "                â˜†çŒå® æˆ˜åˆ©å“é¢å‘â˜†\n\n");		
 		strcat( token , buf );
-			//strcat( token, "	ºÜ±§Ç¸£¬ÄúÃ»ÓĞÁÔ³èÖ¤ÎŞ·¨Áì½±...\n");			
+			//strcat( token, "	å¾ˆæŠ±æ­‰ï¼Œæ‚¨æ²¡æœ‰çŒå® è¯æ— æ³•é¢†å¥–...\n");			
 		return FALSE;
 	}
 
@@ -1886,22 +1886,22 @@ BOOL Raceman_checkprize( int meindex , int talker ,char *token)
 
 	if( CHAR_getInt( talker,CHAR_CATCHCNT1+gmode-1 ) < lowlevel ){
 		NPC_Util_GetStrFromStrWithDelim( argstr , "low_msg", buf, sizeof( buf));
-		strcpy( token, "                ¡îÁÔ³èÕ½ÀûÆ·°ä·¢¡î\n\n");
-			//strcat( token, "	ºÜ±§Ç¸£¬ÄúÃ»ÓĞ´ïµ½×îµÍ±ê×¼...\n");			
+		strcpy( token, "                â˜†çŒå® æˆ˜åˆ©å“é¢å‘â˜†\n\n");
+			//strcat( token, "	å¾ˆæŠ±æ­‰ï¼Œæ‚¨æ²¡æœ‰è¾¾åˆ°æœ€ä½æ ‡å‡†...\n");			
 			strcat( token , buf );
 		return TRUE;
 	}	
 
-	//¼ì²éÓĞÎŞÀ¸Î»
+	//æ£€æŸ¥æœ‰æ— æ ä½
 	if(Raceman_ItemFullCheck( meindex , talker) == FALSE){
 		NPC_Util_GetStrFromStrWithDelim( argstr, "itemfull_msg",buf, sizeof( buf) );
-		strcpy( token, "                ¡îÁÔ³èÕ½ÀûÆ·°ä·¢¡î\n\n		");
+		strcpy( token, "                â˜†çŒå® æˆ˜åˆ©å“é¢å‘â˜†\n\n		");
 		strcat( token, buf );			
 		return FALSE;
 	}
 
-	strcpy( token, "                ¡îÁÔ³èÕ½ÀûÆ·°ä·¢¡î\n\n");
-		strcat( token, "	ÁÔ³èÓÂÊ¿£¬ÕâÊÇÄãÓ¦µÃµÄÕ½ÀûÆ·...\n");			
+	strcpy( token, "                â˜†çŒå® æˆ˜åˆ©å“é¢å‘â˜†\n\n");
+		strcat( token, "	çŒå® å‹‡å£«ï¼Œè¿™æ˜¯ä½ åº”å¾—çš„æˆ˜åˆ©å“...\n");			
 	return TRUE;
 }
 
@@ -1915,7 +1915,7 @@ void Raceman_awardprize( int meindex , int talker )
 
 	memset(prizebuf,0,sizeof(prizebuf));
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 		return;
@@ -1933,18 +1933,18 @@ void Raceman_awardprize( int meindex , int talker )
 
     if(gmode == 3 || gmode == 5) 
 	{
-		strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//¼Ò×åÃû³Æ
-		sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//¼Ò×åid
+		strcpy(name,CHAR_getChar(talker,CHAR_FMNAME));			//å®¶æ—åç§°
+		sprintf(id,"%d",CHAR_getWorkInt(talker, CHAR_WORKFMINDEXI));	//å®¶æ—id
 	}
-	else	// 1 2 4 ¸öÈË
+	else	// 1 2 4 ä¸ªäºº
 	{
 		fd = getfdFromCharaIndex(talker);
 		CONNECT_getCharname( fd, name, sizeof( name ) );  
-		CONNECT_getCdkey( fd, id , sizeof( id ) );		  //ÕÊºÅ	
+		CONNECT_getCdkey( fd, id , sizeof( id ) );		  //å¸å·	
 	}
 
 	rank = 0; 
-	/*	È¡Ïû ¾ö¶¨Ò»¶şÈşÃû
+	/*	å–æ¶ˆ å†³å®šä¸€äºŒåå
 	switch(gmode)
 	{
 	case 1:
@@ -2002,7 +2002,7 @@ void Raceman_awardprize( int meindex , int talker )
 	}else{
 		NPC_Util_GetStrFromStrWithDelim( argstr , "thanks_msg", buf, sizeof( buf));
 		NPC_Util_GetStrFromStrWithDelim( argstr , "Normal", buf3, sizeof( buf3));
-		//²Î¼Ó½±Ëæ»ú¾ö¶¨
+		//å‚åŠ å¥–éšæœºå†³å®š
 		i = 0;
 		while( getStringFromIndexWithDelim( buf3 , "," , i+1 , buf2 , sizeof(buf2) ))
 		{
@@ -2017,7 +2017,7 @@ void Raceman_awardprize( int meindex , int talker )
 	CHAR_talkToCli( talker, -1, buf, CHAR_COLORYELLOW);
 	prize = atoi(buf2);
 
-	//¸ø½±Æ·
+	//ç»™å¥–å“
 	itemindex = ITEM_makeItemAndRegist( prize );
 	if(itemindex == -1) return;
 
@@ -2030,7 +2030,7 @@ void Raceman_awardprize( int meindex , int talker )
 	CHAR_sendItemDataOne( talker, ret);
 
 DELITEM:
-	//É¾³ıÁÔ³èÖ¤
+	//åˆ é™¤çŒå® è¯
   	if( NPC_Util_GetStrFromStrWithDelim( argstr, "CheckItem", buf , sizeof( buf ) ) != NULL )
 	{
 		item = atoi(buf);
@@ -2038,16 +2038,16 @@ DELITEM:
 			itemindex=CHAR_getItemIndex( talker , i );
 			if( ITEM_CHECKINDEX( itemindex) ) {
 				itemid=ITEM_getInt( itemindex ,ITEM_ID );
-				if(itemid==item){	//ÕÒµ½ÁÔ³èÖ¤
+				if(itemid==item){	//æ‰¾åˆ°çŒå® è¯
 					LogItem(
 						CHAR_getChar( talker, CHAR_NAME ), 
 						CHAR_getChar( talker, CHAR_CDKEY ),
-			#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+			#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 						itemindex,
 			#else
        					ITEM_getInt( itemindex, ITEM_ID ),  
 			#endif
-						"ÒòÁì½±¶øÏûÊ§",
+						"å› é¢†å¥–è€Œæ¶ˆå¤±",
 						CHAR_getInt( talker,CHAR_FLOOR),
 						CHAR_getInt( talker,CHAR_X ),
  	      				CHAR_getInt( talker,CHAR_Y ),
@@ -2057,7 +2057,7 @@ DELITEM:
 					);
 
 					CHAR_DelItem( talker , i );
-					CHAR_talkToCli( talker, -1, "ÁÔ³èÖ¤ÏûÊ§ÁË", CHAR_COLORYELLOW);
+					CHAR_talkToCli( talker, -1, "çŒå® è¯æ¶ˆå¤±äº†", CHAR_COLORYELLOW);
 					break;
 				}					
 			}
@@ -2071,10 +2071,10 @@ DELITEM:
 int Raceman_readmode( int meindex , int talkerindex )
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
-	int  gmode;  // 1:ĞÂÊÖÏŞ 2:¸öÈËÏŞ 3:ÍÅÌåÏŞ 4:¸öÈË²»ÏŞ 5:ÍÅÌå²»ÏŞ
+	int  gmode;  // 1:æ–°æ‰‹é™ 2:ä¸ªäººé™ 3:å›¢ä½“é™ 4:ä¸ªäººä¸é™ 5:å›¢ä½“ä¸é™
 	char buf[10];
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 	}
@@ -2094,7 +2094,7 @@ int Raceman_CheckSelectRank(meindex,talkerindex,datanum)
 	int  select = 0;
 
 
-	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //¶Á²ÎÊı
+	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {  //è¯»å‚æ•°
 		print("MsgDisp:GetArgStrErr");
 		print("NPCName=%s\n", CHAR_getChar( meindex, CHAR_NAME));
 	}
@@ -2126,7 +2126,7 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 	if (fp == NULL)
 	{
 		print("racequiz File Open Error\n");
-		strcpy( token,"ÏµÍ³·¢Éú´íÎó£¡");		
+		strcpy( token,"ç³»ç»Ÿå‘ç”Ÿé”™è¯¯ï¼");		
 		return ;
 	}
 	while(1){		
@@ -2139,11 +2139,11 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 	if (fp == NULL)
 	{
 		print("racequiz File Open Error\n");
-		strcpy( token,"ÏµÍ³·¢Éú´íÎó£¡");		
+		strcpy( token,"ç³»ç»Ÿå‘ç”Ÿé”™è¯¯ï¼");		
 		return ;
 	}
 
-	quiz = rand() % (quiztotal) ; //ÂÒÊı¾ö¶¨ÎÊÌâ
+	quiz = rand() % (quiztotal) ; //ä¹±æ•°å†³å®šé—®é¢˜
 
 	j = 0 ;
 	while(1){		
@@ -2154,7 +2154,7 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 		}
 		chop(line);
 
-		// #Îª×¢½â
+		// #ä¸ºæ³¨è§£
 		if( line[0] == '#' )
 			continue;
 		for( i=0; i<strlen(line); i++ ){
@@ -2165,8 +2165,8 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 		}
 
 		if( j == quiz ){
-			getStringFromIndexWithDelim(line, "|", 1, buf, sizeof(buf)); //¶Á³öÄ³Î»Íæ¼ÒµÄÌâÄ¿	
-			CHAR_setWorkInt( talker , CHAR_WORK_RACEQUIZ , quiz );		 //¼ÇÂ¼Ä³Î»Íæ¼ÒÑ¡µÄÌâÄ¿	
+			getStringFromIndexWithDelim(line, "|", 1, buf, sizeof(buf)); //è¯»å‡ºæŸä½ç©å®¶çš„é¢˜ç›®	
+			CHAR_setWorkInt( talker , CHAR_WORK_RACEQUIZ , quiz );		 //è®°å½•æŸä½ç©å®¶é€‰çš„é¢˜ç›®	
 			break;
 		}
 		j++;
@@ -2182,10 +2182,10 @@ void Raceman_GetQuestion( int meindex ,int talker , char *token)
 		strcat( buf,"\n");
 	
 	}
-	sprintf( token,"ÄÔ½î¶¯Ò»¶¯£¡´ğ¶ÔÁË£¬ÄãµÄ³èÎï²ÅÄÜµÇ¼Çà¡\n"
+	sprintf( token,"è„‘ç­‹åŠ¨ä¸€åŠ¨ï¼ç­”å¯¹äº†ï¼Œä½ çš„å® ç‰©æ‰èƒ½ç™»è®°å”·\n"
 			"\n%s "
-			"\n¡ıĞ´ÔÚÕâÀï\n"
-			"¡¡(Ğ´ÍêÇë°´£Ï£Ë)",
+			"\nâ†“å†™åœ¨è¿™é‡Œ\n"
+			"ã€€(å†™å®Œè¯·æŒ‰ï¼¯ï¼«)",
 			buf);	
 
 	//sprintf(buuf,"j%d quiz:%d qtotal:%d setint:%d",j,quiz,quiztotal,CHAR_getWorkInt( talker , CHAR_WORK_RACEQUIZ ));
@@ -2217,7 +2217,7 @@ BOOL Raceman_CheckAnswer( int meindex , int talker , char *data )
 		}
 		chop(line);
 
-		// #Îª×¢½â
+		// #ä¸ºæ³¨è§£
 		if( line[0] == '#' )
 			continue;
 		for( i=0; i<strlen(line); i++ ){

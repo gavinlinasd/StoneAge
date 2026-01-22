@@ -4,9 +4,9 @@
 
 void NPC_generateLoop( BOOL FlgInit );
 
-EXTERN int all_nosee;		/* �༰�ݣ��廯����ë no_see �� */
-EXTERN int all_nobody;		/* �༰�ݣ��廯����ë no_body �� */
-EXTERN int one_loop_born;	/* ������ƥ  ��Ϸ�������� oneloop_born */
+EXTERN int all_nosee;		/* ㄠ及凛｛蝈化及衬毛 no_see 卞 */
+EXTERN int all_nobody;		/* ㄠ及凛｛蝈化及衬毛 no_body 卞 */
+EXTERN int one_loop_born;	/* ㄠ伙□皿匹  嫖戏心请允醒 oneloop_born */
 
 
 #endif  

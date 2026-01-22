@@ -9,13 +9,13 @@
 
 
 
-/*--ËË    ---*/
+/*--æ€‚    ---*/
 #define RATE  1000
 
 
 /* 
- * É¬ÀÃ½ñÄ¾Ğ×ËüÅ«¼şÓñËüÃ«ÇëÔÊNPC
- * ¿ÃÑÆ  Æ½µ©ĞşÊ§ÓñÃ¬¼şÃñÅÒ¡õÈÊÈÕÖĞØ¦ÈÕ×ÛÄ¾ÔÂ¾®ÊÖ£Û
+ * æ¶©çƒ‚ä»Šæœ¨å‡¶å®ƒå¥´ä»¶ç‰å®ƒæ¯›è¯·å…NPC
+ * æ£µå“‘  å¹³æ—¦ç„å¤±ç‰çŸ›ä»¶æ°‘ä¹“â–¡ä»æ—¥ä¸­å…æ—¥ç»¼æœ¨æœˆäº•æ‰‹ï¼»
  *
  */
 
@@ -38,7 +38,7 @@ int NPC_WindowCostCheckMp(int meindex,int talker);
 
 
 /*********************************
-* âÙÓåÖÊ  
+* èµ“æ¸è´¨  
 *********************************/
 BOOL NPC_WindowHealerInit( int meindex )
 {
@@ -52,15 +52,15 @@ BOOL NPC_WindowHealerInit( int meindex )
 
     npcarg = CHAR_getChar(meindex,CHAR_NPCARGUMENT);
 
-	/*--¼ÔãâÔÊÔÂÎçÎå¼°ÔÆàÅÃ«äúÔÂÒÁÃ¬»ïÃ«·¤Ê¢--*/
-	/*--  ØêÄ¾ÈÉ×ÛÈÕÄ¾Ø¦ÖĞ--*/
+	/*--èšæ±Šå…æœˆåˆäº”åŠäº‘å—¯æ¯›æ½¸æœˆä¼ŠçŸ›ä¼™æ¯›ç­ç››--*/
+	/*--  ä»ƒæœ¨å£¬ç»¼æ—¥æœ¨å…ä¸­--*/
 	if(getStringFromIndexWithDelim(npcarg,"|",1,buf2,sizeof(buf2))!=FALSE){
 		CHAR_setWorkInt(meindex,CHAR_WORK_LEVEL,atoi(buf2));
 
 	}else{
 		return FALSE;
 	}
-	/*--êîİ¼  ÒÁ¡õĞş--*/
+	/*--è§è  ä¼Šâ–¡ç„--*/
 	if(getStringFromIndexWithDelim(npcarg, "|", 2, buf2, sizeof( buf2)) != FALSE ){
 		drate = atof(buf2);
 		if(drate==0) {
@@ -137,17 +137,17 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	int windowtype=0;
 	int windowno=0;
 
-	/*--ËüÄÌ¼şÓñËüÕıÄÌÃó¶ªÓÀ±¾¡õ³â»¥ÔÆÔÆÖĞ¼°Æ¥ÛÆ±åÉ¬ÀÃ--*/
+	/*--å®ƒå¥¶ä»¶ç‰å®ƒæ­£å¥¶çš¿ä¸¢æ°¸æœ¬â–¡æ–¥äº’äº‘äº‘ä¸­åŠåŒ¹ç‡®åæ¶©çƒ‚--*/
   	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 
 	switch( num){
 	  case 0:
-  		/*--¼»      --*/
-		sprintf(token," ¡¡¡¡¡¡°¥Ñ½£¡ÄãÊÜÉËÁËÂğ£¿¡¡ \n\n "
-				  "¡¡¡¡¡¡¡¡¡¡¡¡ £¼ ÄÍ¾ÃÁ¦»Ø¸´£¾¡¡¡¡¡¡¡¡¡¡ \n"
-					" ¡¡¡¡¡¡¡¡¡¡¡¡£¼  ÆøÁ¦»Ø¸´ £¾¡¡¡¡¡¡¡¡¡¡ \n"
-					" ¡¡¡¡¡¡¡¡ £¼ ÄÍ¾ÃÁ¦¡¤ÆøÁ¦»Ø¸´ £¾¡¡¡¡ \n\n"
-				  " ¡¡¡¡¡¡¡¡¡¡ £¼³èÎï»Ø¸´(Ãâ·Ñ)£¾¡¡¡¡¡¡¡¡ "
+  		/*--è“Ÿ      --*/
+		sprintf(token," ã€€ã€€ã€€å“å‘€ï¼ä½ å—ä¼¤äº†å—ï¼Ÿã€€ \n\n "
+				  "ã€€ã€€ã€€ã€€ã€€ã€€ ï¼œ è€ä¹…åŠ›å›å¤ï¼ã€€ã€€ã€€ã€€ã€€ \n"
+					" ã€€ã€€ã€€ã€€ã€€ã€€ï¼œ  æ°”åŠ›å›å¤ ï¼ã€€ã€€ã€€ã€€ã€€ \n"
+					" ã€€ã€€ã€€ã€€ ï¼œ è€ä¹…åŠ›Â·æ°”åŠ›å›å¤ ï¼ã€€ã€€ \n\n"
+				  " ã€€ã€€ã€€ã€€ã€€ ï¼œå® ç‰©å›å¤(å…è´¹)ï¼ã€€ã€€ã€€ã€€ "
 			);
 
 	  	buttontype=WINDOW_BUTTONTYPE_CANCEL;
@@ -160,14 +160,14 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 		if( CHAR_getInt(toindex,CHAR_HP) ==CHAR_getWorkInt( toindex, CHAR_WORKMAXHP)){
 			if(NPC_PetHealerCheck(toindex)==FALSE){
 				sprintf(token,
-				"¡¡¡¡¡¡¡¡¡¡¡¡ £¼¡¡ÄÍ¾ÃÁ¦»Ø¸´¡¡£¾"
-				"\n\n\n\n¡¡¡¡¡¡¡¡ËÆºõÃ»ÓĞ±ØÒª»Ø¸´à¡£¡¡¡");
+				"ã€€ã€€ã€€ã€€ã€€ã€€ ï¼œã€€è€ä¹…åŠ›å›å¤ã€€ï¼"
+				"\n\n\n\nã€€ã€€ã€€ã€€ä¼¼ä¹æ²¡æœ‰å¿…è¦å›å¤å”·ï¼ã€€");
 		  	}else{
 		  		sprintf(token,
-				"¡¡¡¡¡¡¡¡¡¡¡¡ £¼¡¡ÄÍ¾ÃÁ¦»Ø¸´¡¡£¾"
-				"\n\n¡¡¡¡¡¡¡¡      ËÆºõÃ»ÓĞ±ØÒª»Ø¸´à¡£¡¡¡"
-					  "\n\n¡¡¡¡¡¡ÒòÎª³èÎïºÃÏñÒ²ÊÜÉËÁË£¡"
-					  "\n                            ÏÈ°ïËû»Ø¸´°É£¡");
+				"ã€€ã€€ã€€ã€€ã€€ã€€ ï¼œã€€è€ä¹…åŠ›å›å¤ã€€ï¼"
+				"\n\nã€€ã€€ã€€ã€€      ä¼¼ä¹æ²¡æœ‰å¿…è¦å›å¤å”·ï¼ã€€"
+					  "\n\nã€€ã€€ã€€å› ä¸ºå® ç‰©å¥½åƒä¹Ÿå—ä¼¤äº†ï¼"
+					  "\n                            å…ˆå¸®ä»–å›å¤å§ï¼");
 		  	
 		  		NPC_WindowHealerAllHeal(toindex,0 );
 		  	}
@@ -176,16 +176,16 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 		  	windowno=CHAR_WINDOWTYPE_WINDOWHEALER_HPMSG; 
 			break;
 		}else if(NPC_WindowHealerLevelCheck(meindex,toindex)==TRUE){
-			sprintf(token,"¡¡¡¡¡¡¡¡¡¡¡¡ £¼¡¡ÄÍ¾ÃÁ¦»Ø¸´¡¡£¾"
-					"\n\n\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡ÊÇÒª»Ø¸´ÄÍ¾ÃÁ¦Ã»´í°É£¡¡¡¡¡¡¡ "
-					"\n\n¡¡ÏÖÔÚµÄµÈ¼¶¿ÉÒÔÃâ·Ñ°ïÄã»Ø¸´à¡£¡");
+			sprintf(token,"ã€€ã€€ã€€ã€€ã€€ã€€ ï¼œã€€è€ä¹…åŠ›å›å¤ã€€ï¼"
+					"\n\n\nã€€ã€€ã€€ã€€ã€€ã€€ã€€æ˜¯è¦å›å¤è€ä¹…åŠ›æ²¡é”™å§ï¼ã€€ã€€ã€€ "
+					"\n\nã€€ç°åœ¨çš„ç­‰çº§å¯ä»¥å…è´¹å¸®ä½ å›å¤å”·ï¼");
 		
 		}else{
 			int gold;
 			gold=NPC_WindowCostCheck(meindex,toindex);
-			sprintf(token,"¡¡¡¡¡¡¡¡¡¡¡¡ £¼¡¡ÄÍ¾ÃÁ¦»Ø¸´¡¡£¾"
-				"\n\n\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡ÊÇÒª»Ø¸´ÄÍ¾ÃÁ¦Ã»´í°É£¡¡¡¡¡¡¡ "
-				 "\n\n¡¡¡¡¡¡¡¡¡¡ÊÕÄú%dµÄSTONE ¡£"
+			sprintf(token,"ã€€ã€€ã€€ã€€ã€€ã€€ ï¼œã€€è€ä¹…åŠ›å›å¤ã€€ï¼"
+				"\n\n\nã€€ã€€ã€€ã€€ã€€ã€€ã€€æ˜¯è¦å›å¤è€ä¹…åŠ›æ²¡é”™å§ï¼ã€€ã€€ã€€ "
+				 "\n\nã€€ã€€ã€€ã€€ã€€æ”¶æ‚¨%dçš„STONE ã€‚"
 				 ,gold);
 		}
 
@@ -196,13 +196,13 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	  case 2:
 		if( CHAR_getInt(toindex,CHAR_MP) ==CHAR_getWorkInt( toindex, CHAR_WORKMAXMP)){
 			if(NPC_PetHealerCheck(toindex)==FALSE){
-				sprintf(token,  "¡¡¡¡¡¡¡¡¡¡¡¡  £¼¡¡ÆøÁ¦»Ø¸´¡¡£¾"
-					"\n\n\n\n¡¡¡¡¡¡¡¡ËÆºõÃ»ÓĞ±ØÒª»Ø¸´à¡£¡¡¡");
+				sprintf(token,  "ã€€ã€€ã€€ã€€ã€€ã€€  ï¼œã€€æ°”åŠ›å›å¤ã€€ï¼"
+					"\n\n\n\nã€€ã€€ã€€ã€€ä¼¼ä¹æ²¡æœ‰å¿…è¦å›å¤å”·ï¼ã€€");
 			}else{
-			sprintf(token,  "¡¡¡¡¡¡¡¡¡¡¡¡  £¼¡¡ÆøÁ¦»Ø¸´¡¡£¾"
-					"\n\n¡¡¡¡¡¡¡¡      ËÆºõÃ»ÓĞ±ØÒª»Ø¸´à¡£¡¡¡"
-					  "\n\n¡¡¡¡¡¡ÒòÎª³èÎïºÃÏñÒ²ÊÜÉËÁË£¡"
-					  "\n                            ÏÈ°ïËû»Ø¸´°É£¡");
+			sprintf(token,  "ã€€ã€€ã€€ã€€ã€€ã€€  ï¼œã€€æ°”åŠ›å›å¤ã€€ï¼"
+					"\n\nã€€ã€€ã€€ã€€      ä¼¼ä¹æ²¡æœ‰å¿…è¦å›å¤å”·ï¼ã€€"
+					  "\n\nã€€ã€€ã€€å› ä¸ºå® ç‰©å¥½åƒä¹Ÿå—ä¼¤äº†ï¼"
+					  "\n                            å…ˆå¸®ä»–å›å¤å§ï¼");
 				NPC_WindowHealerAllHeal(toindex,0 );
 			}
 		  	buttontype=WINDOW_BUTTONTYPE_OK;
@@ -211,15 +211,15 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 		}
 
 		if(NPC_WindowHealerLevelCheck(meindex,toindex)==TRUE){
-			sprintf(token,"¡¡¡¡¡¡¡¡¡¡¡¡  £¼ ÆøÁ¦»Ø¸´£¾"
-					  "\n\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡ÊÇÒª»Ø¸´ÆøÁ¦Ã»´í°É£¡¡¡¡¡¡¡¡¡ "
-					  "\n\n ÏÖÔÚµÄµÈ¼¶¿ÉÒÔÃâ·Ñ°ïÄã»Ø¸´à¡£¡");
+			sprintf(token,"ã€€ã€€ã€€ã€€ã€€ã€€  ï¼œ æ°”åŠ›å›å¤ï¼"
+					  "\n\nã€€ã€€ã€€ã€€ã€€ã€€ã€€æ˜¯è¦å›å¤æ°”åŠ›æ²¡é”™å§ï¼ã€€ã€€ã€€ã€€ "
+					  "\n\n ç°åœ¨çš„ç­‰çº§å¯ä»¥å…è´¹å¸®ä½ å›å¤å”·ï¼");
 		}else{
 			int cost;
 			cost=NPC_WindowCostCheckMp(meindex,toindex);
-			sprintf(token,"¡¡¡¡¡¡¡¡¡¡¡¡  £¼ ÆøÁ¦»Ø¸´£¾"
-					"\n\n\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡ÊÇÒª»Ø¸´ÆøÁ¦Ã»´í°É£¡ "
- 					  "\n\n¡¡¡¡¡¡¡¡ÊÕÄú%dµÄSTONE ¡£",
+			sprintf(token,"ã€€ã€€ã€€ã€€ã€€ã€€  ï¼œ æ°”åŠ›å›å¤ï¼"
+					"\n\n\nã€€ã€€ã€€ã€€ã€€ã€€ã€€æ˜¯è¦å›å¤æ°”åŠ›æ²¡é”™å§ï¼ "
+ 					  "\n\nã€€ã€€ã€€ã€€æ”¶æ‚¨%dçš„STONE ã€‚",
 					cost);
 		}
 	  	buttontype=WINDOW_BUTTONTYPE_YESNO;
@@ -228,11 +228,11 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	  case 3:
-		sprintf(token,	    "\n¡¡¡¡¡¡¡¡¡¡¡¡£¼ÄÍ¾ÃÁ¦ÒÑ»Ø¸´£¾"
-						    "\n¡¡¡¡  £¼³èÎïÒ²ÒÑ»Ø¸´Ò»°ã×´Ì¬£¾"
-						"\n\n\n¡¡¡¡¡¡¡¡¡¡  ÕâÑù×Ó¾ÍÃ»ÎÊÌâÁË£¡¡¡¡¡¡¡¡¡");
+		sprintf(token,	    "\nã€€ã€€ã€€ã€€ã€€ã€€ï¼œè€ä¹…åŠ›å·²å›å¤ï¼"
+						    "\nã€€ã€€  ï¼œå® ç‰©ä¹Ÿå·²å›å¤ä¸€èˆ¬çŠ¶æ€ï¼"
+						"\n\n\nã€€ã€€ã€€ã€€ã€€  è¿™æ ·å­å°±æ²¡é—®é¢˜äº†ï¼ã€€ã€€ã€€ã€€");
 
-		/*--êîİ¼  ¼°ĞÄ¼Ôãâ½ñÁùÔÂ--*/
+		/*--è§è  åŠå¿ƒèšæ±Šä»Šå…­æœˆ--*/
 	  	NPC_WindowHealerAllHeal( toindex ,1 );
 	  	buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowno=CHAR_WINDOWTYPE_WINDOWHEALER_OKHPMSG; 
@@ -240,10 +240,10 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	  case 4:
-		sprintf(token,	    "\n¡¡¡¡¡¡¡¡¡¡¡¡£¼ÆøÁ¦ÒÑ»Ø¸´£¾"
-						    "\n¡¡¡¡ £¼³èÎïÒ²ÒÑ»Ø¸´Ò»°ã×´Ì¬£¾"
-						"\n\n\n¡¡¡¡¡¡¡¡¡¡ ÕâÑù×Ó¾ÍÃ»ÎÊÌâÁË£¡ ¡¡¡¡¡¡");
-		/*--¿¢  ¼°ĞÄ¼Ôãâ½ñÁùÔÂ---*/
+		sprintf(token,	    "\nã€€ã€€ã€€ã€€ã€€ã€€ï¼œæ°”åŠ›å·²å›å¤ï¼"
+						    "\nã€€ã€€ ï¼œå® ç‰©ä¹Ÿå·²å›å¤ä¸€èˆ¬çŠ¶æ€ï¼"
+						"\n\n\nã€€ã€€ã€€ã€€ã€€ è¿™æ ·å­å°±æ²¡é—®é¢˜äº†ï¼ ã€€ã€€ã€€");
+		/*--ç«£  åŠå¿ƒèšæ±Šä»Šå…­æœˆ---*/
 	  	NPC_WindowHealerAllHeal( toindex ,2 );
 	 	buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowno=CHAR_WINDOWTYPE_WINDOWHEALER_OKSPIRITMSG; 
@@ -267,13 +267,13 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 			if(cost==0) {
 				if(NPC_PetHealerCheck(toindex)==FALSE){
 				sprintf(token,
-						"¡¡¡¡¡¡¡¡  £¼¡¡ÄÍ¾ÃÁ¦ÆøÁ¦»Ø¸´¡¡£¾"
-				"\n\n\n\n¡¡¡¡¡¡¡¡ËÆºõÃ»ÓĞ±ØÒª»Ø¸´à¡£¡¡¡");
+						"ã€€ã€€ã€€ã€€  ï¼œã€€è€ä¹…åŠ›æ°”åŠ›å›å¤ã€€ï¼"
+				"\n\n\n\nã€€ã€€ã€€ã€€ä¼¼ä¹æ²¡æœ‰å¿…è¦å›å¤å”·ï¼ã€€");
 				}else{
-				sprintf(token,"¡¡¡¡¡¡¡¡  £¼¡¡ÄÍ¾ÃÁ¦ÆøÁ¦»Ø¸´¡¡£¾"
-					"\n\n¡¡¡¡¡¡¡¡      ËÆºõÃ»ÓĞ±ØÒª»Ø¸´à¡£¡¡¡"
-					  "\n\n¡¡¡¡¡¡ÒòÎª³èÎïºÃÏñÒ²ÊÜÉËÁË£¡"
-					  "\n                            ÏÈ°ïËû»Ø¸´°É£¡");
+				sprintf(token,"ã€€ã€€ã€€ã€€  ï¼œã€€è€ä¹…åŠ›æ°”åŠ›å›å¤ã€€ï¼"
+					"\n\nã€€ã€€ã€€ã€€      ä¼¼ä¹æ²¡æœ‰å¿…è¦å›å¤å”·ï¼ã€€"
+					  "\n\nã€€ã€€ã€€å› ä¸ºå® ç‰©å¥½åƒä¹Ÿå—ä¼¤äº†ï¼"
+					  "\n                            å…ˆå¸®ä»–å›å¤å§ï¼");
 				NPC_WindowHealerAllHeal(toindex,0 );
 			}
 		
@@ -285,16 +285,16 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 				break;
 
 			}else{
-				sprintf(token,"¡¡¡¡¡¡  £¼¡¡ÄÍ¾ÃÁ¦ÆøÁ¦»Ø¸´¡¡£¾"
-						"\n\n\n¡¡¡¡¡¡¡¡ ÊÇÒª»Ø¸´ÄÍ¾ÃÁ¦ÆøÁ¦Ã»´í°É£¡"
-						"\n\n¡¡¡¡¡¡¡¡¡¡ÊÕÄú%dµÄSTONE ¡£",cost);
+				sprintf(token,"ã€€ã€€ã€€  ï¼œã€€è€ä¹…åŠ›æ°”åŠ›å›å¤ã€€ï¼"
+						"\n\n\nã€€ã€€ã€€ã€€ æ˜¯è¦å›å¤è€ä¹…åŠ›æ°”åŠ›æ²¡é”™å§ï¼"
+						"\n\nã€€ã€€ã€€ã€€ã€€æ”¶æ‚¨%dçš„STONE ã€‚",cost);
 			}
 		}
 
 		if(NPC_WindowHealerLevelCheck(meindex,toindex)==TRUE){
-			sprintf(token,"¡¡¡¡¡¡¡¡  £¼¡¡ÄÍ¾ÃÁ¦ÆøÁ¦»Ø¸´¡¡£¾"
-					"\n\n\n¡¡¡¡¡¡¡¡ ¡¡ÊÇÒª»Ø¸´ÄÍ¾ÃÁ¦ÆøÁ¦Ã»´í°É£¡"
-					"\n\n¡¡ÏÖÔÚµÄµÈ¼¶¿ÉÒÔÃâ·Ñ°ïÄã»Ø¸´à¡£¡");
+			sprintf(token,"ã€€ã€€ã€€ã€€  ï¼œã€€è€ä¹…åŠ›æ°”åŠ›å›å¤ã€€ï¼"
+					"\n\n\nã€€ã€€ã€€ã€€ ã€€æ˜¯è¦å›å¤è€ä¹…åŠ›æ°”åŠ›æ²¡é”™å§ï¼"
+					"\n\nã€€ç°åœ¨çš„ç­‰çº§å¯ä»¥å…è´¹å¸®ä½ å›å¤å”·ï¼");
 		}
 	
 	  	buttontype=WINDOW_BUTTONTYPE_YESNO;
@@ -304,9 +304,9 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	  case 7:
-		sprintf(token,"¡¡¡¡¡¡¡¡ £¼ÄÍ¾ÃÁ¦ÆøÁ¦ÒÑ»Ø¸´£¾"
-				  "\n¡¡¡¡  £¼³èÎïÒ²ÒÑ»Ø¸´Ò»°ã×´Ì¬£¾"
-				  "\n\n\n¡¡¡¡¡¡¡¡ÕâÑùÒ»À´¾Í»Ø¸´½¡¿µÁË£¡");
+		sprintf(token,"ã€€ã€€ã€€ã€€ ï¼œè€ä¹…åŠ›æ°”åŠ›å·²å›å¤ï¼"
+				  "\nã€€ã€€  ï¼œå® ç‰©ä¹Ÿå·²å›å¤ä¸€èˆ¬çŠ¶æ€ï¼"
+				  "\n\n\nã€€ã€€ã€€ã€€è¿™æ ·ä¸€æ¥å°±å›å¤å¥åº·äº†ï¼");
 	  	
 	  	NPC_WindowHealerAllHeal( toindex ,3 );
 		buttontype=WINDOW_BUTTONTYPE_OK;
@@ -316,7 +316,7 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	  case 8:
-		sprintf(token,"\n\n\n\n ¡¡¡¡Õæ¿ÉÏ§ËÆºõËù´øµÄ½ğÇ®²»¹»à¡£¡");
+		sprintf(token,"\n\n\n\n ã€€ã€€çœŸå¯æƒœä¼¼ä¹æ‰€å¸¦çš„é‡‘é’±ä¸å¤Ÿå”·ï¼");
 
 		buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
@@ -324,9 +324,9 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	  	break;
 
 	  case 9:
-		sprintf(token,"¡¡¡¡¡¡¡¡¡¡¡¡¡¡£¼³èÎï»Ø¸´£¾¡¡¡¡¡¡¡¡¡¡¡¡"
-				"\n\n\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡ÒÑ¾­Ã»ÎÊÌâÁËÀ²£¡¡¡¡¡¡¡¡¡¡¡"
-				  "\n\n¡¡¡¡µ«ÊÇÌ«ÃãÇ¿µÄ»°Ò²²»ĞĞà¡£¡¡¡¡¡");
+		sprintf(token,"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ï¼œå® ç‰©å›å¤ï¼ã€€ã€€ã€€ã€€ã€€ã€€"
+				"\n\n\nã€€ã€€ã€€ã€€ã€€ã€€ã€€å·²ç»æ²¡é—®é¢˜äº†å•¦ï¼ã€€ã€€ã€€ã€€ã€€"
+				  "\n\nã€€ã€€ä½†æ˜¯å¤ªå‹‰å¼ºçš„è¯ä¹Ÿä¸è¡Œå”·ï¼ã€€ã€€");
 		NPC_WindowHealerAllHeal(toindex,0 );
 		buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
@@ -334,9 +334,9 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	  	break;
 
 	  case 10:
-		sprintf(token,"¡¡¡¡¡¡¡¡¡¡¡¡¡¡£¼³èÎï»Ø¸´£¾¡¡¡¡¡¡¡¡¡¡¡¡"
-				"\n\n\n¡¡ ËÆºõÃ»ÓĞ±ØÒª»Ø¸´³èÎïµÄÑù×Ó¡£¡¡"
-				  "\n\n¡¡¡¡µ«ÊÇÌ«ÃãÇ¿µÄ»°Ò²²»ĞĞà¡£¡¡¡¡¡");
+		sprintf(token,"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ï¼œå® ç‰©å›å¤ï¼ã€€ã€€ã€€ã€€ã€€ã€€"
+				"\n\n\nã€€ ä¼¼ä¹æ²¡æœ‰å¿…è¦å›å¤å® ç‰©çš„æ ·å­ã€‚ã€€"
+				  "\n\nã€€ã€€ä½†æ˜¯å¤ªå‹‰å¼ºçš„è¯ä¹Ÿä¸è¡Œå”·ï¼ã€€ã€€");
 		buttontype=WINDOW_BUTTONTYPE_OK;
 	  	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 	  	windowno=CHAR_WINDOWTYPE_WINDOWHEALER_OKHPMSG; 
@@ -347,7 +347,7 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 	makeEscapeString( token, escapedname, sizeof(escapedname));
-	/*-³ğ³ğÆ¥ËªññÔÊÔÂ--*/
+	/*-ä»‡ä»‡åŒ¹éœœè€¨å…æœˆ--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,
@@ -358,7 +358,7 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 
 
 /*-----------------------------------------
-ÛÍ·ÂÄÌÊ§¼şĞş¾®ÈÕß¯ÔÈ»¯ÎåĞ×Áİ±åôÄÌ«Çë½ñÄ¾ÔÂ£Û
+å¼ä»¿å¥¶å¤±ä»¶ç„äº•æ—¥å¿’åŒ€åŒ–äº”å‡¶å‡›åè£Ÿå¤ªè¯·ä»Šæœ¨æœˆï¼»
 -------------------------------------------*/
 void NPC_WindowHealerWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
@@ -368,38 +368,38 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 
 	switch( seqno){
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_STARTMSG:
-	  	if(atoi(data)==2)	/*--¼»  ØÆĞ×ÄÛ   1--*/
+	  	if(atoi(data)==2)	/*--è“Ÿ  ä»„å‡¶å«©   1--*/
 	  	{
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 1 );
 	  	
 	  	}else if(atoi(data)==3){
-	  		/*--¼»  ØÆĞ×ÄÛ   2--*/
+	  		/*--è“Ÿ  ä»„å‡¶å«©   2--*/
 	  		NPC_WindowHealer_selectWindow( meindex, talkerindex, 2 );
 	  	
 	  	}else if(atoi(data)==4){
-	  		/*--¼»  ØÆĞ×ÄÛ   2--*/
+	  		/*--è“Ÿ  ä»„å‡¶å«©   2--*/
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 6 );
 		
 		}else if(atoi(data)==6){
-			/*--¼»  ØÆĞ×ÄÛ   2--*/
+			/*--è“Ÿ  ä»„å‡¶å«©   2--*/
 	  		if(NPC_PetHealerCheck( talkerindex)==TRUE){
 		  		NPC_WindowHealer_selectWindow( meindex, talkerindex, 9 );
 			}else{
 				NPC_WindowHealer_selectWindow( meindex, talkerindex, 10 );
 			}
 		}else if(select==WINDOW_BUTTONTYPE_CANCEL){
-			  	/*--³ğ³ğÒıÆ¥ÈÊÔÂÎç±Î  Ø¦¼°Æ¥ÖÏÊÖØÆØ¦ÖĞ--*/
+			  	/*--ä»‡ä»‡å¼•åŒ¹ä»æœˆåˆè”½  å…åŠåŒ¹çª’æ‰‹ä»„å…ä¸­--*/
 	  	}
 	  	break;
 	  
 
-	  /*-----êîİ¼  ¼ÔãâÃ«ÔÆ³ğØ¦µ¤-----*/
+	  /*-----è§è  èšæ±Šæ¯›äº‘ä»‡å…ä¸¹-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_HPMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
 		
 		}else if(select==WINDOW_BUTTONTYPE_YES){
-			/*--ÔÆàÅ¼°ÃñÄáÓÀÛÍ--*/
+			/*--äº‘å—¯åŠæ°‘å°¼æ°¸å¼--*/
 			if(NPC_WindowMoneyCheck(meindex,talkerindex,1)==TRUE){
 				NPC_WindowHealer_selectWindow( meindex, talkerindex, 3 );
 			}else{
@@ -412,13 +412,13 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 
 
-	  /*-----¿¢  ¼ÔãâÃ«ÔÆ³ğØ¦µ¤-----*/
+	  /*-----ç«£  èšæ±Šæ¯›äº‘ä»‡å…ä¸¹-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_SPIRITMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
 		
 		}else if(select==WINDOW_BUTTONTYPE_YES){
-			/*--ÔÆàÅ¼°ÃñÄáÓÀÛÍ--*/
+			/*--äº‘å—¯åŠæ°‘å°¼æ°¸å¼--*/
 			if(NPC_WindowMoneyCheck(meindex,talkerindex,2)==TRUE){
 				NPC_WindowHealer_selectWindow( meindex, talkerindex, 4 );
 			}else{
@@ -432,7 +432,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 
 
-	  /*-----êîİ¼  ¼Ôãâ¼°çø°í-----*/
+	  /*-----è§è  èšæ±ŠåŠç‘›ç»Š-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_OKHPMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -447,7 +447,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 	
 
-	  /*--òå¼Ôãâ½ñÁùÔÂ--*/
+	  /*--èˆèšæ±Šä»Šå…­æœˆ--*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_ALLMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -465,7 +465,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 	
 
-	  /*--òå¼Ôãâ¼°çø°í--*/
+	  /*--èˆèšæ±ŠåŠç‘›ç»Š--*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_OKALLMSG:
 		if(select==WINDOW_BUTTONTYPE_YES){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -484,20 +484,20 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 }
 
 
-/*--ê¢¹´ÖĞ»¯ÖĞÔÂ¼°Ø¦ÈÕ£ıTRUEÃ«ß¯ÔÊ--*/
+/*--è¾å‹¾ä¸­åŒ–ä¸­æœˆåŠå…æ—¥ï½TRUEæ¯›å¿’å…--*/
 BOOL NPC_PetHealerCheck(int talker)
 {
 
 	int petindex;
 	int i;
 	
-	/*--Ê¸ÓÀĞş·´ÔÆÒıØêÆ¥¼ÔãâØÆ»¯Ø¤ÆÍÔÂ--*/
+	/*--çŸ¢æ°¸ç„åäº‘å¼•ä»ƒåŒ¹èšæ±Šä»„åŒ–ä¸ä»†æœˆ--*/
 	for(i=0;i<CHAR_MAXPETHAVE;i++){
     	petindex = CHAR_getCharPet(talker,i);
 
 		if( petindex == -1  )  continue;
 
-		/*  Æ½ÅÒ·Â¼°    ÃñÄáÓÀÛÍ    */
+		/*  å¹³ä¹“ä»¿åŠ    æ°‘å°¼æ°¸å¼    */
 		if( !CHAR_CHECKINDEX( talker ) )  continue;
 		
 		
@@ -513,7 +513,7 @@ BOOL NPC_PetHealerCheck(int talker)
 
 
 /*-------------------------------------
-	  ¶Ë±åêîİ¼  Îç¿¢  Ã«¼Ôãâ½ñÁùÔÂÎç³ğÇ·
+	  ç«¯åè§è  åˆç«£  æ¯›èšæ±Šä»Šå…­æœˆåˆä»‡æ¬ 
 ---------------------------------------*/
 void NPC_WindowHealerAllHeal( int talker,int mode )
 {
@@ -522,47 +522,47 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 	char petsend[64];	
 	char msgbuf[64];
 
-	/*--êîİ¼  ¼°ĞÄ¼Ôãâ--*/
+	/*--è§è  åŠå¿ƒèšæ±Š--*/
 	if(mode==1){
-		/*--HP»¥êîİ¼  Ø¦¼°Æ¥Ø¤ÔÂ--*/
+		/*--HPäº’è§è  å…åŠåŒ¹ä¸æœˆ--*/
     	CHAR_setInt( talker , CHAR_HP ,CHAR_getWorkInt( talker, CHAR_WORKMAXHP ) );
 	}else if(mode==2){
-		/*--¿¢  ¼°ĞÄ¼Ôãâ--*/
-		/*--MP»¥¿¢  Ø¦¼°Æ¥Ø¤ÔÂ--*/
+		/*--ç«£  åŠå¿ƒèšæ±Š--*/
+		/*--MPäº’ç«£  å…åŠåŒ¹ä¸æœˆ--*/
     	CHAR_setInt( talker , CHAR_MP ,CHAR_getWorkInt( talker, CHAR_WORKMAXMP ) );
 	}else if(mode==3){
-    	/*--òå¼Ôãâ---*/
+    	/*--èˆèšæ±Š---*/
     	CHAR_setInt( talker , CHAR_HP ,CHAR_getWorkInt( talker, CHAR_WORKMAXHP ) );
     	CHAR_setInt( talker , CHAR_MP ,CHAR_getWorkInt( talker, CHAR_WORKMAXMP ) );
 	}
 
-	/*--Ê¸ÓÀĞş·´ÔÆÒıØêÆ¥¼ÔãâØÆ»¯Ø¤ÆÍÔÂ--*/
+	/*--çŸ¢æ°¸ç„åäº‘å¼•ä»ƒåŒ¹èšæ±Šä»„åŒ–ä¸ä»†æœˆ--*/
 	for(i=0;i<CHAR_MAXPETHAVE;i++){
     	petindex = CHAR_getCharPet(talker,i);
 
 		if( petindex == -1  )  continue;
 
-	   /*  Æ½ÅÒ·Â¼°    ÃñÄáÓÀÛÍ    */
+	   /*  å¹³ä¹“ä»¿åŠ    æ°‘å°¼æ°¸å¼    */
 		if( !CHAR_CHECKINDEX( talker ) )  continue;
 
-		/*--¼Ôãâ--*/
+		/*--èšæ±Š--*/
 		CHAR_setFlg( petindex,CHAR_ISDIE,0 );
 		CHAR_setInt( petindex , CHAR_HP ,CHAR_getWorkInt( petindex, CHAR_WORKMAXHP ) );
 		CHAR_setInt( petindex , CHAR_MP ,CHAR_getWorkInt( petindex, CHAR_WORKMAXMP ) );
 
-		/*--ÓÉ·Â¶ª¡õÕıÆ©°ï--*/
+		/*--ç”±ä»¿ä¸¢â–¡æ­£è­¬å¸®--*/
 		CHAR_complianceParameter( petindex );
 		sprintf( petsend, "K%d", i );
 		CHAR_sendStatusString( talker , petsend );
 
 	}
 
-	/*--ÓÉ·Â¶ª¡õÕıËªÔ»--*/
+	/*--ç”±ä»¿ä¸¢â–¡æ­£éœœæ›°--*/
 	CHAR_send_P_StatusString(talker,CHAR_P_STRING_HP);
 	CHAR_send_P_StatusString(talker,CHAR_P_STRING_MP);
 
 
-	/*---õ´ÃŞ»¥ÖĞÄ¾ÈÉõ´ÃŞ±åÊÖËªññ--*/
+	/*---é†®æ£‰äº’ä¸­æœ¨å£¬é†®æ£‰åæ‰‹éœœè€¨--*/
 	if(CHAR_getWorkInt( talker, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE )
 	{
 		int	topartyarray = -1;
@@ -571,7 +571,7 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 		if( CHAR_CHECKINDEX( oyaindex )) {
 			int		i;
 		
-			/* ·ßÛĞÎçËËØÆĞ×Ö§¹´¼°õ´ÃŞ¼°    ¼°èëô÷Ã«äú   */
+			/* æ„¤åŒåˆæ€‚ä»„å‡¶æ”¯å‹¾åŠé†®æ£‰åŠ    åŠæ¡¦èµ­æ¯›æ½¸   */
 			for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
 				int workindex = CHAR_getWorkInt( oyaindex, CHAR_WORKPARTYINDEX1 +i);
 		
@@ -586,7 +586,7 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 			for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
 				int otherindex = CHAR_getPartyIndex( talker, i);
 		
-				/* õ´ÃŞÓÉ·Â¶ª¡õÕıÃ«ËªÔÂ */
+				/* é†®æ£‰ç”±ä»¿ä¸¢â–¡æ­£æ¯›éœœæœˆ */
 				if( CHAR_CHECKINDEX( otherindex) ) {
 					snprintf( msgbuf, sizeof( msgbuf), "N%d", topartyarray);
 					if( otherindex != talker) {
@@ -601,11 +601,11 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 
 
 /*-------------------------------------
-ÒÁÃ¬»ïÃñÄáÓÀÛÍ
-ÒÁÃ¬»ïÃ«Î­»¯É¬ÀÃÒÁÃ¬»ï·½Ô»ìµØêÄ¾ÈÉ    ±åÔÊÔÂ
-  Ô»°À
-	É¬ÀÃÒÁÃ¬»ï    		TRUE
-	É¬ÀÃÒÁÃ¬»ï¶¯ÏşØ¦ÈÕ	FALSE
+ä¼ŠçŸ›ä¼™æ°‘å°¼æ°¸å¼
+ä¼ŠçŸ›ä¼™æ¯›è‹‡åŒ–æ¶©çƒ‚ä¼ŠçŸ›ä¼™æ–¹æ›°æ–“ä»ƒæœ¨å£¬    åå…æœˆ
+  æ›°è¢„
+	æ¶©çƒ‚ä¼ŠçŸ›ä¼™    		TRUE
+	æ¶©çƒ‚ä¼ŠçŸ›ä¼™åŠ¨æ™“å…æ—¥	FALSE
 ---------------------------------------*/
 BOOL NPC_WindowHealerLevelCheck(int meindex,int talker)
 {
@@ -623,10 +623,10 @@ BOOL NPC_WindowHealerLevelCheck(int meindex,int talker)
 
 
 /*-------------------------------------------
-ÔÆàÅ  ÔÈ»¯ÔÂ¾®ÃñÄáÓÀÛÍ
-Â¦ĞÑ
-meindex¡¯¡¯¡¯      ¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-talker¡¯¡¯¡¯¡¯Æ½ÅÒ·ÂÛÍÕı¡õ¼°ÄÌ¼ş·¸ÓÀÛÍµ©
+äº‘å—¯  åŒ€åŒ–æœˆäº•æ°‘å°¼æ°¸å¼
+å¨„é†’
+meindexâ€™â€™â€™      åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+talkerâ€™â€™â€™â€™å¹³ä¹“ä»¿å¼æ­£â–¡åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
 ---------------------------------------------*/
 BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 {
@@ -637,10 +637,10 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	
 	if(mode==1){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
-			/*---ÔÆàÅÃ«à«Ô»ÇëÔÊ---*/
+			/*---äº‘å—¯æ¯›å–ƒæ›°è¯·å…---*/
 			cost=NPC_WindowCostCheck(meindex,talker);
-			/*--òØ»ş·´ÒÆÉ¬ÀÃ---*/
-			/*---ÔÆàÅ»¥óïÔ»ÔÂ¾®Éıµ¤¾®¼°ÃñÄáÓÀÛÍ---*/
+			/*--èœ‡ç®•åç§»æ¶©çƒ‚---*/
+			/*---äº‘å—¯äº’ç®«æ›°æœˆäº•å‡ä¸¹äº•åŠæ°‘å°¼æ°¸å¼---*/
 			if(CHAR_getInt(talker,CHAR_GOLD) < cost){
 				return FALSE;
 			
@@ -650,11 +650,11 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	}
 	if(mode==2){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
-			/*---ÔÆàÅÃ«à«Ô»ÇëÔÊ---*/
+			/*---äº‘å—¯æ¯›å–ƒæ›°è¯·å…---*/
 			cost=NPC_WindowCostCheckMp(meindex,talker);
 	
-			/*--òØ»ş·´ÒÆÉ¬ÀÃ---*/
-			/*---ÔÆàÅ»¥óïÔ»ÔÂ¾®Éıµ¤¾®¼°ÃñÄáÓÀÛÍ---*/
+			/*--èœ‡ç®•åç§»æ¶©çƒ‚---*/
+			/*---äº‘å—¯äº’ç®«æ›°æœˆäº•å‡ä¸¹äº•åŠæ°‘å°¼æ°¸å¼---*/
 			if(CHAR_getInt(talker,CHAR_GOLD) < cost){
 				return FALSE;
 			}
@@ -665,24 +665,24 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	if(mode==3){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
 
-			/*--êîİ¼  ¼°ÔÆàÅ¼°»ÍÒ£--*/
+			/*--è§è  åŠäº‘å—¯åŠç…Œé¥--*/
 			if( CHAR_getInt(talker,CHAR_HP) <CHAR_getWorkInt( talker, CHAR_WORKMAXHP))
 			{
 				cost=NPC_WindowCostCheck(meindex,talker);
 			}
 
-			/*--¿¢  ¼°ÔÆàÅ¼°»ÍÒ£--*/
+			/*--ç«£  åŠäº‘å—¯åŠç…Œé¥--*/
 			if( CHAR_getInt(talker,CHAR_MP) < CHAR_getWorkInt( talker, CHAR_WORKMAXMP))
 			{
 				cost=cost+NPC_WindowCostCheckMp(meindex,talker);
 			}
 		
-			/*--ÒÆÉ¬ÀÃ--*/
+			/*--ç§»æ¶©çƒ‚--*/
 			if(CHAR_getInt(talker,CHAR_GOLD) < cost){
 				return FALSE;
 			}
 		
-			/*---ÔÆàÅÃ«Ó¼ÈÕÔÊ---*/
+			/*---äº‘å—¯æ¯›è›¹æ—¥å…---*/
 			CHAR_DelGold( talker, cost);
 		}
 		
@@ -697,7 +697,7 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 
 
 /*-----------------------------------------
-Îìµ©Ğş¼°»ÍÒ£
+æˆŠæ—¦ç„åŠç…Œé¥
 ------------------------------------------*/
 int NPC_WindowCostCheck(int meindex,int talker)
 {
@@ -714,7 +714,7 @@ int NPC_WindowCostCheck(int meindex,int talker)
 }
 
 /*-----------------------------------------
-¿¢  Îìµ©Ğş¼°»ÍÒ£
+ç«£  æˆŠæ—¦ç„åŠç…Œé¥
 ------------------------------------------*/
 int NPC_WindowCostCheckMp(int meindex,int talker)
 {

@@ -17,30 +17,30 @@
 static int NPC_Door_isOpen( int meindex );
 
 /*
- * ÓñÊ§Ã«  òØÔÊÔÂĞ×»§¼°NPC±å  Û¢Ø¦èúĞÑ¼°ÀÃñø£Û
- * ÕıÄÌÃó  ¡° Door
+ * ç‰å¤±æ¯›  èœ‡å…æœˆå‡¶æˆ·åŠNPCå  é‚°å…æ¥®é†’åŠçƒ‚è’ï¼»
+ * æ­£å¥¶çš¿  â€œ Door
  *
- * NPCARGUMENT¼°°À·´£ı
+ * NPCARGUMENTåŠè¢„åï½
  *
  * og|cg|idname|swcount|closetime_sec|soonflg0/1|passflg0/1/2
  *
- * passflg ·´£ı1·ÖÔÈĞ×ÈÕÌìÔÊ´õ¡õÉı¹´ÎåÆ¥Ø¤ÔÂÀ²  ±åØ¦ÔÂ£Û2·ÖÔÈĞ×ÈÕ
- * å§¸²·òÈÕ¾®Ø¦ÖĞ£Û 0·ÖÔÈĞ×ÈÕÓÉµ©·¥¡õÓñÆ¥Ø¦ÖĞ£Û
+ * passflg åï½1åˆ†åŒ€å‡¶æ—¥å¤©å…æ­¹â–¡å‡å‹¾äº”åŒ¹ä¸æœˆå•¦  åå…æœˆï¼»2åˆ†åŒ€å‡¶æ—¥
+ * æ¿®è¦†å¤«æ—¥äº•å…ä¸­ï¼» 0åˆ†åŒ€å‡¶æ—¥ç”±æ—¦ä¼â–¡ç‰åŒ¹å…ä¸­ï¼»
  *
- * Ã«Ï¶ÀÃÔÊÔÂ£Û  ÒıÔÂÒıÆ¥¼°ÁİÃŞ·´·¸°×ÇÉ»ïĞşÆ¥·´1ÁİÃŞ£Û
- * É¬ÀÃÃ«Ì¤ÈÊÎçÎå±å·´  ì«  Ä¯»¥ºÖÛ¢Ø¦¶ã°íÃ«ÊÖ¹´¾®ÈÕïÛÀ²»¥  Û¢Æ¥Ø¤ÔÂ£Û
+ * æ¯›éš™çƒ‚å…æœˆï¼»  å¼•æœˆå¼•åŒ¹åŠå‡›æ£‰åçŠ¯ç™½å·§ä¼™ç„åŒ¹å1å‡›æ£‰ï¼»
+ * æ¶©çƒ‚æ¯›è¸ä»åˆäº”åå  é£“  å¯äº’è¤é‚°å…èº²ç»Šæ¯›æ‰‹å‹¾äº•æ—¥é•—å•¦äº’  é‚°åŒ¹ä¸æœˆï¼»
  *
- * ·ßÛĞ¼°Òı´õÔ»±åCÃ«ËªññÔÊÔÂèúĞÑ»¥Ø¤ÔÂ¾®ÈÕ£ı1µæinfo,  ì«  Ä¯
- * Ã«  µÊØÆ»¯¾®ÈÕ¹«¼°èúĞÑÃ«·½ÍÍÈÉÛÍ·ÂÄÌÊ§¼şĞş¼°    ±å  Ô÷½ñÄ¾»¯ÖĞÔÂ
- * ÇÁÚØ»¥  Ş¥±åØ¦ÔÂ£Û
+ * æ„¤åŒåŠå¼•æ­¹æ›°åCæ¯›éœœè€¨å…æœˆæ¥®é†’äº’ä¸æœˆäº•æ—¥ï½1å«info,  é£“  å¯
+ * æ¯›  å‡³ä»„åŒ–äº•æ—¥å…¬åŠæ¥®é†’æ¯›æ–¹å±¯å£¬å¼ä»¿å¥¶å¤±ä»¶ç„åŠ    å  æ†ä»Šæœ¨åŒ–ä¸­æœˆ
+ * æ©‡è°ªäº’  è•™åå…æœˆï¼»
  */
 
-#define NPC_DOOR_OPENMSG "ÓñÊ§»¥£ı·òÈÕÖĞĞ×!"
-#define NPC_DOOR_CLOSEMSG "ÓñÊ§Ã«£ıØÆ»§Ğ×!"
-#define NPC_DOOR_CANTOPENMSG "¾®¿º»¥Ø¤´õØ¦ÖĞ¼°Æ¥£ıÓñÊ§Ã«·òÈÕÈÊ³ğÎç»¥\
-Æ¥ÎåØ¦ÖĞ!"
+#define NPC_DOOR_OPENMSG "ç‰å¤±äº’ï½å¤«æ—¥ä¸­å‡¶!"
+#define NPC_DOOR_CLOSEMSG "ç‰å¤±æ¯›ï½ä»„æˆ·å‡¶!"
+#define NPC_DOOR_CANTOPENMSG "äº•äº¢äº’ä¸æ­¹å…ä¸­åŠåŒ¹ï½ç‰å¤±æ¯›å¤«æ—¥ä»ä»‡åˆäº’\
+åŒ¹äº”å…ä¸­!"
 
-#define ROPEGRAPHIC 9259        /* Ç¾  ±åØ¤ÔÂÉ§Ä¾Ø¦ÖĞ·ò¡õÃó */
+#define ROPEGRAPHIC 9259        /* è”·  åä¸æœˆéªšæœ¨å…ä¸­å¤«â–¡çš¿ */
 
 enum{
 	NPC_DOOR_FLG_SOONCLOSE = 1,
@@ -49,8 +49,8 @@ enum{
 
 
 /*
- * ÓñÊ§ÈÕØÆÖĞÉ¬ÀÃÃ«ÔÊÔÂ±å·´£ı³ğ³ğÆ¥
- * maxhp , maxmp , level , str , tough Ã«0±åÔÊÔÂÎç·½ÖĞ£Û
+ * ç‰å¤±æ—¥ä»„ä¸­æ¶©çƒ‚æ¯›å…æœˆååï½ä»‡ä»‡åŒ¹
+ * maxhp , maxmp , level , str , tough æ¯›0åå…æœˆåˆæ–¹ä¸­ï¼»
  *
  */
 BOOL NPC_DoorInit( int meindex )
@@ -129,45 +129,45 @@ BOOL NPC_DoorInit( int meindex )
         int closeg = CHAR_getWorkInt( meindex , CHAR_WORKDOORCLOSEG );
         int dir = -1;
         switch( closeg ){
-        case 11900: dir = 6; break;  /* ö«¼°ÓñÊ§ ·ò·ÖÔ»ØÆĞ× */
-        case 11902: dir = 0; break;  /*          ·ò·ÖÔ»µ¤Òü */
-        case 11904: dir = 2; break;  /*          ĞÄ¿ºµ¤Òü */
-        case 11906: dir = 4; break;  /*          ĞÄ¿ºØÆĞ× */
+        case 11900: dir = 6; break;  /* éœåŠç‰å¤± å¤«åˆ†æ›°ä»„å‡¶ */
+        case 11902: dir = 0; break;  /*          å¤«åˆ†æ›°ä¸¹å°¹ */
+        case 11904: dir = 2; break;  /*          å¿ƒäº¢ä¸¹å°¹ */
+        case 11906: dir = 4; break;  /*          å¿ƒäº¢ä»„å‡¶ */
 
-        case 11908: dir = 6; break;  /* Ó®ÖĞö«¼°ÓñÊ§ ·ò·ÖÔ»ØÆĞ× */
-        case 11910: dir = 0; break;  /*              ·ò·ÖÔ»µ¤Òü */
-        case 11912: dir = 2; break;  /*              ĞÄ¿ºµ¤Òü */
-        case 11914: dir = 4; break;  /*              ĞÄ¿ºØÆĞ× */
+        case 11908: dir = 6; break;  /* èµ¢ä¸­éœåŠç‰å¤± å¤«åˆ†æ›°ä»„å‡¶ */
+        case 11910: dir = 0; break;  /*              å¤«åˆ†æ›°ä¸¹å°¹ */
+        case 11912: dir = 2; break;  /*              å¿ƒäº¢ä¸¹å°¹ */
+        case 11914: dir = 4; break;  /*              å¿ƒäº¢ä»„å‡¶ */
 
-        case 11916: dir = 6; break;  /* ÎË¼°ÓñÊ§ ·ò·ÖÔ»ØÆĞ× */
-        case 11918: dir = 0; break;  /*          ·ò·ÖÔ»µ¤Òü */
-        case 11920: dir = 2; break;  /*          ĞÄ¿ºµ¤Òü */
-        case 11922: dir = 4; break;  /*          ĞÄ¿ºØÆĞ× */
+        case 11916: dir = 6; break;  /* å—¡åŠç‰å¤± å¤«åˆ†æ›°ä»„å‡¶ */
+        case 11918: dir = 0; break;  /*          å¤«åˆ†æ›°ä¸¹å°¹ */
+        case 11920: dir = 2; break;  /*          å¿ƒäº¢ä¸¹å°¹ */
+        case 11922: dir = 4; break;  /*          å¿ƒäº¢ä»„å‡¶ */
 
-        case 11924: dir = 6; break;  /* Ó®ÖĞÎË¼°ÓñÊ§ ·ò·ÖÔ»ØÆĞ× */
-        case 11926: dir = 0; break;  /*              ·ò·ÖÔ»µ¤Òü */
-        case 11928: dir = 2; break;  /*              ĞÄ¿ºµ¤Òü */
-        case 11930: dir = 4; break;  /*              ĞÄ¿ºØÆĞ× */
+        case 11924: dir = 6; break;  /* èµ¢ä¸­å—¡åŠç‰å¤± å¤«åˆ†æ›°ä»„å‡¶ */
+        case 11926: dir = 0; break;  /*              å¤«åˆ†æ›°ä¸¹å°¹ */
+        case 11928: dir = 2; break;  /*              å¿ƒäº¢ä¸¹å°¹ */
+        case 11930: dir = 4; break;  /*              å¿ƒäº¢ä»„å‡¶ */
 
-        case 11958: dir = 2; break;  /* Ó®ÖĞ  ¼°ÓñÊ§ ĞÄ¿ºµ¤Òü */
-        case 11960: dir = 4; break;  /*              ĞÄ¿ºØÆĞ× */
-        case 11962: dir = 6; break;  /*              ·ò·ÖÔ»ØÆĞ× */
-        case 11964: dir = 0; break;  /*              ·ò·ÖÔ»µ¤Òü */
+        case 11958: dir = 2; break;  /* èµ¢ä¸­  åŠç‰å¤± å¿ƒäº¢ä¸¹å°¹ */
+        case 11960: dir = 4; break;  /*              å¿ƒäº¢ä»„å‡¶ */
+        case 11962: dir = 6; break;  /*              å¤«åˆ†æ›°ä»„å‡¶ */
+        case 11964: dir = 0; break;  /*              å¤«åˆ†æ›°ä¸¹å°¹ */
 
-        case 11966: dir = 2; break;  /*   ¼°ÓñÊ§ ĞÄ¿ºµ¤Òü */
-        case 11968: dir = 4; break;  /*          ĞÄ¿ºØÆĞ× */
-        case 11970: dir = 6; break;  /*          ·ò·ÖÔ»ØÆĞ× */
-        case 11972: dir = 0; break;  /*          ·ò·ÖÔ»µ¤Òü */
+        case 11966: dir = 2; break;  /*   åŠç‰å¤± å¿ƒäº¢ä¸¹å°¹ */
+        case 11968: dir = 4; break;  /*          å¿ƒäº¢ä»„å‡¶ */
+        case 11970: dir = 6; break;  /*          å¤«åˆ†æ›°ä»„å‡¶ */
+        case 11972: dir = 0; break;  /*          å¤«åˆ†æ›°ä¸¹å°¹ */
 
-        case 11978: dir = 2; break;  /* Ó®ÖĞàÅ¼°ÓñÊ§ ĞÄ¿ºµ¤Òü */
-        case 11980: dir = 4; break;  /*              ĞÄ¿ºØÆĞ× */
-        case 11982: dir = 6; break;  /*              ·ò·ÖÔ»ØÆĞ× */
-        case 11984: dir = 0; break;  /*              ·ò·ÖÔ»µ¤Òü */
+        case 11978: dir = 2; break;  /* èµ¢ä¸­å—¯åŠç‰å¤± å¿ƒäº¢ä¸¹å°¹ */
+        case 11980: dir = 4; break;  /*              å¿ƒäº¢ä»„å‡¶ */
+        case 11982: dir = 6; break;  /*              å¤«åˆ†æ›°ä»„å‡¶ */
+        case 11984: dir = 0; break;  /*              å¤«åˆ†æ›°ä¸¹å°¹ */
 
-        case 11986: dir = 2; break;  /* àÅ¼°ÓñÊ§ ĞÄ¿ºµ¤Òü */
-        case 11988: dir = 4; break;  /*          ĞÄ¿ºØÆĞ× */
-        case 11990: dir = 6; break;  /*          ·ò·ÖÔ»ØÆĞ× */
-        case 11992: dir = 0; break;  /*          ·ò·ÖÔ»µ¤Òü */
+        case 11986: dir = 2; break;  /* å—¯åŠç‰å¤± å¿ƒäº¢ä¸¹å°¹ */
+        case 11988: dir = 4; break;  /*          å¿ƒäº¢ä»„å‡¶ */
+        case 11990: dir = 6; break;  /*          å¤«åˆ†æ›°ä»„å‡¶ */
+        case 11992: dir = 0; break;  /*          å¤«åˆ†æ›°ä¸¹å°¹ */
 
         default: break;
         }
@@ -285,7 +285,7 @@ void NPC_DoorPostOver( int meindex , int movedindex )
 {
     if( CHAR_getWorkInt( meindex , CHAR_WORKDOORSOONFLG )){
 		CHAR_setInt( meindex , CHAR_TALKCOUNT, 1 );
-        CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );	/* É§Ä¾Ø¦ÈÊÔÊÔÂ */
+        CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );	/* éªšæœ¨å…ä»å…æœˆ */
     }
 }
 
@@ -346,7 +346,7 @@ void NPC_DoorLooked( int meindex , int lookedindex )
             NPC_DoorFlip( meindex , lookedindex );
             return;
         }
-#define		NPC_DOOR_EXPIRE_MSG		"%s µÄ·¿¼äÓĞĞ§ÆÚÏŞÖÁ %d/%d %d:%d"
+#define		NPC_DOOR_EXPIRE_MSG		"%s çš„æˆ¿é—´æœ‰æ•ˆæœŸé™è‡³ %d/%d %d:%d"
         else {
 			if( CHAR_getWorkInt( meindex, CHAR_WORKDOOREXPIRETIME)
 				!= 0xffffffff ){
@@ -355,7 +355,7 @@ void NPC_DoorLooked( int meindex , int lookedindex )
 				char	msgbuf[128];
 
 				NPC_ROOMINFO roominfo;
-				/* ÓÉµ©Îç  ¶ãÓåò×Ã«±¾ÓÀĞşÔÊÔÂ */
+				/* ç”±æ—¦åˆ  èº²æ¸èœƒæ¯›æœ¬æ°¸ç„å…æœˆ */
 				NPC_RoomAdminNew_ReadFile(
 								CHAR_getWorkChar( meindex, CHAR_WORKDOORNAME),
 										&roominfo);
@@ -380,7 +380,7 @@ void NPC_DoorLooked( int meindex , int lookedindex )
     } else if( needkey == -1 ){
         NPC_DoorFlip(meindex , lookedindex );
     } else {
-        CHAR_talkToCli( lookedindex , -1 , "ÕâÉÈÃÅËÆºõÔõ÷áÒ²´ò²»¿ª£¡" , CHAR_COLORWHITE);
+        CHAR_talkToCli( lookedindex , -1 , "è¿™æ‰‡é—¨ä¼¼ä¹æ€éº½ä¹Ÿæ‰“ä¸å¼€ï¼" , CHAR_COLORWHITE);
     }
 }
 void NPC_DoorTalked( int meindex , int talkerindex , char *msg , int color )
@@ -401,7 +401,7 @@ void NPC_DoorTalked( int meindex , int talkerindex , char *msg , int color )
     if( strcmp( m , msg ) == 0 ){
         NPC_DoorFlip( meindex , talkerindex );
     }else {
-        CHAR_talkToCli( talkerindex , -1 , "ÃÜÂë²»ÕıÈ·À²£¡", CHAR_COLORWHITE );
+        CHAR_talkToCli( talkerindex , -1 , "å¯†ç ä¸æ­£ç¡®å•¦ï¼", CHAR_COLORWHITE );
     }
 }
 

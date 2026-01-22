@@ -17,131 +17,131 @@
 #include "item_trade.h"
 #endif
 #ifdef _DROPSTAKENEW
-#define CASINOTOKENID				20121			// ÓÎÀÖ³¡²ÊÈ¯´úºÅ
-#define MAXCASINOMAPNUM				150			// ÓÎÀÖ³¡µØÍ¼ÉÏÏŞ
-#define MAXACCUMULATION				1000000		// »ı·ÖÉÏÏŞ
+#define CASINOTOKENID				20121			// æ¸¸ä¹åœºå½©åˆ¸ä»£å·
+#define MAXCASINOMAPNUM				150			// æ¸¸ä¹åœºåœ°å›¾ä¸Šé™
+#define MAXACCUMULATION				1000000		// ç§¯åˆ†ä¸Šé™
 typedef struct tagCasinoMapTable
 {
-	int casinofl;				// ÓÎÀÖ³¡Í¼²ã
-	int casinox;				// ÓÎÀÖ³¡£Ø×ù±ê
-	int casinoy;				// ÓÎÀÖ³¡£Ù×ù±ê
-	int casinotype;			// ¶Ä×¢ÀàĞÍ
-	int dropflag;				// ÊÇ·ñ¿ÉÏÂ×¢ flag
-	char casinoinfo[64];		// ¶Ä×¢ÀàĞÍËµÃ÷
-	int accumulation;			// »ı·Ö
-	int stakenum;				// ²ÊÈ¯ÊıÁ¿
+	int casinofl;				// æ¸¸ä¹åœºå›¾å±‚
+	int casinox;				// æ¸¸ä¹åœºï¼¸åº§æ ‡
+	int casinoy;				// æ¸¸ä¹åœºï¼¹åº§æ ‡
+	int casinotype;			// èµŒæ³¨ç±»å‹
+	int dropflag;				// æ˜¯å¦å¯ä¸‹æ³¨ flag
+	char casinoinfo[64];		// èµŒæ³¨ç±»å‹è¯´æ˜
+	int accumulation;			// ç§¯åˆ†
+	int stakenum;				// å½©åˆ¸æ•°é‡
 }CasinoMapTable;
 CasinoMapTable casinomap[MAXCASINOMAPNUM] = 
 {
-	{ 7008, 13, 13, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 14, 13, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 15, 13, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 16, 13, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 17, 13, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 13, 14, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 14, 14, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 15, 14, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 16, 14, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 17, 14, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 13, 15, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 14, 15, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 15, 15, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 16, 15, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008, 17, 15, DICE_BIG, 1, "÷»×Ó£­´ó", 1, 0},
-	{ 7008,  8, 13, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008,  9, 13, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 10, 13, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 11, 13, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 12, 13, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008,  8, 14, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008,  9, 14, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 10, 14, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 11, 14, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 12, 14, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008,  8, 15, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008,  9, 15, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 10, 15, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 11, 15, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
-	{ 7008, 12, 15, DICE_SMALL, 1, "÷»×Ó£­Ğ¡", 1, 0},
+	{ 7008, 13, 13, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 14, 13, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 15, 13, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 16, 13, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 17, 13, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 13, 14, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 14, 14, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 15, 14, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 16, 14, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 17, 14, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 13, 15, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 14, 15, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 15, 15, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 16, 15, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008, 17, 15, DICE_BIG, 1, "éª°å­ï¼å¤§", 1, 0},
+	{ 7008,  8, 13, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008,  9, 13, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 10, 13, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 11, 13, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 12, 13, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008,  8, 14, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008,  9, 14, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 10, 14, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 11, 14, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 12, 14, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008,  8, 15, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008,  9, 15, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 10, 15, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 11, 15, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
+	{ 7008, 12, 15, DICE_SMALL, 1, "éª°å­ï¼å°", 1, 0},
 
-	{ 7005, 22, 21, PET_RACE1, 1, "¾ºËÙ³¡£­³èÎï£±", 2, 0},
-	{ 7005, 23, 21, PET_RACE1, 1, "¾ºËÙ³¡£­³èÎï£±", 2, 0},
-	{ 7005, 24, 21, PET_RACE1, 1, "¾ºËÙ³¡£­³èÎï£±", 2, 0},
-	{ 7005, 25, 21, PET_RACE1, 1, "¾ºËÙ³¡£­³èÎï£±", 2, 0},
-	{ 7005, 26, 21, PET_RACE1, 1, "¾ºËÙ³¡£­³èÎï£±", 2, 0},
-	{ 7005, 27, 21, PET_RACE1, 1, "¾ºËÙ³¡£­³èÎï£±", 2, 0},
-	{ 7005, 28, 21, PET_RACE1, 1, "¾ºËÙ³¡£­³èÎï£±", 2, 0},
-	{ 7005, 22, 24, PET_RACE2, 1, "¾ºËÙ³¡£­³èÎï£²", 2, 0},
-	{ 7005, 23, 24, PET_RACE2, 1, "¾ºËÙ³¡£­³èÎï£²", 2, 0},
-	{ 7005, 24, 24, PET_RACE2, 1, "¾ºËÙ³¡£­³èÎï£²", 2, 0},
-	{ 7005, 25, 24, PET_RACE2, 1, "¾ºËÙ³¡£­³èÎï£²", 2, 0},
-	{ 7005, 26, 24, PET_RACE2, 1, "¾ºËÙ³¡£­³èÎï£²", 2, 0},
-	{ 7005, 27, 24, PET_RACE2, 1, "¾ºËÙ³¡£­³èÎï£²", 2, 0},
-	{ 7005, 28, 24, PET_RACE2, 1, "¾ºËÙ³¡£­³èÎï£²", 2, 0},
-	{ 7005, 22, 27, PET_RACE3, 1, "¾ºËÙ³¡£­³èÎï£³", 2, 0},
-	{ 7005, 23, 27, PET_RACE3, 1, "¾ºËÙ³¡£­³èÎï£³", 2, 0},
-	{ 7005, 24, 27, PET_RACE3, 1, "¾ºËÙ³¡£­³èÎï£³", 2, 0},
-	{ 7005, 25, 27, PET_RACE3, 1, "¾ºËÙ³¡£­³èÎï£³", 2, 0},
-	{ 7005, 26, 27, PET_RACE3, 1, "¾ºËÙ³¡£­³èÎï£³", 2, 0},
-	{ 7005, 27, 27, PET_RACE3, 1, "¾ºËÙ³¡£­³èÎï£³", 2, 0},
-	{ 7005, 28, 27, PET_RACE3, 1, "¾ºËÙ³¡£­³èÎï£³", 2, 0},
+	{ 7005, 22, 21, PET_RACE1, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼‘", 2, 0},
+	{ 7005, 23, 21, PET_RACE1, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼‘", 2, 0},
+	{ 7005, 24, 21, PET_RACE1, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼‘", 2, 0},
+	{ 7005, 25, 21, PET_RACE1, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼‘", 2, 0},
+	{ 7005, 26, 21, PET_RACE1, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼‘", 2, 0},
+	{ 7005, 27, 21, PET_RACE1, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼‘", 2, 0},
+	{ 7005, 28, 21, PET_RACE1, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼‘", 2, 0},
+	{ 7005, 22, 24, PET_RACE2, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼’", 2, 0},
+	{ 7005, 23, 24, PET_RACE2, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼’", 2, 0},
+	{ 7005, 24, 24, PET_RACE2, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼’", 2, 0},
+	{ 7005, 25, 24, PET_RACE2, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼’", 2, 0},
+	{ 7005, 26, 24, PET_RACE2, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼’", 2, 0},
+	{ 7005, 27, 24, PET_RACE2, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼’", 2, 0},
+	{ 7005, 28, 24, PET_RACE2, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼’", 2, 0},
+	{ 7005, 22, 27, PET_RACE3, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼“", 2, 0},
+	{ 7005, 23, 27, PET_RACE3, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼“", 2, 0},
+	{ 7005, 24, 27, PET_RACE3, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼“", 2, 0},
+	{ 7005, 25, 27, PET_RACE3, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼“", 2, 0},
+	{ 7005, 26, 27, PET_RACE3, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼“", 2, 0},
+	{ 7005, 27, 27, PET_RACE3, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼“", 2, 0},
+	{ 7005, 28, 27, PET_RACE3, 1, "ç«é€Ÿåœºï¼å® ç‰©ï¼“", 2, 0},
 
-	{ 7003, 21, 15, ROULETTE1, 1, "ÂÖÅÌºì£±", 1, 0}, { 7003, 17, 15, ROULETTE3, 1, "ÂÖÅÌºì£³", 1, 0},
-	{ 7003, 13, 15, ROULETTE5, 1, "ÂÖÅÌºì£µ", 1, 0}, { 7003, 21, 21, ROULETTE6, 1, "ÂÖÅÌºì£¶", 1, 0},
-	{ 7003, 17, 21, ROULETTE8, 1, "ÂÖÅÌºì£¸", 1, 0}, { 7003, 15, 21, ROULETTE9, 1, "ÂÖÅÌºì£¹", 1, 0},
-	{ 7003, 13, 21, ROULETTE10, 1, "ÂÖÅÌºì£±£°", 1, 0}, { 7003, 13, 18, ROULETTE13, 1, "ÂÖÅÌºì£±£³", 1, 0},
-	{ 7003,  9, 21, ROULETTE17, 1, "ÂÖÅÌºì£±£·", 1, 0}, { 7003, 21, 18, ROULETTE18, 1, "ÂÖÅÌºì£±£¸", 1, 0},
+	{ 7003, 21, 15, ROULETTE1, 1, "è½®ç›˜çº¢ï¼‘", 1, 0}, { 7003, 17, 15, ROULETTE3, 1, "è½®ç›˜çº¢ï¼“", 1, 0},
+	{ 7003, 13, 15, ROULETTE5, 1, "è½®ç›˜çº¢ï¼•", 1, 0}, { 7003, 21, 21, ROULETTE6, 1, "è½®ç›˜çº¢ï¼–", 1, 0},
+	{ 7003, 17, 21, ROULETTE8, 1, "è½®ç›˜çº¢ï¼˜", 1, 0}, { 7003, 15, 21, ROULETTE9, 1, "è½®ç›˜çº¢ï¼™", 1, 0},
+	{ 7003, 13, 21, ROULETTE10, 1, "è½®ç›˜çº¢ï¼‘ï¼", 1, 0}, { 7003, 13, 18, ROULETTE13, 1, "è½®ç›˜çº¢ï¼‘ï¼“", 1, 0},
+	{ 7003,  9, 21, ROULETTE17, 1, "è½®ç›˜çº¢ï¼‘ï¼—", 1, 0}, { 7003, 21, 18, ROULETTE18, 1, "è½®ç›˜çº¢ï¼‘ï¼˜", 1, 0},
 
-	{ 7003, 19, 15, ROULETTE22, 1, "ÂÖÅÌÂÌ£²", 1, 0}, { 7003, 15, 15, ROULETTE24, 1, "ÂÖÅÌÂÌ£´", 1, 0},
-	{ 7003, 19, 21, ROULETTE27, 1, "ÂÖÅÌÂÌ£·", 1, 0}, { 7003, 11, 15, ROULETTE31, 1, "ÂÖÅÌÂÌ£±£±", 1, 0},
-	{ 7003,  9, 15, ROULETTE32, 1, "ÂÖÅÌÂÌ£±£²", 1, 0}, { 7003, 11, 18, ROULETTE34, 1, "ÂÖÅÌÂÌ£±£´", 1, 0},
-	{ 7003,  9, 18, ROULETTE35, 1, "ÂÖÅÌÂÌ£±£µ", 1, 0}, { 7003, 11, 21, ROULETTE36, 1, "ÂÖÅÌÂÌ£±£¶", 1, 0},
-	{ 7003, 19, 18, ROULETTE39, 1, "ÂÖÅÌÂÌ£±£¹", 1, 0}, { 7003, 17, 18, ROULETTE40, 1, "ÂÖÅÌÂÌ£²£°", 1, 0},
-	{ 7003, 17, 24, ROULETTE41, 1, "ÂÖÅÌºì", 1, 0}, { 7003, 16, 24, ROULETTE41, 1, "ÂÖÅÌºì", 1, 0},
-	{ 7003, 17, 25, ROULETTE41, 1, "ÂÖÅÌºì", 1, 0}, { 7003, 16, 25, ROULETTE41, 1, "ÂÖÅÌºì", 1, 0},
-	{ 7003, 14, 24, ROULETTE42, 1, "ÂÖÅÌÂÌ", 1, 0}, { 7003, 13, 24, ROULETTE42, 1, "ÂÖÅÌÂÌ", 1, 0},
-	{ 7003, 14, 25, ROULETTE42, 1, "ÂÖÅÌÂÌ", 1, 0}, { 7003, 13, 25, ROULETTE42, 1, "ÂÖÅÌÂÌ", 1, 0},
+	{ 7003, 19, 15, ROULETTE22, 1, "è½®ç›˜ç»¿ï¼’", 1, 0}, { 7003, 15, 15, ROULETTE24, 1, "è½®ç›˜ç»¿ï¼”", 1, 0},
+	{ 7003, 19, 21, ROULETTE27, 1, "è½®ç›˜ç»¿ï¼—", 1, 0}, { 7003, 11, 15, ROULETTE31, 1, "è½®ç›˜ç»¿ï¼‘ï¼‘", 1, 0},
+	{ 7003,  9, 15, ROULETTE32, 1, "è½®ç›˜ç»¿ï¼‘ï¼’", 1, 0}, { 7003, 11, 18, ROULETTE34, 1, "è½®ç›˜ç»¿ï¼‘ï¼”", 1, 0},
+	{ 7003,  9, 18, ROULETTE35, 1, "è½®ç›˜ç»¿ï¼‘ï¼•", 1, 0}, { 7003, 11, 21, ROULETTE36, 1, "è½®ç›˜ç»¿ï¼‘ï¼–", 1, 0},
+	{ 7003, 19, 18, ROULETTE39, 1, "è½®ç›˜ç»¿ï¼‘ï¼™", 1, 0}, { 7003, 17, 18, ROULETTE40, 1, "è½®ç›˜ç»¿ï¼’ï¼", 1, 0},
+	{ 7003, 17, 24, ROULETTE41, 1, "è½®ç›˜çº¢", 1, 0}, { 7003, 16, 24, ROULETTE41, 1, "è½®ç›˜çº¢", 1, 0},
+	{ 7003, 17, 25, ROULETTE41, 1, "è½®ç›˜çº¢", 1, 0}, { 7003, 16, 25, ROULETTE41, 1, "è½®ç›˜çº¢", 1, 0},
+	{ 7003, 14, 24, ROULETTE42, 1, "è½®ç›˜ç»¿", 1, 0}, { 7003, 13, 24, ROULETTE42, 1, "è½®ç›˜ç»¿", 1, 0},
+	{ 7003, 14, 25, ROULETTE42, 1, "è½®ç›˜ç»¿", 1, 0}, { 7003, 13, 25, ROULETTE42, 1, "è½®ç›˜ç»¿", 1, 0},
 
-    // WON ADD ĞŞÕıµØÍ¼ÉÏµ¥Ë«µÄ´íÎó
-	{ 7003, 11, 24, ROULETTE43, 1, "ÂÖÅÌµ¥", 1, 0}, { 7003, 10, 24, ROULETTE43, 1, "ÂÖÅÌµ¥", 1, 0},
-	{ 7003, 11, 25, ROULETTE43, 1, "ÂÖÅÌµ¥", 1, 0}, { 7003, 10, 25, ROULETTE43, 1, "ÂÖÅÌµ¥", 1, 0},
-	{ 7003, 20, 24, ROULETTE44, 1, "ÂÖÅÌË«", 1, 0}, { 7003, 19, 24, ROULETTE44, 1, "ÂÖÅÌË«", 1, 0},
-	{ 7003, 20, 25, ROULETTE44, 1, "ÂÖÅÌË«", 1, 0}, { 7003, 19, 25, ROULETTE44, 1, "ÂÖÅÌË«", 1, 0},
+    // WON ADD ä¿®æ­£åœ°å›¾ä¸Šå•åŒçš„é”™è¯¯
+	{ 7003, 11, 24, ROULETTE43, 1, "è½®ç›˜å•", 1, 0}, { 7003, 10, 24, ROULETTE43, 1, "è½®ç›˜å•", 1, 0},
+	{ 7003, 11, 25, ROULETTE43, 1, "è½®ç›˜å•", 1, 0}, { 7003, 10, 25, ROULETTE43, 1, "è½®ç›˜å•", 1, 0},
+	{ 7003, 20, 24, ROULETTE44, 1, "è½®ç›˜åŒ", 1, 0}, { 7003, 19, 24, ROULETTE44, 1, "è½®ç›˜åŒ", 1, 0},
+	{ 7003, 20, 25, ROULETTE44, 1, "è½®ç›˜åŒ", 1, 0}, { 7003, 19, 25, ROULETTE44, 1, "è½®ç›˜åŒ", 1, 0},
 
 
 
-	{ 7003, 20, 15, (ROULETTE1<<16)+ROULETTE22, 1, "Ë«ºÅºì£±ÂÌ£²", 1, 0},
-	{ 7003, 18, 15, (ROULETTE3<<16)+ROULETTE22, 1, "Ë«ºÅºì£³ÂÌ£²", 1, 0},
-	{ 7003, 16, 15, (ROULETTE3<<16)+ROULETTE24, 1, "Ë«ºÅºì£³ÂÌ£´", 1, 0},
-	{ 7003, 14, 15, (ROULETTE5<<16)+ROULETTE24, 1, "Ë«ºÅºì£µÂÌ£´", 1, 0},
-	{ 7003, 12, 15, (ROULETTE5<<16)+ROULETTE31, 1, "Ë«ºÅºì£µÂÌ£±£±", 1, 0},
-	{ 7003, 10, 15, (ROULETTE32<<16)+ROULETTE31, 1, "Ë«ºÅÂÌ£±£²ÂÌ£±£±", 1, 0},
+	{ 7003, 20, 15, (ROULETTE1<<16)+ROULETTE22, 1, "åŒå·çº¢ï¼‘ç»¿ï¼’", 1, 0},
+	{ 7003, 18, 15, (ROULETTE3<<16)+ROULETTE22, 1, "åŒå·çº¢ï¼“ç»¿ï¼’", 1, 0},
+	{ 7003, 16, 15, (ROULETTE3<<16)+ROULETTE24, 1, "åŒå·çº¢ï¼“ç»¿ï¼”", 1, 0},
+	{ 7003, 14, 15, (ROULETTE5<<16)+ROULETTE24, 1, "åŒå·çº¢ï¼•ç»¿ï¼”", 1, 0},
+	{ 7003, 12, 15, (ROULETTE5<<16)+ROULETTE31, 1, "åŒå·çº¢ï¼•ç»¿ï¼‘ï¼‘", 1, 0},
+	{ 7003, 10, 15, (ROULETTE32<<16)+ROULETTE31, 1, "åŒå·ç»¿ï¼‘ï¼’ç»¿ï¼‘ï¼‘", 1, 0},
 
-	{ 7003, 20, 18, (ROULETTE18<<16)+ROULETTE39, 1, "Ë«ºÅºì£±£¸ÂÌ£±£¹", 1, 0},
-	{ 7003, 18, 18, (ROULETTE40<<16)+ROULETTE39, 1, "Ë«ºÅÂÌ£²£°ÂÌ£±£¹", 1, 0},
-	{ 7003, 16, 18, (ROULETTE40<<16)+ROULETTE45, 1, "Ë«ºÅÂÌ£²£°ºÚ£°£°", 1, 0},
-	{ 7003, 14, 18, (ROULETTE13<<16)+ROULETTE45, 1, "Ë«ºÅºì£±£³ºÚ£°£°", 1, 0},
-	{ 7003, 12, 18, (ROULETTE13<<16)+ROULETTE34, 1, "Ë«ºÅºì£±£³ÂÌ£±£´", 1, 0},
-	{ 7003, 10, 18, (ROULETTE35<<16)+ROULETTE34, 1, "Ë«ºÅÂÌ£±£µÂÌ£±£´", 1, 0},
+	{ 7003, 20, 18, (ROULETTE18<<16)+ROULETTE39, 1, "åŒå·çº¢ï¼‘ï¼˜ç»¿ï¼‘ï¼™", 1, 0},
+	{ 7003, 18, 18, (ROULETTE40<<16)+ROULETTE39, 1, "åŒå·ç»¿ï¼’ï¼ç»¿ï¼‘ï¼™", 1, 0},
+	{ 7003, 16, 18, (ROULETTE40<<16)+ROULETTE45, 1, "åŒå·ç»¿ï¼’ï¼é»‘ï¼ï¼", 1, 0},
+	{ 7003, 14, 18, (ROULETTE13<<16)+ROULETTE45, 1, "åŒå·çº¢ï¼‘ï¼“é»‘ï¼ï¼", 1, 0},
+	{ 7003, 12, 18, (ROULETTE13<<16)+ROULETTE34, 1, "åŒå·çº¢ï¼‘ï¼“ç»¿ï¼‘ï¼”", 1, 0},
+	{ 7003, 10, 18, (ROULETTE35<<16)+ROULETTE34, 1, "åŒå·ç»¿ï¼‘ï¼•ç»¿ï¼‘ï¼”", 1, 0},
 
-	{ 7003, 20, 21, (ROULETTE6<<16) +ROULETTE27, 1, "Ë«ºÅºì£¶ÂÌ£·", 1, 0},
-	{ 7003, 18, 21, (ROULETTE8<<16) +ROULETTE27, 1, "Ë«ºÅºì£¸ÂÌ£·", 1, 0},
-	{ 7003, 16, 21, (ROULETTE8<<16) + ROULETTE9, 1, "Ë«ºÅºì£¸ºì£¹", 1, 0},
-	{ 7003, 14, 21, (ROULETTE10<<16)+ ROULETTE9, 1, "Ë«ºÅºì£±£°ºì£¹", 1, 0},
-	{ 7003, 12, 21, (ROULETTE10<<16)+ROULETTE36, 1, "Ë«ºÅºì£±£°ÂÌ£±£¶", 1, 0},
-	{ 7003, 10, 21, (ROULETTE17<<16)+ROULETTE36, 1, "Ë«ºÅºì£±£·ÂÌ£±£¶", 1, 0},
-	{ 7003,  8, 15, ROULETTE51, 1, "ºáÁĞ£±", 1, 0},	//ºáÁĞ
-	{ 7003,  8, 18, ROULETTE52, 1, "ºáÁĞ£²", 1, 0},
-	{ 7003,  8, 21, ROULETTE53, 1, "ºáÁĞ£³", 1, 0},
-	{ 7003,  6, 15, ROULETTE61, 1, "ºÅÂë£±£­£±£°", 1, 0},	//1µ½10
-	{ 7003,  5, 15, ROULETTE61, 1, "ºÅÂë£±£­£±£°", 1, 0},
-	{ 7003,  6, 16, ROULETTE61, 1, "ºÅÂë£±£­£±£°", 1, 0},
-	{ 7003,  5, 16, ROULETTE61, 1, "ºÅÂë£±£­£±£°", 1, 0},
-	{ 7003, 24, 15, ROULETTE62, 1, "ºÅÂë£±£±£­£²£°", 1, 0},	//10µ½11
-	{ 7003, 23, 15, ROULETTE62, 1, "ºÅÂë£±£±£­£²£°", 1, 0},
-	{ 7003, 24, 16, ROULETTE62, 1, "ºÅÂë£±£±£­£²£°", 1, 0},
-	{ 7003, 23, 16, ROULETTE62, 1, "ºÅÂë£±£±£­£²£°", 1, 0},
-	{ 7003, 15, 18, ROULETTE45, 1, "ÂÖÅÌ(£°£°)", 1, 0},
+	{ 7003, 20, 21, (ROULETTE6<<16) +ROULETTE27, 1, "åŒå·çº¢ï¼–ç»¿ï¼—", 1, 0},
+	{ 7003, 18, 21, (ROULETTE8<<16) +ROULETTE27, 1, "åŒå·çº¢ï¼˜ç»¿ï¼—", 1, 0},
+	{ 7003, 16, 21, (ROULETTE8<<16) + ROULETTE9, 1, "åŒå·çº¢ï¼˜çº¢ï¼™", 1, 0},
+	{ 7003, 14, 21, (ROULETTE10<<16)+ ROULETTE9, 1, "åŒå·çº¢ï¼‘ï¼çº¢ï¼™", 1, 0},
+	{ 7003, 12, 21, (ROULETTE10<<16)+ROULETTE36, 1, "åŒå·çº¢ï¼‘ï¼ç»¿ï¼‘ï¼–", 1, 0},
+	{ 7003, 10, 21, (ROULETTE17<<16)+ROULETTE36, 1, "åŒå·çº¢ï¼‘ï¼—ç»¿ï¼‘ï¼–", 1, 0},
+	{ 7003,  8, 15, ROULETTE51, 1, "æ¨ªåˆ—ï¼‘", 1, 0},	//æ¨ªåˆ—
+	{ 7003,  8, 18, ROULETTE52, 1, "æ¨ªåˆ—ï¼’", 1, 0},
+	{ 7003,  8, 21, ROULETTE53, 1, "æ¨ªåˆ—ï¼“", 1, 0},
+	{ 7003,  6, 15, ROULETTE61, 1, "å·ç ï¼‘ï¼ï¼‘ï¼", 1, 0},	//1åˆ°10
+	{ 7003,  5, 15, ROULETTE61, 1, "å·ç ï¼‘ï¼ï¼‘ï¼", 1, 0},
+	{ 7003,  6, 16, ROULETTE61, 1, "å·ç ï¼‘ï¼ï¼‘ï¼", 1, 0},
+	{ 7003,  5, 16, ROULETTE61, 1, "å·ç ï¼‘ï¼ï¼‘ï¼", 1, 0},
+	{ 7003, 24, 15, ROULETTE62, 1, "å·ç ï¼‘ï¼‘ï¼ï¼’ï¼", 1, 0},	//10åˆ°11
+	{ 7003, 23, 15, ROULETTE62, 1, "å·ç ï¼‘ï¼‘ï¼ï¼’ï¼", 1, 0},
+	{ 7003, 24, 16, ROULETTE62, 1, "å·ç ï¼‘ï¼‘ï¼ï¼’ï¼", 1, 0},
+	{ 7003, 23, 16, ROULETTE62, 1, "å·ç ï¼‘ï¼‘ï¼ï¼’ï¼", 1, 0},
+	{ 7003, 15, 18, ROULETTE45, 1, "è½®ç›˜(ï¼ï¼)", 1, 0},
 
 };
 #endif
@@ -201,17 +201,17 @@ static void CHAR_sendItemDetachEvent( int charaindex,int itemid )
 {
 	char    mesg[256];
 
-	snprintf( mesg, sizeof( mesg), "Ğ¶ÏÂ%s ", ITEM_getAppropriateName(itemid) );
+	snprintf( mesg, sizeof( mesg), "å¸ä¸‹%s ", ITEM_getAppropriateName(itemid) );
 	CHAR_talkToCli(charaindex,-1,mesg,CHAR_COLORWHITE);
 #ifdef _ITEM_METAMO
 	if( ITEM_getEquipPlace( charaindex, itemid) == CHAR_BODY 
 			&& CHAR_getWorkInt( charaindex, CHAR_WORKITEMMETAMO) != 0 ) {
 		CHAR_setWorkInt( charaindex, CHAR_WORKITEMMETAMO, 0);
-		CHAR_setWorkInt( charaindex, CHAR_WORKNPCMETAMO, 0 ); //Óënpc¶Ô»°ááµÄ±äÉíÒ²Òª±ä»ØÀ´
+		CHAR_setWorkInt( charaindex, CHAR_WORKNPCMETAMO, 0 ); //ä¸npcå¯¹è¯å¾Œçš„å˜èº«ä¹Ÿè¦å˜å›æ¥
 		CHAR_complianceParameter( charaindex);
 		CHAR_sendCToArroundCharacter( CHAR_getWorkInt( charaindex , CHAR_WORKOBJINDEX ));
 		CHAR_send_P_StatusString( charaindex , CHAR_P_STRING_BASEBASEIMAGENUMBER);
-		CHAR_talkToCli( charaindex, -1, "±äÉíÊ§Ğ§ÁË£¡", CHAR_COLORWHITE);
+		CHAR_talkToCli( charaindex, -1, "å˜èº«å¤±æ•ˆäº†ï¼", CHAR_COLORWHITE);
 	}
 #endif
 	{
@@ -227,7 +227,7 @@ static void CHAR_sendItemDetachEvent( int charaindex,int itemid )
 static void CHAR_sendItemAttachEvent( int charaindex,int itemid )
 {
 	char    mesg[256];
-	snprintf( mesg, sizeof( mesg), "×°±¸%s ",
+	snprintf( mesg, sizeof( mesg), "è£…å¤‡%s ",
 			  ITEM_getAppropriateName(itemid) );
 	CHAR_talkToCli(charaindex,-1,mesg,CHAR_COLORWHITE);
 	{
@@ -299,11 +299,11 @@ int CHAR_findEmptyItemBox( int index )
 
 }
 
-#define LACKOFCLASS {CHAR_talkToCli(index,-1,"ÄÜÁ¦²»×ãÎŞ·¨×°±¸¡£",CHAR_COLORWHITE);}
-#define CANNOTEQUIP {CHAR_talkToCli(index,-1,"ÎŞ·¨×°±¸¸ÃÏîÎïÆ·¡£",CHAR_COLORWHITE);}
-#define CANNOTEQUIP2 {CHAR_talkToCli(index,-1,"ÎŞ·¨Í¬Ê±×°±¸Á½ÏîÍ¬ÖÖÀàµÄÎïÆ·¡£",CHAR_COLORWHITE);}
-#define CANNOTEXCHANGE {CHAR_talkToCli(index,-1,"ÎŞ·¨½»»»´ËÁ½ÏîÎïÆ·¡£",CHAR_COLORWHITE);}
-#define CANNOTMOVE  {CHAR_talkToCli(index,-1,"ÎŞ·¨ÒÆ¶¯¸ÃÏîÎïÆ·¡£",CHAR_COLORWHITE);}
+#define LACKOFCLASS {CHAR_talkToCli(index,-1,"èƒ½åŠ›ä¸è¶³æ— æ³•è£…å¤‡ã€‚",CHAR_COLORWHITE);}
+#define CANNOTEQUIP {CHAR_talkToCli(index,-1,"æ— æ³•è£…å¤‡è¯¥é¡¹ç‰©å“ã€‚",CHAR_COLORWHITE);}
+#define CANNOTEQUIP2 {CHAR_talkToCli(index,-1,"æ— æ³•åŒæ—¶è£…å¤‡ä¸¤é¡¹åŒç§ç±»çš„ç‰©å“ã€‚",CHAR_COLORWHITE);}
+#define CANNOTEXCHANGE {CHAR_talkToCli(index,-1,"æ— æ³•äº¤æ¢æ­¤ä¸¤é¡¹ç‰©å“ã€‚",CHAR_COLORWHITE);}
+#define CANNOTMOVE  {CHAR_talkToCli(index,-1,"æ— æ³•ç§»åŠ¨è¯¥é¡¹ç‰©å“ã€‚",CHAR_COLORWHITE);}
 
 static BOOL CHAR_sendSIToCli( int charindex , int from , int to )
 {
@@ -339,7 +339,7 @@ static BOOL CHAR_moveItemFromItemBoxToEquip( int index, int fromindex,
 	if( CHAR_getInt( index, CHAR_STR) < ITEM_getInt( fromid, ITEM_NEEDSTR) ) return FALSE;
 	if( CHAR_getInt( index, CHAR_DEX) < ITEM_getInt( fromid, ITEM_NEEDDEX) ) return FALSE;
 	if( CHAR_getInt( index, CHAR_TRANSMIGRATION) < ITEM_getInt( fromid, ITEM_NEEDTRANS) ) return FALSE;
-#ifdef _CHAR_PROFESSION			// WON ADD ÈËÎïÖ°Òµ
+#ifdef _CHAR_PROFESSION			// WON ADD äººç‰©èŒä¸š
 	if( ITEM_getInt( fromid, ITEM_NEEDPROFESSION) != 0 ){
 		if( CHAR_getInt( index, PROFESSION_CLASS ) != ITEM_getInt( fromid, ITEM_NEEDPROFESSION) )
 			return FALSE;
@@ -351,13 +351,13 @@ static BOOL CHAR_moveItemFromItemBoxToEquip( int index, int fromindex,
 	{
 		if( CHAR_getWorkInt( index, CHAR_WORKITEMMETAMO) > 0 ||
 			CHAR_getWorkInt( index, CHAR_WORKNPCMETAMO) > 0 
-			|| CHAR_getWorkInt( index, CHAR_WORKFOXROUND ) != -1){ //ÈôÊÇ±ä³ÉĞ¡ºüÀê
+			|| CHAR_getWorkInt( index, CHAR_WORKFOXROUND ) != -1){ //è‹¥æ˜¯å˜æˆå°ç‹ç‹¸
 
 			int armtype = ITEM_getInt( fromid, ITEM_TYPE );
 
 			if( armtype == ITEM_BOW || armtype == ITEM_BOUNDTHROW ||
 				armtype == ITEM_BREAKTHROW || armtype == ITEM_BOOMERANG)	{
-				CHAR_talkToCli( index, -1, "±äÉíÎŞ·¨Ê¹ÓÃÔ¶¾àÀëÎäÆ÷£¡", CHAR_COLORYELLOW );
+				CHAR_talkToCli( index, -1, "å˜èº«æ— æ³•ä½¿ç”¨è¿œè·ç¦»æ­¦å™¨ï¼", CHAR_COLORYELLOW );
 				return FALSE;
 			}
 		}
@@ -377,7 +377,7 @@ static BOOL CHAR_moveItemFromItemBoxToEquip( int index, int fromindex,
 			strcmp( ITEM_getChar( fromid, ITEM_HEROINFO), missiontable[mindex].heroinfo) ||
 			strcmp( ITEM_getChar( fromid, ITEM_ANGELINFO), nameinfo) ) {
 
-			CHAR_talkToCli( index, -1, "Õâ²¢²»ÊÇÊôì¶ÄãµÄĞÅÎï£¬ÎŞ·¨×°±¸¡£", CHAR_COLORYELLOW );
+			CHAR_talkToCli( index, -1, "è¿™å¹¶ä¸æ˜¯å±æ–¼ä½ çš„ä¿¡ç‰©ï¼Œæ— æ³•è£…å¤‡ã€‚", CHAR_COLORYELLOW );
 			return FALSE;
 		}
 	}
@@ -433,8 +433,8 @@ static BOOL CHAR_moveItemFromItemBoxToEquip( int index, int fromindex,
 #if 0 //#ifdef _ANGEL_SUMMON
 	//if( !strcmp( ITEM_getChar( fromid, ITEM_USEFUNC), "ITEM_AngelToken") ) {
 	if( ITEM_getInt( fromid, ITEM_ID) == ANGELITEM ) {
-		print(" ×°±¸Ê¹ÕßĞÅÎï ");
-		CHAR_talkToCli( index, -1, "ÄãÊÜµ½ÁË¾«Áé±£»¤£¬²»»á±»µĞÈË¹¥»÷¡£", CHAR_COLORYELLOW );
+		print(" è£…å¤‡ä½¿è€…ä¿¡ç‰© ");
+		CHAR_talkToCli( index, -1, "ä½ å—åˆ°äº†ç²¾çµä¿æŠ¤ï¼Œä¸ä¼šè¢«æ•Œäººæ”»å‡»ã€‚", CHAR_COLORYELLOW );
 		//CHAR_setWorkInt( index, CHAR_WORKANGELMODE, TRUE);
 		CHAR_sendAngelMark( CHAR_getWorkInt( index, CHAR_WORKOBJINDEX), 1);
 	}
@@ -462,7 +462,7 @@ static BOOL CHAR_moveItemFromEquipToItemBox(int index, int fromindex,
 #if 0 //#ifdef _ANGEL_SUMMON
 		//if( !strcmp( ITEM_getChar( fromid, ITEM_USEFUNC), "ITEM_AngelToken") ) {
 		if( ITEM_getInt( fromid, ITEM_ID) == ANGELITEM ) {
-			print(" Ğ¶ÏÂÊ¹ÕßĞÅÎï ");
+			print(" å¸ä¸‹ä½¿è€…ä¿¡ç‰© ");
 			CHAR_setWorkInt( index, CHAR_WORKANGELMODE, FALSE);
 			CHAR_sendAngelMark( CHAR_getWorkInt( index, CHAR_WORKOBJINDEX), 0);
 		}
@@ -481,7 +481,7 @@ int CHAR_getMyMaxPilenum( int charaindex)
 		+ (CHAR_getInt( charaindex, CHAR_TRANSMIGRATION)/5) * 2 + 3;
 
 /*
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 	maxpile += CHAR_getInt( charaindex, ATTACHPILE );
 #endif
 */
@@ -555,7 +555,7 @@ void CHAR_moveEquipItem( int index, int fromindex, int toindex )
 #define		MOVEITEM_ITEMTOEQUIP	1 << 1
 #define		MOVEITEM_ITEMTOITEM		1 << 2
 
-	int     fromid;            /*  item    Æ¥¼°ÄÌ¼ş·¸ÓÀÛÍµ©    */
+	int     fromid;            /*  item    åŒ¹åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦    */
 
 
 	unsigned int     moved_any = 0;
@@ -678,7 +678,7 @@ void CHAR_ItemUse( int charaindex, int to_charaindex, int haveitemindex )
 		return;
 	}
 #ifdef _STREET_VENDOR
-	// °ÚÌ¯ÖĞ²»¿ÉÊ¹ÓÃµÀ¾ß
+	// æ‘†æ‘Šä¸­ä¸å¯ä½¿ç”¨é“å…·
 	if(CHAR_getWorkInt(charaindex,CHAR_WORKSTREETVENDOR) > -1){
 		print("StreetVendor use item charaindex=%d,name=%s\n",charaindex,CHAR_getChar(charaindex,CHAR_NAME));
 		return;
@@ -692,7 +692,7 @@ void CHAR_ItemUse( int charaindex, int to_charaindex, int haveitemindex )
 			}
 		}
 	}
-	//²»µÈì¶ÁÏÀí ºÍ ÆäËû
+	//ä¸ç­‰æ–¼æ–™ç† å’Œ å…¶ä»–
 	if( ITEM_getInt( itemindex,ITEM_TYPE) != ITEM_OTHER &&
 		ITEM_getInt( itemindex,ITEM_TYPE) != ITEM_DISH ) {
 		CHAR_EquipPlace ep;
@@ -734,14 +734,14 @@ void CHAR_ItemUse( int charaindex, int to_charaindex, int haveitemindex )
 	if( usefunc ){
 		{
 			LogItem(
-				CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+				CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 				CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),       /* Ê§ÄÌ  Ø©  Ä¯ */
+				ITEM_getInt( itemindex, ITEM_ID ),       /* å¤±å¥¶  ä¸  å¯ */
 #endif
-				"Use(Ê¹ÓÃµÀ¾ß)",
+				"Use(ä½¿ç”¨é“å…·)",
 				CHAR_getInt( charaindex,CHAR_FLOOR),
 				CHAR_getInt( charaindex,CHAR_X ),
  	      		CHAR_getInt( charaindex,CHAR_Y ),
@@ -754,7 +754,7 @@ void CHAR_ItemUse( int charaindex, int to_charaindex, int haveitemindex )
 	}else{
 		char ansmsg[256];
 		strcpysafe( ansmsg, sizeof(ansmsg),
-					"Ê²÷áÒ²Ã»ÓĞ·¢Éú¡£");
+					"ä»€éº½ä¹Ÿæ²¡æœ‰å‘ç”Ÿã€‚");
 		CHAR_talkToCli( charaindex, -1, ansmsg, CHAR_COLORWHITE );
 	}
 }
@@ -831,14 +831,14 @@ BOOL CHAR_DropItemFXY( int charaindex, int itemcharaindex, int fl,
 			return -3;
 		{
 			LogItem(
-				CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+				CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 				CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),  /* Ê§ÄÌ  Ø©  Ä¯ */
+				ITEM_getInt( itemindex, ITEM_ID ),  /* å¤±å¥¶  ä¸  å¯ */
 #endif
-				"Drop(¶ª³öµÀ¾ß)",
+				"Drop(ä¸¢å‡ºé“å…·)",
 			   	CHAR_getInt( charaindex,CHAR_FLOOR),
 				CHAR_getInt( charaindex,CHAR_X ),
  	      		CHAR_getInt( charaindex,CHAR_Y ),
@@ -867,7 +867,7 @@ void CHAR_SendDropItem_Stats( int charaindex, int itemindex, int itemcharaindex,
 	}
 
 	if( 0 <= itemcharaindex && itemcharaindex < CHAR_STARTITEMARRAY &&
-		CHAR_getInt( charaindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ){	//Èç¹û¶ªÆúÎïÎª×°±¸
+		CHAR_getInt( charaindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ){	//å¦‚æœä¸¢å¼ƒç‰©ä¸ºè£…å¤‡
 		if( ITEM_CHECKINDEX( itemindex) )
 			CHAR_sendItemDetachEvent( charaindex, itemindex );
 
@@ -882,7 +882,7 @@ void CHAR_SendDropItem_Stats( int charaindex, int itemindex, int itemcharaindex,
 
 #if 0 //#ifdef _ANGEL_SUMMON
 		if( ITEM_getInt( itemindex, ITEM_ID) == ANGELITEM ) {
-			print(" Ğ¶ÏÂÊ¹ÕßĞÅÎï ");
+			print(" å¸ä¸‹ä½¿è€…ä¿¡ç‰© ");
 			CHAR_setWorkInt( index, CHAR_WORKANGELMODE, FALSE);
 			CHAR_sendAngelMark( CHAR_getWorkInt( charaindex, CHAR_WORKOBJINDEX), 0);
 		}
@@ -897,7 +897,7 @@ void CHAR_DropStakeByDropItem( int charaindex, int itemcharaindex, int itemindex
 	char tmpbuf[256];
 	dropflag = CHAR_getWorkInt( charaindex, CHAR_WORKSTAKEFLAG);
 	if( dropflag >= MAXSTAKENUM){
-		snprintf( tmpbuf, sizeof( tmpbuf), "ÄãÒÑ¾­ÏÂ×¢Îå´ÎÁË£¬ÎŞ·¨ÔÙÏÂ×¢£¡");
+		snprintf( tmpbuf, sizeof( tmpbuf), "ä½ å·²ç»ä¸‹æ³¨äº”æ¬¡äº†ï¼Œæ— æ³•å†ä¸‹æ³¨ï¼");
 		CHAR_talkToCli(charaindex, -1, tmpbuf, CHAR_COLORYELLOW);
 		return;
 	}
@@ -905,7 +905,7 @@ void CHAR_DropStakeByDropItem( int charaindex, int itemcharaindex, int itemindex
 		if( CHAR_getInt( charaindex, CHAR_FLOOR) != casinomap[j].casinofl ) continue;
 		if( x != casinomap[j].casinox || y != casinomap[j].casinoy ) continue;
 		if( casinomap[j].dropflag == 0 ){
-			CHAR_talkToCli( charaindex, -1, "ÏÖÔÚÎŞ·¨ÏÂ×¢£¡", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "ç°åœ¨æ— æ³•ä¸‹æ³¨ï¼", CHAR_COLORYELLOW);
 			return;
 		}else{
 			int objindex;
@@ -914,8 +914,8 @@ void CHAR_DropStakeByDropItem( int charaindex, int itemcharaindex, int itemindex
 			ITEM_setInt( itemindex, ITEM_PUTTIME, NowTime.tv_sec+30*60);
 			CHAR_sendWatchEvent( objindex, CHAR_ACTSTAND, NULL, 0, TRUE);
 			casinoflag = 1;
-			snprintf(tmpbuf, sizeof(tmpbuf), "ÄãÔÚ %s ÏÂ×¢ÁËÒ»ÕÅ²ÊÈ¯", casinomap[j].casinoinfo);
-			for(k = 0; k < MAXSTAKENUM; k++){//ÏÂ×¢Éè¶¨
+			snprintf(tmpbuf, sizeof(tmpbuf), "ä½ åœ¨ %s ä¸‹æ³¨äº†ä¸€å¼ å½©åˆ¸", casinomap[j].casinoinfo);
+			for(k = 0; k < MAXSTAKENUM; k++){//ä¸‹æ³¨è®¾å®š
 				if(CHAR_getWorkInt(charaindex, CHAR_WORKSTAKETYPE1 + k) != 0) continue;
 				CHAR_setWorkInt(charaindex, CHAR_WORKSTAKETYPE1 + k, casinomap[j].casinotype);
 				dropflag++;
@@ -923,7 +923,7 @@ void CHAR_DropStakeByDropItem( int charaindex, int itemcharaindex, int itemindex
 			}
 			CHAR_talkToCli(charaindex, -1, tmpbuf, CHAR_COLORYELLOW);
 #ifdef _FIX_GAMBLENUM
-			if (dropflag <= MAXSTAKENUM){ //×ö¿ÛµãµÄ¶¯×÷
+			if (dropflag <= MAXSTAKENUM){ //åšæ‰£ç‚¹çš„åŠ¨ä½œ
 				int nAcc = CHAR_getInt(charaindex, CHAR_GAMBLENUM);                                								
 				nAcc -= casinomap[j].accumulation;
 				CHAR_setInt(charaindex, CHAR_GAMBLENUM, nAcc);								
@@ -938,12 +938,12 @@ void CHAR_DropStakeByDropItem( int charaindex, int itemcharaindex, int itemindex
 	if( casinoflag == 0) return;
 		LogItem(CHAR_getChar(charaindex, CHAR_NAME),
 				CHAR_getChar(charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 				itemindex,
 #else
 				ITEM_getInt(itemindex, ITEM_ID),
 #endif
-				"StakeDrop(¶ª³ö²ÊÈ¯)",
+				"StakeDrop(ä¸¢å‡ºå½©åˆ¸)",
 				CHAR_getInt(charaindex,CHAR_FLOOR),
 				CHAR_getInt(charaindex,CHAR_X),
  				CHAR_getInt(charaindex,CHAR_Y),
@@ -999,12 +999,12 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 	if( !CHAR_CHECKINDEX( charaindex ) ) return;
 
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE ) != BATTLE_CHARMODE_NONE ){
-		CHAR_talkToCli( charaindex, -1, "Õ½¶·×´Ì¬ÖĞÎŞ·¨¶ªµÀ¾ß×°±¸¡£", CHAR_COLORYELLOW );
+		CHAR_talkToCli( charaindex, -1, "æˆ˜æ–—çŠ¶æ€ä¸­æ— æ³•ä¸¢é“å…·è£…å¤‡ã€‚", CHAR_COLORYELLOW );
 		return;
 	}
-#ifdef _AVID_TRADETRYBUG  //¶ªµÀ¾ß×°±¸
+#ifdef _AVID_TRADETRYBUG  //ä¸¢é“å…·è£…å¤‡
 	if( CHAR_getWorkInt(charaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE){
-		CHAR_talkToCli( charaindex, -1, "½»Ò××´Ì¬ÖĞÎŞ·¨¶ªµÀ¾ß×°±¸¡£", CHAR_COLORYELLOW );
+		CHAR_talkToCli( charaindex, -1, "äº¤æ˜“çŠ¶æ€ä¸­æ— æ³•ä¸¢é“å…·è£…å¤‡ã€‚", CHAR_COLORYELLOW );
 		return;
 	}
 #endif
@@ -1024,9 +1024,9 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 		CHAR_DropStakeByDropItem( charaindex, itemcharaindex, itemindex, dropfl, dropx, dropy);
 		return;
 	}
-	//ÕÒ³öÖÜÎ§¿Õ¼ä
+	//æ‰¾å‡ºå‘¨å›´ç©ºé—´
 	if( CHAR_FindAroundUsabilitySpace( charaindex, itemindex, &fl, &x, &y) == FALSE ){
-		CHAR_talkToCli( charaindex, -1, "ÖÜÎ§µÄµØÃæÒÑ¾­ÂúÁË¡£", CHAR_COLORYELLOW );
+		CHAR_talkToCli( charaindex, -1, "å‘¨å›´çš„åœ°é¢å·²ç»æ»¡äº†ã€‚", CHAR_COLORYELLOW );
 		return;
 	}
 	
@@ -1042,9 +1042,9 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 		beDropOne = 0;
 	}
 #endif
-	//ÕÒµ½¿Õ¼ä
+	//æ‰¾åˆ°ç©ºé—´
 	ret = ITEM_eventDrop( itemindex, charaindex, itemcharaindex );
-	if( ret == 1 ){	//-1 ÎïÆ·²»´æÔÚ 1 ÏûÊ§ 0 Ò»°ãÎïÆ·
+	if( ret == 1 ){	//-1 ç‰©å“ä¸å­˜åœ¨ 1 æ¶ˆå¤± 0 ä¸€èˆ¬ç‰©å“
 		CHAR_SendDropItem_Stats( charaindex, itemindex, itemcharaindex, beDropOne);
 		return;
 	}else {
@@ -1053,14 +1053,14 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 		ITEM_setInt( itemindex, ITEM_PUTTIME, NowTime.tv_sec);
 		{
 			LogItem(
-				CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+				CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 				CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),  /* Ê§ÄÌ  Ø©  Ä¯ */
+				ITEM_getInt( itemindex, ITEM_ID ),  /* å¤±å¥¶  ä¸  å¯ */
 #endif
-				"Drop(¶ª³öµÀ¾ß)",
+				"Drop(ä¸¢å‡ºé“å…·)",
 		   		CHAR_getInt( charaindex,CHAR_FLOOR),
 				CHAR_getInt( charaindex,CHAR_X ),
  	    		CHAR_getInt( charaindex,CHAR_Y ),
@@ -1086,9 +1086,9 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 
 	if( !CHAR_CHECKINDEX( charaindex ) ) return;
 	if( !ITEM_CHECKINDEX( itemindex) ) return;
-#ifdef _AVID_TRADETRYBUG  //¶ªµÀ¾ß×°±¸
+#ifdef _AVID_TRADETRYBUG  //ä¸¢é“å…·è£…å¤‡
 	if( CHAR_getWorkInt(charaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE){
-		CHAR_talkToCli( charaindex, -1, "½»Ò××´Ì¬ÖĞÎŞ·¨¶ªµÀ¾ß×°±¸¡£", CHAR_COLORYELLOW );
+		CHAR_talkToCli( charaindex, -1, "äº¤æ˜“çŠ¶æ€ä¸­æ— æ³•ä¸¢é“å…·è£…å¤‡ã€‚", CHAR_COLORYELLOW );
 		return;
 	}
 #endif
@@ -1130,7 +1130,7 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 			if(casinodropflag == 0){
 #endif
 		if( count_item > 80 || count_chara > 80 ) {
-			CHAR_talkToCli( charaindex, -1, "ÕâÀïµÄÎïÆ·ÒÑ¾­Ì«¶àÁË£¬²»ÄÜÔÙ¶ªÁË¡£", CHAR_COLORYELLOW );
+			CHAR_talkToCli( charaindex, -1, "è¿™é‡Œçš„ç‰©å“å·²ç»å¤ªå¤šäº†ï¼Œä¸èƒ½å†ä¸¢äº†ã€‚", CHAR_COLORYELLOW );
 			return;
 		}
 #ifdef _DROPSTAKENEW
@@ -1151,11 +1151,11 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 	floor = CHAR_getInt( charaindex,CHAR_FLOOR );
 	{
 		int     ret;
-		if( 0 <= itemcharaindex && itemcharaindex < CHAR_STARTITEMARRAY ){	//Èç¹û¶ªÆúÎïÎª×°±¸
+		if( 0 <= itemcharaindex && itemcharaindex < CHAR_STARTITEMARRAY ){	//å¦‚æœä¸¢å¼ƒç‰©ä¸ºè£…å¤‡
 			CHAR_sendItemDetachEvent( charaindex, itemindex );
 		}
 		ret = ITEM_eventDrop( itemindex, charaindex, itemcharaindex );
-		if( ret == 1 ){	//-1 ÎïÆ·²»´æÔÚ 1 ÏûÊ§ 0 Ò»°ãÎïÆ·
+		if( ret == 1 ){	//-1 ç‰©å“ä¸å­˜åœ¨ 1 æ¶ˆå¤± 0 ä¸€èˆ¬ç‰©å“
 			itemindex = -1;
 			goto END;
 		}else if( ret == -1 ){
@@ -1180,7 +1180,7 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 		int x=CHAR_getInt(charaindex,CHAR_X)+dirx[i];
 		int y=CHAR_getInt(charaindex,CHAR_Y)+diry[i];
 #ifdef _DROPSTAKENEW
-		// ÅĞ¶ÏÎïÆ·ÊÇ·ñÎª²ÊÈ¯
+		// åˆ¤æ–­ç‰©å“æ˜¯å¦ä¸ºå½©åˆ¸
 		if(ITEM_getInt(itemindex, ITEM_ID) == CASINOTOKENID){
 			int j = 0, k = 0;
 			int bdropstake = 0;
@@ -1192,12 +1192,12 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 						int dropflag = CHAR_getWorkInt(charaindex, CHAR_WORKSTAKEFLAG);
 						casinoflag = 1;
 						if(casinomap[j].dropflag == 0){
-							CHAR_talkToCli(charaindex, -1, "ÏÖÔÚÎŞ·¨ÏÂ×¢£¡", CHAR_COLORYELLOW);
+							CHAR_talkToCli(charaindex, -1, "ç°åœ¨æ— æ³•ä¸‹æ³¨ï¼", CHAR_COLORYELLOW);
 							return;
 						}else{
-							snprintf(tmpbuf, sizeof(tmpbuf), "ÄãÔÚ %s ÏÂ×¢ÁËÒ»ÕÅ²ÊÈ¯", casinomap[j].casinoinfo);
+							snprintf(tmpbuf, sizeof(tmpbuf), "ä½ åœ¨ %s ä¸‹æ³¨äº†ä¸€å¼ å½©åˆ¸", casinomap[j].casinoinfo);
 							if(dropflag >= MAXSTAKENUM){
-								snprintf(tmpbuf, sizeof(tmpbuf), "ÄãÒÑ¾­ÏÂ×¢Îå´ÎÁË£¬ÎŞ·¨ÔÙÏÂ×¢£¡");
+								snprintf(tmpbuf, sizeof(tmpbuf), "ä½ å·²ç»ä¸‹æ³¨äº”æ¬¡äº†ï¼Œæ— æ³•å†ä¸‹æ³¨ï¼");
 								CHAR_talkToCli(charaindex, -1, tmpbuf, CHAR_COLORYELLOW);
 								return;
 							}
@@ -1216,7 +1216,7 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 						}
 						CHAR_talkToCli(charaindex, -1, tmpbuf, CHAR_COLORYELLOW);
 #ifdef _FIX_GAMBLENUM		
-						//×ö¿ÛµãµÄ¶¯×÷
+						//åšæ‰£ç‚¹çš„åŠ¨ä½œ
 						if (dropflag <= MAXSTAKENUM){
 							int nAcc = CHAR_getInt(charaindex, CHAR_GAMBLENUM);                                								
 							nAcc -= casinomap[j].accumulation;
@@ -1238,18 +1238,18 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 				}
 			}
 
-			// ´ËµØ·½µÄ²ÊÈ¯ÊıÁ¿³¬¹ıÒ»ÕÅÒÔÉÏ
+			// æ­¤åœ°æ–¹çš„å½©åˆ¸æ•°é‡è¶…è¿‡ä¸€å¼ ä»¥ä¸Š
 			if(bdropstake == 0 && casinoflag != 0){
 				CHAR_setItemIndex(charaindex, itemcharaindex ,-1);
 				CHAR_sendItemDataOne(charaindex, itemcharaindex);
 				LogItem(CHAR_getChar(charaindex, CHAR_NAME),
 						CHAR_getChar(charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 						itemindex,
 #else
 						ITEM_getInt(itemindex, ITEM_ID),
 #endif
-						"StakeDrop(¶ª³ö²ÊÈ¯)",
+						"StakeDrop(ä¸¢å‡ºå½©åˆ¸)",
 						CHAR_getInt(charaindex,CHAR_FLOOR),
 						CHAR_getInt(charaindex,CHAR_X),
  						CHAR_getInt(charaindex,CHAR_Y),
@@ -1293,7 +1293,7 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 	}
 #ifdef _DROPCHECK	
 	if( droped != 1 ) {
-		CHAR_talkToCli( charaindex, -1, "ÖÜÎ§µÄµØÃæÒÑ¾­ÂúÁË¡£", CHAR_COLORYELLOW );
+		CHAR_talkToCli( charaindex, -1, "å‘¨å›´çš„åœ°é¢å·²ç»æ»¡äº†ã€‚", CHAR_COLORYELLOW );
 		return;
 	}
 #endif
@@ -1374,7 +1374,7 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 		else if( objtype == OBJTYPE_ITEM ){
 			int ret;
 			int itemindex = OBJECT_getIndex( index);
-#ifdef _MARKET_TRADE	//Âò
+#ifdef _MARKET_TRADE	//ä¹°
 			if( ITEM_getWorkInt( itemindex, ITEM_WORKTRADETYPE) == TRADETYPE_SELL )	{
 				MAP_TRADEPICKUP( charaindex, itemindex, fl, x, y, TRADEITEMTYPE);
 				return -1;
@@ -1386,7 +1386,7 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 			}
 #endif
 #ifdef _DROPSTAKENEW
-			// ÅĞ¶ÏÎïÆ·ÊÇ·ñÎª²ÊÈ¯
+			// åˆ¤æ–­ç‰©å“æ˜¯å¦ä¸ºå½©åˆ¸
 			if(ITEM_getInt(itemindex, ITEM_ID) == CASINOTOKENID){
 				int i = 0;
 				int bdropstake = 0, casinoflag = 0, emptyitemindexinchara = -1;
@@ -1397,12 +1397,12 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 							int pickupflag = 0;
 							casinoflag = 1;
 							if(casinomap[i].dropflag == 0){
-								CHAR_talkToCli(charaindex, -1, "ÏÖÔÚÒÑ¾­ÎŞ·¨È¡»ØÏÂ×¢²ÊÈ¯ÁË£¡", CHAR_COLORYELLOW);
+								CHAR_talkToCli(charaindex, -1, "ç°åœ¨å·²ç»æ— æ³•å–å›ä¸‹æ³¨å½©åˆ¸äº†ï¼", CHAR_COLORYELLOW);
 								return -1;
 							}
 							stakeflag = CHAR_getWorkInt(charaindex, CHAR_WORKSTAKEFLAG);
 							if(stakeflag == 0){
-								CHAR_talkToCli(charaindex, -1, "Äú²¢Ã»ÓĞÏÂ×¢£¬ËùÒÔÎŞ·¨È¡»Ø²ÊÈ¯£¡", CHAR_COLORYELLOW);
+								CHAR_talkToCli(charaindex, -1, "æ‚¨å¹¶æ²¡æœ‰ä¸‹æ³¨ï¼Œæ‰€ä»¥æ— æ³•å–å›å½©åˆ¸ï¼", CHAR_COLORYELLOW);
 								return -1;
 							}
 							for(j = 0; j < MAXSTAKENUM; j++){
@@ -1414,7 +1414,7 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 									stakeflag--;
 									pickupflag = 1;
 #ifdef _FIX_GAMBLENUM
-									//×ö¼ÓµãµÄ¶¯×÷
+									//åšåŠ ç‚¹çš„åŠ¨ä½œ
 									{
 										int nAcc = CHAR_getInt(charaindex, CHAR_GAMBLENUM);										
 										nAcc += casinomap[i].accumulation;
@@ -1438,14 +1438,14 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 							}else
 								CHAR_setWorkInt(charaindex, CHAR_WORKSTAKEFLAG, stakeflag);
 							if(pickupflag == 0){
-								CHAR_talkToCli(charaindex, -1, "ÄúÃ»ÓĞÔÚ´ËÏÂ×¢£¬ËùÒÔÎŞ·¨È¡»Ø²ÊÈ¯£¡", CHAR_COLORYELLOW);
+								CHAR_talkToCli(charaindex, -1, "æ‚¨æ²¡æœ‰åœ¨æ­¤ä¸‹æ³¨ï¼Œæ‰€ä»¥æ— æ³•å–å›å½©åˆ¸ï¼", CHAR_COLORYELLOW);
 								return -1;
 							}
 						}
 					}
 				}
 				
-				if(bdropstake == 0 && casinoflag != 0){// ´ËµØ·½µÄ²ÊÈ¯ÊıÁ¿³¬¹ıÒ»ÕÅÒÔÉÏ
+				if(bdropstake == 0 && casinoflag != 0){// æ­¤åœ°æ–¹çš„å½©åˆ¸æ•°é‡è¶…è¿‡ä¸€å¼ ä»¥ä¸Š
 					char tmpbuf[256];
 					if(emptyitemindexinchara != -1){
 						int itemid=-1, ret=-1;
@@ -1458,18 +1458,18 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 						}
 					}
 					CHAR_sendItemDataOne(charaindex, emptyitemindexinchara);
-					snprintf(tmpbuf, sizeof(tmpbuf), "Ê°»Ø%s£¬ÒÑ½«ÏÂ×¢È¡Ïû£¡",
+					snprintf(tmpbuf, sizeof(tmpbuf), "æ‹¾å›%sï¼Œå·²å°†ä¸‹æ³¨å–æ¶ˆï¼",
 						ITEM_getChar(itemindex, ITEM_NAME));
 					CHAR_talkToCli(charaindex, -1, tmpbuf, CHAR_COLORWHITE);
-					// ¼ÇÂ¼¼ñ»Ø¼ÇÂ¼
+					// è®°å½•æ¡å›è®°å½•
 					LogItem(CHAR_getChar(charaindex, CHAR_NAME),
 							CHAR_getChar(charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 							itemindex,
 #else
 							ITEM_getInt(itemindex, ITEM_ID),
 #endif
-							"StakePickUp(¼ñÆğ²ÊÈ¯)",
+							"StakePickUp(æ¡èµ·å½©åˆ¸)",
 							CHAR_getInt(charaindex,CHAR_FLOOR),
 							CHAR_getInt(charaindex,CHAR_X),
  							CHAR_getInt(charaindex,CHAR_Y),
@@ -1540,7 +1540,7 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 					}
 				}*/
 #ifdef _MARKET_TRADE
-				if( CHAR_getWorkInt( pindex, CHAR_WORKTRADETYP) ==  TRADETYPE_SELL )	{	//Âò³è
+				if( CHAR_getWorkInt( pindex, CHAR_WORKTRADETYP) ==  TRADETYPE_SELL )	{	//ä¹°å® 
 					MAP_TRADEPICKUP( charaindex, pindex, fl, x, y, TRADEPETTYPE );
 					return -1;
 				}
@@ -1563,7 +1563,7 @@ static int CHAR_PickUpItemFXY( int charaindex, int fl ,int x , int y ,
 					Char	*ch;
 					CHAR_setInt( pindex, CHAR_MAILMODE, CHAR_PETMAIL_NONE);
 					CHAR_setInt( pindex, CHAR_PETMAILIDLETIME, 0);
-					PETMAIL_delPetMailTotalnums( 1); //ÊÖ¶¯¼ñÆğmail PET
+					PETMAIL_delPetMailTotalnums( 1); //æ‰‹åŠ¨æ¡èµ·mail PET
 				    ch  = CHAR_getCharPointer( pindex);
 				    if( ch != NULL ) {
 						strcpysafe( ch->charfunctable[CHAR_LOOPFUNC].string,
@@ -1655,11 +1655,11 @@ void CHAR_PickUpItem( int charaindex, int dir )
 					}
 				}
 				if(ITEM_getInt(contents, ITEM_ID) == CASINOTOKENID && dropflag == 1)
-					snprintf( mesg,sizeof(mesg), "Ê°»Ø%s£¬ÒÑ½«ÏÂ×¢È¡Ïû£¡",
+					snprintf( mesg,sizeof(mesg), "æ‹¾å›%sï¼Œå·²å°†ä¸‹æ³¨å–æ¶ˆï¼",
 					ITEM_getAppropriateName(contents));
 				else
 #endif
-				snprintf( mesg,sizeof(mesg), "Ê°»ñ %s",
+				snprintf( mesg,sizeof(mesg), "æ‹¾è· %s",
 						  ITEM_getAppropriateName(contents) );
 				CHAR_talkToCli(charaindex,-1,mesg,CHAR_COLORWHITE);
 			}
@@ -1668,12 +1668,12 @@ void CHAR_PickUpItem( int charaindex, int dir )
 				LogItem(
 					CHAR_getChar( charaindex, CHAR_NAME ),
 					CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 					contents,
 #else
 					ITEM_getInt(contents, ITEM_ID),
 #endif
-					"PickUp(¼ñÆğµÀ¾ß)",
+					"PickUp(æ¡èµ·é“å…·)",
 					CHAR_getInt( charaindex,CHAR_FLOOR),
 					CHAR_getInt( charaindex,CHAR_X ),
  	      			CHAR_getInt( charaindex,CHAR_Y ),
@@ -1696,9 +1696,9 @@ void CHAR_PickUpItem( int charaindex, int dir )
 			{
 				char    mesg[256];
 				if( contents == 0 ) {
-					snprintf( mesg,sizeof(mesg), "ÎŞ·¨ÔÙÊ°»ñStoneÁË¡£" );
+					snprintf( mesg,sizeof(mesg), "æ— æ³•å†æ‹¾è·Stoneäº†ã€‚" );
 				}else {
-					snprintf( mesg,sizeof(mesg), "Ê°»ñ %d Stone",contents );
+					snprintf( mesg,sizeof(mesg), "æ‹¾è· %d Stone",contents );
 				}
 				CHAR_talkToCli(charaindex,-1,mesg,CHAR_COLORWHITE);
 			}
@@ -1709,7 +1709,7 @@ void CHAR_PickUpItem( int charaindex, int dir )
 			             CHAR_getChar( charaindex, CHAR_CDKEY ),
 			             contents,
 						 CHAR_getInt( charaindex, CHAR_GOLD ),
-			             "PickUp(Ê°»ñ½ğÇ®)",
+			             "PickUp(æ‹¾è·é‡‘é’±)",
 			             CHAR_getInt( charaindex,CHAR_FLOOR),
 			             CHAR_getInt( charaindex,CHAR_X ),
 			             CHAR_getInt( charaindex,CHAR_Y )
@@ -1717,7 +1717,7 @@ void CHAR_PickUpItem( int charaindex, int dir )
 			}
 			return;
 			break;
-		case 2:	//³èÎï
+		case 2:	//å® ç‰©
 			CHAR_ObjectDelete(objindex);
 			CHAR_setWorkInt( contents, CHAR_WORKOBJINDEX, -1);
 			{
@@ -1728,16 +1728,16 @@ void CHAR_PickUpItem( int charaindex, int dir )
 					p = CHAR_getChar( contents, CHAR_NAME);
 				}
 
-				snprintf( mesg,sizeof(mesg), "Ê°»ñ %s", p);
+				snprintf( mesg,sizeof(mesg), "æ‹¾è· %s", p);
 				CHAR_talkToCli(charaindex,-1,mesg,CHAR_COLORWHITE);
 			}
-			// Ê¸ÓÀĞşÃ«½ºÔÈĞ×·òºë
+			// çŸ¢æ°¸ç„æ¯›èƒ¶åŒ€å‡¶å¤«å¼˜
 			LogPet(
-				CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+				CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 				CHAR_getChar( charaindex, CHAR_CDKEY ),
 				CHAR_getChar( contents, CHAR_NAME),
 				CHAR_getInt( contents, CHAR_LV),
-				"PickUp(¼ñ³è)",
+				"PickUp(æ¡å® )",
 				CHAR_getInt( charaindex,CHAR_FLOOR),
 				CHAR_getInt( charaindex,CHAR_X ),
 				CHAR_getInt( charaindex,CHAR_Y ),
@@ -1748,7 +1748,7 @@ void CHAR_PickUpItem( int charaindex, int dir )
 		// Robin 0701 petFollow
 		case 3:
 
-			/*  Òı´õÔ»±å³ğÄ¾Ã«ÛÕÁùÎçÖĞµ¤    */
+			/*  å¼•æ­¹æ›°åä»‡æœ¨æ¯›å£…å…­åˆä¸­ä¸¹    */
 			CHAR_ObjectDelete(objindex);
 			CHAR_setWorkInt( contents, CHAR_WORKOBJINDEX, -1);
 			{
@@ -1759,16 +1759,16 @@ void CHAR_PickUpItem( int charaindex, int dir )
 					p = CHAR_getChar( contents, CHAR_NAME);
 				}
 
-				snprintf( mesg,sizeof(mesg), "Ê°»Ø %s", p);
+				snprintf( mesg,sizeof(mesg), "æ‹¾å› %s", p);
 				CHAR_talkToCli(charaindex,-1,mesg,CHAR_COLORWHITE);
 			}
-			// Ê¸ÓÀĞşÃ«½ºÔÈĞ×·òºë
+			// çŸ¢æ°¸ç„æ¯›èƒ¶åŒ€å‡¶å¤«å¼˜
 			LogPet(
-				CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+				CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 				CHAR_getChar( charaindex, CHAR_CDKEY ),
 				CHAR_getChar( contents, CHAR_NAME),
 				CHAR_getInt( contents, CHAR_LV),
-				"FollowPickUp(ÊÕ»ØÁï³è)",
+				"FollowPickUp(æ”¶å›æºœå® )",
 				CHAR_getInt( charaindex,CHAR_FLOOR),
 				CHAR_getInt( charaindex,CHAR_X ),
 				CHAR_getInt( charaindex,CHAR_Y ),
@@ -1780,19 +1780,19 @@ void CHAR_PickUpItem( int charaindex, int dir )
 		case -1:
 			break;
 		case -2:
-			CHAR_talkToCli( charaindex,-1,"µÀ¾ßÀ¸ÒÑÂú¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex,-1,"é“å…·æ å·²æ»¡ã€‚", CHAR_COLORYELLOW);
 			break;
 		case -3:
-			CHAR_talkToCli( charaindex,-1,"³èÎïÊıÒÑÂú¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex,-1,"å® ç‰©æ•°å·²æ»¡ã€‚", CHAR_COLORYELLOW);
 			break;
 		case -4:
-			CHAR_talkToCli( charaindex,-1,"ÎŞ·¨ÕÕ¹Ë¸Ã³èÎï¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex,-1,"æ— æ³•ç…§é¡¾è¯¥å® ç‰©ã€‚", CHAR_COLORYELLOW);
 			break;
 		case -5:
-			CHAR_talkToCli( charaindex,-1,"ÎŞ·¨Ê°»ñ¸Ã³èÎï¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex,-1,"æ— æ³•æ‹¾è·è¯¥å® ç‰©ã€‚", CHAR_COLORYELLOW);
 			break;
 		case -6:
-			CHAR_talkToCli( charaindex,-1,"ÎŞ·¨Ê°»ñ¸ÃµÀ¾ß¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex,-1,"æ— æ³•æ‹¾è·è¯¥é“å…·ã€‚", CHAR_COLORYELLOW);
 			break;
 		default:
 			return;
@@ -1802,23 +1802,23 @@ void CHAR_PickUpItem( int charaindex, int dir )
 }
 
 /*------------------------------------------------------------
- * ÔÆàÅÃ«Õç  Ï¶ÀÃÆ¥  ¹«µ¤ÎçÔÊÔÂ£ÛCHAR_DropMoney¾®ÈÕ¼°ĞÄÆ¥Òøµ¤ÒÇ£Û
- * Â¦ĞÑ
- *  charaindex  int     Æ½ÅÒ·ÂÄÌ¼ş·¸ÓÀÛÍµ©
- *  itemindex   int     Ê§ÄÌ  Ø©ÄÌ¼ş·¸ÓÀÛÍµ©(Æ½ÅÒ·Â·¸¡õÕı¼°  Æ¥¼°)
- *  fl          int     °×·òÊ§
+ * äº‘å—¯æ¯›ç”„  éš™çƒ‚åŒ¹  å…¬ä¸¹åˆå…æœˆï¼»CHAR_DropMoneyäº•æ—¥åŠå¿ƒåŒ¹é“¶ä¸¹ä»ªï¼»
+ * å¨„é†’
+ *  charaindex  int     å¹³ä¹“ä»¿å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ *  itemindex   int     å¤±å¥¶  ä¸å¥¶ä»¶çŠ¯æ°¸å¼æ—¦(å¹³ä¹“ä»¿çŠ¯â–¡æ­£åŠ  åŒ¹åŠ)
+ *  fl          int     ç™½å¤«å¤±
  *  x           int     x
  *  y           int     y
- *  force       BOOL    ³ğ¼°°À»¥¿Ò·ÖÎç    ãù    ÔÊ
- *  objindex    int*      ÖĞĞ×Ê§ÄÌ  Ø©¼° Object Æ¥¼°ÄÌ¼ş·¸ÛÍÓÀµ©
- * ß¯Ô»°À
- *  ÁÃ  (¹«ÊÏØ¦±åÔÆàÅÃ«  ÔÈ»¯ÖĞØ¦ÖĞ)    -1
- *  ÁÃ  (»©äß¶Á±å·Ö»§)  -2
- *  ¹«Ä¾¶¯Â½¼°ÁÃ    -3
- *  ÁÃ  (¹«³ğ±å·´¹«¼°ĞÚ¼°ÔÆàÅ·´ÄôÔÊ¿ºÔÂ)    -4
- *  ÔÊÆ¥±åÖ°¼°Ê§ÄÌ  Ø©»¥  ÇĞ»¯ÖĞÔÂ  -5
- *  ĞÚ»¥  Æ¥  £Û -6
- *  ÔÀ      0
+ *  force       BOOL    ä»‡åŠè¢„äº’æ³åˆ†åˆ    æ³«    å…
+ *  objindex    int*      ä¸­å‡¶å¤±å¥¶  ä¸åŠ Object åŒ¹åŠå¥¶ä»¶çŠ¯å¼æ°¸æ—¦
+ * å¿’æ›°è¢„
+ *  æ’©  (å…¬æ°å…åäº‘å—¯æ¯›  åŒ€åŒ–ä¸­å…ä¸­)    -1
+ *  æ’©  (å“—æº¥è¯»ååˆ†æˆ·)  -2
+ *  å…¬æœ¨åŠ¨é™†åŠæ’©    -3
+ *  æ’©  (å…¬ä»‡ååå…¬åŠæ±¹åŠäº‘å—¯åè‚å…äº¢æœˆ)    -4
+ *  å…åŒ¹åèŒåŠå¤±å¥¶  ä¸äº’  åˆ‡åŒ–ä¸­æœˆ  -5
+ *  æ±¹äº’  åŒ¹  ï¼» -6
+ *  å²³      0
  ------------------------------------------------------------*/
 static BOOL CHAR_DropMoneyFXY( int charaindex, int amount, int fl , int x,
 							   int y, BOOL force, int* objindex )
@@ -1853,12 +1853,12 @@ static BOOL CHAR_DropMoneyFXY( int charaindex, int amount, int fl , int x,
 #ifdef _DEL_DROP_GOLD
 			OBJECT_setTime( index, NowTime.tv_sec);
 #endif
-			if( amount >= 100 ){ /* ÔÆàÅÃ«  ÖĞĞ×·òºë */
-			        LogStone(-1,CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
-			                 CHAR_getChar( charaindex, CHAR_CDKEY ), /* ½»¡õ°Ç¡õID */
-			                 amount,                                   /* àÅº° */
+			if( amount >= 100 ){ /* äº‘å—¯æ¯›  ä¸­å‡¶å¤«å¼˜ */
+			        LogStone(-1,CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
+			                 CHAR_getChar( charaindex, CHAR_CDKEY ), /* äº¤â–¡æ‰’â–¡ID */
+			                 amount,                                   /* å—¯å–Š */
 							 CHAR_getInt( charaindex, CHAR_GOLD ),
-			                 "Drop(·ÅÖÃ½ğÇ®)",
+			                 "Drop(æ”¾ç½®é‡‘é’±)",
 			                 CHAR_getInt( charaindex,CHAR_FLOOR),
 			                 CHAR_getInt( charaindex,CHAR_X ),
 			                 CHAR_getInt( charaindex,CHAR_Y )
@@ -1869,12 +1869,12 @@ static BOOL CHAR_DropMoneyFXY( int charaindex, int amount, int fl , int x,
 			if( force==TRUE )
 				continue;
 			else
-				/* ÔÊÆ¥±åÊ§ÄÌ  Ø©»¥Ø¤ÔÂ¼°Æ¥·Ö»§ */
+				/* å…åŒ¹åå¤±å¥¶  ä¸äº’ä¸æœˆåŠåŒ¹åˆ†æˆ· */
 				return -5;
 		}
 	}
 
-	/* ³ğ³ğÒıÆ¥²÷ÇíÔÊÔÂÎçÖĞµ¤ÒÇ·´Ş¥½îè¶  ÔÊÔÂ */
+	/* ä»‡ä»‡å¼•åŒ¹è°—ç¼å…æœˆåˆä¸­ä¸¹ä»ªåè•™ç­‹ç“’  å…æœˆ */
 	{
 		Object  one;
 		one.type = OBJTYPE_GOLD;
@@ -1887,24 +1887,24 @@ static BOOL CHAR_DropMoneyFXY( int charaindex, int amount, int fl , int x,
 
 		one.index = amount;
 		*objindex = initObjectOne( &one );
-		/*  ×óÆ¤³âÄáÛÍĞşè¶  ÔÊÔÂ    */
+		/*  å·¦çš®æ–¥å°¼å¼ç„ç“’  å…æœˆ    */
 		if( *objindex == -1 )
-			/*  è¶  ÁÃ      */
+			/*  ç“’  æ’©      */
 			return -3;
 
-		/*ÔÆàÅÃ«Ó¼ÈÕÔÊ*/
+		/*äº‘å—¯æ¯›è›¹æ—¥å…*/
 		CHAR_setInt(charaindex,CHAR_GOLD,
 					(unsigned int)CHAR_getInt(charaindex,CHAR_GOLD )
 					- amount );
 #ifdef _DEL_DROP_GOLD
 		OBJECT_setTime( *objindex, NowTime.tv_sec);
 #endif
-		if( amount >= 100 ){ /* ÔÆàÅÃ«  ÖĞĞ×·òºë */
-		      LogStone(-1,CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
-		               CHAR_getChar( charaindex, CHAR_CDKEY ), /* ½»¡õ°Ç¡õID */
-		               amount,                                   /* àÅº° */
+		if( amount >= 100 ){ /* äº‘å—¯æ¯›  ä¸­å‡¶å¤«å¼˜ */
+		      LogStone(-1,CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
+		               CHAR_getChar( charaindex, CHAR_CDKEY ), /* äº¤â–¡æ‰’â–¡ID */
+		               amount,                                   /* å—¯å–Š */
 					   CHAR_getInt( charaindex, CHAR_GOLD ),
-		               "Drop(·ÅÖÃ½ğÇ®)",
+		               "Drop(æ”¾ç½®é‡‘é’±)",
 		               CHAR_getInt( charaindex,CHAR_FLOOR),
 		               CHAR_getInt( charaindex,CHAR_X ),
 		               CHAR_getInt( charaindex,CHAR_Y )
@@ -1915,13 +1915,13 @@ static BOOL CHAR_DropMoneyFXY( int charaindex, int amount, int fl , int x,
 }
 
 /*------------------------------------------------------------
- * ÔÆàÅÃ«  ÔÊèúĞÑ£Û  ¼°ó¡¾®ÈÕ  ÔÊ£Û
- * Â¦ĞÑ
- *  charaindex      int     Æ½ÅÒ·ÂÄÌ¼ş·¸ÓÀÛÍµ©
- *  amount          int     ÔÆàÅ¼°ĞÚ
+ * äº‘å—¯æ¯›  å…æ¥®é†’ï¼»  åŠèŸ†äº•æ—¥  å…ï¼»
+ * å¨„é†’
+ *  charaindex      int     å¹³ä¹“ä»¿å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ *  amount          int     äº‘å—¯åŠæ±¹
  *
- * ß¯Ô»°À
- *  Ø¦ØÆ
+ * å¿’æ›°è¢„
+ *  å…ä»„
  ------------------------------------------------------------*/
 void CHAR_DropMoney( int charaindex,  int amount )
 {
@@ -1932,9 +1932,9 @@ void CHAR_DropMoney( int charaindex,  int amount )
 
 	if( !CHAR_CHECKINDEX( charaindex ) )return;
 
-#ifdef _AVID_TRADETRYBUG //¶ª³öÊ¯±Ò
+#ifdef _AVID_TRADETRYBUG //ä¸¢å‡ºçŸ³å¸
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_TRADING ){
-		CHAR_talkToCli( charaindex, -1, "½»Ò××´Ì¬ÖĞÎŞ·¨¶ª³öÊ¯±Ò¡£", CHAR_COLORYELLOW );
+		CHAR_talkToCli( charaindex, -1, "äº¤æ˜“çŠ¶æ€ä¸­æ— æ³•ä¸¢å‡ºçŸ³å¸ã€‚", CHAR_COLORYELLOW );
 		return;
 	}
 #endif
@@ -1977,7 +1977,7 @@ void CHAR_DropMoney( int charaindex,  int amount )
 		int x = CHAR_getInt(charaindex,CHAR_X) + dirx[i];
 		int y = CHAR_getInt(charaindex,CHAR_Y) + diry[i];
 
-// CoolFish 2002/04/06 ÏÂ×¢´¦²»¿É¶ªÖÃÊ¯±Ò
+// CoolFish 2002/04/06 ä¸‹æ³¨å¤„ä¸å¯ä¸¢ç½®çŸ³å¸
 #ifdef _DROPSTAKENEW
 		{
 			int j = 0;
@@ -1987,7 +1987,7 @@ void CHAR_DropMoney( int charaindex,  int amount )
 				{
 					if (x == casinomap[j].casinox && y == casinomap[j].casinoy)
 					{
-						CHAR_talkToCli(charaindex, -1, "ÕâÀï²»ÄÜ·ÅÖÃÊ¯±Ò£¡", CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex, -1, "è¿™é‡Œä¸èƒ½æ”¾ç½®çŸ³å¸ï¼", CHAR_COLORYELLOW);
 						return;
 					}
 				}
@@ -2116,7 +2116,7 @@ int CHAR_pickupFollowPet( int charaindex, int pickupindex )
 
 	havepetindex = CHAR_getCharPetElement( charaindex);
 	if( havepetindex == -1 ) {
-		CHAR_talkToCli(charaindex,-1,"³èÎïÀ¸ÒÑÂú£¡ÎŞ·¨Ê°»Ø£¡",CHAR_COLORYELLOW);
+		CHAR_talkToCli(charaindex,-1,"å® ç‰©æ å·²æ»¡ï¼æ— æ³•æ‹¾å›ï¼",CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	
@@ -2126,7 +2126,7 @@ int CHAR_pickupFollowPet( int charaindex, int pickupindex )
 	if( (pickupindex == -1) || (pickupindex == CHAR_getWorkInt( charaindex, CHAR_WORKPETFOLLOW )   ) )
 		CHAR_setWorkInt( charaindex, CHAR_WORKPETFOLLOW, -1 );
 	
-	/* CDKEY ÎçÆ½ÅÒ·Â  »¥ÓòÚÛØÆØ¦ÖĞÎçÎå·´½ºÒüØ¦ÖĞ */
+	/* CDKEY åˆå¹³ä¹“ä»¿  äº’åŸŸè°¯ä»„å…ä¸­åˆäº”åèƒ¶å°¹å…ä¸­ */
 	if( strcmp( CHAR_getChar( petindex, CHAR_OWNERCDKEY), CHAR_getChar( charaindex, CHAR_CDKEY)) != 0 ||
 	    strcmp( CHAR_getChar( petindex, CHAR_OWNERCHARANAME), CHAR_getChar( charaindex, CHAR_NAME)) != 0 )
 	{
@@ -2172,16 +2172,16 @@ int CHAR_pickupFollowPet( int charaindex, int pickupindex )
 		if( strlen( p) == 0 ) {
 			p = CHAR_getChar( petindex, CHAR_NAME);
 		}
-		snprintf( mesg,sizeof(mesg), "Ê°»Ø %s", p);
+		snprintf( mesg,sizeof(mesg), "æ‹¾å› %s", p);
 		CHAR_talkToCli(charaindex,-1,mesg,CHAR_COLORYELLOW);
 	}
-	// Ê¸ÓÀĞşÃ«½ºÔÈĞ×·òºë
+	// çŸ¢æ°¸ç„æ¯›èƒ¶åŒ€å‡¶å¤«å¼˜
 	LogPet(
-		CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+		CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 		CHAR_getChar( charaindex, CHAR_CDKEY ),
 		CHAR_getChar( petindex, CHAR_NAME),
 		CHAR_getInt( petindex, CHAR_LV),
-		"FollowPickUp(ÊÕ»ØÁï³è)",
+		"FollowPickUp(æ”¶å›æºœå® )",
 		CHAR_getInt( charaindex,CHAR_FLOOR),
 		CHAR_getInt( charaindex,CHAR_X ),
 		CHAR_getInt( charaindex,CHAR_Y ),
@@ -2215,7 +2215,7 @@ int NPC_MAPCLEANGOLD( int meindex , int floor)
 				if(ITEM_getInt(itemindex, ITEM_ID) == CASINOTOKENID)	{
 					ITEM_endExistItemsOne( itemindex);
 					OBJECT_setIndex( index, 0);
-					CHAR_ObjectDelete(index);	//Çå³ı
+					CHAR_ObjectDelete(index);	//æ¸…é™¤
 					print(" clean( %d )", index );
 				}
 				break;
@@ -2228,8 +2228,8 @@ int NPC_MAPCLEANGOLD( int meindex , int floor)
 #endif
 
 #ifdef _DROPSTAKENEW
-// casinotype : flg = 0 ²»·Ötype£¬Õë¶ÔÕû²ãtype×öÉè¶¨£»À©³ä²ÎÊı
-// mapdropflag : TRUE = ¿ÉÒÔÏÂ×¢;
+// casinotype : flg = 0 ä¸åˆ†typeï¼Œé’ˆå¯¹æ•´å±‚typeåšè®¾å®šï¼›æ‰©å……å‚æ•°
+// mapdropflag : TRUE = å¯ä»¥ä¸‹æ³¨;
 int SetCasinoMap(int npcindex, int casinotype, int mapdropflag)
 {
 	int npcfloor = CHAR_getInt(npcindex, CHAR_FLOOR);
@@ -2252,7 +2252,7 @@ int SetCasinoMap(int npcindex, int casinotype, int mapdropflag)
 	return	1;
 }
 
-// ¼ÆËã»ı·Ö
+// è®¡ç®—ç§¯åˆ†
 int CasinoAccumulation(int charindex, int npcindex, int floor, int wincasinotype)
 {
 	int i = 0;
@@ -2268,7 +2268,7 @@ int CasinoAccumulation(int charindex, int npcindex, int floor, int wincasinotype
 				if (casinomap[j].casinotype == wincasinotype)
 				{ 
 #ifdef _FIX_GAMBLENUM
-					// ¼Ó Ô­±¾»ı·Ö¼°WIN»ı·Ö
+					// åŠ  åŸæœ¬ç§¯åˆ†åŠWINç§¯åˆ†
 					accumulation = accumulation + casinomap[j].accumulation * 2;
 #else
 					accumulation += casinomap[j].accumulation;
@@ -2301,7 +2301,7 @@ int CasinoAccumulation(int charindex, int npcindex, int floor, int wincasinotype
 	else if (accumulation > MAXACCUMULATION)
 		accumulation = MAXACCUMULATION;
 	CHAR_setInt(charindex, CHAR_GAMBLENUM, accumulation);
-	snprintf(tmpbuf, sizeof(tmpbuf), "ÄúÏÖÔÚ×Ü¹²ÓĞ%4dµãÓÎÀÖ³¡»ı·Ö", accumulation);
+	snprintf(tmpbuf, sizeof(tmpbuf), "æ‚¨ç°åœ¨æ€»å…±æœ‰%4dç‚¹æ¸¸ä¹åœºç§¯åˆ†", accumulation);
 	CHAR_talkToCli(charindex, npcindex, tmpbuf, CHAR_COLORWHITE);
 	return 1;
 }
@@ -2318,14 +2318,14 @@ int CasinoPay(int npcindex, int wincasinotype)
 		if (!CHAR_CHECKINDEX(i))	continue;
 		if (CHAR_getInt(i, CHAR_FLOOR) == npcfloor)
 		{
-			// ²éÑ¯Íæ¼ÒÊÇ·ñÓĞÏÂ×¢
+			// æŸ¥è¯¢ç©å®¶æ˜¯å¦æœ‰ä¸‹æ³¨
 			if (CHAR_getWorkInt(i, CHAR_WORKSTAKEFLAG) == 0)
 				continue;
-			// ¼ÆËã»ı·Ö
+			// è®¡ç®—ç§¯åˆ†
 			CasinoAccumulation(i, npcindex, npcfloor, wincasinotype);
 		}
 	}
-	// Çå³ı´Ë²ãµØÃæ²ÊÈ¯
+	// æ¸…é™¤æ­¤å±‚åœ°é¢å½©åˆ¸
 	for (i = 0; i < arraysizeof(casinomap); i++)
 	{
 		OBJECT object;

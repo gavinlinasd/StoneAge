@@ -412,48 +412,48 @@ tagRidePetTable ridePetTable[296] =
 #ifdef _NEW_RIDEPETS
 
 tagRideCodeMode RideCodeMode[] = {
-	{ 100374, RIDE_PET0 },  /*Æï³èÌûÀ­ËùÒÁ¶ä*/
-	{ 100358, RIDE_PET1 },  /*Æï³èÂê¶÷Ä¦ÂåË¹*/
-	{ 100362, RIDE_PET2 },  /*Æï³è¶äÀ­±ÈË¹*/
-	{ 100279, RIDE_PET3 },  /*Æï³èÀ­ÆæÂ³¸ç*/
-	{ 100288, RIDE_PET4 },  /*Æï³èÑïÆæÂåË¹*/
-	{ 100283, RIDE_PET5 },  /*Æï³è¿¨´ïÂ³¿¨Ë¹*/
-	{ 100346, RIDE_PET6 },  /*Æï³è¿¨¿¨½ğ±¦*/
-	{ 100310, RIDE_PET7 },  /*Æï³è¸ñ¶û¸ñ*/
-	{ 100372, RIDE_PET8 },  /*Æï³è×óµÏÂåË¹*/
-	{ 100373, RIDE_PET9 },  /*Æï³è°Í¶äÀ¼¶÷*/
-	{ 101532, RIDE_PET10 }, /*ïï³èÊ·¿¨Â³*/
-	{ 101576, RIDE_PET11 }, /*Æï³èÂŞ¶à¿ËÀ×*/
+	{ 100374, RIDE_PET0 },  /*éª‘å® å¸–æ‹‰æ‰€ä¼Šæœµ*/
+	{ 100358, RIDE_PET1 },  /*éª‘å® ç›æ©æ‘©æ´›æ–¯*/
+	{ 100362, RIDE_PET2 },  /*éª‘å® æœµæ‹‰æ¯”æ–¯*/
+	{ 100279, RIDE_PET3 },  /*éª‘å® æ‹‰å¥‡é²å“¥*/
+	{ 100288, RIDE_PET4 },  /*éª‘å® æ‰¬å¥‡æ´›æ–¯*/
+	{ 100283, RIDE_PET5 },  /*éª‘å® å¡è¾¾é²å¡æ–¯*/
+	{ 100346, RIDE_PET6 },  /*éª‘å® å¡å¡é‡‘å®*/
+	{ 100310, RIDE_PET7 },  /*éª‘å® æ ¼å°”æ ¼*/
+	{ 100372, RIDE_PET8 },  /*éª‘å® å·¦è¿ªæ´›æ–¯*/
+	{ 100373, RIDE_PET9 },  /*éª‘å® å·´æœµå…°æ©*/
+	{ 101532, RIDE_PET10 }, /*é•²å® å²å¡é²*/
+	{ 101576, RIDE_PET11 }, /*éª‘å® ç½—å¤šå…‹é›·*/
 };
 
 tagRideNoList RideNoList[] = {
-	{{ 101305, 101306, 101307, 101308, 101309, 101310, 101311, 101312, 101008, 101009, 101978, 101989},0},	//Ğ¡°«×Ó
-	{{ 101313, 101314, 101315, 101316, 101317, 101318, 101319, 101320, 101018, 101019, 101986, 101988},0},	//ÈüÑÇÈË
-	{{ 101321, 101322, 101323, 101324, 101325, 101326, 101327, 101328, 101028, 101029, 101975, 101965},0},	//±è×ÓÄĞº¢
-	{{ 101329, 101330, 101331, 101332, 101333, 101334, 101335, 101336, 101038, 101039, 101976, 101966},0},	//¿á¸ç
-	{{ 101337, 101338, 101339, 101340, 101341, 101342, 101343, 101344, 101048, 101049, 101984, 101973},0},	//ĞÜÆ¤ÄĞ
-	{{ 101345, 101346, 101347, 101348, 101349, 101350, 101351, 101352, 101058, 101059, 101985, 101974},0},	//´ó¸ö
-	{{ 101353, 101354, 101355, 101356, 101357, 101358, 101359, 101360, 101068, 101069, 101977, 101967},0},	//Ğ¡°«ÃÃ
-	{{ 101361, 101362, 101363, 101364, 101365, 101366, 101367, 101368, 101078, 101079, 101979, 101968},0},	//ĞÜÆ¤ÃÃ
-	{{ 101369, 101370, 101371, 101372, 101373, 101374, 101375, 101376, 101088, 101089, 101981, 101970},0},	//Ã±×ÓÃÃ
-	{{ 101377, 101378, 101379, 101380, 101381, 101382, 101383, 101384, 101098, 101099, 101980, 101969},0},	//¶Ì·¨·¢¼ĞÃÃ
-	{{ 101385, 101386, 101387, 101388, 101389, 101390, 101391, 101392, 101108, 101109, 101983, 101972},0},	//ÊÖÌ×Å®
-	{{ 101393, 101394, 101395, 101396, 101397, 101398, 101399, 101400, 101118, 101119, 101982, 101970},0},	//À±ÃÃ
+	{{ 101305, 101306, 101307, 101308, 101309, 101310, 101311, 101312, 101008, 101009, 101978, 101989},0},	//å°çŸ®å­
+	{{ 101313, 101314, 101315, 101316, 101317, 101318, 101319, 101320, 101018, 101019, 101986, 101988},0},	//èµ›äºšäºº
+	{{ 101321, 101322, 101323, 101324, 101325, 101326, 101327, 101328, 101028, 101029, 101975, 101965},0},	//è¾«å­ç”·å­©
+	{{ 101329, 101330, 101331, 101332, 101333, 101334, 101335, 101336, 101038, 101039, 101976, 101966},0},	//é…·å“¥
+	{{ 101337, 101338, 101339, 101340, 101341, 101342, 101343, 101344, 101048, 101049, 101984, 101973},0},	//ç†Šçš®ç”·
+	{{ 101345, 101346, 101347, 101348, 101349, 101350, 101351, 101352, 101058, 101059, 101985, 101974},0},	//å¤§ä¸ª
+	{{ 101353, 101354, 101355, 101356, 101357, 101358, 101359, 101360, 101068, 101069, 101977, 101967},0},	//å°çŸ®å¦¹
+	{{ 101361, 101362, 101363, 101364, 101365, 101366, 101367, 101368, 101078, 101079, 101979, 101968},0},	//ç†Šçš®å¦¹
+	{{ 101369, 101370, 101371, 101372, 101373, 101374, 101375, 101376, 101088, 101089, 101981, 101970},0},	//å¸½å­å¦¹
+	{{ 101377, 101378, 101379, 101380, 101381, 101382, 101383, 101384, 101098, 101099, 101980, 101969},0},	//çŸ­æ³•å‘å¤¹å¦¹
+	{{ 101385, 101386, 101387, 101388, 101389, 101390, 101391, 101392, 101108, 101109, 101983, 101972},0},	//æ‰‹å¥—å¥³
+	{{ 101393, 101394, 101395, 101396, 101397, 101398, 101399, 101400, 101118, 101119, 101982, 101970},0},	//è¾£å¦¹
 };
 
 tagRidePetList RPlistMode[] = {
-	{ 100000, 0, 1 }, { 100005, 0, 1 }, { 100010, 0, 1 }, { 100015, 0, 1 }, { 100700, 0, 1 }, { 100705, 0, 1 },	//Ğ¡°«×Ó
-	{ 100020, 1, 1 }, { 100025, 1, 1 }, { 100030, 1, 1 }, { 100035, 1, 1 },	{ 100710, 1, 1 }, { 100715, 1, 1 },//ÈüÑÇÈË
-	{ 100040, 2, 1 }, { 100045, 2, 1 }, { 100050, 2, 1 }, { 100055, 2, 1 }, { 100720, 2, 1 }, { 100725, 2, 1 },	//±è×ÓÄĞº¢
-	{ 100060, 3, 1 }, { 100065, 3, 1 }, { 100070, 3, 1 }, { 100075, 3, 1 },	{ 100730, 3, 1 }, { 100735, 3, 1 },	//¿á¸ç
-	{ 100080, 4, 1 }, { 100085, 4, 1 }, { 100090, 4, 1 }, { 100095, 4, 1 },	{ 100740, 4, 1 }, { 100745, 4, 1 },	//ĞÜÆ¤ÄĞ
-	{ 100100, 5, 1 }, { 100105, 5, 1 }, { 100110, 5, 1 }, { 100115, 5, 1 },	{ 100750, 5, 1 }, { 100755, 5, 1 },	//´ó¸ö
-	{ 100120, 6, 2 }, { 100125, 6, 2 }, { 100130, 6, 2 }, { 100135, 6, 2 },	{ 100760, 6, 2 }, { 100765, 6, 2 },	//Ğ¡°«ÃÃ
-	{ 100140, 7, 2 }, { 100145, 7, 2 }, { 100150, 7, 2 }, { 100155, 7, 2 },	{ 100770, 7, 2 }, { 100775, 7, 2 },	//ĞÜÆ¤ÃÃ
-	{ 100160, 8, 2 }, { 100165, 8, 2 }, { 100170, 8, 2 }, { 100175, 8, 2 },	{ 100780, 8, 2 }, { 100785, 8, 2 },	//Ã±×ÓÃÃ
-	{ 100180, 9, 2 }, { 100185, 9, 2 }, { 100190, 9, 2 }, { 100195, 9, 2 },	{ 100790, 9, 2 }, { 100795, 9, 2 },	//¶Ì·¢¼ĞÃÃ
-	{ 100200, 10, 2 }, { 100205, 10, 2 }, { 100210, 10, 2 }, { 100215, 10, 2 }, { 100800, 10, 2 }, { 100805, 10, 2 },	//ÊÖÌ×Å®
-	{ 100220, 11, 2 }, { 100225, 11, 2 }, { 100230, 11, 2 }, { 100235, 11, 2 },	{ 100810, 11, 2 }, { 100815, 11, 2 },	//À±ÃÃ
+	{ 100000, 0, 1 }, { 100005, 0, 1 }, { 100010, 0, 1 }, { 100015, 0, 1 }, { 100700, 0, 1 }, { 100705, 0, 1 },	//å°çŸ®å­
+	{ 100020, 1, 1 }, { 100025, 1, 1 }, { 100030, 1, 1 }, { 100035, 1, 1 },	{ 100710, 1, 1 }, { 100715, 1, 1 },//èµ›äºšäºº
+	{ 100040, 2, 1 }, { 100045, 2, 1 }, { 100050, 2, 1 }, { 100055, 2, 1 }, { 100720, 2, 1 }, { 100725, 2, 1 },	//è¾«å­ç”·å­©
+	{ 100060, 3, 1 }, { 100065, 3, 1 }, { 100070, 3, 1 }, { 100075, 3, 1 },	{ 100730, 3, 1 }, { 100735, 3, 1 },	//é…·å“¥
+	{ 100080, 4, 1 }, { 100085, 4, 1 }, { 100090, 4, 1 }, { 100095, 4, 1 },	{ 100740, 4, 1 }, { 100745, 4, 1 },	//ç†Šçš®ç”·
+	{ 100100, 5, 1 }, { 100105, 5, 1 }, { 100110, 5, 1 }, { 100115, 5, 1 },	{ 100750, 5, 1 }, { 100755, 5, 1 },	//å¤§ä¸ª
+	{ 100120, 6, 2 }, { 100125, 6, 2 }, { 100130, 6, 2 }, { 100135, 6, 2 },	{ 100760, 6, 2 }, { 100765, 6, 2 },	//å°çŸ®å¦¹
+	{ 100140, 7, 2 }, { 100145, 7, 2 }, { 100150, 7, 2 }, { 100155, 7, 2 },	{ 100770, 7, 2 }, { 100775, 7, 2 },	//ç†Šçš®å¦¹
+	{ 100160, 8, 2 }, { 100165, 8, 2 }, { 100170, 8, 2 }, { 100175, 8, 2 },	{ 100780, 8, 2 }, { 100785, 8, 2 },	//å¸½å­å¦¹
+	{ 100180, 9, 2 }, { 100185, 9, 2 }, { 100190, 9, 2 }, { 100195, 9, 2 },	{ 100790, 9, 2 }, { 100795, 9, 2 },	//çŸ­å‘å¤¹å¦¹
+	{ 100200, 10, 2 }, { 100205, 10, 2 }, { 100210, 10, 2 }, { 100215, 10, 2 }, { 100800, 10, 2 }, { 100805, 10, 2 },	//æ‰‹å¥—å¥³
+	{ 100220, 11, 2 }, { 100225, 11, 2 }, { 100230, 11, 2 }, { 100235, 11, 2 },	{ 100810, 11, 2 }, { 100815, 11, 2 },	//è¾£å¦¹
 };
 
 int RIDEPET_getNOindex( int baseNo)
@@ -656,7 +656,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
     "fl",               /*  CHAR_FLOOR  */
     "x",                /*  CHAR_X */
     "y",                /*  CHAR_Y  */
-    "dir",              /*  CHAR_DIR 12ÁİÃ«0±åÁİ»ÍÁ§Ô»±å */
+    "dir",              /*  CHAR_DIR 12å‡›æ¯›0åå‡›ç…Œç’ƒæ›°å */
 	"lv",               /*  CHAR_LV  */
     "gld",              /*  CHAR_GOLD    */
 
@@ -671,10 +671,10 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 
 	"chr",				/*  CHAR_CHARM	*/
 	"luc",				/*  CHAR_LUCK	*/
-	"aea",				/*  »©óìÁë */
-	"awa",				/*    óìÁë */
-	"afi",				/*  ÉÜóìÁë */
-	"awi",				/*  ë®óìÁë */
+	"aea",				/*  å“—ç®ªå²­ */
+	"awa",				/*    ç®ªå²­ */
+	"afi",				/*  ç»ç®ªå²­ */
+	"awi",				/*  æ°˜ç®ªå²­ */
 
 	"slt",				/*  CHAR_SLOT */
 	"cr",				/*  CHAR_CRITIAL */
@@ -732,9 +732,9 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"evt5",				/*  CHAR_EVENT5	*/
 	"evt6",				/*  CHAR_EVENT6	*/
 #endif
-#ifdef _ADD_NEWEVENT              // WON ¶àÔöÈÎÎñÆì±ê
+#ifdef _ADD_NEWEVENT              // WON å¤šå¢ä»»åŠ¡æ——æ ‡
 	"evt7",				/*  CHAR_EVENT7	*/
-	"evt8",				//	CHAR_ENDEVENT8, 224~255 ¾«ÁéÕÙ»½×¨ÓÃ
+	"evt8",				//	CHAR_ENDEVENT8, 224~255 ç²¾çµå¬å”¤ä¸“ç”¨
 #endif
 
 	"nev",				/*  CHAR_NOWEVENT	*/
@@ -745,9 +745,9 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"nev5",				/*  CHAR_NOWEVENT5	*/
 	"nev6",				/*  CHAR_NOWEVENT6	*/
 #endif
-#ifdef _ADD_NEWEVENT              // WON ¶àÔöÈÎÎñÆì±ê
+#ifdef _ADD_NEWEVENT              // WON å¤šå¢ä»»åŠ¡æ——æ ‡
 	"nev7",				/*  CHAR_NOWEVENT7	*/
-	"nev8",				//	CHAR_NOWEVENT8, 224~255 ¾«ÁéÕÙ»½×¨ÓÃ
+	"nev8",				//	CHAR_NOWEVENT8, 224~255 ç²¾çµå¬å”¤ä¸“ç”¨
 #endif
     
 	"trn",				/*  CHAR_TRANSMIGRATION */
@@ -755,9 +755,9 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
     
     "ini",              /*  CHAR_INITDATA   */
     "silent",              /*  CHAR_SILENT   */    
-    "fmi",		// CoolFish: Family 2001/5/24 ¼Ò×å index
-    "fmlf",		// CoolFish: Family 2001/5/24 ÊÇ·ñÎª¼Ò×å×å³¤
-    "fmspr",		// CoolFish: Family 2001/7/13 ¼Ò×åÊØ»¤¾«Áé
+    "fmi",		// CoolFish: Family 2001/5/24 å®¶æ— index
+    "fmlf",		// CoolFish: Family 2001/5/24 æ˜¯å¦ä¸ºå®¶æ—æ—é•¿
+    "fmspr",		// CoolFish: Family 2001/7/13 å®¶æ—å®ˆæŠ¤ç²¾çµ
 
     "bankgld",		/* CHAR_BANKGOLD */
     "ridepet",		/* CHAR_RIDEPET */
@@ -778,7 +778,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"pkleader", //CHAR_PKLISTLEADER,
 #endif
 
-#ifdef _PERSONAL_FAME	// Arminius 8.30: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME	// Arminius 8.30: å®¶æ—ä¸ªäººå£°æœ›
     "fame",
 #endif
 
@@ -787,35 +787,35 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 #endif
 
 #ifdef __ATTACK_MAGIC
-		"earth_exp",						// Íæ¼ÒµÄµØÄ§·¨ÊìÁ·¶È
-		"water_exp",						// Íæ¼ÒµÄË®Ä§·¨ÊìÁ·¶È
-		"fire_exp",	  					// Íæ¼ÒµÄ»ğÄ§·¨ÊìÁ·¶È
-		"wind_exp", 						// Íæ¼ÒµÄ·çÄ§·¨ÊìÁ·¶È
-		"earth_resist", 				// Íæ¼ÒµÄµØÄ§·¨¿¹ĞÔ
-		"water_resist", 				// Íæ¼ÒµÄË®Ä§·¨¿¹ĞÔ
-		"fire_resist",					// Íæ¼ÒµÄ»ğÄ§·¨¿¹ĞÔ
-		"wind_resist",					// Íæ¼ÒµÄ·çÄ§·¨¿¹ĞÔ
-		"earth_attmagic_exp",		// Íæ¼ÒµÄµØÄ§·¨ÊìÁ·¶È¾­ÑéÖµ
-		"water_attmagic_exp",		// Íæ¼ÒµÄË®Ä§·¨ÊìÁ·¶È¾­ÑéÖµ
-		"fire_attmagic_exp",		// Íæ¼ÒµÄ»ğÄ§·¨ÊìÁ·¶È¾­ÑéÖµ
-		"wind_attmagic_exp",		// Íæ¼ÒµÄ·çÄ§·¨ÊìÁ·¶È¾­ÑéÖµ
-		"earth_defmagic_exp",   // Íæ¼ÒµÄµØÄ§·¨¿¹ĞÔ¾­ÑéÖµ
-		"water_defmagic_exp",   // Íæ¼ÒµÄË®Ä§·¨¿¹ĞÔ¾­ÑéÖµ
-		"fire_defmagic_exp",    // Íæ¼ÒµÄ»ğÄ§·¨¿¹ĞÔ¾­ÑéÖµ
-		"wind_defmagic_exp",    // Íæ¼ÒµÄ·çÄ§·¨¿¹ĞÔ¾­ÑéÖµ
+		"earth_exp",						// ç©å®¶çš„åœ°é­”æ³•ç†Ÿç»ƒåº¦
+		"water_exp",						// ç©å®¶çš„æ°´é­”æ³•ç†Ÿç»ƒåº¦
+		"fire_exp",	  					// ç©å®¶çš„ç«é­”æ³•ç†Ÿç»ƒåº¦
+		"wind_exp", 						// ç©å®¶çš„é£é­”æ³•ç†Ÿç»ƒåº¦
+		"earth_resist", 				// ç©å®¶çš„åœ°é­”æ³•æŠ—æ€§
+		"water_resist", 				// ç©å®¶çš„æ°´é­”æ³•æŠ—æ€§
+		"fire_resist",					// ç©å®¶çš„ç«é­”æ³•æŠ—æ€§
+		"wind_resist",					// ç©å®¶çš„é£é­”æ³•æŠ—æ€§
+		"earth_attmagic_exp",		// ç©å®¶çš„åœ°é­”æ³•ç†Ÿç»ƒåº¦ç»éªŒå€¼
+		"water_attmagic_exp",		// ç©å®¶çš„æ°´é­”æ³•ç†Ÿç»ƒåº¦ç»éªŒå€¼
+		"fire_attmagic_exp",		// ç©å®¶çš„ç«é­”æ³•ç†Ÿç»ƒåº¦ç»éªŒå€¼
+		"wind_attmagic_exp",		// ç©å®¶çš„é£é­”æ³•ç†Ÿç»ƒåº¦ç»éªŒå€¼
+		"earth_defmagic_exp",   // ç©å®¶çš„åœ°é­”æ³•æŠ—æ€§ç»éªŒå€¼
+		"water_defmagic_exp",   // ç©å®¶çš„æ°´é­”æ³•æŠ—æ€§ç»éªŒå€¼
+		"fire_defmagic_exp",    // ç©å®¶çš„ç«é­”æ³•æŠ—æ€§ç»éªŒå€¼
+		"wind_defmagic_exp",    // ç©å®¶çš„é£é­”æ³•æŠ—æ€§ç»éªŒå€¼
 #endif
 
-#ifdef _GAMBLE_BANK //¸öÈËÒøĞĞ
+#ifdef _GAMBLE_BANK //ä¸ªäººé“¶è¡Œ
 		"personaglod",	//CHAR_PERSONAGOLD,
 #endif
 #ifdef _DROPSTAKENEW
 		"gamblenums",	//CHAR_GAMBLENUM
 #endif
-#ifdef _ADD_ACTION          //npc¶¯×÷
+#ifdef _ADD_ACTION          //npcåŠ¨ä½œ
 		"actsty",		//CHAR_ACTIONSTYLE
 #endif
 #ifdef _AUCTIONEER
-    "aucgold",    // CHAR_AUCGOLD ÅÄÂôËùµÃ
+    "aucgold",    // CHAR_AUCGOLD æ‹å–æ‰€å¾—
 #endif
 #ifdef _PET_EVOLUTION
 	"evbasevtl",//	CHAR_EVOLUTIONBASE,	
@@ -838,14 +838,14 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 
 
 #ifdef _FAMILYBANKSTONELOG
-	"fmbankgold", //¼Ò×åÒøĞĞ´æ¿î
+	"fmbankgold", //å®¶æ—é“¶è¡Œå­˜æ¬¾
 #endif
 
 #ifdef _FM_JOINLIMIT
 	"fmtimelimit", //	CHAR_FMTIMELIMIT,
 #endif
 
-#ifdef _CHAR_PROFESSION			// WON ADD ÈËÎïÖ°Òµ
+#ifdef _CHAR_PROFESSION			// WON ADD äººç‰©èŒä¸š
 	"profession_class",
 	"profession_level",
 //	"profession_exp",
@@ -858,7 +858,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"profession_ice_r",
 	"profession_thunder_r",
 #endif
-#ifdef _ALLDOMAN // (²»¿É¿ª) Syu ADD ÅÅĞĞ°ñNPC
+#ifdef _ALLDOMAN // (ä¸å¯å¼€) Syu ADD æ’è¡Œæ¦œNPC
 	"herofloor",
 #endif
 #ifdef _PETSKILL_BECOMEPIG
@@ -879,7 +879,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"herocnt",	// CHAR_HEROCNT
 #endif
 #ifdef _TEACHER_SYSTEM
-	"tsf",	// CHAR_TEACHER_FAME,	// µ¼Ê¦Áìµ¼ÉùÍû
+	"tsf",	// CHAR_TEACHER_FAME,	// å¯¼å¸ˆé¢†å¯¼å£°æœ›
 #endif
 
 #ifdef _RACEMAN
@@ -901,7 +901,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 	"kindcnt10", //CHAR_KINDCNT10,	/*   (288~319)		*/
 #endif
 #ifdef _GM_ITEM
-	"gmtime", // Íæ¼ÒGMÃüÁî´ÎÊı
+	"gmtime", // ç©å®¶GMå‘½ä»¤æ¬¡æ•°
 #endif
 };
 
@@ -912,12 +912,12 @@ static char* CHAR_setchardata[CHAR_DATACHARNUM]={
     "arg",                 /*  CHAR_NPCARGUMENT */
     "ocd",				/* CHAR_OWNERCDKEY */
     "ocn",				/* CHAR_OWNERCHARANAME */
-    "fmname",	// CoolFish: Family 2001/5/24 ¼Ò×åÃû³Æ CHAR_FMNAME
+    "fmname",	// CoolFish: Family 2001/5/24 å®¶æ—åç§° CHAR_FMNAME
 #ifdef _UNIQUE_P_I    
     "ucode",	// CoolFish: 2001/10/11 UNIQUE_P_I CHAR_UNIQUECODE
 #endif
 #ifdef _ACTION_GMQUE
-	//ÈËÎï npc Ê¹ÓÃ 
+	//äººç‰© npc ä½¿ç”¨ 
 	"gmque",	//CHAR_GMQUESTR1,
 	//"temp2",	//CHAR_GMQUESTR2,
 	//"temp3",	//CHAR_GMQUESTR3,
@@ -925,21 +925,21 @@ static char* CHAR_setchardata[CHAR_DATACHARNUM]={
 #endif
 
 #ifdef _GM_IDENTIFY
-  "gmidentify", //gmÃû³Æ
+  "gmidentify", //gmåç§°
 #endif
 #ifdef _TEACHER_SYSTEM
-	"tsi",	// µ¼Ê¦ÕÊºÅ
-	"tsn",	// µ¼Ê¦Ãû×Ö
+	"tsi",	// å¯¼å¸ˆå¸å·
+	"tsn",	// å¯¼å¸ˆåå­—
 #endif
 
 #ifdef _ITEM_SETLOVER
-	"love",       // ½á»éÅĞ¶Ï
-	"lovrrid",    // °®ÈËÕÊºÅ
-	"lovrrneme",	// °®ÈËÃû×Ö
+	"love",       // ç»“å©šåˆ¤æ–­
+	"lovrrid",    // çˆ±äººå¸å·
+	"lovrrneme",	// çˆ±äººåå­—
 #endif
 
 #ifdef _GM_ITEM
-	"gmfunction", // Íæ¼ÒGMÃüÁî
+	"gmfunction", // ç©å®¶GMå‘½ä»¤
 #endif
 };
 
@@ -1240,7 +1240,7 @@ INLINE char _CHAR_setFlg( char *file, int line, int index , CHAR_DATACHAR elemen
     elementnum = element / (sizeof( char )*8);
     bitnum = element % (sizeof( char )*8);
 
-    /*  éÉ¼°°ÀÃ«×ª      */
+    /*  æ¨¯åŠè¢„æ¯›è½¬      */
     buf = CHAR_chara[index].flg[elementnum]
         & CHAR_flgbitmaskpattern[bitnum];
 
@@ -1399,7 +1399,7 @@ INLINE CHAR_HaveSkill* CHAR_getCharHaveSkill( int index,int sindex )
 	return &CHAR_chara[index].haveSkill[sindex];
 }
 //------------------------------------------------------------------------
-//ÈËÎïindex  ¼¼ÄÜÎ»ÖÃ  Ë÷Òı
+//äººç‰©index  æŠ€èƒ½ä½ç½®  ç´¢å¼•
 INLINE int _CHAR_getIntPSkill( char *file, int line, int index, int skillti, SKILL_DATAINT ti)
 {
     if( !CHAR_CHECKINDEX( index) ) return -1;
@@ -1411,7 +1411,7 @@ INLINE int _CHAR_getIntPSkill( char *file, int line, int index, int skillti, SKI
 	if( CHAR_chara[index].haveSkill[skillti].skill.data[ti] <= 0 ) return -1;
 	return CHAR_chara[index].haveSkill[skillti].skill.data[ti];
 }
-//ÈËÎïindex  ¼¼ÄÜÎ»ÖÃ  Ë÷Òı ÓûÉè¶¨Öµ
+//äººç‰©index  æŠ€èƒ½ä½ç½®  ç´¢å¼• æ¬²è®¾å®šå€¼
 INLINE void _CHAR_setIntPSkill( char *file, int line, int index, int skillti, SKILL_DATAINT ti, int data)
 {
     if( !CHAR_CHECKINDEX( index) ) return;
@@ -1425,7 +1425,7 @@ INLINE void _CHAR_setIntPSkill( char *file, int line, int index, int skillti, SK
 }
 //------------------------------------------------------------------------
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 int CHAR_getCharSkill( int index,int sindex )
 {
 	CHAR_HaveSkill* hskill;
@@ -1661,13 +1661,13 @@ BOOL CHAR_initCharArray( int pnum, int petnum,int onum )
 
     CHAR_chara = allocateMemory( sizeof( Char ) * CHAR_charanum );
     if( CHAR_chara == NULL ){
-		print("ÎŞ·¨·ÖÅäÈËÎïÄÚ´æ !!\n");
+		print("æ— æ³•åˆ†é…äººç‰©å†…å­˜ !!\n");
 		return FALSE;
 	}
 
 
 	//andy_log
-	print("ÈËÎïÄÚ´æ: %4.2f...", ((float)sizeof( Char )*CHAR_charanum)/1024);
+	print("äººç‰©å†…å­˜: %4.2f...", ((float)sizeof( Char )*CHAR_charanum)/1024);
 
     for( i = 0 ; i < CHAR_charanum ; i ++ ){
 		memset( &CHAR_chara[i], 0 , sizeof( Char ));
@@ -2154,16 +2154,16 @@ DebugPoint=51;
 		char *sp2 = strstr( data, "ownt=");
 		if( sp && sp2 ){
 			snprintf( name, sp2-sp-5, "%s", sp+5 );		
-			print("\n¿ªÊ¼µÇÂ½ÈËÎïÃû³Æ:%s ", name );
+			print("\nå¼€å§‹ç™»é™†äººç‰©åç§°:%s ", name );
 		}else
-			print("\n¿ªÊ¼µÇÂ½ÈËÎïÃû³Æ´íÎó! ");
+			print("\nå¼€å§‹ç™»é™†äººç‰©åç§°é”™è¯¯! ");
 			
 		if( data[strlen(data)-2] != '\n' ){
-			print("\n µÇÂ½´íÎó!:%s ",data+strlen(data)-20 );
+			print("\n ç™»é™†é”™è¯¯!:%s ",data+strlen(data)-20 );
 		}
 		
 		if( strlen(name) > 16 ){
-			print("ÈËÎïÃû³Æ¹ı³¤!! ÈËÎïÃû³Æ:%s ³¤¶È:%d ", name ,strlen(name) );
+			print("äººç‰©åç§°è¿‡é•¿!! äººç‰©åç§°:%s é•¿åº¦:%d ", name ,strlen(name) );
 		}
     }
 
@@ -2347,14 +2347,14 @@ DebugPoint=66;
 			if( ret == TRUE ){
 		        int petindex = PET_initCharOneArray( &ch );
 		        if( petindex < 0 ){
-		        	print( "³èÎïÖÆ×÷Ê§°Ü¡£\n");
+		        	print( "å® ç‰©åˆ¶ä½œå¤±è´¥ã€‚\n");
 		        }
 		        one->unionTable.indexOfPet[petnumber]  = petindex;
 				goto NEXT;
 			}else{
-				LodBadPetString( data, "´íÎó×Ü¼Æ", petnumber);
+				LodBadPetString( data, "é”™è¯¯æ€»è®¡", petnumber);
 
-				fprint( "´íÎó ³èÎï×Ö·û´® ÎŞ·¨×÷³É\n");
+				fprint( "é”™è¯¯ å® ç‰©å­—ç¬¦ä¸² æ— æ³•ä½œæˆ\n");
 				return FALSE;
 			}
 		}
@@ -2369,13 +2369,13 @@ DebugPoint=67;
 			if( ret == TRUE ) {
 		        int petindex = PET_initCharOneArray( &ch );
 		        if( petindex < 0 ) {
-		        	fprint( "´íÎó ³èÎï ÎŞ·¨×÷³É\n");
+		        	fprint( "é”™è¯¯ å® ç‰© æ— æ³•ä½œæˆ\n");
 		        }
 		        one->indexOfPoolPet[petnumber]  = petindex;
 				goto NEXT;
 			}else{
 				LodBadPetString( data, "err *total", petnumber);
-				fprint( "´íÎó ºÏ³É³èÎï×Ö·û´® ÎŞ·¨×÷³É\n");
+				fprint( "é”™è¯¯ åˆæˆå® ç‰©å­—ç¬¦ä¸² æ— æ³•ä½œæˆ\n");
 				return FALSE;
 			}
 		}
@@ -2399,13 +2399,13 @@ DebugPoint=68;
 		char *sp2 = strstr( data, "ownt=");
 		if( sp && sp2 ){		
 			snprintf( name, sp2-sp-5, "%s", sp+5 );	
-			print("\nµÇÂ½³É¹¦ ÈËÎïÃû³Æ:%s ", name );
+			print("\nç™»é™†æˆåŠŸ äººç‰©åç§°:%s ", name );
 		}
 		else
-			print("\nµÇÂ½³É¹¦ ÈËÎïÃû³Æ´íÎó! ");
+			print("\nç™»é™†æˆåŠŸ äººç‰©åç§°é”™è¯¯! ");
 			
 		if( data[strlen(data)-2] != '\n' ){
-			print("\nÍæ¼ÒµÇÂ½³ö´í! ");
+			print("\nç©å®¶ç™»é™†å‡ºé”™! ");
 			//return FALSE;
 		}
     }
@@ -2460,7 +2460,7 @@ char *CHAR_makePetStringFromPetIndex( int petindex)
                     linedata );
         strlength += strlen( linedata );
         if( strlength > sizeof( CHAR_petdataString ) ) {
-			fprint( "´íÎó ³èÎïÊı¾İ»º³å²»×ã\n");
+			fprint( "é”™è¯¯ å® ç‰©æ•°æ®ç¼“å†²ä¸è¶³\n");
         	return NULL;
     	}
     }
@@ -2476,7 +2476,7 @@ char *CHAR_makePetStringFromPetIndex( int petindex)
                     sizeof( CHAR_petdataString ) - strlength, linedata );
         strlength += strlen( linedata );
         if( strlength > sizeof( CHAR_petdataString ) ) {
-			fprint( "´íÎó ³èÎïÊı¾İ»º³å²»×ã\n");
+			fprint( "é”™è¯¯ å® ç‰©æ•°æ®ç¼“å†²ä¸è¶³\n");
         	return NULL;
 		}
 	}
@@ -2498,7 +2498,7 @@ char *CHAR_makePetStringFromPetIndex( int petindex)
 
         strlength += strlen( linedata );
         if( strlength > sizeof( CHAR_petdataString ) ) {
-			fprint( "´íÎó ³èÎïÊı¾İ»º³å²»×ã\n");
+			fprint( "é”™è¯¯ å® ç‰©æ•°æ®ç¼“å†²ä¸è¶³\n");
         	return NULL;
     	}
     }
@@ -2506,7 +2506,7 @@ char *CHAR_makePetStringFromPetIndex( int petindex)
 
 	if( strstr( CHAR_petdataString, "name:") == NULL ||
 		strstr( CHAR_petdataString, "ownt:") == NULL ){
-		LodBadPetString( CHAR_petdataString, "Ãû×Ö ´íÎó", -1);
+		LodBadPetString( CHAR_petdataString, "åå­— é”™è¯¯", -1);
 	}
 	return CHAR_petdataString;
 }
@@ -2638,7 +2638,7 @@ int CHAR_makePetFromStringToArg( char *src, Char *ch, int ti)
 	return TRUE;
 }
 
-#ifdef _PERSONAL_FAME	// Arminius 8.30: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME	// Arminius 8.30: å®¶æ—ä¸ªäººå£°æœ›
 
 void CHAR_earnFame(int index, int fame)
 {
@@ -2701,12 +2701,12 @@ void CHAR_DetainSameItem( int charaindex, int itemindex)
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME),
 			CHAR_getChar( charaindex, CHAR_CDKEY),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 			itemindex,
 #else
 			ITEM_getInt( itemindex, ITEM_ID),
 #endif
-			"SysDeleteSame(ÏµÍ³É¾³ıÖØ¸²µÀ¾ß)",
+			"SysDeleteSame(ç³»ç»Ÿåˆ é™¤é‡è¦†é“å…·)",
 			CHAR_getInt( charaindex, CHAR_FLOOR),
 			CHAR_getInt( charaindex, CHAR_X),
 			CHAR_getInt( charaindex, CHAR_Y),
@@ -2728,7 +2728,7 @@ void CHAR_DetainSamePet( int charaindex, int petindex)
 	 	   		CHAR_getChar( charaindex, CHAR_CDKEY),
 	   	   		CHAR_getChar( petindex, CHAR_NAME),
 	   	   		CHAR_getInt( petindex, CHAR_LV),
-	   	   		"SysDeleteSame(É¾³ıÖØ¸²³èÎï)",
+	   	   		"SysDeleteSame(åˆ é™¤é‡è¦†å® ç‰©)",
 	   	   		CHAR_getInt( charaindex, CHAR_FLOOR),
 	   	   		CHAR_getInt( charaindex, CHAR_X),
 	   	   		CHAR_getInt( charaindex, CHAR_Y),
@@ -2891,7 +2891,7 @@ void Check_P_I_UniCode( int charaindex)
 }
 #endif
 
-// Arminius 12.15 ÅĞ¶ÏÊÇ·ñÊÇÄĞÊ¿
+// Arminius 12.15 åˆ¤æ–­æ˜¯å¦æ˜¯ç”·å£«
 int IsMale(int charindex) {
   int bbi=CHAR_getInt(charindex, CHAR_BASEBASEIMAGENUMBER);
 
@@ -2908,7 +2908,7 @@ int IsMale(int charindex) {
   return 0;
 }
 
-// Arminius 12.15 ÅĞ¶ÏÊÇ·ñÊÇÅ®Ê¿
+// Arminius 12.15 åˆ¤æ–­æ˜¯å¦æ˜¯å¥³å£«
 int IsFemale(int charindex) {
   int bbi=CHAR_getInt(charindex, CHAR_BASEBASEIMAGENUMBER);
 
@@ -2933,7 +2933,7 @@ BOOL CHAR_CanCureFlg( int charaindex, char *arg)
 	if( getToxication( fd) == 1 ){
 		if( strstr( arg, "FALSE") == 0 )	{
 			char buf[256];
-			sprintf( buf,"ÒòÖĞ¶¾ÎŞ·¨²¹%s¡£", arg);
+			sprintf( buf,"å› ä¸­æ¯’æ— æ³•è¡¥%sã€‚", arg);
 			CHAR_talkToCli( charaindex, -1, buf, CHAR_COLORYELLOW);
 		}
 		return FALSE;
@@ -3045,7 +3045,7 @@ BOOL CHAR_PETSKILLCAN( int toindex)
 		petindex = CHAR_getCharPet( toindex, i);
 		if( !CHAR_CHECKINDEX( petindex) ) continue;
 
-		{//Çå³ı¿ñ±©¹¥»÷
+		{//æ¸…é™¤ç‹‚æš´æ”»å‡»
 			int j;
 			for( j=0; j<CHAR_MAXPETSKILLHAVE; j++)	{
 				if( CHAR_getPetSkill( petindex, j) != 541 )continue;
@@ -3068,7 +3068,7 @@ BOOL CHAR_PETSKILLCAN( int toindex)
 			}
 		}
 		if( CHAR_getInt( petindex, CHAR_PETID) != 968 &&
-			CHAR_getInt ( petindex, CHAR_FUSIONBEIT) != 1 ){ //²»ÊÇÈÚºÏ³è
+			CHAR_getInt ( petindex, CHAR_FUSIONBEIT) != 1 ){ //ä¸æ˜¯èåˆå® 
 			int j;
 			for( j=0; j<CHAR_MAXPETSKILLHAVE; j++)	{
 				if( CHAR_getPetSkill( petindex, j) != 542 )continue;
@@ -3098,7 +3098,7 @@ BOOL CHAR_PETSKILLCAN( int toindex)
 				Finds = TRUE;
 			}
 		}
-		{//Çå³ı¿ñ±©¹¥»÷
+		{//æ¸…é™¤ç‹‚æš´æ”»å‡»
 			int j;
 			for( j=0; j<CHAR_MAXPETSKILLHAVE; j++)	{
 				if( CHAR_getPetSkill( petindex, j) != 541 )continue;
@@ -3112,7 +3112,7 @@ BOOL CHAR_PETSKILLCAN( int toindex)
 		}
 //CHAR_setInt ( newindex, CHAR_FUSIONBEIT, 1);
 		if( CHAR_getInt( petindex, CHAR_PETID) != 968 &&
-			CHAR_getInt ( petindex, CHAR_FUSIONBEIT) != 1 ){ //²»ÊÇÈÚºÏ³è
+			CHAR_getInt ( petindex, CHAR_FUSIONBEIT) != 1 ){ //ä¸æ˜¯èåˆå® 
 			int j;
 			for( j=0; j<CHAR_MAXPETSKILLHAVE; j++)	{
 				if( CHAR_getPetSkill( petindex, j) != 542 )continue;
@@ -3195,7 +3195,7 @@ INLINE int _CHAR_DelItem( char *file, int line, int charaindex, int ti, int num,
 #endif
 /*
 		if( flg == 1 ){
-			sprintf( token, "½»³ö%s¡£", ITEM_getChar( itemindex, ITEM_NAME));
+			sprintf( token, "äº¤å‡º%sã€‚", ITEM_getChar( itemindex, ITEM_NAME));
 			CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 		}
 */
@@ -3212,7 +3212,7 @@ INLINE int _CHAR_DelItem( char *file, int line, int charaindex, int ti, int num,
 int CHAR_getMaxHaveGold( int charaindex)
 {
 	int MaxGold;
-#ifdef _FIX_MAX_GOLD				// WON ADD Ôö¼ÓÈËÎï½ğÇ®ÉÏÏŞ
+#ifdef _FIX_MAX_GOLD				// WON ADD å¢åŠ äººç‰©é‡‘é’±ä¸Šé™
 	int trans = CHAR_getInt( charaindex, CHAR_TRANSMIGRATION);
 	MaxGold = 1000000 + trans*( 1800000);
 #else
@@ -3231,7 +3231,7 @@ INLINE int _CHAR_AddGold( char *file, int line, int charaindex, int gold)
 	MyGold = CHAR_getInt( charaindex, CHAR_GOLD);
 	MyGold = (MyGold>MaxGold)?MaxGold:MyGold;
 	gold = (gold>MaxGold)?MaxGold:gold;
-	sprintf( token, "µÃµ½%dÊ¯±Ò", gold);
+	sprintf( token, "å¾—åˆ°%dçŸ³å¸", gold);
 	CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 	MyGold += gold;
 
@@ -3242,11 +3242,11 @@ INLINE int _CHAR_AddGold( char *file, int line, int charaindex, int gold)
 		MyGBGold += reGolds;
 		MyGBGold = (MyGBGold > CHAR_MAXPERSONAGOLD)?CHAR_MAXPERSONAGOLD:MyGBGold;
 		CHAR_setInt( charaindex, CHAR_PERSONAGOLD, MyGBGold);
-		sprintf( token,"´æ¿î£º%d £¬ÒøĞĞÊ£âÅ£º%d ¡£", reGolds, CHAR_getInt( charaindex, CHAR_PERSONAGOLD ));
+		sprintf( token,"å­˜æ¬¾ï¼š%d ï¼Œé“¶è¡Œå‰©é¦€ï¼š%d ã€‚", reGolds, CHAR_getInt( charaindex, CHAR_PERSONAGOLD ));
 		CHAR_talkToCli( charaindex, -1, token,  CHAR_COLORYELLOW);
 			LogBankStone(    CHAR_getChar( charaindex, CHAR_NAME ), CHAR_getChar( charaindex, CHAR_CDKEY ),
 						charaindex, reGolds, 
-						"GB_Bank_save(±¦Ïä)", 
+						"GB_Bank_save(å®ç®±)", 
 						CHAR_getInt( charaindex, CHAR_FLOOR),
 						CHAR_getInt( charaindex, CHAR_X ), CHAR_getInt( charaindex, CHAR_Y ),
 						CHAR_getInt( charaindex, CHAR_GOLD ),
@@ -3271,7 +3271,7 @@ INLINE int _CHAR_DelGold( char *file, int line, int charaindex, int gold)
 	gold = (gold>MaxGold)?MaxGold:gold;
 
 	if( MyGold < gold ){
-		sprintf( token, "Ã»ÓĞ×ã¹»µÄÊ¯±Ò£¡(%dÊ¯±Ò)", gold);
+		sprintf( token, "æ²¡æœ‰è¶³å¤Ÿçš„çŸ³å¸ï¼(%dçŸ³å¸)", gold);
 		CHAR_talkToCli( charaindex, -1, token, CHAR_COLORYELLOW);
 		return 0;
 	}
@@ -3335,7 +3335,7 @@ void CHAR_removeDepotItem( int charaindex)
 	int i,itemindex;
 	Char*   ch = NULL;
 	if( !CHAR_CHECKINDEX( charaindex) ) return;
-	if( !CHAR_CheckDepotItem( charaindex) ) return; //²Ö¿âÎ´´æÔÚ
+	if( !CHAR_CheckDepotItem( charaindex) ) return; //ä»“åº“æœªå­˜åœ¨
 	ch = CHAR_getCharPointer( charaindex);
     if( ch == NULL ){
 		print( "removeDepotItem err ch == NULL :%d\n", charaindex);
@@ -3483,7 +3483,7 @@ BOOL CHAR_SaveDepotItem( int charaindex)
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return FALSE;
 	fd = getfdFromCharaIndex( charaindex);
-	if( !CHAR_CheckDepotItem( charaindex) ) return FALSE; //²Ö¿âÎ´´æÔÚ
+	if( !CHAR_CheckDepotItem( charaindex) ) return FALSE; //ä»“åº“æœªå­˜åœ¨
 	if( (CdKey=CHAR_getChar( charaindex, CHAR_CDKEY)) == NULL ) return FALSE;
 	if( (databuf = CHAR_makeDepotItemFromCharIndex( charaindex)) == NULL ){
 		CHAR_removeDepotItem( charaindex);
@@ -3502,10 +3502,10 @@ BOOL CHAR_GetDepotItem( int meindex, int charaindex)
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return FALSE;
 	fd = getfdFromCharaIndex( charaindex);
-	if( CHAR_CheckDepotItem( charaindex) ) return FALSE;//²Ö¿âÒÑ´æÔÚ
+	if( CHAR_CheckDepotItem( charaindex) ) return FALSE;//ä»“åº“å·²å­˜åœ¨
 	if( (CdKey=CHAR_getChar( charaindex, CHAR_CDKEY)) == NULL ) return FALSE;
 
-	//ÏòACÒª²Ö¿â×ÊÁÏ
+	//å‘ACè¦ä»“åº“èµ„æ–™
 	saacproto_ACCharGetPoolItem_send( acfd, meindex, charaindex, CONNECT_getFdid(fd), CdKey);
 	return TRUE;
 }
@@ -3574,7 +3574,7 @@ void CHAR_removeDepotPet( int charaindex)
 	int i,petindex;
 	Char*   ch = NULL;
 	if( !CHAR_CHECKINDEX( charaindex) ) return;
-	if( !CHAR_CheckDepotPet( charaindex) ) return; //²Ö¿âÎ´´æÔÚ
+	if( !CHAR_CheckDepotPet( charaindex) ) return; //ä»“åº“æœªå­˜åœ¨
 	ch = CHAR_getCharPointer( charaindex);
     if( ch == NULL ){
 		print( "removeDepotPet err ch == NULL :%d\n", charaindex);
@@ -3724,7 +3724,7 @@ BOOL CHAR_SaveDepotPet( int charaindex)
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return FALSE;
 	fd = getfdFromCharaIndex( charaindex);
-	if( !CHAR_CheckDepotPet( charaindex) ) return FALSE; //²Ö¿âÎ´´æÔÚ
+	if( !CHAR_CheckDepotPet( charaindex) ) return FALSE; //ä»“åº“æœªå­˜åœ¨
 	if( (CdKey=CHAR_getChar( charaindex, CHAR_CDKEY)) == NULL ) return FALSE;
 	if( (databuf = CHAR_makeDepotPetFromCharIndex( charaindex)) == NULL ){
 		CHAR_removeDepotPet( charaindex);
@@ -3743,10 +3743,10 @@ BOOL CHAR_GetDepotPet( int meindex, int charaindex)
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return FALSE;
 	fd = getfdFromCharaIndex( charaindex);
-	if( CHAR_CheckDepotPet( charaindex) ) return FALSE;//²Ö¿âÒÑ´æÔÚ
+	if( CHAR_CheckDepotPet( charaindex) ) return FALSE;//ä»“åº“å·²å­˜åœ¨
 	if( (CdKey=CHAR_getChar( charaindex, CHAR_CDKEY)) == NULL ) return FALSE;
 
-	//ÏòACÒª²Ö¿â×ÊÁÏ
+	//å‘ACè¦ä»“åº“èµ„æ–™
 	saacproto_ACCharGetPoolPet_send( acfd, meindex, charaindex, CONNECT_getFdid(fd), CdKey);
 	return TRUE;
 }

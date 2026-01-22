@@ -5,39 +5,39 @@
 
 typedef enum
 {
-	MAGIC_FIELD_ALL,			/* ÔÊÍÍ»¯¼°èëô÷Æ¥ÒøÒüÔÂ */
-	MAGIC_FIELD_BATTLE,				/* ¾ô    ¼°ĞÄ */
-	MAGIC_FIELD_MAP,				/* É§éÙÑ¨ÓÀÃóÏş¼°ĞÄ */
+	MAGIC_FIELD_ALL,			/* å…å±¯åŒ–åŠæ¡¦èµ­åŒ¹é“¶å°¹æœˆ */
+	MAGIC_FIELD_BATTLE,				/* çˆµ    åŠå¿ƒ */
+	MAGIC_FIELD_MAP,				/* éªšæ©˜ç©´æ°¸çš¿æ™“åŠå¿ƒ */
 
 }MAGIC_FIELDTYPE;
 
 typedef enum
 {
-	MAGIC_TARGET_MYSELF,		/* ·ßÛĞ¼°ĞÄ */
-	MAGIC_TARGET_OTHER,			/* Ö°¼°ÚĞ  ·ßÛĞÖ³¸ê) */
-	MAGIC_TARGET_ALLMYSIDE,		/*     òå   */
-	MAGIC_TARGET_ALLOTHERSIDE,	/* ÇÂÅì´¡òå   */
-	MAGIC_TARGET_ALL,			/* òå»¯ */
-	MAGIC_TARGET_NONE,			/* ²¾ÊÖ¼»  Çë  Ø¦ÖĞ£Û  »¿Ö§Ğ×»§¼°Áİ */
-	MAGIC_TARGET_OTHERWITHOUTMYSELF,/* Ö°¼°ÚĞ  ·ßÛĞÖ³ÒıØ¦ÖĞ) */
-	MAGIC_TARGET_WITHOUTMYSELFANDPET,  /* ·ßÛĞÎçÊ¸ÓÀĞş¶¯Â½ */
-	MAGIC_TARGET_WHOLEOTHERSIDE,/*     ¼°ÈÓÄÌÓñòå   */
+	MAGIC_TARGET_MYSELF,		/* æ„¤åŒåŠå¿ƒ */
+	MAGIC_TARGET_OTHER,			/* èŒåŠè°›  æ„¤åŒæ®–æˆˆ) */
+	MAGIC_TARGET_ALLMYSIDE,		/*     èˆ   */
+	MAGIC_TARGET_ALLOTHERSIDE,	/* é”¹æ¾ç¡€èˆ   */
+	MAGIC_TARGET_ALL,			/* èˆåŒ– */
+	MAGIC_TARGET_NONE,			/* ç°¿æ‰‹è“Ÿ  è¯·  å…ä¸­ï¼»  è±¢æ”¯å‡¶æˆ·åŠå‡› */
+	MAGIC_TARGET_OTHERWITHOUTMYSELF,/* èŒåŠè°›  æ„¤åŒæ®–å¼•å…ä¸­) */
+	MAGIC_TARGET_WITHOUTMYSELFANDPET,  /* æ„¤åŒåˆçŸ¢æ°¸ç„åŠ¨é™† */
+	MAGIC_TARGET_WHOLEOTHERSIDE,/*     åŠæ‰”å¥¶ç‰èˆ   */
 
 #ifdef __ATTACK_MAGIC
 
-        MAGIC_TARGET_SINGLE,            // Õë¶ÔµĞ·½µÄÄ³Ò»ÈË
-        MAGIC_TARGET_ONE_ROW,           // Õë¶ÔµĞ·½µÄÄ³Ò»ÁĞ
-        MAGIC_TARGET_ALL_ROWS,          // Õë¶ÔµĞ·½µÄËùÓĞÈË
+        MAGIC_TARGET_SINGLE,            // é’ˆå¯¹æ•Œæ–¹çš„æŸä¸€äºº
+        MAGIC_TARGET_ONE_ROW,           // é’ˆå¯¹æ•Œæ–¹çš„æŸä¸€åˆ—
+        MAGIC_TARGET_ALL_ROWS,          // é’ˆå¯¹æ•Œæ–¹çš„æ‰€æœ‰äºº
 
 #endif
 }MAGIC_TARGETTYPE;
 
 typedef enum
 {
-	MAGIC_ID,					/* ¶°    Ä¯ */
-	MAGIC_FIELD,				/* ÒøÒüÔÂèëô÷ */
-	MAGIC_TARGET,				/* ¸²ÀŞ */
-	MAGIC_TARGET_DEADFLG,		/* ÉØÊÏ·Ö·®ÊÖ¸²ÀŞ±åÖ³»§ÔÂ¾® */
+	MAGIC_ID,					/* æ ‹    å¯ */
+	MAGIC_FIELD,				/* é“¶å°¹æœˆæ¡¦èµ­ */
+	MAGIC_TARGET,				/* è¦†æ“‚ */
+	MAGIC_TARGET_DEADFLG,		/* éŸ¶æ°åˆ†æ¨Šæ‰‹è¦†æ“‚åæ®–æˆ·æœˆäº• */
 #ifdef __ATTACK_MAGIC
   MAGIC_IDX ,
 #endif
@@ -46,10 +46,10 @@ typedef enum
 
 typedef enum
 {
-	MAGIC_NAME,					/* ÈÈÖî   */
-	MAGIC_COMMENT,				/* Îì¶ª¼şĞş*/
-	MAGIC_FUNCNAME,				/* èúĞÑ   */
-	MAGIC_OPTION,				/* ×óÃóÆËÒà¼ş */
+	MAGIC_NAME,					/* çƒ­è¯¸   */
+	MAGIC_COMMENT,				/* æˆŠä¸¢ä»¶ç„*/
+	MAGIC_FUNCNAME,				/* æ¥®é†’   */
+	MAGIC_OPTION,				/* å·¦çš¿æ‰‘äº¦ä»¶ */
 	MAGIC_DATACHARNUM,
 }MAGIC_DATACHAR;
 
@@ -64,25 +64,25 @@ typedef struct tagMagic
 
 typedef struct tagAttMagic
 {
-  unsigned int  uiSpriteNum;// ´ËÖäÊõÔÚSpr_x.binµÄ±àºÅ
-  unsigned int  uiAttackType;// ¹¥»÷µÄ·½Ê½£ºµ¥ÈË£¬ÕûÅÅ( ÂÖÁ÷ ) ,  ÕûÅÅ( ÂÖÁ÷ ) , ÕûÅÅ( Í¬Ê± ) , È«Ìå( ÂÖÁ÷ ) , È«Ìå( Í¬Ê± )
-  unsigned int  uiSliceTime;// ÂÖÁ÷¹¥»÷Ê±µÄÊ±¼ä²î
-  unsigned int  uiShowType;             // ÏÔÊ¾µÄÎ»ÖÃ·½Ê½£ºÖĞÑë¡¢Ö¸¶¨
-  int           siSx;                   // ÏÔÊ¾µÄÎ»ÖÃ - XÖá
-  int           siSy;                   // ÏÔÊ¾µÄÎ»ÖÃ - YÖá
-  unsigned int  uiShowBehindChar;       // ÏÔÊ¾ÔÚÈËÎïµÄÇ°·½»òÏÂ·½
-  unsigned int  uiShakeScreen;          // ÊÇ·ñÕğ¶¯»­Ãæ
-  unsigned int  uiShakeFrom;            // Õğ¶¯»­ÃæµÄÆğÊ¼Ê±¼ä( ºÁÃë )
-  unsigned int  uiShakeTo;              // Õğ¶¯»­ÃæµÄ½áÊøÊ±¼ä( ºÁÃë _
-  unsigned int  uiPrevMagicNum;         // Ç°ÖÃÖäÊõµÄË÷ÒıºÅ( 0XFFFFFFFFFF ±íÊ¾ÎŞÇ°ÖÃÖäÊõ )
-  int           siPrevMagicSx;          // Ç°ÖÃÖäÊõµÄÏÔÊ¾Î»ÖÃ - XÖá
-  int           siPrevMagicSy;          // Ç°ÖÃÖäÊõµÄÏÔÊ¾Î»ÖÃ - YÖá
-  int           siPrevMagicOnChar;      // Ç°ÖÃÖäÊõÏÔÊ¾ÔÚÈËÎïµÄÇ°·½»òÏÂ·½
-  unsigned int  uiPostMagicNum;         // ááÖÃÖäÊõµÄË÷ÒıºÅ( 0XFFFFFFFF ±íÊ¾ÎŞááÖÃÖäÊõ )
-  int           siPostMagicSx;          // ááÖÃÖäÊõµÄÏÔÊ¾Î»ÖÃ - XÖá
-  int           siPostMagicSy;          // ááÖÃÖäÊõµÄÏÔÊ¾Î»ÖÃ - YÖá
-  int           siPostMagicOnChar;      // ááÖÃÖäÊõÏÔÊ¾ÔÚÈËÎïµÄÇ°·½»òÏÂ·½
-  int           siField[3][5];          // ¹¥»÷Ë÷Òı
+  unsigned int  uiSpriteNum;// æ­¤å’’æœ¯åœ¨Spr_x.binçš„ç¼–å·
+  unsigned int  uiAttackType;// æ”»å‡»çš„æ–¹å¼ï¼šå•äººï¼Œæ•´æ’( è½®æµ ) ,  æ•´æ’( è½®æµ ) , æ•´æ’( åŒæ—¶ ) , å…¨ä½“( è½®æµ ) , å…¨ä½“( åŒæ—¶ )
+  unsigned int  uiSliceTime;// è½®æµæ”»å‡»æ—¶çš„æ—¶é—´å·®
+  unsigned int  uiShowType;             // æ˜¾ç¤ºçš„ä½ç½®æ–¹å¼ï¼šä¸­å¤®ã€æŒ‡å®š
+  int           siSx;                   // æ˜¾ç¤ºçš„ä½ç½® - Xè½´
+  int           siSy;                   // æ˜¾ç¤ºçš„ä½ç½® - Yè½´
+  unsigned int  uiShowBehindChar;       // æ˜¾ç¤ºåœ¨äººç‰©çš„å‰æ–¹æˆ–ä¸‹æ–¹
+  unsigned int  uiShakeScreen;          // æ˜¯å¦éœ‡åŠ¨ç”»é¢
+  unsigned int  uiShakeFrom;            // éœ‡åŠ¨ç”»é¢çš„èµ·å§‹æ—¶é—´( æ¯«ç§’ )
+  unsigned int  uiShakeTo;              // éœ‡åŠ¨ç”»é¢çš„ç»“æŸæ—¶é—´( æ¯«ç§’ _
+  unsigned int  uiPrevMagicNum;         // å‰ç½®å’’æœ¯çš„ç´¢å¼•å·( 0XFFFFFFFFFF è¡¨ç¤ºæ— å‰ç½®å’’æœ¯ )
+  int           siPrevMagicSx;          // å‰ç½®å’’æœ¯çš„æ˜¾ç¤ºä½ç½® - Xè½´
+  int           siPrevMagicSy;          // å‰ç½®å’’æœ¯çš„æ˜¾ç¤ºä½ç½® - Yè½´
+  int           siPrevMagicOnChar;      // å‰ç½®å’’æœ¯æ˜¾ç¤ºåœ¨äººç‰©çš„å‰æ–¹æˆ–ä¸‹æ–¹
+  unsigned int  uiPostMagicNum;         // å¾Œç½®å’’æœ¯çš„ç´¢å¼•å·( 0XFFFFFFFF è¡¨ç¤ºæ— å¾Œç½®å’’æœ¯ )
+  int           siPostMagicSx;          // å¾Œç½®å’’æœ¯çš„æ˜¾ç¤ºä½ç½® - Xè½´
+  int           siPostMagicSy;          // å¾Œç½®å’’æœ¯çš„æ˜¾ç¤ºä½ç½® - Yè½´
+  int           siPostMagicOnChar;      // å¾Œç½®å’’æœ¯æ˜¾ç¤ºåœ¨äººç‰©çš„å‰æ–¹æˆ–ä¸‹æ–¹
+  int           siField[3][5];          // æ”»å‡»ç´¢å¼•
 }AttMagic;
 
 #endif
@@ -91,26 +91,26 @@ typedef struct tagAttMagic
 
 typedef struct tagToCallMagic
 {
-  unsigned int  uiSpriteNum;// ´ËÖäÊõÔÚSpr_x.binµÄ±àºÅ
-  unsigned int  uiAttackType;// ¹¥»÷µÄ·½Ê½£ºµ¥ÈË£¬ÕûÅÅ( ÂÖÁ÷ ) ,  ÕûÅÅ( ÂÖÁ÷ ) , ÕûÅÅ( Í¬Ê± ) , È«Ìå( ÂÖÁ÷ ) , È«Ìå( Í¬Ê± )
-  unsigned int  uiSliceTime;// ÂÖÁ÷¹¥»÷Ê±µÄÊ±¼ä²î
-  unsigned int  uiShowType;             // ÏÔÊ¾µÄÎ»ÖÃ·½Ê½£ºÖĞÑë¡¢Ö¸¶¨
-  int           siSx;                   // ÏÔÊ¾µÄÎ»ÖÃ - XÖá
-  int           siSy;                   // ÏÔÊ¾µÄÎ»ÖÃ - YÖá
-  unsigned int  uiShowBehindChar;       // ÏÔÊ¾ÔÚÈËÎïµÄÇ°·½»òÏÂ·½
-  unsigned int  uiShakeScreen;          // ÊÇ·ñÕğ¶¯»­Ãæ
-  unsigned int  uiShakeFrom;            // Õğ¶¯»­ÃæµÄÆğÊ¼Ê±¼ä( ºÁÃë )
-  unsigned int  uiShakeTo;              // Õğ¶¯»­ÃæµÄ½áÊøÊ±¼ä( ºÁÃë _
-  unsigned int  uiPrevMagicNum;         // Ç°ÖÃÖäÊõµÄË÷ÒıºÅ( 0XFFFFFFFFFF ±íÊ¾ÎŞÇ°ÖÃÖäÊõ )
-  int           siPrevMagicSx;          // Ç°ÖÃÖäÊõµÄÏÔÊ¾Î»ÖÃ - XÖá
-  int           siPrevMagicSy;          // Ç°ÖÃÖäÊõµÄÏÔÊ¾Î»ÖÃ - YÖá
-  int           siPrevMagicOnChar;      // Ç°ÖÃÖäÊõÏÔÊ¾ÔÚÈËÎïµÄÇ°·½»òÏÂ·½
-  unsigned int  uiPostMagicNum;         // ááÖÃÖäÊõµÄË÷ÒıºÅ( 0XFFFFFFFF ±íÊ¾ÎŞááÖÃÖäÊõ )
-  int           siPostMagicSx;          // ááÖÃÖäÊõµÄÏÔÊ¾Î»ÖÃ - XÖá
-  int           siPostMagicSy;          // ááÖÃÖäÊõµÄÏÔÊ¾Î»ÖÃ - YÖá
-  int           siPostMagicOnChar;      // ááÖÃÖäÊõÏÔÊ¾ÔÚÈËÎïµÄÇ°·½»òÏÂ·½
-  int			isPostDisappear;		// ÖäÊõÒ»°ã¹¥»÷ÍêÊ±ÊÇ·ñÂíÉÏÏûÊ§
-  int			ToCallMagicNo;			// ÕÙ»½ÊõµÄ±àºÅ
+  unsigned int  uiSpriteNum;// æ­¤å’’æœ¯åœ¨Spr_x.binçš„ç¼–å·
+  unsigned int  uiAttackType;// æ”»å‡»çš„æ–¹å¼ï¼šå•äººï¼Œæ•´æ’( è½®æµ ) ,  æ•´æ’( è½®æµ ) , æ•´æ’( åŒæ—¶ ) , å…¨ä½“( è½®æµ ) , å…¨ä½“( åŒæ—¶ )
+  unsigned int  uiSliceTime;// è½®æµæ”»å‡»æ—¶çš„æ—¶é—´å·®
+  unsigned int  uiShowType;             // æ˜¾ç¤ºçš„ä½ç½®æ–¹å¼ï¼šä¸­å¤®ã€æŒ‡å®š
+  int           siSx;                   // æ˜¾ç¤ºçš„ä½ç½® - Xè½´
+  int           siSy;                   // æ˜¾ç¤ºçš„ä½ç½® - Yè½´
+  unsigned int  uiShowBehindChar;       // æ˜¾ç¤ºåœ¨äººç‰©çš„å‰æ–¹æˆ–ä¸‹æ–¹
+  unsigned int  uiShakeScreen;          // æ˜¯å¦éœ‡åŠ¨ç”»é¢
+  unsigned int  uiShakeFrom;            // éœ‡åŠ¨ç”»é¢çš„èµ·å§‹æ—¶é—´( æ¯«ç§’ )
+  unsigned int  uiShakeTo;              // éœ‡åŠ¨ç”»é¢çš„ç»“æŸæ—¶é—´( æ¯«ç§’ _
+  unsigned int  uiPrevMagicNum;         // å‰ç½®å’’æœ¯çš„ç´¢å¼•å·( 0XFFFFFFFFFF è¡¨ç¤ºæ— å‰ç½®å’’æœ¯ )
+  int           siPrevMagicSx;          // å‰ç½®å’’æœ¯çš„æ˜¾ç¤ºä½ç½® - Xè½´
+  int           siPrevMagicSy;          // å‰ç½®å’’æœ¯çš„æ˜¾ç¤ºä½ç½® - Yè½´
+  int           siPrevMagicOnChar;      // å‰ç½®å’’æœ¯æ˜¾ç¤ºåœ¨äººç‰©çš„å‰æ–¹æˆ–ä¸‹æ–¹
+  unsigned int  uiPostMagicNum;         // å¾Œç½®å’’æœ¯çš„ç´¢å¼•å·( 0XFFFFFFFF è¡¨ç¤ºæ— å¾Œç½®å’’æœ¯ )
+  int           siPostMagicSx;          // å¾Œç½®å’’æœ¯çš„æ˜¾ç¤ºä½ç½® - Xè½´
+  int           siPostMagicSy;          // å¾Œç½®å’’æœ¯çš„æ˜¾ç¤ºä½ç½® - Yè½´
+  int           siPostMagicOnChar;      // å¾Œç½®å’’æœ¯æ˜¾ç¤ºåœ¨äººç‰©çš„å‰æ–¹æˆ–ä¸‹æ–¹
+  int			isPostDisappear;		// å’’æœ¯ä¸€èˆ¬æ”»å‡»å®Œæ—¶æ˜¯å¦é©¬ä¸Šæ¶ˆå¤±
+  int			ToCallMagicNo;			// å¬å”¤æœ¯çš„ç¼–å·
 }ToCallMagic;
 
 #endif

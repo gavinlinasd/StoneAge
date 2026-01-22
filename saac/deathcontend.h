@@ -1,14 +1,14 @@
 #include "version.h"
 
 #ifdef _DEATH_CONTEND
-//ÍÅ¶ÓÈËÎïÃûµ¥
+//å›¢é˜Ÿäººç‰©åå•
 typedef struct 
 {
 	int use;
 	char cdkey[64];
 	char name[64];
 }PkTeamMans;
-//Õ½¶·¼ÍÂ¼
+//æˆ˜æ–—çºªå½•
 typedef struct 
 {
 	int use;
@@ -16,33 +16,33 @@ typedef struct
 	int flg;	//0 1
 }BattleHistorys;
 
-#define MAXTEAMMANNUM 5		//¶ÓÎé×î¸ßÈËÊı
-#define MAXBATTLENUM 100	//¶ÓÎé×î¸ßÕ½¶·¼ÍÂ¼
+#define MAXTEAMMANNUM 5		//é˜Ÿä¼æœ€é«˜äººæ•°
+#define MAXBATTLENUM 100	//é˜Ÿä¼æœ€é«˜æˆ˜æ–—çºªå½•
 
-#define DEFMAXBATTLENUM 50 //×î¸ß¾ö¶·³¡´Î
+#define DEFMAXBATTLENUM 50 //æœ€é«˜å†³æ–—åœºæ¬¡
 #define DEFWINSCORE 90
 #define DEFLOSERATE 0.4
-//¾ö¶·²ÎÈü¶ÓÎéinfo
+//å†³æ–—å‚èµ›é˜Ÿä¼info
 typedef struct _tagPkTeamLists
 {
 	int use;					//flg
-	int teamnum;				//¶ÓÎéĞòºÅ
-	char teamname[64];			//¶ÓÎéÃû³Æ
-	char pathdir[64];			//¶ÓÎé×ÊÁÏÄ¿Â¼
-	char leadercdkey[64];		//¶Ó³¤CDKEY
-	int win;					//Ê¤
-	int lost;					//¸º
-	int battleplay;				//×Ü³¡´Î
+	int teamnum;				//é˜Ÿä¼åºå·
+	char teamname[64];			//é˜Ÿä¼åç§°
+	char pathdir[64];			//é˜Ÿä¼èµ„æ–™ç›®å½•
+	char leadercdkey[64];		//é˜Ÿé•¿CDKEY
+	int win;					//èƒœ
+	int lost;					//è´Ÿ
+	int battleplay;				//æ€»åœºæ¬¡
 	int score;
-	int inside;					//Â¼È¡Æì±ê
+	int inside;					//å½•å–æ——æ ‡
 
-	int updata;					//¸üĞÂÊ±¼ä
+	int updata;					//æ›´æ–°æ—¶é—´
 
 	PkTeamMans MyTeamMans[MAXTEAMMANNUM];
 	BattleHistorys BHistory[MAXBATTLENUM];
 }PkTeamLists;
 
-//Îğ¶¯-------------------------------------------------------
+//å‹¿åŠ¨-------------------------------------------------------
 int PKLIST_getStringPkTeamData( int ti, char *data, int sizes);
 int PKLIST_SetOneBHistory( int ti, int hi, int use, int teamnum, int flg );
 int PKLIST_GetOneBHistory( int ti );
@@ -58,7 +58,7 @@ void PKLIST_GetPkTeamListDataOne( int fd, int ti);
 //-----------------------------------------------------------
 int PKLIST_LoadPkTeamListfromFile( char *dirpath, char *listfilename );
 int PKLIST_BackupPkTeamListfromFile( char *dirpath, char *listfilename );
-void PKLIST_SortTheCharts( int ti);//ÅÅĞĞ°ñ´¦Àí
+void PKLIST_SortTheCharts( int ti);//æ’è¡Œæ¦œå¤„ç†
 void PKLIST_TheCharts( int fd, int type, int flg);
 
 int PKLIST_LoadUserfromFile( char *dirpath, char *listfilename );

@@ -16,24 +16,24 @@
 
 typedef enum
 {
-    NPC_CREATEFLOORID,      /*  °×·òÊ§ID    */
-    NPC_CREATEBORNLEFTUPX,        /*  ¶ûÏþ¼°XÕç   */
-    NPC_CREATEBORNLEFTUPY,        /*  ¶ûÏþ¼°YÕç   */
-    NPC_CREATEBORNRIGHTDOWNX,     /*  ã¯Æ±¼°XÕç   */
-    NPC_CREATEBORNRIGHTDOWNY,     /*  ã¯Æ±¼°YÕç   */
+    NPC_CREATEFLOORID,      /*  ç™½å¤«å¤±ID    */
+    NPC_CREATEBORNLEFTUPX,        /*  å°”æ™“åŠXç”„   */
+    NPC_CREATEBORNLEFTUPY,        /*  å°”æ™“åŠYç”„   */
+    NPC_CREATEBORNRIGHTDOWNX,     /*  æƒ˜ç¥¨åŠXç”„   */
+    NPC_CREATEBORNRIGHTDOWNY,     /*  æƒ˜ç¥¨åŠYç”„   */
 
-    NPC_CREATEMOVELEFTUPX,        /*  ¶ûÏþ¼°XÕç   */
-    NPC_CREATEMOVELEFTUPY,        /*  ¶ûÏþ¼°YÕç   */
-    NPC_CREATEMOVERIGHTDOWNX,     /*  ã¯Æ±¼°XÕç   */
-    NPC_CREATEMOVERIGHTDOWNY,     /*  ã¯Æ±¼°YÕç   */
+    NPC_CREATEMOVELEFTUPX,        /*  å°”æ™“åŠXç”„   */
+    NPC_CREATEMOVELEFTUPY,        /*  å°”æ™“åŠYç”„   */
+    NPC_CREATEMOVERIGHTDOWNX,     /*  æƒ˜ç¥¨åŠXç”„   */
+    NPC_CREATEMOVERIGHTDOWNY,     /*  æƒ˜ç¥¨åŠYç”„   */
 
-    NPC_CREATEDIR,                /*  ×ÛÔÂÁÝ¼°  éù    */
-    NPC_CREATEBASEIMAGENUMBER,    /*  template ¼°É¬ÀÃÃ«ÏþÌ¤ÎåÔÊÔÂ
-                                        ì«  Ä¯    */
-    NPC_CREATETIME,               /* ÁÝÃÞ */
-    NPC_CREATEBORNNUM,            /*    ¹«¼°»©  ±åÇëòØ½ñÁùÔÂÐÑ    */
+    NPC_CREATEDIR,                /*  ç»¼æœˆå‡›åŠ  è½¾    */
+    NPC_CREATEBASEIMAGENUMBER,    /*  template åŠæ¶©çƒ‚æ¯›æ™“è¸äº”å…æœˆ
+                                        é£“  å¯ž    */
+    NPC_CREATETIME,               /* å‡›æ£‰ */
+    NPC_CREATEBORNNUM,            /*    å…¬åŠå“—  åžè¯·èœ‡ä»Šå…­æœˆé†’    */
 
-    NPC_CREATEENEMYNUM,           /*  ³Ä¼°ÅË  ÐÑ  */
+    NPC_CREATEENEMYNUM,           /*  è¡¬åŠæ½˜  é†’  */
     NPC_CREATEBOUNDARY,
     NPC_CREATEDATE,
     NPC_CREATEIGNOREINVINCIBLE,
@@ -47,7 +47,7 @@ typedef enum
 
 typedef enum
 {
-    NPC_CREATENAME,             /* templateÃ«ÏþÌ¤ÎåÔÊÔÂ¾®ÊÖØÆÄ¾Ø¦ÖÐ  ó¡*/
+    NPC_CREATENAME,             /* templateæ¯›æ™“è¸äº”å…æœˆäº•æ‰‹ä»„æœ¨å…ä¸­  èŸ†*/
     NPC_CREATECHARNUM,
 }NPC_CREATECHAR;
 

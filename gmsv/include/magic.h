@@ -1,7 +1,7 @@
 #ifndef __MAGIC_H__
 #define __MAGIC_H__
 
-/* ÈÈÖî */
+/* çƒ­è¯¸ */
 int MAGIC_Use( int charaindex, int haveitemindex, int toindex);
 int MAGIC_Recovery( int charaindex, int toindex,int marray, int mp );
 int MAGIC_OtherRecovery( int charaindex, int toindex, int marray, int mp );
@@ -28,13 +28,13 @@ int MAGIC_Metamo( int charaindex, int toindex,int marray, int mp );
 #ifdef _ITEM_ATTSKILLMAGIC
 int MAGIC_AttSkill( int charaindex, int toindex,int marray, int mp );
 #endif
-#ifdef _MAGIC_WEAKEN// vincent  ¾«Áé:ĞéÈõ
+#ifdef _MAGIC_WEAKEN// vincent  ç²¾çµ:è™šå¼±
 int	MAGIC_Weaken( int charaindex, int toindex, int marray, int mp );
 #endif
-#ifdef _MAGIC_BARRIER// vincent  ¾«Áé:Ä§ÕÏ
+#ifdef _MAGIC_BARRIER// vincent  ç²¾çµ:é­”éšœ
 int	MAGIC_Barrier( int charaindex, int toindex, int marray, int mp );
 #endif
-#ifdef _MAGIC_NOCAST// vincent  ¾«Áé:³ÁÄ¬
+#ifdef _MAGIC_NOCAST// vincent  ç²¾çµ:æ²‰é»˜
 int	MAGIC_Nocast( int charaindex, int toindex, int marray, int mp );
 #endif
 #ifdef _MAGIC_TOCALL
@@ -42,22 +42,22 @@ int MAGIC_ToCallDragon( int charaindex, int toindex,int marray, int mp );
 #endif
 
 //----------------------------------------------------------------------
-// Ê§ÄÌ  Ø©¼°ŞË  ¾®ÈÕÈÈÖî  Ä¯Ã«ß¯ÔÊ
+// å¤±å¥¶  ä¸åŠåŒ  äº•æ—¥çƒ­è¯¸  å¯æ¯›å¿’å…
 //
 int MAGIC_GetArrayNo(
-	int charaindex, 	// Æ½ÅÒ·ÂÛÍÕıÄÌ¼ş·¸ÓÀÛÍµ©
-	int haveitemindex   //    ÔÈ»¯ÔÂÊ§ÄÌ  Ø©¼°ŞË  
+	int charaindex, 	// å¹³ä¹“ä»¿å¼æ­£å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int haveitemindex   //    åŒ€åŒ–æœˆå¤±å¥¶  ä¸åŠåŒ  
 );
 //
 //----------------------------------------------------------------------
 //-------------------------------------------------------------------
 //
-//  ÈÈÖîÃ«  ÌÎÒøµ¤
+//  çƒ­è¯¸æ¯›  æ¶›é“¶ä¸¹
 //
 int MAGIC_DirectUse(
-	int charaindex, // Òøµ¤Æ½ÅÒ·Â¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-	int marray, 	// Òøµ¤ÈÈÖî¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-	int toindex, 	// ²¾±åÒøµ¤£¢
+	int charaindex, // é“¶ä¸¹å¹³ä¹“ä»¿åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int marray, 	// é“¶ä¸¹çƒ­è¯¸åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int toindex, 	// ç°¿åé“¶ä¸¹ï¼‚
 	int itemnum
 );
 //

@@ -190,7 +190,7 @@ char* getPetskillfile( void );
 char *getItematomfile( void );
 char *getQuizfile( void );
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 char* getProfession( void );
 #endif
 

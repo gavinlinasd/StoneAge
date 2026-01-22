@@ -28,12 +28,12 @@
 
 #ifdef _NPCSERVER_NEW
 enum{
-	uEQUAL = 1, //µ»Ï∂
-	uBIGEQUALt,	//¥ÛÏ∂µ»Ï∂
-	uSMALLEQUALt, //–°Ï∂µ»Ï∂
-	uBIGTHAN = 5,	//¥ÛÏ∂
-	uSMALLTHAN, //–°Ï∂
-	uNEQUAL, //≤ªµ»Ï∂
+	uEQUAL = 1, //Á≠âÊñº
+	uBIGEQUALt,	//Â§ßÊñºÁ≠âÊñº
+	uSMALLEQUALt, //Â∞èÊñºÁ≠âÊñº
+	uBIGTHAN = 5,	//Â§ßÊñº
+	uSMALLTHAN, //Â∞èÊñº
+	uNEQUAL, //‰∏çÁ≠âÊñº
 };
 BOOL NPCS_HandleCheckFreeMess( int npcobjindex, int charaindex, int charobjindex,
 				char *CheckfreeMess)
@@ -43,7 +43,7 @@ BOOL NPCS_HandleCheckFreeMess( int npcobjindex, int charaindex, int charobjindex
 	char buf1[1024], buf2[256];
 	int i=1;
 
-	//÷˜Ãıº˛≈–∂œ
+	//‰∏ªÊù°‰ª∂Âà§Êñ≠
 	while( getStringFromIndexWithDelim( CheckfreeMess, "OVER", i, buf1, sizeof( buf1)) != FALSE ){
 		i++;
 		if( NPC_Util_GetStrFromStrWithDelim( buf1, "FREE", buf2, sizeof( buf2)) == NULL  ) continue;
@@ -53,17 +53,17 @@ BOOL NPCS_HandleCheckFreeMess( int npcobjindex, int charaindex, int charobjindex
 			if( NPCS_RunDoEventAction( charaindex, buf1) == FALSE )
 				return FALSE;
 
-			// ¬º˛¥¶¿Ì
+			//‰∫ã‰ª∂Â§ÑÁêÜ
 			NPCS_NpcstalkToCli( charaindex, npcobjindex, buf2, CHAR_COLORYELLOW);
 			break;
 		}
 	}
-	if( Enable == FALSE ){//À˘”–Ãıº˛≤ª≥…¡¢
-		NPCS_NpcstalkToCli( charaindex, npcobjindex, "Ãıº˛≤ª◊„£°", CHAR_COLORYELLOW);
+	if( Enable == FALSE ){//ÊâÄÊúâÊù°‰ª∂‰∏çÊàêÁ´ã
+		NPCS_NpcstalkToCli( charaindex, npcobjindex, "Êù°‰ª∂‰∏çË∂≥ÔºÅ", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	if( ReCall == TRUE ){
-		//≈–∂œ «∑Òrecall
+		//Âà§Êñ≠ÊòØÂê¶recall
 	}
 	return TRUE;
 }
@@ -140,29 +140,29 @@ BOOL NPCS_FreeBigSmallCheck( int charaindex,char* buf)
 }
 
 BOOL NPCS_ArgumentFreeCheck( int charaindex, char* Argument, int amount, int temp, int probjID)
-{//amount  ˝¡ø Argument ≤Œ ˝
+{//amount Êï∞Èáè Argument ÂèÇÊï∞
 	int MyPoint=0, reAmount;
 	reAmount = 0;
-	if( strcmp( Argument, "LV") == 0)	{//µ»º∂
+	if( strcmp( Argument, "LV") == 0)	{//Á≠âÁ∫ß
 		MyPoint = CHAR_getInt( charaindex, CHAR_LV);
-	}else if( strcmp( Argument, "GOLD") == 0)	{// Ø±“
+	}else if( strcmp( Argument, "GOLD") == 0)	{//Áü≥Â∏Å
 		MyPoint = CHAR_getInt( charaindex, CHAR_GOLD);
-	}else if( strcmp( Argument, "TRANS") == 0)	{//◊™…˙¥Œ ˝
+	}else if( strcmp( Argument, "TRANS") == 0)	{//ËΩ¨ÁîüÊ¨°Êï∞
 		MyPoint = CHAR_getInt( charaindex, CHAR_TRANSMIGRATION);
-	}else if( strcmp( Argument, "PET") == 0)	{//≥ËŒÔ ID  ˝¡ø
+	}else if( strcmp( Argument, "PET") == 0)	{//ÂÆ†Áâ© ID Êï∞Èáè
 		MyPoint = NPCS_getUserPetAmount( charaindex, probjID, 1);
-	}else if( strcmp( Argument, "ITEM") == 0)	{//µ¿æﬂ ID  ˝¡ø
+	}else if( strcmp( Argument, "ITEM") == 0)	{//ÈÅìÂÖ∑ ID Êï∞Èáè
 		MyPoint = NPCS_getUserItemAmount( charaindex, probjID, 1);
-	}else if( strcmp( Argument, "ENDEV") == 0)	{//Ω· ¯∆Ï±Í
+	}else if( strcmp( Argument, "ENDEV") == 0)	{//ÁªìÊùüÊóóÊ†á
 		return NPC_EventCheckFlg( charaindex, amount);
-	}else if( strcmp( Argument, "NOWEV") == 0)	{//ø™∆Ù∆Ï±Í
+	}else if( strcmp( Argument, "NOWEV") == 0)	{//ÂºÄÂêØÊóóÊ†á
 		return NPC_NowEventCheckFlg( charaindex, amount);
-	}else if( strcmp( Argument, "PARTY") == 0)	{//ºÏ≤ÈÕ≈∂”»À ˝
+	}else if( strcmp( Argument, "PARTY") == 0)	{//Ê£ÄÊü•Âõ¢Èòü‰∫∫Êï∞
 		MyPoint = NPCS_getUserPartyAmount( charaindex );
-	}else if( strcmp( Argument, "reITEM")== 0)	{// £‚≈µ¿æﬂ¿∏Œª
+	}else if( strcmp( Argument, "reITEM")== 0)	{//Ââ©È¶ÄÈÅìÂÖ∑Ê†è‰Ωç
 		NPCS_getUserItemAmount( charaindex, probjID, 0);
 		MyPoint = reAmount;
-	}else if( strcmp( Argument, "rePET") == 0)	{// £‚≈≥ËŒÔ¿∏Œª
+	}else if( strcmp( Argument, "rePET") == 0)	{//Ââ©È¶ÄÂÆ†Áâ©Ê†è‰Ωç
 		NPCS_getUserPetAmount( charaindex, probjID, 0);
 		MyPoint = reAmount;
 	}else {
@@ -174,22 +174,22 @@ BOOL NPCS_ArgumentFreeCheck( int charaindex, char* Argument, int amount, int tem
 BOOL NPCS_ArgumentBigSmallCheck( int point, int mypoint, int flg)
 {
 	switch( flg){
-	case uEQUAL: //µ»Ï∂
+	case uEQUAL: //Á≠âÊñº
 		if( mypoint == point ) return TRUE;
 		break;
-	case uBIGEQUALt: //¥ÛÏ∂µ»Ï∂
+	case uBIGEQUALt: //Â§ßÊñºÁ≠âÊñº
 		if( mypoint >= point ) return TRUE;
 		break;
-	case uSMALLEQUALt: //–°Ï∂µ»Ï∂
+	case uSMALLEQUALt: //Â∞èÊñºÁ≠âÊñº
 		if( mypoint <= point ) return TRUE;
 		break;
-	case uBIGTHAN: //¥ÛÏ∂
+	case uBIGTHAN: //Â§ßÊñº
 		if( mypoint > point ) return TRUE;
 		break;
-	case uSMALLTHAN: //–°Ï∂
+	case uSMALLTHAN: //Â∞èÊñº
 		if( mypoint < point ) return TRUE;
 		break;
-	case uNEQUAL: //≤ªµ»Ï∂
+	case uNEQUAL: //‰∏çÁ≠âÊñº
 		if( mypoint != point ) return TRUE;
 		break;
 	}
@@ -273,7 +273,7 @@ BOOL NPCS_RunDoEventAction( int charaindex, char *buf1)
 	if( NPC_Util_GetStrFromStrWithDelim( buf1, "DelItem", buf2, sizeof( buf2)) != NULL ) {
 		//print("\n DelItem:%s:%d ", __FILE__, __LINE__);
 		if( NPC_ActionDelItem( charaindex, buf2) == FALSE ) {
-			//print("\n ∏ƒ∑‚∞¸??NPC_ActionDelItem:%s:%s  ", CHAR_getChar(toindex, CHAR_CDKEY), buf2);
+			//print("\n ÊîπÂ∞ÅÂåÖ??NPC_ActionDelItem:%s:%s  ", CHAR_getChar(toindex, CHAR_CDKEY), buf2);
 			return FALSE;
 		}
 	}

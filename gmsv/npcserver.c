@@ -253,7 +253,7 @@ int connectNpcServer(char* hostname,unsigned short port)
     if( sock.sin_addr.s_addr == -1 ){
         hoste = gethostbyname( hostname );
         if( hoste == NULL ){
-            print( "»ñÈ¡Ö÷»úÃû: %s\n", hostname);
+            print( "èŽ·å–ä¸»æœºå: %s\n", hostname);
             return -1;
         }
         memcpy((void*)&sock.sin_addr.s_addr , hoste->h_addr , sizeof(struct in_addr) );

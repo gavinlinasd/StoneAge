@@ -13,20 +13,20 @@
 
 static void NPC_VeryWelfare_selectWindow(int meindex, int toindex, int num, int select);
 
-//ÔØÈë·Ç³£ºÃ¿µNPCµÄ³õÊ¼»¯
+//è½½å…¥éå¸¸å¥½åº·NPCçš„åˆå§‹åŒ–
 BOOL NPC_VeryWelfareInit( int meindex )
 {
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEVERYWELFARE);
-    print("\nÃû³Æ:%s\n",CHAR_getChar( meindex, CHAR_NAME));
+    print("\nåç§°:%s\n",CHAR_getChar( meindex, CHAR_NAME));
     return TRUE;
 }
 
-//¶Ô»°Ê±µÄ´¦Àí
+//å¯¹è¯æ—¶çš„å¤„ç†
 void NPC_VeryWelfareTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
     if( NPC_Util_isFaceToFace( talkerindex, meindex , 1 ) == FALSE )
         return;
-    //¿ªÊ¼µÄÑ¡Ôñ»­Ãæ
+    //å¼€å§‹çš„é€‰æ‹©ç”»é¢
 	NPC_VeryWelfare_selectWindow( meindex, talkerindex, 0, -1);
 }
 
@@ -41,14 +41,14 @@ static void NPC_VeryWelfare_selectWindow( int meindex, int toindex, int num,int 
 	switch(num)
 	{
 	    case 0:
-            sprintf(token,"%s","ÎÒÊÇ·Ç³£ºÃ¿µAµÄNPC£¬ÎÒ½«Ìá¹©×îºÃ¿µAµÄ·şÎñ¡£");
+            sprintf(token,"%s","æˆ‘æ˜¯éå¸¸å¥½åº·Açš„NPCï¼Œæˆ‘å°†æä¾›æœ€å¥½åº·Açš„æœåŠ¡ã€‚");
 			windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 		    windowno = NPC_VERYWELFARE_START;
 		    lssproto_WN_send( fd, windowtype, WINDOW_BUTTONTYPE_OK, windowno,	
 			CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX),token);
 		    break;
 	    case 1:
-		    sprintf(token,"%s","2\nÇëÑ¡ÔñÒÔÏÂµÄÑ¡Ïî\n\nÌáÉıÉúÃüÁ¦\nÌáÉıÄ§·¨Á¦");
+		    sprintf(token,"%s","2\nè¯·é€‰æ‹©ä»¥ä¸‹çš„é€‰é¡¹\n\næå‡ç”Ÿå‘½åŠ›\næå‡é­”æ³•åŠ›");
 			windowtype = WINDOW_MESSAGETYPE_SELECT;
 		    windowno = NPC_VERYWELFARE_NO1;
 		    lssproto_WN_send( fd, windowtype, buttontype, windowno,	
@@ -56,7 +56,7 @@ static void NPC_VeryWelfare_selectWindow( int meindex, int toindex, int num,int 
 			makeEscapeString( token, buf, sizeof(buf)));
 		    break;
 	    case 2:
-		    sprintf(token,"%s","ÎÒÒªÌá¸ßÉúÃüÁ¦");
+		    sprintf(token,"%s","æˆ‘è¦æé«˜ç”Ÿå‘½åŠ›");
 			windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 		    windowno = NPC_VERYWELFARE_NO2;
 		    lssproto_WN_send( fd, windowtype, buttontype, windowno,	
@@ -64,7 +64,7 @@ static void NPC_VeryWelfare_selectWindow( int meindex, int toindex, int num,int 
 			makeEscapeString( token, buf, sizeof(buf)));
 		    break;
 		case 3:
-		    sprintf(token,"%s","ÎÒÒªÌá¸ßÄ§·¨Á¦");
+		    sprintf(token,"%s","æˆ‘è¦æé«˜é­”æ³•åŠ›");
 			windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 		    windowno = NPC_VERYWELFARE_NO3;
 		    lssproto_WN_send( fd, windowtype, buttontype, windowno,	
@@ -79,7 +79,7 @@ void NPC_VeryWelfareWindowTalked( int meindex, int talkerindex,
 		int seqno, int select, char *data)
 {
 		
-	print("\nÑ¡:%d",select);
+	print("\né€‰:%d",select);
 	//int datanum = atoi( data);
 	switch( seqno){
 

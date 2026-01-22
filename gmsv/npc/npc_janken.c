@@ -13,7 +13,7 @@
 #include "log.h"
 
 /*
- *ÔªÔúÊÏØêÊÏ
+ *å…ƒæ‰æ°ä»ƒæ°
  */
 static void NPC_Janken_selectWindow( int meindex, int talker, int num);
 void NPC_JnakenJudge(int meindex,int talker,int sel);
@@ -23,12 +23,12 @@ void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge);
 
 
 /*********************************
-* âÙÓåÖÊ  
+* èµ“æ¸è´¨  
 *********************************/
 BOOL NPC_JankenInit( int meindex )
 {
 
-	//ÕıÄÌÃóÃ«±¾ÓÀĞş
+	//æ­£å¥¶çš¿æ¯›æœ¬æ°¸ç„
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEJANKEN );
 	
 	return TRUE;
@@ -37,17 +37,17 @@ BOOL NPC_JankenInit( int meindex )
 
 
 /*********************************
-*   ØÆ¾®ØêÈÕÄ¾Ğ×Áİ¼°ÖÊ  
+*   ä»„äº•ä»ƒæ—¥æœ¨å‡¶å‡›åŠè´¨  
 *********************************/
 void NPC_JankenTalked( int meindex , int talkerindex , char *szMes ,
 					 int color )
 {
-	/* ÃóÒÁÄÌØÀ¡õ±å¸²ØÆ»¯·ÖØê  É±ÔÊÔÂ */
+	/* çš¿ä¼Šå¥¶ä¹©â–¡åè¦†ä»„åŒ–åˆ†ä»ƒ  æ€å…æœˆ */
 	if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
 		return;
 	}
 	
-	/* ¨àºëØøÓÀÓñ¶¯  ¼°ĞÄ */
+	/* ã„ å¼˜ä¼‰æ°¸ç‰åŠ¨  åŠå¿ƒ */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 
 	NPC_Janken_selectWindow(meindex, talkerindex, 0);
@@ -60,7 +60,7 @@ void NPC_JankenTalked( int meindex , int talkerindex , char *szMes ,
 
 
 /******************************
- *	¹«Ä¾ÈßÄ¾¼°ÖÊ  ±åÛĞØêÔÂ
+ *	å…¬æœ¨å†—æœ¨åŠè´¨  ååŒä»ƒæœˆ
  ******************************/
 static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 {
@@ -74,10 +74,10 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
    	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	
 
-	/*--ËüÄÌ¼şÓñËüÕıÄÌÃó¶ªÓÀ±¾¡õ³â»¥ÔÆÔÆÖĞ¼°Æ¥ÛÆ±åÉ¬ÀÃ--*/
+	/*--å®ƒå¥¶ä»¶ç‰å®ƒæ­£å¥¶çš¿ä¸¢æ°¸æœ¬â–¡æ–¥äº’äº‘äº‘ä¸­åŠåŒ¹ç‡®åæ¶©çƒ‚--*/
   	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 
-	/*--É¬ÀÃ°×ÑëÄÌ»ïÃ«  ĞÄ  ĞÄ--*/
+	/*--æ¶©çƒ‚ç™½å¤®å¥¶ä¼™æ¯›  å¿ƒ  å¿ƒ--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr))==NULL){
 		print("NPC_janken Init: GetArgStrErr");
 		return ;
@@ -88,7 +88,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	{
 	  case 0:
 
-	  	/*-- µ©Õı¡õĞş¼°¶ªÓÀ±¾¡õ³â»¥  ØêÄ¾ÈÉ¾Ş·Â¡õ  Ô÷ --*/
+	  	/*-- æ—¦æ­£â–¡ç„åŠä¸¢æ°¸æœ¬â–¡æ–¥äº’  ä»ƒæœ¨å£¬å·¨ä»¿â–¡  æ† --*/
 		if(NPC_Util_GetStrFromStrWithDelim( argstr, "MainMsg", token, sizeof( token))
 	 		== NULL)
 		{
@@ -96,7 +96,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 			return ;
 		}
 
-  		/*--¼»      --*/
+  		/*--è“Ÿ      --*/
 	  	buttontype = WINDOW_BUTTONTYPE_YESNO;
 	  	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 	  	windowno = CHAR_WINDOWTYPE_JANKEN_START; 
@@ -105,7 +105,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	
 	case 1:
 		
-		//Ê§ÄÌ  Ø©¼°ÃñÄáÓÀÛÍ
+		//å¤±å¥¶  ä¸åŠæ°‘å°¼æ°¸å¼
 		if(NPC_Util_GetStrFromStrWithDelim( argstr, "EntryItem",
 		 buf, sizeof( buf))
 		!= NULL) {
@@ -115,18 +115,18 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 				NPC_Janken_selectWindow(meindex, talker, 3);
 			}
 
-			//¾Ş¼şĞşØøåÃ¼°Ê§ÄÌ  Ø©Ã«´ÂÂÖ
+			//å·¨ä»¶ç„ä¼‰è¿•åŠå¤±å¥¶  ä¸æ¯›ç»°è½®
 			if(NPC_JankenEntryItemDel(talker,buf) == FALSE){
-				print("ÔªÔúÊÏØêÊÏERR:Ê§ÄÌ  Ø©ÛÕØÆ±åØÆÔÈÌìÖĞ");
+				print("å…ƒæ‰æ°ä»ƒæ°ERR:å¤±å¥¶  ä¸å£…ä»„åä»„åŒ€å¤©ä¸­");
 			}
 		}
 
 
-		/*--¼»      --*/
-		sprintf(token,"              ¼ôµ¶Ê¯Í·²¼£¡£¡\n"
-			      "\n\n               ¡¶  Ê¯Í·  ¡·"
-			      "\n\n               ¡¶  ¼ôµ¶  ¡·"
-				  "\n\n               ¡¶  ²¼  ¡·"
+		/*--è“Ÿ      --*/
+		sprintf(token,"              å‰ªåˆ€çŸ³å¤´å¸ƒï¼ï¼\n"
+			      "\n\n               ã€Š  çŸ³å¤´  ã€‹"
+			      "\n\n               ã€Š  å‰ªåˆ€  ã€‹"
+				  "\n\n               ã€Š  å¸ƒ  ã€‹"
 		);
 
 		buttontype=WINDOW_BUTTONTYPE_NONE;
@@ -135,12 +135,12 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	  break;
 
 	case 2:
-		/*--Ø¤ÖĞ³ğ¼»      --*/
-		//sprintf(token,"              Ø¤ÖĞ³ğÆ¥¡å¡å\n"
-		sprintf(token,"              Æ½ÊÖÔÙÀ´£¡£¡\n"
-			      "\n\n               ¡¶  Ê¯Í·  ¡·"
-			      "\n\n               ¡¶  ¼ôµ¶  ¡·"
-				  "\n\n               ¡¶  ²¼  ¡·"
+		/*--ä¸ä¸­ä»‡è“Ÿ      --*/
+		//sprintf(token,"              ä¸ä¸­ä»‡åŒ¹â€³â€³\n"
+		sprintf(token,"              å¹³æ‰‹å†æ¥ï¼ï¼\n"
+			      "\n\n               ã€Š  çŸ³å¤´  ã€‹"
+			      "\n\n               ã€Š  å‰ªåˆ€  ã€‹"
+				  "\n\n               ã€Š  å¸ƒ  ã€‹"
 		);
 
 	  	buttontype=WINDOW_BUTTONTYPE_NONE;
@@ -149,7 +149,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	  	break;
 
   	case 3:
-	  	/*-- µ©Õı¡õĞş¼°¶ªÓÀ±¾¡õ³â»¥  ØêÄ¾ÈÉ¾Ş·Â¡õ  Ô÷ --*/
+	  	/*-- æ—¦æ­£â–¡ç„åŠä¸¢æ°¸æœ¬â–¡æ–¥äº’  ä»ƒæœ¨å£¬å·¨ä»¿â–¡  æ† --*/
 		NPC_Util_GetStrFromStrWithDelim( argstr, "NoItem", token, sizeof( token));
 
 	  	buttontype=WINDOW_BUTTONTYPE_OK;
@@ -162,7 +162,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 
 
 //	makeEscapeString( token, escapedname, sizeof(escapedname));
-	/*-³ğ³ğÆ¥ËªññÔÊÔÂ--*/
+	/*-ä»‡ä»‡åŒ¹éœœè€¨å…æœˆ--*/
 	lssproto_WN_send( fd, windowtype, 
 					buttontype, 
 					windowno,
@@ -176,12 +176,12 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 
 
 /*********************************
-* ËüÅ«¼şÓñËü¶ªÓÀ±¾¡õ³â±å¸²ÔÊÔÂÖÊ  
+* å®ƒå¥´ä»¶ç‰å®ƒä¸¢æ°¸æœ¬â–¡æ–¥åè¦†å…æœˆè´¨  
 *********************************/
 void NPC_JankenWindowTalked( int meindex, int talkerindex, 
 								int seqno, int select, char *data)
 {
-	/* ¨àºëØøÓÀÓñ¶¯  ¼°ĞÄ */
+	/* ã„ å¼˜ä¼‰æ°¸ç‰åŠ¨  åŠå¿ƒ */
 	if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 
 	switch( seqno){
@@ -202,22 +202,22 @@ void NPC_JankenWindowTalked( int meindex, int talkerindex,
 
 
 /*
- *³âÅÒ¼ş¸¥¼ş¼°  ÀÃ
+ *æ–¥ä¹“ä»¶å¼—ä»¶åŠ  çƒ‚
  */
 void NPC_JnakenJudge(int meindex,int talker,int sel)
 {
 	int player=-1;
 	int jankenman;
-	char j_char[3][8]={" Ê¯Í· "," ¼ôµ¶ ","  ²¼  "};
+	char j_char[3][8]={" çŸ³å¤´ "," å‰ªåˆ€ ","  å¸ƒ  "};
 	char token[1024];
 	int shouhai = 0;
 	int fd = getfdFromCharaIndex( talker);
 	int fl=0,x=0,y=0;
 	
 	
-	if(sel == 3) player = 0; //ºë¡õ
-	if(sel == 5) player = 1; //ÃñÒàÆ½
-	if(sel == 7) player = 2; //ÓÉ¡õ
+	if(sel == 3) player = 0; //å¼˜â–¡
+	if(sel == 5) player = 1; //æ°‘äº¦å¹³
+	if(sel == 7) player = 2; //ç”±â–¡
 
 	jankenman = rand()%3;
 
@@ -248,16 +248,16 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 	}
 
 	if(shouhai == 1){
-		//Change add Íæ¼Ò²ÂÊ¤ÁË¸øµÄµÀ¾ß
+		//Change add ç©å®¶çŒœèƒœäº†ç»™çš„é“å…·
 		NPC_JankenItemGet( meindex, talker, "WinItem" );
 
 		 NPC_WarpPointGet(meindex, talker, &fl, &x, &y, 0);
 		
 		snprintf( token, sizeof( token ) ,
-						"              ¡«¡¡½á  ¹û¡¡¡«      \n\n"
+						"              ï½ã€€ç»“  æœã€€ï½      \n\n"
 						"  %16s      %-16s\n"
 						"        [%s]    VS    [%s]\n\n\n"
-						"      %-16s Ê¤Àû",
+						"      %-16s èƒœåˆ©",
 						 CHAR_getChar(meindex,CHAR_NAME),CHAR_getChar(talker,CHAR_NAME),
 						 j_char[jankenman],j_char[player],
 						 CHAR_getChar(talker,CHAR_NAME)
@@ -265,47 +265,47 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 
 //			    CHAR_talkToCli( talker , -1 ,token , CHAR_COLORCYAN );
 
-				//·¥¡õÃó
+				//ä¼â–¡çš¿
 			    CHAR_warpToSpecificPoint(talker, fl, x, y);
 			    
-			    //  ÔÈĞ×ÎçÎå·´£¾¼õÉÙ£½¼°Ê§ÛÍÆËÒà¼şÃ«ÔÊÔÂ£Û
+			    //  åŒ€å‡¶åˆäº”åï¼å‡å°‘ï¼åŠå¤±å¼æ‰‘äº¦ä»¶æ¯›å…æœˆï¼»
 			    CHAR_sendWatchEvent( CHAR_getWorkInt( talker, CHAR_WORKOBJINDEX),
 							CHAR_ACTPLEASURE,NULL,0,TRUE);
 				CHAR_setWorkInt( talker, CHAR_WORKACTION, CHAR_ACTPLEASURE);
 
 	}else if(shouhai == 2){
 
-		//Change add Íæ¼Ò²ÂÊäÁË¸øµÄµÀ¾ß
+		//Change add ç©å®¶çŒœè¾“äº†ç»™çš„é“å…·
 		NPC_JankenItemGet( meindex, talker, "LoseItem" );
 
 		 NPC_WarpPointGet(meindex, talker, &fl, &x, &y, 1);
 		snprintf( token, sizeof( token ) ,
-						"              ¡«¡¡½á  ¹û¡¡¡«      \n\n"
+						"              ï½ã€€ç»“  æœã€€ï½      \n\n"
 						"  %16s      %-16s\n"
 						"        [%s]    VS    [%s]\n\n\n"
-						"      %-16s ÊäÁË",
+						"      %-16s è¾“äº†",
 						 CHAR_getChar(meindex,CHAR_NAME),CHAR_getChar(talker,CHAR_NAME),
 						 j_char[jankenman],j_char[player],
 						 CHAR_getChar(talker,CHAR_NAME)
 						);
 //			    CHAR_talkToCli( talker , -1 ,token , CHAR_COLORCYAN );
 
-				//·¥¡õÃó
+				//ä¼â–¡çš¿
 				CHAR_warpToSpecificPoint(talker, fl, x, y);
 
-				//  ØêĞ×ÎçÎå·´£¾  ØÆÖĞ£½Ê§ÛÍÆËÒà¼şÃ«ÔÊÔÂ
+				//  ä»ƒå‡¶åˆäº”åï¼  ä»„ä¸­ï¼å¤±å¼æ‰‘äº¦ä»¶æ¯›å…æœˆ
 			    CHAR_sendWatchEvent( CHAR_getWorkInt( talker, CHAR_WORKOBJINDEX),
 							CHAR_ACTSAD,NULL,0,TRUE);
 				CHAR_setWorkInt( talker, CHAR_WORKACTION, CHAR_ACTSAD);
 
 
 	}else{
-		//³ğ³ğ±åÈÊÔÂÎçØ¤ÖĞ³ğ
+		//ä»‡ä»‡åä»æœˆåˆä¸ä¸­ä»‡
 		NPC_Janken_selectWindow( meindex, talker, 2);
 		return;
 	}
 	
-	//Ëªññ
+	//éœœè€¨
 	lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE, 
 					WINDOW_BUTTONTYPE_OK, 
 					CHAR_WINDOWTYPE_JANKEN_END,
@@ -318,7 +318,7 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 
 
 /*
- *·¥¡õÃóÛÆÃ«GETÔÊÔÂ£Û
+ *ä¼â–¡çš¿ç‡®æ¯›GETå…æœˆï¼»
  */
 void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge)
 {
@@ -327,14 +327,14 @@ void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge)
 	char buf[64];
 	char buf2[32];
 
-	/*--É¬ÀÃ°×ÑëÄÌ»ïÃ«  ĞÄ  ĞÄ--*/
+	/*--æ¶©çƒ‚ç™½å¤®å¥¶ä¼™æ¯›  å¿ƒ  å¿ƒ--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr))==NULL){
 		print("NPC_janken Init: GetArgStrErr");
 		return ;
 	}
 
 
-	/*--·¥¡õÃóÛÆÃ«äú  --*/
+	/*--ä¼â–¡çš¿ç‡®æ¯›æ½¸  --*/
 	NPC_Util_GetStrFromStrWithDelim( argstr, strbuf[judge], buf, sizeof( buf));
 	getStringFromIndexWithDelim(buf,",",1,buf2,sizeof(buf2));
 	*fl=atoi(buf2);
@@ -347,7 +347,7 @@ void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge)
 }
 
 /*
- *--Ê§ÄÌ  Ø©¼°ÃñÄáÓÀÛÍ·ÖØêÃ«µæµ¤
+ *--å¤±å¥¶  ä¸åŠæ°‘å°¼æ°¸å¼åˆ†ä»ƒæ¯›å«ä¸¹
  */
 BOOL NPC_JankenEntryItemCheck(int talker,char *buf)
 {
@@ -444,14 +444,14 @@ BOOL NPC_JankenEntryItemDel(int talker,char *buf)
 					if(itemno==id){
 						cnt++;
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+							CHAR_getChar( talker, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* Ê§ÄÌ  Ø©  Ä¯ */
+							ITEM_getInt( itemindex, ITEM_ID),  /* å¤±å¥¶  ä¸  å¯ */
 #endif
-							"QuizDelItem(²ÂÃÕ->½»³öµÀ¾ß)",
+							"QuizDelItem(çŒœè°œ->äº¤å‡ºé“å…·)",
 							CHAR_getInt( talker, CHAR_FLOOR),
 							CHAR_getInt( talker, CHAR_X ),
  							CHAR_getInt( talker, CHAR_Y ),
@@ -467,21 +467,21 @@ BOOL NPC_JankenEntryItemDel(int talker,char *buf)
 				}
 			}		
 		}else{
-			/*--¼»ÊÏ·Ö  Ä¯¼°Ê§ÄÌ  Ø©Ã«¼»Çë---*/
+			/*--è“Ÿæ°åˆ†  å¯åŠå¤±å¥¶  ä¸æ¯›è“Ÿè¯·---*/
 			for( j = 0 ;  j < CHAR_MAXITEMHAVE ; j++){
 				itemindex = CHAR_getItemIndex( talker ,j);
 
 				if( ITEM_CHECKINDEX(itemindex) ){
 					if( atoi( buff3) == ITEM_getInt(itemindex,ITEM_ID)){
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+							CHAR_getChar( talker, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* Ê§ÄÌ  Ø©  Ä¯ */
+							ITEM_getInt( itemindex, ITEM_ID),  /* å¤±å¥¶  ä¸  å¯ */
 #endif
-							"QuizDelItem(²ÂÃÕ->½»³öµÀ¾ß)",
+							"QuizDelItem(çŒœè°œ->äº¤å‡ºé“å…·)",
 							CHAR_getInt( talker,CHAR_FLOOR),
 							CHAR_getInt( talker,CHAR_X ),
 							CHAR_getInt( talker,CHAR_Y ),
@@ -504,7 +504,7 @@ BOOL NPC_JankenItemGet(int meindex,int talker, char *wl)
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	char buf[64];
 
-	/*--É¬ÀÃ°×ÑëÄÌ»ïÃ«  ĞÄ  ĞÄ--*/
+	/*--æ¶©çƒ‚ç™½å¤®å¥¶ä¼™æ¯›  å¿ƒ  å¿ƒ--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr))==NULL){
 		print("NPC_janken ItemGet: GetArgStrErr");
 		return ;

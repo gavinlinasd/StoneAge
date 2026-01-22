@@ -26,7 +26,7 @@ int TRADE_getMasterInt( int index);
 int TRADE_getTimeInt( int index);
 BOOL TRADE_setMasterInt( int index, int Num);
 BOOL TRADE_setTimeInt( int index, int Num);
-int TRADE_AddMasrerTrade( int toindex);	//设定摊位主人
+int TRADE_AddMasrerTrade( int toindex);	//璁惧畾鎽婁綅涓讳汉
 int TRADE_getMaxNumInt();
 void MAPTRADE_CLEANGOLD( int floor, int num);
 BOOL MAPTRADE_CHECKMASTERIN( int masterindex , int toindex, int num);

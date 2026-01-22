@@ -22,15 +22,15 @@ int NPC_WorkInput(int meindex,int talker);
 
 
 /**********************************
-âÙÓå¼À
+èµ“æ¸ç¥­
 ************************************/
 BOOL NPC_HealerInit( int meindex )
 {
-	//ÕıÄÌÃóÃ«¼×¡õ·Â¡õ±åÉ¬ÀÃ
+	//æ­£å¥¶çš¿æ¯›ç”²â–¡ä»¿â–¡åæ¶©çƒ‚
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEHEALER );
-    //  »«Æ¥ÎåØ¦ÖĞ    Û¢Ø¦ÖĞ¾®ÊÖ  
+    //  çŒ¾åŒ¹äº”å…ä¸­    é‚°å…ä¸­äº•æ‰‹  
     CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );
-    //Ïş±åê¼Ä¾Ø¦ÖĞ
+    //æ™“åæ˜™æœ¨å…ä¸­
 //    CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );
 
 	return TRUE;
@@ -42,7 +42,7 @@ BOOL NPC_HealerInit( int meindex )
 
 /*-------------------------------------------
  *
- *   ½ñÄ¾£ıHP,MPÃ«òå·°±åÔÊÔÂ
+ *   ä»Šæœ¨ï½HP,MPæ¯›èˆé’’åå…æœˆ
  *
  --------------------------------------------*/
 void NPC_HealerTalked( int meindex , int talker , char *msg ,int color )
@@ -58,25 +58,25 @@ void NPC_HealerTalked( int meindex , int talker , char *msg ,int color )
     getStringFromIndexWithDelim( npcarg, "|", 1, token,sizeof( token));
     msgNo  = atoi( token );
 
-    /*---ÃóÒÁÄÌØÀ¡õ±å¸²ØÆ»¯·ÖØê  É±ÔÊÔÂ---*/
+    /*---çš¿ä¼Šå¥¶ä¹©â–¡åè¦†ä»„åŒ–åˆ†ä»ƒ  æ€å…æœˆ---*/
     if( CHAR_getInt( talker , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )	return;
 
-	/*---  Çø¶¯  ¾®£¢  Çø·´1ÒıĞ×·´£ıØÆÊÏÆ¥ÖĞÔÂ¾®£¢---*/
-	/* ¨àºëØøÓÀÓñ¶¯  ¼°ĞÄ */
+	/*---  åŒºåŠ¨  äº•ï¼‚  åŒºå1å¼•å‡¶åï½ä»„æ°åŒ¹ä¸­æœˆäº•ï¼‚---*/
+	/* ã„ å¼˜ä¼‰æ°¸ç‰åŠ¨  åŠå¿ƒ */
 	if( NPC_Util_CharDistance( talker, meindex ) > 2) return;
 
 	if( (CHAR_getWorkInt( talker, CHAR_WORKPARTYMODE) == 0)
 	|| (CHAR_getWorkInt( talker, CHAR_WORKPARTYMODE) == 2) )
 	{
-		/*--¼Ôãâ½ñÁùÒıØÆ½ïµ¤--*/
+		/*--èšæ±Šä»Šå…­å¼•ä»„æ–¤ä¸¹--*/
 		NPC_HealerAllHeal( talker);
 	    if(msgNo == 1) {
 		    CHAR_talkToCli( talker, meindex,
-			    "ÒÑ¾­È«²¿»Ø¸´¡£ÇëÔÚÏÂ´ÎµÄ±ÈÈüÖĞ¼ÓÓÍà¡£¡",CHAR_COLORWHITE);
+			    "å·²ç»å…¨éƒ¨å›å¤ã€‚è¯·åœ¨ä¸‹æ¬¡çš„æ¯”èµ›ä¸­åŠ æ²¹å”·ï¼",CHAR_COLORWHITE);
 
 		}else if(msgNo == 2) {
 		    CHAR_talkToCli( talker, meindex,
-		    	"ÓÉì¶ÄãºÜ³ÏÊµ£¬ÈÃÎÒ°ïÄã»Ø¸´°É£¡",CHAR_COLORWHITE);
+		    	"ç”±æ–¼ä½ å¾ˆè¯šå®ï¼Œè®©æˆ‘å¸®ä½ å›å¤å§ï¼",CHAR_COLORWHITE);
 		}
 
 	}else{
@@ -91,11 +91,11 @@ void NPC_HealerTalked( int meindex , int talker , char *msg ,int color )
 				NPC_HealerAllHeal( otherindex);
 				if(msgNo == 1) {
 				    CHAR_talkToCli( otherindex, meindex,
-				    	"ÒÑ¾­È«²¿»Ø¸´¡£ÇëÔÚÏÂ´ÎµÄ±ÈÈüÖĞ¼ÓÓÍà¡£¡",CHAR_COLORWHITE);
+				    	"å·²ç»å…¨éƒ¨å›å¤ã€‚è¯·åœ¨ä¸‹æ¬¡çš„æ¯”èµ›ä¸­åŠ æ²¹å”·ï¼",CHAR_COLORWHITE);
 
 				}else if(msgNo == 2) {
 					CHAR_talkToCli( otherindex, meindex, 
-						"ÓÉì¶ÄãºÜ³ÏÊµ£¬ÈÃÎÒ°ïÄã»Ø¸´°É£¡",CHAR_COLORWHITE);
+						"ç”±æ–¼ä½ å¾ˆè¯šå®ï¼Œè®©æˆ‘å¸®ä½ å›å¤å§ï¼",CHAR_COLORWHITE);
 				}
 			}
 		}
@@ -104,7 +104,7 @@ void NPC_HealerTalked( int meindex , int talker , char *msg ,int color )
 
 
 /*----------------------*/
-/* ¼Ôãâ */
+/* èšæ±Š */
 /*-----------------------*/
 void NPC_HealerAllHeal( int talker )
 {
@@ -123,24 +123,24 @@ void NPC_HealerAllHeal( int talker )
 
 		if( petindex == -1  )  continue;
 
-		/*  Æ½ÅÒ·Â¼°    ÃñÄáÓÀÛÍ    */
+		/*  å¹³ä¹“ä»¿åŠ    æ°‘å°¼æ°¸å¼    */
 		if( !CHAR_CHECKINDEX( talker ) )  continue;
 
-		/* Ê¸ÓÀĞş¼°indexÃñÄáÓÀÛÍÃ«ÔÊÔÂ */
+		/* çŸ¢æ°¸ç„åŠindexæ°‘å°¼æ°¸å¼æ¯›å…æœˆ */
 		if( CHAR_CHECKINDEX( petindex) == FALSE ) continue;
 
-		/*--¼Ôãâ--*/
+		/*--èšæ±Š--*/
 		CHAR_setFlg( petindex, CHAR_ISDIE, 0);
 		CHAR_setInt( petindex , CHAR_HP ,CHAR_getWorkInt( petindex, CHAR_WORKMAXHP ) );
 		CHAR_setInt( petindex , CHAR_MP ,CHAR_getWorkInt( petindex, CHAR_WORKMAXMP ) );
 
-		/*--ÓÉ·Â¶ª¡õÕıÆ©°ï--*/
+		/*--ç”±ä»¿ä¸¢â–¡æ­£è­¬å¸®--*/
 		CHAR_complianceParameter( petindex );
 		sprintf( petsend, "K%d", i );
 		CHAR_sendStatusString( talker , petsend );
 	}
 	
-	/*---õ´ÃŞ»¥ÖĞÄ¾ÈÉõ´ÃŞ±åÊÖËªññ--*/
+	/*---é†®æ£‰äº’ä¸­æœ¨å£¬é†®æ£‰åæ‰‹éœœè€¨--*/
 	if(CHAR_getWorkInt( talker, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE )
 	{
 		int	topartyarray = -1;
@@ -149,7 +149,7 @@ void NPC_HealerAllHeal( int talker )
 		if( CHAR_CHECKINDEX( oyaindex )) {
 			int	i;
 	
-			/* ·ßÛĞÎçËËØÆĞ×Ö§¹´¼°õ´ÃŞ¼°    ¼°èëô÷Ã«äú   */
+			/* æ„¤åŒåˆæ€‚ä»„å‡¶æ”¯å‹¾åŠé†®æ£‰åŠ    åŠæ¡¦èµ­æ¯›æ½¸   */
 			for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
 				int workindex = CHAR_getWorkInt( oyaindex, CHAR_WORKPARTYINDEX1 + i);
 				if( CHAR_CHECKINDEX( workindex) ) {
@@ -162,7 +162,7 @@ void NPC_HealerAllHeal( int talker )
 			
 			for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
 				int otherindex = CHAR_getPartyIndex( talker, i);
-				/* õ´ÃŞÓÉ·Â¶ª¡õÕıÃ«ËªÔÂ */
+				/* é†®æ£‰ç”±ä»¿ä¸¢â–¡æ­£æ¯›éœœæœˆ */
 				if( CHAR_CHECKINDEX( otherindex) ) {
 					snprintf( msgbuf, sizeof( msgbuf), "N%d", topartyarray);
 					if( otherindex != talker) {
@@ -173,7 +173,7 @@ void NPC_HealerAllHeal( int talker )
 		}
 	}
 
-	/*--ÓÉ·Â¶ª¡õÕıËªÔ»--*/
+	/*--ç”±ä»¿ä¸¢â–¡æ­£éœœæ›°--*/
 	CHAR_send_P_StatusString( talker, CHAR_P_STRING_HP);
 	CHAR_send_P_StatusString( talker, CHAR_P_STRING_MP);
 

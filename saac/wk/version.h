@@ -3,16 +3,16 @@
 
 void Log( char *msg );
 //#define _DEBUG_WORK
-#define _FIX_WORKS					//wkÐÞ¸Ä
+#define _FIX_WORKS					//wkä¿®æ”¹
 
 
 // -------------------------------------------------------------------
-// ×¨°¸£º(ÐÂ¸¶·Ñ»úÖÆ)
-#define _AP_CHECK_3_TIMES        // (¿É¿ª) WON ADD ¼õÉÙÈÏÖ¤´ÎÊý (±±¾©&º«¹ú²»±Ø¿ª)
-#define _FIX_MESSAGE             // (¿É¿ª) WON ADD ÐÞ¸Ä·â°üÄÚÈÝ (±±¾©&º«¹ú²»±Ø¿ª)
-//#define _ADD_AC_IP			 // (²âÊÔÖÐ) WON ADD ¼ÓAC_IPÖÁÍ¨Ñ¶Ð­¶¨ÖÐ (±±¾©&º«¹ú²»±Ø¿ª)
+// ä¸“æ¡ˆï¼š(æ–°ä»˜è´¹æœºåˆ¶)
+#define _AP_CHECK_3_TIMES        // (å¯å¼€) WON ADD å‡å°‘è®¤è¯æ¬¡æ•° (åŒ—äº¬&éŸ©å›½ä¸å¿…å¼€)
+#define _FIX_MESSAGE             // (å¯å¼€) WON ADD ä¿®æ”¹å°åŒ…å†…å®¹ (åŒ—äº¬&éŸ©å›½ä¸å¿…å¼€)
+//#define _ADD_AC_IP			 // (æµ‹è¯•ä¸­) WON ADD åŠ AC_IPè‡³é€šè®¯åå®šä¸­ (åŒ—äº¬&éŸ©å›½ä¸å¿…å¼€)
 
-//#define _TIMEOUTKICK // Robin Ê±¶ÎÖÆ
+//#define _TIMEOUTKICK // Robin æ—¶æ®µåˆ¶
 
 #endif
 

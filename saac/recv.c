@@ -36,7 +36,7 @@
 #include "chatroom.h"
 #endif
 
-#ifdef _RECAL_BACKUP_PLAYER			// WON »ØËİ¹¦ÄÜ
+#ifdef _RECAL_BACKUP_PLAYER			// WON å›æº¯åŠŸèƒ½
 #include <dirent.h>
 #include <sys/stat.h>
 
@@ -52,7 +52,7 @@ static int char_data_count=0;
 
 
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD ¼ÆËãÏßÉÏÈËÊı
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD è®¡ç®—çº¿ä¸Šäººæ•°
 struct play_count
 {
 	int playcount;
@@ -79,8 +79,8 @@ void saacproto_ACServerLogin_recv( int ti,char* servername ,
     saacproto_ACServerLogin_send( ti ,result ,retdata );
 }
 /*
-   ±Ø¡õØ©ÈÓ¡õÌï¡õ»¥Ê§ÊĞËü¼şĞşÈÓ¡õÌï¡õ¾®ÈÕ·òºëÊ§ËüĞşÔÊÔÂ£Û
-   int fd : ¸²ÀŞsocket
+   å¿…â–¡ä¸æ‰”â–¡ç”°â–¡äº’å¤±å¸‚å®ƒä»¶ç„æ‰”â–¡ç”°â–¡äº•æ—¥å¤«å¼˜å¤±å®ƒç„å…æœˆï¼»
+   int fd : è¦†æ“‚socket
 
 */
 void  saacproto_ACServerLogout_recv( int ti  )
@@ -103,7 +103,7 @@ void saacproto_ACCharLoad_recv( int ti,char* id,char* pas,char* charname ,
 
 if (!sasql_query(id,pas)){
 		if(!sasql_register(id,pas)){
-	    log("ÃÜÂë´íÎó»òÃ»ÓĞ×¢²á\n");
+	    log("å¯†ç é”™è¯¯æˆ–æ²¡æœ‰æ³¨å†Œ\n");
 	    saacproto_ACCharList_send( ti , FAILED , "Password error" , mesgid);
 	    return;}}
 
@@ -119,16 +119,16 @@ if (!sasql_query(id,pas)){
 
 #ifdef _CHANGEGALAXY
 	if( isChangeGalaxyLocked( id) ) {
-		log(" ÒòĞÇÏµÒÆÃñ±»Ëø ");
+		log(" å› æ˜Ÿç³»ç§»æ°‘è¢«é” ");
 		saacproto_ACCharLoad_send( ti , FAILED , "CHANGE_GALAXY" , mesgid, charindex );
 		return;
 	}
 #endif
 
 
-#ifdef _UNLOCKPOOL // µÇÈëÊ±¼ì²éÊÇ·ñÒÑÔÚUnlockPoolÖĞ
+#ifdef _UNLOCKPOOL // ç™»å…¥æ—¶æ£€æŸ¥æ˜¯å¦å·²åœ¨UnlockPoolä¸­
 	if( inUnlockPool(id) ) {
-		log(" ÒÑ¾­ÔÚUNLOCKPOOLÖĞ ");
+		log(" å·²ç»åœ¨UNLOCKPOOLä¸­ ");
 		saacproto_ACCharLoad_send( ti , FAILED ,
                                    "server load too high" , mesgid , charindex);
 		return;
@@ -154,7 +154,7 @@ if (!sasql_query(id,pas)){
     }
 
     // Spock 2000/10/31
-    //log( "¶ÁÈ¡µµ°¸: ¸½¼Ó×÷Òµ %s %s, ½ø³Ì=%d\n", id,pas,process );
+    //log( "è¯»å–æ¡£æ¡ˆ: é™„åŠ ä½œä¸š %s %s, è¿›ç¨‹=%d\n", id,pas,process );
     // Spock end
 }
 
@@ -169,21 +169,21 @@ void saacproto_ACCharLoadII_recv( int ti,char* id,char* pas,char* charname ,
         saacproto_ACCharLoad_send( ti , FAILED , "not login" , mesgid, charindex );
         return;
     }
-	// ¼ì²éBufferÖĞµÄ×ÊÁÏÊÇ·ñ·ûºÏ
-	// ¼ì²éÔ­ÏÈ´ÓWgs´«»ØCharLoad×öÁËÊ²÷áÊÂ
-	// ¸üĞÂÃûÆ¬×ÊÁÏ
+	// æ£€æŸ¥Bufferä¸­çš„èµ„æ–™æ˜¯å¦ç¬¦åˆ
+	// æ£€æŸ¥åŸå…ˆä»Wgsä¼ å›CharLoadåšäº†ä»€éº½äº‹
+	// æ›´æ–°åç‰‡èµ„æ–™
 }
 #endif
 
 /*
-   Æ½ÅÒ·ÂâçĞå
+   å¹³ä¹“ä»¿å¿¡ç»£
 
    char *id : ID
-   char *pas : ÌìÔÊ´õ¡õÉı
-   char *charname : Æ½ÅÒ·Â  
-   char *opt : ×óÃóÆËÒà¼ş  Ù¯  £Û CharList¼°ÎçÎå±å¶ªÆ¹ÎçØÆ»¯ß¯ÔÊÊ÷  
-   char *charinfo : °×ÑëÄÌ»ï±åâçĞåÔÊÔÂÆ½ÅÒ·ÂÛÍÕı¼°µ©  ¡õÕıµ©Ê÷  £Û
-   int id : ¶ªÓÀ±¾¡õ³âid
+   char *pas : å¤©å…æ­¹â–¡å‡
+   char *charname : å¹³ä¹“ä»¿  
+   char *opt : å·¦çš¿æ‰‘äº¦ä»¶  ä¾¬  ï¼» CharListåŠåˆäº”åä¸¢ä¹’åˆä»„åŒ–å¿’å…æ ‘  
+   char *charinfo : ç™½å¤®å¥¶ä¼™åå¿¡ç»£å…æœˆå¹³ä¹“ä»¿å¼æ­£åŠæ—¦  â–¡æ­£æ—¦æ ‘  ï¼»
+   int id : ä¸¢æ°¸æœ¬â–¡æ–¥id
 */
 #ifdef _NewSave
 void saacproto_ACCharSave_recv( int ti, char* id,
@@ -218,16 +218,16 @@ void saacproto_ACCharSave_recv( int ti, char* id,
 	                       id , "dummy" , charname , process ,"",
 	                       mesgid , 0 ) < 0 ) { 
 #endif
-			log("ÓÎÏ·ÍË³öÊ§°Ü, ½ø³Ì=%s\n" , process );    
+			log("æ¸¸æˆé€€å‡ºå¤±è´¥, è¿›ç¨‹=%s\n" , process );    
 	    } else {
-	        log("ÓÎÏ·ÍË³ö³É¹¦, ½ø³Ì=%s\n" , process );
+	        log("æ¸¸æˆé€€å‡ºæˆåŠŸ, è¿›ç¨‹=%s\n" , process );
 	    }
 
     } else {
-	    log("×Ô¶¯±£´æ\n\n");
+	    log("è‡ªåŠ¨ä¿å­˜\n\n");
     }
 
-    log("ÔÚÏßÍæ¼Ò±£´æ\n");
+    log("åœ¨çº¿ç©å®¶ä¿å­˜\n");
 }
 
 #ifdef _RELOGIN
@@ -244,10 +244,10 @@ void saacproto_ACCharSaveII_recv( int ti, char* id,
     }
     ret = charSave( ti, id, charname, opt, charinfo,
                       unlock,mesgid, charindex );
-	// ´¢´æÈËÎï×ÊÁÏ
-	// ¼ÇÂ¼Ïà¹Ø×ÊÑ¶
-	// ²»ËÍGEÖÁWGS
-	// ²»¸üĞÂÃûÆ¬×ÊÁÏ
+	// å‚¨å­˜äººç‰©èµ„æ–™
+	// è®°å½•ç›¸å…³èµ„è®¯
+	// ä¸é€GEè‡³WGS
+	// ä¸æ›´æ–°åç‰‡èµ„æ–™
     if (unlock) {
 #ifdef _UNLOCKPOOL
 		if( addUnlockPool( ti, id, charname, process, mesgid) <0  ) {
@@ -256,14 +256,14 @@ void saacproto_ACCharSaveII_recv( int ti, char* id,
 	                       id , "dummy" , charname , process ,"",
 	                       mesgid , 0 ) < 0 ) { 
 #endif
-		log("ÓÎÏ·ÍË³öÊ§°Ü, ½ø³Ì=%s\n" , process );    
+		log("æ¸¸æˆé€€å‡ºå¤±è´¥, è¿›ç¨‹=%s\n" , process );    
 	    } else {
-	        log("ÓÎÏ·ÍË³ö³É¹¦, ½ø³Ì=%s\n" , process );
+	        log("æ¸¸æˆé€€å‡ºæˆåŠŸ, è¿›ç¨‹=%s\n" , process );
 	    }
     } else {
-	    log("×Ô¶¯±£´æ\n\n");
+	    log("è‡ªåŠ¨ä¿å­˜\n\n");
     }
-    log("ÔÚÏßÍæ¼Ò±£´æ\n");
+    log("åœ¨çº¿ç©å®¶ä¿å­˜\n");
 }
 #endif
 
@@ -281,7 +281,7 @@ void saacproto_ACCharList_recv( int ti,char* id,char* pas , int mesgid)
 
 #ifdef _CHANGEGALAXY
 	if( isChangeGalaxyLocked( id) ) {
-		log(" ÒòĞÇÏµÒÆÃñ±»Ëø ");
+		log(" å› æ˜Ÿç³»ç§»æ°‘è¢«é” ");
 		saacproto_ACCharList_send( ti , FAILED , "CHANGE_GALAXY" , mesgid );
 		return;
 	}
@@ -297,7 +297,7 @@ void saacproto_ACCharList_recv( int ti,char* id,char* pas , int mesgid)
                                    mesgid );
         return;
     }
-    log( "µµ°¸ÁĞ±í: %s\n", id );
+    log( "æ¡£æ¡ˆåˆ—è¡¨: %s\n", id );
 }
 
 void saacproto_ACCharDelete_recv( int ti,char* id,char* pas,
@@ -308,13 +308,13 @@ void saacproto_ACCharDelete_recv( int ti,char* id,char* pas,
         saacproto_ACCharDelete_send( ti , FAILED , "not login" , mesgid );
         return;
     }
-#ifdef _DEATH_FAMILY_LOGIN_CHECK //ÎŞ·¨É¾³ıÈËÎï×ÊÁÏ
+#ifdef _DEATH_FAMILY_LOGIN_CHECK //æ— æ³•åˆ é™¤äººç‰©èµ„æ–™
 	saacproto_ACCharDelete_send( ti , FAILED , "server load too high",
 							mesgid );
 	return;
 #endif
 
-#ifdef _DEATH_CONTEND //ÎŞ·¨É¾³ıÈËÎï×ÊÁÏ
+#ifdef _DEATH_CONTEND //æ— æ³•åˆ é™¤äººç‰©èµ„æ–™
 	saacproto_ACCharDelete_send( ti , FAILED , "server load too high",
 							mesgid );
 	return;
@@ -327,7 +327,7 @@ void saacproto_ACCharDelete_recv( int ti,char* id,char* pas,
                                    mesgid );
         return;
     }
-    log( "µµ°¸É¾³ı: ¸½¼Ó×÷Òµ %s %s\n",id , pas );
+    log( "æ¡£æ¡ˆåˆ é™¤: é™„åŠ ä½œä¸š %s %s\n",id , pas );
 }
 
 void saacproto_ACLock_recv( int ti ,char* id,int lock,int mesgid )
@@ -365,9 +365,9 @@ void saacproto_ACLock_recv( int ti ,char* id,int lock,int mesgid )
 		if ( lockUser( getGSName( ti ) , id , "0" , lock , result,sizeof(result),
 										retdata ,sizeof( retdata ) , "0" , "0") < 0 ) {
 #endif
-			log( "Ëø¶¨ÓÃ»§: %s Ê§°Ü\n" , id );
+			log( "é”å®šç”¨æˆ·: %s å¤±è´¥\n" , id );
 		} else {
-			log( "Ëø¶¨ÓÃ»§: %s ³É¹¦\n" , id );
+			log( "é”å®šç”¨æˆ·: %s æˆåŠŸ\n" , id );
 		}
     }
     // Spock end
@@ -490,7 +490,7 @@ void saacproto_DBUpdateEntryInt_recv( int fd,
     }
 }
 
-#ifdef _ALLDOMAN					// (²»¿É¿ª) Syu ADD ÅÅĞĞ°ñNPC
+#ifdef _ALLDOMAN					// (ä¸å¯å¼€) Syu ADD æ’è¡Œæ¦œNPC
 void saacproto_UpdataStele_recv( int fd , char *cdkey , char *name , char *title ,
 								int level , int trns , int time , int floor )
 {
@@ -510,7 +510,7 @@ void saacproto_UpdataStele_recv( int fd , char *cdkey , char *name , char *title
 		for( i=0; i<MAX_HERO_LIST; i++){
 			if( Herolist[i].use == 0 )continue;
 			if( floor <= Herolist[i].intdata[3] ) continue;
-			for( j=MAX_HERO_LIST-1; j>i; j--){ //20031001bug (Ô­j++)
+			for( j=MAX_HERO_LIST-1; j>i; j--){ //20031001bug (åŸj++)
 				sprintf( Herolist[j].strings[0], "%s", Herolist[j-1].strings[0] );
 				sprintf( Herolist[j].strings[1], "%s", Herolist[j-1].strings[1] );
 				sprintf( Herolist[j].strings[2], "%s", Herolist[j-1].strings[2] );
@@ -770,7 +770,7 @@ void saacproto_ACAddFM_recv( int fd, char *fmname, char *fmleadername,
 }
 
 void saacproto_ACJoinFM_recv(int fd, char *fmname, int fmindex,
-#ifdef _PERSONAL_FAME	// Arminius: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME	// Arminius: å®¶æ—ä¸ªäººå£°æœ›
 	char *charname, char *charid, int charlv, int index, int fame, int charfdid)
 #else
 	char *charname, char *charid, int charlv, int index, int charfdid)
@@ -778,7 +778,7 @@ void saacproto_ACJoinFM_recv(int fd, char *fmname, int fmindex,
 {
 #ifdef __FAMILY
 	int r = 0;
-#ifdef _PERSONAL_FAME	// Arminius: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME	// Arminius: å®¶æ—ä¸ªäººå£°æœ›
 	r =  ACJoinFM(fd, index, fmname, fmindex, charname, charid, charlv, fame, charfdid);
 #else
 	r =  ACJoinFM(fd, index, fmname, fmindex, charname, charid, charlv, charfdid);
@@ -875,7 +875,7 @@ void saacproto_ACShowFMList_recv(int fd)
 #endif
 }
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD ¼Ò×åÕ½GMÖ¸Áî
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD å®¶æ—æˆ˜GMæŒ‡ä»¤
 void saacproto_ACShowMemberList_2_recv( int fd, int charindex, int fm1, int fm2, int time, int id )
 {
 	char *fm1_name, *fm2_name;
@@ -955,7 +955,7 @@ void saacproto_ACMemberLeaveFM_recv(int fd, char *fmname, int fmindex,
 {
 #ifdef __FAMILY
 	int r = 0;
-	int flag = 1; // Ö÷¶¯Àë¿ª¼Ò×å
+	int flag = 1; // ä¸»åŠ¨ç¦»å¼€å®¶æ—
 #ifdef _FMVER21
 	r =  ACMemberLeaveFM(index, fmname, fmindex, charname, flag,
 		charindex, meindex);
@@ -986,7 +986,7 @@ void saacproto_ACFMCharLogin_recv(int fd, char *fmname, int fmindex,
 #ifdef __FAMILY
 	int r = 0, floor = 0, fmpopular = 0, joinflag = 0, fmsetupflag = 0;
 	int flag = 0, charindex = 0;
-#ifdef _PERSONAL_FAME   // Arminius: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME   // Arminius: å®¶æ—ä¸ªäººå£°æœ›
 	int charfame = 0;
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -1001,7 +1001,7 @@ void saacproto_ACFMCharLogin_recv(int fd, char *fmname, int fmindex,
 	#endif
 			);
 #else
-	#ifdef _PERSONAL_FAME   // Arminius: ¼Ò×å¸öÈËÉùÍû
+	#ifdef _PERSONAL_FAME   // Arminius: å®¶æ—ä¸ªäººå£°æœ›
 		r =  ACFMCharLogin(fd, -1, fmname, fmindex, charname, charid, charlv,
 			&floor, &fmpopular, &joinflag, &fmsetupflag, &charindex, charfdid,
 			&charfame, eventflag);
@@ -1011,7 +1011,7 @@ void saacproto_ACFMCharLogin_recv(int fd, char *fmname, int fmindex,
 	#endif
 #endif
 
-#ifdef _PERSONAL_FAME   // Arminius: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME   // Arminius: å®¶æ—ä¸ªäººå£°æœ›
 	if (r < 0){
 		saacproto_ACFMCharLogin_send(fd, FAILED, r, floor, fmpopular,
 			joinflag, fmsetupflag, flag, charindex, charfame, charfdid
@@ -1102,7 +1102,7 @@ void saacproto_ACFMPointList_recv(int fd)
 
 
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD ¼ÆËãÏßÉÏÈËÊı
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD è®¡ç®—çº¿ä¸Šäººæ•°
 void PlayerCount(void)
 {
 	int i, total_count=0;
@@ -1317,7 +1317,7 @@ extern gmsv gs[MAXCONNECTION];
 	}
 }
 
-#ifdef _AC_SEND_FM_PK		 // WON ADD ×¯Ô°¶ÔÕ½ÁĞ±í´¢´æÔÚAC
+#ifdef _AC_SEND_FM_PK		 // WON ADD åº„å›­å¯¹æˆ˜åˆ—è¡¨å‚¨å­˜åœ¨AC
 #ifdef _ACFMPK_LIST
 void saacproto_ACLoadFmPk_recv(int fd, int fmpks_pos)
 {
@@ -1344,7 +1344,7 @@ void saacproto_ACSendFmPk_recv(int fd, int fmpks_pos, int userindex, int flg, ch
 			saacproto_ACLoadFmPk_send(i, FMPK_GetData( fmpks_pos-1) );
 		}
 	}
-	//ËÍÈ·ÈÏÑ¶Ï¢
+	//é€ç¡®è®¤è®¯æ¯
 	if(userindex != -1) saacproto_ACSendFmPk_send( fd, userindex, 1);
 }
 #else
@@ -1381,7 +1381,7 @@ void saacproto_ACSendFmPk_recv(int fd, int fmpks_pos, char *data)
 
 
 
-#ifdef _RECAL_BACKUP_PLAYER			// WON »ØËİ¹¦ÄÜ
+#ifdef _RECAL_BACKUP_PLAYER			// WON å›æº¯åŠŸèƒ½
 
 #define arraysizeof( x ) (sizeof(x)/sizeof(x[0]))
 
@@ -1394,13 +1394,13 @@ void saacproto_ACRecalPlayer_recv(int fd, char *uid, int userfdid, int GmCliId,
 	if( date<20000000 )			  { log("\n date(%d) format err!!", date); 	 return; }
 
 
-	if( backup_flag == 1 ){ // ±¸·İÈÕÆÚ
-		// »Ø´«ÓĞ±¸·İµÄÈÕÆÚ
+	if( backup_flag == 1 ){ // å¤‡ä»½æ—¥æœŸ
+		// å›ä¼ æœ‰å¤‡ä»½çš„æ—¥æœŸ
 		get_backup_date(fd, uid, userfdid, GmCliId, id, char_num, date);	
 
-	}else if( backup_flag == 2 ){	// ÈËÎï×ÊÁÏ
-		get_online_player_data(fd, uid, userfdid, GmCliId, id, char_num, date);	// ´«»ØÏßÉÏÈËÎï×ÊÁÏ
-		get_backup_player_data(fd, uid, userfdid, GmCliId, id, char_num, date);	// ´«»Ø±¸·İÈËÎï×ÊÁÏ
+	}else if( backup_flag == 2 ){	// äººç‰©èµ„æ–™
+		get_online_player_data(fd, uid, userfdid, GmCliId, id, char_num, date);	// ä¼ å›çº¿ä¸Šäººç‰©èµ„æ–™
+		get_backup_player_data(fd, uid, userfdid, GmCliId, id, char_num, date);	// ä¼ å›å¤‡ä»½äººç‰©èµ„æ–™
 	}
 
 }
@@ -1414,27 +1414,27 @@ void saacproto_ACRecalBackup_recv(int fd, char *uid, int userfdid, int GmCliId, 
 	char filename1[128], filename2[128];
 	char body[256];	
 
-	if(backup_flag == 1){		// »ØËİÈËÎï
-		// ÏßÉÏÈËÎï
+	if(backup_flag == 1){		// å›æº¯äººç‰©
+		// çº¿ä¸Šäººç‰©
 		sprintf(filename1, "~/saac/char/0x%x/%s.%d.char", (getHash(id)&0xff), id, char_num );
 		
-		// ±¸·İÈËÎï
+		// å¤‡ä»½äººç‰©
 		sprintf(filename2, "%s/char/0x%x/%s.%d.char", BACKUP_DIR, (getHash(id)&0xff), id, char_num );
 
-		// ÒÆ¶¯±¸·İÈËÎïÖÁÏßÉÏÈËÎï
+		// ç§»åŠ¨å¤‡ä»½äººç‰©è‡³çº¿ä¸Šäººç‰©
 		strcpy(body, "");
 		sprintf(body, "mv %s %s", filename2, filename1);
 		system(body);
 		
-		/* »ØËİ³É¹¦ */
+		/* å›æº¯æˆåŠŸ */
 		saacproto_ACRecalPlayer_send(fd, uid, userfdid, GmCliId, id, char_num, date, char_data, 4);
 	
 	
-	}else if(backup_flag == 2 ){		// ²¿·Ö»ØËİÈËÎï
+	}else if(backup_flag == 2 ){		// éƒ¨åˆ†å›æº¯äººç‰©
 
 		log("\n won test 44 ==> char_data_chang(%s)", char_data);
 		
-		// È¡³öĞè»ØËİÏîÄ¿
+		// å–å‡ºéœ€å›æº¯é¡¹ç›®
 		for(i=0;i<5;i++){
 			memset(temp, 0, sizeof(temp));
 			easyGetTokenFromString( char_data , count , temp , sizeof( temp ));
@@ -1462,7 +1462,7 @@ void saacproto_ACRecalBackup_recv(int fd, char *uid, int userfdid, int GmCliId, 
 		}
 
 		
-		// ´¦Àí²¿·Ö»ØËİ¹¦ÄÜ
+		// å¤„ç†éƒ¨åˆ†å›æº¯åŠŸèƒ½
 		recal_part_backup(fd, uid, userfdid, GmCliId, id, char_num, date);
 		
 	}	
@@ -1481,7 +1481,7 @@ void recal_part_backup(int fd, char *uid, int userfdid, int GmCliId, char *id, i
 	char *temp=NULL, *temp2, *temp3, *temp4, *temp5, *msg1, delim[20], out_msg[65530];
 	
 
-	// ÏßÉÏÈËÎï
+	// çº¿ä¸Šäººç‰©
 	{
 		c_ptr=onlin_char;
 		snprintf(body , sizeof(body ) , "%s.%d.char" , id , char_num );
@@ -1503,7 +1503,7 @@ void recal_part_backup(int fd, char *uid, int userfdid, int GmCliId, char *id, i
 		fclose(fp);	
 	}
 
-	// ±¸·İÈËÎï
+	// å¤‡ä»½äººç‰©
 	{
 		c_ptr=backup_char;
 		snprintf(body , sizeof(body ) , "%s.%d.char" , id , char_num );
@@ -1533,7 +1533,7 @@ void recal_part_backup(int fd, char *uid, int userfdid, int GmCliId, char *id, i
 			if( item_pet_chang.equit_item[i] != i ){
 				log("\n won test 2 ==> i(%d) item(%d)", i, item_pet_chang.equit_item[i]);
 				
-				// ÏßÉÏÈËÎï
+				// çº¿ä¸Šäººç‰©
 				while( temp==NULL ){
 					log("\n won test 2.1 ==> temp(%s)", temp);
 					sprintf( delim, "item%d=", i);
@@ -1558,7 +1558,7 @@ void recal_part_backup(int fd, char *uid, int userfdid, int GmCliId, char *id, i
 				snprintf(msg1, strlen(onlin_char)-strlen(temp2), "%s", onlin_char );
 				log("\n won test 3.2 ==> msg1(%s)", msg1);
 			
-				// ±¸·İÈËÎï
+				// å¤‡ä»½äººç‰©
 				sprintf( delim, "item%d=", item_pet_chang.equit_item[i]-5+1);
 				temp3=strstr( backup_char, delim);
 				temp4=strstr( temp3, "\n");
@@ -1566,10 +1566,10 @@ void recal_part_backup(int fd, char *uid, int userfdid, int GmCliId, char *id, i
 				snprintf(temp5, strlen(temp3)-strlen(temp4), "%s", temp3);
 				log("\n won test 4 ==> temp5(%s)", temp5);
 				
-				// ×éºÏ
+				// ç»„åˆ
 				memset(out_msg, 0, sizeof(out_msg));
 				strcpy(out_msg, msg1);
-				strcat(out_msg, temp5);				// »ØËİµÄ²¿·Ö
+				strcat(out_msg, temp5);				// å›æº¯çš„éƒ¨åˆ†
 				strcat(out_msg, temp2);
 				log("\n won test 5 ==> out_msg(%s)", out_msg);
 			}
@@ -1581,7 +1581,7 @@ void recal_part_backup(int fd, char *uid, int userfdid, int GmCliId, char *id, i
 #endif
 
 
-#ifdef _CHECKFMSCHEDULE	 // Syu ADD Í¸¹ıACÈ·ÈÏ¼Ò×åÌôÕ½ÅÅ³Ì
+#ifdef _CHECKFMSCHEDULE	 // Syu ADD é€è¿‡ACç¡®è®¤å®¶æ—æŒ‘æˆ˜æ’ç¨‹
 void saacproto_ACCheckSchedule_recv(int fd,char *data)
 {
 	extern  gmsv gs[MAXCONNECTION];
@@ -1631,8 +1631,8 @@ void saacproto_ACManorPKAck_recv(int fd, char *data)
 {
 #ifdef __FAMILY
 
-#ifdef _AC_SEND_FM_PK		 // WON ADD ×¯Ô°¶ÔÕ½ÁĞ±í´¢´æÔÚAC
-	// ²»´¦Àí
+#ifdef _AC_SEND_FM_PK		 // WON ADD åº„å›­å¯¹æˆ˜åˆ—è¡¨å‚¨å­˜åœ¨AC
+	// ä¸å¤„ç†
 #else
 	extern gmsv gs[MAXCONNECTION];
 	int i;
@@ -1673,7 +1673,7 @@ void saacproto_ACKick_recv( int ti ,char* id, int lock,int mesgid )
 		LServer_SAUNLock_send( ti, id, mesgid, 0);
 #endif
 		break;
-	case 1:		//¿çĞÇÇòÌßÈË KICK
+	case 1:		//è·¨æ˜Ÿçƒè¸¢äºº KICK
 		{
 			int i;
 			for(i=0;i<MAXCONNECTION;i++)	{
@@ -1704,7 +1704,7 @@ void saacproto_ACKick_recv( int ti ,char* id, int lock,int mesgid )
 				sprintf(retdata, "LOCK USER !!");
 		  }
 		break;
-	case 5:	//²éÑ¯Íæ¼Ò×´Ì¬ TYPE
+	case 5:	//æŸ¥è¯¢ç©å®¶çŠ¶æ€ TYPE
 		{
 			char buf[4096];
 			if (GetMemLockState(getHash(id) & 0xff, id, buf)) {
@@ -1753,13 +1753,13 @@ void saacproto_ACKick_recv( int ti ,char* id, int lock,int mesgid )
 			int i;
 			if (GetMemLockState(getHash(id) & 0xff, id, buf)) {
 				log("\n won test 20.1 ==>");
-				// ÓĞlockµÄ»°ÌßÈË
+				// æœ‰lockçš„è¯è¸¢äºº
 				for(i=0;i<MAXCONNECTION;i++)	{
 					if( is_game_server_login(i) ){
 						saacproto_ACKick_send( i , 1 , id , mesgid );
 					}
 				}			
-			} else {	// Ã»ÓĞlockµÄ»°£¬ËÍ game end					
+			} else {	// æ²¡æœ‰lockçš„è¯ï¼Œé€ game end					
 				char result[100], retdata[100], process[16];
 				int ret = 0;			
 				log("\n won test 20.2 ==>");
@@ -1786,7 +1786,7 @@ void saacproto_ACKick_recv( int ti ,char* id, int lock,int mesgid )
 		}
 		break;
 #endif
-	case 10:	//¿çĞÇÇòÌßÈË²»º¬load¸ÃĞÇÇò
+	case 10:	//è·¨æ˜Ÿçƒè¸¢äººä¸å«loadè¯¥æ˜Ÿçƒ
 		{
 			int i;
 			for(i=0;i<MAXCONNECTION;i++)	{
@@ -1803,7 +1803,7 @@ void saacproto_ACKick_recv( int ti ,char* id, int lock,int mesgid )
 #endif
 
 
-#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS¶ÏÏß×Ô¶¯ËÍLOGOUT¸øWORKER
+#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GSæ–­çº¿è‡ªåŠ¨é€LOGOUTç»™WORKER
 void Worker_send_logout( int ti ,char* id )
 {
 	char result[100], retdata[100], process[16];
@@ -1860,9 +1860,9 @@ void saacproto_DefendList_recv( int fd, int type, char *data)
 	case 2:
 		DEFEND_LoadScoreForList( data);
 		break;
-	case 3:	//¼ì²é»ı·Ö
+	case 3:	//æ£€æŸ¥ç§¯åˆ†
 		break;
-	case 4:	//É¾³ı»ı·Ö¼ÍÂ¼
+	case 4:	//åˆ é™¤ç§¯åˆ†çºªå½•
 		break;
 	}
 }
@@ -1898,9 +1898,9 @@ void saacproto_LoadNEWPlayer_recv( int ti , int charaindex, char* filename)
 {
 	char Token[256];
 	if( LoadNEWPlayerListAdd( filename) <= 0 ){
-		sprintf( Token, "ÖØ¶ÁĞÂÊÖÃûµ¥-´íÎó¡£");
+		sprintf( Token, "é‡è¯»æ–°æ‰‹åå•-é”™è¯¯ã€‚");
 	}else{
-		sprintf( Token, "ÖØ¶ÁĞÂÊÖÃûµ¥-Íê³É¡£");
+		sprintf( Token, "é‡è¯»æ–°æ‰‹åå•-å®Œæˆã€‚");
 	}
 
 	saacproto_LoadNEWPlayer_send( ti, charaindex, Token);
@@ -1957,7 +1957,7 @@ void saacproto_PKLISTUPDATE_send( int fd, char *ret, int mesgid, int charindex, 
 */
 #endif
 
-#ifdef _GM_BROADCAST					// WON ADD ¿Í·ş¹«¸æÏµÍ³
+#ifdef _GM_BROADCAST					// WON ADD å®¢æœå…¬å‘Šç³»ç»Ÿ
 void broadcast( char *msg )
 {
     extern gmsv gs[MAXCONNECTION];
@@ -1991,7 +1991,7 @@ void broadcast( char *msg )
 }
 #endif
 
-#ifdef _SEND_EFFECT		   // WON ADD ËÍÏÂÑ©¡¢ÏÂÓêµÈÌØĞ§
+#ifdef _SEND_EFFECT		   // WON ADD é€ä¸‹é›ªã€ä¸‹é›¨ç­‰ç‰¹æ•ˆ
 void SendEffect(char *effect)
 {
     extern gmsv gs[MAXCONNECTION];
@@ -2006,11 +2006,11 @@ void SendEffect(char *effect)
 #endif
 
 
-#ifdef _BAD_PLAYER            // WON ADD ËÍ»µÍæ¼ÒÈ¥¹Ø
+#ifdef _BAD_PLAYER            // WON ADD é€åç©å®¶å»å…³
 void BadPlayer(void)
 {
 	int i;
-	extern char BadPlayerList[500][20];			// ¶¨Òå×î´ó 500 Ãû
+	extern char BadPlayerList[500][20];			// å®šä¹‰æœ€å¤§ 500 å
 	char *filename={"sendjail.txt"};
 	FILE *fp;
 	extern int MAX_BAD_PLAYER;
@@ -2042,7 +2042,7 @@ void BadPlayer(void)
 }
 #endif
 
-#ifdef _AC_SEND_FM_PK		 // WON ADD ×¯Ô°¶ÔÕ½ÁĞ±í´¢´æÔÚAC
+#ifdef _AC_SEND_FM_PK		 // WON ADD åº„å›­å¯¹æˆ˜åˆ—è¡¨å‚¨å­˜åœ¨AC
 void load_fm_pk_list()
 {
 	int i;
@@ -2117,7 +2117,7 @@ void saacproto_ACCharGetPoolItem_recv( int fd, char *cdkey, int userindex, int c
 
 	ret = loadCharPoolItemOne( cdkey , loadbuf , sizeof(loadbuf));
 
-	if( ret == -1 ){//ÕÒ²»µ½µµ°¸
+	if( ret == -1 ){//æ‰¾ä¸åˆ°æ¡£æ¡ˆ
 		saacproto_ACCharGetPoolItem_send( fd , FAILED, loadbuf, clifdid, npcid);
 		return;
 	}
@@ -2158,7 +2158,7 @@ void saacproto_ACCharGetPoolPet_recv( int fd, char *cdkey, int userindex, int cl
 
 	ret = loadCharPoolPetOne( cdkey , loadbuf , sizeof(loadbuf));
 
-	if( ret == -1 ){//ÕÒ²»µ½µµ°¸
+	if( ret == -1 ){//æ‰¾ä¸åˆ°æ¡£æ¡ˆ
 		saacproto_ACCharGetPoolPet_send( fd , FAILED, loadbuf, clifdid, npcid);
 		return;
 	}
@@ -2177,10 +2177,10 @@ void saacproto_ACUniChatroom_recv( int fd, char *cdkey, char *data, int userinde
 #endif
 
 
-#ifdef _RECAL_BACKUP_PLAYER			// WON »ØËİ¹¦ÄÜ
+#ifdef _RECAL_BACKUP_PLAYER			// WON å›æº¯åŠŸèƒ½
 
 
-// È¡ÓĞ±¸·İµÄÈÕÆÚ
+// å–æœ‰å¤‡ä»½çš„æ—¥æœŸ
 void get_backup_date(int fd, char *uid, int userfdid, int GmCliId, char *id, int char_num, int date)
 {
 		int filenum=-1, i;
@@ -2198,7 +2198,7 @@ void get_backup_date(int fd, char *uid, int userfdid, int GmCliId, char *id, int
 
 		memset(char_data, 0, sizeof(char_data));
 
-		// ÕÒ³ö·ûºÏÕÊºÅµÄ±¸·İÈÕÆÚ
+		// æ‰¾å‡ºç¬¦åˆå¸å·çš„å¤‡ä»½æ—¥æœŸ
 		for( i = 0 ; i < filenum ; i ++ ){
 			if(strcmp(filenames[i].string, "") != 0 ){
 				char temp[64];
@@ -2218,7 +2218,7 @@ void get_backup_date(int fd, char *uid, int userfdid, int GmCliId, char *id, int
 	
 }
 
-// È¡µÃÏßÉÏÈËÎï×ÊÁÏ
+// å–å¾—çº¿ä¸Šäººç‰©èµ„æ–™
 void get_online_player_data(int fd, char *uid, int userfdid, int GmCliId, char *id, int char_num, int date)
 {
 	FILE *fp;
@@ -2234,7 +2234,7 @@ void get_online_player_data(int fd, char *uid, int userfdid, int GmCliId, char *
 
 	if( !(fp=fopen(filename, "r")) ){
 		log("\n open (%s) file err", filename );		
-		strcpy(char_data, "ÎŞ´ËÕÊºÅÈËÎï×ÊÁÏ");
+		strcpy(char_data, "æ— æ­¤å¸å·äººç‰©èµ„æ–™");
 		saacproto_ACRecalPlayer_send(fd, uid, userfdid, GmCliId, id, char_num, date, char_data, 2);
 		return; 
 	}
@@ -2252,12 +2252,12 @@ void get_online_player_data(int fd, char *uid, int userfdid, int GmCliId, char *
 
     if( char_data[0]=='|' && char_data[1]=='|' ){
 		log("\n open (%s) file err", filename );		
-		strcpy(char_data, "´ËÕÊºÅÈËÎï×ÊÁÏÒì³£");
+		strcpy(char_data, "æ­¤å¸å·äººç‰©èµ„æ–™å¼‚å¸¸");
 		saacproto_ACRecalPlayer_send(fd, uid, userfdid, GmCliId, id, char_num, date, char_data, 2);
 		return; 
 	}		
 	
-	// ·ÖÎöÈËÎï×ÊÁÏ£¬È¡³öËùĞèµÄÈËÎï×ÊÁÏ
+	// åˆ†æäººç‰©èµ„æ–™ï¼Œå–å‡ºæ‰€éœ€çš„äººç‰©èµ„æ–™
 	analysis_char(char_data);
 
 	saacproto_ACRecalPlayer_send(fd, uid, userfdid, GmCliId, id, char_num, date, char_data, 2);
@@ -2307,7 +2307,7 @@ void send_backup_player_data()
 	date=atoi(temp[7]);
 
 	if( (strcmp(uid,"")==0)||(userfdid==-1)||(GmCliId==-1)||(strcmp(id,"")==0)||(char_num==-1)||(date==-1) ) {		
-		strcpy(char_data, "ÎŞ´ËÕÊºÅÈËÎï×ÊÁÏ1");
+		strcpy(char_data, "æ— æ­¤å¸å·äººç‰©èµ„æ–™1");
 		saacproto_ACRecalPlayer_send(fd, uid, userfdid, GmCliId, id, char_num, date, char_data, 3);
 		return; 	
 	}
@@ -2316,7 +2316,7 @@ void send_backup_player_data()
 
 	if( !(fp=fopen(filename, "r")) ){
 		log("\n open (%s) file err", filename );		
-		strcpy(char_data, "ÎŞ´ËÕÊºÅÈËÎï×ÊÁÏ2");
+		strcpy(char_data, "æ— æ­¤å¸å·äººç‰©èµ„æ–™2");
 		saacproto_ACRecalPlayer_send(fd, uid, userfdid, GmCliId, id, char_num, date, char_data, 3);
 		return; 
 	}
@@ -2335,7 +2335,7 @@ void send_backup_player_data()
 
     if( char_data[0]=='|' && char_data[1]=='|' ){
 		log("\n open (%s) file err", filename );		
-		strcpy(char_data, "´ËÕÊºÅÈËÎï×ÊÁÏÒì³£");
+		strcpy(char_data, "æ­¤å¸å·äººç‰©èµ„æ–™å¼‚å¸¸");
 		saacproto_ACRecalPlayer_send(fd, uid, userfdid, GmCliId, id, char_num, date, char_data, 3);
 		return; 
 	}		
@@ -2440,47 +2440,47 @@ void analysis_char(char *char_data)
 	strcpy(char_data, "");
 
 	// player name
-	strcpy(char_data,"Ãû³Æ£º");
+	strcpy(char_data,"åç§°ï¼š");
 	strcat(char_data, player_data.name);
 
 	// player information
-	strcat(char_data,"×ªÉú£º");
+	strcat(char_data,"è½¬ç”Ÿï¼š");
 	strcat(char_data, player_data.trn);
-	strcat(char_data,"µÈ¼¶£º");
+	strcat(char_data,"ç­‰çº§ï¼š");
 	strcat(char_data, player_data.lv);
-	strcat(char_data,"¾­ÑéÖµ£º");
+	strcat(char_data,"ç»éªŒå€¼ï¼š");
 	strcat(char_data, player_data.exp);
-	strcat(char_data,"HP£º");
+	strcat(char_data,"HPï¼š");
 	strcat(char_data, player_data.hp);
-	strcat(char_data,"MP£º");
+	strcat(char_data,"MPï¼š");
 	strcat(char_data, player_data.mp);
-	strcat(char_data,"Ìå£º");
+	strcat(char_data,"ä½“ï¼š");
 	strcat(char_data, player_data.vi);
-	strcat(char_data,"¹¥£º");
+	strcat(char_data,"æ”»ï¼š");
 	strcat(char_data, player_data.str);
-	strcat(char_data,"·À£º");
+	strcat(char_data,"é˜²ï¼š");
 	strcat(char_data, player_data.tou);
-	strcat(char_data,"Ãô£º");
+	strcat(char_data,"æ•ï¼š");
 	strcat(char_data, player_data.dex);
-	strcat(char_data,"½ğÇ®£º");
+	strcat(char_data,"é‡‘é’±ï¼š");
 	strcat(char_data, player_data.gold);
-	strcat(char_data,"ÒøĞĞ´æ¿î£º");
+	strcat(char_data,"é“¶è¡Œå­˜æ¬¾ï¼š");
 	strcat(char_data, player_data.bankgld);
-	strcat(char_data,"ÒÁµé¸öÈË´æ¿î£º");
+	strcat(char_data,"ä¼Šç”¸ä¸ªäººå­˜æ¬¾ï¼š");
 	strcat(char_data, player_data.pgold);
-	strcat(char_data,"¼Ò×å±àºÅ£º");
+	strcat(char_data,"å®¶æ—ç¼–å·ï¼š");
 	strcat(char_data, player_data.fmi);
-	strcat(char_data,"¼Ò×åÃû³Æ£º");
+	strcat(char_data,"å®¶æ—åç§°ï¼š");
 	strcat(char_data, player_data.fmname);
-	strcat(char_data,"×å³¤Æì±ê£º");
+	strcat(char_data,"æ—é•¿æ——æ ‡ï¼š");
 	strcat(char_data, player_data.fmlf);
-	strcat(char_data,"ÉùÍû£º");
+	strcat(char_data,"å£°æœ›ï¼š");
 	strcat(char_data, player_data.fame);
-	strcat(char_data,"Í¼²ã£º");
+	strcat(char_data,"å›¾å±‚ï¼š");
 	strcat(char_data, player_data.fl);
-	strcat(char_data,"X£º");
+	strcat(char_data,"Xï¼š");
 	strcat(char_data, player_data.x);
-	strcat(char_data,"Y£º");
+	strcat(char_data,"Yï¼š");
 	strcat(char_data, player_data.y);
 
 	strcat(char_data, "|");
@@ -2612,7 +2612,7 @@ void _won_get_2(char *char_data, char *fun, char *check)
 
 #endif // end RECAL_ASK_PLAYER
 
-#ifdef _ALLDOMAN // Syu ADD ÅÅĞĞ°ñNPC
+#ifdef _ALLDOMAN // Syu ADD æ’è¡Œæ¦œNPC
 void LOAD_herolist()
 {
 	FILE *fdb;
@@ -2901,14 +2901,14 @@ int UNlockM_UnlockPlayer( void)
 		if( !UNlockM[i].use ) continue;
 		if( UNlockM[i].time >= time(NULL) ) continue;
 		if( isLocked( UNlockM[i].PlayerId ) ){
-			log( "µÈ´ı½âËøÍæ¼Ò: %s »¹ĞèËø¶¨!!\n", UNlockM[i].PlayerId);
+			log( "ç­‰å¾…è§£é”ç©å®¶: %s è¿˜éœ€é”å®š!!\n", UNlockM[i].PlayerId);
 		}else{
-			log( "µÈ´ı½âËøÍæ¼Ò: %s ÒÑ¾­½âËø!!\n", UNlockM[i].PlayerId);
+			log( "ç­‰å¾…è§£é”ç©å®¶: %s å·²ç»è§£é”!!\n", UNlockM[i].PlayerId);
 		}
 		reset_UNlockMPlayer( i);
 		nums++;
 	}
-	log( "µÈ´ı½âËøÍæ¼Ò: ×Ü¼Æ %d ¸öÓÃ»§½âËø !!\n", nums);
+	log( "ç­‰å¾…è§£é”ç©å®¶: æ€»è®¡ %d ä¸ªç”¨æˆ·è§£é” !!\n", nums);
 	return nums;
 }
 
@@ -3072,7 +3072,7 @@ void saacproto_ACMissionTable_recv( int fd, int num, int type, char *data, char*
 void saacproto_ACCheckCharacterOnLine_recv( int fd, int charaindex, char *id, char *name, int flag)
 {
 	LockNode *ln = userlock[getHash(id) & 0xff];
-	// ĞëÒªÈ·ÈÏÃû×Ö
+	// é¡»è¦ç¡®è®¤åå­—
 	if(name != NULL){
 		while(ln != NULL){
 			if(ln->use != 0){
@@ -3083,10 +3083,10 @@ void saacproto_ACCheckCharacterOnLine_recv( int fd, int charaindex, char *id, ch
 			}
 			ln = ln->next;
 		}
-		// Íæ¼Ò²»ÔÚÏßÉÏ
+		// ç©å®¶ä¸åœ¨çº¿ä¸Š
 		saacproto_ACCheckCharacterOnLine_send(fd,charaindex,0,"",flag);
 	}
-	// ²»ĞëÒªÈ·ÈÏÃû×Ö
+	// ä¸é¡»è¦ç¡®è®¤åå­—
 	else{
 		while(ln != NULL){
 			if(ln->use != 0){
@@ -3097,24 +3097,24 @@ void saacproto_ACCheckCharacterOnLine_recv( int fd, int charaindex, char *id, ch
 			}
 			ln = ln->next;
 		}
-		// Íæ¼Ò²»ÔÚÏßÉÏ
+		// ç©å®¶ä¸åœ¨çº¿ä¸Š
 		saacproto_ACCheckCharacterOnLine_send(fd,charaindex,0,"",flag);
 	}
 }
 #endif
 
 #ifdef _RACEMAN
-//racetype  0:µÇ¼Ç 9:É¾³ı 1~5:¶Á×ÊÁÏ 11~55:¶Á×ÊÁÏ
+//racetype  0:ç™»è®° 9:åˆ é™¤ 1~5:è¯»èµ„æ–™ 11~55:è¯»èµ„æ–™
 void saacproto_ACRaceRecordandSort_recv( int fd, int charaindex, char *code , char *id, char *name , int racetype, int catchcnt, int ranknum )
 {
-	//±È½ÏÄ¿Ç°µÄÅÅĞĞ Èç¹û¿ÉÒÔ½øÈëÅÅĞĞ°ñÔòĞ´Èë  ²¢ÇÒ»Ø´«Ä¿Ç°µÄÅÅĞĞ°ñ
+	//æ¯”è¾ƒç›®å‰çš„æ’è¡Œ å¦‚æœå¯ä»¥è¿›å…¥æ’è¡Œæ¦œåˆ™å†™å…¥  å¹¶ä¸”å›ä¼ ç›®å‰çš„æ’è¡Œæ¦œ
 	FILE *fp;
 	char rankfile[64];
 	char allfile[64];
 	char line[512];
 	int  i,j,findflag = 0;
 	char buf[64];
-	char data[4096];  //¿´serverÒª¶àÉÙ±Ê¾ÍÈû¶àÉÙ×ÊÁÏ
+	char data[4096];  //çœ‹serverè¦å¤šå°‘ç¬”å°±å¡å¤šå°‘èµ„æ–™
 
 	//time_t endtime = (time_t)limittime;
 	//struct tm *limit;
@@ -3162,7 +3162,7 @@ void saacproto_ACRaceRecordandSort_recv( int fd, int charaindex, char *code , ch
 			fprintf(fp,"%s|%s|%d|\n",id,name,catchcnt);
 			fclose(fp);
 		}
-		//´¦ÀíÅÅÃû
+		//å¤„ç†æ’å
 		fp = fopen( rankfile, "w");
 		if( fp == NULL ){
 			log("create file:%s error !!\n", rankfile);
@@ -3171,7 +3171,7 @@ void saacproto_ACRaceRecordandSort_recv( int fd, int charaindex, char *code , ch
 		for(i=0; i < DEFMAXRANK ;i++)	
 		{
 
-			if( catchcnt > ranktable[i].catchcnt){   //Ö»ÓĞ´óì¶²ÅÄÜ°ÑÈË¼Ò¼·µô  
+			if( catchcnt > ranktable[i].catchcnt){   //åªæœ‰å¤§æ–¼æ‰èƒ½æŠŠäººå®¶æŒ¤æ‰  
 				for( j=DEFMAXRANK ; j>i+1 ; j-- )
 				{
 					strcpy(ranktable[j-1].id , ranktable[j-2].id);
@@ -3192,7 +3192,7 @@ void saacproto_ACRaceRecordandSort_recv( int fd, int charaindex, char *code , ch
 		}
 		fclose(fp);	
 		
-	}else if(racetype == 9){	//Çå³ıÄ³±Ê×ÊÁÏ
+	}else if(racetype == 9){	//æ¸…é™¤æŸç¬”èµ„æ–™
 
 		fp = fopen( rankfile, "w");
 		if( fp == NULL ){
@@ -3209,7 +3209,7 @@ void saacproto_ACRaceRecordandSort_recv( int fd, int charaindex, char *code , ch
 		}
 		fclose(fp);	
 
-	}else{	//serverÒª×ÊÁÏ¶øÒÑ
+	}else{	//serverè¦èµ„æ–™è€Œå·²
 		for(i=0;i<ranknum;i++)
 		{ 
 			buf[0]='\0';
@@ -3219,7 +3219,7 @@ void saacproto_ACRaceRecordandSort_recv( int fd, int charaindex, char *code , ch
 		}
 	}
 
-	//×îááÔÙËÍ¸øserver
+	//æœ€å¾Œå†é€ç»™server
 	saacproto_ACRaceRecordandSort_send( fd, charaindex , racetype , data );
 }
 

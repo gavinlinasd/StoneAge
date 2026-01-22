@@ -31,19 +31,19 @@
 void set_nodelay( int sock );
 
 #define OK     0
-#define TCPSTRUCT_ENOMEM -1       /* malloc ÁÃ   */
-#define TCPSTRUCT_ESOCK -2        /* socket ÁÃ   */
-#define TCPSTRUCT_EBIND -3        /* bind ÁÃ   */
-#define TCPSTRUCT_ELISTEN -4      /* listen ÁÃ   */
-#define TCPSTRUCT_EBUG -6         /* ÌïºëÆ¥Ø¤ÔÂ */
-#define TCPSTRUCT_EINVCIND -7     /* con³ß¼°index»¥ÔÆ¾®ØÆÖĞ·½ */
-#define TCPSTRUCT_EREADFIN -8     /* read ÔÊÔÂ·¸¡õÕı»¥Ø¦ÈÊ»¯ closed by remote */
-#define TCPSTRUCT_EHOST -9        /* gethostbyname ÁÃ   */
-#define TCPSTRUCT_ECONNECT -10    /* connect ÁÃ   */
-#define TCPSTRUCT_ECFULL -11      /* con »¥ÖĞÔÈÌìÖĞ */
-#define TCPSTRUCT_ETOOLONG -12    /* µæ»¥Ø¦»¥ÔÊ¿º */
-#define TCPSTRUCT_EMBFULL -13     /* mb »¥ÖĞÔÈÌìÖĞ  */
-#define TCPSTRUCT_ECLOSEAGAIN -14 /* close »¥2¼Ô½ñÄ¾Ğ× */
+#define TCPSTRUCT_ENOMEM -1       /* malloc æ’©   */
+#define TCPSTRUCT_ESOCK -2        /* socket æ’©   */
+#define TCPSTRUCT_EBIND -3        /* bind æ’©   */
+#define TCPSTRUCT_ELISTEN -4      /* listen æ’©   */
+#define TCPSTRUCT_EBUG -6         /* ç”°å¼˜åŒ¹ä¸æœˆ */
+#define TCPSTRUCT_EINVCIND -7     /* conå°ºåŠindexäº’äº‘äº•ä»„ä¸­æ–¹ */
+#define TCPSTRUCT_EREADFIN -8     /* read å…æœˆçŠ¯â–¡æ­£äº’å…ä»åŒ– closed by remote */
+#define TCPSTRUCT_EHOST -9        /* gethostbyname æ’©   */
+#define TCPSTRUCT_ECONNECT -10    /* connect æ’©   */
+#define TCPSTRUCT_ECFULL -11      /* con äº’ä¸­åŒ€å¤©ä¸­ */
+#define TCPSTRUCT_ETOOLONG -12    /* å«äº’å…äº’å…äº¢ */
+#define TCPSTRUCT_EMBFULL -13     /* mb äº’ä¸­åŒ€å¤©ä¸­  */
+#define TCPSTRUCT_ECLOSEAGAIN -14 /* close äº’2èšä»Šæœ¨å‡¶ */
 #define TCPSTRUCT_WORKERROR -16
 #define TCPSTRUCT_WORKEBIND -17
 

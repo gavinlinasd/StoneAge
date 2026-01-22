@@ -1,5 +1,5 @@
 /********************/
-/*	ÊĞ¼¯½»Ò×ÏµÍ³	*/
+/*	å¸‚é›†äº¤æ˜“ç³»ç»Ÿ	*/
 /********************/
 #include <string.h>
 #include "version.h"
@@ -56,11 +56,11 @@ int CHECKMAP_TRADEXY( int charindex, int floor, int x, int y)
 }
 
 BOOL MAP_TRADEDROP( int charindex, int itemindex,int floor, int x, int y)
-{	//return FALSE ÎïÆ·¶ªÔÚµØÉÏ TRUE ²»¶ªÔÚµØÉÏ(¿ÉÄÜÊÇ··ÂôµÀ¾ß)
+{	//return FALSE ç‰©å“ä¸¢åœ¨åœ°ä¸Š TRUE ä¸ä¸¢åœ¨åœ°ä¸Š(å¯èƒ½æ˜¯è´©å–é“å…·)
 	int exhibition=-1;
 	int CreateItem=-1,/*itemID=-1,*/ itemimage=-1;
 	int objindex;
-	char itemname[256]="(Ñù)";
+	char itemname[256]="(æ ·)";
 
 	if( CHECKMAP_TRADE( charindex, floor, x, y) == FALSE )
 		return FALSE;
@@ -68,12 +68,12 @@ BOOL MAP_TRADEDROP( int charindex, int itemindex,int floor, int x, int y)
 		return FALSE;
 	exhibition+=TRADESTARTNUM;
 	if( CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE) != exhibition )	{
-		print("\n ²»ÊÇÌ¯Î»[%d]Ö÷ÈË[%d] ", exhibition, CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE));
+		print("\n ä¸æ˜¯æ‘Šä½[%d]ä¸»äºº[%d] ", exhibition, CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE));
 		return TRUE;
 	}
 
 	if( MAPTRADE_CHECKMAPFULL( floor, x, y) == TRUE )	{
-		CHAR_talkToCli( charindex, -1, "Ç°·½ÒÑÓĞ··ÂôÑùÆ·!", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charindex, -1, "å‰æ–¹å·²æœ‰è´©å–æ ·å“!", CHAR_COLORYELLOW);
 		return TRUE;
 	}
 
@@ -81,23 +81,23 @@ BOOL MAP_TRADEDROP( int charindex, int itemindex,int floor, int x, int y)
 	//CreateItem = ITEM_makeItemAndRegist( itemID);
 	itemimage = ITEM_getInt( itemindex, ITEM_BASEIMAGENUMBER);
 	if( ITEM_getChar( itemindex, ITEM_SECRETNAME) != NULL )	{
-		if( strstr( ITEM_getChar( itemindex, ITEM_SECRETNAME), "(Ñù)") == NULL )	{
-			sprintf( itemname, "%s(Ñù)", ITEM_getChar( itemindex, ITEM_SECRETNAME));
+		if( strstr( ITEM_getChar( itemindex, ITEM_SECRETNAME), "(æ ·)") == NULL )	{
+			sprintf( itemname, "%s(æ ·)", ITEM_getChar( itemindex, ITEM_SECRETNAME));
 		}
 	}
 
-	//CREAT ··ÂôÑùÆ·
+	//CREAT è´©å–æ ·å“
 	CreateItem = ITEM_makeItemAndRegist( TRADEITEMID);
 	if( !ITEM_CHECKINDEX( CreateItem ) )
 		return TRUE;
-	//¸´ÖÆITEM×ÊÁÏ
+	//å¤åˆ¶ITEMèµ„æ–™
 	ITEM_setInt( CreateItem, ITEM_BASEIMAGENUMBER, itemimage);
 	ITEM_setChar( CreateItem, ITEM_NAME, itemname);
 	ITEM_setChar( CreateItem, ITEM_SECRETNAME, itemname);
-	ITEM_setChar( CreateItem, ITEM_EFFECTSTRING, "··ÂôÑùÆ·");//ITEM_EFFECTSTRING
-	ITEM_setChar( CreateItem, ITEM_ARGUMENT, "··ÂôÑùÆ·");
+	ITEM_setChar( CreateItem, ITEM_EFFECTSTRING, "è´©å–æ ·å“");//ITEM_EFFECTSTRING
+	ITEM_setChar( CreateItem, ITEM_ARGUMENT, "è´©å–æ ·å“");
 
-	//¶ª
+	//ä¸¢
 	ITEM_setWorkInt( CreateItem, ITEM_WORKOBJINDEX, -1);
 	ITEM_setWorkInt( CreateItem, ITEM_WORKCHARAINDEX, charindex);
 	ITEM_setInt( CreateItem, ITEM_PUTTIME, NowTime.tv_sec);
@@ -116,7 +116,7 @@ BOOL MAP_TRADEDROP( int charindex, int itemindex,int floor, int x, int y)
 	CHAR_sendCToArroundCharacter( objindex);
 	TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodindex = CreateItem;
 	
-	sprintf( TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodname,"µÀ¾ß-%s", itemname);
+	sprintf( TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodname,"é“å…·-%s", itemname);
 	return TRUE;
 }
 
@@ -124,7 +124,7 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
 {
 	int masterindex;
 	int objindex=-1;
-	int exhibition;//Ì¯Î»
+	int exhibition;//æ‘Šä½
 
 	if( (exhibition = CHECKMAP_TRADEXY(charindex, floor, x, y)) == -1 )
 		return FALSE;
@@ -132,8 +132,8 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
 	if( MAPTRADE_CHECKMASTERIN( masterindex, charindex, exhibition) == FALSE )
 		return TRUE;
 
-	if( masterindex == charindex || !CHAR_CHECKINDEX( masterindex) )	{//Ö÷ÈËÊÕ»Ø
-		switch( flg )	{	//Çå³ı
+	if( masterindex == charindex || !CHAR_CHECKINDEX( masterindex) )	{//ä¸»äººæ”¶å›
+		switch( flg )	{	//æ¸…é™¤
 		case TRADEITEMTYPE:
 			objindex = ITEM_getWorkInt( index, ITEM_WORKOBJINDEX);
 			ITEM_endExistItemsOne( index);
@@ -146,7 +146,7 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
 			ITEM_endExistItemsOne( index);
 			break;
 		}
-	}else	{	//½»Ò×
+	}else	{	//äº¤æ˜“
 		char buf1[256], msg[256];
 		int fd = getfdFromCharaIndex( charindex);
 		int mfd = getfdFromCharaIndex( masterindex);
@@ -156,10 +156,10 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
  		//masterindex
 		if( CHAR_getWorkInt( masterindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_TRADING ||
 			CHAR_getWorkInt( masterindex, CHAR_WORKTRADEMODE) == CHAR_TRADE_TRADING ){
-			CHAR_talkToCli( charindex, -1, "Ö÷ÈËÕıÔÚÂòÂôÖĞ!", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charindex, -1, "ä¸»äººæ­£åœ¨ä¹°å–ä¸­!", CHAR_COLORYELLOW);
 			return TRUE;
 		}
-   		CHAR_talkToCli(charindex, -1, "ÇëÉÔºò¡£", CHAR_COLORYELLOW);
+   		CHAR_talkToCli(charindex, -1, "è¯·ç¨å€™ã€‚", CHAR_COLORYELLOW);
    		sprintf(buf1, "C|%d|%s|1", fd, CHAR_getChar( charindex, CHAR_NAME));
    		lssproto_TD_send( mfd, -1, buf1);
    		sprintf(buf1, "C|%d|%s|1", mfd, CHAR_getChar( masterindex, CHAR_NAME));
@@ -172,7 +172,7 @@ BOOL MAP_TRADEPICKUP( int charindex, int index, int floor, int x, int y, int flg
 		CHAR_sendTradeEffect( charindex, 1);
 		CHAR_sendTradeEffect( masterindex, 1);
 
-		switch( flg )	{	//Çå³ı
+		switch( flg )	{	//æ¸…é™¤
 		case TRADEITEMTYPE:	//CHAR_Trade
 			if( (snum = MAPTRADE_getItemSpace( masterindex, index)) != -1 )	{
 				sprintf( buf1, "T|%d|%s|I|1|%d", fd, CHAR_getChar( charindex, CHAR_NAME),
@@ -238,7 +238,7 @@ int TRADE_getMaxNumInt()
 }
 
 int TRADE_AddMasrerTrade( int toindex)
-{	//Éè¶¨Ì¯Î»Ö÷ÈË
+{	//è®¾å®šæ‘Šä½ä¸»äºº
 	int i;
 	if( CHAR_getWorkInt( toindex, CHAR_MAPTRADETYPE) > 0 )
 		return -1;
@@ -258,7 +258,7 @@ void MAPTRADE_CLEANGOLD( int floor, int num)
 	int x,y;
 
 	if( TRADE_DATAS[ num].masterindex != -1 )	{
-		print("\n É¾³ıÌ¯Î»[%d], Ö÷ÈË[%d]´æÔÚ!!", num, TRADE_DATAS[ num].masterindex);
+		print("\n åˆ é™¤æ‘Šä½[%d], ä¸»äºº[%d]å­˜åœ¨!!", num, TRADE_DATAS[ num].masterindex);
 		return;
 	}
 	for( x=TRADE_DATAS[ num].x; x<(TRADE_DATAS[ num].x+TRADEXSIZE); x++ )	{
@@ -273,7 +273,7 @@ void MAPTRADE_CLEANGOLD( int floor, int num)
 					if( ITEM_getWorkInt( objindex, ITEM_WORKTRADETYPE) == TRADETYPE_SELL )	{
 						ITEM_endExistItemsOne( objindex);
 						OBJECT_setIndex( index, 0);
-						CHAR_ObjectDelete(index);	//Çå³ı
+						CHAR_ObjectDelete(index);	//æ¸…é™¤
 						print("clean( %d )", index );
 					}
 					break;
@@ -300,8 +300,8 @@ BOOL MAPTRADE_CHECKMASTERIN( int masterindex , int toindex, int num)
 	if( CHAR_getWorkInt( masterindex, CHAR_MAPTRADETYPE) != exhibition )
 		return FALSE;
 
-	if( CHAR_getInt( masterindex, CHAR_FLOOR) != TRADEMAP )	{	//Ö÷ÈË²»ÔÚÁË
-		CHAR_talkToCli( toindex, -1, "Ö÷ÈË²»ÔÚ!", CHAR_COLORYELLOW);
+	if( CHAR_getInt( masterindex, CHAR_FLOOR) != TRADEMAP )	{	//ä¸»äººä¸åœ¨äº†
+		CHAR_talkToCli( toindex, -1, "ä¸»äººä¸åœ¨!", CHAR_COLORYELLOW);
 		return FALSE;
 	}else	{
 		int mapnum = CHECKMAP_TRADEXY( masterindex, CHAR_getInt( masterindex, CHAR_FLOOR),
@@ -309,8 +309,8 @@ BOOL MAPTRADE_CHECKMASTERIN( int masterindex , int toindex, int num)
 							CHAR_getInt( masterindex, CHAR_Y));
 		if( (mapnum == -1 ) ||
 			CHAR_getWorkInt( masterindex, CHAR_MAPTRADETYPE) != (mapnum+TRADESTARTNUM) )	{
-			CHAR_talkToCli( toindex, -1, "Ö÷ÈË²»ÔÚÌ¯Î»ÉÏ!", CHAR_COLORYELLOW);
-			//Ö÷ÈË²»ÔÚÎ»ÖÃÉÏ
+			CHAR_talkToCli( toindex, -1, "ä¸»äººä¸åœ¨æ‘Šä½ä¸Š!", CHAR_COLORYELLOW);
+			//ä¸»äººä¸åœ¨ä½ç½®ä¸Š
 			return FALSE;
 		}
 		
@@ -347,7 +347,7 @@ BOOL MAP_TRADEPETDROP( int charindex, int petindex,int floor, int x, int y)
 	int exhibition=-1;
 	int Createpet=-1,petid=-1, petimage=-1;
 	int objindex, i, enemynum=-1;
-	char petname[256]="(Ñù)";
+	char petname[256]="(æ ·)";
 	if( CHECKMAP_TRADE( charindex, floor, x, y) == FALSE )
 		return FALSE;
 	if( (exhibition = CHECKMAP_TRADEXY(charindex, floor, x, y)) == -1 )
@@ -355,24 +355,24 @@ BOOL MAP_TRADEPETDROP( int charindex, int petindex,int floor, int x, int y)
 	exhibition+=TRADESTARTNUM;
 
 	if( CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE) != exhibition )	{
-		print("\n ²»ÊÇÌ¯Î»[%d]Ö÷ÈË[%d] ", exhibition, CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE));
+		print("\n ä¸æ˜¯æ‘Šä½[%d]ä¸»äºº[%d] ", exhibition, CHAR_getWorkInt( charindex, CHAR_MAPTRADETYPE));
 		return TRUE;
 	}
 
 	if( MAPTRADE_CHECKMAPFULL( floor, x, y) == TRUE )	{
-		CHAR_talkToCli( charindex, -1, "Ç°·½ÒÑÓĞ··ÂôÑùÆ·!", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charindex, -1, "å‰æ–¹å·²æœ‰è´©å–æ ·å“!", CHAR_COLORYELLOW);
 		return TRUE;
 	}
 
 
 	petimage = CHAR_getInt( petindex, CHAR_BASEIMAGENUMBER);
 	if( CHAR_getChar( petindex, CHAR_NAME) != NULL )	{
-		if( strstr( CHAR_getChar( petindex, CHAR_NAME), "(Ñù)") == NULL )	{
-			sprintf( petname ,"%s(Ñù)", CHAR_getChar( petindex, CHAR_NAME) );
+		if( strstr( CHAR_getChar( petindex, CHAR_NAME), "(æ ·)") == NULL )	{
+			sprintf( petname ,"%s(æ ·)", CHAR_getChar( petindex, CHAR_NAME) );
 		}
 	}
 
-	//CREAT ··ÂôÑùÆ·	ENEMY_TEST_createPetIndex
+	//CREAT è´©å–æ ·å“	ENEMY_TEST_createPetIndex
 
 	petid = CHAR_getInt( petindex, CHAR_PETID );
 	enemynum = ENEMY_getEnemyNum();
@@ -386,12 +386,12 @@ BOOL MAP_TRADEPETDROP( int charindex, int petindex,int floor, int x, int y)
 		return FALSE;
 	Createpet = ENEMY_TEST_createPetIndex( i);
 	if( !CHAR_CHECKINDEX( Createpet ) ) return TRUE;
-	//¸´ÖÆ¿ÉÊÓÌõ¼ş
+	//å¤åˆ¶å¯è§†æ¡ä»¶
 	CHAR_setChar( Createpet, CHAR_NAME, petname);
 	CHAR_setInt( Createpet, CHAR_BASEIMAGENUMBER, petimage);
 	CHAR_setInt( Createpet, CHAR_BASEBASEIMAGENUMBER, petimage);
 
-	//¶ªÏÂ³èÎï
+	//ä¸¢ä¸‹å® ç‰©
 	objindex = PET_dropPetAbsolute( Createpet,floor,x,y, FALSE );
 	if( objindex == -1 )	{
 		CHAR_endCharOneArray( Createpet );
@@ -412,7 +412,7 @@ BOOL MAP_TRADEPETDROP( int charindex, int petindex,int floor, int x, int y)
 	CHAR_sendCToArroundCharacter( objindex);
 	TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodindex = Createpet;
 
-	sprintf( TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodname,"³èÎï-%s", petname);
+	sprintf( TRADE_DATAS[exhibition-TRADESTARTNUM ].Goodname,"å® ç‰©-%s", petname);
 	return TRUE;
 }
 

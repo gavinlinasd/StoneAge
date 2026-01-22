@@ -8,25 +8,25 @@
 #include "npc_fmchallenge.h"
 #include "family.h"
 
-// È«²¿µÄ¼Ò×å pk Èü³Ì
+// å…¨éƒ¨çš„å®¶æ— pk èµ›ç¨‹
 enum {
-	NPC_WORK_ID = CHAR_NPCWORKINT1,		// µÇ¼ÇÔ± ID, ´Ó 0 ¿ªÊ¼
+	NPC_WORK_ID = CHAR_NPCWORKINT1,		// ç™»è®°å‘˜ ID, ä» 0 å¼€å§‹
 };
 
 enum {
-	CHAR_WORK_PAGE = CHAR_WORKSHOPRELEVANT,		// »»Ò³ÓÃ
-	CHAR_WORK_DUELTIME = CHAR_WORKSHOPRELEVANTSEC,	// ËùÑ¡ÔñµÄ pk Ê±¼ä
+	CHAR_WORK_PAGE = CHAR_WORKSHOPRELEVANT,		// æ¢é¡µç”¨
+	CHAR_WORK_DUELTIME = CHAR_WORKSHOPRELEVANTSEC,	// æ‰€é€‰æ‹©çš„ pk æ—¶é—´
 };
 
 #define SCHEDULEFILEDIR		"./Schedule/"
 
 void NPC_LoadPKSchedule(int meindex);	// Load schedule from disk
 void NPC_SavePKSchedule(int meindex);	// save schedule to disk
-// ²úÉúÅÅ³Ì±íµÄ data
+// äº§ç”Ÿæ’ç¨‹è¡¨çš„ data
 void NPC_LIST_gendata(int meindex, int talkerindex, int page, char *buf, int size);
-// ²úÉúÑ¡Ôñ¼Ò×åµÄ data
+// äº§ç”Ÿé€‰æ‹©å®¶æ—çš„ data
 void NPC_SELECT_gendata(int meindex, int page, char *buf, int size);
-// ²úÉúÅÅ³ÌÏêÏ¸µÄ data
+// äº§ç”Ÿæ’ç¨‹è¯¦ç»†çš„ data
 void NPC_DETAIL_gendata(int meindex, char *buf, int size, int dueltime);
 
 BOOL NPC_SchedulemanInit( int meindex )
@@ -38,7 +38,7 @@ BOOL NPC_SchedulemanInit( int meindex )
   CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_TYPEFMSCHEDULEMAN );
   CHAR_setWorkInt ( meindex, NPC_WORK_PREVIOUSCHECKTIME, -1);
 
-  // ²ÎÊı
+  // å‚æ•°
   NPC_Util_GetArgStr(meindex, argstr, sizeof(argstr));
   meid = NPC_Util_GetNumFromStrWithDelim(argstr, "id" );
   if ((meid<0) || (meid>=MAX_SCHEDULEMAN)) {
@@ -70,7 +70,7 @@ BOOL NPC_SchedulemanInit( int meindex )
 
 void NPC_SchedulemanTalked(int meindex, int talkerindex, char *msg, int color)
 {
-//  CHAR_talkToCli(talkerindex, meindex, "ÄãºÃ£¬ÎÒÊÇ¼Ò×å£Ğ£ËµÇ¼ÇÔ±¡£", color);
+//  CHAR_talkToCli(talkerindex, meindex, "ä½ å¥½ï¼Œæˆ‘æ˜¯å®¶æ—ï¼°ï¼«ç™»è®°å‘˜ã€‚", color);
 
 #if 0
   char buf[4096];
@@ -79,7 +79,7 @@ void NPC_SchedulemanTalked(int meindex, int talkerindex, char *msg, int color)
   if (NPC_Util_CharDistance(meindex,talkerindex) > 2) return;
 
   if (strncmp(msg,"list",4)==0) {
-    CHAR_talkToCli(talkerindex, meindex, "ÏÔÊ¾½«ËÍ³öµÄ WN PKSCHEDULELIST data¡£", color);
+    CHAR_talkToCli(talkerindex, meindex, "æ˜¾ç¤ºå°†é€å‡ºçš„ WN PKSCHEDULELIST dataã€‚", color);
     page=atoi(&msg[4]);
 
     NPC_RemoveExpiredBattle(meindex);
@@ -87,7 +87,7 @@ void NPC_SchedulemanTalked(int meindex, int talkerindex, char *msg, int color)
     
     CHAR_talkToCli(talkerindex, -1, buf, CHAR_COLORWHITE);
   } else if (strncmp(msg,"select",6)==0) {
-    CHAR_talkToCli(talkerindex, meindex, "ÏÔÊ¾½«ËÍ³öµÄ WN PKSCHEDULESELECTFAMILY data¡£", color);
+    CHAR_talkToCli(talkerindex, meindex, "æ˜¾ç¤ºå°†é€å‡ºçš„ WN PKSCHEDULESELECTFAMILY dataã€‚", color);
     page=atoi(&msg[6]);
 
     NPC_SELECT_gendata(meindex, page, buf, sizeof(buf));
@@ -96,18 +96,18 @@ void NPC_SchedulemanTalked(int meindex, int talkerindex, char *msg, int color)
   } else if (strncmp(msg,"detail",6)==0) {
     page=atoi(&msg[6]);
 
-    CHAR_talkToCli(talkerindex, meindex, "ÏÔÊ¾½«ËÍ³öµÄ WN PKSCHEDULEDETAIL data¡£", color);
+    CHAR_talkToCli(talkerindex, meindex, "æ˜¾ç¤ºå°†é€å‡ºçš„ WN PKSCHEDULEDETAIL dataã€‚", color);
 
     NPC_DETAIL_gendata(meindex, buf, sizeof(buf), page);
   
     CHAR_talkToCli(talkerindex, -1, buf, CHAR_COLORWHITE);
   } else {
-    CHAR_talkToCli(talkerindex, meindex, "ÄãºÃ£¬ÎÒÊÇ¼Ò×å£Ğ£ËµÇ¼ÇÔ±¡£", color);
-    sprintf(buf, "ÎÒµÄ ID ÊÇ %d (×î´ó %d)¡£",
+    CHAR_talkToCli(talkerindex, meindex, "ä½ å¥½ï¼Œæˆ‘æ˜¯å®¶æ—ï¼°ï¼«ç™»è®°å‘˜ã€‚", color);
+    sprintf(buf, "æˆ‘çš„ ID æ˜¯ %d (æœ€å¤§ %d)ã€‚",
                  CHAR_getWorkInt(meindex, NPC_WORK_ID), MAX_SCHEDULEMAN-1);
     CHAR_talkToCli(talkerindex, meindex, buf, color);
-    CHAR_talkToCli(talkerindex, meindex, "Ä¿Ç°²âÊÔÖĞ£¬²âÊÔÖ¸Áî£ºlist,select,detail", color);
-    CHAR_talkToCli(talkerindex, meindex, "ÇëÏÂÁî¡£", color);
+    CHAR_talkToCli(talkerindex, meindex, "ç›®å‰æµ‹è¯•ä¸­ï¼Œæµ‹è¯•æŒ‡ä»¤ï¼šlist,select,detail", color);
+    CHAR_talkToCli(talkerindex, meindex, "è¯·ä¸‹ä»¤ã€‚", color);
   }
 #endif
 
@@ -173,14 +173,14 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
       break;
     case WINDOW_BUTTONTYPE_OK:
 
-#ifdef _DEATH_FAMILY_CANT_SCHEDULE // WON ADD ¼Ò×åÕ½Íæ¼Ò²»ÄÜ×ÔĞĞÔ¼Õ½
-	  CHAR_talkToCli(talkerindex, meindex, "´ËĞÇÇòÎŞ·¨Ô¼Õ½", CHAR_COLORWHITE);
+#ifdef _DEATH_FAMILY_CANT_SCHEDULE // WON ADD å®¶æ—æˆ˜ç©å®¶ä¸èƒ½è‡ªè¡Œçº¦æˆ˜
+	  CHAR_talkToCli(talkerindex, meindex, "æ­¤æ˜Ÿçƒæ— æ³•çº¦æˆ˜", CHAR_COLORWHITE);
 	  break;
 #endif
 
       if ((CHAR_getInt(talkerindex,CHAR_FMLEADERFLAG)==FMMEMBER_LEADER) &&
           (CHAR_getWorkInt(talkerindex, CHAR_WORKFMSETUPFLAG)==1)) {
-        // Ö»ÓĞÒÑ³ÉÁ¢¼Ò×åµÄ×å³¤¿ÉÒÔÊ¹ÓÃ½øÒ»²½µÄ¹¦ÄÜ (Éè¶¨¡¢¸ü¸Ä¡¢Í¬Òâ)
+        // åªæœ‰å·²æˆç«‹å®¶æ—çš„æ—é•¿å¯ä»¥ä½¿ç”¨è¿›ä¸€æ­¥çš„åŠŸèƒ½ (è®¾å®šã€æ›´æ”¹ã€åŒæ„)
 
         // decide: send family list or detail or accept
         dt=atoi(data);
@@ -188,7 +188,7 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
           if (fmpks[fmpks_pos+i].dueltime==dt) {
             if (i==0) {
               CHAR_talkToCli(talkerindex, meindex,
-                "Õâ¸öÊ±¼äÎŞ·¨½øĞĞÔ¤Ô¼¡£", CHAR_COLORWHITE);
+                "è¿™ä¸ªæ—¶é—´æ— æ³•è¿›è¡Œé¢„çº¦ã€‚", CHAR_COLORWHITE);
               break;
             }
 
@@ -196,9 +196,9 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
             switch (fmpks[fmpks_pos+i].flag) {
             case FMPKS_FLAG_NONE:
               if (NPC_AlreadyScheduled(meindex, talkerindex)) {
-                // Í¬Ò»¸ö¼Ò×åÖ»ÄÜÓĞÒ»´ÎÅÅ³Ì
+                // åŒä¸€ä¸ªå®¶æ—åªèƒ½æœ‰ä¸€æ¬¡æ’ç¨‹
                 CHAR_talkToCli(talkerindex, meindex,
-                  "ÄãÒÑ¾­°²ÅÅ¹ıÒ»³¡Õ½¶·£¬½«Ê±¼äÁô¸øÆäËû¼Ò×å°É¡£", CHAR_COLORWHITE);
+                  "ä½ å·²ç»å®‰æ’è¿‡ä¸€åœºæˆ˜æ–—ï¼Œå°†æ—¶é—´ç•™ç»™å…¶ä»–å®¶æ—å§ã€‚", CHAR_COLORWHITE);
               } else {
                 fmpks[fmpks_pos+i].host_index=CHAR_getInt(talkerindex, CHAR_FMINDEX);
                 strcpy(fmpks[fmpks_pos+i].host_name,makeStringFromEscaped(CHAR_getChar(talkerindex, CHAR_FMNAME)));
@@ -212,7 +212,7 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
                 fmpks[fmpks_pos+i].flag=FMPKS_FLAG_SETTING;
                 fmpks[fmpks_pos+i].setting_timeout=
                     CHAR_getWorkInt(meindex, NPC_WORK_SETTINGTIMEOUT);
-                // ËÍ³öÑ¡Ôñ¼Ò×åµÄÁĞ±í
+                // é€å‡ºé€‰æ‹©å®¶æ—çš„åˆ—è¡¨
                 CHAR_setWorkInt(talkerindex, CHAR_WORK_PAGE, 1); // page 1
                 CHAR_setWorkInt(talkerindex, CHAR_WORK_DUELTIME, dt);
                 NPC_SELECT_gendata(meindex, 1, buf, sizeof(buf));
@@ -227,13 +227,13 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
               }
               break;
             case FMPKS_FLAG_CHALLENGE:
-              { // Ö÷¶Ó×å³¤¿ÉÒÔÖØÉèÌõ¼ş£¬¿Í¶ÓÔòÊÇÍ¬Òâ pk£¬ÆäËûÈË¹öµ°
+              { // ä¸»é˜Ÿæ—é•¿å¯ä»¥é‡è®¾æ¡ä»¶ï¼Œå®¢é˜Ÿåˆ™æ˜¯åŒæ„ pkï¼Œå…¶ä»–äººæ»šè›‹
                 int tkfmindex=CHAR_getInt(talkerindex, CHAR_FMINDEX);
                 if (tkfmindex==fmpks[fmpks_pos+i].host_index) {
                   fmpks[fmpks_pos+i].flag=FMPKS_FLAG_SETTING;
                   fmpks[fmpks_pos+i].setting_timeout=
                     CHAR_getWorkInt(meindex, NPC_WORK_SETTINGTIMEOUT);
-                  // ËÍ³öÏ¸²¿µ÷ÕûµÄÁĞ±í
+                  // é€å‡ºç»†éƒ¨è°ƒæ•´çš„åˆ—è¡¨
                   CHAR_setWorkInt(talkerindex, CHAR_WORK_DUELTIME, dt);
                   NPC_DETAIL_gendata(meindex, buf, sizeof(buf), dt);
                   lssproto_WN_send(fd, WINDOW_MESSAGETYPE_PKSCHEDULEDETAIL,
@@ -254,8 +254,8 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
 		    buttontype=WINDOW_BUTTONTYPE_PREV | WINDOW_BUTTONTYPE_OK;
 		  }
                   CHAR_talkToCli(talkerindex, meindex,
-                      "ÄãµÄ¼Ò×åÒÑ¾­½ÓÊÜÌôÕ½¡£", CHAR_COLORWHITE);
-                  // ÖØĞÂËÍ³ö list
+                      "ä½ çš„å®¶æ—å·²ç»æ¥å—æŒ‘æˆ˜ã€‚", CHAR_COLORWHITE);
+                  // é‡æ–°é€å‡º list
       		  NPC_LIST_gendata(meindex, talkerindex, page, buf, sizeof(buf));
 		  lssproto_WN_send(fd, WINDOW_MESSAGETYPE_PKSCHEDULELIST,
         			   buttontype,
@@ -266,13 +266,13 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
               }
               break;
             case FMPKS_FLAG_SETTING:
-              { // Ö÷¶Ó×å³¤¿ÉÒÔÖØÉèÌõ¼ş
+              { // ä¸»é˜Ÿæ—é•¿å¯ä»¥é‡è®¾æ¡ä»¶
                 int tkfmindex=CHAR_getInt(talkerindex, CHAR_FMINDEX);
                 if (tkfmindex==fmpks[fmpks_pos+i].host_index) {
                   fmpks[fmpks_pos+i].flag=FMPKS_FLAG_SETTING;
                   fmpks[fmpks_pos+i].setting_timeout=
                     CHAR_getWorkInt(meindex, NPC_WORK_SETTINGTIMEOUT);
-                  // ËÍ³öÏ¸²¿µ÷ÕûµÄÁĞ±í
+                  // é€å‡ºç»†éƒ¨è°ƒæ•´çš„åˆ—è¡¨
                   CHAR_setWorkInt(talkerindex, CHAR_WORK_DUELTIME, dt);
                   NPC_DETAIL_gendata(meindex, buf, sizeof(buf), dt);
                   lssproto_WN_send(fd, WINDOW_MESSAGETYPE_PKSCHEDULEDETAIL,
@@ -291,10 +291,10 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
   
 			if (CHAR_getInt(talkerindex,CHAR_FMLEADERFLAG)!=FMMEMBER_LEADER) {        
 			  CHAR_talkToCli(talkerindex, meindex,
-				"Ö»ÓĞ×å³¤²ÅÄÜÔ¤Ô¼¼Ò×å£Ğ£Ëà¸¡£", CHAR_COLORWHITE);
+				"åªæœ‰æ—é•¿æ‰èƒ½é¢„çº¦å®¶æ—ï¼°ï¼«å–”ã€‚", CHAR_COLORWHITE);
 			} else if (CHAR_getWorkInt(talkerindex, CHAR_WORKFMSETUPFLAG)!=1) {
 			  CHAR_talkToCli(talkerindex, meindex,
-				"ÄãµÄ¼Ò×å»¹Ã»ÓĞÕıÊ½³ÉÁ¢à¸¡£", CHAR_COLORWHITE);
+				"ä½ çš„å®¶æ—è¿˜æ²¡æœ‰æ­£å¼æˆç«‹å–”ã€‚", CHAR_COLORWHITE);
 			}
       }
 
@@ -341,10 +341,10 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
                 a=atoi(token);
                 if (a!=fmpks[fmpks_pos+i].host_index) {
                   fmpks[fmpks_pos+i].guest_index=a;
-                  // ±ØĞëÒªÔÙ¼ì²éÊÇ·ñÓĞÕâ¸ö¿Í¶Ó¼Ò×å /**/
+                  // å¿…é¡»è¦å†æ£€æŸ¥æ˜¯å¦æœ‰è¿™ä¸ªå®¢é˜Ÿå®¶æ— /**/
                   if (getStringFromIndexWithDelim(data,"|",2,token,sizeof(token))) {
                     strcpy(fmpks[fmpks_pos+i].guest_name, makeStringFromEscaped(token));
-                    // ËÍ³ö detail ±à¼­´°
+                    // é€å‡º detail ç¼–è¾‘çª—
                     NPC_DETAIL_gendata(meindex, buf, sizeof(buf), dt);
                     lssproto_WN_send(fd, WINDOW_MESSAGETYPE_PKSCHEDULEDETAIL,
         	  		   WINDOW_BUTTONTYPE_OK | WINDOW_BUTTONTYPE_CANCEL,
@@ -375,12 +375,12 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
             switch (select) {
             case WINDOW_BUTTONTYPE_OK:
               {
-                // ×¼±¸Ê±¼ä
+                // å‡†å¤‡æ—¶é—´
                 if (getStringFromIndexWithDelim(data,"|",4,token,sizeof(token))) {
                   a=atoi(token);
                   if ((a>0) && (a<=40)) fmpks[fmpks_pos+i].prepare_time=a;
                 }
-                // ×î´óÈËÊı
+                // æœ€å¤§äººæ•°
                 if (getStringFromIndexWithDelim(data,"|",5,token,sizeof(token))) {
                   a=atoi(token);
                   if ((a>0) && (a<=50)) fmpks[fmpks_pos+i].max_player=a;
@@ -389,13 +389,13 @@ void NPC_SchedulemanWindowTalked(int meindex, int talkerindex,
                 fmpks[fmpks_pos+i].challenge_timeout=
                     CHAR_getWorkInt(meindex, NPC_WORK_CHALLENGETIMEOUT);
                 CHAR_talkToCli(talkerindex, meindex,
-                    "¼Ò×åÌôÕ½Éè¶¨Íê³É¡£", CHAR_COLORWHITE);
+                    "å®¶æ—æŒ‘æˆ˜è®¾å®šå®Œæˆã€‚", CHAR_COLORWHITE);
               }
               break;
             case WINDOW_BUTTONTYPE_CANCEL:
               fmpks[fmpks_pos+i].flag=FMPKS_FLAG_NONE;
               CHAR_talkToCli(talkerindex, meindex,
-                  "Çå³ı¼Ò×åÌôÕ½¡£", CHAR_COLORWHITE);
+                  "æ¸…é™¤å®¶æ—æŒ‘æˆ˜ã€‚", CHAR_COLORWHITE);
               break;
             }
             NPC_SavePKSchedule(meindex);
@@ -420,7 +420,7 @@ void NPC_SchedulemanLoop(int meindex)
   NPC_ProcessTimeout(meindex);
 }
 
-// ÒÆ³ı¹ıÆÚµÄÕ½¶·
+// ç§»é™¤è¿‡æœŸçš„æˆ˜æ–—
 void NPC_RemoveExpiredBattle(int meindex)
 {
   struct tm tm1;
@@ -431,7 +431,7 @@ void NPC_RemoveExpiredBattle(int meindex)
   int fin = CHAR_getWorkInt(meindex, NPC_WORK_FIGHTINTERVAL);
   int h,d;
 
-  // ÒÔÄ¿Ç°µÄÊ±¿Ìµ±±ê×¼È¥ÒÆ³ı¹ıÆÚµÄÅÅ³Ì
+  // ä»¥ç›®å‰çš„æ—¶åˆ»å½“æ ‡å‡†å»ç§»é™¤è¿‡æœŸçš„æ’ç¨‹
   memcpy( &tm1, localtime( (time_t *)&NowTime.tv_sec), sizeof( tm1));
 /*
   if (tm1.tm_hour==0)
@@ -445,9 +445,9 @@ void NPC_RemoveExpiredBattle(int meindex)
     keeptime = tm1.tm_hour*100 + tm1.tm_min - fin;
 
   CHAR_setWorkInt(meindex, NPC_WORK_PREVIOUSCHECKTIME, keeptime);
-  if (keeptime<prevckt) keeptime+=10000;	// ¸ôÈÕ
+  if (keeptime<prevckt) keeptime+=10000;	// éš”æ—¥
 
-  // ¼ÆËãÄÄĞ©ÊÇ¹ıÆÚµÄ
+  // è®¡ç®—å“ªäº›æ˜¯è¿‡æœŸçš„
   i=0;
   while ((i<MAX_SCHEDULE) && (fmpks[fmpks_pos+i].dueltime<=keeptime)) {
     expired=i;
@@ -455,21 +455,21 @@ void NPC_RemoveExpiredBattle(int meindex)
   }
   
   if (expired>=0) {
-    // ÒÆ¶¯ááÃæµÄÅÅ³ÌÀ´È¡´úÒÑ¾­Ê§Ğ§µÄÅÅ³Ì
+    // ç§»åŠ¨å¾Œé¢çš„æ’ç¨‹æ¥å–ä»£å·²ç»å¤±æ•ˆçš„æ’ç¨‹
     for (i=expired+1; i<MAX_SCHEDULE; i++) {
       memcpy(&fmpks[fmpks_pos+i-expired-1],
              &fmpks[fmpks_pos+i],sizeof(FamilyPKSchedule));
     }
-    // ½«ááÃæµÄÅÅ³ÌÉè³ÉÎ´ÅÅ³Ì
+    // å°†å¾Œé¢çš„æ’ç¨‹è®¾æˆæœªæ’ç¨‹
     for (i=MAX_SCHEDULE-expired-1; i<MAX_SCHEDULE; i++) {
       memset(&fmpks[fmpks_pos+i], 0, sizeof(FamilyPKSchedule));
       fmpks[fmpks_pos+i].flag=-1;
-// Terry add 2004/06/10 Òª°Ñhost_index ºÍ guest_index Éè¶¨Îª -1
+// Terry add 2004/06/10 è¦æŠŠhost_index å’Œ guest_index è®¾å®šä¸º -1
 			fmpks[fmpks_pos+i].host_index = -1;
 			fmpks[fmpks_pos+i].guest_index = -1;
 // end
     }
-    // ÖØĞÂ¶¨ÒåÊ±¿Ì
+    // é‡æ–°å®šä¹‰æ—¶åˆ»
 /*    
     h=(fmpks[fmpks_pos].dueltime%10000)/100;
     d=0;
@@ -500,7 +500,7 @@ void NPC_RemoveExpiredBattle(int meindex)
   }
 }
 
-// ´¦Àí timeout
+// å¤„ç† timeout
 void NPC_ProcessTimeout(int meindex)
 {
   int i;
@@ -538,7 +538,7 @@ void NPC_ProcessTimeout(int meindex)
   }
 }
 
-// ¼ì²é, Ò»¸ö¼Ò×åÖ»ÄÜ°²ÅÅÒ»³¡Õ½¶·
+// æ£€æŸ¥, ä¸€ä¸ªå®¶æ—åªèƒ½å®‰æ’ä¸€åœºæˆ˜æ–—
 BOOL NPC_AlreadyScheduled(int meindex, int talkerindex)
 {
   int i;
@@ -556,7 +556,7 @@ BOOL NPC_AlreadyScheduled(int meindex, int talkerindex)
   return FALSE;
 }
 
-// ¶ÁÈ¡ schedule µµ°¸
+// è¯»å– schedule æ¡£æ¡ˆ
 void NPC_LoadPKSchedule(int meindex)
 {
   char filename[256],tmp[4096],token[256];
@@ -581,40 +581,40 @@ void NPC_LoadPKSchedule(int meindex)
     }
   }
 
-  fseek(f, 0, SEEK_SET);	// µµ°¸¿ªÍ·
+  fseek(f, 0, SEEK_SET);	// æ¡£æ¡ˆå¼€å¤´
   for( i = 0; i < MAX_SCHEDULE; i++ ){
     fgets(tmp, sizeof(tmp), f);
     fmpks[fmpks_pos+i].flag=-1;
 
-    // Ê±¼ä
+    // æ—¶é—´
     if (getStringFromIndexWithDelim(tmp,"|",1,token,sizeof(token))) {
       fmpks[fmpks_pos+i].dueltime=atoi(token);
     } else continue;
-    // Ö÷¶Ó familyindex
+    // ä¸»é˜Ÿ familyindex
     if (getStringFromIndexWithDelim(tmp,"|",2,token,sizeof(token))) {
       fmpks[fmpks_pos+i].host_index=atoi(token);
     } else continue;
-    // Ö÷¶Ó ¼Ò×åÃû
+    // ä¸»é˜Ÿ å®¶æ—å
     if (getStringFromIndexWithDelim(tmp,"|",3,token,sizeof(token))) {
       strcpy(fmpks[fmpks_pos+i].host_name,makeStringFromEscaped(token));
     } else continue;
-    // ¿Í¶Ó familyindex
+    // å®¢é˜Ÿ familyindex
     if (getStringFromIndexWithDelim(tmp,"|",4,token,sizeof(token))) {
       fmpks[fmpks_pos+i].guest_index=atoi(token);
     } else continue;
-    // ¿Í¶Ó ¼Ò×åÃû
+    // å®¢é˜Ÿ å®¶æ—å
     if (getStringFromIndexWithDelim(tmp,"|",5,token,sizeof(token))) {
       strcpy(fmpks[fmpks_pos+i].guest_name,makeStringFromEscaped(token));
     } else continue;
-    // ×¼±¸Ê±¼ä
+    // å‡†å¤‡æ—¶é—´
     if (getStringFromIndexWithDelim(tmp,"|",6,token,sizeof(token))) {
       fmpks[fmpks_pos+i].prepare_time=atoi(token);
     } else continue;
-    // ×î´óÈËÊı
+    // æœ€å¤§äººæ•°
     if (getStringFromIndexWithDelim(tmp,"|",7,token,sizeof(token))) {
       fmpks[fmpks_pos+i].max_player=atoi(token);
     } else continue;
-    // Æì±ê
+    // æ——æ ‡
     if (getStringFromIndexWithDelim(tmp,"|",8,token,sizeof(token))) {
       fmpks[fmpks_pos+i].flag=atoi(token);
     } else continue;
@@ -657,7 +657,7 @@ void NPC_SavePKSchedule(int meindex)
   fclose(f);
 }
 
-// ²úÉú WN_PKSCHEDULELIST µÄ data
+// äº§ç”Ÿ WN_PKSCHEDULELIST çš„ data
 void NPC_LIST_gendata(int meindex, int talkerindex, int page, char *buf, int size)
 {
   char tmp[4096], n1[256], n2[256];
@@ -670,7 +670,7 @@ void NPC_LIST_gendata(int meindex, int talkerindex, int page, char *buf, int siz
   memset(buf, 0, size);		// clear buffer
   if ((page<0)||(page>=MAX_SCHEDULE)) return;
 
-  // ¼ÇÂ¼Ä¿Ç°µÄÊ±¼ä
+  // è®°å½•ç›®å‰çš„æ—¶é—´
   memcpy( &tm1, localtime( (time_t *)&NowTime.tv_sec), sizeof( tm1));
   sprintf(buf, "%d|", tm1.tm_hour*100 + tm1.tm_min);
   
@@ -725,7 +725,7 @@ void NPC_LIST_gendata(int meindex, int talkerindex, int page, char *buf, int siz
   }
 }
 
-// ²úÉú WN_PKSCHEDULESELECTFAMILY µÄ data
+// äº§ç”Ÿ WN_PKSCHEDULESELECTFAMILY çš„ data
 void NPC_SELECT_gendata(int meindex, int page, char *buf, int size)
 {
   int i,cnt=0;
@@ -750,7 +750,7 @@ void NPC_SELECT_gendata(int meindex, int page, char *buf, int size)
   }
 }
 
-// ²úÉú WN_PKSCHEDULEDETAIL µÄ data
+// äº§ç”Ÿ WN_PKSCHEDULEDETAIL çš„ data
 void NPC_DETAIL_gendata(int meindex, char *buf, int size, int dueltime)
 {
   char n1[256], n2[256];

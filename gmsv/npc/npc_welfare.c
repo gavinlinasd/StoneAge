@@ -1,7 +1,7 @@
 #include "version.h"
 
 #ifdef _NPC_WELFARE
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 
 #include <string.h>
 #include "char.h"
@@ -20,15 +20,15 @@
 static void NPC_Welfare_selectWindow(int meindex, int toindex, int num, int select);
 
 
-//ÔØÈëºÃ¿µNPCµÄ³õÊ¼»¯
+//è½½å…¥å¥½åº·NPCçš„åˆå§‹åŒ–
 BOOL NPC_WelfareInit( int meindex )
 {
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEWELFARE);
-    //print("Ãû³Æ:%s\n",CHAR_getChar( meindex, CHAR_NAME));
+    //print("åç§°:%s\n",CHAR_getChar( meindex, CHAR_NAME));
     return TRUE;
 }
 
-//¶Ô»°Ê±µÄ´¦Àí
+//å¯¹è¯æ—¶çš„å¤„ç†
 void NPC_WelfareTalked( int meindex , int talkerindex , char *szMes ,int color )
 {
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
@@ -106,7 +106,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		return ;
 	}
 
-	// ÅĞ¶ÏÖ°Òµ
+	// åˆ¤æ–­èŒä¸š
 	{
 		if( NPC_Util_GetStrFromStrWithDelim( argstr, "profession_class", msg, sizeof(msg) ) == NULL){
 			return ;
@@ -114,13 +114,13 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 			p_class = atoi(msg);	
 		}
 		
-		// ¼¼ÄÜËùĞèÖ°Òµ
+		// æŠ€èƒ½æ‰€éœ€èŒä¸š
 		need_class = PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_PROFESSION_CLASS );
 
 		if( CHAR_getInt( talkerindex, PROFESSION_CLASS ) == 0 ){
 			char token[256];
 			memset(token, -1, sizeof(token) );
-			sprintf( token, "ÄúÉĞÎ´¾ÍÖ°!" );
+			sprintf( token, "æ‚¨å°šæœªå°±èŒ!" );
 			CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORYELLOW);
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 			return;
@@ -130,7 +130,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		if( CHAR_getInt( talkerindex, PROFESSION_CLASS ) != need_class && need_class != 4 ){
 			char token[256];
 			memset(token, -1, sizeof(token) );
-			sprintf( token, "´Ë¼¼ÄÜÄã²»ÄÜÑ§à¸!" );
+			sprintf( token, "æ­¤æŠ€èƒ½ä½ ä¸èƒ½å­¦å–”!" );
 			CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORYELLOW);
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 			return;
@@ -139,20 +139,20 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 
 	}
 
-	// ÅĞ¶ÏÊ£âÅµãÊı
+	// åˆ¤æ–­å‰©é¦€ç‚¹æ•°
 	{
 		profession_skill_point = CHAR_getInt( talkerindex, PROFESSION_SKILL_POINT );
 		if( profession_skill_point <= 0 ){
 			char token[256];
 			memset(token, -1, sizeof(token) );
-			sprintf( token, "ÄãÄ¿Ç°Ã»ÓĞÑ§Ï°µãÊı!" );
+			sprintf( token, "ä½ ç›®å‰æ²¡æœ‰å­¦ä¹ ç‚¹æ•°!" );
 			CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORYELLOW);
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 			return;
 		}
 	}
 
-	// ÅĞ¶ÏÊÇ·ñ´ï³ÉÑ§Ï°µÄÌõ¼ş
+	// åˆ¤æ–­æ˜¯å¦è¾¾æˆå­¦ä¹ çš„æ¡ä»¶
 	{
 		int temp[4] = {0}, count = 0, flag = -1 , need_percent = -1, need_count = 0;
 
@@ -172,7 +172,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 				}
 				if( j >=  PROFESSION_MAX_LEVEL ){
 					char token[256];	
-					sprintf( token, "ĞèÏÈÑ§»áÈÎ£±ÖÖÕ½¶·¼¼ÄÜ²ÅÄÜÑ§Ï°£¡");
+					sprintf( token, "éœ€å…ˆå­¦ä¼šä»»ï¼‘ç§æˆ˜æ–—æŠ€èƒ½æ‰èƒ½å­¦ä¹ ï¼");
 					CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORYELLOW);
 					CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 					return;
@@ -180,7 +180,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 			}else{
 				flag = -1;
 				for( j=0; j<PROFESSION_MAX_LEVEL; j++ ){
-					// ÅĞ¶Ï¼¼ÄÜ
+					// åˆ¤æ–­æŠ€èƒ½
 					if( CHAR_getCharSkill( talkerindex, j) == limit ){
 						int skill_level = -1;
 						CHAR_HaveSkill* hskill;
@@ -188,28 +188,28 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 						hskill = CHAR_getCharHaveSkill( talkerindex, j );
 						skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);	
 						
-						// ÅĞ¶ÏÊìÁ·¶È
+						// åˆ¤æ–­ç†Ÿç»ƒåº¦
 						if( skill_level >= need_percent ){
 							flag = 1;	break;
 						}					
 					}
 				}
 				
-				// Î´´ï³ÉÌõ¼ş
+				// æœªè¾¾æˆæ¡ä»¶
 				if( flag == -1 && need_percent == 0 ){
 						temp[count] = limit;
 						count ++;					
 				}else if( flag == -1 ){
 					char token[256];	
 					memset(token, -1, sizeof(token) );
-					sprintf( token, "ÉĞÎ´Ñ§»á%s!", PROFESSION_SKILL_getChar( limit, PROFESSION_SKILL_NAME) );
+					sprintf( token, "å°šæœªå­¦ä¼š%s!", PROFESSION_SKILL_getChar( limit, PROFESSION_SKILL_NAME) );
 					CHAR_talkToCli( talkerindex, -1, token, CHAR_COLORYELLOW);
 					CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 					return;
 				}else if( flag == -2 ){
 					char token[256];	
 					memset(token, -1, sizeof(token) );
-					sprintf( token, "%sÊìÁ·¶È²»×ã%d!", PROFESSION_SKILL_getChar( limit, PROFESSION_SKILL_NAME), need_percent );
+					sprintf( token, "%sç†Ÿç»ƒåº¦ä¸è¶³%d!", PROFESSION_SKILL_getChar( limit, PROFESSION_SKILL_NAME), need_percent );
 					CHAR_talkToCli( talkerindex, -1, token, CHAR_COLORYELLOW);
 					CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 					return;
@@ -220,7 +220,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		if( count == need_count &&  need_count != 0 ){
 			char msg[256] = {0};
 		
-			sprintf( msg, "ĞèÏÈÑ§»á " );
+			sprintf( msg, "éœ€å…ˆå­¦ä¼š " );
 			for( i = 0; i< count; i++ ){
 				if( temp[i] != 0 ){
 					char token[50] = {0};
@@ -228,7 +228,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 					strcat( msg, token );
 				}
 			}
-			sprintf( msg, "%s ÈÎÒ»ÖÖ¼¼ÄÜ", msg );
+			sprintf( msg, "%s ä»»ä¸€ç§æŠ€èƒ½", msg );
 			CHAR_talkToCli( talkerindex, -1, msg, CHAR_COLORYELLOW);
 			CHAR_send_P_StatusString( talkerindex, CHAR_P_STRING_GOLD);
 
@@ -237,7 +237,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 
 	}
 
-	// ÅĞ¶Ï½ğÇ®	
+	// åˆ¤æ–­é‡‘é’±	
 	{
 		cost = PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_COST );
 		cost = cost * rate;
@@ -249,18 +249,18 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 	}
 
 #ifdef _NPC_ProfessionTrans
-	//ÅĞ¶Ï×ªÉú
+	//åˆ¤æ–­è½¬ç”Ÿ
 	{
 		if( NPC_Util_GetStrFromStrWithDelim( argstr, "trans", msg, sizeof(msg) ) != NULL){
 		    int trans = atoi(msg);
-			print("\n×ªÉúÒªÇó:%d,%d",CHAR_getInt( talkerindex, CHAR_TRANSMIGRATION),trans);
+			print("\nè½¬ç”Ÿè¦æ±‚:%d,%d",CHAR_getInt( talkerindex, CHAR_TRANSMIGRATION),trans);
 			if( CHAR_getInt( talkerindex, CHAR_TRANSMIGRATION) < trans){ 
 				if( NPC_Util_GetStrFromStrWithDelim( argstr, "trans_msg", msg, sizeof(msg) ) != NULL){
                     CHAR_talkToCli( talkerindex, meindex, msg, CHAR_COLORYELLOW);
 				    return;
 				}
 				else{
-                    CHAR_talkToCli( talkerindex, meindex, "ÄúµÄ×ªÉú´ÎÊı²»¹»Å¶¡£", CHAR_COLORYELLOW);
+                    CHAR_talkToCli( talkerindex, meindex, "æ‚¨çš„è½¬ç”Ÿæ¬¡æ•°ä¸å¤Ÿå“¦ã€‚", CHAR_COLORYELLOW);
 				    return;
 				}
 			}
@@ -268,11 +268,11 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 	}
 #endif
 
-	// Ôö¼Ó¼¼ÄÜ
+	// å¢åŠ æŠ€èƒ½
 	{
 		int skill_level = 0;
 
-		// ¹²Í¨¼¼ÄÜÊìÁ·¶È¸ø50£¬ÆäâÅ¸ø10
+		// å…±é€šæŠ€èƒ½ç†Ÿç»ƒåº¦ç»™50ï¼Œå…¶é¦€ç»™10
 		if( (skillID == 63) || (skillID == 64) || (skillID == 65)  ){
 			int	Pskillid = -1;
 			skill_level = 50;
@@ -290,7 +290,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		NPC_Welfare_selectWindow( meindex, talkerindex,0,-1);
 	}
 
-	// ´«ËÍÑ¶Ï¢
+	// ä¼ é€è®¯æ¯
 	{
 		char token[256];
 		int next_profession_skill_point = profession_skill_point-1;
@@ -298,7 +298,7 @@ void NPC_WelfareWindowTalked( int meindex, int talkerindex,
 		CHAR_setInt( talkerindex, PROFESSION_SKILL_POINT, next_profession_skill_point );
 		
 		memset(token, -1, sizeof(token) );
-		sprintf( token, "ÄúÑ§Ï°ÁË %s£¬Ê£âÅÑ§Ï°µãÊı %d"
+		sprintf( token, "æ‚¨å­¦ä¹ äº† %sï¼Œå‰©é¦€å­¦ä¹ ç‚¹æ•° %d"
 				,PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME )
 				,next_profession_skill_point );
 		CHAR_talkToCli( talkerindex, -1, token, CHAR_COLORYELLOW);
@@ -365,10 +365,10 @@ void NPC_WelfareMakeStr(int meindex,int toindex,int select)
 			cost = (int)cost*rate;
 
 			sprintf(token2,"|%s|%d|%s|%d",
-				PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME ),	// ¼¼ÄÜÃû³Æ
-				cost,															// ½ğ¶î
-				PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_TXT ),	// ËµÃ÷
-				PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_ICON )	// Í¼Ê¾
+				PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_NAME ),	// æŠ€èƒ½åç§°
+				cost,															// é‡‘é¢
+				PROFESSION_SKILL_getChar( skillarray, PROFESSION_SKILL_TXT ),	// è¯´æ˜
+				PROFESSION_SKILL_getInt( skillarray, PROFESSION_SKILL_ICON )	// å›¾ç¤º
 			);
 			strcat(token,token2);
 		} 

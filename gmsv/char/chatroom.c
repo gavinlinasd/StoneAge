@@ -16,7 +16,7 @@
 #include "chatroom.h"
 #include "net.h"
 #include "util.h"
-#ifdef _CHATROOMPROTOCOL			// (²»¿É¿ª) Syu ADD ÁÄÌìÊÒÆµµÀ
+#ifdef _CHATROOMPROTOCOL			// (ä¸å¯å¼€) Syu ADD èŠå¤©å®¤é¢‘é“
 
 
 
@@ -46,16 +46,16 @@ BOOL ChatCheck_Free( int myindex)
 		return FALSE;
 	old_gold = CHAR_getInt( myindex, CHAR_GOLD );
 	if( old_gold < 200 ){
-		CHAR_talkToCli ( myindex , -1 , "³ÉÁ¢ÁÄÌìÊÒĞè»¨·Ñ£²£°£°Ê¯±Ò" , CHAR_COLORYELLOW ); 
+		CHAR_talkToCli ( myindex , -1 , "æˆç«‹èŠå¤©å®¤éœ€èŠ±è´¹ï¼’ï¼ï¼çŸ³å¸" , CHAR_COLORYELLOW ); 
 		return FALSE;
 	}
 	if ( CHAR_getInt ( myindex , CHAR_LV ) < 30 &&
 		CHAR_getInt ( myindex , CHAR_TRANSMIGRATION ) < 1 ) {
-		CHAR_talkToCli ( myindex , -1 , "³ÉÁ¢ÁÄÌìÊÒĞè£°×ª£³£°¼¶ÒÔÉÏ£¡" , CHAR_COLORYELLOW );
+		CHAR_talkToCli ( myindex , -1 , "æˆç«‹èŠå¤©å®¤éœ€ï¼è½¬ï¼“ï¼çº§ä»¥ä¸Šï¼" , CHAR_COLORYELLOW );
 		return FALSE;
 	}
 	if ( CHAR_getWorkInt ( myindex , CHAR_WORKCHATROOMTYPE ) != 0 ) {
-		CHAR_talkToCli ( myindex , -1 , "ÄãÒÑ¾­ÔÚÆäËûÁÄÌìÊÒÖĞ£¡" , CHAR_COLORYELLOW );
+		CHAR_talkToCli ( myindex , -1 , "ä½ å·²ç»åœ¨å…¶ä»–èŠå¤©å®¤ä¸­ï¼" , CHAR_COLORYELLOW );
 		return FALSE;
 	}
 	return TRUE;
@@ -215,7 +215,7 @@ void ChatRoom_recvall ( int fd , char *data )
 
 	//andy_log
 	print( "CR:%s.\n", data);
-	if ( strcmp ( Head , "C" ) == 0 ) { // ³ÉÁ¢ÆµµÀ
+	if ( strcmp ( Head , "C" ) == 0 ) { // æˆç«‹é¢‘é“
 		char chatname[256];
 		if( ChatCheck_Free( charaindex) == FALSE ) return;
 		if( getStringFromIndexWithDelim( data , "|", 2, chatname, sizeof(chatname)) == FALSE ) return;
@@ -225,7 +225,7 @@ void ChatRoom_recvall ( int fd , char *data )
 			CHAR_getChar( charaindex, CHAR_NAME),
 			CHAR_getChar( charaindex, CHAR_OWNTITLE)
 		);
-	}else if ( strcmp ( Head , "D" ) == 0 ) { // É¾³ıÆµµÀ
+	}else if ( strcmp ( Head , "D" ) == 0 ) { // åˆ é™¤é¢‘é“
 		int chat;
 
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKCHATROOMTYPE) != 1 ) return;
@@ -237,12 +237,12 @@ void ChatRoom_recvall ( int fd , char *data )
 		);
 		//ChatRoom_Destroy( myindex);
 /*
-	}else if ( strcmp ( Head, "A") == 0 ) {// Í¬Òâ¼ÓÈëÆµµÀ
+	}else if ( strcmp ( Head, "A") == 0 ) {// åŒæ„åŠ å…¥é¢‘é“
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		getStringFromIndexWithDelim( data , "|", 3, buf, sizeof(buf));
 		ChatRoom_Agree ( myindex , atoi( message ) , atoi( buf ) ) ;
 */
-	}else if ( strcmp( Head , "J") == 0 ) {//¼ÓÈëÆµµÀ
+	}else if ( strcmp( Head , "J") == 0 ) {//åŠ å…¥é¢‘é“
 		int chat;
 		if( getStringFromIndexWithDelim( data , "|", 2, buf, sizeof(buf)) == FALSE ) return;
 		chat = atoi( buf);
@@ -253,10 +253,10 @@ void ChatRoom_recvall ( int fd , char *data )
 			CHAR_getChar( charaindex, CHAR_OWNTITLE)
 		);
 //		ChatRoom_Join ( myindex , atoi( message ) ) ;
-	}else if ( strcmp( Head , "L") == 0 ) {// Àë¿ªÆµµÀ
+	}else if ( strcmp( Head , "L") == 0 ) {// ç¦»å¼€é¢‘é“
 		ChatRoom_Leave( charaindex);
 		return;
-	}else if ( strcmp ( Head , "K" ) == 0 ) {//Ìß³öÆµµÀ
+	}else if ( strcmp ( Head , "K" ) == 0 ) {//è¸¢å‡ºé¢‘é“
 		int ti, chat;
 		if( getStringFromIndexWithDelim( data , "|", 2, buf, sizeof( buf)) == FALSE ) return;
 		ti = atoi( buf);
@@ -272,7 +272,7 @@ void ChatRoom_recvall ( int fd , char *data )
 			ti );
 
 //		ChatRoom_Kick ( myindex , atoi( message ) ); 
-	}else if ( strcmp ( Head , "M" ) == 0 ) { // ¸ü»»ÊÒ³¤
+	}else if ( strcmp ( Head , "M" ) == 0 ) { // æ›´æ¢å®¤é•¿
 		int ti, chat;
 		if( getStringFromIndexWithDelim( data , "|", 2, buf, sizeof(buf)) == FALSE ) return;
 		ti = atoi( buf);
@@ -286,7 +286,7 @@ void ChatRoom_recvall ( int fd , char *data )
 			CHAR_getChar( charaindex, CHAR_NAME),
 			ti );
 //		ChatRoom_Make ( myindex , atoi( message ) ); 
-	}else if ( strcmp ( Head , "T" ) == 0 ) {// ÆµµÀÑ¶Ï¢
+	}else if ( strcmp ( Head , "T" ) == 0 ) {// é¢‘é“è®¯æ¯
 		int chat;
 		if( getStringFromIndexWithDelim( data , "|", 2, buf, sizeof(buf)) == FALSE ) return;
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKCHATROOMTYPE) == 0 ) return;
@@ -295,7 +295,7 @@ void ChatRoom_recvall ( int fd , char *data )
 		snprintf( token, sizeof( token),"T|%d|%s|",	chat, buf);
 		
 //		ChatRoom_Message ( myindex , message ) ; 
-	}else if ( strcmp ( Head , "B" ) == 0 ) {// ÁÄÌìÊÒÇåµ¥
+	}else if ( strcmp ( Head , "B" ) == 0 ) {// èŠå¤©å®¤æ¸…å•
 		ChatRoom_List ( fd );
 		return;
 	}
@@ -315,7 +315,7 @@ void saac_ChatRoom_recvall ( int fd , char *result, char *data, int charaindex, 
 	print( "saac CR:%s.\n", data);
 	if( getStringFromIndexWithDelim( data , "|", 1, Head, sizeof(Head)) == FALSE ) return;
 
-	if( strcmp( Head, "C") == 0 ) { // ³ÉÁ¢ÆµµÀ
+	if( strcmp( Head, "C") == 0 ) { // æˆç«‹é¢‘é“
 //		int fd = getfdFromCharaIndex( charaindex);
 //		if( getStringFromIndexWithDelim( data , "|", 2, result, sizeof(result)) == FALSE ) return;
 		if( !strcmp( result, SUCCESSFUL) ){
@@ -338,11 +338,11 @@ void saac_ChatRoom_recvall ( int fd , char *result, char *data, int charaindex, 
 			ChatRoom[chat].use = 1;
 			CHAR_setWorkInt ( charaindex , CHAR_WORKCHATROOMTYPE , 1 ) ; 
 			CHAR_setWorkInt ( charaindex , CHAR_WORKCHATROOMNUM , chat ) ; 
-			CHAR_talkToCli ( charaindex , -1 , "³ÉÁ¢ÁÄÌìÊÒ¿Û³ı£²£°£°Ê¯±Ò¡£" , CHAR_COLORYELLOW );
+			CHAR_talkToCli ( charaindex , -1 , "æˆç«‹èŠå¤©å®¤æ‰£é™¤ï¼’ï¼ï¼çŸ³å¸ã€‚" , CHAR_COLORYELLOW );
 
 			ChatRoom_Refresh( chat);
 		}else{
-			CHAR_talkToCli ( charaindex , -1 , "ÎŞ·¨³ÉÁ¢ÁÄÌìÊÒ£¬ÁÄÌìÆµµÀÒÑÂú»òÌõ¼ş²»×ã£¡" , CHAR_COLORYELLOW );
+			CHAR_talkToCli ( charaindex , -1 , "æ— æ³•æˆç«‹èŠå¤©å®¤ï¼ŒèŠå¤©é¢‘é“å·²æ»¡æˆ–æ¡ä»¶ä¸è¶³ï¼" , CHAR_COLORYELLOW );
 		}
 	}else if( strcmp( Head, "U") == 0 ) {
 		int k=2, ti;
@@ -405,12 +405,12 @@ void saac_ChatRoom_recvall ( int fd , char *result, char *data, int charaindex, 
 			if( !strcmp( CHAR_getChar( j, CHAR_CDKEY), ChatRoom[chat].charalist[ti].cdkey) &&
 				!strcmp( CHAR_getChar( j, CHAR_NAME), ChatRoom[chat].charalist[ti].name) ){
 				CHAR_setWorkInt( j, CHAR_WORKCHATROOMTYPE, 1);
-				CHAR_talkToCli( j, -1 , "ÄãÏÖÔÚÊÇÁÄÌìÊÒµÄÊÒ³¤£¡", CHAR_COLORRED);
+				CHAR_talkToCli( j, -1 , "ä½ ç°åœ¨æ˜¯èŠå¤©å®¤çš„å®¤é•¿ï¼", CHAR_COLORRED);
 			}
 			if( !strcmp( CHAR_getChar( j, CHAR_CDKEY), ChatRoom[chat].charalist[ChatRoom[chat].masindex].cdkey) &&
 				!strcmp( CHAR_getChar( j, CHAR_NAME), ChatRoom[chat].charalist[ChatRoom[chat].masindex].name) ){
 				CHAR_setWorkInt( j, CHAR_WORKCHATROOMTYPE, 2);
-				CHAR_talkToCli( j, -1 , "ÄãÏÖÔÚÒÑ¾­²»ÊÇÁÄÌìÊÒµÄÊÒ³¤£¡", CHAR_COLORRED);
+				CHAR_talkToCli( j, -1 , "ä½ ç°åœ¨å·²ç»ä¸æ˜¯èŠå¤©å®¤çš„å®¤é•¿ï¼", CHAR_COLORRED);
 			}
 		}
 		ChatRoom[ chat].masindex = ti;
@@ -450,7 +450,7 @@ print( "_CHATROOM_send( %d, K|) \n", fd );
 print( "ChatRoom_Refresh( %d) \n", chat);
 		ChatRoom[chat].charalist[ti].use = 0;
 		ChatRoom_Refresh( chat);
-	}else if ( strcmp ( Head , "J" ) == 0 ) {//¼ÓÈëÆµµÀ
+	}else if ( strcmp ( Head , "J" ) == 0 ) {//åŠ å…¥é¢‘é“
 	}else if ( strcmp ( Head , "A" ) == 0 ) {
 		if ( !CHAR_CHECKINDEX ( charaindex ) ) return;
 
@@ -459,14 +459,14 @@ print( "ChatRoom_Refresh( %d) \n", chat);
 		if( chat < 0 || chat >= MAX_CHATROOM ) return;
 		if( getStringFromIndexWithDelim( data , "|", 3, result, sizeof( result)) == FALSE ) return;
 		if( !strcmp( result, "FULL") ){
-			CHAR_talkToCli( charaindex, -1, "¸ÃÆµµÀÒÑÂú£¡", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "è¯¥é¢‘é“å·²æ»¡ï¼", CHAR_COLORYELLOW);
 		}else if( !strcmp( result, "OK") ){
-			CHAR_talkToCli( charaindex, -1, "¼ÓÈëÁÄÌìÆµµÀ£¡", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "åŠ å…¥èŠå¤©é¢‘é“ï¼", CHAR_COLORYELLOW);
 			CHAR_setWorkInt( charaindex, CHAR_WORKCHATROOMNUM, chat);
 			CHAR_setWorkInt( charaindex, CHAR_WORKCHATROOMTYPE, 2);
 		}
 		ChatRoom_Refresh( chat);
-	}else if( !strcmp( Head, "T") ) {//ÆµµÀÑ¶Ï¢
+	}else if( !strcmp( Head, "T") ) {//é¢‘é“è®¯æ¯
 		int j;
 		char message[256];
 		int playernum = CHAR_getPlayerMaxNum();
@@ -500,9 +500,9 @@ void CHATROOM_getChatRoomList( void)
 
 /*
 CHAR_WORKCHATROOMTYPE :
-	0 : ÎŞ
-	1 : ÁÄÌìÊÒÊÒ³¤
-	2 : ÁÄÌìÊÒ³ÉÔ±
+	0 : æ— 
+	1 : èŠå¤©å®¤å®¤é•¿
+	2 : èŠå¤©å®¤æˆå‘˜
 */
 typedef struct {
 	BOOL useFlag ;
@@ -537,16 +537,16 @@ BOOL ChatCheck_Free( int myindex)
 		return FALSE;
 	old_gold = CHAR_getInt( myindex, CHAR_GOLD );
 	if( old_gold < 200 ){
-		CHAR_talkToCli ( myindex , -1 , "³ÉÁ¢ÁÄÌìÊÒĞè»¨·Ñ£²£°£°Ê¯±Ò" , CHAR_COLORYELLOW ); 
+		CHAR_talkToCli ( myindex , -1 , "æˆç«‹èŠå¤©å®¤éœ€èŠ±è´¹ï¼’ï¼ï¼çŸ³å¸" , CHAR_COLORYELLOW ); 
 		return FALSE;
 	}
 	if ( CHAR_getInt ( myindex , CHAR_LV ) < 30 &&
 		CHAR_getInt ( myindex , CHAR_TRANSMIGRATION ) < 1 ) {
-		CHAR_talkToCli ( myindex , -1 , "³ÉÁ¢ÁÄÌìÊÒĞè£°×ª£³£°¼¶ÒÔÉÏ£¡" , CHAR_COLORYELLOW );
+		CHAR_talkToCli ( myindex , -1 , "æˆç«‹èŠå¤©å®¤éœ€ï¼è½¬ï¼“ï¼çº§ä»¥ä¸Šï¼" , CHAR_COLORYELLOW );
 		return FALSE;
 	}
 	if ( CHAR_getWorkInt ( myindex , CHAR_WORKCHATROOMTYPE ) != 0 ) {
-		CHAR_talkToCli ( myindex , -1 , "ÄãÒÑ¾­ÔÚÆäËûÁÄÌìÊÒÖĞ£¡" , CHAR_COLORYELLOW );
+		CHAR_talkToCli ( myindex , -1 , "ä½ å·²ç»åœ¨å…¶ä»–èŠå¤©å®¤ä¸­ï¼" , CHAR_COLORYELLOW );
 		return FALSE;
 	}
 	return TRUE;
@@ -582,11 +582,11 @@ BOOL ChatRoom_Create ( int myindex , char *message )
 			ChatRoom_Refresh ( i ) ; 
 
 			CHAR_DelGold( myindex, 200);
-			CHAR_talkToCli ( myindex , -1 , "³ÉÁ¢ÁÄÌìÊÒ¿Û³ı£²£°£°Ê¯±Ò" , CHAR_COLORYELLOW ); 
+			CHAR_talkToCli ( myindex , -1 , "æˆç«‹èŠå¤©å®¤æ‰£é™¤ï¼’ï¼ï¼çŸ³å¸" , CHAR_COLORYELLOW ); 
 			return TRUE; 
 		}
 	}
-	CHAR_talkToCli ( myindex , -1 , "ÁÄÌìÊÒÒÑÂúÎŞ·¨½¨Á¢ĞÂµÄÁÄÌìÆµµÀ£¡" , CHAR_COLORYELLOW ); 
+	CHAR_talkToCli ( myindex , -1 , "èŠå¤©å®¤å·²æ»¡æ— æ³•å»ºç«‹æ–°çš„èŠå¤©é¢‘é“ï¼" , CHAR_COLORYELLOW ); 
 	return FALSE; 
 }
 
@@ -661,7 +661,7 @@ void ChatRoom_Kick ( int myindex , int toindex )
 		else {
 			CHAR_setWorkInt ( toindex , CHAR_WORKCHATROOMTYPE , 0 ) ; 
 			CHAR_setWorkInt ( toindex , CHAR_WORKCHATROOMNUM , -1) ; 
-			//CHAR_talkToCli ( toindex , -1 , "ÊÒ³¤½«ÄãÌß³öÁÄÌìÊÒ£¡" , CHAR_COLORRED ) ; 
+			//CHAR_talkToCli ( toindex , -1 , "å®¤é•¿å°†ä½ è¸¢å‡ºèŠå¤©å®¤ï¼" , CHAR_COLORRED ) ; 
 			fd = getfdFromCharaIndex( toindex );
 			lssproto_CHATROOM_send ( fd , "K|" ) ; 
 			ChatRoom[ Num ].NowPeople --;
@@ -690,12 +690,12 @@ void ChatRoom_Make ( int myindex , int toindex )
 			CHAR_getInt ( toindex , CHAR_TRANSMIGRATION ) >= 1 ) {
 			CHAR_setWorkInt ( myindex , CHAR_WORKCHATROOMTYPE , 2 ) ; 
 			CHAR_setWorkInt ( toindex , CHAR_WORKCHATROOMTYPE , 1 ) ; 
-			CHAR_talkToCli ( toindex , -1 , "ÄãÏÖÔÚÊÇÁÄÌìÊÒµÄÊÒ³¤£¡" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( toindex , -1 , "ä½ ç°åœ¨æ˜¯èŠå¤©å®¤çš„å®¤é•¿ï¼" , CHAR_COLORRED ) ; 
 		
 			ChatRoom[ Num ].Maker = toindex ; 			
 		}
 		else {
-			CHAR_talkToCli ( myindex , -1 , "ÄúÑ¡ÔñµÄ¼ÌÈÎÈËÎïµÈ¼¶²»×ãÒÔµ£ÈÎÊÒ³¤£¡" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( myindex , -1 , "æ‚¨é€‰æ‹©çš„ç»§ä»»äººç‰©ç­‰çº§ä¸è¶³ä»¥æ‹…ä»»å®¤é•¿ï¼" , CHAR_COLORRED ) ; 
 		}
 	}
 	ChatRoom_Refresh ( Num ) ; 
@@ -763,7 +763,7 @@ void ChatRoom_Join ( int myindex , int num )
 		fd = getfdFromCharaIndex( ChatRoom[ num ].Maker );
 		lssproto_CHATROOM_send ( fd , buf );
 	}else if ( ChatRoom[ num ].NowPeople >= MAX_PPLINROOM ) 
-		CHAR_talkToCli ( myindex , -1 , "ÁÄÌìÊÒÈËÊıÒÑÂú£¡" , CHAR_COLORRED ) ; 
+		CHAR_talkToCli ( myindex , -1 , "èŠå¤©å®¤äººæ•°å·²æ»¡ï¼" , CHAR_COLORRED ) ; 
 
 }
 
@@ -788,10 +788,10 @@ void ChatRoom_Agree ( int myindex , int toindex , int YesNo ) {
 				}
 			}
 		}else if ( YesNo == 0 ) {
-			CHAR_talkToCli ( toindex , -1 , "ÄúÉêÇëµÄÁÄÌìÊÒÊÒ³¤¾Ü¾øÄúµÄ¼ÓÈë£¡" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( toindex , -1 , "æ‚¨ç”³è¯·çš„èŠå¤©å®¤å®¤é•¿æ‹’ç»æ‚¨çš„åŠ å…¥ï¼" , CHAR_COLORRED ) ; 
 		}else if ( ChatRoom[ Num ].NowPeople >= MAX_PPLINROOM ) {
-			CHAR_talkToCli ( toindex , -1 , "ÄúÉêÇëµÄÁÄÌìÊÒÈËÊıÒÑÂú£¡" , CHAR_COLORRED ) ; 
-			CHAR_talkToCli ( myindex , -1 , "ÁÄÌìÊÒÈËÊıÒÑÂú£¡" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( toindex , -1 , "æ‚¨ç”³è¯·çš„èŠå¤©å®¤äººæ•°å·²æ»¡ï¼" , CHAR_COLORRED ) ; 
+			CHAR_talkToCli ( myindex , -1 , "èŠå¤©å®¤äººæ•°å·²æ»¡ï¼" , CHAR_COLORRED ) ; 
 		}
 	}
 	ChatRoom_Refresh ( Num ) ; 
@@ -804,7 +804,7 @@ void ChatRoom_List ( int fd )
 	char token[2048] = "B|";
 	for ( i = 0 ; i < MAX_CHATROOM ; i ++ ) {
 		if ( ChatRoom[ i ].useFlag == TRUE ) {
-			sprintf ( buf , "ÁÄÌìÊÒ%2d×ÊÑ¶£ºÊÒÃû=>%20s , ÊÒ³¤=>%16s , ÈËÊı=>%2d" , 
+			sprintf ( buf , "èŠå¤©å®¤%2dèµ„è®¯ï¼šå®¤å=>%20s , å®¤é•¿=>%16s , äººæ•°=>%2d" , 
 				i , 
 				ChatRoom[ i ].RoomName , 
 				CHAR_getChar ( ChatRoom[ i ].Maker , CHAR_NAME ) , 
@@ -869,31 +869,31 @@ void ChatRoom_recvall ( int fd , char *data )
 	getStringFromIndexWithDelim( data , "|", 1, Head, sizeof(Head));
 	getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 
-	if ( strcmp ( Head , "C" ) == 0 ) { // ³ÉÁ¢ÆµµÀ
+	if ( strcmp ( Head , "C" ) == 0 ) { // æˆç«‹é¢‘é“
 		if ( !ChatRoom_Create ( myindex , message ) )
 			print("\nSyu log Create Channel Error" );
-	}else if ( strcmp ( Head , "D" ) == 0 ) { // É¾³ıÆµµÀ
+	}else if ( strcmp ( Head , "D" ) == 0 ) { // åˆ é™¤é¢‘é“
 		if ( !ChatRoom_Destroy ( myindex ) )
 			print("\nSyu log Destroy Channel Error" ) ; 
-	}else if ( strcmp ( Head , "A" ) == 0 ) {// Í¬Òâ¼ÓÈëÆµµÀ
+	}else if ( strcmp ( Head , "A" ) == 0 ) {// åŒæ„åŠ å…¥é¢‘é“
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		getStringFromIndexWithDelim( data , "|", 3, buf, sizeof(buf));
 		ChatRoom_Agree ( myindex , atoi( message ) , atoi( buf ) ) ; 
-	}else if ( strcmp ( Head , "J" ) == 0 ) {// ÉêÇëÆµµÀ
+	}else if ( strcmp ( Head , "J" ) == 0 ) {// ç”³è¯·é¢‘é“
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		ChatRoom_Join ( myindex , atoi( message ) ) ; 
-	}else if ( strcmp ( Head , "L" ) == 0 ) {// Àë¿ªÆµµÀ
+	}else if ( strcmp ( Head , "L" ) == 0 ) {// ç¦»å¼€é¢‘é“
 		ChatRoom_Leave ( myindex ) ; 
-	}else if ( strcmp ( Head , "K" ) == 0 ) {//Ìß³öÆµµÀ
+	}else if ( strcmp ( Head , "K" ) == 0 ) {//è¸¢å‡ºé¢‘é“
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		ChatRoom_Kick ( myindex , atoi( message ) ); 
-	}else if ( strcmp ( Head , "M" ) == 0 ) { // ¸ü»»ÊÒ³¤
+	}else if ( strcmp ( Head , "M" ) == 0 ) { // æ›´æ¢å®¤é•¿
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		ChatRoom_Make ( myindex , atoi( message ) ); 
-	}else if ( strcmp ( Head , "T" ) == 0 ) {// ÆµµÀÑ¶Ï¢
+	}else if ( strcmp ( Head , "T" ) == 0 ) {// é¢‘é“è®¯æ¯
 		getStringFromIndexWithDelim( data , "|", 2, message, sizeof(message));
 		ChatRoom_Message ( myindex , message ) ; 
-	}else if ( strcmp ( Head , "B" ) == 0 ) {// ÁÄÌìÊÒÇåµ¥
+	}else if ( strcmp ( Head , "B" ) == 0 ) {// èŠå¤©å®¤æ¸…å•
 		ChatRoom_List ( fd );
 	}else 
 		print("\nSyu log None");

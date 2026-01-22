@@ -22,12 +22,12 @@ typedef enum
     E_T_WATERAT,
     E_T_FIREAT,
     E_T_WINDAT,
-    E_T_POISON,               /*   ������̫��ĸ������          */
-    E_T_PARALYSIS,            /* ��̫ľ��1  ����  ��ƥ��ئ�У� */
-    E_T_SLEEP,                /* ��Ի�۵�  ƥ��ئ��            */
-    E_T_STONE,                /* �ޣ۵�  ƥ��ئ��              */
-    E_T_DRUNK,                /* �쵤��      ��Ʊ����     */
-    E_T_CONFUSION,            /* ���٣�  ��    ë����     */
+    E_T_POISON,               /*   汹仁凶太卞母丢□斥          */
+    E_T_PARALYSIS,            /* 仄太木｝1  及垫  互匹五卅中［ */
+    E_T_SLEEP,                /* 戽曰［垫  匹五卅中            */
+    E_T_STONE,                /* 檗［垫  匹五卅中              */
+    E_T_DRUNK,                /* 办丹［      互票互月     */
+    E_T_CONFUSION,            /* 渔刭［  猾    毛赀月     */
     E_T_PETSKILL1,
     E_T_PETSKILL2,
     E_T_PETSKILL3,
@@ -88,7 +88,7 @@ typedef enum
 	ENEMY_EXP,
     ENEMY_DUELPOINT,
 	ENEMY_STYLE,
-    ENEMY_PETFLG,               /* ʸ������ئ�¾������� */
+    ENEMY_PETFLG,               /* 矢永玄卞卅月井升丹井 */
 
     ENEMY_ITEM1,
     ENEMY_ITEM2,
@@ -128,8 +128,8 @@ typedef enum
 typedef enum
 {
     GROUP_ID,
-	GROUP_APPEARBYITEMID,		/* ��ʧ��  ةë  �Ȼ��������������� -1 ��  ��*/
-	GROUP_NOTAPPEARBYITEMID,	/* ��ʧ��  ةë  �Ȼ�������������ئ�� -1 ��  ��*/
+	GROUP_APPEARBYITEMID,		/* 仇及失奶  丞毛  匀化中凶日请蜇允月 -1 反  骰*/
+	GROUP_NOTAPPEARBYITEMID,	/* 仇及失奶  丞毛  匀化中凶日请蜇仄卅中 -1 反  骰*/
     ENEMY_ID1,
     ENEMY_ID2,
     ENEMY_ID3,

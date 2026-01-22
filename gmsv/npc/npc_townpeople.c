@@ -11,26 +11,26 @@
 
 
 /*
- *  ���м�����̫��  by nakamura
- *  ������  ��TownPeople
- *    �ƾ�����ľ�������NPCARGUMENT��  ٯ  ë  �ƾ��껯�����б�  �ʣ�
+ *  引切及夫午太午  by nakamura
+ *  正奶皿  “TownPeople
+ *    仄井仃日木凶午五卞NPCARGUMENT及  侬  毛  仄井仃化五凶谛卞  允［
  *
- *  ���ף�npcarg�� ���ϱ��з�,��  �������廥����ƥ����
- *  ��������  ʣ���Ѩë�����������ƻ�  �Ѽ�����������ë
- *  ̤�ʳ��绥ƥ������������¼�ĸةƥ����  �����������£�
- *  npcgen.perl ƥ���� MANƥؤ�£� MSG�����������ئԪ��ئؤ
+ *  引凶｝npcarg卞 仇氏卞切反,漆  反化氏五互中中匹允友
+ *  及方丹卞  剩戊件穴毛犯伉立正午仄化  醒及丢□本□斥毛
+ *  踏仁仇午互匹五｝公及桦宁仿件母丞匹公及  井日仄扎屯月［
+ *  npcgen.perl 匹反｝ MAN匹丐月［ MSG午幻午氏升云卅元分卅丐
  *
  */
 
 /*
- *   �ƾ�����ľ�����巴NPCARGUMENTë��������  �ʣ�
+ *   仄井仃日木凶午五反NPCARGUMENT毛公及引引  允［
  */
 void NPC_TownPeopleTalked( int index, int talker, char *msg, int color )
 {
 	char arg[NPC_UTIL_GETARGSTR_BUFSIZE], token[NPC_UTIL_GETARGSTR_LINEMAX];
     int i, tokennum;
 
-    /* 3��������  ����������߯������ */
+    /* 3弘伉永玉动  及桦宁分仃忒蚕允月 */
 
 	if( CHAR_getInt(talker,CHAR_WHICHTYPE) == CHAR_TYPEPLAYER 
         && NPC_Util_charIsInFrontOfChar( talker, index, 3 ) ){
@@ -38,12 +38,12 @@ void NPC_TownPeopleTalked( int index, int talker, char *msg, int color )
         NPC_Util_GetArgStr( index, arg, sizeof( arg));
 
         tokennum = 1;
-        /* ���Ѩƥ����ľ�������ͼ����ϳ�ؤ�¾������� */
+        /* 戊件穴匹嗉濠日木凶玄□弁件互窒仇丐月井醒尹月 */
         for( i=0;arg[i]!='\0';i++ ){
             if( arg[i] == ',' ) tokennum++;
         }
 
-        /* �¼�ĸةƥ��ľë���¾�裻��������������ͼ�ë��Ի���� */
+        /* 仿件母丞匹升木毛韵月井瑁户化｝公及玄□弁件毛潸曰分允 */
         getStringFromIndexWithDelim( arg,",",
                                      rand()%tokennum+1,token, sizeof(token));
 
@@ -52,7 +52,7 @@ void NPC_TownPeopleTalked( int index, int talker, char *msg, int color )
 }
 
 /*
- * ��������£�
+ * 赓渝祭允月［
  */
 BOOL NPC_TownPeopleInit( int meindex )
 {
@@ -66,7 +66,7 @@ BOOL NPC_TownPeopleInit( int meindex )
 
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPETOWNPEOPLE );
     //CHAR_setFlg( meindex , CHAR_ISOVERED , 1 );
-    //CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );  /*   ����ľئ�з��� */
+    //CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );  /*   猾今木卅中方氏 */
     
     return TRUE;
 }

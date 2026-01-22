@@ -52,37 +52,37 @@
 #define PETSKILL_MPDAMAGE ( 504)
 #endif
 #ifdef _SKILL_WILDVIOLENT_ATT
-#define PETSKILL_WILDVIOLENTATTACK ( 540)//øÒ±© vincent add 2002/05/16
+#define PETSKILL_WILDVIOLENTATTACK ( 540)//ÁãÇÊö¥ vincent add 2002/05/16
 #endif
 #ifdef _SKILL_SPEEDY_ATT
-#define PETSKILL_SPEEDYATTACK ( 541)     //º≤ÀŸ vincent add 2002/05/16
+#define PETSKILL_SPEEDYATTACK ( 541)     //ÁñæÈÄü vincent add 2002/05/16
 #endif
 #ifdef _SKILL_GUARDBREAK2
-#define PETSKILL_GUARDBREAK2 ( 542)      //∆∆≥˝∑¿”˘2 vincent add 2002/05/20
+#define PETSKILL_GUARDBREAK2 ( 542)      //Á†¥Èô§Èò≤Âæ°2 vincent add 2002/05/20
 #endif
 #ifdef _SKILL_SACRIFICE
-#define PETSKILL_SACRIFICE ( 543)		 //æ»‘Æ vincent add 2002/05/30
+#define PETSKILL_SACRIFICE ( 543)		 //ÊïëÊè¥ vincent add 2002/05/30
 #endif
 
 #ifdef _SKILL_WEAKEN 
-#define PETSKILL_WEAKEN ( 544)           //–È»ı vincent add 2002/07/11
+#define PETSKILL_WEAKEN ( 544)           //ËôöÂº± vincent add 2002/07/11
 #endif
 
 #ifdef _SKILL_DEEPPOISON  
-#define PETSKILL_DEEPPOISON ( 545)       //æÁ∂æ vincent add 2002/07/16
+#define PETSKILL_DEEPPOISON ( 545)       //ÂâßÊØí vincent add 2002/07/16
 #endif
 
 #ifdef _SKILL_BARRIER  
-#define PETSKILL_BARRIER ( 546)          //ƒß’œ vincent add 2002/07/16
+#define PETSKILL_BARRIER ( 546)          //È≠îÈöú vincent add 2002/07/16
 #endif
 
 #ifdef _SKILL_NOCAST 
-#define PETSKILL_NOCAST ( 547)           //≥¡ƒ¨ vincent add 2002/07/16
+#define PETSKILL_NOCAST ( 547)           //Ê≤âÈªò vincent add 2002/07/16
 #endif
 
 
 #ifdef _SKILL_ROAR 
-#define PETSKILL_ROAR ( 548)             //¥Û∫ vincent add 2002/07/11
+#define PETSKILL_ROAR ( 548)             //Â§ßÂêº vincent add 2002/07/11
 #endif
 
 #ifdef _ITEM_INSLAY
@@ -121,7 +121,7 @@
 #define PETSKILL_AttCrazed ( 608)
 #endif
 
-#ifdef _SHOOTCHESTNUT	// Syu ADD ≥Ëºº£∫∂™¿ı◊”
+#ifdef _SHOOTCHESTNUT	// Syu ADD ÂÆ†ÊäÄÔºö‰∏¢Ê†óÂ≠ê
 #define PETSKILL_AttShoot ( 609 ) 
 #endif
 

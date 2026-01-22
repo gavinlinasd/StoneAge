@@ -27,12 +27,12 @@ int BATTLE_ItemUseDelete(
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-			"BattleUse(Õ½¶·ÖĞÊ¹ÓÃµôµÄµÀ¾ß)",
+			"BattleUse(æˆ˜æ–—ä¸­ä½¿ç”¨æ‰çš„é“å…·)",
 	       	CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
         	CHAR_getInt( charaindex,CHAR_Y ),
@@ -59,7 +59,7 @@ void ITEM_useImprecate( int charaindex, int toNo, int haveitemindex )
 		int intfun;
 	};
 	struct tagImprecate ImList[3] ={
-		{"Öä",BD_KIND_CURSE},{"¶÷",BD_KIND_BESTOW},{"×£",BD_KIND_WISHES} };
+		{"å’’",BD_KIND_CURSE},{"æ©",BD_KIND_BESTOW},{"ç¥",BD_KIND_WISHES} };
 
 	if( !CHAR_CHECKINDEX( charaindex) ) return;
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
@@ -122,7 +122,7 @@ void ITEM_useMRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 	turn = atoi( buf1);
 	if( getStringFromIndexWithDelim( arg, ":", 1, buf1, sizeof(buf1)) ==FALSE ) return;
 
-	if( strstr( buf1, "È«" ) != NULL ){
+	if( strstr( buf1, "å…¨" ) != NULL ){
 	}else{
 	}
 
@@ -134,15 +134,15 @@ void ITEM_useMRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 	if( IsBATTLING( charaindex ) == TRUE ){
 		int i, status=-1;
 		char *magicarg=NULL, *pszP=NULL;
-#ifdef _PREVENT_TEAMATTACK //¹â¾µÊØ..²»µÃÊ¹ÓÃµĞ·½
+#ifdef _PREVENT_TEAMATTACK //å…‰é•œå®ˆ..ä¸å¾—ä½¿ç”¨æ•Œæ–¹
 		int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER
 			//&& BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P 
 			){
-			if( BATTLE_CheckSameSide( charaindex, toNo) == 0 ){//²»Í¬±ß
+			if( BATTLE_CheckSameSide( charaindex, toNo) == 0 ){//ä¸åŒè¾¹
 				int battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 				BATTLE_NoAction( battleindex, BATTLE_Index2No( battleindex, charaindex) );
-				CHAR_talkToCli( charaindex, -1, "¹â¾µÊØ..²»µÃÊ©Óè·ÇÍæ¼ÒµĞ·½¡£", CHAR_COLORYELLOW);
+				CHAR_talkToCli( charaindex, -1, "å…‰é•œå®ˆ..ä¸å¾—æ–½äºˆéç©å®¶æ•Œæ–¹ã€‚", CHAR_COLORYELLOW);
 				return;
 			}
 		}
@@ -167,12 +167,12 @@ void ITEM_useMRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-			"BattleUse(Õ½¶·ÖĞÊ¹ÓÃµôµÄµÀ¾ß)",
+			"BattleUse(æˆ˜æ–—ä¸­ä½¿ç”¨æ‰çš„é“å…·)",
 	       	CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
         	CHAR_getInt( charaindex,CHAR_Y ),
@@ -215,12 +215,12 @@ void ITEM_useMagic_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-			"BattleUse(Õ½¶·ÖĞÊ¹ÓÃµôµÄµÀ¾ß)",
+			"BattleUse(æˆ˜æ–—ä¸­ä½¿ç”¨æ‰çš„é“å…·)",
 	       	CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
         	CHAR_getInt( charaindex,CHAR_Y ),
@@ -236,7 +236,7 @@ void ITEM_useMagic_Battle( int charaindex, int toNo, int haveitemindex )
 
 void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 {
-#ifdef _CHANGEITEMUSE	 // Syu ADD µ÷ÕûÕ½¶·ÖĞÊ¹ÓÃÁÏÀíÉè¶¨
+#ifdef _CHANGEITEMUSE	 // Syu ADD è°ƒæ•´æˆ˜æ–—ä¸­ä½¿ç”¨æ–™ç†è®¾å®š
 	int power1 = 0;
 #endif
 	int power = 0, per = 0, HealedEffect=0;
@@ -245,33 +245,33 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
-#ifdef _CHANGEITEMUSE	 // Syu ADD µ÷ÕûÕ½¶·ÖĞÊ¹ÓÃÁÏÀíÉè¶¨
-	if( ((p = strstr( arg, "Ìå" )) != NULL) && ((p = strstr( arg,"Æø")) != NULL))
+#ifdef _CHANGEITEMUSE	 // Syu ADD è°ƒæ•´æˆ˜æ–—ä¸­ä½¿ç”¨æ–™ç†è®¾å®š
+	if( ((p = strstr( arg, "ä½“" )) != NULL) && ((p = strstr( arg,"æ°”")) != NULL))
 	{
 		kind = BD_KIND_HP_MP;
-		p = strstr( arg,"Æø");
+		p = strstr( arg,"æ°”");
 		if( sscanf( p+2, "%d", &power1 ) != 1 )
 		{
 			power1 = 0;
 		}
-		p = strstr( arg,"Ìå");
+		p = strstr( arg,"ä½“");
 	}
-	else if( (p = strstr( arg, "Ìå" )) != NULL )
+	else if( (p = strstr( arg, "ä½“" )) != NULL )
 #else
-	if( (p = strstr( arg, "Ìå" )) != NULL )
+	if( (p = strstr( arg, "ä½“" )) != NULL )
 #endif
 	{
 		kind = BD_KIND_HP;
 	}
-	else if( (p = strstr( arg, "Æø" )) != NULL )
+	else if( (p = strstr( arg, "æ°”" )) != NULL )
 	{
 		kind = BD_KIND_MP;
 	}
 	else
 #ifdef _ITEM_UNBECOMEPIG
-    if( (p = strstr( arg, "½âÖí" )) != NULL ){
+    if( (p = strstr( arg, "è§£çŒª" )) != NULL ){
         kind = BD_KIND_UNBECOMEPIG;
-		HealedEffect = 100608; //ÌØĞ§±àºÅ
+		HealedEffect = 100608; //ç‰¹æ•ˆç¼–å·
 	}
 	else
 #endif
@@ -284,7 +284,7 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 #ifdef _ITEM_PROPERTY
     if( (p = strstr( arg, "PROPERTY" )) != NULL ){
 	    kind = BD_KIND_PROPERTY;
-		HealedEffect = 100608; //ÌØĞ§±àºÅ
+		HealedEffect = 100608; //ç‰¹æ•ˆç¼–å·
 		if( strstr( arg, "+" ) )
 			power = 1;
 		else if( strstr( arg, "-" ) )
@@ -319,7 +319,7 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 	if( attackNo < 0 )return;
 
-#ifdef _CHANGEITEMUSE	 // Syu ADD µ÷ÕûÕ½¶·ÖĞÊ¹ÓÃÁÏÀíÉè¶¨
+#ifdef _CHANGEITEMUSE	 // Syu ADD è°ƒæ•´æˆ˜æ–—ä¸­ä½¿ç”¨æ–™ç†è®¾å®š
 	BATTLE_MultiRecovery( battleindex, attackNo, toNo,
 		kind, power, per, SPR_item3, HealedEffect , power1);
 #else
@@ -330,12 +330,12 @@ void ITEM_useRecovery_Battle( int charaindex, int toNo, int haveitemindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-			"BattleUse(Õ½¶·ÖĞÊ¹ÓÃµôµÄµÀ¾ß)",
+			"BattleUse(æˆ˜æ–—ä¸­ä½¿ç”¨æ‰çš„é“å…·)",
 	       	CHAR_getInt( charaindex,CHAR_FLOOR),
 			CHAR_getInt( charaindex,CHAR_X ),
         	CHAR_getInt( charaindex,CHAR_Y ),
@@ -357,7 +357,7 @@ void ITEM_useStatusChange_Battle(
 	int ReceveEffect;
 	char *pszP = NULL, *arg;
 	char szTurn[] = "turn";
-	char szSuccess[] = "³É";
+	char szSuccess[] = "æˆ";
 
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
@@ -396,28 +396,28 @@ void ITEM_useStatusChange_Battle(
 }
 
 void ITEM_useStatusRecovery_Battle(
-	int charaindex, 	// ÒøÔÈĞ×ÚĞ¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-	int toNo, 			// Òø´õÄ¾ÔÂÚĞ¼°  Ä¯
-	int haveitemindex 	// Òøµ¤ÚĞ¼°Ê§ÄÌ  Ø©¼°    Ä¯
+	int charaindex, 	// é“¶åŒ€å‡¶è°›åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int toNo, 			// é“¶æ­¹æœ¨æœˆè°›åŠ  å¯
+	int haveitemindex 	// é“¶ä¸¹è°›åŠå¤±å¥¶  ä¸åŠ    å¯
 ){
 	int i;
 	int battleindex, attackNo,itemindex, status = -1;
 	int ReceveEffect;
 	char *pszP = NULL, *arg;
 
-	// Ê§ÄÌ  Ø©»¥Ø¤ÔÂ¾®Éıµ¤¾®
+	// å¤±å¥¶  ä¸äº’ä¸æœˆäº•å‡ä¸¹äº•
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	// ÓÉ·Â¶ª¡õÕıÃ«äú  
+	// ç”±ä»¿ä¸¢â–¡æ­£æ¯›æ½¸  
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
 	pszP = arg;
-	// ¶ã°íÃ«äú  
+	// èº²ç»Šæ¯›æ½¸  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
-		// òåÜìÊÖØ¤ÔÂ¼°Æ¥¨ß¾®ÈÕ¸¹³ñ
+		// èˆè’æ‰‹ä¸æœˆåŠåŒ¹ã„Ÿäº•æ—¥è…¹ç»¸
 		for( i = 0; i < BATTLE_ST_END; i ++ ){
-			// ¶ã°íñâÓÀÕıØø¾®£¢
+			// èº²ç»Šç–‹æ°¸æ­£ä¼‰äº•ï¼‚
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -425,21 +425,21 @@ void ITEM_useStatusRecovery_Battle(
 			}
 		}
 	}
-	// ¶ã°íØ¦ÖĞ¼°Æ¥ÁÃ  
+	// èº²ç»Šå…ä¸­åŠåŒ¹æ’©  
 	if( status == -1 ) return ;
 
-	//------- ³ğ³ğ¾®ÈÕ¼ÔãâÖÊ   -----------
+	//------- ä»‡ä»‡äº•æ—¥èšæ±Šè´¨   -----------
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 
-	ReceveEffect = SPR_tyusya;	//   ÔÂÎçÎå·´³ğÄ¾
+	ReceveEffect = SPR_tyusya;	//   æœˆåˆäº”åä»‡æœ¨
 
-	// òå¹»
+	// èˆå¤Ÿ
 	BATTLE_MultiStatusRecovery( battleindex, attackNo, toNo,
 		status, SPR_item3, ReceveEffect );
 
-	// ¾ô    ±åÊ§ÄÌ  Ø©»¥ÛÕÒüĞ×èëÄş¼°ËåÉ§ÖÊ  
+	// çˆµ    åå¤±å¥¶  ä¸äº’å£…å°¹å‡¶æ¡¦å®åŠéš‹éªšè´¨  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 }
@@ -503,13 +503,13 @@ void ITEM_useMagicDef_Battle(
 
 
 //--------------------------------------------------------------
-//  ÓÉ·Â¶ª¡õÕı  µÊÊ§ÄÌ  Ø©Ã«ÒøÔÈĞ×èëÄş¼°ÖÊ  
+//  ç”±ä»¿ä¸¢â–¡æ­£  å‡³å¤±å¥¶  ä¸æ¯›é“¶åŒ€å‡¶æ¡¦å®åŠè´¨  
 //--------------------------------------------------------------
-// ¾ô    ¼°èëÄş
+// çˆµ    åŠæ¡¦å®
 void ITEM_useParamChange_Battle(
-	int charaindex, 	// ÒøÔÈĞ×ÚĞ¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-	int toNo, 			// Òø´õÄ¾ÔÂÚĞ¼°  Ä¯
-	int haveitemindex 	// Òøµ¤ÚĞ¼°Ê§ÄÌ  Ø©¼°    Ä¯
+	int charaindex, 	// é“¶åŒ€å‡¶è°›åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int toNo, 			// é“¶æ­¹æœ¨æœˆè°›åŠ  å¯
+	int haveitemindex 	// é“¶ä¸¹è°›åŠå¤±å¥¶  ä¸åŠ    å¯
 )
 {
 	int i;
@@ -518,18 +518,18 @@ void ITEM_useParamChange_Battle(
 	int kind = -1;
 	char *pszP = NULL, *arg;
 
-	// Ê§ÄÌ  Ø©»¥Ø¤ÔÂ¾®Éıµ¤¾®
+	// å¤±å¥¶  ä¸äº’ä¸æœˆäº•å‡ä¸¹äº•
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	// ÓÉ·Â¶ª¡õÕıÃ«äú  
+	// ç”±ä»¿ä¸¢â–¡æ­£æ¯›æ½¸  
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
 	pszP = arg;
-	// ¶ã°íÃ«äú  
+	// èº²ç»Šæ¯›æ½¸  
 	for( ;kind == -1 && pszP[0] != 0; pszP++ ){
 		for( i = 1; i < BATTLE_MD_END; i ++ ){
-			// ¶ã°íñâÓÀÕıØø¾®£¢
+			// èº²ç»Šç–‹æ°¸æ­£ä¼‰äº•ï¼‚
 			if( strncmp( pszP, aszParamChange[i], 2 ) == 0 ){
 				kind = i;
 				pszP +=2;
@@ -537,30 +537,30 @@ void ITEM_useParamChange_Battle(
 			}
 		}
 	}
-	// ¶ã°íØ¦ÖĞ¼°Æ¥ÁÃ  
+	// èº²ç»Šå…ä¸­åŠåŒ¹æ’©  
 	if( kind == -1 ) return ;
 
 
-	if( strstr( pszP, "%" ) ){	// ³ğ¼°èëÄş·´¡Ñ»ÍÒ£
+	if( strstr( pszP, "%" ) ){	// ä»‡åŠæ¡¦å®åâŠ™ç…Œé¥
 		par = 1;
 	}
 
 	if( sscanf( pszP, "%d", &pow ) != 1 ){
-		// ÖÏºÌÄÌ¼şĞşØ¤ÆÍÔÂ¾®
+		// çª’ç¦¾å¥¶ä»¶ç„ä¸ä»†æœˆäº•
 		pow = 30;
 	}
 
-	//------- ³ğ³ğ¾®ÈÕÖÊ   -----------
+	//------- ä»‡ä»‡äº•æ—¥è´¨   -----------
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 
-	// òå¹»
+	// èˆå¤Ÿ
 	BATTLE_MultiParamChange( battleindex, attackNo, toNo,
 		kind, pow, par, SPR_item3, SPR_hoshi );
 
 
-	// ¾ô    ±åÊ§ÄÌ  Ø©»¥ÛÕÒüĞ×èëÄş¼°ËåÉ§ÖÊ  
+	// çˆµ    åå¤±å¥¶  ä¸äº’å£…å°¹å‡¶æ¡¦å®åŠéš‹éªšè´¨  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 
@@ -572,64 +572,64 @@ void ITEM_useParamChange_Battle(
 
 
 //--------------------------------------------------------------
-//  °×Å«¡õ»ïÓñóìÁë  µÊÊ§ÄÌ  Ø©Ã«ÒøÔÈĞ×èëÄş¼°ÖÊ  
+//  ç™½å¥´â–¡ä¼™ç‰ç®ªå²­  å‡³å¤±å¥¶  ä¸æ¯›é“¶åŒ€å‡¶æ¡¦å®åŠè´¨  
 //--------------------------------------------------------------
-// ¾ô    ¼°èëÄş
+// çˆµ    åŠæ¡¦å®
 void ITEM_useFieldChange_Battle(
-	int charaindex, 	// ÒøÔÈĞ×ÚĞ¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-	int toNo, 			// Òø´õÄ¾ÔÂÚĞ¼°  Ä¯
-	int haveitemindex 	// Òøµ¤ÚĞ¼°Ê§ÄÌ  Ø©¼°    Ä¯
+	int charaindex, 	// é“¶åŒ€å‡¶è°›åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int toNo, 			// é“¶æ­¹æœ¨æœˆè°›åŠ  å¯
+	int haveitemindex 	// é“¶ä¸¹è°›åŠå¤±å¥¶  ä¸åŠ    å¯
 )
 {
 	int itemindex;
 	char *pArg;
 
-	// Ê§ÄÌ  Ø©»¥Ø¤ÔÂ¾®Éıµ¤¾®
+	// å¤±å¥¶  ä¸äº’ä¸æœˆäº•å‡ä¸¹äº•
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	//------- ³ğ³ğ¾®ÈÕÖÊ   -----------
-	// ÓÉ·Â¶ª¡õÕıÃ«äú  
+	//------- ä»‡ä»‡äº•æ—¥è´¨   -----------
+	// ç”±ä»¿ä¸¢â–¡æ­£æ¯›æ½¸  
 	pArg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	// ÓÉ·Â¶ª¡õÕı  ÖĞ¼°Æ¥ÁÃ  
+	// ç”±ä»¿ä¸¢â–¡æ­£  ä¸­åŠåŒ¹æ’©  
 	if( pArg == NULL )return ;
 
 	BATTLE_FieldAttChange( charaindex, pArg );
 
-	// ¾ô    ±åÊ§ÄÌ  Ø©»¥ÛÕÒüĞ×èëÄş¼°ËåÉ§ÖÊ  
+	// çˆµ    åå¤±å¥¶  ä¸äº’å£…å°¹å‡¶æ¡¦å®åŠéš‹éªšè´¨  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 }
 
 
 //--------------------------------------------------------------
-//  óìÁë  ±îÊ§ÄÌ  Ø©Ã«ÒøÔÈĞ×èëÄş¼°ÖÊ  
+//  ç®ªå²­  é³–å¤±å¥¶  ä¸æ¯›é“¶åŒ€å‡¶æ¡¦å®åŠè´¨  
 //--------------------------------------------------------------
-// ¾ô    ¼°èëÄş
+// çˆµ    åŠæ¡¦å®
 void ITEM_useAttReverse_Battle(
-	int charaindex, 	// ÒøÔÈĞ×ÚĞ¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-	int toNo, 			// Òø´õÄ¾ÔÂÚĞ¼°  Ä¯
-	int haveitemindex 	// Òøµ¤ÚĞ¼°Ê§ÄÌ  Ø©¼°    Ä¯
+	int charaindex, 	// é“¶åŒ€å‡¶è°›åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int toNo, 			// é“¶æ­¹æœ¨æœˆè°›åŠ  å¯
+	int haveitemindex 	// é“¶ä¸¹è°›åŠå¤±å¥¶  ä¸åŠ    å¯
 )
 {
 	int itemindex, battleindex, attackNo;
 
 
-	// Ê§ÄÌ  Ø©»¥Ø¤ÔÂ¾®Éıµ¤¾®
+	// å¤±å¥¶  ä¸äº’ä¸æœˆäº•å‡ä¸¹äº•
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	//------- ³ğ³ğ¾®ÈÕÖÊ   -----------
+	//------- ä»‡ä»‡äº•æ—¥è´¨   -----------
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 
-	// òå¹»
+	// èˆå¤Ÿ
 	BATTLE_MultiAttReverse( battleindex, attackNo, toNo,
 		SPR_item3, SPR_kyu );
 
-	// ¾ô    ±åÊ§ÄÌ  Ø©»¥ÛÕÒüĞ×èëÄş¼°ËåÉ§ÖÊ  
+	// çˆµ    åå¤±å¥¶  ä¸äº’å£…å°¹å‡¶æ¡¦å®åŠéš‹éªšè´¨  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 
@@ -637,33 +637,33 @@ void ITEM_useAttReverse_Battle(
 
 
 //--------------------------------------------------------------
-//  ¿¢å§¾®ÈÕãâÍÙÃ«ÒøÔÈĞ×èëÄş¼°ÖÊ  
+//  ç«£æ¿®äº•æ—¥æ±Šå”¾æ¯›é“¶åŒ€å‡¶æ¡¦å®åŠè´¨  
 //--------------------------------------------------------------
-// ¾ô    ¼°èëÄş
+// çˆµ    åŠæ¡¦å®
 void ITEM_useRessurect(
-	int charaindex, 	// ÒøÔÈĞ×ÚĞ¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-	int toNo, 			// Òø´õÄ¾ÔÂÚĞ¼°  Ä¯
-	int haveitemindex 	// Òøµ¤ÚĞ¼°Ê§ÄÌ  Ø©¼°    Ä¯
+	int charaindex, 	// é“¶åŒ€å‡¶è°›åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int toNo, 			// é“¶æ­¹æœ¨æœˆè°›åŠ  å¯
+	int haveitemindex 	// é“¶ä¸¹è°›åŠå¤±å¥¶  ä¸åŠ    å¯
 )
 {
 	int itemindex, battleindex, attackNo, par = 0, pow = 0, ReceveEffect;
 	char *pszP = NULL;
 
 
-	// Ê§ÄÌ  Ø©»¥Ø¤ÔÂ¾®Éıµ¤¾®
+	// å¤±å¥¶  ä¸äº’ä¸æœˆäº•å‡ä¸¹äº•
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	//------- ³ğ³ğ¾®ÈÕÖÊ   -----------
+	//------- ä»‡ä»‡äº•æ—¥è´¨   -----------
 	pszP = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	if( strstr( pszP, "%" ) ){	// ³ğ¼°èëÄş·´¡Ñ»ÍÒ£
+	if( strstr( pszP, "%" ) ){	// ä»‡åŠæ¡¦å®åâŠ™ç…Œé¥
 		par = 1;
 	}
 
 	if( sscanf( pszP, "%d", &pow ) != 1 ){
-		// ÖÏºÌÄÌ¼şĞş¼ÔãâÔÊÔÂ¾®£¢
-		pow = 0;	// ¨ß¼°èëÄş·´¶Øòå¼Ôãâ
+		// çª’ç¦¾å¥¶ä»¶ç„èšæ±Šå…æœˆäº•ï¼‚
+		pow = 0;	// ã„ŸåŠæ¡¦å®åæ•¦èˆèšæ±Š
 	}
 
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
@@ -682,12 +682,12 @@ void ITEM_useRessurect(
 		ReceveEffect = SPR_fukkatu3;
 	}
 
-	// òå¹»
+	// èˆå¤Ÿ
 	BATTLE_MultiRessurect( battleindex, attackNo, toNo,
 		pow, par, SPR_item3, ReceveEffect );
 
 
-	// ¾ô    ±åÊ§ÄÌ  Ø©»¥ÛÕÒüĞ×èëÄş¼°ËåÉ§ÖÊ  
+	// çˆµ    åå¤±å¥¶  ä¸äº’å£…å°¹å‡¶æ¡¦å®åŠéš‹éªšè´¨  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 }
@@ -695,31 +695,31 @@ void ITEM_useRessurect(
 
 
 //--------------------------------------------------------------
-//    ¿­  Ä¤¿ÒÃ«ÒøÔÈĞ×èëÄş¼°ÖÊ  
+//    å‡¯  è†œæ³æ¯›é“¶åŒ€å‡¶æ¡¦å®åŠè´¨  
 //--------------------------------------------------------------
-// ¾ô    ¼°èëÄş
+// çˆµ    åŠæ¡¦å®
 void ITEM_useCaptureUp_Battle(
-	int charaindex, 	// ÒøÔÈĞ×ÚĞ¼°ÄÌ¼ş·¸ÓÀÛÍµ©
-	int toNo, 			// Òø´õÄ¾ÔÂÚĞ¼°  Ä¯
-	int haveitemindex 	// Òøµ¤ÚĞ¼°Ê§ÄÌ  Ø©¼°    Ä¯
+	int charaindex, 	// é“¶åŒ€å‡¶è°›åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+	int toNo, 			// é“¶æ­¹æœ¨æœˆè°›åŠ  å¯
+	int haveitemindex 	// é“¶ä¸¹è°›åŠå¤±å¥¶  ä¸åŠ    å¯
 )
 {
 	int itemindex, battleindex, attackNo, pow = 5, ReceveEffect;
 	char *pArg;
 
-	// Ê§ÄÌ  Ø©»¥Ø¤ÔÂ¾®Éıµ¤¾®
+	// å¤±å¥¶  ä¸äº’ä¸æœˆäº•å‡ä¸¹äº•
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	//------- ³ğ³ğ¾®ÈÕÖÊ   -----------
-	// ÓÉ·Â¶ª¡õÕıÃ«äú  
+	//------- ä»‡ä»‡äº•æ—¥è´¨   -----------
+	// ç”±ä»¿ä¸¢â–¡æ­£æ¯›æ½¸  
 	pArg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	// ÓÉ·Â¶ª¡õÕı  ÖĞ¼°Æ¥ÁÃ  
+	// ç”±ä»¿ä¸¢â–¡æ­£  ä¸­åŠåŒ¹æ’©  
 	if( pArg == NULL )return ;
 
 	if( sscanf( pArg, "%d", &pow ) != 1 ){
-		// ÖÏºÌÄÌ¼şĞş¼ÔãâÔÊÔÂ¾®£¢
+		// çª’ç¦¾å¥¶ä»¶ç„èšæ±Šå…æœˆäº•ï¼‚
 		pow = 5;
 	}
 
@@ -729,11 +729,11 @@ void ITEM_useCaptureUp_Battle(
 
 	ReceveEffect = SPR_hoshi;
 
-	// òå¹»
+	// èˆå¤Ÿ
 	BATTLE_MultiCaptureUp( battleindex, attackNo, toNo,
 		pow, SPR_item3, ReceveEffect );
 
-	// ¾ô    ±åÊ§ÄÌ  Ø©»¥ÛÕÒüĞ×èëÄş¼°ËåÉ§ÖÊ  
+	// çˆµ    åå¤±å¥¶  ä¸äº’å£…å°¹å‡¶æ¡¦å®åŠéš‹éªšè´¨  
 	BATTLE_ItemUseDelete( charaindex, haveitemindex );
 
 }
@@ -743,7 +743,7 @@ void ITEM_useCracker_Effect( charaindex, toindex, haveitemindex)
 	int itemindex,x,y,tofd;
 
 	itemindex = CHAR_getItemIndex(charaindex,haveitemindex);
-	// ¼ì²éÎïÆ·
+	// æ£€æŸ¥ç‰©å“
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 
     x = CHAR_getInt( charaindex, CHAR_X);
@@ -755,13 +755,13 @@ void ITEM_useCracker_Effect( charaindex, toindex, haveitemindex)
 	//to client
 	tofd = getfdFromCharaIndex( charaindex );
 	lssproto_IC_send(tofd, x, y);
-	//Çå³ıµÀ¾ß
+	//æ¸…é™¤é“å…·
 	BATTLE_ItemUseDelete(charaindex,haveitemindex);
-	CHAR_talkToCli(charaindex,-1,"µÀ¾ßÏûÊ§ÁË¡£",CHAR_COLORYELLOW);
+	CHAR_talkToCli(charaindex,-1,"é“å…·æ¶ˆå¤±äº†ã€‚",CHAR_COLORYELLOW);
 
 }
 #endif
-#ifdef _ITEM_REFRESH //vincent ½â³ıÒì³£×´Ì¬µÀ¾ß
+#ifdef _ITEM_REFRESH //vincent è§£é™¤å¼‚å¸¸çŠ¶æ€é“å…·
 void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 {
 	int i,itemindex,ReceveEffect;
@@ -772,16 +772,16 @@ void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 	char *pszP;
 
 //print("\nvincent--ITEM_useRefresh_Effect");
-	// ¼ì²éÎïÆ·
+	// æ£€æŸ¥ç‰©å“
 	itemindex = CHAR_getItemIndex(charaindex,haveitemindex);
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 	pszP = arg;
-	// ¶ã°íÃ«äú  
+	// èº²ç»Šæ¯›æ½¸  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
-		// ¨à¾®ÈÕ¸¹³ñ
+		// ã„ äº•æ—¥è…¹ç»¸
 		for( i = 1; i < BATTLE_ST_END; i ++ ){
-			// ¶ã°íñâÓÀÕıØø¾®£¢
+			// èº²ç»Šç–‹æ°¸æ­£ä¼‰äº•ï¼‚
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -790,28 +790,28 @@ void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 		}
 	}
 //print("\nvincent-->status:%d",status);
-	// ¶ã°íØ¦ÖĞ¼°Æ¥ÁÃ  
+	// èº²ç»Šå…ä¸­åŠåŒ¹æ’©  
 	if( status == -1 ) return;
 
-	// ÌïĞş»ï  Ä¯
+	// ç”°ç„ä¼™  å¯
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
-	index2 = BATTLE_No2Index( battleindex, toindex);//±»»÷ÖĞÄ¿±êÖ®index
+	index2 = BATTLE_No2Index( battleindex, toindex);//è¢«å‡»ä¸­ç›®æ ‡ä¹‹index
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 //    defNo = BATTLE_Index2No( battleindex, index2 );
 //print("\nvincent-->charaindex:%d,attackNo:%d,index2:%d,defNo:%d,",charaindex,attackNo,index2,defNo);
 
-    /* Æ½ÅÒ·ÂÛÍÕı¡õ¼°ô÷    Øøµ©Ğş¾®ÈÕÛÕ»× */
+    /* å¹³ä¹“ä»¿å¼æ­£â–¡åŠèµ­    ä¼‰æ—¦ç„äº•æ—¥å£…è›” */
     CHAR_setItemIndex(charaindex, haveitemindex ,-1);
-	CHAR_sendItemDataOne( charaindex, haveitemindex);/* Ê§ÄÌ  Ø©µÊŞ¥ */
+	CHAR_sendItemDataOne( charaindex, haveitemindex);/* å¤±å¥¶  ä¸å‡³è•™ */
 //	if( CHAR_getWorkInt( charaindex, StatusTbl[status] ) > 0 ){
 //		ReceveEffect = SPR_tyusya;
 //	}else{
 //		ReceveEffect = SPR_hoshi;
 //	}
-	ReceveEffect = SPR_tyusya;//´òÕë
+	ReceveEffect = SPR_tyusya;//æ‰“é’ˆ
 	BATTLE_MultiStatusRecovery( battleindex, attackNo, toindex,
 		status, MAGIC_EFFECT_USER, ReceveEffect );
-	/* ÛÕÔÊ */
+	/* å£…å… */
 	ITEM_endExistItemsOne( itemindex );
 //////////////////////////
 //	BATTLE_MultiList( battleindex, defNo, ToList );
@@ -825,7 +825,7 @@ void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 ////////////////////////////
 }
 #endif
-#ifdef _ITEM_ADDEXP	//vincent ¾­ÑéÌáÉı
+#ifdef _ITEM_ADDEXP	//vincent ç»éªŒæå‡
 void ITEM_useAddexp_Effect( charaindex, toindex, haveitemindex)
 {
 	int itemindex,power,vtime;
@@ -835,31 +835,31 @@ void ITEM_useAddexp_Effect( charaindex, toindex, haveitemindex)
 
 	itemindex = CHAR_getItemIndex(charaindex,haveitemindex);
 
-	// ¼ì²éÎïÆ·
+	// æ£€æŸ¥ç‰©å“
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	if( (p = strstr( arg, "Ôö" )) != NULL ){
+	if( (p = strstr( arg, "å¢" )) != NULL ){
         sscanf( p+2, "%d", &power );
 	}
-	if( (p = strstr( arg, "·Ö" )) != NULL ){
+	if( (p = strstr( arg, "åˆ†" )) != NULL ){
 		sscanf( p+2, "%d", &vtime );
 	}
 	if( p == NULL )return;
-#ifdef _ITEM_ADDEXP2 // ÖÇ¹ûÊ±¼ä¿ÉÒÔÀÛ¼Ó
+#ifdef _ITEM_ADDEXP2 // æ™ºæœæ—¶é—´å¯ä»¥ç´¯åŠ 
 	{
 		int point;
 		point = CHAR_getWorkInt( charaindex, CHAR_WORKITEM_ADDEXP)
 					* (int)(CHAR_getWorkInt( charaindex, CHAR_WORKITEM_ADDEXPTIME)/60);
 		if( point >= 72000) {
-			CHAR_talkToCli( charaindex, -1, "ÖÇ»ÛÖ®¹ûÀÛ¼ÆÊ±¼ä¼°Ğ§¹ûÒÑ´ïÉÏÏŞ¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "æ™ºæ…§ä¹‹æœç´¯è®¡æ—¶é—´åŠæ•ˆæœå·²è¾¾ä¸Šé™ã€‚", CHAR_COLORYELLOW);
 			return;
 		}
 		point += (power * vtime);
 		point = min( point, 72000);
 		vtime = (int)(point / power);
 #ifdef _LOG_OTHER
-		sprintf( szBuffer, "Ê¹ÓÃÖÇ»ÛÖ®¹û %d\tÀÛ»ıĞ§¹û= ·ÖÊı%d ÄÜÁ¦%d£¥ Ê±¼ä%d·Ö ",
+		sprintf( szBuffer, "ä½¿ç”¨æ™ºæ…§ä¹‹æœ %d\tç´¯ç§¯æ•ˆæœ= åˆ†æ•°%d èƒ½åŠ›%dï¼… æ—¶é—´%dåˆ† ",
 				ITEM_getInt( itemindex, ITEM_ID ), point, power, vtime);
 		LogOther( 
 			CHAR_getChar( charaindex, CHAR_CDKEY),
@@ -869,17 +869,17 @@ void ITEM_useAddexp_Effect( charaindex, toindex, haveitemindex)
 		//CHAR_setInt( charaindex, CHAR_ADDEXPPOWER, power);
 		//CHAR_setInt( charaindex, CHAR_ADDEXPTIME,vtime*60 );
 
-		//sprintf(szBuffer, "²âÊÔÑ¶Ï¢£ºÄ¿Ç°·ÖÊı%d Ê±¼ä%dÃë¡£", point, vtime*60);
+		//sprintf(szBuffer, "æµ‹è¯•è®¯æ¯ï¼šç›®å‰åˆ†æ•°%d æ—¶é—´%dç§’ã€‚", point, vtime*60);
 		//CHAR_talkToCli(charaindex,-1,szBuffer,CHAR_COLORRED);
 	}
 #endif
 	CHAR_setWorkInt( charaindex, CHAR_WORKITEM_ADDEXP, power);
 	CHAR_setWorkInt( charaindex, CHAR_WORKITEM_ADDEXPTIME,vtime*60 );
 
-	//Çå³ıµÀ¾ß
+	//æ¸…é™¤é“å…·
 	BATTLE_ItemUseDelete(charaindex,haveitemindex);
-	//sprintf(szBuffer, "Ñ§Ï°¾­ÑéµÄÄÜÁ¦ÌáÉıÁË%d£¥", power);
-	sprintf(szBuffer, "Ñ§Ï°¾­ÑéµÄÄÜÁ¦ÌáÉıÁË%d£¥£¬Ê±Ğ§Ê£âÅ%d·ÖÖÓ¡£", power, vtime);
+	//sprintf(szBuffer, "å­¦ä¹ ç»éªŒçš„èƒ½åŠ›æå‡äº†%dï¼…", power);
+	sprintf(szBuffer, "å­¦ä¹ ç»éªŒçš„èƒ½åŠ›æå‡äº†%dï¼…ï¼Œæ—¶æ•ˆå‰©é¦€%dåˆ†é’Ÿã€‚", power, vtime);
 	CHAR_talkToCli(charaindex,-1,szBuffer,CHAR_COLORYELLOW);
 
 }
@@ -901,7 +901,7 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 #endif
 
 	itemindex = CHAR_getItemIndex(charaindex,haveitemindex);
-	// ¼ì²éÎïÆ·
+	// æ£€æŸ¥ç‰©å“
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 
 	battleindex = CHAR_getWorkInt(charaindex,CHAR_WORKBATTLEINDEX);
@@ -918,24 +918,24 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 		MySide_start = safeSide*SIDE_OFFSET;
 		MySide_end = ((safeSide*SIDE_OFFSET) + SIDE_OFFSET);
 
-		if( (toindex >= MySide_start) && (toindex<MySide_end) ){	//Í¬±ß
+		if( (toindex >= MySide_start) && (toindex<MySide_end) ){	//åŒè¾¹
 			return;
 		}
 	}
 
 	if( BATTLE_Index2No( battleindex, charaindex ) == toindex ){
-		BATTLE_ItemUseDelete(charaindex,haveitemindex);//ÓÃÔÚ×ÔÉí
+		BATTLE_ItemUseDelete(charaindex,haveitemindex);//ç”¨åœ¨è‡ªèº«
 		return;
 	}
 
 	if( CHAR_getInt( index2, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ) {
-		petid = -1;//×÷ÓÃÔÚÈËÎï
+		petid = -1;//ä½œç”¨åœ¨äººç‰©
 	}else if( CHAR_getInt( index2, CHAR_WHICHTYPE) == CHAR_TYPEPET ) {
-		masteridx = BATTLE_No2Index(battleindex,toindex-5);//×÷ÓÃÔÚ³èÎï
+		masteridx = BATTLE_No2Index(battleindex,toindex-5);//ä½œç”¨åœ¨å® ç‰©
 
 		if( !CHAR_CHECKINDEX( masteridx) ) return;
 
-		petid = CHAR_getInt(index2,CHAR_PETID);//³èÎïid
+		petid = CHAR_getInt(index2,CHAR_PETID);//å® ç‰©id
 	}else if( CHAR_getInt( index2, CHAR_WHICHTYPE) == CHAR_TYPEENEMY ) {
 		petid = CHAR_getInt(index2,CHAR_PETID);
 	}
@@ -952,48 +952,48 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 	while( getStringFromIndexWithDelim( token,"_", i, buf1, sizeof( buf1)) != FALSE )	{
 	//while( getStringFromIndexWithDelim( token,"|", i, buf1, sizeof( buf1)) != FALSE )	{
 		i++;
-		if( petid == atoi( buf1) ){//ÄêÊŞÅĞ±ğ
+		if( petid == atoi( buf1) ){//å¹´å…½åˆ¤åˆ«
 			FINDPET = TRUE;
 			break;
 		}
 	}
 
 	sprintf(szWork,"BB|a%X|w3|r%X|f0|d0|p0|FF|",BATTLE_Index2No(battleindex,charaindex),toindex);
-	BATTLESTR_ADD(szWork);//¶ª³ö±ŞÅÚµÄ¶¯»­
-//ËÍÑ¶Ï¢ÖÁÍæ¼Ò
-	if( FINDPET == TRUE )	{//ÈôÎªÄêÊŞ
+	BATTLESTR_ADD(szWork);//ä¸¢å‡ºé­ç‚®çš„åŠ¨ç”»
+//é€è®¯æ¯è‡³ç©å®¶
+	if( FINDPET == TRUE )	{//è‹¥ä¸ºå¹´å…½
 		char buf4[255];
-		sprintf( buf4, "%s±»ÏÅÅÜÁË£¡", CHAR_getChar( index2, CHAR_NAME));
+		sprintf( buf4, "%sè¢«å“è·‘äº†ï¼", CHAR_getChar( index2, CHAR_NAME));
 
-		BATTLE_Exit(index2,battleindex);//Àë¿ªÕ½¶·
+		BATTLE_Exit(index2,battleindex);//ç¦»å¼€æˆ˜æ–—
 		if( CHAR_CHECKINDEX( masteridx) ){
-			CHAR_setInt(masteridx,CHAR_DEFAULTPET,-1);//ÎŞ²ÎÕ½³è
+			CHAR_setInt(masteridx,CHAR_DEFAULTPET,-1);//æ— å‚æˆ˜å® 
 			CHAR_talkToCli( masteridx,-1, buf4, CHAR_COLORYELLOW);
 		}
 
-		sprintf(szWork,"BQ|e%X|",toindex);//ÌÓÅÜ¶¯»­
+		sprintf(szWork,"BQ|e%X|",toindex);//é€ƒè·‘åŠ¨ç”»
 		BATTLESTR_ADD(szWork);
 		CHAR_talkToCli( charaindex,-1, buf4, CHAR_COLORYELLOW);
 	}else	{
-		CHAR_talkToCli( charaindex, -1, "Ê²÷áÊÂ¶¼Ã»·¢Éú¡£", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "ä»€éº½äº‹éƒ½æ²¡å‘ç”Ÿã€‚", CHAR_COLORYELLOW);
 	}
-	BATTLE_ItemUseDelete( charaindex, haveitemindex);//É¾³ı±ŞÅÚ
+	BATTLE_ItemUseDelete( charaindex, haveitemindex);//åˆ é™¤é­ç‚®
 #else
 
 	index2 = BATTLE_No2Index(battleindex,toindex);
-	// ±»Õ¨µ½µÄÊÇ·ñÎª³èÎï
+	// è¢«ç‚¸åˆ°çš„æ˜¯å¦ä¸ºå® ç‰©
 	if(CHAR_getInt(index2,CHAR_WHICHTYPE) == CHAR_TYPEPET) {
-		// Èç¹û±»Õ¨µÄÊÇÄêÊŞ
+		// å¦‚æœè¢«ç‚¸çš„æ˜¯å¹´å…½
 		if(CHAR_getInt(index2,CHAR_PETID) >= 901 && CHAR_getInt(index2,CHAR_PETID) <= 904){
-			// È¡µÃÄ¿±êµÄÕıáá·½µÄ½ÇÉ«µÄindex
+			// å–å¾—ç›®æ ‡çš„æ­£å¾Œæ–¹çš„è§’è‰²çš„index
 			masteridx = BATTLE_No2Index(battleindex,toindex-5);
-			// Èç¹û¶ÔÕ½µÄÊÇÍæ¼Ò
+			// å¦‚æœå¯¹æˆ˜çš„æ˜¯ç©å®¶
 			if(CHAR_getInt(masteridx,CHAR_WHICHTYPE) == CHAR_TYPEPLAYER) PetEscape = 1;
-			else																									       print("\nÄêÊŞÔÚÓöµĞÊ±³öÏÖ");
+			else																									       print("\nå¹´å…½åœ¨é‡æ•Œæ—¶å‡ºç°");
 		}
 	}
 	
-	// Èç¹û²»ÊÇÕ¨×Ô¼º
+	// å¦‚æœä¸æ˜¯ç‚¸è‡ªå·±
 	if(BATTLE_Index2No(battleindex,charaindex) != toindex)
 	{
 		sprintf(szWork,"BB|a%X|w3|r%X|f0|d0|p0|FF|",BATTLE_Index2No(battleindex,charaindex),toindex);
@@ -1004,13 +1004,13 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 			CHAR_setInt(masteridx,CHAR_DEFAULTPET,-1);
 			sprintf(szWork,"BQ|e%X|",toindex);
 			BATTLESTR_ADD(szWork);
-			CHAR_talkToCli(masteridx,-1,"ÄêÊŞ±»ÏÅÅÜÁË£¡",CHAR_COLORWHITE);
-			CHAR_talkToCli(charaindex,-1,"ÄêÊŞ±»ÏÅÅÜÁË£¡",CHAR_COLORWHITE);
+			CHAR_talkToCli(masteridx,-1,"å¹´å…½è¢«å“è·‘äº†ï¼",CHAR_COLORWHITE);
+			CHAR_talkToCli(charaindex,-1,"å¹´å…½è¢«å“è·‘äº†ï¼",CHAR_COLORWHITE);
 		}
 	}
-	CHAR_talkToCli(charaindex,-1,"Ê²÷áÊÂ¶¼Ã»·¢Éú¡£",CHAR_COLORWHITE);
-	CHAR_talkToCli(charaindex,-1,"µÀ¾ßÏûÊ§ÁË¡£",CHAR_COLORWHITE);
-	// Ê¹ÓÃááµÀ¾ßÏûÊ§
+	CHAR_talkToCli(charaindex,-1,"ä»€éº½äº‹éƒ½æ²¡å‘ç”Ÿã€‚",CHAR_COLORWHITE);
+	CHAR_talkToCli(charaindex,-1,"é“å…·æ¶ˆå¤±äº†ã€‚",CHAR_COLORWHITE);
+	// ä½¿ç”¨å¾Œé“å…·æ¶ˆå¤±
 	BATTLE_ItemUseDelete(charaindex,haveitemindex);
 #endif
 }
@@ -1021,9 +1021,9 @@ void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
 
 
 
-//Æø¾ø×´Ì¬»Ø¸´ÄÍÁ¦,¸´¼Ó¸´»î(¹â,¾µ,ÊØ)¾«Áé ²ÎÊıÍ¬Ä§·¨(¹â,¾µ,ÊØ)¾«Áé,µ«Ö»ÄÜÔÚÕ½¶·Ö®Ê¹ÓÃ,ÓÃÍê¾ÍÃ»ÁË 
-//²ÎÊı ÀıÈç:ÄÍÁ¦Öµ Îü turn 1
-#ifdef  _FEV_ADD_NEW_ITEM			// FEV ADD Ôö¼Ó¸´»îÊØ¾«
+//æ°”ç»çŠ¶æ€å›å¤è€åŠ›,å¤åŠ å¤æ´»(å…‰,é•œ,å®ˆ)ç²¾çµ å‚æ•°åŒé­”æ³•(å…‰,é•œ,å®ˆ)ç²¾çµ,ä½†åªèƒ½åœ¨æˆ˜æ–—ä¹‹ä½¿ç”¨,ç”¨å®Œå°±æ²¡äº† 
+//å‚æ•° ä¾‹å¦‚:è€åŠ›å€¼ å¸ turn 1
+#ifdef  _FEV_ADD_NEW_ITEM			// FEV ADD å¢åŠ å¤æ´»å®ˆç²¾
 void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 {
 	int itemindex, battleindex, attackNo, par = 0, pow = 0, ReceveEffect;
@@ -1034,37 +1034,37 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 	char magicarg4[200];
 
     char *pszP = NULL; 
-	char delim[] = " ";//Ğ­Öú·Ö½â×Ö´®µÄÇø¸ô×ÖÔª
+	char delim[] = " ";//ååŠ©åˆ†è§£å­—ä¸²çš„åŒºéš”å­—å…ƒ
 
 	int status = -1, i, turn = 3;
 	char szTurn[] = "turn";
 
-	// Ê§ÄÌ  Ø©»¥Ø¤ÔÂ¾®Éıµ¤¾®
+	// å¤±å¥¶  ä¸äº’ä¸æœˆäº•å‡ä¸¹äº•
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
-	buffer = ITEM_getChar(itemindex, ITEM_ARGUMENT );//Õû´®×Ö´®
-	pszP = strtok(buffer, delim);//µÚÒ»¸ö²ÎÊı
-    magicarg = strtok(NULL, delim);//µÚ¶ş¸ö²ÎÊı
-	magicarg2 = strtok(NULL, delim);//µÚÈş¸ö²ÎÊı
-	magicarg3 = strtok(NULL, delim);//µÚËÄ¸ö²ÎÊı
+	buffer = ITEM_getChar(itemindex, ITEM_ARGUMENT );//æ•´ä¸²å­—ä¸²
+	pszP = strtok(buffer, delim);//ç¬¬ä¸€ä¸ªå‚æ•°
+    magicarg = strtok(NULL, delim);//ç¬¬äºŒä¸ªå‚æ•°
+	magicarg2 = strtok(NULL, delim);//ç¬¬åä¸ªå‚æ•°
+	magicarg3 = strtok(NULL, delim);//ç¬¬å››ä¸ªå‚æ•°
     sprintf(magicarg4,"%s %s %s",magicarg,magicarg2,magicarg3);
 	magicarg = (char*)magicarg4;
 
-	//¹â¾µÊØ..²»µÃÊ¹ÓÃµĞ·½
+	//å…‰é•œå®ˆ..ä¸å¾—ä½¿ç”¨æ•Œæ–¹
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER
 		//&& BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P 
 		){
-		if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//²»Í¬±ß
+		if( BATTLE_CheckSameSide( charaindex, toindex) == 0 ){//ä¸åŒè¾¹
 			battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 			BATTLE_NoAction( battleindex, BATTLE_Index2No( battleindex, charaindex) );
-			CHAR_talkToCli( charaindex, -1, "¹â¾µÊØ..²»µÃÊ©Óè·ÇÍæ¼ÒµĞ·½¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "å…‰é•œå®ˆ..ä¸å¾—æ–½äºˆéç©å®¶æ•Œæ–¹ã€‚", CHAR_COLORYELLOW);
 			return;
 		}
 	}
 
-	//ÔÚÆø¾ø×´Ì¬»Ø¸´ÄÍÁ¦
+	//åœ¨æ°”ç»çŠ¶æ€å›å¤è€åŠ›
 	if( strstr( pszP, "%" ) ){
 		par = 1;
 	}
@@ -1075,7 +1075,7 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
       
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
    
-	//Ñ¡Ôñ´ú±íµÄÌØĞ§
+	//é€‰æ‹©ä»£è¡¨çš„ç‰¹æ•ˆ
 	if( pow <= 0 ){
 		ReceveEffect = SPR_fukkatu3;
 	}else
@@ -1092,12 +1092,12 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 		pow, par, SPR_item3, ReceveEffect );
     
 
-	//(¹â,¾µ,ÊØ)¾«Áé
+	//(å…‰,é•œ,å®ˆ)ç²¾çµ
 
-	// ¶ã°íÃ«äú  
+	// èº²ç»Šæ¯›æ½¸  
 	for( ;status == -1 && magicarg[0] != 0; magicarg++ ){
 		for( i = 1; i < BATTLE_MD_END; i ++ ){
-			// ¶ã°íñâÓÀÕıØø¾®£¢
+			// èº²ç»Šç–‹æ°¸æ­£ä¼‰äº•ï¼‚
 			if( strncmp( magicarg, aszMagicDef[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -1105,22 +1105,22 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 			}
 		}
 	}
-	// ¶ã°íØ¦ÖĞ¼°Æ¥ÁÃ  
+	// èº²ç»Šå…ä¸­åŠåŒ¹æ’©  
 	if( status == -1 ) return;
 
-	// ÖÏ¼Ô  µÊ½ñÁùÔÂ¾®£¢
+	// çª’èš  å‡³ä»Šå…­æœˆäº•ï¼‚
 	if( ( magicarg = strstr( magicarg, szTurn ) ) != NULL){
 		magicarg += sizeof( szTurn );
 		sscanf( magicarg, "%d", &turn );
 	}
 
-	//print("´ÎÊı:%d",turn);
+	//print("æ¬¡æ•°:%d",turn);
 
-	// ÌïĞş»ï  Ä¯
+	// ç”°ç„ä¼™  å¯
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 
-	// òå¹»
+	// èˆå¤Ÿ
 	BATTLE_MultiMagicDef( battleindex, attackNo, toindex,
 		status, turn, MAGIC_EFFECT_USER, SPR_difence );
 

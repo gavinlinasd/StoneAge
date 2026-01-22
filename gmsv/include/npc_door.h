@@ -14,7 +14,7 @@ void NPC_DoorLooked( int meindex , int lookedindex );
 BOOL NPC_DoorRefreshOverFlg( int meind );
 
 
-/* Ö°¼°NPC¾®ÈÕ³ó×Û½ñÄ¾ÔÂåÃ£ÛNPCÃŞÃó·òĞşÎì»ï±å¹´ÖĞ»¯·´ npc_stepswitch.cÃ«ĞÄÇ· */
+/* èŒåŠNPCäº•æ—¥ä¸‘ç»¼ä»Šæœ¨æœˆè¿•ï¼»NPCæ£‰çš¿å¤«ç„æˆŠä¼™åå‹¾ä¸­åŒ–å npc_stepswitch.cæ¯›å¿ƒæ¬  */
 int NPC_DoorSetPasswd( int meindex, char *pas );
 int NPC_DoorGetPasswd( int meindex, char *out , int len );
 void NPC_DoorFlip(int meindex , int doindex);

@@ -35,7 +35,7 @@ int GetMemLockServer(int entry, char *cdkey, char *result);
 int LockNode_getGname( int entries, char *id, char *gname);
 
 
-#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS断线自动送LOGOUT给WORKER
+#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS鏂嚎鑷姩閫丩OGOUT缁橶ORKER
 void Worker_auto_logout(int ti, char *sname);
 #endif
 

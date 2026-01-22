@@ -25,52 +25,52 @@
 
 
 /*
- * ·òºëÄÌ¼þØÆ»¯ÖÐØ¦ÖÐ£ý ·òºëÄÌ¼þØÆ»¯ÖÐÔÂ£ý ·òºëÄÌ¼þ   Æ½ÅÒ·Â×ÛÔ»  
- * ·òºëÊ§ËüÐþ  ( ±¾¡õÆ¤   ) , ·òºëÊ§ËüÐþ  ( Ê§¼þ·òÓÀÛÍ   )
- *  N ·´ NOT £ý W ·´ WHILE , UL ·´ UNLOCK ¼°ÒÇ
+ * å¤«å¼˜å¥¶ä»¶ä»„åŒ–ä¸­å…ä¸­ï½ å¤«å¼˜å¥¶ä»¶ä»„åŒ–ä¸­æœˆï½ å¤«å¼˜å¥¶ä»¶   å¹³ä¹“ä»¿ç»¼æ›°  
+ * å¤«å¼˜å¤±å®ƒçŽ„  ( æœ¬â–¡çš®   ) , å¤«å¼˜å¤±å®ƒçŽ„  ( å¤±ä»¶å¤«æ°¸å¼   )
+ *  N å NOT ï½ W å WHILE , UL å UNLOCK åŠä»ª
  */
 typedef enum
 {
-    NOTLOGIN,           /*  ·òºëÄÌ¼þØÆ»¯ÖÐØ¦ÖÐ  */
-    LOGIN,              /*  ·òºëÄÌ¼þ            */
-    WHILELOGIN,         /*  ·òºëÄÌ¼þØÆ»¯ÖÐÔÂ    */
-    WHILECREATE,        /*  ×ÛÔÈ»¯ÖÐÔÂ          */
-    WHILELOGOUTSAVE,    /*  ·òºëÊ§ËüÐþ¼°±¾¡õÆ¤      */
-    WHILECANNOTLOGIN,   /*  ·òºëÄÌ¼þÆ¥ÎåØ¦¾®ÔÈÐ×ÁÝ¼°Ê§¼þ·òÓÀÛÍÖÊ        */
-    WHILECHARDELETE,    /*  Æ½ÅÒ·Â´ÂÂÖ      */
-    WHILEDOWNLOADCHARLIST,  /*  Æ½ÅÒ·ÂØøµ©ÐþÄ¸Ëü¼þ·ò¡õÓñ    */
-    WHILECHANGEPASSWD,  /*  ÓÉµ©·¥¡õÓñ  µÊ      */
+    NOTLOGIN,           /*  å¤«å¼˜å¥¶ä»¶ä»„åŒ–ä¸­å…ä¸­  */
+    LOGIN,              /*  å¤«å¼˜å¥¶ä»¶            */
+    WHILELOGIN,         /*  å¤«å¼˜å¥¶ä»¶ä»„åŒ–ä¸­æœˆ    */
+    WHILECREATE,        /*  ç»¼åŒ€åŒ–ä¸­æœˆ          */
+    WHILELOGOUTSAVE,    /*  å¤«å¼˜å¤±å®ƒçŽ„åŠæœ¬â–¡çš®      */
+    WHILECANNOTLOGIN,   /*  å¤«å¼˜å¥¶ä»¶åŒ¹äº”å…äº•åŒ€å‡¶å‡›åŠå¤±ä»¶å¤«æ°¸å¼è´¨        */
+    WHILECHARDELETE,    /*  å¹³ä¹“ä»¿ç»°è½®      */
+    WHILEDOWNLOADCHARLIST,  /*  å¹³ä¹“ä»¿ä¼‰æ—¦çŽ„æ¯å®ƒä»¶å¤«â–¡çŽ‰    */
+    WHILECHANGEPASSWD,  /*  ç”±æ—¦ä¼â–¡çŽ‰  å‡³      */
 
-    WHILELOSTCHARSAVE,  /*  ·òµ©ÐþÆ¥Æ½ÅÒ·Â±¾¡õÆ¤ØÆ      */
-    WHILELOSTCHARDELETE,/*  ·òµ©ÐþÆ¥Æ½ÅÒ·ÂÛÕØÆ      */
+    WHILELOSTCHARSAVE,  /*  å¤«æ—¦çŽ„åŒ¹å¹³ä¹“ä»¿æœ¬â–¡çš®ä»„      */
+    WHILELOSTCHARDELETE,/*  å¤«æ—¦çŽ„åŒ¹å¹³ä¹“ä»¿å£…ä»„      */
 
-    WHILECLOSEALLSOCKETSSAVE, /* closeallsockets Æ¥Æ½ÅÒ·Â±¾¡õÆ¤ØÆ  */
-    WHILESAVEWAIT,              /* ·òºëÊ§ËüÐþ¼°±¾¡õÆ¤±åµæÈÊó¡¼°´Í  ½÷ÇÐ  */
+    WHILECLOSEALLSOCKETSSAVE, /* closeallsockets åŒ¹å¹³ä¹“ä»¿æœ¬â–¡çš®ä»„  */
+    WHILESAVEWAIT,              /* å¤«å¼˜å¤±å®ƒçŽ„åŠæœ¬â–¡çš®åžåž«ä»èŸ†åŠèµ  è°¨åˆ‡  */
 }LoginType;
 
-/*     ØÆ»¯ÖÐØ¦ÖÐ£ýÊ§ÊÐËü¼þÐþÈÓ¡õÌï£ýÛÍ·ÂÄÌÊ§¼þÐþ£ýÊ§ÓñØ© */
+/*     ä»„åŒ–ä¸­å…ä¸­ï½å¤±å¸‚å®ƒä»¶çŽ„æ‰”â–¡ç”°ï½å¼ä»¿å¥¶å¤±ä»¶çŽ„ï½å¤±çŽ‰ä¸ž */
 typedef enum
 {
     NOTDETECTED,AC,CLI,ADM
 }ConnectType;
 
 
-/*  ÈÓ¡õÌï»¥âçÐåØÆ»¯ÔÆÈÊÓ®½ñ    */
+/*  æ‰”â–¡ç”°äº’å¿¡ç»£ä»„åŒ–äº‘ä»èµ¢ä»Š    */
 #define CDKEYLEN    16
 #define PASSWDLEN   16
-/* ³ðÄ¾¼°  µÊ·´æØµÚ(ÔÊÔÂØ¦ÈÕ Char ¼°STRING64 ÊÖØÍå©Ø¦°À±åå©Ô»¾§ÔÂ³ðÎç*/
+/* ä»‡æœ¨åŠ  å‡³åå°•ç¬¬(å…æœˆå…æ—¥ Char åŠSTRING64 æ‰‹èµæ¿ å…è¢„åžæ¿ æ›°æ™¶æœˆä»‡åˆ*/
 #define CHARNAMELEN     32
 
-#define CLITIMEOUT_SEC  120     /* ÛÍ·ÂÄÌÊ§¼þÐþ¾®ÈÕreadØÆØ¦¾®ÔÈÐ×ÈÕ£ý
-                                   ³ð¼°ÁÝÃÞÆ¥ÕýÄÌØ©Ê§ËüÐþ£ý·òºëÊ§ËüÐþ£Û */
+#define CLITIMEOUT_SEC  120     /* å¼ä»¿å¥¶å¤±ä»¶çŽ„äº•æ—¥readä»„å…äº•åŒ€å‡¶æ—¥ï½
+                                   ä»‡åŠå‡›æ£‰åŒ¹æ­£å¥¶ä¸žå¤±å®ƒçŽ„ï½å¤«å¼˜å¤±å®ƒçŽ„ï¼» */
 
 #define		NET_STRING_SUCCESSFULL	"successful"
 #define		NET_STRING_FAILED		"failed"
 
-// ¿×¹´µ¤¼°    ¼°Øø¡õÓñ£Ý·ÂÄÌÐþÌïÓÀ°×ÑëÈÓÄÌÊõ
+// å­”å‹¾ä¸¹åŠ    åŠä¼‰â–¡çŽ‰ï¼½ä»¿å¥¶çŽ„ç”°æ°¸ç™½å¤®æ‰”å¥¶æœ¯
 #define RBSIZE 65536
 #define WBSIZE (65536*6)
-// Ê§ÊÐËü¼þÐþÈÓ¡õÌï¡õåÃ
+// å¤±å¸‚å®ƒä»¶çŽ„æ‰”â–¡ç”°â–¡è¿•
 
 #define	AC_RBSIZE (65536*48)
 //#define	AC_RBSIZE (65536*32)
@@ -78,9 +78,9 @@ typedef enum
 //#define	AC_WBSIZE (65536*16)
 extern int AC_WBSIZE;
 
-EXTERN int      bindedfd;     /*·ò¡õÊÐ»ïÊ§ÓñÒÁµ©±åÌïÄÌ¼þÓñØÆÐ×Ä©¸¥ÓÀÐþ*/
-EXTERN int      acfd;         /*Ê§ÊÐËü¼þÐþÈÓ¡õÌï±åÎìÉúÛÍÐþÆËÕýÄ©¸¥ÓÀÐþ*/
-EXTERN int      ConnectLen;   /*Æ±¼°°À¼°Ó®½ñ*/
+EXTERN int      bindedfd;     /*å¤«â–¡å¸‚ä¼™å¤±çŽ‰ä¼Šæ—¦åžç”°å¥¶ä»¶çŽ‰ä»„å‡¶æœ«å¼—æ°¸çŽ„*/
+EXTERN int      acfd;         /*å¤±å¸‚å®ƒä»¶çŽ„æ‰”â–¡ç”°åžæˆŠç”Ÿå¼çŽ„æ‰‘æ­£æœ«å¼—æ°¸çŽ„*/
+EXTERN int      ConnectLen;   /*ç¥¨åŠè¢„åŠèµ¢ä»Š*/
 #define CONNECT_WINDOWBUFSIZE 7
 
 //#ifdef _M_SERVER
@@ -91,7 +91,7 @@ EXTERN int		mfd;
 EXTERN int		npcfd;
 #endif
 
-/* Ïæ  Ð×ÇÐ */
+/* æ¹˜  å‡¶åˆ‡ */
 BOOL initConnect( int size );
 void endConnect( void );
 #define		CONNECT_endOne( sockfd, lin) \
@@ -127,14 +127,14 @@ void SERVSTATE_setDsptime(int a);
 void SERVSTATE_setLimittime(int a);
 
 
-/* ¹«¼°»Ã¾® */
+/* å…¬åŠå¹»äº• */
 void outputNetProcLog( int fd, int mode);
 void chardatasavecheck( void );
 void closeAllConnectionandSaveData( void );
 BOOL SetShutdown( BOOL nvalue );
 int GetShutdown( void );
 
-/* »ï¡õÃóØÆ»¯¸¹³ñèúÐÑ */
+/* ä¼™â–¡çš¿ä»„åŒ–è…¹ç»¸æ¥®é†’ */
 int getfdFromCdkey( char* cd );
 int getfdFromCharaIndex( int charaindex );
 int getcdkeyFromCharaIndex( int charaindex , char *out, int outlen );
@@ -144,7 +144,7 @@ int getfdFromFdid( int fdid );
 int getfdFromCdkeyWithLogin( char* cd );
 
 
-/* ØÆÈÕÍÍ */        
+/* ä»„æ—¥å±¯ */        
 INLINE int CONNECT_checkfd( int fd );
 BOOL CONNECT_isCLI( int fd );
 BOOL CONNECT_isAC( int fd );
@@ -179,10 +179,10 @@ int CONNECT_getTradecardcharaindex( int fd, int i );
 int CONNECT_getClosed( int fd );
 void CONNECT_setClosed( int fd, int a );
 
-/* MT·¸ÌïÓÀºëåÃÑ¨ÛÍ·ò */
+/* MTçŠ¯ç”°æ°¸å¼˜è¿•ç©´å¼å¤« */
 #define CONNECT_endOne_debug(a) CONNECT_endOne( (a) , __LINE__ )
 
-/* ·¸¡õÕý³ó×ÛèúÐÑ(ÒýÔÂÇÐÔÊÄ¾ÔÈÉý¸²É±åÃ) */
+/* çŠ¯â–¡æ­£ä¸‘ç»¼æ¥®é†’(å¼•æœˆåˆ‡å…æœ¨åŒ€å‡è¦†æ€è¿•) */
 void CONNECT_setCDKEY( int sockfd, char *cd );
 void CONNECT_getCDKEY( int sockfd , char *out, int outlen );
 void CONNECT_setState( int fd, int s );
@@ -318,17 +318,17 @@ int CONNECT_getTradeList(int fd);
 BOOL MSBUF_CHECKbuflen( int size, float defp);
 
 
-#ifdef _GM_BROADCAST					// WON ADD ¿Í·þ¹«¸æÏµÍ³
+#ifdef _GM_BROADCAST					// WON ADD å®¢æœå…¬å‘Šç³»ç»Ÿ
 
 
 typedef struct tag_broadcast_struct
 {
-	int time;			// Ñ¶Ï¢¼ä¸ôÊ±¼ä
-	int loop;			// Ö´ÐÐ´ÎÊý	
-	int wait;			// ¹«¸æÍêÐÝÏ¢Ê±¼ä
+	int time;			// è®¯æ¯é—´éš”æ—¶é—´
+	int loop;			// æ‰§è¡Œæ¬¡æ•°	
+	int wait;			// å…¬å‘Šå®Œä¼‘æ¯æ—¶é—´
 	int next_msg;
-	int max_msg_line;	// Ñ¶Ï¢Êý
-	char msg[10][128];	// ¹«¸æÑ¶Ï¢
+	int max_msg_line;	// è®¯æ¯æ•°
+	char msg[10][128];	// å…¬å‘Šè®¯æ¯
 }broadcast_struct;
 
 broadcast_struct BS;
@@ -338,7 +338,7 @@ void GM_BROADCAST();
 #endif
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD ¼Ò×åÕ½´æ·ÅÊ¤¸º×ÊÁÏ
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD å®¶æ—æˆ˜å­˜æ”¾èƒœè´Ÿèµ„æ–™
 void Init_FM_PK_STRUCT();
 #endif
 

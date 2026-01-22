@@ -17,8 +17,8 @@
 #include "configfile.h"
 
 #ifdef _SERVICE
-#define LOOP_TIME 100		//0.1Ãë(½øÈëloop function µÄÊ±¼ä)
-#define MAX_AP_MSG 128		// ½ÓÊÕAPËÍÀ´Ñ¶Ï¢µÄ×î´óÊı
+#define LOOP_TIME 100		//0.1ç§’(è¿›å…¥loop function çš„æ—¶é—´)
+#define MAX_AP_MSG 128		// æ¥æ”¶APé€æ¥è®¯æ¯çš„æœ€å¤§æ•°
 
 // socket struct
 struct socketaddr_in
@@ -29,52 +29,52 @@ struct socketaddr_in
   char    sin_zero[8];
 };
 
-// ½ÓÊÕAP´«À´µÄÑ¶Ï¢
+// æ¥æ”¶APä¼ æ¥çš„è®¯æ¯
 typedef struct _MSG
 {
-  int nAid;		// nAid => Á÷Ë®ºÅ*10 + Ñ¶Ï¢´úºÅ(_AP_CLIENT_MESSAGE)
-  int nIndex;		// NPCµÄindexÖµ
-  int nLen;		// Ñ¶Ï¢³¤¶È
-  LPList Data;		// Êµ¼Ê×ÊÁÏ
-  int bIsUse;		// Õâ¸öÑ¶Ï¢ÊÇ·ñÓĞÊ¹ÓÃ¹ı
+  int nAid;		// nAid => æµæ°´å·*10 + è®¯æ¯ä»£å·(_AP_CLIENT_MESSAGE)
+  int nIndex;		// NPCçš„indexå€¼
+  int nLen;		// è®¯æ¯é•¿åº¦
+  LPList Data;		// å®é™…èµ„æ–™
+  int bIsUse;		// è¿™ä¸ªè®¯æ¯æ˜¯å¦æœ‰ä½¿ç”¨è¿‡
 }Msg,*pMsg;
 Msg g_APMsg[MAX_AP_MSG];
         
-// ¶¯×÷id        
+// åŠ¨ä½œid        
 enum _AP_CLIENT_MESSAGE
 {
-  Cli_CHECKPLAYER,  //ÒªÇóAP¶ÔÍæ¼ÒÊÇ·ñÓĞ¹ºÂò²úÆ·µÄÈ·ÈÏ  0
-  AP_CHECKPLAYER,   //AP»ØÓ¦Íæ¼ÒÊÇ·ñÓĞ¹ºÂò²úÆ·
-  Cli_YES,          //Íæ¼ÒÈ·¶¨Òª½«½±Æ·ÄÃ×ß
-  Cli_CANCEL,	    //Í¨ÖªAP°ÑlockÀ¸Î»ÇåÎª0             
-  Cli_GET,	    //Í¨ÖªAP¸øÎïÆ·
-  AP_GET,	    //AP»ØÓ¦ÎïÆ·			5
-  Cli_CONNECT,      //²âÊÔÊÇ·ñÓĞÁ¬µ½AP
-  AP_CONNECT,       //AP»ØÓ¦
-  AP_ERROR          //APÓĞ´íÎó				
+  Cli_CHECKPLAYER,  //è¦æ±‚APå¯¹ç©å®¶æ˜¯å¦æœ‰è´­ä¹°äº§å“çš„ç¡®è®¤  0
+  AP_CHECKPLAYER,   //APå›åº”ç©å®¶æ˜¯å¦æœ‰è´­ä¹°äº§å“
+  Cli_YES,          //ç©å®¶ç¡®å®šè¦å°†å¥–å“æ‹¿èµ°
+  Cli_CANCEL,	    //é€šçŸ¥APæŠŠlockæ ä½æ¸…ä¸º0             
+  Cli_GET,	    //é€šçŸ¥APç»™ç‰©å“
+  AP_GET,	    //APå›åº”ç‰©å“			5
+  Cli_CONNECT,      //æµ‹è¯•æ˜¯å¦æœ‰è¿åˆ°AP
+  AP_CONNECT,       //APå›åº”
+  AP_ERROR          //APæœ‰é”™è¯¯				
 };
 
-// NPCµÄ¹¤×÷±äÊı
+// NPCçš„å·¥ä½œå˜æ•°
 enum
 {
   NPC_WORK_FLAG1   	 = CHAR_NPCWORKINT2,	//flag1
   NPC_WORK_FLAG2   	 = CHAR_NPCWORKINT3,	//flag2
   NPC_WORK_FLAG3   	 = CHAR_NPCWORKINT4,	//flag3
-  NPC_WORK_TIMEOUT 	 = CHAR_NPCWORKINT5,	//time out Ê±¼ä
-  NPC_WORK_STATE   	 = CHAR_NPCWORKINT6,	//Ä¿Ç°Ö´ĞĞ×´Ì¬
-  NPC_WORK_START   	 = CHAR_NPCWORKINT7,	//¿ªÊ¼¼ÆÊ±flag
-  NPC_WORK_LEAVE_COUNT   = CHAR_NPCWORKINT8,	//Íæ¼ÒtalkÊ±¼ä¼ÆÊ±
-  NPC_WORK_TOINDEX 	 = CHAR_NPCWORKINT9,	//Íæ¼ÒµÄindexÖµ
-  NPC_WORK_SERIALNUM     = CHAR_NPCWORKINT10,   //Á÷Ë®ºÅ
-  NPC_WORK_ISUSE   	 = CHAR_NPCWORKINT11,	//Ä¿Ç°NPCÊÇ·ñÓĞÍæ¼ÒÔÚÊ¹ÓÃ
+  NPC_WORK_TIMEOUT 	 = CHAR_NPCWORKINT5,	//time out æ—¶é—´
+  NPC_WORK_STATE   	 = CHAR_NPCWORKINT6,	//ç›®å‰æ‰§è¡ŒçŠ¶æ€
+  NPC_WORK_START   	 = CHAR_NPCWORKINT7,	//å¼€å§‹è®¡æ—¶flag
+  NPC_WORK_LEAVE_COUNT   = CHAR_NPCWORKINT8,	//ç©å®¶talkæ—¶é—´è®¡æ—¶
+  NPC_WORK_TOINDEX 	 = CHAR_NPCWORKINT9,	//ç©å®¶çš„indexå€¼
+  NPC_WORK_SERIALNUM     = CHAR_NPCWORKINT10,   //æµæ°´å·
+  NPC_WORK_ISUSE   	 = CHAR_NPCWORKINT11,	//ç›®å‰NPCæ˜¯å¦æœ‰ç©å®¶åœ¨ä½¿ç”¨
 };
 
-// Ö´ĞĞµÄ×´Ì¬
+// æ‰§è¡Œçš„çŠ¶æ€
 enum
 {
-  SERVICE_STATE_1,	// check ÓĞÃ»ÓĞºÍAPÁ¬ÏßÖĞ 
-  SERVICE_STATE_2,	// ÏòAPÈ¡µÃÍæ¼ÒÓĞÎŞÂò²úÆ·
-  SERVICE_STATE_3,	// È¡µÃÒª¸øÍæ¼ÒµÄ¶«Î÷µÄ×ÊÁÏ
+  SERVICE_STATE_1,	// check æœ‰æ²¡æœ‰å’ŒAPè¿çº¿ä¸­ 
+  SERVICE_STATE_2,	// å‘APå–å¾—ç©å®¶æœ‰æ— ä¹°äº§å“
+  SERVICE_STATE_3,	// å–å¾—è¦ç»™ç©å®¶çš„ä¸œè¥¿çš„èµ„æ–™
   SERVICE_STATE_4	// end state
 };
                                                                 
@@ -92,7 +92,7 @@ extern int GetSerialNum(void);
 static int flag = 1;
 
 /*********************************
-* ³õÊ¼»¯
+* åˆå§‹åŒ–
 *********************************/
 BOOL NPC_StoneServiceManInit(int meindex )
 {
@@ -118,12 +118,12 @@ BOOL NPC_StoneServiceManInit(int meindex )
 
   g_EnableService = getEnableService();
   
-  //Á¬Ïßµ½APÔÚinitÊ±Ö»×öÒ»´Î
+  //è¿çº¿åˆ°APåœ¨initæ—¶åªåšä¸€æ¬¡
   if(flag && g_EnableService){
     strcpy(g_ApID,getApID());
 		g_Port = getApPort();
     bzero(g_APMsg,sizeof(g_APMsg));
-    ConnectToAP();//Á¬Ïßµ½AP
+    ConnectToAP();//è¿çº¿åˆ°AP
     flag = 0;
   }
   
@@ -162,10 +162,10 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
   
   token[0] = '\0';
 
-  //Èç¹û²»Ê¹ÓÃÊ¯Æ÷·şÎñÔ±µÄ¹¦ÄÜ
+  //å¦‚æœä¸ä½¿ç”¨çŸ³å™¨æœåŠ¡å‘˜çš„åŠŸèƒ½
   if(!g_EnableService)
   {
-    sprintf(token,"\n Çëµ½´ËĞÇÏµµÄ×îááÒ»¿ÅĞÇÇòÊ¹ÓÃ´Ë·şÎñ£¬Ğ»Ğ»£¡");
+    sprintf(token,"\n è¯·åˆ°æ­¤æ˜Ÿç³»çš„æœ€å¾Œä¸€é¢—æ˜Ÿçƒä½¿ç”¨æ­¤æœåŠ¡ï¼Œè°¢è°¢ï¼");
     buttontype = WINDOW_BUTTONTYPE_OK;
     windowtype = WINDOW_MESSAGETYPE_MESSAGE;
     windowno = CHAR_WINDOWTYPE_SERVICE_WAIT;
@@ -176,20 +176,20 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
     return;
   }
   
-  //Èç¹ûÕâ¸öÍæ¼ÒÊÇµÚÒ»¸öºÍNPC½²»°
+  //å¦‚æœè¿™ä¸ªç©å®¶æ˜¯ç¬¬ä¸€ä¸ªå’ŒNPCè®²è¯
   if(CHAR_getWorkInt(meindex,NPC_WORK_ISUSE) == 0 && 
      CHAR_getWorkInt(meindex,NPC_WORK_TOINDEX) == -1)
   {
-    //¼Ç×¡µÚÒ»¸öºÍNPC½²»°µÄÊÇË­
+    //è®°ä½ç¬¬ä¸€ä¸ªå’ŒNPCè®²è¯çš„æ˜¯è°
     CHAR_setWorkInt(meindex,NPC_WORK_TOINDEX,toindex);
-    //Éè¶¨ÎªNPCÕıÔÚÊ¹ÓÃÖĞ
+    //è®¾å®šä¸ºNPCæ­£åœ¨ä½¿ç”¨ä¸­
     CHAR_setWorkInt(meindex,NPC_WORK_ISUSE,1);
   }
-  //Èç¹ûÊÇµÚ¶ş¸öÒÔááºÍNPC½²»°µÄÈË
+  //å¦‚æœæ˜¯ç¬¬äºŒä¸ªä»¥å¾Œå’ŒNPCè®²è¯çš„äºº
   else if(CHAR_getWorkInt(meindex,NPC_WORK_ISUSE) == 1 &&
           CHAR_getWorkInt(meindex,NPC_WORK_TOINDEX) != toindex)
   {
-    sprintf(token,"\n ÕıÔÚ·şÎñÆäËûÍæ¼ÒÖĞ£¬ÇëÉÔµÈ...");
+    sprintf(token,"\n æ­£åœ¨æœåŠ¡å…¶ä»–ç©å®¶ä¸­ï¼Œè¯·ç¨ç­‰...");
     buttontype = WINDOW_BUTTONTYPE_OK;
     windowtype = WINDOW_MESSAGETYPE_MESSAGE;
     windowno = CHAR_WINDOWTYPE_SERVICE_WAIT;
@@ -208,7 +208,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
   {
   case 0:
   case 1:
-    //È¡µÃÍæ¼ÒµÄid
+    //å–å¾—ç©å®¶çš„id
     pUserid = CHAR_getChar(toindex,CHAR_CDKEY);
     if(CHAR_getWorkInt(meindex,NPC_WORK_FLAG2) == 1)
     {
@@ -226,12 +226,12 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
     }
     if(CHAR_getWorkInt(meindex,NPC_WORK_STATE) == SERVICE_STATE_2)
     {
-			// ³¬¹ıÎåÃëtime out
+			// è¶…è¿‡äº”ç§’time out
       if(CHAR_getWorkInt(meindex,NPC_WORK_TIMEOUT) >= 50)
       {
         close(g_nServiceSocket);
         flag = 1;
-        sprintf(token,"\n ÖØĞÂÓëÏµÍ³È¡µÃÁ¬Ïß...");
+        sprintf(token,"\n é‡æ–°ä¸ç³»ç»Ÿå–å¾—è¿çº¿...");
         buttontype = WINDOW_BUTTONTYPE_OK;
         windowtype = WINDOW_MESSAGETYPE_MESSAGE;
         windowno = CHAR_WINDOWTYPE_SERVICE_CONTINUE;
@@ -242,7 +242,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
       }
       if((Ret = RecvFromAP(&nAid,meindex,&nLen,&DataList)) == -1)
       {
-        sprintf(token,"\n µÈ´ı»ØÓ¦...");
+        sprintf(token,"\n ç­‰å¾…å›åº”...");
         buttontype = WINDOW_BUTTONTYPE_OK;
         windowtype = WINDOW_MESSAGETYPE_MESSAGE;
         windowno = CHAR_WINDOWTYPE_SERVICE_CONTINUE;
@@ -257,44 +257,44 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
           DataList = DataList->Next;
           if(Kill != NULL) free(Kill);
         }
-        // Ê¹ÓÃ¹ıµÄÑ¶Ï¢Çå¿Õ
+        // ä½¿ç”¨è¿‡çš„è®¯æ¯æ¸…ç©º
         bzero(&g_APMsg[Ret],sizeof(Msg));
       }
       if(nAid == AP_CHECKPLAYER)
       {
         switch(atoi(Data[0]))
         {
-        case 0: //Ã»Âò
+        case 0: //æ²¡ä¹°
           if(NPC_Util_GetStrFromStrWithDelim(npcarg,"ErrMsg",buf,sizeof(buf)) == NULL) return;
           sprintf(token,"\n %s",buf);
           buttontype = WINDOW_BUTTONTYPE_OK;
           windowtype = WINDOW_MESSAGETYPE_MESSAGE;
           windowno = CHAR_WINDOWTYPE_SERVICE_EXIT;     
         break;
-        case 1: //ÓĞÂò
+        case 1: //æœ‰ä¹°
           if(NPC_Util_GetStrFromStrWithDelim(npcarg,"MainMsg",buf,sizeof(buf)) == NULL) return;
           sprintf(token,"5\n %s"
-                        "\n ÄãÒª½«%s"
-												"\n µÄ½±Æ·¸øÕâ¸ö½ÇÉ«Âğ£¿\n"
+                        "\n ä½ è¦å°†%s"
+												"\n çš„å¥–å“ç»™è¿™ä¸ªè§’è‰²å—ï¼Ÿ\n"
                         "\n"
-                        "\n                    ¡¶ È·  ¶¨ ¡·"
+                        "\n                    ã€Š ç¡®  å®š ã€‹"
   	                    "\n"
-        	              "\n                    ¡¶ È¡  Ïû ¡·",
+        	              "\n                    ã€Š å–  æ¶ˆ ã€‹",
                         buf,Data[1]);
           buttontype = WINDOW_BUTTONTYPE_NONE;
           windowtype = WINDOW_MESSAGETYPE_SELECT;
           windowno = CHAR_WINDOWTYPE_SERVICE_START; 
         break;
-        //ÁíÒ»¸ö½ÇÉ«ÕıÔÚÊ¹ÓÃÖĞ
+        //å¦ä¸€ä¸ªè§’è‰²æ­£åœ¨ä½¿ç”¨ä¸­
         case 2:
-          sprintf(token,"\n Ä¿Ç°ÄúµÄÁíÒ»¸ö½ÇÉ«ÕıÔÚÁìÈ¡.");
+          sprintf(token,"\n ç›®å‰æ‚¨çš„å¦ä¸€ä¸ªè§’è‰²æ­£åœ¨é¢†å–.");
           buttontype = WINDOW_BUTTONTYPE_OK;
           windowtype = WINDOW_MESSAGETYPE_MESSAGE;
           windowno = CHAR_WINDOWTYPE_SERVICE_EXIT;
           break;
-				//Íæ¼ÒµÄ½±Æ·ÒÑÁìÍê
+				//ç©å®¶çš„å¥–å“å·²é¢†å®Œ
 				case 3:
-					sprintf(token,"\n ÄúµÄ½±Æ·ÒÑ¾­ÁìÍêÁË!!");
+					sprintf(token,"\n æ‚¨çš„å¥–å“å·²ç»é¢†å®Œäº†!!");
           buttontype = WINDOW_BUTTONTYPE_OK;
           windowtype = WINDOW_MESSAGETYPE_MESSAGE;
           windowno = CHAR_WINDOWTYPE_SERVICE_EXIT;
@@ -304,7 +304,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
       }
       else
       {
-        sprintf(token,"\n ÏµÍ³Ñ¶Ï¢´íÎó!!(%d)",nAid);
+        sprintf(token,"\n ç³»ç»Ÿè®¯æ¯é”™è¯¯!!(%d)",nAid);
         buttontype = WINDOW_BUTTONTYPE_OK;
         windowtype = WINDOW_MESSAGETYPE_MESSAGE;
         windowno = CHAR_WINDOWTYPE_SERVICE_EXIT;
@@ -314,14 +314,14 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
     }
     else
     {
-      sprintf(token,"\n µÈ´ı»ØÓ¦...");
+      sprintf(token,"\n ç­‰å¾…å›åº”...");
       buttontype = WINDOW_BUTTONTYPE_OK;
       windowtype = WINDOW_MESSAGETYPE_MESSAGE;
       windowno = CHAR_WINDOWTYPE_SERVICE_CONTINUE;
     }
   break;
   case 2:
-    //È¡µÃÍæ¼ÒµÄid
+    //å–å¾—ç©å®¶çš„id
     pUserid = CHAR_getChar(toindex,CHAR_CDKEY);
     if(CHAR_getWorkInt(meindex,NPC_WORK_FLAG3) == 1){
       if(pUserid == NULL || SendToAP(Cli_GET,meindex,1,pUserid,NULL) == 0){
@@ -336,11 +336,11 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
       CHAR_setWorkInt(meindex,NPC_WORK_FLAG3,0);
     }
     if(CHAR_getWorkInt(meindex,NPC_WORK_STATE) == SERVICE_STATE_3){
-			// ³¬¹ıÎåÃëtime out
+			// è¶…è¿‡äº”ç§’time out
       if(CHAR_getWorkInt(meindex,NPC_WORK_TIMEOUT) >= 50){
         close(g_nServiceSocket);
         flag = 1;
-        sprintf(token,"\n ÖØĞÂÓëÏµÍ³È¡µÃÁ¬Ïß...");
+        sprintf(token,"\n é‡æ–°ä¸ç³»ç»Ÿå–å¾—è¿çº¿...");
         buttontype = WINDOW_BUTTONTYPE_OK;
         windowtype = WINDOW_MESSAGETYPE_MESSAGE;
         windowno = CHAR_WINDOWTYPE_SERVICE_CONTINUE;
@@ -350,7 +350,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
         break;
       }
       if((Ret = RecvFromAP(&nAid,meindex,&nLen,&DataList)) == -1){
-        sprintf(token,"\n µÈ´ı»ØÓ¦...");
+        sprintf(token,"\n ç­‰å¾…å›åº”...");
         buttontype = WINDOW_BUTTONTYPE_OK;
         windowtype = WINDOW_MESSAGETYPE_MESSAGE;
         windowno = CHAR_WINDOWTYPE_SERVICE_CONTINUE;
@@ -365,17 +365,17 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
           DataList = DataList->Next;
           if(Kill != NULL) free(Kill);
         }
-        // Ê¹ÓÃ¹ıµÄÑ¶Ï¢Çå¿Õ
+        // ä½¿ç”¨è¿‡çš„è®¯æ¯æ¸…ç©º
         bzero(&g_APMsg[Ret],sizeof(Msg));
       }
       if(nAid == AP_GET)
       {
-        //Èç¹ûÊÇ¸øÇ®
-        //È·¶¨Íæ¼ÒÉíÉÏÓĞÃ»ÓĞ¿ÕµÄÀ¸Î»
+        //å¦‚æœæ˜¯ç»™é’±
+        //ç¡®å®šç©å®¶èº«ä¸Šæœ‰æ²¡æœ‰ç©ºçš„æ ä½
         if(atoi(Data[2]) == 0){
           if(CHAR_getInt(toindex,CHAR_GOLD)+atoi(Data[1]) > CHAR_getMaxHaveGold(toindex) ){
             sprintf(token,"\n"
-                          "\n ÄãÉíÉÏµÄ¿Õ¼ä²»×ãÒÔ·ÅÈëÄÇ÷á¶àÇ®£¡\n");
+                          "\n ä½ èº«ä¸Šçš„ç©ºé—´ä¸è¶³ä»¥æ”¾å…¥é‚£éº½å¤šé’±ï¼\n");
             buttontype = WINDOW_BUTTONTYPE_OK;
             windowtype = WINDOW_MESSAGETYPE_MESSAGE;
             windowno = CHAR_WINDOWTYPE_SERVICE_EXIT; 
@@ -387,30 +387,30 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
             LogService(CHAR_getChar(toindex,CHAR_NAME),
                        CHAR_getChar(toindex,CHAR_CDKEY),
                        atoi(Data[1]),
-                       "Ç®",
+                       "é’±",
                        CHAR_getInt(toindex,CHAR_FLOOR),
                        CHAR_getInt(toindex,CHAR_X),
                        CHAR_getInt(toindex,CHAR_Y)
                       );
-            sprintf(talk,"%sÊ¯±ÒÒÑ¾­¸øÄãà¶!!\n",Data[1]);
+            sprintf(talk,"%sçŸ³å¸å·²ç»ç»™ä½ å–½!!\n",Data[1]);
           }
         }
-        //Èç¹ûÊÇ¸øÎïÆ·
+        //å¦‚æœæ˜¯ç»™ç‰©å“
         else if(atoi(Data[2]) == 1){
-          //È·¶¨Íæ¼ÒÉíÉÏÓĞÃ»ÓĞ¿ÕµÄÀ¸Î»
+          //ç¡®å®šç©å®¶èº«ä¸Šæœ‰æ²¡æœ‰ç©ºçš„æ ä½
           int num = 0,itemindex = 0;
 
           for(i=CHAR_STARTITEMARRAY;i<CHAR_MAXITEMHAVE;i++)
             if(CHAR_getItemIndex(toindex,i) != -1) num++;
           if(atoi(Data[1])+num > CHAR_MAXITEMNUM){
             sprintf(token,"\n"
-                          "\n ÄãµÄµÀ¾ßÀ¸¿Õ¼ä²»¹»£¡\n");
+                          "\n ä½ çš„é“å…·æ ç©ºé—´ä¸å¤Ÿï¼\n");
             buttontype = WINDOW_BUTTONTYPE_OK;
             windowtype = WINDOW_MESSAGETYPE_MESSAGE;
             windowno = CHAR_WINDOWTYPE_SERVICE_EXIT; 
             break;
           }
-          //ÓĞ¿ÕµÄÀ¸Î»
+          //æœ‰ç©ºçš„æ ä½
           for(j=0;j<atoi(Data[1]);j++){
             for(i=CHAR_STARTITEMARRAY;i<CHAR_MAXITEMHAVE;i++){
               if(CHAR_getItemIndex(toindex,i) == -1){
@@ -422,7 +422,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
                 LogService(CHAR_getChar(toindex,CHAR_NAME),
                            CHAR_getChar(toindex,CHAR_CDKEY),
                            atoi(Data[0]),
-                           "ÎïÆ·",
+                           "ç‰©å“",
                            CHAR_getInt(toindex,CHAR_FLOOR),
                            CHAR_getInt(toindex,CHAR_X),
                            CHAR_getInt(toindex,CHAR_Y)
@@ -431,12 +431,12 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
               }
             }
           }
-          sprintf(talk,"%s %s¸öÒÑ¾­¸øÄãà¶!!\n",ITEM_getAppropriateName(itemindex),Data[1]);
+          sprintf(talk,"%s %sä¸ªå·²ç»ç»™ä½ å–½!!\n",ITEM_getAppropriateName(itemindex),Data[1]);
         }
-        //Èç¹ûÊÇ¸ø³èÎï
+        //å¦‚æœæ˜¯ç»™å® ç‰©
         else if(atoi(Data[2]) == 2)
         {
-          //È·¶¨Íæ¼ÒÉíÉÏÓĞÃ»ÓĞ¿ÕµÄÀ¸Î»
+          //ç¡®å®šç©å®¶èº«ä¸Šæœ‰æ²¡æœ‰ç©ºçš„æ ä½
           int num = 0,ret = 0;
           
           for(i=0;i<CHAR_MAXPETHAVE;i++)
@@ -444,13 +444,13 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
           if(atoi(Data[1])+num > CHAR_MAXPETHAVE)
           {
             sprintf(token,"\n"
-                          "\n ÄãµÄ³èÎïÀ¸¿Õ¼ä²»¹»£¡\n");
+                          "\n ä½ çš„å® ç‰©æ ç©ºé—´ä¸å¤Ÿï¼\n");
             buttontype = WINDOW_BUTTONTYPE_OK;
             windowtype = WINDOW_MESSAGETYPE_MESSAGE;
             windowno = CHAR_WINDOWTYPE_SERVICE_EXIT; 
             break;
           }
-          //ÓĞ¿ÕµÄÀ¸Î»
+          //æœ‰ç©ºçš„æ ä½
           for(j=0;j<atoi(Data[1]);j++)
           {
             for(i=0;i<CHAR_MAXPETHAVE;i++)
@@ -485,7 +485,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
                 LogService(CHAR_getChar(toindex,CHAR_NAME),
                            CHAR_getChar(toindex,CHAR_CDKEY),
                            atoi(Data[0]),
-                           "³èÎï",
+                           "å® ç‰©",
                            CHAR_getInt(toindex,CHAR_FLOOR),
                            CHAR_getInt(toindex,CHAR_X),
                            CHAR_getInt(toindex,CHAR_Y)
@@ -494,9 +494,9 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
               }
             }
           }
-          sprintf(talk,"%s %sÖ»ÒÑ¾­¸øÄãà¶!!\n",CHAR_getChar(ret,CHAR_NAME),Data[1]);
+          sprintf(talk,"%s %såªå·²ç»ç»™ä½ å–½!!\n",CHAR_getChar(ret,CHAR_NAME),Data[1]);
         }
-        //Íæ¼Ò×ÊÁÏ´æµµ
+        //ç©å®¶èµ„æ–™å­˜æ¡£
         CHAR_charSaveFromConnect(CHAR_getWorkInt(toindex,CHAR_WORKFD),0);
        if(pUserid == NULL || SendToAP(Cli_YES,meindex,1,pUserid,NULL) == 0)
        {
@@ -508,7 +508,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
 					LogService(CHAR_getChar(toindex,CHAR_NAME),
  										 CHAR_getChar(toindex,CHAR_CDKEY),
 										 -1,
-										 "Íæ¼ÒÒÑÁìÈ¡³èÎïµ«Cli_YESÃ»ËÍµ½AP",
+										 "ç©å®¶å·²é¢†å–å® ç‰©ä½†Cli_YESæ²¡é€åˆ°AP",
 										 CHAR_getInt(toindex,CHAR_FLOOR),
 										 CHAR_getInt(toindex,CHAR_X),
 										 CHAR_getInt(toindex,CHAR_Y)
@@ -526,7 +526,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
       }
       else 
       {
-        sprintf(token,"\n ÏµÍ³Ñ¶Ï¢´íÎó!!(%d)",nAid);
+        sprintf(token,"\n ç³»ç»Ÿè®¯æ¯é”™è¯¯!!(%d)",nAid);
         buttontype = WINDOW_BUTTONTYPE_OK;
         windowtype = WINDOW_MESSAGETYPE_MESSAGE;
         windowno = CHAR_WINDOWTYPE_SERVICE_EXIT;
@@ -535,7 +535,7 @@ static void NPC_StoneServiceMan_selectWindow(int meindex,int toindex,int num,int
     }
     else
     {
-      sprintf(token,"\n µÈ´ı»ØÓ¦...");
+      sprintf(token,"\n ç­‰å¾…å›åº”...");
       buttontype = WINDOW_BUTTONTYPE_OK;
       windowtype = WINDOW_MESSAGETYPE_MESSAGE;
       windowno = CHAR_WINDOWTYPE_SERVICE_CONTINUE;
@@ -567,12 +567,12 @@ void NPC_StoneServiceManLoop(int meindex)
   
   if(g_EnableService)
   {
-    // Èç¹ûÍæ¼ÒºÍNPC½²»°ÁË¾Í¿ªÊ¼µ¹Êı
+    // å¦‚æœç©å®¶å’ŒNPCè®²è¯äº†å°±å¼€å§‹å€’æ•°
     if(CHAR_getWorkInt(meindex,NPC_WORK_ISUSE) == 1)
     {
       nLeaveCount = CHAR_getWorkInt(meindex,NPC_WORK_LEAVE_COUNT);
-      // Èç¹ûÍæ¼Ò³¬¹ıÊ±¼äÃ»Íê³É¶¯×÷(Ò²ÓĞ¿ÉÄÜÊÇÍæ¼ÒÃ»ÓĞ°´ÏÂok¾ÍÀë¿ª¶Ô»°¿ò)
-      // ÕâÊ±Òª°ÑNPCµÄ¹¤×÷±äÊıÇåÎªÁã²ÅÄÜÈÃÏÂÒ»¸öÍæ¼Òtalk
+      // å¦‚æœç©å®¶è¶…è¿‡æ—¶é—´æ²¡å®ŒæˆåŠ¨ä½œ(ä¹Ÿæœ‰å¯èƒ½æ˜¯ç©å®¶æ²¡æœ‰æŒ‰ä¸‹okå°±ç¦»å¼€å¯¹è¯æ¡†)
+      // è¿™æ—¶è¦æŠŠNPCçš„å·¥ä½œå˜æ•°æ¸…ä¸ºé›¶æ‰èƒ½è®©ä¸‹ä¸€ä¸ªç©å®¶talk
       if(nLeaveCount > getLoopTime())
       {
         int  talkerindex,i;
@@ -591,16 +591,16 @@ void NPC_StoneServiceManLoop(int meindex)
         CHAR_setWorkInt(meindex,NPC_WORK_ISUSE,0);
         CHAR_setWorkInt(meindex,NPC_WORK_LEAVE_COUNT,0);
         CHAR_setWorkInt(meindex,NPC_WORK_SERIALNUM,-1);
-        //°ÑÖ®Ç°ÊÕµÄÓĞ¹ØÕâ¸öNPCµÄÑ¶Ï¢bufÇå¿Õ
+        //æŠŠä¹‹å‰æ”¶çš„æœ‰å…³è¿™ä¸ªNPCçš„è®¯æ¯bufæ¸…ç©º
         for(i=0;i<MAX_AP_MSG;i++)
         {
-          // ¼ì²éÑ¶Ï¢À¸ÓĞÃ»ÓĞ±»Ê¹ÓÃ
+          // æ£€æŸ¥è®¯æ¯æ æœ‰æ²¡æœ‰è¢«ä½¿ç”¨
           if(g_APMsg[i].bIsUse == 1)
           {
-            // ¼ì²éÊÇ²»ÊÇËÍ¸øÕâ¸öNPCµÄÑ¶Ï¢
+            // æ£€æŸ¥æ˜¯ä¸æ˜¯é€ç»™è¿™ä¸ªNPCçš„è®¯æ¯
             if(g_APMsg[i].nIndex == meindex)
             {
-              // Ê¹ÓÃ¹ıµÄÑ¶Ï¢Çå¿Õ
+              // ä½¿ç”¨è¿‡çš„è®¯æ¯æ¸…ç©º
               while(g_APMsg[i].Data != NULL)
               {
                 kill = g_APMsg[i].Data;
@@ -614,7 +614,7 @@ void NPC_StoneServiceManLoop(int meindex)
         print("Player leave NPC\n");
         return;
       }
-      // Î´³¬¹ıÊ±¼äÔò¼ÆÊı
+      // æœªè¶…è¿‡æ—¶é—´åˆ™è®¡æ•°
       CHAR_setWorkInt(meindex,NPC_WORK_LEAVE_COUNT,++nLeaveCount);
     }
 
@@ -625,14 +625,14 @@ void NPC_StoneServiceManLoop(int meindex)
 			print("\nI'm life!!!!!");
 		}
 		else dwLifeTime++;*/
-		 // NPC_WORK_STARTÎª1Ê±¼ÆÊ±ÎåÃë,³¬¹ıÎåÃëÎªtime out
+		 // NPC_WORK_STARTä¸º1æ—¶è®¡æ—¶äº”ç§’,è¶…è¿‡äº”ç§’ä¸ºtime out
     if(CHAR_getWorkInt(meindex,NPC_WORK_START) == 1)
     {
 			tm.tv_sec = 0;
 			tm.tv_usec = 0;
 			FD_ZERO(&readfds);
 			FD_SET(g_nServiceSocket,&readfds);
-			// ¼ì²éAPÓĞÃ»ÓĞËÍÑ¶Ï¢¹ıÀ´
+			// æ£€æŸ¥APæœ‰æ²¡æœ‰é€è®¯æ¯è¿‡æ¥
 			if(!select(g_nServiceSocket+1,&readfds,NULL,NULL,&tm))
 			{
 				nTimeout = CHAR_getWorkInt(meindex,NPC_WORK_TIMEOUT);
@@ -641,20 +641,20 @@ void NPC_StoneServiceManLoop(int meindex)
 			}
 			print("\nAP send message.");
 			
-			// ÓĞËÍÑ¶Ï¢¹ıÀ´½ÓÊÕÑ¶Ï¢
+			// æœ‰é€è®¯æ¯è¿‡æ¥æ¥æ”¶è®¯æ¯
 			switch(GetMsg(meindex))
 			{
-				//Õâ¸öÑ¶Ï¢²»ÊÇ¸øÕâ¸öNPC
+				//è¿™ä¸ªè®¯æ¯ä¸æ˜¯ç»™è¿™ä¸ªNPC
 			case  0: 
 				print("Msg not send to this npc!!\n");
 				nTimeout = CHAR_getWorkInt(meindex,NPC_WORK_TIMEOUT);
 				CHAR_setWorkInt(meindex,NPC_WORK_TIMEOUT,++nTimeout);
 				return;
-			case -1: break; //ÖØĞÂconnect to ap
-			case -2: print("Msg buf is full!!\n"); break; 	 // Ñ¶Ï¢bufferÓÃ¹âÁË
-			case -3: print("Msg data is wrong!!\n"); break;  // Ñ¶Ï¢ÄÚÈİ´íÎó
-			case -4: print("calloc fail!!\n"); break;        // ¼ÇÒäÌåÅäÖÃ´íÊ§°Ü
-			case -5: print("\nAP send get I'm life"); break; // APÊÕµ½Cli_CONNECTµÄ»ØÓ¦
+			case -1: break; //é‡æ–°connect to ap
+			case -2: print("Msg buf is full!!\n"); break; 	 // è®¯æ¯bufferç”¨å…‰äº†
+			case -3: print("Msg data is wrong!!\n"); break;  // è®¯æ¯å†…å®¹é”™è¯¯
+			case -4: print("calloc fail!!\n"); break;        // è®°å¿†ä½“é…ç½®é”™å¤±è´¥
+			case -5: print("\nAP send get I'm life"); break; // APæ”¶åˆ°Cli_CONNECTçš„å›åº”
 			}
 			CHAR_setWorkInt(meindex,NPC_WORK_START,0);
 		}
@@ -693,16 +693,16 @@ void NPC_StoneServiceManWindowTalked(int meindex,int talkerindex,int seqno,int s
     CHAR_setWorkInt(meindex,NPC_WORK_ISUSE,0);
     CHAR_setWorkInt(meindex,NPC_WORK_LEAVE_COUNT,0);
     CHAR_setWorkInt(meindex,NPC_WORK_SERIALNUM,-1);
-    //°ÑÖ®Ç°ÊÕµÄÓĞ¹ØÕâ¸öNPCµÄÑ¶Ï¢bufÇå¿Õ
+    //æŠŠä¹‹å‰æ”¶çš„æœ‰å…³è¿™ä¸ªNPCçš„è®¯æ¯bufæ¸…ç©º
     for(i=0;i<MAX_AP_MSG;i++)
     {
-      // ¼ì²éÑ¶Ï¢À¸ÓĞÃ»ÓĞ±»Ê¹ÓÃ
+      // æ£€æŸ¥è®¯æ¯æ æœ‰æ²¡æœ‰è¢«ä½¿ç”¨
       if(g_APMsg[i].bIsUse == 1)
       {
-        // ¼ì²éÊÇ²»ÊÇËÍ¸øÕâ¸öNPCµÄÑ¶Ï¢
+        // æ£€æŸ¥æ˜¯ä¸æ˜¯é€ç»™è¿™ä¸ªNPCçš„è®¯æ¯
         if(g_APMsg[i].nIndex == meindex)
         {
-          // Ê¹ÓÃ¹ıµÄÑ¶Ï¢Çå¿Õ
+          // ä½¿ç”¨è¿‡çš„è®¯æ¯æ¸…ç©º
           while(g_APMsg[i].Data != NULL)
           {
             Kill = g_APMsg[i].Data;
@@ -744,9 +744,9 @@ void NPC_StoneServiceManWindowTalked(int meindex,int talkerindex,int seqno,int s
   }
 }
 
-//ËÍÑ¶Ï¢µ½AP
+//é€è®¯æ¯åˆ°AP
 
-//nAid (Cli_????) nIndex (npc Index) nLen (ááĞø×ÊÁÏ±ÊÊı) Data1 (user cdkey)
+//nAid (Cli_????) nIndex (npc Index) nLen (å¾Œç»­èµ„æ–™ç¬”æ•°) Data1 (user cdkey)
 int SendToAP(int nAid,int nIndex,int nLen,void *Data1,void *Data2)
 {
   char		buf[128];
@@ -755,37 +755,37 @@ int SendToAP(int nAid,int nIndex,int nLen,void *Data1,void *Data2)
   fd_set	fdset;
   struct  timeval tmv;
   int     ret;
- // Syu ADD ĞŞÕıÊ¯Æ÷·şÎñÔ±ĞÇÏµÈ·ÈÏ
+ // Syu ADD ä¿®æ­£çŸ³å™¨æœåŠ¡å‘˜æ˜Ÿç³»ç¡®è®¤
   char *sags="";
-  if( strcmp ( getAccountservername() , "210.64.50.31") == 0 ) sags = "sags31"; //±±¶·
-  if( strcmp ( getAccountservername() , "210.64.50.41") == 0 ) sags = "sags41"; //ÌìÉñ
-  if( strcmp ( getAccountservername() , "210.64.50.51") == 0 ) sags = "sags51"; //Ì«Ñô
-  if( strcmp ( getAccountservername() , "210.64.50.61") == 0 ) sags = "sags61"; //×ÏÎ¢
-  if( strcmp ( getAccountservername() , "210.64.50.71") == 0 ) sags = "sags71"; //²ÔÁú
-  if( strcmp ( getAccountservername() , "210.64.50.81") == 0 ) sags = "sags81"; //ÒøºÓ
-  if( strcmp ( getAccountservername() , "210.64.50.91") == 0 ) sags = "sags91"; //ÌìÓ¥
-  if( strcmp ( getAccountservername() , "210.64.50.101") == 0 ) sags = "sags101"; //ÍøÂ·¼ÒÍ¥
-  if( strcmp ( getAccountservername() , "210.64.50.106") == 0 ) sags = "sags106"; //ĞÇÀÖÔ°
-  if( strcmp ( getAccountservername() , "210.64.50.111") == 0 ) sags = "sags111"; //Ê¥ÊŞ
-  if( strcmp ( getAccountservername() , "152.104.1.206") == 0 ) sags = "hkgs206"; //Ïã¸Û
-  if( strcmp ( getAccountservername() , "202.134.122.130") == 0 ) sags = "hkgs130"; //ĞÂ½ç
+  if( strcmp ( getAccountservername() , "210.64.50.31") == 0 ) sags = "sags31"; //åŒ—æ–—
+  if( strcmp ( getAccountservername() , "210.64.50.41") == 0 ) sags = "sags41"; //å¤©ç¥
+  if( strcmp ( getAccountservername() , "210.64.50.51") == 0 ) sags = "sags51"; //å¤ªé˜³
+  if( strcmp ( getAccountservername() , "210.64.50.61") == 0 ) sags = "sags61"; //ç´«å¾®
+  if( strcmp ( getAccountservername() , "210.64.50.71") == 0 ) sags = "sags71"; //è‹é¾™
+  if( strcmp ( getAccountservername() , "210.64.50.81") == 0 ) sags = "sags81"; //é“¶æ²³
+  if( strcmp ( getAccountservername() , "210.64.50.91") == 0 ) sags = "sags91"; //å¤©é¹°
+  if( strcmp ( getAccountservername() , "210.64.50.101") == 0 ) sags = "sags101"; //ç½‘è·¯å®¶åº­
+  if( strcmp ( getAccountservername() , "210.64.50.106") == 0 ) sags = "sags106"; //æ˜Ÿä¹å›­
+  if( strcmp ( getAccountservername() , "210.64.50.111") == 0 ) sags = "sags111"; //åœ£å…½
+  if( strcmp ( getAccountservername() , "152.104.1.206") == 0 ) sags = "hkgs206"; //é¦™æ¸¯
+  if( strcmp ( getAccountservername() , "202.134.122.130") == 0 ) sags = "hkgs130"; //æ–°ç•Œ
 
   
   bzero(buf,sizeof(buf));
   pData[0] = (char*)Data1;
   pData[1] = (char*)Data2;
   
-  // ÒÔÏÂÎª±àÂë
-  // È¡µÃÁ÷Ë®ºÅ
+  // ä»¥ä¸‹ä¸ºç¼–ç 
+  // å–å¾—æµæ°´å·
   nAid = GetSerialNum()*10+nAid;
-// Syu ADD ĞŞÕıÊ¯Æ÷·şÎñÔ±ĞÇÏµÈ·ÈÏ
+// Syu ADD ä¿®æ­£çŸ³å™¨æœåŠ¡å‘˜æ˜Ÿç³»ç¡®è®¤
   nLen=2;	
 
   sprintf(buf,"&;%d;%d;%d;",nAid,nIndex,nLen);
   CHAR_setWorkInt(nIndex,NPC_WORK_SERIALNUM,nAid/10);
   if(nLen > 0)
   {
- // Syu ADD ĞŞÕıÊ¯Æ÷·şÎñÔ±ĞÇÏµÈ·ÈÏ
+ // Syu ADD ä¿®æ­£çŸ³å™¨æœåŠ¡å‘˜æ˜Ÿç³»ç¡®è®¤
     for(j = 0 ; j < 1 ; j++)
 
     {
@@ -811,7 +811,7 @@ int SendToAP(int nAid,int nIndex,int nLen,void *Data1,void *Data2)
       	else buf[i] = *pData[j];
       	pData[j]++;
       }
-// Syu ADD ĞŞÕıÊ¯Æ÷·şÎñÔ±ĞÇÏµÈ·ÈÏ
+// Syu ADD ä¿®æ­£çŸ³å™¨æœåŠ¡å‘˜æ˜Ÿç³»ç¡®è®¤
 	  strcat(buf,";");
 	  strcat(buf,sags);
 
@@ -824,7 +824,7 @@ int SendToAP(int nAid,int nIndex,int nLen,void *Data1,void *Data2)
 
   memset(&buf[strlen(buf)],'&',sizeof(buf)-strlen(buf));
 
-	// ¼ì²éÍøÂ·¿É²»¿ÉÒÔ´«ËÍÑ¶Ï¢
+	// æ£€æŸ¥ç½‘è·¯å¯ä¸å¯ä»¥ä¼ é€è®¯æ¯
 	FD_ZERO(&fdset);
   FD_SET(g_nServiceSocket,&fdset);
   tmv.tv_sec = tmv.tv_usec = 0;	
@@ -834,11 +834,11 @@ int SendToAP(int nAid,int nIndex,int nLen,void *Data1,void *Data2)
 
   if(ret > 0)
 	{
-		// ËÍÑ¶Ï¢µ½AP
+		// é€è®¯æ¯åˆ°AP
 		print("\n**SendToAP**:[%s]",buf);  
 		if((bufnum = write(g_nServiceSocket,buf,sizeof(buf))) < 0)
 		{
-			//ÓëÖ÷»úÊ§È¥Á¬Ïß
+			//ä¸ä¸»æœºå¤±å»è¿çº¿
 			print("reconnect to server!\n");
 			close(g_nServiceSocket);
 			flag = 1;
@@ -859,21 +859,21 @@ int SendToAP(int nAid,int nIndex,int nLen,void *Data1,void *Data2)
   return 1;
 }
 
-//ÊÕµ½AP»ØÓ¦µÄÑ¶Ï¢
+//æ”¶åˆ°APå›åº”çš„è®¯æ¯
 int RecvFromAP(int *nAid,int nIndex,int *nLen,LPList *Data)
 {
   int  i;
   
   for(i=0;i<MAX_AP_MSG;i++)
   {
-    // ¼ì²éÑ¶Ï¢À¸ÓĞÃ»ÓĞ±»Ê¹ÓÃ
+    // æ£€æŸ¥è®¯æ¯æ æœ‰æ²¡æœ‰è¢«ä½¿ç”¨
     if(g_APMsg[i].bIsUse == 1)
     {
-      // ¼ì²éÊÇ²»ÊÇËÍ¸øÕâ¸öNPCµÄÑ¶Ï¢
+      // æ£€æŸ¥æ˜¯ä¸æ˜¯é€ç»™è¿™ä¸ªNPCçš„è®¯æ¯
       if(g_APMsg[i].nIndex == nIndex)
       {
         *nAid = g_APMsg[i].nAid;
-        //¼ì²éÁ÷Ë®ºÅ¶Ô²»¶Ô
+        //æ£€æŸ¥æµæ°´å·å¯¹ä¸å¯¹
         if((*nAid)/10 == CHAR_getWorkInt(nIndex,NPC_WORK_SERIALNUM))
         {
           *nAid = *nAid%10;
@@ -898,17 +898,17 @@ int GetMsg(int meindex)
   LPList tempList = NULL;
   
 	bzero(buf,sizeof(buf));
-  // ½ÓÊÕAP´«À´µÄÑ¶Ï¢
+  // æ¥æ”¶APä¼ æ¥çš„è®¯æ¯
   if(read(g_nServiceSocket,buf,sizeof(buf)) <= 0)
   {
     print("can't read message!\n");
-    //ÖØÁ¬AP
+    //é‡è¿AP
 	close(g_nServiceSocket);
     flag = 1;
     return -1;
   }
   print("**GetFromAP**:[%s]\n",buf);
-  // È¡µÃÒ»¸öÃ»ÓÃ¹ıµÄÑ¶Ï¢À¸À´ÓÃ
+  // å–å¾—ä¸€ä¸ªæ²¡ç”¨è¿‡çš„è®¯æ¯æ æ¥ç”¨
   for(j=0;j<MAX_AP_MSG;j++)
   {
     if(g_APMsg[j].bIsUse == 0) 
@@ -923,11 +923,11 @@ int GetMsg(int meindex)
       else return -4;
     }
   }
-  // ³¬¹ıMAX_AP_MSG±íÊ¾Ñ¶Ï¢À¸¶¼ÂúÁË
+  // è¶…è¿‡MAX_AP_MSGè¡¨ç¤ºè®¯æ¯æ éƒ½æ»¡äº†
   if(j == MAX_AP_MSG) return -2;
 	Msg->bIsUse = 1;
   
-  // ÒÔÏÂÎª½âÂë
+  // ä»¥ä¸‹ä¸ºè§£ç 
   if(buf[i] == '&')
   {
     if(buf[++i] == ';')
@@ -944,7 +944,7 @@ int GetMsg(int meindex)
       Msg->nAid   = atoi(temp[0]);
       Msg->nIndex = atoi(temp[1]);
       Msg->nLen   = atoi(temp[2]);
-			// Èç¹ûÊÕµ½µÄÊÇAP_CONNECT²»ÀíÕâ¸öÑ¶Ï¢
+			// å¦‚æœæ”¶åˆ°çš„æ˜¯AP_CONNECTä¸ç†è¿™ä¸ªè®¯æ¯
 			if(Msg->nAid%10 == AP_CONNECT)
 			{
 				free(Msg->Data);
@@ -990,7 +990,7 @@ int GetMsg(int meindex)
           }
         }
         tempList->Next = NULL;
-        // Èç¹ûÕâ¸öÑ¶Ï¢ÊÇ¸øÕâ¸öNPC return 1
+        // å¦‚æœè¿™ä¸ªè®¯æ¯æ˜¯ç»™è¿™ä¸ªNPC return 1
         if(Msg->nIndex == meindex) return 1;
         else 											 return 0;
       }
@@ -1027,7 +1027,7 @@ int ConnectToAP(void)
   return 1;
 }
 
-//È¡µÃÁ÷Ë®ºÅ
+//å–å¾—æµæ°´å·
 int GetSerialNum(void)
 {
   static int i = 0;

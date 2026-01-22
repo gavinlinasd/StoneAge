@@ -123,7 +123,7 @@ int TCPconnect0(char *bindAddress,int bindPort,int block)
 	}
 
     if (connect(sd, (struct sockaddr *)&saddr, sizeof(saddr)) < 0) {
-        	error3("无法连接地址 %s 端口 %d\n",
+        	error3("鏃犳硶杩炴帴鍦板潃 %s 绔彛 %d\n",
 	        bindAddress, bindPort);
 	        return -1;
 	}
