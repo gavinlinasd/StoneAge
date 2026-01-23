@@ -17,7 +17,7 @@
 #include "char_base.h"
 #include "item_event.h"
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 #include "profession_skill.h"
 #include "item.h"
 #include "skill.h"
@@ -66,10 +66,10 @@ int MagicTbl[] = { -1, CHAR_DEFMAGICSTATUS, CHAR_MAGICSUPERWALL };
 #endif
 
 char *aszStatus[] = { "��", "馮", "鎊", "蹺", "坒", "郳", "觴", "剞", "曄", "梤", "蘇" 
-#ifdef _PET_SKILL_SARS			// WON ADD 職業延長
+#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
 					  ,"伢"
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 					  ,"婠","莊","蹕","惇","咭","璋","嘍","渀","泔","尥","邞","萇","蚳","鳶","梨","濘","朒","雲","僻"
 #endif
 #ifdef _PROFESSION_ADDSKILL
@@ -78,10 +78,10 @@ char *aszStatus[] = { "��", "馮", "鎊", "蹺", "坒", "郳", "觴", "剞",
 };
 
 char *aszStatusFull[] = { "�姪�", "馮", "鎊敘", "阯蹺", "坒趙", "嬴郳", "髦觴", "剞��", "曄馮", "藹梤", "麥蘇" 
-#ifdef _PET_SKILL_SARS			// WON ADD 職業延長
+#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
 					  ,"馮伢"
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 					  ,"婠悈","莊��","毞蹕","梨惇","疻咭","梨璋","岓悛嘍","珨渀獗悛","泔畢","鳶蜇极",
 					  "梨蜇极","濘蜇极","蚳蛁桵須","鳶蕨","梨蕨","濘蕨","鳶蜇","梨蜇","濘蜇"
 #endif
@@ -92,10 +92,10 @@ int StatusTbl[] = { -1, CHAR_WORKPOISON,	CHAR_WORKPARALYSIS,
 						CHAR_WORKDRUNK,		CHAR_WORKCONFUSION,
 						CHAR_WORKWEAKEN,	CHAR_WORKDEEPPOISON,
 						CHAR_WORKBARRIER,   CHAR_WORKNOCAST
-#ifdef _PET_SKILL_SARS			// WON ADD 職業延長
+#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
 						,CHAR_WORKSARS
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 						,CHAR_WORKDIZZY,		CHAR_WORKENTWINE
 						,CHAR_WORKDRAGNET,		CHAR_WORKICECRACK
 						,CHAR_WORKOBLIVION,		CHAR_WORKICEARROW
@@ -128,10 +128,10 @@ int RegTbl[] = { -1, CHAR_WORKMODPOISON,	CHAR_WORKMODPARALYSIS,
 					 CHAR_WORKMODDRUNK,		CHAR_WORKMODCONFUSION,
 					 CHAR_WORKMODWEAKEN,	CHAR_WORKMODDEEPPOISON,
 					 CHAR_WORKMODBARRIER,   CHAR_WORKMODNOCAST  
-#ifdef _PET_SKILL_SARS			// WON ADD 職業延長
+#ifdef _PET_SKILL_SARS			// WON ADD 馮伢雞晊
 					 ,CHAR_WORKMODSARS
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 					 ,CHAR_WORKMODDIZZY,		CHAR_WORKMODENTWINE
 					 ,CHAR_WORKMODDRAGNET,		CHAR_WORKMODICECRACK
 					 ,CHAR_WORKMODOBLIVION,		CHAR_WORKMODICEARROW
@@ -146,7 +146,7 @@ int RegTbl[] = { -1, CHAR_WORKMODPOISON,	CHAR_WORKMODPARALYSIS,
 					};
 
 char *aszMagicDef[] = { "都", "柲", "毀", "拸" 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 						,"疪"
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -157,7 +157,7 @@ char *aszMagicDef[] = { "都", "柲", "毀", "拸"
 
 
 char *aszMagicDefFull[] = { "籵都", "柲彶", "毀扞", "拸虴趙" 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 						,"疪筘"
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -167,7 +167,7 @@ char *aszMagicDefFull[] = { "籵都", "柲彶", "毀扞", "拸虴趙"
 
 
 int MagicDefTbl[] = { -1, CHAR_WORKDAMAGEABSROB, CHAR_WORKDAMAGEREFLEC, CHAR_WORKDAMAGEVANISH 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 						,CHAR_WORKTRAP
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -492,7 +492,7 @@ int BATTLE_ItemCrush( int charaindex, int ItemEquip, int Damages, int flg)
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ), 
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemindex,
 #else
        		ITEM_getInt( itemindex, ITEM_ID ),  
@@ -598,7 +598,7 @@ int BATTLE_ItemCrush( int charaindex )
 		LogItem(
 			CHAR_getChar( charaindex, CHAR_NAME ),
 			CHAR_getChar( charaindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 			itemindex,
 #else
    			ITEM_getInt( itemindex, ITEM_ID ),
@@ -883,7 +883,7 @@ static BOOL BATTLE_DuckCheck(
 #endif
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	per = BATTLE_check_profession_duck( defindex, per );
 #endif
 	
@@ -895,7 +895,7 @@ static BOOL BATTLE_DuckCheck(
 
 	if( RAND( 1, 10000 ) <= per ){
 		flg = TRUE;
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 		// 隙旌撮夔汔撰
 		if( (CHAR_getInt( defindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER) ){
 			PROFESSION_SKILL_LVEVEL_UP( defindex, "PROFESSION_AVOID" );
@@ -1345,7 +1345,7 @@ static int BATTLE_CriticalCheckPlayer( int attackindex, int defindex )
 	if( per < 0 ) per = 1;
 	if( per > 10000 ) per = 10000;
 #ifdef _PETSKILL_LER
-	// 錯誤不能被打開
+	// 濘嫌祥夔掩湖滄
 	if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) per = 0;
 #endif
@@ -1552,7 +1552,7 @@ static int BATTLE_GuardianCheck( int attackindex, int defindex )
 	|| CHAR_getWorkInt( GuardianIndex, CHAR_WORKSTONE ) > 0
 	|| CHAR_getWorkInt( GuardianIndex, CHAR_WORKBARRIER ) > 0
 	|| GuardianIndex == attackindex
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	|| CHAR_getWorkInt( GuardianIndex, CHAR_WORKDIZZY ) > 0 	// 婠悈				
 	|| CHAR_getWorkInt( GuardianIndex, CHAR_WORKDRAGNET ) > 0 	// 毞蹕華厙
 	|| CHAR_getWorkInt( GuardianIndex, CHAR_WORKINSTIGATE ) > 0 // 泔畢	
@@ -1727,7 +1727,7 @@ static int BATTLE_AttackSeq( int attackindex, int defindex, int *pDamage, int *p
 		int myside = CHAR_getWorkInt( defindex, CHAR_WORKBATTLESIDE);//attackindex
 		if( myside == CHAR_getWorkInt( attackindex, CHAR_WORKBATTLESIDE)){
 			if( CHAR_getWorkInt( attackindex, CHAR_WORKCONFUSION) > 0 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 					|| CHAR_getWorkInt( attackindex, CHAR_WORKINSTIGATE) > 0	// 泔畢	
 #endif
 #ifdef _PROFESSION_ADDSKILL
@@ -1800,7 +1800,7 @@ BOOL BATTLE_CheckMySkillDuck( int charaindex )
 }
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 int BATTLE_check_profession_duck( int charaindex, int per )
 {
 
@@ -1828,7 +1828,7 @@ int BATTLE_GetDamageReact( int charaindex )
 		return BATTLE_MD_REFLEC;
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKTRAP ) > 0 ){	//疪筘	
 		return BATTLE_MD_TRAP;
 	}
@@ -1888,7 +1888,7 @@ int BATTLE_DamageSub( int attackindex, int defindex, int *pDamage, int *pPetDama
 	}else{
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP ){
 		if( BATTLE_IsThrowWepon( CHAR_getItemIndex( attackindex, CHAR_ARM ) ) == FALSE )
 			*pRefrect = BATTLE_MD_TRAP;
@@ -1955,7 +1955,7 @@ int BATTLE_DamageSub( int attackindex, int defindex, int *pDamage, int *pPetDama
 			defpet = attackpet;
 		}
 	}else
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( *pRefrect == BATTLE_MD_TRAP ){		//疪筘	
 #ifdef _PETSKILL_BATTLE_MODEL
 		if(CHAR_getWorkInt(defindex,CHAR_NPCWORKINT1) == BATTLE_COM_S_BATTLE_MODEL){
@@ -2152,7 +2152,7 @@ int BATTLE_DamageSub( int attackindex, int defindex, int *pDamage, int *pPetDama
 	if( BattleArray[battleindex].type == BATTLE_TYPE_P_vs_P ){
 	}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 	if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) IsUltimate = 0;
 #endif
@@ -2208,7 +2208,7 @@ int BATTLE_DamageSub_FIREKILL( int attackindex, int defindex, int *pDamage, int 
 	}else{
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP ){
 		if( BATTLE_IsThrowWepon( CHAR_getItemIndex( attackindex, CHAR_ARM ) ) == FALSE )
 			*pRefrect = BATTLE_MD_TRAP;
@@ -2265,7 +2265,7 @@ int BATTLE_DamageSub_FIREKILL( int attackindex, int defindex, int *pDamage, int 
 		defpet = attackpet;
 
 	}else
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( *pRefrect == BATTLE_MD_TRAP ){		//疪筘	
 		int value=0;
 		value = CHAR_getWorkInt( defindex, CHAR_WORKMODTRAP );
@@ -2448,7 +2448,7 @@ int BATTLE_DamageSub_FIREKILL( int attackindex, int defindex, int *pDamage, int 
 	}
 
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 	if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) IsUltimate = 0;
 #endif
@@ -2498,7 +2498,7 @@ int BATTLE_DamageSub2( int attackindex, int defindex, int *pDamage, int *pPetDam
 		}
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP ){
 		if( BATTLE_IsThrowWepon( CHAR_getItemIndex( attackindex, CHAR_ARM ) ) == FALSE )
 			*pRefrect = BATTLE_MD_TRAP;
@@ -2540,7 +2540,7 @@ int BATTLE_DamageSub2( int attackindex, int defindex, int *pDamage, int *pPetDam
 		defpet = attackpet;
 
 	}else
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( *pRefrect == BATTLE_MD_TRAP ){	//疪筘	
 
 		hp = CHAR_getInt( attackindex, CHAR_HP );
@@ -2621,7 +2621,7 @@ int BATTLE_DamageSub2( int attackindex, int defindex, int *pDamage, int *pPetDam
 	if( BattleArray[battleindex].type == BATTLE_TYPE_P_vs_P ){
 	}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 	if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) IsUltimate = 0;
 #endif
@@ -2730,7 +2730,7 @@ int BATTLE_Attack( int battleindex, int attackNo, int defNo )
 
 	ultimate = BATTLE_DamageSub( attackindex, defindex, &damage, &petdamage, &react );
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP ){
 		defindex = attackindex;
 		statusDefNo = attackNo;
@@ -2870,7 +2870,7 @@ int BATTLE_Attack( int battleindex, int attackNo, int defNo )
 		}
 
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) ultimate = 0;
 #endif
@@ -2923,7 +2923,7 @@ int BATTLE_Attack( int battleindex, int attackNo, int defNo )
 					CHAR_getWorkInt( defindex, CHAR_WORKDRUNK ) / 2 );
 			}
 
-#ifdef _PET_SKILL_SARS				// WON ADD 職業延長
+#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
 			if( gBattleStausChange == BATTLE_ST_SARS ){
 				CHAR_setWorkInt( defindex, CHAR_WORKMODSARS, 1);
 			}
@@ -2974,7 +2974,7 @@ int BATTLE_Attack( int battleindex, int attackNo, int defNo )
 		}
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能	
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�	
 	if( damage > 0 && (CHAR_getInt(attackindex, CHAR_WHICHTYPE)== CHAR_TYPEPLAYER) ){
 		int i;
 		// 潰脤鳶﹜梨﹜濘蜇极
@@ -3111,7 +3111,7 @@ int BATTLE_Attack_FIREKILL( int battleindex, int attackNo, int defNo )
 
 	ultimate = BATTLE_DamageSub_FIREKILL( attackindex, defindex, &damage, &petdamage, &react );
 
-//#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+//#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 //	if( react == BATTLE_MD_TRAP ){
 //		defindex = attackindex;
 //		statusDefNo = attackNo;
@@ -3241,7 +3241,7 @@ int BATTLE_Attack_FIREKILL( int battleindex, int attackNo, int defNo )
 			}
 		}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) ultimate = 0;
 #endif
@@ -3290,7 +3290,7 @@ int BATTLE_Attack_FIREKILL( int battleindex, int attackNo, int defNo )
 					CHAR_getWorkInt( defindex, CHAR_WORKDRUNK ) / 2 );
 			}
 
-#ifdef _PET_SKILL_SARS				// WON ADD 職業延長
+#ifdef _PET_SKILL_SARS				// WON ADD 馮伢雞晊
 			if( gBattleStausChange == BATTLE_ST_SARS ){
 				CHAR_setWorkInt( defindex, CHAR_WORKMODSARS, 1);
 			}
@@ -3341,7 +3341,7 @@ int BATTLE_Attack_FIREKILL( int battleindex, int attackNo, int defNo )
 		}
 	}
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能	
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�	
 	if( damage > 0 && (CHAR_getInt(attackindex, CHAR_WHICHTYPE)== CHAR_TYPEPLAYER) ){
 		int i;
 		// 潰脤鳶﹜梨﹜濘蜇极
@@ -3658,7 +3658,7 @@ BOOL BATTLE_Counter( int battleindex, int attackNo, int defNo )
 	ultimate = BATTLE_DamageSub( attackindex, defindex, &damage, &petdamage, &react );
 	if( react == BATTLE_MD_REFLEC )		defindex = attackindex;
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP )	defindex = attackindex;
 #endif
 
@@ -3748,7 +3748,7 @@ BOOL BATTLE_Counter( int battleindex, int attackNo, int defNo )
 			}
 		}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) ultimate = 0;
 #endif
@@ -3991,7 +3991,7 @@ BOOL BATTLE_CaptureItemDelAll( int attackindex, int defindex )
 				LogItem(
 					CHAR_getChar( attackindex, CHAR_NAME ),
 					CHAR_getChar( attackindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 						itemindex,
 #else
 					ITEM_getInt( itemindex, ITEM_ID ),
@@ -4099,7 +4099,7 @@ BOOL BATTLE_Capture(
 							LogItem(
 								CHAR_getChar( attackindex, CHAR_NAME ),
 								CHAR_getChar( attackindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 								itemindex,
 #else
 					   			ITEM_getInt( itemindex, ITEM_ID ),
@@ -4532,7 +4532,7 @@ int BATTLE_S_GBreak( int battleindex, int attackNo, int defNo )
 		react = 0;
 		ultimate = BATTLE_DamageSub( attackindex, defindex, &damage, &petdamage, &react );
 		if( react == BATTLE_MD_REFLEC )defindex = attackindex;
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 		if( react == BATTLE_MD_TRAP )	defindex = attackindex;
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -4641,7 +4641,7 @@ int BATTLE_S_GBreak( int battleindex, int attackNo, int defNo )
 			}
 		}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) ultimate = 0;
 #endif
@@ -4862,7 +4862,7 @@ int BATTLE_S_GBreak2( int battleindex, int attackNo, int defNo )
 		ultimate = BATTLE_DamageSub( attackindex, defindex, &damage, &petdamage, &react );
 		if( react == BATTLE_MD_REFLEC )defindex = attackindex;
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 		if( react == BATTLE_MD_TRAP )	defindex = attackindex;
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -4963,7 +4963,7 @@ int BATTLE_S_GBreak2( int battleindex, int attackNo, int defNo )
 			}
 		}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) ultimate = 0;
 #endif
@@ -5254,7 +5254,7 @@ int BATTLE_Combo( int battleindex, int *pAttackList, int defNo )
 
 		react = BATTLE_GetDamageReact( defindex );
 		if( ( react == BATTLE_MD_REFLEC
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 			 || react == BATTLE_MD_TRAP
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -5288,7 +5288,7 @@ int BATTLE_Combo( int battleindex, int *pAttackList, int defNo )
 		if( react == BATTLE_MD_REFLEC ){
 			defindex = attackindex;
 		}
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 		if( react == BATTLE_MD_TRAP )	defindex = attackindex;
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -5360,7 +5360,7 @@ int BATTLE_Combo( int battleindex, int *pAttackList, int defNo )
 				}
 			}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) ultimate = 0;
 #endif
@@ -5863,7 +5863,7 @@ void BATTLE_Steal( int battleindex, int attackNo, int defNo )
 					LogItem(
 						CHAR_getChar( defindex, CHAR_NAME ), 
 						CHAR_getChar( defindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 						itemindex,
 #else
 		       			ITEM_getInt( itemindex, ITEM_ID ),
@@ -5936,7 +5936,7 @@ int BATTLE_S_FallGround( int battleindex, int attackNo, int defNo, int skill_typ
 	ultimate = BATTLE_DamageSub( attackindex, defindex, &damage, &petdamage, &react );
 	if( react == BATTLE_MD_REFLEC )		defindex = attackindex;
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP )	defindex = attackindex;
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -6072,7 +6072,7 @@ int BATTLE_S_FallGround( int battleindex, int attackNo, int defNo, int skill_typ
 			}
 		}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) ultimate = 0;
 #endif
@@ -6141,7 +6141,7 @@ int BATTLE_S_Explode( int battleindex, int attackNo, int defNo, int skill_type)
 	ultimate = BATTLE_DamageSub( attackindex, defindex, &damage, &petdamage, &react );
 	if( react == BATTLE_MD_REFLEC )		defindex = attackindex;
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP )	defindex = attackindex;
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -6239,7 +6239,7 @@ int BATTLE_S_Explode( int battleindex, int attackNo, int defNo, int skill_type)
 			}
 		}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) ultimate = 0;
 #endif
@@ -6533,7 +6533,7 @@ int BATTLE_DefDieType( int defindex, int iRet, int *ultimate, int *flg, char *sz
 		}
 
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) *ultimate = 0;
 #endif
@@ -6684,7 +6684,7 @@ void BATTLE_S_ToothCrushe( int battleindex, int attackindex, int defindex, int d
 			LogItem(
 				CHAR_getChar( defindex, CHAR_NAME ), 
 				CHAR_getChar( defindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
+#ifdef _add_item_log_name  // WON ADD 婓item腔log笢崝樓item靡備
 				itemindex,
 #else
        			ITEM_getInt( itemindex, ITEM_ID ),  
@@ -6877,7 +6877,7 @@ int BATTLE_S_AttackDamage( int battleindex, int attackNo, int defNo, int skill_t
 
 	if( react == BATTLE_MD_REFLEC )		defindex = attackindex;
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP )	defindex = attackindex;
 #endif
 
@@ -7664,7 +7664,7 @@ int BATTLE_getReactFlg( int index, int react)
 		flg |= BCF_SUPERWALL;
 	}
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 	if( react == BATTLE_MD_TRAP )	flg |= BCF_TRAP;
 #endif
 #ifdef _PETSKILL_ACUPUNCTURE 
@@ -7752,7 +7752,7 @@ int PET_PetskillPropertyEvent( int Myindex, int defindex, int *damage, int *T_Po
 
 
 
-#ifdef _PROFESSION_SKILL			// WON ADD 職業技能
+#ifdef _PROFESSION_SKILL			// WON ADD �冼攃曼絳敵�
 
 // 眻諉馴僻滲宒
 int battle_profession_attack_fun(int battleindex, int attackNo, int defNo, int charaindex)
@@ -9611,7 +9611,7 @@ int BATTLE_PROFESSION_ATK_PET_DamageSub( int attackindex, int defindex, int *pDa
 	if( BattleArray[battleindex].type == BATTLE_TYPE_P_vs_P ){
 	}
 #ifdef _PETSKILL_LER
-// 錯誤不能被打開
+// 濘嫌祥夔掩湖滄
 	if(CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 		 CHAR_getInt(defindex,CHAR_BASEBASEIMAGENUMBER) == 101814) IsUltimate = 0;
 #endif
@@ -10026,7 +10026,7 @@ void BATTLE_BattleModel_ATTACK(
 			if(RAND(1,100) < 50) iUltimate = 1;
 		}
 #ifdef _PETSKILL_LER
-		// 錯誤不能被打開
+		// 濘嫌祥夔掩湖滄
 		if(CHAR_getInt(iDefindex,CHAR_BASEBASEIMAGENUMBER) == 101813 ||
 			CHAR_getInt(iDefindex,CHAR_BASEBASEIMAGENUMBER) == 101814) iUltimate = 0;
 #endif
