@@ -8,7 +8,7 @@
 #include "common.h"
 #include "net.h"
 
-#ifdef _SEND_EFFECT	   	        // WON ADD ACËÍÏÂÑ©¡¢ÏÂÓêµÈÌØĞ§
+#ifdef _SEND_EFFECT	   	        // WON ADD ACé€ä¸‹é›ªã€ä¸‹é›¨ç­‰ç‰¹æ•ˆ
 #include "chatmagic.h"
 #endif
 
@@ -16,19 +16,19 @@
 
 /*
 90 :   <LI>  <a name="ACServerLoginC"><font color=red>clienttoserver ACServerLogin(string servername,string serverpas);<br></font></a>
-91 :      ±Ø¡õØ©ÈÓ¡õÌï¡õ»¥Ê§ÊĞËü¼şĞşÈÓ¡õÌï¡õ±å·òºëÄÌ¼şÔÊÔÂÎçÎå±åÒøµ¤£Û
-92 :      ÌÎÁ¸Ã«½¢ÔÈĞ×Ø¤Îç£ı³ğ¼°·òºëÄÌ¼şÃ«ØÆØ¦ÖĞÎçÔÊÍÍ»¯¼°ÈÓ¡õÉêµ©Ã«ØÆØ¦ÖĞ£Û
+91 :      å¿…â–¡ä¸æ‰”â–¡ç”°â–¡äº’å¤±å¸‚å®ƒä»¶ç„æ‰”â–¡ç”°â–¡åå¤«å¼˜å¥¶ä»¶å…æœˆåˆäº”åé“¶ä¸¹ï¼»
+92 :      æ¶›ç²®æ¯›èˆ°åŒ€å‡¶ä¸åˆï½ä»‡åŠå¤«å¼˜å¥¶ä»¶æ¯›ä»„å…ä¸­åˆå…å±¯åŒ–åŠæ‰”â–¡ç”³æ—¦æ¯›ä»„å…ä¸­ï¼»
 93 :      <br><br>
 94 :      <dl>
 95 :        <dt>string servername
-96 :        <dd>ÈÓ¡õÌï¡õ  £Ûacserv.cf±åÉ¬ÀÃ½ñÄ¾»¯ÖĞÔÂ£Û
+96 :        <dd>æ‰”â–¡ç”°â–¡  ï¼»acserv.cfåæ¶©çƒ‚ä»Šæœ¨åŒ–ä¸­æœˆï¼»
 97 :        <dt>string serverpas
-98 :        <dd>ÈÓ¡õÌï¡õÓÉµ©·¥¡õÓñ£Ûacserv.cf±åÉ¬ÀÃ½ñÄ¾»¯ÖĞÔÂ£Û
+98 :        <dd>æ‰”â–¡ç”°â–¡ç”±æ—¦ä¼â–¡ç‰ï¼»acserv.cfåæ¶©çƒ‚ä»Šæœ¨åŒ–ä¸­æœˆï¼»
 99 :      </dl>
 100 :   
 */
 
-#ifdef _ALLDOMAN // (²»¿É¿ª) Syu ADD ÅÅĞĞ°ñNPC
+#ifdef _ALLDOMAN // (ä¸å¯å¼€) Syu ADD æ’è¡Œæ¦œNPC
 void saacproto_UpdataStele_send( int fd , char *cdkey , char *name , char *title , int level , int trns , int time , int floor) {
 	saacproto_CreateHeader( saacproto.work , "UpdataStele" );
 	saacproto_strcatsafe( saacproto.work , saacproto_mkstr_string( cdkey ) ,saacproto.workbufsize );
@@ -52,9 +52,9 @@ void saacproto_ACServerLogin_send( int fd,char* servername,char* serverpas )
 }
 /*
 114 : <LI><a name="ACServerLogoutC"><font color=red>clienttoserver ACServerLogout(void);<br></font></a>
-115 :      ÈÓ¡õÌï¡õ»¥Ê§ÊĞËü¼şĞşÈÓ¡õÌï¡õ¾®ÈÕ·òºëÊ§ËüĞşÔÊÔÂÎçÎå±åÒøµ¤£Û
-116 :      ÌÎÁ¸·´ÈÓ¡õÌï±å·½ÔÈ»¯  Åì±åå©ÈÕÄ¾ÔÂ£ÛØÆĞ×»¥ÔÈ»¯³ğÄ¾±å¸²ÔÊÔÂÊ§ÊĞËü¼şĞşÈÓ¡õÌï
-117 :      ¼°ß¯²Ï·´ÎìÉúÛÍÆËÒà¼şÃ«å©ÔÂÒÇÆ¥Ø¤ÔÂ£Û
+115 :      æ‰”â–¡ç”°â–¡äº’å¤±å¸‚å®ƒä»¶ç„æ‰”â–¡ç”°â–¡äº•æ—¥å¤«å¼˜å¤±å®ƒç„å…æœˆåˆäº”åé“¶ä¸¹ï¼»
+116 :      æ¶›ç²®åæ‰”â–¡ç”°åæ–¹åŒ€åŒ–  æ¾åæ¿ æ—¥æœ¨æœˆï¼»ä»„å‡¶äº’åŒ€åŒ–ä»‡æœ¨åè¦†å…æœˆå¤±å¸‚å®ƒä»¶ç„æ‰”â–¡ç”°
+117 :      åŠå¿’èš•åæˆŠç”Ÿå¼æ‰‘äº¦ä»¶æ¯›æ¿ æœˆä»ªåŒ¹ä¸æœˆï¼»
 118 :      <br>
 119 :      <br>
 120 :      <br>
@@ -256,17 +256,17 @@ void saacproto_DBGetEntryByCount_send( int fd,char* table,int count_start,int nu
 }
 /*
 608 :  <LI><a name="Broadcast"><font color=red>clienttoserver Broadcast( string id, string charname, string message , int flag );</font></a><BR>
-609 : 	 ±Ø¡õØ©ÈÓ¡õÌï¡õ±å¸²ØÆ»¯³ğ¼°ÎìÑ¨¼şÓñÃ«ËªññÔÊÔÂÎç£ı
-610 : 	 ÔÊÍÍ»¯¼°±Ø¡õØ©ÈÓ¡õÌï¡õ±åĞ×ÖĞØÆ»¯  Ôª¶ªÓÀ±¾¡õ³â»¥Ëªññ½ñÄ¾ÔÂ£Û
-611 : 	 id , charname ·´·½ÈÊ¹´¾®´õÄ¾ÔÂ¼°Æ¥£ıòÛ  ¼°Â¦ĞÑÃ«ÊÖ¹´·½µ¤±åØÆĞ×£Û
-612 : 	 ÖĞÇĞÖĞÇĞ  Ù¯  ÓÉ¡õµ©¼°»ï¡õÃñ¼şÃ«Ì¤¾®Ø¦ÈÊ»¯ÊÖÖĞÖĞ·½µ¤±å£Û
+609 : 	 å¿…â–¡ä¸æ‰”â–¡ç”°â–¡åè¦†ä»„åŒ–ä»‡åŠæˆŠç©´ä»¶ç‰æ¯›éœœè€¨å…æœˆåˆï½
+610 : 	 å…å±¯åŒ–åŠå¿…â–¡ä¸æ‰”â–¡ç”°â–¡åå‡¶ä¸­ä»„åŒ–  å…ƒä¸¢æ°¸æœ¬â–¡æ–¥äº’éœœè€¨ä»Šæœ¨æœˆï¼»
+611 : 	 id , charname åæ–¹ä»å‹¾äº•æ­¹æœ¨æœˆåŠåŒ¹ï½èœŠ  åŠå¨„é†’æ¯›æ‰‹å‹¾æ–¹ä¸¹åä»„å‡¶ï¼»
+612 : 	 ä¸­åˆ‡ä¸­åˆ‡  ä¾¬  ç”±â–¡æ—¦åŠä¼™â–¡æ°‘ä»¶æ¯›è¸äº•å…ä»åŒ–æ‰‹ä¸­ä¸­æ–¹ä¸¹åï¼»
 613 : 	 <dl>
 614 : 	   <dt>string id
 615 : 	   <dd>user ID
 616 : 	   <dt>string charname
-617 : 	   <dd>Æ½ÅÒ·Â  (¾Şµ©¸¥¡õÃóØ¦ØÆ)
+617 : 	   <dd>å¹³ä¹“ä»¿  (å·¨æ—¦å¼—â–¡çš¿å…ä»„)
 618 : 	   <dt>string message
-619 : 	   <dd>  Ëª½ñÄ¾ÔÂ¶ªÓÀ±¾¡õ³â£Û±Ø¡õØ©ÈÓ¡õÌï¡õ»¥Ñ±Îå±åÒøµ¤£Û
+619 : 	   <dd>  éœœä»Šæœ¨æœˆä¸¢æ°¸æœ¬â–¡æ–¥ï¼»å¿…â–¡ä¸æ‰”â–¡ç”°â–¡äº’é©¯äº”åé“¶ä¸¹ï¼»
 620 : 	 </dl>
 */
 
@@ -281,7 +281,7 @@ void saacproto_Broadcast_send( int fd,char* id,char* charname,char* message,int 
 }
 /*
 634 :  <LI><a name="Message"><font color=red>clienttoserver Message( string id_from, string charname_from, string id_to, string charname_to, string message , int option );</font></a><BR>
-635 : 	 ÄÌ¼şµ©Õı¼şĞş¶ªÓÀ±¾¡õ³âÃ«ËªññÔÊÔÂ
+635 : 	 å¥¶ä»¶æ—¦æ­£ä»¶ç„ä¸¢æ°¸æœ¬â–¡æ–¥æ¯›éœœè€¨å…æœˆ
 636 : 	 <dl>
 637 : 	   <dt>string id_from
 638 : 	   <dd>from ID
@@ -292,11 +292,11 @@ void saacproto_Broadcast_send( int fd,char* id,char* charname,char* message,int 
 643 : 	   <dt>string charname_to
 644 : 	   <dd>to character name
 645 : 	   <dt>string message
-646 : 	   <dd>¶ªÓÀ±¾¡õ³â    
+646 : 	   <dd>ä¸¢æ°¸æœ¬â–¡æ–¥    
 647 : 	   <dt>int option
-648 : 	   <dd>×óÃóÆËÒà¼ş£ÛÃñÅÒÓÀĞş¼°çÆÎç¾®ÖĞÇ·ÖĞÇ·  Ä¾Ä¾ÔÂ£ÛÆá  ¼°¿ş½¢åÃ
-649 : 		   ³ğÄ¾Ã«Éıµ¤Òøµ¤¾®·´±Ø¡õØ©ÈÓ¡õÌï¡õ¼°  ÅìÆ¥£ıÊ§ÊĞËü¼şĞşÈÓ¡õÌï¡õ·´
-650 : 		   Óòå©³ğ¼°    ±åÕıÓÀÃñØÆØ¦ÖĞ
+648 : 	   <dd>å·¦çš¿æ‰‘äº¦ä»¶ï¼»æ°‘ä¹“æ°¸ç„åŠç¼™åˆäº•ä¸­æ¬ ä¸­æ¬   æœ¨æœ¨æœˆï¼»æ¼†  åŠå‚€èˆ°è¿•
+649 : 		   ä»‡æœ¨æ¯›å‡ä¸¹é“¶ä¸¹äº•åå¿…â–¡ä¸æ‰”â–¡ç”°â–¡åŠ  æ¾åŒ¹ï½å¤±å¸‚å®ƒä»¶ç„æ‰”â–¡ç”°â–¡å
+650 : 		   åŸŸæ¿ ä»‡åŠ    åæ­£æ°¸æ°‘ä»„å…ä¸­
 651 : 	 </dL>
 */
 
@@ -359,7 +359,7 @@ void saacproto_ACAddFM_send(int fd, char *fmname, char *fmleadername,
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charfdid), saacproto.workbufsize);
 	saacproto_Send(fd, saacproto.work);
 }
-#ifdef _PERSONAL_FAME	// Arminius: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME	// Arminius: å®¶æ—ä¸ªäººå£°æœ›
 void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
         char *charid, int charlv, int index, int fame, int charfdid)
 #else
@@ -374,7 +374,7 @@ void saacproto_ACJoinFM_send(int fd, char *fmname, int fmindex, char *charname,
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_string(charid), saacproto.workbufsize);
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charlv), saacproto.workbufsize);
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(index), saacproto.workbufsize);
-// #ifdef _PERSONAL_FAME	// Arminius: ¼Ò×å¸öÈËÉùÍû
+// #ifdef _PERSONAL_FAME	// Arminius: å®¶æ—ä¸ªäººå£°æœ›
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(fame), saacproto.workbufsize);
 // #endif
 	saacproto_strcatsafe(saacproto.work, saacproto_mkstr_int(charfdid), saacproto.workbufsize);
@@ -411,7 +411,7 @@ void saacproto_ACShowFMList_send(int fd)
 	saacproto_Send(fd, saacproto.work);
 }
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD ¼Ò×åÕ½GMÖ¸Áî
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD å®¶æ—æˆ˜GMæŒ‡ä»¤
 void saacproto_ACShowMemberList_2_send( int fd, int charaindex, int fm1, int fm2, int time, int id )
 {
 	saacproto_CreateHeader(saacproto.work, "ACShowMemberList2");
@@ -513,7 +513,7 @@ void saacproto_ACFMCharLogin_send(int fd, char *fmname, int fmindex, char *charn
 }
 
 
-#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD ¼Ò×åÕ½µÇÈë¼ì²é
+#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD å®¶æ—æˆ˜ç™»å…¥æ£€æŸ¥
 void saacproto_new_ACFM_Login_send( int acfd, int charaindex, char *char_id, char *char_name )
 {
 	saacproto_CreateHeader(saacproto.work, "ACFMCharLogin2");
@@ -524,7 +524,7 @@ void saacproto_new_ACFM_Login_send( int acfd, int charaindex, char *char_id, cha
 }
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD ¼Ò×åÕ½GMÖ¸Áî
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD å®¶æ—æˆ˜GMæŒ‡ä»¤
 void saacproto_ReloadFamily_send( int acfd, int charaindex )
 {
 	saacproto_CreateHeader(saacproto.work, "ACRELOADFM");
@@ -570,7 +570,7 @@ void saacproto_ACFMPointList_send(int fd)
 	saacproto_Send(fd, saacproto.work);
 }
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD ¼ÆËãÏßÉÏÈËÊı
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD è®¡ç®—çº¿ä¸Šäººæ•°
 void saacproto_GS_PLAYER_COUNT_SEND(int acfd, int num)
 {
 	saacproto_CreateHeader(saacproto.work, "ACGSPCOUNT");
@@ -656,7 +656,7 @@ void saacproto_ACgetFMBankgold_send(int fd, char *fmname, int fmindex, int index
 #endif
 
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD ¼Ò×åÕ½´æ·ÅÊ¤¸º×ÊÁÏ
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD å®¶æ—æˆ˜å­˜æ”¾èƒœè´Ÿèµ„æ–™
 void saacproto_Init_FM_PK_STRUC_send( int fd )
 {
 	saacproto_CreateHeader(saacproto.work, "FMINITPKSTRUCT");
@@ -744,7 +744,7 @@ void saacproto_ACSendFmPk_send(int fd, int toindex, int PkFlg, int fmpks_pos, ch
 #endif
 
 
-#ifdef _RECAL_ASK_PLAYER			// WON ÒªÇóÈËÎï×ÊÁÏ
+#ifdef _RECAL_ASK_PLAYER			// WON è¦æ±‚äººç‰©èµ„æ–™
 void saacproto_Recal_Player_send(int acfd, char *uid, int userfdid, int GmCliId, char *id, int char_num, int date, int backup_flag)
 {
 	saacproto_CreateHeader(saacproto.work, "ACSendRecalPlayer");
@@ -1028,10 +1028,10 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 354 :  <LI><a name="DBUpdateEntryStringS"><font color=blue>servertoclient DBUpdateEntryString( string result, string table, string key, int msgid, int msgid2 );</font></a><BR>
-355 : 	 Ïş¼°ÎìÑ¨¼şÓñ¼°çø°í£ÛÁÃ  ØÆ»¯ÊÖ¼ÔãâæØµÚ  Ø¦¼°Æ¥  ÷»ØÆ»¯·½ÖĞÈß
+355 : 	 æ™“åŠæˆŠç©´ä»¶ç‰åŠç‘›ç»Šï¼»æ’©  ä»„åŒ–æ‰‹èšæ±Šå°•ç¬¬  å…åŠåŒ¹  éª°ä»„åŒ–æ–¹ä¸­å†—
 356 : 	 <dl>
 357 : 	   <dt>string result
-358 : 	   <dD>successful ¾®failed	   
+358 : 	   <dD>successful å°failed	   
 359 : 	   <dt>string table
 360 : 	   <dD>
 361 : 	   <dt>int msgid
@@ -1058,7 +1058,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 379 :  <LI><a name="DBDeleteEntryStringS"><font color=blue>servertoclient DBDeleteEntryString( string result, string table, string key , int msgid , int msgid2 );</font></a><BR>
-380 : 	   Ù¯  ¾Ş¼şĞşØø¼°´ÂÂÖ¼°çø°í
+380 : 	   ä¾¬  å·¨ä»¶ç„ä¼‰åŠç»°è½®åŠç‘›ç»Š
 381 : 	 <dl>
 382 : 	   <dt>string result
 383 : 	   <dd>successful / failed
@@ -1090,12 +1090,12 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 406 :  <Li><a name="DBGetEntryStringS"><font color=blue>servertoclient DBGetEntryString( string result, string value, string table, string key, int msgid, int msgid2 );</font></a><BR>
-407 : 	 äúÔ»·ÖØÆ¼°ß¯Ô»°À
+407 : 	 æ½¸æ›°åˆ†ä»„åŠå¿’æ›°è¢„
 408 : 	 <dl>
 409 : 	   <dt>string result
 410 : 	   <dd>successful / failed
 411 : 	   <dt>string value
-412 : 	   <dd>°À
+412 : 	   <dd>è¢„
 413 : 	   <dt>string table
 414 : 	   <dd>		   
 415 : 	   <dt>string key
@@ -1126,16 +1126,16 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 445 :  <LI><a name="DBUpdateEntryIntS"><font color=blue>servertoclient DBUpdateEntryInt( string result , string table, string key, int msgid, int msgid2 );</font></a><BR>
-446 : 	 DBUpdateEntry¼°çø°í£Û
+446 : 	 DBUpdateEntryåŠç‘›ç»Šï¼»
 447 : 	 <dl>
 448 : 	   <dt>string result
 449 : 	   <dd>succesful/failed
 450 : 	   <dt>string table
-451 : 	   <dd>  ¡õÆ¤»ï  Ã«¹«¼°ÒıÒı¾®ÒüÔÊ
+451 : 	   <dd>  â–¡çš®ä¼™  æ¯›å…¬åŠå¼•å¼•äº•å°¹å…
 452 : 	   <dt>string key
-453 : 	   <dd>Æ½¡õÃ«¹«¼°ÒıÒı¾®ÒüÔÊ		   
+453 : 	   <dd>å¹³â–¡æ¯›å…¬åŠå¼•å¼•äº•å°¹å…		   
 454 : 	   <dt>int msgid, int msgid2
-455 : 	   <dd>msgid Ã«¹«¼°ÒıÒıß¯ÔÊ£Û
+455 : 	   <dd>msgid æ¯›å…¬åŠå¼•å¼•å¿’å…ï¼»
 456 : 	 </dl>
 457 : 	 <BR><BR>
 458 : 
@@ -1157,20 +1157,20 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 473 :  <LI><a name="DBGetEntryRankS"><font color=blue>servertoclient DBGetEntryRank( string result , int rank , int count, string table, string key, int msgid, int msgid2 );</font></a><BR>
-474 : 	 ´ÍŞËÃ«ß¯ÔÊ£Û
+474 : 	 èµåŒæ¯›å¿’å…ï¼»
 475 : 	 <dl>
 476 : 	   <dt>string result
 477 : 	   <dd>successful/failed
 478 : 	   <dt>int rank
-479 : 	   <dd>´ÍŞË£Û1¶¯Ïş¼°°ÀÃ«äúÔÂ£Û
+479 : 	   <dd>èµåŒï¼»1åŠ¨æ™“åŠè¢„æ¯›æ½¸æœˆï¼»
 480 : 	   <dt>int count
-481 : 	   <dd>Ïş¾®ÈÕÖĞÈÊ¹´»§¾®£Û  âÙ¼°¾Ş¼şĞşØø·´0¾®ÈÕ·´ÔªÒıÔÂ£Û
+481 : 	   <dd>æ™“äº•æ—¥ä¸­ä»å‹¾æˆ·äº•ï¼»  èµ“åŠå·¨ä»¶ç„ä¼‰å0äº•æ—¥åå…ƒå¼•æœˆï¼»
 482 : 	   <dt>string table
-483 : 	   <dd>  ¡õÆ¤»ï  Ã«¹«¼°ÒıÒı¾®ÒüÔÊ
+483 : 	   <dd>  â–¡çš®ä¼™  æ¯›å…¬åŠå¼•å¼•äº•å°¹å…
 484 : 	   <dt>string key
-485 : 	   <dd>Æ½¡õÃ«¹«¼°ÒıÒı¾®ÒüÔÊ
+485 : 	   <dd>å¹³â–¡æ¯›å…¬åŠå¼•å¼•äº•å°¹å…
 486 : 	   <dt>int msgid, int msgid2
-487 : 	   <dd>msgid Ã«¹«¼°ÒıÒıß¯ÔÊ
+487 : 	   <dd>msgid æ¯›å…¬åŠå¼•å¼•å¿’å…
 488 : 	 </dl>
 489 : 	 <BR><BR>
 490 : 
@@ -1197,16 +1197,16 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 504 :  <LI><a name="DBDeleteEntryIntS"><font color=blue>servertoclient DBDeleteEntryInt( string result , string table, string key, int msgid, int msgid2 );</font></a><BR>
-505 : 	 ´ÂÂÖ¼°çø°í
+505 : 	 æ¾—æ…‹å¼è‹»å£±
 506 : 	 <dl>
 507 : 	   <dt>string result
 508 : 	   <dd>successful/failed
 509 : 	   <dt>string table
-510 : 	   <dd>  ¡õÆ¤»ï  Ã«¹«¼°ÒıÒı¾®ÒüÔÊ
+510 : 	   <dd>  â–¡çš®ä¼™  æ¯›å…¬åŠå¼•å¼•äº•å°¹å…
 511 : 	   <dt>string key
-512 : 	   <dd>Æ½¡õÃ«¹«¼°ÒıÒı¾®ÒüÔÊ
+512 : 	   <dd>å¹³â–¡æ¯›å…¬åŠå¼•å¼•äº•å°¹å…
 513 : 	   <dt>int msgid, int msgid2
-514 : 	   <dd>msgid Ã«¹«¼°ÒıÒıß¯ÔÊ
+514 : 	   <dd>msgid æ¯›å…¬åŠå¼•å¼•å¿’å…
 515 : 	 </dl>
 516 : 	 <BR><BR>
 517 : 
@@ -1228,18 +1228,18 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 530 :  <LI><a name="DBGetEntryIntS"><font color=blue>servertoclient DBGetEntryInt( string result , int value , string table, string key, int msgid, int msgid2 );</font></a><BR>
-531 : 	 ¾Ş¼şĞşØø¼°°ÀÃ«¾®ÒüÔÊ
+531 : 	 å·¨ä»¶ç„ä¼‰åŠè¢„æ¯›äº•å°¹å…
 532 : 	 <dl>
 533 : 	   <dt>string result
 534 : 	   <dd>successful/failed
 535 : 	   <dt>int value
-536 : 	   <dd>°À¹«¼°ÊÖ¼°
+536 : 	   <dd>è¢„å…¬åŠæ‰‹åŠ
 537 : 	   <dt>string table
-538 : 	   <dd>  ¡õÆ¤»ï  Ã«¹«¼°ÒıÒı¾®ÒüÔÊ
+538 : 	   <dd>  â–¡çš®ä¼™  æ¯›å…¬åŠå¼•å¼•äº•å°¹å…
 539 : 	   <dt>string key
-540 : 	   <dd>Æ½¡õÃ«¹«¼°ÒıÒı¾®ÒüÔÊ
+540 : 	   <dd>å¹³â–¡æ¯›å…¬åŠå¼•å¼•äº•å°¹å…
 541 : 	   <dt>int msgid, int msgid2
-542 : 	   <dd>msgid Ã«¹«¼°ÒıÒıß¯ÔÊ
+542 : 	   <dd>msgid æ¯›å…¬åŠå¼•å¼•å¿’å…
 543 : 	 </dl>
 544 : 
 545 : 
@@ -1264,19 +1264,19 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 562 :  <LI><a name="DBGetEntryByRankS"><font color=blue>servertoclient DBGetEntryByRank( string result , string list , string table, int msgid, int msgid2 );</font></a><BR>
-563 : 	 DBGetEntryByRank¼°çø°í£Û
+563 : 	 DBGetEntryByRankåŠç‘›ç»Šï¼»
 564 : 	 <dl>
 565 : 	   <dt>string result
 566 : 	   <dd>
 567 : 	   <dt>string list
 568 : 	   <dd>"RANK,KEY,SCORE,INFO|RANK,KEY,SCORE,INFO|...."<BR>
-569 : 		   RANK·´´ÍŞËÆ¥Ø¤ÔÂ£ÛKEY·´¹«¼°´ÍŞË±åØ¦ÔÈ»¯ÖĞÔÂµ©ÎìÊ§Ã«ÊÖÔÈ»¯ÖĞÔÂ
-570 : 		   Æ½¡õ£ÛSCORE·´°ïĞÑ°ÀÆ¥µ©ÎìÊ§Æ¥Ø¤ÔÂ£Û
-571 : 		     £Û<br>
+569 : 		   RANKåèµåŒåŒ¹ä¸æœˆï¼»KEYåå…¬åŠèµåŒåå…åŒ€åŒ–ä¸­æœˆæ—¦æˆŠå¤±æ¯›æ‰‹åŒ€åŒ–ä¸­æœˆ
+570 : 		   å¹³â–¡ï¼»SCOREåå¸®é†’è¢„åŒ¹æ—¦æˆŠå¤±åŒ¹ä¸æœˆï¼»
+571 : 		     ï¼»<br>
 572 : 		   "1,RINGO,123465,data1|2,HOGE,4567,data2|2,FUCK,4567,data3"<BR>
-573 : 		   ³ğ¼°  ·ÖÎç£ı2ŞË·´2ÚĞÖĞÔÂ³ğÎç±åØ¦ÔÂ£Û
+573 : 		   ä»‡åŠ  åˆ†åˆï½2åŒå2è°›ä¸­æœˆä»‡åˆåå…æœˆï¼»
 574 : 	   <dt>string table
-575 : 	   <dd>  ¡õÆ¤»ï  
+575 : 	   <dd>  â–¡çš®ä¼™  
 576 : 	   <dt>int msgid, int msgid2
 577 : 	   <dd>
 578 : 	 </dl>
@@ -1300,18 +1300,18 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 593 :  <LI><a name="DBGetEntryByCountS"><font color=blue>servertoclient DBGetEntryByCount( string result , string list , string table, int count_start, int msgid, int msgid2 );</font></a><BR>
-594 : 	 DBGetEntryByCount ¼°çø°í£Û
+594 : 	 DBGetEntryByCount åŠç‘›ç»Šï¼»
 595 : 	 <dl>
 596 : 	   <dt>string result
 597 : 	   <dd>SUCCESSFUL/FAILED
 598 : 	   <dt>string list
-599 : 	   <dd>Çë  Øøµ©Ğş£Û1¾Ş¼şĞşØøØ¤Ğ×Ô» "INDEX,RANK,KEY,SCORE,INFO" ¼°4òÛ¼°Ê÷  
-600 : 		   ¼°×¬Æ¥Ø¤Ô»£ı¹«Ä¾»¥òÛĞÑÛĞ "|" Æ¥¹´Ø¦»¥ÔÂ£ÛòÛĞÑ»¥0¼°èëÄş·´
-601 : 		   Îë  Ù¯  £Û
+599 : 	   <dd>è¯·  ä¼‰æ—¦ç„ï¼»1å·¨ä»¶ç„ä¼‰ä¸å‡¶æ›° "INDEX,RANK,KEY,SCORE,INFO" åŠ4èœŠåŠæ ‘  
+600 : 		   åŠèµšåŒ¹ä¸æ›°ï½å…¬æœ¨äº’èœŠé†’åŒ "|" åŒ¹å‹¾å…äº’æœˆï¼»èœŠé†’äº’0åŠæ¡¦å®å
+601 : 		   å  ä¾¬  ï¼»
 602 : 	   <dt>int num
-603 : 	   <dd>ÖĞÈÊ¹´ÎçÔ»·ÖÔÊ¾®£Û1Ø¦ÈÕ1òÛ£Û2Ø¦ÈÕ2òÛ£Û
+603 : 	   <dd>ä¸­ä»å‹¾åˆæ›°åˆ†å…äº•ï¼»1å…æ—¥1èœŠï¼»2å…æ—¥2èœŠï¼»
 604 : 	   <dt>int msgid ,msgid2
-605 : 	   <dd>¶ªÓÀ±¾¡õ³âID.	   
+605 : 	   <dd>ä¸¢æ°¸æœ¬â–¡æ–¥ID.	   
 606 : 	 </dL>
 607 : 
 */
@@ -1332,7 +1332,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_DBGetEntryByCount_recv( fd,result,list,table,count_start,msgid,msgid2);
 		return 0;
 	}
-#ifdef _ALLDOMAN // (²»¿É¿ª) Syu ADD ÅÅĞĞ°ñNPC
+#ifdef _ALLDOMAN // (ä¸å¯å¼€) Syu ADD æ’è¡Œæ¦œNPC
 	if ( strcmp( funcname , "UpdataStele" ) == 0 ) {
 		char* token;
 		token = saacproto_wrapStringAddr( saacproto_stringwrapper[1] , saacproto.workbufsize , saacproto_demkstr_string( saacproto.token_list[2] ));
@@ -1363,16 +1363,16 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 #endif
 /*
 621 :  <LI><a name="Broadcast"><font color=blue>servertoclient Broadcast( string id, string charname, string message );</font></a><BR>
-622 : 	 Broadcast¼°Ê§ÊĞËü¼şĞşÈÓ¡õÌï¡õ¾®ÈÕ±Ø¡õØ©ÈÓ¡õÌï¡õ³ß¼°ËªññåÃ
+622 : 	 BroadcaståŠå¤±å¸‚å®ƒä»¶ç„æ‰”â–¡ç”°â–¡äº•æ—¥å¿…â–¡ä¸æ‰”â–¡ç”°â–¡å°ºåŠéœœè€¨è¿•
 623 : 	 <dl>
 624 : 	   <dt>string id
 625 : 	   <dd>user ID
 626 : 	   <dt>string charname
 627 : 	   <dd>character name
 628 : 	   <dt>string message
-629 : 	   <dd>¶ªÓÀ±¾¡õ³â
+629 : 	   <dd>ä¸¢æ°¸æœ¬â–¡æ–¥
 630 : 	   <dt>int flag
-631 : 	   <dd>1±åÔÊÔÂÎç£ı·ßÛĞ±å±å·´  Ëª½ñÄ¾Ø¦ÖĞ£Û
+631 : 	   <dd>1åå…æœˆåˆï½æ„¤åŒååå  éœœä»Šæœ¨å…ä¸­ï¼»
 632 : 	 </dl>
 633 : 
 */
@@ -1389,7 +1389,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 /*
 652 :  <LI><a name="Message"><font color=blue>servertoclient Message( string id_from, string charname_from, string id_to, string charname_to, string message , int option , int mesgid );</font></a><BR>
-653 : 	 Ê§ÊĞËü¼şĞşÈÓ¡õÌï¡õ¾®ÈÕ±Ø¡õØ©ÈÓ¡õÌï¡õ±å¶ªÓÀ±¾¡õ³âÃ«ËªññÔÊÔÂ£Û
+653 : 	 å¤±å¸‚å®ƒä»¶ç„æ‰”â–¡ç”°â–¡äº•æ—¥å¿…â–¡ä¸æ‰”â–¡ç”°â–¡åä¸¢æ°¸æœ¬â–¡æ–¥æ¯›éœœè€¨å…æœˆï¼»
 654 : 	 <dl>
 655 : 	   <dt>string id_from
 656 : 	   <dd>from ID
@@ -1400,11 +1400,11 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 661 : 	   <dt>string charname_to
 662 : 	   <dd>to character name
 663 : 	   <dt>string message
-664 : 	   <dd>¶ªÓÀ±¾¡õ³â¼°    
+664 : 	   <dd>ä¸¢æ°¸æœ¬â–¡æ–¥åŠ    
 665 : 	   <dt>int option
-666 : 	   <dd>×óÃóÆËÒà¼ş(Ïş¼°èúĞÑÃ«¸¨å¾)
+666 : 	   <dd>å·¦çš¿æ‰‘äº¦ä»¶(æ™“åŠæ¥®é†’æ¯›è¾…å¯°)
 667 : 	   <dt>int mesgid
-668 : 	   <dd>¶ªÓÀ±¾¡õ³âID Ê§ÊĞËü¼şĞşÈÓ¡õÌï¡õ¼°¶°  åÃ
+668 : 	   <dd>ä¸¢æ°¸æœ¬â–¡æ–¥ID å¤±å¸‚å®ƒä»¶ç„æ‰”â–¡ç”°â–¡åŠæ ‹  è¿•
 669 : 	 </dl>
 670 : 
 */
@@ -1475,7 +1475,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		return 0;
 	}
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD ¼Ò×åÕ½GMÖ¸Áî
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD å®¶æ—æˆ˜GMæŒ‡ä»¤
 	if( strcmp( funcname, "ACRELOADFMOK") == 0){
 		int charindex;
 		charindex = saacproto_demkstr_int(saacproto.token_list[2]);
@@ -1502,7 +1502,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 
 #endif
 
-#ifdef _DEATH_FAMILY_STRUCT		// WON ADD ¼Ò×åÕ½´æ·ÅÊ¤¸º×ÊÁÏ
+#ifdef _DEATH_FAMILY_STRUCT		// WON ADD å®¶æ—æˆ˜å­˜æ”¾èƒœè´Ÿèµ„æ–™
 	if( strcmp( funcname, "ACSendFmPkStruct") == 0){
 		char *data;
 
@@ -1513,7 +1513,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 #endif
 
-#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD ¼Ò×åÕ½µÇÈë¼ì²é
+#ifdef _DEATH_FAMILY_LOGIN_CHECK   // WON ADD å®¶æ—æˆ˜ç™»å…¥æ£€æŸ¥
 	if( strcmp( funcname, "ACSendMemberList") == 0){
 		int charindex;
 		char *result, *data;
@@ -1568,7 +1568,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 	if( strcmp( funcname, "ACFMCharLogin") == 0){
 		int charfdid, index, floor, fmdp, joinflag, fmsetupflag, flag, charindex;
-#ifdef _PERSONAL_FAME   // Arminius: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME   // Arminius: å®¶æ—ä¸ªäººå£°æœ›
 		int charfame;
 #endif
 #ifdef _NEW_MANOR_LAW
@@ -1583,7 +1583,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		fmsetupflag = saacproto_demkstr_int(saacproto.token_list[7]);
 		flag = saacproto_demkstr_int(saacproto.token_list[8]);
 		charindex = saacproto_demkstr_int(saacproto.token_list[9]);
-#ifdef _PERSONAL_FAME   // Arminius: ¼Ò×å¸öÈËÉùÍû
+#ifdef _PERSONAL_FAME   // Arminius: å®¶æ—ä¸ªäººå£°æœ›
 		charfame = saacproto_demkstr_int(saacproto.token_list[10]);
 		charfdid = saacproto_demkstr_int(saacproto.token_list[11]);
 	#ifdef _NEW_MANOR_LAW
@@ -1763,8 +1763,8 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 
 
 
-#ifdef _RECAL_ASK_PLAYER			// WON ÒªÇóÈËÎï×ÊÁÏ
-	if( strcmp( funcname, "ACRecalPlayer") == 0){		// ÏßÉÏÈËÎï×ÊÁÏ
+#ifdef _RECAL_ASK_PLAYER			// WON è¦æ±‚äººç‰©èµ„æ–™
+	if( strcmp( funcname, "ACRecalPlayer") == 0){		// çº¿ä¸Šäººç‰©èµ„æ–™
 		char *uid, *id, *char_data;
 		int userfdid, char_num, date, GmCliId;
 
@@ -1779,7 +1779,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_ACRecalPlayer_recv(uid, userfdid, GmCliId, id, char_num, date, char_data);	
 		return 0;
 	}
-	if( strcmp( funcname, "ACRecalBackupPlayer") == 0){		// ±¸·İÈËÎï×ÊÁÏ
+	if( strcmp( funcname, "ACRecalBackupPlayer") == 0){		// å¤‡ä»½äººç‰©èµ„æ–™
 		char *uid, *id, *char_data;
 		int userfdid, char_num, date, GmCliId;
 
@@ -1794,7 +1794,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_ACRecalBackupPlayer_recv(uid, userfdid, GmCliId, id, char_num, date, char_data);	
 		return 0;
 	}
-	if( strcmp( funcname, "ACRecalBackupDate") == 0){		// ±¸·İÈÕÆÚ
+	if( strcmp( funcname, "ACRecalBackupDate") == 0){		// å¤‡ä»½æ—¥æœŸ
 		char *uid, *id, *char_data;
 		int userfdid, char_num, date, GmCliId;
 
@@ -1809,7 +1809,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 		saacproto_ACRecalBackupDate_recv(uid, userfdid, GmCliId, id, char_num, date, char_data);	
 		return 0;
 	}
-	if( strcmp( funcname, "ACRecalAllBackupOK") == 0){		// »ØËİok
+	if( strcmp( funcname, "ACRecalAllBackupOK") == 0){		// å›æº¯ok
 		char *uid, *id, *char_data;
 		int userfdid, char_num, date, GmCliId;
 
@@ -1851,7 +1851,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 #endif
 
-#ifdef _SEND_EFFECT	   	        // WON ADD ACËÍÏÂÑ©¡¢ÏÂÓêµÈÌØĞ§
+#ifdef _SEND_EFFECT	   	        // WON ADD ACé€ä¸‹é›ªã€ä¸‹é›¨ç­‰ç‰¹æ•ˆ
   if( strcmp(funcname, "EFFECT") == 0){
 		char *effect;
 		effect = saacproto_wrapStringAddr(saacproto_stringwrapper[1], saacproto.workbufsize, saacproto_demkstr_string(saacproto.token_list[2]));
@@ -1862,7 +1862,7 @@ int saacproto_ClientDispatchMessage(int fd ,char*line)
 	}
 #endif
 
-#ifdef _GM_BROADCAST					// WON ADD ¿Í·ş¹«¸æÏµÍ³
+#ifdef _GM_BROADCAST					// WON ADD å®¢æœå…¬å‘Šç³»ç»Ÿ
   if( strcmp(funcname, "GMBROADCAST") == 0){
 		int time = 0, loop = 0, wait = 0;
 		char *msg;

@@ -2,7 +2,7 @@
 
 #include "version.h"
 
-#ifdef _SASQL1//ĞÂÌí¼Ó
+#ifdef _SASQL1//æ–°æ·»åŠ 
 
 #include "main.h"
 #include "util.h"
@@ -60,7 +60,7 @@ int worksockfd;
 #include "saacproto_lserver.h"
 #endif
 
-#ifdef _SEND_EFFECT               // WON ADD ËÍÏÂÑ©¡¢ÏÂÓêµÈÌØĞ§ 
+#ifdef _SEND_EFFECT               // WON ADD é€ä¸‹é›ªã€ä¸‹é›¨ç­‰ç‰¹æ•ˆ 
 #include "recv.h"
 #endif
 
@@ -130,54 +130,54 @@ static int readConfig( char *path )
         if( strcmp( command , "sql_IP" ) == 0 ){
             strcmp( config.sql_IP , param ) ;
             snprintf( config.sql_IP , sizeof( config.sql_IP) , param );
-            log("\nÊı¾İ¿âµØÖ·£º  %s",config.sql_IP);
+            log("\næ•°æ®åº“åœ°å€ï¼š  %s",config.sql_IP);
         } else if( strcmp( command , "sql_Port" ) == 0 ){
         		config.sql_Port = atoi( param );
             snprintf( config.sql_Port1 , sizeof( config.sql_Port1) , param );
-				  	log("\nÊı¾İ¿â¶Ë¿Ú£º  %d",config.sql_Port);
+				  	log("\næ•°æ®åº“ç«¯å£ï¼š  %d",config.sql_Port);
         } else if( strcmp( command , "sql_ID" ) == 0 ){
         		strcmp( config.sql_ID , param ) ;
             snprintf( config.sql_ID , sizeof( config.sql_ID) , param );
-						log("\nÊı¾İ¿âÓÃ»§£º  %s",config.sql_ID);
+						log("\næ•°æ®åº“ç”¨æˆ·ï¼š  %s",config.sql_ID);
         } else if( strcmp( command , "sql_PS" ) == 0 ){
         		strcmp( config.sql_PS , param ) ;
             snprintf( config.sql_PS , sizeof( config.sql_PS) , param );
-						log("\nÊı¾İ¿âÃÜÂë£º  %s",config.sql_PS);
+						log("\næ•°æ®åº“å¯†ç ï¼š  %s",config.sql_PS);
         } else if( strcmp( command , "sql_DataBase" ) == 0 ){
         		strcmp( config.sql_DataBase , param ) ;
             snprintf( config.sql_DataBase , sizeof( config.sql_DataBase) , param );
-						log("\nµÇÂ½Êı¾İ¿âÃû£º%s",config.sql_DataBase);
+						log("\nç™»é™†æ•°æ®åº“åï¼š%s",config.sql_DataBase);
         } else if( strcmp( command , "sql_Table" ) == 0 ){
         		strcmp( config.sql_Table , param ) ;
             snprintf( config.sql_Table , sizeof( config.sql_Table) , param );
-				  	log("\nÊı¾İ¿â±íÃû£º  %s",config.sql_Table);
+				  	log("\næ•°æ®åº“è¡¨åï¼š  %s",config.sql_Table);
         } else if( strcmp( command , "sql_Name" ) == 0 ){
         		strcmp( config.sql_Name , param ) ;
             snprintf( config.sql_Name , sizeof( config.sql_Name) , param );
-						log("\nÓÃ»§Ãû×Ö¶Î£º  %s",config.sql_Name);
+						log("\nç”¨æˆ·åå­—æ®µï¼š  %s",config.sql_Name);
         } else if( strcmp( command , "sql_PassWord" ) == 0 ){
         		strcmp( config.sql_PassWord , param ) ;
         		snprintf( config.sql_PassWord , sizeof( config.sql_PassWord) , param );
-						log("\nÃÜÂë×Ö¶Î£º    %s",config.sql_PassWord);
+						log("\nå¯†ç å­—æ®µï¼š    %s",config.sql_PassWord);
         } else if( strcmp( command , "sql_RegTime" ) == 0 ){
         		strcmp( config.sql_RegTime , param ) ;
             snprintf( config.sql_RegTime , sizeof( config.sql_RegTime) , param );
-						log("\n×¢²áÊ±¼ä£º    %s",config.sql_RegTime);
+						log("\næ³¨å†Œæ—¶é—´ï¼š    %s",config.sql_RegTime);
         } else if( strcmp( command , "sql_LoginTime" ) == 0 ){
         		strcmp( config.sql_LoginTime , param ) ;
             snprintf( config.sql_LoginTime , sizeof( config.sql_LoginTime) , param );
-						log("\nµÇÂ½Ê±¼ä£º    %s",config.sql_LoginTime);
+						log("\nç™»é™†æ—¶é—´ï¼š    %s",config.sql_LoginTime);
 				} else if( strcmp( command , "sql_Path" ) == 0 ){
         		strcmp( config.sql_Path , param ) ;
             snprintf( config.sql_Path , sizeof( config.sql_Path) , param );
-						log("\nÂ·¾¶×Ö¶Î£º    %s",config.sql_Path);
+						log("\nè·¯å¾„å­—æ®µï¼š    %s",config.sql_Path);
 				} else if( strcmp( command , "sql_OnlineName" ) == 0 ){
         		strcmp( config.sql_OnlineName , param ) ;
             snprintf( config.sql_OnlineName , sizeof( config.sql_OnlineName) , param );
-						log("\nÔÚÏßÍæ¼Ò×Ö¶Î£º%s",config.sql_OnlineName);
+						log("\nåœ¨çº¿ç©å®¶å­—æ®µï¼š%s",config.sql_OnlineName);
 				} else if( strcmp( command , "AutoReg" ) == 0 ){
         		AutoReg = atoi( param );
-        		log("\n¿ª·Å×Ô¶¯×¢²á£º%d",AutoReg);
+        		log("\nå¼€æ”¾è‡ªåŠ¨æ³¨å†Œï¼š%d",AutoReg);
     fclose(fp);
     return 0;
     		}
@@ -189,28 +189,28 @@ BOOL sasql_init( void )
 	
 if( mysql_init(&mysql) == NULL & readConfig("acserv.cf"))
 {
-	  log("\nÊı¾İ¿â³õÊ¼»¯Ê§°Ü£¡");
+	  log("\næ•°æ®åº“åˆå§‹åŒ–å¤±è´¥ï¼");
 	  exit(1);
     return FALSE;
 }
 
   if( !mysql_real_connect( &mysql,
           config.sql_IP,
-          config.sql_ID,//ÕÊºÅ
-          config.sql_PS,//ÃÜÂë
-          config.sql_DataBase,//Ñ¡ÔñµÄ×ÊÁÏ¿â
+          config.sql_ID,//å¸å·
+          config.sql_PS,//å¯†ç 
+          config.sql_DataBase,//é€‰æ‹©çš„èµ„æ–™åº“
           config.sql_Port,
           NULL,
           0 ) )
 	{
-		log("\n¸üĞÂÊı¾İ¿âÊ§°Ü£¡\n");
+		log("\næ›´æ–°æ•°æ®åº“å¤±è´¥ï¼\n");
 		return FALSE;
 	}
   
-  	log("\nÊı¾İ¿âÁ¬½Ó³É¹¦£¡\n");
+  	log("\næ•°æ®åº“è¿æ¥æˆåŠŸï¼\n");
 #ifdef _SQL_BACKGROUND
     if(!sasql_initonline())
-      	log("\nÊı¾İ¿â³õÊ¼»¯Ê§°Ü£¡\n");
+      	log("\næ•°æ®åº“åˆå§‹åŒ–å¤±è´¥ï¼\n");
 #endif
   	return TRUE;
 }
@@ -234,7 +234,7 @@ BOOL sasql_query(char *nm, char *pas){
 	  else{
 	  	return FALSE;}}
 	else{
-		log("\n Êı¾İ¿â²éÕÒÊ§°Ü£¡\n");
+		log("\n æ•°æ®åº“æŸ¥æ‰¾å¤±è´¥ï¼\n");
 		return FALSE;}
 }
 
@@ -246,7 +246,7 @@ BOOL sasql_update(char *nm, char *path){
 	if(!mysql_query(&mysql,sqlstr)){
 		return TRUE;}
 	else{
-		log("\n¸üĞÂÊı¾İ¿âÊ§°Ü£¡\n");
+		log("\næ›´æ–°æ•°æ®åº“å¤±è´¥ï¼\n");
 		return FALSE;}
 }
 
@@ -256,7 +256,7 @@ BOOL sasql_online(char *nm,char *lnm){
 	if(!mysql_query(&mysql,sqlstr)){
 		return TRUE;}
 	else{
-		log("\n¸üĞÂÊı¾İ¿âÊ§°Ü£¡\n");
+		log("\næ›´æ–°æ•°æ®åº“å¤±è´¥ï¼\n");
 		return FALSE;}
 }
 
@@ -284,15 +284,15 @@ BOOL sasql_register(char *nm, char *pas){
 		  if(num_row==0){
 				sprintf(sqlstr,"INSERT INTO %s (%s,%s,%s) VALUES ('%s','%s',NOW())",config.sql_Table,config.sql_Name,config.sql_PassWord,config.sql_RegTime,nm,pas);
 				if(!mysql_query(&mysql,sqlstr)){
-					log("\nĞÂÓÃ»§×¢²á³É¹¦£¡\n");
+					log("\næ–°ç”¨æˆ·æ³¨å†ŒæˆåŠŸï¼\n");
 					return TRUE;}
 				else{
-					log("\nĞÂÓÃ»§×¢²áÊ§°Ü£¡\n");
+					log("\næ–°ç”¨æˆ·æ³¨å†Œå¤±è´¥ï¼\n");
 				return FALSE;}}
 		  else{
 		  	return FALSE;}}
 		else{
-			log("\n Êı¾İ¿â²éÕÒÊ§°Ü£¡\n");
+			log("\n æ•°æ®åº“æŸ¥æ‰¾å¤±è´¥ï¼\n");
 			return FALSE;}
 	}
 	else{

@@ -10,7 +10,7 @@ void CHAR_getMessageBody(char* message, char* kind, int kindlen,
             char** body);
 
 #ifdef _GM_SIGUSR2
-    typedef void (*CHATMAGICFUNC2)(int,char*);//功能相同typedef void (*CHATMAGICFUNC)(int,char*);
+    typedef void (*CHATMAGICFUNC2)(int,char*);//鍔熻兘鐩稿悓typedef void (*CHATMAGICFUNC)(int,char*);
     CHATMAGICFUNC2 gm_CHAR_getChatMagicFuncPointer(char* name,BOOL isDebug);
 #endif
 

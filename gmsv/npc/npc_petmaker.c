@@ -14,7 +14,7 @@
 #include "chatmagic.h"
 #include "log.h"
 
-#define EVFLG 118                 // 58->°×»¢  118->ÇàÁú
+#define EVFLG 118                 // 58->ç™½è™  118->é’é¾™
   
 void pet_make( int charaindex, char* message );
   
@@ -52,34 +52,34 @@ void NPC_PetMakerTalked( int meindex , int talker , char *msg ,int color )
         	return;
     }
     
-    //translv = CHAR_getInt( talker, CHAR_TRANSMIGRATION);    // °×»¢
+    //translv = CHAR_getInt( talker, CHAR_TRANSMIGRATION);    // ç™½è™
     
     for(i=0; i<CHAR_MAXPETHAVE; i++)
         if(CHAR_getCharPet(talker, i) != -1) 
             num++;
 
-    // °×»¢
+    // ç™½è™
     /*if( translv < 5 || CHAR_getInt( talker, CHAR_LV ) < 125){
-        sprintf(tmpbuf, "±§Ç¸Å¶¡«µÈµ½×ªÉú£µ´Î¼°µÈ¼¶£±£²£µ¼¶Ê±ÔÙÀ´ÕÒÎÒ°É£¡");
+        sprintf(tmpbuf, "æŠ±æ­‰å“¦ï½ç­‰åˆ°è½¬ç”Ÿï¼•æ¬¡åŠç­‰çº§ï¼‘ï¼’ï¼•çº§æ—¶å†æ¥æ‰¾æˆ‘å§ï¼");
         CHAR_talkToCli( talker, meindex,
                         tmpbuf,CHAR_COLORWHITE);
         return;
     }*/   
-	// ÇàÁú	
+	// é’é¾™	
     if( CHAR_getInt( talker, CHAR_FAME) < 200000){
-        sprintf(tmpbuf, "±§Ç¸Å¶¡«ÄãÄ¿Ç°¸öÈËÉùÍû %d µã£¬ÇëµÈµ½³¬¹ı¶şÇ§µãÊ±ÔÙÀ´ÕÒÎÒ°É£¡", (CHAR_getInt( talker, CHAR_FAME)/100));
+        sprintf(tmpbuf, "æŠ±æ­‰å“¦ï½ä½ ç›®å‰ä¸ªäººå£°æœ› %d ç‚¹ï¼Œè¯·ç­‰åˆ°è¶…è¿‡äºŒåƒç‚¹æ—¶å†æ¥æ‰¾æˆ‘å§ï¼", (CHAR_getInt( talker, CHAR_FAME)/100));
         CHAR_talkToCli( talker, meindex,
                         tmpbuf,CHAR_COLORWHITE);
         return;
     }
     else if( ckpoint & (1 << shift) ){
-        sprintf(tmpbuf, "Å¶¡«ÎÒ¼ÇµÃÎÒºÃÏñ¸ø¹ıÄãÁË°É£¡");
+        sprintf(tmpbuf, "å“¦ï½æˆ‘è®°å¾—æˆ‘å¥½åƒç»™è¿‡ä½ äº†å§ï¼");
         CHAR_talkToCli( talker, meindex,
                         tmpbuf,CHAR_COLORWHITE);
         return;
     }    
     else if( num>=CHAR_MAXPETHAVE ){
-        sprintf(tmpbuf, "±§Ç¸¡«Ã»¶àâÅµÄ¿Õ¼ä¿É·ÅÖÃ³èÎï¡£");
+        sprintf(tmpbuf, "æŠ±æ­‰ï½æ²¡å¤šé¦€çš„ç©ºé—´å¯æ”¾ç½®å® ç‰©ã€‚");
         CHAR_talkToCli( talker, meindex,
                         tmpbuf,CHAR_COLORWHITE);
         return;    
@@ -110,7 +110,7 @@ void pet_make( int charaindex, char* message )
     if(i==enemynum) return;
 
     ret = ENEMY_createPetFromEnemyIndex( charaindex, i);
-    snprintf( msgbuf, sizeof( msgbuf), "Å¶¡«ÒÔÄãµÄÄÜÁ¦×ãÒÔÅäµÃÉÏÒ»Ö»´«Ëµ³èÎï£¬ºÃ°É£¡¾ÍÊÇÄãÁË¡£");
+    snprintf( msgbuf, sizeof( msgbuf), "å“¦ï½ä»¥ä½ çš„èƒ½åŠ›è¶³ä»¥é…å¾—ä¸Šä¸€åªä¼ è¯´å® ç‰©ï¼Œå¥½å§ï¼å°±æ˜¯ä½ äº†ã€‚");
     CHAR_talkToCli( charaindex, -1, msgbuf, CHAR_COLORYELLOW);
                 
     for( i=0; i<CHAR_MAXPETHAVE; i++ ){
@@ -133,9 +133,9 @@ void pet_make( int charaindex, char* message )
 			CHAR_send_K_StatusString(charaindex, i, CHAR_K_STRING_HP|CHAR_K_STRING_AI);
 	
 	LogPet(
-		CHAR_getChar( charaindex, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+		CHAR_getChar( charaindex, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 		CHAR_getChar( charaindex, CHAR_CDKEY ),
-		"¿­¶÷",1,"PetMaker",
+		"å‡¯æ©",1,"PetMaker",
 		CHAR_getInt( charaindex,CHAR_FLOOR),
 		CHAR_getInt( charaindex,CHAR_X ),
 		CHAR_getInt( charaindex,CHAR_Y ),

@@ -1,32 +1,32 @@
 #ifndef _RECV_H_
 #define _RECV_H_
 
-#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 计算线上人数
+#ifdef _CK_ONLINE_PLAYER_COUNT    // WON ADD 璁＄畻绾夸笂浜烘暟
 void PlayerCount(void);
 #endif
 
-#ifdef _SEND_EFFECT		   // WON ADD 送下雪、下雨等特效
+#ifdef _SEND_EFFECT		   // WON ADD 閫佷笅闆�佷笅闆ㄧ瓑鐗规晥
 void SendEffect(char *ffect);
 #endif
 
-#ifdef _BAD_PLAYER            // WON ADD 送坏玩家去关
+#ifdef _BAD_PLAYER            // WON ADD 閫佸潖鐜╁鍘诲叧
 void BadPlayer(void);
 char BadPlayerList[500][20];
 int MAX_BAD_PLAYER;
 #endif
 
-#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS断线自动送LOGOUT给WORKER
+#ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS鏂嚎鑷姩閫丩OGOUT缁橶ORKER
 void Worker_send_logout( int ti ,char* id );
 #endif
 
 
-#ifdef _AC_SEND_FM_PK		 // WON ADD 庄园对战列表储存在AC
+#ifdef _AC_SEND_FM_PK		 // WON ADD 搴勫洯瀵规垬鍒楄〃鍌ㄥ瓨鍦ˋC
 void load_fm_pk_list(void);
 void save_fm_pk_list(void);
 char fm_pk_list[9][255];
 #endif
 
-#ifdef _ALLDOMAN // Syu ADD 排行榜NPC
+#ifdef _ALLDOMAN // Syu ADD 鎺掕姒淣PC
 void LOAD_herolist(); 
 void SAVE_herolist(int);
 void Send_A_herolist(int);
@@ -52,7 +52,7 @@ char Herolist[MAX_HERO_LIST][MAX_HERO_COLUMN][72];
 #endif
 
 
-#ifdef _RECAL_BACKUP_PLAYER			// WON 回溯功能
+#ifdef _RECAL_BACKUP_PLAYER			// WON 鍥炴函鍔熻兘
 
 struct PLAYER_DATA {
 	char name[20];
@@ -130,12 +130,12 @@ int UNlockM_UnlockPlayer( void);
 int UNlockM_Init( void);
 
 
-#ifdef _GM_BROADCAST					// WON ADD 客服公告系统
+#ifdef _GM_BROADCAST					// WON ADD 瀹㈡湇鍏憡绯荤粺
 void broadcast( char *msg );
 #endif
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 瀹舵棌鎴楪M鎸囦护
 void saacproto_ACShowMemberList_2_recv( int fd, int charindex, int fm1, int fm2, int time, int id );
 #endif
 

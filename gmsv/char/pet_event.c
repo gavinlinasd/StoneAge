@@ -166,7 +166,7 @@ void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color)
   if( CHAR_getInt( meindex, CHAR_LV ) >= CHAR_getInt( meindex, CHAR_LIMITLEVEL)  )	{
 	Type = 1;
   }
-	//Éè¶¨Îª·ÇÖ÷ÈË²»µÃÓëPET»¥¶¯
+	//è®¾å®šä¸ºéä¸»äººä¸å¾—ä¸PETäº’åŠ¨
   if( strcmp( CHAR_getChar( meindex, CHAR_OWNERCDKEY), CHAR_getChar( talkerindex, CHAR_CDKEY) ) ||
       strcmp( CHAR_getChar( meindex, CHAR_OWNERCHARANAME), CHAR_getChar( talkerindex, CHAR_NAME) )){
 #ifdef _PET_TALKPRO
@@ -175,7 +175,7 @@ void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color)
   	if( NPC_Util_GetStrFromStrWithDelim( buf1, "NoPlayerMsg", buf3, sizeof( buf3)) != NULL )	{
 #endif
   	}else	{
-  		sprintf(buf3,"Ä°ÉúÈË£¿ÎÒ²»ÈÏÊ¶ÄãÑ½£¡ÄãÊÇ»µÈË£¡");
+  		sprintf(buf3,"é™Œç”Ÿäººï¼Ÿæˆ‘ä¸è®¤è¯†ä½ å‘€ï¼ä½ æ˜¯åäººï¼");
   	}
   	CHAR_talkToCli( talkerindex, meindex, buf3, color);
   	return;	
@@ -189,25 +189,25 @@ void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color)
 #endif
 		talkNo++;
 		if( ( strstr( buf2, TalkType[Type]) == NULL ) && ( strstr( buf2, TalkType[2]) == NULL ) )continue;
-		if( NPC_Util_GetStrFromStrWithDelim( buf2, "FLOOR", buf3, sizeof( buf3)) != NULL )	{//ÅĞ¶Ï·¿¼äºÅ
+		if( NPC_Util_GetStrFromStrWithDelim( buf2, "FLOOR", buf3, sizeof( buf3)) != NULL )	{//åˆ¤æ–­æˆ¿é—´å·
 			if( PetTalk_CheckMyFloor( meindex, talkerindex, buf3, 0) == FALSE )continue;
 		}
-		if( NPC_Util_GetStrFromStrWithDelim( buf2, "PET", buf3, sizeof( buf3)) != NULL )	{//ÅĞ¶Ï³èÎïFREEÌõ¼ş
+		if( NPC_Util_GetStrFromStrWithDelim( buf2, "PET", buf3, sizeof( buf3)) != NULL )	{//åˆ¤æ–­å® ç‰©FREEæ¡ä»¶
 			if( PetTalk_CheckFree( meindex, meindex, buf3) != TRUE ) continue;
 		}
 		if( NPC_Util_GetStrFromStrWithDelim( buf2, "FREE", buf3, sizeof( buf3) ) == NULL)continue;
-		if( NPC_ActionPassCheck( meindex, talkerindex, buf3) == FALSE )	continue;//ÅĞ¶ÏÍæ¼ÒFREEÌõ¼ş
+		if( NPC_ActionPassCheck( meindex, talkerindex, buf3) == FALSE )	continue;//åˆ¤æ–­ç©å®¶FREEæ¡ä»¶
 
 //		if( ActionNpc_CheckFree( meindex, talkerindex, buf2, 0) == FALSE ) continue; 
 
 		if( PetTalk_CheckPetEvent( meindex, talkerindex, buf2) == FALSE )continue;
-		FREEs = TRUE;  //Ìõ¼ş³ÉÁ¢
+		FREEs = TRUE;  //æ¡ä»¶æˆç«‹
 		strcpy( AllTalk[j++], buf2 );
 		if( j > PETTALK_MAXID-1 ) break;
 	}
 	talkNo = 0;
 
-	if( FREEs == FALSE)	{	//Èç¹ûÈ«²¿Ìõ¼ş¶¼²»³ÉÁ¢
+	if( FREEs == FALSE)	{	//å¦‚æœå…¨éƒ¨æ¡ä»¶éƒ½ä¸æˆç«‹
 		j=0;
 #ifdef _PET_TALKPRO
 		while( getStringFromIndexWithDelim( pettalktext[tPage].DATA,"OVER",talkNo, buf2, sizeof( buf2) ) != FALSE ){
@@ -227,12 +227,12 @@ void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color)
   if( j > 0 )	{
   	strcpy( buf2, AllTalk[ RAND( 0, (j-1) ) ] );
 	if( PetTalk_RunEvent( meindex, talkerindex, buf2) == FALSE )	{
-		sprintf( buf3,"£®£®£®£®£¡");
+		sprintf( buf3,"ï¼ï¼ï¼ï¼ï¼");
 		CHAR_talkToCli( talkerindex, meindex, buf3, color);
 		return;
 	}
 	if( NPC_Util_GetStrFromStrWithDelim( buf2, "TalkMsg", buf3, sizeof( buf3)) == NULL)     {
-		//sprintf( buf3,"Ö÷ÈË£¬ÎÒÃÇÈ¥¹ä¹ä°É£¡");
+		//sprintf( buf3,"ä¸»äººï¼Œæˆ‘ä»¬å»é€›é€›å§ï¼");
 		strcpy( buf3, buf2);
 	}
 
@@ -311,14 +311,14 @@ BOOL PetTalk_DelItem(int meindex,int talker,char *buf)
 						cnt++;
 						
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+							CHAR_getChar( talker, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* Ê§ÄÌ  Ø©  Ä¯ */
+							ITEM_getInt( itemindex, ITEM_ID),  /* å¤±å¥¶  ä¸  å¯ */
 #endif
-							"WarpManDelItem(NPCÊÕµÀ¾ßáá´«ÖÁÄ³µã)",
+							"WarpManDelItem(NPCæ”¶é“å…·å¾Œä¼ è‡³æŸç‚¹)",
 							CHAR_getInt( talker, CHAR_FLOOR),
 							CHAR_getInt( talker, CHAR_X ),
  							CHAR_getInt( talker, CHAR_Y ),
@@ -336,21 +336,21 @@ BOOL PetTalk_DelItem(int meindex,int talker,char *buf)
 				}
 			}		
 		}else{
-			/*--¼»ÊÏ·Ö  Ä¯¼°Ê§ÄÌ  Ø©Ã«¼»Çë---*/
+			/*--è“Ÿæ°åˆ†  å¯åŠå¤±å¥¶  ä¸æ¯›è“Ÿè¯·---*/
 			for( j = 0 ;  j < CHAR_MAXITEMHAVE ; j++){
 				itemindex = CHAR_getItemIndex( talker ,j);
 
 				if( ITEM_CHECKINDEX(itemindex) ){
 					if( atoi( buff3) == ITEM_getInt(itemindex,ITEM_ID)){
 						LogItem(
-							CHAR_getChar( talker, CHAR_NAME ), /* Æ½ÅÒ·Â   */
+							CHAR_getChar( talker, CHAR_NAME ), /* å¹³ä¹“ä»¿   */
 							CHAR_getChar( talker, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ÔÚitemµÄlogÖĞÔö¼ÓitemÃû³Æ
+#ifdef _add_item_log_name  // WON ADD åœ¨itemçš„logä¸­å¢åŠ itemåç§°
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* Ê§ÄÌ  Ø©  Ä¯ */
+							ITEM_getInt( itemindex, ITEM_ID),  /* å¤±å¥¶  ä¸  å¯ */
 #endif
-							"WarpManDelItem(NPCÊÕµÀ¾ßáá´«ÖÁÄ³µã)",
+							"WarpManDelItem(NPCæ”¶é“å…·å¾Œä¼ è‡³æŸç‚¹)",
 							CHAR_getInt( talker,CHAR_FLOOR),
 							CHAR_getInt( talker,CHAR_X ),
 							CHAR_getInt( talker,CHAR_Y ),
@@ -385,7 +385,7 @@ BOOL PetTalk_AddItem(int meindex, int talker, char *buf)
 			}
 		}                                                                                                                                                                                                                                                                                                                                      
 		if( i == CHAR_MAXITEMHAVE )	{
-			snprintf( msgbuf,sizeof( msgbuf), "Ö÷ÈË£¬ÄãµÄÎïÆ·À¸ÒÑ¾­ÂúÁË£¡£¡");
+			snprintf( msgbuf,sizeof( msgbuf), "ä¸»äººï¼Œä½ çš„ç‰©å“æ å·²ç»æ»¡äº†ï¼ï¼");
 			CHAR_talkToCli( talker, meindex, msgbuf,  CHAR_COLORWHITE);
 			return FALSE;
 		}
@@ -404,7 +404,7 @@ BOOL PetTalk_AddItem(int meindex, int talker, char *buf)
 			print ("\n ret error!!");
 			return FALSE;
 		}
-		sprintf( token,"ÄÃµ½%s",ITEM_getChar( itemindex, ITEM_NAME));
+		sprintf( token,"æ‹¿åˆ°%s",ITEM_getChar( itemindex, ITEM_NAME));
 		CHAR_talkToCli( talker, -1,token,CHAR_COLORWHITE);
                                 
 		CHAR_sendItemDataOne( talker, ret);
@@ -488,7 +488,7 @@ BOOL PetTalk_BSCheck(int meindex,int talker,char* buf)
 	int kosuu,temp=-1,flg=0;
 	char buff1[128],buff3[128];
 	if(strstr( buf, "-") != NULL)	{
-		//buff3Îª×¥³èÎïID
+		//buff3ä¸ºæŠ“å® ç‰©ID
 		getStringFromIndexWithDelim( buf, "-", 2, buff3, sizeof(buff3));
 		temp = atoi( buff3);
 		getStringFromIndexWithDelim( buf, "-", 1, buff1, sizeof(buff1));
@@ -669,7 +669,7 @@ BOOL PetTalk_CheckMyPet( int meindex, int talker, int petLv, int flg, int petid)
 	}
 	if( petsel  == CHAR_MAXPETHAVE )	{
 		return FALSE;
-	}else	{	//ÕÒµ½Ìõ¼ş³è
+	}else	{	//æ‰¾åˆ°æ¡ä»¶å® 
 		if( PetTalk_BigSmallLastCheck( petLv, CHAR_getInt( petindex, CHAR_LV), flg ) == TRUE  )
 			return TRUE;
 	}
@@ -749,7 +749,7 @@ int PET_CleanPetdeletetime( int objmeindex)
 			"Watchfunc",
 			CHAR_getChar( pindex, CHAR_NAME),
 			CHAR_getInt( pindex, CHAR_LV),
-			"timeout_lost(ÏµÍ³Çå³ı-µØÉÏ×ÔÓÉ³è)",
+			"timeout_lost(ç³»ç»Ÿæ¸…é™¤-åœ°ä¸Šè‡ªç”±å® )",
 			CHAR_getInt( pindex, CHAR_FLOOR),
 			CHAR_getInt( pindex,CHAR_X ),
 			CHAR_getInt( pindex,CHAR_Y ),
@@ -778,7 +778,7 @@ void PET_CHECKFreePetIsIt( int petindex)
 			"Watchfunc",
 			CHAR_getChar( petindex, CHAR_NAME),
 			CHAR_getInt( petindex, CHAR_LV),
-			"timeout_lost(ÏµÍ³Çå³ı-µØÉÏ×ÔÓÉ³è)",
+			"timeout_lost(ç³»ç»Ÿæ¸…é™¤-åœ°ä¸Šè‡ªç”±å® )",
 			CHAR_getInt( petindex, CHAR_FLOOR),
 			CHAR_getInt( petindex,CHAR_X ),
 			CHAR_getInt( petindex,CHAR_Y ),
@@ -806,7 +806,7 @@ void PET_Watchfunc( int objmeindex, int objmoveindex, CHAR_ACTION act, int x, in
 	if( CHAR_getWorkInt( petindex, CHAR_WORKTRADETYP) != TRADETYPE_SELL)	{
 #endif
 		if( CHAR_getInt( petindex, CHAR_MAILMODE) != CHAR_PETMAIL_NONE) {
-			//³èÓÊ²»´¦Àí
+			//å® é‚®ä¸å¤„ç†
 		}else if( CHAR_getWorkInt( petindex, CHAR_WORKPETFOLLOWMODE) == CHAR_PETFOLLOW_NOW ){
 			if( NowTime.tv_sec >= (petputtime + 60*60) ) {
 				int	ownerindex = CHAR_getWorkInt( petindex, CHAR_WORKPLAYERINDEX);
@@ -814,7 +814,7 @@ void PET_Watchfunc( int objmeindex, int objmoveindex, CHAR_ACTION act, int x, in
 					if( CHAR_pickupFollowPet( ownerindex, petindex ) )	{
 						return;
 					}
-					CHAR_talkToCli( ownerindex, -1, "Áï³èÌ«¾Ã£¬³èÎï×ßÊ§ÁË£¡£¡", CHAR_COLORYELLOW );
+					CHAR_talkToCli( ownerindex, -1, "æºœå® å¤ªä¹…ï¼Œå® ç‰©èµ°å¤±äº†ï¼ï¼", CHAR_COLORYELLOW );
 				}
 #ifdef _PET_LOSTPET
 				CHAR_CharSaveLostPet( petindex, 1);
@@ -823,13 +823,13 @@ void PET_Watchfunc( int objmeindex, int objmoveindex, CHAR_ACTION act, int x, in
 					"Watchfunc",
 					CHAR_getChar( petindex, CHAR_NAME),
 					CHAR_getInt( petindex, CHAR_LV),
-					"timeout_lost(ÏµÍ³¿ÛÁô-Áï³è×ÔÓÉ³è)",
+					"timeout_lost(ç³»ç»Ÿæ‰£ç•™-æºœå® è‡ªç”±å® )",
 					CHAR_getInt( petindex, CHAR_FLOOR),
 					CHAR_getInt( petindex,CHAR_X ),
 					CHAR_getInt( petindex,CHAR_Y ),
 					CHAR_getChar( petindex, CHAR_UNIQUECODE)   // shan 2001/12/14
 				);
-				print("ÏµÍ³¿ÛÁô-Áï³è×ÔÓÉ³è:%s\n", CHAR_getUseName( petindex));
+				print("ç³»ç»Ÿæ‰£ç•™-æºœå® è‡ªç”±å® :%s\n", CHAR_getUseName( petindex));
 				CHAR_CharaDelete( petindex);
 #else
 				CHAR_setInt( petindex, CHAR_PUTPETTIME, NowTime.tv_sec);
@@ -839,7 +839,7 @@ void PET_Watchfunc( int objmeindex, int objmoveindex, CHAR_ACTION act, int x, in
 					CHAR_getChar( pindex, CHAR_CDKEY ),
 					CHAR_getChar( petindex, CHAR_NAME),
 					CHAR_getInt( petindex, CHAR_LV),
-					"timeout_lost(Áï³èÌ«¾Ã£¬³èÎï×ßÊ§))",
+					"timeout_lost(æºœå® å¤ªä¹…ï¼Œå® ç‰©èµ°å¤±))",
 					CHAR_getInt( pindex,CHAR_FLOOR),
 					CHAR_getInt( pindex,CHAR_X ),
 	 				CHAR_getInt( pindex,CHAR_Y ),

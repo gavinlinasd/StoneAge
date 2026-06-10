@@ -18,15 +18,15 @@
 #define BCF_ABSORB		(1 << 11)
 #define BCF_VANISH		(1 << 12)
 #define BCF_CRUSH		(1 << 13)
-#define BCF_FALL		(1 << 14)	//ÂäÂíÊõ
+#define BCF_FALL		(1 << 14)	//è½é©¬æœ¯
 #ifdef _SKILL_TOOTH
-#define BCF_TOOTH		(1 << 15)	//  ³Ý
+#define BCF_TOOTH		(1 << 15)	//  æŽ›
 #endif
 #ifdef _PSKILL_MODIFY
-#define BCF_ATTDOUBLE	(1 << 16)	//ÊôÐÔÇ¿»¯
+#define BCF_ATTDOUBLE	(1 << 16)	//å±žæ€§å¼ºåŒ–
 #endif
 #ifdef _SKILL_ROAR  
-#define BCF_ROAR		(1 << 17)	//³è¼¼:´óºð(¿ËÄêÊÞ)
+#define BCF_ROAR		(1 << 17)	//å® æŠ€:å¤§å¼(å…‹å¹´å…½)
 #endif 
 
 #ifdef _MAGIC_DEFMAGICATT
@@ -39,17 +39,17 @@
 #define BCF_MODIFY		(1 << 21)
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
-#define BCF_F_SKILLACT	(1 << 22)	//»÷ÖÐÇ°ÐãÍ¼
-#define	BCF_TRAP		(1 << 25)	//ÏÝÚå
-#define BCF_NO_DAMAGE   (1 << 26)   //Ë«ÖØ¹¥»÷
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
+#define BCF_F_SKILLACT	(1 << 22)	//å‡»ä¸­å‰ç§€å›¾
+#define	BCF_TRAP		(1 << 25)	//é™·é˜±
+#define BCF_NO_DAMAGE   (1 << 26)   //åŒé‡æ”»å‡»
 #endif
-#define BCF_B_SKILLACT	(1 << 23)	//»÷ÖÐááÐãÍ¼
+#define BCF_B_SKILLACT	(1 << 23)	//å‡»ä¸­å¾Œç§€å›¾
 
 
 
 #ifdef _EQUIT_ARRANGE
-#define BCF_B_ARRANGE	(1 << 24)	//¸ñµ²ÐãÍ¼
+#define BCF_B_ARRANGE	(1 << 24)	//æ ¼æŒ¡ç§€å›¾
 #endif
 
 #ifdef _PETSKILL_ACUPUNCTURE
@@ -92,47 +92,47 @@ extern int	 gBattleStausChange;
 extern int	 gBattleStausTurn;
 
 enum{
-	BATTLE_ST_NONE,		 //  0 "Õý³£",
-	BATTLE_ST_POISON,	 //  1 "¶¾",
-	BATTLE_ST_PARALYSIS, //  2 "Âé",
-	BATTLE_ST_SLEEP,	 //  3 "Ãß",
+	BATTLE_ST_NONE,		 //  0 "æ­£å¸¸",
+	BATTLE_ST_POISON,	 //  1 "æ¯’",
+	BATTLE_ST_PARALYSIS, //  2 "éº»",
+	BATTLE_ST_SLEEP,	 //  3 "çœ ",
 	BATTLE_ST_STONE,	 //  4 "Ê¯",
-	BATTLE_ST_DRUNK,	 //  5 "×í",
-	BATTLE_ST_CONFUSION, //  6 "ÂÒ",
-    BATTLE_ST_WEAKEN,    //  7 "Ðé"
-	BATTLE_ST_DEEPPOISON,//  8 "¾ç¶¾"
-	BATTLE_ST_BARRIER,   //  9 "Ä§ÕÏ"
-	BATTLE_ST_NOCAST,    // 10 "³ÁÄ¬"
-#ifdef _PET_SKILL_SARS				// WON ADD ¶¾É·ÂûÑÓ
+	BATTLE_ST_DRUNK,	 //  5 "é†‰",
+	BATTLE_ST_CONFUSION, //  6 "ä¹±",
+    BATTLE_ST_WEAKEN,    //  7 "è™š"
+	BATTLE_ST_DEEPPOISON,//  8 "å‰§æ¯’"
+	BATTLE_ST_BARRIER,   //  9 "é­”éšœ"
+	BATTLE_ST_NOCAST,    // 10 "æ²‰é»˜"
+#ifdef _PET_SKILL_SARS				// WON ADD è•Žå½ªèŒ¸å†³
 	BATTLE_ST_SARS,		 // 11 "É·"
 #endif
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
-	BATTLE_ST_DIZZY,	 // 12 "ÔÎ"
-	BATTLE_ST_ENTWINE,	 // 13 "²ø"
-	BATTLE_ST_DRAGNET,	 // 14 "ÌìÂÞµØÍø"
-	BATTLE_ST_ICECRACK,  // 15 "±ù±¬Êõ"
-	BATTLE_ST_OBLIVION,	 // 16 "ÒÅÍü"
-	BATTLE_ST_ICEARROW,	 // 17 "±ù¼ý"
-	BATTLE_ST_BLOODWORMS,// 18 "ÊÈÑª¹Æ"
-	BATTLE_ST_SIGN,		 // 19 "Ò»Õë¼ûÑª"
-	BATTLE_ST_INSTIGATE, // 20 "Ìô²¦"
-	BATTLE_ST_F_ENCLOSE, // 21 "»ð¸½Ìå"
-	BATTLE_ST_I_ENCLOSE, // 22 "±ù¸½Ìå"
-	BATTLE_ST_T_ENCLOSE, // 23 "À×¸½Ìå"
-	BATTLE_ST_FOCUS,	 // 24 "×¨×¢Õ½¶·"	
-	BATTLE_ST_RESIST_F,	 // 25 "»ð¿¹"
-	BATTLE_ST_RESIST_I,	 // 26 "±ù¿¹"
-	BATTLE_ST_RESIST_T,	 // 27 "À×¿¹"
-	BATTLE_ST_F_ENCLOSE2, // 28 "»ð¸½"
-	BATTLE_ST_I_ENCLOSE2, // 29 "±ù¸½"
-	BATTLE_ST_T_ENCLOSE2, // 30 "À×¸½"
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
+	BATTLE_ST_DIZZY,	 // 12 "æ™•"
+	BATTLE_ST_ENTWINE,	 // 13 "ç¼ "
+	BATTLE_ST_DRAGNET,	 // 14 "å¤©ç½—åœ°ç½‘"
+	BATTLE_ST_ICECRACK,  // 15 "å†°çˆ†æœ¯"
+	BATTLE_ST_OBLIVION,	 // 16 "é—å¿˜"
+	BATTLE_ST_ICEARROW,	 // 17 "å†°ç®­"
+	BATTLE_ST_BLOODWORMS,// 18 "å—œè¡€è›Š"
+	BATTLE_ST_SIGN,		 // 19 "ä¸€é’ˆè§è¡€"
+	BATTLE_ST_INSTIGATE, // 20 "è–¬çŽ‹"
+	BATTLE_ST_F_ENCLOSE, // 21 "ç«é™„ä½“"
+	BATTLE_ST_I_ENCLOSE, // 22 "å†°é™„ä½“"
+	BATTLE_ST_T_ENCLOSE, // 23 "é›·é™„ä½“"
+	BATTLE_ST_FOCUS,	 // 24 "ä¸“æ³¨æˆ˜æ–—"	
+	BATTLE_ST_RESIST_F,	 // 25 "ç«æŠ—"
+	BATTLE_ST_RESIST_I,	 // 26 "å†°æŠ—"
+	BATTLE_ST_RESIST_T,	 // 27 "é›·æŠ—"
+	BATTLE_ST_F_ENCLOSE2, // 28 "ç«é™„"
+	BATTLE_ST_I_ENCLOSE2, // 29 "ç”¥ç¾"
+	BATTLE_ST_T_ENCLOSE2, // 30 "è·¡ç¾"
 #ifdef _PROFESSION_ADDSKILL
-    BATTLE_ST_RESIST_F_I_T, //31 "»ð±ùÀ×¿¹"
-    //BATTLE_ST_BOUNDARY_F, //32 "»ð½á½ç
-	BATTLE_ST_WATER, //32 "Ë®¸½Ìå"
-	BATTLE_ST_WORKANNEX, //33 "¸½Éí"
-	BATTLE_ST_FEAR, //34 "¿Ö¾å"
-	BATTLE_ST_ICECRACK2,  // 35 "±ù±¬Êõ"
+    BATTLE_ST_RESIST_F_I_T, //31 "ç«å†°é›·æŠ—"
+    //BATTLE_ST_BOUNDARY_F, //32 "ç«ç»“ç•Œ
+	BATTLE_ST_WATER, //32 "æ°´é™„ä½“"
+	BATTLE_ST_WORKANNEX, //33 "é™„èº«"
+	BATTLE_ST_FEAR, //34 "è¨Šä¸Š"
+	BATTLE_ST_ICECRACK2,  // 35 "å†°çˆ†æœ¯"
 	BATTLE_ST_ICECRACK3,  // 36
 	BATTLE_ST_ICECRACK4,  // 37
 	BATTLE_ST_ICECRACK5,  // 38
@@ -169,13 +169,13 @@ enum{
 	BATTLE_MD_VANISH,
 	BATTLE_MD_TRAP,
 #ifdef _PETSKILL_ACUPUNCTURE
-    BATTLE_MD_ACUPUNCTURE, //Õë´ÌÍâÆ¤
+    BATTLE_MD_ACUPUNCTURE, //é’ˆåˆºå¤–çš®
 #endif
 	BATTLE_MD_END 
 };
 
 #ifdef _PETSKILL_RETRACE
-    //´æ·ÅBATTLE_Attackº¯Ê½Ö´ÐÐááµÄ¹¥»÷Ä£Ê½   
+    //å­˜æ”¾BATTLE_Attackå‡½å¼æ‰§è¡Œå¾Œçš„æ”»å‡»æ¨¡å¼   
 typedef struct tagBattle_Attack_ReturnData_x1
 {
     int Battle_Attack_ReturnData;
@@ -214,7 +214,7 @@ int BATTLE_Magic( int battleindex, int attackNo );
 
 int BATTLE_S_GBreak( int battleindex, int attackNo, int defNo );
 
-#ifdef _SKILL_GUARDBREAK2//ÆÆ³ý·ÀÓù2 vincent add 2002/05/20
+#ifdef _SKILL_GUARDBREAK2//ç ´é™¤é˜²å¾¡2 vincent add 2002/05/20
 int BATTLE_S_GBreak2( int battleindex, int attackNo, int defNo );
 #endif
 
@@ -226,23 +226,23 @@ int BATTLE_S_Sacrifice( int battleindex, int attackNo, int defNo );
 int BATTLE_S_Refresh( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_WEAKEN  //vincent³è¼¼:ÐéÈõ
+#ifdef _SKILL_WEAKEN  //vincentå® æŠ€:è™šå¼±
 int BATTLE_S_Weaken( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_DEEPPOISON  //vincent³è¼¼:¾ç¶¾ 
+#ifdef _SKILL_DEEPPOISON  //vincentå® æŠ€:å‰§æ¯’ 
 int BATTLE_S_Deeppoison( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_BARRIER  //vincent³è¼¼:Ä§ÕÏ
+#ifdef _SKILL_BARRIER  //vincentå® æŠ€:é­”éšœ
 int BATTLE_S_Barrier( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_NOCAST  //vincent³è¼¼:³ÁÄ¬
+#ifdef _SKILL_NOCAST  //vincentå® æŠ€:æ²‰é»˜
 int BATTLE_S_Nocast( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
-#ifdef _SKILL_ROAR //vincent³è¼¼:´óºð
+#ifdef _SKILL_ROAR //vincentå® æŠ€:å¤§å¼
 int BATTLE_S_Roar( int battleindex, int attackNo, int defNo, int marray );
 #endif
 
@@ -254,12 +254,12 @@ int BATTLE_StatusAttackCheck(
 	int attackindex,
 	int defindex,
 	int status,
-	//BATTLE_ST_POISON,	    1 "¶¾",
-	//BATTLE_ST_PARALYSIS,  2 "Âé",
-	//BATTLE_ST_SLEEP,	    3 "Ãß",
+	//BATTLE_ST_POISON,	    1 "æ¯’",
+	//BATTLE_ST_PARALYSIS,  2 "éº»",
+	//BATTLE_ST_SLEEP,	    3 "çœ ",
 	//BATTLE_ST_STONE,	    4 "Ê¯",
-	//BATTLE_ST_DRUNK,	    5 "×í",
-	//BATTLE_ST_CONFUSION,  6 "ÂÒ"
+	//BATTLE_ST_DRUNK,	    5 "é†‰",
+	//BATTLE_ST_CONFUSION,  6 "ä¹±"
 	int PerOffset,
 	int Range,
 	float Bai,
@@ -308,7 +308,7 @@ float BATTLE_adjustRidePet3A( int charaindex, int petindex, int workindex, int a
 
 int BATTLE_getRidePet( int charaindex );
 
-#ifdef _PSKILL_FALLGROUND	//ÂäÂíÊõ
+#ifdef _PSKILL_FALLGROUND	//è½é©¬æœ¯
 int BATTLE_S_FallGround( int battleindex, int attackNo, int defNo, int skill_type );
 #endif
 #ifdef _PETSKILL_EXPLODE
@@ -352,14 +352,14 @@ int BATTLE_CheckSameSide( int charaindex, int toNo);
 #endif
 
 #ifdef _USER_CHARLOOPS
-int CHAR_BattleStayLoop( int charaindex);//Ô­µØÓöµÐ
+int CHAR_BattleStayLoop( int charaindex);//åŽŸåœ°é‡æ•Œ
 #endif
 
 #ifdef _PETSKILL_PROPERTY
 int PET_PetskillPropertyEvent( int Myindex, int defindex, int *damage, int *T_Pow, int size);
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 int battle_profession_attack_fun(int battleindex, int attackNo, int defNo, int charaindex);
 int battle_profession_attack_magic_fun(int battleindex, int attackNo, int defNo, int charaindex);
 int battle_profession_assist_fun(int battleindex, int attackNo, int defNo, int charaindex);
@@ -373,11 +373,11 @@ int BATTLE_PROFESSION_RANG_ATTACK_DAMAGE( int charaindex, int attackNo, int defN
 
 #endif
 
-#ifdef _PETSKILL_FIREKILL //»ðÏßÁÔÉ±×¨ÓÃ
+#ifdef _PETSKILL_FIREKILL //ç«çº¿çŒŽæ€ä¸“ç”¨
 int BATTLE_Attack_FIREKILL( int battleindex, int attackNo, int defNo );
 #endif
 #ifdef _PROFESSION_ADDSKILL
-BOOL BATTLE_BattleUltimate( int battleindex, int bid ); //¼ì²é´ËÎ»  ÉÏÊÇ·ñ±»´ò·É
+BOOL BATTLE_BattleUltimate( int battleindex, int bid ); //æ£€æŸ¥æ­¤ä½  ä¸Šæ˜¯å¦è¢«æ‰“é£ž
 #endif
 
 #endif

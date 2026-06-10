@@ -40,7 +40,7 @@
 #include "npcserver.h"
 #endif
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 #include "profession_skill.h"
 #endif
 
@@ -65,19 +65,19 @@ void printUsage( void )
 }
 
 /*
- * ÎìÑ¨¼şÓñ·ÂÄÌ¼şÃ«ÖÊ  ÔÊÔÂ
+ * æˆŠç©´ä»¶ç‰ä»¿å¥¶ä»¶æ¯›è´¨  å…æœˆ
  *
- * Â¦ĞÑ
- *      argc      Ù¯  ¼°ĞÑ
- *      argv      Ù¯  ¼°    
- * ß¯Ô»°À
- *      TRUE(1)     ¿ÒéÙØ¦ÎìÑ¨¼şÓñ·ÂÄÌ¼şÂ¦ĞÑ·ÖÔÈĞ×ÈÕ
- *      FALSE(0)    ³ªéÙØ¦ÎìÑ¨¼şÓñ·ÂÄÌ¼şÂ¦ĞÑ·ÖÔÈĞ×ÈÕ
+ * å¨„é†’
+ *      argc      ä¾¬  åŠé†’
+ *      argv      ä¾¬  åŠ    
+ * å¿’æ›°è¢„
+ *      TRUE(1)     æ³æ©˜å…æˆŠç©´ä»¶ç‰ä»¿å¥¶ä»¶å¨„é†’åˆ†åŒ€å‡¶æ—¥
+ *      FALSE(0)    å”±æ©˜å…æˆŠç©´ä»¶ç‰ä»¿å¥¶ä»¶å¨„é†’åˆ†åŒ€å‡¶æ—¥
  */
 BOOL parseCommandLine( int argc , char** argv )
 {
-    int c;                          /* getopt Æ¥Òøµ¤ */
-    extern char* optarg;            /* getopt Æ¥Òøµ¤ */
+    int c;                          /* getopt ãçª…ç«£ */
+    extern char* optarg;            /* getopt ãçª…ç«£ */
 
 
     while( ( c = getopt( argc, argv ,OPTIONSTRING )) != -1 ){
@@ -113,11 +113,11 @@ BOOL parseCommandLine( int argc , char** argv )
 
 
 /*
- * ×ØÑã  ĞÑÃ«ÓÉ¡õµ©ÔÊÔÂ
- * Â¦ĞÑ
- *      env     ×ØÑã  ĞÑ¼°    
+ * æ£•é›  é†’æ¯›ç”±â–¡æ—¦å…æœˆ
+ * å¨„é†’
+ *      env     æ£•é›  é†’åŠ    
  *
- * Æá¼°ô÷ÖÏÊÖØÆØ¦ÖĞ
+ * æ¼†åŠèµ­çª’æ‰‹ä»„å…ä¸­
  */
 BOOL parseEnvironment( char** env )
 {
@@ -132,21 +132,21 @@ BOOL parseEnvironment( char** env )
 
 
 
-/*lsgenåÃ¼°·¥¡õÆ½¼şºëÌïÓÀ°×Ñë¼°  Îå½ñ*/
+/*lsgenè¿•åŠä¼â–¡å¹³ä»¶å¼˜ç”°æ°¸ç™½å¤®åŠ  äº”ä»Š*/
 #define LSGENWORKINGBUFFER  65536*4
 
 
 
 #define GOTORETURNFALSEIFFALSE(x) if(!(x))goto RETURNFALSE
 /*
- * âÙÓå¼À»ï¡õÃñ¼ş
- * Â¦ĞÑ
- *      argc    argv¼°ĞÑ
- *      argv    ÎìÑ¨¼şÓñ·ÂÄÌ¼şÂ¦ĞÑ
- *      env     ×ØÑã  ĞÑ
- * ß¯Ô»°À
- *      TRUE(1) ÔÀ  
- *      FALSE(1) ÁÃ  
+ * èµ“æ¸ç¥­ä¼™â–¡æ°‘ä»¶
+ * å¨„é†’
+ *      argc    argvåŠé†’
+ *      argv    æˆŠç©´ä»¶ç‰ä»¿å¥¶ä»¶å¨„é†’
+ *      env     æ£•é›  é†’
+ * å¿’æ›°è¢„
+ *      TRUE(1) å²³  
+ *      FALSE(1) æ’©  
  */
 BOOL init(int argc , char** argv , char** env )
 {
@@ -179,145 +179,145 @@ BOOL init(int argc , char** argv , char** env )
         debug( sizeof( aho.workchar ),d);
     }
 
-    print( "ÅäÖÃÎÄ¼ş: %s\n" , getConfigfilename() );
+    print( "é…ç½®æ–‡ä»¶: %s\n" , getConfigfilename() );
 
     GOTORETURNFALSEIFFALSE(readconfigfile( getConfigfilename() ) );
     //ttom start
     {  int iWork = setEncodeKey();
        if( iWork == 0 ){
-       // ¾Ş¼şÎì¡õÓñÆ½¡õÃ«É¬ÀÃ
+       // å·¨ä»¶æˆŠâ–¡ç‰å¹³â–¡æ¯›æ¶©çƒ‚
        printf( "----------------------------------------\n" );
-       printf( "-------------[±àÂë] ÎŞ·¨ÉèÖÃ %s\n", getConfigfilename() );
+       printf( "-------------[ç¼–ç ] æ— æ³•è®¾ç½® %s\n", getConfigfilename() );
        printf( "----------------------------------------\n" );
        exit( 1 );
        }else{
-            // ¾Ş¼şÎì¡õÓñÆ½¡õÃ«É¬ÀÃ
-               printf( "±àÂë = %d\n", iWork );
+            // å·¨ä»¶æˆŠâ–¡ç‰å¹³â–¡æ¯›æ¶©çƒ‚
+               printf( "ç¼–ç  = %d\n", iWork );
        }
     }
-    // AcWBuffÃ«É¬ÀÃ
+    // AcWBuffè°·å¿…é†’
     {   int iWork = setAcWBSize();
         if( iWork == 0 ){
            printf( "----------------------------------------\n" );
-           printf( "-------------[AC»º³å] ÎŞ·¨ÉèÖÃ %s\n", getConfigfilename() );
+           printf( "-------------[ACç¼“å†²] æ— æ³•è®¾ç½® %s\n", getConfigfilename() );
            printf( "----------------------------------------\n" );
            exit( 1 );
            }else{
-                   printf( "AC»º³å = %d\n", iWork );
+                   printf( "ACç¼“å†² = %d\n", iWork );
            }
     }
     //ttom end
 
     if( getDebuglevel() >= 1 ){
 //		print("ServerType: %d\n", getServerType() );
-        print("µ÷ÊÔµÈ¼¶: %d\n" , getDebuglevel() );
-        print("ÄÚ´æµ¥Ôª: %d\n"  , getMemoryunit() );
-        print("ÄÚ´æµ¥ÔªÊıÁ¿: %d\n" , getMemoryunitnum() );
+        print("è°ƒè¯•ç­‰çº§: %d\n" , getDebuglevel() );
+        print("å†…å­˜å•å…ƒ: %d\n"  , getMemoryunit() );
+        print("å†…å­˜å•å…ƒæ•°é‡: %d\n" , getMemoryunitnum() );
 
-        print("ÕËºÅ·şÎñÆ÷µØÖ·: %s\n" , getAccountservername() );
-        print("ÕËºÅ·şÎñÆ÷¶Ë¿Ú: %d\n" , getAccountserverport() );
-        print("µÇÂ½·şÎñÆ÷Ãû³Æ: %s\n",
+        print("è´¦å·æœåŠ¡å™¨åœ°å€: %s\n" , getAccountservername() );
+        print("è´¦å·æœåŠ¡å™¨ç«¯å£: %d\n" , getAccountserverport() );
+        print("ç™»é™†æœåŠ¡å™¨åç§°: %s\n",
               getGameservername());
-        print("µÇÂ½·şÎñÆ÷ÃÜÂë: %s\n", getAccountserverpasswd());
+        print("ç™»é™†æœåŠ¡å™¨å¯†ç : %s\n", getAccountserverpasswd());
 
-        print("µÈ´ıÁ¬½Ó¶Ë¿Ú: %d\n",  getPortnumber() );
+        print("ç­‰å¾…è¿æ¥ç«¯å£: %d\n",  getPortnumber() );
 
-        print("·şÎñ¶ËĞòÁĞºÅ: %d\n",  getServernumber() );
+        print("æœåŠ¡ç«¯åºåˆ—å·: %d\n",  getServernumber() );
 
-        print("ÖØ¸´µØÖ·Ê¹ÓÃ: %d\n",  getReuseaddr() );
+        print("é‡å¤åœ°å€ä½¿ç”¨: %d\n",  getReuseaddr() );
 
 
-        print("×î´óÔÚÏßÈËÊı: %d\n",
+        print("æœ€å¤§åœ¨çº¿äººæ•°: %d\n",
               getFdnum() );
-        print("×î´óÔÚÏß³èÊı: %d\n" , getPetcharnum() );
-        print("×î´óÆäËûÊıÄ¿: %d\n"  , getOtherscharnum() );
-        print("×î´ó¶ÔÏóÊıÄ¿: %d\n",  getObjnum() );
-        print("×î´óÎïÆ·ÊıÄ¿: %d\n",  getItemnum() );
-        print("×î´óÕ½¶·ÊıÄ¿: %d\n",  getBattlenum() );
+        print("æœ€å¤§åœ¨çº¿å® æ•°: %d\n" , getPetcharnum() );
+        print("æœ€å¤§å…¶ä»–æ•°ç›®: %d\n"  , getOtherscharnum() );
+        print("æœ€å¤§å¯¹è±¡æ•°ç›®: %d\n",  getObjnum() );
+        print("æœ€å¤§ç‰©å“æ•°ç›®: %d\n",  getItemnum() );
+        print("æœ€å¤§æˆ˜æ–—æ•°ç›®: %d\n",  getBattlenum() );
 #ifdef _GET_BATTLE_EXP
-				print("Õ½¶·¾­Ñé±¶Êı: %d\n",  getBattleexp() );
+				print("æˆ˜æ–—ç»éªŒå€æ•°: %d\n",  getBattleexp() );
 #endif
-        print("¶¥²ãÎÄ¼şÄ¿Â¼: %s\n"  , getTopdir());
-        print("µØÍ¼ÎÄ¼şÄ¿Â¼: %s\n"  , getMapdir());
-        print("µØÍ¼±êÊ¶ÎÄ¼ş: %s\n"  , getMaptilefile());
-        print("ÎïÆ·ÅäÖÃÎÄ¼ş: %s\n"  , getItemfile());
-        print("²»¿ÉÕ½¶·ÎÄ¼ş: %s\n"  , getInvfile());
-        print("ÏÔÊ¾Î»ÖÃÎÄ¼ş: %s\n"  , getAppearfile());
-        print("ÓöµĞÅäÖÃÎÄ¼ş: %s\n"  , getEffectfile());
-        print("Í·ÏÎÃû³ÆÎÄ¼ş: %s\n"  , getTitleNamefile());
-        print("Í·ÏÎÅäÖÃÎÄ¼ş: %s\n"  , getTitleConfigfile());
-        print("ÓöµĞ×ø±êÎÄ¼ş: %s\n"  , getEncountfile());
-        print("ÓöµĞ×éÈºÎÄ¼ş: %s\n"  , getGroupfile());
-        print("³èÎï»ù±¾ÎÄ¼ş: %s\n"  , getEnemyBasefile());
-        print("´´½¨³èÎïÎÄ¼ş: %s\n"  , getEnemyfile());
-        print("¾«ÁéÄ§·¨ÎÄ¼ş: %s\n"  , getMagicfile());
+        print("é¡¶å±‚æ–‡ä»¶ç›®å½•: %s\n"  , getTopdir());
+        print("åœ°å›¾æ–‡ä»¶ç›®å½•: %s\n"  , getMapdir());
+        print("åœ°å›¾æ ‡è¯†æ–‡ä»¶: %s\n"  , getMaptilefile());
+        print("ç‰©å“é…ç½®æ–‡ä»¶: %s\n"  , getItemfile());
+        print("ä¸å¯æˆ˜æ–—æ–‡ä»¶: %s\n"  , getInvfile());
+        print("æ˜¾ç¤ºä½ç½®æ–‡ä»¶: %s\n"  , getAppearfile());
+        print("é‡æ•Œé…ç½®æ–‡ä»¶: %s\n"  , getEffectfile());
+        print("å¤´è¡”åç§°æ–‡ä»¶: %s\n"  , getTitleNamefile());
+        print("å¤´è¡”é…ç½®æ–‡ä»¶: %s\n"  , getTitleConfigfile());
+        print("é‡æ•Œåæ ‡æ–‡ä»¶: %s\n"  , getEncountfile());
+        print("é‡æ•Œç»„ç¾¤æ–‡ä»¶: %s\n"  , getGroupfile());
+        print("å® ç‰©åŸºæœ¬æ–‡ä»¶: %s\n"  , getEnemyBasefile());
+        print("åˆ›å»ºå® ç‰©æ–‡ä»¶: %s\n"  , getEnemyfile());
+        print("ç²¾çµé­”æ³•æ–‡ä»¶: %s\n"  , getMagicfile());
 
 #ifdef __ATTACK_MAGIC
-        print("¹¥»÷Ä§·¨ÎÄ¼ş: %s\n" , getAttMagicfileName() );
+        print("æ”»å‡»é­”æ³•æ–‡ä»¶: %s\n" , getAttMagicfileName() );
 #endif
 
-        print("³èÎï¼¼ÄÜÎÄ¼ş: %s\n"  , getPetskillfile());
+        print("å® ç‰©æŠ€èƒ½æ–‡ä»¶: %s\n"  , getPetskillfile());
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
-        print("Ö°Òµ¼¼ÄÜÎÄ¼ş: %s\n"  , getProfession());
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
+        print("èŒä¸šæŠ€èƒ½æ–‡ä»¶: %s\n"  , getProfession());
 #endif
 
-        print("ÎïÆ·³É·İÎÄ¼ş: %s\n", getItematomfile());
-        print("²ÂÃÔÎÊÌâÎÄ¼ş: %s\n", getQuizfile());
+        print("ç‰©å“æˆä»½æ–‡ä»¶: %s\n", getItematomfile());
+        print("çŒœè¿·é—®é¢˜æ–‡ä»¶: %s\n", getQuizfile());
 #ifdef _BLACK_MARKET
-				print("µØÏÂÊĞ³¡ÎÄ¼ş: %s\n", getBMItemFile());
+				print("åœ°ä¸‹å¸‚åœºæ–‡ä»¶: %s\n", getBMItemFile());
 #endif
 #ifdef _GMRELOAD
-				print("G M ÅäÖÃÎÄ¼ş: %s\n", getGMSetfile());
+				print("G M é…ç½®æ–‡ä»¶: %s\n", getGMSetfile());
 #endif
-        print("ÈÕÖ¾¼ÇÂ¼ÎÄ¼ş: %s\n"  ,  getLsgenlogfilename() );
-        print("»¹Ô­×ÊÁÏÄ¿Â¼: %s\n"  , getStoredir());
-        print("NPC ÅäÖÃÄ¿Â¼: %s\n"  , getNpcdir());
-        print("ÈÕÖ¾¼ÇÔØÎÄ¼ş: %s\n",  getLogdir());
-        print("ÈÕÖ¾ÅäÖÃÎÄ¼ş: %s\n", getLogconffile() );
-        print("GMµÄÖ¸ÃüÃÜÂë: %s\n", getChatMagicPasswd() );
-        print("Ê¹ÓÃGMµÄÈ¨ÏŞ: %d\n", getChatMagicCDKeyCheck() );
+        print("æ—¥å¿—è®°å½•æ–‡ä»¶: %s\n"  ,  getLsgenlogfilename() );
+        print("è¿˜åŸèµ„æ–™ç›®å½•: %s\n"  , getStoredir());
+        print("NPC é…ç½®ç›®å½•: %s\n"  , getNpcdir());
+        print("æ—¥å¿—è®°è½½æ–‡ä»¶: %s\n",  getLogdir());
+        print("æ—¥å¿—é…ç½®æ–‡ä»¶: %s\n", getLogconffile() );
+        print("GMçš„æŒ‡å‘½å¯†ç : %s\n", getChatMagicPasswd() );
+        print("ä½¿ç”¨GMçš„æƒé™: %d\n", getChatMagicCDKeyCheck() );
 
-        print("NPC Ä£°åÊıÄ¿: %d\n"  , getNpctemplatenum() );
-        print("NPC ×î´óÊıÄ¿: %d\n"  , getNpccreatenum() );
+        print("NPC æ¨¡æ¿æ•°ç›®: %d\n"  , getNpctemplatenum() );
+        print("NPC æœ€å¤§æ•°ç›®: %d\n"  , getNpccreatenum() );
 
-        print("×ßÂ·Ê±¼ä¼ä¸ô: %d\n"  , getWalksendinterval());
-        print("Çå³ıËùÓĞ¼ä¸ô: %d\n"  , getCAsendinterval_ms());
-        print("Çå³ıÄ¿±ê¼ä¸ô: %d\n"  , getCDsendinterval_ms());
-        print("Ö´ĞĞÒ»´ÎÊ±¼ä: %d\n"  , getOnelooptime_ms());
-        print("³èÎïÇå³ıÊ±¼ä: %d\n"  , getPetdeletetime());
-        print("µÀ¾ßÇå³ıÊ±¼ä: %d\n"  , getItemdeletetime());
+        print("èµ°è·¯æ—¶é—´é—´éš”: %d\n"  , getWalksendinterval());
+        print("æ¸…é™¤æ‰€æœ‰é—´éš”: %d\n"  , getCAsendinterval_ms());
+        print("æ¸…é™¤ç›®æ ‡é—´éš”: %d\n"  , getCDsendinterval_ms());
+        print("æ‰§è¡Œä¸€æ¬¡æ—¶é—´: %d\n"  , getOnelooptime_ms());
+        print("å® ç‰©æ¸…é™¤æ—¶é—´: %d\n"  , getPetdeletetime());
+        print("é“å…·æ¸…é™¤æ—¶é—´: %d\n"  , getItemdeletetime());
 #ifdef _DEL_DROP_GOLD
-				print("Ê¯Æ÷Çå³ıÊ±¼ä: %d\n"  , getGolddeletetime());
+				print("çŸ³å™¨æ¸…é™¤æ—¶é—´: %d\n"  , getGolddeletetime());
 #endif
-        print("Êı¾İ±£´æ¼ä¸ô: %d\n"  , getCharSavesendinterval());
+        print("æ•°æ®ä¿å­˜é—´éš”: %d\n"  , getCharSavesendinterval());
 
-        print("ÃûÆ¬×î´óÊıÄ¿: %d\n",getAddressbookoffmsgnum());
-        print("¶ÁÈ¡ÆµÂÊĞ­Òé: %d\n",getProtocolreadfrequency());
+        print("åç‰‡æœ€å¤§æ•°ç›®: %d\n",getAddressbookoffmsgnum());
+        print("è¯»å–é¢‘ç‡åè®®: %d\n",getProtocolreadfrequency());
 
-        print("Á¬½Ó´íÎóÉÏÏŞ: %d\n",getAllowerrornum());
+        print("è¿æ¥é”™è¯¯ä¸Šé™: %d\n",getAllowerrornum());
 
 #ifdef	_M_SERVER
-		    print("GM·şÎñÆ÷µØÖ·: %s\n",getmservername());
-		    print("GM·şÎñÆ÷¶Ë¿Ú: %d\n",getmserverport());
+		    print("GMæœåŠ¡å™¨åœ°å€: %s\n",getmservername());
+		    print("GMæœåŠ¡å™¨ç«¯å£: %d\n",getmserverport());
 #endif
 #ifdef _NPCSERVER_NEW
-				print("Npc·şÎñÆ÷µØÖ·: %s\n",getnpcserveraddr());
-				print("Npc·şÎñÆ÷¶Ë¿Ú: %d\n",getnpcserverport());
+				print("NpcæœåŠ¡å™¨åœ°å€: %s\n",getnpcserveraddr());
+				print("NpcæœåŠ¡å™¨ç«¯å£: %d\n",getnpcserverport());
 #endif
 #ifdef _NEW_PLAYER_CF
-				print("³öÉúÈËÎï×ªÊı: %d\n",getNewplayertrans());
-				print("³öÉúÈËÎïµÈ¼¶: %d\n",getNewplayerlv());
-				print("³öÉúÈËÎï½ğÇ®: %d\n",getNewplayergivegold());
-				print("³öÉú³èÎïµÈ¼¶: %d\n",getNewplayerpetlv());
-				print("³öÉúÓµÓĞ³èÎï: NO1:%d NO2:%d NO3:%d NO4:%d NO5:%d\n",getNewplayergivepet(0),
+				print("å‡ºç”Ÿäººç‰©è½¬æ•°: %d\n",getNewplayertrans());
+				print("å‡ºç”Ÿäººç‰©ç­‰çº§: %d\n",getNewplayerlv());
+				print("å‡ºç”Ÿäººç‰©é‡‘é’±: %d\n",getNewplayergivegold());
+				print("å‡ºç”Ÿå® ç‰©ç­‰çº§: %d\n",getNewplayerpetlv());
+				print("å‡ºç”Ÿæ‹¥æœ‰å® ç‰©: NO1:%d NO2:%d NO3:%d NO4:%d NO5:%d\n",getNewplayergivepet(0),
 																																	getNewplayergivepet(1),
 																																	getNewplayergivepet(2),
 																																	getNewplayergivepet(3),
 																																	getNewplayergivepet(4));
-				print("³öÉúÓµÓĞÎïÆ·: ITEM1:%d ITEM2:%d ITEM3:%d ITEM4:%d ITEM5:%d\n"
-							"¡¡¡¡¡¡¡¡¡¡¡¡¡¡ITEM1:%d ITEM2:%d ITEM3:%d ITEM4:%d ITEM5:%d\n"
-							"¡¡¡¡¡¡¡¡¡¡¡¡¡¡ITEM1:%d ITEM2:%d ITEM3:%d ITEM4:%d ITEM5:%d\n"
+				print("å‡ºç”Ÿæ‹¥æœ‰ç‰©å“: ITEM1:%d ITEM2:%d ITEM3:%d ITEM4:%d ITEM5:%d\n"
+							"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ITEM1:%d ITEM2:%d ITEM3:%d ITEM4:%d ITEM5:%d\n"
+							"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ITEM1:%d ITEM2:%d ITEM3:%d ITEM4:%d ITEM5:%d\n"
 																																	,getNewplayergiveitem(0)
 																																	,getNewplayergiveitem(1)
 																																	,getNewplayergiveitem(2)
@@ -335,26 +335,26 @@ BOOL init(int argc , char** argv , char** env )
 																																	,getNewplayergiveitem(14));
 #endif
 #ifdef _UNLAW_WARP_FLOOR
-		print("½ûÖ¹´«ËÍµØÍ¼: FLOOR1:%d FLOOR2:%d FLOOR3:%d FLOOR4:%d FLOOR5:%d\n",getUnlawwarpfloor(0),
+		print("ç¦æ­¢ä¼ é€åœ°å›¾: FLOOR1:%d FLOOR2:%d FLOOR3:%d FLOOR4:%d FLOOR5:%d\n",getUnlawwarpfloor(0),
 																																	getUnlawwarpfloor(1),
 																																	getUnlawwarpfloor(2),
 																																	getUnlawwarpfloor(3),
 																																	getUnlawwarpfloor(4));
 #endif
 #ifdef _UNREG_NEMA
-		print("½ûÖ¹ÈËÎïÃû³Æ: NAME1:%s NAME2:%s NAME3:%s NAME4:%s NAME5:%s\n",getUnregname(0),
+		print("ç¦æ­¢äººç‰©åç§°: NAME1:%s NAME2:%s NAME3:%s NAME4:%s NAME5:%s\n",getUnregname(0),
 																																	getUnregname(1),
 																																	getUnregname(2),
 																																	getUnregname(3),
 																																	getUnregname(4));
 #endif
 #ifdef _TRANS_LEVEL_CF
-		print("ÈËÎïµÈ¼¶×ªÊı: %d\n",getChartrans());
-		print("³èÎïµÈ¼¶×ªÊı: %d\n",getPettrans());
+		print("äººç‰©ç­‰çº§è½¬æ•°: %d\n",getChartrans());
+		print("å® ç‰©ç­‰çº§è½¬æ•°: %d\n",getPettrans());
 #endif
 
 #ifdef _LOCK_IP
-		print("·âËø IP ÉèÖÃ: %s\n",getLockipPath());
+		print("å°é” IP è®¾ç½®: %s\n",getLockipPath());
 #endif
     }
 
@@ -363,21 +363,21 @@ BOOL init(int argc , char** argv , char** env )
 		GameServerName = getGameserverID();
 		if( GameServerName == NULL || strlen( GameServerName) <= 0 )
 			return FALSE;
-		print("\nÓÎÏ··şÎñÆ÷ID: %s\n",  GameServerName );
+		print("\næ¸¸æˆæœåŠ¡å™¨ID: %s\n",  GameServerName );
 	}
 	
-    print("¿ªÊ¼³õÊ¼»¯\n" );
+    print("å¼€å§‹åˆå§‹åŒ–\n" );
 
 //#define DEBUG1( arg... ) if( getDebuglevel()>1 ){##arg}
-    print( "½¨Á¢ÄÚ´æ¿Õ¼ä..." );
+    print( "å»ºç«‹å†…å­˜ç©ºé—´..." );
     GOTORETURNFALSEIFFALSE(configmem( getMemoryunit(),
                                       getMemoryunitnum() ) );
     GOTORETURNFALSEIFFALSE(memInit());
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
     if( !initConnect(getFdnum()) )
         goto MEMEND;
     while( 1 ){
-        print( "³¢ÊÔ°ó¶¨±¾µØ¶Ë¿Ú %d... " , getPortnumber());
+        print( "å°è¯•ç»‘å®šæœ¬åœ°ç«¯å£ %d... " , getPortnumber());
         bindedfd = bindlocalhost( getPortnumber() );
         if( bindedfd == -1 )
             sleep( 10 );
@@ -385,206 +385,206 @@ BOOL init(int argc , char** argv , char** env )
             break;
 
     }
-	print( "Íê³É\n" );
-	print( "½¨Á¢¶ÔÏó..." );
+	print( "å®Œæˆ\n" );
+	print( "å»ºç«‹å¯¹è±¡..." );
     if( !initObjectArray( getObjnum()) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
-	print( "½¨Á¢ÈËÎï..." );
+	print( "å®Œæˆ\n" );
+	print( "å»ºç«‹äººç‰©..." );
     if(!CHAR_initCharArray( getFdnum(), getPetcharnum(),getOtherscharnum()) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
-	print( "½¨Á¢ÎïÆ·:%s...", getItemfile());
+	print( "å®Œæˆ\n" );
+	print( "å»ºç«‹ç‰©å“:%s...", getItemfile());
     if(!ITEM_readItemConfFile( getItemfile()) )
         goto CLOSEBIND;
     if(!ITEM_initExistItemsArray( getItemnum() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "½¨Á¢Õ½¶·..." );
+	print( "å»ºç«‹æˆ˜æ–—..." );
     if(!BATTLE_initBattleArray( getBattlenum() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "½¨Á¢¹¦ÄÜÄ£¿é..." );
+	print( "å»ºç«‹åŠŸèƒ½æ¨¡å—..." );
     if( !initFunctionTable() )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "³õÊ¼»¯ÓÊ¼ş..." );
+	print( "åˆå§‹åŒ–é‚®ä»¶..." );
     if( !PETMAIL_initOffmsgBuffer( getAddressbookoffmsgnum() ))
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "¶ÁÈ¡²»¿ÉÕ½¶·ÎÄ¼ş..." );
+	print( "è¯»å–ä¸å¯æˆ˜æ–—æ–‡ä»¶..." );
     if( !CHAR_initInvinciblePlace( getInvfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "¶ÁÈ¡ÏÔÊ¾Î»ÖÃÎÄ¼ş..." );
+	print( "è¯»å–æ˜¾ç¤ºä½ç½®æ–‡ä»¶..." );
     if( !CHAR_initAppearPosition( getAppearfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "¶ÁÈ¡Í·ÏÎÃû³ÆÎÄ¼ş..." );
+	print( "è¯»å–å¤´è¡”åç§°æ–‡ä»¶..." );
     if( !TITLE_initTitleName( getTitleNamefile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "¶ÁÈ¡Í·ÏÎÅäÖÃÎÄ¼ş..." );
+	print( "è¯»å–å¤´è¡”é…ç½®æ–‡ä»¶..." );
     if( !TITLE_initTitleConfig( getTitleConfigfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "¶ÁÈ¡ÓöµĞ×ø±êÎÄ¼ş..." );
+	print( "è¯»å–é‡æ•Œåæ ‡æ–‡ä»¶..." );
     if( !ENCOUNT_initEncount( getEncountfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "¶ÁÈ¡³èÎï»ù±¾ÎÄ¼ş..." );
+	print( "è¯»å–å® ç‰©åŸºæœ¬æ–‡ä»¶..." );
     if( !ENEMYTEMP_initEnemy( getEnemyBasefile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "¶ÁÈ¡´´½¨³èÎïÎÄ¼ş..." );
+	print( "è¯»å–åˆ›å»ºå® ç‰©æ–‡ä»¶..." );
     if( !ENEMY_initEnemy( getEnemyfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "¶ÁÈ¡ÓöµĞ×éÈºÎÄ¼ş..." );
+	print( "è¯»å–é‡æ•Œç»„ç¾¤æ–‡ä»¶..." );
     if( !GROUP_initGroup( getGroupfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
-	print( "¶ÁÈ¡Ä§·¨ÎÄ¼ş..." );
+	print( "å®Œæˆ\n" );
+	print( "è¯»å–é­”æ³•æ–‡ä»¶..." );
     if( !MAGIC_initMagic( getMagicfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
 		#ifdef __ATTACK_MAGIC
 
-	print( "¶ÁÈ¡Ä§·¨¹¥»÷ÎÄ¼ş..." );
+	print( "è¯»å–é­”æ³•æ”»å‡»æ–‡ä»¶..." );
 
     if( !ATTMAGIC_initMagic( getAttMagicfileName() ) )
 //		if( !ATTMAGIC_initMagic( getMagicfile() ) )
         goto CLOSEBIND;
 
-	print( "Ä§·¨¹¥»÷ÎÄ¼ş -->%s..." , getAttMagicfileName());
-	print( "Íê³É\n" );
+	print( "é­”æ³•æ”»å‡»æ–‡ä»¶ -->%s..." , getAttMagicfileName());
+	print( "å®Œæˆ\n" );
 
     #endif
  
-	print( "¶ÁÈ¡³èÎï¼¼ÄÜÎÄ¼ş..." );
+	print( "è¯»å–å® ç‰©æŠ€èƒ½æ–‡ä»¶..." );
     if( !PETSKILL_initPetskill( getPetskillfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
-	print( "¶ÁÈ¡Ö°Òµ¼¼ÄÜÎÄ¼ş..." );
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
+	print( "è¯»å–èŒä¸šæŠ€èƒ½æ–‡ä»¶..." );
 	if( !PROFESSION_initSkill( getProfession() ) ){
 		goto CLOSEBIND;
 	}
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 #endif
 
-    /* Ê§ÄÌ  Ø©¼°¼ã    Ã«  ¸ê */
-	print( "¶ÁÈ¡ÎïÆ·³É·İÎÄ¼ş..." );
+    /* å¤±å¥¶  ä¸åŠç¬º    æ¯›  æˆˆ */
+	print( "è¯»å–ç‰©å“æˆä»½æ–‡ä»¶..." );
     if( !ITEM_initItemAtom( getItematomfile()) )
         goto CLOSEBIND;
-	print("Íê³É\n" );
+	print("å®Œæˆ\n" );
 
-	print( "³õÊ¼»¯ÎïÆ·¸ßËÙ»º³å..." );
+	print( "åˆå§‹åŒ–ç‰©å“é«˜é€Ÿç¼“å†²..." );
     if( !ITEM_initItemIngCache() )
         goto CLOSEBIND;
-	print("Íê³É\n" );
+	print("å®Œæˆ\n" );
     
-	print( "³õÊ¼»¯ÎïÆ·Ãû³Æ..." );
+	print( "åˆå§‹åŒ–ç‰©å“åç§°..." );
     if( !ITEM_initRandTable() )
         goto CLOSEBIND;
-	print("Íê³É\n" );
+	print("å®Œæˆ\n" );
     
-	print( "¶ÁÈ¡ÓöµĞÅäÖÃÎÄ¼ş..." );
+	print( "è¯»å–é‡æ•Œé…ç½®æ–‡ä»¶..." );
     if( !CHAR_initEffectSetting( getEffectfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
-	print( "¶ÁÈ¡²ÂÃÔÎÊÌâÎÄ¼ş..." );
+	print( "å®Œæˆ\n" );
+	print( "è¯»å–çŒœè¿·é—®é¢˜æ–‡ä»¶..." );
     if( !QUIZ_initQuiz( getQuizfile() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
 #ifdef _BLACK_MARKET
-	print( "µØÏÂÊĞ³¡ÎÄ¼ş..." );
+	print( "åœ°ä¸‹å¸‚åœºæ–‡ä»¶..." );
 	if ( !LoadBMItem(getBMItemFile()) )
 		goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 #endif
 
 #ifdef _GMRELOAD
-	print( "¶ÁÈ¡GMÅäÖÃÎÄ¼ş..." );
+	print( "è¯»å–GMé…ç½®æ–‡ä»¶..." );
 	if ( !LoadGMSet( getGMSetfile() ) )
 		goto CLOSEBIND;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 #endif
 
 #ifdef _GMRELOAD
-	print( "¶ÁÈ¡¾­ÑéÅäÖÃÎÄ¼ş..." );
+	print( "è¯»å–ç»éªŒé…ç½®æ–‡ä»¶..." );
 	if ( !LoadEXP( getEXPfile() ) )
 		goto CLOSEBIND;
-	print("×î¸ßµÈ¼¶: %d...",getMaxLevel());
-	print("Ò»°ãµÈ¼¶: %d...",getYBLevel());
-	print( "Íê³É\n" );
+	print("æœ€é«˜ç­‰çº§: %d...",getMaxLevel());
+	print("ä¸€èˆ¬ç­‰çº§: %d...",getYBLevel());
+	print( "å®Œæˆ\n" );
 #endif
 
 #ifdef _ANGEL_SUMMON
-	print("¶ÁÈ¡ÈÎÎñÁĞ±íÎÄ¼ş...");
+	print("è¯»å–ä»»åŠ¡åˆ—è¡¨æ–‡ä»¶...");
 	if( !LoadMissionList( ) )
 		goto CLOSEBIND;
-	print("Íê³É\n");
+	print("å®Œæˆ\n");
 #endif
 
 #ifdef _CONTRACT
-	print("¶ÁÈ¡ÆõÔ¼ÎÄ¼ş...");
+	print("è¯»å–å¥‘çº¦æ–‡ä»¶...");
 	//if( !LoadMissionList( ) )
 	//	goto CLOSEBIND;
 	if( !ITEM_initContractTable() )
 		goto CLOSEBIND;
-	print("Íê³É\n");
+	print("å®Œæˆ\n");
 #endif
 
 #ifdef _JOBDAILY
-	print("¶ÁÈ¡ÈÎÎñÈÕÖ¾ÎÄ¼ş...");
+	print("è¯»å–ä»»åŠ¡æ—¥å¿—æ–‡ä»¶...");
 	if(!LoadJobdailyfile())
 		goto CLOSEBIND;
-	print("Íê³É\n");
+	print("å®Œæˆ\n");
 #endif
 
 #ifdef _RACEMAN
-	print("¶ÁÈ¡³èÎïÈüÅÜÎÄ¼ş...");
+	print("è¯»å–å® ç‰©èµ›è·‘æ–‡ä»¶...");
 	if(!LoadRacepetfile())
 		goto CLOSEBIND;
-	print("Íê³É\n");
+	print("å®Œæˆ\n");
 #endif
 
 #ifdef _LOCK_IP
-	print("¶ÁÈ¡Ëø¶¨IPÎÄ¼ş...");
+	print("è¯»å–é”å®šIPæ–‡ä»¶...");
 	if(!loadLockip( getLockipPath()))
 		goto CLOSEBIND;
-	print("Íê³É\n");
+	print("å®Œæˆ\n");
 #endif
 
-	print( "½¨Á¢µØÍ¼..." );
+	print( "å»ºç«‹åœ°å›¾..." );
     if( !MAP_initReadMap( getMaptilefile() , getMapdir() ))
         goto CLOSEBIND;
-	print( "Íê³É\n" );
-	print( "¶ÁÈ¡NPCÎÄ¼ş..." );
+	print( "å®Œæˆ\n" );
+	print( "è¯»å–NPCæ–‡ä»¶..." );
     if( !NPC_readNPCSettingFiles( getNpcdir(), getNpctemplatenum(),
                                   getNpccreatenum() ) )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
-	print( "³õÊ¼»¯ NPC ·şÎñÆ÷... " );
+	print( "å®Œæˆ\n" );
+	print( "åˆå§‹åŒ– NPC æœåŠ¡å™¨... " );
     if( lssproto_InitServer( lsrpcClientWriteFunc, LSGENWORKINGBUFFER ) < 0 )
         goto CLOSEBIND;
-	print( "Íê³É\n" );
-	print( "³¢ÊÔÁ¬½ÓÕËºÅ·şÎñÆ÷... " );
+	print( "å®Œæˆ\n" );
+	print( "å°è¯•è¿æ¥è´¦å·æœåŠ¡å™¨... " );
     acfd = connectHost( getAccountservername(), getAccountserverport());
     if(acfd == -1)
         goto CLOSEBIND;
@@ -602,23 +602,23 @@ BOOL init(int argc , char** argv , char** env )
 	}
 */
 
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
     initConnectOne( acfd, NULL , 0 );
     if( !CONNECT_acfdInitRB( acfd)) goto CLOSEAC;
     if( !CONNECT_acfdInitWB( acfd)) goto CLOSEAC;
     CONNECT_setCtype( acfd, AC );
 	
-	print( "³õÊ¼»¯ NPC ¿Í»§¶Ë ... " );
-    /*  rpc(client)¼°âÙÓå¼À */
+	print( "åˆå§‹åŒ– NPC å®¢æˆ·ç«¯ ... " );
+    /*  rpc(client)åŠèµ“æ¸ç¥­ */
     if( saacproto_InitClient( lsrpcClientWriteFunc,LSGENWORKINGBUFFER, acfd) < 0 )
         goto CLOSEAC;
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
-	print( "ÏòÕËºÅ·şÎñÆ÷·¢ËÍµÇÂ½ÇëÇó... " );
-    /*  ·òºëÄÌ¼şÛ¢·ÆÃ«ÇëÔÊ  */
+	print( "å‘è´¦å·æœåŠ¡å™¨å‘é€ç™»é™†è¯·æ±‚... " );
+    /*  å¤«å¼˜å¥¶ä»¶é‚°è²æ¯›è¯·å…  */
     saacproto_ACServerLogin_send(acfd, getGameservername(),
                                  getAccountserverpasswd());
-	print( "Íê³É\n" );
+	print( "å®Œæˆ\n" );
 
     if( isExistFile( getLsgenlogfilename() ) ){
         lssproto_SetServerLogFiles( getLsgenlogfilename(),
@@ -628,16 +628,16 @@ BOOL init(int argc , char** argv , char** env )
     }
 
 
-	print( "³õÊ¼»¯ÒÑÍê³É\n" );
+	print( "åˆå§‹åŒ–å·²å®Œæˆ\n" );
 
 #ifdef _MUSEUM
 	if( getMuseum() )
-		print("\nÕâÊÇÊ¯Æ÷²©Îï¹İ!!\n");
+		print("\nè¿™æ˜¯çŸ³å™¨åšç‰©é¦†!!\n");
 	else
-		print("\nÕâÊÇÆÕÍ¨ĞÇÇò!!\n");
+		print("\nè¿™æ˜¯æ™®é€šæ˜Ÿçƒ!!\n");
 #endif
 
-	print( "¿ªÊ¼¼ÇÊ¼ÈÕÖ¾\n" );
+	print( "å¼€å§‹è®°å§‹æ—¥å¿—\n" );
     {
         char    logconffile[512];
         snprintf( logconffile, sizeof( logconffile), "%s/%s" ,
@@ -647,31 +647,31 @@ BOOL init(int argc , char** argv , char** env )
     }
 
 #ifdef _M_SERVER
-	print( "³¢ÊÔÁ¬½ÓGM·şÎñÆ÷... " );
+	print( "å°è¯•è¿æ¥GMæœåŠ¡å™¨... " );
     mfd = connectmServer( getmservername(), getmserverport());
 	if (mfd ==-1 ){
-		print( "Á¬½ÓGM·şÎñÆ÷Ê§°Ü... " );
+		print( "è¿æ¥GMæœåŠ¡å™¨å¤±è´¥... " );
 	}else{
 		initConnectOne( mfd, NULL , 0 );
-		print( "³É°ÜÁ¬½ÓGM·şÎñÆ÷... " );
+		print( "æˆè´¥è¿æ¥GMæœåŠ¡å™¨... " );
 	}
 #endif
 
 #ifdef _NPCSERVER_NEW
 	npcfd = connectNpcServer( getnpcserveraddr(), getnpcserverport());
 	if( npcfd == -1 ){
-		print( "Á¬½ÓNPC·şÎñÆ÷Ê§°Ü... " );
+		print( "è¿æ¥NPCæœåŠ¡å™¨å¤±è´¥... " );
 	}else{
 		initConnectOne( npcfd, NULL , 0 );
-		print( "³É°ÜÁ¬½ÓNPC·şÎñÆ÷... " );
+		print( "æˆè´¥è¿æ¥NPCæœåŠ¡å™¨... " );
 		NPCS_NpcSLogin_send( npcfd);
 	}
 #endif
 	
 #ifdef _ITEM_QUITPARTY
-	print( "¶ÁÈ¡¶ÓÎé½âÉ¢ÎïÆ·ÏûÊ§ÎÄ¼ş..." );
+	print( "è¯»å–é˜Ÿä¼è§£æ•£ç‰©å“æ¶ˆå¤±æ–‡ä»¶..." );
     
-	//¶ÁÈ¡µµ°¸
+	//è¯»å–æ¡£æ¡ˆ
     f = fopen( getitemquitparty(), "r" );
 	if( f != NULL ){
 		while( fgets( line, sizeof( line ), f ) ){
@@ -681,26 +681,26 @@ BOOL init(int argc , char** argv , char** env )
 			itemquitparty_num++;
 		}
 		if( fseek( f, 0, SEEK_SET ) == -1 ){
-			print( "ÎïÆ·Â¼ÕÒ´íÎó\n" );
+			print( "ç‰©å“å½•æ‰¾é”™è¯¯\n" );
 			fclose(f);
 			goto CLOSEAC;
 		}
-		//Åä¼ÇÒäÌå
+		//é…è®°å¿†ä½“
 		Disappear_Item = allocateMemory( sizeof(struct tagDisappearItem) * itemquitparty_num );
 		if( Disappear_Item == NULL ){
-			print( "ÎŞ·¨·ÖÅäÄÚ´æ %d\n", sizeof(struct tagDisappearItem) * itemquitparty_num );
+			print( "æ— æ³•åˆ†é…å†…å­˜ %d\n", sizeof(struct tagDisappearItem) * itemquitparty_num );
 			fclose( f );
 			goto CLOSEAC;
 		}
 
 		i = 0;
-		//½«µÀ¾ß±àºÅ´æÈë Disappear_Item.string
+		//å°†é“å…·ç¼–å·å­˜å…¥ Disappear_Item.string
 		while( fgets( line, sizeof( line ), f ) ){
 			if( line[0] == '#' )continue;
 			if( line[0] == '\n' )continue; 
 			chomp( line );
 			sprintf( Disappear_Item[i].string,"%s",line );
-			print("\nµÀ¾ß±àºÅ:%s", Disappear_Item[i].string );
+			print("\né“å…·ç¼–å·:%s", Disappear_Item[i].string );
 			i++;
 		}
 		fclose(f);

@@ -14,7 +14,7 @@
 #include "deathcontend.h"
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD ¼Ò×åÕ½GMÖ¸Áî
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD å®¶æ—æˆ˜GMæŒ‡ä»¤
 #include "family.h"
 #endif
 
@@ -120,7 +120,7 @@ void NPC_DuelrankingLooked( int meindex , int lookedindex)
 	}
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD ¼Ò×åÕ½GMÖ¸Áî
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD å®¶æ—æˆ˜GMæŒ‡ä»¤
 	NPC_Duelranking_selectWindow( meindex, lookedindex, 2, -1);
 #endif
 
@@ -145,10 +145,10 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			char	buf[2048];
 			strcpy( message, 
 				"1\n"
-				"             Òª¿´ÄÄÒ»¸ö£¿              \n\n\n"
-				"             £¼Ç¿ÕßÃÇ£¾              \n\n"
-				"             £¼ ×Ô¼º £¾              \n\n"
-				"             £¼¶¼²»¿´£¾              \n\n" );
+				"             è¦çœ‹å“ªä¸€ä¸ªï¼Ÿ              \n\n\n"
+				"             ï¼œå¼ºè€…ä»¬ï¼              \n\n"
+				"             ï¼œ è‡ªå·± ï¼              \n\n"
+				"             ï¼œéƒ½ä¸çœ‹ï¼              \n\n" );
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT, 
 							WINDOW_BUTTONTYPE_NONE,
 							CHAR_WINDOWTYPE_DUELRANKING_START,
@@ -163,12 +163,12 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			char	buf[2048];
 			strcpy( message, 
 				"1\n"
-				"             Òª¿´ÄÄÒ»¸ö£¿           \n\n"
-//				"           £¼×Ê¸ñÈüÅÅĞĞ£¾              \n"
-				"          £¼ ÕıÊ½Èü³Ì±í £¾   \n"
-				"           £¼ ¶ÓÎé×ÊÁÏ £¾  \n"
-//				"           £¼ ²Î¼ÓÈü³Ì £¾   \n"
-				"           £¼ Èü³Ì¼ÍÂ¼ £¾   \n" );
+				"             è¦çœ‹å“ªä¸€ä¸ªï¼Ÿ           \n\n"
+//				"           ï¼œèµ„æ ¼èµ›æ’è¡Œï¼              \n"
+				"          ï¼œ æ­£å¼èµ›ç¨‹è¡¨ ï¼   \n"
+				"           ï¼œ é˜Ÿä¼èµ„æ–™ ï¼  \n"
+//				"           ï¼œ å‚åŠ èµ›ç¨‹ ï¼   \n"
+				"           ï¼œ èµ›ç¨‹çºªå½• ï¼   \n" );
 
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT,
 							WINDOW_BUTTONTYPE_CANCEL,
@@ -201,8 +201,8 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			if( page == 39 ) button = WINDOW_BUTTONTYPE_OK | WINDOW_BUTTONTYPE_PREV;
 			CHAR_setWorkInt( toindex, CHAR_WORKSHOPRELEVANT, page);
 			snprintf( token, sizeof( token), 
-				"                 ×Ê¸ñÈüÅÅĞĞ°ñ\n\n"
-				"ÅÅÃû    ¶ÓÎé               Ê¤  ¸º  ³¡ »ı·Ö\n\n" );
+				"                 èµ„æ ¼èµ›æ’è¡Œæ¦œ\n\n"
+				"æ’å    é˜Ÿä¼               èƒœ  è´Ÿ  åœº ç§¯åˆ†\n\n" );
 
 			for( i=0; i<pagecount; i++ ){
 				if( PKLIST_GetChartsListData( (page*pagecount)+1+i, buf, sizeof(buf) ) == FALSE )continue;
@@ -217,8 +217,8 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 				if( !getStringFromIndexWithDelim( buf, "|", 5, buf1, sizeof( buf1)) ) continue;
 				score =atoi( buf1);
 
-				strcpy( buf2, "£­");
-				if( battle>= 30 && score > 0 ) strcpy( buf2, "¡ï");
+				strcpy( buf2, "ï¼");
+				if( battle>= 30 && score > 0 ) strcpy( buf2, "ï¿¥");
 				sprintf( buf1, "%4dth %-18s %3d %3d %3d %3d %s\n", (page*pagecount)+1+i,
 					teamname, win, lose, battle, score, buf2);
 
@@ -230,8 +230,8 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 		}
 		break;
 */
-	case 5://½ú¼¶¶ÓÎé
-	case 3://ÕıÊ½Èü³Ì
+	case 5://æ™‹çº§é˜Ÿä¼
+	case 3://æ­£å¼èµ›ç¨‹
 		{
 			char token[4096], buf1[256];
 			char teamname1[256], teamname2[256], typestring[256];
@@ -260,12 +260,12 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			switch( num){
 			case 3:
 				snprintf( token, sizeof( token), 
-					"         Èü³Ì±í\n\n"
-					"³¡´Î  ¶ÓÎé                         Ê£âÅÊ±¼ä ×´Ì¬\n\n" );
+					"         èµ›ç¨‹è¡¨\n\n"
+					"åœºæ¬¡  é˜Ÿä¼                         å‰©é¦€æ—¶é—´ çŠ¶æ€\n\n" );
 				break;
 			case 5:
-				snprintf( token, sizeof( token),	"  ¶ÓÎéÃûµ¥&Èü³Ì¼ÍÂ¼\n\n"
-													"¼ÍÂ¼  \n\n" );
+				snprintf( token, sizeof( token),	"  é˜Ÿä¼åå•&èµ›ç¨‹çºªå½•\n\n"
+													"çºªå½•  \n\n" );
 				winno = WINDOWTYPE_PKLIST_SELECT2;
 				break;
 			}
@@ -281,7 +281,7 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 				case 3:
 					dtimes = (stimes-(int)time(NULL));
 					if( dtimes<1 ) dtimes = 1;
-					sprintf( buf1, "³¡%2d %-12s VS %-12s %2d·Ö%2dÃë %s \n", tindex,
+					sprintf( buf1, "åœº%2d %-12s VS %-12s %2dåˆ†%2dç§’ %s \n", tindex,
 						teamname1, teamname2, (int)(dtimes/60), dtimes%60, typestring);
 					break;
 				case 5:
@@ -311,7 +311,7 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 				CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX), token );
 		}
 		break;
-/*	case 6://¼ÓÈëÈü³Ì
+/*	case 6://åŠ å…¥èµ›ç¨‹
 		{
 			int teamnum;
 			{
@@ -332,11 +332,11 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 				return;
 			}
 			if( CHAR_getInt( toindex, CHAR_PKLISTLEADER) != 1 ) {
-				CHAR_talkToCli( toindex, -1, "Ö»ÓĞ¶Ó³¤¿ÉÒÔ´ú±í¶ÓÎé¼ÓÈëÈü³Ì¡£", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "åªæœ‰é˜Ÿé•¿å¯ä»¥ä»£è¡¨é˜Ÿä¼åŠ å…¥èµ›ç¨‹ã€‚", CHAR_COLORYELLOW);
 				return;
 			}
 			if( PKLIST_JoinPKProcedures( toindex) == FALSE ){
-				CHAR_talkToCli( toindex, -1, "¼ÓÈëÈü³ÌÊ§°Ü£¡¡£", CHAR_COLORYELLOW);
+				CHAR_talkToCli( toindex, -1, "åŠ å…¥èµ›ç¨‹å¤±è´¥ï¼ã€‚", CHAR_COLORYELLOW);
 			}
 
 		}
@@ -351,9 +351,9 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 			char	buf[2048];
 			strcpy( message, 
 				"1\n"
-				"             Òª¿´ÄÄÒ»¸ö£¿           \n\n"
-				"          £¼¼Ò×å×Ê¸ñÅÅĞĞ£¾              \n"
-				"       £¼ ¿çĞÇÏµ¼Ò×åÕ½±¨Ãû £¾   \n" );
+				"             è¦çœ‹å“ªä¸€ä¸ªï¼Ÿ           \n\n"
+				"          ï¼œå®¶æ—èµ„æ ¼æ’è¡Œï¼              \n"
+				"       ï¼œ è·¨æ˜Ÿç³»å®¶æ—æˆ˜æŠ¥å ï¼   \n" );
 
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT,
 							WINDOW_BUTTONTYPE_CANCEL,
@@ -389,8 +389,8 @@ static void NPC_Duelranking_selectWindow( int meindex, int toindex, int num, int
 
 			CHAR_setWorkInt( toindex, CHAR_WORKSHOPRELEVANT, page);
 			snprintf( token, sizeof( token), 
-				"          ¿çĞÇÏµ¼Ò×åÈü×Ê¸ñÅÅĞĞ°ñ\n\n"
-				"ÅÅÃû    ¼Ò×åÃû³Æ          ¼Ò×å×å³¤Ãû³Æ\n\n" );
+				"          è·¨æ˜Ÿç³»å®¶æ—èµ›èµ„æ ¼æ’è¡Œæ¦œ\n\n"
+				"æ’å    å®¶æ—åç§°          å®¶æ—æ—é•¿åç§°\n\n" );
 			for( i=0; i<pagecount; i++ ){
 				joinE = 0;
 
@@ -406,7 +406,7 @@ print("FPKList[%d]:%s\n", i, buf);
 				joinE = atoi( buf1);
 
 				sprintf( buf1, "%2dth %-18s %-24s %s\n", (page*pagecount)+1+i,
-					familyname, mname, (joinE == 1)?"¡ï":"");
+					familyname, mname, (joinE == 1)?"ï¿¥":"");
 
 
 				strcat( token, buf1);
@@ -417,21 +417,21 @@ print("FPKList[%d]:%s\n", i, buf);
 		}
 		break;
 
-	case 4:	//±¨Ãû
+	case 4:	//æŠ¥å
 		NPC_CheckJoin_FamilyPK_List( meindex, toindex);
 		break;
 #endif
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD ¼Ò×åÕ½GMÖ¸Áî
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD å®¶æ—æˆ˜GMæŒ‡ä»¤
 	case 2:
 		{
 			char	message[1024] = {0};
 			char	buf[2048]= {0};
 			strcpy( message, 
 				"1\n"
-				"             Òª¿´ÄÄÒ»¸ö£¿           \n\n"
-				"       £¼ ¿çĞÇÏµ¼Ò×åÕ½ÅÅĞĞ £¾   \n" );
+				"             è¦çœ‹å“ªä¸€ä¸ªï¼Ÿ           \n\n"
+				"       ï¼œ è·¨æ˜Ÿç³»å®¶æ—æˆ˜æ’è¡Œ ï¼   \n" );
 
 			lssproto_WN_send( fd, WINDOW_MESSAGETYPE_SELECT,
 							WINDOW_BUTTONTYPE_CANCEL,
@@ -466,7 +466,7 @@ print("FPKList[%d]:%s\n", i, buf);
 			if( page == 39 ) button = WINDOW_BUTTONTYPE_OK | WINDOW_BUTTONTYPE_PREV;
 			CHAR_setWorkInt( toindex, CHAR_WORKSHOPRELEVANT, page);
 			snprintf( token, sizeof( token), 
-				"          ¿çĞÇÏµ¼Ò×åÕ½ÅÅĞĞ°ñ\n\n" );			
+				"          è·¨æ˜Ÿç³»å®¶æ—æˆ˜æ’è¡Œæ¦œ\n\n" );			
 
 
 			for( i=0; i<40*10; i++){
@@ -559,19 +559,19 @@ void NPC_DuelrankingWindowTalked( int meindex, int talkerindex, int seqno, int s
 	case WINDOWTYPE_PKLIST_START:
 		{
 			switch( atoi( data)){
-			case 2://×Ê¸ñÈüÅÅĞĞ
+			case 2://èµ„æ ¼èµ›æ’è¡Œ
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 3, select);
 				break;
-			case 3://ÕıÊ½Èü³Ì
+			case 3://æ­£å¼èµ›ç¨‹
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 4, select);
 				break;
-			case 4://¶ÓÎé×ÊÁÏ
+			case 4://é˜Ÿä¼èµ„æ–™
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 5, select);
 				break;
-			case 5://¼ÓÈëÈü³Ì
+			case 5://åŠ å…¥èµ›ç¨‹
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 6, -1);
 				break;
-			case 6://½ú¼¶¶ÓÎé
+			case 6://æ™‹çº§é˜Ÿä¼
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 7, select);
 				break;
 			}
@@ -591,10 +591,10 @@ void NPC_DuelrankingWindowTalked( int meindex, int talkerindex, int seqno, int s
 	case WINDOWTYPE_FAMILYCONTENDSTART:
 		{
 			switch( atoi( data)){
-			case 2://×Ê¸ñÅÅĞĞ
+			case 2://èµ„æ ¼æ’è¡Œ
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 3, select);
 				break;
-			case 3://±¨Ãû
+			case 3://æŠ¥å
 				NPC_Duelranking_selectWindow( meindex, talkerindex, 4, select);
 				break;
 			}
@@ -605,7 +605,7 @@ void NPC_DuelrankingWindowTalked( int meindex, int talkerindex, int seqno, int s
 		break;
 #endif
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD ¼Ò×åÕ½GMÖ¸Áî
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD å®¶æ—æˆ˜GMæŒ‡ä»¤
 	case WINDOWTYPE_PKLIST_START:
 		{
 			switch( atoi( data ) ){
@@ -635,7 +635,7 @@ void NPC_Duelranking_PrintRanking( char *data, int count_start, int fdid, int ms
 	if( fd == -1 ) return;
 	message[0] = '\0';
 	snprintf( message, sizeof( message), 
-			"                        ÊÀ½çµÄÇ¿ÕßÃÇ\n\n"
+			"                        ä¸–ç•Œçš„å¼ºè€…ä»¬\n\n"
 			"      Rank       DuelPoint      Lv     Name\n\n" );
 	for( i = 1; ; i ++ ) {
 		char	rankdata[256];
@@ -677,9 +677,9 @@ void NPC_Duelranking_PrintRanking( char *data, int count_start, int fdid, int ms
 			if( dsprank > 3) dsprank = 3;
 			if( mycdkey != NULL && myname != NULL && strcmp( cdkey, mycdkey) == 0 && 
 				strcmp( charaname, myname) == 0 ) {
-				strcpy( hosi, "¡ï");
+				strcpy( hosi, "ï¿¥");
 			}else {
-				strcpy( hosi, "¡¡");
+				strcpy( hosi, "ã€€");
 			}
 			snprintf( msgbuf, sizeof( msgbuf), "%s %5d%s      %10s     %3s     %s\n",
 											hosi,
@@ -691,7 +691,7 @@ void NPC_Duelranking_PrintRanking( char *data, int count_start, int fdid, int ms
 		cnt ++;
 	}
 	if( cnt == 0 ) {
-		strcpy( message, "\n      Ã»ÓĞÆäËûµÄ×ÊÁÏÁË¡£");
+		strcpy( message, "\n      æ²¡æœ‰å…¶ä»–çš„èµ„æ–™äº†ã€‚");
 		button = WINDOW_BUTTONTYPE_PREV|WINDOW_BUTTONTYPE_OK;
 	}else if( cnt < NPC_DUELRANKING_WINDOWLINENUM ) {
 		if( count_start >= NPC_DUELRANKING_WINDOWLINENUM) {
@@ -879,16 +879,16 @@ BOOL NPC_CheckJoin_FamilyPK_List( int meindex, int toindex)
 		}
 
 		if( JoinFamilyList[i].join == 1 ){
-			CHAR_talkToCli( toindex, -1, "ÒÑ¾­±¨Ãû²Î¼ÓÁË¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "å·²ç»æŠ¥åå‚åŠ äº†ã€‚", CHAR_COLORYELLOW);
 			return FALSE;
 		}else{
-			CHAR_talkToCli( toindex, -1, "±¨ÃûÍê³É¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "æŠ¥åå®Œæˆã€‚", CHAR_COLORYELLOW);
 			JoinFamilyList[i].join = 1;
 			NPC_BackupFamilyPK_List();
 			return TRUE;
 		}
 	}
-	CHAR_talkToCli( toindex, -1, "ÎŞ·¨±¨Ãû£¬ÇëÈ·ÈÏÄãÊÇ·ñÎª×Ê¸ñÃûµ¥ÉÏÖ®¼Ò×å×å³¤¡£", CHAR_COLORYELLOW);
+	CHAR_talkToCli( toindex, -1, "æ— æ³•æŠ¥åï¼Œè¯·ç¡®è®¤ä½ æ˜¯å¦ä¸ºèµ„æ ¼åå•ä¸Šä¹‹å®¶æ—æ—é•¿ã€‚", CHAR_COLORYELLOW);
 	return FALSE;
 }
 //CHAR_FMINDEX 

@@ -24,8 +24,8 @@ enum {
 	WINDOW_START=10,
 	WINDOW_SELECT,
 	WINDOW_FUSION,
-	WINDOW_WARP,	//ÌøÔ¾
-	WINDOW_END,		//½áÊø
+	WINDOW_WARP,	//è·³è·ƒ
+	WINDOW_END,		//ç»“æŸ
 
 	WINDOW_TALKSTART=20,
 	WINDOW_TALKSELECT,
@@ -73,7 +73,7 @@ void NPC_PetFusionManTalked( int meindex, int talkerindex, char *msg, int color 
 	}
 #ifdef _ITEM_CHECKWARES
 	if( CHAR_CheckInItemForWares( talkerindex, 0) == FALSE ){
-		CHAR_talkToCli( talkerindex, meindex, "ÎŞ·¨·şÎñĞ¯´ø»õÎïµÄÈË£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( talkerindex, meindex, "æ— æ³•æœåŠ¡æºå¸¦è´§ç‰©çš„äººï¼", CHAR_COLORYELLOW);
 		return;
 	}
 #endif
@@ -90,7 +90,7 @@ static void NPC_PetFusion_selectWindow( int meindex, int toindex, int num,int se
 	int fd = getfdFromCharaIndex( toindex);
 	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 	if( Action_PartyCheck( meindex, toindex) == FALSE)	{
-		CHAR_talkToCli( toindex, meindex, "ÇëÒ»¸öÒ»¸öÀ´£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, meindex, "è¯·ä¸€ä¸ªä¸€ä¸ªæ¥ï¼", CHAR_COLORYELLOW);
 		return;
 	}
 	memset( npcarg, 0, sizeof( npcarg));
@@ -122,7 +122,7 @@ static void NPC_PetFusion_selectWindow( int meindex, int toindex, int num,int se
 		}
 		break;
 	case WINDOW_FUSION:
-		//ÈÚºÏ´¦Àí
+		//èåˆå¤„ç†
 		break;
 	case WINDOW_WARP:
 		break;
@@ -195,11 +195,11 @@ BOOL NPC_DoPetFusion( int meindex, int toindex, char *data, int sizes)
 	}
 
 	if( PETFUSION_getIndexForChar( toindex, &MainIndex, &Subindex1, &Subindex2, buf) == FALSE ){
-		CHAR_talkToCli( toindex, -1, "³èÎïÈÚºÏÊ§°Ü£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "å® ç‰©èåˆå¤±è´¥ï¼", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	if( (flg=PETFUSION_FusionPetSub( toindex, Subindex1, Subindex2, work, skill2)) == 0 ){
-		CHAR_talkToCli( toindex, -1, "³èÎïÈÚºÏÊ§°Ü£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "å® ç‰©èåˆå¤±è´¥ï¼", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 
@@ -209,7 +209,7 @@ BOOL NPC_DoPetFusion( int meindex, int toindex, char *data, int sizes)
 	}
 
 	if( PETFUSION_FusionPetMain( toindex, MainIndex, work, skill1) == FALSE )	{
-		CHAR_talkToCli( toindex, -1, "³èÎïÈÚºÏÊ§°Ü£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( toindex, -1, "å® ç‰©èåˆå¤±è´¥ï¼", CHAR_COLORYELLOW);
 		return FALSE;
 	}else	{
 		int Eggindex=-1, petNo=0, petID, newpetindex=-1;
@@ -217,7 +217,7 @@ BOOL NPC_DoPetFusion( int meindex, int toindex, char *data, int sizes)
 		int PetCode=-1;
 		flg++;
 		if( (PetCode = NPC_getFusionTableForBase( toindex, MainIndex, Subindex1 )) < 0 ){
-			CHAR_talkToCli( toindex, -1, "³èÎïÈÚºÏÊ§°Ü£¡", CHAR_COLORYELLOW);
+			CHAR_talkToCli( toindex, -1, "å® ç‰©èåˆå¤±è´¥ï¼", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 		petNo = NPC_getPetArrayForNo( PetCode);

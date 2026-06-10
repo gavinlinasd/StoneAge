@@ -48,7 +48,7 @@ BOOL NPC_MicInit( int meindex )
 		    if( getStringFromIndexWithDelim(argstr, "|" , i , buf,sizeof(buf) )
 	    		== FALSE ) 
 	    	    {
-	    		printf( "NPC_MIC:省略参数\n");
+	    		printf( "NPC_MIC:鐪佺暐鍙傛暟\n");
 	    		arg_param[i-1] = 0;
 	    		continue;
 	    	    }
@@ -91,7 +91,7 @@ void NPC_MicTalked( int meindex , int talkerindex , char *msg ,int color )
 				CHAR_getChar( talkerindex, CHAR_NAME),
 				msg);
 	
-	// Robin 0621 族长广播
+	// Robin 0621 鏃忛暱骞挎挱
 	print(" MIC_FL:%d ", CHAR_getWorkInt( meindex, CHAR_WORK_FMFL ));
 	if( CHAR_getWorkInt( meindex, CHAR_WORK_FMFL ) != 0 )
 	{
@@ -106,7 +106,7 @@ void NPC_MicTalked( int meindex , int talkerindex , char *msg ,int color )
 				CHAR_getChar( talkerindex, CHAR_FMNAME), CHAR_getInt( talkerindex, CHAR_FMINDEX),
 				CHAR_getWorkInt( talkerindex, CHAR_WORKFMINDEXI), buf);
 			
-			sprintf(message, "[族长广播]%s", buf);
+			sprintf(message, "[鏃忛暱骞挎挱]%s", buf);
 			saacproto_ACFMAnnounce_send( acfd, 
 						CHAR_getChar( talkerindex, CHAR_FMNAME), 
 						CHAR_getInt( talkerindex, CHAR_FMINDEX),

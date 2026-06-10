@@ -52,8 +52,8 @@ getNextMessageID(void)
     if( fp == NULL ){
         fp = fopen( filename ,"w" );
         if( fp == NULL ){
-            log( "²»ÄÜ´´½¨ %s ... Ê¹ÓÃÍ¬ÑùµÄÓÊ¼şID,"
-                 " saac ·¢ËÍ±äµÃ»ºÂı!(id:9999)\n", filename );
+            log( "ä¸èƒ½åˆ›å»º %s ... ä½¿ç”¨åŒæ ·çš„é‚®ä»¶ID,"
+                 " saac å‘é€å˜å¾—ç¼“æ…¢!(id:9999)\n", filename );
             return 9999;
         }
         fprintf( fp, "10000\n" );
@@ -66,13 +66,13 @@ getNextMessageID(void)
 
     fp = fopen( filename, "w" );
     if( fp == NULL ){
-        log( "²»ÄÜĞ´ÈëĞÂµÄIDµ½ %s ... Ê¹ÓÃÍ¬ÑùµÄÊı×Ö!\n", filename );
+        log( "ä¸èƒ½å†™å…¥æ–°çš„IDåˆ° %s ... ä½¿ç”¨åŒæ ·çš„æ•°å­—!\n", filename );
         return i;
     }
     fprintf( fp, "%u", i+1 );
     fclose(fp);
 
-    log( "ĞÂÓÊ¼şID:%u\n", i);
+    log( "æ–°é‚®ä»¶ID:%u\n", i);
     return i;
 }
 
@@ -90,7 +90,7 @@ static int reallocMailBuf( void )
     newbuf = ( struct mail * )calloc( 1, new_mailbufsize *
                                       sizeof( struct mail ));
     if( newbuf == NULL ){
-        log( "»Ø¸´ÓÊ¼ş»º³å: ÄÚ¼ş²»×ã!! ĞÂÓÊ¼ş´óĞ¡:%d\n",
+        log( "å›å¤é‚®ä»¶ç¼“å†²: å†…ä»¶ä¸è¶³!! æ–°é‚®ä»¶å¤§å°:%d\n",
              new_mailbufsize );
         return -1;
     }
@@ -101,8 +101,8 @@ static int reallocMailBuf( void )
     mailbufsize = new_mailbufsize;
     mailbuf = newbuf;
 
-    log( "ÖØĞÂ·ÖÅäÓÊ¼ş»º³å: "
-         "ĞÂÓÊ¼ş»º³å:%d ¾ÉµØÖ·:%x ĞÂµØÖ·:%x\n",
+    log( "é‡æ–°åˆ†é…é‚®ä»¶ç¼“å†²: "
+         "æ–°é‚®ä»¶ç¼“å†²:%d æ—§åœ°å€:%x æ–°åœ°å€:%x\n",
          new_mailbufsize, (unsigned int)previous,(unsigned int)newbuf );
     return 0;
 }
@@ -131,9 +131,9 @@ static int allocMail( int use_msgid, unsigned int msgid  )
             return mailbuf_finder;
         }
     }
-    log( "·ÖÅäÓÊ¼ş: ÓÊ¼ş»º³åÊ§°Ü.ÕıÔÚ½øĞĞ·ÖÅä...\n" );
+    log( "åˆ†é…é‚®ä»¶: é‚®ä»¶ç¼“å†²å¤±è´¥.æ­£åœ¨è¿›è¡Œåˆ†é…...\n" );
     if( reallocMailBuf() < 0 ){
-        log( "·ÖÅäÓÊ¼ş: ·ÖÅäÊ§°Ü\n" );
+        log( "åˆ†é…é‚®ä»¶: åˆ†é…å¤±è´¥\n" );
     } else {
         return allocMail(use_msgid, msgid );
     }
@@ -157,7 +157,7 @@ void receiveMail( char *id_from,
     snprintf( id_charname, sizeof( id_charname), "%s_%s", id_to, charname_to );
     h = hashpjw( id_charname ) & 0xff ;
     if( (mbindex = allocMail(use_msgid, msgid )) < 0 ){
-        log( "»Ø¸´ÓÊ¼ş: »ñÈ¡ĞÂµÄÓÊ¼ş»º³åÊ§°Ü.\n" );
+        log( "å›å¤é‚®ä»¶: è·å–æ–°çš„é‚®ä»¶ç¼“å†²å¤±è´¥.\n" );
         return;
     }
     mailbuf[mbindex].id_charname_hash = h;
@@ -180,7 +180,7 @@ void receiveMail( char *id_from,
         makeDirFilename( savefile , sizeof(savefile), maildir, h, childname );
         fp = fopen( savefile, "w" );
         if( fp == NULL ){
-            log( "»Ø¸´ÓÊ¼ş : ²»ÄÜ±£´æÓÊ¼şÎÄ¼ş: %s %s\n",
+            log( "å›å¤é‚®ä»¶ : ä¸èƒ½ä¿å­˜é‚®ä»¶æ–‡ä»¶: %s %s\n",
                  savefile, strerror( errno ));
             return;
         }
@@ -253,8 +253,8 @@ void receiveMailAck( char *id, char *charname, int a , int mesgid )
                     log( "failed to unlink %s: %s\n",
                          savefile, strerror(errno ));
                 } else {
-                    log( "»Ø¸´ÓÊ¼ş: É¾³ıÓÊ¼ş "
-                         "%u ´Ó %s(%s) to %s(%s)\n",
+                    log( "å›å¤é‚®ä»¶: åˆ é™¤é‚®ä»¶ "
+                         "%u ä» %s(%s) to %s(%s)\n",
                          mailbuf[i].message_id,
                          mailbuf[i].id_from,
                          mailbuf[i].charname_from,
@@ -264,7 +264,7 @@ void receiveMailAck( char *id, char *charname, int a , int mesgid )
                 memset( &mailbuf[i], 0 , sizeof( mailbuf[0] ));
                 return;
             } else {
-                log( "»Ø¸´ÓÊ¼ş: ÎŞÓÃĞÅÏ¢»òID»òÃû³Æ»òÉùÃ÷ÑÏÖØ´íÎó" );
+                log( "å›å¤é‚®ä»¶: æ— ç”¨ä¿¡æ¯æˆ–IDæˆ–åç§°æˆ–å£°æ˜ä¸¥é‡é”™è¯¯" );
                 log( "use[%d] h[%d][%d] id[%s][%s] nm[%s][%s] st[%d]\n",
                      mailbuf[i].use, mailbuf[i].id_charname_hash, h,
                      mailbuf[i].id_to, id,
@@ -273,7 +273,7 @@ void receiveMailAck( char *id, char *charname, int a , int mesgid )
             }
         }
     }
-    log( "»Ø¸´ÓÊ¼ş: ÓÊ¼ş %u ²»ÄÜ´Ó %s(%s) ÕÒµ½\n",
+    log( "å›å¤é‚®ä»¶: é‚®ä»¶ %u ä¸èƒ½ä» %s(%s) æ‰¾åˆ°\n",
          mesgid, id,charname );
 }
 
@@ -290,14 +290,14 @@ void flushMail( int fd,
     snprintf( id_charname, sizeof( id_charname ) , "%s_%s", id, charname );
     h = hashpjw( id_charname );
     // Nuke +1
-    log("ÓÊ¼ş»º³å´óĞ¡:%d (%s)\n",mailbufsize,chartime());
+    log("é‚®ä»¶ç¼“å†²å¤§å°:%d (%s)\n",mailbufsize,chartime());
     // Nuke *1
     for(i=0;(i<mailbufsize)&&(i<MAX_FLUSH_MAIL);i++){
         if( mailbuf[i].id_charname_hash == h &&
             mailbuf[i].use &&
             strcmp( mailbuf[i].id_to , id ) == 0 &&
             strcmp( mailbuf[i].charname_to, charname ) == 0 ){
-            log( "ÏûÏ¢ID:%u\n", mailbuf[i].message_id );
+            log( "æ¶ˆæ¯ID:%u\n", mailbuf[i].message_id );
             flush_index[flush_i++] = i;
             c++;
         }
@@ -317,10 +317,10 @@ void flushMail( int fd,
         }
     }
 
-    /*   ¶Ë±åËªññÔÊÔÂ */
+    /*   ç«¯åéœœè€¨å…æœˆ */
     for(i=0;i< flush_i; i++ ){
-        /* flush ¼°èëÄş·´£ıflushÃ«ËªññØÆ»¯ÎåĞ×±Ø¡õØ©ÈÓ¡õÌï¡õ±å
-           ¸²ØÆ»¯·ÖØêËªññÔÊÄ¾ÈÉÖĞÖĞ */
+        /* flush åŠæ¡¦å®åï½flushæ¯›éœœè€¨ä»„åŒ–äº”å‡¶å¿…â–¡ä¸æ‰”â–¡ç”°â–¡å
+           è¦†ä»„åŒ–åˆ†ä»ƒéœœè€¨å…æœ¨å£¬ä¸­ä¸­ */
         saacproto_Message_send( fd,
                                 mailbuf[flush_index[i]].id_from,
                                 mailbuf[flush_index[i]].charname_from,
@@ -330,11 +330,11 @@ void flushMail( int fd,
                                 mailbuf[flush_index[i]].option,
                                 mailbuf[flush_index[i]].message_id );
         mailbuf[flush_index[i]].state = MS_WAIT_ACK;
-        log( "·ÖÀàÓÊ¼şID:%u\n",
+        log( "åˆ†ç±»é‚®ä»¶ID:%u\n",
                 mailbuf[flush_index[i]].message_id );
     }
     // Nuke *1
-    log( "ÓÊ¼ş: ·¢ËÍ %d ·âÓÊ¼şµ½ %s(%s)(%s)\n", c, id, charname ,chartime());
+    log( "é‚®ä»¶: å‘é€ %d å°é‚®ä»¶åˆ° %s(%s)(%s)\n", c, id, charname ,chartime());
 }
 
 // Nuke start: To expire undelivered mail
@@ -347,22 +347,22 @@ expireMail()
     char id_charname[1000];
     time_t now=time(NULL);
     
-    /* 1¼Ô¼°flush Æ¥ËªññÔÊÔÂ    ĞÑ */
+    /* 1èšåŠflush åŒ¹éœœè€¨å…æœˆ    é†’ */
 #define MAX_FLUSH_MAIL 1024
     int flush_index[MAX_FLUSH_MAIL];
     int flush_i=0;
     // Nuke +1
-    log("ÓÊ¼ş»º³å´óĞ¡:%d (%s)\n",mailbufsize,chartime());
+    log("é‚®ä»¶ç¼“å†²å¤§å°:%d (%s)\n",mailbufsize,chartime());
     // Nuke *1
     for(i=0;(i<mailbufsize)&&(i<MAX_FLUSH_MAIL);i++){
         if(mailbuf[i].use && (now - mailbuf[i].recv_time >= MAIL_EXPIRE_TIME)) {
-            log( "ÏûÏ¢ID:%u ÒÑ¹ıÆÚ\n", mailbuf[i].message_id );
+            log( "æ¶ˆæ¯ID:%u å·²è¿‡æœŸ\n", mailbuf[i].message_id );
             flush_index[flush_i++] = i;
             c++;
         }
     }
 
-    /*   ¶Ë±åËªññÔÊÔÂ */
+    /*   ç«¯åéœœè€¨å…æœˆ */
     for(i=0;i< flush_i; i++ ){
         
         snprintf( id_charname, sizeof( id_charname), "%s_%s", 
@@ -380,8 +380,8 @@ expireMail()
                 log( "failed to unlink %s: %s\n",
                 savefile, strerror(errno ));
             } else {
-                log( "¹ıÆÚÓÊ¼ş: É¾³ıÓÎÏ· "
-                	"%u ´Ó %s(%s) µ½ %s(%s)\n",
+                log( "è¿‡æœŸé‚®ä»¶: åˆ é™¤æ¸¸æˆ "
+                	"%u ä» %s(%s) åˆ° %s(%s)\n",
                         mailbuf[flush_index[i]].message_id,
                         mailbuf[flush_index[i]].id_from,
                         mailbuf[flush_index[i]].charname_from,
@@ -392,7 +392,7 @@ expireMail()
 	}
     }
     // Nuke *1
-    log( "¹ıÆÚÓÊ¼ş: ¹ıÆÚ %d ÏûÏ¢ (%s)\n", c ,chartime());
+    log( "è¿‡æœŸé‚®ä»¶: è¿‡æœŸ %d æ¶ˆæ¯ (%s)\n", c ,chartime());
 }
 
 int readMail( char *dir )
@@ -406,7 +406,7 @@ int readMail( char *dir )
         d = opendir(dirname);
         if(d == NULL ){
 			mkdir( dirname, 0755);
-			log("´´½¨ %s\n", dirname);
+			log("åˆ›å»º %s\n", dirname);
             continue;
         }
         while(1){
@@ -425,7 +425,7 @@ int readMail( char *dir )
                 if( !(s.st_mode & S_IFREG)) continue;
                 fp = fopen( filename, "r" );
                 if( fp == NULL ){
-                    log( "²»ÄÜ´ò¿ªÎÄ¼ş %s %s\n",filename,strerror(errno));
+                    log( "ä¸èƒ½æ‰“å¼€æ–‡ä»¶ %s %s\n",filename,strerror(errno));
                     continue;
                 }
                 {
@@ -478,8 +478,8 @@ int readMail( char *dir )
                     if( toid[0] == 0 || fromid[0] == 0 ||
                         tochar[0] == 0 || fromchar[0] == 0 ||
                         text[0] == 0 ){
-                        log( "ÓĞÎÊÌâÓÊ¼ş! %s ½ÓÊÕID[%c] ½ÓÊÕÃû×Ö[%c]"
-                             " ·¢ËÍID[%c] ·¢ËÍÃû×Ö[%c] ÎÄ±¾[%c]\n",
+                        log( "æœ‰é—®é¢˜é‚®ä»¶! %s æ¥æ”¶ID[%c] æ¥æ”¶åå­—[%c]"
+                             " å‘é€ID[%c] å‘é€åå­—[%c] æ–‡æœ¬[%c]\n",
                              filename,
                              toid[0], tochar[0], fromid[0], fromchar[0],
                              text[0] );
@@ -499,6 +499,6 @@ int readMail( char *dir )
         }
         closedir(d);
     }
-    log( "¶ÁÈ¡ÓÊ¼ş: ÔÚ'%s'Ä¿Â¼Àï¶ÁÈ¡µ½ %d ·âÓÊ¼ş \n", dir, read_count );
+    log( "è¯»å–é‚®ä»¶: åœ¨'%s'ç›®å½•é‡Œè¯»å–åˆ° %d å°é‚®ä»¶ \n", dir, read_count );
     return 0;
 }

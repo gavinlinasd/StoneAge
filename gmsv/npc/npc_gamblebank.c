@@ -30,7 +30,7 @@ enum	{
 
 enum {
 	NPC_WORK_INDEX = CHAR_NPCWORKINT1,
-	NPC_WORK_WORKTYPE = CHAR_NPCWORKINT2,	// 0,-1 = NULL 2 = “¯–– 3 = ªª±“ 4 = BOTH
+	NPC_WORK_WORKTYPE = CHAR_NPCWORKINT2,	// 0,-1 = NULL 2 = Èì∂Ë°å 3 = Êç¢Â∏Å 4 = BOTH
 	NPC_WORK_CURRENTTIME = CHAR_NPCWORKINT3,
 	NPC_WORK_PAGE = CHAR_NPCWORKINT4,
 /*
@@ -45,11 +45,11 @@ enum {
 	NPC_WORK_SEFLG = CHAR_NPCWORKINT10,
 */
 };
-#define _GAMBLEBANK_U_NOLOCK	//Õ¨ ±∂‘∂‡»À
+#define _GAMBLEBANK_U_NOLOCK	//ÂêåÊó∂ÂØπÂ§ö‰∫∫
 
 #define GAMBLEBANK_LOOPTIME 80
 #define GAMBLEBANK_STANDBY	5000 
-#define GAMBLEBANK_DEF		3	// ÷–¯∑— / 100
+#define GAMBLEBANK_DEF		3	//ÊâãÁª≠Ë¥π / 100
 #define GAMBLEBANK_GETMAX	1000000
 #define GAMBLEBANK_GETMIN	100
 #define LIST_PAGE 7
@@ -127,7 +127,7 @@ void NPC_GambleBankTalked( int meindex , int talkerindex , char *szMes ,int colo
 
 
 	if( work_type < 1 || work_type > 4 )	{	// 0 or -1
-		strcpy( buf1,"‘› ±Õ£÷π∑˛ŒÒ°£");
+		strcpy( buf1,"ÊöÇÊó∂ÂÅúÊ≠¢ÊúçÂä°„ÄÇ");
 		CHAR_talkToCli( talkerindex, meindex, buf1,  CHAR_COLORYELLOW);
 		CHAR_setWorkInt( meindex , NPC_WORK_INDEX, -1);
 		return;
@@ -136,7 +136,7 @@ void NPC_GambleBankTalked( int meindex , int talkerindex , char *szMes ,int colo
 
 #else
 	if( CHAR_getWorkInt( meindex , NPC_WORK_INDEX) >= 0 )	{
-			strcpy( buf1,"Œ“’˝√¶◊≈£°");
+			strcpy( buf1,"ÊàëÊ≠£ÂøôÁùÄÔºÅ");
 			CHAR_talkToCli( talkerindex, meindex, buf1,  CHAR_COLORYELLOW);
 		return;
 	}else	{
@@ -157,8 +157,8 @@ static void NPC_GambleBank_selectWindow( int meindex, int toindex, int num, int 
 	int fd = getfdFromCharaIndex( toindex);
 	int i;
 	int page=-1;
-	//flg <= 0 ¥ÌŒÛ 1 ’˝≥£ flg = 2 «Æ≤ªπª  3 = ∏ˆ»À¥ÊøÓΩ´¬˙
-	//		4 = ∏ˆ»À“¯––Ω´¬˙ 5 = Ã·¡Ï…œœﬁ 6 = Ã·¡Ïœ¬œﬁ
+	//flg <= 0 ÈîôËØØ 1 Ê≠£Â∏∏ flg = 2 Èí±‰∏çÂ§ü  3 = ‰∏™‰∫∫Â≠òÊ¨æÂ∞ÜÊª°
+	//		4 = ‰∏™‰∫∫Èì∂Ë°åÂ∞ÜÊª° 5 = ÊèêÈ¢Ü‰∏äÈôê 6 = ÊèêÈ¢Ü‰∏ãÈôê
 	char Gamble_End[][56] = {
 		"error_msg", "end_msg", "money_msg", "full_msg1",
 		"full_msg2","getmax_msg","getmin_msg",
@@ -198,33 +198,33 @@ static void NPC_GambleBank_selectWindow( int meindex, int toindex, int num, int 
 	  	windowno = NPC_GambleBank_SELECT; 
 		break;
 	
-	case GAMBLE_MAN_BANK:	//“¯––
+	case GAMBLE_MAN_BANK:	//Èì∂Ë°å
 		sprintf( token,"%d", CHAR_getInt( toindex, CHAR_PERSONAGOLD ) );
 		windowtype = WINDOW_MESSAGETYPE_BANK;
 		windowno = NPC_GambleBank_BANK;
 	break;
 
-	case GAMBLE_MAN_CHANG1:	//ªªŒÔ	
+	case GAMBLE_MAN_CHANG1:	//Êç¢Áâ©	
 		{
 			char snum[256];
 			page = CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT);
-			strcpy( token, "ªªŒÔ");
-			sprintf( token, "ƒ„”–%dª˝∑÷£¨œÎªªƒƒ“ª∏ˆΩ±∆∑ƒÿ£ø\n", CHAR_getInt( toindex, CHAR_GAMBLENUM));
+			strcpy( token, "Êç¢Áâ©");
+			sprintf( token, "‰Ω†Êúâ%dÁßØÂàÜÔºåÊÉ≥Êç¢Âì™‰∏Ä‰∏™Â•ñÂìÅÂë¢Ôºü\n", CHAR_getInt( toindex, CHAR_GAMBLENUM));
 			for( i=(page*LIST_PAGE);i<(page*LIST_PAGE+LIST_PAGE);i++)	{
 				if( i>=arraysizeof( GB_ITEMS))	{
 					break;
 				}
 				if( !strcmp( GB_ITEMS[i].name,"NEXT") )	{
-					strcat( token, "               œ¬“ª“≥");
+					strcat( token, "               ‰∏ã‰∏ÄÈ°µ");
 					break;
 				}
 				if( !strcmp( GB_ITEMS[i].name,"END") )	{
-					strcat( token, "               »°œ˚\n");
+					strcat( token, "               ÂèñÊ∂à\n");
 					break;
 				}
 
 				sprintf( snum,"%s%d\t%s",
-								"ª˝∑÷£∫", GB_ITEMS[i].Gnum,
+								"ÁßØÂàÜÔºö", GB_ITEMS[i].Gnum,
 								GB_ITEMS[i].name);
 				snum[36] = 0;
 				strcat( token, snum);
@@ -286,7 +286,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 	{
 		char buf1[256];
 		if( CHAR_getWorkInt( meindex , NPC_WORK_INDEX) != talkerindex )	{
-			strcpy( buf1,"Œ“’˝√¶◊≈ƒÿ£°");
+			strcpy( buf1,"ÊàëÊ≠£ÂøôÁùÄÂë¢ÔºÅ");
 			CHAR_talkToCli( talkerindex, meindex, buf1,  CHAR_COLORYELLOW);
 			CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, -1);
 			return;
@@ -310,10 +310,10 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 		  }
 	  	break;
 	  case NPC_GambleBank_SELECT:
-		  if( type == 1 )	{	//“¯––
+		  if( type == 1 )	{	//Èì∂Ë°å
 			CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 2);
 			NPC_GambleBank_selectWindow( meindex, talkerindex, GAMBLE_MAN_BANK, flg);
-		  }else if( type == 2 )	{	//ªªŒÔ
+		  }else if( type == 2 )	{	//Êç¢Áâ©
 			CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 			NPC_GambleBank_selectWindow( meindex, talkerindex, GAMBLE_MAN_CHANG1, flg);
 		  }else	{
@@ -321,7 +321,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 		  }
 	  break;
 	  case NPC_GambleBank_BANK:	//2
-			if( CHAR_getWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT) != 2 )	//¥ÌŒÛ≥Ã–Ú
+			if( CHAR_getWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT) != 2 )	//ÈîôËØØÁ®ãÂ∫è
 				return;
 			if( work_type != 2 && work_type != 4 )	{
 				CHAR_setWorkInt( meindex , NPC_WORK_INDEX, -1);
@@ -330,7 +330,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 			if( select == 4 && atoi( data) != 0 )	{
 				stone_gold = atoi( data);
 				flg = NPC_GambleBank_DoGold( meindex, talkerindex, stone_gold, select);
-				//flg = 1 ’˝≥£ flg = 2 «Æ≤ªπª flg <= 0 ¥ÌŒÛ
+				//flg = 1 Ê≠£Â∏∏ flg = 2 Èí±‰∏çÂ§ü flg <= 0 ÈîôËØØ
 				if( flg == 1 )	{
 					CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, -1);
 					CHAR_setWorkInt( meindex , NPC_WORK_INDEX, -1);
@@ -339,7 +339,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 			}
 			NPC_GambleBank_selectWindow( meindex, talkerindex, GAMBLE_END, flg);
 		break;
-	  case NPC_GambleBank_CHANG1:	//ªªŒÔ
+	  case NPC_GambleBank_CHANG1:	//Êç¢Áâ©
 		  {
 			  int page,ItemID;
 			  int count;
@@ -350,7 +350,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 					return;
 			  }
 
-			  if( page < 0 )	//¥ÌŒÛ∂‘ª∞≥Ã–Ú
+			  if( page < 0 )	//ÈîôËØØÂØπËØùÁ®ãÂ∫è
 				  return;
 			  if( (page+type) < 0 || (page+type) >= arraysizeof( GB_ITEMS) )	{
 				NPC_GambleBank_selectWindow( meindex, talkerindex, GAMBLE_END, flg);
@@ -368,7 +368,7 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 							  !strcmp( GB_ITEMS[page+type].name, "\0") )	{
 						  }else	{
 							  ItemID = GB_ITEMS[page+type].ItemId;	//ID
-							  count = GB_ITEMS[page+type].Gnum;	//ª˝∑÷
+							  count = GB_ITEMS[page+type].Gnum;	//ÁßØÂàÜ
 							  NPC_GambleBank_AddItem( meindex, talkerindex, ItemID, count);
 						  }
 						  CHAR_setWorkInt( meindex , NPC_WORK_INDEX, -1);
@@ -386,19 +386,19 @@ void NPC_GambleBankWindowTalked ( int meindex, int talkerindex, int seqno, int s
 
 int NPC_GambleBank_DoGold( int meindex, int toindex, int Gold, int flg)
 {
-	//flg = 1 ’˝≥£ flg = 2 «Æ≤ªπª flg <= 0 ¥ÌŒÛ 3 = ∏ˆ»À¥ÊøÓΩ´¬˙ 4 = ∏ˆ»À“¯––Ω´¬˙ 5 = µ•¥Œ◊Ó∏ﬂΩ∂Ó
+	//flg = 1 Ê≠£Â∏∏ flg = 2 Èí±‰∏çÂ§ü flg <= 0 ÈîôËØØ 3 = ‰∏™‰∫∫Â≠òÊ¨æÂ∞ÜÊª° 4 = ‰∏™‰∫∫Èì∂Ë°åÂ∞ÜÊª° 5 = ÂçïÊ¨°ÊúÄÈ´òÈáëÈ¢ù
 	char buf1[256];
 	int player_gold = CHAR_getInt( toindex, CHAR_GOLD );
-	int stone_def = 0; // ÷–¯∑—
+	int stone_def = 0; //ÊâãÁª≠Ë¥π
 //	int def = GAMBLEBANK_DEF;
-	//≤ª◊˜Œﬁ“‚“Âµƒ¥Ê»°øÓ
+	//‰∏ç‰ΩúÊó†ÊÑè‰πâÁöÑÂ≠òÂèñÊ¨æ
 	if( flg != 4 )
 		return 0;
 	if( Gold == 0 )	{
 		return 0;
 	}
 	
-	if( Gold < 0 )	{	//»°øÓ
+	if( Gold < 0 )	{	//ÂèñÊ¨æ
 		Gold *=-1;
 		//stone_def = (Gold * def) /100;
 		stone_def = 300;
@@ -408,8 +408,8 @@ int NPC_GambleBank_DoGold( int meindex, int toindex, int Gold, int flg)
 			return 6;
 		}
 		if( ( player_gold + Gold ) > CHAR_getMaxHaveGold(toindex) )	{
-			return 3;	//»°øÓ··Ω´≥¨π˝∏ˆ»ÀΩ∂Ó
-		}else	if( (Gold + stone_def)> CHAR_getInt( toindex, CHAR_PERSONAGOLD ) )	{	//“¯––¥ÊøÓ≤ªπª
+			return 3;	//ÂèñÊ¨æÂæåÂ∞ÜË∂ÖËøá‰∏™‰∫∫ÈáëÈ¢ù
+		}else	if( (Gold + stone_def)> CHAR_getInt( toindex, CHAR_PERSONAGOLD ) )	{	//Èì∂Ë°åÂ≠òÊ¨æ‰∏çÂ§ü
 			return 2;
 		}
 		
@@ -417,18 +417,18 @@ int NPC_GambleBank_DoGold( int meindex, int toindex, int Gold, int flg)
 
 		CHAR_AddGold( toindex, Gold);
 
-		sprintf( buf1,"»°øÓ£∫%d £¨ ÷–¯∑—£∫%d£¨“¯–– £‚≈£∫%d °£", Gold, stone_def, CHAR_getInt( toindex, CHAR_PERSONAGOLD ));
+		sprintf( buf1,"ÂèñÊ¨æÔºö%d ÔºåÊâãÁª≠Ë¥πÔºö%dÔºåÈì∂Ë°åÂâ©È¶ÄÔºö%d „ÄÇ", Gold, stone_def, CHAR_getInt( toindex, CHAR_PERSONAGOLD ));
 		CHAR_talkToCli( toindex, meindex, buf1,  CHAR_COLORYELLOW);
 		LogBankStone(    CHAR_getChar( toindex, CHAR_NAME ), CHAR_getChar( toindex, CHAR_CDKEY ),
 					toindex, Gold, 
-					"GB_Bank_Get(“¯––»°øÓ)", 
+					"GB_Bank_Get(Èì∂Ë°åÂèñÊ¨æ)", 
 					CHAR_getInt( toindex, CHAR_FLOOR),
 		            CHAR_getInt( toindex, CHAR_X ), CHAR_getInt( toindex, CHAR_Y ) ,
 					CHAR_getInt( toindex, CHAR_GOLD ),
 					CHAR_getInt( toindex, CHAR_PERSONAGOLD )
 					);
 		return 1;
-	}else if( Gold > 0 )	{	//¥ÊøÓ
+	}else if( Gold > 0 )	{	//Â≠òÊ¨æ
 		if( Gold > player_gold )	{
 			return 2;
 		}else if( (Gold + CHAR_getInt( toindex, CHAR_PERSONAGOLD ) ) > CHAR_MAXPERSONAGOLD )  {
@@ -438,11 +438,11 @@ int NPC_GambleBank_DoGold( int meindex, int toindex, int Gold, int flg)
 		CHAR_DelGold( toindex, Gold );
 
 		CHAR_setInt( toindex, CHAR_PERSONAGOLD, (CHAR_getInt( toindex, CHAR_PERSONAGOLD ) + Gold ) );
-		sprintf( buf1,"¥ÊøÓ£∫%d £¨“¯–– £‚≈£∫%d °£", Gold, CHAR_getInt( toindex, CHAR_PERSONAGOLD ));
+		sprintf( buf1,"Â≠òÊ¨æÔºö%d ÔºåÈì∂Ë°åÂâ©È¶ÄÔºö%d „ÄÇ", Gold, CHAR_getInt( toindex, CHAR_PERSONAGOLD ));
 		CHAR_talkToCli( toindex, meindex, buf1,  CHAR_COLORYELLOW);
 		LogBankStone(    CHAR_getChar( toindex, CHAR_NAME ), CHAR_getChar( toindex, CHAR_CDKEY ),
 					toindex, Gold, 
-					"GB_Bank_save(“¯––¥ÊøÓ)", 
+					"GB_Bank_save(Èì∂Ë°åÂ≠òÊ¨æ)", 
 					CHAR_getInt( toindex, CHAR_FLOOR),
 		            CHAR_getInt( toindex, CHAR_X ), CHAR_getInt( toindex, CHAR_Y ),
 					CHAR_getInt( toindex, CHAR_GOLD ),
@@ -463,7 +463,7 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 		return FALSE;
 
 	if( CHAR_getInt( toindex, CHAR_GAMBLENUM) < count )	{
-		sprintf( token,"”Œ¿÷≥°ª˝∑÷≤ª◊„£°");
+		sprintf( token,"Ê∏∏‰πêÂú∫ÁßØÂàÜ‰∏çË∂≥ÔºÅ");
 		CHAR_talkToCli( toindex, -1,token,CHAR_COLORWHITE);
 		return FALSE;
 	}
@@ -474,7 +474,7 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 		}
 	}
 	if( i == CHAR_MAXITEMHAVE )	{
-		snprintf( token,sizeof( token), "ŒÔ∆∑¿∏ø’º‰≤ª◊„£°£°");
+		snprintf( token,sizeof( token), "Áâ©ÂìÅÊ†èÁ©∫Èó¥‰∏çË∂≥ÔºÅÔºÅ");
 		CHAR_talkToCli( toindex, -1, token,  CHAR_COLORWHITE);
 		return FALSE;
 	}
@@ -489,12 +489,12 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 		LogItem(
 				CHAR_getChar( toindex, CHAR_NAME ),
 				CHAR_getChar( toindex, CHAR_CDKEY ),
-#ifdef _add_item_log_name  // WON ADD ‘⁄itemµƒlog÷–‘ˆº”item√˚≥∆
+#ifdef _add_item_log_name  // WON ADD Âú®itemÁöÑlog‰∏≠Â¢ûÂä†itemÂêçÁß∞
 				itemindex,
 #else
 				ITEM_getInt( itemindex, ITEM_ID ),
 #endif
-				"G_BANK(”Œ¿÷≥°ª˝∑÷∂“ªªµ¿æﬂ)",
+				"G_BANK(Ê∏∏‰πêÂú∫ÁßØÂàÜÂÖëÊç¢ÈÅìÂÖ∑)",
 				CHAR_getInt( toindex,CHAR_FLOOR),
 				CHAR_getInt( toindex,CHAR_X ),
 				CHAR_getInt( toindex,CHAR_Y ),
@@ -502,11 +502,11 @@ BOOL NPC_GambleBank_AddItem( int meindex, int toindex, int itemId, int count)
 				ITEM_getChar( itemindex, ITEM_NAME),
 				ITEM_getInt( itemindex, ITEM_ID)
 		);
-	sprintf( token,"ƒ√µΩ%s",ITEM_getChar( itemindex, ITEM_NAME));
+	sprintf( token,"ÊãøÂà∞%s",ITEM_getChar( itemindex, ITEM_NAME));
 	CHAR_talkToCli( toindex, -1,token,CHAR_COLORWHITE);
 	CHAR_sendItemDataOne( toindex, ret);
 	CHAR_setInt( toindex, CHAR_GAMBLENUM, CHAR_getInt( toindex, CHAR_GAMBLENUM) - count);
-	sprintf( token,"”Œ¿÷≥°ª˝∑÷ £‚≈£∫ %d", CHAR_getInt( toindex, CHAR_GAMBLENUM));
+	sprintf( token,"Ê∏∏‰πêÂú∫ÁßØÂàÜÂâ©È¶ÄÔºö %d", CHAR_getInt( toindex, CHAR_GAMBLENUM));
 	CHAR_talkToCli( toindex, -1,token,CHAR_COLORWHITE);
 	return TRUE;
 }

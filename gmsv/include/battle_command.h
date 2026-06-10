@@ -14,8 +14,8 @@ BOOL BATTLE_CommandSend( int charaindex, char *pszCommand );
 
 BOOL BATTLE_MakeCharaString(
 	int battleindex,
-	char *pszCommand,	// Æ½ÅÒ·ÂÛÍÕı¡õÊ÷  Çë  ÛÆ
-	int	size 			// ÈÓÄÌÊõ
+	char *pszCommand,	// å¹³ä¹“ä»¿å¼æ­£â–¡æ ‘  è¯·  ç‡®
+	int	size 			// é£¯é€šå®
 );
 
 void BATTLE_CharSendAll( int battleindex );

@@ -131,7 +131,7 @@ int tcpstruct_work_accept( int *tis , int ticount )
 					wk[findWk].use = 1;
 					wk[findWk].ti = newcon;
 					wk[findWk].fd = newsockfd;
-					log( "同意工作: sockfd:%d,newfd:%d=aWork:%d\n" , worksockfd, newsockfd, findWk);
+					log( "鍚屾剰宸ヤ綔: sockfd:%d,newfd:%d=aWork:%d\n" , worksockfd, newsockfd, findWk);
 					break;
 				}
 			}

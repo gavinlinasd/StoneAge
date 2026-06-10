@@ -60,7 +60,7 @@ BOOL MapTradeManInit( int meindex )
 	CHAR_setWorkInt( meindex, NPC_WORK_SELLINDEX, 0 );
 	CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 	CHAR_setWorkInt( meindex, NPC_WORK_INDEX, TRADE_getMaxNumInt());
-	InitMapTradeData( -1, 0);	//³õÊ¼Ì¯Î»×ÊÁÏ
+	InitMapTradeData( -1, 0);	//åˆå§‹æ‘Šä½èµ„æ–™
 	return TRUE;
 }
 
@@ -101,7 +101,7 @@ void MapTradeManLoop( int meindex)
 		buf2 = MAPTRADE_getCharSellName( i);
 		if( buf2 == NULL || !strcmp( buf2, "NULL"))
 			return;
-		sprintf( buf1, "%dºÅ··Âô%s", i+TRADESTARTNUM, buf2);
+		sprintf( buf1, "%då·è´©å–%s", i+TRADESTARTNUM, buf2);
 		showString( meindex, buf1, 0);
 	}
 /*
@@ -162,11 +162,11 @@ void NPC_MapTrade_selectWindow( int meindex, int toindex, int num,int select)
 			int num;
 			Msg_Type = 2;
 			if( CHAR_getWorkInt( toindex, CHAR_MAPTRADETYPE) > 0 )	{
-				sprintf(token , "ÄãÒÑ¾­³Ğ×âÁË%dºÅÌ¯Î»ÁËÑ½£¡",
+				sprintf(token , "ä½ å·²ç»æ‰¿ç§Ÿäº†%då·æ‘Šä½äº†å‘€ï¼",
 					CHAR_getWorkInt( toindex, CHAR_MAPTRADETYPE));
 			}else	if( (num = TRADE_AddMasrerTrade( toindex)) != -1 )	{
 				CHAR_setWorkInt( toindex, CHAR_MAPTRADETYPE, num);
-				sprintf(token , "ºÃÁË£¬%dºÅÌ¯Î»ÔİÊ±¾Í×â¸øÄãÁË¡£\nÒ»µ©ÏÂÏßÀë¿ªááÕâÌ¯Î»¾Í±ØĞë¹é»¹ÁË¡£", num);
+				sprintf(token , "å¥½äº†ï¼Œ%då·æ‘Šä½æš‚æ—¶å°±ç§Ÿç»™ä½ äº†ã€‚\nä¸€æ—¦ä¸‹çº¿ç¦»å¼€å¾Œè¿™æ‘Šä½å°±å¿…é¡»å½’è¿˜äº†ã€‚", num);
 				//CHAR_talkToCli( i, -1, buff, CHAR_COLORYELLOW);
 				Msg_Type = 1;
 			}
@@ -185,7 +185,7 @@ void NPC_MapTrade_selectWindow( int meindex, int toindex, int num,int select)
 		if( NPC_Util_GetStrFromStrWithDelim( npcarg, message[Msg_Type], token, sizeof( token)) == NULL )
 			return;
 	}
-	//ËÍÑ¶Ï¢¸ø CLI						
+	//é€è®¯æ¯ç»™ CLI						
 	lssproto_WN_send( fd, windowtype, buttontype, windowno,
 			CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX), token	);																				
 }
@@ -212,7 +212,7 @@ void MapTradeManWindowTalked( int meindex, int talkerindex, int seqno, int selec
 			char buf1[256];
 			CHAR_setWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 
-			sprintf( buf1, "ÄãÒÑ¾­ÊÇ%dºÅÌ¯Î»µÄÖ÷ÈËÁËÑ½£¡", CHAR_getInt( talkerindex, CHAR_MAPTRADETYPE));
+			sprintf( buf1, "ä½ å·²ç»æ˜¯%då·æ‘Šä½çš„ä¸»äººäº†å‘€ï¼", CHAR_getInt( talkerindex, CHAR_MAPTRADETYPE));
 			CHAR_talkToCli( talkerindex, -1, buf1, CHAR_COLORYELLOW);
 			return;
 		}

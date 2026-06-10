@@ -17,7 +17,7 @@ typedef struct tagSKILL_charDataSetting
 
 typedef enum
 {
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
     SKILL_1,
     SKILL_2,
     SKILL_3,
@@ -69,8 +69,8 @@ typedef struct tagSkillTable
 
 typedef enum
 {
-    SKILL_LEVEL,		// ¼¼ÄÜµÈ¼¶
-    SKILL_IDENTITY,		// ¼¼ÄÜ±àºÅ
+    SKILL_LEVEL,		// æŠ€èƒ½ç­‰çº§
+    SKILL_IDENTITY,		// æŠ€èƒ½ç¼–å·
     SKILL_DATAINTNUM,
 }SKILL_DATAINT;
 
@@ -92,7 +92,7 @@ BOOL  SKILL_makeSkillFromStringToArg( char* src, Skill* sk );
 int SKILL_getInt( Skill* skill, int element);
 int SKILL_setInt( Skill* skill, int element, int new);
 
-#ifdef _CHAR_PROFESSION			// WON ADD ÈËÎïÖ°Òµ
+#ifdef _CHAR_PROFESSION			// WON ADD äººç‰©èŒä¸š
 char* SKILL_makeSkillStatusString( Skill* skill, int charaindex, int skill_num );
 #else
 char* SKILL_makeSkillStatusString( Skill* skill );
@@ -107,7 +107,7 @@ int SKILL_getLevelFromSkillID( int charaindex, SKILL_ID id );
 BOOL SKILL_getUpableSkillID( int charaindex,char* buf, int buflen );
 void SKILL_skillEffect( int charaindex );
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num );
 INLINE int PROFESSION_CHANGE_SKILL_LEVEL_M( int skill_level );
 INLINE int PROFESSION_CHANGE_SKILL_LEVEL_A( int skill_level );

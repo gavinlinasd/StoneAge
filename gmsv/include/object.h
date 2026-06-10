@@ -5,10 +5,10 @@
 
 typedef enum
 {
-    OBJTYPE_NOUSE,      /*  ³ð¼°ÄÌ¼þ·¸ÓÀÛÍµ©·´ÒøÔÈ»¯ÖÐØ¦ÖÐÎçÖÐµ¤ÒÇÃ«Ô÷ÔÊ*/
-    OBJTYPE_CHARA,      /*  Æ½ÅÒ·ÂÛÍÕý CHAR_chara³ß¼°ÄÌ¼þ·¸ÓÀÛÍµ©   */
-    OBJTYPE_ITEM,       /*  Ê§ÄÌ  Ø©    ITEM_item ³ß¼°ÄÌ¼þ·¸ÓÀÛÍµ©  */
-    OBJTYPE_GOLD,       /*  ´ò¡õ»ïÓñ    ÔÆàÅ¼°ÐÚ»¥index±å  ÔÈ»¯ÖÐÔÂ */
+    OBJTYPE_NOUSE,      /*  ä»‡åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦åé“¶åŒ€åŒ–ä¸­å…ä¸­åˆä¸­ä¸¹ä»ªæ¯›æ†Žå…*/
+    OBJTYPE_CHARA,      /*  å¹³ä¹“ä»¿å¼æ­£ CHAR_charaå°ºåŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦   */
+    OBJTYPE_ITEM,       /*  å¤±å¥¶  ä¸ž    ITEM_item å°ºåŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦  */
+    OBJTYPE_GOLD,       /*  æ‰“â–¡ä¼™çŽ‰    äº‘å—¯åŠæ±¹äº’indexåž  åŒ€åŒ–ä¸­æœˆ */
 #ifdef _NPCSERVER_NEW
 	OBJTYPE_NPCSCHARA,
 #endif

@@ -45,7 +45,7 @@ BOOL NPC_initCreateArray( int createnum )
     NPC_createnum = createnum;
     NPC_create  = (NPC_Create*)allocateMemory( sizeof( NPC_Create ) * NPC_createnum );
 
-	print( "¿ªÆô´óĞ¡:%d. ´´½¨ÊıÁ¿:%d.\n", sizeof( NPC_Create ), createnum);
+	print( "å¼€å¯å¤§å°:%d. åˆ›å»ºæ•°é‡:%d.\n", sizeof( NPC_Create ), createnum);
     if( NPC_create == NULL ){
 		return FALSE;
 	}
@@ -106,7 +106,7 @@ BOOL NPC_IsNPCCreateFile( char* filename )
     char    line1[128];
     char*   ret;
 
-    /*  ~Æ¥±ÎÔÂ°×ÑëÄÌ»ï·´Ø¦ØÆ±åÔÊÔÂ */
+    /*  ~åŒ¹è”½æœˆç™½å¤®å¥¶ä¼™åå…ä»„åå…æœˆ */
     if( filename == NULL
         || strlen( filename ) < 1
         || filename[strlen(filename)-1] == '~'
@@ -147,22 +147,22 @@ static int NPC_readCreateFile( char* filename )
     {
         int w,h;
     }REC;
-    POINT   center[2]={{0,0},{0,0}};     /*  born »¥ 0 Æ¥ move »¥ 1 */
-    REC     wh[2]    ={{0,0},{0,0}};      /*  born »¥ 0 Æ¥ move »¥ 1 */
+    POINT   center[2]={{0,0},{0,0}};     /*  born èª‘ 0 ã move èª‘ 1 */
+    REC     wh[2]    ={{0,0},{0,0}};      /*  born èª‘ 0 ã move èª‘ 1 */
 
-    POINT   lu[2]    ={{0,0},{0,0}};     /*  born »¥ 0 Æ¥ move »¥ 1 */
-    POINT   rd[2]    ={{0,0},{0,0}};     /*  born »¥ 0 Æ¥ move »¥ 1 */
+    POINT   lu[2]    ={{0,0},{0,0}};     /*  born èª‘ 0 ã move èª‘ 1 */
+    POINT   rd[2]    ={{0,0},{0,0}};     /*  born èª‘ 0 ã move èª‘ 1 */
 
-    int     defborn=FALSE;              /*  born Ã«É¬ÀÃØÆĞ×¾®Éıµ¤¾® */
-    int     defmove=FALSE;              /*  move Ã«É¬ÀÃØÆĞ×¾®Éıµ¤¾® */
-    int     deflurd[2]={FALSE,FALSE};   /*  lu,rd Æ¥É¬ÀÃØÆĞ×¾®Éıµ¤¾® */
+    int     defborn=FALSE;              /*  born è°·å¿…é†’æ„¼ä¿”å°å¹…æ°—å° */
+    int     defmove=FALSE;              /*  move è°·å¿…é†’æ„¼ä¿”å°å¹…æ°—å° */
+    int     deflurd[2]={FALSE,FALSE};   /*  lu,rd è¬„å¿…é†’æ„¼ä¿”å°å¹…æ°—å° */
     char*   ret;
 
 
     if( NPC_create_readindex >= NPC_createnum ){
-        print("´´½¨³¬¹ıÅäÖÃ»º³å\n" );
-        print("ÅäÖÃ»º³åÊıÄ¿ÊÇ %d\n",NPC_createnum);
-        print("Ã»ÓÃÎÄ¼ş %s\n",filename);
+        print("åˆ›å»ºè¶…è¿‡é…ç½®ç¼“å†²\n" );
+        print("é…ç½®ç¼“å†²æ•°ç›®æ˜¯ %d\n",NPC_createnum);
+        print("æ²¡ç”¨æ–‡ä»¶ %s\n",filename);
         return FALSE;
     }
 
@@ -174,7 +174,7 @@ static int NPC_readCreateFile( char* filename )
     ret = fgets( line, sizeof( line ), f );
     if( ret == NULL )goto FCLOSERETURNFALSE;
     if( strcmp( NPC_CREATEFILEMAGIC, line ) != 0 ){
-        print( "Õâ²»ÊÇÒ»¸öcreateÎÄ¼ş.\n" );
+        print( "è¿™ä¸æ˜¯ä¸€ä¸ªcreateæ–‡ä»¶.\n" );
         goto FCLOSERETURNFALSE;
     }
     linenum = 1;
@@ -192,7 +192,7 @@ static int NPC_readCreateFile( char* filename )
             if( start == ON ){
                 fprint( "Find {. But already START state. %s:%d\n",
                         filename, linenum);
-                fprint( "ÍË³ö\n" );
+                fprint( "é€€å‡º\n" );
                 goto FCLOSERETURNFALSE;
 
             }else{
@@ -205,16 +205,16 @@ static int NPC_readCreateFile( char* filename )
                 int     err = FALSE;
                 if( enemyreadindex == 0 ){
                     err = TRUE;
-                    print( "Õâ²»ÊÇÓöµĞÊı¾İ  %s:%d\n",
+                    print( "è¿™ä¸æ˜¯é‡æ•Œæ•°æ®  %s:%d\n",
                            filename,linenum);
                 }else if( MAP_IsThereSpecificFloorid(
                     cr.intdata[NPC_CREATEFLOORID]) == FALSE ){
                     err = TRUE;
-                    print( "µØÍ¼IDºÅÓĞÃ«²¡ %s:%d-floor:%d\n",
+                    print( "åœ°å›¾IDå·æœ‰æ¯›ç—… %s:%d-floor:%d\n",
                            filename,linenum, cr.intdata[NPC_CREATEFLOORID]);
                 }else if( defborn == FALSE ){
                     err = TRUE;
-                    print( "ÕâĞ©²»ÊÇ born °²×° %s:%d\n",
+                    print( "è¿™äº›ä¸æ˜¯ born å®‰è£… %s:%d\n",
                            filename,linenum);
                 }
 
@@ -240,7 +240,7 @@ static int NPC_readCreateFile( char* filename )
                         cr.intdata[NPC_CREATEBORNRIGHTDOWNY] =
                             center[0].y+wh[0].h/2;
                     }
-					/* 99/01/21 Ôú÷ú [0]-->[1]±åÄ¤¿Ò */
+					/* 99/01/21 æ‰é¼¹ [0]-->[1]åè†œæ³ */
                     if( defmove ){
                         if( deflurd[0] ){
                             cr.intdata[NPC_CREATEMOVELEFTUPX] =
@@ -263,7 +263,7 @@ static int NPC_readCreateFile( char* filename )
                         }
 
                     }else{
-                        /*  born Ã«Îìñâ¡õÔÊÔÂ */
+                        /*  born æ¯›æˆŠç–‹â–¡å…æœˆ */
                         cr.intdata[NPC_CREATEMOVELEFTUPX] =
                             cr.intdata[NPC_CREATEBORNLEFTUPX];
                         cr.intdata[NPC_CREATEMOVERIGHTDOWNX] =
@@ -281,15 +281,15 @@ static int NPC_readCreateFile( char* filename )
                     NPC_create_readindex++;
 
                     if( NPC_create_readindex >= NPC_createnum ){
-                        print("´´½¨³¬¹ıÅäÖÃ»º³å\n" );
-                        print("ÅäÖÃ´´½¨ÎÄ¼şÊıÄ¿ %d\n",
+                        print("åˆ›å»ºè¶…è¿‡é…ç½®ç¼“å†²\n" );
+                        print("é…ç½®åˆ›å»ºæ–‡ä»¶æ•°ç›® %d\n",
                               NPC_createnum);
-                        print("Ã»ÓÃÎÄ¼ş:%s\n",filename);
+                        print("æ²¡ç”¨æ–‡ä»¶:%s\n",filename);
                         goto FCLOSERETURNFALSE;
                     }
 
                 }
-                /*  âÙÓå°À±å  ØÆ»¯ÔÆÈÊ  */
+                /*  èµ“æ¸è¢„å  ä»„åŒ–äº‘ä»  */
                 NPC_setDefaultNPCCreate( &cr );
                 enemyreadindex=0;
                 defborn=FALSE;
@@ -299,7 +299,7 @@ static int NPC_readCreateFile( char* filename )
 
                 start = OFF;
             }else{
-                fprint( "Î´½â¾ö '}' at %s:%d\n",filename,linenum);
+                fprint( "æœªè§£å†³ '}' at %s:%d\n",filename,linenum);
                 goto FCLOSERETURNFALSE;
             }
             break;
@@ -384,25 +384,25 @@ static int NPC_readCreateFile( char* filename )
                 cr.intdata[NPC_CREATEFAMILY] = atoi( secondToken );
 
             }else if( strcasecmp("enemy", firstToken) == 0 ){
-                /*  Â¦ĞÑÃ«  ÁùÔÂ·½µ¤±åÔÊÔÂ  */
+                /*  å¨„é†’æ¯›  å…­æœˆæ–¹ä¸¹åå…æœˆ  */
                 int     templateindex;
                 char    enemyname[64];
 
-                /*  ÑãîÎË²ÃñÄáÓÀÛÍ  */
+                /*  é›é’—ç¬æ°‘å°¼æ°¸å¼  */
                 if( enemyreadindex <= arraysizeof(cr.templateindex) )
                     /* OK */
                     ;
                 else
                     break;
 
-                /*  secondToken Ã«  Ù¯  ±åÛĞİ©ÔÊÔÂ    */
+                /*  secondToken æ¯›  ä¾¬  ååŒè¸å…æœˆ    */
                 getStringFromIndexWithDelim(secondToken,"|",1,enemyname,
                                             sizeof(enemyname) );
                 templateindex= NPC_templateGetTemplateIndex(enemyname);
                 if( templateindex != -1 ){
                     cr.templateindex[enemyreadindex] = templateindex;
                     {
-                        /*  Â¦ĞÑÃ«ÖÊ  ÔÊÔÂ  */
+                        /*  å¨„é†’æ¯›è´¨  å…æœˆ  */
                         char    tmp[2];
                         int     ret;
                         ret = getStringFromIndexWithDelim( secondToken,
@@ -418,10 +418,10 @@ static int NPC_readCreateFile( char* filename )
                     }
                     enemyreadindex++;
                 }else
-                    fprint( "Ã»ÓĞÕâÖÖÄ£¿é:\n[%s(%d)%s] enemy:%s\n",
+                    fprint( "æ²¡æœ‰è¿™ç§æ¨¡å—:\n[%s(%d)%s] enemy:%s\n",
                             filename ,linenum,secondToken, enemyname);
             }else{
-                fprint( "Ã»ÓĞÕâÖÖµÇÂ½ %s %s:%d\n",firstToken,filename,
+                fprint( "æ²¡æœ‰è¿™ç§ç™»é™† %s %s:%d\n",firstToken,filename,
                         linenum );
             }
         }
@@ -444,7 +444,7 @@ BOOL NPC_readNPCCreateFiles( char* topdirectory ,int createsize)
     filenames = (STRING64 *)allocateMemory( sizeof( STRING64 ) *
                                               (int)getFilesearchnum( ) );
 	if( filenames == NULL ){
-	    print( "¶ÁÈ¡NPC´´½¨ÎÄ¼ş... ÄÚ´æ´íÎó\n" );
+	    print( "è¯»å–NPCåˆ›å»ºæ–‡ä»¶... å†…å­˜é”™è¯¯\n" );
 		return FALSE;
 	}
     filenum = rgetFileName( topdirectory ,filenames ,getFilesearchnum( ) );
@@ -453,23 +453,23 @@ BOOL NPC_readNPCCreateFiles( char* topdirectory ,int createsize)
     	return FALSE;
     }
 	if( filenum >= getFilesearchnum( ) ){
-		print( "ÎÄ¼şËÑË÷ÊıÄ¿Ê§°Ü %d\n", getFilesearchnum( ) );
+		print( "æ–‡ä»¶æœç´¢æ•°ç›®å¤±è´¥ %d\n", getFilesearchnum( ) );
 		while( 1 );
 	}
     if( !NPC_initCreateArray( createsize ) ){
-        fprint( "¿ªÆô´´½¨Êı×é´íÎó\n" );
+        fprint( "å¼€å¯åˆ›å»ºæ•°ç»„é”™è¯¯\n" );
 	    freeMemory( filenames );
         return FALSE;
     }
-    print( "¶ÁÈ¡NPC´´½¨ÎÄ¼ş..." );
+    print( "è¯»å–NPCåˆ›å»ºæ–‡ä»¶..." );
     for( i = 0 ; i < filenum ; i ++ )
         if( NPC_IsNPCCreateFile( filenames[i].string ))
             if( NPC_readCreateFile( filenames[i].string ) == -1 )
                 break;
-    print( "ÕıÈ·´´½¨NPC %d ..." , NPC_create_readindex );
+    print( "æ­£ç¡®åˆ›å»ºNPC %d ..." , NPC_create_readindex );
      NPC_createnum=NPC_create_readindex;
 #ifdef DEBUG
-	/* 99/4/8 By Kawata csväßÖ¿±åØÆ»¯Ö§ÔÂ */
+	/* 99/4/8 By Kawata csvæº¥æŒšåä»„åŒ–æ”¯æœˆ */
 	print( "Npc_Create's\n");
     for( i = 0 ; i < NPC_createnum ; i ++ ){
         int     j;
@@ -496,12 +496,12 @@ BOOL NPC_readNPCCreateFiles( char* topdirectory ,int createsize)
 
 
 /*------------------------------------------------------------
- * createindex ¾®ÈÕ boundary »¥É¬ÀÃ½ñÄ¾»¯ÖĞÔÂ¾®Éıµ¤¾®Ã«Î­ÔÂ
- * Â¦ĞÑ
- *  createindex         int         create¼°ÄÌ¼ş·¸ÓÀÛÍµ©
- * ß¯Ô»°À
- *  É¬ÀÃ½ñÄ¾»¯ÖĞÔÂ          TRUE(1)
- *  É¬ÀÃ½ñÄ¾»¯ÖĞØ¦ÖĞ        FALSE(0)
+ * createindex äº•æ—¥ boundary äº’æ¶©çƒ‚ä»Šæœ¨åŒ–ä¸­æœˆäº•å‡ä¸¹äº•æ¯›è‹‡æœˆ
+ * å¨„é†’
+ *  createindex         int         createåŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ * å¿’æ›°è¢„
+ *  æ¶©çƒ‚ä»Šæœ¨åŒ–ä¸­æœˆ          TRUE(1)
+ *  æ¶©çƒ‚ä»Šæœ¨åŒ–ä¸­å…ä¸­        FALSE(0)
  ------------------------------------------------------------*/
 BOOL NPC_isBoundarySet( int createindex )
 {
@@ -509,13 +509,13 @@ BOOL NPC_isBoundarySet( int createindex )
     return NPC_create[createindex].intdata[NPC_CREATEBOUNDARY];
 }
 /*------------------------------------------------------------
- * createindex ¾®ÈÕ  ØêÔÂ  Çø¼°RECT Ã«·Æ»§ÔÂ£Û
- * Â¦ĞÑ
- *  createindex         int           ¼şÃóÒÁ¡õĞş¼°ÄÌ¼ş·¸ÓÀÛÍµ©
- *  r                   RECT*       °ÀÃ«°¾ØêÎçÔÂRECT ¼°ºÌÄÌ¼şÕı
- * ß¯Ô»°À
- *  ÔÀ      TRUE(1)
- *  ÁÃ      FALSE(0)
+ * createindex äº•æ—¥  ä»ƒæœˆ  åŒºåŠRECT æ¯›è²æˆ·æœˆï¼»
+ * å¨„é†’
+ *  createindex         int           ä»¶çš¿ä¼Šâ–¡ç„åŠå¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ *  r                   RECT*       è¢„æ¯›ç†¬ä»ƒåˆæœˆRECT åŠç¦¾å¥¶ä»¶æ­£
+ * å¿’æ›°è¢„
+ *  å²³      TRUE(1)
+ *  æ’©      FALSE(0)
  ------------------------------------------------------------*/
 BOOL NPC_createGetRECT( int createindex,RECT*   r )
 {
@@ -535,12 +535,12 @@ BOOL NPC_createGetRECT( int createindex,RECT*   r )
 
 
 /*------------------------------------------------------------
- * ÁİÃŞ¾®ÈÕ×ÛÔÈ»¯ÊÖÖĞÖĞ¾®Éıµ¤¾®ÃñÄáÓÀÛÍÔÊÔÂ£Û
- * Â¦ĞÑ
- *  cindex      int     ÄÌ¼ş·¸ÓÀÛÍµ©
- * ß¯Ô»°À
- *  BOOL    ×ÛÔÈ»¯ÖĞÖĞèëÄş  TRUE(1)
- *  BOOL    ×ÛÔÈ»¯ÖĞØêØ¦ÖĞèëÄş  FALSE(0)
+ * å‡›æ£‰äº•æ—¥ç»¼åŒ€åŒ–æ‰‹ä¸­ä¸­äº•å‡ä¸¹äº•æ°‘å°¼æ°¸å¼å…æœˆï¼»
+ * å¨„é†’
+ *  cindex      int     å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ * å¿’æ›°è¢„
+ *  BOOL    ç»¼åŒ€åŒ–ä¸­ä¸­æ¡¦å®  TRUE(1)
+ *  BOOL    ç»¼åŒ€åŒ–ä¸­ä»ƒå…ä¸­æ¡¦å®  FALSE(0)
  ------------------------------------------------------------*/
 BOOL NPC_createCheckGenerateFromTime( int cindex )
 {
@@ -570,26 +570,26 @@ BOOL NPC_createCheckGenerateFromTime( int cindex )
 
 
 /*------------------------------------------------------------
- * ×ÛÔÂÁİ¼°ÁİÃŞ¼°É¬ÀÃÃ«âÙÓå¼ÀÔÊÔÂ£Û
- * Â¦ĞÑ
- *  tindex      int     ÄÌ¼ş·¸ÓÀÛÍµ©
- * ß¯Ô»°À
- *  Ø¦ØÆ
+ * ç»¼æœˆå‡›åŠå‡›æ£‰åŠæ¶©çƒ‚æ¯›èµ“æ¸ç¥­å…æœˆï¼»
+ * å¨„é†’
+ *  tindex      int     å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ * å¿’æ›°è¢„
+ *  å…ä»„
  ------------------------------------------------------------*/
 void NPC_createInitTime( int index )
 {
-    /*  ×ÛÔÂÒÇ±åØ¦ÔÈĞ×¾®ÈÕ°ÀÃ«É¬ÀÃ  */
+    /*  ç»¼æœˆä»ªåå…åŒ€å‡¶äº•æ—¥è¢„æ¯›æ¶©çƒ‚  */
     NPC_create[index].workdata[NPC_CREATEWORKMAKESTARTSEC] =
         NowTime.tv_sec;
     NPC_create[index].workdata[NPC_CREATEWORKMAKESTARTUSEC] =
         NowTime.tv_usec;
 }
 /*------------------------------------------------------------
- * ³ÄÃ«×ÛÔÈĞ×  ±åÊĞËü¼şĞşĞÑÃ«  Ö§ÔÊèúĞÑ
- * Â¦ĞÑ
- *  index       int         ÄÌ¼ş·¸ÓÀÛÍµ©
- * ß¯Ô»°À
- *  Ø¦ØÆ
+ * è¡¬æ¯›ç»¼åŒ€å‡¶  åå¸‚å®ƒä»¶ç„é†’æ¯›  æ”¯å…æ¥®é†’
+ * å¨„é†’
+ *  index       int         å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ * å¿’æ›°è¢„
+ *  å…ä»„
  ------------------------------------------------------------*/
 void NPC_createIncreaseEnemynum( int index )
 {
@@ -597,11 +597,11 @@ void NPC_createIncreaseEnemynum( int index )
     NPC_create[index].workdata[NPC_CREATEWORKENEMYNUM] ++;
 }
 /*------------------------------------------------------------
- * ³Ä»¥ÉØÊÏÆ¥ÊĞËü¼şĞşĞÑÃ«Ó¼ÈÕÔÊèúĞÑ
- * Â¦ĞÑ
- *  index       int         ÄÌ¼ş·¸ÓÀÛÍµ©
- * ß¯Ô»°À
- *  Ø¦ØÆ
+ * è¡¬äº’éŸ¶æ°åŒ¹å¸‚å®ƒä»¶ç„é†’æ¯›è›¹æ—¥å…æ¥®é†’
+ * å¨„é†’
+ *  index       int         å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ * å¿’æ›°è¢„
+ *  å…ä»„
  ------------------------------------------------------------*/
 void NPC_createDecreaseEnemynum( int index )
 {
@@ -609,11 +609,11 @@ void NPC_createDecreaseEnemynum( int index )
     NPC_create[index].workdata[NPC_CREATEWORKENEMYNUM] --;
 }
 /*------------------------------------------------------------
- * ÊĞËü¼şĞşĞÑ»¥Æá    ¾®Æ©ÍÍÔÂèúĞÑ
- * Â¦ĞÑ
- *  index       int         ÄÌ¼ş·¸ÓÀÛÍµ©
- * ß¯Ô»°À
- *  TRUE:MAX  FALSE:à¨µ¤
+ * å¸‚å®ƒä»¶ç„é†’äº’æ¼†    äº•è­¬å±¯æœˆæ¥®é†’
+ * å¨„é†’
+ *  index       int         å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ * å¿’æ›°è¢„
+ *  TRUE:MAX  FALSE:å•œä¸¹
  ------------------------------------------------------------*/
 BOOL NPC_createCheckMaxEnemynum( int index )
 {

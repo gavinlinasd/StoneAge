@@ -1,0 +1,14 @@
+# build artifacts
+*.o
+*.a
+*~
+core
+core.*
+
+# built binaries
+/saac/saac
+/saac/wk/acwk
+/gmsv/gmsv
+
+# generated at build time
+/gmsv/genver.h

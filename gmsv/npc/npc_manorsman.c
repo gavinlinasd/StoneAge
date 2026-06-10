@@ -14,7 +14,7 @@
 #include "log.h"
 
 /*
- * ×¯Ô° PK µÇ¼ÇÔ±
+ * åº„å›­ PK ç™»è®°å‘˜
  *
  */
 #define MAX_MANORSMAN 22
@@ -26,19 +26,19 @@ static int FMPK_ManorsmanList[MAX_MANORSMAN]={
 -1,-1 };
 
 enum {
-	NPC_WORK_ID = CHAR_NPCWORKINT1,		// µÇ¼ÇÔ± ID, ´Ó 0 ¿ªÊ¼
-	NPC_WORK_MANORID = CHAR_NPCWORKINT2,	// ×¯Ô°±àºÅ
-	NPC_WORK_CHALLENGEWAIT = CHAR_NPCWORKINT3,	// ÌôÕ½µÈ´ıÊ±¼ä
-	NPC_WORK_PEACEWAIT = CHAR_NPCWORKINT4,	// ĞİÕ½Ê±¼ä
-	NPC_WORK_PREVLOOPTIME = CHAR_NPCWORKINT5,	// Ç°Ò»´Î´¦Àí Loop µÄÊ±¼ä
+	NPC_WORK_ID = CHAR_NPCWORKINT1,		// ç™»è®°å‘˜ ID, ä» 0 å¼€å§‹
+	NPC_WORK_MANORID = CHAR_NPCWORKINT2,	// åº„å›­ç¼–å·
+	NPC_WORK_CHALLENGEWAIT = CHAR_NPCWORKINT3,	// æŒ‘æˆ˜ç­‰å¾…æ—¶é—´
+	NPC_WORK_PEACEWAIT = CHAR_NPCWORKINT4,	// ä¼‘æˆ˜æ—¶é—´
+	NPC_WORK_PREVLOOPTIME = CHAR_NPCWORKINT5,	// å‰ä¸€æ¬¡å¤„ç† Loop çš„æ—¶é—´
 #ifdef _NEW_MANOR_LAW
-	NPC_WORK_BETTLETIME = CHAR_NPCWORKINT6	// ¼ÇÂ¼¿ª´òÊ±µÄÈÕÆÚ
+	NPC_WORK_BETTLETIME = CHAR_NPCWORKINT6	// è®°å½•å¼€æ‰“æ—¶çš„æ—¥æœŸ
 #endif
 };
 
 #define SCHEDULEFILEDIR		"./Schedule/"
 
-#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD ½«¿ÉÌôÕ½×¯Ô°µÄÓÉÇ°Ê®´ó¸ÄÎªÇ°¶şÊ®´ó
+#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD å°†å¯æŒ‘æˆ˜åº„å›­çš„ç”±å‰åå¤§æ”¹ä¸ºå‰äºŒåå¤§
 #define PK_LIMIT	20	       
 #endif
 
@@ -73,7 +73,7 @@ BOOL NPC_ManorSmanInit( int meindex )
 
   CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_TYPEMANORSCHEDULEMAN );
 
-  // ²ÎÊı
+  // å‚æ•°
   NPC_Util_GetArgStr(meindex, argstr, sizeof(argstr));
   meid = NPC_Util_GetNumFromStrWithDelim(argstr, "id" );
   if ((meid<0) || (meid>=MAX_SCHEDULEMAN)) {
@@ -136,23 +136,23 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 
   switch (fmpks[fmpks_pos+1].flag) {
   case FMPKS_FLAG_NONE:
-    // Ã»ÓĞÔ¼¶¨Õ½¶·£¬´ËÊ±¿ÉÒÔÏÂÕ½Êé
+    // æ²¡æœ‰çº¦å®šæˆ˜æ–—ï¼Œæ­¤æ—¶å¯ä»¥ä¸‹æˆ˜ä¹¦
     saacproto_ACFMPointList_send(acfd);
 #ifdef _MANOR_PKRULE
-	sprintf(buf, "×¯Ô°ËùÓĞÈ¨Õù¶áÕ½µÄÌôÕ½×Ê¸ñ\n\n"
-                 "Ò»¡¢Ã»ÓĞÓµÓĞ×¯Ô°µÄ¼Ò×å\n"
-	#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD ½«¿ÉÌôÕ½×¯Ô°µÄÓÉÇ°Ê®´ó¸ÄÎªÇ°¶şÊ®´ó
-				 "¶ş¡¢¼Ò×åÅÅĞĞ±ØĞèÎªÇ°¶şÊ®´ó¼Ò×å\n"
+	sprintf(buf, "åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜çš„æŒ‘æˆ˜èµ„æ ¼\n\n"
+                 "ä¸€ã€æ²¡æœ‰æ‹¥æœ‰åº„å›­çš„å®¶æ—\n"
+	#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD å°†å¯æŒ‘æˆ˜åº„å›­çš„ç”±å‰åå¤§æ”¹ä¸ºå‰äºŒåå¤§
+				 "äºŒã€å®¶æ—æ’è¡Œå¿…éœ€ä¸ºå‰äºŒåå¤§å®¶æ—\n"
 	#else
-                 "¶ş¡¢¼Ò×åÅÅĞĞ±ØĞèÎªÇ°Ê®´ó¼Ò×å\n"
+                 "äºŒã€å®¶æ—æ’è¡Œå¿…éœ€ä¸ºå‰åå¤§å®¶æ—\n"
 	#endif
-				 "Èş¡¢Ìß¹İÊ±¼ä£ºÏÂÎçÁùµãÖÁÁè³¿Èşµã\n\n"
-                 "ÇëÉÔ´ı£¬ÎÒ½«È·ÈÏÄãµÄ×Ê¸ñ¡£");
+				 "åã€è¸¢é¦†æ—¶é—´ï¼šä¸‹åˆå…­ç‚¹è‡³å‡Œæ™¨åç‚¹\n\n"
+                 "è¯·ç¨å¾…ï¼Œæˆ‘å°†ç¡®è®¤ä½ çš„èµ„æ ¼ã€‚");
 #else
-    sprintf(buf, "×¯Ô°ËùÓĞÈ¨Õù¶áÕ½µÄÌôÕ½×Ê¸ñ\n\n"
-                 "Ò»¡¢Ã»ÓĞÓµÓĞ×¯Ô°µÄ¼Ò×å\n"
-                 "¶ş¡¢¼Ò×åµÄÉùÍû¸ßì¶×¯Ô°¼Ò×åµÄÉùÍû\n\n"
-                 "ÇëÉÔ´ı£¬ÎÒ½«È·ÈÏÄãµÄ×Ê¸ñ¡£");
+    sprintf(buf, "åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜çš„æŒ‘æˆ˜èµ„æ ¼\n\n"
+                 "ä¸€ã€æ²¡æœ‰æ‹¥æœ‰åº„å›­çš„å®¶æ—\n"
+                 "äºŒã€å®¶æ—çš„å£°æœ›é«˜æ–¼åº„å›­å®¶æ—çš„å£°æœ›\n\n"
+                 "è¯·ç¨å¾…ï¼Œæˆ‘å°†ç¡®è®¤ä½ çš„èµ„æ ¼ã€‚");
 #endif
     lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 	    		WINDOW_BUTTONTYPE_YESNO,
@@ -161,7 +161,7 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
     			buf);
     break;
   case FMPKS_FLAG_MANOR_PREPARE:
-    // Ä¿Ç°ÒÑ¾­¶¨ºÃÕ½¶·£¬×¼±¸ÖĞ
+    // ç›®å‰å·²ç»å®šå¥½æˆ˜æ–—ï¼Œå‡†å¤‡ä¸­
     {
       int timeleft=fmpks[fmpks_pos+1].dueltime-NowTime.tv_sec;
       int dd,hh,mm;
@@ -170,20 +170,20 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
       hh = /*fmpks[fmpks_pos+1].dueltime*/ timeleft / 3600 - dd*24;
       mm = /*fmpks[fmpks_pos+1].dueltime*/ timeleft / 60 - dd*24*60 - hh*60;
       memset(buf2,0,sizeof(buf2));
-      if (dd>0) sprintf(buf, " %d Ìì", dd); else strcpy(buf, "");
+      if (dd>0) sprintf(buf, " %d å¤©", dd); else strcpy(buf, "");
       strcat(buf2, buf);
       if (hh>0) sprintf(buf, " %d Ğ¡Ê±", hh); else strcpy(buf, "");
       strcat(buf2, buf);
-      if (mm>0) sprintf(buf, " %d ·Öïñ", mm); else strcpy(buf, "");
+      if (mm>0) sprintf(buf, " %d åˆ†é”º", mm); else strcpy(buf, "");
       strcat(buf2, buf);
       if (strlen(buf2)==0)
-        sprintf(buf, "×¯Ô°ËùÓĞÈ¨Õù¶áÕ½\n¡º%s £Ö£Ó %s¡»\n\n"
-                    "¼´½«¿ªÊ¼£¬Çë×¼±¸Èë³¡¡£",
+        sprintf(buf, "åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜\nã€%s ï¼¶ï¼³ %sã€\n\n"
+                    "å³å°†å¼€å§‹ï¼Œè¯·å‡†å¤‡å…¥åœºã€‚",
     		fmpks[fmpks_pos+1].guest_name,
     		fmpks[fmpks_pos+1].host_name);
       else
-        sprintf(buf, "×¯Ô°ËùÓĞÈ¨Õù¶áÕ½\n¡º%s £Ö£Ó %s¡»\n\n"
-                    "Ô¤¶¨½«ÔÚ%sáá¿ªÊ¼¡£",
+        sprintf(buf, "åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜\nã€%s ï¼¶ï¼³ %sã€\n\n"
+                    "é¢„å®šå°†åœ¨%så¾Œå¼€å§‹ã€‚",
     		fmpks[fmpks_pos+1].guest_name,
     		fmpks[fmpks_pos+1].host_name,
     		buf2);
@@ -195,7 +195,7 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
     }
     break;
   case FMPKS_FLAG_MANOR_PEACE:
-    // Õ½¶·ÒÑ¾­½áÊøµÄºÍÆ½Ê±ÆÚ
+    // æˆ˜æ–—å·²ç»ç»“æŸçš„å’Œå¹³æ—¶æœŸ
     {
       int timeleft=fmpks[fmpks_pos+1].dueltime-NowTime.tv_sec;
       int dd,hh,mm;
@@ -204,17 +204,17 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
       hh = /*fmpks[fmpks_pos+1].dueltime*/ timeleft / 3600 - dd*24;
       mm = /*fmpks[fmpks_pos+1].dueltime*/ timeleft / 60 - dd*24*60 - hh*60;
       strcpy(buf2,"");
-      if (dd>0) sprintf(buf, " %d Ìì", dd); else strcpy(buf, "");
+      if (dd>0) sprintf(buf, " %d å¤©", dd); else strcpy(buf, "");
       strcat(buf2, buf);
       if (hh>0) sprintf(buf, " %d Ğ¡Ê±", hh); else strcpy(buf, "");
       strcat(buf2, buf);
-      if (mm>0) sprintf(buf, " %d ·Öïñ", mm); else strcpy(buf, "");
+      if (mm>0) sprintf(buf, " %d åˆ†é”º", mm); else strcpy(buf, "");
       strcat(buf2, buf);
 
       if (strlen(buf2)==0)
-        strcpy(buf, "ÇëÉÔµÈ£¬ÈÃÎÒ×¼±¸Ò»ÏÂÉêÇëÌß¹İµÄ±í¸ñ¡£");
+        strcpy(buf, "è¯·ç¨ç­‰ï¼Œè®©æˆ‘å‡†å¤‡ä¸€ä¸‹ç”³è¯·è¸¢é¦†çš„è¡¨æ ¼ã€‚");
       else
-        sprintf(buf, "ÏÖÔÚÊÇĞİÕ½Ê±ÆÚ£¬ÒªÌß¹İµÄ»°\nÇë%sááÔÙÀ´ÉêÇë¡£",buf2);
+        sprintf(buf, "ç°åœ¨æ˜¯ä¼‘æˆ˜æ—¶æœŸï¼Œè¦è¸¢é¦†çš„è¯\nè¯·%så¾Œå†æ¥ç”³è¯·ã€‚",buf2);
       lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    	WINDOW_BUTTONTYPE_OK,
     			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -222,9 +222,9 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
     }
     break;
   case FMPKS_FLAG_MANOR_BATTLEBEGIN:
-    // Ä¿Ç°ÕıÔÚ½øĞĞÌß¹İ
-    sprintf(buf, "×¯Ô°ËùÓĞÈ¨Õù¶áÕ½\n¡º%s £Ö£Ó %s¡»\n\n"
-                 "¿ª¡«´ò¡«ÂŞ¡«\n»¹Ã»½ø³¡µÄÈË¸Ï¿ì½ø³¡°É¡£",
+    // ç›®å‰æ­£åœ¨è¿›è¡Œè¸¢é¦†
+    sprintf(buf, "åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜\nã€%s ï¼¶ï¼³ %sã€\n\n"
+                 "å¼€ï½æ‰“ï½ç½—ï½\nè¿˜æ²¡è¿›åœºçš„äººèµ¶å¿«è¿›åœºå§ã€‚",
     		fmpks[fmpks_pos+1].guest_name,
     		fmpks[fmpks_pos+1].host_name);
     lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
@@ -234,9 +234,9 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
     			buf);
     break;
   case FMPKS_FLAG_MANOR_OTHERPLANET:
-    // ÔÚ±ğµÄĞÇÇò½øĞĞÕ½¶·
-    sprintf(buf, "×¯Ô°ËùÓĞÈ¨Õù¶áÕ½\n¡º%s £Ö£Ó %s¡»\n\n"
-    		 "¾ö¶·µØµãÔÚ %s ¡£",
+    // åœ¨åˆ«çš„æ˜Ÿçƒè¿›è¡Œæˆ˜æ–—
+    sprintf(buf, "åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜\nã€%s ï¼¶ï¼³ %sã€\n\n"
+    		 "å†³æ–—åœ°ç‚¹åœ¨ %s ã€‚",
               fmpks[fmpks_pos+1].guest_name,
               fmpks[fmpks_pos+1].host_name,
               fmpks[fmpks_pos+2].host_name);
@@ -268,16 +268,16 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 	if(fmpks[fmpks_pos+1].flag == FMPKS_FLAG_CHALLENGE) fmpks[fmpks_pos+1].flag = FMPKS_FLAG_NONE;
 
   switch(fmpks[fmpks_pos+1].flag){
-	// ÌôÕ½ÆÚ 1800~2200
+	// æŒ‘æˆ˜æœŸ 1800~2200
   case FMPKS_FLAG_NONE:
 	case FMPKS_FLAG_WAIT:
     saacproto_ACFMPointList_send(acfd);
-		sprintf(buf,"×¯Ô°ËùÓĞÈ¨Õù¶áÕ½µÄÌôÕ½×Ê¸ñ\n\n"
-								"Ò»¡¢Ã»ÓĞ×¯Ô°µÄ¼Ò×å\n"
-								"¶ş¡¢¼Ò×åµÄÆøÊÆ¸ßì¶×¯Ô°¼Ò×åµÄÆøÊÆ\n"
-								"Èş¡¢Ô¼Õ½Ê±¼äÖÕÖ¹Ê±£¬ÆøÊÆÅÅÃûµÚÒ»Õß»ñµÃÌôÕ½×Ê¸ñ\n"
-								"ËÄ¡¢ÆøÊÆÏàÍ¬ÕßÒÔ×îÏÈ±¨ÃûÕß»ñµÃ×Ê¸ñ\n"
-								"°´ OK ÎÒ½«È·ÈÏÄãµÄ×Ê¸ñ£¬°´ NO ¹Û¿´ÌôÕ½ÅÅÃû");
+		sprintf(buf,"åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜çš„æŒ‘æˆ˜èµ„æ ¼\n\n"
+								"ä¸€ã€æ²¡æœ‰åº„å›­çš„å®¶æ—\n"
+								"äºŒã€å®¶æ—çš„æ°”åŠ¿é«˜æ–¼åº„å›­å®¶æ—çš„æ°”åŠ¿\n"
+								"åã€çº¦æˆ˜æ—¶é—´ç»ˆæ­¢æ—¶ï¼Œæ°”åŠ¿æ’åç¬¬ä¸€è€…è·å¾—æŒ‘æˆ˜èµ„æ ¼\n"
+								"å››ã€æ°”åŠ¿ç›¸åŒè€…ä»¥æœ€å…ˆæŠ¥åè€…è·å¾—èµ„æ ¼\n"
+								"æŒ‰ OK æˆ‘å°†ç¡®è®¤ä½ çš„èµ„æ ¼ï¼ŒæŒ‰ NO è§‚çœ‹æŒ‘æˆ˜æ’å");
     lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_YESNO,CHAR_WINDOWTYPE_CHECKMAN_START,
     								 CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),buf);
 		if(fmpointlist.fm_momentum[manorid-1] <= -1){
@@ -288,7 +288,7 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 			hadfmindex = atoi(token);
 			if(hadfmindex != -1){
 				for(index=0;index<FAMILY_MAXNUM;index++){
-					// ÕÒ³öÊØ×¯¼Ò×åµÄË÷Òı
+					// æ‰¾å‡ºå®ˆåº„å®¶æ—çš„ç´¢å¼•
 					if(fmdptop.fmtopid[index] == (hadfmindex - 1)) break;
 				}
 				if(index >= FAMILY_MAXNUM){
@@ -296,15 +296,15 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 					printf("\nNPC_ManorSmanTalked():save fm_momentum error(%d:%s)",hadfmindex,token);
 					break;
 				}
-				// ¼ÇÂ¼Õâ¸öÊ±¿ÌÊØ×¯¼Ò×åµÄÆøÊÆ
+				// è®°å½•è¿™ä¸ªæ—¶åˆ»å®ˆåº„å®¶æ—çš„æ°”åŠ¿
 				else fmpointlist.fm_momentum[manorid-1] = fmdptop.fmMomentum[index];
 			}
 		}
 		SortManorSchedule();
     break;
-	// ÌôÕ½×¼±¸ÆÚ 2200~È¡µÃÌôÕ½×Ê¸ñµÄ¼Ò×åµ±Ê±ÌôÕ½µÄÊ±¼ä(¸ôÌìµÄ 1800~2200 Ö®¼ä)
+	// æŒ‘æˆ˜å‡†å¤‡æœŸ 2200~å–å¾—æŒ‘æˆ˜èµ„æ ¼çš„å®¶æ—å½“æ—¶æŒ‘æˆ˜çš„æ—¶é—´(éš”å¤©çš„ 1800~2200 ä¹‹é—´)
   case FMPKS_FLAG_MANOR_PREPARE:
-    // Ä¿Ç°ÒÑ¾­¶¨ºÃÕ½¶·£¬×¼±¸ÖĞ
+    // ç›®å‰å·²ç»å®šå¥½æˆ˜æ–—ï¼Œå‡†å¤‡ä¸­
     {
       int timeleft = fmpks[fmpks_pos+1].dueltime - NowTime.tv_sec;
       int mm,hh,dd;
@@ -314,23 +314,23 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
 			hh = timeleft / 3600 - dd * 24;
       mm = timeleft / 60 - dd * 24 * 60 - hh * 60;
       memset(buf2,0,sizeof(buf2));
-			if(dd > 0) sprintf(buf," %d Ìì",dd); else strcpy(buf,"");
+			if(dd > 0) sprintf(buf," %d å¤©",dd); else strcpy(buf,"");
       strcat(buf2,buf);
 			if(hh > 0) sprintf(buf," %d Ğ¡Ê±",hh); else strcpy(buf,"");
       strcat(buf2,buf);
-      if(mm > 0) sprintf(buf," %d ·Öïñ",mm); else strcpy(buf,"");
+      if(mm > 0) sprintf(buf," %d åˆ†é”º",mm); else strcpy(buf,"");
       strcat(buf2,buf);
       if(strlen(buf2) == 0)
-        sprintf(buf,"×¯Ô°ËùÓĞÈ¨Õù¶áÕ½\n¡º%s £Ö£Ó %s¡»\n\n¼´½«¿ªÊ¼£¬Çë×¼±¸Èë³¡¡£",
+        sprintf(buf,"åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜\nã€%s ï¼¶ï¼³ %sã€\n\nå³å°†å¼€å§‹ï¼Œè¯·å‡†å¤‡å…¥åœºã€‚",
     						fmpks[fmpks_pos+1].guest_name,fmpks[fmpks_pos+1].host_name);
       else
-				sprintf(buf,"×¯Ô°ËùÓĞÈ¨Õù¶áÕ½\n¡º%s £Ö£Ó %s¡»\n\nÔ¤¶¨½«ÔÚ%sáá¿ªÊ¼¡£",
+				sprintf(buf,"åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜\nã€%s ï¼¶ï¼³ %sã€\n\né¢„å®šå°†åœ¨%så¾Œå¼€å§‹ã€‚",
     						fmpks[fmpks_pos+1].guest_name,fmpks[fmpks_pos+1].host_name,buf2);
       lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
     									 CHAR_getWorkInt(meindex,CHAR_WORKOBJINDEX),buf);
     }
     break;
-	// ĞİÕ½ÆÚ¼°×¼±¸ÆÚ,ÎåÌì
+	// ä¼‘æˆ˜æœŸåŠå‡†å¤‡æœŸ,äº”å¤©
   case FMPKS_FLAG_MANOR_PEACE:
 	case FMPKS_FLAG_MANOR_PEACE_SAVE:
     {
@@ -341,29 +341,29 @@ void NPC_ManorSmanTalked(int meindex, int talkerindex, char *msg, int color)
       hh = timeleft / 3600 - dd*24;
       mm = timeleft / 60 - dd*24*60 - hh*60;
       memset(buf2,0,sizeof(buf2));
-      if(dd > 0) sprintf(buf," %d Ìì",dd); else strcpy(buf,"");
+      if(dd > 0) sprintf(buf," %d å¤©",dd); else strcpy(buf,"");
       strcat(buf2,buf);
       if(hh > 0) sprintf(buf," %d Ğ¡Ê±",hh); else strcpy(buf,"");
       strcat(buf2,buf);
-      if(mm > 0) sprintf(buf," %d ·Öïñ",mm); else strcpy(buf,"");
+      if(mm > 0) sprintf(buf," %d åˆ†é”º",mm); else strcpy(buf,"");
       strcat(buf2,buf);
 
-      if(strlen(buf2) == 0) strcpy(buf, "ÇëÉÔµÈ£¬ÈÃÎÒ×¼±¸Ò»ÏÂÉêÇëÌß¹İµÄ±í¸ñ¡£");
-      else sprintf(buf, "ÏÖÔÚ·ÇÌôÕ½Ê±ÆÚ£¬ÒªÌôÕ½µÄ»°\nÇë%sááÔÙÀ´ÉêÇë¡£",buf2);
+      if(strlen(buf2) == 0) strcpy(buf, "è¯·ç¨ç­‰ï¼Œè®©æˆ‘å‡†å¤‡ä¸€ä¸‹ç”³è¯·è¸¢é¦†çš„è¡¨æ ¼ã€‚");
+      else sprintf(buf, "ç°åœ¨éæŒ‘æˆ˜æ—¶æœŸï¼Œè¦æŒ‘æˆ˜çš„è¯\nè¯·%så¾Œå†æ¥ç”³è¯·ã€‚",buf2);
       lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
 											 CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),buf);
     }
     break;
-	// ÌôÕ½ÖĞ
+	// æŒ‘æˆ˜ä¸­
   case FMPKS_FLAG_MANOR_BATTLEBEGIN:
-    sprintf(buf,"×¯Ô°ËùÓĞÈ¨Õù¶áÕ½\n¡º%s £Ö£Ó %s¡»\n\n¿ª¡«´ò¡«ÂŞ¡«\n»¹Ã»½ø³¡µÄÈË¸Ï¿ì½ø³¡°É¡£",
+    sprintf(buf,"åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜\nã€%s ï¼¶ï¼³ %sã€\n\nå¼€ï½æ‰“ï½ç½—ï½\nè¿˜æ²¡è¿›åœºçš„äººèµ¶å¿«è¿›åœºå§ã€‚",
     				fmpks[fmpks_pos+1].guest_name,fmpks[fmpks_pos+1].host_name);
     lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
     								 CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),buf);
     break;
   case FMPKS_FLAG_MANOR_OTHERPLANET:
-    // ÔÚ±ğµÄĞÇÇò½øĞĞÕ½¶·
-    sprintf(buf,"×¯Ô°ËùÓĞÈ¨Õù¶áÕ½\n¡º%s £Ö£Ó %s¡»\n\n¾ö¶·µØµãÔÚ %s ¡£",
+    // åœ¨åˆ«çš„æ˜Ÿçƒè¿›è¡Œæˆ˜æ–—
+    sprintf(buf,"åº„å›­æ‰€æœ‰æƒäº‰å¤ºæˆ˜\nã€%s ï¼¶ï¼³ %sã€\n\nå†³æ–—åœ°ç‚¹åœ¨ %s ã€‚",
             fmpks[fmpks_pos+1].guest_name,fmpks[fmpks_pos+1].host_name,fmpks[fmpks_pos+2].host_name);
     lssproto_WN_send(fd,WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
     								 CHAR_getWorkInt(meindex,CHAR_WORKOBJINDEX),buf);
@@ -400,11 +400,11 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
   case CHAR_WINDOWTYPE_CHECKMAN_START:
     if (select==WINDOW_BUTTONTYPE_YES){
 #ifdef _ACFMPK_NOFREE
-		sprintf(buf, "×¯Ô°ÌôÕ½»áÓĞÒ»ÌìµÄ×¼±¸ÆÚ\n"
-				"Äã¿ÉÒÔËæÊ±Ñ¯ÎÊÎÒÒÔµÃÖªÊ£ÏÂµÄÊ±¼ä\n"
-				"ÌôÕ½½áÊøáá²»ÂÛÊ¤¸º½«»áÓĞ¶şÌìµÄĞİÕ½ÆÚ\n"
-				"ĞİÕ½ÆÚ¼ä²»ÄÜÌôÕ½\n\n"
-				"ÄãÈ·¶¨ÒªÌôÕ½Õâ¸ö×¯Ô°Âğ£¿");
+		sprintf(buf, "åº„å›­æŒ‘æˆ˜ä¼šæœ‰ä¸€å¤©çš„å‡†å¤‡æœŸ\n"
+				"ä½ å¯ä»¥éšæ—¶è¯¢é—®æˆ‘ä»¥å¾—çŸ¥å‰©ä¸‹çš„æ—¶é—´\n"
+				"æŒ‘æˆ˜ç»“æŸå¾Œä¸è®ºèƒœè´Ÿå°†ä¼šæœ‰äºŒå¤©çš„ä¼‘æˆ˜æœŸ\n"
+				"ä¼‘æˆ˜æœŸé—´ä¸èƒ½æŒ‘æˆ˜\n\n"
+				"ä½ ç¡®å®šè¦æŒ‘æˆ˜è¿™ä¸ªåº„å›­å—ï¼Ÿ");
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 				WINDOW_BUTTONTYPE_YESNO,
 				CHAR_WINDOWTYPE_CHECKMAN_MAIN,
@@ -421,12 +421,12 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
         if (hadfmindex != -1) {
           if (hadfmindex-1 != tkfmindex){
             int check=0,i;
-            // Arminius 2.25 fix: fmpks ÖĞµÚ 1~"MANORNUM" ×éÒ»¶¨Òª¸ø manorsman
-            for (i=0; i<=/*3*/MANORNUM-1; i++) {	// 9¸ö×¯Ô°
+            // Arminius 2.25 fix: fmpks ä¸­ç¬¬ 1~"MANORNUM" ç»„ä¸€å®šè¦ç»™ manorsman
+            for (i=0; i<=/*3*/MANORNUM-1; i++) {	// 9ä¸ªåº„å›­
               getStringFromIndexWithDelim(fmpointlist.pointlistarray[i], "|", 5, token, sizeof(token));
               if (tkfmindex==atoi(token)-1) check=1;
             }
-            for (i=1; i<=/*4*/MANORNUM; i++) {	// ÊÇ·ñÒÑ¾­ÌôÕ½ÆäËû×¯Ô°
+            for (i=1; i<=/*4*/MANORNUM; i++) {	// æ˜¯å¦å·²ç»æŒ‘æˆ˜å…¶ä»–åº„å›­
               if ((fmpks[i*MAX_SCHEDULE+1].guest_index==tkfmindex) &&
 								(strcmp(fmpks[i*MAX_SCHEDULE+1].guest_name,
 								CHAR_getChar(talkerindex, CHAR_FMNAME))==0)
@@ -443,14 +443,14 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 							won1 = 1;
 
 							for(index=0;index<FAMILY_MAXNUM;index++){
-								// ÕÒ³öÌôÕ½¼Ò×åµÄË÷Òı
+								// æ‰¾å‡ºæŒ‘æˆ˜å®¶æ—çš„ç´¢å¼•
 								if(fmdptop.fmtopid[index] == tkfmindex) break;
 							}
 							if(index >= FAMILY_MAXNUM){
 								printf("\nNPC_ManorSmanWindowTalked():find tkfmIndex error (%d)",tkfmindex);
 							}
 							else
-							// Èç¹ûÌôÕ½¼Ò×åÆøÊÆ²»×ãÊØ×¯¼Ò×åÆøÊÆµÄ¾Å³É,²»ÄÜÌôÕ½
+							// å¦‚æœæŒ‘æˆ˜å®¶æ—æ°”åŠ¿ä¸è¶³å®ˆåº„å®¶æ—æ°”åŠ¿çš„ä¹æˆ,ä¸èƒ½æŒ‘æˆ˜
 							if(fmdptop.fmMomentum[index] < fmpointlist.fm_momentum[manorid-1]*0.9) won1 = 0;
 		//-----------------------------------------
 	#else
@@ -458,7 +458,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 							int i;
 							char won2[256];
 							won1 = 0;
-		#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD ½«¿ÉÌôÕ½×¯Ô°µÄÓÉÇ°Ê®´ó¸ÄÎªÇ°¶şÊ®´ó		
+		#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD å°†å¯æŒ‘æˆ˜åº„å›­çš„ç”±å‰åå¤§æ”¹ä¸ºå‰äºŒåå¤§		
 							for(i=0; i< PK_LIMIT; i++){
 		#else
 							for(i=0; i<10; i++){
@@ -478,25 +478,25 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 							if(won1 == 1){		
 			// WON END
 	#ifdef _NEW_MANOR_LAW
-							sprintf(buf,"È·¶¨×¯Ô°ÌôÕ½×Ê¸ñáá»áÓĞÒ»ÌìµÄ×¼±¸Ê±¼ä\n"
-													"Äã¿ÉÒÔËæÊ±Ñ¯ÎÊÎÒÒÔµÃÖªÊ£ÏÂµÄÊ±¼ä\n"
-													"ÌôÕ½½áÊøááÖÁÏÂ´ÎÌôÕ½ÆÚ½«»áÓĞÒ»ÌìµÄĞİÕ½ÆÚ\n"
-													"ºÍËÄÌìµÄ×¼±¸ÆÚ£¬ÔÚÕâÎåÌìÆÚ¼äÄÚ²»ÄÜÌôÕ½\n\n"
-													"ÄãÈ·¶¨ÒªÌôÕ½Õâ¸ö×¯Ô°Âğ£¿");
+							sprintf(buf,"ç¡®å®šåº„å›­æŒ‘æˆ˜èµ„æ ¼å¾Œä¼šæœ‰ä¸€å¤©çš„å‡†å¤‡æ—¶é—´\n"
+													"ä½ å¯ä»¥éšæ—¶è¯¢é—®æˆ‘ä»¥å¾—çŸ¥å‰©ä¸‹çš„æ—¶é—´\n"
+													"æŒ‘æˆ˜ç»“æŸå¾Œè‡³ä¸‹æ¬¡æŒ‘æˆ˜æœŸå°†ä¼šæœ‰ä¸€å¤©çš„ä¼‘æˆ˜æœŸ\n"
+													"å’Œå››å¤©çš„å‡†å¤‡æœŸï¼Œåœ¨è¿™äº”å¤©æœŸé—´å†…ä¸èƒ½æŒ‘æˆ˜\n\n"
+													"ä½ ç¡®å®šè¦æŒ‘æˆ˜è¿™ä¸ªåº„å›­å—ï¼Ÿ");
 	#else
-							sprintf(buf,"×¯Ô°ÌôÕ½»áÓĞÒ»ÌìµÄ×¼±¸ÆÚ\n"
-													"Äã¿ÉÒÔËæÊ±Ñ¯ÎÊÎÒÒÔµÃÖªÊ£ÏÂµÄÊ±¼ä\n"
-													"ÌôÕ½½áÊøáá²»ÂÛÊ¤¸º½«»áÓĞ¶şÌìµÄĞİÕ½ÆÚ\n"
-													"ĞİÕ½ÆÚ¼ä²»ÄÜÌôÕ½\n\n"
-													"ÄãÈ·¶¨ÒªÌôÕ½Õâ¸ö×¯Ô°Âğ£¿");
+							sprintf(buf,"åº„å›­æŒ‘æˆ˜ä¼šæœ‰ä¸€å¤©çš„å‡†å¤‡æœŸ\n"
+													"ä½ å¯ä»¥éšæ—¶è¯¢é—®æˆ‘ä»¥å¾—çŸ¥å‰©ä¸‹çš„æ—¶é—´\n"
+													"æŒ‘æˆ˜ç»“æŸå¾Œä¸è®ºèƒœè´Ÿå°†ä¼šæœ‰äºŒå¤©çš„ä¼‘æˆ˜æœŸ\n"
+													"ä¼‘æˆ˜æœŸé—´ä¸èƒ½æŒ‘æˆ˜\n\n"
+													"ä½ ç¡®å®šè¦æŒ‘æˆ˜è¿™ä¸ªåº„å›­å—ï¼Ÿ");
 	#endif
 #else
               if(tkfmdp >= hadfmpopular){
-								sprintf(buf,"×¯Ô°ÌôÕ½»áÓĞÒ»ÌìµÄ×¼±¸ÆÚ\n"
-                            "Äã¿ÉÒÔËæÊ±Ñ¯ÎÊÎÒÒÔµÃÖªÊ£ÏÂµÄÊ±¼ä\n"
-												    "ÌôÕ½½áÊøáá²»ÂÛÊ¤¸º½«»áÓĞÎåÌìµÄĞİÕ½ÆÚ\n"
-														"ĞİÕ½ÆÚ¼ä²»ÄÜÌôÕ½\n\n"
-														"ÄãÈ·¶¨ÒªÌôÕ½Õâ¸ö×¯Ô°Âğ£¿");
+								sprintf(buf,"åº„å›­æŒ‘æˆ˜ä¼šæœ‰ä¸€å¤©çš„å‡†å¤‡æœŸ\n"
+                            "ä½ å¯ä»¥éšæ—¶è¯¢é—®æˆ‘ä»¥å¾—çŸ¥å‰©ä¸‹çš„æ—¶é—´\n"
+												    "æŒ‘æˆ˜ç»“æŸå¾Œä¸è®ºèƒœè´Ÿå°†ä¼šæœ‰äº”å¤©çš„ä¼‘æˆ˜æœŸ\n"
+														"ä¼‘æˆ˜æœŸé—´ä¸èƒ½æŒ‘æˆ˜\n\n"
+														"ä½ ç¡®å®šè¦æŒ‘æˆ˜è¿™ä¸ªåº„å›­å—ï¼Ÿ");
 #endif
                 lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    							WINDOW_BUTTONTYPE_YESNO,
@@ -506,17 +506,17 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
     					}
 							else{
 #ifdef _NEW_MANOR_LAW
-								sprintf(buf, "ÄãµÄ¼Ò×åÆøÊÆÉĞÎ´µ½´ï×¯Ô°¼Ò×åÆøÊÆµÄ¾Å³É£¬ÇëÔÙ¼ÓÓÍ¡£");
+								sprintf(buf, "ä½ çš„å®¶æ—æ°”åŠ¿å°šæœªåˆ°è¾¾åº„å›­å®¶æ—æ°”åŠ¿çš„ä¹æˆï¼Œè¯·å†åŠ æ²¹ã€‚");
 #else
 	#ifdef _MANOR_PKRULE
-		#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD ½«¿ÉÌôÕ½×¯Ô°µÄÓÉÇ°Ê®´ó¸ÄÎªÇ°¶şÊ®´ó
-                sprintf(buf, "ÄãµÄ¼Ò×åÉùÍûÉĞÎ´½øÈëÇ°¶şÊ®´ó¼Ò×å£¬ÇëÔÙ¼ÓÓÍ¡£");
+		#ifdef _FIX_FAMILY_PK_LIMIT	   // WON ADD å°†å¯æŒ‘æˆ˜åº„å›­çš„ç”±å‰åå¤§æ”¹ä¸ºå‰äºŒåå¤§
+                sprintf(buf, "ä½ çš„å®¶æ—å£°æœ›å°šæœªè¿›å…¥å‰äºŒåå¤§å®¶æ—ï¼Œè¯·å†åŠ æ²¹ã€‚");
 		#else
-                sprintf(buf, "ÄãµÄ¼Ò×åÉùÍûÉĞÎ´½øÈëÇ°Ê®´ó¼Ò×å£¬ÇëÔÙ¼ÓÓÍ¡£");
+                sprintf(buf, "ä½ çš„å®¶æ—å£°æœ›å°šæœªè¿›å…¥å‰åå¤§å®¶æ—ï¼Œè¯·å†åŠ æ²¹ã€‚");
 		#endif
 	#else
-                sprintf(buf, "ÄãµÄ¼Ò×åÉùÍûÉĞ²»×ãÒÔÌôÕ½\n"
-                             "ÓµÓĞÕâ¸ö×¯Ô°µÄ¼Ò×å£¬ÇëÔÙ¼ÓÓÍ¡£");
+                sprintf(buf, "ä½ çš„å®¶æ—å£°æœ›å°šä¸è¶³ä»¥æŒ‘æˆ˜\n"
+                             "æ‹¥æœ‰è¿™ä¸ªåº„å›­çš„å®¶æ—ï¼Œè¯·å†åŠ æ²¹ã€‚");
 	#endif
 #endif
                 lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
@@ -527,8 +527,8 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 		   	      }
             }
 						else if(check == 2){
-              sprintf(buf, "ÄãµÄ¼Ò×åÕıÔÚÌôÕ½ÆäËû×¯Ô°£¬\n"
-                           "Çë°Ñ»ú»áÁô¸øÆäËû¼Ò×å°É£¡");
+              sprintf(buf, "ä½ çš„å®¶æ—æ­£åœ¨æŒ‘æˆ˜å…¶ä»–åº„å›­ï¼Œ\n"
+                           "è¯·æŠŠæœºä¼šç•™ç»™å…¶ä»–å®¶æ—å§ï¼");
               lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 													    	WINDOW_BUTTONTYPE_OK,
 											    			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -536,9 +536,9 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 											    			buf);
             }
 						else{
-              sprintf(buf, "Ò»¸ö¼Ò×åÖ»ÄÜÓµÓĞÒ»¸ö×¯Ô°£¬\n"
-                           "Èç¹û×¯Ô°¼Ò×åÖ®¼äĞèÒªÇĞ´è\n"
-                           "Çëµ½¼Ò×å£Ğ£Ë³¡¡£");
+              sprintf(buf, "ä¸€ä¸ªå®¶æ—åªèƒ½æ‹¥æœ‰ä¸€ä¸ªåº„å›­ï¼Œ\n"
+                           "å¦‚æœåº„å›­å®¶æ—ä¹‹é—´éœ€è¦åˆ‡ç£‹\n"
+                           "è¯·åˆ°å®¶æ—ï¼°ï¼«åœºã€‚");
               lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    						WINDOW_BUTTONTYPE_OK,
 											    			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -547,7 +547,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
             }
           }
 					else{
-            sprintf(buf, "Õâ¸ö×¯Ô°ÒÑ¾­ÊÇÄãµÄ¼Ò×åµÄà¸¡£");
+            sprintf(buf, "è¿™ä¸ªåº„å›­å·²ç»æ˜¯ä½ çš„å®¶æ—çš„å–”ã€‚");
             lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               						  	WINDOW_BUTTONTYPE_OK,
 									    				CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -556,8 +556,8 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
           }
         }
 				else{
-          sprintf(buf, "ÏÖÔÚ²¢Ã»ÓĞ×¯Ô°¼Ò×å£¬\n"
-                       "Ö±½ÓÈ¥ÉêÇëÇ¨Èë¾Í¿ÉÒÔÁËÓ´¡£");
+          sprintf(buf, "ç°åœ¨å¹¶æ²¡æœ‰åº„å›­å®¶æ—ï¼Œ\n"
+                       "ç›´æ¥å»ç”³è¯·è¿å…¥å°±å¯ä»¥äº†å“Ÿã€‚");
           lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 			              	    	WINDOW_BUTTONTYPE_OK,
     												CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -566,7 +566,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
         }
       }
 			else{
-        sprintf(buf, "Ö»ÓĞ×å³¤¿ÉÒÔÏÂÕ½Êéà¸¡£");
+        sprintf(buf, "åªæœ‰æ—é•¿å¯ä»¥ä¸‹æˆ˜ä¹¦å–”ã€‚");
         lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    			WINDOW_BUTTONTYPE_OK,
 									   			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -579,9 +579,9 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 			int i,index,manorindex;
 			char szMsg[3072];
 
-			sprintf(buf,"              ×¯Ô°ÌôÕ½ÅÅÃû±í\nÃû´Î ¼Ò×åÃû³Æ         Ê±¼ä          ÆøÊÆ\n");
+			sprintf(buf,"              åº„å›­æŒ‘æˆ˜æ’åè¡¨\nåæ¬¡ å®¶æ—åç§°         æ—¶é—´          æ°”åŠ¿\n");
 			manorindex = CHAR_getWorkInt(meindex,NPC_WORK_MANORID) - 1;
-			// ËÍ³öÌôÕ½ÅÅÃû
+			// é€å‡ºæŒ‘æˆ˜æ’å
 			for(i=0;i<10;i++){
 				index = ManorSchedule[manorindex].iSort[i];
 				if(ManorSchedule[manorindex].iFmIndex[index] != -1){
@@ -600,7 +600,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 #ifdef _ACFMPK_NOFREE
 	#ifndef _NEW_MANOR_LAW
 		NPC_ManorSavePKSchedule(meindex, talkerindex, 0);
-		sprintf( buf, "×¯Ô°ÌôÕ½µÇÂ½È·ÈÏÖĞ£¬ÇëÉÔáá¡£");
+		sprintf( buf, "åº„å›­æŒ‘æˆ˜ç™»é™†ç¡®è®¤ä¸­ï¼Œè¯·ç¨å¾Œã€‚");
 		CHAR_talkToCli( talkerindex, meindex, buf, CHAR_COLORYELLOW);
 	#else
 		NPC_ManorAddToSchedule(meindex,talkerindex);
@@ -635,7 +635,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 		  else
 			  p->tm_hour = p->tm_hour+8;		 
 		  if(p->tm_hour<18 && p->tm_hour>2){
-			  sprintf(buf, "Çëì¶ÏÂÎç£¶£º£°£°ÖÁÁè³¿£³£º£°£°ÔÙÀ´Ô¼Õ½°É£¡");
+			  sprintf(buf, "è¯·æ–¼ä¸‹åˆï¼–ï¼šï¼ï¼è‡³å‡Œæ™¨ï¼“ï¼šï¼ï¼å†æ¥çº¦æˆ˜å§ï¼");
 			  lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    	WINDOW_BUTTONTYPE_OK,
     			        CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -644,9 +644,9 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 			  break;
 		  }		  
 	#endif
-			// WON ADD ĞŞÕı¼Ò×åpk³¡µÄÔ¼Õ½ÎÊÌâ
+			// WON ADD ä¿®æ­£å®¶æ—pkåœºçš„çº¦æˆ˜é—®é¢˜
 			if( fmpks[fmpks_pos+1].flag != FMPKS_FLAG_NONE ){
-			     sprintf(buf, "Õâ¸ö×¯Ô°ÒÑ¾­ÓĞÈËÔ¼Õ½ÁËà¸¡£");
+			     sprintf(buf, "è¿™ä¸ªåº„å›­å·²ç»æœ‰äººçº¦æˆ˜äº†å–”ã€‚");
 					 lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
 						 WINDOW_BUTTONTYPE_OK,
 						 CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -658,7 +658,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 #ifdef _ACFMPK_LIST
 	#ifndef _NEW_MANOR_LAW
 		NPC_ManorSavePKSchedule(meindex, talkerindex, 0);
-		sprintf( buf, "×¯Ô°ÌôÕ½µÇÂ½È·ÈÏÖĞ£¬ÇëÉÔáá¡£");
+		sprintf( buf, "åº„å›­æŒ‘æˆ˜ç™»é™†ç¡®è®¤ä¸­ï¼Œè¯·ç¨å¾Œã€‚");
 		CHAR_talkToCli( talkerindex, meindex, buf, CHAR_COLORYELLOW);
 	#else
 		NPC_ManorAddToSchedule(meindex,talkerindex);
@@ -669,7 +669,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
         strcpy(hadfmname, token);
 
         fmpks[fmpks_pos+1].dueltime = CHAR_getWorkInt(meindex, NPC_WORK_CHALLENGEWAIT) + NowTime.tv_sec
-                                      - tm1.tm_min*60 + 1800; // Arminius 11.1 ¸Ä³ÉÒ»ÂÉ xx:30 ¿ª´ò
+                                      - tm1.tm_min*60 + 1800; // Arminius 11.1 æ”¹æˆä¸€å¾‹ xx:30 å¼€æ‰“
         fmpks[fmpks_pos+1].host_index = hadfmindex-1;
         strcpy(fmpks[fmpks_pos+1].host_name, hadfmname);
         fmpks[fmpks_pos+1].guest_index = tkfmindex;
@@ -682,7 +682,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 
 	#ifndef _NEW_MANOR_LAW
 		NPC_ManorSavePKSchedule(meindex, talkerindex, 0);
-		sprintf(buf, "×¯Ô°ÌôÕ½ÒÑ¾­Éè¶¨Íê³É£¬ÇëºÃºÃ×¼±¸¡£");
+		sprintf(buf, "åº„å›­æŒ‘æˆ˜å·²ç»è®¾å®šå®Œæˆï¼Œè¯·å¥½å¥½å‡†å¤‡ã€‚");
         lssproto_WN_send( fd, WINDOW_MESSAGETYPE_MESSAGE,
               	    	WINDOW_BUTTONTYPE_OK,
     			CHAR_WINDOWTYPE_CHECKMAN_END,
@@ -702,7 +702,7 @@ void NPC_ManorSmanWindowTalked(int meindex, int talkerindex,
 
 void NPC_CleanPkList( int ti)
 {
-// Terry fix ÒªÇåÎª-1²»ÄÜÇåÎª0
+// Terry fix è¦æ¸…ä¸º-1ä¸èƒ½æ¸…ä¸º0
 /*	fmpks[ ti+1 ].host_index = 0;
 	fmpks[ ti+1].guest_index=0;
 	fmpks[ ti].host_index=0;
@@ -741,13 +741,13 @@ void NPC_ManorSmanLoop(int meindex)
 		{
 			int hadfmindex,index,manorid;
 			char token[256];
-			//´ËÊ±¿ÉÒÔ¿ªÊ¼ÌôÕ½
+			//æ­¤æ—¶å¯ä»¥å¼€å§‹æŒ‘æˆ˜
 			manorid = CHAR_getWorkInt(meindex,NPC_WORK_MANORID);
 			getStringFromIndexWithDelim(fmpointlist.pointlistarray[manorid-1],"|",5,token,sizeof(token));
 			hadfmindex = atoi(token);
 			if(hadfmindex != -1){
 				for(index=0;index<FAMILY_MAXNUM;index++){
-					// ÕÒ³öÊØ×¯¼Ò×åµÄË÷Òı
+					// æ‰¾å‡ºå®ˆåº„å®¶æ—çš„ç´¢å¼•
 					if(fmdptop.fmtopid[index] == (hadfmindex - 1)) break;
 				}
 				if(index >= FAMILY_MAXNUM){
@@ -755,11 +755,11 @@ void NPC_ManorSmanLoop(int meindex)
 					printf("\nNPC_ManorSmanLoop():save fm_momentum error(%d:%s)",hadfmindex,token);
 					break;
 				}
-				// ¼ÇÂ¼Õâ¸öÊ±¿ÌÊØ×¯¼Ò×åµÄÆøÊÆ
+				// è®°å½•è¿™ä¸ªæ—¶åˆ»å®ˆåº„å®¶æ—çš„æ°”åŠ¿
 				else fmpointlist.fm_momentum[manorid-1] = fmdptop.fmMomentum[index];
-				// ½øÈëÏÂÒ»¸ö×´Ì¬
+				// è¿›å…¥ä¸‹ä¸€ä¸ªçŠ¶æ€
 				fmpks[fmpks_pos+1].flag = FMPKS_FLAG_WAIT;
-				// ÌôÕ½ÆÚ¹²4Ğ¡Ê±(1800~2200)
+				// æŒ‘æˆ˜æœŸå…±4å°æ—¶(1800~2200)
 				fmpks[fmpks_pos+1].dueltime = NowTime.tv_sec + 3600 * 4;
 				NPC_ManorSavePKSchedule(meindex, -1, FMPKS_FLAG_WAIT,fmpks[fmpks_pos+1].dueltime,tm1);
 			}
@@ -768,30 +768,30 @@ void NPC_ManorSmanLoop(int meindex)
 #endif    
     break;
 #ifdef _NEW_MANOR_LAW
-	// ½øÈëÌôÕ½ÆÚ,ÒÑ¼ÇÂ¼¼Ò×åÆøÊÆ,µÈ´ıÌôÕ½ÅÅ³Ì
+	// è¿›å…¥æŒ‘æˆ˜æœŸ,å·²è®°å½•å®¶æ—æ°”åŠ¿,ç­‰å¾…æŒ‘æˆ˜æ’ç¨‹
 	case FMPKS_FLAG_WAIT:
 		{
 			int manorid,i,iPlayerNum = CHAR_getPlayerMaxNum();
 			char szMsg[256];
 
 			manorid = CHAR_getWorkInt(meindex,NPC_WORK_MANORID);
-			// »¹Ã»¿ª´ò,ÆøÊÆ¸Ä±äÒªÈ¥ÏòACÒª¼´Ê±×ÊÁÏ
+			// è¿˜æ²¡å¼€æ‰“,æ°”åŠ¿æ”¹å˜è¦å»å‘ACè¦å³æ—¶èµ„æ–™
 			fmpointlist.fm_inwar[manorid-1] = TRUE;
 			if(fmpks[fmpks_pos+1].dueltime <= NowTime.tv_sec){
-				// ÌôÕ½¼Ò×åÖĞÆøÊÆ×î¸ßµÄ»ñµÃÌôÕ½È¨
+				// æŒ‘æˆ˜å®¶æ—ä¸­æ°”åŠ¿æœ€é«˜çš„è·å¾—æŒ‘æˆ˜æƒ
 				int manorindex = CHAR_getWorkInt(meindex,NPC_WORK_MANORID) - 1;
 				int iNo1FmIndexSort = ManorSchedule[manorindex].iSort[0];
 				int index = ManorSchedule[manorindex].iFmIndex[iNo1FmIndexSort],iFmIndex1,iCharindex;
 				char token[256],fmname[256];
-				// Ã»ÈËÌôÕ½
+				// æ²¡äººæŒ‘æˆ˜
 				if(index < 0){
-					// Ö±½Ó½øÈëµ½ÌôÕ½½áÊø
+					// ç›´æ¥è¿›å…¥åˆ°æŒ‘æˆ˜ç»“æŸ
 					fmpks[fmpks_pos+1].flag = FMPKS_FLAG_MANOR_BATTLEEND;
 					CHAR_setWorkInt(meindex,NPC_WORK_BETTLETIME,tm1.tm_mday);
-					// Í¨ÖªËùÓĞÈË
+					// é€šçŸ¥æ‰€æœ‰äºº
 					for(i=0;i<iPlayerNum;i++){
 						if(CHAR_getCharUse(i) != FALSE){
-							CHAR_talkToCli(i,-1,"ÓÉì¶ÎŞ¼Ò×åÌôÕ½×¯Ô°£¬×¯Ô°½øÈëĞİÕ½Ê±ÆÚ",CHAR_COLORBLUE2);
+							CHAR_talkToCli(i,-1,"ç”±æ–¼æ— å®¶æ—æŒ‘æˆ˜åº„å›­ï¼Œåº„å›­è¿›å…¥ä¼‘æˆ˜æ—¶æœŸ",CHAR_COLORBLUE2);
 						}
 					}
 					getStringFromIndexWithDelim(fmpointlist.pointlistarray[manorid-1],"|",5,token,sizeof(token));
@@ -800,21 +800,21 @@ void NPC_ManorSmanLoop(int meindex)
 						getStringFromIndexWithDelim(fmpointlist.pointlistarray[manorid-1],"|",6,fmname,sizeof(token));
 						saacproto_ACFixFMPoint_send(acfd,fmname,iFmIndex1 + 1,iFmIndex1,
 							fmname,iFmIndex1 + 1,iFmIndex1,CHAR_getWorkInt(meindex,NPC_WORK_ID));
-						// Ôö¼Ó×¯Ô°Õ½Ê¤¸ºLog
+						// å¢åŠ åº„å›­æˆ˜èƒœè´ŸLog
 						sprintf(token," (%d:%d) %d/%d/%d",tm1.tm_hour,tm1.tm_min,tm1.tm_year+1900,tm1.tm_mon+1,tm1.tm_mday);
-						Logfmpk(fmname,iFmIndex1,-1,"ÎŞÈËÌôÕ½",-1,-1,token,"","",2);
-						// Ô­¼Ò×åÊØ×¡ÁË×¯Ô°,¼Ò×å³ÉÔ±¿ÉµÃµ½Ê¯±Ò
+						Logfmpk(fmname,iFmIndex1,-1,"æ— äººæŒ‘æˆ˜",-1,-1,token,"","",2);
+						// åŸå®¶æ—å®ˆä½äº†åº„å›­,å®¶æ—æˆå‘˜å¯å¾—åˆ°çŸ³å¸
 						for(i=0;i<FAMILY_MAXMEMBER;i++){
 							iCharindex = familyMemberIndex[iFmIndex1][i];
-							// ÈôÔÚÏßÉÏ²Å¸øÇ® 
+							// è‹¥åœ¨çº¿ä¸Šæ‰ç»™é’± 
 							if(iCharindex >= 0 && CHAR_getCharUse(iCharindex)){
-								// »ñµÃ½ğÇ® = ¸öÈËÆøÊÆ * 5000
+								// è·å¾—é‡‘é’± = ä¸ªäººæ°”åŠ¿ * 5000
 								int iAddGold = ((float)CHAR_getInt(iCharindex,CHAR_MOMENTUM)/100.0f) * 5000.0f;
 								int iGold = CHAR_getInt(iCharindex,CHAR_BANKGOLD),iMaxGold;
-								// ÏÈ·ÅÈë¸öÈËÒøĞĞ
+								// å…ˆæ”¾å…¥ä¸ªäººé“¶è¡Œ
 								if(iGold + iAddGold > CHAR_MAXBANKGOLDHAVE){
 									CHAR_setInt(iCharindex,CHAR_BANKGOLD,CHAR_MAXBANKGOLDHAVE);
-									// ¸öÈËÒøĞĞ·Å²»ÏÂÁË,·Åµ½¸öÈËÉíÉÏ
+									// ä¸ªäººé“¶è¡Œæ”¾ä¸ä¸‹äº†,æ”¾åˆ°ä¸ªäººèº«ä¸Š
 									iAddGold = iGold + iAddGold - CHAR_MAXBANKGOLDHAVE;
 									iGold = CHAR_getInt(iCharindex,CHAR_GOLD);
 									iMaxGold = CHAR_getMaxHaveGold(iCharindex);
@@ -832,21 +832,21 @@ void NPC_ManorSmanLoop(int meindex)
 																	CHAR_getChar(iCharindex,CHAR_NAME),
 																	CHAR_getInt(iCharindex,CHAR_MOMENTUM),iAddGold,1);
 								}
-								CHAR_talkToCli(iCharindex,-1,"ĞÁ¿àÁË!ÊØ»¤×¡×¯Ô°µÄ½±½ğÒÑ»ãÈëÄãµÄ¸öÈËÒøĞĞ",CHAR_COLORRED);
-								// ¼Ò×åµÄ¸öÈË¼°¼Ò×åÆøÊÆ¶¼Òª¹éÁã
+								CHAR_talkToCli(iCharindex,-1,"è¾›è‹¦äº†!å®ˆæŠ¤ä½åº„å›­çš„å¥–é‡‘å·²æ±‡å…¥ä½ çš„ä¸ªäººé“¶è¡Œ",CHAR_COLORRED);
+								// å®¶æ—çš„ä¸ªäººåŠå®¶æ—æ°”åŠ¿éƒ½è¦å½’é›¶
 								CHAR_setInt(iCharindex,CHAR_MOMENTUM,0);
-								CHAR_talkToCli(iCharindex,-1,"×¯Ô°Õ½áá¸öÈË¼°¼Ò×åÆøÊÆ¹éÁã",CHAR_COLORRED);
+								CHAR_talkToCli(iCharindex,-1,"åº„å›­æˆ˜å¾Œä¸ªäººåŠå®¶æ—æ°”åŠ¿å½’é›¶",CHAR_COLORRED);
 							}
 						}
 					}
 				}
 				else{
-					// ÌôÕ½Ê±¼äÒÑ¹ı,Ñ¡³öµÄÌôÕ½¼Ò×åºÍÊØ×¯¼Ò×åÓĞÔ¼Ò»ÌìµÄÊ±¼ä¿ÉÒÔ×¼±¸
+					// æŒ‘æˆ˜æ—¶é—´å·²è¿‡,é€‰å‡ºçš„æŒ‘æˆ˜å®¶æ—å’Œå®ˆåº„å®¶æ—æœ‰çº¦ä¸€å¤©çš„æ—¶é—´å¯ä»¥å‡†å¤‡
 					NPC_ManorSavePKSchedule(meindex,index,0,-1,ManorSchedule[manorindex].tm1[iNo1FmIndexSort]);
-					// ¿ª´òÁË,ÆøÊÆ¸Ä±äÒ²²»ÓÃÈ¥ÏòACÒª¼´Ê±×ÊÁÏÁË
+					// å¼€æ‰“äº†,æ°”åŠ¿æ”¹å˜ä¹Ÿä¸ç”¨å»å‘ACè¦å³æ—¶èµ„æ–™äº†
 					fmpointlist.fm_inwar[manorid-1] = FALSE;
-					// Í¨ÖªËùÓĞÈË
-					sprintf(szMsg,"%s ¼Ò×å»ñµÃÌôÕ½×¯Ô°×Ê¸ñ",ManorSchedule[manorindex].szFmName[iNo1FmIndexSort]);
+					// é€šçŸ¥æ‰€æœ‰äºº
+					sprintf(szMsg,"%s å®¶æ—è·å¾—æŒ‘æˆ˜åº„å›­èµ„æ ¼",ManorSchedule[manorindex].szFmName[iNo1FmIndexSort]);
 					
 					for(i=0;i<iPlayerNum;i++){
 						if(CHAR_getCharUse(i) != FALSE){
@@ -866,7 +866,7 @@ void NPC_ManorSmanLoop(int meindex)
       fmpks[fmpks_pos+1].dueltime = 0;
       fmpks[fmpks_pos+1].flag = FMPKS_FLAG_MANOR_BATTLEBEGIN;
       NPC_talkToFloor(CHAR_getInt(meindex, CHAR_FLOOR) , fmpks[fmpks_pos].host_index,
-         	fmpks[fmpks_pos].guest_index, "×¯Ô°Õù¶áÕ½ÒÑ¾­¿ªÊ¼£¬Çë¾¡¿ìÈë³¡£¡");
+         	fmpks[fmpks_pos].guest_index, "åº„å›­äº‰å¤ºæˆ˜å·²ç»å¼€å§‹ï¼Œè¯·å°½å¿«å…¥åœºï¼");
 #ifdef _NEW_MANOR_LAW
 			CHAR_setWorkInt(meindex,NPC_WORK_BETTLETIME,tm1.tm_mday);
 #endif
@@ -895,19 +895,19 @@ void NPC_ManorSmanLoop(int meindex)
 #ifndef _NEW_MANOR_LAW
 			fmpks[fmpks_pos+1].dueltime = CHAR_getWorkInt(meindex, NPC_WORK_PEACEWAIT) + NowTime.tv_sec;
 #else
-			// ´òÍêááÒªÔÙ¹ıÎåÌì²ÅÄÜÔÙÌôÕ½
-			// Èô¿ª´òµÄÈÕÆÚºÍ½áÊøÕ½¶·µÄÈÕÆÚ²»Ò»Ñù±íÊ¾´ò³¬¹ıÁËÒ»ÌìÒÔÉÏ,ÒÔÒ»Ìì¼Æ
+			// æ‰“å®Œå¾Œè¦å†è¿‡äº”å¤©æ‰èƒ½å†æŒ‘æˆ˜
+			// è‹¥å¼€æ‰“çš„æ—¥æœŸå’Œç»“æŸæˆ˜æ–—çš„æ—¥æœŸä¸ä¸€æ ·è¡¨ç¤ºæ‰“è¶…è¿‡äº†ä¸€å¤©ä»¥ä¸Š,ä»¥ä¸€å¤©è®¡
 			if(CHAR_getWorkInt(meindex,NPC_WORK_BETTLETIME) != tm1.tm_mday){
-				iOffsetTime = tm1.tm_hour * 3600 * -1;	// ¿Û»Ø00:00
+				iOffsetTime = tm1.tm_hour * 3600 * -1;	// æ‰£å›00:00
 			}
-			else{	// Õ½¶·½áÊøÊ±Î´³¬¹ıÒ»Ìì
-				iOffsetTime = (24 - tm1.tm_hour) * 3600;	// ²¹³É00:00
+			else{	// æˆ˜æ–—ç»“æŸæ—¶æœªè¶…è¿‡ä¸€å¤©
+				iOffsetTime = (24 - tm1.tm_hour) * 3600;	// è¡¥æˆ00:00
 			}
 			//#ifdef _75_TEST
-			fmpks[fmpks_pos+1].dueltime = NowTime.tv_sec - tm1.tm_min*60 + iOffsetTime + 172800 + (18 * 3600);	// ¶şÌì
+			fmpks[fmpks_pos+1].dueltime = NowTime.tv_sec - tm1.tm_min*60 + iOffsetTime + 172800 + (18 * 3600);	// äºŒå¤©
 			//#else
 			//	fmpks[fmpks_pos+1].dueltime = NowTime.tv_sec - tm1.tm_min*60 + iOffsetTime + 432000 + (18 * 3600);
-			//														|-----------È¡Õûµã------------| |-²¹³É00:00-| |-ÎåÌì-|  |18:00¿ªÊ¼±¨Ãû|
+			//														|-----------å–æ•´ç‚¹------------| |-è¡¥æˆ00:00-| |-äº”å¤©-|  |18:00å¼€å§‹æŠ¥å|
 			//#endif
 #endif
 			fmpks[fmpks_pos+1].flag = FMPKS_FLAG_MANOR_PEACE_SAVE;
@@ -916,7 +916,7 @@ void NPC_ManorSmanLoop(int meindex)
 			NPC_ManorSavePKSchedule(meindex, -1, FMPKS_FLAG_MANOR_PEACE_SAVE);
 #else
 			NPC_ManorSavePKSchedule(meindex, -1, FMPKS_FLAG_MANOR_PEACE_SAVE,fmpks[fmpks_pos+1].dueltime,tm1);
-			// Çå¿ÕÅÅ³Ì
+			// æ¸…ç©ºæ’ç¨‹
 			memset(&ManorSchedule[manorindex],0,sizeof(ManorSchedule[manorindex]));
 			{
 				int i;
@@ -973,43 +973,43 @@ void NPC_ManorLoadPKSchedule(int meindex)
 		fwrite(tmp, strlen(tmp), 1, f);
 	}
 
-	fseek(f, 0, SEEK_SET);	// µµ°¸¿ªÍ·
+	fseek(f, 0, SEEK_SET);	// æ¡£æ¡ˆå¼€å¤´
 	fgets(tmp, sizeof(tmp), f);
 	fmpks[fmpks_pos].flag=-1;
 
-	// Ê±¼ä
+	// æ—¶é—´
 	if (getStringFromIndexWithDelim(tmp,"|",1,token,sizeof(token))) {
 		fmpks[fmpks_pos+1].dueltime=atoi(token);
 	}
-	// Ö÷¶Ó familyindex
+	// ä¸»é˜Ÿ familyindex
 	if (getStringFromIndexWithDelim(tmp,"|",2,token,sizeof(token))) {
 	    fmpks[fmpks_pos+1].host_index=atoi(token);
 	}
-	// Ö÷¶Ó ¼Ò×åÃû
+	// ä¸»é˜Ÿ å®¶æ—å
 	if (getStringFromIndexWithDelim(tmp,"|",3,token,sizeof(token))) {
 		strcpy(fmpks[fmpks_pos+1].host_name,makeStringFromEscaped(token));
 	}
-	// ¿Í¶Ó familyindex
+	// å®¢é˜Ÿ familyindex
 	if (getStringFromIndexWithDelim(tmp,"|",4,token,sizeof(token))) {
 	    fmpks[fmpks_pos+1].guest_index=atoi(token);
 	}
-	// ¿Í¶Ó ¼Ò×åÃû
+	// å®¢é˜Ÿ å®¶æ—å
 	if (getStringFromIndexWithDelim(tmp,"|",5,token,sizeof(token))) {
 	    strcpy(fmpks[fmpks_pos+1].guest_name,makeStringFromEscaped(token));
 	}
-	// ×¼±¸Ê±¼ä
+	// å‡†å¤‡æ—¶é—´
 	if (getStringFromIndexWithDelim(tmp,"|",6,token,sizeof(token))) {
 		fmpks[fmpks_pos+1].prepare_time=atoi(token);
 	}
-	// ×î´óÈËÊı
+	// æœ€å¤§äººæ•°
 	if (getStringFromIndexWithDelim(tmp,"|",7,token,sizeof(token))) {
 		fmpks[fmpks_pos+1].max_player=atoi(token);
 	}
-	// Æì±ê
+	// ã‚ˆæ¢“
 	if (getStringFromIndexWithDelim(tmp,"|",8,token,sizeof(token))) {
 		fmpks[fmpks_pos+1].flag=atoi(token);
 	}
-	// ¶ÔÕ½ĞÇÇò
+	// å¯¹æˆ˜æ˜Ÿçƒ
 	if (getStringFromIndexWithDelim(tmp,"|",9,token,sizeof(token))) {
 		strcpy(fmpks[fmpks_pos+2].host_name,makeStringFromEscaped(token));
 	}
@@ -1020,11 +1020,11 @@ void NPC_ManorLoadPKSchedule(int meindex)
 	if ((fmpks[fmpks_pos+1].flag==FMPKS_FLAG_MANOR_PREPARE) &&
 		  (fmpks[fmpks_pos+1].dueltime<NowTime.tv_sec)) {
 		fmpks[fmpks_pos].flag=-1;
-// Terry fix ÒªÇåÎª-1²»ÄÜÇåÎª0
+// Terry fix è¦æ¸…ä¸º-1ä¸èƒ½æ¸…ä¸º0
 //		fmpks[fmpks_pos].host_index=0;
 		fmpks[fmpks_pos].host_index=-1;
 		strcpy(fmpks[fmpks_pos].host_name,"");
-// Terry fix ÒªÇåÎª-1²»ÄÜÇåÎª0
+// Terry fix è¦æ¸…ä¸º-1ä¸èƒ½æ¸…ä¸º0
 //		fmpks[fmpks_pos].guest_index=0;
 		fmpks[fmpks_pos].guest_index=-1;
 		strcpy(fmpks[fmpks_pos].guest_name,"");
@@ -1066,7 +1066,7 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #ifndef _NEW_MANOR_LAW
 		tkfmindex = CHAR_getWorkInt(toindex, CHAR_WORKFMINDEXI);
 #else
-		// toindex ±ä³É ¼Ò×åµÄindex
+		// toindex å˜æˆ å®¶æ—çš„index
 		tkfmindex = toindex;
 #endif
 		fmpks_pos = CHAR_getWorkInt(meindex, NPC_WORK_ID) * MAX_SCHEDULE;
@@ -1075,9 +1075,9 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #ifndef _NEW_MANOR_LAW
 		dueltime = CHAR_getWorkInt(meindex, NPC_WORK_CHALLENGEWAIT) + NowTime.tv_sec - tm1.tm_min*60 + 1800;
 #else
-		// ÒÔÌôÕ½Ê±µÄÊ±¼äÎª¿ª´òµÄÊ±¼ä,ÖĞ¼äËù¾­¹ıµÄÊ±¼äÎª×¼±¸Ê±¼ä
+		// ä»¥æŒ‘æˆ˜æ—¶çš„æ—¶é—´ä¸ºå¼€æ‰“çš„æ—¶é—´,ä¸­é—´æ‰€ç»è¿‡çš„æ—¶é—´ä¸ºå‡†å¤‡æ—¶é—´
 		dueltime = NowTime.tv_sec - tm1.tm_min * 60 + ((24 - tm1.tm_hour) * 3600) + 3600 * tm2.tm_hour;
-		//				|-------------È¡Õûµã-------------|  |--------¼Óµ½0000Ê±-------|  |ÌôÕ½Ê±µÄÊ±¼ä(ËãÕûµã)| 
+		//				|-------------å–æ•´ç‚¹-------------|  |--------åŠ åˆ°0000æ—¶-------|  |æŒ‘æˆ˜æ—¶çš„æ—¶é—´(ç®—æ•´ç‚¹)| 
 #endif
 		getStringFromIndexWithDelim( fmpointlist.pointlistarray[manorid-1], "|", 5, token, sizeof(token));
 		hadfmindex = atoi( token);
@@ -1089,7 +1089,7 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #ifndef _NEW_MANOR_LAW
 		makeEscapeString( CHAR_getChar(toindex, CHAR_FMNAME), n2, sizeof(n2));		
 #else
-		// ÕÒ³öÌôÕ½¼Ò×åÖĞÆøÊÆ×î¸ß¼Ò×åË÷Òı
+		// æ‰¾å‡ºæŒ‘æˆ˜å®¶æ—ä¸­æ°”åŠ¿æœ€é«˜å®¶æ—ç´¢å¼•
 		index = ManorSchedule[manorid-1].iSort[0];
 		makeEscapeString(ManorSchedule[manorid-1].szFmName[index],n2,sizeof(n2));
 #endif
@@ -1110,7 +1110,7 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #ifndef _NEW_MANOR_LAW
 	saacproto_ACSendFmPk_send( acfd, toindex, PkFlg, CHAR_getWorkInt( meindex, NPC_WORK_ID), msg);
 #else
-	// toindex ÓÃ²»µ½ÉèÎª -1
+	// toindex ç”¨ä¸åˆ°è®¾ä¸º -1
 	saacproto_ACSendFmPk_send( acfd, -1, PkFlg, CHAR_getWorkInt( meindex, NPC_WORK_ID), msg);
 #endif
 }
@@ -1118,105 +1118,105 @@ void NPC_ManorSavePKSchedule(int meindex, int toindex, int flg,int setTime,struc
 #endif
 
 #ifdef _NEW_MANOR_LAW
-// ¼ÓÈëÌôÕ½ÅÅ³Ì
+// åŠ å…¥æŒ‘æˆ˜æ’ç¨‹
 void NPC_ManorAddToSchedule(int meindex,int charaindex)
 {
 	int i,j,iEmpty = -1,iFmIndex,manorindex = CHAR_getWorkInt(meindex,NPC_WORK_MANORID) - 1;
 	struct tm tm1;
 
 	iFmIndex = CHAR_getWorkInt(charaindex,CHAR_WORKFMINDEXI);
-	// ¼ì²éÊÇ·ñÒÑÅÅÈëÅÅ³Ì,¼ì²éËùÓĞµÄ×¯Ô°Ô¼Õ½
+	// æ£€æŸ¥æ˜¯å¦å·²æ’å…¥æ’ç¨‹,æ£€æŸ¥æ‰€æœ‰çš„åº„å›­çº¦æˆ˜
 	for(j=0;j<MANORNUM;j++){
 		for(i=0;i<10;i++){
 			if(ManorSchedule[j].iFmIndex[i] != -1){
 				if(ManorSchedule[j].iFmIndex[i] == iFmIndex){
 					lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-						CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"ÄãÒÑ¾­±¨Ãû¹ıÌôÕ½×¯Ô°ÁËà¸¡«");
+						CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"ä½ å·²ç»æŠ¥åè¿‡æŒ‘æˆ˜åº„å›­äº†å–”ï½");
 					return;
 				}
 			}
 			else{
-				if(j == manorindex) iEmpty = i;	// ¼ÇÂ¼¿ÕµÄÎ»ÖÃ
+				if(j == manorindex) iEmpty = i;	// è®°å½•ç©ºçš„ä½ç½®
 			}
 		}
 	}
-	// Èç¹û³ÌÊ½Ö´ĞĞµ½ÕâÀï,±íÊ¾Ã»ÓĞ¼ÓÈëÅÅ³Ì,¼ì²éÓĞÃ»ÓĞ¿ÕµÄÎ»ÖÃ
-	if(iEmpty != -1){ // ÓĞ¿ÕÎ»ÖÃ,°Ñ±¨ÃûÕß¼ÓÈë
-		// ¼ÇÂ¼¼Ò×åË÷Òı
+	// å¦‚æœç¨‹å¼æ‰§è¡Œåˆ°è¿™é‡Œ,è¡¨ç¤ºæ²¡æœ‰åŠ å…¥æ’ç¨‹,æ£€æŸ¥æœ‰æ²¡æœ‰ç©ºçš„ä½ç½®
+	if(iEmpty != -1){ // æœ‰ç©ºä½ç½®,æŠŠæŠ¥åè€…åŠ å…¥
+		// è®°å½•å®¶æ—ç´¢å¼•
 		ManorSchedule[manorindex].iFmIndex[iEmpty] = iFmIndex;
-		// ¼ÇÂ¼¼Ò×åÃû³Æ
+		// è®°å½•å®¶æ—åç§°
 		sprintf(ManorSchedule[manorindex].szFmName[iEmpty],"%s",CHAR_getChar(charaindex,CHAR_FMNAME));
-		// ¼ÇÂ¼ÌôÕ½Ê±¼ä
+		// è®°å½•æŒ‘æˆ˜æ—¶é—´
 		memcpy(&tm1,localtime((time_t *)&NowTime.tv_sec),sizeof(tm1));
 		memset(ManorSchedule[manorindex].szMemo[iEmpty],0,sizeof(ManorSchedule[manorindex].szMemo[iEmpty]));
 		memcpy(&ManorSchedule[manorindex].tm1[iEmpty],&tm1,sizeof(tm1));
 		lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"¼ÓÈëÌôÕ½ÅÅ³Ì");
+				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"åŠ å…¥æŒ‘æˆ˜æ’ç¨‹");
 	}
-	// ÂúÁË,ºÍÌôÕ½ÅÅ³ÌµÄ×îááÒ»Ãû×÷±È½Ï,Èç¹ûááÀ´µÄÆøÊÆ±È×îááÒ»Ãû¸ß,Ìæ»»µô×îááÒ»Ãû,·ñÔòÍ¨ÖªÄ¿Ç°ÆøÊÆÎŞ·¨¼·½øÅÅ³Ì
+	// æ»¡äº†,å’ŒæŒ‘æˆ˜æ’ç¨‹çš„æœ€å¾Œä¸€åä½œæ¯”è¾ƒ,å¦‚æœå¾Œæ¥çš„æ°”åŠ¿æ¯”æœ€å¾Œä¸€åé«˜,æ›¿æ¢æ‰æœ€å¾Œä¸€å,å¦åˆ™é€šçŸ¥ç›®å‰æ°”åŠ¿æ— æ³•æŒ¤è¿›æ’ç¨‹
 	else{
-		// È¡µÃ×îááÒ»ÃûÔÚManorScheduleµÄÎ»ÖÃ
+		// å–å¾—æœ€å¾Œä¸€ååœ¨ManorScheduleçš„ä½ç½®
 		int index = ManorSchedule[manorindex].iSort[9];
 
 		for(i=0;i<FAMILY_MAXNUM;i++){
-			// ÕÒ³öÌôÕ½¼Ò×åµÄË÷Òı
+			// æ‰¾å‡ºæŒ‘æˆ˜å®¶æ—çš„ç´¢å¼•
 			if(fmdptop.fmtopid[i] == iFmIndex) break;
 		}
-		// ÕÒ²»µ½´Ë¼Ò×å
+		// æ‰¾ä¸åˆ°æ­¤å®¶æ—
 		if(i >= FAMILY_MAXNUM){
 			lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"±§Ç¸£¬ÕÒ²»µ½ÄãµÄ¼Ò×åÆøÊÆ×ÊÁÏ");
+				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"æŠ±æ­‰ï¼Œæ‰¾ä¸åˆ°ä½ çš„å®¶æ—æ°”åŠ¿èµ„æ–™");
 			return;
 		}
-		// ±È½ÏÆøÊÆ
+		// æ¯”è¾ƒæ°”åŠ¿
 		if(ManorSchedule[manorindex].iFmMomentum[index] < fmdptop.fmMomentum[i]){
 			int fmpks_pos,iPlayerNum = CHAR_getPlayerMaxNum();
 			char szMsg[256];
 
-			// Í¨ÖªËùÓĞÈË
+			// é€šçŸ¥æ‰€æœ‰äºº
 			fmpks_pos = CHAR_getWorkInt(meindex,NPC_WORK_ID) * MAX_SCHEDULE;
-			sprintf(szMsg,"%s ¼Ò×å±» %s ¼Ò×å¼·ÏÂÌôÕ½ÅÅ³Ì",ManorSchedule[manorindex].szFmName[index],CHAR_getChar(charaindex,CHAR_FMNAME));
+			sprintf(szMsg,"%s å®¶æ—è¢« %s å®¶æ—æŒ¤ä¸‹æŒ‘æˆ˜æ’ç¨‹",ManorSchedule[manorindex].szFmName[index],CHAR_getChar(charaindex,CHAR_FMNAME));
 			for(i=0;i<iPlayerNum;i++){
 				if(CHAR_getCharUse(i) != FALSE){
 					CHAR_talkToCli(i,-1,szMsg,CHAR_COLORBLUE2);
 				}
 			}
-			// ×îááÒ»Ãû±»¼·µô
+			// æœ€å¾Œä¸€åè¢«æŒ¤æ‰
 			ManorSchedule[manorindex].iFmIndex[index] = iFmIndex;
-			// ¼ÇÂ¼¼Ò×åÃû³Æ
+			// è®°å½•å®¶æ—åç§°
 			sprintf(ManorSchedule[manorindex].szFmName[index],"%s",CHAR_getChar(charaindex,CHAR_FMNAME));
-			// ¼ÇÂ¼ÌôÕ½Ê±¼ä
+			// è®°å½•æŒ‘æˆ˜æ—¶é—´
 			memcpy(&tm1,localtime((time_t *)&NowTime.tv_sec),sizeof(tm1));
 			memcpy(&ManorSchedule[manorindex].tm1[index],&tm1,sizeof(tm1));
 			lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"¼ÓÈëÌôÕ½ÅÅ³Ì");
+				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"åŠ å…¥æŒ‘æˆ˜æ’ç¨‹");
 		}
 		else{
 			lssproto_WN_send(getfdFromCharaIndex(charaindex),WINDOW_MESSAGETYPE_MESSAGE,WINDOW_BUTTONTYPE_OK,CHAR_WINDOWTYPE_CHECKMAN_END,
-				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"±§Ç¸£¬ÄãµÄ¼Ò×åÆøÊÆ²»×ãÒÔÅÅ½øÌôÕ½ÅÅ³Ì");
+				CHAR_getWorkInt(meindex, CHAR_WORKOBJINDEX),"æŠ±æ­‰ï¼Œä½ çš„å®¶æ—æ°”åŠ¿ä¸è¶³ä»¥æ’è¿›æŒ‘æˆ˜æ’ç¨‹");
 			return;
 		}
 	}
-	// ÅÅĞò
+	// æ’åº
 	SortManorSchedule();
 }
 
-// ÅÅĞòÌôÕ½ÅÅ³Ì
+// æ’åºæŒ‘æˆ˜æ’ç¨‹
 void SortManorSchedule()
 {
 	int i,j,k;
 
-	// ÏÈÈ¡µÃ×îĞÂ¼Ò×åÆøÊÆ
+	// å…ˆå–å¾—æœ€æ–°å®¶æ—æ°”åŠ¿
 	for(k=0;k<MANORNUM;k++){
 		for(i=0;i<10;i++){
 			ManorSchedule[k].iSort[i] = i;
 			if(ManorSchedule[k].iFmIndex[i] != -1){
 				for(j=0;j<FAMILY_MAXNUM;j++){
-					// ÕÒ³öÌôÕ½¼Ò×åµÄË÷Òı
+					// æ‰¾å‡ºæŒ‘æˆ˜å®¶æ—çš„ç´¢å¼•
 					if(fmdptop.fmtopid[j] == ManorSchedule[k].iFmIndex[i]){
-						// È¡µÃÆøÊÆÖµ
+						// å–å¾—æ°”åŠ¿å€¼
 						ManorSchedule[k].iFmMomentum[i] = fmdptop.fmMomentum[j];
-						// ×÷³Émemo
+						// ä½œæˆmemo
 						sprintf(ManorSchedule[k].szMemo[i],"%-16s %2d:%2d %12d",
 							ManorSchedule[k].szFmName[i],ManorSchedule[k].tm1[i].tm_hour,ManorSchedule[k].tm1[i].tm_min,
 							ManorSchedule[k].iFmMomentum[i]/100);
@@ -1226,7 +1226,7 @@ void SortManorSchedule()
 			}
 		}
 	}
-	// ÅÅĞò
+	// æ’åº
 	for(i=0;i<MANORNUM;i++){
 		g_iSortManor = i;
 		qsort(&ManorSchedule[g_iSortManor].iSort,10,sizeof(int),&SortManorScheduleMomentum);

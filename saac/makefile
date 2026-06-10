@@ -7,7 +7,7 @@
 
 CC = gcc
 
-#¼ÓÈëmysql×ÊÁÏ¿â¹¦ÄÜ¯à
+#åŠ å…¥mysqlèµ„æ–™åº“åŠŸèƒ½îˆ•
 CFLAGS=-w -O3 $(INCFLAGS)
 MYSQL=-L /usr/lib/mysql/ -lmysqlclient -lz 
 
@@ -24,7 +24,7 @@ RPCSRC = saacproto_serv.c saacproto_util.c saacproto_work.c saacproto_lserver.c 
 RPCINCLUDE = saacproto_serv.h saacproto_util.h saacproto_work.h saacproto_lserver.h saacproto_oac.h deathcontend.h
 RPCNOUSE = saacproto_cli.c saacproto_cli.h
 
-#¼ÓÈëmysql×ÊÁÏ¿â¹¦ÄÜ¥\¯à
+#åŠ å…¥mysqlèµ„æ–™åº“åŠŸèƒ½î™¢îˆ•
 SRC = main.c recv.c util.c char.c db.c mail.c acfamily.c defend.c lock.c tcpip_util.c chatroom.c auction.c sasql.c $(RPCSRC)
 #SRC = main.c recv.c util.c char.c db.c mail.c acfamily.c defend.c lock.c tcpip_util.c chatroom.c auction.c $(RPCSRC)
 

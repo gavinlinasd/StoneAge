@@ -11,7 +11,7 @@
 #ifdef _GAMBLE_ROULETTE 
 #include "npc_gambleroulette.h"
 
-#define _OTHER_ROUND	//ÁíÒ»ÖÖÅÜ·¨
+#define _OTHER_ROUND	//å¦ä¸€ç§è·‘æ³•
 
 static void Gamble_Roulette_walk( int meindex);
 static int Gamble_RouletteSetPoint( int meindex );
@@ -31,7 +31,7 @@ enum {
 	NPC_WORK_ROUTEMAX = CHAR_NPCWORKINT7,
 	NPC_WORK_WAITTIME = CHAR_NPCWORKINT8,
 	NPC_WORK_CURRENTTIME = CHAR_NPCWORKINT9,
-	NPC_WORK_SEFLG = CHAR_NPCWORKINT10,	//¼ÇÂ¼Ö÷³ÖÈËindex
+	NPC_WORK_SEFLG = CHAR_NPCWORKINT10,	//è®°å½•ä¸»æŒäººindex
 };
 
 typedef struct tagRoulettePoint {
@@ -58,20 +58,20 @@ BOOL NPC_Gamble_RouletteInit( int meindex )
 
 	CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_GAMBLEROULETTE );
 	//CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, routenum);
-	//Ğ¡ÖíÒª×ß¼¸¸ñ²ÅÍ£
+	//å°çŒªè¦èµ°å‡ æ ¼æ‰åœ
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, 0);
 	CHAR_setWorkInt( meindex, NPC_WORK_SEFLG, -1);
-	// NPC_WORK_MODE Ğ¡ÖíµÄ×´Ì¬ 0:µÈ´ı 1:×ß(Ë³)
+	// NPC_WORK_MODE å°çŒªçš„çŠ¶æ€ 0:ç­‰å¾… 1:èµ°(é¡º)
 	CHAR_setWorkInt( meindex, NPC_WORK_MODE, 0);
-	//µÚ¼¸¸öµØÍ¼µã
+	//ç¬¬å‡ ä¸ªåœ°å›¾ç‚¹
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, 0);
-	//Ë³Ïò 1  ÄæÏò  0
+	//é¡ºå‘ 1  é€†å‘  0
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUNDTRIP, 1);
-	//µÚ¼¸¸öÂ·Ïß
+	//ç¬¬å‡ ä¸ªè·¯çº¿
 	CHAR_setWorkInt( meindex, NPC_WORK_CURRENTROUTE, 0);
-	//Éè¶¨LOOP TIMER
+	//è®¾å®šLOOP TIMER
 	CHAR_setInt( meindex, CHAR_LOOPINTERVAL, ROULETTE_STANDBY);
-	//ÓÃÀ´¼ÇÂ¼Ê±¼äµã
+	//ç”¨æ¥è®°å½•æ—¶é—´ç‚¹
 	CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 	CHAR_sendCToArroundCharacter( CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX));
 	if( ReadPointData( meindex) == FALSE )
@@ -94,25 +94,25 @@ void NPC_Gamble_RouletteLoop( int meindex)
 	int	objmeindex = -1, index = 0, act = 0;
 	objmeindex = CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX);
 	switch( CHAR_getWorkInt( meindex, NPC_WORK_MODE )) {
-	  case 0:	//Í£Ö¹Ê±µÈ´ı	ÎªµÈ´ıÖ÷³ÖÈËÏÂÃüÁî
+	  case 0:	//åœæ­¢æ—¶ç­‰å¾…	ä¸ºç­‰å¾…ä¸»æŒäººä¸‹å‘½ä»¤
 		  
-		  //×¥Ö÷³ÖÈËindex ¼ì²éÖ÷³ÖÈË ÊÇ·ñº°¿ªÊ¼
+		  //æŠ“ä¸»æŒäººindex æ£€æŸ¥ä¸»æŒäºº æ˜¯å¦å–Šå¼€å§‹
 		  if( CHAR_getWorkInt( meindex, NPC_WORK_SEFLG) < 0 )	{
 			CHAR_setWorkInt( meindex, NPC_WORK_MODE,5);
 		  }else	{
 			index = CHAR_getWorkInt( meindex, NPC_WORK_SEFLG);
-			//CHAR_NPCWORKINT7 0 null 1 ×¼±¸ 2 ÅÜ 3 Í£
+			//CHAR_NPCWORKINT7 0 null 1 å‡†å¤‡ 2 è·‘ 3 åœ
 			if( CHAR_getWorkInt( index, CHAR_NPCWORKINT7 ) == 2 )	{
 				CHAR_sendCToArroundCharacter( objmeindex);
 				CHAR_setWorkInt( meindex, NPC_WORK_MODE,1);
 				CHAR_setInt( meindex, CHAR_LOOPINTERVAL, ROULETTE_RUNTIME1);
-				//¾ö¶¨Ğ¡Öí×ß¼¸¸ñ
+				//å†³å®šå°çŒªèµ°å‡ æ ¼
 				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, RunRand( meindex, 0 ) );
-				ResetDataStart( meindex);//¾ö¶¨½øµã
+				ResetDataStart( meindex);//å†³å®šè¿›ç‚¹
 				if( CHAR_getInt( meindex, CHAR_X) == 14 &&
 					CHAR_getInt( meindex, CHAR_Y) == 8 )	{
 				}else	{
-					print("\n\n####################\n Ğ¡Öí²»ÔÚÔ­µã!![%d,%d]",
+					print("\n\n####################\n å°çŒªä¸åœ¨åŸç‚¹!![%d,%d]",
 						CHAR_getInt( meindex, CHAR_X),
 						CHAR_getInt( meindex, CHAR_Y)
 					);
@@ -121,7 +121,7 @@ void NPC_Gamble_RouletteLoop( int meindex)
 			}else if( CHAR_getWorkInt( index, CHAR_NPCWORKINT7 ) == 1 ||
 				( CHAR_getWorkInt( index, CHAR_NPCWORKINT9) < 30 &&
 				CHAR_getWorkInt( index, CHAR_NPCWORKINT9) > 24 )
-				)	{	//×¼±¸
+				)	{	//å‡†å¤‡
 				if( CHAR_getInt( meindex, CHAR_X) == 14 && CHAR_getInt( meindex, CHAR_Y) == 8 )	{
 				}else	{
 					CHAR_warpToSpecificPoint( meindex, CHAR_getInt( meindex, CHAR_FLOOR),
@@ -139,16 +139,16 @@ void NPC_Gamble_RouletteLoop( int meindex)
 	  case 2:
 		break;
 	  case 3:
-		  //µã¹éÁã
+		  //ç‚¹å½’é›¶
 		  CHAR_setWorkInt( meindex, NPC_WORK_MODE, 0);
-		  //¶¯×÷ 
+		  //åŠ¨ä½œ 
 		  act = CHAR_ACTATTACK;
 		  CHAR_sendWatchEvent( objmeindex, act, NULL,0, FALSE);
 		  CHAR_setWorkInt( meindex, CHAR_WORKACTION, act);
 		  CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, 0);
 		  CHAR_setInt( meindex, CHAR_LOOPINTERVAL, ROULETTE_STANDBY);
 
-		  //ËÍÈËÎï×ÊÁÏ¸øÊÓ¾õ  Î§ÄÚµÄÈË
+		  //é€äººç‰©èµ„æ–™ç»™è§†è§‰  å›´å†…çš„äºº
 		  CHAR_sendCToArroundCharacter( objmeindex);
 		  if( SetEndPoint( meindex ) == FALSE )	{
 			print("\n not Set EndPoint !!");
@@ -157,11 +157,11 @@ void NPC_Gamble_RouletteLoop( int meindex)
 #else
 		  ReadPointData( meindex);	//load round data
 #endif
-		  //»¹Ô­Ö÷³ÖÈË
+		  //è¿˜åŸä¸»æŒäºº
 		  index = CHAR_getWorkInt( meindex, NPC_WORK_SEFLG);
 		  CHAR_setWorkInt( index, CHAR_NPCWORKINT7, 3);
 		break;
-	  case 5:	//Ñ°ÕÒÖ÷³ÖÈË
+	  case 5:	//å¯»æ‰¾ä¸»æŒäºº
 			Find_Master( meindex);
 			if( CHAR_getWorkInt( meindex, NPC_WORK_SEFLG) < 0 )	{
 				CHAR_setInt( meindex, CHAR_LOOPINTERVAL, 0);
@@ -171,7 +171,7 @@ void NPC_Gamble_RouletteLoop( int meindex)
 			}
 		break;
 	  default:
-		  //ÖØÖÃ ´íÎó´¦Àí
+		  //é‡ç½® é”™è¯¯å¤„ç†
 		  Gamble_Roulette_Reset( meindex, 0);
 	    break;
 	}
@@ -190,13 +190,13 @@ static void Gamble_Roulette_walk( int meindex)
 	start.y = CHAR_getInt( meindex, CHAR_Y);
 	end.x = CHAR_getWorkInt( meindex, NPC_WORK_ROUTETOX);
 	end.y = CHAR_getWorkInt( meindex, NPC_WORK_ROUTETOY);
-	// loop timer·ÖÎªÁ½²¿·Ö 1. ´¦ÀíÏÂÒ»µã 2. ×ßµ½ÏÂÒ»µã
+	// loop timeråˆ†ä¸ºä¸¤éƒ¨åˆ† 1. å¤„ç†ä¸‹ä¸€ç‚¹ 2. èµ°åˆ°ä¸‹ä¸€ç‚¹
 
 	if( start.x == end.x && start.y == end.y ) {
 #ifdef _OTHER_ROUND
 #else
 		int add = 1;
-		//Èç¹ûÎª NPC_WORK_ROUNDTRIP != 1  ÄæÏò
+		//å¦‚æœä¸º NPC_WORK_ROUNDTRIP != 1  é€†å‘
 		if( CHAR_getWorkInt( meindex, NPC_WORK_ROUNDTRIP ) != 1 ) {
 			add *= -1;
 		}
@@ -210,9 +210,9 @@ static void Gamble_Roulette_walk( int meindex)
 			return;
 #else
 			if( CHAR_getWorkInt( meindex, NPC_WORK_ROUNDTRIP ) != 1 ) {
-				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, arraysizeof( PointData) );	//ÄæÏò
+				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, arraysizeof( PointData) );	//é€†å‘
 			}else	{
-				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, -1);	//Ë³Ïò
+				CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, -1);	//é¡ºå‘
 			}
 			return;
 #endif
@@ -316,7 +316,7 @@ BOOL SetEndPoint( int meindex )
 
 void Gamble_Roulette_Reset( int meindex, int flg)
 {
-	//´íÎó´¦Àí
+	//é”™è¯¯å¤„ç†
 	int index;
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTEMAX, 0);
 	CHAR_setWorkInt( meindex, NPC_WORK_MODE, 0);
@@ -435,7 +435,7 @@ static int Gamble_RouletteSetPoint( int meindex )
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTETOX, PointData[i].x );
 	CHAR_setWorkInt( meindex, NPC_WORK_ROUTETOY, PointData[i].y );
 #endif
-	{//¼ì²éÂ·Ïß
+	{//æ£€æŸ¥è·¯çº¿
 		struct tagWalkStartPoint{
 			int x;
 			int y;

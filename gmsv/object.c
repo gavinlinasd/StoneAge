@@ -199,10 +199,10 @@ INLINE int OBJECT_setTime( int index, int newvalue )
 
 
 /*------------------------------------------------------------
- * index Ã«  ÔÂ
- * Â¦ĞÑ
- *  index      int     ÄÌ¼ş·¸ÓÀÛÍµ©
- * ß¯Ô»°À
+ * index æ¯›  æœˆ
+ * å¨„é†’
+ *  index      int     å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ * å¿’æ›°è¢„
  *  int
  ------------------------------------------------------------*/
 INLINE int OBJECT_getIndex( int index )
@@ -210,12 +210,12 @@ INLINE int OBJECT_getIndex( int index )
     return obj[index].index;
 }
 /*------------------------------------------------------------
- * y Ã«É¬ÀÃÔÊÔÂ
- * Â¦ĞÑ
- *  index      int     ÄÌ¼ş·¸ÓÀÛÍµ©
- *  newvalue    int     Ş¥ØÆÖĞ°À
- * ß¯Ô»°À
- *  int éÉ¼°°À
+ * y æ¯›æ¶©çƒ‚å…æœˆ
+ * å¨„é†’
+ *  index      int     å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
+ *  newvalue    int     è•™ä»„ä¸­è¢„
+ * å¿’æ›°è¢„
+ *  int æ¨¯åŠè¢„
  ------------------------------------------------------------*/
 INLINE int OBJECT_setIndex( int index, int newvalue )
 {
@@ -227,10 +227,10 @@ INLINE int OBJECT_setIndex( int index, int newvalue )
 
 
 /*------------------------------------------------------------
- * ×óÆ¤³âÄáÛÍĞş¼°    ĞÑÃ«·Æ»§ÔÂ
- * Â¦ĞÑ
- *  Ø¦ØÆ
- * ß¯Ô»°À
+ * å·¦çš®æ–¥å°¼å¼ç„åŠ    é†’æ¯›è²æˆ·æœˆ
+ * å¨„é†’
+ *  å…ä»„
+ * å¿’æ›°è¢„
  *  int
  ------------------------------------------------------------*/
 INLINE int OBJECT_getNum( void )
@@ -239,17 +239,17 @@ INLINE int OBJECT_getNum( void )
 }
 
 /*------------------------------------------------------------
- *  ×óÆ¤³âÄáÛÍĞşÑáÕ°  ¼°¶ª¼şÌïÃ«òå  Â¦ĞÑ±å  ÔÈ»¯
- *  ×óÆ¤³âÄáÛÍĞşÑáÕ°  Ã«×ÛÔ»ÇëØÆ»¯£ıè¶  ÔÊÔÂ£Û
+ *  å·¦çš®æ–¥å°¼å¼ç„åŒç»  åŠä¸¢ä»¶ç”°æ¯›èˆ  å¨„é†’å  åŒ€åŒ–
+ *  å·¦çš®æ–¥å°¼å¼ç„åŒç»  æ¯›ç»¼æ›°è¯·ä»„åŒ–ï½ç“’  å…æœˆï¼»
  *
- * Â¦ĞÑ
- *  type    OBJTYPE     ×óÆ¤³âÄáÛÍĞş¼°ÕıÄÌÃó
- *  index   int         ¹«Ä¾ÈßÄ¾¼°    Æ¥¼°index
- *  x       int         xÕç  
- *  y       int         yÕç  
+ * å¨„é†’
+ *  type    OBJTYPE     å·¦çš®æ–¥å°¼å¼ç„åŠæ­£å¥¶çš¿
+ *  index   int         å··ç›´åº‡ç›´å¼    è¬„å¼index
+ *  x       int         xç”„  
+ *  y       int         yç”„  
  *  floor   int         floorid
- * ß¯Ô»°À
- *   int  à«Ô»ñ²»¯Ä¾Ğ×index, ÁÃ  ¼°Áİ·´£ı -1
+ * å¿’æ›°è¢„
+ *   int  å–ƒæ›°ç™«åŒ–æœ¨å‡¶index, æ’©  åŠå‡›åï½ -1
  ------------------------------------------------------------*/
 int initObjectFromObjectMember(
     OBJTYPE type, int index, int x, int y , int floor )
@@ -455,7 +455,7 @@ BOOL restoreObjects( char* dirname )
 			    int objindex;
 		        int petindex = PET_initCharOneArray( &ch );
 		        if( petindex < 0 ) {
-		        	print( "³èÎïÖÆ×÷Ê§°Ü¡£\n");
+		        	print( "å® ç‰©åˆ¶ä½œå¤±è´¥ã€‚\n");
 		        }
 			    object.type = OBJTYPE_CHARA;
 			    object.index = petindex;

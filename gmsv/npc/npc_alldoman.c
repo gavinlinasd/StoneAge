@@ -62,30 +62,30 @@ void NPC_AlldomanWindowTalked(int meindex, int talkerindex, int seqno, int selec
 			NPC_Alldoman_selectWindow(meindex , talkerindex , 4 ,"");
 		}
 		if ( select == WINDOW_BUTTONTYPE_OK ) {
-			//CHAR_talkToCli(talkerindex,meindex,"������ˣ�",CHAR_COLORRED);
+			//CHAR_talkToCli(talkerindex,meindex,"看清楚了！",CHAR_COLORRED);
 			showpage = 1 ; 
 			NPC_Alldoman_selectWindow(meindex , talkerindex, 5 ,"");
 		}
 		break;
 	case NPC_ALLDOMAN_SELECT_WND:
 		if(atoi(data)==2) {
-			//CHAR_talkToCli(talkerindex,meindex,"����",CHAR_COLORRED);
+			//CHAR_talkToCli(talkerindex,meindex,"１！",CHAR_COLORRED);
 			if ( CHAR_getInt( talkerindex , CHAR_FLOOR ) != 8200 ) {
-				CHAR_talkToCli(talkerindex,-1,"����ֻ�ܸ�������Ӣ�ۿ�д��",CHAR_COLORRED);
+				CHAR_talkToCli(talkerindex,-1,"这里只能给真正的英雄刻写！",CHAR_COLORRED);
 				break;
 			}
 			if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) > 132 ||
 				CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) <= 0 ) {
 				CHAR_setWorkInt( talkerindex  , CHAR_WORKHEROFLOOR , 0 ) ;
-				CHAR_talkToCli(talkerindex,-1,"����ֻ�ܸ�������Ӣ�ۿ�д��",CHAR_COLORRED);
+				CHAR_talkToCli(talkerindex,-1,"这里只能给真正的英雄刻写！",CHAR_COLORRED);
 				break;
 			}
-			sprintf( buf2 , "���ó��˴��������%3d��֤������ͼ���Լ�����������ʯ����" ,	 CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) );
+			sprintf( buf2 , "你拿出了打败守灵者%3d的证明，试图将自己的姓名刻上石碑！" ,	 CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) );
 			CHAR_talkToCli(talkerindex,-1,buf2,CHAR_COLORRED);
 			if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) == 132 ) {
-				sprintf( buf2 , "%s" , "��˹��½Ӣ��" ) ; 
-				//���ﶥ���ȫ��ϵ�㲥
-				sprintf( buf , "%s������Ӣ��ս�����ɷ�֮���齫�����Ϣ֪ͨȫ���磬�µ�Ӣ�۵�����!!" , CHAR_getChar( talkerindex, CHAR_NAME ) );
+				sprintf( buf2 , "%s" , "尼斯大陆英雄" ) ; 
+				//到达顶层对全星系广播
+				sprintf( buf , "%s征服了英雄战场，由风之精灵将这个消息通知全世界，新的英雄诞生了!!" , CHAR_getChar( talkerindex, CHAR_NAME ) );
 				for( i = 0 ; i < playernum ; i++) {
 					if( CHAR_getCharUse(i) != FALSE ) {
 						CHAR_talkToCli( i, -1, buf, CHAR_COLORBLUE2);
@@ -93,27 +93,27 @@ void NPC_AlldomanWindowTalked(int meindex, int talkerindex, int seqno, int selec
 				}
 			}
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 130 )
-				sprintf( buf2 , "%s" , "��˹��½սʿ" ) ; 
+				sprintf( buf2 , "%s" , "尼斯大陆战士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 125 )
-				sprintf( buf2 , "%s" , "��˹��½��ʿ" ) ; 
+				sprintf( buf2 , "%s" , "尼斯大陆勇士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 120 )
-				sprintf( buf2 , "%s" , "������˹Ӣ��" ) ; 
+				sprintf( buf2 , "%s" , "萨伊那斯英雄" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 115 )
-				sprintf( buf2 , "%s" , "˹�ʹ�սʿ" ) ; 
+				sprintf( buf2 , "%s" , "斯巴达战士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 110 )
-				sprintf( buf2 , "%s" , "��ķ����սʿ" ) ; 
+				sprintf( buf2 , "%s" , "萨姆吉尔战士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 100 )
-				sprintf( buf2 , "%s" , "������˿սʿ" ) ; 
+				sprintf( buf2 , "%s" , "玛丽那丝战士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 80 )
-				sprintf( buf2 , "%s" , "��̹սʿ" ) ; 
+				sprintf( buf2 , "%s" , "卡坦战士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 60 )
-				sprintf( buf2 , "%s" , "���ض�սʿ" ) ; 
+				sprintf( buf2 , "%s" , "霍特尔战士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 40 )
-				sprintf( buf2 , "%s" , "��ħ��ʿ" ) ; 
+				sprintf( buf2 , "%s" , "降魔勇士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 20 )
-				sprintf( buf2 , "%s" , "ʥ����ʿ" ) ; 
+				sprintf( buf2 , "%s" , "圣灵勇士" ) ; 
 			else if ( CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) >= 1 )
-				sprintf( buf2 , "%s" , "������ʿ" ) ; 
+				sprintf( buf2 , "%s" , "初犊勇士" ) ; 
 			else
 				sprintf( buf2 , " " );
 			saacproto_UpdataStele_send ( 				
@@ -126,16 +126,16 @@ void NPC_AlldomanWindowTalked(int meindex, int talkerindex, int seqno, int selec
 				10 	, 
 				CHAR_getWorkInt( talkerindex  , CHAR_WORKHEROFLOOR ) 
 				) ; 
-			//���WorkFloor
+			//清除WorkFloor
 			CHAR_setWorkInt( talkerindex  , CHAR_WORKHEROFLOOR , 0 ) ;
 		}
 		if(atoi(data)==4) {
-			//CHAR_talkToCli(talkerindex,meindex,"����",CHAR_COLORRED);
+			//CHAR_talkToCli(talkerindex,meindex,"２！",CHAR_COLORRED);
 			showpage = 1 ; 
 			NPC_Alldoman_selectWindow(meindex , talkerindex, 6 ,"");
 		}
 		if(atoi(data)==6) {
-			//CHAR_talkToCli(talkerindex,meindex,"����",CHAR_COLORRED);
+			//CHAR_talkToCli(talkerindex,meindex,"３！",CHAR_COLORRED);
 		}
 		break;
 	case NPC_ALLDOMAN_LIST_WND:
@@ -169,15 +169,15 @@ static void NPC_Alldoman_selectWindow( int meindex, int talker, int num, char *d
 	 case 4:
 		 if ( showpage == 1 ) {
 			 buttontype = WINDOW_BUTTONTYPE_NEXT;
-			 sprintf( token, "������������ʥ��ʱ����³���ִ����������У�����֮������һ���⣬��˹����ĳ��ϴ�ɹ�ʶ������������ʿ��ǰ��������Ⱥ����Ļ�������Ⱥ��ʿ�ں���������ڸ���Ⱥ������ս�����ϣ�ʵ��������⣬��ʿ���������أ����ŵ���ʿ��ѡ���ڻ��ض�����ͨ·���������");
+			 sprintf( token, "４８５４４７圣饼时，吉鲁出现大批机暴横行，所到之处皆无一幸免，尼斯各村的长老达成共识，调集各村勇士，前往消灭这群发狂的机暴，这群勇士在海底隧道入口跟这群机暴激战，不料，实力相差悬殊，勇士们伤亡惨重，残馀的勇士，选择在霍特尔海底通路的入口做最");
 		 }
 		 else if ( showpage == 2 ) {
 			 buttontype = WINDOW_BUTTONTYPE_NEXT;
-			 sprintf( token, "��ĵĵֿ������峤���ټ�������������������ͨ����³�ĺ���ͨ��������ڴ�������ӿ��ǰ������ڷ������˵�Ϊ������������ʥ��ʱ�����죬Ϊ�������������ʥ��ʱ����������ʿ������ʯ�������˵ض�������Ϊ��Ӣ��ս��������������Ч�����ҵ��о����ﵽǿ��ǿ");
+			 sprintf( token, "後的的抵抗，各村长老召集大批人力，封死所有通往吉鲁的海底通道，终於在大批机暴涌入前，将入口封死，此地为４８５５５０圣饼时所建造，为纪念４８５４４７圣饼时所牺牲的勇士，立此石碑，建此地洞，命名为“英雄战场”，望後世人效法先烈的行径，达到强种强");
 		 }
 		 else if ( showpage == 3) {
 			 buttontype = WINDOW_BUTTONTYPE_OK;
-			 sprintf( token, "��ΪĿ�ģ�����˹��½������������Ϣ�������Ӣ��������´���Ӣ��ս�������������ģ��ش�گ��ȫ��˹Ӣ�ۣ�\n\n                      Ӣ��ս������ίԱ��");
+			 sprintf( token, "族为目的，让尼斯大陆的人们生生不息，上面的英雄是最近勇闯“英雄战场”所留下来的，特此诏告全尼斯英雄！\n\n                      英雄战场制作委员会");
 		 }
 		 windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 		 windowno = NPC_ALLDOMAN_MAIN_WND;
@@ -189,9 +189,9 @@ static void NPC_Alldoman_selectWindow( int meindex, int talker, int num, char *d
 		 windowtype = WINDOW_MESSAGETYPE_SELECT;
 		 windowno = NPC_ALLDOMAN_SELECT_WND;
 		 sprintf(token,
-			"0\n\n����������������      ��дʯ��"
-			 "\n\n������      ��������������������"
-			 "\n\n����������      ��������ȡ��"
+			"0\n\n　　　　　　　　      刻写石碑"
+			 "\n\n　　　      　　　　检视其他勇者"
+			 "\n\n　　　　　      　　　　取消"
 			 );
 		 lssproto_WN_send( fd, windowtype, buttontype, windowno,
 			 CHAR_getWorkInt( meindex, CHAR_WORKOBJINDEX),token);
@@ -207,7 +207,7 @@ static void NPC_Alldoman_selectWindow( int meindex, int talker, int num, char *d
 			 buttontype = WINDOW_BUTTONTYPE_OK | WINDOW_BUTTONTYPE_PREV | WINDOW_BUTTONTYPE_NEXT;
 		 windowtype = WINDOW_MESSAGETYPE_WIDEMESSAGEANDLINEINPUT;
 		 windowno = NPC_ALLDOMAN_LIST_WND;
-		 sprintf ( token2 , "            ����          ͷ��    ¥��    �ȼ�    ת��\n");
+		 sprintf ( token2 , "            姓名          头衔    楼层    等级    转生\n");
 		 for ( i=0+(showpage-1 )*15; i<showpage*15; i++) {
 #ifdef _FIX_ALLDOMAN
 			if( i >= MAX_HERO_LIST || i<0 ) break;
@@ -246,7 +246,7 @@ BOOL NPC_AlldomanInit( int meindex )
 //print( "\n\nNPC_AlldomanInit( %d)\n\n", meindex);
 	if( loadherolist == 0){
 		loadherolist = 1;
-		saacproto_UpdataStele_send ( acfd , "FirstLoad", "LoadHerolist" , "����" , 0 , 0 , 0 , 999 ) ; 
+		saacproto_UpdataStele_send ( acfd , "FirstLoad", "LoadHerolist" , "华义" , 0 , 0 , 0 , 999 ) ; 
 	}
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEALLDOMAN);
     CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );

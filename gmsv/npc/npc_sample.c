@@ -5,10 +5,10 @@
 #include "readmap.h"
  
 /*
- * ÈÓ¼þÃó»ï¼°NPCÎì¡õÓñ
+ * æ‰”ä»¶çš¿ä¼™åŠNPCæˆŠâ–¡çŽ‰
  *
- * ÕýÄÌÃó  ¡° Sample
- * ÀÃñøÔÊÔÂèúÐÑ  ¡° òåÅË  £Û
+ * æ­£å¥¶çš¿  â€œ Sample
+ * çƒ‚è’å…æœˆæ¥®é†’  â€œ èˆæ½˜  ï¼»
  * NPC_SamplePreWalk
  * NPC_SamplePostWalk
  * NPC_SamplePreOver
@@ -24,9 +24,9 @@
  * NPC_SampleItemPut
  */
 /*------------------------------------------------------------
- * NPC¼°ÈÓ¼þÃó»ï»ï¡õÃñ¼þ
- * Â¦ÐÑ
- *  index       int     ÄÌ¼þ·¸ÓÀÛÍµ©
+ * NPCåŠæ‰”ä»¶çš¿ä¼™ä¼™â–¡æ°‘ä»¶
+ * å¨„é†’
+ *  index       int     å¥¶ä»¶çŠ¯æ°¸å¼æ—¦
  ------------------------------------------------------------*/
 void NPC_SampleLoop( int index )
 {
@@ -40,10 +40,10 @@ void NPC_SampleLoop( int index )
     y  = CHAR_getInt(index,CHAR_Y);
 
     /*
-     * àÍÈÊ±åÃóÒÁÄÌØÀ¡õ»¥ÖÐÔÂ¾®Éýµ¤¾®Ã«Æ©ÍÍ»¯£ýÖÐÐ×ÈÕ¹«ÖÐ¹´±åàÍÎðÈÊ
-     * òØ»þ£ý  âÙ±åÐÄ¹´¾®ÔÈÐ×Ö§¹´·ÖØê£Û
-     * ÖÐØ¦¾®ÔÈÐ×ÈÕ·Â¼þÄ¸Ø©ËüÇÉ¡õÛÍ
-     *  ÓòÐÚÐÚÈÊ  ±å  »«ÔÊÔÂ
+     * å—¤ä»åžçš¿ä¼Šå¥¶ä¹©â–¡äº’ä¸­æœˆäº•å‡ä¸¹äº•æ¯›è­¬å±¯åŒ–ï½ä¸­å‡¶æ—¥å…¬ä¸­å‹¾åžå—¤å‹¿ä»
+     * èœ‡ç®•ï½  èµ“åžå¿ƒå‹¾äº•åŒ€å‡¶æ”¯å‹¾åˆ†ä»ƒï¼»
+     * ä¸­å…äº•åŒ€å‡¶æ—¥ä»¿ä»¶æ¯ä¸žå®ƒå·§â–¡å¼
+     *  åŸŸæ±¹æ±¹ä»  åž  çŒ¾å…æœˆ
      */
     for( i=x-2 ; i<=x+2 ; i ++ ){
         for( j=y-2 ; j<=y+2 ; j++ ){
@@ -65,7 +65,7 @@ void NPC_SampleLoop( int index )
                     if( dir != -1 )
                         CHAR_walk(index,dir,0);
                     else
-                        /*    ÔªÕç  Ö§  */
+                        /*    å…ƒç”„  æ”¯  */
                         print( "????????same coordinates\n" );
                     found = TRUE;
 

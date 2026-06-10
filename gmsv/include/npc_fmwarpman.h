@@ -10,7 +10,7 @@ void NPC_GetPKFMNum(int floor, int fmindex1, int fmindex2, int *num1, int *num2)
 
 
 
-#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 家族战GM指令
+#ifdef _DEATH_FAMILY_GM_COMMAND	// WON ADD 瀹舵棌鎴楪M鎸囦护
 void set_fm_pk_score( int win_index, int loser_index, char *win_name, char *loser_name );
 void swap_fm_pk_struct( int no1, int no2 );
 int get_fm_pk_index( int win_index );

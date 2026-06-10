@@ -67,7 +67,7 @@ BOOL IAData_ADDITEM( int fd, int ItemID, char *ITEMNAME, char *DATA, int flg)
 		}
 	}
 	if( i>= MAXPAITEMS ) return FALSE;
-	//�ͻظ�GS
+	//送回给GS
 	for(i=0;i<MAXCONNECTION;i++)	{
 		if( is_game_server_login(i) ){
 			saacproto_ACItemAuction_send( i, IAData[num].ItemName, IAData[num].Data,

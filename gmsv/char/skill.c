@@ -7,7 +7,7 @@
 #include "util.h"
 #include "char.h"
 
-#ifdef _CHAR_PROFESSION			// WON ADD ÈËÎïÖ°Òµ
+#ifdef _CHAR_PROFESSION			// WON ADD äººç‰©èŒä¸š
 #include "battle.h"
 #include "profession_skill.h"
 #endif
@@ -115,7 +115,7 @@ BOOL SKILL_makeSkillFromStringToArg( char* src, Skill* sk )
     return TRUE;
 }
 
-#ifdef _CHAR_PROFESSION			// WON ADD ÈËÎïÖ°Òµ
+#ifdef _CHAR_PROFESSION			// WON ADD äººç‰©èŒä¸š
 INLINE int SKILL_getRealInt( Skill* skill, int element)
 {
     return skill->data[element];
@@ -139,7 +139,7 @@ INLINE int SKILL_setInt( Skill* skill, int element, int new)
     return buf;
 }
 
-#ifndef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifndef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 static void SKILL_setitemlimit( int charaindex, Skill* sk );
 static void SKILL_setmerchant( int charaindex, Skill* sk );
 static void SKILL_setlevel( int charaindex, Skill* sk );
@@ -147,7 +147,7 @@ static void SKILL_setlevel( int charaindex, Skill* sk );
 
 static SKILL_table  SKILL_tbl[]={
 
-#ifdef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifdef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 	{ 100,	NULL},		// 1
 	{ 100,	NULL},
 	{ 100,	NULL},
@@ -179,7 +179,7 @@ static SKILL_table  SKILL_tbl[]={
 };
 
 
-#ifndef _PROFESSION_SKILL			// WON ADD ÈËÎïÖ°Òµ¼¼ÄÜ
+#ifndef _PROFESSION_SKILL			// WON ADD äººç‰©èŒä¸šæŠ€èƒ½
 static void SKILL_setitemlimit( int charaindex, Skill* sk )
 {
     static int itemlimit[9]={
@@ -265,17 +265,17 @@ static void SKILL_setlevel( int charaindex, Skill* sk )
 static char    ITEM_statusStringBuffer[SKILLSTRINGBUFSIZ];
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD ÈËÎïÖ°Òµ
+#ifdef _CHAR_PROFESSION			// WON ADD äººç‰©èŒä¸š
 char* SKILL_makeSkillStatusString( Skill* skill, int charaindex, int skill_num )
 {
 	  int skillindex=SKILL_getInt( skill,SKILL_IDENTITY);
 	  int Pskill=PROFESSION_SKILL_getskillArray( skillindex);
 	  int skill_level=0, cost_mp=0;
 		
-	  // ÈËÎï¼¼ÄÜµÈ¼¶
+	  // äººç‰©æŠ€èƒ½ç­‰çº§
 	  skill_level = SKILL_getInt( skill, SKILL_LEVEL);
 	
-	  // ºÄ·ÑMP
+	  // è€—è´¹MP
 	  if( (cost_mp = PROFESSION_MAGIC_COST_MP( charaindex, skill_num )) == -1 )
 		cost_mp = PROFESSION_SKILL_getInt( Pskill, PROFESSION_SKILL_COST_MP);
 
@@ -409,8 +409,8 @@ void SKILL_skillEffect( int charaindex )
 
 
 
-#ifdef _CHAR_PROFESSION			// WON ADD ÈËÎïÖ°Òµ
-// È¡Ê¹ÓÃÄ§·¨ºÄ·ÑMP
+#ifdef _CHAR_PROFESSION			// WON ADD äººç‰©èŒä¸š
+// å–ä½¿ç”¨é­”æ³•è€—è´¹MP
 int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 {
 	int skill_level=0, dec_mp=0;
@@ -418,40 +418,40 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 	char *skill_name;
 	CHAR_HaveSkill* hskill;
 		
-	// ÈËÎï¼¼ÄÜ
+	// äººç‰©æŠ€èƒ½
 	skillid = CHAR_getCharSkill( charaindex, skill_num);
 	Pskillid = PROFESSION_SKILL_getskillArray( skillid);
 	if( Pskillid == -1 )	return FALSE;
 
-	// ¼¼ÄÜÃû³Æ
+	// æŠ€èƒ½åç§°
 	skill_name = PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_FUNCNAME);
 
-	// ¼¼ÄÜµÈ¼¶
+	// æŠ€èƒ½ç­‰çº§
 	hskill = CHAR_getCharHaveSkill( charaindex, skill_num );
 	skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);
 	skill_level = PROFESSION_CHANGE_SKILL_LEVEL_M( skill_level );	
 
-	if( (strcmp( skill_name, "PROFESSION_VOLCANO_SPRINGS" )) == 0 ){	// »ðÉ½Èª
+	if( (strcmp( skill_name, "PROFESSION_VOLCANO_SPRINGS" )) == 0 ){	// ç«å±±æ³‰
 				if( skill_level >= 10 )		dec_mp = 35;
 				else if( skill_level >= 7 )	dec_mp = 30;
 				else if( skill_level >= 5 )	dec_mp = 20;
 				else if( skill_level >= 3 )	dec_mp = 15;
 				else						dec_mp = 10;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_FIRE_BALL" )) == 0 ){			// »ðÐÇÇò
+	if( (strcmp( skill_name, "PROFESSION_FIRE_BALL" )) == 0 ){			// ç«æ˜Ÿçƒ
 				if( skill_level >= 9 )		dec_mp = 50;
 				else if( skill_level >= 7 )	dec_mp = 45;
 				else if( skill_level >= 5 )	dec_mp = 40;
 				else if( skill_level >= 3 )	dec_mp = 35;
 				else						dec_mp = 30;
 	}else 
-	if( (strcmp( skill_name, "PROFESSION_SUMMON_THUNDER" )) == 0 ){		// ÕÙÀ×Êõ
+	if( (strcmp( skill_name, "PROFESSION_SUMMON_THUNDER" )) == 0 ){		// å¬é›·æœ¯
 				if( skill_level >= 8 )		dec_mp = 30;
 				else if( skill_level >= 5 )	dec_mp = 25;
 				else if( skill_level >= 3)	dec_mp = 20;	
 				else						dec_mp = 10;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_CURRENT" )) == 0 ){			// µçÁ÷Êõ
+	if( (strcmp( skill_name, "PROFESSION_CURRENT" )) == 0 ){			// ç”µæµæœ¯
 #ifdef _PROFESSION_ADDSKILL
                 if( skill_level >= 10 )		dec_mp = 100;
 				else if( skill_level > 9 )	dec_mp = 90;
@@ -469,7 +469,7 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else						dec_mp = 30;
 #endif
 	}else
-	if( (strcmp( skill_name, "PROFESSION_STORM" )) == 0 ){				// ±©·çÓê
+	if( (strcmp( skill_name, "PROFESSION_STORM" )) == 0 ){				// æš´é£Žé›¨
 #ifdef _PROFESSION_ADDSKILL
                 if( skill_level > 8 )		dec_mp = 50;
 				else if( skill_level > 6 )	dec_mp = 45;
@@ -483,12 +483,12 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else						dec_mp = 50;
 #endif
 	}else
-	if( (strcmp( skill_name, "PROFESSION_ICE_ARROW" )) == 0 ){			// ±ù¼ýÊõ
+	if( (strcmp( skill_name, "PROFESSION_ICE_ARROW" )) == 0 ){			// å†°ç®­æœ¯
 				if( skill_level >= 8)		dec_mp = 20;
 				else if( skill_level >= 4 )	dec_mp = 15;
 				else						dec_mp = 10;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_ICE_CRACK" )) == 0 ){			// ±ù±¬Êõ
+	if( (strcmp( skill_name, "PROFESSION_ICE_CRACK" )) == 0 ){			// å†°çˆ†æœ¯
 #ifdef _PROFESSION_ADDSKILL
                 if( skill_level >= 10 )		dec_mp = 80;
 				else if( skill_level > 8 )  dec_mp = 70;
@@ -504,61 +504,61 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else						dec_mp = 30;
 #endif
 	}else
-	if( (strcmp( skill_name, "PROFESSION_DOOM" )) == 0 ){				// ÊÀ½çÄ©ÈÕ	
+	if( (strcmp( skill_name, "PROFESSION_DOOM" )) == 0 ){				// ä¸–ç•Œæœ«æ—¥	
 				if( skill_level > 8 )		dec_mp = 150;
 				else if( skill_level > 4 )  dec_mp = 100;
 				else						dec_mp = 50;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_FIRE_SPEAR" )) == 0 ){			// »ðÁúÇ¹
+	if( (strcmp( skill_name, "PROFESSION_FIRE_SPEAR" )) == 0 ){			// ç«é¾™æžª
 				if( skill_level > 8 )		dec_mp = 80;
 				else if( skill_level > 6 )	dec_mp = 70;			
 				else if( skill_level > 4 )	dec_mp = 60;
 				else if( skill_level > 2 )	dec_mp = 40;
 				else						dec_mp = 30;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_BLOOD_WORMS" )) == 0 ){		// ÊÈÑª¹Æ
+	if( (strcmp( skill_name, "PROFESSION_BLOOD_WORMS" )) == 0 ){		// å—œè¡€è›Š
 				if( skill_level >= 10 )		dec_mp = 15;
 				else if( skill_level >= 5 ) dec_mp = 10;
 				else						dec_mp = 5;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_SIGN" )) == 0 ){				// Ò»Õë¼ûÑª
+	if( (strcmp( skill_name, "PROFESSION_SIGN" )) == 0 ){				// ä¸€é’ˆè§è¡€
 
 				if( skill_level >= 8 )		dec_mp = 10;
 				else						dec_mp = 5;
 
 	}else
-	if( (strcmp( skill_name, "PROFESSION_ENCLOSE" )) == 0 ){			// ¸½ÉíÊõ
+	if( (strcmp( skill_name, "PROFESSION_ENCLOSE" )) == 0 ){			// é™„èº«æœ¯
 				if( skill_level >= 10 )		dec_mp = 80;
 				else if( skill_level >= 8 ) dec_mp = 70;
 				else if( skill_level >= 5)  dec_mp = 60;
 				else						dec_mp = 50;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_ICE_MIRROR" )) == 0 ){			// ±ù¾µÊõ
+	if( (strcmp( skill_name, "PROFESSION_ICE_MIRROR" )) == 0 ){			// å†°é•œæœ¯
 				if( skill_level >= 9 )		dec_mp = 40;
 				else if( skill_level >= 7 )	dec_mp = 35;			
 				else if( skill_level >= 5 )	dec_mp = 30;
 				else if( skill_level >= 3 )	dec_mp = 25;
 				else						dec_mp = 20;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_FIRE_ENCLOSE" )) == 0 ){		// »ð¸½Ìå		
+	if( (strcmp( skill_name, "PROFESSION_FIRE_ENCLOSE" )) == 0 ){		// ç«é™„ä½“		
 				if( skill_level >= 10 )		dec_mp = 50;
 				else if( skill_level >= 7 )	dec_mp = 40;			
 				else if( skill_level >= 4 )	dec_mp = 30;
 				else						dec_mp = 20;
 	}else	
-	if( (strcmp( skill_name, "PROFESSION_ICE_ENCLOSE" )) == 0 ){		// ±ù¸½Ìå		
+	if( (strcmp( skill_name, "PROFESSION_ICE_ENCLOSE" )) == 0 ){		// å†°é™„ä½“		
 				if( skill_level >= 10 )		dec_mp = 50;
 				else if( skill_level >= 7 )	dec_mp = 40;			
 				else if( skill_level >= 4 )	dec_mp = 30;
 				else						dec_mp = 20;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_THUNDER_ENCLOSE" )) == 0 ){	// À×¸½Ìå
+	if( (strcmp( skill_name, "PROFESSION_THUNDER_ENCLOSE" )) == 0 ){	// é›·é™„ä½“
 				if( skill_level >= 10 )		dec_mp = 50;
 				else if( skill_level >= 7 )	dec_mp = 40;			
 				else if( skill_level >= 4 )	dec_mp = 30;
 				else						dec_mp = 20;
 	}else	
-	if( (strcmp( skill_name, "PROFESSION_TRANSPOSE" )) == 0 ){			// ÒÆÐÎ»»Î»		
+	if( (strcmp( skill_name, "PROFESSION_TRANSPOSE" )) == 0 ){			// ç§»å½¢æ¢ä½		
 				if( skill_level >= 10 )		dec_mp = 50;
 				else if( skill_level >= 9 )	dec_mp = 40;			
 				else if( skill_level >= 7 )	dec_mp = 30;
@@ -566,13 +566,13 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else						dec_mp = 10;
 	}else
 #ifdef _PROFESSION_ADDSKILL
-	if( (strcmp( skill_name, "PROFESSION_RESIST_F_I_T" )) == 0 ){  // ×ÔÈ»ÍþÄÜ
+	if( (strcmp( skill_name, "PROFESSION_RESIST_F_I_T" )) == 0 ){  // è‡ªç„¶å¨èƒ½
 	            if( skill_level >= 10 )		dec_mp = 20;
 				else if( skill_level >= 9 )	dec_mp = 15;			
 				else if( skill_level >= 6 )	dec_mp = 10;		
 				else						dec_mp = 5;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_CALL_NATURE" )) == 0 ){  // ºÅÕÙ×ÔÈ»
+	if( (strcmp( skill_name, "PROFESSION_CALL_NATURE" )) == 0 ){  // å·å¬è‡ªç„¶
 		        
 		/*skill_level = SKILL_getInt( &hskill->skill, SKILL_LEVEL);
 	            if( skill_level >= 100 )	dec_mp = 50;
@@ -586,13 +586,13 @@ int PROFESSION_MAGIC_COST_MP( int charaindex, int skill_num )
 				else dec_mp = 50;*/
 		dec_mp = 50;
 	}else
-	if( (strcmp( skill_name, "PROFESSION_BOUNDARY" )) == 0 ){  // ËÄÊôÐÔ½á½ç
+	if( (strcmp( skill_name, "PROFESSION_BOUNDARY" )) == 0 ){  // å››å±žæ€§ç»“ç•Œ
 	            char *pszP=NULL; 
 		        if( skill_level > 9 )	dec_mp = 20;
 				else if( skill_level > 6 )	dec_mp = 15;			
 				else dec_mp = 10;
-				//ÆÆ³ý½á½çºÄËðmpÓëÆäËû½á½ç²»Í¬
-				if( (pszP = strstr( PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_OPTION), "ÆÆ½á½ç" ) ) != NULL ){// ¼¼ÄÜµÄ²ÎÊý
+				//ç ´é™¤ç»“ç•Œè€—æŸmpä¸Žå…¶ä»–ç»“ç•Œä¸åŒ
+				if( (pszP = strstr( PROFESSION_SKILL_getChar( Pskillid, PROFESSION_SKILL_OPTION), "ç ´ç»“ç•Œ" ) ) != NULL ){// æŠ€èƒ½çš„å‚æ•°
                     if( skill_level >= 9 )	dec_mp = 20;
 				    else if( skill_level > 4 )	dec_mp = 15;	
 				    else if( skill_level > 2 )  dec_mp = 10;

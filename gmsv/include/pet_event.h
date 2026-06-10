@@ -2,8 +2,8 @@
 #define __PET_EVENT_H__
 
 /*
- * Ê¸ÓÀĞşèú  ¼°É¬ÀÃÆ¥ÔÊ£Û
- * Ê¸ÓÀĞşÄÌÃ¬¼şĞşèú  
+ * çŸ¢æ°¸ç„æ¥®  åŠæ¶©çƒ‚åŒ¹å…ï¼»
+ * æ–‡å–Ÿå‚²é€šç‹¸å‘¨å‚²è“¼  
  */
 
 void PET_Talkfunc( int meindex, int talkerindex, char *msg, int color);

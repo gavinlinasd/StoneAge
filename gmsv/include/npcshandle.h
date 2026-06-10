@@ -4,26 +4,26 @@
 #include "util.h"
 
 #ifdef _NPCSERVER_NEW
-//Ìõ¼şÅĞ¶Ï
+//æ¡ä»¶åˆ¤æ–­
 BOOL NPCS_HandleCheckFreeMess( int npcobjindex, int charaindex, int charobjindex,
 				char *CheckfreeMess);
 
 BOOL NPCS_FreePassCheck( int charaindex, char *buf);
 
-//±È½ÏÅĞ¶Ï
+//æ¯”è¾ƒåˆ¤æ–­
 BOOL NPCS_FreeBigSmallCheck( int charaindex,char* buf);
-//²ÎÊıÅĞ¶Ï
+//å‚æ•°åˆ¤æ–­
 BOOL NPCS_ArgumentFreeCheck( int charaindex, char* Argument, int amount, int temp, int probjID);
-//²ÎÊı´óĞ¡ÅĞ¶Ï
+//å‚æ•°å¤§å°åˆ¤æ–­
 BOOL NPCS_ArgumentBigSmallCheck( int point, int mypoint, int flg);
-//È¡µÃÖ¸¶¨ID³èÎïÊı	*reAmount Ê£âÅÀ¸Î»
+//å–å¾—æŒ‡å®šIDå® ç‰©æ•°	*reAmount å‰©é¦€æ ä½
 int NPCS_getUserPetAmount( int charaindex, int objID, int flg);
-//È¡µÃÖ¸¶¨IDµÀ¾ßÊı	*reAmount Ê£âÅÀ¸Î»
+//å–å¾—æŒ‡å®šIDé“å…·æ•°	*reAmount å‰©é¦€æ ä½
 int NPCS_getUserItemAmount( int charaindex, int objID, int flg);
-//È¡µÃÍÅ¶ÓÈËÊı
+//å–å¾—å›¢é˜Ÿäººæ•°
 int NPCS_getUserPartyAmount( int charaindex );
 BOOL NPCS_NpcstalkToCli( int charaindex,int npcobjindex, char* message, CHAR_COLOR color );
-//ÊÂ¼ş´¦Àí
+//äº‹ä»¶å¤„ç†
 BOOL NPCS_RunDoEventAction( int charaindex, char *buf1);
 #endif
 #endif

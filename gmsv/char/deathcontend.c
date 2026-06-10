@@ -28,7 +28,7 @@ static int maxteam = 0;
 
 static int PKListSort[550];
 
-//ÕıÊ½Èü
+//æ­£å¼èµ›
 ArrangeBattleC *NowABattle[MAXBAHEAD][MAXBAFLOOR][MAXNOWBATTLE];
 ArrangeBattleC *headABattle[MAXBAHEAD];
 ArrangeBattleC *InBattle[MAXBATTLEPAGE];
@@ -95,7 +95,7 @@ void del_rn( char *s )
 	}
 }
 
-//Îğ¶¯-------------------------------------------------------
+//å‹¿åŠ¨-------------------------------------------------------
 void PKLIST_ResetOneTeamMan( int ti )
 {
 	int k;
@@ -178,7 +178,7 @@ int PKLIST_InitPkTeamList( int teamnum )
 #ifdef _DEATH_CONTENDAB
 	ABATTLE_InitABattle(19);
 #endif
-	PKLIST_LoadPkTeamListData();	// ±¾À´ÏòacÒª,¸ÄÎªÖ±½Ó¶Áµµ
+	PKLIST_LoadPkTeamListData();	// æœ¬æ¥å‘acè¦,æ”¹ä¸ºç›´æ¥è¯»æ¡£
 	PKLIST_Sort_PKListSort();
 
 	return 1;
@@ -206,7 +206,7 @@ int PKLIST_GetPkTeamListArray( int teamnum, char *cdkey)
 	return -1;
 }
 
-//È·ÈÏÔ¼Õ½
+//ç¡®è®¤çº¦æˆ˜
 BOOL PKLIST_CHECKPkTeamSame( int teamnum, int charaindex, char *cdkey, int toteamnum )
 {
 	int k;
@@ -216,7 +216,7 @@ BOOL PKLIST_CHECKPkTeamSame( int teamnum, int charaindex, char *cdkey, int totea
 	if( array == -1 ) return FALSE;
 	for( k=0; k<MAXBATTLENUM; k++){
 		if( k >= DEFMAXBATTLENUM ){
-			CHAR_talkToCli( charaindex, -1, "¶ÔÕ½³¡´ÎÒÑÂú£¡", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "å¯¹æˆ˜åœºæ¬¡å·²æ»¡ï¼", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 		if( PkTeamList[array].BHistory[k].use == 0 ) continue;
@@ -231,7 +231,7 @@ int PKLIST_CHECKPkTeamNew( int teamnum, int charaindex, char *cdkey )
 	int array;
 	array = PKLIST_GetPkTeamListArray( teamnum, cdkey);
 	if( array == -1 ){
-		CHAR_talkToCli( charaindex, -1, "ÎŞ·¨È¡µÃ¶ÓÎé×ÊÁÏ£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "æ— æ³•å–å¾—é˜Ÿä¼èµ„æ–™ï¼", CHAR_COLORYELLOW);
 		return -1;
 	}
 	for( k=0; k<MAXBATTLENUM; k++){
@@ -239,7 +239,7 @@ int PKLIST_CHECKPkTeamNew( int teamnum, int charaindex, char *cdkey )
 		break;
 	}
 	if( k>= DEFMAXBATTLENUM ){
-		CHAR_talkToCli( charaindex, -1, "¶ÔÕ½³¡´ÎÒÑÂú£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "å¯¹æˆ˜åœºæ¬¡å·²æ»¡ï¼", CHAR_COLORYELLOW);
 		return -1;
 	}
 	return k;
@@ -270,11 +270,11 @@ BOOL PKLIST_LoadPkTeamListDataSub( int ti, char *data)
 	if( getStringFromIndexWithDelim( data, "|", 9, buf, sizeof( buf)) == FALSE  ) return FALSE;
 		PkTeamList[ti].inside = atoi( buf);
 
-	if( PkTeamList[ti].inside == 2 && PkTeamList[ti].inside != oldinside ){//¹ã²¥
+	if( PkTeamList[ti].inside == 2 && PkTeamList[ti].inside != oldinside ){//å¹¿æ’­
 		char token[256];
 		int i;
 		int playernum = CHAR_getPlayerMaxNum();
-		sprintf( token, "%s ¶Ó£¬´ï³É±ÈÈü¹æ¶¨»ı·Ö£¬»ı·Ö£º%d¡£",
+		sprintf( token, "%s é˜Ÿï¼Œè¾¾æˆæ¯”èµ›è§„å®šç§¯åˆ†ï¼Œç§¯åˆ†ï¼š%dã€‚",
 			PkTeamList[ti].teamname, PkTeamList[ti].score );
 
 		for( i=0; i<playernum; i++){
@@ -330,7 +330,7 @@ BOOL PKLIST_LoadPkTeamListDataBHistory( int ti, char *data)
 	return TRUE;
 }
 
-// teamlist.ini ÄÚÈİ
+// teamlist.ini å†…å®¹
 // teamnum|teamname|leadercdkeky|leadername|cdkey|name|cdkey|name|cdkey|name|cdkey|name
 
 void PKLIST_LoadInitPkTeamListData(void)
@@ -387,10 +387,10 @@ void PKLIST_LoadInitPkTeamListData(void)
 	PKLIST_SavePkTeamListData();
 }
 
-// teamlist.txt ÄÚÈİ
+// teamlist.txt å†…å®¹
 // teamindex_teamnum|pathdir|teamname|leadercdkeky|win|lost|battleplay|score|inside_cdkey,name|...|cdkey,name|_teamnum,flg|...|teamnum,flg
-//																																									|--------×î¶àÎå±Ê--------| |--------×î¶àÒ»°Ù±Ê-------|
-BOOL PKLIST_LoadPkTeamListData(void) // ¸Ä³É¶Áµµ
+//																																									|--------æœ€å¤šäº”ç¬”--------| |--------æœ€å¤šä¸€ç™¾ç¬”-------|
+BOOL PKLIST_LoadPkTeamListData(void) // æ”¹æˆè¯»æ¡£
 {
 	FILE *fp = NULL;
 	int array = -1,count = 0;
@@ -657,13 +657,13 @@ void NPC_PKLIST_PlayerLogout_Exit( int charaindex )
 		if( (aB1=aBo->next[0]) == NULL || (aB2=aBo->next[1]) == NULL ) return;
 
 		if( aB1->teamnum == menum ){
-			sprintf( token, "%s ¶Ó Ê¤ %s ¶Ó¡£", aB2->teamname, aB1->teamname );
+			sprintf( token, "%s é˜Ÿ èƒœ %s é˜Ÿã€‚", aB2->teamname, aB1->teamname );
 			LogPkContend( aB2->teamname , aB1->teamname, 0, 0, 0, 0);
 			ABATTLE_RecordBattle( -1, aB1->teamname, "", aB2->teamname, "Ê¤");
 			tonum = aB2->teamnum;
 			ABATTLE_EnterBattle( aB2);
 		}else{
-			sprintf( token, "%s ¶Ó Ê¤ %s ¶Ó¡£", aB1->teamname, aB2->teamname );
+			sprintf( token, "%s é˜Ÿ èƒœ %s é˜Ÿã€‚", aB1->teamname, aB2->teamname );
 			LogPkContend( aB1->teamname , aB2->teamname, 0, 0, 0, 0);
 			ABATTLE_RecordBattle( -1, aB1->teamname, "Ê¤", aB2->teamname, "");
 			tonum = aB1->teamnum;
@@ -673,7 +673,7 @@ void NPC_PKLIST_PlayerLogout_Exit( int charaindex )
 			if( InBattle[i] == NULL) continue;
 			if( InBattle[i] == aBo ) InBattle[i] = NULL;
 		}
-		{ //¹ã²¥Ê¤¸º
+		{ //å¹¿æ’­èƒœè´Ÿ
 			int i;
 			int playernum = CHAR_getPlayerMaxNum();
 			for( i=0; i<playernum; i++){
@@ -728,7 +728,7 @@ void NPC_PKLIST_PlayerLogout_Exit( int charaindex )
 		//saacproto_PkListUpDate_send( acfd , tocdkey, mecdkey,tonum, menum, 0, 0);
 		PKLIST_UpData(tocdkey,mecdkey,tonum,menum,0,0);
 
-		sprintf( token, "%s ¶Ó Ê¤ %s ¶Ó¡£",
+		sprintf( token, "%s é˜Ÿ èƒœ %s é˜Ÿã€‚",
 			PkTeamList[toarray].teamname, PkTeamList[mearray].teamname);
 
 		LogPkContend( PkTeamList[toarray].teamname, PkTeamList[mearray].teamname,
@@ -738,7 +738,7 @@ void NPC_PKLIST_PlayerLogout_Exit( int charaindex )
 		PKLIST_DelPKProcedures( battlearray, 0, PKTYPE_WAIT);
 		PKLIST_DelPKProcedures( battlearray, 1, PKTYPE_WAIT);
 
-		{ //¹ã²¥Ê¤¸º
+		{ //å¹¿æ’­èƒœè´Ÿ
 			int i;
 			int playernum = CHAR_getPlayerMaxNum();
 			for( i=0; i<playernum; i++){
@@ -789,12 +789,12 @@ int NPC_PKLIST_Finish_Exit( int menum, int tonum, int winside, int battlemap)
 			aB1->top != aB2->top ) return 0;
 
 		if( winside == 0 ){
-			sprintf( token, "%s ¶Ó Ê¤ %s ¶Ó¡£", aB1->teamname, aB2->teamname );
+			sprintf( token, "%s é˜Ÿ èƒœ %s é˜Ÿã€‚", aB1->teamname, aB2->teamname );
 			LogPkContend( aB1->teamname , aB2->teamname, 0, 0, 0, 0);
 			ABATTLE_RecordBattle( -1, aB1->teamname, "Ê¤", aB2->teamname, "");
 			ABATTLE_EnterBattle( aB1);
 		}else{
-			sprintf( token, "%s ¶Ó Ê¤ %s ¶Ó¡£", aB2->teamname, aB1->teamname );
+			sprintf( token, "%s é˜Ÿ èƒœ %s é˜Ÿã€‚", aB2->teamname, aB1->teamname );
 			LogPkContend( aB2->teamname , aB1->teamname, 0, 0, 0, 0);
 			ABATTLE_RecordBattle( -1, aB1->teamname, "", aB2->teamname, "Ê¤");
 			ABATTLE_EnterBattle( aB2);
@@ -805,7 +805,7 @@ int NPC_PKLIST_Finish_Exit( int menum, int tonum, int winside, int battlemap)
 			if( InBattle[i] == aB1->top ) InBattle[i] = NULL;
 		}
 
-		{ //¹ã²¥Ê¤¸º
+		{ //å¹¿æ’­èƒœè´Ÿ
 			int i;
 			int playernum = CHAR_getPlayerMaxNum();
 			for( i=0; i<playernum; i++){
@@ -845,7 +845,7 @@ int NPC_PKLIST_Finish_Exit( int menum, int tonum, int winside, int battlemap)
 	//saacproto_PkListUpDate_send( acfd , mecdkey, tocdkey, menum, tonum, winside, 0);
 	PKLIST_UpData(mecdkey,tocdkey,menum,tonum,winside,0);
 
-	sprintf( token, "%s ¶Ó Ê¤ %s ¶Ó¡£",
+	sprintf( token, "%s é˜Ÿ èƒœ %s é˜Ÿã€‚",
 		(winside==0)?PkTeamList[mearray].teamname:PkTeamList[toarray].teamname,
 		(winside==0)?PkTeamList[toarray].teamname:PkTeamList[mearray].teamname );
 
@@ -854,7 +854,7 @@ int NPC_PKLIST_Finish_Exit( int menum, int tonum, int winside, int battlemap)
 		(winside==0)?PkTeamList[toarray].teamname:PkTeamList[mearray].teamname,
 		0, 0, 0 ,0);
 
-	{ //¹ã²¥Ê¤¸º
+	{ //å¹¿æ’­èƒœè´Ÿ
 		int i;
 		int playernum = CHAR_getPlayerMaxNum();
 		for( i=0; i<playernum; i++){
@@ -911,16 +911,16 @@ BOOL PKLIST_GetMyPKListTeamData( int teamnum, char *data, int sizes )
 	if( PkTeamList[ti].use == 0 ) return FALSE;
 	if( PkTeamList[ti].MyTeamMans[0].use == 0 ) return FALSE;
 
-	/*snprintf( data, sizes, "¶ÓÎé£º%s\nÊ¤£º%d ¸º£º%d ³¡£º%d »ı£º%d·Ö \n",
+	/*snprintf( data, sizes, "é˜Ÿä¼ï¼š%s\nèƒœï¼š%d è´Ÿï¼š%d åœºï¼š%d ç§¯ï¼š%dåˆ† \n",
 			PkTeamList[ti].teamname, PkTeamList[ti].win, PkTeamList[ti].lost,
 			PkTeamList[ti].battleplay, PkTeamList[ti].score );*/
-	snprintf( data, sizes, "¶ÓÎé£º%s\nÊ¤£º%d ¸º£º%d ³¡£º%d\n",
+	snprintf( data, sizes, "é˜Ÿä¼ï¼š%s\nèƒœï¼š%d è´Ÿï¼š%d åœºï¼š%d\n",
 			PkTeamList[ti].teamname, PkTeamList[ti].win, PkTeamList[ti].lost,
 			PkTeamList[ti].battleplay);
 
-	sprintf( buf, "¶Ó³¤£º%s \n", PkTeamList[ti].MyTeamMans[0].name );
+	sprintf( buf, "é˜Ÿé•¿ï¼š%s \n", PkTeamList[ti].MyTeamMans[0].name );
 	strcat( data, buf);
-	strcat( data, "¶ÓÔ±£º");
+	strcat( data, "é˜Ÿå‘˜ï¼š");
 
 	for( k=1; k<MAXTEAMMANNUM; k++){
 		if( PkTeamList[ti].MyTeamMans[k].use == 0 ) continue;
@@ -931,7 +931,7 @@ BOOL PKLIST_GetMyPKListTeamData( int teamnum, char *data, int sizes )
 
 	return TRUE;
 }
-//Èü³Ì
+//èµ›ç¨‹
 void PKLIST_DelPKProcedures( int ti, int side, int type)
 {
 	if( ti<0 || ti>=40 ) return;
@@ -980,12 +980,12 @@ BOOL PKLIST_CheckPKSameTeam( int charaindex )
 	}
 #else
 	if( PkTeamList[meti].battleplay >= DEFMAXBATTLENUM ){
-		CHAR_talkToCli( charaindex, -1, "¶ÔÕ½³¡ÊıÒÑÂú£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "å¯¹æˆ˜åœºæ•°å·²æ»¡ï¼", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 
 	if( CHAR_getInt( charaindex, CHAR_PKLISTLEADER) != 1 ){
-		CHAR_talkToCli( charaindex, -1, "Ö»ÓĞ²ÎÈü¶ÓÎéµÄ¶Ó³¤²ÅÄÜ¼ÓÈëÈü³Ìà¸£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "åªæœ‰å‚èµ›é˜Ÿä¼çš„é˜Ÿé•¿æ‰èƒ½åŠ å…¥èµ›ç¨‹å–”ï¼", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 #endif
@@ -997,7 +997,7 @@ BOOL PKLIST_CheckPKSameTeam( int charaindex )
 		int pindex = CHAR_getWorkInt( charaindex, CHAR_WORKPARTYINDEX1+i);
 		if( !CHAR_CHECKINDEX( pindex) ) continue;
 		if( teamnum != CHAR_getInt( pindex, CHAR_PKLISTTEAMNUM) ){
-			CHAR_talkToCli( charaindex, -1, "ÄãµÄ¶ÓÀïÔõ»áÓĞ²»Í¬¶ÓÎéµÄÈËÄØ£¿", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charaindex, -1, "ä½ çš„é˜Ÿé‡Œæ€ä¼šæœ‰ä¸åŒé˜Ÿä¼çš„äººå‘¢ï¼Ÿ", CHAR_COLORYELLOW);
 			return FALSE;
 		}
 	}
@@ -1005,12 +1005,12 @@ BOOL PKLIST_CheckPKSameTeam( int charaindex )
 		int pindex = CHAR_getWorkInt( charaindex, CHAR_WORKPARTYINDEX1+i);
 		if(!CHAR_CHECKINDEX(pindex)) continue;
 		if(CHAR_getInt(pindex,CHAR_LV) < 120){
-			sprintf(szMsg,"ÄãµÄ¶ÓÀï %s µÈ¼¶ %d Î´´ï±ÈÈü±ê×¼à¸£¡",CHAR_getChar(pindex,CHAR_NAME),CHAR_getInt(pindex,CHAR_LV));
+			sprintf(szMsg,"ä½ çš„é˜Ÿé‡Œ %s ç­‰çº§ %d æœªè¾¾æ¯”èµ›æ ‡å‡†å–”ï¼",CHAR_getChar(pindex,CHAR_NAME),CHAR_getInt(pindex,CHAR_LV));
 			CHAR_talkToCli(charaindex,-1,szMsg,CHAR_COLORYELLOW);
 			return FALSE;
 		}
 		if(CHAR_getInt(pindex,CHAR_TRANSMIGRATION) < 3){
-			sprintf(szMsg,"ÄãµÄ¶ÓÀï %s ×ªÉúÊı %d ×ª£¬Î´´ï±ÈÈü±ê×¼à¸£¡",CHAR_getChar(pindex,CHAR_NAME),CHAR_getInt(pindex,CHAR_TRANSMIGRATION));
+			sprintf(szMsg,"ä½ çš„é˜Ÿé‡Œ %s è½¬ç”Ÿæ•° %d è½¬ï¼Œæœªè¾¾æ¯”èµ›æ ‡å‡†å–”ï¼",CHAR_getChar(pindex,CHAR_NAME),CHAR_getInt(pindex,CHAR_TRANSMIGRATION));
 			CHAR_talkToCli(charaindex,-1,szMsg,CHAR_COLORYELLOW);
 			return FALSE;
 		}
@@ -1058,14 +1058,14 @@ BOOL PKLIST_JoinPKProcedures( int charaindex )
 	}
 	if( (teamnum = CHAR_getInt( charaindex, CHAR_PKLISTTEAMNUM)) < 0 ) return FALSE;
 	if( PKLIST_CheckLOCKTeam( teamnum) == FALSE ){
-		CHAR_talkToCli( charaindex, -1, "ÏµÍ³Ã¦ÂµÖĞ£¬ÇëÉÔáá£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "ç³»ç»Ÿå¿™ç¢Œä¸­ï¼Œè¯·ç¨å¾Œï¼", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 
 	for( i=0; i<MAXJOINTEAM; i++ ){
 		if( PKProcedure[i].type == PKTYPE_STANDBY ){
 			if( PKProcedure[i].time + (5*60) < (int)time(NULL) ){
-				print( "Ì«¾ÃÎ´Õ½¶·\n");
+				print( "å¤ªä¹…æœªæˆ˜æ–—\n");
 				if( PKProcedure[i].Team[0].use != 0 &&
 					PKLIST_CheckPklistInServerMap( i, 0) == TRUE &&
 					PKProcedure[i].Team[1].use != 0 &&
@@ -1073,7 +1073,7 @@ BOOL PKLIST_JoinPKProcedures( int charaindex )
 
 					if( CHAR_getWorkInt( PKProcedure[i].Team[0].toindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE ){
 						//andy_log
-						print("Ç¿ÖÆÕ½¶·!!\n");
+						print("å¼ºåˆ¶æˆ˜æ–—!!\n");
 						BATTLE_CreateVsPlayer( PKProcedure[i].Team[0].toindex,
 							PKProcedure[i].Team[1].toindex );
 					}
@@ -1113,7 +1113,7 @@ BOOL PKLIST_JoinPKProcedures( int charaindex )
 				PKProcedure[i].type = PKTYPE_WAIT;
 			}
 //-----------------------------------------------------------------------------
-			//ÔØÈë¶ÓÎé×ÊÁÏ
+			//è½½å…¥é˜Ÿä¼èµ„æ–™
 			PKProcedure[i].Team[j].teamnum = teamnum;
 			snprintf( PKProcedure[i].Team[j].cdkey, sizeof(PKProcedure[i].Team[j].cdkey),"%s",
 				CHAR_getChar( charaindex, CHAR_CDKEY) );
@@ -1132,7 +1132,7 @@ BOOL PKLIST_JoinPKProcedures( int charaindex )
 	}
 
 	if( Finds == FALSE ){
-		CHAR_talkToCli( charaindex, -1, "Ä¿Ç°Èü³ÌÖĞÖ®¶ÓÎéÒÑÂúÇëÉÔááÔÙÊÔ£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( charaindex, -1, "ç›®å‰èµ›ç¨‹ä¸­ä¹‹é˜Ÿä¼å·²æ»¡è¯·ç¨å¾Œå†è¯•ï¼", CHAR_COLORYELLOW);
 		return FALSE;
 	}
 	return TRUE;
@@ -1144,7 +1144,7 @@ void PKLIST_CheckTeamBeEnable( void)
 	for( i=0; i<MAXJOINTEAM; i++ ){
 		for( j=0; j<2; j++ ){
 			if( PKProcedure[i].Team[j].use == 0 ) continue;
-			PKLIST_CheckPklistInServerMap( i, j);//È·ÈÏ¶ÓÎéÊÇ·ñ³ÉÁ¢
+			PKLIST_CheckPklistInServerMap( i, j);//ç¡®è®¤é˜Ÿä¼æ˜¯å¦æˆç«‹
 		}
 	}
 }
@@ -1169,14 +1169,14 @@ void PKLIST_warp( int ti, int side, int fl, int x, int y )
 	if( !CHAR_CHECKINDEX(PKProcedure[ti].Team[side].toindex) );
 	if( CHAR_getWorkInt( PKProcedure[ti].Team[side].toindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_LEADER ){
 		CHAR_warpToSpecificPoint( PKProcedure[ti].Team[side].toindex, fl, x, y);
-		CHAR_talkToCli( PKProcedure[ti].Team[side].toindex, -1, "ÇëÔÚ´ËµÈ´ı¶ÔÕ½¶ÓÎé£¡", CHAR_COLORYELLOW);
+		CHAR_talkToCli( PKProcedure[ti].Team[side].toindex, -1, "è¯·åœ¨æ­¤ç­‰å¾…å¯¹æˆ˜é˜Ÿä¼ï¼", CHAR_COLORYELLOW);
 	}else{
 		for( k = 0; k < CHAR_PARTYMAX; k ++ ){
 			int subindex = CHAR_getWorkInt( PKProcedure[ti].Team[side].toindex,
 				CHAR_WORKPARTYINDEX1+k );
 
 			if( !CHAR_CHECKINDEX( subindex ) )continue;
-			CHAR_talkToCli( subindex, -1, "ÇëÔÚ´ËµÈ´ı¶ÔÕ½¶ÓÎé£¡ÈçÊ±¼ä³¬¹ı£±£°·ÖááÎ´ÓĞ¶ÔÕ½¶ÓÎé£¬½¨ÒéÍæ¼Ò¿ÉÖØÔ­µÇááÖØĞÂ¼ÓÈëÈü³Ì¡£", CHAR_COLORYELLOW);
+			CHAR_talkToCli( subindex, -1, "è¯·åœ¨æ­¤ç­‰å¾…å¯¹æˆ˜é˜Ÿä¼ï¼å¦‚æ—¶é—´è¶…è¿‡ï¼‘ï¼åˆ†å¾Œæœªæœ‰å¯¹æˆ˜é˜Ÿä¼ï¼Œå»ºè®®ç©å®¶å¯é‡åŸç™»å¾Œé‡æ–°åŠ å…¥èµ›ç¨‹ã€‚", CHAR_COLORYELLOW);
 			CHAR_warpToSpecificPoint( subindex, fl, x, y);
 		}
 	}
@@ -1263,7 +1263,7 @@ void PKLIST_Sort_PKListSort( void)
 	PKLIST_HandleChartsMess(0,data,2,0);
 }
 
-//ÕıÊ½Èü
+//æ­£å¼èµ›
 
 void ABATTLE_InitABattle( int maxnums )
 {
@@ -1438,11 +1438,11 @@ BOOL ABATTLE_InsertBattle( ArrangeBattleC *aB)
 			InBattle[i]->next[0]->teamnum, InBattle[i]->next[0]->teamname,
 			InBattle[i]->next[1]->teamnum, InBattle[i]->next[1]->teamname );
 #ifdef _DEATH_CONTENDTEST
-		aB->time = (int)time(NULL)+30;	//Õ½¶·Ê±¼ä
+		aB->time = (int)time(NULL)+30;	//æˆ˜æ–—æ—¶é—´
 #else
-		aB->time = (int)time(NULL)+(5*60);	//Õ½¶·Ê±¼ä
+		aB->time = (int)time(NULL)+(5*60);	//æˆ˜æ–—æ—¶é—´
 #endif
-		aB->type = 1; // Õ½¶·Æì±ê
+		aB->type = 1; // æˆ˜æ–—æ——æ ‡
 		return TRUE;
 	}
 	return FALSE;
@@ -1503,17 +1503,17 @@ int ABATTLE_FindBattlefromFl( int ti, int fl)
 			side = (j+1)%2;
 			aB2=aBo->next[side];
 
-			if( aB2 == NULL || aB2->use == 0 || aB2->teamnum == -1 ){ //Ã»ÓĞ¶ÔÊÖ
+			if( aB2 == NULL || aB2->use == 0 || aB2->teamnum == -1 ){ //æ²¡æœ‰å¯¹æ‰‹
 			}else{
 				if( ABATTLE_InsertBattle( aBo) == FALSE ){
 					return -1;
 				}else{
 					char token[256];
 					int playernum = CHAR_getPlayerMaxNum();
-					sprintf( token, "%s¶Ó VS %s¶Ó £µ·ÖÖÓáá¾ö¶·¡£", aB1->teamname, aB2->teamname );
+					sprintf( token, "%sé˜Ÿ VS %sé˜Ÿ ï¼•åˆ†é’Ÿå¾Œå†³æ–—ã€‚", aB1->teamname, aB2->teamname );
 					PKLIST_shoutToAll( token, -1, -1);
 					count++;
-					// °ÑÅÅÈëÈü³ÌµÄÈËÔ±´«ÈëµØÍ¼ 8250
+					// æŠŠæ’å…¥èµ›ç¨‹çš„äººå‘˜ä¼ å…¥åœ°å›¾ 8250
 					for(i=0;i<playernum;i++){
 						if(CHAR_getCharUse(i) == FALSE) continue;
 						printf("%s will be send...",CHAR_getChar(i,CHAR_NAME));
@@ -1542,7 +1542,7 @@ void ABATTLE_CheckBattlefromFl(int charindex, int ti,int battleindex)
 	//for( i=0; i<MAXBAHEAD; i++){
 	{
 		if( ABFloor[i] == -1 ){
-			CHAR_talkToCli( charindex, -1, "×é±ğ²»´æÔÚ", CHAR_COLORYELLOW);
+			CHAR_talkToCli( charindex, -1, "ç»„åˆ«ä¸å­˜åœ¨", CHAR_COLORYELLOW);
 			return;
 		}
 		floor = ABATTLE_CheckBattlefromFl_sub(charindex, i, ABFloor[i],battleindex);
@@ -1555,9 +1555,9 @@ void ABATTLE_CheckBattlefromFl(int charindex, int ti,int battleindex)
 			FILE *fp=NULL;
 			if( headABattle[i]->use == 1 && headABattle[i]->teamnum != -1 ){
 				char token[256];
-				sprintf( token, "¹§Ï² %s ¶Ó£¬È¡µÃ·Ö×éÓÅÊ¤£¬½ú¼¶ÏÂÒ»½×¶Î¡£", headABattle[i]->teamname );
+				sprintf( token, "æ­å–œ %s é˜Ÿï¼Œå–å¾—åˆ†ç»„ä¼˜èƒœï¼Œæ™‹çº§ä¸‹ä¸€é˜¶æ®µã€‚", headABattle[i]->teamname );
 				PKLIST_shoutToAll( token, -1, 8250);
-				ABATTLE_RecordBattle( i, headABattle[i]->teamname, "½ú¼¶£¸Ç¿", "NULL", "");
+				ABATTLE_RecordBattle( i, headABattle[i]->teamname, "æ™‹çº§ï¼˜å¼º", "NULL", "");
 
 			}
 			if( (fp=fopen( "nbattle.txt", "a+")) != NULL ){
@@ -1586,20 +1586,20 @@ int ABATTLE_CheckBattlefromFl_sub(int charindex, int ti, int fl, int battleindex
 		aB1=aBo->next[0];
 		aB2=aBo->next[1];
 		if( (aB1 == NULL || aB1->use == 0 ) &&
-			(aB2 == NULL || aB2->use == 0 ) ){//Á½¶Ó¶¼²»³ÉÁ¢
+			(aB2 == NULL || aB2->use == 0 ) ){//ä¸¤é˜Ÿéƒ½ä¸æˆç«‹
 			if( aB1 != NULL ) free( aB1);
 			if( aB2 != NULL ) free( aB2);
 			aBo->next[0] = NULL;
 			aBo->next[1] = NULL;
 			continue;
-		}else if( aB1 == NULL || aB1->use == 0 || aB1->teamnum == -1 ){ //0²»³ÉÁ¢
+		}else if( aB1 == NULL || aB1->use == 0 || aB1->teamnum == -1 ){ //0ä¸æˆç«‹
 			ABATTLE_EliminateBattlefromFl( aB1);
 			aBo->next[0] = NULL;
 			if( aB2 != NULL && aB2->use != 0 && aB2->type == 0 ){
 				ABATTLE_EnterBattle( aB2);
 			}
 			return fl;
-		}else if( aB2 == NULL || aB2->use == 0 || aB2->teamnum == -1 ){ //1²»³ÉÁ¢
+		}else if( aB2 == NULL || aB2->use == 0 || aB2->teamnum == -1 ){ //1ä¸æˆç«‹
 			ABATTLE_EliminateBattlefromFl( aB2);
 			aBo->next[1] = NULL;
 			if( aB1 != NULL && aB1->use != 0 && aB1->type == 0 ){
@@ -1608,7 +1608,7 @@ int ABATTLE_CheckBattlefromFl_sub(int charindex, int ti, int fl, int battleindex
 			return fl;
 		}else{
 			//andy_log
-			print("Á½Õß³ÉÁ¢!.%d.%x[%d,%s] %x[%d,%s]\n", i,
+			print("ä¸¤è€…æˆç«‹!.%d.%x[%d,%s] %x[%d,%s]\n", i,
 				aB1, aB1->teamnum, aB1->teamname,
 				aB2, aB2->teamnum, aB2->teamname );
 			return fl;
@@ -1618,7 +1618,7 @@ int ABATTLE_CheckBattlefromFl_sub(int charindex, int ti, int fl, int battleindex
 	return (fl-1);
 }
 
-//È·ÈÏÈü³ÌÕ½¶·×´Ì¬ °üº¬Ê±¼ä
+//ç¡®è®¤èµ›ç¨‹æˆ˜æ–—çŠ¶æ€ åŒ…å«æ—¶é—´
 BOOL ABATTLE_CheckInABattle( int ti)
 {
 	ArrangeBattleC *aB=NULL;
@@ -1637,11 +1637,11 @@ BOOL ABATTLE_CheckInABattle( int ti)
 	switch( aB->type){
 	case 0:
 		break;
-	case 1:	//ÒÑÅÅÈëÈü³Ì 5·ÖÖÓáá½ø³¡
+	case 1:	//å·²æ’å…¥èµ›ç¨‹ 5åˆ†é’Ÿå¾Œè¿›åœº
 		if( aB->time < (int)time(NULL) ){
 			if( aB1 == NULL || aB1->use == 0 || 
 				aB2 == NULL || aB2->use == 0 ) return FALSE;
-			sprintf( token, "%s¶Ó VS %s¶Ó£¬Èü³Ì¼´½«¿ªÊ¼£¬ÇëÁ½¶Ó×öºÃ×¼±¸¡£",
+			sprintf( token, "%sé˜Ÿ VS %sé˜Ÿï¼Œèµ›ç¨‹å³å°†å¼€å§‹ï¼Œè¯·ä¸¤é˜Ÿåšå¥½å‡†å¤‡ã€‚",
 				aB1->teamname, aB2->teamname );
 			//PKLIST_shoutToAll( token, aB1->teamnum, 8250);
 			PKLIST_shoutToAll( token, aB2->teamnum, 8250);
@@ -1651,7 +1651,7 @@ BOOL ABATTLE_CheckInABattle( int ti)
 			aB->time=(int)time(NULL)+(2*60);
 #endif
 			aB->type=2;
-			// °ÑÅÅÈëÈü³ÌµÄÈËÔ±´«ÈëµØÍ¼ 8250
+			// æŠŠæ’å…¥èµ›ç¨‹çš„äººå‘˜ä¼ å…¥åœ°å›¾ 8250
 			for(i=0;i<playernum;i++){
 				if(CHAR_getCharUse(i) == FALSE) continue;
 				printf("%s will be send...",CHAR_getChar(i,CHAR_NAME));
@@ -1664,7 +1664,7 @@ BOOL ABATTLE_CheckInABattle( int ti)
 			}
 		}
 		break;
-	case 2:	//ÒÑÅÅÈëÈü³Ì ½ø³¡3·ÖÖÓ ²¢ÅĞ¶Ï¶Ó³¤ÊÇ·ñ´æÔÚ ²¢¹ã²¥
+	case 2:	//å·²æ’å…¥èµ›ç¨‹ è¿›åœº3åˆ†é’Ÿ å¹¶åˆ¤æ–­é˜Ÿé•¿æ˜¯å¦å­˜åœ¨ å¹¶å¹¿æ’­
 		{
 			int playernum = CHAR_getPlayerMaxNum();
 			for( i=0 ; i<playernum ; i++) {
@@ -1675,7 +1675,7 @@ BOOL ABATTLE_CheckInABattle( int ti)
 					PKLIST_CheckPKSameTeam( i) == TRUE ){
 
 						int stime = ((aB->time)-(int)time(NULL));
-						sprintf( token, "Çë¿ìÕÒÆëÄãµÄËùÓĞ¶ÓÔ±£¬²¢×éºÃ¶Ó£¬%dÃëáá½«½øĞĞ´«ËÍ¡£", (stime<0)?0:stime);
+						sprintf( token, "è¯·å¿«æ‰¾é½ä½ çš„æ‰€æœ‰é˜Ÿå‘˜ï¼Œå¹¶ç»„å¥½é˜Ÿï¼Œ%dç§’å¾Œå°†è¿›è¡Œä¼ é€ã€‚", (stime<0)?0:stime);
 						CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW);
 						aB1->toindex = i;
 						continue;
@@ -1686,14 +1686,14 @@ BOOL ABATTLE_CheckInABattle( int ti)
 					CHAR_getInt( i, CHAR_PKLISTLEADER) == 1 &&
 					PKLIST_CheckPKSameTeam( i) == TRUE ){
 						int stime = ((aB->time)-(int)time(NULL));
-						sprintf( token, "Çë¿ìÕÒÆëÄãµÄËùÓĞ¶ÓÔ±£¬²¢×éºÃ¶Ó£¬%dÃëáá½«½øĞĞ´«ËÍ¡£", (stime<0)?0:stime);
+						sprintf( token, "è¯·å¿«æ‰¾é½ä½ çš„æ‰€æœ‰é˜Ÿå‘˜ï¼Œå¹¶ç»„å¥½é˜Ÿï¼Œ%dç§’å¾Œå°†è¿›è¡Œä¼ é€ã€‚", (stime<0)?0:stime);
 						CHAR_talkToCli( i, -1, token, CHAR_COLORYELLOW);
 						aB2->toindex = i;
 						continue;
 				}
 			}
 		}
-		// °ÑÅÅÈëÈü³ÌµÄÈËÔ±´«ÈëµØÍ¼ 8250
+		// æŠŠæ’å…¥èµ›ç¨‹çš„äººå‘˜ä¼ å…¥åœ°å›¾ 8250
 		for(i=0;i<playernum;i++){
 			if(CHAR_getCharUse(i) == FALSE) continue;
 			if((CHAR_getInt(i,CHAR_PKLISTTEAMNUM) == aB1->teamnum || CHAR_getInt(i,CHAR_PKLISTTEAMNUM) == aB2->teamnum) &&
@@ -1703,7 +1703,7 @@ BOOL ABATTLE_CheckInABattle( int ti)
 		if( aB->time < (int)time(NULL) ){
 			char token[256];
 
-			sprintf( token, "%s¶Ó VS %s¶Ó£¬Èü³Ì¿ªÊ¼¡£", aB1->teamname, aB2->teamname );
+			sprintf( token, "%sé˜Ÿ VS %sé˜Ÿï¼Œèµ›ç¨‹å¼€å§‹ã€‚", aB1->teamname, aB2->teamname );
 			PKLIST_shoutToAll( token, -1, 8250);
 
 			if( CHAR_CHECKINDEX( aB1->toindex) && CHAR_CHECKINDEX( aB2->toindex) ){
@@ -1717,18 +1717,18 @@ BOOL ABATTLE_CheckInABattle( int ti)
 				aB->type=3;
 				return TRUE;
 			}else if( !CHAR_CHECKINDEX( aB1->toindex) && !CHAR_CHECKINDEX( aB2->toindex) ){
-				sprintf( token, "%s¶Ó(%d)£¬%s¶Ó(%d)£¬Òò¶Ó³¤Î´ÔÚÊ±¼äÄÚµ½³¡£¬ÊÓÎªÆúÈ¨¡£",aB1->teamname,aB1->toindex,
+				sprintf( token, "%sé˜Ÿ(%d)ï¼Œ%sé˜Ÿ(%d)ï¼Œå› é˜Ÿé•¿æœªåœ¨æ—¶é—´å†…åˆ°åœºï¼Œè§†ä¸ºå¼ƒæƒã€‚",aB1->teamname,aB1->toindex,
 					aB2->teamname,aB2->toindex);
 				ABATTLE_RecordBattle( ti, aB1->teamname, "Î´", aB2->teamname, "Î´");
 				aB1->use = 0;
 				aB2->use = 0;
 			}else if( !CHAR_CHECKINDEX( aB1->toindex) ) {
-				sprintf( token, "%s¶Ó(%d)£¬Òò¶Ó³¤Î´ÔÚÊ±¼äÄÚµ½³¡£¬ÊÓÎªÆúÈ¨¡£",aB1->teamname,aB1->toindex);
+				sprintf( token, "%sé˜Ÿ(%d)ï¼Œå› é˜Ÿé•¿æœªåœ¨æ—¶é—´å†…åˆ°åœºï¼Œè§†ä¸ºå¼ƒæƒã€‚",aB1->teamname,aB1->toindex);
 				aB1->use = 0;
 				ABATTLE_RecordBattle( ti, aB1->teamname, "Î´", "NULL", "");
 				ABATTLE_EnterBattle( aB2);
 			}else if( !CHAR_CHECKINDEX( aB2->toindex) ){
-				sprintf( token, "%s¶Ó(%d)£¬Òò¶Ó³¤Î´ÔÚÊ±¼äÄÚµ½³¡£¬ÊÓÎªÆúÈ¨¡£",aB2->teamname,aB2->toindex);
+				sprintf( token, "%sé˜Ÿ(%d)ï¼Œå› é˜Ÿé•¿æœªåœ¨æ—¶é—´å†…åˆ°åœºï¼Œè§†ä¸ºå¼ƒæƒã€‚",aB2->teamname,aB2->toindex);
 				aB2->use = 0;
 				ABATTLE_RecordBattle( ti, aB2->teamname, "Î´", "NULL", "");
 				ABATTLE_EnterBattle( aB1);
@@ -1738,15 +1738,15 @@ BOOL ABATTLE_CheckInABattle( int ti)
 			return FALSE;
 		}
 		break;
-	case 3:	//ÒÑÅÅÈëÈü³Ì ¶ÓÎéµ½Æë 5·ÖÖÓÄÚ Ç¿ÖÆÕ½¶·
+	case 3:	//å·²æ’å…¥èµ›ç¨‹ é˜Ÿä¼åˆ°é½ 5åˆ†é’Ÿå†… å¼ºåˆ¶æˆ˜æ–—
 		aB->type=4;
 		aB->time=(int)time(NULL)+(2*60);
 		break;
 	case 4:
-		if( aB->time < (int)time(NULL) ){//Ç¿ÖÆÕ½¶·
+		if( aB->time < (int)time(NULL) ){//å¼ºåˆ¶æˆ˜æ–—
 			if( CHAR_getWorkInt( aB1->toindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE ){
 				//andy_log
-				print("Ç¿ÖÆÕ½¶· %s vs %s \n", aB1->teamname, aB2->teamname);
+				print("å¼ºåˆ¶æˆ˜æ–— %s vs %s \n", aB1->teamname, aB2->teamname);
 				BATTLE_CreateVsPlayer( aB1->toindex, aB2->toindex );
 				aB->type = 5;
 			}
@@ -1775,15 +1775,15 @@ void ABATTLE_MakeInABattleString( void)
 		switch( aB->type){
 		case 0: continue;
 			break;
-		case 1://Ô¤¶¨
-			strcpy( buf, "Ô¤¶¨");
+		case 1://é¢„å®š
+			strcpy( buf, "é¢„å®š");
 			break;
-		case 2://×¼±¸
-			strcpy( buf, "×¼±¸");
+		case 2://å‡†å¤‡
+			strcpy( buf, "å‡†å¤‡");
 			break;
-		case 3://¿ªÊ¼
+		case 3://å¼€å§‹
 		case 4:
-			strcpy( buf, "¿ªÊ¼");
+			strcpy( buf, "å¼€å§‹");
 			break;
 		}
 
@@ -1825,10 +1825,10 @@ BOOL PKLIST_GetABattlelistDataString( int ti, int *tindex, int *stimes,
 			*tindex=atoi( buf);
 			if( getStringFromIndexWithDelim( data, "|", 2, buff, sizeof( buff)) == FALSE ) return FALSE;
 			if( getStringFromIndexWithDelim( data, "|", 3, buf, sizeof( buf)) == FALSE ) return FALSE;
-			sprintf( buf1, "£Û%s£İ%s ", buff, buf);
+			sprintf( buf1, "ï¼»%sï¼½%s ", buff, buf);
 			if( getStringFromIndexWithDelim( data, "|", 4, buff, sizeof( buff)) == FALSE ) return FALSE;
 			if( getStringFromIndexWithDelim( data, "|", 5, buf, sizeof( buf)) == FALSE ) return FALSE;
-			sprintf( buf2, "£Û%s£İ%s ", buff, buf);
+			sprintf( buf2, "ï¼»%sï¼½%s ", buff, buf);
 		}
 		break;
 	}
@@ -1970,12 +1970,12 @@ int PKLIST_UpdateOnePkTeamData( int ti, int forti, int winerflg)
 	}else{
 		PkTeamList[ti].lost++;
 	}
-	PkTeamList[ti].battleplay++; //³¡´Î
-	PkTeamList[ti].score = (PkTeamList[ti].win*3) - (PkTeamList[ti].lost*1);//»ı·Ö
+	PkTeamList[ti].battleplay++; //åœºæ¬¡
+	PkTeamList[ti].score = (PkTeamList[ti].win*3) - (PkTeamList[ti].lost*1);//ç§¯åˆ†
 
 	if( PkTeamList[ti].score >= 90 ){
 		PkTeamList[ti].inside = 2; //Â¼È¡
-	}else if( PkTeamList[ti].lost > 50*0.4){// 0.7 = (1-Ê¤ÂÊ3³É)*×î¸ß³¡´Î
+	}else if( PkTeamList[ti].lost > 50*0.4){// 0.7 = (1-èƒœç‡3æˆ)*æœ€é«˜åœºæ¬¡
 		PkTeamList[ti].inside = 0;
 	}else {
 		PkTeamList[ti].inside = 1;
