@@ -10,7 +10,8 @@ struct RANKTABLE
 	int  catchcnt;
 	char kindcnt[10000];
 	int  rank;
-}*LPRANKTABLE;
+};
+extern struct RANKTABLE *LPRANKTABLE;
 
 struct ASKTABLE
 {

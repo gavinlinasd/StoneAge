@@ -42,6 +42,10 @@ NPC_PETSHOP_MSG		shopmsg[] = {
 
 #define PETCOST	10
 
+int NPC_DepotPet_CheckLevel(int meindex,int talker,int select,char *token);
+int NPC_DepotPet_CheckRepeat( int charaindex);
+int NPC_DepotPet_CheckRepeat_del( int charaindex, int petindex);
+
 void NPC_PetDate(int meindex,int toindex,int select,char *token);
 void NPC_PetDate2(int meindex,int talker,int select,char *token);
 void NPC_PetDate3(int meindex,int talker,int select,char *token);
@@ -1438,6 +1442,7 @@ int NPC_DepotPet_CheckRepeat_del( int charaindex, int petindex)
 
 	CHAR_endCharOneArray( petindex );
 
+	return 0;
 }
 
 // 检查等级是否足够

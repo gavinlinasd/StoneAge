@@ -9,8 +9,8 @@ typedef struct tagDisappearItem
 {
 	char string[64];	
 }DisappearItem;
-DisappearItem *Disappear_Item;
-int itemquitparty_num;
+extern DisappearItem *Disappear_Item;
+extern int itemquitparty_num;
 
 #endif
 

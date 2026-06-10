@@ -1,6 +1,8 @@
 #ifndef __BATTLE_H__
 #define __BATTLE_H__
 
+#include "common.h"
+
 #define	BATTLE_ENTRY_MAX 10
 #define	BATTLE_PLAYER_MAX 5
 #define SIDE_OFFSET 	10
@@ -341,7 +343,7 @@ enum{
 	BATTLE_RET_ARRANGE,
 #endif
 	BATTLE_RET_END
-}BATTLE_RET;
+};
 
 
 #define BC_FLG_NEW			(1<<0)
@@ -679,5 +681,9 @@ void BATTLE_ProfessionStatus_init( int battleindex, int charaindex );
 void BATTLE_ProfessionStatusSeq( int battleindex, int charaindex);
 #endif
 
+
+
+/* prototypes added during the 64-bit/C17 modernization */
+int BATTLE_AddProfit( int battleindex, int *pBidList);
 
 #endif

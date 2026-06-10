@@ -1,4 +1,6 @@
 #include "version.h"
+
+struct RANKTABLE *LPRANKTABLE;
 #include <time.h>
 #include "char.h"
 #include "object.h"
@@ -2087,7 +2089,7 @@ int Raceman_readmode( int meindex , int talkerindex )
 	return 0;
 }
 
-int Raceman_CheckSelectRank(meindex,talkerindex,datanum)
+int Raceman_CheckSelectRank(int meindex,int talkerindex,int datanum)
 {
 	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	char buf[64],buf2[64];

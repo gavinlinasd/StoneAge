@@ -76,5 +76,10 @@ BOOL restoreObjects( char* dirname );
 
 int searchObjectFromCharaIndex( int index );
 
+
+/* prototypes added during the 64-bit/C17 modernization */
+INLINE int OBJECT_setTime( int index, int newvalue );
+INLINE int OBJECT_getTime( int index );
+
 #endif 
 /*__OBJECT_h__*/

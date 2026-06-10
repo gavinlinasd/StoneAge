@@ -59,7 +59,7 @@ extern int snprintf (char* , size_t, const char* , ...)
 #define BOOL int
 #define FALSE 0
 #define TRUE  1
-#define INLINE inline
+#define INLINE /* C99 inline semantics breaks this codebase; plain functions */
 #define USE_MTIO 0
 
 #endif

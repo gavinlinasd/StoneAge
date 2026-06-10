@@ -604,7 +604,7 @@ unsigned int MAP_getExFloor_XY( int floor, int *map_type)
 	}
 	return 0;
 }
-BOOL CHECKFLOORID( id)
+BOOL CHECKFLOORID( int id)
 {
 	int i;
 

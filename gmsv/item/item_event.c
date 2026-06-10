@@ -1,4 +1,7 @@
 #include "version.h"
+#include "battle_event.h"
+#include "chatmagic.h"
+#include "char_angel.h"
 #include <string.h> /* strstr */
 #include <ctype.h>  /* isdigit, isalnum */
 #include "common.h"

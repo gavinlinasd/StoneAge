@@ -16,7 +16,7 @@ static void NPC_DengonWriteString( int meindex, int talkerindex, int id, char *s
 #define DENGONFILEENTRYSIZE (DENGONFILECOUNTERSIZE+DENGONFILESTRINGSIZE+1)
 #define MESSAGEINONEWINDOW 7
 
-char NPC_sendbuf[DENGONFILEENTRYSIZE*MESSAGEINONEWINDOW];
+static char NPC_sendbuf[DENGONFILEENTRYSIZE*MESSAGEINONEWINDOW];
 
 BOOL NPC_DengonInit( int meindex )
 {

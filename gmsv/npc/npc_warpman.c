@@ -1,4 +1,5 @@
 #include "version.h"
+#include "item_event.h"
 #include <string.h>
 #include "char.h"
 #include "object.h"

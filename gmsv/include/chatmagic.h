@@ -1,5 +1,7 @@
 #ifndef __CHATMAGIC_H__
 #define __CHATMAGIC_H__
+
+#include "common.h"
 #include "version.h"
 
 void CHAR_CHAT_DEBUG_hp( int charindex , char *message );

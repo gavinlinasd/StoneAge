@@ -1,4 +1,5 @@
 #include "version.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -13,6 +14,7 @@
 #include "char.h"
 #include "configfile.h"
 #include "encount.h"
+ENCOUNT_Table           *ENCOUNT_table;
 #include "enemy.h"
 
 #ifdef _ADD_ENCOUNT           // WON ADD 增加敌遭遇触发修件

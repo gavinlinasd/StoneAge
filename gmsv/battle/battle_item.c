@@ -1,4 +1,5 @@
 #include "version.h"
+#include "magic.h"
 #include <string.h>
 #include "char.h"
 #include "char_base.h"
@@ -738,7 +739,7 @@ void ITEM_useCaptureUp_Battle(
 
 }
 #ifdef _ITEM_CRACKER
-void ITEM_useCracker_Effect( charaindex, toindex, haveitemindex)
+void ITEM_useCracker_Effect( int charaindex, int toindex, int haveitemindex)
 {
 	int itemindex,x,y,tofd;
 
@@ -762,7 +763,7 @@ void ITEM_useCracker_Effect( charaindex, toindex, haveitemindex)
 }
 #endif
 #ifdef _ITEM_REFRESH //vincent 解除异常状态道具
-void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
+void ITEM_useRefresh_Effect( int charaindex, int toindex, int haveitemindex)
 {
 	int i,itemindex,ReceveEffect;
 	char  *arg;
@@ -826,7 +827,7 @@ void ITEM_useRefresh_Effect( charaindex, toindex, haveitemindex)
 }
 #endif
 #ifdef _ITEM_ADDEXP	//vincent 经验提升
-void ITEM_useAddexp_Effect( charaindex, toindex, haveitemindex)
+void ITEM_useAddexp_Effect( int charaindex, int toindex, int haveitemindex)
 {
 	int itemindex,power,vtime;
 	//,pindex
@@ -886,7 +887,7 @@ void ITEM_useAddexp_Effect( charaindex, toindex, haveitemindex)
 #endif
 //Terry add 2001/12/24
 #ifdef _ITEM_FIRECRACKER
-void ITEM_useFirecracker_Battle( charaindex, toindex, haveitemindex)
+void ITEM_useFirecracker_Battle( int charaindex, int toindex, int haveitemindex)
 {
 	int itemindex, battleindex, masteridx=-1, index2;
 	

@@ -8,6 +8,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#include "version.h"
+#ifdef _SASQL1
+#include "sasql.h"
+#endif
 #include "main.h"
 #include "char.h"
 #include "saacproto_serv.h"

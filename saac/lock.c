@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lock.h"
+#include "util.h"
 #include "main.h"
 #include "char.h"
 

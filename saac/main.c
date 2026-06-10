@@ -1,5 +1,9 @@
 #define _MAIN_C_
 
+/* version.h must come first: it defines the feature gates
+ * (_SASQL1 etc.) that the gated includes below depend on. */
+#include "version.h"
+
 #ifdef _SASQL1
 #include "sasql.h"
 #endif
@@ -174,6 +178,16 @@ char *chartime()
 /*
   sigaction白弁
  */
+void sigusr2(int a);
+static void initWorkerPort( void );
+#ifdef _ANGEL_SUMMON
+static int initMissionTable( void );
+void checkMissionTimelimit( void );
+#endif
+#ifdef _RACEMAN
+static int initRankTable( void );
+#endif
+
 void sighandle( int a )
 {
     if (a==SIGUSR1) log("sigusr1信号!\n");
@@ -1884,7 +1898,7 @@ void sigusr2(int a)
 	log("\n  %s Change_Galaxies.......\n", saacname);
 
 	// 解除全部移民锁定
-	DeleteGalaxyChangeLock(0);
+	DeleteGalaxyChangeLock();
 
 	for( j=1; j<=12; j++) {
 
@@ -2021,7 +2035,7 @@ static int initMissionTable( void )
 	}
 	fclose( fp);
 	log("..成功! \n");
-	//return true;
+	return 1;
 }
 
 
@@ -2053,7 +2067,7 @@ int saveMissionTable( void )
 	}
 	fclose( fp);
 	log("..成功! \n");
-	//return true;
+	return 1;
 }
 
 void delMissionTableOnedata( int index)
@@ -2163,7 +2177,7 @@ static int initRankTable( void )
 	}
 	log("\n\n Load RankTable... \n");
 */
-	return;
+	return 0;
 }
 
 #endif

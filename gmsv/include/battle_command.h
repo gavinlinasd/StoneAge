@@ -1,6 +1,8 @@
 #ifndef __BATTLE_COMMAND_H__
 #define __BATTLE_COMMAND_H__
 
+#include "common.h"
+
 void BattleCommandDispach(
 	int fd,
 	char *command
@@ -23,5 +25,9 @@ void BATTLE_CharSendAll( int battleindex );
 BOOL	BATTLE_PetDefaultCommand( int petindex );
 
 void BATTLE_ActSettingSend( int battleindex );
+
+
+/* prototypes added during the 64-bit/C17 modernization */
+int checkErrorStatus( int charaindex);
 
 #endif

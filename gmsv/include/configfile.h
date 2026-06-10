@@ -273,4 +273,16 @@ int getMaxLockip( void );
 int cmpLockip( int index, int a, int b, int c, int d, int login );
 int addLockip( int a, int b ,int c ,int d, int locktime );
 char *dispalyLockip( int index );
+
+/* prototypes added during the 64-bit/C17 modernization */
+unsigned int getBattleexp( void );
+char* getUnregname( int index );
+int getNewplayergiveitem( unsigned int index );
+int getUnlawwarpfloor( unsigned int index );
+int getChartrans( void );
+int getPettrans( void );
+BOOL LoadMissionList( );
+int setLockip( int a, int b ,int c ,int d, int locktime );
+BOOL LoadRacepetfile(void);
+
 #endif

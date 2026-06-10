@@ -1,4 +1,5 @@
 #include "version.h"
+#include "char_angel.h"
 #include <stdio.h>
 
 #include "readmap.h"

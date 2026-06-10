@@ -1,4 +1,5 @@
 #include "version.h"
+#include "battle.h"
 #include<string.h>
 #include"char.h"
 #include"char_base.h"
@@ -3033,7 +3034,7 @@ int	MAGIC_ResAndDef_Battle(
 			battleindex = CHAR_getWorkInt(charaindex, CHAR_WORKBATTLEINDEX);
 			BATTLE_NoAction(battleindex, BATTLE_Index2No(battleindex, charaindex));
 			CHAR_talkToCli(charaindex, -1, "复活光镜守..不得施予非玩家敌方。", CHAR_COLORYELLOW);
-			return;
+			return 0;
 		}
 	}
 // end

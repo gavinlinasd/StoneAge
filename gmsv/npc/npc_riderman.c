@@ -16,10 +16,10 @@ extern	char	familyListBuf[MAXFAMILYLIST];
 extern	tagRidePetTable	ridePetTable[296];
 extern	struct  FM_POINTLIST fmpointlist;
 
-char sendbuf[1024];
-char buf[1024];
-char subbuf[128];
-int i, j;
+static char sendbuf[1024];
+static char buf[1024];
+static char subbuf[128];
+static int i, j;
 
 /* 
  * 必醒書直俔万笛周囁万谷萩塋NPC
@@ -27,7 +27,7 @@ int i, j;
  *
  */
  
-struct	{
+static struct	{
 	int		windowno;
 	int		windowtype;
 	int		buttontype;
@@ -38,7 +38,7 @@ struct	{
 	int		letter[4];
 }w;
 
-struct	{
+static struct	{
 	BOOL	use;
 	int		checkhaveitem;
 	int		checkhaveitemgotowin;

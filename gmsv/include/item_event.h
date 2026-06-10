@@ -1,5 +1,7 @@
 #ifndef __ITEM_EVENT_H__
 #define __ITEM_EVENT_H__
+
+#include "common.h"
 #include "item.h"
 int ITEM_eventDrop( int itemindex, int charaindex, int itemcharaindex );
 BOOL ITEM_MedicineInit( ITEM_Item* itm );
@@ -237,5 +239,9 @@ enum{
 #endif
 	BD_KIND_END
 };
+
+
+/* prototypes added during the 64-bit/C17 modernization */
+void ITEM_timeticketEx( int charaindex, int toindex, int haveitemindex, int flag);
 
 #endif

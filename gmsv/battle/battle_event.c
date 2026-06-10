@@ -1,10 +1,14 @@
 #include "version.h"
+
 #include <string.h>
 #include <math.h>
 #include "char.h"
 #include "char_event.h"
 #include "battle.h"
 #include "battle_event.h"
+#ifdef _PETSKILL_RETRACE
+Battle_Attack_ReturnData_x1 Battle_Attack_ReturnData_x;
+#endif
 #include "configfile.h"
 #include "pet.h"
 #include "log.h"

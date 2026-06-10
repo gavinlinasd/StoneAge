@@ -1,4 +1,5 @@
 #include "version.h"
+#include "char_angel.h"
 #ifdef _ANGEL_SUMMON
 #include <stdio.h>
 #include <stdlib.h>

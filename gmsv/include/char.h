@@ -668,7 +668,7 @@ void CHAR_PetAddVariableAi( int petindex, int iValue );
 void CHAR_PartyUpdate( int charaindex, int senddata );
 char *CHAR_getUseName( int charaindex );
 char *CHAR_getUseID( int charaindex );
-EXTERN int EnemyMoveNum;	/*   時に  高  ける敵の数 */
+extern int EnemyMoveNum;	/*   時に  高  ける敵の数 */
 extern char *DebugFunctionName;
 extern int DebugPoint;
 
@@ -727,8 +727,8 @@ typedef struct tagCHAR_effectsetting
 	
 }CHAR_effectsetting;
 
-CHAR_effectsetting*    CHAR_effect;
-int                    CHAR_effectnum;
+extern CHAR_effectsetting*    CHAR_effect;
+extern int                    CHAR_effectnum;
 #endif
 
 #ifdef _ITEM_PILENUMS

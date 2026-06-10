@@ -1,4 +1,7 @@
 #include "version.h"
+#include "char_angel.h"
+#include "configfile.h"
+#include "npc_exchangeman.h"
 #include <string.h>
 #include "char.h"
 #include "object.h"
@@ -2087,7 +2090,7 @@ BOOL NPC_ActionChangePlayerBBI( int meindex, int charindex, char *Img)
 #ifdef _PETSKILL_BECOMEPIG
     if( CHAR_getInt( charindex, CHAR_BECOMEPIG) > -1 ){//变成乌力了
 		CHAR_talkToCli( charindex, -1, "无法变身，乌力化中不能变身！", CHAR_COLORYELLOW );
-	    return;
+	    return FALSE;
 	}
 #endif
 	if( CHAR_getInt( charindex, CHAR_RIDEPET) != -1 )	{//骑宠不换图

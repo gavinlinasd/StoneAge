@@ -98,7 +98,7 @@ struct worker
     int iparam[IPARAMNUM];
 };
 
-struct worker wk[MAXWK];
+EXT struct worker wk[MAXWK];
 
 #endif
 char *chartime();
@@ -201,6 +201,7 @@ typedef enum
 	MISSION_HERO_COMPLETE,
 	MISSION_TIMEOVER,
 }ANGEL_MISSIONFLAG;
+void delMissionTableOnedata( int index);
 #endif
 
 

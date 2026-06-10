@@ -1,4 +1,5 @@
 #include "version.h"
+#include "configfile.h"
 #include<string.h>
 #include<stdlib.h>
 #include <time.h>
@@ -3547,7 +3548,7 @@ int BATTLE_GetProfit( int battleindex, int side, int num )
 
 }
 
-int BATTLE_FinishSet( battleindex )
+int BATTLE_FinishSet( int battleindex )
 {
 
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return BATTLE_ERR_BATTLEINDEX;
@@ -3627,7 +3628,7 @@ static int BATTLE_Finish( int battleindex )
 	return 0;
 }
 
-int BATTLE_StopSet( battleindex )
+int BATTLE_StopSet( int battleindex )
 {
 
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return BATTLE_ERR_BATTLEINDEX;

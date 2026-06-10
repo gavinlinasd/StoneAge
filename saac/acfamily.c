@@ -2676,7 +2676,7 @@ int ACFMCharLogout(int index, char *fmname, int fmindex, char *charname,
 }
 
 // 取得家族庄园图层
-int ACgetFMFloor(fmindex)
+int ACgetFMFloor(int fmindex)
 {
    int i = 0;
    for (i = 0; i < MAX_FMPOINT; i++)

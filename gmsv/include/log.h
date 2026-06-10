@@ -203,7 +203,7 @@ enum
     HACK_CHECKSUMERROR, 
     HACK_HP,
 	HACK_TYPE_NUM,
-}HACK_TYPE;
+};
 void logHack(int fd, int errcode);
 // Nuke 0626
 void logSpeed(int fd);

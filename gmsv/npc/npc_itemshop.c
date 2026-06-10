@@ -1,4 +1,5 @@
 #include "version.h"
+#include "saacproto_cli.h"
 #include <string.h>
 #include "char.h"
 #include "object.h"

@@ -17,6 +17,9 @@
  */
 static void NPC_Janken_selectWindow( int meindex, int talker, int num);
 void NPC_JnakenJudge(int meindex,int talker,int sel);
+BOOL NPC_JankenItemGet(int meindex,int talker, char *wl);
+BOOL NPC_EventAddItem( int meindex, int talkerindex, char *data);
+
 BOOL NPC_JankenEntryItemCheck(int talker,char *buf);
 BOOL NPC_JankenEntryItemDel(int talker,char *buf);
 void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge);
@@ -507,11 +510,12 @@ BOOL NPC_JankenItemGet(int meindex,int talker, char *wl)
 	/*--涩烂白央奶伙毛  心  心--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr))==NULL){
 		print("NPC_janken ItemGet: GetArgStrErr");
-		return ;
+		return FALSE;
 	}
 
 	if(NPC_Util_GetStrFromStrWithDelim( argstr, wl, buf, sizeof( buf) ) !=NULL){
 			NPC_EventAddItem( meindex, talker, buf);
 	}
+	return TRUE;
 }
 

@@ -4,10 +4,12 @@
 #ifdef _FIX_WORKS
 #include "saacproto_serv.h"
 #include "saacproto_work.h"
+
+struct connection *cWork;
 #include "char.h"
 
 extern int worksockfd;
-struct timeval select_timeout;
+extern struct timeval select_timeout;
 static int findWk = 0;
 int FindWorkRegBlankCon( void );
 

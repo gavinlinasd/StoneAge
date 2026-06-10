@@ -1,6 +1,8 @@
 #ifndef __MAGIC_H__
 #define __MAGIC_H__
 
+#include "common.h"
+
 /* 热诸 */
 int MAGIC_Use( int charaindex, int haveitemindex, int toindex);
 int MAGIC_Recovery( int charaindex, int toindex,int marray, int mp );

@@ -1,6 +1,8 @@
 #ifndef __BATTLE_EVENT_H__
 #define __BATTLE_EVENT_H__
 
+#include "common.h"
+
 #define BCC_HIT		'H'
 #define BCC_FIRE	'F'
 
@@ -180,7 +182,7 @@ typedef struct tagBattle_Attack_ReturnData_x1
 {
     int Battle_Attack_ReturnData;
 }Battle_Attack_ReturnData_x1;
-Battle_Attack_ReturnData_x1 Battle_Attack_ReturnData_x;
+extern Battle_Attack_ReturnData_x1 Battle_Attack_ReturnData_x;
 
 #endif
 

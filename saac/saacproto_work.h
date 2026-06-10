@@ -4,7 +4,7 @@
 #include "main.h"
 #ifdef _FIX_WORKS
 
-struct connection *cWork;
+extern struct connection *cWork;
 //struct membuf *wb;
 #define MAXWORKCONNECTION MAXWK	//30
 #define WK_R	1

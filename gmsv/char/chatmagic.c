@@ -1,4 +1,5 @@
 #include "version.h"
+#include "char_angel.h"
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>

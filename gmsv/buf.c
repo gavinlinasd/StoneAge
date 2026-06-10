@@ -176,7 +176,7 @@ void freeMemory( void* freepointer )
     char* toppointer;
     toppointer = mem[0].pointer;
     if( freepointer == NULL )return;
-    arrayindex = ((int)freepointer-(int)toppointer)/UNIT;
+    arrayindex = (int)(((char*)freepointer-(char*)toppointer)/UNIT);
 	if( arrayindex < readblock) {
 		readblock = arrayindex;
 	}

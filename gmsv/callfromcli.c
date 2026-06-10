@@ -1,4 +1,6 @@
 #include "version.h"
+#include "char_angel.h"
+#include "item.h"
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>

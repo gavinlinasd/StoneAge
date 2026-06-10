@@ -12,7 +12,7 @@ LServer Ls;
 LSMem *LSbufHead;
 SAMessC *SAMess;
 
-struct timeval select_timeout;
+extern struct timeval select_timeout;
 void REreadConfig( char *path );
 BOOL LSbuffInit()
 {

@@ -1,6 +1,7 @@
 #define _SASQL_C_
 
 #include "version.h"
+#include "sasql.h"
 
 #ifdef _SASQL1//新添加
 
@@ -53,7 +54,7 @@
 
 #ifdef _FIX_WORKS
 #include "saacproto_work.h"
-int worksockfd;
+extern int worksockfd;
 #endif
 
 #ifdef _LOCK_SERVER
@@ -178,10 +179,10 @@ static int readConfig( char *path )
 				} else if( strcmp( command , "AutoReg" ) == 0 ){
         		AutoReg = atoi( param );
         		log("\n开放自动注册：%d",AutoReg);
-    fclose(fp);
-    return 0;
     		}
     }
+    fclose(fp);
+    return 0;
 }
 
 BOOL sasql_init( void )

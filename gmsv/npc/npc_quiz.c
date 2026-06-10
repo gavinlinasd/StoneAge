@@ -15,6 +15,41 @@
 #define MEPLAYER	8
 #define OLDNO		100
 
+struct pl;
+
+/* The original code stored the calloc'd struct pl pointer directly in a
+ * CHAR work-int slot, which truncates pointers on 64-bit. Store an index
+ * into this registry instead; -1 keeps its "empty slot" meaning. */
+#define QUIZPTR_MAX 256
+static struct pl *quizPtrTable[QUIZPTR_MAX];
+
+static int NPC_QuizPtrStore( struct pl *p )
+{
+	int i;
+	for( i = 0; i < QUIZPTR_MAX; i++ ){
+		if( quizPtrTable[i] == NULL ){
+			quizPtrTable[i] = p;
+			return i;
+		}
+	}
+	return -1;
+}
+
+static struct pl *NPC_QuizPtrGet( int idx )
+{
+	if( idx < 0 || idx >= QUIZPTR_MAX ) return NULL;
+	return quizPtrTable[idx];
+}
+
+static void NPC_QuizPtrFree( int idx )
+{
+	if( idx < 0 || idx >= QUIZPTR_MAX ) return;
+	if( quizPtrTable[idx] != NULL ){
+		free( quizPtrTable[idx] );
+		quizPtrTable[idx] = NULL;
+	}
+}
+
 enum {
 	CHAR_WORK_PLAYER1	= CHAR_NPCWORKINT1,
 	CHAR_WORK_PLAYER2	= CHAR_NPCWORKINT2,
@@ -250,7 +285,8 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 			/*--解答者  号を  る--*/
 			p_no = CHAR_getWorkInt( talker, CHAR_WORKSHOPRELEVANT);
 			point = CHAR_getWorkInt( meindex, CHAR_WORK_PLAYER1 + p_no);
-			pl_ptr = (int *)point;
+			pl_ptr = (int *)NPC_QuizPtrGet( point);
+			if( pl_ptr == NULL ) return;
 			
 			/*-- メモリの    を構造  にコピー --*/
 			memcpy(&PLAYER, pl_ptr, sizeof(struct pl));
@@ -347,7 +383,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 //				print("\n %s %d开放",CHAR_getChar(talker,CHAR_NAME),(int)PLAYER.ptr);
 
 				/*--隍さ惉    楣  --*/
-				free(PLAYER.ptr);
+				NPC_QuizPtrFree( point);
 				
 #if 0				
 				/*-仇仇匹霜耨允月--*/
@@ -375,7 +411,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 			{
 				/*--  題が足りない--*/
 				/*--隍さ惉    楣  --*/
-				free(PLAYER.ptr);
+				NPC_QuizPtrFree( point);
 				return ;
 			}
 
@@ -562,8 +598,8 @@ void NPC_QuizWindowTalked( int meindex, int talkerindex,
 		
 			p_no = CHAR_getWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT);
 			point = CHAR_getWorkInt( meindex, CHAR_WORK_PLAYER1 + p_no);
-			pl_ptr = (int *)point;
-		
+			pl_ptr = (int *)NPC_QuizPtrGet( point);
+			if( pl_ptr == NULL ) return;
 
 			memcpy(&PLAYER,pl_ptr,sizeof(struct pl));
 
@@ -583,7 +619,7 @@ void NPC_QuizWindowTalked( int meindex, int talkerindex,
 			}else if(select == WINDOW_BUTTONTYPE_CANCEL){
 				CHAR_setWorkInt( meindex, CHAR_WORK_PLAYER1 + 
 							CHAR_getWorkInt( talkerindex, CHAR_WORKSHOPRELEVANT) ,-1);
-				free(PLAYER.ptr);
+				NPC_QuizPtrFree( point);
 			}else if( atoi( data) == 0){
 			}else{
 				if(atoi(data) == PLAYER.ansno){
@@ -898,7 +934,11 @@ BOOL NPC_PlayerCheck(int meindex,int talker)
 	/*--自分の解答者  号を覚えて恭く--*/
 	CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANT, i);
 
-	k= (int)ptr;
+	k = NPC_QuizPtrStore( (struct pl *)ptr);
+	if( k < 0 ){
+		free( ptr);
+		return FALSE;
+	}
 	CHAR_setWorkInt( meindex, CHAR_WORK_PLAYER1 + i, k );
 	return TRUE;
 
@@ -927,8 +967,9 @@ int NPC_RealyCheack(int meindex,int talker)
 		if(point == -1) continue;
 
 		/*--解答者  号を  る--*/
-		pl_ptr = (int *)point;
-			
+		pl_ptr = (int *)NPC_QuizPtrGet( point);
+		if( pl_ptr == NULL ) continue;
+
 		memcpy(&PLAYER, pl_ptr, sizeof(struct pl));
 		talkerindex = PLAYER.talkerindex;
 		
@@ -946,7 +987,7 @@ int NPC_RealyCheack(int meindex,int talker)
 						if(talkerindex == talker) {
 							okflg = TRUE;
 //							print("\n %s %d开放",CHAR_getChar(talker,CHAR_NAME),(int)PLAYER.ptr);
-							free(PLAYER.ptr);
+							NPC_QuizPtrFree( point);
 							CHAR_setWorkInt( meindex, CHAR_WORK_PLAYER1 + j,-1);
 						}else{
 							okflg = TRUE;
@@ -960,7 +1001,7 @@ int NPC_RealyCheack(int meindex,int talker)
 
 		if(okflg ==FALSE){
 //			print("\n %s %d开放",CHAR_getChar(talker,CHAR_NAME),(int)PLAYER.ptr);
-			free(PLAYER.ptr);
+			NPC_QuizPtrFree( point);
 			CHAR_setWorkInt( meindex, CHAR_WORK_PLAYER1 + j,-1);
 		}
 		

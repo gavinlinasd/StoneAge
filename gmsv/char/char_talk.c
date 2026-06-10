@@ -1481,7 +1481,7 @@ BOOL CHAR_talkToCliExt( int talkedcharaindex,int talkcharaindex,
 BOOL CHAR_talkToCli( int talkedcharaindex,int talkcharaindex,
 					 char* message, CHAR_COLOR color )
 {
-	CHAR_talkToCliExt( talkedcharaindex, talkcharaindex,
+	return CHAR_talkToCliExt( talkedcharaindex, talkcharaindex,
 					 message, color, 0 );
 }
 #else

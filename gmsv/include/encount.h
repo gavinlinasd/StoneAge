@@ -34,7 +34,7 @@ typedef struct tagENCOUNT_Table
     RECT                rect;
 }ENCOUNT_Table;
 
-ENCOUNT_Table           *ENCOUNT_table;
+extern ENCOUNT_Table           *ENCOUNT_table;
 #endif
 
 #endif

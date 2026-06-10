@@ -1,3 +1,4 @@
+#include <time.h>
 #include "version.h"
 #include "object.h"
 #include "char_base.h"

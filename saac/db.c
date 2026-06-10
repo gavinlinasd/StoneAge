@@ -258,8 +258,8 @@ reallocDB( void )
     dbsize = new_dbsize;
     master_buf = newbuf;
     
-    log( "重新分配数据: 新数据大小:%d 旧地址: %x 新地址:%x\n",
-         new_dbsize , (unsigned int)previous, (unsigned int)newbuf );
+    log( "重新分配数据: 新数据大小:%d 旧地址: %p 新地址:%p\n",
+         new_dbsize , (void *)previous, (void *)newbuf );
 
     return 0;
 }
@@ -382,8 +382,8 @@ reallocHash( int dbi )
     dbt[dbi].hashsize = new_hashsize;
     dbt[dbi].hashtable = newbuf;
     
-    log( "重新分配无用信息: 新无用信息大小:%d 旧地址: %x 新地址:%x\n",
-         new_hashsize , (unsigned int)previous, (unsigned int)newbuf );
+    log( "重新分配无用信息: 新无用信息大小:%d 旧地址: %p 新地址:%p\n",
+         new_hashsize , (void *)previous, (void *)newbuf );
 
     return 0;
 }

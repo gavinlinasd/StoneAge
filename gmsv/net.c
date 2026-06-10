@@ -1,5 +1,6 @@
 #define __NET_C__ 
 #include "version.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,6 +17,7 @@
 //ttom+1
 #include <sys/timeb.h>
 #include "net.h"
+broadcast_struct BS;
 #include "buf.h"
 #include "link.h"
 #include "common.h"
@@ -765,7 +767,7 @@ ANYTHREAD BOOL _CONNECT_endOne( char *file, int fromline, int sockfd , int line 
     print( "账号=%s 编号=%d\n", Connect[sockfd].cdkey,sockfd );
 
 		for(i=0;i<getMaxLockip();i++)
-			 if(cmpLockip(i,a,b,c,d,0))return;
+			 if(cmpLockip(i,a,b,c,d,0))return FALSE;
 #if USE_MTIO == 0
     Connect[sockfd].rbuse = Connect[sockfd].wbuse = 0;
 #else
@@ -3583,7 +3585,7 @@ void setDie(int fd)
   Connect[fd].die=1;
 }
  
-int checkNu(fd)
+int checkNu(int fd)
 {
 	Connect[fd].nu--;
 	//print("NU=%d\n",Connect[fd].nu);
@@ -3591,7 +3593,7 @@ int checkNu(fd)
 	return 0;
 }
 
-int checkKe(fd)
+int checkKe(int fd)
 {
 	Connect[fd].ke--;
 	//print("KE=%d\n",Connect[fd].ke);
@@ -3600,15 +3602,15 @@ int checkKe(fd)
 }
 
 // Nuke start 0626: For no enemy function
-void setNoenemy(fd)
+void setNoenemy(int fd)
 {
         Connect[fd].noenemy=6;
 }
-void clearNoenemy(fd)
+void clearNoenemy(int fd)
 {
         Connect[fd].noenemy=0;
 }
-int getNoenemy(fd)
+int getNoenemy(int fd)
 {
         return Connect[fd].noenemy;
 }

@@ -331,7 +331,7 @@ typedef struct tag_broadcast_struct
 	char msg[10][128];	// 公告讯息
 }broadcast_struct;
 
-broadcast_struct BS;
+extern broadcast_struct BS;
 
 void Init_GM_BROADCAST( int loop, int time, int wait, char *msg );
 void GM_BROADCAST();

@@ -1,4 +1,5 @@
 #include "version.h"
+#include "buf.h"
 #ifdef _CONTRACT
 #include <string.h> /* strstr */
 #include <ctype.h>  /* isdigit, isalnum */

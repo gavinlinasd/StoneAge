@@ -11,8 +11,8 @@ void SendEffect(char *ffect);
 
 #ifdef _BAD_PLAYER            // WON ADD 送坏玩家去关
 void BadPlayer(void);
-char BadPlayerList[500][20];
-int MAX_BAD_PLAYER;
+extern char BadPlayerList[500][20];
+extern int MAX_BAD_PLAYER;
 #endif
 
 #ifdef _WORKER_AUTO_LOGOUT     // WON ADD GS断线自动送LOGOUT给WORKER
@@ -23,7 +23,7 @@ void Worker_send_logout( int ti ,char* id );
 #ifdef _AC_SEND_FM_PK		 // WON ADD 庄园对战列表储存在AC
 void load_fm_pk_list(void);
 void save_fm_pk_list(void);
-char fm_pk_list[9][255];
+extern char fm_pk_list[9][255];
 #endif
 
 #ifdef _ALLDOMAN // Syu ADD 排行榜NPC
@@ -40,13 +40,13 @@ typedef struct _tagHerolistBase
 	int intdata[3];
 	int use;
 }HerolistBase;
-HerolistBase Herolist[MAX_HERO_LIST];
+extern HerolistBase Herolist[MAX_HERO_LIST];
 #else
 void Send_S_herolist( char *ocdkey , char *oname , char *ncdkey , char *nname , 
 					 char *title , int level , int trns , int floor );
 #define MAX_HERO_COLUMN 7
 #define MAX_HERO_LIST 100
-char Herolist[MAX_HERO_LIST][MAX_HERO_COLUMN][72];
+extern char Herolist[MAX_HERO_LIST][MAX_HERO_COLUMN][72];
 #endif
 
 #endif

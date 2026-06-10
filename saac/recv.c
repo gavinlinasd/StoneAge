@@ -1,6 +1,9 @@
 #define _RECV_C_
 
 #include "version.h"
+#ifdef _SASQL1
+#include "sasql.h"
+#endif
 #include "main.h"
 #include "saacproto_util.h"
 #include "saacproto_serv.h"
@@ -31,6 +34,23 @@
 #include "deathcontend.h"
 #endif
 #include "defend.h"
+/* definitions for arrays declared in recv.h (moved out of the header
+ * for -fno-common; modern linkers reject duplicate definitions) */
+#ifdef _BAD_PLAYER
+char BadPlayerList[500][20];
+int MAX_BAD_PLAYER;
+#endif
+#ifdef _AC_SEND_FM_PK
+char fm_pk_list[9][255];
+#endif
+#ifdef _ALLDOMAN
+#ifdef _FIX_ALLDOMAN
+HerolistBase Herolist[MAX_HERO_LIST];
+#else
+char Herolist[MAX_HERO_LIST][MAX_HERO_COLUMN][72];
+#endif
+#endif
+
 
 #ifdef _UNIVERSE_CHATROOM
 #include "chatroom.h"
@@ -39,6 +59,7 @@
 #ifdef _RECAL_BACKUP_PLAYER			// WON 回溯功能
 #include <dirent.h>
 #include <sys/stat.h>
+
 
 #define MAX_HAVE_ITEM	20
 #define MAX_POOL_ITEM	30

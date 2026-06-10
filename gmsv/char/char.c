@@ -1,4 +1,5 @@
 #include "version.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -3726,7 +3727,7 @@ void CHAR_deleteTitle( int index, int titleindex )
 	CHAR_send_P_StatusString( index, CHAR_P_STRING_TITLE );
 }
 
-static void CHAR_initcharWorkInt( index )
+static void CHAR_initcharWorkInt( int index )
 {
 	float hp;
 	static struct substitutionTable{
@@ -6685,10 +6686,14 @@ typedef struct tagCHAR_effectsetting
 	
 }CHAR_effectsetting;
 
+#endif
+
+/* Definitions live outside the #ifndef above: when _SEND_EFFECT is on,
+ * the typedef comes from char.h and these are the real (only) instances.
+ * The original put them inside the #ifndef, leaving the feature build
+ * without any definition - masked for years by pre-C17 common symbols. */
 CHAR_effectsetting*    CHAR_effect;
 int                     CHAR_effectnum;
-
-#endif
 
 
 

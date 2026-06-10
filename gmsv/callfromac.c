@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "char_angel.h"
 #include "version.h"
 #include "common.h"
 #include "saacproto_cli.h"

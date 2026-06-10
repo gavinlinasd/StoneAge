@@ -102,8 +102,8 @@ static int reallocMailBuf( void )
     mailbuf = newbuf;
 
     log( "重新分配邮件缓冲: "
-         "新邮件缓冲:%d 旧地址:%x 新地址:%x\n",
-         new_mailbufsize, (unsigned int)previous,(unsigned int)newbuf );
+         "新邮件缓冲:%d 旧地址:%p 新地址:%p\n",
+         new_mailbufsize, (void *)previous,(void *)newbuf );
     return 0;
 }
 

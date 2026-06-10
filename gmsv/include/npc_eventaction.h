@@ -1,5 +1,7 @@
 #ifndef _PRO_NPCFIX_H
 #define _PRO_NPCFIX_H
+
+#include "common.h"
 //ANDY_Edit
 BOOL ActionNpc_CheckMenuFree( int meindex, int toindex, char *npcarg, int nums);
 BOOL ActionNpc_CheckFree( int meindex, int toindex, char *npcarg);
@@ -119,5 +121,11 @@ BOOL NPC_ActionPartyCountCheck( int toindex, int nums, int flg);
 BOOL NPC_ActionManCountCheck( int toindex, int nums, int flg);//检查男生人数
 BOOL NPC_ActionWomanCountCheck( int toindex, int nums, int flg);//检查女生人数
 #endif
+
+
+/* prototypes added during the 64-bit/C17 modernization */
+BOOL NPC_ActionMissionAngelCheck(int meindex,int talker,int mission,int flg,int checkitem);
+BOOL NPC_ActionMissionHeroCheck(int meindex,int talker,int mission,int flg,int checkitem);
+BOOL NPC_HeroCompleteCountCheck(int meindex,int talker,int count,int flg);
 
 #endif

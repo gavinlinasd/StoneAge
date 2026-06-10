@@ -8,7 +8,7 @@
 #include "lssproto_serv.h"
 #include "npc_windowman.h"
  
-struct	{
+static struct	{
 	int		windowno;
 	int		windowtype;
 	int		buttontype;
@@ -17,7 +17,7 @@ struct	{
 	char	message[4096];
 }w;
 
-struct	{
+static struct	{
 	BOOL	use;
 	int		checkhaveitem;
 	int		checkhaveitemgotowin;

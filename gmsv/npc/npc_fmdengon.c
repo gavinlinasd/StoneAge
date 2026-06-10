@@ -40,7 +40,7 @@ extern struct  FMS_MEMO fmsmemo;                           // 家族之间的留
 extern struct  FM_POINTLIST fmpointlist;                   // 家族据点
 extern struct  FMS_DPTOP fmdptop;                          // 家族强者表
 extern int leaderdengonindex;                              // 777 家族公布栏 index
-char NPC_sendbuf[DENGONFILEENTRYSIZE*MESSAGEINONEWINDOW];  // 一整页的大小
+static char NPC_sendbuf[DENGONFILEENTRYSIZE*MESSAGEINONEWINDOW];  // 一整页的大小
 char enlistbuf[4096];                                        // 家族成员召募 BUF(显示用的)
 
 unsigned long READTIME1 = 0,

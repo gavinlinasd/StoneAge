@@ -2,7 +2,11 @@
 #ifndef __ITEM_H__
 #define __ITEM_H__
 
-#include "char.h"
+/* char.h include removed: it created an item.h -> char.h -> char_data.h
+ * -> item.h cycle that broke compilation depending on entry order. */
+#include "common.h"
+#include "util.h"       /* STRING64 */
+#include "char_base.h"  /* CHAR_EquipPlace, CHAR_ACTION */
 
 #define NULLITEM    "0"
 
@@ -439,5 +443,9 @@ void ITEM_getDefaultItemData( int itemID, ITEM_Item* itm);
 #ifdef _CONTRACT
 BOOL ITEM_initContractTable( );
 #endif
+
+
+/* prototypes added during the 64-bit/C17 modernization */
+void ITEM_contractSign( int fd, int itemindex, int signindex);
 
 #endif

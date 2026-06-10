@@ -40,7 +40,7 @@ void Worker_auto_logout(int ti, char *sname);
 #endif
 
 #ifdef _CHANGEGALAXY
-int DeleteChangeGalaxyLock( void);
+int DeleteGalaxyChangeLock( void);
 int isChangeGalaxyLocked( char *cdkey);
 #endif
 

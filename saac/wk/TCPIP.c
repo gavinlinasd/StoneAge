@@ -5,6 +5,11 @@
 #include <netdb.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
+#include <arpa/inet.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include "error.h"
 #include "TCPIP.h"
 #include "version.h"
 
@@ -132,12 +137,12 @@ int TCPconnect0(char *bindAddress,int bindPort,int block)
 
 int TCPconnect(char *bindAddress,int bindPort)
 { 
-	TCPconnect0(bindAddress,bindPort,1); 
+	return TCPconnect0(bindAddress,bindPort,1); 
 }
 
 int TCPconnectNB(char *bindAddress,int bindPort)
 {
-	TCPconnect0(bindAddress,bindPort,0);
+	return TCPconnect0(bindAddress,bindPort,0);
 }
 
 

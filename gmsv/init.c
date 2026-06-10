@@ -1,4 +1,5 @@
 #include "version.h"
+
 #include <unistd.h>
 #include <stdio.h>
 #include <strings.h>
@@ -46,6 +47,10 @@
 
 #ifdef _ITEM_QUITPARTY
 #include "init.h"
+#ifdef _ITEM_QUITPARTY
+DisappearItem *Disappear_Item;
+int itemquitparty_num;
+#endif
 //int itemquitparty_num = 0;
 //static DisappearItem *Disappear_Item;
 #endif
