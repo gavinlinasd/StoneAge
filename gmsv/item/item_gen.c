@@ -1875,7 +1875,7 @@ int PETSKILL_ITEM_FixItem( int charindex, int fixindex, int *itemindex)
 		if( strstr( buf1, "(") != 0 )	{
 			char buf5[256];
 			if( getStringFromIndexWithDelim( buf1,"(",1, buf5, sizeof( buf5)) != FALSE )	{
-				sprintf( buf1, buf5);
+				sprintf( buf1, "%s", buf5);
 			}
 		}
 		ITEM_setChar( fixindex, ITEM_SECRETNAME, buf1);

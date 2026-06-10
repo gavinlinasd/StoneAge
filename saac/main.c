@@ -615,43 +615,43 @@ static int readConfig( char *path )
             port = atoi( param );
         		log( "端口:%d\n",port );
         } else if( strcmp( command , "logdir" ) == 0 ){
-            snprintf( logdir , sizeof( logdir) , param );
+            snprintf( logdir , sizeof( logdir) , "%s", param );
             log( "日志目录:%s\n",logdir );
         } else if( strcmp( command , "lockdir" ) == 0 ){
-            snprintf( lockdir , sizeof( lockdir) , param );
+            snprintf( lockdir , sizeof( lockdir) , "%s", param );
             log( "锁定目录:%s\n",lockdir );
         } else if( strcmp( command , "chardir" ) == 0 ){
-            snprintf( chardir , sizeof( chardir) , param );
+            snprintf( chardir , sizeof( chardir) , "%s", param );
             log( "档案目录:%s\n",chardir );
 #ifdef _SLEEP_CHAR
 			snprintf( sleepchardir , sizeof( sleepchardir), "%s_sleep", chardir);
 						log( "睡眠目录:%s\n",sleepchardir );
 #endif
         } else if( strcmp( command , "pass" ) == 0 ){
-            snprintf( svpass , sizeof( svpass ) , param );
+            snprintf( svpass , sizeof( svpass ) , "%s", param );
             log( "密码:%s\n",svpass );
         } else if( strcmp( command , "wklogdir" ) == 0 ){
-            snprintf( wklogdir , sizeof( wklogdir) , param );
+            snprintf( wklogdir , sizeof( wklogdir) , "%s", param );
             log( "工作日志:%s\n",wklogdir );
         } else if( strcmp( command , "dbdir" ) == 0 ){
-            snprintf( dbdir , sizeof( dbdir) , param );    
+            snprintf( dbdir , sizeof( dbdir) , "%s", param );    
             log( "数据目录:%s\n",dbdir );        
         } else if( strcmp( command, "rotate_interval" ) == 0 ){
             log_rotate_interval = atoi( param );
             log( "日志循环间隔:%d\n",log_rotate_interval ); 
         } else if( strcmp( command, "maildir" ) == 0 ){
-            snprintf( maildir, sizeof( maildir ), param );
+            snprintf( maildir, sizeof( maildir ), "%s", param );
             log( "邮件目录:%s\n",maildir );
 #ifdef	__FAMILY
         // CoolFish: Family 2001/5/9
         } else if( strcmp( command, "familydir" ) == 0 ){
-            snprintf( familydir, sizeof( familydir ), param );
+            snprintf( familydir, sizeof( familydir ), "%s", param );
             log( "家族目录:%s\n",familydir );
         } else if( strcmp( command, "fmpointdir" ) == 0 ){
-            snprintf( fmpointdir, sizeof( fmpointdir ), param );
+            snprintf( fmpointdir, sizeof( fmpointdir ), "%s", param );
             log( "庄园表列:%s\n",fmpointdir );
         } else if( strcmp( command, "fmsmemodir" ) == 0 ){
-            snprintf( fmsmemodir, sizeof( fmsmemodir ), param );
+            snprintf( fmsmemodir, sizeof( fmsmemodir ), "%s", param );
             log( "家族备份:%s\n",fmsmemodir );
 #endif
 #ifdef _LOCK_SERVER
@@ -676,7 +676,7 @@ static int readConfig( char *path )
 #endif
 
         } else if( strcmp( command, "saacname" ) == 0 ){ // 星系名
-					snprintf( saacname, sizeof( saacname ), param );
+					snprintf( saacname, sizeof( saacname ), "%s", param );
 					log( "saac名:%s\n",saacname );
 			  } else if( strcmp( command , "Total_Charlist" ) == 0 ){
         	Total_Charlist = atoi( param );

@@ -948,7 +948,7 @@ int GetMsg(int meindex)
 			if(Msg->nAid%10 == AP_CONNECT)
 			{
 				free(Msg->Data);
-				bzero(Msg,sizeof(Msg));
+				bzero(Msg,sizeof(*Msg));
 				return -5;
 			}
       j = 0;

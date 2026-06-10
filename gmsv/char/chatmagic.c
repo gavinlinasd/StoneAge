@@ -2738,7 +2738,7 @@ void CHAR_CHAT_DEBUG_fixfmleader(int charaindex, char *message)
    }
 
    easyGetTokenFromString(message, 1, token, sizeof(token));
-   sprintf(id, token);			// id		
+   sprintf(id, "%s", token);			// id		
    
    easyGetTokenFromString(message, 2, token, sizeof(token));
    flag = atoi(token);			// flag 执行旗标，输入 1 就行了
@@ -3007,7 +3007,7 @@ void CHAR_CHAT_DEBUG_gmreload( int charaindex, char* message )
 		CHAR_talkToCli(charaindex, -1, buf, CHAR_COLORWHITE);
 		return;
 	}
-	snprintf(charcdkey, sizeof(charcdkey), CHAR_getChar(charaindex, CHAR_CDKEY));
+	snprintf(charcdkey, sizeof(charcdkey), "%s", CHAR_getChar(charaindex, CHAR_CDKEY));
 	for (i = 0; i < GMMAXNUM; i++)
 	{
 		if (strcmp(charcdkey, gminfo[i].cdkey) == 0)

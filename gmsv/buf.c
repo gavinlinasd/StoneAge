@@ -190,6 +190,6 @@ void showMem( char *buf)
 {
 	sprintf( buf, "NowMemory.remnants:%d%%", ((UNITNUMBER-NowMemory)*100)/UNITNUMBER);
 	printf( "\n" );
-	printf( buf );
+	printf( "%s", buf );
 }
 

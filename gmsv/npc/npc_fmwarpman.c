@@ -961,7 +961,7 @@ static void NPC_FMWarpMan_selectWindow( int meindex, int toindex, int num,int se
 		else if ((strcmp(fmpks[fmpks_pos].host_name, "") ==  0) || (strcmp(fmpks[fmpks_pos].guest_name, "") == 0))
 		{
 			if(NPC_Util_GetStrFromStrWithDelim( npcarg, "TalkMsg", buf2, sizeof( buf2)) == NULL) return;
-			sprintf(token, buf2);
+			sprintf(token, "%s", buf2);
 			CONNECT_set_pass(fd, FALSE);
 			CONNECT_set_first_warp(fd, FALSE);
 		}

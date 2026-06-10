@@ -383,13 +383,13 @@ void NPC_ItemShop_BuyMain(int meindex,int talker,int before )
 
 		snprintf( token2, sizeof( token2), "%s|%s", buff, buff2);
 	
-	    strncat( token, token2, sizeof( token));
+	    strncat( token, token2, sizeof( token) - strlen( token) - 1);
 			
 		NPC_Util_GetStrFromStrWithDelim( argstr, "realy_msg", buff, sizeof( buff));
 		NPC_Util_GetStrFromStrWithDelim( argstr, "itemfull_msg", buff2, sizeof( buff2));
 
 		sprintf( token2, "|%s|%s", buff, buff2);
-		strncat(token , token2,sizeof(token));
+		strncat(token , token2, sizeof(token) - strlen(token) - 1);
 		strcpy(token2, "|");
 
 #ifdef _ADD_FAMILY_TAX			   // WON ADD 增加庄园税收	
@@ -397,7 +397,7 @@ void NPC_ItemShop_BuyMain(int meindex,int talker,int before )
 #else
 		NPC_GetItemList( argstr, token2);
 #endif
-		strncat( token, token2, sizeof( token));
+		strncat( token, token2, sizeof( token) - strlen( token) - 1);
 	}
 
 #ifdef _NPC_SHOPALTER01
@@ -476,7 +476,7 @@ void NPC_GetItemList(char *argstr,char *argtoken)
 				NPC_ItemStrStr( atoi( buff2), rate, name, token2);
 	#endif
 #endif
-	    		strncat( argtoken, token2, sizeof(token2));
+	    		strncat( argtoken, token2, NPC_UTIL_GETARGSTR_BUFSIZE - strlen(argtoken) - 1);
 			}else{
 				int start;
 				int end;
@@ -507,7 +507,7 @@ void NPC_GetItemList(char *argstr,char *argtoken)
 					NPC_ItemStrStr( start, rate, name, token2);
 	#endif
 #endif
-		    		strncat( argtoken, token2, sizeof(token2));
+		    		strncat( argtoken, token2, NPC_UTIL_GETARGSTR_BUFSIZE - strlen(argtoken) - 1);
 				}
 			}
 		}
@@ -868,7 +868,7 @@ void NPC_ItemShop_SellMain(int meindex,int talker,int before)
 #else
 		NPC_GetLimtItemList( talker,argstr, token2, -1);//详细玩家要卖出的道具资料
 #endif	
-		strncat( token, token2, sizeof( token));
+		strncat( token, token2, sizeof( token) - strlen( token) - 1);
 
 		lssproto_WN_send( fd, WINDOW_MESSAGETYPE_ITEMSHOPMAIN+
 					CHAR_getWorkInt(meindex,NPC_SHOP_WORK_NO), 
@@ -935,7 +935,7 @@ int NPC_GetLimtItemList(int talker, char *argstr, char* token2,int sell)
 							if(ITEM_getInt(itemindex,ITEM_TYPE) == itemtype) {
 								cost = NPC_GetSellItemList(itemindex,0,argstr,token3,i,sell);
 								if(cost != -1) return cost;
-								strncat( token2, token3, sizeof( token3));
+								strncat( token2, token3, sizeof( token2) - strlen( token2) - 1);
 #ifdef _NPC_SHOPALTER01
 								print("Change->itemtype = %d",itemtype);
 								print("Change->token2:%s\n",token2);
@@ -962,7 +962,7 @@ int NPC_GetLimtItemList(int talker, char *argstr, char* token2,int sell)
 									&& (ITEM_getInt(itemindex,ITEM_TYPE) <= 15) ){
 									cost = NPC_GetSellItemList(itemindex,0,argstr,token3,i,sell);
 									if(cost != -1) return cost;
-									strncat(token2,token3,sizeof(token3));
+									strncat(token2,token3, sizeof(token2) - strlen(token2) - 1);
 #ifdef _NPC_SHOPALTER01
 									print("Change->itemtype = 30");
 									print("Change->token2:%s\n",token2);
@@ -992,7 +992,7 @@ int NPC_GetLimtItemList(int talker, char *argstr, char* token2,int sell)
 									&& (ITEM_getInt(itemindex,ITEM_TYPE) <= 19))) {
 									cost = NPC_GetSellItemList(itemindex,0,argstr,token3,i,sell);
 									if(cost != -1) return cost;
-									strncat(token2,token3,sizeof(token3));
+									strncat(token2,token3, sizeof(token2) - strlen(token2) - 1);
 #ifdef _NPC_SHOPALTER01
 									print("Change->itemtype = 40");
 									print("Change->token2:%s\n",token2);
@@ -1020,7 +1020,7 @@ int NPC_GetLimtItemList(int talker, char *argstr, char* token2,int sell)
 									&& (ITEM_getInt(itemindex,ITEM_TYPE) <= 7) ){
 									cost = NPC_GetSellItemList(itemindex,0,argstr,token3,i,sell);
 									if(cost != -1) return cost;
-									strncat(token2,token3,sizeof(token3));
+									strncat(token2,token3, sizeof(token2) - strlen(token2) - 1);
 #ifdef _NPC_SHOPALTER01
 									print("Change->itemtype = 50");
 									print("Change->token2:%s\n",token2);
@@ -1059,7 +1059,7 @@ int NPC_GetLimtItemList(int talker, char *argstr, char* token2,int sell)
 						if(ITEM_getInt(itemindex,ITEM_ID) == atoi(token)) {
 							cost = NPC_GetSellItemList(itemindex,0,argstr,token3,i,sell);
 							if(cost != -1) return cost;
-							strncat(token2,token3,sizeof(token3));
+							strncat(token2,token3, sizeof(token2) - strlen(token2) - 1);
 #ifdef _NPC_SHOPALTER01
 							print("Change->1\n");
 							print("Change->token2:%s\n",token2);
@@ -1103,7 +1103,7 @@ int NPC_GetLimtItemList(int talker, char *argstr, char* token2,int sell)
 						if( (start <= ITEM_getInt(itemindex,ITEM_ID)) && (ITEM_getInt(itemindex,ITEM_ID) < end) ){
 							cost = NPC_GetSellItemList(itemindex,0,argstr,token3,i,sell);
 							if(cost != -1) return cost;
-							strncat(token2,token3,sizeof(token3));
+							strncat(token2,token3, sizeof(token2) - strlen(token2) - 1);
 #ifdef _NPC_SHOPALTER01
 							print("Change->2\n");
 							print("Change->token2:%s\n",token2);
@@ -1133,7 +1133,7 @@ int NPC_GetLimtItemList(int talker, char *argstr, char* token2,int sell)
 			if(okflg == 0) {
 				cost = NPC_GetSellItemList(itemindex, 1, argstr, token3, i, sell);
 				if(sell != -1) return -1;
-				strncat( token2, token3, sizeof( token3));
+				strncat( token2, token3, sizeof( token2) - strlen( token2) - 1);
 #ifdef _NPC_SHOPALTER01
 				print("Change->4\n");
 				print("Change->token2:%s\n",token2);

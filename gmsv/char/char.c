@@ -7253,7 +7253,7 @@ int storeCharaData( void ){
 			 chardata ) == 0 
 		){
 
-			fprintf( fp, outbuff );
+			fprintf( fp, "%s", outbuff );
 		}else{
 //			fprintf( fp, "セーブ失  \n" );
 		}
@@ -7266,7 +7266,7 @@ int storeCharaData( void ){
 		if( (fp=fopen( szFileName, "w" )) == NULL )continue;
 		print(" 存储:%s\n", szFileName);
 		chardata = CHAR_makeDepotItemFromCharIndex( i);
-		fprintf( fp, chardata );
+		fprintf( fp, "%s", chardata );
 		fclose( fp );
 		CHAR_removeDepotItem( i);
 	}
@@ -7279,7 +7279,7 @@ int storeCharaData( void ){
 		if( (fp=fopen( szFileName, "w" )) == NULL )continue;
 		print(" 存储:%s\n", szFileName);
 		chardata = CHAR_makeDepotPetFromCharIndex( i);
-		fprintf( fp, chardata );
+		fprintf( fp, "%s", chardata );
 		fclose( fp );
 		CHAR_removeDepotPet( i);
 	}

@@ -716,7 +716,7 @@ static void NPC_AirSendMsg( int meindex, int talkerindex, int tablenum)
 		strcpy( msg, buf);
 	}
 	else {
-		snprintf( msg, sizeof(msg),airmsg[tablenum].defaultmsg);
+		snprintf( msg, sizeof(msg),"%s", airmsg[tablenum].defaultmsg);
 	}
 	CHAR_talkToCli( talkerindex, meindex, msg, CHAR_COLORYELLOW);
 }

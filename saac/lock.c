@@ -22,7 +22,7 @@ void Lock_Init(void)
 {
 	int i;
  	userlock= (LockNode **) calloc( 1, sizeof(LockNode *) * 256);
-	memset(userlock, 0, sizeof(userlock));
+	memset(userlock, 0, sizeof(LockNode *) * 256);
 	for (i=0; i<256; i++) {
 		userlock[i] = (LockNode *)calloc( 1,sizeof(LockNode));
 		userlock[i]->use=0;

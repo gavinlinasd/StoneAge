@@ -4324,7 +4324,7 @@ void PROFESSION_MAGIC_TOLIST_SORT( int *list, int *listidx, int charaindex )
 					}	
 				}
 
-				memset(list, -1, sizeof(list));
+				memset(list, -1, sizeof(temp));  /* list and temp share extent */
 				memcpy(	list, temp, sizeof(temp) );
 	
 				*listidx = count;
@@ -4358,7 +4358,7 @@ void PROFESSION_MAGIC_TOLIST_SORT( int *list, int *listidx, int charaindex )
 				}else	
 					*listidx = 1;
 
-				memset(list, -1, sizeof(list));
+				memset(list, -1, sizeof(temp));  /* list and temp share extent */
 				memcpy(	list, temp, sizeof(temp) );
 	
 			}
@@ -4387,7 +4387,7 @@ void PROFESSION_MAGIC_TOLIST_SORT( int *list, int *listidx, int charaindex )
 		}
 	}
 
-	memset(list, -1, sizeof(list));
+	memset(list, -1, sizeof(temp));  /* list and temp share extent */
 	memcpy(	list, temp, sizeof(temp) );
 	
 	*listidx = j;

@@ -1972,7 +1972,7 @@ void FAMILY_SetPoint(int fd, int meindex, char *message)
       	return;
    }
    fmdp = CHAR_getWorkInt(meindex, CHAR_WORKFMDP);
-   for (i = 0; i < arraysizeof(fmdplevelexp); i++){
+   for (i = 0; i < arraysizeof(fmdplevelexp) - 1; i++){
    	if (fmdp < fmdplevelexp[i + 1] && fmdp >= fmdplevelexp[i]){
    		fmlevel = i;
    	}

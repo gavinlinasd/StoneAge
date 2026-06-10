@@ -130,51 +130,51 @@ static int readConfig( char *path )
 
         if( strcmp( command , "sql_IP" ) == 0 ){
             strcmp( config.sql_IP , param ) ;
-            snprintf( config.sql_IP , sizeof( config.sql_IP) , param );
+            snprintf( config.sql_IP , sizeof( config.sql_IP) , "%s", param );
             log("\n数据库地址：  %s",config.sql_IP);
         } else if( strcmp( command , "sql_Port" ) == 0 ){
         		config.sql_Port = atoi( param );
-            snprintf( config.sql_Port1 , sizeof( config.sql_Port1) , param );
+            snprintf( config.sql_Port1 , sizeof( config.sql_Port1) , "%s", param );
 				  	log("\n数据库端口：  %d",config.sql_Port);
         } else if( strcmp( command , "sql_ID" ) == 0 ){
         		strcmp( config.sql_ID , param ) ;
-            snprintf( config.sql_ID , sizeof( config.sql_ID) , param );
+            snprintf( config.sql_ID , sizeof( config.sql_ID) , "%s", param );
 						log("\n数据库用户：  %s",config.sql_ID);
         } else if( strcmp( command , "sql_PS" ) == 0 ){
         		strcmp( config.sql_PS , param ) ;
-            snprintf( config.sql_PS , sizeof( config.sql_PS) , param );
+            snprintf( config.sql_PS , sizeof( config.sql_PS) , "%s", param );
 						log("\n数据库密码：  %s",config.sql_PS);
         } else if( strcmp( command , "sql_DataBase" ) == 0 ){
         		strcmp( config.sql_DataBase , param ) ;
-            snprintf( config.sql_DataBase , sizeof( config.sql_DataBase) , param );
+            snprintf( config.sql_DataBase , sizeof( config.sql_DataBase) , "%s", param );
 						log("\n登陆数据库名：%s",config.sql_DataBase);
         } else if( strcmp( command , "sql_Table" ) == 0 ){
         		strcmp( config.sql_Table , param ) ;
-            snprintf( config.sql_Table , sizeof( config.sql_Table) , param );
+            snprintf( config.sql_Table , sizeof( config.sql_Table) , "%s", param );
 				  	log("\n数据库表名：  %s",config.sql_Table);
         } else if( strcmp( command , "sql_Name" ) == 0 ){
         		strcmp( config.sql_Name , param ) ;
-            snprintf( config.sql_Name , sizeof( config.sql_Name) , param );
+            snprintf( config.sql_Name , sizeof( config.sql_Name) , "%s", param );
 						log("\n用户名字段：  %s",config.sql_Name);
         } else if( strcmp( command , "sql_PassWord" ) == 0 ){
         		strcmp( config.sql_PassWord , param ) ;
-        		snprintf( config.sql_PassWord , sizeof( config.sql_PassWord) , param );
+        		snprintf( config.sql_PassWord , sizeof( config.sql_PassWord) , "%s", param );
 						log("\n密码字段：    %s",config.sql_PassWord);
         } else if( strcmp( command , "sql_RegTime" ) == 0 ){
         		strcmp( config.sql_RegTime , param ) ;
-            snprintf( config.sql_RegTime , sizeof( config.sql_RegTime) , param );
+            snprintf( config.sql_RegTime , sizeof( config.sql_RegTime) , "%s", param );
 						log("\n注册时间：    %s",config.sql_RegTime);
         } else if( strcmp( command , "sql_LoginTime" ) == 0 ){
         		strcmp( config.sql_LoginTime , param ) ;
-            snprintf( config.sql_LoginTime , sizeof( config.sql_LoginTime) , param );
+            snprintf( config.sql_LoginTime , sizeof( config.sql_LoginTime) , "%s", param );
 						log("\n登陆时间：    %s",config.sql_LoginTime);
 				} else if( strcmp( command , "sql_Path" ) == 0 ){
         		strcmp( config.sql_Path , param ) ;
-            snprintf( config.sql_Path , sizeof( config.sql_Path) , param );
+            snprintf( config.sql_Path , sizeof( config.sql_Path) , "%s", param );
 						log("\n路径字段：    %s",config.sql_Path);
 				} else if( strcmp( command , "sql_OnlineName" ) == 0 ){
         		strcmp( config.sql_OnlineName , param ) ;
-            snprintf( config.sql_OnlineName , sizeof( config.sql_OnlineName) , param );
+            snprintf( config.sql_OnlineName , sizeof( config.sql_OnlineName) , "%s", param );
 						log("\n在线玩家字段：%s",config.sql_OnlineName);
 				} else if( strcmp( command , "AutoReg" ) == 0 ){
         		AutoReg = atoi( param );

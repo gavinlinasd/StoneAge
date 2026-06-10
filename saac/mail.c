@@ -102,8 +102,8 @@ static int reallocMailBuf( void )
     mailbuf = newbuf;
 
     log( "重新分配邮件缓冲: "
-         "新邮件缓冲:%d 旧地址:%p 新地址:%p\n",
-         new_mailbufsize, (void *)previous,(void *)newbuf );
+         "新邮件缓冲:%d 新地址:%p\n",
+         new_mailbufsize, (void *)newbuf );
     return 0;
 }
 
@@ -459,7 +459,7 @@ int readMail( char *dir )
                     fgets( line,sizeof(line),fp);
                     chop(line);                    
                     if(strncmp(FROM_CHAR_HEAD,line,strlen(FROM_CHAR_HEAD))==0){
-                        snprintf( fromchar, sizeof( fromchar ),
+                        snprintf( fromchar, sizeof( fromchar ), "%s",
                                   line + strlen(FROM_CHAR_HEAD ));
                         makeStringFromEscaped( fromchar );
                     }

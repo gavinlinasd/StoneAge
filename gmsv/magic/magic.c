@@ -618,7 +618,7 @@ int MAGIC_AttSkill( int charaindex, int toindex,int marray, int mp )
 		char buff1[256];
 		if( getStringFromIndexWithDelim( magicarg, ";", 1, buff1, sizeof( buff1)) == FALSE )
 			return FALSE;
-		snprintf( funName, sizeof(funName), buff1);
+		snprintf( funName, sizeof(funName), "%s", buff1);
 		if( getStringFromIndexWithDelim( magicarg, ";", 2, buff1, sizeof( buff1)) == FALSE )
 			return FALSE;
 		skillID = atoi( buff1);

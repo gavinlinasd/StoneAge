@@ -448,8 +448,8 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 			p_old++;
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, p_old);
 
-			strncpy( buf, Quiz[questionno].question, 
-							sizeof( Quiz[questionno].question));
+			strncpy( buf, Quiz[questionno].question, sizeof( buf) - 1);
+			buf[sizeof( buf) - 1] = '\0';
 
 			/*--弁奶术及  锁及赢今卞方匀化｝蓟    及  憎匏  毛  尹月--*/
 			if(strlen( buf) < 40) {

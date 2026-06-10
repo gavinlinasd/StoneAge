@@ -984,7 +984,7 @@ void NPC_PetDel3( int meindex, int talker, int select, char *token)
 	int selectpet;
 	int emptyindex;
 	char szPet[128];
-	int workindex[CHAR_MAXPOOLPETHAVE];
+	int workindex[CHAR_MAXDEPOTPETHAVE];
 	int i;
 	int cnt;
 

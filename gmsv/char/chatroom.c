@@ -110,7 +110,7 @@ void ChatRoom_Refresh ( int Num )
 		if ( ChatRoom[ Num ].charalist[i].use == 0 ) continue;
 		sprintf( buf , "I%d|%s|%s|" , 
 			i, ChatRoom[Num].charalist[i].name, ChatRoom[Num].charalist[i].own	);
-		strncat ( token , buf , sizeof ( buf ) ) ; 
+		strncat ( token , buf , sizeof ( token ) - strlen ( token ) - 1 ) ; 
 	}
 
 	for ( j=0; j<playernum; j++) {
@@ -140,7 +140,7 @@ void ChatRoom_List ( int fd )
 			ChatRoom[ i ].masindex , 
 			ChatRoom[ i ].charalist[ChatRoom[ i ].masindex].name,
 			ChatRoom[ i ].charanum );
-		strncat ( token , buf , sizeof ( buf ) ) ; 
+		strncat ( token , buf , sizeof ( token ) - strlen ( token ) - 1 ) ; 
 
 	}
 	lssproto_CHATROOM_send( fd, token); 
@@ -816,7 +816,7 @@ void ChatRoom_List ( int fd )
 				ChatRoom[ i ].Maker , 
 				CHAR_getChar ( ChatRoom[ i ].Maker , CHAR_NAME ) , 
 				ChatRoom[ i ].NowPeople  );
-			strncat ( token , buf , sizeof ( buf ) ) ; 
+			strncat ( token , buf , sizeof ( token ) - strlen ( token ) - 1 ) ; 
 		}
 	}
 	lssproto_CHATROOM_send ( fd , token ) ; 
@@ -842,7 +842,7 @@ void ChatRoom_Refresh ( int Num )
 					CHAR_getChar ( ChatRoom[ Num ].MemberList[ i ] , CHAR_NAME ) , 
 					CHAR_getChar ( ChatRoom[ Num ].MemberList[ i ] , CHAR_OWNTITLE )  
 					);
-				strncat ( token , buf , sizeof ( buf ) ) ; 
+				strncat ( token , buf , sizeof ( token ) - strlen ( token ) - 1 ) ; 
 			}
 		}
 	}

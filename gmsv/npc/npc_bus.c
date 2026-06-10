@@ -650,7 +650,7 @@ static void NPC_BusSendMsg( int meindex, int talkerindex, int tablenum)
 		strcpy( msg, buf);
 	}
 	else {
-		snprintf( msg, sizeof(msg),busmsg[tablenum].defaultmsg);
+		snprintf( msg, sizeof(msg),"%s", busmsg[tablenum].defaultmsg);
 	}
 	CHAR_talkToCli( talkerindex, meindex, msg, CHAR_COLORYELLOW);
 }

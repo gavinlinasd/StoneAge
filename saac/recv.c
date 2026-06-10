@@ -366,7 +366,7 @@ void saacproto_ACLock_recv( int ti ,char* id,int lock,int mesgid )
 		} else {
 			sprintf(retdata, "USRUNLOCKED:%s", buf);
 		}
-		log(retdata);
+		log("%s", retdata);
     } else if (lock==3) {
 		int proc;
 		if (DeleteMemLock(getHash(id) & 0xff, id, &proc)) {
@@ -374,7 +374,7 @@ void saacproto_ACLock_recv( int ti ,char* id,int lock,int mesgid )
 		} else {
 			sprintf(retdata, "GMUNLOCKFAIL");
 		}
-		log(retdata);
+		log("%s", retdata);
 	} else if (lock==4) {
 		DeleteMemLockServer(id);
 		sprintf(retdata, "GMUNLOCKALL");
