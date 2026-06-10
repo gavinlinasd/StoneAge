@@ -73,7 +73,7 @@ void NPC_DepotPet_AskGet(int meindex,int talker,int select,char *token);
 //   懆  直狹係易派誌傲
 #define		NPC_PETSHOP_POOLCOST_DEFAULT	200
 
-/*--伐□弁    及割忡--*/
+/*--ワーク    の確保--*/
 enum {
 	CHAR_WORK_NOMALRATE	= CHAR_NPCWORKINT1,
 	CHAR_WORK_SPECIALRATE	= CHAR_NPCWORKINT2,
@@ -104,7 +104,7 @@ BOOL NPC_PetShopInit( int meindex )
 		return FALSE;
 	}
 
-	/*--伊□玄毛铵户卞筏盛今六化云仁*/
+	/*--レートを始めに記憶させて恭く*/
 	if( NPC_Util_GetStrFromStrWithDelim( npcarg, "nomal_rate", buf, sizeof( buf)) != NULL){
 		rate = atof( buf);		
 		intrate = ( int)( rate *1000);		
@@ -114,7 +114,7 @@ BOOL NPC_PetShopInit( int meindex )
 	}
 
 		
-	/*--旦矢扑乓伙伊□玄手筏盛今六化云仁--*/
+	/*--スペ竺ャ郊レートも記憶させて恭く--*/
 	if(NPC_Util_GetStrFromStrWithDelim( npcarg, "special_rate", buf, sizeof( buf))
 	!=NULL)
 	{
@@ -131,7 +131,7 @@ BOOL NPC_PetShopInit( int meindex )
 	//CHAR_setWorkInt( meindex, CHAR_WORK_POOLCOST, cost);
 	
 	
-	//   仃  木互请  月井升丹井毛筏盛
+	//   け  れが出  るかどうかを記憶
 	tmp = NPC_Util_GetNumFromStrWithDelim( npcarg, "pool_flg");
 	if( tmp != 1 ) tmp = 0;
 	CHAR_setWorkInt( meindex, CHAR_WORK_POOLFLG, tmp);
@@ -161,7 +161,7 @@ void NPC_PetShopTalked( int meindex , int talkerindex , char *szMes ,int color )
 		if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	}
 
-	/*--伐□弁及赓渝祭--*/
+	/*--ワークの初期化--*/
 	CHAR_setWorkInt(talkerindex,CHAR_WORKSHOPRELEVANT,0);
 
 	/*-反元户及蓟      --*/
@@ -182,7 +182,7 @@ void NPC_PetShopLooked( int meindex , int lookedindex)
 	/* ㄠ弘伉永玉动  及心 */
 	if( NPC_Util_CharDistance( lookedindex, meindex ) > 2) return;
 
-	/*--伐□弁及赓渝祭--*/
+	/*--ワークの初期化--*/
 //	CHAR_setWorkInt(lookedindex,CHAR_WORKSHOPRELEVANT,0);
 
 
@@ -328,7 +328,7 @@ static void NPC_PetShop_selectWindow( int meindex, int toindex, int num,int sele
 	  	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 		windowno = CHAR_WINDOWTYPE_WINDOWPETSHOP_END; 
 	    break;
-	  // 娄五潸曰矢永玄域  它奴件玉它
+	  // 引き取りペット一  ウィンドウ
 	  case 9: // 取出寄放宠列表
 	  	if( CHAR_getWorkInt( meindex, CHAR_WORK_POOLFLG) != 1 )
 	  		return;
@@ -434,11 +434,11 @@ static void NPC_PetShop_selectWindow( int meindex, int toindex, int num,int sele
 	
 	}
 	
-	/*--巨旦弗□皿--*/
+	/*--エスケープ--*/
 	//makeEscapeString( token, escapedname, sizeof(escapedname));
 		
 		
-	/*--霜耨--*/
+	/*--送信--*/
 	lssproto_WN_send( fd, windowtype, 
 				buttontype, 
 				windowno,
@@ -654,7 +654,7 @@ void NPC_PetDate(int meindex,int talker,int select,char *token)
 	char *petname;
 	char buf[1024];
 
-	/*--伐□弁及赓渝祭--*/
+	/*--ワークの初期化--*/
 	CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANT,select);
 
 	petindex = CHAR_getCharPet( talker, select-1);
@@ -733,7 +733,7 @@ int NPC_GetCost(int meindex,int talker,int petindex)
 
 	if(getlevel==0)	getlevel=1	;
 	
-	/*--袄蟾毛菲户月--*/
+	/*--値段を求める--*/
 	levelcost=(level*level)*10;
 	getlevel=(getlevel*getlevel)*10;
 // Syu ADD 修改卖转生宠金钱会变负的bug
@@ -757,7 +757,7 @@ int NPC_GetCost(int meindex,int talker,int petindex)
 	NPC_Util_GetStrFromStrWithDelim( npcarg, "special_pet", buf, sizeof( buf));
 
 	i=1;
-	/*--旦矢扑乓伙伊□玄匹煌遥今木月矢永玄毛喃曰请允  矢永玄及隙烂反  飓  寞)--*/
+	/*--スペ竺ャ郊レートで計算されるペットを割り出す  ペットの指定は  像  号)--*/
 	while( getStringFromIndexWithDelim(buf,",",i,buff2,sizeof(buff2)) !=FALSE )
 	{
 		if(strstr( buff2, "-")==NULL){
@@ -801,10 +801,10 @@ int NPC_GetCost(int meindex,int talker,int petindex)
 		i++;
 	}
 
-	/*--矢永玄及镝擦蘸毛      ---*/
+	/*--ペットの忠誠度を      ---*/
 	petai=CHAR_getWorkInt(petindex,CHAR_WORKFIXAI);
 
-	/*--    毛必永玄--*/
+	/*--    をゲット--*/
 	charm = CHAR_getWorkInt(talker,CHAR_WORKFIXCHARM);
 
 	/*--      ≈镝擦蘸  / ㄡ  */
@@ -823,7 +823,7 @@ int NPC_GetCost(int meindex,int talker,int petindex)
 	/*--    镝擦喘仃--*/
 	cost = cost * rate;
 
-	/*--云嗯毛筏盛--*/
+	/*--恭金を記憶--*/
    	CHAR_setWorkInt(talker,CHAR_WORKSHOPRELEVANTSEC,cost);
 
 	return cost;
@@ -912,7 +912,7 @@ void NPC_PetDel2( int meindex, int talker, int select, char *token)
 		fprint( "err\n");
 		return;
 	}
-	// 矢永玄犯□正  凳［矢永玄      仃  木  
+	// ペットデータ  更?ペット      け  れ  
 	selectpet = CHAR_getWorkInt( talker, CHAR_WORKSHOPRELEVANT) -1;
 	petindex = CHAR_getCharPet( talker, selectpet);
 	if( !CHAR_CHECKINDEX( petindex) ) return;
@@ -936,19 +936,19 @@ void NPC_PetDel2( int meindex, int talker, int select, char *token)
 		fprint( "err\n");
 		return;
 	}
-	// 爵  赏  迕矢永玄卅日］公木及瓒  毛壅允［
+	// 戦  準  用ペットなら?それの登  を消す?
 	if( CHAR_getInt( talker, CHAR_DEFAULTPET) == selectpet) {
 		CHAR_setInt( talker, CHAR_DEFAULTPET, -1);
 		lssproto_KS_send( fd, -1, TRUE);
 	}
-	//   仃  木  卞］矢永玄及奶件犯永弁旦毛戊疋□
+	//   け  れ  に?ペットのインデックスをコピー
 	CHAR_setCharPoolPet( talker, emptyindex, petindex);
-	// 矢永玄  井日壅允
+	// ペット  から消す
 	CHAR_setCharPet( talker, selectpet, -1);
 	
-	// 丢永本□斥潸  
+	// メッセージ取  
 	NPC_MaxGoldOver( meindex, talker, NPC_PETSHOP_MSG_POOLTHANKS, token);
-	// 云嗯蛹日允
+	// 恭金減らす
 
 	CHAR_DelGold( talker, NPC_GETPOOLCOST( talker) );
 
@@ -956,7 +956,7 @@ void NPC_PetDel2( int meindex, int talker, int select, char *token)
 	CHAR_send_P_StatusString(talker,CHAR_P_STRING_GOLD);
 
 	snprintf( szPet, sizeof( szPet ), "K%d", selectpet);
-	// 蕙仄中矢永玄旦  □正旦霜曰勾仃月
+	// 新しいペットス  ータス送りつける
 	CHAR_sendStatusString( talker, szPet );
 	// 矢永玄毛  仃凶夫弘
 	LogPet(
@@ -1056,7 +1056,7 @@ void NPC_getDrawPet( int meindex, int toindex, char *token, int *buttontype, int
 	endnum = (page + select+1)*LINENUM ;
 	startnum = endnum - LINENUM;
 	*buttontype = WINDOW_BUTTONTYPE_CANCEL;
-	// 羹矢□斥譬帮［
+	// 端ページ調整?
 	if( endnum >= limit ) {
 		endnum = limit;
 		if( page +select!= 0 ) *buttontype |= WINDOW_BUTTONTYPE_PREV;
@@ -1161,7 +1161,7 @@ void NPC_DepotPet_List( int meindex, int toindex, char *token, int *buttontype, 
 	endnum = (page + select+1)*LINENUM ;
 	startnum = endnum - LINENUM;
 	*buttontype = WINDOW_BUTTONTYPE_CANCEL;
-	// 羹矢□斥譬帮［
+	// 端ページ調整?
 	if( endnum >= limit ) {
 		endnum = limit;
 		if( page +select!= 0 ) *buttontype |= WINDOW_BUTTONTYPE_PREV;
@@ -1214,7 +1214,7 @@ void NPC_DepotPet_Add( int meindex, int talker, int select, char *token)
 		fprint( "err\n");
 		return;
 	}
-	// 矢永玄犯□正  凳［矢永玄      仃  木  
+	// ペットデータ  更?ペット      け  れ  
 	selectpet = CHAR_getWorkInt( talker, CHAR_WORKSHOPRELEVANT) -1;
 	//print("\n selectpet:%d ", selectpet);
 	petindex = CHAR_getCharPet( talker, selectpet);
@@ -1253,19 +1253,19 @@ void NPC_DepotPet_Add( int meindex, int talker, int select, char *token)
 		return;
 	}
 
-	// 爵  赏  迕矢永玄卅日］公木及瓒  毛壅允［
+	// 戦  準  用ペットなら?それの登  を消す?
 	if( CHAR_getInt( talker, CHAR_DEFAULTPET) == selectpet) {
 		CHAR_setInt( talker, CHAR_DEFAULTPET, -1);
 		lssproto_KS_send( fd, -1, TRUE);
 	}
-	//   仃  木  卞］矢永玄及奶件犯永弁旦毛戊疋□
+	//   け  れ  に?ペットのインデックスをコピー
 	CHAR_setDepotPetIndex( talker, emptyindex, petindex);
-	// 矢永玄  井日壅允
+	// ペット  から消す
 	CHAR_setCharPet( talker, selectpet, -1);
 	
-	// 丢永本□斥潸  
+	// メッセージ取  
 	NPC_MaxGoldOver( meindex, talker, NPC_PETSHOP_MSG_POOLTHANKS, token);
-	// 云嗯蛹日允
+	// 恭金減らす
 
 	CHAR_DelGold( talker, NPC_GETPOOLCOST( talker) );
 
@@ -1273,7 +1273,7 @@ void NPC_DepotPet_Add( int meindex, int talker, int select, char *token)
 	CHAR_send_P_StatusString(talker,CHAR_P_STRING_GOLD);
 
 	snprintf( szPet, sizeof( szPet ), "K%d", selectpet);
-	// 蕙仄中矢永玄旦  □正旦霜曰勾仃月
+	// 新しいペットス  ータス送りつける
 	CHAR_sendStatusString( talker, szPet );
 	// 矢永玄毛  仃凶夫弘
 	if( NPC_DepotPet_CheckRepeat( talker) == 0)  // 检查编码重复宠

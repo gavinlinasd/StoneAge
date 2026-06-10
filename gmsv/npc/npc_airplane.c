@@ -16,7 +16,7 @@ enum {
 	NPC_WORK_ROUTETOX = CHAR_NPCWORKINT1,		/* 升仇尺＂  甄   */
 	NPC_WORK_ROUTETOY = CHAR_NPCWORKINT2,		/* 升仇尺＂  甄   */
 	NPC_WORK_ROUTEPOINT = CHAR_NPCWORKINT3,		/* 那嶇    小 */
-	NPC_WORK_ROUNDTRIP = CHAR_NPCWORKINT4,		/* 垫五井窖曰井  ㄟ“垫五 ㄠ“窖曰  */
+	NPC_WORK_ROUNDTRIP = CHAR_NPCWORKINT4,		/* 行きか帰りか  ０：行き １：帰り  */
 	NPC_WORK_MODE = CHAR_NPCWORKINT5,
 	NPC_WORK_CURRENTROUTE = CHAR_NPCWORKINT6, 
 	NPC_WORK_ROUTEMAX = CHAR_NPCWORKINT7,
@@ -147,21 +147,21 @@ BOOL NPC_AirInit( int meindex )
 	CHAR_setInt( meindex, CHAR_LOOPINTERVAL, 
 		NPC_AIR_WAITINGMODE_WAITTIME);
     
-    /* 蜇箕及凛棉毛本永玄 */
+    /* 現在の時間をセット */
     CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 
     for( i = 0; i < CHAR_PARTYMAX; i ++) {
     	CHAR_setWorkInt( meindex, CHAR_WORKPARTYINDEX1 + i, -1);
     }
 	
-	/* 伙□玄瑁烂允月 */
+	/* 郊ート決定する */
 {
 	int rev;
 	int r = CHAR_getWorkInt( meindex, NPC_WORK_ROUTEMAX);
 	CHAR_setWorkInt( meindex, NPC_WORK_CURRENTROUTE, RAND( 1, r));
 	//print( "route:%d\n",CHAR_getWorkInt( meindex, NPC_WORK_CURRENTROUTE));
 
-	/*   欠旦正□玄 */
+	/*   ろスタート */
 	rev = NPC_Util_GetNumFromStrWithDelim( argstr, "reverse");
 	if( rev == 1 ) {
 		int num = NPC_AirGetRoutePointNum( meindex, argstr);
@@ -172,7 +172,7 @@ BOOL NPC_AirInit( int meindex )
 		CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, num-1);
 		CHAR_setWorkInt( meindex, NPC_WORK_ROUNDTRIP, 1);
 	}
-	/* 伙□玄毛本永玄允月 */
+	/* 郊ートをセットする */
 	NPC_AirSetPoint( meindex, argstr);
 	/* 垫五燮毛  憎允月 */
 	NPC_AirSetDestPoint( meindex, argstr);
@@ -196,7 +196,7 @@ void NPC_AirTalked( int meindex , int talkerindex , char *szMes ,
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
-    /* 愤坌及由□  奴  昙菸  井升丹井譬屯月 */
+    /* 自分のパー  ィ  乗客  かどうか調べる */
     for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
 	int index = CHAR_getWorkInt( meindex, CHAR_WORKPARTYINDEX1+i);
 	if( CHAR_CHECKINDEX(index)){
@@ -249,10 +249,10 @@ void NPC_AirTalked( int meindex , int talkerindex , char *szMes ,
 		{
 			CHAR_setWorkInt( meindex, NPC_WORK_MODE,2);
 
-			/* 伙□皿楮醒及奶件正□田伙毛聂仁允月  */
+			/* 郊ープ関数のインターバ郊を多くする  */
 			CHAR_setInt( meindex, CHAR_LOOPINTERVAL, 
 						NPC_AIR_WAITINGMODE_WAITTIME);
-		    /* 蜇箕及凛棉毛本永玄 */
+		    /* 現在の時間をセット */
 		    CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 		}
 		else if( strstr( szMes, NPC_AIR_DEBUGROUTINTG )) {
@@ -267,14 +267,14 @@ void NPC_AirTalked( int meindex , int talkerindex , char *szMes ,
 				CHAR_setWorkInt( meindex, NPC_WORK_CURRENTROUTE, a);
 			}
 			//print( "route:%d\n",CHAR_getWorkInt( meindex, NPC_WORK_CURRENTROUTE));
-			/* 伙□玄毛本永玄允月 */
+			/* 郊ートをセットする */
 			NPC_AirSetPoint( meindex, argstr);
 		}
 #endif
 	}
 }
 /**************************************
- * 伙□皿楮醒
+ * 郊ープ関数
  **************************************/
 void NPC_AirLoop( int meindex)
 {
@@ -396,7 +396,7 @@ static void NPC_Air_walk( int meindex)
 			CHAR_getWorkInt( meindex, NPC_WORK_ROUTEPOINT) +add);
 		if( NPC_AirSetPoint( meindex, argstr) == FALSE ) {
 			/*     怨快繞*/
-			/* 谨切乒□玉卞允月 */
+			/* 待ちモードにする */
 			CHAR_setWorkInt( meindex, NPC_WORK_MODE,3);
 			
 			/* SE   日允  穴件乒旦及陲太   */
@@ -416,7 +416,7 @@ static void NPC_Air_walk( int meindex)
 					NPC_AirSendMsg( meindex, partyindex, NPC_AIR_MSG_END);
 				}
 			}
-			/* 蜇箕及凛棉毛本永玄 */
+			/* 現在の時間をセット */
 			CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 			return;
 		}
@@ -427,7 +427,7 @@ static void NPC_Air_walk( int meindex)
 	/*-------------------------------------------------------*/
 	/* 汹井六月质   */
 	
-	/*   轾毛菲户月 */
+	/*   向を求める */
 	dir = NPC_Util_getDirFromTwoPoint( &start,&end );
 
 	/* 漆中月桦赭及谨    由□  奴汹五匹银丹   */
@@ -541,7 +541,7 @@ static int NPC_AirSetPoint( int meindex, char *argstr)
 	return TRUE;
 }
 /**************************************
- * route  寞井日］  蟆互丐匀凶日公木毛
+ * route  号から?  前があったらそれを
  * 惫寞及午仇卞本永玄允月［
  **************************************/
 static void NPC_AirSetDestPoint( int meindex, char *argstr)
@@ -681,8 +681,8 @@ static BOOL NPC_AirCheckMaxLevel( int meindex, int charaindex, char *argstr)
 #endif
 
 /**************************************
- * 豢嗯毛民尼永弁允月
- * -1 蛲   0动晓”    ］井勾  邰Stone
+ * 御金をチェックする
+ * -1 駄   0以上；    ?かつ  要Stone
  **************************************/
 static int NPC_AirCheckStone( int meindex, int charaindex, char *argstr)
 {
@@ -698,8 +698,8 @@ static int NPC_AirCheckStone( int meindex, int charaindex, char *argstr)
 	return -1;
 }
 /**************************************
- * 丢永本□斥毛霜月
- * 娄醒及丢永本□斥互卅仃木壬犯白巧伙玄丢永本□斥毛霜月
+ * メッセージを送る
+ * 引数のメッセージがなければデフォ郊トメッセージを送る
  **************************************/
 static void NPC_AirSendMsg( int meindex, int talkerindex, int tablenum)
 {
@@ -721,7 +721,7 @@ static void NPC_AirSendMsg( int meindex, int talkerindex, int tablenum)
 	CHAR_talkToCli( talkerindex, meindex, msg, CHAR_COLORYELLOW);
 }
 /**************************************
- * 伙□玄  □皮伙及禾奶件玄及醒毛潸  允月
+ * 郊ート  ーブ郊のポイントの数を取  する
  **************************************/
 static int NPC_AirGetRoutePointNum( int meindex, char *argstr )
 {
@@ -820,10 +820,10 @@ BOOL NPC_AirCheckJoinParty( int meindex, int charaindex, BOOL msgflg)
 	}
 	if( ret != 0 ) {
 		char msgbuf[128];
-		/* 豢嗯毛午月 */
+		/* 御金をとる */
 		CHAR_setInt( charaindex, CHAR_GOLD, 
 					CHAR_getInt( charaindex, CHAR_GOLD) - ret);
-		/* 霜耨 */
+		/* 送信 */
 		CHAR_send_P_StatusString( charaindex, CHAR_P_STRING_GOLD);
 		snprintf( msgbuf, sizeof( msgbuf), "支付了%d Stone！", ret);
 		CHAR_talkToCli( charaindex, -1, msgbuf, CHAR_COLORYELLOW);

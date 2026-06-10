@@ -317,7 +317,7 @@ void flushMail( int fd,
         }
     }
 
-    /*   端卞霜耨允月 */
+    /*   際に送信する */
     for(i=0;i< flush_i; i++ ){
         /* flush 及桦宁反｝flush毛霜耨仄化五凶必□丞扔□田□卞
            覆仄化分仃霜耨允木壬中中 */
@@ -347,7 +347,7 @@ expireMail()
     char id_charname[1000];
     time_t now=time(NULL);
     
-    /* 1荚及flush 匹霜耨允月    醒 */
+    /* 1回のflush で送信する    数 */
 #define MAX_FLUSH_MAIL 1024
     int flush_index[MAX_FLUSH_MAIL];
     int flush_i=0;
@@ -362,7 +362,7 @@ expireMail()
         }
     }
 
-    /*   端卞霜耨允月 */
+    /*   際に送信する */
     for(i=0;i< flush_i; i++ ){
         
         snprintf( id_charname, sizeof( id_charname), "%s_%s", 

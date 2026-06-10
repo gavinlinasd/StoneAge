@@ -413,7 +413,7 @@ BOOL storePetmail( void)
 	char	escapebuf1[ 64],escapebuf2[ 64];
 	int		i;
 
-    /*  白央奶伙  毛菲户月  */
+    /*  ファイ郊  を求める  */
     snprintf( filename ,sizeof( filename ) ,"%s/%s" ,
     				getStoredir(), PETMAILOFFMSGFILE);
     fp = fopen( filename , "wt" );

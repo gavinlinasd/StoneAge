@@ -57,9 +57,9 @@ typedef enum
 typedef enum
 {
     NPC_TEMPLATEMAKEATNOBODY,           /* 簿手中卅中凛卞手综月井升丹井 */
-    NPC_TEMPLATEMAKEATNOSEE,            /* 苇尹卅中赭匹综月井升丹井    */
-    NPC_TEMPLATEIMAGENUMBER,            /*   飓  寞    */
-    NPC_TEMPLATETYPE,                   /*     瑁户月凛卞瑁户月        */
+    NPC_TEMPLATEMAKEATNOSEE,            /* 見えない所で作るかどうか    */
+    NPC_TEMPLATEIMAGENUMBER,            /*   像  号    */
+    NPC_TEMPLATETYPE,                   /*     決める時に決める        */
 
     NPC_TEMPLATEMINHP,                  /* HP   */
 
@@ -69,13 +69,13 @@ typedef enum
 
     NPC_TEMPLATEMINTOUGH,               /* TOUGH    */
 
-    NPC_TEMPLATEISFLYING,               /*  氏匹月井升丹井  */
+    NPC_TEMPLATEISFLYING,               /*  んでるかどうか  */
 
     NPC_TEMPLATEITEMNUM,                /*   切丹月失奶  丞及    醒    */
 
     NPC_TEMPLATELOOPFUNCTIME,           /*
-                                         * 窒立伉  仍午卞伙□皿楮醒
-                                         * 毛裟少井
+                                         * 何ミリ  ごとに郊ープ関数
+                                         * を呼ぶか
                                          */
     NPC_TEMPLATEFUNCTIONINDEX,         /*
                                         * fucntionSet 及窒    及

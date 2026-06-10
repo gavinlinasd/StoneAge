@@ -31,7 +31,7 @@ BOOL NPC_OldmanInit( int meindex )
     getStringFromIndexWithDelim( npcarg,"|",4,token,sizeof(token));
     borny = atoi( token );
 
-    /* 赢  反ID毛创尹化云仁瓜伉 */
+    /* 長  はIDを覚えて恭くナリ */
     CHAR_setWorkInt( meindex , CHAR_WORKOLDMANID ,oldmanid );
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEHEALER );
     CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );
@@ -42,7 +42,7 @@ BOOL NPC_OldmanInit( int meindex )
         &&
         CHAR_ElderSetPosition( oldmanid ,bornfl,bornx, borny ) 
         == TRUE ){
-        /* 赢  及匏  毛赓渝祭允月卅曰 */
+        /* 長  の位  を初期化するなり */
         return TRUE;
     }else{
         printf( "Invalid elder npcarg=%s\n", npcarg );

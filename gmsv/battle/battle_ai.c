@@ -8,7 +8,7 @@
 #include "pet_skill.h"
 
 struct B_AI_RESULT {
-	BATTLE_COM	command;		/* 窒毛允月井 */
+	BATTLE_COM	command;		/* 何をするか */
 	int			target;			/* 移勗 */
 };
 
@@ -137,13 +137,13 @@ int BATTLE_ai_one( int charaindex, int battleindex, int side, int turn)
 	return TRUE;
 }
 
-/*   骚卞锹澎毛瑁户月 */
+/*   通に相手を決める */
 
-#define B_AI_NORMAL_ATTACKOPTION	"at"	/*   猾左皿扑亦件 */
-#define B_AI_NORMAL_GUARDOPTION		"gu"	/*   豢左皿扑亦件 */
-#define B_AI_NORMAL_MAGICOPTION		"ma"	/* 热诸左皿扑亦件 */
+#define B_AI_NORMAL_ATTACKOPTION	"at"	/*   撃オプ竺ョン */
+#define B_AI_NORMAL_GUARDOPTION		"gu"	/*   御オプ竺ョン */
+#define B_AI_NORMAL_MAGICOPTION		"ma"	/* 呪術オプ竺ョン */
 #define B_AI_NORMAL_ESCAPEOPTION	"es"	/*   仆月左皿扑亦件 */
-#define B_AI_NORMAL_WAZAOPTION		"wa"	/*   左皿扑亦件 */
+#define B_AI_NORMAL_WAZAOPTION		"wa"	/*   オプ竺ョン */
 #ifdef _ENEMY_ATTACK_AI
 #define B_AI_NORMAL_RANDAOPTION		"rn"
 #define B_AI_NORMAL_RANDOMOPTIONNUM         1
@@ -155,7 +155,7 @@ int BATTLE_ai_one( int charaindex, int battleindex, int side, int turn)
 #define	B_AI_NORMAL_ESCAPESUBOPTIONNUM		1
 #define	B_AI_NORMAL_WAZASUBOPTIONNUM		7
 
-/* 左皿扑亦件娄醒及  侬及烂聒 */
+/* オプ竺ョン引数の  字の定義 */
 #define	B_AI_NORMAL_TARGET_ALL			1
 #define	B_AI_NORMAL_TARGET_PLAYER		2
 #define	B_AI_NORMAL_TARGET_PET			3
@@ -203,11 +203,11 @@ static int BATTLE_ai_normal( int turn, int charaindex,
 							BATTLE_ENTRY *pEntry,
 							struct B_AI_RESULT *result)
 {
-	int		at[B_AI_NORMAL_ATTACKSUBOPTIONNUM] = { 0,0,0}; 		/*   猾左皿扑亦件 */
-	int		gu[B_AI_NORMAL_GUARDSUBOPTIONNUM] = {0}; 		/* 左皿扑亦件 */
-	int		ma[B_AI_NORMAL_MAGICSUBOPTIONNUM] = {0}; 		/* 左皿扑亦件 */
-	int		es[B_AI_NORMAL_ESCAPESUBOPTIONNUM] = {0}; 			/* 左皿扑亦件 */
-	int		wa[B_AI_NORMAL_WAZASUBOPTIONNUM] = {0,0,0,0, 0,0,0};/* 左皿扑亦件 */
+	int		at[B_AI_NORMAL_ATTACKSUBOPTIONNUM] = { 0,0,0}; 		/*   撃オプ竺ョン */
+	int		gu[B_AI_NORMAL_GUARDSUBOPTIONNUM] = {0}; 		/* オプ竺ョン */
+	int		ma[B_AI_NORMAL_MAGICSUBOPTIONNUM] = {0}; 		/* オプ竺ョン */
+	int		es[B_AI_NORMAL_ESCAPESUBOPTIONNUM] = {0}; 			/* オプ竺ョン */
+	int		wa[B_AI_NORMAL_WAZASUBOPTIONNUM] = {0,0,0,0, 0,0,0};/* オプ竺ョン */
 #ifdef _ENEMY_ATTACK_AI
     int		rn[B_AI_NORMAL_RANDOMOPTIONNUM] = {1};
 #endif

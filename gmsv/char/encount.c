@@ -28,7 +28,7 @@ typedef struct tagENCOUNT_Table
     int                 floor;
     int                 encountprob_min;                /* 巨件市它件玄割   */
     int                 encountprob_max;                /* 巨件市它件玄割   */
-    int                 enemymaxnum;        /* 升木分仃衬毛综月井 */
+    int                 enemymaxnum;        /* どれだけ敵を作るか */
     int                 zorder;
     int                 groupid[ENCOUNT_GROUPMAXNUM];       /* 精鳴↓鏤No */
     int                 createprob[ENCOUNT_GROUPMAXNUM];    /* 公及弘伙□皿及请蜇   */
@@ -48,9 +48,9 @@ static INLINE BOOL ENCOUNT_CHECKENCOUNTTABLEARRAY( int array)
 
 /*------------------------------------------------------------
  * 巨件市它件玄涩烂及赓渝祭毛允月［
- * 娄醒
+ * 引数
  *  filename        char*       必醒易刹通誌  
- * 忒曰袄
+ * 返り値
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  *------------------------------------------------------------*/
@@ -69,7 +69,7 @@ BOOL ENCOUNT_initEncount( char* filename )
 
     ENCOUNT_encountnum=0;
 
-    /*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+    /*  まず  効な行が何行あるかどうか調べる    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
@@ -94,7 +94,7 @@ BOOL ENCOUNT_initEncount( char* filename )
         return FALSE;
     }
 
-    /* 赓渝祭 */
+    /* 初期化 */
 {
     int     i,j;
     for( i = 0; i < ENCOUNT_encountnum; i ++ ) {
@@ -128,10 +128,10 @@ BOOL ENCOUNT_initEncount( char* filename )
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  垫毛帮溥允月    */
+        /*  行を整形する    */
         /*  引内 tab 毛 " " 卞  五晶尹月    */
         replaceString( line, '\t' , ' ' );
-        /* 燮  及旦矢□旦毛潸月［*/
+        /* 先  のスペースを取る?*/
 {
         int     i;
         char    buf[256];
@@ -255,7 +255,7 @@ BOOL ENCOUNT_initEncount( char* filename )
 		int		a,b;
 		a = ENCOUNT_table[encount_readlen].encountprob_min;
 		b = ENCOUNT_table[encount_readlen].encountprob_max;
-		/*   凝及譬帮 */
+		/*   小の調整 */
         ENCOUNT_table[encount_readlen].encountprob_min 
         	= min( a,b);
         ENCOUNT_table[encount_readlen].encountprob_max 
@@ -310,7 +310,7 @@ BOOL ENCOUNT_initEncount( char* filename )
                 }
             }
 
-            /* 褐  民尼永弁 */
+            /* 重  チェック */
             if( checkRedundancy( ENCOUNT_table[encount_readlen].groupid, 
             			arraysizeof( ENCOUNT_table[encount_readlen].groupid)))
             {
@@ -387,13 +387,13 @@ BOOL ENCOUNT_reinitEncount( void )
 /*------------------------------------------------------------
  * 隙烂今木凶甄  及ENCOUNT_table及骄侬毛譬屯月［
  * zorder及醒侬毛苇化穸燮赐匏及嫖中  毛潸  允月［
- * 娄醒
+ * 引数
  *  floor       int     白夫失ID
  *  x           int     x甄  
  *  y           int     y甄  
- * 忒曰袄
- *  恳橘      骄侬
- *  潸  撩    -1
+ * 返り値
+ *  正常      添字
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getEncountAreaArray( int floor, int x, int y)
 {
@@ -405,7 +405,7 @@ int ENCOUNT_getEncountAreaArray( int floor, int x, int y)
                 int curZorder = ENCOUNT_getZorderFromArray(i);
                 if( curZorder >0) {
                     if( index != -1 ) {
-                        /* 穸燮赐匏毛譬屯月 */
+                        /* 優先順位を調べる */
                         /*   五中  穸燮 */
                         if(  curZorder > ENCOUNT_getZorderFromArray(index)) {
                             index = i;
@@ -423,13 +423,13 @@ int ENCOUNT_getEncountAreaArray( int floor, int x, int y)
 
 /*------------------------------------------------------------
  * 隙烂今木凶甄  及巨件市它件玄割  毛譬屯月［
- * 娄醒
+ * 引数
  *  floor       int     白夫失ID
  *  x           int     x甄  
  *  y           int     y甄  
- * 忒曰袄
+ * 返り値
  *  恳橘      ㄟ动晓及割  
- *  潸  撩    -1
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getEncountPercentMin( int charaindex, int floor , int x, int y )
 {
@@ -451,13 +451,13 @@ int ENCOUNT_getEncountPercentMin( int charaindex, int floor , int x, int y )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶甄  及巨件市它件玄割  毛譬屯月［
- * 娄醒
+ * 引数
  *  floor       int     白夫失ID
  *  x           int     x甄  
  *  y           int     y甄  
- * 忒曰袄
+ * 返り値
  *  恳橘      ㄟ动晓及割  
- *  潸  撩    -1
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getEncountPercentMax( int charaindex, int floor , int x, int y )
 {
@@ -479,13 +479,13 @@ int ENCOUNT_getEncountPercentMax( int charaindex, int floor , int x, int y )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶甄  及衬戏岳MAX醒毛譬屯月［
- * 娄醒
+ * 引数
  *  floor       int     白夫失ID
  *  x           int     x甄  
  *  y           int     y甄  
- * 忒曰袄
+ * 返り値
  *  恳橘      ㄟ动晓及割  
- *  潸  撩    -1
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getCreateEnemyMaxNum( int floor , int x, int y )
 {
@@ -499,13 +499,13 @@ int ENCOUNT_getCreateEnemyMaxNum( int floor , int x, int y )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶甄  及巨件市它件玄白奴□伙玉及index毛譬屯月［
- * 娄醒
+ * 引数
  *  floor       int     白夫失ID
  *  x           int     x甄  
  *  y           int     y甄  
- * 忒曰袄
- *  恳橘      ㄟ动晓
- *  潸  撩    -1
+ * 返り値
+ *  正常      ０以上
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getEncountIndex( int floor , int x, int y )
 {
@@ -519,11 +519,11 @@ int ENCOUNT_getEncountIndex( int floor , int x, int y )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶甄  及巨件市它件玄白奴□伙玉及index毛譬屯月［
- * 娄醒
+ * 引数
  *  array           int     ENCOUNTTABLE及骄侬
- * 忒曰袄
- *  恳橘      ㄟ动晓
- *  潸  撩    -1
+ * 返り値
+ *  正常      ０以上
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getEncountIndexFromArray( int array )
 {
@@ -532,11 +532,11 @@ int ENCOUNT_getEncountIndexFromArray( int array )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶甄  及巨件市它件玄割  毛譬屯月［
- * 娄醒
+ * 引数
  *  array           int     ENCOUNTTABLE及骄侬
- * 忒曰袄
- *  恳橘      ㄟ动晓
- *  潸  撩    -1
+ * 返り値
+ *  正常      ０以上
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getEncountPercentFromArray( int array )
 {
@@ -545,11 +545,11 @@ int ENCOUNT_getEncountPercentFromArray( int array )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶甄  及衬戏岳MAX醒毛譬屯月［
- * 娄醒
+ * 引数
  *  array           int     ENCOUNTTABLE及骄侬
- * 忒曰袄
- *  恳橘      ㄟ动晓
- *  潸  撩    -1
+ * 返り値
+ *  正常      ０以上
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getCreateEnemyMaxNumFromArray( int array )
 {
@@ -558,11 +558,11 @@ int ENCOUNT_getCreateEnemyMaxNumFromArray( int array )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶骄侬及弘伙□皿  寞毛譬屯月［
- * 娄醒
+ * 引数
  *  array           int     ENCOUNTTABLE及骄侬
- * 忒曰袄
- *  恳橘      ㄟ动晓
- *  潸  撩    -1
+ * 返り値
+ *  正常      ０以上
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getGroupIdFromArray( int array, int grouparray )
 {
@@ -571,11 +571,11 @@ int ENCOUNT_getGroupIdFromArray( int array, int grouparray )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶骄侬及弘伙□皿及请蜇  毛譬屯月［
- * 娄醒
+ * 引数
  *  array           int     ENCOUNTTABLE及骄侬
- * 忒曰袄
- *  恳橘      ㄟ动晓
- *  潸  撩    -1
+ * 返り値
+ *  正常      ０以上
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getGroupProbFromArray( int array, int grouparray )
 {
@@ -584,11 +584,11 @@ int ENCOUNT_getGroupProbFromArray( int array, int grouparray )
 }
 /*------------------------------------------------------------
  * 隙烂今木凶骄侬及穸燮赐匏毛譬屯月［
- * 娄醒
+ * 引数
  *  array           int     ENCOUNTTABLE及骄侬
- * 忒曰袄
- *  恳橘      ㄟ动晓
- *  潸  撩    -1
+ * 返り値
+ *  正常      ０以上
+ *  取  失    -1
  ------------------------------------------------------------*/
 int ENCOUNT_getZorderFromArray( int array )
 {

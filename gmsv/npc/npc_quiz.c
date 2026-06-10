@@ -182,7 +182,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 			}
 		
 		}else if(NPC_PlayerCheck( meindex, talker) == FALSE) {
-			/*--谛醒左□田□---*/
+			/*--人数オーバー---*/
 			sprintf(token,"\n\n\n        请,稍等一下"
 						      "\n｛｛ ㄠ蘸卞公氏卅卞锹澎匹五卅中井日"
 			);
@@ -215,7 +215,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 			print("GetArgstrErr:Quiz %s",CHAR_getChar( meindex, CHAR_NAME));
 		}
 
-		/*-- 旦正□玄丢永本□斥 --*/
+		/*-- スタートメッセージ --*/
 		if(NPC_Util_GetStrFromStrWithDelim( argstr,"ItemFullMsg",
 									token, sizeof( token)) == NULL)
 		{
@@ -247,12 +247,12 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 
 			
 			
-			/*--荸蚕樊  寞毛  月--*/
+			/*--解答者  号を  る--*/
 			p_no = CHAR_getWorkInt( talker, CHAR_WORKSHOPRELEVANT);
 			point = CHAR_getWorkInt( meindex, CHAR_WORK_PLAYER1 + p_no);
 			pl_ptr = (int *)point;
 			
-			/*-- 丢乒伉及    毛厌瞻  卞戊疋□ --*/
+			/*-- メモリの    を構造  にコピー --*/
 			memcpy(&PLAYER, pl_ptr, sizeof(struct pl));
 			
 			/*--蝈化及  锁互蔽歹匀凶及匹瑛绊毛  屡--*/
@@ -325,7 +325,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 
 
 				
-				/*-- 失矛伊□斥(  剽)毛菲户月 -*/
+				/*-- アベレージ(  均)を求める -*/
 				avg = (double)PLAYER.answer /
 					CHAR_getWorkInt( meindex, CHAR_WORK_QUIZNUM) * 100;
 #if 0
@@ -340,7 +340,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 				);
 #endif				
 				
-				/*--皿伊奶乩□及伐□弁    毛赓渝祭 -*/
+				/*--プレイヤーのワーク    を初期化 -*/
 				CHAR_setWorkInt( meindex, CHAR_WORK_PLAYER1 + 
 							CHAR_getWorkInt( talker, CHAR_WORKSHOPRELEVANT) ,-1);
 	
@@ -373,7 +373,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 			/*--  锁醒及民尼永弁 tbl[0]卞反椭瘀毛  凶仄凶  锁醒互反中匀化中月 --*/
 			if( CHAR_getWorkInt( meindex, CHAR_WORK_QUIZNUM) > ( tbl[0] - 1))
 			{
-				/*--  锁互箫曰卅中--*/
+				/*--  題が足りない--*/
 				/*--隍さ惉    楣  --*/
 				free(PLAYER.ptr);
 				return ;
@@ -386,7 +386,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 				if(i == 0) continue;
 				questionno = tbl[i];
 		
-				/*--褐  民尼永弁--*/
+				/*--重  チェック--*/
 				for( k = 0 ; k < OLDNO ; k++){
 					if(PLAYER.oldno[k] == questionno) {
 						loop = 0;
@@ -395,7 +395,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 				}
 				if(k == OLDNO) break;
 				
-				/*--  蜃伙□皿  鞅--*/
+				/*--  限郊ープ  止--*/
 				if(loop == 5000) {
 					print("问题不足i全部重覆了j");
 				 	break;
@@ -407,7 +407,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 
 			PLAYER.quizno++;
 			
-			/*-- 漆引匹及  锁  寞毛筏盛仄化云仁--*/
+			/*-- 今までの  題  号を記憶して恭く--*/
 			PLAYER.oldno[p_old] = questionno;
 			p_old++;
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, p_old);
@@ -422,7 +422,7 @@ static void NPC_Quiz_selectWindow( int meindex, int talker, int num)
 				len = 5;
 			}	
 
-			/*--签贿穴永民--*/
+			/*--賭語マッチ--*/
 			if( Quiz[questionno].answertype == 4) {
 				
 				if(strlen( buf) < 40) {
@@ -698,7 +698,7 @@ BOOL NPC_QuizAddItem(int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
-    		ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+    		ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
 #endif
 			"QuizAddItem(猜谜->领到的道具)",
 			CHAR_getInt( talker, CHAR_FLOOR),
@@ -846,7 +846,7 @@ int  NPC_QuizRandAnswer(int p_no,int q_no, int mode,
 }
 
 
-/*--皿伊奶乩□及民尼永弁      ㄧ谛引匹  --*/
+/*--プレイヤーのチェック      ８人まで  --*/
 BOOL NPC_PlayerCheck(int meindex,int talker)
 	{
 	int i;
@@ -874,11 +874,11 @@ BOOL NPC_PlayerCheck(int meindex,int talker)
     	return FALSE;
 	}
 
-    /*-- 禾奶件正及桦赭毛创尹化云仁??-*/
+    /*-- ポインタの場所を覚えて恭く??-*/
     Player.ptr = ptr;
     Player.talkerindex = talker;	//npc及奶件犯永弁旦???
 	Player.quizno = 0;		//鰒時式  迄佰
-	Player.answer = 0;		//恳荸醒
+	Player.answer = 0;		//正解数
 	Player.ansno = 0;		//蚕尹及  寞毛创尹化云仁  蚕尹毛田仿田仿卞请仄凶端卞银迕)
 
 	/*--请锁碧心  锁    及赓渝祭--*/
@@ -895,7 +895,7 @@ BOOL NPC_PlayerCheck(int meindex,int talker)
 	CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTTRD,0);
 
 
-	/*--愤坌及荸蚕樊  寞毛创尹化云仁--*/
+	/*--自分の解答者  号を覚えて恭く--*/
 	CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANT, i);
 
 	k= (int)ptr;
@@ -926,7 +926,7 @@ int NPC_RealyCheack(int meindex,int talker)
 		okflg = FALSE;
 		if(point == -1) continue;
 
-		/*--荸蚕樊  寞毛  月--*/
+		/*--解答者  号を  る--*/
 		pl_ptr = (int *)point;
 			
 		memcpy(&PLAYER, pl_ptr, sizeof(struct pl));
@@ -1175,7 +1175,7 @@ BOOL NPC_QuizItemFullCheck(int meindex,int talker)
 	char buf2[32];
 	
 		
-	/*--民尼永弁   癫卞蝈    月井＂-*/
+	/*--チェック   当に全    るか?-*/
 	for( i = CHAR_STARTITEMARRAY ; i < CHAR_MAXITEMHAVE ; i++ ) {
 		itemindex = CHAR_getItemIndex( talker , i );
 		if( !ITEM_CHECKINDEX( itemindex) ) {
@@ -1253,7 +1253,7 @@ BOOL NPC_EntryStoneDel(int talker,char *buf)
 
 
 /*
- *失奶  丞毛绰轮允月
+ *アイ  ムを削除する
  */
 BOOL NPC_EntryItemDel(int talker,char *buf)
 {
@@ -1287,7 +1287,7 @@ BOOL NPC_EntryItemDel(int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
 #endif
 							"QuizDelItem(猜谜->交出的道具)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -1318,7 +1318,7 @@ BOOL NPC_EntryItemDel(int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
 #endif
 							"QuizDelItem(猜谜->领到的道具)",
 							CHAR_getInt( talker,CHAR_FLOOR),
@@ -1411,7 +1411,7 @@ BOOL NPC_EntryItemCheck(int talker,char *buf)
 }
 
 /*
- * 由□  奴井升丹井及民尼永弁 
+ * パー  ィかどうかのチェック 
  */
 BOOL NPC_QUIZPARTY_CHAECK(int meindex,int talker)
 {

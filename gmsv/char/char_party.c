@@ -19,12 +19,12 @@
 extern struct FM_PKFLOOR fmpkflnum[FAMILY_FMPKFLOOR];
 
 /*------------------------------------------------------------
- * 由□  奴楮  及末□旦
+ * パー  ィ関  のソース
  ------------------------------------------------------------*/
 
 /*------------------------------------------------------------
  * 坞中化中月由□  奴  毛茧允
- * 卅仃木壬-1毛忒允［
+ * なければ-1を返す?
  ------------------------------------------------------------*/
 int CHAR_getEmptyPartyArray( int charaindex)
 {
@@ -50,7 +50,7 @@ int CHAR_getEmptyPartyArray( int charaindex)
 /*------------------------------------------------------------
  *   端卞由□  奴卞  月质  
  *
- *  charaindex		int		愤坌
+ *  charaindex		int		自分
  *  targetindex		int		  月锹澎及谛
  ------------------------------------------------------------*/
 void CHAR_JoinParty_Main( int charaindex, int targetindex)
@@ -85,7 +85,7 @@ void CHAR_JoinParty_Main( int charaindex, int targetindex)
 	if( CHAR_getWorkInt( toindex, CHAR_WORKPARTYMODE) == CHAR_PARTY_NONE ) {
 		CHAR_sendLeader( CHAR_getWorkInt( toindex, CHAR_WORKOBJINDEX), 1);
 		/* 锹澎及橇谪及踏五晶尹 */
-		/* 褪卞卅月 */
+		/* 親になる */
 		CHAR_setWorkInt( toindex, CHAR_WORKPARTYMODE, 1);
 		CHAR_setWorkInt( toindex, CHAR_WORKPARTYINDEX1, toindex);
 		firstflg = TRUE;
@@ -129,7 +129,7 @@ void CHAR_JoinParty_Main( int charaindex, int targetindex)
 	}
 }
 /*------------------------------------------------------------
- * 由□  奴卞  欠丹午允月［
+ * パー  ィに  ろうとする?
  ------------------------------------------------------------*/
 BOOL CHAR_JoinParty( int charaindex )
 {
@@ -148,7 +148,7 @@ BOOL CHAR_JoinParty( int charaindex )
 		return FALSE;
 	}
 
-        /* 愤坌互由□  奴赚氏匹凶日蛲   */
+        /* 自分がパー  ィ組んでたら駄   */
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE ) {
 		lssproto_PR_send( fd, 1, FALSE);
 		return FALSE;
@@ -160,7 +160,7 @@ BOOL CHAR_JoinParty( int charaindex )
 							 CHAR_getInt( charaindex , CHAR_Y ) ,
 							 1 , &x , &y );
 
-	/* 赓渝祭允月 */
+	/* 初期化する */
 	for( i = 0; i < CONNECT_WINDOWBUFSIZE; i ++ ) {
         CONNECT_setJoinpartycharaindex(fd,i,-1);
     }
@@ -196,7 +196,7 @@ BOOL CHAR_JoinParty( int charaindex )
 		/* 駐卅通慇＆式掃 */
 		if( CHAR_getInt( toindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ){
 			found = TRUE;
-			/* 锹澎互阂分匀凶日褪毛娄匀舰曰请允 */
+			/* 相手が子だったら親を引っ張り出す */
 			if( CHAR_getWorkInt( toindex, CHAR_WORKPARTYMODE) == CHAR_PARTY_CLIENT ) {
 				targetindex = CHAR_getWorkInt( toindex, CHAR_WORKPARTYINDEX1);
 				if( !CHAR_CHECKINDEX( targetindex) ) {
@@ -220,7 +220,7 @@ BOOL CHAR_JoinParty( int charaindex )
 			if( CHAR_getWorkInt( targetindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ){
 				continue;
 			}
-			/* 醮棉袱第乒□玉井 */
+			/* 仲間許可モードか */
 			if( !CHAR_getFlg( targetindex, CHAR_ISPARTY) ) continue;
 
 #ifdef _ANGEL_SUMMON
@@ -582,7 +582,7 @@ BOOL CHAR_DischargePartyNoMsg( int charaindex)
 
 
 /*------------------------------------------------------------
- * 愤坌互伉□母□井升丹井毛霜耨允月［
+ * 自分がリーダーかどうかを送信する?
  ------------------------------------------------------------*/
 void CHAR_sendLeader( int objindex, int leader)
 {
@@ -591,19 +591,19 @@ void CHAR_sendLeader( int objindex, int leader)
 	CHAR_sendWatchEvent( objindex,CHAR_ACTLEADER,opt,1,TRUE);
 }
 /*------------------------------------------------------------
- * 醮棉毛赐    CHAR_WORKPARTYINDEX)隙烂匹平乓仿index毛娄匀舰月［
- * 愤坌互褪匹手阂匹手    ［
+ * 仲間を順    CHAR_WORKPARTYINDEX)指定でキャラindexを引っ張る?
+ * 自分が親でも子でも    ?
  ------------------------------------------------------------*/
 int CHAR_getPartyIndex( int index, int num)
 {
 	int	nindex = -1;
 
-	/* 醮棉及奶件犯永弁旦毛潸   */
-	/* 褪及桦宁 */
+	/* 仲間のインデックスを取   */
+	/* 親の場合 */
 	if( CHAR_getWorkInt( index, CHAR_WORKPARTYMODE) == CHAR_PARTY_LEADER ) {
 		nindex = CHAR_getWorkInt( index, CHAR_WORKPARTYINDEX1 + num );
 	}
-	/* 阂及桦宁 */
+	/* 子の場合 */
 	else {
 		int oyaindex = CHAR_getWorkInt( index, CHAR_WORKPARTYINDEX1);
 		if( CHAR_CHECKINDEX( oyaindex)) {
@@ -613,8 +613,8 @@ int CHAR_getPartyIndex( int index, int num)
 	return nindex;
 }
 /*------------------------------------------------------------
- * 丢永本□斥毛霜耨允月［
- * 醮棉互中木壬公及醮棉卞手丢永本□斥毛霜耨允月［
+ * メッセージを送信する?
+ * 仲間がいればその仲間にもメッセージを送信する?
  ------------------------------------------------------------*/
 void CHAR_talkToCliAndParty( int talkedcharaindex,int talkcharaindex,
 					 char* message, CHAR_COLOR color )

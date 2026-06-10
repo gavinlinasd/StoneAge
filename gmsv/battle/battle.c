@@ -1988,10 +1988,10 @@ BOOL BATTLE_WatchTry( int charaindex )
         /* 平乓仿弁正□元扎卅中 */
         if( OBJECT_getType( objindex) != OBJTYPE_CHARA) continue;
         toindex = OBJECT_getIndex( objindex);
-        /* 皿伊奶乩□元扎卅中 */
+        /* プレイヤーじゃない */
         if( CHAR_getInt( toindex, CHAR_WHICHTYPE) != CHAR_TYPEPLAYER ) continue;
         pfound = TRUE;
-        /* 爵    匹卅中卅日戚尺 */
+        /* 戦    でないなら鵜へ */
         if( CHAR_getWorkInt( toindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_NONE ){
 			continue;
 		}
@@ -2024,7 +2024,7 @@ BOOL BATTLE_WatchTry( int charaindex )
 		char	escapebuf[2048];
 		strcpy( msgbuf, "1\n观看谁的战斗呢？\n");
 		strlength = strlen( msgbuf);
-		/* 它奴件玉它及丢永本□斥综岳［
+		/* ウィンドウのメッセージ作成?
 		 * 爵    及平乓仿及域  
 		 */
 		for( i = 0;
@@ -2079,7 +2079,7 @@ int *Doujyou_GetEnemy( int meindex, int charaindex )
 
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 
-	/* 赓渝祭 */
+	/* 初期化 */
 	for( i = 0; i < arraysizeof(WorkEnemyTbl); i ++ ) {
 		WorkEnemyTbl[i] = -1;
 	}
@@ -2589,7 +2589,7 @@ BATTLE_CreateVsPlayer_End:;
 
 //*********************************************************
 //
-// 棋爵迕田玄伙正旦弁毛馨笛［玄永皿及戚卞涩烂允月
+// 観戦用バト郊タスクを追加?トップの鵜に設定する
 //
 int BATTLE_WatchLink( int topbattleindex, int battleindex )
 //
@@ -2615,7 +2615,7 @@ int BATTLE_WatchLink( int topbattleindex, int battleindex )
 	}
 
 
-	pWork = pTop->pNext;	// 田永弁失永皿
+	pWork = pTop->pNext;	// バックアップ
 
 	if( pWork ){
 		if( BATTLE_CHECKADDRESS( pWork ) == FALSE ){
@@ -2624,11 +2624,11 @@ int BATTLE_WatchLink( int topbattleindex, int battleindex )
 		}
 	}
 
-	// 愤坌毛蟆及戚卞允月
+	// 自分を前の鵜にする
 	pTop->pNext = &BattleArray[battleindex];
-	// 愤坌及蟆田玄伙毛涩烂
+	// 自分の前バト郊を設定
 	BattleArray[battleindex].pBefore = pTop;
-	// 愤坌及戚田玄伙毛涩烂
+	// 自分の鵜バト郊を設定
 	BattleArray[battleindex].pNext = pWork;
 	// 戚及蟆反愤坌
 	if( pWork ){
@@ -2639,7 +2639,7 @@ int BATTLE_WatchLink( int topbattleindex, int battleindex )
 
 //*********************************************************
 //
-// 棋爵迕田玄伙正旦弁毛夫午勾  仁
+// 観戦用バト郊タスクをひとつ  く
 //
 int BATTLE_WatchUnLink( int battleindex )
 //
@@ -2653,14 +2653,14 @@ int BATTLE_WatchUnLink( int battleindex )
 		return FALSE;
 	}
 
-	// 愤坌毛蟆及田玄伙
+	// 自分を前のバト郊
 	pTop = BattleArray[battleindex].pBefore;
 
 	if( pTop ){
 		if( BATTLE_CHECKADDRESS( pTop ) == FALSE ){
 			fprint( "err:battle address も墅(%p)\n", pTop );
 		}else{
-			// 勾卅亢卅云仄
+			// つなぎな恭し
 			pTop->pNext = BattleArray[battleindex].pNext;
 		}
 	}
@@ -2671,9 +2671,9 @@ int BATTLE_WatchUnLink( int battleindex )
 			BattleArray[battleindex].pNext->pBefore = pTop;
 		}
 	}
-	// 愤坌及蟆田玄伙毛涩烂
+	// 自分の前バト郊を設定
 	BattleArray[battleindex].pBefore = NULL;
-	// 愤坌及戚田玄伙反  仄
+	// 自分の鵜バト郊は  し
 	BattleArray[battleindex].pNext = NULL;
 
 	return TRUE;
@@ -2683,7 +2683,7 @@ int BATTLE_WatchUnLink( int battleindex )
 
 //*********************************************************
 //
-// 棋爵迕卞田玄伙正旦弁毛综岳允月
+// 観戦用にバト郊タスクを作成する
 //
 int BATTLE_CreateForWatcher( int charaindex, int topbattleindex )
 //
@@ -2707,7 +2707,7 @@ int BATTLE_CreateForWatcher( int charaindex, int topbattleindex )
 		return BATTLE_ERR_ALREADYBATTLE;
 	}
 
-	// 爵  正旦弁毛综岳允月
+	// 戦  タスクを作成する
 	battleindex = BATTLE_CreateBattle(  );
 	if( battleindex < 0 )return BATTLE_ERR_NOTASK;// 正旦弁  苇匹五卅井匀凶巨仿□
 
@@ -2715,12 +2715,12 @@ int BATTLE_CreateForWatcher( int charaindex, int topbattleindex )
 	BattleArray[battleindex].Side[0].type = BATTLE_S_TYPE_PLAYER;
 	// 轾仇丹础及讽采手皿伊奶乩□讽采匹丐月午烂聒允月［
 	BattleArray[battleindex].Side[1].type = BATTLE_S_TYPE_PLAYER;
-	// 伉□母□毛忡绣
+	// リーダーを保存
 	BattleArray[battleindex].leaderindex = charaindex;
 	// 爵  及正奶皿
 	BattleArray[battleindex].type = BATTLE_TYPE_WATCH;
 	BattleArray[battleindex].mode = BATTLE_MODE_WATCHBC;
-	// 田玄伙白奴□伙玉  寞
+	// バト郊フィー郊ド  号
 	field_no = BattleArray[battleindex].field_no = BattleArray[topbattleindex].field_no;
 	BattleArray[battleindex].turn = BattleArray[topbattleindex].turn;
 
@@ -2732,7 +2732,7 @@ int BATTLE_CreateForWatcher( int charaindex, int topbattleindex )
 		goto BATTLE_CreateForWatcher_End;
 	}
 
-	// 由□  奴仍午巨件玄伉□
+	// パー  ィごとエントリー
 	iRet = BATTLE_WatchPartyNewEntry( charaindex, battleindex, 0 );
 	if( iRet ){
 		// 巨仿□质  匹及 GOTO
@@ -2743,7 +2743,7 @@ int BATTLE_CreateForWatcher( int charaindex, int topbattleindex )
 // 巨仿□及桦宁反允什卞戊戊卞  月
 BATTLE_CreateForWatcher_End:;
 
-	if( iRet ){	// 巨仿□互丐匀凶日正旦弁  滋
+	if( iRet ){	// エラーがあったらタスク  棄
 		// 蝈够  仃月
 		BATTLE_ExitAll( battleindex );
 		//｛爵  正旦弁绰轮
@@ -2762,7 +2762,7 @@ BATTLE_CreateForWatcher_End:;
 					NULL, 0, FALSE);
 			CHAR_setWorkInt( charaindex, CHAR_WORKACTION, -1);
 		}
-		/* 爵  失奶戊件  憎CA霜耨 */
+		/* 戦  アイコン  示CA送信 */
 		CHAR_sendBattleWatch( CHAR_getWorkInt( charaindex, CHAR_WORKOBJINDEX ), ON);
 
 		// 醮棉卞手项尹月
@@ -2785,7 +2785,7 @@ BATTLE_CreateForWatcher_End:;
 						NULL, 0, FALSE);
 				CHAR_setWorkInt( pindex, CHAR_WORKACTION, -1);
 			}
-			/* 爵  失奶戊件  憎CA霜耨 */
+			/* 戦  アイコン  示CA送信 */
 			CHAR_sendBattleWatch( CHAR_getWorkInt( charaindex, CHAR_WORKOBJINDEX ), ON);
 		}
 /*
@@ -2804,7 +2804,7 @@ BATTLE_CreateForWatcher_End:;
 
 
 /*------------------------------------------------------------
- * 爵  毛  蝇允月
+ * 戦  を  断する
  ------------------------------------------------------------*/
 void BATTLE_WatchStop( int charaindex )
 {
@@ -2867,7 +2867,7 @@ void BATTLE_TurnParam(
 	modparam *= 0.8;
 	CHAR_setWorkInt( charaindex, mod, modparam );
 
-	//         卞笛尹月
+	//         に加える
 	if( last != -1 ){
 		CHAR_setWorkInt(
 			charaindex,
@@ -2970,7 +2970,7 @@ void BATTLE_PreWatchWaitSeq( int battleindex )
 //
 //**************************************************
 {
-	// 仇及凛鳔匹凛对忡绣
+	// この時点で時刻保存
 	BattleArray[battleindex].timer = NowTime.tv_sec;
 	// 蝈够及乒□玉毛戊穴件玉    蟆卞允月
 	BATTLE_AllCharaWatchWaitSet( battleindex );
@@ -3007,7 +3007,7 @@ int BATTLE_CountEntry(
 	if( BATTLE_CHECKSIDE( side ) == FALSE )return -BATTLE_ERR_PARAM;
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return -BATTLE_ERR_BATTLEINDEX;
 
-	// 巨件玄伉□    
+	// エントリー    
 	pEntry = BattleArray[battleindex].Side[side].Entry;
 
 	for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
@@ -3194,14 +3194,14 @@ int BATTLE_DpCalc( int battleindex )
 	looseside = 1 - winside;
 	if( winside != 0 && winside != 1 )return BATTLE_ERR_PARAM;
 
-	// 宁煌袄赓渝祭
+	// 合計値初期化
 	dpall = 0;
 
 	//  仃凶  井日    毛畴丹
 	pLooseEntry = BattleArray[battleindex].Side[looseside].Entry;
 	for( i = 0 ; i < BATTLE_ENTRY_MAX; i ++ ){
 		charaindex = pLooseEntry[i].charaindex;
-		// 皿伊奶乩□动陆反饬    仄
+		// プレイヤー以外は興    し
 		if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )continue;
 		// ㄠㄟ坌及ㄠ手日尹月
@@ -3219,7 +3219,7 @@ int BATTLE_DpCalc( int battleindex )
 	pWinEntry = BattleArray[battleindex].Side[winside].Entry;
 	for( num = 0,i = 0 ; i < BATTLE_ENTRY_MAX; i ++ ){
 		charaindex = pWinEntry[i].charaindex;
-		// 皿伊奶乩□动陆反饬    仄
+		// プレイヤー以外は興    し
 		if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )continue;
 		num++;
@@ -3231,7 +3231,7 @@ int BATTLE_DpCalc( int battleindex )
 
 	for( num = 0,i = 0 ; i < BATTLE_ENTRY_MAX; i ++ ){
 		charaindex = pWinEntry[i].charaindex;
-		// 皿伊奶乩□动陆反饬    仄
+		// プレイヤー以外は興    し
 		if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )continue;
 
@@ -3243,7 +3243,7 @@ int BATTLE_DpCalc( int battleindex )
 	return 0;
 }
 
-//#define RS_LIST_MAX	4	//   凛卞窒谛爵  瑛绊霜月井
+//#define RS_LIST_MAX	4	//   時に何人戦  結果送るか
 #define RS_LIST_MAX	5
 typedef struct{
 	int num;
@@ -3252,8 +3252,8 @@ typedef struct{
 }RS_LIST;
 
 int BATTLE_GetDuelPoint(
-	int battleindex,	// 爵  奶件犯永弁旦
-	int side, 			// 扔奶玉  ㄟ  ㄠ  
+	int battleindex,	// 戦  インデックス
+	int side, 			// サイド  ０  １  
 	int num 			// 愤坌反    及窒    及平乓仿井
 )
 {
@@ -3306,8 +3306,8 @@ int BATTLE_GetDuelPoint(
 }
 
 int BATTLE_GetExpGold(
-	int battleindex,	// 爵  奶件犯永弁旦
-	int side, 			// 扔奶玉  ㄟ  ㄠ  
+	int battleindex,	// 戦  インデックス
+	int side, 			// サイド  ０  １  
 	int num 			// 愤坌反    及窒    及平乓仿井
 )
 {
@@ -3479,7 +3479,7 @@ int BATTLE_GetExpGold(
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
-		       		ITEM_getInt( itemindex, ITEM_ID ),  /* 失奶  丞  寞 */
+		       		ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
 #endif
 					"BattleGet(战斗後所得的道具)",
 					CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -3696,7 +3696,7 @@ int BATTLE_DefaultAttacker( int battleindex, int side )
 #if 0
 //*********************************************************
 //
-// 衬平乓仿卞爵  戊穴件玉毛  木月
+// 敵キャラに戦  コマンドを  れる
 
 static int BATTLE_EnemyCommand( int battleindex, int side )
 //
@@ -3721,16 +3721,16 @@ static int BATTLE_EnemyCommand( int battleindex, int side )
 		charaindex = pEntry[i].charaindex;
 		// 平乓仿弁正银匀化卅井匀凶日戚尺
 		if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
-		// 衬平乓仿元扎卅井匀凶日戚尺
+		// 敵キャラじゃなかったら鵜へ
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) != CHAR_TYPEENEMY ){
 			continue;
 		}
 		//     反仇仇匹檗  午井卞杀元化戊穴件玉毛  尹月互｝
 		// 漆反爵丹及心午允月［
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ATTACK );
-		// 锹澎反赝癫
+		// 相手は適当
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, BATTLE_DefaultAttacker( battleindex, 0 ) );
-		// 戊穴件玉     OK 午仄化云仁
+		// コマンド     OK として恭く
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );
 
 	}
@@ -3741,10 +3741,10 @@ static int BATTLE_EnemyCommand( int battleindex, int side )
 
 //*********************************************************
 //
-// 爵    丐月扔奶玉及戏五酸曰皿伊奶乩□卞    毛笛遥
+// 戦    あるサイドの生き残りプレイヤーに    を加算
 //
 int BATTLE_AddDpAlive(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// バト郊インデックス
 	int side, 			// 飯通囁( 0 or 1 )
 	int dp
 )
@@ -3762,7 +3762,7 @@ int BATTLE_AddDpAlive(
 	if( BATTLE_CHECKSIDE( side ) == FALSE )return -BATTLE_ERR_PARAM;
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return -BATTLE_ERR_BATTLEINDEX;
 
-	// 巨件玄伉□    
+	// エントリー    
 	pEntry = BattleArray[battleindex].Side[side].Entry;
 
 	for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
@@ -3786,7 +3786,7 @@ int BATTLE_AddDpAlive(
 // 爵    ｝皿伊奶乩□互戏五酸匀化中月井譬屯月
 //
 int BATTLE_CountAlive(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// バト郊インデックス
 	int side 			// 飯通囁( 0 or 1 )
 )
 //
@@ -3803,7 +3803,7 @@ int BATTLE_CountAlive(
 	if( BATTLE_CHECKSIDE( side ) == FALSE )return -BATTLE_ERR_PARAM;
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return -BATTLE_ERR_BATTLEINDEX;
 
-	// 巨件玄伉□    
+	// エントリー    
 	pEntry = BattleArray[battleindex].Side[side].Entry;
 
 	for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
@@ -3827,7 +3827,7 @@ int BATTLE_CountAlive(
 // 爵    ｝辅爵仄凶化皿伊奶乩□及心互戏五化中月橇谪井毛民尼永弁
 //
 int BATTLE_OnlyRescue(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
+	int battleindex, 	// バト郊インデックス
 	int side, 			// 飯通囁( 0 or 1 )
 	int *pOnlyFlg
 )
@@ -3847,7 +3847,7 @@ int BATTLE_OnlyRescue(
 	if( BATTLE_CHECKSIDE( side ) == FALSE )return -BATTLE_ERR_PARAM;
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return -BATTLE_ERR_BATTLEINDEX;
 
-	// 巨件玄伉□    
+	// エントリー    
 	pEntry = BattleArray[battleindex].Side[side].Entry;
 
 	for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
@@ -4119,8 +4119,8 @@ typedef struct {
 	int charaindex;	// 平乓仿弁正奶件犯永弁旦
 	int side;		// 飯通囁
 	int dex;		// 豳镀今
-	int num;		// 巨件玄伉□  寞
-	int combo;		// 宁    猾允月谛棉井＂
+	int num;		// エントリー  号
+	int combo;		// 合    撃する人間か?
 #ifdef _EQUIT_SEQUENCE
 	int sequence;
 #endif
@@ -4131,7 +4131,7 @@ typedef int (*FUNC)( const void *, const void * );
 
 //************************************************************
 //
-//  爵  及豳镀今  胜楮醒
+//  戦  の素早さ  較関数
 //
 // 豳镀今反袄互  五中  互穸木化中月［嫦赐末□玄匹丐月［
 //
@@ -4208,7 +4208,7 @@ static int BATTLE_DexCalc(
 	int charaindex
 )
 //
-//    曰袄  豳镀今
+//    り値  素早さ
 //
 //************************************************************
 {
@@ -4216,7 +4216,7 @@ static int BATTLE_DexCalc(
 	int work, COM;
 	int petindex = BATTLE_getRidePet( charaindex );
 
-	// 戊穴件玉潸  
+	// コマンド取  
 	COM = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLECOM1 );
 
 #ifdef _PETSKILL_BECOMEFOX // 攻击顺序中的敏捷降下20%
@@ -4231,7 +4231,7 @@ static int BATTLE_DexCalc(
 		dex = work*0.8;//敏降20%
 	}
 #endif
-	// 骚橘  猾及桦宁
+	// 通常  撃の場合
 	switch( COM ){
 #ifdef _PROFESSION_SKILL			// WON ADD 人物职业技能
 	case BATTLE_COM_S_BLOOD:				// 嗜血成性
@@ -4294,11 +4294,11 @@ static int BATTLE_DexCalc(
 		break;
 #endif
 
-	case BATTLE_COM_ITEM:	// 失奶  丞毛银丹桦宁
+	case BATTLE_COM_ITEM:	// アイ  ムを使う場合
 		work = CHAR_getWorkInt( charaindex, CHAR_WORKQUICK )+20;
 		dex = work - RAND( 0, work * 0.3 ) + work * 0.15;
 		break;
-	default:	// 骚橘  爵丹卅升)
+	default:	// 通常  戦うなど)
 		// Robin 0727 ride pet
 		if( petindex == -1 )
 			work = CHAR_getWorkInt( charaindex, CHAR_WORKQUICK )+20;
@@ -4308,7 +4308,7 @@ static int BATTLE_DexCalc(
 		break;
 	}
 
-	// 穴奶瓜旦卞卅匀化仄引匀凶日＂
+	// マイナスになってしまったら?
 	if( dex <= 0 )dex = 1;
 
 	return dex;
@@ -4336,8 +4336,8 @@ static void ComboCheck(
 		com,
 		enemy,
 		side,
-		oldside = -3, // 赝癫卞丐曰尹卅中袄
-		oldenemy = -3, // 赝癫卞丐曰尹卅中袄
+		oldside = -3, // 適当にありえない値
+		oldenemy = -3, // 適当にありえない値
 		armtype,
 		move,
 		per,
@@ -4357,7 +4357,7 @@ static void ComboCheck(
 		if( CHAR_getInt( charaindex, CHAR_WHICHTYPE ) == CHAR_TYPEENEMY ){
 			per = 20;	// 衬反ㄡㄟ⊙
 		}else{
-			per = 50;	// 愤坌反ㄤㄟ⊙
+			per = 50;	// 自分は５０％
 #ifdef _ITEM_ADDCOMBO
             for( j = 0 ; j < CHAR_EQUIPPLACENUM ; j ++ ){
 		        int id = CHAR_getItemIndex(charaindex,j);//道具id
@@ -4397,7 +4397,7 @@ static void ComboCheck(
 #endif
 		}
 
-		//     互ㄟ井  仃卅井匀凶日
+		//     が０か  けなかったら
 		if( CHAR_getInt( charaindex, CHAR_HP ) <= 0
 		||  BATTLE_CanMoveCheck( charaindex ) == FALSE
 		){
@@ -4406,7 +4406,7 @@ static void ComboCheck(
 			move = 1;
 		}
 
-		//   猾础及  湛毛潸  ［髑仆烟卅日母丢
+		//   撃側の  器を取  ?投慌系ならダメ
 		// 髑仆烟卅日母丢
 		if( BATTLE_IsThrowWepon(
 			CHAR_getItemIndex( charaindex, CHAR_ARM ) ) == TRUE
@@ -4414,17 +4414,17 @@ static void ComboCheck(
 			armtype = 1;
 		}
 
-		pEntryList[i].combo = 0;	// 赓渝祭
+		pEntryList[i].combo = 0;	// 初期化
 
 		if( start != -1 ){		// 宁    猾      
-			if(	com != BATTLE_COM_ATTACK 	//   猾戊穴件玉匹卅中
+			if(	com != BATTLE_COM_ATTACK 	//   撃コマンドでない
 			||	enemy != oldenemy 			// 谎匀化月衬互  元匹卅中
-			||	side != oldside 			// 扔奶玉互啜丹
+			||	side != oldside 			// サイドが違う
 			||	armtype == 1 				// 麶ど捈ぁ堣堎
 			||	move == 0 					//   仃卅中
 			){
 				start = -1;			// 蔽  
-				oldside = side;		// 扔奶玉创尹月
+				oldside = side;		// サイド覚える
 			}else{
 				// 戊件示涩烂
 				CHAR_setWorkInt( pEntryList[i].charaindex,
@@ -4441,10 +4441,10 @@ static void ComboCheck(
 			&&	armtype != 1 				// 麶ど捈ぁ埵笢
 			&&	move == 1 					//   仃月
 			&& RAND( 1, 100 ) <= per
-			){	// 骚橘  猾  匹丐月
+			){	// 通常  撃  である
 				start = i;
 				oldenemy = enemy;	// 谎匀化月衬毛创尹月
-				oldside = side;		// 扔奶玉创尹月
+				oldside = side;		// サイド覚える
 				ComboId ++;
 			}
 		}
@@ -4459,9 +4459,9 @@ static void ComboCheck(
 //｛戚及谛互戊件示匹五月橇谪元扎卅井匀凶日 FALSE
 //
 static BOOL ComboCheck2(
-	BATTLE_CHARLIST *pEntryList,	// 巨件玄伉□伉旦玄
+	BATTLE_CHARLIST *pEntryList,	// エントリーリスト
 	int nownum,		// 鰒時式翰  
-	int entrynum	// 巨件玄伉□    醒
+	int entrynum	// エントリー    数
 )
 //
 // 戊件示匹五月    TRUE
@@ -4480,7 +4480,7 @@ static BOOL ComboCheck2(
 
 	charaindex = pEntryList[nownum].charaindex;
 
-	// 愤坌互镝擦蘸撩  仄化中凶日撩  
+	// 自分が忠誠度失  していたら失  
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEFLG) & CHAR_BATTLEFLG_AIBAD )
 	{
 //		print( "由於忠诚度不足使用必杀技失败( %s )\n",CHAR_getUseName( charaindex ) );
@@ -4494,7 +4494,7 @@ static BOOL ComboCheck2(
 		// 戊件示    啜丹午镀仁手撩  
 		if( ComboId != pEntryList[i].combo )break;
 
-		// 爵  卞辅笛仄化中卅井匀凶日戚尺
+		// 戦  に参加していなかったら鵜へ
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE) == 0 ) break;
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE) == BATTLE_CHARMODE_FINAL ) break;
 
@@ -4579,12 +4579,12 @@ void BATTLE_UltimateExtra(
 		}
 
 	}else
-	// 矢永玄卅日
+	// ペットなら
 	if( CHAR_getInt( enemyindex, CHAR_WHICHTYPE ) == CHAR_TYPEPET ){
 		int levelflg = 1;
 		int playerindex = CHAR_getWorkInt( enemyindex, CHAR_WORKPLAYERINDEX );
 
-		// 伊矛伙互斓中桦宁反    蛹月  坌
+		// レベ郊が低い場合は    減る  分
 		if( CHAR_getInt( playerindex, CHAR_LV ) <= 10 ){
 			levelflg = 2;
 		}
@@ -4596,7 +4596,7 @@ void BATTLE_UltimateExtra(
 		// 潜谛及犯白巧伙玄井日反内允
 		CHAR_setInt( playerindex, CHAR_DEFAULTPET, -1 );
 
-		// 犯亘巨伙动陆反镝擦艘毛票仆月
+		// デュエ郊以外は忠誠心を下慌る
 		if( BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P ){
 			// 伉旦弁及  中田玄伙井＂丐月卅日镝擦    毛票仆月
 			if( BattleArray[battleindex].norisk == 0 ){;
@@ -4616,11 +4616,11 @@ void BATTLE_UltimateExtra(
 
 	}else{
 		int flg;
-		// 公木动陆匹失伙  奴丢永玄韶
+		// それ以外でア郊  ィメット死
 		//snprintf( szBuffer, sizeof(szBuffer),
 		//	"(%s)被击飞。",
 		//	CHAR_getUseName( enemyindex ) );
-		// 衬平乓仿反扔□田□卞酸仄化云仁
+		// 敵キャラはサーバーに残して恭く
 //		BATTLE_Exit( enemyindex, battleindex );
 		flg = CHAR_getWorkInt( enemyindex, CHAR_WORKBATTLEFLG );
 		flg |= CHAR_BATTLEFLG_ULTIMATE;	// 失伙  奴丢永玄熬仃凶
@@ -4639,7 +4639,7 @@ void BATTLE_UltimateExtra(
 //  骚橘卞竣濮今六凶桦宁及  溃质  
 //
 void BATTLE_NormalDeadExtra(
-	int battleindex, // 爵  奶件犯永弁旦
+	int battleindex, // 戦  インデックス
 	int charaindex,  // 诮仄凶平乓仿及奶件犯永弁旦
 	int enemyindex 	// 诮今木凶平乓仿及奶件犯永弁旦
 )
@@ -4678,7 +4678,7 @@ void BATTLE_NormalDeadExtra(
 		// 韶氏分平乓仿及戊穴件玉反侉木月
 		CHAR_setWorkInt( enemyindex, CHAR_WORKBATTLECOM1, BATTLE_COM_NONE );
 	}else
-	// 矢永玄卅日
+	// ペットなら
 	if( CHAR_getInt( enemyindex, CHAR_WHICHTYPE ) == CHAR_TYPEPET
 	&& BattleArray[battleindex].type == BATTLE_TYPE_P_vs_E
 	&&  BattleArray[battleindex].norisk == 0
@@ -4690,7 +4690,7 @@ void BATTLE_NormalDeadExtra(
 		if( CHAR_getInt( playerindex, CHAR_LV ) <= 10 ){
 			levelflg = 2;
 		}
-		// 愤坌及镝擦艘毛票仆月
+		// 自分の忠誠心を下慌る
 		CHAR_PetAddVariableAi( enemyindex, AI_FIX_PETDEAD/levelflg );
 		// 潜谛及矢永玄韶氏分荚醒毛市它件玄允月
 		CHAR_setInt( playerindex, CHAR_DEADPETCOUNT,
@@ -4700,7 +4700,7 @@ void BATTLE_NormalDeadExtra(
 		CHAR_setWorkInt( enemyindex, CHAR_WORKBATTLECOM1, BATTLE_COM_NONE );
 
 	}else{
-	// 公木动陆
+	// それ以外
 	}
 
 	//snprintf( szBuffer, sizeof(szBuffer),
@@ -4760,14 +4760,14 @@ void BATTLE_EscapeDpSend( int battleindex, int charaindex )
 
 	pEntry = BattleArray[battleindex].Side[enemyside].Entry;
 
-	// 锹澎础卞中月谛醒毛醒尹月
+	// 相手側にいる人数を数える
 	dpadd = CHAR_getInt( charaindex, CHAR_DUELPOINT ) * DUELPOINT_RATE;
-	if( dpadd < 1 )dpadd = 1;	//   斓匹手ㄠ
+	if( dpadd < 1 )dpadd = 1;	//   低でも１
 
 	//   谛井日娄中化云仁
 	CHAR_setWorkInt( charaindex, CHAR_WORKGETEXP, -dpadd*2 );
 
-	// 锹澎础卞反箫允
+	// 相手側には足す
 	BattleArray[battleindex].Side[enemyside].common_dp += dpadd;
 
 
@@ -6505,7 +6505,7 @@ BOOL BATTLE_CanMoveCheck( int charaindex )
 		return FALSE;
 	}
 
-	// 檗祭
+	// 石化
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKSTONE ) > 0 ){
 		return FALSE;
 	}
@@ -6829,11 +6829,11 @@ static int BATTLE_PetLoyalCheck( int battleindex, int bid, int charaindex )
 
 	Rand = RAND( 1, 100 );
 
-	mode = 0;	// 恳仄中垫  
-	if( ai >= 80 ){	// 镝擦蘸ㄧㄟ⊙动晓
+	mode = 0;	// 正しい行  
+	if( ai >= 80 ){	// 忠誠度８０％以上
 		mode = PETAI_MODE_NORMAL;	// 濮覆岳  
 	}else
-	if( ai >= 70 ){	// 镝擦蘸ㄦㄟ⊙动晓
+	if( ai >= 70 ){	// 忠誠度７０％以上
 		if( Rand < 10 )mode = PETAI_MODE_TARGETRANDOM;	// 正□必永玄  
 	}else
 	if( ai >= 60 ){
@@ -6853,13 +6853,13 @@ static int BATTLE_PetLoyalCheck( int battleindex, int bid, int charaindex )
 	}else
 	if( ai >= 10 ){
 		if( Rand < 80 ){
-			mode = PETAI_MODE_OWNERATTACK;	// 潜谛  猾
+			mode = PETAI_MODE_OWNERATTACK;	// 主人  撃
 		}else{
 			mode = PETAI_MODE_ENEMYATTACK;	// 衬  猾
 		}
 	}else{
 		if( Rand < 60 ){
-			mode = PETAI_MODE_OWNERATTACK;	// 潜谛  猾
+			mode = PETAI_MODE_OWNERATTACK;	// 主人  撃
 		}else{
 			mode = PETAI_MODE_ESCAPE;		//   ど堎
 		}
@@ -6897,7 +6897,7 @@ static int BATTLE_PetLoyalCheck( int battleindex, int bid, int charaindex )
 		}
 		break;
 	case PETAI_MODE_RANDOMACT:	// 垫  互仿件母丞
-		// 哗萄ㄠ葱  猾蟆反濮覆井尹切扎母丢
+		// 地球１週  撃前は絶対かえちゃダメ
 		if(	CHAR_getWorkInt( charaindex, CHAR_WORKBATTLECOM1 ) == BATTLE_COM_S_EARTHROUND0 ){
 			return 0;
 		}
@@ -6907,7 +6907,7 @@ static int BATTLE_PetLoyalCheck( int battleindex, int bid, int charaindex )
 		flg &= ~CHAR_BATTLEFLG_GUARDIAN;
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLEFLG, flg );
 
-		if( toNo == bid ){	// 愤坌毛蓟氏匹仄引匀凶日
+		if( toNo == bid ){	// 自分を選んでしまったら
 			// 窒手匹五卅中仇午卞允月
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_NONE );
 		}else{
@@ -6916,7 +6916,7 @@ static int BATTLE_PetLoyalCheck( int battleindex, int bid, int charaindex )
 		}
 		break;
 
-	case PETAI_MODE_OWNERATTACK:	// 潜谛  猾
+	case PETAI_MODE_OWNERATTACK:	// 主人  撃
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ATTACK );
 		CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2, bid-5 );
 		break;
@@ -6925,7 +6925,7 @@ static int BATTLE_PetLoyalCheck( int battleindex, int bid, int charaindex )
 		{ int myside = 0;
 			if( bid >= BATTLE_ENTRY_MAX ) myside = 1;
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ATTACK );
-			// 锹澎扔奶玉卞
+			// 相手サイドに
 			CHAR_setWorkInt( charaindex, CHAR_WORKBATTLECOM2,
 				BATTLE_DefaultAttacker( battleindex, 1 - myside ) );
 		}
@@ -8603,12 +8603,12 @@ static int BATTLE_Battling( int battleindex )
 			}
 			gDamageDiv = 1.0;
 			ComboId = EntryList[i].combo;
-			aAttackList[0] = EntryList[i].num; // 伉旦玄卞笛尹月
+			aAttackList[0] = EntryList[i].num; // リストに加える
 			i ++; // 戚及谛井日
 			k = 1;
 			for( ; EntryList[i].combo == ComboId && i < entrynum; i ++ ){
 				int charmode;
-				// 绣箕允月井民尼永弁
+				// 存在するかチェック
 				if( CHAR_CHECKINDEX( EntryList[i].charaindex ) == FALSE )continue;
 
 				// 爵  卞辅笛仄化中卅中桦宁反戚尺
@@ -8617,7 +8617,7 @@ static int BATTLE_Battling( int battleindex )
 					continue;
 				}
 
-				// 旦  □正旦唱橘荚汊↓  质  
+				// ス  ータス異常回復＆  処  
 				BATTLE_StatusSeq( EntryList[i].charaindex );
 #ifdef _OTHER_MAGICSTAUTS
 				BATTLE_MagicStatusSeq( EntryList[i].charaindex );
@@ -8903,7 +8903,7 @@ print("\n风:%d ",boundary_turn );
 			//     引匹中匀凶井日窒手仄卅中
 		}else{
 			memcpy( szAllBattleString+AllSize, szBattleString, len );
-			szAllBattleString[AllSize+len] = 0;// NULL 毛本永玄
+			szAllBattleString[AllSize+len] = 0;// NULL をセット
 			AllSize += len;
 		}
 

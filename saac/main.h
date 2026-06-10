@@ -41,7 +41,7 @@ void set_nodelay( int sock );
 #define TCPSTRUCT_EHOST -9        /* gethostbyname 撩   */
 #define TCPSTRUCT_ECONNECT -10    /* connect 撩   */
 #define TCPSTRUCT_ECFULL -11      /* con 互中匀天中 */
-#define TCPSTRUCT_ETOOLONG -12    /* 垫互卅互允亢 */
+#define TCPSTRUCT_ETOOLONG -12    /* 行がながすぎ */
 #define TCPSTRUCT_EMBFULL -13     /* mb 互中匀天中  */
 #define TCPSTRUCT_ECLOSEAGAIN -14 /* close 札2者書直俔 */
 #define TCPSTRUCT_WORKERROR -16

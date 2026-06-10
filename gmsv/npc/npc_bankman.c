@@ -277,7 +277,7 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 		b_mode = -1;
 		errflg = FALSE;
 
-		/* 赓渝祭 */
+		/* 初期化 */
 		w.windowno = -1;
 		w.windowtype = -1;
 		w.buttontype = -1;
@@ -308,13 +308,13 @@ static BOOL NPC_Bankman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			/* 戊丢件玄反  骰 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 荼垫潸月 */
+			/* 改行取る */
 			chomp( line );
 			
-			/*  垫毛帮溥允月    */
+			/*  行を整形する    */
 			/*  引内 tab 毛 " " 卞  五晶尹月    */
 			replaceString( line, '\t' , ' ' );
-			/* 燮  及旦矢□旦毛潸月［*/
+			/* 先  のスペースを取る?*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;

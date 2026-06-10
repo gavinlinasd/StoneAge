@@ -5,7 +5,7 @@ typedef struct NPC_Quiz{
 
 	int 	no;				//  锁及  寞
 	int 	type;			//  锁及正奶皿  必□丞    ｝旦禾□汁)	
-	int		level;  		//  锁及伊矛伙
+	int		level;  		//  題のレベ郊
 	int 	answertype;		//蚕尹及蓟太井凶(ㄡ  ｝ㄢ  ｝签贿穴永民  
 	int 	answerNo;		//  迄式河哄
 	char	question[512]; 	//  锁

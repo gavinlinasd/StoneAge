@@ -594,7 +594,7 @@ static void getCharNameFromString(char*str ,char *out )
 	for(c=0;;c++){
 		if( IS_2BYTEWORD( str[c] ) ){
 			out[c] = str[c];
-			c ++ ;	// 戚及  侬尺
+			c ++ ;	// 鵜の  字へ
 			out[c] = str[c];
 			continue;
 		}
@@ -618,7 +618,7 @@ static void getCharOptionFromString( char *str , char *out )
 		if( str[c]=='\0')break;
 		if( IS_2BYTEWORD( str[c] ) ){
 			c++;
-			if( str[c] == '\0' )break;	// 公及  侬互允匹卞NULL卅日蔽  
+			if( str[c] == '\0' )break;	// その  字がすでにNULLなら終  
 			continue;
 		}
 		
@@ -631,16 +631,16 @@ static void getCharOptionFromString( char *str , char *out )
 					break;	
 				}
 				
-				// 仇仇手ㄡ田奶玄  侬及ㄠ田奶玄  卅日手丹域田奶玄戊疋□允月
+				// こ�Aも２バイト  字の１バイト  ならもう一バイトコピーする
 				//----   For 2Byte Code ----
 				if( IS_2BYTEWORD( str[c] ) ){
-					out[outc++] = str[c++];		// ㄠ田奶玄  戊疋□
-					out[outc++] = str[c];		// ㄡ田奶玄  戊疋□
-					if( str[c] == '\0' )break;	// 公及  侬互允匹卞NULL卅日蔽  
+					out[outc++] = str[c++];		// １バイト  コピー
+					out[outc++] = str[c];		// ２バイト  コピー
+					if( str[c] == '\0' )break;	// その  字がすでにNULLなら終  
 					continue;
 				}
 				
-				// 骚橘  侬反ㄠ田奶玄戊疋□
+				// 通常  字は１バイトコピー
 				out[outc] = str[c];			// 引内戊疋□
 				if( str[c] == '\0' )break;	// 蔽  分匀凶日蔽歹月
 				
@@ -897,7 +897,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	char *nmwork_p , *optwork_p , *infowork_p;
 	int l;
 	
-	/* 戊疋□仄化 */
+	/* コピーして */
 	
 	strncpy( nmwork , nm , sizeof( nmwork ));
 	nmwork[strlen( nm)]=0;
@@ -908,7 +908,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	strncpy( infowork , info , sizeof( infowork ));
 	infowork[strlen(info)]=0;
 	
-	/* 巨旦弗□皿仄 */
+	/* エスケープし */
 	/*    if ( esc ) {
 	nmwork_p = makeEscapeString1( nm , nmwork ,sizeof( nmwork ));
 	optwork_p = makeEscapeString1( opt , optwork , sizeof( optwork ));
@@ -972,7 +972,7 @@ int getCharIndexByName( char *id , char *charname )
 			char cn[CHARDATASIZE];
 			getCharNameFromString( output , cn );
 			
-			/* Escape毛荸仁 */
+			/* Escapeを解く */
 			if( strcmp( charname , makeStringFromEscaped(cn) ) == 0 ){
 				return i;
 			}else{
@@ -989,7 +989,7 @@ int getCharIndexByName( char *id , char *charname )
 		  卅日丐中化中卅中［0动晓卅日丐五旦夫永玄及index.
 		
 			
-				签卞夫□玉匹五卅井匀凶日公木毛井尹允分仃［
+				賭にひードできなかったらそれをかえすだけ?
 				手匀午切扎氏午匹五月支欠仃升手［
 				
 */

@@ -176,14 +176,14 @@ void saacproto_ACCharLoadII_recv( int ti,char* id,char* pas,char* charname ,
 #endif
 
 /*
-   平乓仿忡绣
+   キャラ保存
 
    char *id : ID
-   char *pas : 天允歹□升
+   char *pas : ぱすわーど
    char *charname : 平乓仿  
-   char *opt : 左皿扑亦件  侬  ［ CharList及午五卞丢乒午仄化忒允树  
+   char *opt : オプ竺ョン  字  ? CharListのときにメモとして返す情  
    char *charinfo : 白央奶伙卞忡绣允月平乓仿弁正及旦  □正旦树  ［
-   int id : 丢永本□斥id
+   int id : メッセージid
 */
 #ifdef _NewSave
 void saacproto_ACCharSave_recv( int ti, char* id,

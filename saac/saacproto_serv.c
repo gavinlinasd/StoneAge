@@ -1274,7 +1274,7 @@ void saacproto_ACCharLoadII_send( int fd,char* result,char* data,int id,int char
 
 /*
 214 :  <li><a name="ACCharSaveS"><font color=blue>servertoclient ACCharSave( string result , string data,int id);<br></font></a>
-215 :      ACCharSave卞覆允月忒蚕［
+215 :      ACCharSaveに対する返答?
 216 :      <br><br>
 217 :      <dl>
 218 :        <dt> string result
@@ -1316,7 +1316,7 @@ void saacproto_ACCharSaveII_send( int fd,char* result,char* data,int id,int gs1,
 
 /*
 256 :  <li><a name="ACCharDeleteS"><font color=blue>servertoclient ACCharDelete(string result, string data,int id);<br></font></a>
-257 :      ACCharDelete卞覆允月忒蚕［
+257 :      ACCharDeleteに対する返答?
 258 :      <br><br>
 259 :      <dl>
 260 :        <dt> string result
@@ -1342,7 +1342,7 @@ void saacproto_ACCharDelete_send( int fd,char* result,char* data,int id )
 }
 /*
 290 :  <LI>    <a name="ACLockS"><font color=blue>servertoclient ACLock( string result, string data ,int id);<br></font></a>
-291 :      ACLock卞覆允月忒蚕［
+291 :      ACLockに対する返答?
 292 :      <br><br>
 293 :      <dl>
 294 :        <dt>string result
@@ -1441,7 +1441,7 @@ void saacproto_DBDeleteEntryString_send( int fd,char* result,char* table,char* k
 }
 /*
 396 :  <Li><a name="DBGetEntryStringS"><font color=blue>servertoclient DBGetEntryString( string result, string value, string table, string key, int msgid, int msgid2 );</font></a><BR>
-397 : 	 潸曰分仄及忒曰袄
+397 : 	 取りだしの返り値
 398 : 	 <dl>
 399 : 	   <dt>string result
 400 : 	   <dd>successful / failed
@@ -1521,7 +1521,7 @@ void saacproto_DBUpdateEntryInt_send( int fd,char* result,char* table,char* key,
 }
 /*
 463 :  <LI><a name="DBGetEntryRankS"><font color=blue>servertoclient DBGetEntryRank( string result , int rank , int count, string table, string key, int msgid, int msgid2 );</font></a><BR>
-464 : 	 赐匏毛忒允［
+464 : 	 順位を返す?
 465 : 	 <dl>
 466 : 	   <dt>string result
 467 : 	   <dd>successful/failed
@@ -1582,7 +1582,7 @@ void saacproto_DBDeleteEntryInt_send( int fd,char* result,char* table,char* key,
 }
 /*
 520 :  <LI><a name="DBGetEntryIntS"><font color=blue>servertoclient DBGetEntryInt( string result , int value , string table, string key, int msgid, int msgid2 );</font></a><BR>
-521 : 	 巨件玄伉及袄毛井尹允
+521 : 	 エントリの値をかえす
 522 : 	 <dl>
 523 : 	   <dt>string result
 524 : 	   <dd>successful/failed
@@ -1625,7 +1625,7 @@ void saacproto_DBGetEntryInt_send( int fd,char* result,int value,char* table,cha
 562 : 		   "1,RINGO,123465,data1|2,HOGE,4567,data2|2,FUCK,4567,data3"<BR>
 563 : 		   仇及  分午｝2匏反2谛中月仇午卞卅月［
 564 : 	   <dt>string table
-565 : 	   <dd>  □皮伙  
+565 : 	   <dd>  ーブ郊  
 566 : 	   <dt>int msgid, int msgid2
 567 : 	   <dd>
 568 : 	 </dl>
@@ -1651,12 +1651,12 @@ void saacproto_DBGetEntryByRank_send( int fd,char* result,char* list,char* table
 587 : 	   <dd>SUCCESSFUL/FAILED
 588 : 	   <dt>string list
 589 : 	   <dd>请  伉旦玄［1巨件玄伉丐凶曰 "INDEX,RANK,KEY,SCORE,INFO" 及4蜊及树  
-590 : 		   及赚匹丐曰｝公木互蜊醒坌 "|" 匹勾卅互月［蜊醒互0及桦宁反
+590 : 		   の組であり�bそれが個数分 "|" でつながる?個数が0の場合は
 591 : 		   坞  侬  ［
 592 : 	   <dt>int num
 593 : 	   <dd>中仁勾午曰分允井［1卅日1蜊［2卅日2蜊［
 594 : 	   <dt>int msgid ,msgid2
-595 : 	   <dd>丢永本□斥ID.	   
+595 : 	   <dd>メッセージID.	   
 596 : 	 </dL>
 597 : 
 */
@@ -1681,7 +1681,7 @@ void saacproto_DBGetEntryByCount_send( int fd,char* result,char* list,char* tabl
 616 : 	   <dt>string charname
 617 : 	   <dd>character name
 618 : 	   <dt>string message
-619 : 	   <dd>丢永本□斥
+619 : 	   <dd>メッセージ
 620 : 	   <dt>int flag
 621 : 	   <dd>1卞允月午｝愤坌卞卞反  霜今木卅中［
 622 : 	 </dl>
@@ -1698,7 +1698,7 @@ void saacproto_Broadcast_send( int fd,char* id,char* charname,char* message )
 }
 /*
 642 :  <LI><a name="Message"><font color=blue>servertoclient Message( string id_from, string charname_from, string id_to, string charname_to, string message , int option , int mesgid );</font></a><BR>
-643 : 	 失市它件玄扔□田□井日必□丞扔□田□卞丢永本□斥毛霜耨允月［
+643 : 	 アカウントサーバーからゲームサーバーにメッセージを送信する?
 644 : 	 <dl>
 645 : 	   <dt>string id_from
 646 : 	   <dd>from ID
@@ -1711,7 +1711,7 @@ void saacproto_Broadcast_send( int fd,char* id,char* charname,char* message )
 653 : 	   <dt>string message
 654 : 	   <dd>丢永本□斥及    
 655 : 	   <dt>int option
-656 : 	   <dd>左皿扑亦件(晓及楮醒毛辅寰)
+656 : 	   <dd>オプ竺ョン(上の関数を参照)
 657 : 	   <dt>int mesgid
 658 : 	   <dd>丢永本□斥ID 失市它件玄扔□田□及栋  迕
 659 : 	 </dl>

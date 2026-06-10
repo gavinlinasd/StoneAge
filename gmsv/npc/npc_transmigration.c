@@ -19,7 +19,7 @@
 static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num);
 static int NPC_TransmigrationCheck(int meindex, int talker);
 BOOL NPC_TransmigrationAddPet(int meindex, int talker, int petid);
-//楮醒及烂聒
+//関数の定義
 int NPC_StartpointCheck(int meindex,int talker);
 BOOL NPC_TransmigrationMain(int meindex, int toindex, char *buf);
 int NPC_TransmigrationFlg_CLS(int meindex, int toindex);
@@ -184,7 +184,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 #endif
 #endif//_TRANS_6
 			&& ten_no >= 0){
-	  		//椭瘀弁伉失□
+	  		//条件クリアー
 	  		if(NPC_Util_GetStrFromStrWithDelim( buf,"startmsg", token,sizeof( token) ) 
 				 == NULL)
 				{
@@ -244,7 +244,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
       	 	        // Robin 2001/03/05 Tensei Check
 			//if(!CHAR_getWorkInt(toindex,CHAR_TENSEICHECKED))  return;
 	 	       
-	 		//鳖戏质  毛
+	 		//転生処  を
 	 		point = NPC_StartpointCheck( meindex, toindex);
 	 		if(point == -1) {
 	 			return;
@@ -260,7 +260,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 		sprintf( tmp, "yesmsg%d", 
 	 						CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT));
 	 		
-	 		//鳖戏蔽  丢永本□斥毛分允［
+	 		//転生終  メッセージをだす?
 	 		if(NPC_Util_GetStrFromStrWithDelim( buf,tmp, token,sizeof( token) ) 
 			 == NULL)
 			{
@@ -274,8 +274,8 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 		sprintf( tmp, "yesmsg%d", 
 	 						CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT));
 			
-			//鳖戏蔽  丢永本□斥毛分允［
-	 		//鳖戏蔽  丢永本□斥毛分允［
+			//転生終  メッセージをだす?
+	 		//転生終  メッセージをだす?
 	 		if(strstr(buf, tmp) == NULL)	{
 				buttontype = WINDOW_BUTTONTYPE_OK;
 		  		windowno = CHAR_WINDOWTYPE_TRANSMIGRATION_END; 
@@ -288,7 +288,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 	case 3:
 	 		
 	 		/*--蓟      --*/
-			/*--平□伐□玉及民尼永弁毛垫丹--*/
+			/*--キーワードのチェックを行う--*/
 			if(NPC_Util_GetStrFromStrWithDelim( buf,"nomsg", token,sizeof( token) ) 
 			 == NULL)
 			{
@@ -304,7 +304,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 		//鳖戏  及丢永本□斥质  
 	 		sprintf( tmp, "yesmsg%d", 
 	 						CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT));
-	 		//鳖戏蔽  丢永本□斥毛分允［
+	 		//転生終  メッセージをだす?
 	 		if(NPC_Util_GetStrFromStrWithDelim( buf,tmp, token,sizeof( token) ) 
 			 == NULL)
 			{
@@ -318,8 +318,8 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 		sprintf( tmp, "yesmsg%d", 
 	 						CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT));
 			
-			//鳖戏蔽  丢永本□斥毛分允［
-	 		//鳖戏蔽  丢永本□斥毛分允［
+			//転生終  メッセージをだす?
+	 		//転生終  メッセージをだす?
 	 		if(strstr(buf, tmp) == NULL)
 			{
 				buttontype = WINDOW_BUTTONTYPE_OK;
@@ -335,7 +335,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 
                         // Robin 2001/03/05 Tensei Check
                         //if(!CHAR_getWorkInt(toindex,CHAR_TENSEICHECKED))  return;
-			//鳖戏质  毛
+			//転生処  を
 	 		point = NPC_StartpointCheck( meindex, toindex);
 	 		if(point == -1) return;
 			NPC_Util_GetStrFromStrWithDelim( npcarg,elder[point],buf2,sizeof( buf2));
@@ -388,7 +388,7 @@ void NPC_TransmigrationWindowTalked( int meindex, int talkerindex,
 		}
 	  	break;
 		
-		//鳖戏允月井升丹井  仁丢永本□斥及蚕尹  
+		//転生するかどうか  くメッセージの答え  
 	  case CHAR_WINDOWTYPE_TRANSMIGRATION_MAIN:
 	 	if( select == WINDOW_BUTTONTYPE_OK) {
 	 	        //ttom
@@ -478,7 +478,7 @@ BOOL NPC_TransmigratiomWarp(int meindex, int toindex, char *buf)
 	int i = 1;
 	int ret;
 	
-	//请褥翘仍午及椭瘀毛  仁
+	//出身村ごとの条件を  く
 	while(getStringFromIndexWithDelim( buf,",",i,buf2,sizeof( buf2))
 	!= FALSE)
 	{
@@ -503,7 +503,7 @@ BOOL NPC_TransmigratiomWarp(int meindex, int toindex, char *buf)
 	}
     
     
-	//伐□皿燮及民尼永弁
+	//ワープ先のチェック
     if( MAP_IsValidCoordinate( floor, x, y )== FALSE ){
 		return FALSE;
 	}
@@ -531,11 +531,11 @@ BOOL NPC_TransmigratiomWarp(int meindex, int toindex, char *buf)
 //*请  鳔及民尼永弁
 //
 //  曰袄“
-//	ㄟ“扔丞幼伙
-//	ㄠ“穴伉瓜旦
-//	ㄡ“斥乓斥乓
+//	０：サムギ郊
+//	１：マリナス
+//	２：ジャジャ
 //	ㄢ“市伙正□瓜
-//	≡ㄠ“巨仿□
+//	−１：エラー
 //************************************************************
 int NPC_StartpointCheck(int meindex,int talker)
 {
@@ -562,17 +562,17 @@ int NPC_StartpointCheck(int meindex,int talker)
 static int NPC_TransmigrationCheck(int meindex, int talker)
 {
 	//	猿老蓉頡
-	//伊矛伙互ㄧㄟ动晓
+	//レベ郊が８０以上
 	//ㄣ勾及箪岭奶矛件玄互蔽歹匀化中月仇午
-	//  蔽奶矛件玄毛仇卅允［(仇木反中日氏井卅  
+	//  終イベントをこなす?(これはいらんかな  
 	int i,j,k=0;
 	int ch_no[4] = {39,40,42,46};
 	int petindex;
 	int num;
-//	int petid[4] = {1, 2, 3, 4}; //矢永玄及    毛隙烂
-	int petid[4] = {693, 694, 695, 696}; //矢永玄及    毛隙烂
-//	int petidfinal[4] = {11, 12, 13, 14}; //矢永玄及    毛隙烂
-	int petidfinal[4] = {693, 694, 695, 696}; //矢永玄及    毛隙烂
+//	int petid[4] = {1, 2, 3, 4}; //ペットの    を指定
+	int petid[4] = {693, 694, 695, 696}; //ペットの    を指定
+//	int petidfinal[4] = {11, 12, 13, 14}; //ペットの    を指定
+	int petidfinal[4] = {693, 694, 695, 696}; //ペットの    を指定
 
 	// Robin 2001/03/05
 	//CHAR_setWorkInt(talker,CHAR_TENSEICHECKED,FALSE);
@@ -587,7 +587,7 @@ static int NPC_TransmigrationCheck(int meindex, int talker)
 	}
 #endif
 
-	//伊矛伙互ㄧㄟ动晓
+	//レベ郊が８０以上
 	if(CHAR_getInt( talker, CHAR_LV) < 80) return -1;
 
 	//奶矛件玄及白仿弘民尼永弁
@@ -624,7 +624,7 @@ static int NPC_TransmigrationCheck(int meindex, int talker)
 #endif
 	{
 		for(j = 0; j < 4 ;j++){
-			//诡荚  及桦宁反ㄣ  毛民尼永弁
+			//五回  の場合は４  をチェック
 			for(i=0 ; i < CHAR_MAXPETHAVE ; i++){
 				petindex = CHAR_getCharPet( talker, i);
 				if( petindex == -1  )  continue;
@@ -693,7 +693,7 @@ static int NPC_TransmigrationCheck(int meindex, int talker)
 #endif
 	// Robin 2001/03/05
 	//CHAR_setWorkInt(talker,CHAR_TENSEICHECKED,TRUE);
-	//  蔽奶矛件玄民尼永弁
+	//  終イベントチェック
 
 	return CHAR_getInt(talker, CHAR_TRANSMIGRATION);
 }
@@ -800,13 +800,13 @@ BOOL NPC_TransmigrationMain(int meindex, int toindex, char *buf)
 		work[6],work[7],work[8],work[9]
 		);
 
-	//凳蕙
+	//更新
 	CHAR_complianceParameter( toindex );
 	//HP毛荚汊今六化丐仆月
 	CHAR_setInt(toindex, CHAR_HP, CHAR_getWorkInt(toindex, CHAR_WORKMAXHP) );
-	//    燮毛请褥哗及翘赢镉卞  允［
+	//    先を出身地の村長宅に  す?
 	CHAR_setInt(toindex,CHAR_LASTTALKELDER, NPC_StartpointCheck(meindex,toindex));
-	/*  皿伊奶乩□树  毛霜月  */
+	/*  プレイヤー情  を送る  */
 	CHAR_sendStatusString( toindex, "P" );
 	/*
 	CHAR_send_P_StatusString( toindex,
@@ -832,7 +832,7 @@ static int questTbl[20] = {
 1,2,4,5,8,12,14,15,16,17,19,22,27,30,31,34,35,38,45,47
 };
 //*******************************************************
-//弁巨旦玄及醒毛醒尹月
+//クエストの数を数える
 //*******************************************************
 int NPC_TransmigrationQuestCheck(int toindex)
 {
@@ -849,7 +849,7 @@ int NPC_TransmigrationQuestCheck(int toindex)
 }
 
 //*******************************************************
-//	旦  □正旦毛煌遥允月
+//	ス  ータスを計算する
 //*******************************************************
 int NPC_TransCalculation(int toindex, int para)
 {
@@ -891,7 +891,7 @@ float Rounding(float work,int num)
 
 //*******************************************************
 //
-//	旦  □正旦楮溢及凳蕙
+//	ス  ータス関係の更新
 //
 //*******************************************************
 BOOL NPC_TransmigrationStatus(int meindex, int toindex,int work[10])
@@ -908,9 +908,9 @@ BOOL NPC_TransmigrationStatus(int meindex, int toindex,int work[10])
 	dex = CHAR_getInt(toindex,CHAR_DEX);
 
 
-	//弁巨旦玄白仿弘毛民尼永弁
+	//クエストフラグをチェック
 	quest = NPC_TransmigrationQuestCheck( toindex);
-	//伊矛伙
+	//レベ郊
 	level = CHAR_getInt(toindex,CHAR_LV);
 	
 	work[0] = level;
@@ -965,7 +965,7 @@ BOOL NPC_TransmigrationStatus(int meindex, int toindex,int work[10])
 	
 	
 	
-	//伊矛伙    禾奶件玄手  凳
+	//レベ郊    ポイントも  更
 	lvup = CHAR_getInt(toindex, CHAR_SKILLUPPOINT );
 /*#ifdef _TRANS_6
 	if( CHAR_getInt(toindex, CHAR_TRANSMIGRATION) == 6)
@@ -988,7 +988,7 @@ BOOL NPC_TransmigrationStatus(int meindex, int toindex,int work[10])
 
 
 /*----------------------------
- *  矢永玄毛馨笛允月
+ *  ペットを追加する
  ------------------------------*/
 BOOL NPC_TransmigrationAddPet(int meindex, int talker, int petid)
 {
@@ -1188,7 +1188,7 @@ int NPC_TransmigrationFlg_CLS(int meindex, int toindex)
 }
 
 //******************************************************************
-//矢永玄毛壅允
+//ペットを消す
 //******************************************************************
 BOOL NPC_TransmigrationDelPetDel(int meindex,int talker,int petsel)
 {
@@ -1206,7 +1206,7 @@ BOOL NPC_TransmigrationDelPetDel(int meindex,int talker,int petsel)
 	/*--公及平乓仿互爵    卅日｝矢永玄毛丹日内蔽  --*/
 	if( CHAR_getWorkInt( CONNECT_getCharaindex( fd),
    	                     CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) return FALSE;
-	/*--公及矢永玄互田玄伙井升丹井及民尼永弁--*/
+	/*--そのペットがバト郊かどうかのチェック--*/
 	defpet = CHAR_getInt( talker, CHAR_DEFAULTPET);
 	if(defpet == petsel){
 		CHAR_setInt( talker, CHAR_DEFAULTPET, -1);
@@ -1231,13 +1231,13 @@ BOOL NPC_TransmigrationDelPetDel(int meindex,int talker,int petsel)
 	CHAR_setCharPet( talker, petsel, -1);
 	CHAR_endCharOneArray( petindex );
 	snprintf( szPet, sizeof( szPet ), "K%d", petsel);
-	// 蕙仄中矢永玄旦  □正旦霜曰勾仃月
+	// 新しいペットス  ータス送りつける
 	CHAR_sendStatusString( talker, szPet );
 	return TRUE;
 }
 
 //***********************************************************
-//	壅允矢永玄毛茧允［
+//	消すペットを探す?
 //***********************************************************
 BOOL NPC_TransmigrationDelPet(int meindex, int talker)
 {
@@ -1245,10 +1245,10 @@ BOOL NPC_TransmigrationDelPet(int meindex, int talker)
 	int petindex;
 	int num;
 	int j, k;
-//	int petid[4] = {1, 2, 3, 4}; //矢永玄及    毛隙烂
-	int petid[4] = {693, 694, 695, 696}; //矢永玄及    毛隙烂
-//	int petidfinal[4] = {11, 12, 13, 14}; //矢永玄及    毛隙烂
-	int petidfinal[4] = {693, 694, 695, 696}; //矢永玄及    毛隙烂
+//	int petid[4] = {1, 2, 3, 4}; //ペットの    を指定
+	int petid[4] = {693, 694, 695, 696}; //ペットの    を指定
+//	int petidfinal[4] = {11, 12, 13, 14}; //ペットの    を指定
+	int petidfinal[4] = {693, 694, 695, 696}; //ペットの    を指定
 	int petwork[4] ={ -1, -1, -1, -1};
 	
 	num = CHAR_getInt(talker, CHAR_TRANSMIGRATION);

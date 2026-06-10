@@ -109,7 +109,7 @@ struct sockaddr_in localaddr;       /* bind 允月失玉伊旦 */
 struct connection *con;        /* 戊生弁扑亦件     */
 
 static int mb_finder=0;              /* mb及坞五毛腹绸允月凶户及
-                               腹绸玄永皿及匏  筏盛迕 */
+                               検索トップの位  記憶用 */
 // WON FIX
 char tmpbuf[65536];
 //char tmpbuf[65536*3];         /* read迕 */
@@ -145,13 +145,13 @@ void set_nodelay( int sock );
 #define TCPSTRUCT_EHOST -9        /* gethostbyname 撩   */
 #define TCPSTRUCT_ECONNECT -10    /* connect 撩   */
 #define TCPSTRUCT_ECFULL -11      /* con 互中匀天中 */
-#define TCPSTRUCT_ETOOLONG -12    /* 垫互卅互允亢 */
+#define TCPSTRUCT_ETOOLONG -12    /* 行がながすぎ */
 #define TCPSTRUCT_EMBFULL -13     /* mb 互中匀天中  */
 #define TCPSTRUCT_ECLOSEAGAIN -14 /* close 札2者書直俔 */
 #endif
 
 
-int port;               /* 必□丞扔□田□互涛粮仄化仁月禾□玄 */
+int port;               /* ゲームサーバーが接続してくるポート */
 int Total_Charlist;
 int Expired_mail;
 int Del_Family_or_Member;
@@ -826,7 +826,7 @@ int main( int argc , char **argv )
   
 	}
 
-    /* TCPSTRUCT 毛赓渝祭 */
+    /* TCPSTRUCT を初期化 */
     {
         int tcpr;
         if( ( tcpr = tcpstruct_init( NULL , port , 0 ,
@@ -1121,7 +1121,7 @@ int main( int argc , char **argv )
 
         /* 伐□市□及正奶丞失它玄毛譬屯月［
            正奶丞失它玄仄凶日夫弘毛分仄化伐□市□毛诮仄化仄引丹［
-           匹必□丞扔□田□卞  蔽读卞反骚襞允月           */
+           でゲームサーバーに  終的には通知する           */
         {
             int i;
             time_t thre = time(NULL) - WKTIMEOUT;            
@@ -1661,10 +1661,10 @@ static int getLineReadBuffer( int index , char *buf, int len )
         top = mb[top].next;
     }
     if( ti > len ){
-        /* 1垫互卅互允亢月［    卅巨仿□毛井尹六 */
+        /* 1行がながすぎる?    なエラーをかえせ */
         return TCPSTRUCT_ETOOLONG;
     }
-    /* 垫互敦岳仄化卅中 */
+    /* 行が完成してない */
     if( breakflag == 0 ){
         return 0;
     }
@@ -1679,7 +1679,7 @@ static int getLineReadBuffer( int index , char *buf, int len )
   int index : con index
 
   return:
-    反巨仿□
+    はエラー
   0动晓及桦宁反 read 仄化手方中赢今［
 
 
@@ -1722,7 +1722,7 @@ static int findregBlankMemBuf( void  )
 }
 
 /*
-  mb 毛荸  允月
+  mb を解  する
   
  */
 static int unregMemBuf(  int index )
@@ -1813,7 +1813,7 @@ void set_nodelay( int sock )
 
 
 /*
-  允屯化及必□丞扔□田□卞  霜［
+  すべてのゲームサーバーに  送?
 
   int flag : 1分匀凶日霜耨葭卞反云仁日卅中
   

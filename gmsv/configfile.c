@@ -21,17 +21,17 @@
 
 #include "npc_raceman.h"
 
-/* 涩烂毛忡  允月厌瞻   */
+/* 設定を保  する構造   */
 typedef struct tagConfig
 {
     /*皿夫弘仿丞  (愤  读卞菲户凶中仃升引分蛲  */
     char    progname[8];
 
     char    configfilename[32]; /* config易刹通誌   */
-    unsigned char debuglevel;   /* 犯田永弘伊矛伙 */
+    unsigned char debuglevel;   /* デバッグレベ郊 */
 
     unsigned int  usememoryunit;    /*丢乒伉及交瓦永玄扔奶术 */
-    unsigned int  usememoryunitnum; /*丢乒伉及交瓦永玄醒 */
+    unsigned int  usememoryunitnum; /*メモリのユニット数 */
 
     char    asname[32];         /*失市它件玄扔□田及  蟆*/
     unsigned short  acservport; /*失市它件玄扔□田及禾□玄  */
@@ -52,11 +52,11 @@ typedef struct tagConfig
 #endif    
     unsigned short allowmanorpk;	// is this server allow manor pk
                                  
-    unsigned short port;        /* 扔□田及谨切熬仃禾□玄 */
+    unsigned short port;        /* サーバの待ち受けポート */
 	
-	int				servernumber;	/* 必□丞扔□田及  寞 */
+	int				servernumber;	/* ゲームサーバの  号 */
 	int				reuseaddr;	/* Address already used... 互鞅引日卅中凛及凶户卞 */
-    int             do_nodelay;     /* TCP_NODELAY 卞允月井升丹井 */
+    int             do_nodelay;     /* TCP_NODELAY にするかどうか */
     int             log_write_time; /* 踏五仇心夫弘毛允月井升丹井［ */
     int             log_io_time;    /* I/O蝈  及凛棉反井月井升丹井［ */
     int             log_game_time;  /* 必□丞及质  蝈  及凛棉毛反井月 */
@@ -67,24 +67,24 @@ typedef struct tagConfig
     unsigned short fdnum;           /*升木分仃戊生弁扑亦件毛忡  允月井 */
     unsigned int   othercharnum;    /*  公及职及平乓仿及醒  */
 
-    unsigned int objnum;            /* 左皮斥尼弁玄及    醒*/
+    unsigned int objnum;            /* オブジェクトの    数*/
     unsigned int   petcharnum;   	/* 文喟傲式佰    */
     unsigned int itemnum;           /* 失奶  丞及    醒*/
-    unsigned int battlenum;         /* 田玄伙及    */
-    unsigned int battleexp;         /* 田玄伙及    */
+    unsigned int battlenum;         /* バト郊の    */
+    unsigned int battleexp;         /* バト郊の    */
     
-    char    topdir[64];         	/* 玄永皿犯奴伊弁玄伉  */
+    char    topdir[64];         	/* トップディレクトリ  */
 
-    char    mapdir[64];         	/* 穴永皿犯奴伊弁玄伉  */
+    char    mapdir[64];         	/* マップディレクトリ  */
     char    maptilefile[64];    	/* 僭喟駐必醒易刹通誌  */
-    char    battlemapfile[64];    	/* 田玄伙穴永皿涩烂白央奶伙  */
+    char    battlemapfile[64];    	/* バト郊マップ設定ファイ郊  */
     char    itemfile[64];       	/* 払通  悸必醒易刹通誌  */
     char    invfile[64];        	/*   劃必醒易刹通誌  */
-    char    appearfile[64];     	/* 请蜇匏  涩烂白央奶伙  */
-	char	titlenamefile[64];		/* 惫寞白央奶伙   */
+    char    appearfile[64];     	/* 出現位  設定ファイ郊  */
+	char	titlenamefile[64];		/* 称号ファイ郊   */
 	char	titleconfigfile[64];	/* 厩眺必醒易刹通誌   */
 	char	encountfile[64];		/* 巨件市它件玄涩烂白央奶伙   */
-	char	enemybasefile[64];		/* 衬湘  涩烂白央奶伙   */
+	char	enemybasefile[64];		/* 敵基  設定ファイ郊   */
 	char	enemyfile[64];			/* 劃必醒易刹通誌   */
 	char	groupfile[64];			/* 埼誌＆駐必醒易刹通誌   */
 	char	magicfile[64];			/* 犯幗必醒易刹通誌   */
@@ -101,48 +101,48 @@ typedef struct tagConfig
     char    quizfile[64];     		/* 柩通宝必醒易刹通誌  */
 
 
-    char    lsgenlog[64];       /*扔□田及lsgen 失它玄皿永玄白央奶伙  */
+    char    lsgenlog[64];       /*サーバのlsgen アウトプットファイ郊  */
 
-    char    storedir[64];       /*旦玄失犯奴伊弁玄伉    */
-    char    npcdir[64];         /*NPC及涩烂白央奶伙毛  仁犯奴伊弁玄伉   */
+    char    storedir[64];       /*ストアディレクトリ    */
+    char    npcdir[64];         /*NPCの設定ファイ郊を  くディレクトリ   */
 
     char    logdir[64];         /*
-                                 * 夫弘犯奴伊弁玄伉
+                                 * ひグディレクトリ
                                  */
     char    logconfname[64];    /*
-                                 * 夫弘涩烂白央奶伙  
+                                 * ひグ設定ファイ郊  
                                  */
-    char	chatmagicpasswd[64];	/* 民乓永玄  芊由旦伐□玉 */
+    char	chatmagicpasswd[64];	/* チャット  法パスワード */
 
 #ifdef _STORECHAR
     char	storechar[64];
 #endif
 	
-    unsigned int 	chatmagiccdkeycheck;	/* 民乓永玄  芊匹CDKEY毛民尼永弁允月井 */
+    unsigned int 	chatmagiccdkeycheck;	/* チャット  法でCDKEYをチェックするか */
     
     unsigned int    filesearchnum;     /*白央奶伙毛腹绸匹五月白央奶伙及醒*/
     unsigned int    npctemplatenum;     /*NPC及  件皿伊□玄白央奶伙及醒*/
     unsigned int    npccreatenum;       /*NPC式老撚易刹通誌式佰*/
     unsigned int    walksendinterval;   /* 汹仁及毛霜月棉厥 */
-    unsigned int    CAsendinterval_ms;     /* CA毛霜月棉厥 (ms)*/
-    unsigned int    CDsendinterval_ms;     /* CD毛霜月棉厥 (ms)*/
-    unsigned int    Onelooptime_ms;     	/* 1伙□皿卞井仃月凛棉 */
-	unsigned int	Petdeletetime;		/* 矢永玄互壅  允月凛棉 */
-	unsigned int	Itemdeletetime;		/* 失奶  丞互壅  允月凛棉 */
+    unsigned int    CAsendinterval_ms;     /* CAを送る間隔 (ms)*/
+    unsigned int    CDsendinterval_ms;     /* CDを送る間隔 (ms)*/
+    unsigned int    Onelooptime_ms;     	/* 1郊ープにかける時間 */
+	unsigned int	Petdeletetime;		/* ペットが消  する時間 */
+	unsigned int	Itemdeletetime;		/* アイ  ムが消  する時間 */
     /* 夫弘奶件  及平乓仿及本□皮毛允月棉厥 */
     unsigned int    CharSavesendinterval;
     unsigned int    addressbookoffmsgnum;  /*
-                                            * 失玉伊旦皮永弁卞左白仿奶件
-                                            * 丢永本□斥毛
+                                            * アドレスブックにオフライン
+                                            * メッセージを
                                             * 窒丢永本□斥酸六月井
                                             */
 
     unsigned int    protocolreadfrequency;  /*
-                                             * 皿夫玄戊伙毛窒立伉    
+                                             * プひトコ郊を何ミリ    
                                              * 勗  資凝
                                              */
     unsigned int    allowerrornum;          /*
-                                             * 巨仿□毛窒蜊引匹袱允井
+                                             * エラーを何個まで許すか
                                              */
     unsigned int    loghour;          		/*
                                              * 夫弘毛忡绣允月凛对  ＂凛  
@@ -241,7 +241,7 @@ sLockip lockip[100];
 int maxlockip=0;
 #endif
 /*
- *  戊件白奴弘白央奶伙毛  戈凛卞银丹厌瞻  
+ *  コンフィグファイ郊を  む時に使う構造  
  *  xxxx=yyyy 心凶中卅及毛  戈
  */
 
@@ -841,9 +841,9 @@ BOOL LoadGMSet( char* filename )
 
 /*------------------------------------------------------------
  * 皿夫弘仿丞  毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  cahr*
  ------------------------------------------------------------*/
 char* getProgname( void )
@@ -852,9 +852,9 @@ char* getProgname( void )
 }
 /*------------------------------------------------------------
  * configfilename 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getConfigfilename( void )
@@ -862,11 +862,11 @@ char* getConfigfilename( void )
     return config.configfilename;
 }
 /*------------------------------------------------------------
- * configfilename 毛涩烂允月［
- * 娄醒
- *  newv    char*   蕙仄中袄
- * 忒曰袄
- *  卅仄
+ * configfilename を設定する?
+ * 引数
+ *  newv    char*   新しい値
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void setConfigfilename( char* newv )
 {
@@ -875,10 +875,10 @@ void setConfigfilename( char* newv )
 }
 
 /*------------------------------------------------------------
- * 犯田永弘伊矛伙毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * デバッグレベ郊を  る
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getDebuglevel( void )
@@ -886,10 +886,10 @@ unsigned int getDebuglevel( void )
     return config.debuglevel;
 }
 /*------------------------------------------------------------
- * 犯田永弘伊矛伙毛涩烂允月
- * 娄醒
- *  newv    int     蕙仄中袄
- * 忒曰袄
+ * デバッグレベ郊を設定する
+ * 引数
+ *  newv    int     新しい値
+ * 返り値
  *  unsigned int    樯及袄
  ------------------------------------------------------------*/
 unsigned int setDebuglevel( unsigned int newv )
@@ -901,9 +901,9 @@ unsigned int setDebuglevel( unsigned int newv )
 }
 /*------------------------------------------------------------
  * memoryunit 毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getMemoryunit( void )
@@ -912,9 +912,9 @@ unsigned int getMemoryunit( void )
 }
 /*------------------------------------------------------------
  * memoryunitnum 毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getMemoryunitnum( void )
@@ -924,9 +924,9 @@ unsigned int getMemoryunitnum( void )
 
 /*------------------------------------------------------------
  * 失市它件玄扔□田及失玉伊旦毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char*   getAccountservername( void )
@@ -935,9 +935,9 @@ char*   getAccountservername( void )
 }
 /*------------------------------------------------------------
  * 失市它件玄扔□田及禾□玄毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned short
  ------------------------------------------------------------*/
 unsigned short   getAccountserverport( void )
@@ -946,9 +946,9 @@ unsigned short   getAccountserverport( void )
 }
 /*------------------------------------------------------------
  * 失市它件玄扔□田尺及由旦伐□玉毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned short
  ------------------------------------------------------------*/
 char*   getAccountserverpasswd( void )
@@ -957,9 +957,9 @@ char*   getAccountserverpasswd( void )
 }
 /*------------------------------------------------------------
  * 失市它件玄扔□田井日苇尹月必□丞扔□田午仄化及  蟆毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned short
  ------------------------------------------------------------*/
 char*   getGameservername( void )
@@ -1010,9 +1010,9 @@ unsigned short getPortnumber( void )
 }
 /*------------------------------------------------------------
  * 必□丞扔□田及  寞   寞毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned short
  ------------------------------------------------------------*/
 int getServernumber( void )
@@ -1021,9 +1021,9 @@ int getServernumber( void )
 }
 /*------------------------------------------------------------
  * reuseaddr 及袄毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned short
  ------------------------------------------------------------*/
 int getReuseaddr( void )
@@ -1054,9 +1054,9 @@ int getLogNetloopFaster(void)
 
 /*------------------------------------------------------------
  * saacwritenum 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *   int
  ------------------------------------------------------------*/
 int getSaacwritenum( void )
@@ -1064,10 +1064,10 @@ int getSaacwritenum( void )
     return config.saacwritenum;
 }
 /*------------------------------------------------------------
- * saacwritenum 毛涩烂允月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * saacwritenum を設定する?
+ * 引数
+ *  なし
+ * 返り値
  *   int
  ------------------------------------------------------------*/
 void setSaacwritenum( int num )
@@ -1076,9 +1076,9 @@ void setSaacwritenum( int num )
 }
 /*------------------------------------------------------------
  * saacreadnum 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *   int
  ------------------------------------------------------------*/
 int getSaacreadnum( void )
@@ -1086,10 +1086,10 @@ int getSaacreadnum( void )
     return config.saacreadnum;
 }
 /*------------------------------------------------------------
- * saacreadnum 毛涩烂允月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * saacreadnum を設定する?
+ * 引数
+ *  なし
+ * 返り値
  *   int
  ------------------------------------------------------------*/
 void setSaacreadnum( int num )
@@ -1098,9 +1098,9 @@ void setSaacreadnum( int num )
 }
 /*------------------------------------------------------------
  * fdnum 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getFdnum( void )
@@ -1109,9 +1109,9 @@ unsigned int getFdnum( void )
 }
 /*------------------------------------------------------------
  * petcharanum 毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getPetcharnum( void )
@@ -1122,9 +1122,9 @@ unsigned int getPetcharnum( void )
 
 /*------------------------------------------------------------
  * othercharnum 毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getOtherscharnum( void )
@@ -1134,9 +1134,9 @@ unsigned int getOtherscharnum( void )
 
 /*------------------------------------------------------------
  * objnum 毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getObjnum( void )
@@ -1146,9 +1146,9 @@ unsigned int getObjnum( void )
 
 /*------------------------------------------------------------
  * itemnum 毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getItemnum( void )
@@ -1159,9 +1159,9 @@ unsigned int getItemnum( void )
 
 /*------------------------------------------------------------
  * battlenum 毛  月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getBattlenum( void )
@@ -1177,9 +1177,9 @@ unsigned int getBattleexp( void )
 #endif
 /*------------------------------------------------------------
  * topdir 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getTopdir( void )
@@ -1188,9 +1188,9 @@ char* getTopdir( void )
 }
 /*------------------------------------------------------------
  * mapdir 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getMapdir( void )
@@ -1199,9 +1199,9 @@ char* getMapdir( void )
 }
 /*------------------------------------------------------------
  * maptilefile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getMaptilefile( void )
@@ -1210,9 +1210,9 @@ char* getMaptilefile( void )
 }
 /*------------------------------------------------------------
  * battlemapfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getBattleMapfile( void )
@@ -1221,9 +1221,9 @@ char* getBattleMapfile( void )
 }
 /*------------------------------------------------------------
  * itemfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getItemfile( void )
@@ -1232,9 +1232,9 @@ char* getItemfile( void )
 }
 /*------------------------------------------------------------
  * invfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getInvfile( void )
@@ -1243,9 +1243,9 @@ char* getInvfile( void )
 }
 /*------------------------------------------------------------
  * appearfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getAppearfile( void )
@@ -1254,9 +1254,9 @@ char* getAppearfile( void )
 }
 /*------------------------------------------------------------
  * effectfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getEffectfile( void )
@@ -1265,9 +1265,9 @@ char* getEffectfile( void )
 }
 /*------------------------------------------------------------
  * titlenamefile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getTitleNamefile( void )
@@ -1276,9 +1276,9 @@ char* getTitleNamefile( void )
 }
 /*------------------------------------------------------------
  * titleconfigfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getTitleConfigfile( void )
@@ -1287,9 +1287,9 @@ char* getTitleConfigfile( void )
 }
 /*------------------------------------------------------------
  * encountfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getEncountfile( void )
@@ -1298,9 +1298,9 @@ char* getEncountfile( void )
 }
 /*------------------------------------------------------------
  * enemyfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getEnemyfile( void )
@@ -1309,9 +1309,9 @@ char* getEnemyfile( void )
 }
 /*------------------------------------------------------------
  * enemybasefile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getEnemyBasefile( void )
@@ -1320,9 +1320,9 @@ char* getEnemyBasefile( void )
 }
 /*------------------------------------------------------------
  * groupfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getGroupfile( void )
@@ -1331,9 +1331,9 @@ char* getGroupfile( void )
 }
 /*------------------------------------------------------------
  * magicfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getMagicfile( void )
@@ -1390,9 +1390,9 @@ char* getQuizfile( void )
 
 /*------------------------------------------------------------
  * lsgenlogfile 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getLsgenlogfilename( void )
@@ -1415,9 +1415,9 @@ char* getGMSetfile( void )
 
 /*------------------------------------------------------------
  * storedir 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getStoredir( void )
@@ -1441,10 +1441,10 @@ char* getAuctiondir(void)
 #endif
 
 /*------------------------------------------------------------
- * NPC 迕及犯奴伊弁玄伉毛  化仁月楮醒
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * NPC 用のディレクトリを  てくる関数
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getNpcdir( void )
@@ -1452,10 +1452,10 @@ char* getNpcdir( void )
     return config.npcdir;
 }
 /*------------------------------------------------------------
- * 夫弘犯奴伊弁玄伉毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * ひグディレクトリを  る?
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getLogdir( void )
@@ -1465,9 +1465,9 @@ char* getLogdir( void )
 
 /*------------------------------------------------------------
  * 夫弘涩烂白央奶伙  毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getLogconffile( void )
@@ -1476,9 +1476,9 @@ char* getLogconffile( void )
 }
 /*------------------------------------------------------------
  * 民乓永玄  芊由旦伐□玉 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 char* getChatMagicPasswd( void )
@@ -1486,10 +1486,10 @@ char* getChatMagicPasswd( void )
     return config.chatmagicpasswd;
 }
 /*------------------------------------------------------------
- * 犯田永弘民乓永玄  芊匹及CDKEY民尼永弁毛允月井升丹井毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * デバッグチャット  法でのCDKEYチェックをするかどうかを  る?
+ * 引数
+ *  なし
+ * 返り値
  *  char*
  ------------------------------------------------------------*/
 unsigned getChatMagicCDKeyCheck( void )
@@ -1499,9 +1499,9 @@ unsigned getChatMagicCDKeyCheck( void )
 
 /*------------------------------------------------------------
  * filesearchnum毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getFilesearchnum( void )
@@ -1510,9 +1510,9 @@ unsigned int getFilesearchnum( void )
 }
 /*------------------------------------------------------------
  * npctemplatenum毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getNpctemplatenum( void )
@@ -1521,9 +1521,9 @@ unsigned int getNpctemplatenum( void )
 }
 /*------------------------------------------------------------
  * npccreatenum毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getNpccreatenum( void )
@@ -1533,9 +1533,9 @@ unsigned int getNpccreatenum( void )
 
 /*------------------------------------------------------------
  * walksendinterval毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getWalksendinterval( void )
@@ -1544,9 +1544,9 @@ unsigned int getWalksendinterval( void )
 }
 /*------------------------------------------------------------
  * walksendinterval毛本永玄允月［
- * 娄醒
- *  unsigned int 	interval	凛棉  立伉    
- * 忒曰袄
+ * 引数
+ *  unsigned int 	interval	時間  ミリ    
+ * 返り値
  *  void
  ------------------------------------------------------------*/
 void setWalksendinterval( unsigned int interval )
@@ -1555,9 +1555,9 @@ void setWalksendinterval( unsigned int interval )
 }
 /*------------------------------------------------------------
  * CAsendinterval毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getCAsendinterval_ms( void )
@@ -1566,9 +1566,9 @@ unsigned int getCAsendinterval_ms( void )
 }
 /*------------------------------------------------------------
  * CAsendinterval毛本永玄允月［
- * 娄醒
+ * 引数
  *  unsigned int interval
- * 忒曰袄
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 void setCAsendinterval_ms( unsigned int interval_ms )
@@ -1577,9 +1577,9 @@ void setCAsendinterval_ms( unsigned int interval_ms )
 }
 /*------------------------------------------------------------
  * CDsendinterval毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getCDsendinterval_ms( void )
@@ -1588,9 +1588,9 @@ unsigned int getCDsendinterval_ms( void )
 }
 /*------------------------------------------------------------
  * CDsendinterval毛本永玄允月［
- * 娄醒
+ * 引数
  *  interval		unsigned int
- * 忒曰袄
+ * 返り値
  * void
  ------------------------------------------------------------*/
 void setCDsendinterval_ms( unsigned int interval_ms )
@@ -1599,9 +1599,9 @@ void setCDsendinterval_ms( unsigned int interval_ms )
 }
 /*------------------------------------------------------------
  * Onelooptime毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getOnelooptime_ms( void )
@@ -1610,9 +1610,9 @@ unsigned int getOnelooptime_ms( void )
 }
 /*------------------------------------------------------------
  * Onelooptime毛本永玄允月［
- * 娄醒
+ * 引数
  *  interval		unsigned int
- * 忒曰袄
+ * 返り値
  * void
  ------------------------------------------------------------*/
 void setOnelooptime_ms( unsigned int interval_ms )
@@ -1621,9 +1621,9 @@ void setOnelooptime_ms( unsigned int interval_ms )
 }
 /*------------------------------------------------------------
  * Petdeletetime毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getPetdeletetime( void )
@@ -1632,9 +1632,9 @@ unsigned int getPetdeletetime( void )
 }
 /*------------------------------------------------------------
  * Petdeletetime毛本永玄允月［
- * 娄醒
+ * 引数
  *  interval		unsigned int
- * 忒曰袄
+ * 返り値
  * void
  ------------------------------------------------------------*/
 void setPetdeletetime( unsigned int interval )
@@ -1643,9 +1643,9 @@ void setPetdeletetime( unsigned int interval )
 }
 /*------------------------------------------------------------
  * Itemdeletetime毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getItemdeletetime( void )
@@ -1654,9 +1654,9 @@ unsigned int getItemdeletetime( void )
 }
 /*------------------------------------------------------------
  * Itemdeletetime毛本永玄允月［
- * 娄醒
+ * 引数
  *  interval		unsigned int
- * 忒曰袄
+ * 返り値
  * void
  ------------------------------------------------------------*/
 void setItemdeletetime( unsigned int interval )
@@ -1666,9 +1666,9 @@ void setItemdeletetime( unsigned int interval )
 
 /*------------------------------------------------------------
  * CharSavesendinterval毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getCharSavesendinterval( void )
@@ -1677,9 +1677,9 @@ unsigned int getCharSavesendinterval( void )
 }
 /*------------------------------------------------------------
  * CharSavesendinterval毛本永玄允月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 void setCharSavesendinterval( unsigned int interval)
@@ -1689,9 +1689,9 @@ void setCharSavesendinterval( unsigned int interval)
 
 /*------------------------------------------------------------
  * Addressbookoffmsgnum 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getAddressbookoffmsgnum( void )
@@ -1700,9 +1700,9 @@ unsigned int getAddressbookoffmsgnum( void )
 }
 /*------------------------------------------------------------
  * Protocolreadfrequency 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getProtocolreadfrequency( void )
@@ -1712,9 +1712,9 @@ unsigned int getProtocolreadfrequency( void )
 
 /*------------------------------------------------------------
  * Allowerrornum 毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getAllowerrornum( void )
@@ -1724,9 +1724,9 @@ unsigned int getAllowerrornum( void )
 
 /*------------------------------------------------------------
  * 夫弘毛潸  允月凛对毛  月［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int
  ------------------------------------------------------------*/
 unsigned int getLogHour( void )
@@ -1735,10 +1735,10 @@ unsigned int getLogHour( void )
 }
 
 /*------------------------------------------------------------
- * 田玄伙  及犯田永弘丢永本□斥毛请允井［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * バト郊  のデバッグメッセージを出すか?
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int 1卅日请允
  ------------------------------------------------------------*/
 unsigned int getBattleDebugMsg( void )
@@ -1746,10 +1746,10 @@ unsigned int getBattleDebugMsg( void )
     return config.battledebugmsg;
 }
 /*------------------------------------------------------------
- * 田玄伙  及犯田永弘丢永本□斥毛请允井［
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * バト郊  のデバッグメッセージを出すか?
+ * 引数
+ *  なし
+ * 返り値
  *  unsigned int 1卅日请允
  ------------------------------------------------------------*/
 void setBattleDebugMsg( unsigned int num )
@@ -1760,17 +1760,17 @@ void setBattleDebugMsg( unsigned int num )
 
 
 /*
- * Config及犯白巧伙玄袄毛瑁户月楮醒
- * 娄醒
+ * Configのデフォ郊ト値を決める関数
+ * 引数
  *  argv0   char*   戊穴件玉仿奶件娄醒及  赓
  */
 void  defaultConfig( char* argv0 )
 {
-    char* program;                  /* program  毛菲户月及卞银丹 */
+    char* program;                  /* program  を求めるのに使う */
 
-    /* 犯白巧伙玄袄毛  木月 */
+    /* デフォ郊ト値を  れる */
 
-    /*皿夫弘仿丞  */
+    /*プひグラム  */
     program = rindex(argv0, '/');
     if (program == NULL)
         program = argv0;
@@ -1786,15 +1786,15 @@ void  defaultConfig( char* argv0 )
 
 /*
  * 涩烂白央奶伙  毛  氏分  匹及质  毛垫丹［
- * 娄醒
- *  卅仄
- * 忒曰袄
- *  卅仄
+ * 引数
+ *  なし
+ * 返り値
+ *  なし
  */
 void lastConfig( void )
 {
     char    entry[256];
-    /*  穴永皿犯奴伊弁玄伉及涩烂    */
+    /*  マップディレクトリの設定    */
     snprintf(entry, sizeof(entry), "%s/%s", config.topdir, config.mapdir);
     strcpysafe(config.mapdir, sizeof(config.mapdir), entry);
 
@@ -1816,7 +1816,7 @@ void lastConfig( void )
     snprintf(entry,sizeof(entry), "%s/%s", config.topdir,config.invfile);
     strcpysafe(config.invfile, sizeof(config.invfile), entry);
 
-    /*  请蜇匏  涩烂白央奶伙  及涩烂    */
+    /*  出現位  設定ファイ郊  の設定    */
     snprintf(entry,sizeof(entry), "%s/%s", config.topdir,config.appearfile);
     strcpysafe(config.appearfile, sizeof(config.appearfile), entry);
 
@@ -1832,16 +1832,16 @@ void lastConfig( void )
     snprintf(entry,sizeof(entry), "%s/%s", config.topdir,config.titlenamefile);
     strcpysafe(config.titlenamefile, sizeof(config.titlenamefile), entry);
 
-    /*  lsgen 失它玄皿永玄白央奶伙      */
+    /*  lsgen アウトプットファイ郊      */
     snprintf(entry,sizeof(entry),"%s/%s", config.topdir,config.lsgenlog);
     strcpysafe(config.lsgenlog, sizeof(config.lsgenlog), entry);
 
-    /*  旦玄失犯奴伊弁玄伉及涩烂    */
+    /*  ストアディレクトリの設定    */
 /*
     snprintf(entry,sizeof(entry), "%s/%s",config.topdir,config.storedir);
     strcpysafe(config.storedir, sizeof(config.storedir), entry);
 */
-    /*  NPC涩烂玄永皿犯奴伊弁玄伉及涩烂    */
+    /*  NPC設定トップディレクトリの設定    */
     snprintf(entry,sizeof(entry), "%s/%s",config.topdir,config.npcdir);
     strcpysafe(config.npcdir, sizeof(config.npcdir), entry);
 
@@ -1855,13 +1855,13 @@ void lastConfig( void )
 
 
 /*
- * 禾奶件正□午赝濠卅滇树  毛  匀化医  毛允月楮醒
- * 娄醒
+ * ポインターと適切な型情  を  って代  をする関数
+ * 引数
  *  to      void*   袄毛医  允月禾奶件正
  *  type    CTYPE   to及滇毛瑁户月
  *  value   double  to卞医  允月袄
- * 忒曰袄
- *  卅仄
+ * 返り値
+ *  なし
  */
 void substitutePointerFromType( void* to , CTYPE type ,double value)
 {
@@ -1884,18 +1884,18 @@ void substitutePointerFromType( void* to , CTYPE type ,double value)
 
 /*------------------------------------------------------------
  * 必醒易刹通誌谷  瑚
- * 娄醒
+ * 引数
  *      filename            易刹通誌  
- * 忒曰袄
+ * 返り値
  *      TRUE(1)     岳  
  *      FALSE(0)    撩      -> 白央奶伙及左□皿件卞撩  仄凶
  ------------------------------------------------------------*/
 BOOL readconfigfile( char* filename )
 {
     FILE* f=NULL;
-    char linebuf[256];                  /* 域垫  心  戈田永白央 */
-    int linenum=0;                      /* 垫醒毛醒尹月 */
-    char    realopenfilename[256];      /*    端卞open 允月白央奶伙  */
+    char linebuf[256];                  /* 一行  み  むバッファ */
+    int linenum=0;                      /* 行数を数える */
+    char    realopenfilename[256];      /*    際にopen するファイ郊  */
 
     char    hostname[128];
 
@@ -1922,10 +1922,10 @@ BOOL readconfigfile( char* filename )
         }
     }
 
-    /* 域垫勿勾  心  戈 */
+    /* 一行づつ  み  む */
     while( fgets( linebuf , sizeof( linebuf ), f ) ){
         char firstToken[256];       /*1    及  侬  */
-        int i;                      /*伙□皿  醒*/
+        int i;                      /*郊ープ  数*/
         int ret;                    /*伉正□件戊□玉*/
 
         linenum ++;
@@ -1956,7 +1956,7 @@ BOOL readconfigfile( char* filename )
                                                    , secondToken ,
                                                    sizeof(secondToken) );
 
-                /* NULL  侬井升丹井毛譬屯月 */
+                /* NULL  字かどうかを調べる */
                 if( ret == FALSE ){
                     print( "Find error at %s in line %d. Ignore",
                            filename , linenum);
@@ -1998,11 +1998,11 @@ BOOL readconfigfile( char* filename )
 }
 //ttom add this becaus the second had this function 
 /*------------------------------------------------------------
- * 巨件戊□玉平□毛涩烂允月
- * 娄醒
- *  卅仄
- * 忒曰袄
- *  unsigned int 平□毛忒允
+ * エンコードキーを設定する
+ * 引数
+ *  なし
+ * 返り値
+ *  unsigned int キーを返す
 ------------------------------------------------------------*/
 unsigned int setEncodeKey( void )
 {
@@ -2011,10 +2011,10 @@ unsigned int setEncodeKey( void )
 }
 /*------------------------------------------------------------
 * 失市它件玄扔□田□卞踏五  戈田永白央及扔奶术毛涩烂允月
-* 娄醒
-*  卅仄
-* 忒曰袄
-*  unsigned int 平□毛忒允
+* 引数
+*  なし
+* 返り値
+*  unsigned int キーを返す
 ------------------------------------------------------------*/
 unsigned int setAcWBSize( void )
 {

@@ -317,7 +317,7 @@ BOOL PETSKILL_initPetskill( char *filename)
 
     PETSKILL_petskillnum=0;
 
-    /*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    *///读曲宠技总数
+    /*  まず  効な行が何行あるかどうか調べる    *///读曲宠技总数
     while( fgets( line, sizeof( line ), f ) ){
 		char    token[256];
         linenum ++;
@@ -353,7 +353,7 @@ BOOL PETSKILL_initPetskill( char *filename)
         return FALSE;
     }
 
-	/* 赓渝祭 */
+	/* 初期化 */
     for( i = 0; i < PETSKILL_petskillnum; i ++ ) {
     	for( j = 0; j < PETSKILL_DATAINTNUM; j ++ ) {
     		PETSKILL_setInt( i,j,-1);
@@ -372,10 +372,10 @@ BOOL PETSKILL_initPetskill( char *filename)
                 
         chomp( line );
 
-        /*  垫毛帮溥允月    */
+        /*  行を整形する    */
         /*  引内 tab 毛 " " 卞  五晶尹月    */
         replaceString( line, '\t' , ' ' );
-        /* 燮  及旦矢□旦毛潸月［*/
+        /* 先  のスペースを取る?*/
 {
         char    buf[256];
         for( i = 0; i < strlen( line); i ++) {
@@ -402,7 +402,7 @@ BOOL PETSKILL_initPetskill( char *filename)
 #endif
 
 		for( i = 0; i < PETSKILL_DATACHARNUM; i ++ ) {
-	        /*    侬  迕玄□弁件毛苇月    */
+	        /*    字  用トークンを見る    */
 	        ret = getStringFromIndexWithDelim( line,",", i + 1, token,sizeof(token));
 	        if( ret==FALSE ){
 	            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
@@ -475,9 +475,9 @@ BOOL PETSKILL_reinitPetskill( void )
 	return( PETSKILL_initPetskill( getPetskillfile()));
 }
 /*------------------------------------------------------------------------
- * PETSKILL_ID井日骄侬毛襞月楮醒
- * 忒曰袄
- * 岳  : 骄侬
+ * PETSKILL_IDから添字を知る関数
+ * 返り値
+ * 成  : 添字
  * 撩  : -1
  *-----------------------------------------------------------------------*/
 int PETSKILL_getPetskillArray( int petskillid)
@@ -496,10 +496,10 @@ int PETSKILL_getPetskillArray( int petskillid)
 	return -1;
 }
 /*------------------------------------------------------------
- * 矢永玄  及楮醒  井日禾奶件正□毛忒允
- * 娄醒
+ * ペット  の関数  からポインターを返す
+ * 引数
  *  name        char*       热诸及  蟆
- * 忒曰袄
+ * 返り値
  *  楮醒尺及禾奶件正［卅中桦宁卞反NULL
  ------------------------------------------------------------*/
 PETSKILL_CALLFUNC PETSKILL_getPetskillFuncPointer(char* name )
@@ -944,7 +944,7 @@ int PETSKILL_WildViolentAttack(
 	if( ( pszP = strstr( pszOption, "避" ) ) != NULL){
 		sscanf(	 pszP+2, "%d", &iDuck );
 	}
-	//       膜恳毛忡绣
+	//       修正を保存
 	CHAR_SETWORKINT_HIGH( charaindex, CHAR_WORKBATTLECOM3, iDuck );
 
 	return TRUE;
@@ -1283,7 +1283,7 @@ int PETSKILL_StealMoney( int charaindex, int toNo, int array, char *data)
 #endif
 
 //*******************************************************
-// 檗  -- 失奶  丞宁岳
+// 石  -- アイ  ム合成
 //
 int PETSKILL_Merge(
 	int charaindex,

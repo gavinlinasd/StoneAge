@@ -73,7 +73,7 @@ void AddFMAdv(int talker, int shiftbit);
 // Robin 0817 family income
 int addNpcFamilyTax( int meindex, int talkerindex, int income );
 
-#define		NPC_ENEMY_ENEMYNUMBER		10		/* 请蜇衬    醒 */
+#define		NPC_ENEMY_ENEMYNUMBER		10		/* 出現敵    数 */
 
 /* 娄醒白央奶伙  心  心及ㄠ垫及  侬醒晓蜃 */
 #define NPC_UTIL_GETARGSTR_LINEMAX	4096

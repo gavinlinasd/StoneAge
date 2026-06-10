@@ -66,8 +66,8 @@ void LogAcMess( int fd, char *type, char *mess );
 void LogItem(
 	char *CharName, /* 平乓仿弁正   */
 	char *CharID,
-	int ItemNo, 	/* 失奶  丞  寞 */
-	char *Key, 		/* 平□伐□玉 */
+	int ItemNo, 	/* アイ  ム  号 */
+	char *Key, 		/* キーワード */
 	int floor,		/* 甄   */
 	int x,
 	int y,
@@ -89,7 +89,7 @@ void LogPet(
 	char *CharID,
 	char *PetName,
 	int PetLv,
-	char *Key, 		/* 平□伐□玉 */
+	char *Key, 		/* キーワード */
 	int floor,		/* 甄   */
 	int x,
 	int y,
@@ -119,20 +119,20 @@ void LogStreetVendor(
 void LogTensei(
 	char *CharName, /* 平乓仿弁正   */
 	char *CharID,
-	char *Key, 		/* 平□伐□玉 */
-	int level,		//伊矛伙
+	char *Key, 		/* キーワード */
+	int level,		//レベ郊
 	int transNum,	//猿老者佰
-	int quest,		//弁巨旦玄醒
+	int quest,		//クエスト数
 	int home,		//请褥哗
 	int item,		//  却払通  悸  小垰佰
 	int pet,		//  却文喟傲  小垰佰
-	int vital,		//  祭蟆Vital
+	int vital,		//  化前Vital
 	int b_vital,	//  祭  vital
-	int str,		//  祭蟆str
+	int str,		//  化前str
 	int b_str,		//  祭  str
-	int tgh,		//  祭蟆      
+	int tgh,		//  化前      
 	int b_tgh,		//  祭        
-	int dex,		//  祭蟆      
+	int dex,		//  化前      
 	int b_dex		//  祭        
 );
 // Syu ADD 新增家族个人银行存取Log (不含家族银行)
@@ -154,7 +154,7 @@ void LogStone(
         char *CharId,   /* 住＆闇＆ID */
         int Gold,               /* 嗯喊 */
 		int MyGold,
-        char *Key,              /* 平□伐□玉 */
+        char *Key,              /* キーワード */
         int floor,              /* 甄   */
         int x,
         int y
@@ -273,7 +273,7 @@ void LogBankStone(
         char *CharId, /* 住＆闇＆ID */
 		int	meindex,
         int Gold,               /* 嗯喊 */
-        char *Key,              /* 平□伐□玉 */
+        char *Key,              /* キーワード */
         int floor,              /* 甄   */
         int x,
         int y,

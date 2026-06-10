@@ -7,7 +7,7 @@ typedef enum
 {
 	PETSKILL_FIELD_ALL,			/* 允屯化及桦赭匹银尹月 */
 	PETSKILL_FIELD_BATTLE,				/* 爵    及心 */
-	PETSKILL_FIELD_MAP,				/* 骚橘穴永皿晓及心 */
+	PETSKILL_FIELD_MAP,				/* 通常マップ上のみ */
 
 }PETSKILL_FIELDTYPE;
 
@@ -16,11 +16,11 @@ typedef enum
 	PETSKILL_TARGET_MYSELF,		/* 愤坌及心 */
 	PETSKILL_TARGET_OTHER,			/* 职及谛  愤坌殖戈) */
 	PETSKILL_TARGET_ALLMYSIDE,		/*     蝈   */
-	PETSKILL_TARGET_ALLOTHERSIDE,	/* 锹澎础蝈   */
+	PETSKILL_TARGET_ALLOTHERSIDE,	/* 相手側全   */
 	PETSKILL_TARGET_ALL,			/* 蝈化 */
 	PETSKILL_TARGET_NONE,			/* 簿手蓟  请  卅中［  豢支凶户及凛 */
 	PETSKILL_TARGET_OTHERWITHOUTMYSELF,/* 职及谛  愤坌殖引卅中) */
-	PETSKILL_TARGET_WITHOUTMYSELFANDPET,  /* 愤坌午矢永玄动陆 */
+	PETSKILL_TARGET_WITHOUTMYSELFANDPET,  /* 自分とペット以外 */
 }PETSKILL_TARGETTYPE;
 
 typedef enum
@@ -39,9 +39,9 @@ typedef enum
 typedef enum
 {
 	PETSKILL_NAME,					/*      */
-	PETSKILL_COMMENT,				/* 戊丢件玄*/
-	PETSKILL_FUNCNAME,				/* 楮醒   */
-	PETSKILL_OPTION,				/* 左皿扑亦件 */
+	PETSKILL_COMMENT,				/* コメント*/
+	PETSKILL_FUNCNAME,				/* 関数   */
+	PETSKILL_OPTION,				/* オプ竺ョン */
 #ifdef _CFREE_petskill
 	PETSKILL_FREE,					/*条件*/
 	PETSKILL_KINDCODE,				/*种类码*/
@@ -98,14 +98,14 @@ int PETSKILL_ChargeAttack(
 
 #define PETSKILL_ID_GBREAK		0	// 下＆囁討卅通柩
 #define PETSKILL_ID_RENZOKU		1	//   粮  猾
-#define PETSKILL_ID_GUARDIAN	2	// 镝舅甩民跤
-#define PETSKILL_ID_CHARGE		3	// 民乓□斥  猾
-#define PETSKILL_ID_ICHIGEKI	100	// 域猾  诮
+#define PETSKILL_ID_GUARDIAN	2	// 忠犬ハチ公
+#define PETSKILL_ID_CHARGE		3	// チャージ  撃
+#define PETSKILL_ID_ICHIGEKI	100	// 一撃  殺
 #define PETSKILL_ID_POWERBALANCE 110	//     及讽
 
 //**********************************************************************
 //
-//  檗  -- 职谛毛潮曰卅互日  猾
+//  石  -- 他人を守りながら  撃
 //
 int PETSKILL_Guardian(
 	int charaindex,
@@ -139,7 +139,7 @@ int PETSKILL_Mighty(
 
 //**********************************************************************
 //
-//  檗  -- 旦  □正旦唱橘  猾
+//  石  -- ス  ータス異常  撃
 //
 int PETSKILL_StatusChange(
 	int charaindex,
@@ -154,7 +154,7 @@ int PETSKILL_StatusChange(
 
 //*******************************************************
 //
-// 檗  -- 骚橘  猾
+// 石  -- 通常  撃
 //
 int PETSKILL_NormalAttack(
 	int charaindex,
@@ -168,7 +168,7 @@ int PETSKILL_NormalAttack(
 
 //*******************************************************
 //
-// 檗  -- 骚橘  豢
+// 石  -- 通常  御
 //
 int PETSKILL_NormalGuard(
 	int charaindex,
@@ -181,7 +181,7 @@ int PETSKILL_NormalGuard(
 //*******************************************************
 
 //*******************************************************
-// 檗  -- 谨窗(窒手仄卅中)
+// 石  -- 待機(何もしない)
 //
 int PETSKILL_None(
 	int charaindex,
@@ -280,7 +280,7 @@ int PETSKILL_Fixitem(
 );
 #endif
 
-// 檗  -- 失奶  丞宁岳
+// 石  -- アイ  ム合成
 //
 int PETSKILL_Merge(
 	int charaindex,

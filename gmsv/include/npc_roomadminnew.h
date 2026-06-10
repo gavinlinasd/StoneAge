@@ -19,9 +19,9 @@ typedef struct roomadmin_tag
     
     char doorname[256];     /* 公及  盒及玉失及  蟆 */
     char explanation[256];  /*      */
-    char passwd[256];       /* 由旦伐□玉 */
-    int expire_time_mod;    /* 匏锹 */
-    time_t expire_time;     /* 渝蜃濠木及凛棉 */
+    char passwd[256];       /* パスワード */
+    int expire_time_mod;    /* 位相 */
+    time_t expire_time;     /* 期限切れの時間 */
     int least_cost;         /*   斓嗯喊 */
     
 }NPC_ROOMINFO;
@@ -36,10 +36,10 @@ typedef struct npc_roomadminnew_tag {
 
 typedef struct npc_roomadminnew_ranking_tag {
 	int		gold;				/*   诳嗯喊 */
-	int		biddate;			/*   诳凛棉 */
+	int		biddate;			/*   札時間 */
 	char	cdkey[CDKEYLEN];	/*   午仄凶谛及    平□ */
 	char	charaname[32];		/*   午仄凶谛及  蟆 */
-	char	owntitle[32];		/* 惫寞*/
+	char	owntitle[32];		/* 称号*/
 	
 }NPC_RANKING_INFO;
 

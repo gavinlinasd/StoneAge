@@ -32,7 +32,7 @@ typedef struct tagPOINT
     int     x;
     int     y;
 }POINT;
-/* strtol 及仿永由□迕卞银丹 */
+/* strtol のラッパー用に使う */
 typedef enum
 {
     CHAR,SHORT,INT,DOUBLE
@@ -99,20 +99,20 @@ unsigned short CheckCRC( unsigned char *p , int size );
 INLINE double time_diff(struct timeval subtrahend,struct timeval subtractor);
  
 
-/*  穴弁夫卅曰  */
+/*  マクひなり  */
 #define ABS(x)      ((x)>=0 ? (x) : -(x))
 
-/*    轾毛 0 - 7 卞濮覆卞允月   */
+/*    向を 0 - 7 に絶対にする   */
 #define VALIDATEDIR(x)  ({(x)%=8;(x)=((x)+8)%8;})
 
-/*  4田奶玄犯□正毛2田奶玄犯□正午仄化银丹  */
+/*  4バイトデータを2バイトデータとして使う  */
 #define GETLOWVALUE(x)  (  (x)&0x0000ffff)
 #define GETHIGHVALUE(x) ((((x)&0xffff0000)>>16)&0x0000ffff)
 #define SETLOWVALUE(x,y)  ((x)=((x)&0xffff0000)|( (y)     &0x0000ffff))
 #define SETHIGHVALUE(x,y) ((x)=((x)&0x0000ffff)|(((y)<<16)&0xffff0000))
 #define MAKE2VALUE(x,y)  ((((x)<<16)&0xffff0000)|((y)&0x0000ffff))
 
-/*  4田奶玄犯□正毛1田奶玄*4午仄化丐勾井丹穴弁夫    */
+/*  4バイトデータを1バイト*4としてあつかうマクひ    */
 #define GETFIRSTVALUE(x)  (  (x)&0x000000ff )
 #define GETSECONDVALUE(x) ((((x)&0x0000ff00)>>8 )&0x000000ff)
 #define GETTHIRDVALUE(x)  ((((x)&0x00ff0000)>>16)&0x000000ff)

@@ -24,7 +24,7 @@ typedef struct tagENCOUNT_Table
     int                 floor;
     int                 encountprob_min;                /* 巨件市它件玄割   */
     int                 encountprob_max;                /* 巨件市它件玄割   */
-    int                 enemymaxnum;        /* 升木分仃衬毛综月井 */
+    int                 enemymaxnum;        /* どれだけ敵を作るか */
     int                 zorder;
     int                 groupid[ENCOUNT_GROUPMAXNUM];       /* 精鳴↓鏤No */
     int                 createprob[ENCOUNT_GROUPMAXNUM];    /* 公及弘伙□皿及请蜇   */

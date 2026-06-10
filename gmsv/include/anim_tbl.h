@@ -5,55 +5,55 @@
 #define SPRSTART			100000		// SPR犯□正及铵引曰及  寞
 
 // 平乓仿
-#define SPR_001em			100000		//	阂间裆ㄠ	豳澎
+#define SPR_001em			100000		//	子供男１	素手
 #define SPR_001ax			100001		// 			  
 #define SPR_001cl			100002		//			仇氏徇
 #define SPR_001sp			100003		//			键
 #define SPR_001bw			100004		//			菰
 
-#define SPR_002em			100005		//	阂间裆ㄠ	豳澎
+#define SPR_002em			100005		//	子供男１	素手
 #define SPR_002ax			100006		// 			  
 #define SPR_002cl			100007		//			仇氏徇
 #define SPR_002sp			100008		//			键
 #define SPR_002bw			100009		//			菰
 
-#define SPR_003em			100010		//	阂间裆ㄠ	豳澎
+#define SPR_003em			100010		//	子供男１	素手
 #define SPR_003ax			100011		// 			  
 #define SPR_003cl			100012		//			仇氏徇
 #define SPR_003sp			100013		//			键
 #define SPR_003bw			100014		//			菰
 
-#define SPR_004em			100015		//	阂间裆ㄠ	豳澎
+#define SPR_004em			100015		//	子供男１	素手
 #define SPR_004ax			100016		// 			  
 #define SPR_004cl			100017		//			仇氏徇
 #define SPR_004sp			100018		//			键
 #define SPR_004bw			100019		//			菰
 
-#define SPR_011em			100020		//	剂  ㄠ		豳澎
+#define SPR_011em			100020		//	少  １		素手
 #define SPR_011ax			100021		// 			  
 #define SPR_011cl			100022		//			仇氏徇
 #define SPR_011sp			100023		//			键
 #define SPR_011bw			100024		//			菰
 
-#define SPR_012em			100025		//	剂  ㄠ		豳澎
+#define SPR_012em			100025		//	少  １		素手
 #define SPR_012ax			100026		// 			  
 #define SPR_012cl			100027		//			仇氏徇
 #define SPR_012sp			100028		//			键
 #define SPR_012bw			100029		//			菰
 
-#define SPR_013em			100030		//	剂  ㄠ		豳澎
+#define SPR_013em			100030		//	少  １		素手
 #define SPR_013ax			100031		// 			  
 #define SPR_013cl			100032		//			仇氏徇
 #define SPR_013sp			100033		//			键
 #define SPR_013bw			100034		//			菰
 
-#define SPR_014em			100035		//	剂  ㄠ		豳澎
+#define SPR_014em			100035		//	少  １		素手
 #define SPR_014ax			100036		// 			  
 #define SPR_014cl			100037		//			仇氏徇
 #define SPR_014sp			100038		//			键
 #define SPR_014bw			100039		//			菰
 
-#define SPR_021em			100040		//	剂  ㄡ		豳澎
+#define SPR_021em			100040		//	少  ２		素手
 #define SPR_021ax			100041		// 			  
 #define SPR_021cl			100042		//			仇氏徇
 #define SPR_021sp			100043		//			键
@@ -101,7 +101,7 @@
 #define SPR_034sp			100078
 #define SPR_034bw			100079
 
-#define SPR_041em			100080		//	敛  ㄠ		豳澎
+#define SPR_041em			100080		//	青  １		素手
 #define SPR_041ax			100081		// 			  
 #define SPR_041cl			100082		//			仇氏徇
 #define SPR_041sp			100083		//			键
@@ -125,7 +125,7 @@
 #define SPR_044sp			100098
 #define SPR_044bw			100099
 
-#define SPR_051em			100100		//	敛  ㄡ		豳澎
+#define SPR_051em			100100		//	青  ２		素手
 #define SPR_051ax			100101		// 			  
 #define SPR_051cl			100102		//			仇氏徇
 #define SPR_051sp			100103		//			键
@@ -149,7 +149,7 @@
 #define SPR_054sp			100118
 #define SPR_054bw			100119
 
-#define SPR_061em			100120		//	阂间辉ㄠ		豳澎
+#define SPR_061em			100120		//	子供女１		素手
 #define SPR_061ax			100121		// 			  
 #define SPR_061cl			100122		//			仇氏徇
 #define SPR_061sp			100123		//			键
@@ -173,7 +173,7 @@
 #define SPR_064sp			100138
 #define SPR_064bw			100139
 
-#define SPR_071em			100140		//	剂辉ㄠㄠ	豳澎
+#define SPR_071em			100140		//	少女１１	素手
 #define SPR_071ax			100141		// 			  
 #define SPR_071cl			100142		//			仇氏徇
 #define SPR_071sp			100143		//			键
@@ -197,7 +197,7 @@
 #define SPR_074sp			100158
 #define SPR_074bw			100159
 
-#define SPR_081em			100160		//	剂辉ㄡ		豳澎
+#define SPR_081em			100160		//	少女２		素手
 #define SPR_081ax			100161		// 			  
 #define SPR_081cl			100162		//			仇氏徇
 #define SPR_081sp			100163		//			键
@@ -245,7 +245,7 @@
 #define SPR_094sp			100198
 #define SPR_094bw			100199
 
-#define SPR_101em			100200		//	辉岭ㄠ		豳澎
+#define SPR_101em			100200		//	女性１		素手
 #define SPR_101ax			100201		// 			  
 #define SPR_101cl			100202		//			仇氏徇
 #define SPR_101sp			100203		//			键
@@ -269,7 +269,7 @@
 #define SPR_104sp			100218
 #define SPR_104bw			100219
 
-#define SPR_111em			100220		//	辉岭ㄡ		豳澎
+#define SPR_111em			100220		//	女性２		素手
 #define SPR_111ax			100221		// 			  
 #define SPR_111cl			100222		//			仇氏徇
 #define SPR_111sp			100223		//			键
@@ -294,22 +294,22 @@
 #define SPR_114bw			100239
 
 
-// 矢永玄  衬  平乓仿
+// ペット  敵  キャラ
 #define SPR_pet001			100250		//	万＆戀
 #define SPR_pet002			100251		//	万戀万戀
 #define SPR_pet003			100252		//	它伉旦正奶件
 #define SPR_pet004			100253		//	万戀討誌
 
-#define SPR_pet011			100254		//	皮□申奴
-#define SPR_pet012			100255		//	打□伙玉皮□奶
+#define SPR_pet011			100254		//	ブービィ
+#define SPR_pet012			100255		//	ゴー郊ドブーイ
 #define SPR_pet013			100256		//	討＆通
 #define SPR_pet014			100257		//	討通＆賦＆
-#define SPR_pet015			100258		//	市□皮奶
+#define SPR_pet015			100258		//	カーブイ
 
-#define SPR_pet021			100259		//	幼乓立□
-#define SPR_pet022			100260		//	幼乓申□
-#define SPR_pet023			100261		//	幼乓申左
-#define SPR_pet024			100262		//	幼乓□旦
+#define SPR_pet021			100259		//	ギャミー
+#define SPR_pet022			100260		//	ギャビー
+#define SPR_pet023			100261		//	ギャビオ
+#define SPR_pet024			100262		//	ギャース
 
 #define SPR_pet031			100263		//	万彩彩
 #define SPR_pet032			100264		//	万笛万笛
@@ -318,101 +318,101 @@
 
 #define SPR_pet041			100267		//	矛夫□件
 #define SPR_pet042			100268		//	矛夫夫永弁
-#define SPR_pet043			100269		//	矛夫禾永弁伙
-#define SPR_pet044			100270		//	矛夫禾伉
+#define SPR_pet043			100269		//	ベひポック郊
+#define SPR_pet044			100270		//	ベひポリ
 
 #define SPR_pet051			100271		//	市丢用玉件
 #define SPR_pet052			100272		//	市仿打
-#define SPR_pet053			100273		//	乩玉市丢
+#define SPR_pet053			100273		//	ヤドカメ
 #define SPR_pet054			100274		//	市仿打伙
 
 #define SPR_pet061			100275		//	生打旦
-#define SPR_pet062			100276		//	生幼乓旦
+#define SPR_pet062			100276		//	ネギャス
 #define SPR_pet063			100277		//	正夫打件
-#define SPR_pet064			100278		//	母永弁伙
+#define SPR_pet064			100278		//	ダック郊
 
-#define SPR_pet071			100279		//	仿幼伙打
+#define SPR_pet071			100279		//	ラギ郊ゴ
 #define SPR_pet072			100280		//	白田田
 #define SPR_pet073			100281		//	玄扔平件弘
-#define SPR_pet074			100282		//	伙瓦  旦
+#define SPR_pet074			100282		//	郊ニ  ス
 
-#define SPR_pet081			100283		//	伙瓦  旦
+#define SPR_pet081			100283		//	郊ニ  ス
 #define SPR_pet082			100284		//	市正伙市旦
-#define SPR_pet083			100285		//	弁奶永正
-#define SPR_pet084			100286		//	戊夫幼乓旦
+#define SPR_pet083			100285		//	クイッタ
+#define SPR_pet084			100286		//	コひギャス
 
 #define SPR_pet091			100287		//	伉未用玉件
 #define SPR_pet092			100288		//	乩件幼夫旦
 #define SPR_pet093			100289		//	田件示夫旦
 #define SPR_pet094			100290		//	田件幼□用
 
-#define SPR_pet101			100291		//	弁伊伙
-#define SPR_pet102			100292		//	弁弁伙
+#define SPR_pet101			100291		//	クレ郊
+#define SPR_pet102			100292		//	クク郊
 #define SPR_pet103			100293		//	平亦夫伙
-#define SPR_pet104			100294		//	伉旦平□
+#define SPR_pet104			100294		//	リスキー
 
-#define SPR_pet111			100295		//	市申永玄
+#define SPR_pet111			100295		//	カビット
 #define SPR_pet112			100296		//	献通賦＆
-#define SPR_pet113			100297		//	平亘□奶
-#define SPR_pet114			100298		//	平乓申永玄
+#define SPR_pet113			100297		//	キューイ
+#define SPR_pet114			100298		//	キャビット
 
-#define SPR_pet121			100299		//	卅仄
-#define SPR_pet122			100300		//	卅仄
-#define SPR_pet123			100301		//	卅仄
-#define SPR_pet124			100302		//	卅仄
+#define SPR_pet121			100299		//	なし
+#define SPR_pet122			100300		//	なし
+#define SPR_pet123			100301		//	なし
+#define SPR_pet124			100302		//	なし
 
-#define SPR_pet131			100303		//	卅仄
-#define SPR_pet132			100304		//	卅仄
-#define SPR_pet133			100305		//	卅仄
-#define SPR_pet134			100306		//	卅仄
+#define SPR_pet131			100303		//	なし
+#define SPR_pet132			100304		//	なし
+#define SPR_pet133			100305		//	なし
+#define SPR_pet134			100306		//	なし
 
 #define SPR_pet141			100307		//	打伙玉件
-#define SPR_pet142			100308		//	幼仿玉件
+#define SPR_pet142			100308		//	ギラドン
 #define SPR_pet143			100309		//	幼仿打伙打件
 #define SPR_pet144			100310		//	打伙□打
 
-#define SPR_pet151			100311		//	卅仄
-#define SPR_pet152			100312		//	卅仄
-#define SPR_pet153			100313		//	卅仄
-#define SPR_pet154			100314		//	卅仄
+#define SPR_pet151			100311		//	なし
+#define SPR_pet152			100312		//	なし
+#define SPR_pet153			100313		//	なし
+#define SPR_pet154			100314		//	なし
 
-#define SPR_pet161			100315		//	卅仄
-#define SPR_pet162			100316		//	卅仄
-#define SPR_pet163			100317		//	卅仄
-#define SPR_pet164			100318		//	卅仄
+#define SPR_pet161			100315		//	なし
+#define SPR_pet162			100316		//	なし
+#define SPR_pet163			100317		//	なし
+#define SPR_pet164			100318		//	なし
 
-#define SPR_pet171			100319		//	甲亘□示
+#define SPR_pet171			100319		//	ヒューボ
 #define SPR_pet172			100320		//	布仿示旦
-#define SPR_pet173			100321		//	皿弁皿弁
-#define SPR_pet174			100322		//	玄夫□斥乓
+#define SPR_pet173			100321		//	プクプク
+#define SPR_pet174			100322		//	トひージャ
 
 #define SPR_pet181			100323		//	石夫□伙
-#define SPR_pet182			100324		//	弁弁□伙
-#define SPR_pet183			100325		//	伙田田
-#define SPR_pet184			100326		//	弁伙□田
+#define SPR_pet182			100324		//	ククー郊
+#define SPR_pet183			100325		//	郊ババ
+#define SPR_pet184			100326		//	ク郊ーバ
 
-#define SPR_pet191			100327		//	矛伙布□
+#define SPR_pet191			100327		//	ベ郊ガー
 #define SPR_pet192			100328		//	狸誌通下＆
-#define SPR_pet193			100329		//	打伙扑旦
+#define SPR_pet193			100329		//	ゴ郊竺ス
 #define SPR_pet194			100330		//	平件弘扔□矛伙
 
-#define SPR_pet201			100331		//	卅仄
-#define SPR_pet202			100332		//	卅仄
-#define SPR_pet203			100333		//	卅仄
-#define SPR_pet204			100334		//	卅仄
+#define SPR_pet201			100331		//	なし
+#define SPR_pet202			100332		//	なし
+#define SPR_pet203			100333		//	なし
+#define SPR_pet204			100334		//	なし
 
-#define SPR_pet211			100335		//	玄伉用皿旦
+#define SPR_pet211			100335		//	トリノプス
 #define SPR_pet212			100336		//	矢件正旦
-#define SPR_pet213			100337		//	玄伉弗仿□
-#define SPR_pet214			100338		//	玄夫皿旦
+#define SPR_pet213			100337		//	トリケラー
+#define SPR_pet214			100338		//	トひプス
 
-#define SPR_pet221			100339		//	戊田件弗旦
+#define SPR_pet221			100339		//	コバンケス
 #define SPR_pet222			100340		//	喇籤精溘
 #define SPR_pet223			100341		//	喇籤↓精
-#define SPR_pet224			100342		//	田件斥□
+#define SPR_pet224			100342		//	バンジー
 
 #define SPR_pet231			100343		//	幼布夫旦
-#define SPR_pet232			100344		//	幼□瓜
+#define SPR_pet232			100344		//	ギーナ
 #define SPR_pet233			100345		//	幼布件示旦
 #define SPR_pet234			100346		//	布布幼件示
 
@@ -422,11 +422,11 @@
 #define SPR_pet244			100350		//	傲誌＆彩＆
 
 #define SPR_pet251			100351		//	皮夫件玄旦
-#define SPR_pet252			100352		//	皮伉件  旦
+#define SPR_pet252			100352		//	ブリン  ス
 #define SPR_pet253			100353		//	々溘す哱筒
-#define SPR_pet254			100354		//	旦  件玄旦
+#define SPR_pet254			100354		//	ス  ントス
 
-#define SPR_pet261			100355		//	穴件乒□
+#define SPR_pet261			100355		//	マンモー
 #define SPR_pet262			100356		//	璃ささ
 #define SPR_pet263			100357		//	悃さ圖筒
 #define SPR_pet264			100358		//	穴件乒夫旦
@@ -434,20 +434,20 @@
 #define SPR_pet271			100359		//	  仿打件
 #define SPR_pet272			100360		//	用布夫件
 #define SPR_pet273			100361		//	斥乓田打件
-#define SPR_pet274			100362		//	玉仿疋旦
+#define SPR_pet274			100362		//	ドラピス
 
-#define SPR_pet281			100363		//	卅仄
-#define SPR_pet282			100364		//	卅仄
-#define SPR_pet283			100365		//	卅仄
-#define SPR_pet284			100366		//	卅仄
+#define SPR_pet281			100363		//	なし
+#define SPR_pet282			100364		//	なし
+#define SPR_pet283			100365		//	なし
+#define SPR_pet284			100366		//	なし
 
 #define SPR_pet291			100367		//	正永平□
-#define SPR_pet292			100368		//	弁弁夫旦
-#define SPR_pet293			100369		//	石伙永弁
+#define SPR_pet292			100368		//	ククひス
+#define SPR_pet293			100369		//	ホ郊ック
 #define SPR_pet294			100370		//	平奴□示□
 
 #define SPR_pet301			100371		//	左布夫旦
-#define SPR_pet302			100372		//	札犯奴用旦
+#define SPR_pet302			100372		//	ゾディノス
 #define SPR_pet303			100373		//	由玉仿件
 #define SPR_pet304			100374		//	  径奬通囁
 
@@ -456,29 +456,29 @@
 #define SPR_pet313			100377		//	市奶石□件
 #define SPR_pet314			100378		//	仿奶石□件
 
-#define SPR_pet321			100379		//	旦玄仿斥玉件
-#define SPR_pet322			100380		//	扒丢夫旦
+#define SPR_pet321			100379		//	ストラジドン
+#define SPR_pet322			100380		//	ザメひス
 #define SPR_pet323			100381		//	失伉必用旦
 #define SPR_pet324			100382		//	母奶用夫旦
-#define SPR_pet325			100383		//	仿戊夫旦
+#define SPR_pet325			100383		//	ラコひス
 
 #define SPR_pet331			100384		//	田夫夫弁旦
-#define SPR_pet332			100385		//	仿件矛伙旦
-#define SPR_pet333			100386		//	戊伉玄夫旦
+#define SPR_pet332			100385		//	ランベ郊ス
+#define SPR_pet333			100386		//	コリトひス
 #define SPR_pet334			100387		//	用□旦玄夫旦
 
 // 泪庶椣却文喟傲
 #define SPR_pet005			100388		//	幕掩
 #define SPR_pet085			100389		//	港市正伙市旦
-#define SPR_pet086			100390		//	  弁奶永正
-#define SPR_pet087			100391		//	皮仿永弁戊夫幼乓旦
+#define SPR_pet086			100390		//	  クイッタ
+#define SPR_pet087			100391		//	ブラックコひギャス
 #define SPR_pet088			100392		//	失旦白央伙玄夫幼失件
 #define SPR_pet065			100393		//	氘箪岭生打旦
 #define SPR_pet095			100394		//	氘箪岭伉未用玉件
-#define SPR_pet175			100395		//	氘箪岭申亘□示
-#define SPR_pet255			100396		//	氘箪岭皮夫件玄旦
+#define SPR_pet175			100395		//	風属性ビューボ
+#define SPR_pet255			100396		//	風属性ブひントス
 
-// 蕙筋馨笛皿伊奶乩□平乓仿
+// 新規追加プレイヤーキャラ
 #define SPR_121em			100400		//	失白夫ㄠ	豳澎
 #define SPR_121ax			100401		//			  
 #define SPR_121cl			100402		//			轺徇
@@ -535,7 +535,7 @@
 #define SPR_133sp			100444		//			键
 #define SPR_133bw			100445		//			菰
 
-#define SPR_151em			100446		//	剂辉ㄠㄤ	豳澎
+#define SPR_151em			100446		//	少女１５	素手
 #define SPR_151ax			100447		// 			  
 #define SPR_151cl			100448		//			仇氏徇
 #define SPR_151sp			100449		//			键
@@ -547,7 +547,7 @@
 #define SPR_152sp			100454
 #define SPR_152bw			100455
 
-#define SPR_161em			100456		//	剂辉ㄠㄥ	豳澎
+#define SPR_161em			100456		//	少女１６	素手
 #define SPR_161ax			100457		// 			  
 #define SPR_161cl			100458		//			仇氏徇
 #define SPR_161sp			100459		//			键
@@ -560,28 +560,28 @@
 #define SPR_162bw			100465
 
 //备潘失瓦丢□扑亦件
-#define SPR_leader			100500		//	伉□母□穴□弁失瓦丢□扑亦件
+#define SPR_leader			100500		//	リーダーマークアニメー竺ョン
 #define SPR_star			100501		//	夭方夭方及弥穴□弁失瓦丢
 #define SPR_boomerang		100502		//	皮□丢仿件及失瓦丢□扑亦件
 #define SPR_stornbomb		100503		//	檗及祯仃失瓦丢□扑亦件
-#define SPR_ono				100504		//	髑仆  失瓦丢□扑亦件
-#define SPR_onokage			100505		//	髑仆  及排仃失瓦丢□扑亦件
-#define SPR_isiware			100506		//	檗喃木失瓦丢□扑亦件
-#define SPR_mail			100507		//	丢□伙邋耨失瓦丢□扑亦件
-//躲绊失瓦丢
-#define SPR_stone			100550		//	檗祭躲绊失瓦丢
-#define SPR_shock			100551		//	    躲绊失瓦丢
+#define SPR_ono				100504		//	投慌  アニメー竺ョン
+#define SPR_onokage			100505		//	投慌  の影けアニメー竺ョン
+#define SPR_isiware			100506		//	石割れアニメー竺ョン
+#define SPR_mail			100507		//	メー郊着信アニメー竺ョン
+//効果アニメ
+#define SPR_stone			100550		//	石化効果アニメ
+#define SPR_shock			100551		//	    効果アニメ
 #define SPR_drunk			100552		//	办中躲绊失瓦丢
-#define SPR_sleep			100553		//	戽曰躲绊失瓦丢
-#define SPR_conf			100554		//	渔刭躲绊失瓦丢
-#define SPR_poison			100555		//	  躲绊失瓦丢
-#define SPR_zokusei			100556		//	箪岭  晶躲绊失瓦丢
-//热诸巨白尼弁玄失瓦丢□扑亦件
-#define SPR_effect01		100600		//	热诸失瓦丢□扑亦件
-#define SPR_heal			100601		//	热诸失瓦丢□扑亦件  荚汊ㄠ  
-#define SPR_heal2			100602		//	热诸失瓦丢□扑亦件  荚汊ㄡ  
-#define SPR_heal3			100603		//	热诸失瓦丢□扑亦件  荚汊ㄢ  
-#define SPR_tyusya			100604		//	热诸失瓦丢□扑亦件  旦  □正旦唱橘荚汊  
+#define SPR_sleep			100553		//	眠り効果アニメ
+#define SPR_conf			100554		//	混乱効果アニメ
+#define SPR_poison			100555		//	  効果アニメ
+#define SPR_zokusei			100556		//	属性  換効果アニメ
+//呪術エフェクトアニメー竺ョン
+#define SPR_effect01		100600		//	呪術アニメー竺ョン
+#define SPR_heal			100601		//	呪術アニメー竺ョン  回復１  
+#define SPR_heal2			100602		//	呪術アニメー竺ョン  回復２  
+#define SPR_heal3			100603		//	呪術アニメー竺ョン  回復３  
+#define SPR_tyusya			100604		//	呪術アニメー竺ョン  ス  ータス異常回復  
 #define SPR_hoshi			100605		//	热诸毛井仃日木凶午五及失瓦丢□扑亦件
 #define SPR_kyu				100606		//	旦  □正旦荚汊热诸毛井仃日木凶午五及失瓦丢□扑亦件
 #define SPR_fukkatu1		100607		//	汊唾  ㄠ  毛井仃日木凶午五及失瓦丢□扑亦件
@@ -590,8 +590,8 @@
 #define SPR_difence			100610		//	  豢烟热诸毛井仃日木凶午五及失瓦丢□扑亦件
 #define SPR_item			100611		//	失奶  丞毛银迕仄凶午五及失瓦丢□扑亦件
 #define SPR_item3			100612		//	失奶  丞毛银迕仄凶午五及失瓦丢□扑亦件
-//  豢烟热诸失瓦丢□扑亦件
-#define SPR_mirror			100650		//	  椁失瓦丢□扑亦件
+//  御系呪術アニメー竺ョン
+#define SPR_mirror			100650		//	  射アニメー竺ョン
 #define SPR_barrior			100651		//	田伉失失瓦丢□扑亦件
 
 // 仇仇井日反｝      犯□正匹反卅中 ****************************************************/
@@ -623,16 +623,16 @@
 // 箪岭失奶戊件
 #define CG_ATR_ICON_EARTH_BIG		25120	// ＞哗＝  
 #define CG_ATR_ICON_EARTH_MDL		25121	// ＞哗＝  
-#define CG_ATR_ICON_EARTH_SML		25122	// ＞哗＝凝
+#define CG_ATR_ICON_EARTH_SML		25122	// 「地」小
 #define CG_ATR_ICON_WATER_BIG		25123	// ＞  ＝  
 #define CG_ATR_ICON_WATER_MDL		25124	// ＞  ＝  
 #define CG_ATR_ICON_WATER_SML		25125	// ＞  ＝凝
 #define CG_ATR_ICON_FIRE_BIG		25126	// ＞绍＝  
 #define CG_ATR_ICON_FIRE_MDL		25127	// ＞绍＝  
-#define CG_ATR_ICON_FIRE_SML		25128	// ＞绍＝凝
+#define CG_ATR_ICON_FIRE_SML		25128	// 「火」小
 #define CG_ATR_ICON_WIND_BIG		25129	// ＞氘＝  
 #define CG_ATR_ICON_WIND_MDL		25130	// ＞氘＝  
-#define CG_ATR_ICON_WIND_SML		25131	// ＞氘＝凝
+#define CG_ATR_ICON_WIND_SML		25131	// 「風」小
 
 // 爵    箪岭失奶戊件
 #define CG_ATR_ICON_EARTH_BATTLE	25132	// ＞哗＝
@@ -646,11 +646,11 @@
 #define CG_PET_BTL_BUTTON_WAZA_DOWN	25142	//   示正件枭
 #define CG_PET_BTL_BUTTON_CANCEL_UP	25143	// 平乓件本伙示正件  
 
-// 甲永玄穴□弁
+// ヒットマーク
 #define CG_HIT_MARK_00				25500	// 置  
 #define CG_HIT_MARK_01				25501	// 置蹄
 
-#define CG_HIT_MARK_10				25502	// 敛缙
+#define CG_HIT_MARK_10				25502	// 青色
 #define CG_HIT_MARK_11				25503
 #define CG_HIT_MARK_12				25504
 
@@ -662,7 +662,7 @@
 #define CG_HIT_MARK_31				25509
 #define CG_HIT_MARK_32				25510
 
-#define CG_HIT_MARK_40				25511	// 疵缙
+#define CG_HIT_MARK_40				25511	// 黄色
 #define CG_HIT_MARK_41				25512
 #define CG_HIT_MARK_42				25513
 
@@ -745,16 +745,16 @@
 #define CG_WND_TITLE_SE		26017
 #define CG_WND_TITLE_RESULT	26018
 
-// 正旦弁田□
+// タスクバー
 #define CG_TASK_BAR_BACK		26012
 
-// 爵  凛及    午    田□
+// 戦  時の    と    バー
 #define CG_BATTLE_BAR_PLAYER		26013	// 駐卅通慇＆
 #define CG_BATTLE_BAR_PLAYER_2		26019	// 駐卅通慇＆
 #define CG_BATTLE_BAR_PET			26014	// 职及谛
 #define CG_BATTLE_BAR_PET_2			26020	// 駐卅通慇＆式文喟傲
 
-//   迕它奴件玉它ㄡ
+//   用ウィンドウ２
 #define CG_WND2_G_0			26021
 #define CG_WND2_G_1			26022
 #define CG_WND2_G_2			26023
@@ -765,7 +765,7 @@
 #define CG_WND2_G_7			26028
 #define CG_WND2_G_8			26029
 
-//   迕它奴件玉它ㄢ
+//   用ウィンドウ３
 #define CG_WND3_G_7			26037	// 票及心｝  侬毛藉切  户月正奶皿
 #define CG_WND3_G_8			26038
 #define CG_WND3_G_9			26039
@@ -806,7 +806,7 @@
 
 
 // 払通  悸万笛周囁万
-#define CG_ITEM_WND_0		26060	// 失奶  丞它奴件玉它晓
+#define CG_ITEM_WND_0		26060	// アイ  ムウィンドウ上
 #define CG_ITEM_WND_1		26061	// 払通  悸万笛周囁万同
 #define CG_ITEM_WND_GOLD_DROP_BTN_UP	26062	// 云嗯  午允示正件  
 #define CG_ITEM_WND_GOLD_DROP_BTN_DOWN	26063	// 云嗯  午允示正件枭
@@ -817,13 +817,13 @@
 #define CG_JUJUTU_WND					26068	// 犯幗万笛周囁万
 #define CG_ITEM_WND_JUJUTU_BTN			26069	// 失奶  丞它奴件玉它及热诸示正件
 #define CG_ITEM_WND_SELECT_WND			26070	// 嫉  万笛周囁万
-#define CG_STATUS_WND_GROUP_WND			26071	// 旦  □正旦域  它奴件玉它
+#define CG_STATUS_WND_GROUP_WND			26071	// ス  ータス一  ウィンドウ
 #define CG_BTL_ITEM_WND_TITLE			26072	// 爵  凛及失奶  丞它奴件玉它正奶玄伙
 
-// 旦  □正旦它奴件玉它
+// ス  ータスウィンドウ
 #define CG_STATUS_WND					26073	// 駐卅通慇＆稀  ＆屎稀万笛周囁万
-#define CG_STATUS_WND_VICTORY_MARK		26074	//     穴□弁
-#define CG_STATUS_WND_LV_UP_POINT		26075	// 伊矛伙失永皿  侬
+#define CG_STATUS_WND_VICTORY_MARK		26074	//     マーク
+#define CG_STATUS_WND_LV_UP_POINT		26075	// レベ郊アップ  字
 #define CG_STATUS_WND_UP_BTN_UP			26076	// 旦  □正旦失永皿示正件  
 #define CG_STATUS_WND_UP_BTN_DOWN		26077	// 旦  □正旦失永皿示正件枭
 #define CG_STATUS_WND_SHOUGOU_BTN_UP	26078	// 惫寞示正件  
@@ -851,13 +851,13 @@
 #define CG_SEND_BTN						26099	// "送信"示正件  
 #define CG_SEND_BTN_DOWN				26174	// "送信"示正件枭
 
-// 失伙田丞它奴件玉它
-#define CG_ALBUM_WND					26230	// 失伙田丞它奴件玉它
+// ア郊バムウィンドウ
+#define CG_ALBUM_WND					26230	// ア郊バムウィンドウ
 #define CG_ALBUM_WND_NEW_ICON			26231	// 蕙筋失奶戊件
-#define CG_ALBUM_WND_SNAP_BTN_UP		26170	// 樟蕞毛诲月  
-#define CG_ALBUM_WND_SNAP_BTN_DOWN		26171	// 樟蕞毛诲月枭
+#define CG_ALBUM_WND_SNAP_BTN_UP		26170	// 写真を撮る  
+#define CG_ALBUM_WND_SNAP_BTN_DOWN		26171	// 写真を撮る凹
 
-// 民乓永玄及  侬瓒  它奴件玉它
+// チャットの  字登  ウィンドウ
 #define CG_CHAT_REGISTY_WND				26232
 
 //   扼  垰  綯万笛周囁万
@@ -866,15 +866,15 @@
 #define CG_COMMON_NO_BTN				26092	// 中中尹示正件
 
 // 白奴□伙玉    示正件  
-#define CG_FIELD_MENU_LEFT				26100	// 尔晓酱甄
+#define CG_FIELD_MENU_LEFT				26100	// 左上台座
 #define CG_FIELD_MENU_BTN_OFF			26101	// 丢瓦亘□示正件左白橇谪
 #define CG_FIELD_MENU_BTN_ON			26102	// 丢瓦亘□示正件左件橇谪
 #define CG_FIELD_CARD_BTN_OFF			26103	//   铜示正件左白橇谪
 #define CG_FIELD_CARD_BTN_ON			26104	//   铜示正件左件橇谪
 #define CG_FIELD_GROUP_BTN_OFF			26105	// 弘伙□皿示正件左白橇谪
 #define CG_FIELD_GROUP_BTN_ON			26106	// 弘伙□皿示正件左件橇谪
-#define CG_FIELD_MAIL_LAMP				26107	// 丢□伙熬耨仿件皿
-#define CG_FIELD_MENU_RIGHT				26110	// 惘晓酱甄
+#define CG_FIELD_MAIL_LAMP				26107	// メー郊受信ランプ
+#define CG_FIELD_MENU_RIGHT				26110	// 右上台座
 #define CG_FIELD_JOIN_BTL_BTN_OFF		26111	// 辅爵示正件左白橇谪
 #define CG_FIELD_JOIN_BTL_BTN_ON		26112	// 辅爵示正件左件橇谪
 #define CG_FIELD_DUEL_BTN_OFF			26113	// 覆爵示正件左白橇谪
@@ -885,7 +885,7 @@
 #define CG_FIELD_AM_PM_01				26118	// し＊  精溘啞贖蚗袲
 #define CG_FIELD_AM_PM_02				26119	// し＊  精溘啞贖蚗袲
 #define CG_FIELD_AM_PM_03				26120	// し＊  精溘啞贖蚗袲
-#define CG_FIELD_MENU_RIGHT_BACK		26121	// 惘晓酱甄及田永弁
+#define CG_FIELD_MENU_RIGHT_BACK		26121	// 右上台座のバック
 
 // 文喟傲式  万笛周囁万
 #define CG_PET_WAZA_WND		26130
@@ -897,7 +897,7 @@
 #define CG_PET_WAZA_BAR_6	26136
 #define CG_PET_WAZA_BAR_7	26137
 
-// 失奶  丞扑亦永皿它奴件玉它
+// アイ  ム竺ョップウィンドウ
 #define CG_ITEMSHOP_WIN			26138
 
 //   橡呀喟駐万笛周囁万
@@ -956,10 +956,10 @@
 #define CG_ICON_LEAVE			26513	// ＞Leave!＝
 #define CG_ICON_GUARD_BREAK 	26514	// ＞Guard Break!＝
 
-// 矢永玄及涌  仄弘仿白奴永弁
+// ペットの顔  しグラフィック
 #define CG_NOW_PAINTING			28999
 
-// 正奶玄伙
+// タイト郊
 #define CG_LOGO				29000
 #define CG_TITLE			29001
 #define CG_TITLE_NAME_S		29002
@@ -984,9 +984,9 @@
 #define CG_TITLE_ID_PASS_OK		29021
 #define CG_TITLE_ID_PASS_QUIT	29022
 
-// 平乓仿综岳
-#define CG_CHR_MAKE_SEL_BG		29030		// 蕙筋平乓仿蓟      
-#define CG_CHR_MAKE_BG			29031		// 蕙筋平乓仿由仿丢□正蕊曰坌仃    
+// キャラ作成
+#define CG_CHR_MAKE_SEL_BG		29030		// 新規キャラ選      
+#define CG_CHR_MAKE_BG			29031		// 新規キャラパラメータ振り分け    
 #define CG_CHR_SEL_BG			29032		// 平乓仿弁正蓟      
 #define CG_CHR_SEL_LOGIN_BTN	29033		// 夫弘奶件示正件
 #define CG_CHR_SEL_NEW_BTN		29034		// 蕙筋示正件
@@ -994,13 +994,13 @@
 #define CG_CHR_SEL_BACK_BTN		29036		//   月示正件
 #define CG_CHR_MAKE_OK_BTN		29037		// 蕙筋平乓仿 瑁烂示正件
 #define CG_CHR_MAKE_BACK_BTN	29038		// 蕙筋平乓仿   月示正件
-#define CG_CHR_MAKE_SEL2_BG		29039		// 请褥哗蓟      
+#define CG_CHR_MAKE_SEL2_BG		29039		// 出身地選      
 #define CG_CHR_MAKE_HOME_NAME0	29040		// 请褥哗  ＞扔丞幼伙及翘＝
 #define CG_CHR_MAKE_HOME_NAME1	29041		// 请褥哗  ＞穴伉瓜旦及翘＝
 #define CG_CHR_MAKE_HOME_NAME2	29042		// 请褥哗  ＞斥乓斥乓及翘＝
 #define CG_CHR_MAKE_HOME_NAME3	29043		// 请褥哗  ＞市伙正□瓜及翘＝
-#define CG_CHR_MAKE_EYE_SEL		29044		// 蕙筋平乓仿   ’轼蓟  
-#define CG_CHR_MAKE_NOSE_SEL	29045		// 蕙筋平乓仿   ’轼蓟  
-#define CG_CHR_MAKE_FACE		30000		// 平乓仿涌  飓钒铵
+#define CG_CHR_MAKE_EYE_SEL		29044		// 新規キャラ   ・口選  
+#define CG_CHR_MAKE_NOSE_SEL	29045		// 新規キャラ   ・口選  
+#define CG_CHR_MAKE_FACE		30000		// キャラ顔  像開始
 
 #endif

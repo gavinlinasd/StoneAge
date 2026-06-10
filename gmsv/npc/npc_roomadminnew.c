@@ -28,16 +28,16 @@
 enum{
 	/* 左□弁扑亦件  区 */
 	CHAR_WORKINT_RANGE     = CHAR_NPCWORKINT1,
-	/* 戚及蠡濠凛棉 */
+	/* 鵜の締切時間 */
 	CHAR_WORKINT_NEXTTIME  = CHAR_NPCWORKINT2,
-	/*   憎迕＞蠡濠＂坌蟆＝ */
+	/*   示用「締切?分前」 */
 	CHAR_WORKINT_PRINTCLOSETIME = CHAR_NPCWORKINT3,
 	/*   盒腹绸仄凶  尥 */
 	CHAR_WORKINT_SEARCHROOMTIME = CHAR_NPCWORKINT4,
 	
 };
 enum {
-	/* 愤坌及  蟆 */
+	/* 自分の  前 */
 	CHAR_WORKCHAR_MYNAME   = CHAR_NPCWORKCHAR1,
 	/* 戚及  瘀 */
 	CHAR_WORKCHAR_NEXTROOM = CHAR_NPCWORKCHAR2,
@@ -46,12 +46,12 @@ enum {
 
 /* 仿件平件弘  憎      迕伐□弁*/
 enum {
-	/* 栋  谛及  蟆 */
+	/* 管  人の  前 */
 	CHAR_WORKCHAR_ADMNAME = CHAR_NPCWORKCHAR1,
 };
 
 
-/* 犯□正白央奶伙毛伞  允月犯奴伊弁玄伉［ls2/src/lss 井日及锹覆隙烂 */
+/* データファイ郊を格  するディレクトリ?ls2/src/lss からの相対指定 */
 #define     NPC_ROOMADMINNEW_DATADIR        "roomadmin/"
 /* 犯□正白央奶伙及傀舰阂 */
 #define     NPC_ROOMADMINNEW_EXTENSION      ".room"
@@ -60,7 +60,7 @@ enum {
 #define     NPC_ROOMADMINNEW_RANKING_EXTENSION_TMP  ".score.tmp"
 /*   嫖  诳樊仿件平件弘白央奶伙 */
 #define     NPC_ROOMADMINNEW_SCOREFILE      ".score"
-/* 蠡户濠曰＂坌蟆井日丢永本□斥 */
+/* 締め切り?分前からメッセージ */
 #define     NPC_ROOMADMINNEW_PRINTCLOSETIME_DEFAULT     5
 
 #define     NPC_ROOMADMINNEW_MSG_CLOSE_BEFORE       \
@@ -133,32 +133,32 @@ BOOL NPC_RoomAdminNewInit( int meindex )
 	
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 	
-	/* 赓渝祭质   */
+	/* 初期化処   */
 	
 	/* type本永玄 */
 	CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_TYPEROOMADMIN);
 	/*   躲  区潸   */
 	getStringFromIndexWithDelim(argstr, "|" , 1 , buf,sizeof(buf) );
 	CHAR_setWorkInt( meindex , CHAR_WORKINT_RANGE , atoi( buf ));
-	/* 愤坌及  蟆潸   */
+	/* 自分の  前取   */
 	if( !getStringFromIndexWithDelim(argstr, "|" , 2 , buf,sizeof(buf) )) {
 		print( "arg err.admin not created.\n");
 		return( FALSE);
 	}
 	CHAR_setWorkChar( meindex , CHAR_WORKCHAR_MYNAME , buf);
 	
-	/*   憎迕＞蠡濠＂坌蟆＝赓渝祭 */
+	/*   示用「締切?分前」初期化 */
 	CHAR_setWorkInt( meindex, CHAR_WORKINT_PRINTCLOSETIME, 0);
 	
-	/* 戚及  瘀午左□弁扑亦件钒疡凛棉毛本永玄 */
+	/* 鵜の  件とオーク竺ョン開催時間をセット */
 	NPC_RoomAdminNew_SetNextAuction( meindex);
 	
 	return TRUE;
 }
 /************************************************
- * 伙□皿质  
+ * 郊ープ処  
  * 裟太请仄  蘸反公氏卅卞    匹卅仁化手中中［
- * 匹手濮覆卞ㄠ坌    卞允月仪
+ * でも絶対に１分    にする事
  ************************************************/
 void NPC_RoomAdminNewLoop( int meindex )
 {
@@ -187,7 +187,7 @@ void NPC_RoomAdminNewLoop( int meindex )
 	if( hun < 0 ) hun = 0;
 	
 	if( hun < NPC_ROOMADMINNEW_PRINTCLOSETIME_DEFAULT ) {
-		/* 蠡户濠曰嗤仁卞卅匀凶日＞蠡户濠曰＂坌蟆匹允＝午蜕歹允 */
+		/* 締め切り近くになったら「締め切り?分前です」と言わす */
 		if( hun != CHAR_getWorkInt( meindex, CHAR_WORKINT_PRINTCLOSETIME)) {
 			char    buff[256];
 			if( hun != 0 ) {
@@ -196,7 +196,7 @@ void NPC_RoomAdminNewLoop( int meindex )
 				char    argstr2[NPC_UTIL_GETARGSTR_BUFSIZE];
 				int		doorindex;
 
-				/*   盒树  潸   */
+				/*   屋情  取   */
 				doorindex = NPC_DoorSearchByName( CHAR_getWorkChar( meindex, CHAR_WORKCHAR_NEXTROOM));
 				NPC_Util_GetArgStr( doorindex, argstr2, sizeof( argstr2));
 				getStringFromIndexWithDelim( argstr2, "|" , 9 , 
@@ -208,7 +208,7 @@ void NPC_RoomAdminNewLoop( int meindex )
 				else {
 					msgbuff[0] = '\0';
 				}
-				/* ＞蠡户濠曰＂坌蟆匹允＝ */
+				/* 「締め切り?分前です」 */
 				snprintf( buff, sizeof(buff), 
 							NPC_ROOMADMINNEW_MSG_CLOSE_BEFORE, 
 							buf2,
@@ -246,7 +246,7 @@ void NPC_RoomAdminNewTalked( int meindex , int talkerindex , char *msg ,
 	/*   仄井仃日木凶谛互  盒毛欧曰化中凶日由旦伐□玉毛  憎允月 */
 	/*NPC_RoomAdminNew_DspRoomPasswd( meindex, talkerindex);*/
 	
-	/* 戚荚钒疡凛棉］  盒毛蜕丹 */
+	/* 鵜回開催時間?  屋を言う */
 	NPC_RoomAdminNew_DspNextAuction( meindex, talkerindex);
 }
 /*-----------------------------------------------
@@ -259,9 +259,9 @@ static void NPC_RoomAdminNew_CloseProc( int meindex)
 	char    pname[32];
 	int     failed = TRUE;
 	
-	/* 域  云嗯毛聂仁  匀化中月皿伊奶乩□毛茧允 */
+	/* 一  恭金を多く  っているプレイヤーを探す */
 	pindex = NPC_RoomAdminNew_SearchPlayerHasMostMoney( meindex);
-	/* 竟癫樊失伉 */
+	/* 該当者アリ */
 	if( pindex != -1) {
 		/* 兒樊ぁ  崹堎鳴↓鏤ぁ埰 */
 		while( 1) {
@@ -269,7 +269,7 @@ static void NPC_RoomAdminNew_CloseProc( int meindex)
 			int		doorindex;
 			doorindex = NPC_DoorSearchByName( 
 							CHAR_getWorkChar( meindex, CHAR_WORKCHAR_NEXTROOM));
-			/* 由旦伐□玉毛戏岳允月 */
+			/* パスワードを生成する */
 			NPC_RoomAdminNew_CreatePasswd( passwd, sizeof( passwd));
 			/* 白央奶伙卞仇及谛及    平□］平乓仿  ］  盒  ］由旦毛踏五  戈 */
 			if( NPC_RoomAdminNew_WriteDataFile( meindex, pindex,
@@ -283,7 +283,7 @@ static void NPC_RoomAdminNew_CloseProc( int meindex)
 			if( NPC_DoorSetPasswd( doorindex, passwd) == -1 ) {
 				break;
 			}
-			/*   躲渝蜃毛本永玄 */
+			/*   効期限をセット */
 			CHAR_setWorkInt( doorindex, CHAR_WORKDOOREXPIRETIME, 
 							CHAR_getWorkInt( meindex, CHAR_WORKINT_NEXTTIME)
 							+ NPC_ROOMADMINNEW_2WEEK);
@@ -294,7 +294,7 @@ static void NPC_RoomAdminNew_CloseProc( int meindex)
 
 			CHAR_send_P_StatusString( pindex , CHAR_P_STRING_GOLD);
 			
-			/* 云户匹午丹″丢永本□斥 */
+			/* 恭めでとう?メッセージ */
 			strcpy( pname, CHAR_getChar( pindex, CHAR_NAME));
 			snprintf( buff, sizeof(buff), 
 						NPC_ROOMADMINNEW_MSG_CONGRATULATION, pname, pname, pname);
@@ -316,12 +316,12 @@ static void NPC_RoomAdminNew_CloseProc( int meindex)
 	/* 仇及白夫失卞中月谛蝈够卞霜耨 */
 	NPC_RoomAdminNew_SendMsgThisFloor( meindex, buff);
 	
-	/* 戚及  瘀午左□弁扑亦件钒疡凛棉毛本永玄 */
+	/* 鵜の  件とオーク竺ョン開催時間をセット */
 	NPC_RoomAdminNew_SetNextAuction( meindex);
 	
 }
 /*-----------------------------------------------
- * 域  云嗯毛聂仁  匀化中月皿伊奶乩□毛茧允
+ * 一  恭金を多く  っているプレイヤーを探す
  *----------------------------------------------*/
 static int NPC_RoomAdminNew_SearchPlayerHasMostMoney( int meindex)
 {
@@ -336,7 +336,7 @@ static int NPC_RoomAdminNew_SearchPlayerHasMostMoney( int meindex)
 	range = CHAR_getWorkInt( meindex , CHAR_WORKINT_RANGE);
 	topindex = -1;
 	
-	/*   盒及  蟆井日  斓  诳嗯喊毛譬屯月 */
+	/*   屋の  前から  低  札金額を調べる */
 	doorindex = NPC_DoorSearchByName( CHAR_getWorkChar( meindex, 
 														CHAR_WORKCHAR_NEXTROOM));
 	gold = atoi( CHAR_getWorkChar( doorindex, CHAR_WORKDOORGOLDLIMIT));
@@ -359,7 +359,7 @@ static int NPC_RoomAdminNew_SearchPlayerHasMostMoney( int meindex)
 								topindex =  index;
 							}
 							else {
-								/* 玄永皿及谛午云嗯  胜 */
+								/* トップの人と恭金  較 */
 								int nowgold,topgold;
 								nowgold = CHAR_getInt( index, CHAR_GOLD );
 								topgold = CHAR_getInt( topindex, CHAR_GOLD);
@@ -367,7 +367,7 @@ static int NPC_RoomAdminNew_SearchPlayerHasMostMoney( int meindex)
 									topindex = index;
 								}
 								else if( nowgold == topgold ) {
-									/* 域踝卅日伊矛伙互斓中谛 */
+									/* 一緒ならレベ郊が低い人 */
 									int nowlv, toplv;
 									nowlv = CHAR_getInt( index, CHAR_LV );
 									toplv = CHAR_getInt( topindex, CHAR_LV);
@@ -375,7 +375,7 @@ static int NPC_RoomAdminNew_SearchPlayerHasMostMoney( int meindex)
 										topindex = index;
 									}
 									/* 公木匹手荸瑁仄卅中氏卅日仿件母丞元扎*/
-									/* index互燮及谛互切斤匀午尕厍分仃升 */
+									/* indexが先の人がちょっと不利だけど */
 									else if( nowlv == toplv ) {
 										if( RAND( 0,1)) {
 											topindex = index;
@@ -393,7 +393,7 @@ static int NPC_RoomAdminNew_SearchPlayerHasMostMoney( int meindex)
 }
 /*-----------------------------------------------
  * 隙烂今木凶index及白夫失卞中月皿伊奶乩□蝈够卞
- * 丢永本□斥毛霜耨允月［
+ * メッセージを送信する?
  *----------------------------------------------*/
 static void NPC_RoomAdminNew_SendMsgThisFloor( int index, char *buff)
 {
@@ -430,7 +430,7 @@ static void NPC_RoomAdminNew_CreatePasswd( char *passwd, int passlen)
 #undef NPC_ROOMADMINNEW_RAND
 }
 /*-----------------------------------------------
- * 栋  谛迕及白央奶伙卞犯□正毛踏五  戈
+ * 管  人用のファイ郊にデータを書き  む
  *
  * 白央奶伙  反"房间的名字.room"
  * 毛银丹［
@@ -467,7 +467,7 @@ static BOOL NPC_RoomAdminNew_WriteDataFile( int meindex, int pindex,
 		/*   诳仄凶谛及平乓仿   */
 		makeEscapeString(  CHAR_getChar( pindex, CHAR_NAME),
 							charaname, sizeof( charaname));
-		/* 渝蜃濠木凛棉 */
+		/* 期限切れ時間 */
 		snprintf( expiretime, sizeof( expiretime), "%d", 
 					CHAR_getWorkInt( meindex, CHAR_WORKINT_NEXTTIME)
 					+ NPC_ROOMADMINNEW_2WEEK   /* ㄡ葱棉   */
@@ -492,8 +492,8 @@ static BOOL NPC_RoomAdminNew_WriteDataFile( int meindex, int pindex,
 	
 }
 /*-----------------------------------------------
- * 犯□正白央奶伙毛  氏匹竟癫允月  盒互丐木壬
- * 犯□正毛伞  仄化忒允［
+ * データファイ郊を  んで該当する  屋があれば
+ * データを格  して返す?
  *----------------------------------------------*/
 BOOL NPC_RoomAdminNew_ReadFile( char *roomname, NPC_ROOMINFO *data)
 {
@@ -528,7 +528,7 @@ BOOL NPC_RoomAdminNew_ReadFile( char *roomname, NPC_ROOMINFO *data)
 	return TRUE;
 }
 /*-----------------------------------------------
- * 戚及左□弁扑亦件及凛棉午  盒  毛伐□弁卞本永玄允月
+ * 鵜のオーク竺ョンの時間と  屋  をワークにセットする
  *----------------------------------------------*/
 static BOOL NPC_RoomAdminNew_SetNextAuction( int meindex)
 {
@@ -538,13 +538,13 @@ static BOOL NPC_RoomAdminNew_SetNextAuction( int meindex)
 	char    argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	struct  tm  tmwk;
 	
-	/*     卅升毛潸  允月*/
+	/*     などを取  する*/
 	memcpy( &tmwk, localtime( ( time_t *)&NowTime.tv_sec), sizeof( tmwk));
 	
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 
 	/* 玉失毛腹绸允月［NPC_DoorSearchByName()毛银匀凶日啼分仃升
-	 *    蛲互聂仁卅曰公丹卅及匹仇仇左伉斥瓜伙
+	 *    駄が多くなりそうなのでこ�Aオリジナ郊
 	 */
 	for( i = CHAR_getPlayerMaxNum()+ CHAR_getPetMaxNum(); 
 		 i < charnum;
@@ -574,11 +574,11 @@ static BOOL NPC_RoomAdminNew_SetNextAuction( int meindex)
 			if( strcmp( buf, doorname ) != 0 ) {
 				continue;
 			}
-			/*     互域谯允月 */
+			/*     が一致する */
 			if( atoi( CHAR_getWorkChar( i, CHAR_WORKDOORWEEK)) != tmwk.tm_wday) {
 				break;
 			}
-			/* 域杀赓渝祭 */
+			/* 一応初期化 */
 			memset( &data, 0, sizeof( data));
 			/* 犯□正白央奶伙井日犯□正毛  戈 */
 			if( NPC_RoomAdminNew_ReadFile( doorname, &data) ) {
@@ -595,7 +595,7 @@ static BOOL NPC_RoomAdminNew_SetNextAuction( int meindex)
 					
 					break;
 				}
-				/* 漆  匹濠木月  瘀卅日     */
+				/* 今  で切れる  件なら     */
 				memcpy( &tmdoor, localtime( ( time_t *)&data.expire), sizeof( tmdoor));
 				if( tmdoor.tm_mon != tmwk.tm_mon ||
 					tmdoor.tm_mday != tmwk.tm_mday)
@@ -623,7 +623,7 @@ static BOOL NPC_RoomAdminNew_SetNextAuction( int meindex)
 				hitindex = i;
 			}
 			else {
-				/* 钒疡凛棉互镀仁］蜇箕欧曰日木化中月午中丹及互穸燮赐匏 */
+				/* 開催時間が早く?現在借りられているというのが優先順位 */
 				if( atoi( CHAR_getWorkChar( hitindex, CHAR_WORKDOORHOUR)) 
 					> atoi( CHAR_getWorkChar( i, CHAR_WORKDOORHOUR)))
 				{
@@ -656,23 +656,23 @@ static BOOL NPC_RoomAdminNew_SetNextAuction( int meindex)
 		}
 	}
 	if( hitindex > 0 ) {
-		/* 钒疡凛棉毛本永玄 */
+		/* 開催時間をセット */
 		tmwk.tm_sec = 0;
 		tmwk.tm_min = atoi( CHAR_getWorkChar( hitindex, CHAR_WORKDOORMINUTE));
 		tmwk.tm_hour = atoi( CHAR_getWorkChar( hitindex, CHAR_WORKDOORHOUR));
 		CHAR_setWorkInt( meindex, CHAR_WORKINT_NEXTTIME, mktime( &tmwk));
-		/*   盒  毛本永玄 */
+		/*   屋  をセット */
 		CHAR_setWorkChar( meindex, CHAR_WORKCHAR_NEXTROOM,
 						 CHAR_getWorkChar( hitindex, CHAR_WORKDOORNAME));
 		
 	}
 	else {
 		CHAR_setWorkInt( meindex, CHAR_WORKINT_NEXTTIME, 0);
-		/*   盒  毛本永玄 */
+		/*   屋  をセット */
 		CHAR_setWorkChar( meindex, CHAR_WORKCHAR_NEXTROOM,"" );
 	
 	}
-	/* 腹绸凛棉毛本永玄 */
+	/* 検索時間をセット */
 	CHAR_setWorkInt( meindex, CHAR_WORKINT_SEARCHROOMTIME, NowTime.tv_sec);
 	return( TRUE);
 }
@@ -699,14 +699,14 @@ static void NPC_RoomAdminNew_DspRoomPasswd( int index, int adminindex, int talke
 		if( getStringFromIndexWithDelim(argstr, "|" , i , buf,sizeof(buf) )) {
 			rc = NPC_RoomAdminNew_ReadFile( buf, &info);
 			if( rc == TRUE ) {
-				/* CDKEY 午平乓仿及  蟆互域谯仄凶日 */
+				/* CDKEY とキャラの  前が一致したら */
 				if( strcmp( info.cdkey, cdkey) == 0 &&
 					strcmp( info.charaname, 
 							CHAR_getChar( talkerindex, CHAR_NAME)) == 0 )
 				{
 					int doorindex;
 					char    msgbuf[256];
-					/*   盒树  潸   */
+					/*   屋情  取   */
 					doorindex = NPC_DoorSearchByName( buf);
 					NPC_Util_GetArgStr( doorindex, argstr2, sizeof( argstr2));
 					getStringFromIndexWithDelim( argstr2, "|" , 9 , 
@@ -719,23 +719,23 @@ static void NPC_RoomAdminNew_DspRoomPasswd( int index, int adminindex, int talke
 						buff[0] = '\0';
 					}
 					
-					/* 丢永本□斥本永玄 */
+					/* メッセージセット */
 					snprintf( msgbuf, sizeof( msgbuf), 
 								NPC_ROOMADMINNEW_MSG_DSPPASSWD1,
 								buf2,
 								CHAR_getChar( doorindex, CHAR_NAME),
 								buff
 							);
-					/* 丢永本□斥霜耨 */
+					/* メッセージ送信 */
 					CHAR_talkToCli( talkerindex, index,msgbuf, 
 									NPC_ROOMADMINNEW_MSGCOLOR);
 
-					/* 丢永本□斥本永玄 */
+					/* メッセージセット */
 					snprintf( msgbuf, sizeof( msgbuf), 
 								NPC_ROOMADMINNEW_MSG_DSPPASSWD2,
 								CHAR_getWorkChar(doorindex, CHAR_WORKDOORPASSWD)
 							);
-					/* 丢永本□斥霜耨 */
+					/* メッセージ送信 */
 					CHAR_talkToCli( talkerindex, index,msgbuf, 
 									NPC_ROOMADMINNEW_MSGCOLOR);
 					flg = TRUE;
@@ -753,7 +753,7 @@ static void NPC_RoomAdminNew_DspRoomPasswd( int index, int adminindex, int talke
 	}
 }
 /*-----------------------------------------------
- * 戚荚钒疡凛棉］  盒毛蜕丹
+ * 鵜回開催時間?  屋を言う
  *----------------------------------------------*/
 static void NPC_RoomAdminNew_DspNextAuction( int meindex, int talkerindex)
 {
@@ -775,7 +775,7 @@ static void NPC_RoomAdminNew_DspNextAuction( int meindex, int talkerindex)
 		char	buff[16];
 		struct  tm tmwk;
 		int     difftime;
-		/*   盒树  毛潸   */
+		/*   屋情  を取   */
 		doorindex = NPC_DoorSearchByName( 
 					CHAR_getWorkChar( meindex, CHAR_WORKCHAR_NEXTROOM));
 		NPC_Util_GetArgStr( doorindex, argstr, sizeof( argstr));
@@ -794,7 +794,7 @@ static void NPC_RoomAdminNew_DspNextAuction( int meindex, int talkerindex)
 					buff
 				);
 		CHAR_talkToCli( talkerindex, meindex,msgbuf, NPC_ROOMADMINNEW_MSGCOLOR);
-		/* 蠡户濠曰凛棉 */
+		/* 締め切り時間 */
 		memcpy( &tmwk, localtime( &closetime), sizeof( tmwk));
 		difftime = closetime - NowTime.tv_sec;
 		snprintf( msgbuf, sizeof( msgbuf),
@@ -823,7 +823,7 @@ static void NPC_RoomAdminNew_DspNextAuction( int meindex, int talkerindex)
  *
  * 白央奶伙白巧□穴永玄反］
  * gold|time|cdkey|charaname|owntitle
- * 匹ㄠㄟ垫引匹［
+ * で１０行まで?
  *
  *   曰袄“ 岳  “仿件平件弘窒匏井忒允［仿件平件弘卞  日卅仃木壬ㄟ［
  *          礎  ＾-1
@@ -1003,11 +1003,11 @@ BOOL NPC_RankingInit( int meindex )
 	
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 	
-	/* 赓渝祭质   */
+	/* 初期化処   */
 	
 	/* type本永玄 */
 	CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_TYPERANKING);
-	/* 栋  谛及  蟆潸   */
+	/* 管  人の  前取   */
 	if( !getStringFromIndexWithDelim(argstr, "|" , 1 , buf,sizeof(buf) )) {
 		print( "arg err.rankingNPC not created.\n");
 		return( FALSE);
@@ -1043,11 +1043,11 @@ BOOL NPC_PrintpassmanInit( int meindex )
 	
 	NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 	
-	/* 赓渝祭质   */
+	/* 初期化処   */
 	
 	/* type本永玄 */
 	CHAR_setInt( meindex, CHAR_WHICHTYPE, CHAR_TYPEPRINTPASSMAN);
-	/* 栋  谛及  蟆潸   */
+	/* 管  人の  前取   */
 	if( !getStringFromIndexWithDelim(argstr, "|" , 1 , buf,sizeof(buf) )) {
 		print( "arg err.passmanNPC not created.\n");
 		return( FALSE);
@@ -1067,7 +1067,7 @@ void NPC_PrintpassmanTalked( int meindex , int talkerindex , char *msg ,
 	/* 皿伊奶乩□互玉失穴件及2弘伉永玉动  卅日  杀允月［ */
 	if(NPC_Util_CharDistance( talkerindex, meindex ) > 2)return;
 	
-	/* 愤坌迕及栋  谛及  蟆毛腹绸允月*/
+	/* 自分用の管  人の  前を検索する*/
 	charnum  = CHAR_getCharNum();
 	for(i= CHAR_getPlayerMaxNum() +CHAR_getPetMaxNum();
 		i<charnum;

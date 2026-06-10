@@ -18,7 +18,7 @@ static int NPC_Door_isOpen( int meindex );
 
 /*
  * 玉失毛  蜇允月凶户及NPC卞  邰卅楮醒及烂聒［
- * 正奶皿  “ Door
+ * タイプ  ： Door
  *
  * NPCARGUMENT及袄反｝
  *
@@ -28,11 +28,11 @@ static int NPC_Door_isOpen( int meindex );
  * 濮覆夫日井卅中［ 0分匀凶日由旦伐□玉匹卅中［
  *
  * 毛隙烂允月［  引月引匹及凛棉反犯白巧伙玄匹反1凛棉［
- * 涩烂毛踏仁午五卞反  飓  寞互褐邰卅躲绊毛手勾井日镗啦互  邰匹丐月［
+ * 設定を書くときには  像  号が重要な効果をもつから注意が  要である?
  *
- * 愤坌及引歹曰卞C毛霜耨允月楮醒互丐月井日｝1垫info,  飓  寞
+ * 自分のまわりにCを送信する関数があるから�b1行info,  像  号
  * 毛  凳仄化井日公及楮醒毛方屯壬弁仿奶失件玄及    卞  憎今木化中月
- * 橇谪互  蕙卞卅月［
+ * 状態が  新になる?
  */
 
 #define NPC_DOOR_OPENMSG "玉失互｝夫日中凶!"
@@ -131,22 +131,22 @@ BOOL NPC_DoorInit( int meindex )
         switch( closeg ){
         case 11900: dir = 6; break;  /* 霁及玉失 夫分曰仄凶 */
         case 11902: dir = 0; break;  /*          夫分曰丹尹 */
-        case 11904: dir = 2; break;  /*          心亢丹尹 */
+        case 11904: dir = 2; break;  /*          みぎうえ */
         case 11906: dir = 4; break;  /*          心亢仄凶 */
 
         case 11908: dir = 6; break;  /* 赢中霁及玉失 夫分曰仄凶 */
         case 11910: dir = 0; break;  /*              夫分曰丹尹 */
-        case 11912: dir = 2; break;  /*              心亢丹尹 */
+        case 11912: dir = 2; break;  /*              みぎうえ */
         case 11914: dir = 4; break;  /*              心亢仄凶 */
 
         case 11916: dir = 6; break;  /* 嗡及玉失 夫分曰仄凶 */
         case 11918: dir = 0; break;  /*          夫分曰丹尹 */
-        case 11920: dir = 2; break;  /*          心亢丹尹 */
+        case 11920: dir = 2; break;  /*          みぎうえ */
         case 11922: dir = 4; break;  /*          心亢仄凶 */
 
         case 11924: dir = 6; break;  /* 赢中嗡及玉失 夫分曰仄凶 */
         case 11926: dir = 0; break;  /*              夫分曰丹尹 */
-        case 11928: dir = 2; break;  /*              心亢丹尹 */
+        case 11928: dir = 2; break;  /*              みぎうえ */
         case 11930: dir = 4; break;  /*              心亢仄凶 */
 
         case 11958: dir = 2; break;  /* 赢中  及玉失 心亢丹尹 */
@@ -285,7 +285,7 @@ void NPC_DoorPostOver( int meindex , int movedindex )
 {
     if( CHAR_getWorkInt( meindex , CHAR_WORKDOORSOONFLG )){
 		CHAR_setInt( meindex , CHAR_TALKCOUNT, 1 );
-        CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );	/* 骚木卅仁允月 */
+        CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );	/* 通れなくする */
     }
 }
 
@@ -355,7 +355,7 @@ void NPC_DoorLooked( int meindex , int lookedindex )
 				char	msgbuf[128];
 
 				NPC_ROOMINFO roominfo;
-				/* 由旦午  躲渝蜃毛本永玄允月 */
+				/* パスと  効期限をセットする */
 				NPC_RoomAdminNew_ReadFile(
 								CHAR_getWorkChar( meindex, CHAR_WORKDOORNAME),
 										&roominfo);

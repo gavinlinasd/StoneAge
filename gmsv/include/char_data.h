@@ -33,20 +33,20 @@ BOOL CHAR_getDefaultChar( Char*  nc, int imagenumber );
 /*====================隶    ｝  飓  寞赘尹楮溢====================*/
 int CHAR_getNewImagenumberFromEquip( int basebaseimagenumber,
                                      ITEM_CATEGORY category );
-/*====================  飓  寞  侬   ->   寞楮溢====================*/
+/*====================  像  号  字   ->   号関係====================*/
 void CHAR_initSeekGraphicNumberFromString();
 int CHAR_seekGraphicNumberFromString( char* string );
 
 
 
-/*====================平乓仿及赓渝袄楮溢====================*/
+/*====================キャラの初期値関係====================*/
 BOOL CHAR_getInitElderPosition( Char* ch,int hometown);
 BOOL CHAR_getElderPosition( int elderindex, int* fl, int* x, int* y );
 
 void CHAR_setInitValues( Char* ch );
 
 
-/*====================  衬匏  楮溢====================*/
+/*====================  敵位  関係====================*/
 typedef enum
 {
     CHAR_INVAREA,
@@ -63,13 +63,13 @@ BOOL CHAR_isAppearPosition( int floor, int *x, int *y);
 BOOL CHAR_isCannotDropArea( int floor , int x, int y );
 
 
-/* 赢  楮溢 */
+/* 長  関係 */
 BOOL CHAR_ElderSetPosition( int elderindex ,int fl,int x ,int y);
 
 
 
 /*************************************************
-酵烂伊矛伙失永皿质  
+暫定レベ郊アップ処  
 *************************************************/
 
 

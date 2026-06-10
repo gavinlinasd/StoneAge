@@ -2,7 +2,7 @@
 #define __PET_H__
 
 /*
- * 矢永玄楮  及涩烂匹允［
+ * ペット関  の設定です?
  */
 #include "version.h"
 #include "common.h"

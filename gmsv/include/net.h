@@ -37,12 +37,12 @@ typedef enum
     WHILECREATE,        /*  综匀化中月          */
     WHILELOGOUTSAVE,    /*  夫弘失它玄及本□皮      */
     WHILECANNOTLOGIN,   /*  夫弘奶件匹五卅井匀凶凛及失件夫永弁质        */
-    WHILECHARDELETE,    /*  平乓仿绰轮      */
+    WHILECHARDELETE,    /*  キャラ削除      */
     WHILEDOWNLOADCHARLIST,  /*  平乓仿伉旦玄母它件夫□玉    */
-    WHILECHANGEPASSWD,  /*  由旦伐□玉  凳      */
+    WHILECHANGEPASSWD,  /*  パスワード  更      */
 
     WHILELOSTCHARSAVE,  /*  夫旦玄匹平乓仿本□皮仄      */
-    WHILELOSTCHARDELETE,/*  夫旦玄匹平乓仿壅仄      */
+    WHILELOSTCHARDELETE,/*  ひストでキャラ消し      */
 
     WHILECLOSEALLSOCKETSSAVE, /* closeallsockets ぁす籤溘掛↓々媃  */
     WHILESAVEWAIT,              /* 夫弘失它玄及本□皮卞垫仁蟆及赐  谨切  */
@@ -55,7 +55,7 @@ typedef enum
 }ConnectType;
 
 
-/*  扔□田互忡绣仄化云仁赢今    */
+/*  サーバが保存して恭く長さ    */
 #define CDKEYLEN    16
 #define PASSWDLEN   16
 /* 仇木及  凳反尕第(允月卅日 Char 及STRING64 手赝濠卅袄卞濠曰晶月仇午*/
@@ -134,7 +134,7 @@ void closeAllConnectionandSaveData( void );
 BOOL SetShutdown( BOOL nvalue );
 int GetShutdown( void );
 
-/* 伙□皿仄化腹绸楮醒 */
+/* 郊ープして検索関数 */
 int getfdFromCdkey( char* cd );
 int getfdFromCharaIndex( int charaindex );
 int getcdkeyFromCharaIndex( int charaindex , char *out, int outlen );
@@ -179,7 +179,7 @@ int CONNECT_getTradecardcharaindex( int fd, int i );
 int CONNECT_getClosed( int fd );
 void CONNECT_setClosed( int fd, int a );
 
-/* MT犯田永弘迕穴弁夫 */
+/* MTデバッグ用マクひ */
 #define CONNECT_endOne_debug(a) CONNECT_endOne( (a) , __LINE__ )
 
 /* 犯□正丑综楮醒(引月切允木匀升覆杀迕) */

@@ -208,11 +208,11 @@ BOOL NPC_SysinfoInit( int meindex )
 
     NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 
-	/* 赓渝祭质   */
+	/* 初期化処   */
 
 	CHAR_setWorkInt( meindex, CHAR_WORK_MODE, 0);
 
-	/* 由旦伐□玉本永玄 */
+	/* パスワードセット */
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "passwd", buff, sizeof( buff))
 		== NULL)
 	{
@@ -225,7 +225,7 @@ BOOL NPC_SysinfoInit( int meindex )
 	if( tmp == -1 ) tmp = NPC_SYSINFO_TIMELIMIT_DEFAULT;
 	CHAR_setWorkInt( meindex, CHAR_WORK_TIMELIMIT, tmp);
 
-    /* 丢永本□斥及缙潸   */
+    /* メッセージの色取   */
 	tmp = NPC_Util_GetNumFromStrWithDelim( argstr, "msg_col");
 	if( tmp < CHAR_COLORRED || tmp > CHAR_COLORWHITE )
 		tmp = CHAR_COLORYELLOW;
@@ -248,9 +248,9 @@ void NPC_SysinfoLoop( int meindex )
 	int		shuttime;
 	if( CHAR_getWorkInt( meindex, CHAR_WORK_MODE) == 1) {
 		int		oldtime;
-		/* 凛棉毛褡户月 */
+		/* 時間を進める */
 		oldtime = CHAR_getWorkInt( meindex, CHAR_WORK_TIME);
-		/* 孺蜃凛棉左□田□匹骚橘乒□玉尺 */
+		/* 制限時間オーバーで通常モードへ */
 		if( NowTime.tv_sec - oldtime >
 			CHAR_getWorkInt( meindex, CHAR_WORK_TIMELIMIT))
 		{
@@ -259,14 +259,14 @@ void NPC_SysinfoLoop( int meindex )
 		}
 	}
 	shuttime = CHAR_getWorkInt( meindex, CHAR_WORK_SHUTDOWNTIME);
-	/* shutdown凛棉民尼永弁 */
+	/* shutdown時間チェック */
 	if( shuttime > 0 ) {
 		int diff,limit,hun;
 
 		diff = NowTime.tv_sec - shuttime;
 		limit = CHAR_getWorkInt( meindex, CHAR_WORK_SHUTDOWNLIMIT);
 		hun = limit - (diff/60);
-		/* ㄠ坌云五卞丢永本□斥 */
+		/* １分恭きにメッセージ */
 		if( hun != CHAR_getWorkInt( meindex, CHAR_WORK_SHUTDOWNDSPTIME)){
 			char	buff[256];
 			if( hun != 0 ) {
@@ -299,7 +299,7 @@ void NPC_SysinfoTalked( int meindex, int tindex, char *msg, int color)
 	msgwk = calloc( 1, sizeof(char)*len);
 	buff = calloc( 1, sizeof(char)*len);
 	strcpy( msgwk, msg);
-	/* 旦矢□旦毛引午户月 */
+	/* スペースをまとめる */
 	deleteSequentChar( msgwk, " ");
 	if( CHAR_getWorkInt( meindex, CHAR_WORK_MODE) == 0 ) {
 		msgno = 0;
@@ -364,7 +364,7 @@ static void NPC_Sysinfo_Msg_EndInfo( int meindex, int tindex, char *msg)
 
 }
 /*------------------------------------------------------------------------
- * HELP丢永本□斥
+ * HELPメッセージ
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_Help( int meindex, int tindex, char *msg)
 {
@@ -398,7 +398,7 @@ static void NPC_Sysinfo_Msg_Help( int meindex, int tindex, char *msg)
 	}
 }
 /*------------------------------------------------------------------------
- * 皿伊奶乩□及醒毛譬屯月
+ * プレイヤーの数を調べる
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_Player( int meindex, int tindex, char *msg)
 {
@@ -418,7 +418,7 @@ static void NPC_Sysinfo_Msg_Player( int meindex, int tindex, char *msg)
 
 }
 /*------------------------------------------------------------------------
- * 丢永本□斥伉旦玄毛  憎允月
+ * メッセージリストを  示する
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_List( int meindex, int tindex, char *msg)
 {
@@ -438,7 +438,7 @@ static void NPC_Sysinfo_Msg_List( int meindex, int tindex, char *msg)
 	}
 }
 /*------------------------------------------------------------------------
- * 丢永本□斥  寞井日丢永本□斥毛霜耨允月
+ * メッセージ  号からメッセージを送信する
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_SendNo( int meindex, int tindex, char *msg)
 {
@@ -471,7 +471,7 @@ static void NPC_Sysinfo_Msg_SendMsg( int meindex, int tindex, char *msg)
 	}
 }
 /*------------------------------------------------------------------------
- * 丢永本□斥市仿□毛  凳允月
+ * メッセージカラーを  更する
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_Msgcol( int meindex, int tindex, char *msg)
 {
@@ -504,7 +504,7 @@ static void NPC_Sysinfo_Msg_Msgcol( int meindex, int tindex, char *msg)
 	}
 }
 /*------------------------------------------------------------------------
- * 娄醒井日丢永本□斥毛潸  允月
+ * 引数からメッセージを取  する
  *----------------------------------------------------------------------*/
 static char *NPC_Sysinfo_GetMsg( int meindex, char *msgindexstr,
 								char *out,int outlen, int num )
@@ -542,9 +542,9 @@ static void NPC_Sysinfo_Msg_Shutdown( int meindex, int tindex, char *msg)
 	char	buff[10];
 	int		hun;
 
-	/*   赓及丢永本□斥霜耨 */
+	/*   初のメッセージ送信 */
 	NPC_Sysinfo_SendMsg( meindex, tindex, NPC_SYSINFO_ARG_SHUTDOWN_MSG);
-	/* 凛棉本永玄 */
+	/* 時間セット */
 	CHAR_setWorkInt( meindex, CHAR_WORK_SHUTDOWNTIME, NowTime.tv_sec);
 	/* 比鰈掃筑糲   */
 	if( getStringFromIndexWithDelim( msg, " ", 2, buff, sizeof( buff)) == TRUE )
@@ -563,7 +563,7 @@ static void NPC_Sysinfo_Msg_Shutdown( int meindex, int tindex, char *msg)
 	CHAR_setWorkInt( meindex, CHAR_WORK_SHUTDOWNDSPTIME,0);
 }
 /*------------------------------------------------------------------------
- * 丢永本□斥毛霜月  娄醒井日丢永本□斥毛潸    
+ * メッセージを送る  引数からメッセージを取    
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_SendMsg( int meindex, int pindex, int tblnum)
 {
@@ -599,7 +599,7 @@ static void NPC_Sysinfo_SendMsgToAll( int meindex, char *msg)
 
 
 
-/* 蝈衬平乓仿毛 NO_SEE 卞允月井升丹井 */
+/* 全敵キャラを NO_SEE にするかどうか */
 static void NPC_Sysinfo_All_NoSee( int meindex, int tindex, char *msg ){
 	char	buff[256];
 
@@ -607,14 +607,14 @@ static void NPC_Sysinfo_All_NoSee( int meindex, int tindex, char *msg ){
 	/* 比鰈掃筑糲   */
 	if( getStringFromIndexWithDelim( msg, " ", 2, buff, sizeof( buff)) == TRUE )
 	{
-		/*     卞允月桦宁 */
+		/*     にする場合 */
 		if( strncmp( buff, "on", strlen( buff ) ) == 0 ){
 			all_nosee = 1;
 			snprintf( buff, sizeof( buff), "已开启all_nosee 。" );
 			CHAR_talkToCli( tindex, meindex, buff,
 					CHAR_getWorkInt( meindex, CHAR_WORK_MSGCOLOR));
 		}else
-		/*     卞允月桦宁 */
+		/*     にする場合 */
 		if( strncmp( buff, "off", strlen( buff ) ) == 0 ){
 			all_nosee = 0;
 			snprintf( buff, sizeof( buff), "已关闭all_nosee 。" );
@@ -633,7 +633,7 @@ static void NPC_Sysinfo_All_NoSee( int meindex, int tindex, char *msg ){
 	}
 }
 
-/* 蝈衬平乓仿毛 NO_BODY 卞允月井升丹井 */
+/* 全敵キャラを NO_BODY にするかどうか */
 static void NPC_Sysinfo_All_NoBody( int meindex, int tindex, char *msg ){
 	char	buff[256];
 
@@ -641,14 +641,14 @@ static void NPC_Sysinfo_All_NoBody( int meindex, int tindex, char *msg ){
 	/* 比鰈掃筑糲   */
 	if( getStringFromIndexWithDelim( msg, " ", 2, buff, sizeof( buff)) == TRUE )
 	{
-		/*     卞允月桦宁 */
+		/*     にする場合 */
 		if( strncmp( buff, "on", strlen( buff ) ) == 0 ){
 			all_nobody = 1;
 			snprintf( buff, sizeof( buff), "已开启all_nobody 。" );
 			CHAR_talkToCli( tindex, meindex, buff,
 					CHAR_getWorkInt( meindex, CHAR_WORK_MSGCOLOR));
 		}else
-		/*     卞允月桦宁 */
+		/*     にする場合 */
 		if( strncmp( buff, "off", strlen( buff ) ) == 0 ){
 			all_nobody = 0;
 			snprintf( buff, sizeof( buff), "已关闭all_nobody 。" );
@@ -668,7 +668,7 @@ static void NPC_Sysinfo_All_NoBody( int meindex, int tindex, char *msg ){
 }
 
 
-/* 蝈衬平乓仿毛 ㄠ伙□皿匹窒    综今六月井＂ */
+/* 全敵キャラを １郊ープで何    作させるか? */
 static void NPC_Sysinfo_Move_Num( int meindex, int tindex, char *msg ){
 	char	buff[256];
 	int		work;
@@ -681,7 +681,7 @@ static void NPC_Sysinfo_Move_Num( int meindex, int tindex, char *msg ){
 		if( work <= 0 ) {
 			work = 1000; /* 赝癫 */
 		}
-		/*   凛卞仇木分仃  井仄引允 */
+		/*   時にこれだけ  かします */
 		EnemyMoveNum = work;
 		snprintf( buff, sizeof( buff), "让敌人同时%d动作。",
 			EnemyMoveNum );
@@ -697,7 +697,7 @@ static void NPC_Sysinfo_Move_Num( int meindex, int tindex, char *msg ){
 
 
 
-/* 衬平乓仿毛ㄠ伙□皿匹窒    嫖戏心请允井 */
+/* 敵キャラを１郊ープで何    高生み出すか */
 static void NPC_Sysinfo_Born_Num( int meindex, int tindex, char *msg ){
 	char	buff[256];
 	int		work;

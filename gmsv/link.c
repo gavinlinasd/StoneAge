@@ -5,19 +5,19 @@
 
 /*
  *  伉件弁及  卞勾仃月
- * 娄醒
- *      top         玄永皿用□玉
+ * 引数
+ *      top         トップノード
  *      add         尥仃笛尹月用□玉及    毛忡  允月用□玉尺及禾奶件正□
- * 忒曰袄
+ * 返り値
  *      TRUE(1)     岳  
  *      FALSE(0)    撩  
  */
 BOOL Nodeappendtail( Node** top  , Node* add )
 {
-    Node* c;        /*伙□皿迕*/
-    Node* next;     /*蕙仄仁综月用□玉迕*/
+    Node* c;        /*郊ープ用*/
+    Node* next;     /*新しく作るノード用*/
 
-    /*玄永皿互NULL井升丹井及民尼永弁*/
+    /*トップがNULLかどうかのチェック*/
     if( *top == NULL ){
         *top = allocateMemory( sizeof( Node  ) );
         if( *top== NULL ) return FALSE;
@@ -30,7 +30,7 @@ BOOL Nodeappendtail( Node** top  , Node* add )
     for( c = *top ; c->next ; c = c->next ); /* c及匏  毛内日允 */
     next = allocateMemory( sizeof(Node) );
     if( next == NULL )return FALSE;
-    c->next = next;                         /* next卞袄毛涩烂允月 */
+    c->next = next;                         /* nextに値を設定する */
     next->next  = NULL;                      /*粮五反  中*/
     next->val   = add->val;                   /*禾奶件正□及戊疋□*/
     next->size  = add->size;             /*赢今及忡栋*/
@@ -42,18 +42,18 @@ BOOL Nodeappendtail( Node** top  , Node* add )
 
 /*
  *  伉件弁及蟆卞勾仃月
- * 娄醒
- *      top         玄永皿用□玉
+ * 引数
+ *      top         トップノード
  *      add         尥仃笛尹月用□玉及    毛忡  允月用□玉尺及禾奶件正□
- * 忒曰袄
+ * 返り値
  *      TRUE(1)     岳  
  *      FALSE(0)    撩  
  */
 BOOL Nodeappendhead( Node** nowtop  , Node* add )
 {
-    Node* newtop;       /*蕙仄中燮  迕*/
+    Node* newtop;       /*新しい先  用*/
 
-    /*玄永皿互NULL井升丹井及民尼永弁*/
+    /*トップがNULLかどうかのチェック*/
     if( *nowtop == NULL ){
         *nowtop = allocateMemory( sizeof( Node  ) );
         if( *nowtop == NULL ) return FALSE;
@@ -80,17 +80,17 @@ BOOL Nodeappendhead( Node** nowtop  , Node* add )
 
 
 /*
- * 域    赓及用□玉毛娄醒卞戊疋□仄化潸曰轮仁
- * 娄醒
+ * 一    初のノードを引数にコピーして取り除く
+ * 引数
  *          top         用□玉及燮  
  *          ret         潸曰轮中凶用□玉及戊疋□
- * 忒曰袄
+ * 返り値
  *      TRUE(1)         岳  
  *      FALSE(0)        撩      用□玉及燮  互NULL
  */
 BOOL  Noderemovehead( Node** top , Node* ret)
 {
-    Node* newtop;         /*蕙仄仁燮  卞卅月用□玉*/
+    Node* newtop;         /*新しく先  になるノード*/
 
     if( *top == NULL )return FALSE;
 
@@ -108,18 +108,18 @@ BOOL  Noderemovehead( Node** top , Node* ret)
 
 
 /*
- * 域      及用□玉毛娄醒卞戊疋□仄化潸曰轮仁
- * 娄醒
+ * 一      のノードを引数にコピーして取り除く
+ * 引数
  *          top         用□玉及燮  
  *          ret         潸曰轮中凶用□玉及戊疋□
- * 忒曰袄
+ * 返り値
  *      TRUE(1)         岳  
  *      FALSE(0)        撩      用□玉及燮  互NULL
  */
 BOOL  Noderemovetail( Node** top , Node* ret)
 {
-    Node* c;             /*伙□皿迕*/
-    Node* c1;            /*伙□皿迕 中勾匹手 c->next毛隙允*/
+    Node* c;             /*郊ープ用*/
+    Node* c1;            /*郊ープ用 いつでも c->nextを指す*/
 
     if( *top == NULL )return FALSE;
 
@@ -128,7 +128,7 @@ BOOL  Noderemovetail( Node** top , Node* ret)
     while(1){
         if( c1->next == NULL )
             /*
-             * 仇及凛鳔匹          c1
+             * この時点で          c1
              *                      |
              *  c ---> +------+       
              *         | next |---->+------+
@@ -143,7 +143,7 @@ BOOL  Noderemovetail( Node** top , Node* ret)
         c1=c->next;
     }
     c->next = NULL;     /*c1卞丐凶月手及毛绰轮允月及匹next反NULL午允月*/
-    /*戊疋□*/
+    /*コピー*/
     ret->val    = c1->val;
     ret->size   = c1->size;
 

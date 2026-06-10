@@ -654,21 +654,21 @@ typedef enum
 }CHAR_DATAINT;
 
 typedef enum {
-    CHAR_MODAI    			= CHAR_CHARM,    		/*  矢永玄  及及镝擦艘膜恳袄    */
+    CHAR_MODAI    			= CHAR_CHARM,    		/*  ペット  のの忠誠心修正値    */
 	CHAR_VARIABLEAI 		= CHAR_LUCK,			/*  矢永玄及镝擦艘  祭袄  ㄠㄟㄟ  仄凶袄匹  匀化云仁   */
-    CHAR_SLOT 				= CHAR_DEFAULTPET,		/* 檗  毛本永玄请  月旦夫永玄醒  矢永玄互银迕  */
+    CHAR_SLOT 				= CHAR_DEFAULTPET,		/* 石  をセット出  るスひット数  ペットが使用  */
    	CHAR_PETGETLV			= CHAR_CHATVOLUME,		/* 必永玄今木凶伊矛伙  矢永玄及心银迕   */
     CHAR_PUTPETTIME			= CHAR_LOGINCOUNT,		/*  文喟傲札皐  怨  小直俔掃筑 */
-	CHAR_MAILMODE 			= CHAR_RADARSTRENGTH,	/*   矢永玄及心银迕  丢□伙霜耨橇谪 */
-    CHAR_ALLOCPOINT			= CHAR_LEVELUPPOINT,	/* 伊矛伙失永皿凛及喃曰蕊曰禾奶件玄(矢永玄迕) */
+	CHAR_MAILMODE 			= CHAR_RADARSTRENGTH,	/*   ペットのみ使用  メー郊送信状態 */
+    CHAR_ALLOCPOINT			= CHAR_LEVELUPPOINT,	/* レベ郊アップ時の割り振りポイント(ペット用) */
     CHAR_PETMAILBUFINDEX	= CHAR_GETPETCOUNT, 	/* 文喟傲卿＆誌(offmsg)樫式index */
-	CHAR_PETMAILIDLETIME	= CHAR_SENDMAILCOUNT,	/* 矢永玄丢□伙及啃及凛棉卅升 */
+	CHAR_PETMAILIDLETIME	= CHAR_SENDMAILCOUNT,	/* ペットメー郊の為の時間など */
 	CHAR_PETMAILFROMFLOOR	= CHAR_DUELBATTLECOUNT,	/* 丢□伙毛霜匀凶凛及白夫失 */
 	CHAR_PETMAILFROMX		= CHAR_DUELWINCOUNT,	/* 丢□伙毛霜匀凶凛及  甄   */
 	CHAR_PETMAILFROMY		= CHAR_DUELLOSECOUNT,	/* 丢□伙毛霜匀凶凛及  甄   */
-	CHAR_PETMAILEFFECT		= CHAR_DUELSTWINCOUNT,	/* 矢永玄丢□伙及请蜇及巨白尼弁玄  寞 */
-	CHAR_PETSENDMAILCOUNT	= CHAR_TALKCOUNT,		/* 矢永玄互丢□伙毛扪氏分荚醒 */
-    CHAR_PETRANK			= CHAR_LASTTIMESETLUCK, /* 矢永玄及仿件弁(矢永玄迕  ㄠ  ㄥ［ㄟ反巨仿□迕 */
+	CHAR_PETMAILEFFECT		= CHAR_DUELSTWINCOUNT,	/* ペットメー郊の出現のエフェクト  号 */
+	CHAR_PETSENDMAILCOUNT	= CHAR_TALKCOUNT,		/* ペットがメー郊を運んだ回数 */
+    CHAR_PETRANK			= CHAR_LASTTIMESETLUCK, /* ペットのランク(ペット用  １  ６?０はエラー用 */
 	CHAR_PETID				= CHAR_DUELMAXSTWINCOUNT,/* 矢永玄及  件皿伊□玄及     */
     CHAR_PETFAMILY		= CHAR_FMLEADERFLAG,		// CoolFish: Family 判断是否为家族守护兽
 }CHAR_PET;

@@ -200,9 +200,9 @@ INLINE int OBJECT_setTime( int index, int newvalue )
 
 /*------------------------------------------------------------
  * index 毛  月
- * 娄醒
- *  index      int     奶件犯永弁旦
- * 忒曰袄
+ * 引数
+ *  index      int     インデックス
+ * 返り値
  *  int
  ------------------------------------------------------------*/
 INLINE int OBJECT_getIndex( int index )
@@ -210,11 +210,11 @@ INLINE int OBJECT_getIndex( int index )
     return obj[index].index;
 }
 /*------------------------------------------------------------
- * y 毛涩烂允月
- * 娄醒
- *  index      int     奶件犯永弁旦
- *  newvalue    int     蕙仄中袄
- * 忒曰袄
+ * y を設定する
+ * 引数
+ *  index      int     インデックス
+ *  newvalue    int     新しい値
+ * 返り値
  *  int 樯及袄
  ------------------------------------------------------------*/
 INLINE int OBJECT_setIndex( int index, int newvalue )
@@ -227,10 +227,10 @@ INLINE int OBJECT_setIndex( int index, int newvalue )
 
 
 /*------------------------------------------------------------
- * 左皮斥尼弁玄及    醒毛菲户月
- * 娄醒
- *  卅仄
- * 忒曰袄
+ * オブジェクトの    数を求める
+ * 引数
+ *  なし
+ * 返り値
  *  int
  ------------------------------------------------------------*/
 INLINE int OBJECT_getNum( void )
@@ -239,16 +239,16 @@ INLINE int OBJECT_getNum( void )
 }
 
 /*------------------------------------------------------------
- *  左皮斥尼弁玄厌瞻  及丢件田毛蝈  娄醒卞  匀化
+ *  オブジェクト構造  のメンバを全  引数に  って
  *  左皮斥尼弁玄厌瞻  毛综曰请仄化｝瓒  允月［
  *
- * 娄醒
- *  type    OBJTYPE     左皮斥尼弁玄及正奶皿
+ * 引数
+ *  type    OBJTYPE     オブジェクトのタイプ
  *  index   int         巷直庇直式    謄式index
  *  x       int         x甄  
  *  y       int         y甄  
  *  floor   int         floorid
- * 忒曰袄
+ * 返り値
  *   int  喃曰癫化木凶index, 撩  及凛反｝ -1
  ------------------------------------------------------------*/
 int initObjectFromObjectMember(

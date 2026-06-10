@@ -13,7 +13,7 @@
  */
 /*----------------------------------------------------------------------
  * 愤坌及心荚汊
- * 娄醒
+ * 引数
  * charaindex		int		愤坌及index
  * magicindex		int		  芊及index
  *---------------------------------------------------------------------*/
@@ -73,8 +73,8 @@ int MAGIC_Recovery_Field( int charaindex, int magicindex)
 
 }
 /*----------------------------------------------------------------------
- * 职谛毛荚汊
- * 娄醒
+ * 他人を回復
+ * 引数
  * charaindex		int		愤坌及index
  * toindex			int		荚汊允月谛及index
  * magicindex		int		  芊及index

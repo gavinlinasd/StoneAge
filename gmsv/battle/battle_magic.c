@@ -756,14 +756,14 @@ int	MAGIC_Recovery_Battle( int charaindex, int toNo, int marray, int mp )
 }
 
 void BATTLE_MultiResAndDef( 
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
+	int battleindex, 	// バト郊インデックス
+	int attackNo,		// かける人  号
 	int toNo,			// 井仃日木月谛  寞
-	int power,			// 湘  荚汊袄
+	int power,			// 基  回復値
 	int per,			// ⊙井＂
-	int kind, 			//   芊  豢及潘  
+	int kind, 			//   法  御の種  
 	int count, 			// 嶇者  焚小
-	int UseEffect,		// 银丹谛及巨白尼弁玄
+	int UseEffect,		// 使う人のエフェクト
 	int RecevEffect		// 井仃日木月谛及巨白尼弁玄
 )
 {
@@ -777,10 +777,10 @@ void BATTLE_MultiResAndDef(
 	BATTLE_MultiListDead( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
-		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
-		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
-		UseEffect, 				// 井仃月谛巨白尼弁玄
+		battleindex, 			// バト郊インデックス
+		attackNo, 				// かける人  号(０  １９)
+		ToList, 				// かけられる人  号リスト(０  １９)
+		UseEffect, 				// かける人エフェクト
 		RecevEffect				// 井仃日木月谛巨白尼弁玄
 	);
 	charaindex = BATTLE_No2Index( battleindex, attackNo );
@@ -986,12 +986,12 @@ int BATTLE_CalcCharaRatio( int AttEle , int charaidx )
 }
 
 static int	BATTLE_AttrCalc(
-		int My_Fire,	// 愤坌础(膜恳熬仃月幻丹)
+		int My_Fire,	// 自分側(修正受けるほう)
 		int My_Water,
 		int My_Earth,
 		int My_Wind,
 		int My_None,
-		int Vs_Fire,	// 锹澎础
+		int Vs_Fire,	// 相手側
 		int Vs_Water,
 		int Vs_Earth,
 		int Vs_Wind,
@@ -1035,7 +1035,7 @@ static int	BATTLE_AttrCalc(
 			+ My_None * Vs_Earth * AJ_DOWN  //     萝  浇中
 			+ My_None * Vs_Wind * AJ_DOWN;  //     氘  浇中
 
-	// 蝈  宁煌允月
+	// 全  合計する
 	iRet = (My_Fire + My_Water + My_Earth + My_Wind + My_None) ;
 
 	// 喘仃遥壬匀井曰匹  五仁卅匀凶及匹公及坌尺日允
@@ -1758,12 +1758,12 @@ void BATTLE_MultiToCallDragonMagic( int battleindex, int attackNo, int toNo,
 //    芊羁匹  醒及平乓仿弁正□毛汊唾今六月
 //
 void BATTLE_MultiRessurect(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
+	int battleindex, 	// バト郊インデックス
+	int attackNo,		// かける人  号
 	int toNo,			// 井仃日木月谛  寞
-	int power,			// 湘  荚汊袄
+	int power,			// 基  回復値
 	int per,			// ⊙井＂
-	int UseEffect,		// 银丹谛及巨白尼弁玄
+	int UseEffect,		// 使う人のエフェクト
 	int RecevEffect		// 井仃日木月谛及巨白尼弁玄
 )
 //
@@ -1779,19 +1779,19 @@ void BATTLE_MultiRessurect(
 	BATTLE_MultiListDead( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
-		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
-		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
-		UseEffect, 				// 井仃月谛巨白尼弁玄
+		battleindex, 			// バト郊インデックス
+		attackNo, 				// かける人  号(０  １９)
+		ToList, 				// かけられる人  号リスト(０  １９)
+		UseEffect, 				// かける人エフェクト
 		RecevEffect				// 井仃日木月谛巨白尼弁玄
 	);
 
 	// 汊唾今六月
 	for( i = 0; ToList[i] != -1; i ++ ){
-		// 锹澎及奶件犯永弁旦
+		// 相手のインデックス
 		toindex = BATTLE_No2Index( battleindex, ToList[i] );
 
-		//           反皿伊奶乩□及戏五忒曰  仄
+		//           はプレイヤーの生き返り  し
 		if( BattleArray[battleindex].type == BATTLE_TYPE_P_vs_P
 		&& CHAR_getInt( toindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER
 		){
@@ -1812,22 +1812,22 @@ void BATTLE_MultiRessurect(
 		}
 
 		if( power == 0 ){
-			// 仇及桦宁反敦蝈荚汊
+			// この場合は完全回復
 			UpPoint = CHAR_getWorkInt( toindex, CHAR_WORKMAXHP );
 		}else{
 			// 荚汊汹卞汔毛  凶六月(漆反赝癫)
 			UpPoint = RAND( (power*0.9), (power*1.1) );
 		}
-		//   斓匹手ㄠ
+		//   低でも１
 		UpPoint = max( 1, UpPoint );
 
 		workhp = CHAR_getInt( toindex, CHAR_HP ) + UpPoint;
 
-		//     毛译尹卅中方丹卞荚汊
+		//     を超えないように回復
 		CHAR_setInt( toindex, CHAR_HP,
 			min( workhp, CHAR_getWorkInt( toindex, CHAR_WORKMAXHP ) ) );
 
-		// 汊唾
+		// 復活
 		CHAR_setFlg( toindex, CHAR_ISDIE, 0 );
 
 		//snprintf( szBuffer, sizeof(szBuffer),
@@ -1856,11 +1856,11 @@ void BATTLE_MultiRessurect(
 		BATTLESTR_ADD( szCommand );
 */
 
-		// 衬午及爵    匹伉旦弁互卅井匀凶日
+		// 敵との戦    でリスクがなかったら
 		if( BattleArray[battleindex].norisk == 0
 		 &&	BattleArray[battleindex].type == BATTLE_TYPE_P_vs_E
 		 ){
-			// 仇仇匹矢永玄分匀凶日袄毛皿仿旦允月
+			// こ�Aでペットだったら値をプラスする
 			if( CHAR_getInt( toindex, CHAR_WHICHTYPE ) == CHAR_TYPEPET ){
 				CHAR_PetAddVariableAi( toindex, AI_FIX_PETRESSURECT );
 			}
@@ -1934,12 +1934,12 @@ void BATTLE_MultiReLife( int battleindex, int attackNo, int toNo,
 #endif
 
 void BATTLE_MultiStatusChange(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
+	int battleindex, 	// バト郊インデックス
+	int attackNo,		// かける人  号
 	int toNo,			// 井仃日木月谛  寞
-	int status,			// 旦  □正旦潘  
+	int status,			// ス  ータス種  
 	int turn,			// 正□件醒
-	int UseEffect,		// 银丹谛及巨白尼弁玄
+	int UseEffect,		// 使う人のエフェクト
 	int RecevEffect,	// 井仃日木月谛及巨白尼弁玄
 	int Success			// 岳    
 )
@@ -1951,10 +1951,10 @@ void BATTLE_MultiStatusChange(
 
 	BATTLE_MultiList( battleindex, toNo, ToList );
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
-		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
-		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
-		UseEffect, 				// 井仃月谛巨白尼弁玄
+		battleindex, 			// バト郊インデックス
+		attackNo, 				// かける人  号(０  １９)
+		ToList, 				// かけられる人  号リスト(０  １９)
+		UseEffect, 				// かける人エフェクト
 		RecevEffect				// 井仃日木月谛巨白尼弁玄
 	);
 
@@ -2030,14 +2030,14 @@ void BATTLE_MultiMagicStatusChange( int battleindex, int attackNo, int toNo, int
 
 //***********************************************************
 //
-//    芊羁匹  醒及平乓仿弁正□毛旦  □正旦荚汊
+//    法等で  数のキャラクターをス  ータス回復
 //
 void BATTLE_MultiStatusRecovery(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
+	int battleindex, 	// バト郊インデックス
+	int attackNo,		// かける人  号
 	int toNo,			// 井仃日木月谛  寞
-	int status,			// 旦  □正旦潘  
-	int UseEffect,		// 银丹谛及巨白尼弁玄
+	int status,			// ス  ータス種  
+	int UseEffect,		// 使う人のエフェクト
 	int RecevEffect		// 井仃日木月谛及巨白尼弁玄
 )
 //
@@ -2054,10 +2054,10 @@ void BATTLE_MultiStatusRecovery(
 	BATTLE_MultiList( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
-		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
-		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
-		UseEffect, 				// 井仃月谛巨白尼弁玄
+		battleindex, 			// バト郊インデックス
+		attackNo, 				// かける人  号(０  １９)
+		ToList, 				// かけられる人  号リスト(０  １９)
+		UseEffect, 				// かける人エフェクト
 		RecevEffect				// 井仃日木月谛巨白尼弁玄
 	);
 
@@ -2065,9 +2065,9 @@ void BATTLE_MultiStatusRecovery(
 
 	// 旦  □正旦唱橘荚汊今六月
 	for( i = 0; ToList[i] != -1; i ++ ){
-		// 锹澎及奶件犯永弁旦
+		// 相手のインデックス
 		toindex = BATTLE_No2Index( battleindex, ToList[i] );
-		// 锹澎互升及旦  □正旦井＂
+		// 相手がどのス  ータスか?
 		tostatus = 0;
 		//检查异常状态
 		for( j = 1; j < BATTLE_ST_END; j ++ ){
@@ -2077,17 +2077,17 @@ void BATTLE_MultiStatusRecovery(
 		}
 		//======== 仇仇匹岳  井升丹井毛  烂今六月 ==========
 		if( tostatus == 0 ){//正常
-			// 撩  凛
+			// 失  時
 //	print("\n vincent--很健康");
 			//snprintf( szBuffer, sizeof(szBuffer),
 			//	"(%s)很健康",
 			//	CHAR_getUseName( toindex ) );
 		}else
-		// 蝈莒隙烂匹尕麻僖分匀凶日
+		// 全快指定で不蛎康だったら
 		if( ( status == 0 && tostatus != 0 && tostatus <= CHAR_WORKCONFUSION ) // 蝈莒隙烂匹尕麻僖//找到异常
 		||	( status == tostatus ) // 唱橘午荚汊椭互穴永民仄凶
 		){
-			// 荚汊允月
+			// 回復する
 			CHAR_setWorkInt( toindex, StatusTbl[tostatus], 0 );
 #ifdef _MAGIC_NOCAST
 			if( StatusTbl[tostatus] == CHAR_WORKNOCAST ){
@@ -2096,19 +2096,19 @@ void BATTLE_MultiStatusRecovery(
 			}
 #endif
 //	print("\n vincent--解除了:%d",tostatus);
-			// 岳  凛
+			// 成  時
 			//snprintf( szBuffer, sizeof(szBuffer),
 			//	"(%s)解除了(%s)的(%s)",
 			//	CHAR_getUseName( charaindex ),
 			//	CHAR_getUseName( toindex ),
 			//	aszStatusFull[tostatus]
 			//);
-			// 仇仇匹旦  □正旦唱橘迕  侬  戊穴件玉毛中木月
+			// こ�Aでス  ータス異常用  字  コマンドをいれる
 			BATTLE_BadStatusString( ToList[i], 0 );//解除异常
 
 		}else{
 //	print("\n vincent--不");
-			// 撩  凛
+			// 失  時
 /*			snprintf( szBuffer, sizeof(szBuffer),
 				"(%s)不(%s)",
 				CHAR_getUseName( toindex ),
@@ -2126,15 +2126,15 @@ void BATTLE_MultiStatusRecovery(
 
 //***********************************************************
 //
-//    芊羁匹  醒及平乓仿弁正□毛  芊  豢
+//    法等で  数のキャラクターを  法  御
 //
 void BATTLE_MultiMagicDef(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
+	int battleindex, 	// バト郊インデックス
+	int attackNo,		// かける人  号
 	int toNo,			// 井仃日木月谛  寞
 	int kind,			// 幅式  楫  賛小
 	int count,			// 者佰
-	int UseEffect,		// 银丹谛及巨白尼弁玄
+	int UseEffect,		// 使う人のエフェクト
 	int RecevEffect		// 井仃日木月谛及巨白尼弁玄
 )
 //
@@ -2150,10 +2150,10 @@ void BATTLE_MultiMagicDef(
 	BATTLE_MultiList( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
-		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
-		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
-		UseEffect, 				// 井仃月谛巨白尼弁玄
+		battleindex, 			// バト郊インデックス
+		attackNo, 				// かける人  号(０  １９)
+		ToList, 				// かけられる人  号リスト(０  １９)
+		UseEffect, 				// かける人エフェクト
 		RecevEffect				// 井仃日木月谛巨白尼弁玄
 	);
 
@@ -2185,13 +2185,13 @@ void BATTLE_MultiMagicDef(
 //    芊羁匹  醒及平乓仿弁正□及由仿丢□正毛晓票今六月
 //
 void BATTLE_MultiParamChange(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
+	int battleindex, 	// バト郊インデックス
+	int attackNo,		// かける人  号
 	int toNo,			// 井仃日木月谛  寞
 	int kind,			// 升及由仿丢□正井
 	int power,			// 彩通周傲
-	int par,			// ⊙煌遥允月
-	int UseEffect,		// 银丹谛及巨白尼弁玄
+	int par,			// ％計算する
+	int UseEffect,		// 使う人のエフェクト
 	int RecevEffect		// 井仃日木月谛及巨白尼弁玄
 )
 //
@@ -2207,10 +2207,10 @@ void BATTLE_MultiParamChange(
 	BATTLE_MultiList( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
-		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
-		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
-		UseEffect, 				// 井仃月谛巨白尼弁玄
+		battleindex, 			// バト郊インデックス
+		attackNo, 				// かける人  号(０  １９)
+		ToList, 				// かけられる人  号リスト(０  １９)
+		UseEffect, 				// かける人エフェクト
 		RecevEffect				// 井仃日木月谛巨白尼弁玄
 	);
 
@@ -2219,7 +2219,7 @@ void BATTLE_MultiParamChange(
 	// 升及由仿丢□正卞允月井
 	for( i = 0; ToList[i] != -1; i ++ ){
 
-		// 锹澎及奶件犯永弁旦
+		// 相手のインデックス
 		toindex = BATTLE_No2Index( battleindex, ToList[i] );
 
 		switch( kind ){
@@ -2306,13 +2306,13 @@ void BATTLE_MultiParamChange(
 
 //***********************************************************
 //
-//    芊羁匹  醒及箪岭  鳖
+//    法等で  数の属性  転
 //
 void BATTLE_MultiAttReverse(
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
+	int battleindex, 	// バト郊インデックス
+	int attackNo,		// かける人  号
 	int toNo,			// 井仃日木月谛  寞
-	int UseEffect,		// 银丹谛及巨白尼弁玄
+	int UseEffect,		// 使う人のエフェクト
 	int RecevEffect		// 井仃日木月谛及巨白尼弁玄
 )
 //
@@ -2327,10 +2327,10 @@ void BATTLE_MultiAttReverse(
 	BATTLE_MultiList( battleindex, toNo, ToList );
 
 	BATTLE_MagicEffect(
-		battleindex, 			// 田玄伙奶件犯永弁旦
-		attackNo, 				// 井仃月谛  寞(ㄟ  ㄠㄨ)
-		ToList, 				// 井仃日木月谛  寞伉旦玄(ㄟ  ㄠㄨ)
-		UseEffect, 				// 井仃月谛巨白尼弁玄
+		battleindex, 			// バト郊インデックス
+		attackNo, 				// かける人  号(０  １９)
+		ToList, 				// かけられる人  号リスト(０  １９)
+		UseEffect, 				// かける人エフェクト
 		RecevEffect				// 井仃日木月谛巨白尼弁玄
 	);
 
@@ -2339,7 +2339,7 @@ void BATTLE_MultiAttReverse(
 	// 升及由仿丢□正卞允月井
 	for( i = 0; ToList[i] != -1; i ++ ){
 
-		// 锹澎及奶件犯永弁旦
+		// 相手のインデックス
 		toindex = BATTLE_No2Index( battleindex, ToList[i] );
 
 		flg = CHAR_getWorkInt( toindex, CHAR_WORKBATTLEFLG );
@@ -2438,7 +2438,7 @@ void BATTLE_MultiCaptureUp(
 
 //****************************************************************
 //
-// 白奴□伙玉箪岭  凳热诸
+// フィー郊ド属性  更呪術
 //
 int	BATTLE_FieldAttChange(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -2466,10 +2466,10 @@ int	BATTLE_FieldAttChange(
 
 
 	pszP = pArg;
-	// 箪岭毛潸  
+	// 属性を取  
 	for( ;attr == -1 && pszP[0] != 0; pszP++ ){
 		for( i = 0; i < 5; i ++ ){
-			// 箪岭疋永正伉井＂
+			// 属性ピッタリか?
 			if( strncmp( pszP, aszAttr[i], 2 ) == 0 ){
 				attr = i;
 				pszP +=2;
@@ -2530,7 +2530,7 @@ int	BATTLE_FieldAttChange(
 
 //****************************************************************
 //
-// 白奴□伙玉箪岭  凳热诸
+// フィー郊ド属性  更呪術
 //
 int	MAGIC_FieldAttChange_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -2556,7 +2556,7 @@ int	MAGIC_FieldAttChange_Battle(
 }
 //****************************************************************
 //
-// 旦  □正旦唱橘毛芨尹月热诸
+// ス  ータス異常を与える呪術
 //
 int	MAGIC_StatusChange_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -2564,8 +2564,8 @@ int	MAGIC_StatusChange_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 )
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 
 {
@@ -2619,8 +2619,8 @@ int	MAGIC_StatusChange_Battle2(
 	int marray, 	// magicindex
 	int mp 			// MP
 )
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 
 {
@@ -2636,11 +2636,11 @@ int	MAGIC_StatusChange_Battle2(
 		return FALSE;
 	}
 	pszP = magicarg;
-	// 躲绊毛潸  
+	// 効果を取  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
-		// ㄠ井日腹绸
+		// １から検索
 		for( i = 1; i < BATTLE_ST_END; i ++ ){
-			// 躲绊疋永正伉井＂
+			// 効果ピッタリか?
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -2665,7 +2665,7 @@ int	MAGIC_StatusChange_Battle2(
 
 
 
-	// 田玄伙  寞
+	// バト郊  号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 
@@ -2794,7 +2794,7 @@ int	MAGIC_MagicDef_Battle(
 
 //****************************************************************
 //
-// 由仿丢□正  祭毛芨尹月热诸
+// パラメータ  化を与える呪術
 //
 int	MAGIC_ParamChange_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -2802,8 +2802,8 @@ int	MAGIC_ParamChange_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 )
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 
 {
@@ -2820,7 +2820,7 @@ int	MAGIC_ParamChange_Battle(
 	// 躲绊毛潸  //取得更改参数(无,攻,防,早,魅,捕)
 	for( ;kind == -1 && pszP[0] != 0; pszP++ ){
 		for( i = 1; i < BATTLE_MD_END; i ++ ){
-			// 躲绊疋永正伉井＂
+			// 効果ピッタリか?
 			if( strncmp( pszP, aszParamChange[i], 2 ) == 0 ){
 				kind = i;
 				pszP +=2;
@@ -2831,7 +2831,7 @@ int	MAGIC_ParamChange_Battle(
 	// 躲绊卅中及匹撩  
 	if( kind == -1 ) return FALSE;
 
-	if( strstr( pszP, "%" ) ){	// 仇及桦宁反⊙煌遥
+	if( strstr( pszP, "%" ) ){	// この場合は％計算
 		par = 1;
 	}
 
@@ -2840,7 +2840,7 @@ int	MAGIC_ParamChange_Battle(
 		pow = 30;
 	}
 
-	// 田玄伙  寞
+	// バト郊  号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 
@@ -2864,7 +2864,7 @@ int	MAGIC_ParamChange_Battle(
 
 //****************************************************************
 //
-// 蜊谛及箪岭  鳖毛芨尹月热诸
+// 個人の属性  転を与える呪術
 //
 int	MAGIC_AttReverse_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -2872,8 +2872,8 @@ int	MAGIC_AttReverse_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 )
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 
 {
@@ -2881,7 +2881,7 @@ int	MAGIC_AttReverse_Battle(
 	int battleindex;
 
 	// 由仿丢□正反漆及午仇欠  中
-	// 田玄伙  寞
+	// バト郊  号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 
@@ -2897,7 +2897,7 @@ int	MAGIC_AttReverse_Battle(
 
 //****************************************************************
 //
-// 旦  □正旦唱橘毛荚汊允月热诸
+// ス  ータス異常を回復する呪術
 //
 int	MAGIC_StatusRecovery_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -2905,8 +2905,8 @@ int	MAGIC_StatusRecovery_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 )
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 {
 	char *magicarg;
@@ -2918,11 +2918,11 @@ int	MAGIC_StatusRecovery_Battle(
 	magicarg = MAGIC_getChar( marray, MAGIC_OPTION );
 
 	pszP = magicarg;
-	// 躲绊毛潸  
+	// 効果を取  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
 		// 蝈莒手丐月及匹ㄟ井日腹绸
 		for( i = 0; i < BATTLE_ST_END; i ++ ){
-			// 躲绊疋永正伉井＂
+			// 効果ピッタリか?
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -2934,7 +2934,7 @@ int	MAGIC_StatusRecovery_Battle(
 	if( status == -1 ) return FALSE;
 
 
-	// 田玄伙  寞
+	// バト郊  号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
 
@@ -2952,7 +2952,7 @@ int	MAGIC_StatusRecovery_Battle(
 
 //****************************************************************
 //
-// 竣濮井日汊唾允月热诸
+// 気絶から復活する呪術
 //
 int	MAGIC_Ressurect_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -2960,8 +2960,8 @@ int	MAGIC_Ressurect_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 )
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 {
 	char *magicarg;
@@ -2975,12 +2975,12 @@ int	MAGIC_Ressurect_Battle(
 
 	pszP = magicarg;
 
-	if( strstr( pszP, "%" ) ){	// 仇及桦宁反⊙煌遥
+	if( strstr( pszP, "%" ) ){	// この場合は％計算
 		par = 1;
 	}
 	if( sscanf( pszP, "%d", &pow ) != 1 ){
-		// 窒禾奶件玄荚汊允月井＂
-		pow = 0;	// ㄟ及桦宁反敦蝈荚汊
+		// 何ポイント回復するか?
+		pow = 0;	// ０の場合は完全回復
 	}
 
 	if( pow <= 0 ){
@@ -2995,7 +2995,7 @@ int	MAGIC_Ressurect_Battle(
 		ReceveEffect = SPR_fukkatu3;
 	}
 
-	// 田玄伙  寞
+	// バト郊  号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 
@@ -3042,19 +3042,19 @@ int	MAGIC_ResAndDef_Battle(
 
 	pszP = magicarg;
 
-	if( strstr( pszP, "%" ) ){	// 仇及桦宁反⊙煌遥
+	if( strstr( pszP, "%" ) ){	// この場合は％計算
 		par = 1;
 	}
 	if( sscanf( pszP, "%d", &pow ) != 1 ){
-		// 窒禾奶件玄荚汊允月井＂
-		pow = 0;	// ㄟ及桦宁反敦蝈荚汊
+		// 何ポイント回復するか?
+		pow = 0;	// ０の場合は完全回復
 	}
 
-	// 馨笛允月  芊  豢躲绊毛潸  
+	// 追加する  法  御効果を取  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
 		for( i = 1; i < BATTLE_MD_END; i ++ ){
 			char *p;
-			// 躲绊疋永正伉井＂
+			// 効果ピッタリか?
 			p = strstr( pszP, aszMagicDef[i] );
 			if( p != NULL ){
 				status = i;
@@ -3073,7 +3073,7 @@ int	MAGIC_ResAndDef_Battle(
 		sscanf( pszP, "%d", &turn );
 	}
 
-	// 田玄伙  寞
+	// バト郊  号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 
@@ -3185,7 +3185,7 @@ int MAGIC_ToCallDragon_Battle( int charaindex , int toNo , int marray , int mp )
 
 //****************************************************************
 //
-//   凯    祭允月热诸
+//   獲    化する呪術
 //
 int	MAGIC_CaptureUp_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -3193,8 +3193,8 @@ int	MAGIC_CaptureUp_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 )
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 {
 	char *magicarg;
@@ -3205,13 +3205,13 @@ int	MAGIC_CaptureUp_Battle(
 	magicarg = MAGIC_getChar( marray, MAGIC_OPTION );
 
 	if( sscanf( magicarg, "%d", &pow ) != 1 ){
-		// 窒禾奶件玄荚汊允月井＂
+		// 何ポイント回復するか?
 		pow = 5;
 	}
 
 	ReceveEffect = SPR_hoshi;
 
-	// 田玄伙  寞
+	// バト郊  号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 
@@ -3383,11 +3383,11 @@ int	MAGIC_ParamChange_Turn_Battle(
 		return FALSE;
 	}
 	pszP = magicarg;
-	// 躲绊毛潸  
+	// 効果を取  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
-		// ㄠ井日腹绸
+		// １から検索
 		for( i = 1; i < BATTLE_ST_END; i ++ ){
-			// 躲绊疋永正伉井＂
+			// 効果ピッタリか?
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;

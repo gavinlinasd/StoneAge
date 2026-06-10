@@ -12,7 +12,7 @@
 
 /*
  *  引切及夫午太午  by nakamura
- *  正奶皿  “TownPeople
+ *  タイプ  ：TownPeople
  *    仄井仃日木凶午五卞NPCARGUMENT及  侬  毛  仄井仃化五凶谛卞  允［
  *
  *  引凶｝npcarg卞 仇氏卞切反,漆  反化氏五互中中匹允友
@@ -52,7 +52,7 @@ void NPC_TownPeopleTalked( int index, int talker, char *msg, int color )
 }
 
 /*
- * 赓渝祭允月［
+ * 初期化する?
  */
 BOOL NPC_TownPeopleInit( int meindex )
 {

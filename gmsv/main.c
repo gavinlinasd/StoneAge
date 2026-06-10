@@ -63,7 +63,7 @@ void warplog_proc();
 
 int main( int argc , char** argv, char** env )
 {
-    /*  午曰丐尹内凛棉毛涩烂仄化云仁    */
+    /*  とりあえず時間を設定して恭く    */
     setNewTime();
 
     if ( argc > 1 && 0==strcmp(argv[1],"-v"))

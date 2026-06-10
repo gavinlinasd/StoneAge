@@ -87,7 +87,7 @@ int ITEM_eventDrop( int itemindex, int charaindex, int itemcharaindex )
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
-       		ITEM_getInt( itemindex, ITEM_ID ),  /* 失奶  丞  寞 */
+       		ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
 #endif
 			"Drop&Delete(丢出後消失)",
 			CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -108,9 +108,9 @@ int ITEM_eventDrop( int itemindex, int charaindex, int itemcharaindex )
 
 typedef struct {
     char* cmd;        /* ġ    ٯ   */
-    char*   onmessage;    /*  丢永本□斥  侬      */
-    char*   offmessage;    /*  丢永本□斥  侬      */
-    int   element;    /* 覆擂卞卅月邰豳 */
+    char*   onmessage;    /*  メッセージ  字      */
+    char*   offmessage;    /*  メッセージ  字      */
+    int   element;    /* 対象になる要素 */
     int   maxElement; /* element匹隙烂今木凶邰豳及    袄毛手勾邰豳 */
 } ITEM_EFFECTPARAM;
 static ITEM_EFFECTPARAM ITEM_restorableParam[] = {
@@ -1640,9 +1640,9 @@ void ITEM_dropDice( int charaindex, int itemindex)
 	
 	//   讖  眺谷女  
 	ITEM_setInt( itemindex, ITEM_VAR1, ITEM_getInt( itemindex, ITEM_BASEIMAGENUMBER));
-	//   飓  寞凳蕙
+	//   像  号更新
 	ITEM_setInt( itemindex, ITEM_BASEIMAGENUMBER, diceimagenumber[r]);
-	//   蟆凳蕙
+	//   前更新
 	ITEM_setChar( itemindex, ITEM_SECRETNAME, dicename[r]);
 	
 	// 犯□正及弁仿奶失件玄尺及霜耨反晓匏楮醒匹垫丹及匹］仇仇匹反支日卅中［
@@ -1653,9 +1653,9 @@ void ITEM_dropDice( int charaindex, int itemindex)
 //-------------------------------------------------------------------------
 void ITEM_pickupDice( int charaindex, int itemindex)
 {
-	//   飓  寞毛葭卞  允［
+	//   像  号を元に  す?
 	ITEM_setInt( itemindex,  ITEM_BASEIMAGENUMBER, ITEM_getInt( itemindex, ITEM_VAR1));
-	//   蟆手葭卞  允
+	//   前も元に  す
 	ITEM_setChar( itemindex, ITEM_SECRETNAME, ITEM_getChar( itemindex, ITEM_NAME));
 }
 enum {
@@ -1725,7 +1725,7 @@ BOOL ITEM_initLottery(ITEM_Item* itm)
 	count = 0;
 	memset( countnum, 0, sizeof( countnum));
 	if( hit != ITEM_LOTTERY_NONE ) {
-		// 癫曰毛本永玄
+		// 当りをセット
 		result[0] = result[1] = result[2] = hit+1;
 		count = 3;
 		countnum[hit] = 3;
@@ -1750,12 +1750,12 @@ BOOL ITEM_initLottery(ITEM_Item* itm)
 		count++;
 	}
 	// 请  毛扑乓永白伙允月［
-	// 癫曰及凛反2/3及割  匹］癫曰醒侬毛域    欠卞裔烂允月［
-	// 玉平玉平躲绊毛谎丹啃［
+	// 当りの時は2/3の確  で?当り数字を一    ろに固定する?
+	// ドキドキ効果を狙う為?
 	len = sizeof( result)-2;
 	if( hit != ITEM_LOTTERY_NONE ) {
 		if( RAND( 0,2) ) {
-			// 癫曰醒侬毛域    欠卞［
+			// 当り数字を一    ろに?
 			char s = result[0];
 			result[0] = result[5];
 			result[5] = s;
@@ -1782,7 +1782,7 @@ BOOL ITEM_initLottery(ITEM_Item* itm)
 }
 //-------------------------------------------------------------------------
 //	旦疋□玉仁元毛银匀凶凛及楮醒［
-//  ㄥ荚银丹午］窒羁操井及失奶  丞卞  祭允月［
+//  ６回使うと?何等賞かのアイ  ムに  化する?
 //-------------------------------------------------------------------------
 void ITEM_useLottery( int charaindex, int toindex, int haveitemindex)
 {
@@ -1800,7 +1800,7 @@ void ITEM_useLottery( int charaindex, int toindex, int haveitemindex)
 	if( count == 0 ) {
 		ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "");
 	}
-	// ㄥ荚  及银迕反］陆木仄井丐曰  卅中及匹］仇仇匹失奶  丞毛壅允
+	// ６回  の使用は?外れしかあり  ないので?こ�Aでアイ  ムを消す
 	else if( count == 6 ) {
         CHAR_setItemIndex( charaindex , haveitemindex, -1 );
 		CHAR_sendItemDataOne( charaindex, haveitemindex);
@@ -1837,8 +1837,8 @@ void ITEM_useLottery( int charaindex, int toindex, int haveitemindex)
 	snprintf( buff, sizeof( buff), "%s%s", numbuff, num[result]);
 	count ++;
 	ITEM_setInt( itemindex, ITEM_VAR2, count);
-	// ㄥ荚  匹癫曰卅日癫曰失奶  丞卞  凳］陆木卅日陆木午  憎］
-	// 戚荚母皮伙弁伉永弁匹壅允［
+	// ６回  で当りなら当りアイ  ムに  更?外れなら外れと  示?
+	// 鵜回ダブ郊クリックで消す?
 	if( count >= 6 ) {
 		// 癫曰
 		if( hit != ITEM_LOTTERY_NONE ) {
@@ -2879,7 +2879,7 @@ void ITEM_metamo( int charaindex, int toindex, int haveitemindex )
 #endif
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
-	// 爵  钒铵凛反  骰允月
+	// 戦  開始時は  視する
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return;
 	}
@@ -3047,7 +3047,7 @@ print("\nvincent-->charaindex:%d,toindex:%d",charaindex,toindex);
 
     /* 平乓仿弁正□及赭    伉旦玄井日壅蛔 */
     CHAR_setItemIndex(charaindex, haveitemindex ,-1);
-	CHAR_sendItemDataOne( charaindex, haveitemindex);/* 失奶  丞凳蕙 */
+	CHAR_sendItemDataOne( charaindex, haveitemindex);/* アイ  ム更新 */
 	/* 壅允 */
 	ITEM_endExistItemsOne( itemindex );
 }

@@ -12,12 +12,12 @@
 
 /*------------------------------------------------------------
  * 汹仃月井升丹井  蝇允月［平乓仿互  氏匹中月井升丹井娄醒互丐月［
- * 娄醒
+ * 引数
  *  ff          int     floor
  *  fx          int     x甄  
  *  fy          int     y甄  
- *  isfly       int       氏匹中月井升丹井
- * 忒曰袄
+ *  isfly       int       んでいるかどうか
+ * 返り値
  *  汹仃月      TRUE(1)
  *  汹仃卅中    FALSE(0)
  ------------------------------------------------------------*/
@@ -64,12 +64,12 @@ BOOL MAP_walkAbleFromPoint( int ff, int fx, int fy, BOOL isfly )
 
 /*------------------------------------------------------------
  * 汹仃月井升丹井  蝇允月［
- * 娄醒
+ * 引数
  *  index       int     Char    ぁ摯 Index
  *  ff          int     floor id
  *  fx          int     x甄  
  *  fy          int     y甄  
- * 忒曰袄
+ * 返り値
  *  汹中化方中      TRUE(1)
  *  汹中化反母丢    FALSE(0)
  ------------------------------------------------------------*/
@@ -91,12 +91,12 @@ BOOL MAP_walkAble( int index,int ff, int fx, int fy)
 }
 
 /*------------------------------------------------------------
- * 甄  毛隙烂仄化｝公仇及左皮斥尼弁玄卞嫖今互丐月井升丹井
- * 娄醒
+ * 座  を指定して�bそこのオブジェクトに高さがあるかどうか
+ * 引数
  *  fl              int     白夫失
  *  x               int     x 甄  
  *  y               int     y 甄  
- * 忒曰袄
+ * 返り値
  *  嫖今互丐月  TRUE
  *  嫖今互卅中  FALSE
  ------------------------------------------------------------*/
@@ -115,11 +115,11 @@ BOOL MAP_haveHeight( int fl, int x, int y )
 
 /*----------------------------------------
  * 旦  □正旦  祭烟及  凳毛允月
- * 娄醒
+ * 引数
  *  index   int     平乓仿及奶件犯永弁旦
- *  map     int     穴永皿犯□正
+ *  map     int     マップデータ
  *  outof   BOOL    褡戈凛｝转仁凛井 TRUE 卅日壬 褡戈凛匹丐月［
- * 忒曰袄
+ * 返り値
  *  由仿丢□正  祭毛仄凶    TRUE
  *  由仿丢□正  祭毛仄卅井匀凶  FALSE
   ----------------------------------------*/
@@ -127,7 +127,7 @@ static BOOL MAP_changeCharStatusFromMapDataAndTime( int index,
                                                     int map, BOOL outof)
 {
 #if 0
-// 旦玄□件巨奶斥匹反银歹卅中
+// ストーンエイジでは使わない
     int i;
     int offset;
     BOOL    change=FALSE;
@@ -175,10 +175,10 @@ static BOOL MAP_changeCharStatusFromMapDataAndTime( int index,
 
 /*------------------------------------------------------------
  * Map 奶矛件玄及 pre post毛质  允月
- * 娄醒
+ * 引数
  *  index       int     昙欠丹午仄化中月平乓仿及奶件犯永弁旦
  *  mode        BOOL    TRUE及凛反｝in  FALSE及凛反 out 卞覆杀
- * 忒曰袄卅仄
+ * 返り値なし
  ------------------------------------------------------------*/
 static void MAP_dealprepostevent( int index, BOOL mode )
 {
@@ -223,14 +223,14 @@ static void MAP_dealprepostevent( int index, BOOL mode )
 
 /*----------------------------------------
  * 公及正奶伙卞昙月蟆卞裟壬木月［仇仇匹公仇井日转仁午｝xxx烟及
- * 仪毛  蜇允月［
- * 娄醒
+ * 事を  現する?
+ * 引数
  *  index       int     昙欠丹午仄化中月平乓仿及奶件犯永弁旦
  *  flooor      int     白夫失ID
  *  fx          int     x甄  
  *  fy          int     y甄  
- * 忒曰袄
- *  卅仄
+ * 返り値
+ *  なし
  ----------------------------------------*/
 void MAP_preovered( int index )
 {
@@ -239,10 +239,10 @@ void MAP_preovered( int index )
 
 /*----------------------------------------
  * 公及正奶伙卞昙匀凶  卞裟壬木月［
- * 娄醒
+ * 引数
  *  index       int     昙欠丹午仄化中月平乓仿及奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 返り値
+ *  なし
  ----------------------------------------*/
 void MAP_postovered( int index )
 {
@@ -252,10 +252,10 @@ void MAP_postovered( int index )
 
 /*----------------------------------------
  * 平乓仿及璃曰及穴永皿毛允屯化霜月
- * 娄醒
+ * 引数
  *  fd          int
  *  charaindex  int     平乓仿及奶件犯永弁旦
- * 忒曰袄
+ * 返り値
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  ----------------------------------------*/
@@ -302,9 +302,9 @@ BOOL MAP_sendArroundCharNeedFD( int fd,int charaindex )
 
 /*----------------------------------------
  * 穴永皿犯□正毛  月［
- * 娄醒
+ * 引数
  *  charaindex      int     平乓仿及奶件犯永弁旦
- * 忒曰袄
+ * 返り値
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  ----------------------------------------*/

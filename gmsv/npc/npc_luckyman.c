@@ -108,7 +108,7 @@ static void NPC_LuckyMan_selectWindow( int meindex, int toindex, int num,char *m
 	}
 
 
-	/*--霜耨--*/
+	/*--送信--*/
 	lssproto_WN_send( fd, windowtype, 
 				buttontype, 
 				windowno,
@@ -190,7 +190,7 @@ void NPC_LuckyDisp(int meindex,int talker)
 		return;
 	}
 
-	/*--扪毛苇月--*/
+	/*--運を見る--*/
 	sprintf( buf, "luck%d", CHAR_getInt( talker, CHAR_LUCK));
 	NPC_Util_GetStrFromStrWithDelim( argstr, buf, buf2, sizeof( buf2));
 
@@ -212,7 +212,7 @@ void NPC_LuckyDisp(int meindex,int talker)
 BOOL NPC_LuckyCostCheck(int meindex,int talker,int cost)
 {
 	/*--蜇箕反移涩烂---*/
-	/*---云嗯互箫曰月井升丹井及民尼永弁---*/
+	/*---恭金が足りるかどうかのチェック---*/
 	if(CHAR_getInt( talker, CHAR_GOLD) < cost) {
 		return FALSE;
 	}

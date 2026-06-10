@@ -240,7 +240,7 @@ static int NPC_readCreateFile( char* filename )
                         cr.intdata[NPC_CREATEBORNRIGHTDOWNY] =
                             center[0].y+wh[0].h/2;
                     }
-					/* 99/01/21 扎鼹 [0]-->[1]卞膜恳 */
+					/* 99/01/21 ゃ田 [0]-->[1]に修正 */
                     if( defmove ){
                         if( deflurd[0] ){
                             cr.intdata[NPC_CREATEMOVELEFTUPX] =
@@ -263,7 +263,7 @@ static int NPC_readCreateFile( char* filename )
                         }
 
                     }else{
-                        /*  born 毛戊疋□允月 */
+                        /*  born をコピーする */
                         cr.intdata[NPC_CREATEMOVELEFTUPX] =
                             cr.intdata[NPC_CREATEBORNLEFTUPX];
                         cr.intdata[NPC_CREATEMOVERIGHTDOWNX] =
@@ -289,7 +289,7 @@ static int NPC_readCreateFile( char* filename )
                     }
 
                 }
-                /*  赓渝袄卞  仄化云仁  */
+                /*  初期値に  して恭く  */
                 NPC_setDefaultNPCCreate( &cr );
                 enemyreadindex=0;
                 defborn=FALSE;
@@ -388,14 +388,14 @@ static int NPC_readCreateFile( char* filename )
                 int     templateindex;
                 char    enemyname[64];
 
-                /*  雁钗瞬民尼永弁  */
+                /*  境界線チェック  */
                 if( enemyreadindex <= arraysizeof(cr.templateindex) )
                     /* OK */
                     ;
                 else
                     break;
 
-                /*  secondToken 毛  侬  卞坌荸允月    */
+                /*  secondToken を  字  に分解する    */
                 getStringFromIndexWithDelim(secondToken,"|",1,enemyname,
                                             sizeof(enemyname) );
                 templateindex= NPC_templateGetTemplateIndex(enemyname);
@@ -497,9 +497,9 @@ BOOL NPC_readNPCCreateFiles( char* topdirectory ,int createsize)
 
 /*------------------------------------------------------------
  * createindex 井日 boundary 互涩烂今木化中月井升丹井毛苇月
- * 娄醒
+ * 引数
  *  createindex         int         create及奶件犯永弁旦
- * 忒曰袄
+ * 返り値
  *  涩烂今木化中月          TRUE(1)
  *  涩烂今木化中卅中        FALSE(0)
  ------------------------------------------------------------*/
@@ -510,10 +510,10 @@ BOOL NPC_isBoundarySet( int createindex )
 }
 /*------------------------------------------------------------
  * createindex 井日  仃月  区及RECT 毛菲户月［
- * 娄醒
- *  createindex         int           件皿伊□玄及奶件犯永弁旦
+ * 引数
+ *  createindex         int           ンプレートのインデックス
  *  r                   RECT*       袄毛熬仃午月RECT 及禾奶件正
- * 忒曰袄
+ * 返り値
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  ------------------------------------------------------------*/
@@ -536,9 +536,9 @@ BOOL NPC_createGetRECT( int createindex,RECT*   r )
 
 /*------------------------------------------------------------
  * 凛棉井日综匀化手中中井升丹井民尼永弁允月［
- * 娄醒
- *  cindex      int     奶件犯永弁旦
- * 忒曰袄
+ * 引数
+ *  cindex      int     インデックス
+ * 返り値
  *  BOOL    综匀化中中桦宁  TRUE(1)
  *  BOOL    综匀化中仃卅中桦宁  FALSE(0)
  ------------------------------------------------------------*/
@@ -571,10 +571,10 @@ BOOL NPC_createCheckGenerateFromTime( int cindex )
 
 /*------------------------------------------------------------
  * 综月凛及凛棉及涩烂毛赓渝祭允月［
- * 娄醒
- *  tindex      int     奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 引数
+ *  tindex      int     インデックス
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void NPC_createInitTime( int index )
 {
@@ -586,10 +586,10 @@ void NPC_createInitTime( int index )
 }
 /*------------------------------------------------------------
  * 衬毛综匀凶  卞市它件玄醒毛  支允楮醒
- * 娄醒
- *  index       int         奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 引数
+ *  index       int         インデックス
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void NPC_createIncreaseEnemynum( int index )
 {
@@ -597,11 +597,11 @@ void NPC_createIncreaseEnemynum( int index )
     NPC_create[index].workdata[NPC_CREATEWORKENEMYNUM] ++;
 }
 /*------------------------------------------------------------
- * 衬互韶氏匹市它件玄醒毛蛹日允楮醒
- * 娄醒
- *  index       int         奶件犯永弁旦
- * 忒曰袄
- *  卅仄
+ * 敵が死んでカウント数を減らす関数
+ * 引数
+ *  index       int         インデックス
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void NPC_createDecreaseEnemynum( int index )
 {
@@ -609,10 +609,10 @@ void NPC_createDecreaseEnemynum( int index )
     NPC_create[index].workdata[NPC_CREATEWORKENEMYNUM] --;
 }
 /*------------------------------------------------------------
- * 市它件玄醒互漆    井譬屯月楮醒
- * 娄醒
- *  index       int         奶件犯永弁旦
- * 忒曰袄
+ * カウント数が今    か調べる関数
+ * 引数
+ *  index       int         インデックス
+ * 返り値
  *  TRUE:MAX  FALSE:啜丹
  ------------------------------------------------------------*/
 BOOL NPC_createCheckMaxEnemynum( int index )

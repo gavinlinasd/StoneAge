@@ -210,7 +210,7 @@ BOOL NPC_AndReduce(int meindex,int talker,char *buf,int flg)
 		while(getStringFromIndexWithDelim(buf,"&",j,buf2,sizeof(buf2))!=FALSE)
 		{
 			j++;
-			/*--  ←  互丐木壬｝公及失奶  丞反  醒隙烂仄化月午蜕丹啦  --*/
+			/*--  ＊  があれば�bそのアイ  ムは  数指定してると言う意  --*/
 			if(strstr( buf2, "*") != NULL){
 				getStringFromIndexWithDelim(buf2,"*",1,buf3,sizeof(buf3));
 				itemNo = atoi(buf3);
@@ -218,7 +218,7 @@ BOOL NPC_AndReduce(int meindex,int talker,char *buf,int flg)
 				kosuu = atoi(buf3);
 	
 				
-				/*--民尼永弁乒□玉--*/
+				/*--チェックモード--*/
 				if(NPC_SavePointItemCheck(meindex,talker,itemNo,kosuu)==FALSE){
 					return FALSE;
 				}
@@ -226,7 +226,7 @@ BOOL NPC_AndReduce(int meindex,int talker,char *buf,int flg)
 			}else{
 				itemNo = atoi(buf2);
 
-				/*--民尼永弁乒□玉--*/
+				/*--チェックモード--*/
 				if(NPC_SavePointItemCheck(meindex,talker,itemNo,1)==FALSE){
 					return FALSE;
 				}
@@ -235,21 +235,21 @@ BOOL NPC_AndReduce(int meindex,int talker,char *buf,int flg)
 		}
 
 	}else{
-		/*--  ←  互丐木壬｝公及失奶  丞反  醒隙烂仄化月午蜕丹啦  --*/
+		/*--  ＊  があれば�bそのアイ  ムは  数指定してると言う意  --*/
 		if(strstr( buf, "*") != NULL){
 			getStringFromIndexWithDelim(buf,"*",1,buf3,sizeof(buf3));
 			itemNo = atoi(buf3);
 			getStringFromIndexWithDelim(buf,"*",2,buf3,sizeof(buf3));
 			kosuu = atoi(buf3);
 
-			/*--民尼永弁乒□玉--*/
+			/*--チェックモード--*/
 			if(NPC_SavePointItemCheck(meindex,talker,itemNo,kosuu)==FALSE){
 				return FALSE;
 			}
 
 		}else{
 			itemNo = atoi(buf);
-			/*--民尼永弁乒□玉--*/
+			/*--チェックモード--*/
 			if(NPC_SavePointItemCheck(meindex,talker,itemNo,1)==FALSE){
 					return FALSE;
 			}
@@ -276,7 +276,7 @@ BOOL NPC_AndReduceDelete(int meindex,int talker,char *buf,int flg)
 		while(getStringFromIndexWithDelim(buf,"&",j,buf2,sizeof(buf2))!=FALSE)
 		{
 			j++;
-			/*--  ←  互丐木壬｝公及失奶  丞反  醒隙烂仄化月午蜕丹啦  --*/
+			/*--  ＊  があれば�bそのアイ  ムは  数指定してると言う意  --*/
 			if(strstr( buf2, "*") != NULL){
 				getStringFromIndexWithDelim(buf2,"*",1,buf3,sizeof(buf3));
 				itemNo = atoi(buf3);
@@ -299,7 +299,7 @@ BOOL NPC_AndReduceDelete(int meindex,int talker,char *buf,int flg)
 		}
 
 	}else{
-		/*--  ←  互丐木壬｝公及失奶  丞反  醒隙烂仄化月午蜕丹啦  --*/
+		/*--  ＊  があれば�bそのアイ  ムは  数指定してると言う意  --*/
 		if(strstr( buf, "*") != NULL){
 			getStringFromIndexWithDelim(buf,"*",1,buf3,sizeof(buf3));
 			itemNo = atoi(buf3);
@@ -502,7 +502,7 @@ BOOL NPC_SavePointItemDelete(int meindex,int talker,int itemNo,int kosuu)
 }
 
 
-/*--失奶  丞毛民尼永弁--*/
+/*--アイ  ムをチェック--*/
 BOOL NPC_SavePointItemCheck(int meindex,int talker,int itemno,int kosuu)
 {
 	int i;

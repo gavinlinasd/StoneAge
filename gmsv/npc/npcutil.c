@@ -422,7 +422,7 @@ BOOL NPC_Util_isFaceToChara( int index1, int index2, int distance )
             return FALSE;
         }
     }
-    /* 兮氏兮氏褐卅日卅井匀凶日FALSE */
+    /* ぜんぜん重ならなかったらFALSE */
     return FALSE;
 }
 
@@ -618,8 +618,8 @@ static int  SearchNearLine(
 
 
 static int SearchNearAround(
-	int x, 	   /* 腹绸  艘及  甄   */
-	int y,     /* 腹绸  艘及  甄   */
+	int x, 	   /* 検索  心の  座   */
+	int y,     /* 検索  心の  座   */
 	int floor, /* 腹绸  艘及白夫失 */
 	int Part,  /* 腹绸钒铵允月  赓及仿奶件 */
 	int Level, /*   艘方曰  木化中月覃   */
@@ -627,12 +627,12 @@ static int SearchNearAround(
 ){
 	int i, iTarget = -1;
 	for( i = 0; i < 4; i ++ ){
-		if( Part == 0 ){ /* 晓及仿奶件毛腹绸 */
+		if( Part == 0 ){ /* 上のラインを検索 */
 			iTarget = SearchNearLine( x-Level+1, y-Level,
 				floor, 1, 0, Level*2, type );
 			if( iTarget >= 0 )break;
 		}else
-		if( Part == 1 ){ /* 惘及仿奶件毛腹绸 */
+		if( Part == 1 ){ /* 右のラインを検索 */
 			iTarget = SearchNearLine( x+Level, y-Level+1,
 				floor, 0, 1, Level*2, type );
 			if( iTarget >= 0 )break;
@@ -647,7 +647,7 @@ static int SearchNearAround(
 				floor, 0, -1, Level*2, type );
 			if( iTarget >= 0 ) break;
 		}
-		Part ++; Part &= 3; /* 戚及由□玄毛腹绸 */
+		Part ++; Part &= 3; /* 鵜のパートを検索 */
 	}
 	return iTarget;
 }
@@ -674,7 +674,7 @@ int NPC_Util_SearchNear( int meindex, int maxlen, int type )
 #else
 	/* 仇切日反衙中支曰   */
     int	floor, x, y, i,iTarget = -1, iLen, iMin = 655360, tX, tY;
-    /*   醒必永玄*/
+    /*   数ゲット*/
     if( !CHAR_CHECKINDEX( meindex ) )return -1;
     floor = CHAR_getInt( meindex, CHAR_FLOOR );
     x  = CHAR_getInt( meindex, CHAR_X );
@@ -684,7 +684,7 @@ int NPC_Util_SearchNear( int meindex, int maxlen, int type )
     for( i = 0 ; i<objnum ; i++ ){
         /*平乓仿弁正□及凛*/
         if( obj[i].type != OBJTYPE_CHARA ) continue;
-		/* 潘  毛苇月*/
+		/* 種  を見る*/
         if( CHAR_getInt( obj[i].index,CHAR_WHICHTYPE)
             != type ) continue;
 		/*   元白夫失及凛*/
@@ -697,14 +697,14 @@ int NPC_Util_SearchNear( int meindex, int maxlen, int type )
 		tX = ABS( x-CHAR_getInt(obj[i].index,CHAR_X) );
 		tY = ABS( y-CHAR_getInt(obj[i].index,CHAR_Y) );
 		if( tX > maxlen )continue;	/*   直塋榛*/
-		if( tY > maxlen )continue;	/* 卅日戚尺*/
+		if( tY > maxlen )continue;	/* なら鵜へ*/
 
         /* 称井中覃  毛煌遥*/
 		iLen = tX*tX+tY*tY;
 		/* 域  嗤井匀凶桦宁反筏  凳蕙*/
 		if( iMin > iLen ){
 			iMin = iLen;
-			iTarget = obj[i].index;	/* 奶件犯永弁旦毛瓒  */
+			iTarget = obj[i].index;	/* インデックスを登  */
 		}
 	}
 
@@ -712,7 +712,7 @@ int NPC_Util_SearchNear( int meindex, int maxlen, int type )
 #endif
 }
 /*------------------------------------------------------------
-* 域  嗤中皿伊奶乩□及腹绸
+* 一  近いプレイヤーの検索
 ------------------------------------------------------------*/
 int NPC_Util_SearchNearPlayer( int meindex, int maxlen )
 {
@@ -737,20 +737,20 @@ int NPC_Util_SearchNearEnemy( int meindex, int maxlen )
   );
 
     曰袄  0  7“汹仃月  轾
-          -1  “穴永皿卞娄匀井井匀化巨仿□
-          -2  “平乓仿弁正卞娄匀井井匀化巨仿□
+          -1  ：マップに引っかかってエラー
+          -2  ：キャラクタに引っかかってエラー
           -3  ＾    怨側堡小小堡晒賞径＆
 
   标户啖  允月桦宁引内冲｝产卞啖  匹五月井譬屯月［
-      啖  匹五木壬标户毛民尼永弁允月［    仄井啖  匹五卅仃木壬
+      移  できれば斜めをチェックする?    しか移  できなければ
   公切日及  轾毛忒允［
 
- 公仇卞窒井丐匀凶日  穴永皿动陆  ㄠ毛忒允
+ そこに何かあったら  マップ以外  １を返す
 *******************************************************/
 int NPC_Util_OtherCharCheck( int ff, int fx, int fy)
 {
 #if 1
-	/* 腹绸  挚毛      井日及伉件弁卞  凳 */
+	/* 検索  式を      からのリンクに  更 */
 	OBJECT object;
 	for( object=MAP_getTopObj(ff,fx,fy); object ;
 		object = NEXT_OBJECT(object) )
@@ -825,9 +825,9 @@ int NPC_Util_SuberiWalk(
 		tX = x+CHAR_getDX(dir2);
 		tY = y+CHAR_getDY(dir2);
 		if( MAP_walkAble( index,fl,tX,tY ) == 0 ){
-			aDirList[i] = -1; /* 垫仃卅中桦宁反公及  轾坫诮*/
+			aDirList[i] = -1; /* 行けない場合はその  向抹殺*/
 //		}else if( NPC_Util_OtherCharCheck( fl,tX, tY ) ){
-//			aDirList[i] = -2; /* 垫仃卅中桦宁反公及  轾坫诮*/
+//			aDirList[i] = -2; /* 行けない場合はその  向抹殺*/
 		}else{
 			/* 究懆俔!!*/
 			OkFlg ++;
@@ -858,11 +858,11 @@ int NPC_Util_SuberiWalk(
 * 公及  及醒袄毛潸  允月［左皿扑亦件匹醒袄毛隙烂今六化支曰凶中午五卞忐厍
 *
 * 镗啦“犯伉立正反"|"卞蜃烂仄化引允［
-*       娄醒卞  元  侬  互ㄡ勾岈氏分桦宁］
+*       引数に  じ  字  が２つ並んだ場合?
 *       燮及  互穸燮今木引允［
 * ----------------------------------
 * IN : int meindex : 平乓仿index
-*    : char* in    : 腹绸允月  侬  
+*    : char* in    : 検索する  字  
 * OUT:
 * RETURN:
 * 潸  请  卅井匀凶凛 :-1
@@ -900,14 +900,14 @@ int NPC_Util_GetNumFromArg( int meindex, char* in)
 /*
  * 失奶  丞及 index 午平乓仿 index 及孔凶勾及树  井日｝
  * 平乓仿互公及失奶  丞毛  匀化月井升丹井仄日屯化  匀化凶日升及
- * 匏  卞  匀化月井毛忒允［  失奶  丞楮  及NPC迕［CHAR_卞啖垫
- * 匹五月井手仄木氏楮醒瓜伉
+ * 位  に  ってるかを返す?  アイ  ム関  のNPC用?CHAR_に移行
+ * できるかもしれん関数ナリ
  * by ringo
  *
  * int charindex : 覆擂平乓仿及 index
  * int itemindex : 失奶  丞及index
  *
- * 忒曰袄
+ * 返り値
  *
  *  >=0 : 升及匏  卞  匀化中月及井［  躲卅袄［
  *  -1 : 手仄仁反  匀化卅中［
@@ -937,13 +937,13 @@ int NPC_Util_SearchItemInChar( int charindex , int itemindex)
 *
 * int	fromindex 	仇及平乓仿index井日
 * int	toindex		仇及平乓仿index卞覆仄化及  轾互菲户日木月
-* int	mode		潸  允月  轾
-*                   0:toindex卞轾井匀化
+* int	mode		取  する  向
+*                   0:toindexに向かって
 *                   1:toindex及  覆  轾
-*                   2:toindex卞覆仄化惘ㄨㄟ蘸  轾
-*                   3:toindex卞覆仄化尔ㄨㄟ蘸  轾
+*                   2:toindexに対して右９０度  向
+*                   3:toindexに対して左９０度  向
 *
-* 忒曰袄 岳   “dir    轾毛忒允  
+* 返り値 成   ：dir    向を返す  
 *        礎   ＾-1
 ------------------------------------------------------------------------*/
 int NPC_Util_GetDirCharToChar( int fromindex, int toindex, int mode)
@@ -976,10 +976,10 @@ int NPC_Util_GetDirCharToChar( int fromindex, int toindex, int mode)
 * int	fromindex 	汹仁平乓仿index
 * int	toindex		汹仁    及平乓仿index
 * int	mode		汹仁  轾
-*                   0:toindex卞轾井匀化
+*                   0:toindexに向かって
 *                   1:toindex及  覆  轾
-*                   2:toindex卞覆仄化惘ㄨㄟ蘸  轾
-*                   3:toindex卞覆仄化尔ㄨㄟ蘸  轾
+*                   2:toindexに対して右９０度  向
+*                   3:toindexに対して左９０度  向
 * BOOL	suberi		NPC_Util_SuberiWalk毛哔  允月井＂TRUE:允月 FALSE:仄卅中
 *
 * 忒曰袄 岳    汹中凶  “dir  汹中凶  轾毛忒允  
@@ -1024,9 +1024,9 @@ void NPC_Util_NPCDelete( int srcindex)
     //objindex = CHAR_getWorkInt(srcindex,CHAR_WORKOBJINDEX);
 
 	/* createnum 互    及凛］戏引木凶凛棉毛本永玄允月
-	 * 卅兮仇仇匹仇氏卅仪毛仄化中月井午中丹午
+	 * なぜこ�Aでこんな事をしているかというと
 	 * create白央奶伙及time袄互戏引木化井日公木分仃坌烦匀化中月午］
-	 * 濮覆卞允什卞戏引木化仁月午中丹酷  毛卅氏午井仄方丹午允月啃
+	 * 絶対にすぐに生まれてくるという仕  をなんとかしようとする為
 	 */
 	if( CHAR_getInt( srcindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ) return;
 	if( NPC_createCheckMaxEnemynum( CHAR_getInt(srcindex,CHAR_NPCCREATEINDEX )))
@@ -1336,14 +1336,14 @@ int *NPC_Util_getEnemy( int meindex, int charaindex)
 				int	target_et_array;
 				int	flg = FALSE;
 				int	j;
-				/*   木月桦赭毛茧允 */
+				/*   れる場所を探す */
 				for( j = 0; j < 5; j ++ ) {
 					/* 坞中化月及反云井仄中 */
 					if( !ENEMY_CHECKINDEX( NPCUtil_enemytbl[j])) break;
 
 					target_et_array = ENEMYTEMP_getEnemyTempArray(
 													NPCUtil_enemytbl[j]);
-					/* 云井仄中 */
+					/* 恭かしい */
 					if( !ENEMYTEMP_CHECKINDEX( target_et_array)) break;
 
 					/*   直匳希直埖 */

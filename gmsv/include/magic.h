@@ -42,7 +42,7 @@ int MAGIC_ToCallDragon( int charaindex, int toindex,int marray, int mp );
 #endif
 
 //----------------------------------------------------------------------
-// 失奶  丞及匏  井日热诸  寞毛忒允
+// アイ  ムの位  から呪術  号を返す
 //
 int MAGIC_GetArrayNo(
 	int charaindex, 	// 平乓仿弁正奶件犯永弁旦
@@ -52,11 +52,11 @@ int MAGIC_GetArrayNo(
 //----------------------------------------------------------------------
 //-------------------------------------------------------------------
 //
-//  热诸毛  涛银丹
+//  呪術を  接使う
 //
 int MAGIC_DirectUse(
-	int charaindex, // 银丹平乓仿及奶件犯永弁旦
-	int marray, 	// 银丹热诸及奶件犯永弁旦
+	int charaindex, // 使うキャラのインデックス
+	int marray, 	// 使う呪術のインデックス
 	int toindex, 	// 簿卞银丹＂
 	int itemnum
 );

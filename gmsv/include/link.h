@@ -4,14 +4,14 @@
 #include "common.h"
 
 /*
- * 伉旦玄厌瞻毛烂聒允月  ［
+ * リスト構造を定義する  ?
  * 仇及伉旦玄反val反    读卞反窒手仄卅中［勾引曰禾奶件正□及戊疋□及心
  * 垫丹［
  */
 typedef struct tagNode
 {
     struct tagNode* next;           /*戚及用□玉尺及禾奶件正□*/
-    char* val;                      /*忡  允月  侬  */
+    char* val;                      /*保  する  字  */
     int size;                       /*val式飯通宝*/
 }Node;
 

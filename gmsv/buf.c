@@ -165,10 +165,10 @@ void*   allocateMemory( const unsigned int nbyte )
 
 /*------------------------------------------------------------
  * allocateMemory匹割忡仄凶丢乒伉□毛free允月［
- * 娄醒
+ * 引数
  *  freepointer     int     割忡允月燮  及禾奶件正□
- * 忒曰袄
- *  卅仄
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void freeMemory( void* freepointer )
 {

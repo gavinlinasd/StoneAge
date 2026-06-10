@@ -17,10 +17,10 @@
 #endif
 #include "function.h"
 /*
- * 矢永玄质  卞楮允月末□旦
+ * ペット処  に関するソース
  */
 /*------------------------------------------------------------------------
- * 矢永玄毛ㄠ勾喃曰癫化月［犯田永弘迕［
+ * ペットを１つ割り当てる?デバッグ用?
  * CHAR厌瞻  卞及心综岳今木月［
  *   曰袄“综岳今木凶平乓仿index 撩  “-1
  *-----------------------------------------------------------------------*/
@@ -35,7 +35,7 @@ int PET_DEBUG_initPetOne( int charaindex)
     memset( &ch, 0, sizeof( ch));
     if( !CHAR_getDefaultChar( &ch,31010 ) )return -1;
 
-    /*    飓  寞    */
+    /*    像  号    */
     ch.data[CHAR_BASEBASEIMAGENUMBER]
         = ch.data[CHAR_BASEIMAGENUMBER] = 30008;
     ch.data[CHAR_WHICHTYPE] = CHAR_TYPEPET;
@@ -53,7 +53,7 @@ int PET_DEBUG_initPetOne( int charaindex)
 
     if( index < 0 ) return -1;
 
-    /* 仍潜谛本永玄 */
+    /* ご主人セット */
     CHAR_setWorkInt( index, CHAR_WORKPLAYERINDEX, charaindex);
     CHAR_setWorkInt( index,CHAR_WORKOBJINDEX,-1);
     CHAR_setCharPet( charaindex, havepetindex, index);
@@ -182,14 +182,14 @@ static int _PET_dropPet( int charaindex, int havepetindex, int tofl, int tox, in
 
 
 /*------------------------------------------------------------
- *     泫  矢永玄毛  仁
- * 娄醒
- *  itemindex       int         失奶  丞奶件犯永弁旦
+ *     矢  ペットを  く
+ * 引数
+ *  itemindex       int         アイ  ムインデックス
  *  floor           int         白夫失ID
  *  x               int         x甄  
  *  y               int         y甄  
- *  net             BOOL        生永玄伐□弁及仇午毛允月井升丹井
- * 忒曰袄
+ *  net             BOOL        ネットワークのことをするかどうか
+ * 返り値
  *  岳      objindex
  *  撩      -1
  ------------------------------------------------------------*/
@@ -206,7 +206,7 @@ int PET_dropPetAbsolute( int petindex, int floor, int x, int y,BOOL net)
     object.y = y;
     object.floor = floor;
 
-    /*  左皮斥尼弁玄瓒  允月    */
+    /*  オブジェクト登  する    */
     objindex = initObjectOne( &object );
 
     /* 生永玄伐□弁白仿弘互凶匀化中月午五反允月  by ringo*/
@@ -403,7 +403,7 @@ int PET_createPetFromCharaIndex( int charaindex, int enemyindex)
 BOOL PET_SelectBattleEntryPet( int charaindex, int petarray)
 {
 	int		pindex;
-	/* 爵    反轮仁   仿弘匹仇木卞娄匀井井月第  岭丐曰  */
+	/* 戦    は除く   ラグでこれに引っかかる可  性あり  */
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE)
 		!= BATTLE_CHARMODE_NONE) return FALSE;
 	/* -1及桦宁反］-1卞仄化本永玄仄化蔽歹曰［*/

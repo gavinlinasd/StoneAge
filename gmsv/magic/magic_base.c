@@ -153,7 +153,7 @@ BOOL MAGIC_initMagic( char *filename)
 
     MAGIC_magicnum=0;
 
-    /*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+    /*  まず  効な行が何行あるかどうか調べる    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
@@ -190,7 +190,7 @@ BOOL MAGIC_initMagic( char *filename)
         return FALSE;
     }
 
-	/* 赓渝祭 */
+	/* 初期化 */
     for( i = 0; i < MAGIC_magicnum; i ++ ) {
     	for( j = 0; j < MAGIC_DATAINTNUM; j ++ ) {
     		MAGIC_setInt( i,j,-1);
@@ -208,10 +208,10 @@ BOOL MAGIC_initMagic( char *filename)
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  垫毛帮溥允月    */
+        /*  行を整形する    */
         /*  引内 tab 毛 " " 卞  五晶尹月    */
         replaceString( line, '\t' , ' ' );
-        /* 燮  及旦矢□旦毛潸月［*/
+        /* 先  のスペースを取る?*/
 {
         char    buf[256];
         for( i = 0; i < strlen( line); i ++) {
@@ -237,7 +237,7 @@ BOOL MAGIC_initMagic( char *filename)
 
 		for( i = 0; i < MAGIC_DATACHARNUM; i ++ ) {
 
-	        /*    侬  迕玄□弁件毛苇月    */
+	        /*    字  用トークンを見る    */
 	        ret = getStringFromIndexWithDelim( line,",",
 	        									i + 1,
 	        									token,sizeof(token));
@@ -404,9 +404,9 @@ BOOL ATTMAGIC_reinitMagic( void )
 #endif
 
 /*------------------------------------------------------------------------
- * MAGIC_ID井日骄侬毛襞月楮醒
- * 忒曰袄
- * 岳  : 骄侬
+ * MAGIC_IDから添字を知る関数
+ * 返り値
+ * 成  : 添字
  * 撩  : -1
  *-----------------------------------------------------------------------*/
 int MAGIC_getMagicArray( int magicid)
@@ -426,9 +426,9 @@ int MAGIC_getMagicArray( int magicid)
 }
 /*------------------------------------------------------------
  * 热诸及楮醒  井日禾奶件正□毛忒允
- * 娄醒
+ * 引数
  *  name        char*       热诸及  蟆
- * 忒曰袄
+ * 返り値
  *  楮醒尺及禾奶件正［卅中桦宁卞反NULL
  ------------------------------------------------------------*/
 MAGIC_CALLFUNC MAGIC_getMagicFuncPointer(char* name)

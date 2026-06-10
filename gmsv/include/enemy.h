@@ -27,7 +27,7 @@ typedef enum
     E_T_SLEEP,                /* 戽曰［垫  匹五卅中            */
     E_T_STONE,                /* 檗［垫  匹五卅中              */
     E_T_DRUNK,                /* 办丹［      互票互月     */
-    E_T_CONFUSION,            /* 渔刭［  猾    毛赀月     */
+    E_T_CONFUSION,            /* 混乱?  撃    を誤る     */
     E_T_PETSKILL1,
     E_T_PETSKILL2,
     E_T_PETSKILL3,

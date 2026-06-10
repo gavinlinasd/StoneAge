@@ -21,15 +21,15 @@ typedef struct tagNPC_searchPoint
 }NPC_searchPoint;
 
 
-/*  窒荚NPC毛综月井 */
+/*  何回NPCを作るか */
 #define NPC_CREATECHALLENGETIME    1
 int all_nosee = 0;		/* ㄠ及凛｛蝈化及衬毛 no_see 卞 */
 int all_nobody = 0;		/* ㄠ及凛｛蝈化及衬毛 no_body 卞 */
-int one_loop_born = 1;	/* ㄠ伙□皿匹  嫖戏心请允醒 oneloop_born */
+int one_loop_born = 1;	/* １郊ープで  高生み出す数 oneloop_born */
 
 /*------------------------------------------------------------
- * 衬毛丹心分允桦赭毛瑁烂允月
- * 娄醒
+ * 敵をうみだす場所を決定する
+ * 引数
  *  cr      NPC_Create*         甄  及汔互瑁匀化中月NPC_Create及禾奶件正
  *  nobody  int                 1 及凛反簿手中卅中凛卞勾仁月
  *                                          (簿井中化手综月)
@@ -40,8 +40,8 @@ int one_loop_born = 1;	/* ㄠ伙□皿匹  嫖戏心请允醒 oneloop_born */
  *  point   NPC_searchPoint*    请蜇今六月桦赭毛医  允月
  *  isflying    BOOL              氏匹中月井升丹井［  氏匹中月卅日 TRUE 匹
  *                                  请蜇匏  氏及及穴永皿午及癫曰  烂
- *                                  毛仄卅仁卅月
- * 忒曰袄
+ *                                  をしなくなる
+ * 返り値
  *  综木月凛反  TRUE
  *  综木卅中凛反  FALSE
  ------------------------------------------------------------*/
@@ -97,7 +97,7 @@ static BOOL NPC_searchCreatePoint( NPC_Create* cr,int  nobody,int nosee,
         if( width == 0 ){
             return FALSE;
         }else{
-            /*  甄  瑁户藉切卅及匹  */
+            /*  座  決め打ちなので  */
             crx = startpoint%width + x;
             cry = startpoint/width + y;
         }
@@ -181,12 +181,12 @@ static NPC_Correspondfunction   correspondfunction[]={
 #endif
 };
 /*------------------------------------------------------------
- * 楮醒戊疋□允月
- * 娄醒
+ * 関数コピーする
+ * 引数
  *  ch      Char*           平乓仿犯□正
  *  temp    NPC_template*     件皿伊□玄及禾奶件正□
- * 忒曰袄
- *  卅仄
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 static void NPC_copyFunction( Char* ch, NPC_Template*   temp )
 {

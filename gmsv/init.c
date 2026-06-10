@@ -67,12 +67,12 @@ void printUsage( void )
 /*
  * 戊穴件玉仿奶件毛质  允月
  *
- * 娄醒
+ * 引数
  *      argc      侬  及醒
  *      argv      侬  及    
- * 忒曰袄
- *      TRUE(1)     恳橘卅戊穴件玉仿奶件娄醒分匀凶日
- *      FALSE(0)    唱橘卅戊穴件玉仿奶件娄醒分匀凶日
+ * 返り値
+ *      TRUE(1)     正常なコマンドライン引数だったら
+ *      FALSE(0)    異常なコマンドライン引数だったら
  */
 BOOL parseCommandLine( int argc , char** argv )
 {
@@ -113,9 +113,9 @@ BOOL parseCommandLine( int argc , char** argv )
 
 
 /*
- * 棕雁  醒毛由□旦允月
- * 娄醒
- *      env     棕雁  醒及    
+ * 環境  数をパースする
+ * 引数
+ *      env     環境  数の    
  *
  * 漆及赭窒手仄卅中
  */
@@ -140,11 +140,11 @@ BOOL parseEnvironment( char** env )
 #define GOTORETURNFALSEIFFALSE(x) if(!(x))goto RETURNFALSE
 /*
  * 赓渝祭伙□民件
- * 娄醒
+ * 引数
  *      argc    argv及醒
- *      argv    戊穴件玉仿奶件娄醒
- *      env     棕雁  醒
- * 忒曰袄
+ *      argv    コマンドライン引数
+ *      env     環境  数
+ * 返り値
  *      TRUE(1) 岳  
  *      FALSE(1) 撩  
  */
@@ -185,13 +185,13 @@ BOOL init(int argc , char** argv , char** env )
     //ttom start
     {  int iWork = setEncodeKey();
        if( iWork == 0 ){
-       // 巨件戊□玉平□毛涩烂
+       // エンコードキーを設定
        printf( "----------------------------------------\n" );
        printf( "-------------[编码] 无法设置 %s\n", getConfigfilename() );
        printf( "----------------------------------------\n" );
        exit( 1 );
        }else{
-            // 巨件戊□玉平□毛涩烂
+            // エンコードキーを設定
                printf( "编码 = %d\n", iWork );
        }
     }
@@ -609,7 +609,7 @@ BOOL init(int argc , char** argv , char** env )
     CONNECT_setCtype( acfd, AC );
 	
 	print( "初始化 NPC 客户端 ... " );
-    /*  rpc(client)及赓渝祭 */
+    /*  rpc(client)の初期化 */
     if( saacproto_InitClient( lsrpcClientWriteFunc,LSGENWORKINGBUFFER, acfd) < 0 )
         goto CLOSEAC;
 	print( "完成\n" );

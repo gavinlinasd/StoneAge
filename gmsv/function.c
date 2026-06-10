@@ -165,7 +165,7 @@ static CorrespondStringAndFunctionTable
 correspondStringAndFunctionTable[]=
 {
     /* 动票反扔□田□    戊□玉匹烂聒今木化中月楮醒分［NPC手仇木
-     毛勾井丹午五互丐月*/
+     をつかうときがある*/
     { {"core_PreWalk"},  			CHAR_allprewalk,   		0 },
     { {"core_PostWalk"},  			CHAR_allpostwalk,  		0 },
     { {"core_Loop"},				CHAR_loopFunc, 			0 },
@@ -422,7 +422,7 @@ correspondStringAndFunctionTable[]=
     { {"WindowHealerLooked"} , 		NPC_WindowHealerLooked,	0 },
     { {"WindowHealerWindowTalked"}, NPC_WindowHealerWindowTalked, 0 },
 
-	/* 失奶  丞盒 */
+	/* アイ  ム屋 */
     { {"ItemShopInit"} ,			NPC_ItemShopInit ,		0 },
     { {"ItemShopTalked"} ,			NPC_ItemShopTalked ,	0 },
     { {"ItemShopWindowTalked"},		NPC_ItemShopWindowTalked, 0 },
@@ -445,7 +445,7 @@ correspondStringAndFunctionTable[]=
     { {"PetSkillShopLooked"} ,		NPC_PetSkillShopLooked,	0 },
     { {"PetSkillShopWindowTalked"},	NPC_PetSkillShopWindowTalked, 0 },
 
-    /* 它奴件玉它矢永玄  中潸曰盒 */
+    /* ウィンドウペット  い取り屋 */
     { {"PetShopInit"} ,				NPC_PetShopInit, 		0 },
     { {"PetShopTalked"} ,			NPC_PetShopTalked,		0 },
     { {"PetShopLooked"} ,			NPC_PetShopLooked,		0 },
@@ -456,7 +456,7 @@ correspondStringAndFunctionTable[]=
     { {"SignBoardLooked"} ,			NPC_SignBoardLooked,	0 },
     { {"SignBoardWindowTalked"},	NPC_SignBoardWindowTalked, 0 },
 
-    /*伐□皿穴件 */
+    /*ワープマン */
     { {"WarpManInit"},				NPC_WarpManInit,		0 },
     { {"WarpManTalked"},			NPC_WarpManTalked,		0 },
 	{ {"WarpManWatch"},				NPC_WarpManWatch,		0 },
@@ -519,7 +519,7 @@ correspondStringAndFunctionTable[]=
     { {"CheckManTalked"} , 		NPC_CheckManTalked,	0 },
     { {"CheckManWindowTalked"}, NPC_CheckManWindowTalked, 0 },
 
-    /* 元扎氏仃氏楝 */
+    /* じゃんけん君 */
     { {"JankenInit"} , 		NPC_JankenInit ,	0 },
     { {"JankenTalked"} , 		NPC_JankenTalked,	0 },
     { {"JankenWindowTalked"}, NPC_JankenWindowTalked, 0 },

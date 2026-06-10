@@ -319,7 +319,7 @@ void NPC_FamilymanWindowTalked( int meindex, int talkerindex,
 /* 
  * 涩烂白央奶伙毛  氏匹隙烂今木凶windowno及犯□正毛本永玄允月
  * 
- * 娄醒“
+ * 引数：
  *		meindex		int		仇及NPC及charaindex
  *		windowno	int		万笛周囁万  眺
  *		
@@ -371,7 +371,7 @@ static BOOL NPC_Familyman_readData( int meindex, int windowno, BOOL chkflg)
 		b_mode = -1;
 		errflg = FALSE;
 
-		/* 赓渝祭 */
+		/* 初期化 */
 		w.windowno = -1;
 		w.windowtype = -1;
 		w.buttontype = -1;
@@ -402,13 +402,13 @@ static BOOL NPC_Familyman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			/* 戊丢件玄反  骰 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 荼垫潸月 */
+			/* 改行取る */
 			chomp( line );
 			
-			/*  垫毛帮溥允月    */
+			/*  行を整形する    */
 			/*  引内 tab 毛 " " 卞  五晶尹月    */
 			replaceString( line, '\t' , ' ' );
-			/* 燮  及旦矢□旦毛潸月［*/
+			/* 先  のスペースを取る?*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;

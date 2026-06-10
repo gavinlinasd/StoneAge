@@ -18,12 +18,12 @@
 
 
 enum {
-	E_INT_GRAPHIC = CHAR_NPCWORKINT1,		/*   褥蟆及  飓 */
+	E_INT_GRAPHIC = CHAR_NPCWORKINT1,		/*   身前の  像 */
 	E_INT_GRAPHIC2 = CHAR_NPCWORKINT2,		/*   褥  及  飓 */
 	E_INT_BORN = CHAR_NPCWORKINT3,			/* 添老掃筑 */
-	E_INT_DEAD = CHAR_NPCWORKINT4,			/* 壅尹月凛棉*/ 
+	E_INT_DEAD = CHAR_NPCWORKINT4,			/* 消える時間*/ 
 	E_INT_MODE = CHAR_NPCWORKINT5,			/* 鰒時式胴＆囁 */
-	E_INT_NOWGRAPHIC = CHAR_NPCWORKINT6,	/* 蜇箕及弘仿白奴永弁瓜件田□ */
+	E_INT_NOWGRAPHIC = CHAR_NPCWORKINT6,	/* 現在のグラフィックナンバー */
 
 };
 
@@ -47,8 +47,8 @@ static NPC_TimeMan	TimeTble[] = {
 	{"AM",			YONAKA+1,		SHOUGO}, 	/* AM 凛及心 */
 	{"PM",			SHOUGO+1,		YONAKA}, 	/* PM 凛及心 */
 	{"FORE",		YOAKE+1,		SHOUGO},	/* 脐  互匹化井日恳诟引匹 */
-	{"AFTER",		SHOUGO+1,		NICHIBOTU},/* 恳诟井日脐  互释戈引匹 */
-	{"EVNING",		NICHIBOTU+1,	YONAKA}, 	/* 脐  互释氏匹井日蕞    引匹 */
+	{"AFTER",		SHOUGO+1,		NICHIBOTU},/* 正午から太  が沈むまで */
+	{"EVNING",		NICHIBOTU+1,	YONAKA}, 	/* 太  が沈んでから真    まで */
 	{"MORNING",		YONAKA+1,		YOAKE}, 	/* 蕞    井日脐  互哝月引匹 */
 	{"FREE",		0,				1024},
 };
@@ -130,7 +130,7 @@ void NPC_TimeManTalked( int meindex , int talkerindex , char *msg ,int color )
 
 
 	if(CHAR_getWorkInt(meindex,E_INT_MODE)==0){
-		/*--丢永本□斥毛忒允 */
+		/*--メッセージを返す */
 		NPC_Util_GetStrFromStrWithDelim(argstr,"main_msg",buf,sizeof( buf) );
  	
  	}else{
@@ -146,7 +146,7 @@ void NPC_TimeManTalked( int meindex , int talkerindex , char *msg ,int color )
  
     /* 仿件母丞匹升木毛韵月井瑁户化｝公及玄□弁件毛潸曰分允 */
     getStringFromIndexWithDelim( buf,",", rand()%tokennum+1,token, sizeof(token));
-	/*--仄扎屯月--*/
+	/*--しゃべる--*/
 	CHAR_talkToCli( talkerindex, meindex, token, CHAR_COLORWHITE );
 
 
@@ -174,7 +174,7 @@ void NPC_TimeManWatch( int meobjindex, int objindex, CHAR_ACTION act,
 
 //	print("now_hour=%d",nowlstime.hour);
 	
-	/* 凛棉毛苇化橇谪毛瑁户月 */
+	/* 時間を見て状態を決める */
 	if(born < dead){
 		RealTimeToLSTime( NowTime.tv_sec, &nowlstime);
 		if( (born < nowlstime.hour) && (dead > nowlstime.hour) ){

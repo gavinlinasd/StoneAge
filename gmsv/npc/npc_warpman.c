@@ -1010,7 +1010,7 @@ BOOL NPC_TreasureRandItemGet(int meidex,int talker,int rand_j,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
-			ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+			ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
 #endif
 			"EventAddItem(任务需求所得到的道具)",
 			CHAR_getInt( talker,CHAR_FLOOR),

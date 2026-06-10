@@ -784,7 +784,7 @@ void NPC_ERR_FMDiSP(int meindex,int talker,int errNO)
 	if(errNO==1){
 		/*--由□  奴□匹  仄井仃凶--*/
 		if(NPC_Util_GetStrFromStrWithDelim( npcarg, "PartyMsg",token, sizeof( token))==NULL) {
-			/*--涩烂今木化卅仃木壬｝票及丢永本□斥毛银丹--*/
+			/*--設定されてなければ�b下のメッセージを使う--*/
 			sprintf(token, "\n\n无法加入团队，请先解散团队！");
 		}
 
@@ -1062,7 +1062,7 @@ int NPC_FMFloorUse(int floor)
 	int	players = 0;
 	int     playernum = CHAR_getPlayerMaxNum();
 
-	/* 皿伊奶乩□民尼永弁 */
+	/* プレイヤーチェック */
 	for( i=0 ; i< playernum ; i++ ){
 		if( CHAR_getCharUse(i) == FALSE )continue;
 			if(CHAR_getInt(i,CHAR_FLOOR)==floor){
@@ -1078,7 +1078,7 @@ void NPC_GetPKFMNum(int floor, int index1, int index2, int *num1, int *num2)
 
 	*num1 = 0; *num2 = 0;
 
-	/* 皿伊奶乩□民尼永弁 */
+	/* プレイヤーチェック */
 	for (i = 0 ; i < FAMILY_MAXMEMBER; i++ ){
 		charindex = familyMemberIndex[ index1][i];
 		if( CHAR_getCharUse( charindex) ){

@@ -206,7 +206,7 @@ void BATTLE_MultiCaptureUp(
 
 //****************************************************************
 //
-// 竣濮井日汊唾允月热诸
+// 気絶から復活する呪術
 //
 int	MAGIC_Ressurect_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -214,13 +214,13 @@ int	MAGIC_Ressurect_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 );
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 
 //****************************************************************
 //
-// 箪岭及  鳖毛允月热诸
+// 属性の  転をする呪術
 //
 int	MAGIC_AttReverse_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -228,12 +228,12 @@ int	MAGIC_AttReverse_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 );
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 //****************************************************************
 //
-//   凯    祭允月热诸
+//   獲    化する呪術
 //
 int	MAGIC_CaptureUp_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -241,8 +241,8 @@ int	MAGIC_CaptureUp_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 );
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 
 //***********************************************************
@@ -250,21 +250,21 @@ int	MAGIC_CaptureUp_Battle(
 //    芊羁匹  醒及平乓仿弁正□毛汊唾今六月今日卞  芊  豢毛馨笛
 //
 void BATTLE_MultiResAndDef( 
-	int battleindex, 	// 田玄伙奶件犯永弁旦
-	int attackNo,		// 井仃月谛  寞
+	int battleindex, 	// バト郊インデックス
+	int attackNo,		// かける人  号
 	int toNo,			// 井仃日木月谛  寞
-	int power,			// 湘  荚汊袄
+	int power,			// 基  回復値
 	int per,			// ⊙井＂
-	int kind, 			//   芊  豢及潘  
+	int kind, 			//   法  御の種  
 	int count, 			// 嶇者  焚小
-	int UseEffect,		// 银丹谛及巨白尼弁玄
+	int UseEffect,		// 使う人のエフェクト
 	int RecevEffect		// 井仃日木月谛及巨白尼弁玄
 );
 //
 //***********************************************************
 //****************************************************************
 //
-// 汊唾≈  芊  豢毛芨尹月热诸
+// 復活?  法  御を与える呪術
 //
 int	MAGIC_ResAndDef_Battle(
 	int charaindex, // 井仃月谛及奶件犯永弁旦
@@ -272,8 +272,8 @@ int	MAGIC_ResAndDef_Battle(
 	int marray, 	// magicindex
 	int mp 			// MP
 );
-//  岳  仄凶日 TRUE
-//  撩  仄凶日 FALSE
+//  成  したら TRUE
+//  失  したら FALSE
 //****************************************************************
 
 #ifdef __ATTACK_MAGIC

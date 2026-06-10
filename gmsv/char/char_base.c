@@ -656,7 +656,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
     "fl",               /*  CHAR_FLOOR  */
     "x",                /*  CHAR_X */
     "y",                /*  CHAR_Y  */
-    "dir",              /*  CHAR_DIR 12凛毛0卞凛煌璃曰卞 */
+    "dir",              /*  CHAR_DIR 12時を0に時計周りに */
 	"lv",               /*  CHAR_LV  */
     "gld",              /*  CHAR_GOLD    */
 
@@ -671,7 +671,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
 
 	"chr",				/*  CHAR_CHARM	*/
 	"luc",				/*  CHAR_LUCK	*/
-	"aea",				/*  哗箪岭 */
+	"aea",				/*  地属性 */
 	"awa",				/*    箪岭 */
 	"afi",				/*  府鼬窓 */
 	"awi",				/*  氘箪岭 */

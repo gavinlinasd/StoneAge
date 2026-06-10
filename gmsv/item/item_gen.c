@@ -1,5 +1,5 @@
 /***********************************************
- * 失奶  丞宁岳″
+ * アイ  ム合成?
  **********************************************/
 #include "version.h"
 #include <stdio.h>
@@ -380,7 +380,7 @@ int ITEM_initItemAtom( char *fn )
 		line[strlen(line)-1]=0;
 
 		/* 尔羹卞烟让及  蟆互    贿匹反中匀化中化｝
-		 公木分仃互  邰 */
+		 それだけが  要 */
 		getStringFromIndexWithDelim( line, "," , 1 , tk, sizeof( tk ));
 		snprintf( item_atoms[count].name,
 				  sizeof( item_atoms[count].name ),
@@ -411,13 +411,13 @@ int ITEM_initItemAtom( char *fn )
 
 /*
   
-  刭醒及伊□玄
+  乱数のレート
 
   base 互 100 匹 min 互 0.7 匹 max 互 1.3 分匀凶日｝
-  70 ~ 130 卞剽域卞坌  允月［午曰丐尹内剽域［
+  70 ~ 130 に均一に分  する?とりあえず均一?
   剽域元扎卅仁仄凶曰允月井手仄木卅中及匹｝
   失奶  丞毁迕伙□民件午仄化仇仇卞烂聒允月 by ringo 1999Oct1 
-  1000坌及min_rate,max_rate匹健丹［
+  1000分のmin_rate,max_rateで扱う?
   double 支float 反］支支仇仄中及匹银歹卅中［
  */
 static int
@@ -703,9 +703,9 @@ int PET_ADD_INGRED( int nm, int vl1, int vl2, int vl3,
 /*
   矢永玄及ID井日｝刭醒及膜恳涩烂毛潸曰分允［
 
-  int *fixuse : 袄瑛绊娄醒［    及    醒毛午曰｝烂聒醒毛中木化井尹允
+  int *fixuse : 値結果引数?    の    数をとり�b定義数をいれてかえす
 
-  int *fixatom : 升及豳笺卞覆允月膜恳卅及井
+  int *fixatom : どの素材に対する修正なのか
   int *baseup : 湘  袄卞凶中允月笛遥
   int *minadd : 井仃遥及  凝卞凶中允月笛遥
   int *maxadd : 井仃遥及    卞凶中允月笛遥
@@ -809,7 +809,7 @@ ITEM_merge_getPetFix( int petid, int *fixuse, int *fixatom,
 }
 
 /* 
- * 公及    互］宁岳葭失奶  丞卞丐匀凶日FALSE毛忒允
+ * その    が?合成元アイ  ムにあったらFALSEを返す
  */
 
 static BOOL ITEM_merge_checkitem( ITEM_Item *items, int itemsnum, int id)
@@ -1022,7 +1022,7 @@ int ITEM_mergeItem( int charaindex, ITEM_Item *items, int num , int money, int p
 	struct item_ingindtable ingindtable[MAX_ITEM_ATOMS_SIZE];
 	int sortedingindtable[MAX_ITEM_ATOMS_SIZE];
 	int sortedingtable[MAX_ITEM_ATOMS_SIZE];
-	/* 矢永玄卞方月膜恳迕 */
+	/* ペットによる修正用 */
 	int pet_fixatom[MAX_ITEM_ATOMS_SIZE];
 	int  pet_baseup[MAX_ITEM_ATOMS_SIZE];
 	int pet_minadd[MAX_ITEM_ATOMS_SIZE];
@@ -1570,7 +1570,7 @@ int ITEM_mergeItem_merge( int charaindex, int petid, char *data, int petindex, i
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindexs[i],
 #else
-					ITEM_getInt( itemindexs[i], ITEM_ID),  /* 失奶  丞  寞 */
+					ITEM_getInt( itemindexs[i], ITEM_ID),  /* アイ  ム  号 */
 #endif
 					"mergedel(合成所删除的道具)",
 					CHAR_getInt( charaindex,CHAR_FLOOR),

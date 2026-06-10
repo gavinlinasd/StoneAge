@@ -5,10 +5,10 @@
 #include "readmap.h"
  
 /*
- * 扔件皿伙及NPC戊□玉
+ * サンプ郊のNPCコード
  *
- * 正奶皿  “ Sample
- * 烂聒允月楮醒  “ 蝈潘  ［
+ * タイプ  ： Sample
+ * 定義する関数  ： 全種  ?
  * NPC_SamplePreWalk
  * NPC_SamplePostWalk
  * NPC_SamplePreOver
@@ -25,8 +25,8 @@
  */
 /*------------------------------------------------------------
  * NPC及扔件皿伙伙□民件
- * 娄醒
- *  index       int     奶件犯永弁旦
+ * 引数
+ *  index       int     インデックス
  ------------------------------------------------------------*/
 void NPC_SampleLoop( int index )
 {
@@ -40,7 +40,7 @@ void NPC_SampleLoop( int index )
     y  = CHAR_getInt(index,CHAR_Y);
 
     /*
-     * 嗤仁卞皿伊奶乩□互中月井升丹井毛譬屯化｝中凶日公中勾卞嗤勿仁
+     * 近くにプレイヤーがいるかどうかを調べて�bいたらそいつに近づく
      * 蜇箕｝  赓卞心勾井匀凶支勾分仃［
      * 中卅井匀凶日仿件母丞它巧□弁
      *  域汹汹仁  卞  猾允月

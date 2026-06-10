@@ -36,7 +36,7 @@
 struct dbentry
 {
     int use;
-//    unsigned int keyhash;       /* 腹绸平□及甩永扑亘戊□玉 */
+//    unsigned int keyhash;       /* 検索キーのハッ竺ュコード */
     int ivalue;                  /* 旦戊失［玄永皿 NODE 反  -1 匹｝
                                  允屯化及旦戊失反 0 动晓匹卅中午中仃卅中*/
 //    int nextind;                /* -1 分匀凶日    毛啦  允月 */
@@ -45,8 +45,8 @@ struct dbentry
     int next;	// 下一个dbentry, -1表示此项为tail
     char key[KEY_MAX];
     char charvalue[CHARVALUE_MAX];
-//    char key[64];               /* 腹绸平□午卅月  侬   */
-//    int charvalue_index;        /*   侬  田永白央毛今允index */
+//    char key[64];               /* 検索キーとなる  字   */
+//    int charvalue_index;        /*   字  バッファをさすindex */
     // Spock end
 };
 
@@ -68,12 +68,12 @@ typedef enum
     DB_STRING,
 }DBTYPE;
 
-/* 1蜊及犯□正矛□旦毛丐日歹允 */
+/* 1個のデータベースをあらわす */
 struct table
 {
     int use;		// 0:未使用 1:已使用
     DBTYPE type;                    /* DB及潘   */
-    char name[32];                  /* 犯□正矛□旦及  蟆 */
+    char name[32];                  /* データベースの  前 */
     int num;                        /* 巨件玄伉及醒 */
     int toplinkindex;
     // Spock 2000/10/12
@@ -84,7 +84,7 @@ struct table
     // Spock end
 };
 
-struct dbentry *master_buf;     /* 巨件玄伉筏盛迕 */
+struct dbentry *master_buf;     /* エントリ記憶用 */
 int dbsize = 0;                 /*   赓0匹｝1,2,4,8,16...*/
 static int dbent_finder = 0;
 
@@ -119,7 +119,7 @@ int charvaluesize=0;
 */
 
 /*
-    侬  田永白央□毛傀舰允月
+    字  バッファーを拡張する
  */
 /* Spock deleted 2000/10/12
 int
@@ -157,7 +157,7 @@ reallocCharValue(void)
 */
 
 /*
-    侬  田永白央□毛1蜊歹曰丐化月［
+    字  バッファーを1個わりあてる?
   凶曰卅仁卅匀凶日realloc允月［
   
 */
@@ -243,7 +243,7 @@ reallocDB( void )
     if( previous )memcpy( (char*)newbuf, (char*)previous,
             dbsize * sizeof( struct dbentry ));
 
-    // 衙中幻丹毛荸  仄
+    // 古いほうを解  し
     free( previous );
     */
     // Spock 2000/10/19
@@ -283,7 +283,7 @@ dbAllocNode()
         if( master_buf[dbent_finder].use == 0 ){
             master_buf[dbent_finder].use = 1;
             /* Spock deleted 2000/10/12
-            // int 匹手尥笛树  及啃卞stringbuffer毛  勾仪卞允月 kawata
+            // int でも付加情  の為にstringbufferを  つ事にする kawata
             if( type == DB_STRING || type == DB_INT_SORTED){
                 if( ( master_buf[dbent_finder].charvalue_index =
                       dbAllocCharValue() ) < 0 ){
@@ -499,7 +499,7 @@ dbExtractNodeByKey( int topind , char *k  )
             } else {                
                 master_buf[prev].nextind = master_buf[cur].nextind;
             }
-            // 公木匹愤坌互伉旦玄井日陆木月及匹荸  允月
+            // それで自分がリストから外れるので解  する
             dbReleaseNode( cur );
             log( "find key %s deleted\n", k );
             return 0;
@@ -554,7 +554,7 @@ dbGetEntryByKey( int topind , char *k )
 */
 
 /*
-  伉件弁及玄永皿毛芨尹日木凶日｝袄毛  曰卞用□玉毛腹绸仄化
+  リンクのトップを与えられたら�b値を  りにノードを検索して
   赝濠卅午仇欠卞 Insert 允月［切中今中  井日云云五中  卞卅日氏匹中月午
   移烂
 
@@ -695,7 +695,7 @@ dbGetTableIndex( char *tname , DBTYPE type )
             master_buf[topind].nextind = -1;
             */
             
-            /* 玄永皿及用□玉毛赓渝祭允月卅曰［
+            /* トップのノードを初期化するなり?
                侬  及桦宁手帮醒及桦宁手云卅元匹方中［
              0x7fffffff午中丹袄反｝  侬  及桦宁反今幻升啦  毛手凶卅中及分［*/
             master_buf[topind].ivalue = 0x7fffffff;    
@@ -758,7 +758,7 @@ int dbUpdateEntryInt( char *table , char *key , int value, char *info )
     master_buf[entind].keyhash = hashpjw( master_buf[entind].key );
     master_buf[entind].nextind = -1; 
 	
-	// 尥笛树  毛本永玄允月
+	// 付加情  をセットする
     dbSetString( master_buf[entind].charvalue_index, info );
 	
 	
@@ -919,7 +919,7 @@ dbShowAllTable(void)
     
 }
 
-/* 犯□正毛1蜊潸曰分允［
+/* データを1個取りだす?
  */
 int
 dbGetEntryInt( char *table, char *key, int *output )
@@ -961,7 +961,7 @@ dbGetEntryInt( char *table, char *key, int *output )
   int *rank_out : 仿件弁及请  
   int *count_out : 晓井日窒蜊  井及请  
 
-  int 犯□正矛□旦毁迕友
+  int データベース郡用ね
   
  */
 
@@ -1268,7 +1268,7 @@ int dbRead( char *dir )
  撩  仄凶日  ｝岳  仄凶日0［岳  仄化手坞及请  及午五互丐月冗［
    “num互0及午五午井｝竟癫允月巨件玄伉互卅中午五［
 
- int 犯□正矛□旦毁迕分冗
+ int データベース郡用だぞ
 
  */
 int dbGetEntryCountRange( char *table, int count_start, int  num,

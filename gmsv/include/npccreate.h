@@ -29,8 +29,8 @@ typedef enum
 
     NPC_CREATEDIR,                /*  综月凛及  轾    */
     NPC_CREATEBASEIMAGENUMBER,    /*  template 及涩烂毛晓踏五允月
-                                        飓  寞    */
-    NPC_CREATETIME,               /* 凛棉 */
+                                        像  号    */
+    NPC_CREATETIME,               /* 時間 */
     NPC_CREATEBORNNUM,            /*    公及哗  卞请蜇今六月醒    */
 
     NPC_CREATEENEMYNUM,           /*  衬及潘  醒  */

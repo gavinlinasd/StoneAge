@@ -49,7 +49,7 @@ typedef struct tagdefaultCharcterGet
 static defaultCharacterGet CHAR_defaultCharacterGet[]=
 {
   /*  CHAR_DEFAULTPLAYER  */
-//阂间裆ㄠ
+//子供男１
     {SPR_001em,&player,&lvplayer00,CHAR_IMAGETYPE_CHILDBOY},
     {SPR_002em,&player,&lvplayer00,CHAR_IMAGETYPE_CHILDBOY},
     {SPR_003em,&player,&lvplayer00,CHAR_IMAGETYPE_CHILDBOY},
@@ -85,19 +85,19 @@ static defaultCharacterGet CHAR_defaultCharacterGet[]=
     {SPR_053em,&player,&lvplayer00,CHAR_IMAGETYPE_MAN},
     {SPR_054em,&player,&lvplayer00,CHAR_IMAGETYPE_MAN},
 
-//阂间辉ㄠ
+//子供女１
     {SPR_061em,&player,&lvplayer00,CHAR_IMAGETYPE_CHILDGIRL},
     {SPR_062em,&player,&lvplayer00,CHAR_IMAGETYPE_CHILDGIRL},
     {SPR_063em,&player,&lvplayer00,CHAR_IMAGETYPE_CHILDGIRL},
     {SPR_064em,&player,&lvplayer00,CHAR_IMAGETYPE_CHILDGIRL},
 
-//剂辉ㄠ
+//少女１
     {SPR_071em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
     {SPR_072em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
     {SPR_073em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
     {SPR_074em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
 
-//剂辉ㄡ
+//少女２
     {SPR_081em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
     {SPR_082em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
     {SPR_083em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
@@ -109,13 +109,13 @@ static defaultCharacterGet CHAR_defaultCharacterGet[]=
     {SPR_093em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
     {SPR_094em,&player,&lvplayer00,CHAR_IMAGETYPE_GIRL},
 
-//辉岭ㄠ
+//女性１
     {SPR_101em,&player,&lvplayer00,CHAR_IMAGETYPE_WOMAN},
     {SPR_102em,&player,&lvplayer00,CHAR_IMAGETYPE_WOMAN},
     {SPR_103em,&player,&lvplayer00,CHAR_IMAGETYPE_WOMAN},
     {SPR_104em,&player,&lvplayer00,CHAR_IMAGETYPE_WOMAN},
 
-//辉岭ㄡ
+//女性２
     {SPR_111em,&player,&lvplayer00,CHAR_IMAGETYPE_WOMAN},
     {SPR_112em,&player,&lvplayer00,CHAR_IMAGETYPE_WOMAN},
     {SPR_113em,&player,&lvplayer00,CHAR_IMAGETYPE_WOMAN},
@@ -216,11 +216,11 @@ BOOL CHAR_checkPlayerImageNumber( int imagenumber)
 	else return TRUE;
 }
 /*------------------------------------------------------------
- * 涌  飓  寞及民尼永弁
+ * 顔  像  号のチェック
  *
  * 涌  飓  寞反动票及白巧□穴永玄匹瑁引匀化中月
  * number = 嶇斟  小
- * CG_CHR_MAKE_FACE + (number*100) + (  缙  number * 25) + (     寞 * 5 ) + 轼  寞
+ * CG_CHR_MAKE_FACE + (number*100) + (  色  number * 25) + (     号 * 5 ) + 口  号
  *
  ------------------------------------------------------------*/
 BOOL CHAR_checkFaceImageNumber( int imagenumber, int faceimagenumber)
@@ -322,18 +322,18 @@ int CHAR_eqimagetbl[][5]={
 };
 
 /*------------------------------------------------------------
- * 隶    午  飓  寞井日蕙仄中  飓  寞毛  月［
- * 娄醒
- *  basebaseimagenumber     int             葭卞卅月  飓  寞
+ * 装    と  像  号から新しい  像  号を  る?
+ * 引数
+ *  basebaseimagenumber     int             元になる  像  号
  *  category                ITEM_CATEGORY   失奶  丞及市  打伉
- * 忒曰袄
+ * 返り値
  *  蕙仄中  飓  寞［巨仿□及凛反｝-1
  ------------------------------------------------------------*/
 int CHAR_getNewImagenumberFromEquip( int basebaseimagenumber,
                                      ITEM_CATEGORY category )
 {
     int i;
-    /*  ITEM_CATEGORY 民尼永弁  */
+    /*  ITEM_CATEGORY チェック  */
     if( category < 0 || category > arraysizeof(CHAR_eqimagetbl[0]) )
         return -1;
     for( i=0 ; i<arraysizeof(CHAR_eqimagetbl) ; i++ ){
@@ -347,10 +347,10 @@ int CHAR_getNewImagenumberFromEquip( int basebaseimagenumber,
 
 
 /*------------------------------------------------------------
- * hash 袄毛菲户月［
- * 娄醒
- * 忒曰袄
- *  卅仄
+ * hash 値を求める?
+ * 引数
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void CHAR_initSeekGraphicNumberFromString( void )
 {
@@ -361,11 +361,11 @@ void CHAR_initSeekGraphicNumberFromString( void )
 
 /*------------------------------------------------------------
  *   侬  井日  飓  寞毛  月［
- * 娄醒
+ * 引数
  *  string      char*         ٯ  
- * 忒曰袄
- *  巨仿□ -1
- *  公木动陆分午弘仿白奴永弁  寞
+ * 返り値
+ *  エラー -1
+ *  それ以外だとグラフィック  号
  ------------------------------------------------------------*/
 int CHAR_seekGraphicNumberFromString( char* string )
 {
@@ -387,8 +387,8 @@ int CHAR_seekGraphicNumberFromString( char* string )
 
 
 
-/*====================  衬桦赭====================*/
-/*  衬桦赭毛忡  允月    */
+/*====================  敵場所====================*/
+/*  敵場所を保  する    */
 typedef struct tagCHAR_invinsibleArea
 {
     CHAR_AREAKIND   kind;
@@ -400,10 +400,10 @@ CHAR_invincibleArea*    CHAR_invarea;
 int                     CHAR_invareanum;
 
 /*------------------------------------------------------------
- *   衬桦赭及赓渝祭毛允月［
- * 娄醒
+ *   敵場所の初期化をする?
+ * 引数
  *  filename        char*       必醒易刹通誌  
- * 忒曰袄
+ * 返り値
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  *------------------------------------------------------------*/
@@ -422,7 +422,7 @@ BOOL CHAR_initInvinciblePlace( char* filename )
 
     CHAR_invareanum=0;
 
-    /*  引内  躲卅垫互窒垫丐月井升丹井譬屯月    */
+    /*  まず  効な行が何行あるかどうか調べる    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
@@ -446,7 +446,7 @@ BOOL CHAR_initInvinciblePlace( char* filename )
         fclose( f );
         return FALSE;
     }
-    /* 赓渝祭 */
+    /* 初期化 */
 {
     int     i;
     for( i = 0; i < CHAR_invareanum; i ++ ) {
@@ -821,12 +821,12 @@ BOOL CHAR_getInitElderPosition( Char* ch,int hometown)
 
 /*------------------------------------------------------------
  * 巨伙母□及桦赭毛  月
- * 娄醒
- *  elderindex      int     巨伙母□奶件犯永弁旦
+ * 引数
+ *  elderindex      int     エ郊ダーインデックス
  *  fl              int*    白夫失毛熬仃潸月桦赭
- *  x               int*    x毛熬仃潸月桦赭
- *  y               int*    y毛熬仃潸月桦赭
- * 娄醒
+ *  x               int*    xを受け取る場所
+ *  y               int*    yを受け取る場所
+ * 引数
  *  岳    TRUE(1)
  *  撩    FALSE(0)
  ------------------------------------------------------------*/
@@ -842,8 +842,8 @@ BOOL CHAR_getElderPosition( int elderindex, int* fl, int* x, int* y )
 /*------------------------------------------------------------
  * 赢  NPC互愤坌及赓渝祭及午五卞｝赢    卞踏五仇戈及分［
  * 公及凶户及奶件正□白尼奶旦
- * 娄醒
- *  index   int 左□田□匹 撩  仄凶日FALSE 毛井尹允
+ * 引数
+ *  index   int オーバーで 失  したらFALSE をかえす
  *  fl      int 匏  及树  
  *  x       int
  *  y       int
@@ -1379,7 +1379,7 @@ int CHAR_PetLevelUp( int petindex )
 #ifdef _TEACHER_SYSTEM
 	int iGetFame = 0;
 #endif	
-	// 娄醒民尼永弁
+	// 引数チェック
 	if( CHAR_CHECKINDEX( petindex ) == FALSE )	return -1;
 	if( CHAR_getInt( petindex, CHAR_WHICHTYPE ) != CHAR_TYPEPET )return -1;
 	
@@ -1395,7 +1395,7 @@ int CHAR_PetLevelUp( int petindex )
 	tgh = (float)(( LevelUpPoint >> 8 ) & 0xFF);
 	dex = (float)(( LevelUpPoint >> 0 ) & 0xFF);
 	
-	// ㄠㄟ荚ㄣ    扔奶戊夫毛蕊匀化备嫩  卞ㄠ箫允
+	// １０回４    サイコひを振って各項  に１足す
 	for( i = 0; i < 10; i ++ ){
 		Param[RAND( 0, 3 )] += 1.0;
 	}
@@ -1404,7 +1404,7 @@ int CHAR_PetLevelUp( int petindex )
 	fRand = (float)RAND( RankRandTbl[petrank].min, RankRandTbl[petrank].max )
 		* 0.01;
 	
-	// 喃曰蕊曰禾奶件玄方曰煌遥
+	// 割り振りポイントより計算
 	vital = (float)vital * fRand + Param[0] * fRand;
 	str = (float)str   * fRand + Param[1] * fRand;
 	tgh = (float)tgh   * fRand + Param[2] * fRand;

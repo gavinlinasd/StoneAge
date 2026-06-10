@@ -24,7 +24,7 @@ typedef enum
 	CHAR_COLORGREEN2,
 
 }CHAR_COLOR;
-/*====================平乓仿及综岳卞楮允月楮醒====================*/
+/*====================キャラの作成に関する関数====================*/
 void CHAR_createNewChar( int clifd, int dataplacenum,char* charname ,
 						  int imgno,int faceimgno,
 						  int vital,int str,int tgh,int dex,
@@ -62,7 +62,7 @@ void CHAR_useSkill( int charaindex, int dir ,int skindex );
 typedef enum
 {
     CHAR_WALKSUCCESSED,     /* 岳      */
-    CHAR_WALKSYSTEMERROR,   /* 扑旦  丞巨仿□    及index民尼永弁卞
+    CHAR_WALKSYSTEMERROR,   /* 竺ス  ムエラー    のindexチェックに
                              * 健堡小小堡俔怜小 */
     CHAR_WALKEXTEND,        /*    区左□田□仄化汹仇丹午仄凶［NPC卞及心*/
     CHAR_WALKHITOBJECT,     /*  窒井  卞癫匀化｝汹仃卅井匀凶    */
@@ -276,25 +276,25 @@ typedef enum
 
 typedef enum
 {
-    CHAR_WINDOWTYPE_RETURNTOELDER=-1,   /*  赢  尺  月它奴件玉它    */
-    CHAR_WINDOWTYPE_RESURRECTION=-2,   /*  汊唾允月它奴件玉它    */
+    CHAR_WINDOWTYPE_RETURNTOELDER=-1,   /*  長  へ  るウィンドウ    */
+    CHAR_WINDOWTYPE_RESURRECTION=-2,   /*  復活するウィンドウ    */
 
 	CHAR_WINDOWTYPE_SELECTBATTLE = 1,		/*   月爵  毛蓟  允月它奴件玉它 */
 	CHAR_WINDOWTYPE_SELECTDUEL = 2,  		/*   月DUEL毛蓟  允月它奴件玉它 */
-	CHAR_WINDOWTYPE_SELECTTRADECARD = 3, 	/*   铜跟晶毛蓟  允月它奴件玉它 */
-	CHAR_WINDOWTYPE_SELECTPARTY = 4, 		/* 由□  奴毛蓟  允月它奴件玉它 */
-	CHAR_WINDOWTYPE_SELECTBATTLEWATCH = 5, 	/* 棋爵毛蓟  允月它奴件玉它 */
+	CHAR_WINDOWTYPE_SELECTTRADECARD = 3, 	/*   刺交換を選  するウィンドウ */
+	CHAR_WINDOWTYPE_SELECTPARTY = 4, 		/* パー  ィを選  するウィンドウ */
+	CHAR_WINDOWTYPE_SELECTBATTLEWATCH = 5, 	/* 観戦を選  するウィンドウ */
 	CHAR_WINDOWTYPE_MICMESSAGE = 6,			/* MICNPC毛银匀化请月它奴件玉它 */
 
 	// CoolFish: Trade 2001/4/18
 	CHAR_WINDOWTYPE_SELECTTRADE = 7,	/* 交易 Window */
 
-	CHAR_WINDOWTYPE_SELECTRENAMEITEM_PAGE1 = 10,	/*   蟆毛  凳允月失奶  丞毛蓟  允月它奴件玉它 */
-	CHAR_WINDOWTYPE_SELECTRENAMEITEM_PAGE2 = 11,	/*   蟆毛  凳允月失奶  丞毛蓟  允月它奴件玉它 */
-	CHAR_WINDOWTYPE_SELECTRENAMEITEM_PAGE3 = 12,	/*   蟆毛  凳允月失奶  丞毛蓟  允月它奴件玉它 */
-	CHAR_WINDOWTYPE_SELECTRENAMEITEM_PAGE4 = 13,	/*   蟆毛  凳允月失奶  丞毛蓟  允月它奴件玉它 */
-	CHAR_WINDOWTYPE_SELECTRENAMEITEM_RENAME = 14,	/*   蟆毛    允月它奴件玉它 */
-	CHAR_WINDOWTYPE_SELECTRENAMEITEM_RENAME_ATTENTION  = 15,	/*   蟆毛    允月它奴件玉它 */
+	CHAR_WINDOWTYPE_SELECTRENAMEITEM_PAGE1 = 10,	/*   前を  更するアイ  ムを選  するウィンドウ */
+	CHAR_WINDOWTYPE_SELECTRENAMEITEM_PAGE2 = 11,	/*   前を  更するアイ  ムを選  するウィンドウ */
+	CHAR_WINDOWTYPE_SELECTRENAMEITEM_PAGE3 = 12,	/*   前を  更するアイ  ムを選  するウィンドウ */
+	CHAR_WINDOWTYPE_SELECTRENAMEITEM_PAGE4 = 13,	/*   前を  更するアイ  ムを選  するウィンドウ */
+	CHAR_WINDOWTYPE_SELECTRENAMEITEM_RENAME = 14,	/*   前を    するウィンドウ */
+	CHAR_WINDOWTYPE_SELECTRENAMEITEM_RENAME_ATTENTION  = 15,	/*   前を    するウィンドウ */
 	
 	CHAR_WINDOWTYPE_DENGON = 50,			/* 鳗蜕   */
 
@@ -668,12 +668,12 @@ void CHAR_PetAddVariableAi( int petindex, int iValue );
 void CHAR_PartyUpdate( int charaindex, int senddata );
 char *CHAR_getUseName( int charaindex );
 char *CHAR_getUseID( int charaindex );
-EXTERN int EnemyMoveNum;	/*   凛卞  嫖  仃月衬及醒 */
+EXTERN int EnemyMoveNum;	/*   時に  高  ける敵の数 */
 extern char *DebugFunctionName;
 extern int DebugPoint;
 
-#define DB_DUELPOINT	"db_duel"			// 犯亘巨伙禾奶件玄犯□正矛□旦
-#define DB_ADDRESSBOOK	"db_addressbook"	// 失玉伊旦皮永弁犯□正矛□旦
+#define DB_DUELPOINT	"db_duel"			// デュエ郊ポイントデータベース
+#define DB_ADDRESSBOOK	"db_addressbook"	// アドレスブックデータベース
 
 BOOL CHAR_send_DpDBUpdate( int charaindex );
 BOOL CHAR_send_DpDBUpdate_AddressBook( int charaindex, int mode );
@@ -719,10 +719,10 @@ typedef struct tagCHAR_effectsetting
 	int		effect;								//	梢请  寞
 	int		level;								//	梢请及伊矛伙［  蜇及雄今［
 	int		sendflg;							//	  憎巨白尼弁玄毛霜匀凶井升丹井［
-	char	month[CHAR_EFFECT_SETTINGBUFFER];	//	  垫允月畸
+	char	month[CHAR_EFFECT_SETTINGBUFFER];	//	  行する月
 	char	day[CHAR_EFFECT_SETTINGBUFFER];		//	  垫允月  
-	char	hour[CHAR_EFFECT_SETTINGBUFFER];	//	  垫允月凛棉
-	char	min[CHAR_EFFECT_SETTINGBUFFER];		//	  垫允月坌
+	char	hour[CHAR_EFFECT_SETTINGBUFFER];	//	  行する時間
+	char	min[CHAR_EFFECT_SETTINGBUFFER];		//	  行する分
 	char	expire[CHAR_EFFECT_SETTINGBUFFER];	//	  垫仄化中月赢今［(    
 	
 }CHAR_effectsetting;

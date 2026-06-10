@@ -67,7 +67,7 @@ enum
 /*
  * 扔□田    及职及桦赭午及 cdkey charname 及赢今毛宁六月凶户卞
  * CHEKEYLEN, CHARNAMELEN
- * 毛银丹方丹卞  凳［
+ * を使うように  更?
  */
     
 void CHAR_Family(int fd, int index, char* message);

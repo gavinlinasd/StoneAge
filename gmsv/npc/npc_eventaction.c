@@ -894,7 +894,7 @@ BOOL NPC_ActionNewDelPet( int toindex, char *msg)
 	            //公及平乓仿互爵    卅日｝矢永玄毛丹日内蔽  
 	            if( CHAR_getWorkInt( CONNECT_getCharaindex( fd ), CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) 
 					return FALSE;
-	            //及矢永玄互田玄伙井升丹井及民尼永弁
+	            //のペットがバト郊かどうかのチェック
 	            defpet = CHAR_getInt( toindex, CHAR_DEFAULTPET);
 	            if(defpet == i){
 		            CHAR_setInt( toindex, CHAR_DEFAULTPET, -1);
@@ -924,7 +924,7 @@ BOOL NPC_ActionNewDelPet( int toindex, char *msg)
 	            CHAR_endCharOneArray( petindex );
 
 	            snprintf( szPet, sizeof( szPet ), "K%d", i);
-	            // 蕙仄中矢永玄旦  □正旦霜曰勾仃月
+	            // 新しいペットス  ータス送りつける
 	            CHAR_sendStatusString( toindex, szPet );
 
 				++count;
@@ -2922,7 +2922,7 @@ BOOL NPC_ActionTreasureRandItemGet(int meidex,int talker,int rand_j,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
-			ITEM_getInt( itemindex, ITEM_ID),  /* 失奶  丞  寞 */
+			ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
 #endif
 			"EventAddItem(任务需求所得到的道具)",
 			CHAR_getInt( talker,CHAR_FLOOR),

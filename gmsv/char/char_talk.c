@@ -33,7 +33,7 @@ extern int channelMember[FAMILY_MAXNUM][FAMILY_MAXCHANNEL][FAMILY_MAXMEMBER];
 int *piOccChannelMember = NULL;
 #endif
 /*------------------------------------------------------------
- * 民乓永玄楮  及末□旦
+ * チャット関  のソース
  ------------------------------------------------------------*/
 #define DEBUGCDKEYNUM 100
 struct tagDebugCDKey {
@@ -42,7 +42,7 @@ struct tagDebugCDKey {
 };
 static struct tagDebugCDKey DebugCDKey[DEBUGCDKEYNUM];
 
-/*====================民乓永玄  芊====================*/
+/*====================チャット  法====================*/
 typedef void (*CHATMAGICFUNC)(int,char*);
 typedef struct tagCHAR_ChatMagicTable
 {
@@ -538,9 +538,9 @@ void CHAR_initDebugChatCdkey( void)
 	}
 }
 /*------------------------------------------------------------
- * 民乓永玄  芊及甩永扑亘袄毛综月［
+ * チャット  法のハッ竺ュ値を作る?
  * 娄醒｝忒曰袄
- *  卅仄
+ *  なし
  ------------------------------------------------------------*/
 void CHAR_initChatMagic(void)
 {
@@ -634,13 +634,13 @@ int CHAR_getChatMagicFuncMaxNum( void)
 }
 
 /*------------------------------------------------------------
- * 民乓永玄  芊
- * 娄醒
- *  charaindex      int     平乓仿奶件犯永弁旦
- *  message         char*   丢永本□斥
- *  isDebug         BOOL    犯田永弘民乓永玄  芊井升丹井
- * 忒曰袄
- *  卅仄
+ * チャット  法
+ * 引数
+ *  charaindex      int     キャラインデックス
+ *  message         char*   メッセージ
+ *  isDebug         BOOL    デバッグチャット  法かどうか
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 static BOOL CHAR_useChatMagic( int charaindex, char* data, BOOL isDebug)
 {
@@ -714,10 +714,10 @@ static BOOL CHAR_useChatMagic( int charaindex, char* data, BOOL isDebug)
 
 /*------------------------------------------------------------
  * 祥汹井日汔毛菲户月
- * 娄醒
+ * 引数
  *  volume  int     祥汹
- * 忒曰袄
- *  穴永皿匹及穴旦
+ * 返り値
+ *  マップでのマス
  ------------------------------------------------------------*/
 static int CHAR_getRangeFromVolume( int volume )
 {
@@ -733,9 +733,9 @@ static int CHAR_getRangeFromVolume( int volume )
 }
 /*------------------------------------------------------------
  * 擘及示伉亘□丞毛茧月［条卅中支曰井凶［
- * 娄醒
- *  mesg        char*       仄扎屯月蜕邯
- * 忒曰袄
+ * 引数
+ *  mesg        char*       しゃべる言葉
+ * 返り値
  *  -1 及午五反仇公仇公
  *  0  及午五反孔勾丹
  *  1 方曰云云五中午｝仃勾卞勾中化中月 ! 及醒
@@ -757,9 +757,9 @@ static int CHAR_getVolume( char* mesg )
 	}else{
 		/*  3动晓   */
 		if( mesg[stringlen-1] == '.' ){
-			/*  仇公仇公及第  岭丐曰    */
+			/*  こそこその可  性あり    */
 			if( mesg[stringlen-2] == '.' && mesg[stringlen-3] == '.' ){
-				/*  仇公仇公    */
+				/*  こそこそ    */
 				return -1;
 			}
 			return 0;
@@ -780,13 +780,13 @@ static int CHAR_getVolume( char* mesg )
 
 /*------------------------------------------------------------
  * 丢永本□斥及    井日丢永本□斥及      坌毛潸曰请允
- * 娄醒
- *  message     char*           丢永本□斥    
+ * 引数
+ *  message     char*           メッセージ    
  *  kind        char*           p or s or i卅及丢永本□斥
  *  kindlen     int             kind 及赢今
  *  body        char**          丢永本□斥    及禾奶件正□及伞  桦赭
- * 忒曰袄
- *  卅仄
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void CHAR_getMessageBody(char* message,char* kind,int kindlen,char** body)
 {

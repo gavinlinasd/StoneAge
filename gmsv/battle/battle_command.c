@@ -29,7 +29,7 @@ int BATTLE_MpDown( int charaindex, int down )
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 
 	if( BATTLE_CHECKINDEX( battleindex ) == FALSE )return TRUE;
-	// 覆谛爵元扎卅井匀凶日??
+	// 対人戦じゃなかったら??
 	if( BattleArray[battleindex].type != BATTLE_TYPE_P_vs_P ){
 		return TRUE;
 	}
@@ -542,7 +542,7 @@ void BATTLE_ActSettingSend( int battleindex )
 			){
 				endBit |= 1 << k;	// 申永玄  化月
 			}else
-			// 衬分匀凶日濮覆  井允
+			// 敵だったら絶対  かす
 			if( CHAR_getInt( pindex, CHAR_WHICHTYPE ) == CHAR_TYPEENEMY )
 			{
 				endBit |= 1 << k;	// 申永玄  化月
@@ -560,7 +560,7 @@ void BATTLE_ActSettingSend( int battleindex )
 			if( CHAR_CHECKINDEX( pindex ) == FALSE )continue;
 			// 辅爵仄凶化及平乓仿卞反霜日卅中
 			if( CHAR_getWorkInt( pindex, CHAR_WORKBATTLEMODE ) == BATTLE_CHARMODE_RESCUE )continue;
-			// 皿伊奶乩□分匀凶日
+			// プレイヤーだったら
 			if( CHAR_getInt( pindex, CHAR_WHICHTYPE ) == CHAR_TYPEPLAYER
 			){	// 戊穴件玉霜月
 				BATTLE_CommandSend( pindex, szBA );
@@ -577,7 +577,7 @@ void BATTLE_ActSettingSend( int battleindex )
 			fprint( "err:观战battle address错误(%p)\n", pBattle );
 			break;
 		}
-		// 蝈够卞霜耨
+		// 全員に送信
 		for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 			charaindex = pBattle->Side[0].Entry[i].charaindex;
 			if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
@@ -642,7 +642,7 @@ BOOL BATTLE_MakeCharaString(
 
 	for( j = 0; j < 2; j ++ ){
 		if( j == 1 ){
-			iOffset = SIDE_OFFSET;	// 轾仇丹础扔奶玉及桦宁反皿仿旦允月
+			iOffset = SIDE_OFFSET;	// 向こう側サイドの場合はプラスする
 		}else{
 			iOffset = 0;
 		}
@@ -821,7 +821,7 @@ BOOL BATTLE_MakeCharaString(
 				petmaxhp
 			);
 			STRCPY_TAIL( pszTop, pszLast, szBuffer );
-			if( pszTop >= pszLast )return FALSE;// 译尹凶日撩  
+			if( pszTop >= pszLast )return FALSE;// 超えたら失  
 		}
 	}
 
@@ -845,7 +845,7 @@ void BATTLE_BpSendToWatch(
 		return;
 	}
 
-	// 蝈够卞霜耨
+	// 全員に送信
 	for( i = 0; i < BATTLE_ENTRY_MAX; i ++ ){
 		charaindex = pBattle->Side[0].Entry[i].charaindex;
 		if( CHAR_CHECKINDEX( charaindex ) == FALSE )continue;
@@ -855,8 +855,8 @@ void BATTLE_BpSendToWatch(
 			== BATTLE_CHARMODE_WATCHINIT){
 			flg |= BP_FLG_JOIN;	// 犍踐落萃
 		}
-		flg |= BP_FLG_PLAYER_MENU_OFF;	// 皿伊奶乩□丢瓦亘□请今卅中
-		// 皿伊奶乩□  寞霜月
+		flg |= BP_FLG_PLAYER_MENU_OFF;	// プレイヤーメニュー出さない
+		// プレイヤー  号送る
 		sprintf( szBp, "BP|%X|%X|%X", 20, flg, 0 );
 		BATTLE_CommandSend( charaindex, szBp );
 		// 蝈够隋骚树  霜月
@@ -1022,16 +1022,16 @@ void BattleEncountOut( int charaindex)
 
 //**************************************************
 //
-// 犯白巧伙玄及戊穴件玉毛  木月矢永玄迕
+// デフォ郊トのコマンドを  れるペット用
 //
 BOOL	BATTLE_PetDefaultCommand( int petindex )
 //
 //**************************************************
 {
 	if( CHAR_CHECKINDEX( petindex ) == FALSE )return FALSE;
-	// 锹澎及隙烂
+	// 相手の指定
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLECOM2, -1 );
-	// 骚橘  猾及隙烂
+	// 通常  撃の指定
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLECOM1, BATTLE_COM_ATTACK );
 	// 戊穴件玉OK及隙烂
 	CHAR_setWorkInt( petindex, CHAR_WORKBATTLEMODE, BATTLE_CHARMODE_C_OK );

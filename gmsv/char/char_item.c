@@ -555,7 +555,7 @@ void CHAR_moveEquipItem( int index, int fromindex, int toindex )
 #define		MOVEITEM_ITEMTOEQUIP	1 << 1
 #define		MOVEITEM_ITEMTOITEM		1 << 2
 
-	int     fromid;            /*  item    匹及奶件犯永弁旦    */
+	int     fromid;            /*  item    でのインデックス    */
 
 
 	unsigned int     moved_any = 0;
@@ -739,7 +739,7 @@ void CHAR_ItemUse( int charaindex, int to_charaindex, int haveitemindex )
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),       /* 失奶  丞  寞 */
+				ITEM_getInt( itemindex, ITEM_ID ),       /* アイ  ム  号 */
 #endif
 				"Use(使用道具)",
 				CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -836,7 +836,7 @@ BOOL CHAR_DropItemFXY( int charaindex, int itemcharaindex, int fl,
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),  /* 失奶  丞  寞 */
+				ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
 #endif
 				"Drop(丢出道具)",
 			   	CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -1058,7 +1058,7 @@ void CHAR_DropItem( int charaindex,  int itemcharaindex )
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-				ITEM_getInt( itemindex, ITEM_ID ),  /* 失奶  丞  寞 */
+				ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
 #endif
 				"Drop(丢出道具)",
 		   		CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -1748,7 +1748,7 @@ void CHAR_PickUpItem( int charaindex, int dir )
 		// Robin 0701 petFollow
 		case 3:
 
-			/*  引歹曰卞仇木毛壅六午中丹    */
+			/*  まわりにこれを消せという    */
 			CHAR_ObjectDelete(objindex);
 			CHAR_setWorkInt( contents, CHAR_WORKOBJINDEX, -1);
 			{
@@ -1802,18 +1802,18 @@ void CHAR_PickUpItem( int charaindex, int dir )
 }
 
 /*------------------------------------------------------------
- * 云嗯毛甄  隙烂匹  公丹午允月［CHAR_DropMoney井日及心匹银丹仪［
- * 娄醒
- *  charaindex  int     平乓仿奶件犯永弁旦
+ * 恭金を座  指定で  そうとする?CHAR_DropMoneyからのみで使う事?
+ * 引数
+ *  charaindex  int     キャラインデックス
  *  itemindex   int     失奶  丞奶件犯永弁旦(平乓仿犯□正及  匹及)
  *  fl          int     白夫失
  *  x           int     x
  *  y           int     y
- *  force       BOOL    仇及袄互恳分午    泫    允
+ *  force       BOOL    この値が正だと    矢    す
  *  objindex    int*      中凶失奶  丞及 Object 匹及奶件犯弁永旦
- * 忒曰袄
- *  撩  (公氏卅卞云嗯毛  匀化中卅中)    -1
- *  撩  (哗溥读卞分户)  -2
+ * 返り値
+ *  失  (そんなに恭金を  っていない)    -1
+ *  失  (地形的にだめ)  -2
  *  公木动陆及撩    -3
  *  撩  (公仇卞反公及汹及云嗯反聂允亢月)    -4
  *  允匹卞职及失奶  丞互  切化中月  -5
@@ -1887,12 +1887,12 @@ static BOOL CHAR_DropMoneyFXY( int charaindex, int amount, int fl , int x,
 
 		one.index = amount;
 		*objindex = initObjectOne( &one );
-		/*  左皮斥尼弁玄瓒  允月    */
+		/*  オブジェクト登  する    */
 		if( *objindex == -1 )
-			/*  瓒  撩      */
+			/*  登  失      */
 			return -3;
 
-		/*云嗯毛蛹日允*/
+		/*恭金を減らす*/
 		CHAR_setInt(charaindex,CHAR_GOLD,
 					(unsigned int)CHAR_getInt(charaindex,CHAR_GOLD )
 					- amount );
@@ -1915,13 +1915,13 @@ static BOOL CHAR_DropMoneyFXY( int charaindex, int amount, int fl , int x,
 }
 
 /*------------------------------------------------------------
- * 云嗯毛  允楮醒［  及蟆井日  允［
- * 娄醒
- *  charaindex      int     平乓仿奶件犯永弁旦
+ * 恭金を  す関数?  の前から  す?
+ * 引数
+ *  charaindex      int     キャラインデックス
  *  amount          int     云嗯及汹
  *
- * 忒曰袄
- *  卅仄
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void CHAR_DropMoney( int charaindex,  int amount )
 {

@@ -82,7 +82,7 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 
 	now[0] =0;
 	
-	/*--它奶件玉它正奶皿丢永本□斥互云云中及匹燮卞涩烂--*/
+	/*--ウインドウタイプメッセージがおおいので先に設定--*/
   	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 
 	switch( num) {

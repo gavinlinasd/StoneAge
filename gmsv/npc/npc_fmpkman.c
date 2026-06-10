@@ -39,7 +39,7 @@ BOOL NPC_FMPKManInit( int meindex )
 	}
 
 	/*--伐□皿互涩烂今木化中月井----*/
-	/*--伐□皿互涩烂今木化卅仃木壬NPC毛综日卅中仇午卞允月--*/
+	/*--ワープが設定されてなければNPCを作らないことにする--*/
 	if(NPC_Util_GetStrFromStrWithDelim( npcarg, "WARP", buf, sizeof( buf))==NULL){
 	        print("FMPKMan Err is %s",npcarg);
 		print("FMPKMan Err");
@@ -90,7 +90,7 @@ void NPC_FMPKManTalked( int meindex , int talkerindex , char *szMes ,int color )
 		if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	}
 
-	/*--伐□弁及赓渝祭--*/
+	/*--ワークの初期化--*/
 	CHAR_setWorkInt(talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 
 	/*-反元户及蓟      --*/
@@ -175,11 +175,11 @@ static void NPC_FMPKMan_selectWindow( int meindex, int toindex, int num,int sele
 	  	break;
 	}
 	
-	/*--巨旦弗□皿--*/
+	/*--エスケープ--*/
 	//makeEscapeString( token, escapedname, sizeof(escapedname));
 		
 		
-	/*--霜耨--*/
+	/*--送信--*/
 	lssproto_WN_send( fd, windowtype, 
 				buttontype, 
 				windowno,

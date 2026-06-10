@@ -37,7 +37,7 @@
   macintosh : \r
   匹允［
   公木午仇及皿夫弘仿丞分午仃勾及  侬元扎卅仁化手
-  荼垫壅允仃升中中氏匹允井
+  改行消すけどいいんですか
   -----------------------------------------*/
 void chompex( char *buf )
 {
@@ -52,9 +52,9 @@ void chompex( char *buf )
 
 
 /*----------------------------------------
- * 仃勾及1  侬毛潸曰轮仁
- * 娄醒
- *  src           凳允月  侬  
+ * けつの1  字を取り除く
+ * 引数
+ *  src           更する  字  
  ----------------------------------------*/
 void chop( char* src )
 {
@@ -69,7 +69,7 @@ void chop( char* src )
 
 /*----------------------------------------
  * 仃勾及  侬毛潸月［公及  侬毛  醒隙烂匹五月［
- * 娄醒
+ * 引数
  *  src     葭及  侬  
  *  delim   绰轮允月  侬及    ［    反NULL  侬匹蔽匀化中月仪
  ----------------------------------------*/
@@ -81,7 +81,7 @@ void dchop( char* src , char* del)
 
     /*
      * src及  欠井日譬屯化中仁［1  侬卞勾五 del 允屯化毛伙□皿仄化
-     * 域谯允木壬壅允［公仄化戚及  侬卞中仁［
+     * 一致すれば消す?そして鵜の  字にいく?
      */
 
     srclen = strlen( src );
@@ -95,14 +95,14 @@ void dchop( char* src , char* del)
         }
     }
 
-    /*  濠曰潸曰    */
+    /*  切り取り    */
     if( delete )src[srclen - 1] = '\0';
 }
 
 
 /*----------------------------------------
  * dchop及菅［  赓及  侬毛潸月［公及  侬毛  醒隙烂匹五月［
- * 娄醒
+ * 引数
  *  src     葭及  侬  
  *  delim   绰轮允月  侬及    ［    反NULL  侬匹蔽匀化中月仪
  ----------------------------------------*/
@@ -114,7 +114,7 @@ void pohcd( char* src , char* del)
 
     /*
      * src及蟆井日譬屯化中仁［1  侬卞勾五 del 允屯化毛伙□皿仄化
-     * 域谯允木壬壅允［公仄化戚及  侬卞中仁［
+     * 一致すれば消す?そして鵜の  字にいく?
      */
 
     srclen = strlen( src );
@@ -138,10 +138,10 @@ void pohcd( char* src , char* del)
 
 /*----------------------------------------
  *   侬  卞  侬互殖引木化中月井升丹井譬屯月［
- * 娄醒
- *  src     char*   譬屯月  侬  
+ * 引数
+ *  src     char*   調べる  字  
  *  include char*   殖引木化中月井升丹井及  侬  ［
- * 忒曰袄
+ * 返り値
  *  岳        赓卞殖引木化中凶src及桦赭
  *  撩      -1
  ----------------------------------------*/
@@ -163,16 +163,16 @@ int charInclude( char* src, char* include )
 
 
 /*------------------------------------------------------------
- * EUC及2田奶玄  分仃毛戊疋□仄卅中strncpy
+ * EUCの2バイト  だけをコピーしないstrncpy
  * freeBSD 及仿奶皮仿伉井日 strncpy 毛潸匀化五化｝
  * 公木毛手午卞荼瞻［*dest++ 午井银中凶中仃升｝瑛宁赐辆卞愤褥互
  * 卅中及匹｝银匀化中卅中［井歹曰卞    分仃升｝禾奶件正手银匀化化
- * 井卅曰  卅皿夫弘仿丞
- * 娄醒
- *  dest        char*   戊疋□燮
- *  src         char*   末□旦
+ * かなり  なプひグラム
+ * 引数
+ *  dest        char*   コピー先
+ *  src         char*   ソース
  *  n           size_t  赢今
- * 忒曰袄
+ * 返り値
  *  dest
  ------------------------------------------------------------*/
 char* strncpy2( char* dest, const char* src, size_t n )
@@ -183,7 +183,7 @@ char* strncpy2( char* dest, const char* src, size_t n )
         int i;
         for( i=0; i<n ; i++ ){
             if( *(s+i) == 0 ){
-                /*  戊疋□仄云歹匀凶日 NULL   侬毛  木月   */
+                /*  コピーし恭わったら NULL   字を  れる   */
                 *(d+i) = '\0';
                 return dest;
             }
@@ -204,18 +204,18 @@ char* strncpy2( char* dest, const char* src, size_t n )
 
 /*----------------------------------------
  * src 井日 dest 卞戊疋□允月［ 戊疋□燮及扔奶术毛譬屯月［
- * 娄醒
- *      dest        戊疋□燮
+ * 引数
+ *      dest        コピー先
  *      n           飯通宝
  *      src         葭及  侬  
  ----------------------------------------*/
 void strcpysafe( char* dest ,size_t n ,const char* src )
 {
     /*
-     * src 井日 dest 尺戊疋□允月.
+     * src から dest へコピーする.
      * strcpy, strncpy 匹反 dest 方曰 戊疋□允月汹互
      *   五中凛卞裟少午,丢乒伉陆失弁本旦互粟月.
-     * 仇木毛  什啃卞, strncpy 互丐月互 strlen( src ) 互 n 方曰
+     * これを  ぐ為に, strncpy があるが strlen( src ) が n より
      *   五中凛卞反, dest 及    互 NULL   侬午反卅日卅中.
      *
      * 仄凶互匀化 dest 及  五今方曰 src 及幻丹互赢中凛卞反
@@ -233,11 +233,11 @@ void strcpysafe( char* dest ,size_t n ,const char* src )
         return;
 
     /*  仇及凛鳔匹｝ n >= 1 动晓互瑁烂  */
-    /*  NULL  侬毛哔  仄化  胜允月  */
+    /*  NULL  字を考  して  較する  */
     else if( n < strlen( src ) + 1 ){
         /*
-         * 田永白央互箫曰卅中及匹 n - 1(NULL  侬)
-         * 匹 strncpy 毛裟少
+         * バッファが足りないので n - 1(NULL  字)
+         * で strncpy を呼ぶ
          */
         strncpy2( dest , src , n-1 );
         dest[n-1]='\0';
@@ -248,17 +248,17 @@ void strcpysafe( char* dest ,size_t n ,const char* src )
 
 /*----------------------------------------
  * src 井日 length 掏允［   戊疋□燮及  五今毛譬屯月［
- * 娄醒
- *          dest        戊疋□燮
+ * 引数
+ *          dest        コピー先
  *          n           隷驍＆枡式飯通宝
- *          src         戊疋□葭
- *          length      窒  侬戊疋□允月井
+ *          src         コピー元
+ *          length      何  字コピーするか
  ----------------------------------------*/
 void strncpysafe( char* dest , const size_t n ,
                   const char* src ,const int length )
 {
     /*
-     * src 井日 dest 卞 length 戊疋□允月
+     * src から dest に length コピーする
      * strcpy, strncpy 匹反 dest 方曰 戊疋□允月汹互
      *   五中凛卞裟少午,丢乒伉陆失弁本旦互粟月.
      * 仇及楮醒匹反｝strlen( src ) 午 length 及凝今中幻丹
@@ -272,8 +272,8 @@ void strncpysafe( char* dest , const size_t n ,
     /* NULL  侬 毛哔  仄凶  胜 */
     if( n < Short + 1 ){
         /*
-         * 田永白央互箫曰卅中及匹 n - 1(NULL  侬)
-         * 匹 strncpy 毛裟少
+         * バッファが足りないので n - 1(NULL  字)
+         * で strncpy を呼ぶ
          */
         strncpy2( dest , src , n-1 );
         dest[n-1]='\0';
@@ -295,12 +295,12 @@ void strncpysafe( char* dest , const size_t n ,
 
 /*------------------------------------------------------------
  * strcat毛兜蝈卞  蜇允月［赞中及匹｝    卅桦宁毛轮中化银歹卅中仪［
- * 娄醒
- *  src     char*       葭卞卅月  侬  
+ * 引数
+ *  src     char*       元になる  字  
  *  size    int         src 及扔奶术(   欠卞升木分仃酸匀化中月井匹反
- *                          卅仁化田永白央蝈   )
- *  ap      char*       尥仃笛尹月  
- * 忒曰袄
+ *                          なくてバッファ全   )
+ *  ap      char*       付け加える  
+ * 返り値
  *  src     (  直災綯)
  ------------------------------------------------------------*/
 char* strcatsafe( char* src, int size, char* ap )
@@ -310,11 +310,11 @@ char* strcatsafe( char* src, int size, char* ap )
 }
 
 /*----------------------------------------
- *   侬  及    毛  胜允月［  元井升丹井仄井  烂仄卅中 by ringo
- * char *s1 , *s2 :   胜允月  侬  
- * 忒曰袄
- * 0 “ 云卅元
- * 1 : 仇午卅月
+ *   字  の    を  較する?  じかどうかしか  定しない by ringo
+ * char *s1 , *s2 :   較する  字  
+ * 返り値
+ * 0 ： 恭なじ
+ * 1 : ことなる
  * 仇木反NPC及  平旦玄荸  卞支仁分勾［
  ----------------------------------------*/
 int strcmptail( char *s1 , char *s2 )
@@ -338,9 +338,9 @@ int strcmptail( char *s1 , char *s2 )
  * NPC及  平旦玄荸  卞支仁分勾［
  * 凶分仄    卞中日氏  侬互丐月桦宁  骰允月［
  * 耨痊互  切卅中失伙打伉术丞卞  凳［
- * 娄醒
- *  hoge    char*   荸  允月  侬  
- * 忒曰袄
+ * 引数
+ *  hoge    char*   解  する  字  
+ * 返り値
  *  荸  仄凶帮醒［
  *
  *   ＾
@@ -364,12 +364,12 @@ char *UTIL_specialchar[SPECIALCHARNUM] = {"",""};
  *
  *    : in "这本书七万册300美金吗？"
  *      out "7万"
- * 娄醒
+ * 引数
  * char *in:      ٯ  
  * char *out:请    侬  
  * int outsiz:请    侬  及田永白央扔奶术
- * 忒曰袄
- * 醒袄毛  允  坌互丐匀凶日公及  侬  及赢今｝卅井匀凶日ㄟ
+ * 返り値
+ * 数値を  す  分があったらその  字  の長さ�bなかったら０
  */
 static int findNumberString( char *in, char *out, int outsiz )
 {
@@ -460,7 +460,7 @@ int textToInt( char *str )
 }
 
 /*
- * 醒袄毛  允  侬  互｝    贿挚卅及井壑钗挚卅及井毛    
+ * 数値を  す  字  が�b    語式なのか世界式なのかを    
  * 娄醒     允月  侬  ［醒侬毛  允  侬  动陆反殖氏匹反中仃卅中［
  * 忒曰袄     贿挚卅日ㄠ｝壑钗挚卅日ㄟ
  *    str 互"一亿四千万。"及午五｛忒曰袄1
@@ -500,7 +500,7 @@ int numstrIsKanji( char *str )
 /*
  * 蜗褡芊匹醒袄毛  仄凶  侬  毛int卞  晶
  * char *str   ٯ  
- * 忒曰袄   侬  互  允醒袄
+ * 返り値   字  が  す数値
  */
 int decimalstrToInt( char *str )
 {
@@ -535,8 +535,8 @@ int decimalstrToInt( char *str )
 
 /*
  *     挚匹  仄凶醒袄毛帮醒卞  晶
- * char *str 醒袄毛  允  侬  
- * 忒曰袄 醒袄
+ * char *str 数値を  す  字  
+ * 返り値 数値
  *   
  * str互"一亿4千万？"及午五忒曰袄 140000000
  */
@@ -606,9 +606,9 @@ nextchar:
  * NPC及  平旦玄荸  卞支仁分勾［
  * 凶分仄    卞中日氏  侬互丐月桦宁  骰允月［
  * 耨痊互  切卅中失伙打伉术丞卞  凳［
- * 娄醒
- *  hoge    char*   荸  允月  侬  
- * 忒曰袄
+ * 引数
+ *  hoge    char*   解  する  字  
+ * 返り値
  *  荸  仄凶帮醒［
  *
  *   ＾
@@ -626,7 +626,7 @@ int texttoiTail( char *hoge)
     int len = strlen(hoge);
 
     if( len == 0 )return atoi(hoge);
-    /*    井日茧仄化  赓卞醒侬毛苇勾仃月    */
+    /*    から探して  初に数字を見つける    */
     while(--len && len >= 0){
         if( isdigit(hoge[len]) )
             break;
@@ -653,14 +653,14 @@ int texttoiTail( char *hoge)
 }
 
 /*----------------------------------------
- *   侬  毛醒侬井升丹井民尼永弁仄化｝醒侬分匀凶日
- *  娄醒卞  木化忒允
- * 娄醒
+ *   字  を数字かどうかチェックして�b数字だったら
+ *  引数に  れて返す
+ * 引数
  *      arg               晶葭
  *      number            晶  毛医  允月赭
- *      base            湘醒
+ *      base            基数
  *      type            娄醒及滇( CTYPE 反 common.h 卞烛蜕今木化中月 )
- * 忒曰袄
+ * 返り値
  *      TRUE(1)    岳  
  *      FALSE(0)   strtol互敦僬卞反岳  仄卅井匀凶
  *                  仇及凛及number反strtol及忒曰袄匹丐月
@@ -705,26 +705,26 @@ BOOL strtolchecknum( char* arg , void* number,int base ,CTYPE type)
 
 /*----------------------------------------
  * src 井日 dels 匹隙烂仄凶  侬毛潸曰轮仁
- * 田永弁旦仿永扑亘反巨旦弗□皿匹丐月仪卞镗啦［
- * 勾引曰田永弁旦仿永扑亘反绰轮匹五卅中［
- * 娄醒
+ * バックスラッ竺ュはエスケープである事に注意?
+ * つまりバックスラッ竺ュは削除できない?
+ * 引数
  *  src      凳今木月  侬  
- *  char*  绰轮允月  侬(  侬  匹隙烂第)
- * 忒曰袄
- *  卅仄
+ *  char*  削除する  字(  字  で指定可)
+ * 返り値
+ *  なし
  ----------------------------------------*/
 void deleteCharFromString( char* src , char* dels )
 {
     int index=0;    /* 匹五丐互曰及  侬  匹及 index */
     int delength;   /* dels 及赢今毛涩烂允月(剂仄反簧蘸失永皿及啃 */
-    int i=0,j;/* i 反 src 毛伙□皿允月  醒 j 反 dels 毛伙□皿允月  醒 */
+    int i=0,j;/* i は src を郊ープする  数 j は dels を郊ープする  数 */
 
     delength= strlen( dels );
 
     while( src[i] != '\0' ){
         if( src[i] == BACKSLASH  )
             /*
-             * 田永弁旦仿永扑亘卅及匹巨旦弗□皿允月
+             * バックスラッ竺ュなのでエスケープする
              * 勾引曰戚及  侬反  椭瘀卞啖  允月
              */
             src[index++] = src[++i];         /* substitute next char */
@@ -753,18 +753,18 @@ void deleteCharFromString( char* src , char* dels )
 
 /*----------------------------------------
  * src 井日 dels 匹隙烂仄凶  侬毛潸曰轮仁
- * 巨旦弗□皿反卅中
- * 娄醒
+ * エスケープはない
+ * 引数
  *  src      凳今木月  侬  
- *  char*  绰轮允月  侬(  侬  匹隙烂第)
- * 忒曰袄
- *  卅仄
+ *  char*  削除する  字(  字  で指定可)
+ * 返り値
+ *  なし
  ----------------------------------------*/
 void deleteCharFromStringNoEscape( char* src , char* dels )
 {
     int index=0;    /* 匹五丐互曰及  侬  匹及 index */
     int delength;   /* dels 及赢今毛涩烂允月(剂仄反簧蘸失永皿及啃 */
-    int i=0,j;/* i 反 src 毛伙□皿允月  醒 j 反 dels 毛伙□皿允月  醒 */
+    int i=0,j;/* i は src を郊ープする  数 j は dels を郊ープする  数 */
 
     delength= strlen( dels );
 
@@ -789,11 +789,11 @@ void deleteCharFromStringNoEscape( char* src , char* dels )
 
 /*------------------------------------------------------------
  * 隙烂今木凶  侬毛隙烂今木凶  侬匹  五井尹月
- * 娄醒
+ * 引数
  *  src     char*         凳今木月  侬  
  *  oldc    char          凳今木月  侬
- *  newc    char          凳允月  侬
- * 忒曰袄
+ *  newc    char          更する  字
+ * 返り値
  *  src
  ------------------------------------------------------------*/
 char*   replaceString( char* src, char oldc ,char newc )
@@ -836,10 +836,10 @@ char makeCharFromEscaped( char c )//add this function,because the second had it
 }
 /*----------------------------------------
  * makeEscapeString匹综岳今木凶  侬  毛葭卞  允
- * 娄醒
+ * 引数
  *  src             char*       葭卞卅月  侬  ［仇木互踏五赘月［
- * 忒曰袄
- *  src    毛忒允［(楮醒毛  木仇卞仄支允中方丹卞)
+ * 返り値
+ *  src    を返す?(関数を  れこにしやすいように)
  ----------------------------------------*/
 char   *makeStringFromEscaped( char* src )
 {//ttom this function all change,beside copy from the second
@@ -863,7 +863,7 @@ char   *makeStringFromEscaped( char* src )
     }else
             if( src[i] == '\\' )
             {	
-                // 戚及  侬卞垫仁
+                // 鵜の  字に行く
                 i++;
                 src[searchindex++] = makeCharFromEscaped( src[i] );
             }
@@ -933,9 +933,9 @@ char * ScanOneByte( char *src, char delim ){
 	// Nuke
 	if (!src) return NULL;
 
-        //   侬  互卅仁卅月引匹腹绸
+        //   字  がなくなるまで検索
         for( ;src[0] != '\0'; src ++ ){
-             // 蝈剩及ㄠ田奶玄  井升丹井毛民尼永弁
+             // 全角の１バイト  かどうかをチェック
           if( IS_2BYTEWORD( src[0] ) ){
               // 蝈剩分［公及桦宁反ㄠ田奶玄芴坌卞褡引六月［
               // 凶分仄ㄠ田奶玄仄井卅中桦宁反公丹仄卅中
@@ -959,15 +959,15 @@ char * ScanOneByte( char *src, char delim ){
  * delim 匹隙烂今木凶  侬  毛嗉濠曰  侬午仄化
  * index     及  毛  月［index反1匹反元引月［
  *   侬  酷  ［
- * 娄醒
+ * 引数
  *  src     葭及  侬  
  *  delim   犯伉立正午卅月  侬  ［    反NULL  侬匹蔽匀化中月仪
  *  index   窒    及  毛潸月井
- *  buf     瑛绊  侬  毛伞  允月桦赭尺及禾奶件正□
+ *  buf     結果  字  を格  する場所へのポインター
  *  buflen  瑛绊  侬  毛伞  允月桦赭及扔奶术
- * 忒曰袄
- *  丐匀凶日 TRUE(1);
- *  卅井匀凶日 FALSE(0);
+ * 返り値
+ *  あったら TRUE(1);
+ *  なかったら FALSE(0);
  *  ex
  *      getStringFromIndexWithDelim( "aho=hoge","=",1,buf,sizeof(buf) );
  *      buf ... aho
@@ -977,29 +977,29 @@ char * ScanOneByte( char *src, char delim ){
  *      仇木手  户日木月［
  *
  *      getStringFromIndexWithDelim( "aho=hoge","=",3,buf,sizeof(buf) );
- *      忒曰袄 FALSE
+ *      返り値 FALSE
  ----------------------------------------*/
 BOOL getStringFromIndexWithDelim_body( char* src ,char* delim ,int index,
                                  char* buf , int buflen ,
                                        char *file, int line )
 {//ttom this function all change,copy from the second
-    int i;          /* 伙□皿  醒 */
+    int i;          /* 郊ープ  数 */
     int length =0;  /* 潸曰请仄凶  侬  及赢今 */
     int addlen=0;   /* 箫今木月赢今 */
-    int oneByteMode = 0; /* ㄠ田奶玄乒□玉井＂ */
+    int oneByteMode = 0; /* １バイトモードか? */
 
-    if( strlen( delim ) == 1 ){ // 腹绸互ㄠ田奶玄卅日ㄠ田奶玄乒□玉卞允月
-        oneByteMode = 1;// 公及端ㄡ田奶玄  侬反民尼永弁仄卅中
+    if( strlen( delim ) == 1 ){ // 検索が１バイトなら１バイトモードにする
+        oneByteMode = 1;// その際２バイト  字はチェックしない
     }
     for( i =  0 ; i < index ; i ++ ){
          char* last;
          src += addlen;/* 心勾井匀凶赢今毛箫允 */
       
          if( oneByteMode ){
-             // ㄠ田奶玄乒□玉分匀凶日仇切日匹腹绸
+             // １バイトモードだったらこちらで検索
              last = ScanOneByte( src, delim[0] );
          }else{
-                 last  = strstr( src , delim );  /* 苇尥仃月 */
+                 last  = strstr( src , delim );  /* 見付ける */
          }
          if( last == NULL ){
             /*
@@ -1035,14 +1035,14 @@ BOOL getStringFromIndexWithDelim_body( char* src ,char* delim ,int index,
 /*------------------------------------------------------------
  *   侬   "a,b,c,d" 毛娄醒卞医  允月［犯白巧伙玄反 0 卞允月［
  * 井卅曰及  溃楮醒［蜇箕反切斤匀午赞中［
- * 娄醒
+ * 引数
  *  src         char*   葭及  侬  
  *  int1        int*    int及禾奶件正［(a毛医  允月)
  *  int2        int*    int及禾奶件正［(b毛医  允月)
  *  int3        int*    int及禾奶件正［(c毛医  允月)
  *  int4        int*    int及禾奶件正［(d毛医  允月)
- * 忒曰袄
- *  卅仄
+ * 返り値
+ *  なし
  ------------------------------------------------------------*/
 void getFourIntsFromString(char* src,int* int1,int* int2,int* int3,
                            int* int4)
@@ -1072,32 +1072,32 @@ void getFourIntsFromString(char* src,int* int1,int* int2,int* int3,
 /*----------------------------------------------
  * src 及  匹dels匹隙烂仄凶  侬互  粮仄化中凶日
  * 1勾卞引午户月［
- * 田永弁旦仿永扑亘反巨旦弗□皿扑□弗件旦午卅月［
+ * バックスラッ竺ュはエスケープ竺ーケンスとなる?
  * 仄凶互匀化  粮仄凶田永弁旦仿永扑亘毛壅允仪反匹五卅中［
- * 娄醒
- *  src      祭允月  侬  
- *  dels   壅允  侬(  侬  匹隙烂第)
- * 忒曰袄
- *  卅仄
+ * 引数
+ *  src      化する  字  
+ *  dels   消す  字(  字  で指定可)
+ * 返り値
+ *  なし
  ---------------------------------------------*/
 void deleteSequentChar( char* src , char* dels )
 {
     int length;         /* src 及赢今 */
     int delength;       /* dels 及赢今 */
-    int i,j;            /* 伙□皿  醒 */
-    int index=0;        /* 割烂  侬  及 index */
-    char backchar='\0';   /* 绰轮允月  侬 */
+    int i,j;            /* 郊ープ  数 */
+    int index=0;        /* 確定  字  の index */
+    char backchar='\0';   /* 削除する  字 */
 
     length = strlen( src );
     delength = strlen( dels );
 
     /*
-     * 伙□皿允月仍午卞戊疋□允月
+     * 郊ープするごとにコピーする
      */
     for( i = 0 ; i < length ; i ++ ){
         if( src[i] == BACKSLASH ){
             /*
-             * 田永弁旦仿永扑亘分匀凶日
+             * バックスラッ竺ュだったら
              * 雄孺读卞  勾( BACKSLASH愤褥午｝戚及  侬 )
              * 褡户月
              */
@@ -1119,7 +1119,7 @@ void deleteSequentChar( char* src , char* dels )
 
         /*
          *   粮及绰轮允月  侬互卅仁卅匀凶及匹 backchar 反 NULL   侬卞允月
-         * 仇木互井氏元氏
+         * これがかんじん
          */
         backchar = '\0';
         for( j = 0 ; j < delength ; j ++ ){
@@ -1138,12 +1138,12 @@ void deleteSequentChar( char* src , char* dels )
 }
 
 /*----------------------------------------
- * hash袄毛忒允［  侬  卞及心银丹仇午
+ * hash値を返す?  字  にのみ使うこと
  * 仇木反  公及引引卅及匹失伙打伉术丞反方丹歹井日氏互
  * 中中失伙打伉术丞日仄中［
- * 娄醒
+ * 引数
  *  s     ٯ  
- * 忒曰袄
+ * 返り値
  *  int 辿蚗で堥偯
  *----------------------------------------*/
 #define PRIME 211
@@ -1163,18 +1163,18 @@ int hashpjw ( char* s )
 
 /*----------------------------------------
  * 夫□市伙卞田奶件玉仄凶末弗永玄毛忒允( TCP )
- * 娄醒
+ * 引数
  *          port        夫□市伙禾□玄
- * 忒曰袄
- *          -1      巨仿□
- *                      1. socket扑旦  丞戊□伙及巨仿□
- *                      2. bind扑旦  丞戊□伙及巨仿□
- *                      3. listen扑旦  丞戊□伙及巨仿□
+ * 返り値
+ *          -1      エラー
+ *                      1. socket竺ス  ムコー郊のエラー
+ *                      2. bind竺ス  ムコー郊のエラー
+ *                      3. listen竺ス  ムコー郊のエラー
  ----------------------------------------*/
 int bindlocalhost( int port )
 {
     struct sockaddr_in sin;         /*夫□市伙失玉伊旦迕*/
-    int sfd;                        /*末弗永玄犯奴旦弁伉皿正*/
+    int sfd;                        /*ソケットディスクリプタ*/
     int rc;                         /*夫□市伙伉正□件戊□玉*/
 
     /*AF_INET皿夫玄戊伙 及 SOCK_STREAM */
@@ -1216,16 +1216,16 @@ int bindlocalhost( int port )
 
 /*----------------------------------------
  * 戊生弁玄允月［( TCP )
- * 娄醒
+ * 引数
  *      hostname    涛粮允月石旦玄  
  *                      (xx.xxx.xxx.xxx匹手中中仄xxx.co.jp午井匹手中中)
  *      port        涛粮允月石旦玄及禾□玄  
- * 忒曰袄
- *      犯奴旦弁伉皿正( -1 及凛反巨仿□ )
+ * 返り値
+ *      ディスクリプタ( -1 の時はエラー )
  ----------------------------------------*/
 int connectHost( char* hostname , unsigned short port )
 {
-    struct sockaddr_in sock;        /*connect及凛卞银丹*/
+    struct sockaddr_in sock;        /*connectの時に使う*/
     struct hostent* hoste;          /*hostname及hostent*/
     int     fd;                     /*戊生弁玄仄凶末弗永玄犯奴旦弁伉皿正*/
     int     lr;                     /*夫□市伙伉正□件戊□玉*/
@@ -1234,7 +1234,7 @@ int connectHost( char* hostname , unsigned short port )
     sock.sin_family = AF_INET;
     sock.sin_port = htons( port );
 
-    /* dot notation 井升丹井毛譬屯月 */
+    /* dot notation かどうかを調べる */
     sock.sin_addr.s_addr = inet_addr( hostname );
     if( sock.sin_addr.s_addr == -1 ){
         /*
@@ -1251,7 +1251,7 @@ int connectHost( char* hostname , unsigned short port )
                hoste->h_addr , sizeof(struct in_addr) );
     }
 
-    /*末弗永玄毛综月*/
+    /*ソケットを作る*/
     fd = socket( AF_INET, SOCK_STREAM , 0 );
     if( fd == -1 ){
         print("Cannot Create Socket(%s errno:%d)\n"
@@ -1271,11 +1271,11 @@ int connectHost( char* hostname , unsigned short port )
 
 
 /*----------------------------------------
- * 田永白央及  卞荼垫筏寞互丐月井升丹井［
+ * バッファの  に改行記号があるかどうか?
  * 剂仄镀中失伙打伉术丞卞  凳［
- * 娄醒
- *  char*   譬屯月  侬  
- * 忒曰袄
+ * 引数
+ *  char*   調べる  字  
+ * 返り値
  *    赓卞苇勾井凶荼垫筏寞及匏       失弁本旦仄凶凛卞中中袄［
  *  升丹中丹仪井午中丹午｝
  *      existsNewLinwCharacter( "aho\nhoge\n" )
@@ -1291,7 +1291,7 @@ int existsNewLineCharacter( char* line )
         if( *line == NEWLINE)return line-old;
     }while( *(line++) );
 #else
-    int i;                          /*伙□皿  醒*/
+    int i;                          /*郊ープ  数*/
     int length = strlen( line );    /*譬屯月  侬  及赢今*/
     for( i = 0 ; i < length ; i ++ ){
         if( line[i] == NEWLINE )
@@ -1305,21 +1305,21 @@ int existsNewLineCharacter( char* line )
 
 
 /*----------------------------------------
- *    侬    卞  侬互  歹木月桦赭毛井尹允［窒    井毛瑁户木月［
+ *    字    に  字が  われる場所をかえす?何    かを決めれる?
  *  nindex( string , c , 1 ) 午 index( string , c ) 反 equivalent 匹丐月［
  *  number互  引凶反0及凛反忒曰袄反｝string午  元匹丐月［
  *
- *  娄醒
- *      string  char*   譬屯月  侬  
- *      c       int     譬屯月  侬
+ *  引数
+ *      string  char*   調べる  字  
+ *      c       int     調べる  字
  *      number  int       歹月  寞
- *  忒曰袄
+ *  返り値
  *      域谯仄凶  侬及禾奶件正□
  *      NULL    心勾井日卅井匀凶［
  ----------------------------------------*/
 char* nindex( char* string, int c , int number )
 {
-    int i;                          /*伙□皿  醒*/
+    int i;                          /*郊ープ  数*/
     int num=0;
     int length = strlen( string );  /*譬屯月  侬  及赢今*/
     if( number <= 0 )return string;
@@ -1477,8 +1477,8 @@ void easyGetTokenFromString( char *src,int count,char*output,int len )
 }
 
 /*------------------------------------------------------------
- * 瞬滇匹  坌鳔毛手午户月［ by ringo
- * 蔷及啖  迕
+ * 線型で  分点をもとめる? by ringo
+ * 船の移  用
  *
  * double val1 , val2 : 仇及袄及丐中分毛午月
  * double d :   坌  
@@ -1516,9 +1516,9 @@ void makeRandomString( char *cand , char *out , int len )
 
 /*------------------------------------------------------------
  * 娄醒卞隙烂今木凶白央奶伙互白央奶伙井升丹毛譬屯月
- * 娄醒
+ * 引数
  *  filename        char*        易刹通誌  
- * 忒曰袄
+ * 返り値
  *  易刹通誌        TRUE(1)
  *  白央奶伙匹卅中  FALSE(0)
  ------------------------------------------------------------*/
@@ -1535,9 +1535,9 @@ BOOL isExistFile( char* filename )
 }
 /*------------------------------------------------------------
  * 10褡  62褡  晶
- * 娄醒
- * a        int     葭及ㄠㄟ褡
- * out      char *  伞  田永白央□
+ * 引数
+ * a        int     元の１０進
+ * out      char *  格  バッファー
  * outlen   int     伞  田永白央及  五今
  *   曰袄
  *          岳      out及失玉伊旦
@@ -1624,14 +1624,14 @@ char *cnv10to62( int a, char *out, int outlen )
 }
 /* 
  * 芨尹日木凶    及  匹］醒袄互褐  仄化中月井譬屯月楮醒
- * -1 反覆擂陆午中丹  卅楮醒
+ * -1 は対象外という  な関数
  *
- * 娄醒
+ * 引数
  * src		*int		譬屯月葭及    
  * srclen	int			src 及  五今
  *
- *   曰袄   褐  丐曰	TRUE
- *				卅仄	FALSE
+ *   り値   重  あり	TRUE
+ *				なし	FALSE
  */
 BOOL checkRedundancy( int *src, int srclen)
 {
@@ -1666,7 +1666,7 @@ shuffle_ints( int num, int *a, int t )
 }
 
 
-static unsigned char BitTable[] =	/*	申永玄及岈太赐毛菅卞允月  □皮伙	*/
+static unsigned char BitTable[] =	/*	ビットの並び順を逆にする  ーブ郊	*/
 {
 		0x00 , 0x80 , 0x40 , 0xC0 , 0x20 , 0xA0 , 0x60 , 0xE0 , 
 		0x10 , 0x90 , 0x50 , 0xD0 , 0x30 , 0xB0 , 0x70 , 0xF0 , 

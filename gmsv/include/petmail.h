@@ -2,14 +2,14 @@
 #define __PETMAIL_H__
 #include "version.h"
 /*
- * 矢永玄楮  及涩烂匹允［
+ * ペット関  の設定です?
  */
 #define PETMAIL_OFFMSG_MAX          10000
 #define PETMAIL_OFFMSG_TIMEOUT      ( 3 * 24 * 3600 )
 #define PETMAIL_CHECK_OFFMSG_EXPIRE_INTERVAL  3600
 #define PETMAIL_OFFMSG_TEXTLEN 512
 
-/* 矢永玄丢□伙及请蜇躲绊及醒［  端及醒方曰ㄠ剂卅仁允月仇午 */
+/* ペットメー郊の出現効果の数?  際の数より１少なくすること */
 #define		 PETMAIL_EFFECTMAX	1			
 
 #define		PETMAIL_SPOOLFLOOR		777
@@ -26,9 +26,9 @@ typedef struct
     time_t send_tm;     /* 交□扒互丢永本□斥毛霜耨仄凶凛棉+TIMEOUT［ */
     int color;							/*   平旦玄及缙 */
     char text[PETMAIL_OFFMSG_TEXTLEN];     /*   平旦玄及     */
-    char destcd[CDKEYLEN];				/* 霜耨燮CDKEY */
+    char destcd[CDKEYLEN];				/* 送信先CDKEY */
     char destcharname[CHARNAMELEN];		/* 霜耨燮及平乓仿   */
-    char srccd[CDKEYLEN];				/* 霜耨葭及cdkey */
+    char srccd[CDKEYLEN];				/* 送信元のcdkey */
     char srccharname[CHARNAMELEN];		/* 霜耨葭及平乓仿   */
 	
 } PETMAIL_offmsg;

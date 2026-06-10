@@ -592,7 +592,7 @@ BOOL NPC_SetNewItem(int meindex,int talker,char *data)
 	}
 
 	/*--忒匀化  凶蜊醒及  互  端及蜊醒  扔□田础  方曰聂中午云井仄中及匹--*/
-	/*--扔□田□础及  毛  木月--*/
+	/*--サーバー側の  を  れる--*/
 	if( kosuucnt < kosuu) kosuu = kosuucnt;
 		
 	/*--未夫及桦宁反巨仿□--*/
@@ -606,7 +606,7 @@ BOOL NPC_SetNewItem(int meindex,int talker,char *data)
    	return FALSE;
 	}
 
-	/*---伊□玄毛潸    卅仃木壬1.0)-*/
+	/*---レートを取    なければ1.0)-*/
 	if(NPC_Util_GetStrFromStrWithDelim( argstr, "buy_rate", buf, sizeof( buf)) != NULL) {
 		rate= atof( buf);
 	}
@@ -635,7 +635,7 @@ BOOL NPC_SetNewItem(int meindex,int talker,char *data)
 				if( ITEM_getcostFromITEMtabl(atoi(buff2)) !=-1) {
 					if ( i == select) {
 						/*---失奶  丞及综岳---*/
-						/*--蜊醒坌综岳--*/
+						/*--個数分作成--*/
 #ifdef _NEW_MANOR_LAW
 						if(NPC_AddItemBuy(meindex, talker,atoi(buff2),kosuu,rate,iCostFame,iChangeItemCost) != TRUE)
 #else
@@ -672,7 +672,7 @@ BOOL NPC_SetNewItem(int meindex,int talker,char *data)
 					if( ITEM_getcostFromITEMtabl( start) != -1) {
 						if ( i == select) {
 							/*---失奶  丞及综岳---*/
-							/*--蜊醒坌综岳--*/
+							/*--個数分作成--*/
 #ifdef _NEW_MANOR_LAW
 							if(NPC_AddItemBuy(meindex, talker, start, kosuu, rate,iCostFame,iChangeItemCost) != TRUE)
 #else
