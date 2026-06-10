@@ -1,5 +1,5 @@
 NPCCREATE
-#æŸ¥ç½•æ—çš„æ—é•¿
+#²éº±×åµÄ×å³¤
 {
 floorid=10007
 borncenter=31,24,1,1
@@ -8,24 +8,24 @@ createnum=1
 time=200000
 dir=4
 graphicname=16001
-name=æŸ¥ç½•æ—çš„æ—é•¿
+name=²éº±×åµÄ×å³¤
 enemy=windowman|conff:sainasu/event/e_01.conf
 }
 
-#æŸ¥ç½•æ—çš„ç¥­å¸
+#²éº±×åµÄ¼ÀË¾
 {
 floorid=10007
 borncorner=26,23,26,23
 time=0
 createnum=1
 graphicname=16170
-name=æŸ¥ç½•æ—çš„ç¥­å¸
+name=²éº±×åµÄ¼ÀË¾
 dir=4
 ignoreinvincible=1
 enemy=changeevent|file:sainasu/event/tiger_water.arg
 }
 
-#è¿·å¹»æ´çªŸçš„ç ”ç©¶è€…
+#ÃÔ»Ã¶´¿ßµÄÑĞ¾¿Õß
 {
 floorid=10408
 borncenter=34,24,1,1
@@ -34,7 +34,7 @@ createnum=1
 time=200000
 dir=5
 graphicname=16044
-name=ç ”ç©¶è€…
+name=ÑĞ¾¿Õß
 enemy=windowman|conff:sainasu/event/e_02.conf
 }
 

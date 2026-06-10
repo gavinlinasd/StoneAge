@@ -30,7 +30,7 @@ BOOL NPC_HealerInit( int meindex )
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEHEALER );
     //  猾匹五卅中    邰卅中井手  
     CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );
-    //上に乗れない
+    //上面不能骑乘
 //    CHAR_setFlg( meindex , CHAR_ISOVERED , 0 );
 
 	return TRUE;
@@ -140,7 +140,7 @@ void NPC_HealerAllHeal( int talker )
 		CHAR_sendStatusString( talker , petsend );
 	}
 	
-	/*---仲間がいれば仲間にも送信--*/
+	/*---有队友的话也发给队友--*/
 	if(CHAR_getWorkInt( talker, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE )
 	{
 		int	topartyarray = -1;

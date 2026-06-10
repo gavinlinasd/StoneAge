@@ -1,5 +1,5 @@
 NPCCREATE
-#å® ç‰©ç«é€Ÿä¸»æŒäºº
+#³èÎï¾ºËÙÖ÷³ÖÈË
 {
 floorid=7005
 borncenter=25,33,1,1
@@ -7,6 +7,6 @@ movecenter=25,33,1,1
 createnum=1
 dir=0
 graphicname=100140
-name=å® ç‰©ç«é€Ÿåœºä¸»æŒäºº
+name=³èÎï¾ºËÙ³¡Ö÷³ÖÈË
 enemy=petracemaster|
 }

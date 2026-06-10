@@ -2,7 +2,7 @@
 
 static Char    player=
 {
-    FALSE,      /*  use     どうでもいい*/
+    FALSE,      /*  use     无所谓*/
     {
 		0,		/*  CHAR_DATAPLACENUMBER */
         0,      /*  CHAR_BASEIMAGENUMBER */
@@ -11,7 +11,7 @@ static Char    player=
         0,      /*  CHAR_FLOOR  */
         0,      /*  CHAR_X */
         0,      /*  CHAR_Y  */
-        5,      /*  CHAR_DIR 12時を0に時計周りに */
+        5,      /*  CHAR_DIR 12点钟方向为0,顺时针方向 */
         1,      /*  CHAR_LV  */
         0,      /*  CHAR_GOLD    */
         1,      /*  CHAR_HP  */

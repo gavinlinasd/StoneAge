@@ -1,39 +1,39 @@
 NPCCREATE
 
-#é—¨å«å·¦
+#ÃÅÎÀ×ó
 {
 floorid=2000
 borncenter=54,50
 time=0
 createnum=1
 graphicname=16957
-name=ä¼šå‘˜è¯è®¤è¯å‘˜
+name=»áÔ±Ö¤ÈÏÖ¤Ô±
 dir=6
 ignoreinvincible=1
 enemy=changeevent|file:almark/huiyuancs/transfer7.arg
 }
 
-#é—¨å«å³
+#ÃÅÎÀÓÒ
 {
 floorid=2000
 borncenter=59,50
 time=0
 createnum=1
 graphicname=16957
-name=ä¼šå‘˜ä¼ é€å‘˜
+name=»áÔ±´«ËÍÔ±
 dir=6
 ignoreinvincible=1
 enemy=changeevent|file:almark/huiyuancs/transfer7.arg
 }
 
-#VIPä¼šå‘˜ä¼ é€å‘˜
+#VIP»áÔ±´«ËÍÔ±
 {
 floorid=2000
 borncenter=46,20
 time=0
 createnum=1
 graphicname=17045
-name=VIPä¼šå‘˜ä¼ é€å‘˜
+name=VIP»áÔ±´«ËÍÔ±
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:almark/huiyuancs/transfer8.arg

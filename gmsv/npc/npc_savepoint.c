@@ -210,7 +210,7 @@ BOOL NPC_AndReduce(int meindex,int talker,char *buf,int flg)
 		while(getStringFromIndexWithDelim(buf,"&",j,buf2,sizeof(buf2))!=FALSE)
 		{
 			j++;
-			/*--  ＊  があれば�bそのアイ  ムは  数指定してると言う意  --*/
+			/*--  若有＊号,表示该道具指定了数量  --*/
 			if(strstr( buf2, "*") != NULL){
 				getStringFromIndexWithDelim(buf2,"*",1,buf3,sizeof(buf3));
 				itemNo = atoi(buf3);
@@ -218,7 +218,7 @@ BOOL NPC_AndReduce(int meindex,int talker,char *buf,int flg)
 				kosuu = atoi(buf3);
 	
 				
-				/*--チェックモード--*/
+				/*--检查模式--*/
 				if(NPC_SavePointItemCheck(meindex,talker,itemNo,kosuu)==FALSE){
 					return FALSE;
 				}
@@ -226,7 +226,7 @@ BOOL NPC_AndReduce(int meindex,int talker,char *buf,int flg)
 			}else{
 				itemNo = atoi(buf2);
 
-				/*--チェックモード--*/
+				/*--检查模式--*/
 				if(NPC_SavePointItemCheck(meindex,talker,itemNo,1)==FALSE){
 					return FALSE;
 				}
@@ -235,21 +235,21 @@ BOOL NPC_AndReduce(int meindex,int talker,char *buf,int flg)
 		}
 
 	}else{
-		/*--  ＊  があれば�bそのアイ  ムは  数指定してると言う意  --*/
+		/*--  若有＊号,表示该道具指定了数量  --*/
 		if(strstr( buf, "*") != NULL){
 			getStringFromIndexWithDelim(buf,"*",1,buf3,sizeof(buf3));
 			itemNo = atoi(buf3);
 			getStringFromIndexWithDelim(buf,"*",2,buf3,sizeof(buf3));
 			kosuu = atoi(buf3);
 
-			/*--チェックモード--*/
+			/*--检查模式--*/
 			if(NPC_SavePointItemCheck(meindex,talker,itemNo,kosuu)==FALSE){
 				return FALSE;
 			}
 
 		}else{
 			itemNo = atoi(buf);
-			/*--チェックモード--*/
+			/*--检查模式--*/
 			if(NPC_SavePointItemCheck(meindex,talker,itemNo,1)==FALSE){
 					return FALSE;
 			}
@@ -276,7 +276,7 @@ BOOL NPC_AndReduceDelete(int meindex,int talker,char *buf,int flg)
 		while(getStringFromIndexWithDelim(buf,"&",j,buf2,sizeof(buf2))!=FALSE)
 		{
 			j++;
-			/*--  ＊  があれば�bそのアイ  ムは  数指定してると言う意  --*/
+			/*--  若有＊号,表示该道具指定了数量  --*/
 			if(strstr( buf2, "*") != NULL){
 				getStringFromIndexWithDelim(buf2,"*",1,buf3,sizeof(buf3));
 				itemNo = atoi(buf3);
@@ -299,7 +299,7 @@ BOOL NPC_AndReduceDelete(int meindex,int talker,char *buf,int flg)
 		}
 
 	}else{
-		/*--  ＊  があれば�bそのアイ  ムは  数指定してると言う意  --*/
+		/*--  若有＊号,表示该道具指定了数量  --*/
 		if(strstr( buf, "*") != NULL){
 			getStringFromIndexWithDelim(buf,"*",1,buf3,sizeof(buf3));
 			itemNo = atoi(buf3);
@@ -502,7 +502,7 @@ BOOL NPC_SavePointItemDelete(int meindex,int talker,int itemNo,int kosuu)
 }
 
 
-/*--アイ  ムをチェック--*/
+/*--检查道具--*/
 BOOL NPC_SavePointItemCheck(int meindex,int talker,int itemno,int kosuu)
 {
 	int i;

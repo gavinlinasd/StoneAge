@@ -1,14 +1,14 @@
 LIMITSHOP
 sell_rate:0.6
-buy_msg:ä¹°,æƒ³è¦,kau,buy
-main_msg:è°¢è°¢ï¼
-sell_msg:å–,sell,uru
-sell_main:æ‚¨è¦ä»€ä¹ˆæ ·çš„è‚‰å‘¢ï¼Ÿ
-other_msg:æš—ç¤º,æƒ…æŠ¥,æƒ…å†µæ˜¯,è‚‰,niku
-hint_msg:ç›®å‰æ²¡æœ‰ã€‚
-sellonly_msg:æŸ¯å°”å…‹å‘é“çš„å¤–å‡ºä¹°è‚‰å•†åº—ã€‚\næˆ‘åªæ˜¯æ¥ä¹°çš„ï¼Œä¸å¥½æ„æ€ã€‚
-stone_msg:ä½ çš„é‡‘é¢å·²æ»¡ã€‚
-realy_msg:çœŸçš„å¯ä»¥å—ï¼Ÿ
+buy_msg:Âò,ÏëÒª,kau,buy
+main_msg:Ğ»Ğ»£¡
+sell_msg:Âô,sell,uru
+sell_main:ÄúÒªÊ²Ã´ÑùµÄÈâÄØ£¿
+other_msg:°µÊ¾,Çé±¨,Çé¿öÊÇ,Èâ,niku
+hint_msg:Ä¿Ç°Ã»ÓĞ¡£
+sellonly_msg:¿Â¶û¿Ë¿ÓµÀµÄÍâ³öÂòÈâÉÌµê¡£\nÎÒÖ»ÊÇÀ´ÂòµÄ£¬²»ºÃÒâË¼¡£
+stone_msg:ÄãµÄ½ğ¶îÒÑÂú¡£
+realy_msg:ÕæµÄ¿ÉÒÔÂğ£¿
 LimitItemNo:1600-2343
 special_item:
 special_rate:0.5

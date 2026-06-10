@@ -1,6 +1,6 @@
 NPCCREATE
 
-###ç²¾çµæ¢å¥–å“###
+###¾«Áé»»½±Æ·###
 {
 floorid=1000
 borncenter=73,72,1,1
@@ -10,11 +10,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16154
-name=æµæµªæ—…äºº
+name=Á÷ÀËÂÃÈË
 enemy=changeevent|file:sa75/angel/angelitem
 }
 
-###åœ°é¾™èœ¥æˆ˜æ–—###
+###µØÁúòáÕ½¶·###
 {
 floorid=158
 borncenter=7,6,1,1
@@ -24,11 +24,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101493
-name=é­”å…½å¸–å°¼å¸ƒå¤´ç›®
+name=Ä§ÊŞÌûÄá²¼Í·Ä¿
 enemy=angelfire|file:sa75/angel/earth.arg
 }
 
-###åœ°é¾™èœ¥å¯¹è¯###
+###µØÁúòá¶Ô»°###
 {
 floorid=159
 borncenter=7,6,1,1
@@ -38,11 +38,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101493
-name=é­”å…½å¸–å°¼å¸ƒå¤´ç›®
+name=Ä§ÊŞÌûÄá²¼Í·Ä¿
 enemy=changeevent|file:sa75/angel/earth_1.arg
 }
 
-###åœ°é¾™èœ¥å¤æ–¯ç‰¹å¯¹è¯###
+###µØÁúòá¹ÅË¹ÌØ¶Ô»°###
 {
 floorid=150
 borncenter=10,6,1,1
@@ -52,11 +52,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101283
-name=å¤æ–¯ç‰¹
+name=¹ÅË¹ÌØ
 enemy=npcgen_warpman|file:sa75/angel/earth_10_6.arg
 }
 
-###æ°´é¾™èœ¥æˆ˜æ–—###
+###Ë®ÁúòáÕ½¶·###
 {
 floorid=160
 borncenter=15,13,1,1
@@ -66,11 +66,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101494
-name=é­”å…½å¸–å°¼è´å¤´ç›®
+name=Ä§ÊŞÌûÄá±´Í·Ä¿
 enemy=angelfire|file:sa75/angel/water.arg
 }
 
-###æ°´é¾™èœ¥å¯¹è¯###
+###Ë®Áúòá¶Ô»°###
 {
 floorid=161
 borncenter=15,13,1,1
@@ -80,11 +80,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101494
-name=é­”å…½å¸–å°¼è´å¤´ç›®
+name=Ä§ÊŞÌûÄá±´Í·Ä¿
 enemy=changeevent|file:sa75/angel/water_1.arg
 }
 
-###æ°´é¾™èœ¥å¤æ–¯ç‰¹###
+###Ë®Áúòá¹ÅË¹ÌØ###
 {
 floorid=151
 borncenter=12,11,1,1
@@ -94,11 +94,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101283
-name=å¤æ–¯ç‰¹
+name=¹ÅË¹ÌØ
 enemy=npcgen_warpman|file:sa75/angel/water_12_11.arg
 }
 
-###ç«é¾™èœ¥æˆ˜æ–—###
+###»ğÁúòáÕ½¶·###
 {
 floorid=162
 borncenter=6,5,1,1
@@ -108,11 +108,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101495
-name=é­”å…½å¸–å°¼æ©å¤´ç›®
+name=Ä§ÊŞÌûÄá¶÷Í·Ä¿
 enemy=angelfire|file:sa75/angel/fire.arg
 }
 
-###ç«é¾™èœ¥å¯¹è¯###
+###»ğÁúòá¶Ô»°###
 {
 floorid=163
 borncenter=6,5,1,1
@@ -122,11 +122,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101495
-name=é­”å…½å¸–å°¼æ©å¤´ç›®
+name=Ä§ÊŞÌûÄá¶÷Í·Ä¿
 enemy=changeevent|file:sa75/angel/fire_1.arg
 }
 
-###ç«é¾™èœ¥å¤æ–¯ç‰¹###
+###»ğÁúòá¹ÅË¹ÌØ###
 {
 floorid=152
 borncenter=30,6,1,1
@@ -136,11 +136,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101283
-name=å¤æ–¯ç‰¹
+name=¹ÅË¹ÌØ
 enemy=npcgen_warpman|file:sa75/angel/fire_30_6.arg
 }
 
-###é£é¾™èœ¥æˆ˜æ–—###
+###·çÁúòáÕ½¶·###
 {
 floorid=164
 borncenter=13,12,1,1
@@ -150,11 +150,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101496
-name=é­”å…½å¸–å°¼æ–¯å¤´ç›®
+name=Ä§ÊŞÌûÄáË¹Í·Ä¿
 enemy=angelfire|file:sa75/angel/wind.arg
 }
 
-###é£é¾™èœ¥å¯¹è¯###
+###·çÁúòá¶Ô»°###
 {
 floorid=165
 borncenter=13,12,1,1
@@ -164,11 +164,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101496
-name=é­”å…½å¸–å°¼æ–¯å¤´ç›®
+name=Ä§ÊŞÌûÄáË¹Í·Ä¿
 enemy=changeevent|file:sa75/angel/wind_1.arg
 }
 
-###é£é¾™èœ¥å¤æ–¯ç‰¹###
+###·çÁúòá¹ÅË¹ÌØ###
 {
 floorid=153
 borncenter=26,24,1,1
@@ -178,7 +178,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101283
-name=å¤æ–¯ç‰¹
+name=¹ÅË¹ÌØ
 enemy=npcgen_warpman|file:sa75/angel/wind_26_24.arg
 }
 
@@ -189,6 +189,6 @@ time=0
 createnum=1
 graphicname=100888
 dir=4
-name=å…‹æ‹‰è‚¯
+name=¿ËÀ­¿Ï
 enemy=npcgen_warpman|file:sa75/angel/warp702_213_25
 }

@@ -39,7 +39,7 @@ BOOL NPC_FMPKManInit( int meindex )
 	}
 
 	/*--伐□皿互涩烂今木化中月井----*/
-	/*--ワープが設定されてなければNPCを作らないことにする--*/
+	/*--未设置传送点的话就不生成NPC--*/
 	if(NPC_Util_GetStrFromStrWithDelim( npcarg, "WARP", buf, sizeof( buf))==NULL){
 	        print("FMPKMan Err is %s",npcarg);
 		print("FMPKMan Err");
@@ -90,7 +90,7 @@ void NPC_FMPKManTalked( int meindex , int talkerindex , char *szMes ,int color )
 		if( NPC_Util_CharDistance( talkerindex, meindex ) > 1) return;
 	}
 
-	/*--ワークの初期化--*/
+	/*--初始化工作区--*/
 	CHAR_setWorkInt(talkerindex, CHAR_WORKSHOPRELEVANT, 0);
 
 	/*-反元户及蓟      --*/
@@ -175,7 +175,7 @@ static void NPC_FMPKMan_selectWindow( int meindex, int toindex, int num,int sele
 	  	break;
 	}
 	
-	/*--エスケープ--*/
+	/*--转义--*/
 	//makeEscapeString( token, escapedname, sizeof(escapedname));
 		
 		

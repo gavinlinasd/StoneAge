@@ -1,8 +1,8 @@
 NPCCREATE
 
 ########################################
-#浠庣洍璐兼墜涓彇鍥炰笁绉嶇鍣ㄧ殑浜嬩欢#
-#                                                  鎷呬换鑰咃細鐭㈠欢#
+#从盗贼手中取回三种神器的事件#
+#                                                  担任者：矢延#
 ########################################
 
 
@@ -14,7 +14,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16000
-name=鑰佷汉钀ㄩ】
+name=老人萨顿
 enemy=changeevent|file:sainasu/event/event13_1
 }
 
@@ -28,6 +28,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16048
-name=鍏虫��鑰佷汉鐨勫勾杞讳汉
+name=关怀老人的年轻人
 enemy=changeevent|file:sainasu/event/event13_2
 }

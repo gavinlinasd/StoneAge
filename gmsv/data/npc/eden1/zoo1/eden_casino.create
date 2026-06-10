@@ -1,6 +1,6 @@
 NPCCREATE
 
-#ç©å®¶Aï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼›å¼ºï¼‰
+#Íæ¼ÒA£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£»Ç¿£©
 {
 floorid=7002
 borncorner=9,39,11,41
@@ -9,11 +9,11 @@ createnum=1
 dir=1
 ignoreinvincible=1
 graphicname=100004
-name=ç½—è¥¿æ˜‚ã€€Lv:103
+name=ÂŞÎ÷°º¡¡Lv:103
 enemy=changeevent|file:eden1/zoo1/player00_01
 }
 
-#ç©å®¶Bï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒB£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=5,15,7,17
@@ -22,12 +22,12 @@ createnum=1
 dir=2
 ignoreinvincible=1
 graphicname=100228
-name=æµ·ä¼¦å¨œã€€Lv:112
+name=º£Â×ÄÈ¡¡Lv:112
 enemy=changeevent|file:eden1/zoo1/player00_02
 action=13
 }
 
-#ç©å®¶Cï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒC£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=36,52,38,54
@@ -36,11 +36,11 @@ createnum=1
 dir=3
 ignoreinvincible=1
 graphicname=100020
-name=è´ç‰¹å…°ã€€Lv:101
+name=±´ÌØÀ¼¡¡Lv:101
 enemy=changeevent|file:eden1/zoo1/player00_03
 }
 
-#ç©å®¶Dï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒD£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=18,69,20,71
@@ -49,11 +49,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100212
-name=å¤åªšçƒŸã€€Lv:89
+name=ÏÄÃÄÑÌ¡¡Lv:89
 enemy=changeevent|file:eden1/zoo1/player00_04
 }
 
-#ç©å®¶Eï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒE£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=42,75,44,77
@@ -62,11 +62,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=100036
-name=æ‹‰ä¼å¥‘ã€€Lv:97
+name=À­·¥Æõ¡¡Lv:97
 enemy=changeevent|file:eden1/zoo1/player00_05
 }
 
-#ç©å®¶Fï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒF£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=54,69,56,71
@@ -75,11 +75,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100196
-name=ä¾è±ä¸ã€€Lv:90
+name=ÒÀÀ³Ë¿¡¡Lv:90
 enemy=changeevent|file:eden1/zoo1/player00_06
 }
 
-#ç©å®¶Gï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒG£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=25,32,27,34
@@ -88,11 +88,11 @@ createnum=1
 dir=7
 ignoreinvincible=1
 graphicname=100052
-name=ä½›ç½—ä¼¦æ–¯ã€€Lv:111
+name=·ğÂŞÂ×Ë¹¡¡Lv:111
 enemy=changeevent|file:eden1/zoo1/player00_07
 }
 
-#ç©å®¶Hï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒH£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=38,49,40,51
@@ -101,11 +101,11 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100180
-name=å¯Œå°”è–‡äºšã€€Lv:99
+name=¸»¶ûŞ±ÑÇ¡¡Lv:99
 enemy=changeevent|file:eden1/zoo1/player00_08
 }
 
-#ç©å®¶Iï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒI£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=3,66,5,68
@@ -114,11 +114,11 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100068
-name=å¥—ä»£åŒå¸½ã€€Lv:95
+name=ÅåÂåÁĞË¹¡¡Lv:95
 enemy=changeevent|file:eden1/zoo1/player00_09
 }
 
-#ç©å®¶Jï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒJ£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=49,34,51,36
@@ -127,11 +127,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=100164
-name=å¥¥å…‹è–‡äºšã€€Lv:121
+name=°Â¿ËŞ±ÑÇ¡¡Lv:121
 enemy=changeevent|file:eden1/zoo1/player00_11
 }
 
-#ç©å®¶Kï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒK£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=52,47,54,49
@@ -140,11 +140,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100084
-name=ç¿®ã±æ‡‰æ»ï¹›Lv:115
+name=¿­ÆÕÀ³ÌØ¡¡Lv:115
 enemy=changeevent|file:eden1/zoo1/player00_10
 }
 
-#ç©å®¶Lï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒL£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=44,35,46,37
@@ -153,11 +153,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100148
-name=ç½—èç³ã€€Lv:100
+name=ÂŞÉ¯ÁÕ¡¡Lv:100
 enemy=changeevent|file:eden1/zoo1/player00_12
 }
 
-#ç©å®¶Mï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒM£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=44,38,46,40
@@ -166,11 +166,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100100
-name=æ‹‰æ•·ã€€Lv:99
+name=À­·ó¡¡Lv:99
 enemy=changeevent|file:eden1/zoo1/player00_13
 }
 
-#ç©å®¶Nï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒN£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=18,58,20,60
@@ -179,11 +179,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100132
-name=è¥¿è‰äºšã€€Lv:125
+name=Î÷ÀòÑÇ¡¡Lv:125
 enemy=changeevent|file:eden1/zoo1/player00_14
 }
 
-#ç©å®¶Oï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒO£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=25,42,27,44
@@ -192,11 +192,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=100116
-name=å“€å‹’å…‹æ–¯ã€€Lv:83
+name=°§ÀÕ¿ËË¹¡¡Lv:83
 enemy=changeevent|file:eden1/zoo1/player00_15
 }
 
-#ç©å®¶Pï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒP£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=4,33,6,35
@@ -205,11 +205,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100124
-name=åˆšå°¼å¯†ã€€Lv:96
+name=¸ÕÄáÃÜ¡¡Lv:96
 enemy=changeevent|file:eden1/zoo1/player00_16
 }
 
-#ç©å®¶Qï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒQ£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=6,43,8,45
@@ -218,11 +218,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100108
-name=æœ±åŠ›æ–¯ã€€Lv:85
+name=ÖìÁ¦Ë¹¡¡Lv:85
 enemy=changeevent|file:eden1/zoo1/player00_17
 }
 
-#ç©å®¶Rï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒR£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7002
 borncorner=2,1,4,3
@@ -231,11 +231,11 @@ createnum=1
 dir=3
 ignoreinvincible=1
 graphicname=100140
-name=çˆ±è²å¨œã€€Lv:98
+name=°®Á«ÄÈ¡¡Lv:98
 enemy=changeevent|file:eden1/zoo1/player00_18
 }
 
-#ç©å®¶Sï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒS£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7008
 borncorner=1,5,1,14
@@ -244,11 +244,11 @@ createnum=1
 dir=2
 ignoreinvincible=1
 graphicname=100092
-name=å±‹å¤§ç»´ã€€Lv:93
+name=Îİ´óÎ¬¡¡Lv:93
 enemy=changeevent|file:eden1/zoo1/player00_19
 }
 
-#ç©å®¶Tï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒT£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7008
 borncorner=2,15,4,17
@@ -257,11 +257,11 @@ createnum=1
 dir=1
 ignoreinvincible=1
 graphicname=100156
-name=è‹»ä¼¦å¦®äºšã€€Lv:92
+name=ÜŞÂ×ÄİÑÇ¡¡Lv:92
 enemy=changeevent|file:eden1/zoo1/player00_20
 }
 
-#ç©å®¶Uï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒU£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7008
 borncorner=8,16,11,18
@@ -270,11 +270,11 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100076
-name=é›·åˆ©æ–¯ã€€Lv:94
+name=À×ÀûË¹¡¡Lv:94
 enemy=changeevent|file:eden1/zoo1/player00_21
 }
 
-#ç©å®¶Vï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒV£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7008
 borncorner=19,7,22,12
@@ -283,11 +283,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100172
-name=ç»´çªè‰äºšã€€Lv:99
+name=Î¬ç÷ÀòÑÇ¡¡Lv:99
 enemy=changeevent|file:eden1/zoo1/player00_22
 }
 
-#ç©å®¶Wï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒW£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7008
 borncorner=13,16,19,19
@@ -296,11 +296,11 @@ createnum=1
 dir=7
 ignoreinvincible=1
 graphicname=100060
-name=ç‰æ¯æ–¯ã€€Lv:114
+name=ÁğÏ¢Ë¹¡¡Lv:114
 enemy=changeevent|file:eden1/zoo1/player00_23
 }
 
-#ç©å®¶Xï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒX£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7008
 borncorner=10,17,15,21
@@ -309,6 +309,6 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100188
-name=æ¢µè•¾ä¸½äºšã€€Lv:85
+name=èóÀÙÀöÑÇ¡¡Lv:85
 enemy=changeevent|file:eden1/zoo1/player00_24
 }

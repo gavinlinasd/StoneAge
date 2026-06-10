@@ -1,6 +1,6 @@
 NPCCREATE
-#######ã‚¶ãƒãƒ³è¯åŠå¨˜##########
-##èµ¢è£†
+#######¥¶¥Ï¥ó»°·»Äï##########
+##Ó®ñÉ
 {
 floorid=10007
 borncenter=29,39,1,1
@@ -9,10 +9,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100431
-name=æŸ¥ç½•Â·ä¹Œå°”å¤«
+name=²éº±¡¤ÎÚ¶û·ò
 enemy=sb_uiy1|file:100/sb_uiy1.arg
 }
-##ã¹é®¸
+##ÆİñÉ
 {
 floorid=10007
 borncenter=28,39,1,1
@@ -21,10 +21,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100439
-name=è‡¥è‰®ï¼Œè€³ç¶š
+name=²éº±¡¤¼ªÂ³
 enemy=sb_uiy2|file:100/sb_uiy2.arg
 }
-##èµ¶è£†
+##¸ÏñÉ
 {
 floorid=10007
 borncenter=30,39,1,1
@@ -33,7 +33,7 @@ createnum=1
 time=60000
 dir=4
 graphicname=100436
-name=æŸ¥ç½•Â·é²å¤š
+name=²éº±¡¤Â³¶à
 enemy=sb_uiy3|file:100/sb_uiy3.arg
 }
 

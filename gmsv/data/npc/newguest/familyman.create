@@ -1,6 +1,6 @@
 NPCCREATE
 
-#æˆ˜æ–—æŒ‡å¯¼å‘˜è¨ä¼Šé‚£æ–¯
+#Õ½¶·Ö¸µ¼Ô±ÈøÒÁÄÇË¹
 {
 floorid=1006
 borncenter=15,13,1,1
@@ -9,12 +9,12 @@ createnum=1
 time=0
 dir=5
 graphicname=16125
-name=æˆ˜æ–—æŒ‡å¯¼å‘˜
+name=Õ½¶·Ö¸µ¼Ô±
 enemy=familyman|conff:newguest/familyman.conf
 }
 
 
-#æˆ˜æ–—æŒ‡å¯¼å‘˜ç›ä¸½å¨œä¸
+#Õ½¶·Ö¸µ¼Ô±ÂêÀöÄÈË¿
 {
 floorid=2006
 borncenter=17,14,1,1
@@ -23,12 +23,12 @@ createnum=1
 time=0
 dir=4
 graphicname=120079
-name=ç‚é¾™æ–°æ‰‹æŒ‡å¯¼å‘˜
+name=Ñ×ÁúĞÂÊÖÖ¸µ¼Ô±
 enemy=familyman|conff:newguest/familyman.conf
 }
 
 
-#æˆ˜æ–—æŒ‡å¯¼å‘˜åŠ åŠ 
+#Õ½¶·Ö¸µ¼Ô±¼Ó¼Ó
 {
 floorid=3006
 borncenter=14,13,1,1
@@ -37,12 +37,12 @@ createnum=1
 time=0
 dir=5
 graphicname=16062
-name=æˆ˜æ–—æŒ‡å¯¼å‘˜
+name=Õ½¶·Ö¸µ¼Ô±
 enemy=familyman|conff:newguest/familyman.conf
 }
 
 
-#æˆ˜æ–—æŒ‡å¯¼å‘˜åŠ é²å¡
+#Õ½¶·Ö¸µ¼Ô±¼ÓÂ³¿¨
 {
 floorid=4006
 borncenter=16,25,1,1
@@ -51,6 +51,6 @@ createnum=1
 time=0
 dir=5
 graphicname=16114
-name=æˆ˜æ–—æŒ‡å¯¼å‘˜
+name=Õ½¶·Ö¸µ¼Ô±
 enemy=familyman|conff:newguest/familyman.conf
 }

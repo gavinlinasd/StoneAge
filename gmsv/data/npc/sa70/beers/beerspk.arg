@@ -1,16 +1,16 @@
 NEWNPCENEMY
 
-####哥达####
+####���####
 entype:2
-askbattlemsg1:这里是禁地你不知道吗？我猜你也是想拿水果对吧！那先打倒我在说吧！
-startmsg:有本事你就拿啊！这里的水果可都是酿酒的好材料呢！
+askbattlemsg1:�����ǽ����㲻֪�����Ҳ���Ҳ������ˮ���԰ɣ����ȴ�����˵�ɣ�
+startmsg:�б�������ð��������ˮ���ɶ�����Ƶĺò����أ�
 dieact:1
 warpfl:0
 warpx:0
 warpy:0
 enemyno:2259
-deniedmsg:你有什么本事来拿水果啊！
-alreadymsg:你有什么本事来拿水果啊！
+deniedmsg:����ʲô��������ˮ������
+alreadymsg:����ʲô��������ˮ������
 onebattle:1
 OVER
 

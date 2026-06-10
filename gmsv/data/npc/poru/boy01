@@ -1,32 +1,32 @@
-NomalMainMsg:千万要小心！到处都有龙会攻击你！！
+NomalMainMsg:ǧ��ҪС�ģ������������ṥ���㣡��
 
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=64
-NomalWindowMsg:\n尼斯大陆....不知道是怎样的地方，我好期待喔。
+NomalWindowMsg:\n��˹��½....��֪���������ĵط����Һ��ڴ�ม�
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:NOWEV=64&ITEM=18556&ITEM=18557&ITEM=18558&ITEM=18559
-NomalWindowMsg:\n我们终于搜集到四颗宝石了！赶快给玛丽娜丝姊姊看吧！
+NomalWindowMsg:\n���������Ѽ����Ŀű�ʯ�ˣ��Ͽ��������˿�梿��ɣ�
 EventEnd
 
 
 #EventNo:-1
 #TYPE:MESSAGE
 #EVENT:ENDEV=63
-#NomalWindowMsg:\n我前几天，去海边游泳的时候，看到可爱的小姊姊。\n她有一种令我感到温暖的亲切感。
+#NomalWindowMsg:\n��ǰ���죬ȥ������Ӿ��ʱ�򣬿����ɰ���С�梡�\n����һ�����Ҹе���ů�����иС�
 #EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=63
-NomalWindowMsg:\n人类与恐龙间的关系......我还不是很懂....也许我再长大一点就可以知道了...
+NomalWindowMsg:\n�����������Ĺ�ϵ......�һ����Ǻܶ�....Ҳ�����ٳ���һ��Ϳ���֪����...
 EventEnd
 
 
@@ -34,7 +34,7 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:NOWEV=63
-NomalWindowMsg:这边我已经查过了，老爷爷的孙女大概是被龙给抓走了。\n据我所知龙的巢穴就在水坝里面，水坝的位置往右过桥沿着河岸走就可以找到了！\n我必须赶快过去水坝救老爷爷的孙女！
+NomalWindowMsg:������Ѿ�����ˣ���үү����Ů����Ǳ�����ץ���ˡ�\n������֪���ĳ�Ѩ����ˮ�����棬ˮ�ӵ�λ�����ҹ������źӰ��߾Ϳ����ҵ��ˣ�\n�ұ���Ͽ��ȥˮ�Ӿ���үү����Ů��
 EventEnd
 
 
@@ -42,7 +42,7 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:小弟弟，不要怕！有我在这里！\n没有任何龙可以欺负你的！\n咦～我没见过你！\n.............\n............\n你是刚来这里不久的旅行者吧！！\n赶快到上方的避难洞窟去避难吧！
+NomalWindowMsg:С�ܵܣ���Ҫ�£����������\nû���κ��������۸���ģ�\n�ס���û�����㣡\n.............\n............\n���Ǹ������ﲻ�õ������߰ɣ���\n�Ͽ쵽�Ϸ��ı��Ѷ���ȥ���Ѱɣ�
 EventEnd
 
 

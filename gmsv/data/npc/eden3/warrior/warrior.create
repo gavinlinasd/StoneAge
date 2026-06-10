@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### å‹‡å£«å›¢é•¿è¾›å…‹è±å°” ######
+###### ÓÂÊ¿ÍÅ³¤ĞÁ¿ËÀ³¶û ######
 {
-name=è¾›å…‹è±å°”
+name=ĞÁ¿ËÀ³¶û
 floorid=60337
 borncenter=16,8
 dir=4
@@ -14,7 +14,7 @@ enemy=changeevent|file:eden3/warrior/zingclear
 graphicname=16624
 }
 
-#ç‰¹æ®Šè·³è·ƒç‚¹ï¼ˆå¼€å¯æˆ–ç»“æŸç«çµæ ‡åä¼ é€ç©å®¶æŒ‘æˆ˜ç«çµå‹‡å£«ï¼‰
+#ÌØÊâÌøÔ¾µã£¨¿ªÆô»ò½áÊø»ğÁé±êºó´«ËÍÍæ¼ÒÌôÕ½»ğÁéÓÂÊ¿£©
 {
 floorid=60337
 borncenter=11,8
@@ -24,9 +24,9 @@ createnum=1
 enemy=npcgen_warp|file:eden3/warrior/warppoint.arg
 }
 
-###### å¼—çƒˆé¡¿å›½ç‹èµ«è‚¯è±ª ######
+###### ¸¥ÁÒ¶Ù¹úÍõºÕ¿ÏºÀ ######
 {
-name=èµ«è‚¯è±ª
+name=ºÕ¿ÏºÀ
 floorid=60342
 borncenter=11,11
 dir=6
@@ -37,9 +37,9 @@ enemy=changeevent|file:eden3/warrior/hokenhow
 graphicname=16938
 }
 
-###### ç«ç²¾çµæ²™æ‹‰æ›¼è¾¾ ######
+###### »ğ¾«ÁéÉ³À­Âü´ï ######
 {
-name=æ²™æ‹‰æ›¼è¾¾
+name=É³À­Âü´ï
 floorid=60313
 borncenter=29,15
 dir=4
@@ -50,9 +50,9 @@ enemy=changeevent|file:eden3/warrior/saramanda
 graphicname=16939
 }
 
-#ä¼ é€å°å…µï¼ˆç©å®¶è§è¿‡ç«ç²¾çµåä»¥åå¯æŒç»­è§ï¼Œä¸ç”¨æ‰“ç«çµå‹‡å£«ï¼‰
+#´«ËÍĞ¡±ø£¨Íæ¼Ò¼û¹ı»ğ¾«ÁéºóÒÔºó¿É³ÖĞø¼û£¬²»ÓÃ´ò»ğÁéÓÂÊ¿£©
 {
-name=æŸ¯äºš
+name=¿ÂÑÇ
 floorid=60337
 borncenter=13,8
 dir=4
@@ -70,7 +70,7 @@ createnum=1
 dir=4
 time=0
 graphicname=101019
-name=ç¬¬äºŒåé˜Ÿå‹‡å£«
+name=µÚ¶şÊ®¶ÓÓÂÊ¿
 enemy=sb_dou|file:eden3/warrior/warrior20.arg
 }
 

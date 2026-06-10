@@ -1,7 +1,7 @@
 NPCCREATE
-###çŒå® è€…###
+###ÁÔ³èÕß###
 {
-name=çŒå® è€…
+name=ÁÔ³èÕß
 floorid=1200
 borncenter=50,31
 dir=6
@@ -10,9 +10,9 @@ createnum=1
 graphicname=16105
 enemy=changeevent|file:sa70/sleep/sleep1.arg
 }
-###æ¶‰çŒè€…###
+###ÉæÁÔÕß###
 {
-name=æ¶‰çŒè€…
+name=ÉæÁÔÕß
 floorid=1200
 borncenter=46,28
 dir=4

@@ -1,9 +1,9 @@
 NPCCREATE
 
-########ã€€ç™½ç‹¼å‹‡å£«ã€€#########
-##### å…¬ä¼šå¯¼å¸ˆ ######
+########¡¡°×ÀÇÓÂÊ¿¡¡#########
+##### ¹«»áµ¼Ê¦ ######
 {
-name=æ‹‰æ–å°”
+name=À­ì³¶û
 floorid=8216
 borncenter=28,23
 dir=6
@@ -14,7 +14,7 @@ enemy=npcgen_warpman|file:sa70/class/war.arg
 }
 
 {
-name=å°±èŒå¯¼å¸ˆå‰å¯å› 
+name=¾ÍÖ°µ¼Ê¦¼ª¿ÉÒò
 floorid=8216
 borncenter=26,26
 dir=6
@@ -24,9 +24,9 @@ graphicname=16182
 enemy=npcgen_warpman|file:sa70/class/war2
 }
 
-##### å…¬ä¼šè§£è¯´å‘˜ ######
+##### ¹«»á½âËµÔ± ######
 {
-name=å…¬ä¼šè§£è¯´å‘˜
+name=¹«»á½âËµÔ±
 floorid=8216
 borncenter=6,23
 dir=6
@@ -36,9 +36,9 @@ graphicname=16183
 enemy=changeevent|file:sa70/class/war3
 }
 
-##### å‹‡å£«ä»»åŠ¡æ¸…é™¤ ######
+##### ÓÂÊ¿ÈÎÎñÇå³ı ######
 {
-name=é©¬å°”
+name=Âí¶û
 floorid=8216
 borncenter=25,30
 dir=6
@@ -48,9 +48,9 @@ graphicname=16339
 enemy=changeevent|file:sa70/class/clean
 }
 
-##### æ³•å¸ˆä»»åŠ¡æ¸…é™¤ ######
+##### ·¨Ê¦ÈÎÎñÇå³ı ######
 {
-name=é©¬å°”
+name=Âí¶û
 floorid=8218
 borncenter=25,24
 dir=6
@@ -60,9 +60,9 @@ graphicname=16339
 enemy=changeevent|file:sa70/class/clean
 }
 
-##### çŒäººä»»åŠ¡æ¸…é™¤ ######
+##### ÁÔÈËÈÎÎñÇå³ı ######
 {
-name=é©¬å°”
+name=Âí¶û
 floorid=8217
 borncenter=27,22
 dir=6
@@ -72,9 +72,9 @@ graphicname=16339
 enemy=changeevent|file:sa70/class/clean
 }
 
-##### è¯•ç»ƒè€…ä¸€ ######
+##### ÊÔÁ·ÕßÒ» ######
 {
-name=å‹‡å£«è¯•ç‚¼è€…
+name=ÓÂÊ¿ÊÔÁ¶Õß
 floorid=8219
 borncenter=156,34
 dir=6
@@ -84,9 +84,9 @@ graphicname=16184
 enemy=npcgen_warpman|file:sa70/class/wquest1
 }
 
-##### è¯•ç»ƒè€…äºŒ ######
+##### ÊÔÁ·Õß¶ş ######
 {
-name=å‹‡å£«è¯•ç‚¼è€…
+name=ÓÂÊ¿ÊÔÁ¶Õß
 floorid=8219
 borncenter=64,4
 dir=4
@@ -96,9 +96,9 @@ graphicname=16179
 enemy=npcgen_warpman|file:sa70/class/wquest2
 }
 
-##### è¯•ç»ƒè€…ä¸‰ ######
+##### ÊÔÁ·ÕßÈı ######
 {
-name=å‹‡å£«è¯•ç‚¼è€…
+name=ÓÂÊ¿ÊÔÁ¶Õß
 floorid=8219
 borncenter=37,21
 dir=6
@@ -108,9 +108,9 @@ graphicname=16184
 enemy=npcgen_warpman|file:sa70/class/wquest3
 }
 
-##### è¯•ç»ƒè€…å›› ######
+##### ÊÔÁ·ÕßËÄ ######
 {
-name=å‹‡å£«è¯•ç‚¼è€…
+name=ÓÂÊ¿ÊÔÁ¶Õß
 floorid=8219
 borncenter=65,90
 dir=4
@@ -120,9 +120,9 @@ graphicname=16179
 enemy=npcgen_warpman|file:sa70/class/wquest4
 }
 
-##### ç†”ç‚‰ ######
+##### ÈÛÂ¯ ######
 {
-name=ç†”ç‚‰
+name=ÈÛÂ¯
 floorid=8219
 borncenter=67,90
 dir=4
@@ -132,9 +132,9 @@ graphicname=12838
 enemy=changeevent|file:sa70/class/wquest5
 }
 
-##### è¯•ç»ƒè€…äº” ######
+##### ÊÔÁ·ÕßÎå ######
 {
-name=å‹‡å£«è¯•ç‚¼è€…
+name=ÓÂÊ¿ÊÔÁ¶Õß
 floorid=8219
 borncenter=40,74
 dir=6

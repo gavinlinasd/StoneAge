@@ -8,7 +8,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100407
-name=ä»»åŠ¡é“å…·è´©å–å‘˜
+name=ÈÎÎñµÀ¾ß··ÂôÔ±
 enemy=npcgen_shop|file:my/yucunpc/dj.arg
 }
 
@@ -21,7 +21,7 @@ dir=6
 ignoreinvincible=1
 #graphicname=16300
 graphicname=16950
-name=è¯å‡½é¡¹é“¾ä¸“å–
+name=Ö¤º¯ÏîÁ´×¨Âô
 enemy=npcgen_shop|file:my/yucunpc/zmm.arg
 }
 
@@ -33,7 +33,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100407
-name=å®ç”¨è£…å¤‡è´©å–å‘˜
+name=ÊµÓÃ×°±¸··ÂôÔ±
 enemy=npcgen_shop|file:my/yucunpc/zb.arg
 }
 
@@ -45,11 +45,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100407
-name=èŒä¸šè£…å¤‡è´©å–å‘˜
+name=Ö°Òµ×°±¸··ÂôÔ±
 enemy=npcgen_shop|file:my/yucunpc/zb2.arg
 }
 
-#æ¸”æ‘PKæŠ¤å£«
+#Óæ´åPK»¤Ê¿
 {
 floorid=2000
 borncorner=56,78,56,78
@@ -58,10 +58,10 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16012
-name=æ¸”æ‘PKæŠ¤å£«
+name=Óæ´åPK»¤Ê¿
 enemy=npcgen_healer|1
 }
-#PKç‰©å“ä¸“å–
+#PKÎïÆ·×¨Âô
 {
 floorid=2000
 borncorner=51,78,51,78
@@ -70,11 +70,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16023
-name=PKç‰©å“ä¸“å–
+name=PKÎïÆ·×¨Âô
 enemy=npcgen_shop|file:my/yucunpc/pkzm.arg
 }
 
-#æœˆå®«PKæŠ¤å£«
+#ÔÂ¹¬PK»¤Ê¿
 {
 floorid=8257
 borncorner=53,37,53,37
@@ -83,10 +83,10 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16012
-name=æœˆå®«PKæŠ¤å£«
+name=ÔÂ¹¬PK»¤Ê¿
 enemy=npcgen_healer|1
 }
-#PKç‰©å“ä¸“å–
+#PKÎïÆ·×¨Âô
 {
 floorid=8257
 borncorner=50,37,50,37
@@ -95,7 +95,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16023
-name=PKç‰©å“ä¸“å–
+name=PKÎïÆ·×¨Âô
 enemy=npcgen_shop|file:my/yucunpc/pkzm.arg
 }
 
@@ -107,7 +107,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16036
-name=pkåŒºå® ç‰©åº—
+name=pkÇø³èÎïµê
 enemy=npcgen_petshop|file:genout/ps_1003_12_13
 }
 #line 5
@@ -119,7 +119,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16056
-name=pkåŒºå¯„æ”¾åº—
+name=pkÇø¼Ä·Åµê
 enemy=npcgen_poolitemshop|file:my/yucunpc/jifang.arg
 }
 {
@@ -130,7 +130,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100407
-name=äººç‰©å½¢è±¡å¤§å¸ˆ
+name=ÈËÎïĞÎÏó´óÊ¦
 enemy=npcgen_shop|file:my/yucunpc/xx.arg
 }
 
@@ -142,7 +142,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16055
-name=ä¼šå‘˜å¯„æ”¾åº—
+name=»áÔ±¼Ä·Åµê
 enemy=npcgen_poolitemshop|file:genout/pis_1009_14_13
 }
 
@@ -154,6 +154,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16038
-name=ä¼šå‘˜å® ç‰©åº—
+name=»áÔ±³èÎïµê
 enemy=npcgen_petshop|file:genout/ps_1003_12_13
 }

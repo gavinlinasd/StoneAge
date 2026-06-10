@@ -12,7 +12,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100120
-name=æ‹‰ä¼Šå¥‡
+name=À­ÒÁÆæ
 enemy=npcgen_janken|file:genout/jan_802_29_19
 }
 #line 9
@@ -24,7 +24,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100125
-name=å¸ƒæ‹‰å§†
+name=²¼À­Ä·
 enemy=npcgen_janken|file:genout/jan_804_29_19
 }
 #line 11
@@ -36,7 +36,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100130
-name=æœ­å…‹ç½—
+name=Ôý¿ËÂÞ
 enemy=npcgen_janken|file:genout/jan_807_18_19
 }
 #line 16
@@ -48,7 +48,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100120
-name=æ‹‰ä¼Šå¥‡
+name=À­ÒÁÆæ
 enemy=npcgen_janken|file:genout/jan_822_29_19
 }
 #line 18
@@ -60,7 +60,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100125
-name=å¸ƒæ‹‰å§†
+name=²¼À­Ä·
 enemy=npcgen_janken|file:genout/jan_824_29_19
 }
 #line 20
@@ -72,7 +72,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100130
-name=æœ­å…‹ç½—
+name=Ôý¿ËÂÞ
 enemy=npcgen_janken|file:genout/jan_827_18_19
 }
 #line 25
@@ -84,7 +84,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100120
-name=æ‹‰ä¼Šå¥‡
+name=À­ÒÁÆæ
 enemy=npcgen_janken|file:genout/jan_842_29_19
 }
 #line 27
@@ -96,7 +96,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100125
-name=å¸ƒæ‹‰å§†
+name=²¼À­Ä·
 enemy=npcgen_janken|file:genout/jan_844_29_19
 }
 #line 29
@@ -108,6 +108,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100130
-name=æœ­å…‹ç½—
+name=Ôý¿ËÂÞ
 enemy=npcgen_janken|file:genout/jan_847_18_19
 }

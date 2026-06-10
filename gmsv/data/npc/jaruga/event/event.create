@@ -1,5 +1,5 @@
 NPCCREATE
-#äº‹ä»¶ç¼–å·01
+#ÊÂ¼ş±àºÅ01
 
 {
 floorid=3110
@@ -9,7 +9,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ‘åº„å°å§‘å¨˜
+name=´å×¯Ğ¡¹ÃÄï
 enemy=changeevent|file:jaruga/event/event01_1
 }
 
@@ -21,7 +21,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16024
-name=å’ç½—å±±çš„åŒ»ç”Ÿ
+name=…õÂŞÉ½µÄÒ½Éú
 enemy=changeevent|file:jaruga/event/event01_2
 }
 
@@ -33,7 +33,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16001
-name=ä»ªå¼çš„å®¡åˆ¤
+name=ÒÇÊ½µÄÉóÅĞ
 enemy=changeevent|file:jaruga/event/event04_1
 }
 
@@ -45,7 +45,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16203
-name=ä»ªå¼å®¡åˆ¤çš„å·®ä½¿
+name=ÒÇÊ½ÉóÅĞµÄ²îÊ¹
 enemy=changeevent|file:jaruga/event/event04_2
 }
 

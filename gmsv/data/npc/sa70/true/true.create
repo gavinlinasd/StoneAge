@@ -1,7 +1,7 @@
 NPCCREATE
-########è¿ªå…‹#########
+########µÏ¿Ë#########
 {
-name=è¿ªå…‹
+name=µÏ¿Ë
 floorid=1400
 borncenter=94,73
 dir=6
@@ -11,9 +11,9 @@ graphicname=16047
 enemy=changeevent|file:sa70/true/true1.arg
 }
 
-###å°Šå°¼æˆ˜æ–—äºº###
+###×ðÄáÕ½¶·ÈË###
 {
-name=å°Šå°¼
+name=×ðÄá
 floorid=6000
 borncenter=62,53
 dir=6

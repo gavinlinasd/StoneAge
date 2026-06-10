@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:鍝囷綖锝炶蛋鍒拌繖閲屾潵浜嗭紝濂芥鍠旓紒
+NomalWindowMsg:哇～～走到这里来了，好棒喔！
 EventEnd

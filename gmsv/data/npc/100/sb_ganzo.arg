@@ -1,12 +1,12 @@
 entype:2
-askbattlemsg1:å¦‚æœèƒ½èµ¢è¿‡æˆ‘çš„è¯å°±è®©ä½ é€šè¿‡ã€‚è¦å†³èƒœè´Ÿå—ï¼Ÿ
-startmsg:å‘¼æ‹”å‰ï¼Œå»å§ï¼
+askbattlemsg1:Èç¹ûÄÜÓ®¹ıÎÒµÄ»°¾ÍÈÃÄãÍ¨¹ı¡£Òª¾öÊ¤¸ºÂğ£¿
+startmsg:ºô°Î¼ª£¬È¥°É£¡
 dieact:0
 #warpfl:100
 #warpx:472
 #warpy:293
 end msg:
 enemyno:253,254
-deniedmsg:æœ‰ä»€ä¹ˆäº‹å—ï¼Ÿ
+deniedmsg:ÓĞÊ²Ã´ÊÂÂğ£¿
 time=60
 

@@ -1,8 +1,8 @@
 NPCCREATE
 
-#### å®£ä¼ å• ####
+#### Ğû´«µ¥ ####
 {
-name=é†’é¾™å®£ä¼ å‘˜
+name=ĞÑÁúĞû´«Ô±
 floorid=40
 borncenter=15,13
 dir=5
@@ -12,9 +12,9 @@ graphicname=16975
 enemy=changeevent|file:my/2d/xuanchuan.arg
 }
 
-#### ç ”ç©¶å‘˜ ####
+#### ÑĞ¾¿Ô± ####
 {
-name=ç ”ç©¶å‘˜
+name=ÑĞ¾¿Ô±
 floorid=1209
 borncenter=28,35
 dir=5
@@ -24,9 +24,9 @@ graphicname=16974
 enemy=changeevent|file:my/2d/yanjiu.arg
 }
 
-#### æº€ç¶šä¾ç¶š ####
+#### ËşÂ³°ÍÂ³ ####
 {
-name=æº€ç¶šä¾ç¶š
+name=ËşÂ³°ÍÂ³
 floorid=1209
 borncenter=21,19
 dir=5
@@ -36,9 +36,9 @@ graphicname=16988
 enemy=changeevent|file:my/2d/talubalu.arg
 }
 
-#### æµ¿è‰ä¸ ####
+#### ›ÖÀòË¿ ####
 {
-name=æµ¿è‰ä¸
+name=›ÖÀòË¿
 floorid=1209
 borncenter=24,21
 dir=6
@@ -48,9 +48,9 @@ graphicname=17004
 enemy=changeevent|file:my/2d/beilisi.arg
 }
 
-#ä¼ é€äºº
+#´«ËÍÈË
 {
-name=æ™®æ‹“æ´ç©´å®ˆé—¨äºº
+name=ÆÕÍØ¶´Ñ¨ÊØÃÅÈË
 floorid=300
 borncenter=115,136,1,1
 dir=6
@@ -59,9 +59,9 @@ enemy=npcgen_warpman|file:my/2d/warpman.arg
 graphicname=16342
 }
 
-#### é†’é¾™ä¹‹é­‚ ####
+#### ĞÑÁúÖ®»ê ####
 {
-name=é†’é¾™å®ˆæŠ¤äºº
+name=ĞÑÁúÊØ»¤ÈË
 floorid=1215
 borncorner=26,22,26,22
 time=0

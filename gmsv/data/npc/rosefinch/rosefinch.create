@@ -1,5 +1,5 @@
 NPCCREATE
-#æµ‹è¯•ç”¨
+#²âÊÔÓÃ
 {
 floorid=1000
 borncorner=49,104,49,104
@@ -8,6 +8,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100401
-name=æœ±é›€æ´»åŠ¨é¢†å¥–NPC
+name=ÖìÈ¸»î¶¯Áì½±NPC
 enemy=npc_newwarpman|file:rosefinch/rosefinch02.arg
 }

@@ -1,8 +1,8 @@
 NPCCREATE
 
-###### å¡”åˆ©å§† ######
+###### ËşÀûÄ· ######
 {
-name=å¡”åˆ©å§†
+name=ËşÀûÄ·
 floorid=500
 borncenter=227,294,1,1
 dir=4
@@ -11,9 +11,9 @@ enemy=changeevent|file:my/weilingbei/talimu.arg
 graphicname=17011
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=227,293,1,1
 dir=4
@@ -22,9 +22,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=230,246,1,1
 dir=4
@@ -33,9 +33,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=554,464,1,1
 dir=6
@@ -44,9 +44,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10060
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=547,564,1,1
 dir=4
@@ -55,9 +55,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=548,674,1,1
 dir=6
@@ -66,9 +66,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10060
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=454,651,1,1
 dir=4
@@ -77,9 +77,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=377,633,1,1
 dir=6
@@ -88,9 +88,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10060
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=321,627,1,1
 dir=4
@@ -99,9 +99,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=321,501,1,1
 dir=4
@@ -110,9 +110,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=524,615,1,1
 dir=4
@@ -121,9 +121,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=79,454,1,1
 dir=4
@@ -132,9 +132,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=421,539,1,1
 dir=4
@@ -143,9 +143,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ï¼•ï¼å¹´å‰çš„ æ…°çµç¢‘ ######
+######£µ£°ÄêÇ°µÄ Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=500
 borncenter=333,362,1,1
 dir=4
@@ -154,9 +154,9 @@ enemy=changeevent|file:my/weilingbei/bei0.arg
 graphicname=10061
 }
 
-######ç°ä»£çš„ã€€æ…°çµç¢‘ ######
+######ÏÖ´úµÄ¡¡Î¿Áé±® ######
 {
-name=æ…°çµç¢‘
+name=Î¿Áé±®
 floorid=5540
 borncenter=227,294,1,1
 dir=4

@@ -1,6 +1,6 @@
 NPCCREATE
 
-#### ç›æ‘èåˆå¸ˆ ####
+#### Âê´åÈÚºÏÊ¦ ####
 {
 floorid=2000
 borncenter=85,86
@@ -9,7 +9,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16048
-name=åŠ©æ‰‹
+name=ÖúÊÖ
 enemy=npc_petfusion|file:sa50/petfusion/petfusion.arg
 }
 
@@ -21,11 +21,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16091
-name=åšå£«å¼Ÿå­
+name=²©Ê¿µÜ×Ó
 enemy=changeevent|file:sa50/petfusion/petfusion
 }
 
-#### å¡æ‘èåˆå¸ˆ ####
+#### ¿¨´åÈÚºÏÊ¦ ####
 {
 floorid=4000
 borncenter=67,72
@@ -34,7 +34,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16048
-name=åŠ©æ‰‹
+name=ÖúÊÖ
 enemy=npc_petfusion|file:sa50/petfusion/petfusion.arg
 }
 
@@ -46,11 +46,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16091
-name=åšå£«å¼Ÿå­
+name=²©Ê¿µÜ×Ó
 enemy=changeevent|file:sa50/petfusion/petfusion
 }
 
-#### ä¼Šç”¸èåˆå¸ˆ ####
+#### ÒÁµéÈÚºÏÊ¦ ####
 {
 floorid=7000
 borncenter=78,119
@@ -59,7 +59,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16048
-name=åŠ©æ‰‹
+name=ÖúÊÖ
 enemy=npc_petfusion|file:sa50/petfusion/petfusion.arg
 }
 
@@ -71,6 +71,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16091
-name=åšå£«å¼Ÿå­
+name=²©Ê¿µÜ×Ó
 enemy=changeevent|file:sa50/petfusion/petfusion
 }

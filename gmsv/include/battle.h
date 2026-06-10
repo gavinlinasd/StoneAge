@@ -450,16 +450,16 @@ typedef struct
 typedef struct _Battle
 {
 	BOOL	use;	/* 银匀化中月井升丹井 */
-	int		battleindex; /* バト郊  号 */
+	int		battleindex; /* 战斗编号 */
 	int		mode;	/* 鰒時式浄  胴＆囁 */
-	int		type;	/* 戦  タイプ (0:通常)(1:DUEL)(2:ボス戦) */
+	int		type;	/* 战斗类型 (0:通常)(1:DUEL)(2:BOSS战) */
 	int		dpbattle;	/* DP田玄伙井＂ */
-	int		norisk;	/* 死んでもリスクの  いバト郊か? */
+	int		norisk;	/* 是否是死亡无风险的战斗? */
 	int		turn;	/* 正□件醒 */
 	int		timer;	/* 万賞通傲鄂怨咢気屎通僭 */
 	int		leaderindex; /* 巨件市它件玄毛粟仇仄凶平乓仿及奶件犯永弁旦 */
 	int		winside; /*   厍仄凶扔奶玉 */
-	int		field_att;	/* フィー郊ドの属性 */
+	int		field_att;	/* 场地的属性 */
 	int		att_count;	/* 白奴□伙玉及箪岭  祭  及正奶穴 */
 	int		att_pow;	/* 白奴□伙玉及箪岭  祭  及由伐□ */
 	int		field_no;
@@ -529,8 +529,8 @@ enum
 };
 //krynn end
 
-#define TARGET_SIDE_0	20	// 右側  サイド０  指定
-#define TARGET_SIDE_1	21	// 左側  サイド１  指定
+#define TARGET_SIDE_0	20	// 右侧  指定阵营０
+#define TARGET_SIDE_1	21	// 左侧  指定阵营１
 #define TARGET_ALL	22	// 全  指定
 
 #ifdef __ATTACK_MAGIC
@@ -545,14 +545,14 @@ enum
 
 #endif
 
-extern int	gItemCrushRate;		//   壊  デフォ郊ト
-extern BATTLE *BattleArray; 	/* 戦  タスク     */
+extern int	gItemCrushRate;		//   破坏  默认
+extern BATTLE *BattleArray; 	/* 战斗任务     */
 extern int BATTLE_battlenum;	/*     及醒 */
-extern char szAllBattleString[BATTLE_STRING_MAX];	/* 戦  に使うコマンド  字   */
-extern char *pszBattleTop, *pszBattleLast;	/* 戦  に使う  字  の位   */
-extern char szBadStatusString[];	// ス  ータス異常用  字  
+extern char szAllBattleString[BATTLE_STRING_MAX];	/* 战斗使用的命令字符串   */
+extern char *pszBattleTop, *pszBattleLast;	/* 战斗使用的字符串的位置   */
+extern char szBadStatusString[];	// 状态异常用字符串  
 extern int gWeponType;	// 蜇箕及  湛及潘  
-extern float gDamageDiv;	// ダメージ分割
+extern float gDamageDiv;	// 伤害分割
 
 #define BATTLE_CHECKINDEX( a ) ( ((a)>=BATTLE_battlenum || (a)<0 )?(FALSE):(TRUE) )
 #define BATTLE_CHECKSIDE( a ) ( ((a)>=2 || (a)<0)?(FALSE):( TRUE) )
@@ -567,23 +567,23 @@ extern float gDamageDiv;	// ダメージ分割
 
 #define BATTLE_MAP_MAX 219
 
-#define CH_FIX_PLAYERLEVELUP	(+2)	// プレイヤーのレベ郊がアップ
-#define CH_FIX_PLAYERDEAD		(-2)	// プレイヤーが通常死
-#define CH_FIX_PLAYEULTIMATE	(-4)	// プレイヤーがア郊  ィメット死
+#define CH_FIX_PLAYERLEVELUP	(+2)	// 玩家升级
+#define CH_FIX_PLAYERDEAD		(-2)	// 玩家通常死亡
+#define CH_FIX_PLAYEULTIMATE	(-4)	// 玩家终极死亡
 #define CH_FIX_PETESCAPE		(-1)	// 文喟傲札  突俔
 
-#define AI_FIX_PETLEVELUP		(+5*100)	// ペットがレベ郊アップ
+#define AI_FIX_PETLEVELUP		(+5*100)	// 宠物升级
 #define AI_FIX_PETWIN			(+1)		// 矢永玄互衬毛逦仄凶
 #define AI_FIX_PETGOLDWIN		(+2*10)	// 矢永玄互伊矛伙及嫖中衬毛逦仄凶
 #define AI_FIX_PETRECOVERY		(+10)		// 爵    卞荚汊仄化手日匀凶
 #define AI_FIX_PETRESSURECT		(+3*100)	// 爵    卞汊唾仄化手日匀凶
 //#define AI_FIX_PETRECOVERY	(+50)		// 爵    卞荚汊仄化手日匀凶
 
-#define AI_FIX_SEKKAN 			(-2*100)	// 自分のペットを  撃
-#define AI_FIX_PLAYERULTIMATE	(-10*100)	// 自分の主人がア郊  ィメット死
-#define AI_FIX_PETULTIMATE		(-10*100)	// ペットがア郊  ィメット死
-#define AI_FIX_PLAYERDEAD		(-1*100)	// 自分の主人が気絶
-#define AI_FIX_PETDEAD			(-5*100)	// ペットが気絶
+#define AI_FIX_SEKKAN 			(-2*100)	// 攻击自己的宠物
+#define AI_FIX_PLAYERULTIMATE	(-10*100)	// 自己的主人终极死亡
+#define AI_FIX_PETULTIMATE		(-10*100)	// 宠物终极死亡
+#define AI_FIX_PLAYERDEAD		(-1*100)	// 自己的主人昏迷
+#define AI_FIX_PETDEAD			(-5*100)	// 宠物昏迷
 
 
 #ifdef _Item_ReLifeAct
@@ -623,7 +623,7 @@ int BATTLE_PetDefaultExit( int charaindex, int battleindex);
 
 int	BATTLE_PetDefaultEntry(
 	int charaindex,	// 矢永玄毛  匀化中月皿伊奶乩□及          
-	int battleindex,// バト郊インデックス
+	int battleindex,// 战斗索引
 	int side
 );
 

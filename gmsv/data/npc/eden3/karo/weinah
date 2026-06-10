@@ -1,58 +1,58 @@
-#### 试炼洞窟中的葳娜 ####
+#### ���������е����� ####
 
-NomalMainMsg:有了这神圣咒文之后，再也不怕任何魔物了。
+NomalMainMsg:��������ʥ����֮����Ҳ�����κ�ħ���ˡ�
 
-####告知需要四个咒语片段####
+####��֪��Ҫ�ĸ�����Ƭ��####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM!=20192&ITEM!=20193&ITEM!=20194&ITEM!=20195&ITEM!=20196
-NomalWindowMsg:咒语好像被这里的生物撕破成四段了，如果你能收集到四个片段，我会帮你合成原来的样子的。
+NomalWindowMsg:����������������˺�Ƴ��Ķ��ˣ���������ռ����ĸ�Ƭ�Σ��һ����ϳ�ԭ�������ӵġ�
 EventEnd
 
-####完成任务####
+####�������####
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM=20192&ITEM=20193&ITEM=20194&ITEM=20195
-AcceptMsg:嗯，没错，你真的找到了，太好了。
-ThanksMsg:这就是完整的咒语了，你快拿去帮助卡罗吧。
+AcceptMsg:�ţ�û����������ҵ��ˣ�̫���ˡ�
+ThanksMsg:����������������ˣ������ȥ�������ްɡ�
 DelItem:20192,20193,20194,20195
-ItemFullMsg:你身上东西太多了，没办法给你咒语呀。
+ItemFullMsg:�����϶���̫���ˣ�û�취��������ѽ��
 GetItem:20196
 EventEnd
 
-####已拿到神圣咒文####
+####���õ���ʥ����####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM=20196
-NomalWindowMsg:那快回去吧，只要使用精神结晶就可以了。
+NomalWindowMsg:�ǿ��ȥ�ɣ�ֻҪʹ�þ���ᾧ�Ϳ����ˡ�
 EventEnd
 
-####少咒语片段四####
+####������Ƭ����####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM!=20195
-NomalWindowMsg:还没找到四个片段吗？加油了。
+NomalWindowMsg:��û�ҵ��ĸ�Ƭ���𣿼����ˡ�
 EventEnd
 
-####少咒语片段三####
+####������Ƭ����####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM!=20194
-NomalWindowMsg:还没找到四个片段吗？加油了。
+NomalWindowMsg:��û�ҵ��ĸ�Ƭ���𣿼����ˡ�
 EventEnd
 
-####少咒语片段二####
+####������Ƭ�ζ�####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM!=20193
-NomalWindowMsg:还没找到四个片段吗？加油了。
+NomalWindowMsg:��û�ҵ��ĸ�Ƭ���𣿼����ˡ�
 EventEnd
 
-####少咒语片段一####
+####������Ƭ��һ####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112&ITEM!=20192
-NomalWindowMsg:还没找到四个片段吗？加油了。
+NomalWindowMsg:��û�ҵ��ĸ�Ƭ���𣿼����ˡ�
 EventEnd
 
 

@@ -208,11 +208,11 @@ BOOL NPC_SysinfoInit( int meindex )
 
     NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
 
-	/* 初期化処   */
+	/* 初始化处理   */
 
 	CHAR_setWorkInt( meindex, CHAR_WORK_MODE, 0);
 
-	/* パスワードセット */
+	/* 设置密码 */
 	if( NPC_Util_GetStrFromStrWithDelim( argstr, "passwd", buff, sizeof( buff))
 		== NULL)
 	{
@@ -225,7 +225,7 @@ BOOL NPC_SysinfoInit( int meindex )
 	if( tmp == -1 ) tmp = NPC_SYSINFO_TIMELIMIT_DEFAULT;
 	CHAR_setWorkInt( meindex, CHAR_WORK_TIMELIMIT, tmp);
 
-    /* メッセージの色取   */
+    /* 取得讯息颜色   */
 	tmp = NPC_Util_GetNumFromStrWithDelim( argstr, "msg_col");
 	if( tmp < CHAR_COLORRED || tmp > CHAR_COLORWHITE )
 		tmp = CHAR_COLORYELLOW;
@@ -248,9 +248,9 @@ void NPC_SysinfoLoop( int meindex )
 	int		shuttime;
 	if( CHAR_getWorkInt( meindex, CHAR_WORK_MODE) == 1) {
 		int		oldtime;
-		/* 時間を進める */
+		/* 推进时间 */
 		oldtime = CHAR_getWorkInt( meindex, CHAR_WORK_TIME);
-		/* 制限時間オーバーで通常モードへ */
+		/* 超过限制时间则回到通常模式 */
 		if( NowTime.tv_sec - oldtime >
 			CHAR_getWorkInt( meindex, CHAR_WORK_TIMELIMIT))
 		{
@@ -259,14 +259,14 @@ void NPC_SysinfoLoop( int meindex )
 		}
 	}
 	shuttime = CHAR_getWorkInt( meindex, CHAR_WORK_SHUTDOWNTIME);
-	/* shutdown時間チェック */
+	/* 检查shutdown时间 */
 	if( shuttime > 0 ) {
 		int diff,limit,hun;
 
 		diff = NowTime.tv_sec - shuttime;
 		limit = CHAR_getWorkInt( meindex, CHAR_WORK_SHUTDOWNLIMIT);
 		hun = limit - (diff/60);
-		/* １分恭きにメッセージ */
+		/* 每１分钟一条讯息 */
 		if( hun != CHAR_getWorkInt( meindex, CHAR_WORK_SHUTDOWNDSPTIME)){
 			char	buff[256];
 			if( hun != 0 ) {
@@ -299,7 +299,7 @@ void NPC_SysinfoTalked( int meindex, int tindex, char *msg, int color)
 	msgwk = calloc( 1, sizeof(char)*len);
 	buff = calloc( 1, sizeof(char)*len);
 	strcpy( msgwk, msg);
-	/* スペースをまとめる */
+	/* 合并空格 */
 	deleteSequentChar( msgwk, " ");
 	if( CHAR_getWorkInt( meindex, CHAR_WORK_MODE) == 0 ) {
 		msgno = 0;
@@ -364,7 +364,7 @@ static void NPC_Sysinfo_Msg_EndInfo( int meindex, int tindex, char *msg)
 
 }
 /*------------------------------------------------------------------------
- * HELPメッセージ
+ * HELP讯息
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_Help( int meindex, int tindex, char *msg)
 {
@@ -398,7 +398,7 @@ static void NPC_Sysinfo_Msg_Help( int meindex, int tindex, char *msg)
 	}
 }
 /*------------------------------------------------------------------------
- * プレイヤーの数を調べる
+ * 调查玩家的数量
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_Player( int meindex, int tindex, char *msg)
 {
@@ -418,7 +418,7 @@ static void NPC_Sysinfo_Msg_Player( int meindex, int tindex, char *msg)
 
 }
 /*------------------------------------------------------------------------
- * メッセージリストを  示する
+ * 显示讯息列表
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_List( int meindex, int tindex, char *msg)
 {
@@ -438,7 +438,7 @@ static void NPC_Sysinfo_Msg_List( int meindex, int tindex, char *msg)
 	}
 }
 /*------------------------------------------------------------------------
- * メッセージ  号からメッセージを送信する
+ * 按讯息编号发送讯息
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_SendNo( int meindex, int tindex, char *msg)
 {
@@ -471,7 +471,7 @@ static void NPC_Sysinfo_Msg_SendMsg( int meindex, int tindex, char *msg)
 	}
 }
 /*------------------------------------------------------------------------
- * メッセージカラーを  更する
+ * 变更讯息颜色
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_Msg_Msgcol( int meindex, int tindex, char *msg)
 {
@@ -504,7 +504,7 @@ static void NPC_Sysinfo_Msg_Msgcol( int meindex, int tindex, char *msg)
 	}
 }
 /*------------------------------------------------------------------------
- * 引数からメッセージを取  する
+ * 从参数取得讯息
  *----------------------------------------------------------------------*/
 static char *NPC_Sysinfo_GetMsg( int meindex, char *msgindexstr,
 								char *out,int outlen, int num )
@@ -542,9 +542,9 @@ static void NPC_Sysinfo_Msg_Shutdown( int meindex, int tindex, char *msg)
 	char	buff[10];
 	int		hun;
 
-	/*   初のメッセージ送信 */
+	/*   发送最初的讯息 */
 	NPC_Sysinfo_SendMsg( meindex, tindex, NPC_SYSINFO_ARG_SHUTDOWN_MSG);
-	/* 時間セット */
+	/* 设置时间 */
 	CHAR_setWorkInt( meindex, CHAR_WORK_SHUTDOWNTIME, NowTime.tv_sec);
 	/* 比鰈掃筑糲   */
 	if( getStringFromIndexWithDelim( msg, " ", 2, buff, sizeof( buff)) == TRUE )
@@ -563,7 +563,7 @@ static void NPC_Sysinfo_Msg_Shutdown( int meindex, int tindex, char *msg)
 	CHAR_setWorkInt( meindex, CHAR_WORK_SHUTDOWNDSPTIME,0);
 }
 /*------------------------------------------------------------------------
- * メッセージを送る  引数からメッセージを取    
+ * 发送讯息  从参数取得讯息    
  *----------------------------------------------------------------------*/
 static void NPC_Sysinfo_SendMsg( int meindex, int pindex, int tblnum)
 {
@@ -599,7 +599,7 @@ static void NPC_Sysinfo_SendMsgToAll( int meindex, char *msg)
 
 
 
-/* 全敵キャラを NO_SEE にするかどうか */
+/* 是否把全部敌人物设为 NO_SEE */
 static void NPC_Sysinfo_All_NoSee( int meindex, int tindex, char *msg ){
 	char	buff[256];
 
@@ -607,14 +607,14 @@ static void NPC_Sysinfo_All_NoSee( int meindex, int tindex, char *msg ){
 	/* 比鰈掃筑糲   */
 	if( getStringFromIndexWithDelim( msg, " ", 2, buff, sizeof( buff)) == TRUE )
 	{
-		/*     にする場合 */
+		/*     需要设为该值的情况 */
 		if( strncmp( buff, "on", strlen( buff ) ) == 0 ){
 			all_nosee = 1;
 			snprintf( buff, sizeof( buff), "已开启all_nosee 。" );
 			CHAR_talkToCli( tindex, meindex, buff,
 					CHAR_getWorkInt( meindex, CHAR_WORK_MSGCOLOR));
 		}else
-		/*     にする場合 */
+		/*     需要设为该值的情况 */
 		if( strncmp( buff, "off", strlen( buff ) ) == 0 ){
 			all_nosee = 0;
 			snprintf( buff, sizeof( buff), "已关闭all_nosee 。" );
@@ -633,7 +633,7 @@ static void NPC_Sysinfo_All_NoSee( int meindex, int tindex, char *msg ){
 	}
 }
 
-/* 全敵キャラを NO_BODY にするかどうか */
+/* 是否把全部敌人物设为 NO_BODY */
 static void NPC_Sysinfo_All_NoBody( int meindex, int tindex, char *msg ){
 	char	buff[256];
 
@@ -641,14 +641,14 @@ static void NPC_Sysinfo_All_NoBody( int meindex, int tindex, char *msg ){
 	/* 比鰈掃筑糲   */
 	if( getStringFromIndexWithDelim( msg, " ", 2, buff, sizeof( buff)) == TRUE )
 	{
-		/*     にする場合 */
+		/*     需要设为该值的情况 */
 		if( strncmp( buff, "on", strlen( buff ) ) == 0 ){
 			all_nobody = 1;
 			snprintf( buff, sizeof( buff), "已开启all_nobody 。" );
 			CHAR_talkToCli( tindex, meindex, buff,
 					CHAR_getWorkInt( meindex, CHAR_WORK_MSGCOLOR));
 		}else
-		/*     にする場合 */
+		/*     需要设为该值的情况 */
 		if( strncmp( buff, "off", strlen( buff ) ) == 0 ){
 			all_nobody = 0;
 			snprintf( buff, sizeof( buff), "已关闭all_nobody 。" );
@@ -668,7 +668,7 @@ static void NPC_Sysinfo_All_NoBody( int meindex, int tindex, char *msg ){
 }
 
 
-/* 全敵キャラを １郊ープで何    作させるか? */
+/* 全部敌人物在１次循环中动作多少次? */
 static void NPC_Sysinfo_Move_Num( int meindex, int tindex, char *msg ){
 	char	buff[256];
 	int		work;
@@ -681,7 +681,7 @@ static void NPC_Sysinfo_Move_Num( int meindex, int tindex, char *msg ){
 		if( work <= 0 ) {
 			work = 1000; /* 赝癫 */
 		}
-		/*   時にこれだけ  かします */
+		/*   同时只让这么多活动 */
 		EnemyMoveNum = work;
 		snprintf( buff, sizeof( buff), "让敌人同时%d动作。",
 			EnemyMoveNum );
@@ -697,7 +697,7 @@ static void NPC_Sysinfo_Move_Num( int meindex, int tindex, char *msg ){
 
 
 
-/* 敵キャラを１郊ープで何    高生み出すか */
+/* 敌人物在１次循环中最多生成多少 */
 static void NPC_Sysinfo_Born_Num( int meindex, int tindex, char *msg ){
 	char	buff[256];
 	int		work;

@@ -1,23 +1,23 @@
-NomalMainMsg:ä½ æ˜¯æ€Žä¹ˆè¿›æ¥çš„ï¼Ÿï¼Ÿï¼Ÿ
+NomalMainMsg:ÄãÊÇÔõÃ´½øÀ´µÄ£¿£¿£¿
 
-#å®Œæˆä»»åŠ¡åŽ
+#Íê³ÉÈÎÎñºó
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>79&TRANS>4&ENDEV=184&ENDEV=189
-NomalWindowMsg:æ­å–œæˆåŠŸä½¿äººé¾™è§£é™¤å°å°ï¼ï¼
+NomalWindowMsg:¹§Ï²³É¹¦Ê¹ÈËÁú½â³ý·âÓ¡£¡£¡
 EventEnd
 
-#å«çŽ©å®¶åŽ»æ‰“ç‰‡æ®µ
+#½ÐÍæ¼ÒÈ¥´òÆ¬¶Î
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>79&TRANS>4&ENDEV=184&NOWEV=189&ITEM=19421
-NomalWindowMsg:é­”å…½å°±åœ¨æ²™å§†å²›ï¼Œèµ¶å¿«åŽ»å§ã€‚ã€‚ã€‚
+NomalWindowMsg:Ä§ÊÞ¾ÍÔÚÉ³Ä·µº£¬¸Ï¿ìÈ¥°É¡£¡£¡£
 EventEnd
 
-#å‚¬çŽ©å®¶æ‰¾å¡”é²å·´é²
+#´ßÍæ¼ÒÕÒËþÂ³°ÍÂ³
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>79&TRANS>4&ENDEV=184&NOWEV=189&ITEM=19420
-NomalWindowMsg:ä½ æ˜¯çœ‹äº†æˆ‘ä»¬çš„å®£ä¼ å•è€Œæ¥åˆ°è¿™é‡Œå—ã€‚ã€‚ã€‚
-NomalWindowMsg1:æ˜¯è¿™æ ·å•Šï¼æ‰¾æˆ‘æ²¡ç”¨çš„ï¼åŽ»æ‰¾æµ¿èŽ‰ä¸å§ï¼ï¼ï¼ï¼ï¼ï¼
+NomalWindowMsg:ÄãÊÇ¿´ÁËÎÒÃÇµÄÐû´«µ¥¶øÀ´µ½ÕâÀïÂð¡£¡£¡£
+NomalWindowMsg1:ÊÇÕâÑù°¡£¡ÕÒÎÒÃ»ÓÃµÄ£¡È¥ÕÒ›ÖÀòË¿°É£¡£¡£¡£¡£¡£¡
 EventEnd

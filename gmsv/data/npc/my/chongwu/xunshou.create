@@ -1,8 +1,8 @@
 NPCCREATE
 
-######ä¼šå‘˜######
+######»áÔ±######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=777
 borncenter=3,1
 dir=6
@@ -14,7 +14,7 @@ enemy=ITEMCHANGE|file:my/chongwu/vip.arg
 }
 ###### 1 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=1041
 borncenter=11,9
 dir=6
@@ -27,7 +27,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi1.arg
 
 ###### 2 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=2031
 borncenter=11,8
 dir=6
@@ -40,7 +40,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi2.arg
 
 ###### 3 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=3031
 borncenter=9,10
 dir=6
@@ -53,7 +53,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi3.arg
 
 ###### 4 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=4031
 borncenter=8,8
 dir=6
@@ -66,7 +66,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi4.arg
 
 ###### 5 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=5031
 borncenter=8,5
 dir=6
@@ -79,7 +79,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi5.arg
 
 ###### 6 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=6031
 borncenter=2,9
 dir=6
@@ -92,7 +92,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi6.arg
 
 ###### 7 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=7031
 borncenter=4,11
 dir=6
@@ -105,7 +105,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi7.arg
 
 ###### 8 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=8031
 borncenter=7,12
 dir=6
@@ -118,7 +118,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi8.arg
 
 ###### 9 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=9031
 borncenter=17,13
 dir=6
@@ -131,7 +131,7 @@ enemy=ITEMCHANGE|file:my/chongwu/shi9.arg
 
 ###### 10 ######
 {
-name=æ•å® æ™¶çŸ³æç‚¼å¸ˆ
+name=²¶³è¾§Ê¯ÌáÁ¶Ê¦
 floorid=10031
 borncenter=8,5
 dir=6

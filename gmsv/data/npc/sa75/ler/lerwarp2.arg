@@ -1,25 +1,25 @@
 NEWWARPMAN
 
-####Áâ¢Èó®Ê≤°Èí•Âåô ####
+####¿Œ√≈√ª‘ø≥◊ ####
 NOFREE
 FREE:LV>0
-NomalMsg:Âç°Âç°Âç°ÔºÅ
-PartyMsg:Âç°Âç°Âç°ÔºÅ
+NomalMsg:ø®ø®ø®£°
+PartyMsg:ø®ø®ø®£°
 OVER
 
-####„ÄÄÁâ¢Èó®ÊúâÈí•Âåô‰º†ÈÄÅËá≥Âú∞Áâ¢ ####
+####°°¿Œ√≈”–‘ø≥◊¥´ÀÕ÷¡µÿ¿Œ ####
 TALKEVENT1
 WARP:8513,23,18
 FREE:LV>89&ENDEV=4&ENDEV=81&ENDEV=174&ENDEV=116&ENDEV=111&ENDEV=115&NOWEV=175&NOWEV=176&ITEM=20609
 DelItem:20609
-FreeMsg:Âç°Âç°Âç°ÔºÅ
+FreeMsg:ø®ø®ø®£°
 OVER
 
-####„ÄÄÁâ¢Èó®Ê≤°Èí•Âåô ####
+####°°¿Œ√≈√ª‘ø≥◊ ####
 TALKEVENT2
 WARP:0,0,0
 FREE:LV>89&ENDEV=4&ENDEV=81&ENDEV=174&ENDEV=116&ENDEV=111&ENDEV=115&NOWEV=175
-FreeMsg:Âç°Âç°Âç°ÔºÅ
+FreeMsg:ø®ø®ø®£°
 OVER
 
 

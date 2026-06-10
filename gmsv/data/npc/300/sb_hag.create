@@ -1,5 +1,5 @@
 NPCCREATE
-#######ã¯ãã‚Œã‚´ãƒ«ã‚·ã‚¹##########
+#######¤Ï¤°¤ì¥´¥ë¥·¥¹##########
 {
 floorid=31204
 borncenter=44,27,1,1
@@ -7,6 +7,6 @@ movecenter=20,20,100,100
 createnum=1
 dir=2
 graphicname=100329
-name=èµ°å¤±çš„æ ¼é­¯è¥¿æ–¯
+name=¨«¥¢ªº®æ¾|¦è´µ
 enemy=sb_hag|file:300/sb_hag.arg
 }

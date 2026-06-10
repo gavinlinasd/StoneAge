@@ -1,6 +1,6 @@
 NPCCREATE
 
-#ç‘å°”åº„å›­è´©å–å…±é€šç±»
+#Èğ¶û×¯Ô°··Âô¹²Í¨Àà
 {
 floorid=7537
 borncorner=7,6,7,6
@@ -9,10 +9,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=17040
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop10_1
 }
-#ç‘å°”åº„å›­è´©å–ç´ æç±»
+#Èğ¶û×¯Ô°··ÂôËØ²ÄÀà
 {
 floorid=7535
 borncorner=4,5,4,5
@@ -21,11 +21,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16326
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop10_2
 }
 
-#ç‘å°”åº„å›­è´©å–ä¸“å±
+#Èğ¶û×¯Ô°··Âô×¨Êô
 {
 floorid=7536
 borncorner=4,5,4,5
@@ -34,11 +34,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16971
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop10_4
 }
 
-#ç‘å°”åº„å›­é€šè¡Œè¯è´©å–
+#Èğ¶û×¯Ô°Í¨ĞĞÖ¤··Âô
 {
 floorid=7530
 borncorner=82,49,82,49
@@ -47,10 +47,10 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17007
-name=é€šè¡Œè¯è´©å–å‘˜
+name=Í¨ĞĞÖ¤··ÂôÔ±
 enemy=npcgen_shop|file:family/npc/shop10_5
 }
-#å•†åº—å®ˆé—¨å‘˜(å…±é€šç±»)
+#ÉÌµêÊØÃÅÔ±(¹²Í¨Àà)
 {
 floorid=7530
 borncorner=68,28,68,28
@@ -59,7 +59,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17045
-name=å•†åº—è­¦å«
+name=ÉÌµê¾¯ÎÀ
 enemy=npcgen_warpman|file:family/npc/wpm10_1
 }
 
@@ -71,6 +71,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17043
-name=å•†åº—è­¦å«
+name=ÉÌµê¾¯ÎÀ
 enemy=npcgen_warpman|file:family/npc/wpm10_3
 }

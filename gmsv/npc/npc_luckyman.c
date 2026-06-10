@@ -190,7 +190,7 @@ void NPC_LuckyDisp(int meindex,int talker)
 		return;
 	}
 
-	/*--運を見る--*/
+	/*--看运气--*/
 	sprintf( buf, "luck%d", CHAR_getInt( talker, CHAR_LUCK));
 	NPC_Util_GetStrFromStrWithDelim( argstr, buf, buf2, sizeof( buf2));
 
@@ -212,7 +212,7 @@ void NPC_LuckyDisp(int meindex,int talker)
 BOOL NPC_LuckyCostCheck(int meindex,int talker,int cost)
 {
 	/*--蜇箕反移涩烂---*/
-	/*---恭金が足りるかどうかのチェック---*/
+	/*---检查金钱是否足够---*/
 	if(CHAR_getInt( talker, CHAR_GOLD) < cost) {
 		return FALSE;
 	}

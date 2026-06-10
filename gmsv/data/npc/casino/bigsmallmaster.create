@@ -1,5 +1,5 @@
 NPCCREATE
-#æ¯”å¤§å°ä¸»æŒäºº
+#±È´óĞ¡Ö÷³ÖÈË
 {
 floorid=7008
 borncenter=13,5,1,1
@@ -7,6 +7,6 @@ movecenter=13,5,1,1
 createnum=1
 dir=4
 graphicname=100015
-name=ä¸»æŒäºº
+name=Ö÷³ÖÈË
 enemy=bigsmallmaster|conff:casino/bigsmall.conf
 }

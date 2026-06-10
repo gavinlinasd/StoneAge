@@ -1,7 +1,7 @@
 NPCCREATE
-########æ³•å¸ˆ(åˆæˆ)#########
+########·¨Ê¦(ºÏ³É)#########
 {
-name=æ³•å¸ˆ
+name=·¨Ê¦
 floorid=3000
 borncenter=107,114
 dir=6
@@ -12,9 +12,9 @@ enemy=changeevent|file:sa50/bone.arg
 graphicname=16346
 }
 
-########çŒäººç»™é¾™éª¨#########
+########ÁÔÈË¸øÁú¹Ç#########
 {
-name=çŒäºº
+name=ÁÔÈË
 floorid=3000
 borncenter=82,57
 dir=4

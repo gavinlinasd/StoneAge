@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:杩欐槸鎴戠涓�娆″潗椋為緳鑸┖锛屼粠涓婄┖鐪嬪埌鏁翠釜灏兼柉锛屾劅瑙夋槸涓嶉敊鍟︼紝鍙笉杩囬浜嗗崄鍑犱釜灏忔椂寮勫緱鎴戝叏韬吀鐥涙浜嗭紒
+NomalWindowMsg:这是我第一次坐飞龙航空，从上空看到整个尼斯，感觉是不错啦，只不过飞了十几个小时弄得我全身酸痛死了！
 EventEnd

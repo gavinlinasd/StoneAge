@@ -1,17 +1,17 @@
 NEWNPCENEMY
 
-#### ç¬¬äº”è¯•ç‚¼æˆ˜æ–—äºº ####
+#### µÚÎåÊÔÁ¶Õ½¶·ÈË ####
 
 entype:2
-askbattlemsg1:æ‰“è´¥äº†æˆ‘æ‰€é¥²å…»çš„ç†Šï¼Œä½ å°±å®Œæˆäº†æ‰€æœ‰çš„è€ƒéªŒã€‚
-startmsg:å°½ä½ çš„å…¨åŠ›å§ã€‚
+askbattlemsg1:´ò°ÜÁËÎÒËùËÇÑøµÄÐÜ£¬Äã¾ÍÍê³ÉÁËËùÓÐµÄ¿¼Ñé¡£
+startmsg:¾¡ÄãµÄÈ«Á¦°É¡£
 dieact:1
 warpfl:60312
 warpx:22
 warpy:24
 enemyno:2392
-deniedmsg:åŠ æ²¹â€¦
-alreadymsg:ï¼ƒï¼ƒï¼ƒ
+deniedmsg:¼ÓÓÍ¡­
+alreadymsg:¡­¡­¡­
 onebattle:1
 OVER
 
@@ -19,11 +19,11 @@ NEWEVENT1:
 FREE:LV>0&ENDEV=4&NOWEV=145&ITEM=2100&ITEM=2101&ITEM=2102&ITEM=2099
 AddItem:2103
 WARP:8216,27,23
-endmsg:æ­å–œä½ é€šè¿‡æœ€åŽçš„è€ƒéªŒï¼ï¼
+endmsg:¹§Ï²ÄãÍ¨¹ý×îºóµÄ¿¼Ñé£¡£¡
 OVER
 
 NEWEVENT2:
 FREE:LV>0
 WARP:8219,120,85
-endmsg:ä¸çŸ¥é“ä½ æ¥è¿™é‡Œå¹²å˜›è€¶ï¼
+endmsg:²»ÖªµÀÄãÀ´ÕâÀï¸ÉÂïÒ®£¡
 OVER

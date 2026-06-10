@@ -1,11 +1,11 @@
-NomalMainMsg:欢迎光临。贩卖往斗技场的票。
+NomalMainMsg:��ӭ���١���������������Ʊ��
 
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV<11,DR<11,DR=77,DR=777
-AcceptMsg:贩卖往斗技场的票。\n你的话免费喔。\n能够进入竞技场吗？\n\n还有、其他的票全部都要回收\n、请原谅。
-ThanksMsg:那么、我就把票交给你啰。还有、这张票若是登出、或是放置于地面都会消失请注意。
-ItemFullMsg:道具已满无法交付给你。
+AcceptMsg:��������������Ʊ��\n��Ļ����ม�\n�ܹ����뾺������\n\n���С�������Ʊȫ����Ҫ����\n����ԭ�¡�
+ThanksMsg:��ô���ҾͰ�Ʊ�����ㆪ�����С�����Ʊ���ǵǳ������Ƿ����ڵ��涼����ʧ��ע�⡣
+ItemFullMsg:���������޷��������㡣
 GetItem:2598
 DelItem:2521,2522,2523,2524,2597,2599,2600,2601,2602
 EventEnd
@@ -14,16 +14,16 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=2598
-NomalMsg:已经有票了喔。
+NomalMsg:�Ѿ���Ʊ��ม�
 EventEnd
 
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>10
-AcceptMsg:贩卖往斗技场的票。\n你的话要%8ds。\n可以吗？\n\n还有、因为其他的票全部都要回收\n、请原谅。
-ThanksMsg:那么、请交给我吧。还有、这张票若是登出、或是放置于地面都会消失请注意。
-StoneLessMsg:不好意思钱不够喔。
-ItemFullMsg:道具已满无法交付给你。
+AcceptMsg:��������������Ʊ��\n��Ļ�Ҫ%8ds��\n������\n\n���С���Ϊ������Ʊȫ����Ҫ����\n����ԭ�¡�
+ThanksMsg:��ô���뽻���Ұɡ����С�����Ʊ���ǵǳ������Ƿ����ڵ��涼����ʧ��ע�⡣
+StoneLessMsg:������˼Ǯ����ม�
+ItemFullMsg:���������޷��������㡣
 DelStone:LV*3
 GetItem:2598
 DelItem:2521,2522,2523,2524,2597,2599,2600,2601,2602

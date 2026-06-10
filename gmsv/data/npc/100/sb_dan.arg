@@ -1,11 +1,11 @@
 entype:2
-askbattlemsg1:è¯•è¯•ä½ çš„åŠ›é‡
-startmsg:æ”¾é©¬è¿‡æ¥ï¼
+askbattlemsg1:ÊÔÊÔÄãµÄÁ¦Á¿
+startmsg:·ÅÂí¹ıÀ´£¡
 dieact:1
 warpfl:11107
 warpx:23
 warpy:35
 end msg:
 enemyno:527,526,528,529
-deniedmsg:ï¼ˆå¥½åƒåœ¨ç›¯ç€æˆ‘è¿™è¾¹ï¼‰
+deniedmsg:£¨ºÃÏñÔÚ¶¢×ÅÎÒÕâ±ß£©
 

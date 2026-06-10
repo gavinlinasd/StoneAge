@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-########å°å°è¿·å®«#########
+########·âÓ¡ÃÔ¹¬#########
 {
-name=å¥½å¿ƒçš„åŒ»ç”Ÿ
+name=ºÃĞÄµÄÒ½Éú
 floorid=32021
 borncenter=31,23
 dir=4
@@ -14,9 +14,9 @@ enemy=npcgen_warpman|file:new/lubi/fengyin.arg
 graphicname=16347
 }
 
-########ç¢§é’#########
+########±ÌÇà#########
 {
-name=è‹—æ—èµ¤è„šåŒ»ç”Ÿ
+name=Ãç×å³à½ÅÒ½Éú
 floorid=850
 borncenter=35,27
 dir=4
@@ -28,9 +28,9 @@ graphicname=16342
 }
 
 
-########ç‰ç’ƒ#########
+########ÁğÁ§#########
 {
-name=é¾™æ´çš„å†’é™©è€…
+name=Áú¶´µÄÃ°ÏÕÕß
 floorid=5511
 borncenter=17,4
 dir=4

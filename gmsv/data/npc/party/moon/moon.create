@@ -9,7 +9,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=35303
-name=ã€€
+name=¡¡
 enemy=npcgen_warpman|file:party/moon/moonwarp1.arg
 }
 
@@ -22,7 +22,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=35303
-name=ã€€
+name=¡¡
 enemy=npcgen_warpman|file:party/moon/moonwarp1.arg
 }
 
@@ -35,7 +35,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=35303
-name=ã€€
+name=¡¡
 enemy=npcgen_warpman|file:party/moon/moonwarp1.arg
 }
 
@@ -47,7 +47,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=35303
-name=ã€€
+name=¡¡
 enemy=npcgen_warpman|file:party/moon/moonwarp1.arg
 }
 
@@ -59,7 +59,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=35303
-name=ã€€
+name=¡¡
 enemy=npcgen_warpman|file:party/moon/moonwarp1.arg
 }
 
@@ -69,7 +69,7 @@ borncenter=35,61,1,1
 createnum=1
 time=0
 dir=7
-name=æœˆä¹‹å¹»å¢ƒæœˆå…”
+name=ÔÂÖ®»Ã¾³ÔÂÍÃ
 graphicname=100854
 enemy=changeevent|file:party/moon/moon.arg
 }
@@ -80,7 +80,7 @@ borncenter=58,47,1,1
 createnum=1
 time=0
 dir=4
-name=æœˆå¦ƒ
+name=ÔÂåú
 graphicname=16300
 enemy=changeevent|file:party/moon/moonqueen.arg
 }
@@ -92,7 +92,7 @@ borncenter=34,13,1,1
 createnum=1
 time=0
 dir=6
-name=æ³•äºšç¥­å¸
+name=·¨ÑÇ¼ÀË¾
 graphicname=101427
 enemy=changeevent|file:party/moon/moonya.arg
 }
@@ -103,7 +103,7 @@ borncenter=34,22,1,1
 createnum=1
 time=0
 dir=6
-name=æ³•æ©ç¥­å¸
+name=·¨¶÷¼ÀË¾
 graphicname=101424
 enemy=changeevent|file:party/moon/moonn.arg
 }
@@ -114,7 +114,7 @@ borncenter=28,5,1,1
 createnum=1
 time=0
 dir=4
-name=æ³•æ´›ç¥­å¸
+name=·¨Âå¼ÀË¾
 graphicname=101425
 enemy=changeevent|file:party/moon/moonno.arg
 }
@@ -125,7 +125,7 @@ borncenter=59,53,1,1
 createnum=1
 time=0
 dir=4
-name=æ³•ä¼Šç¥­å¸
+name=·¨ÒÁ¼ÀË¾
 graphicname=101426
 enemy=changeevent|file:party/moon/mooni.arg
 }
@@ -138,7 +138,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101424
-name=ç‹¼äººä¸€æ—
+name=ÀÇÈËÒ»×å
 enemy=npcgen_warpman|file:party/moon/moonwarp.arg
 }
 
@@ -150,7 +150,7 @@ createnum=2
 dir=4
 ignoreinvincible=1
 graphicname=101424
-name=ç‹¼äººä¸€æ—
+name=ÀÇÈËÒ»×å
 enemy=npcgen_warpman|file:party/moon/moonwarp2.arg
 }
 
@@ -162,7 +162,7 @@ time=0
 dir=4
 ignoreinvincible=1
 graphicname=100854
-name=æœˆå…”
+name=ÔÂÍÃ
 enemy=npcgen_warpman|file:party/moon/moonwarp3.arg
 }
 
@@ -181,7 +181,7 @@ borncenter=149,70,1,1
 createnum=1
 time=120
 dir=3
-name=ç¦é”¢éª·é«…
+name=½ûïÀ÷¼÷Ã
 ignoreinvincible=1
 graphicname=101282
 enemy=devilpk|file:party/moon/moonattack.arg
@@ -193,7 +193,7 @@ borncenter=149,83,1,1
 createnum=1
 time=120
 dir=9
-name=ç¦é”¢éª·é«…
+name=½ûïÀ÷¼÷Ã
 ignoreinvincible=1
 graphicname=101282
 enemy=devilpk|file:party/moon/moonattack.arg
@@ -205,7 +205,7 @@ borncenter=162,83,1,1
 createnum=1
 time=120
 dir=7
-name=ç¦é”¢éª·é«…
+name=½ûïÀ÷¼÷Ã
 ignoreinvincible=1
 graphicname=101282
 enemy=devilpk|file:party/moon/moonattack.arg
@@ -217,7 +217,7 @@ borncenter=162,70,1,1
 createnum=1
 time=120
 dir=5
-name=ç¦é”¢éª·é«…
+name=½ûïÀ÷¼÷Ã
 ignoreinvincible=1
 graphicname=101282
 enemy=devilpk|file:party/moon/moonattack.arg
@@ -229,7 +229,7 @@ borncenter=155,77,1,1
 createnum=1
 time=0
 dir=4
-name=å«¦å¨¥
+name=æÏ¶ğ
 graphicname=100135
 action=0
 enemy=npcgen_warpman|file:party/moon/moongod.arg
@@ -241,7 +241,7 @@ borncenter=155,77,1,1
 createnum=1
 time=0
 dir=4
-name=å«¦å¨¥
+name=æÏ¶ğ
 graphicname=100135
 action=0
 enemy=npcgen_warpman|file:party/moon/moongod.arg

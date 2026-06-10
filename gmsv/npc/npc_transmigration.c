@@ -19,7 +19,7 @@
 static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num);
 static int NPC_TransmigrationCheck(int meindex, int talker);
 BOOL NPC_TransmigrationAddPet(int meindex, int talker, int petid);
-//関数の定義
+//函数的定义
 int NPC_StartpointCheck(int meindex,int talker);
 BOOL NPC_TransmigrationMain(int meindex, int toindex, char *buf);
 int NPC_TransmigrationFlg_CLS(int meindex, int toindex);
@@ -184,7 +184,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 #endif
 #endif//_TRANS_6
 			&& ten_no >= 0){
-	  		//条件クリアー
+	  		//条件达成
 	  		if(NPC_Util_GetStrFromStrWithDelim( buf,"startmsg", token,sizeof( token) ) 
 				 == NULL)
 				{
@@ -244,7 +244,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
       	 	        // Robin 2001/03/05 Tensei Check
 			//if(!CHAR_getWorkInt(toindex,CHAR_TENSEICHECKED))  return;
 	 	       
-	 		//転生処  を
+	 		//进行转生处理
 	 		point = NPC_StartpointCheck( meindex, toindex);
 	 		if(point == -1) {
 	 			return;
@@ -260,7 +260,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 		sprintf( tmp, "yesmsg%d", 
 	 						CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT));
 	 		
-	 		//転生終  メッセージをだす?
+	 		//发出转生结束讯息
 	 		if(NPC_Util_GetStrFromStrWithDelim( buf,tmp, token,sizeof( token) ) 
 			 == NULL)
 			{
@@ -274,8 +274,8 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 		sprintf( tmp, "yesmsg%d", 
 	 						CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT));
 			
-			//転生終  メッセージをだす?
-	 		//転生終  メッセージをだす?
+			//发出转生结束讯息
+	 		//发出转生结束讯息
 	 		if(strstr(buf, tmp) == NULL)	{
 				buttontype = WINDOW_BUTTONTYPE_OK;
 		  		windowno = CHAR_WINDOWTYPE_TRANSMIGRATION_END; 
@@ -288,7 +288,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 	case 3:
 	 		
 	 		/*--蓟      --*/
-			/*--キーワードのチェックを行う--*/
+			/*--进行关键字检查--*/
 			if(NPC_Util_GetStrFromStrWithDelim( buf,"nomsg", token,sizeof( token) ) 
 			 == NULL)
 			{
@@ -304,7 +304,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 		//鳖戏  及丢永本□斥质  
 	 		sprintf( tmp, "yesmsg%d", 
 	 						CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT));
-	 		//転生終  メッセージをだす?
+	 		//发出转生结束讯息
 	 		if(NPC_Util_GetStrFromStrWithDelim( buf,tmp, token,sizeof( token) ) 
 			 == NULL)
 			{
@@ -318,8 +318,8 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 	 		sprintf( tmp, "yesmsg%d", 
 	 						CHAR_getWorkInt( toindex, CHAR_WORKSHOPRELEVANT));
 			
-			//転生終  メッセージをだす?
-	 		//転生終  メッセージをだす?
+			//发出转生结束讯息
+	 		//发出转生结束讯息
 	 		if(strstr(buf, tmp) == NULL)
 			{
 				buttontype = WINDOW_BUTTONTYPE_OK;
@@ -335,7 +335,7 @@ static void NPC_Transmigration_selectWindow( int meindex, int toindex, int num)
 
                         // Robin 2001/03/05 Tensei Check
                         //if(!CHAR_getWorkInt(toindex,CHAR_TENSEICHECKED))  return;
-			//転生処  を
+			//进行转生处理
 	 		point = NPC_StartpointCheck( meindex, toindex);
 	 		if(point == -1) return;
 			NPC_Util_GetStrFromStrWithDelim( npcarg,elder[point],buf2,sizeof( buf2));
@@ -388,7 +388,7 @@ void NPC_TransmigrationWindowTalked( int meindex, int talkerindex,
 		}
 	  	break;
 		
-		//転生するかどうか  くメッセージの答え  
+		//询问是否转生的讯息的回答  
 	  case CHAR_WINDOWTYPE_TRANSMIGRATION_MAIN:
 	 	if( select == WINDOW_BUTTONTYPE_OK) {
 	 	        //ttom
@@ -478,7 +478,7 @@ BOOL NPC_TransmigratiomWarp(int meindex, int toindex, char *buf)
 	int i = 1;
 	int ret;
 	
-	//出身村ごとの条件を  く
+	//询问出身村各自的条件
 	while(getStringFromIndexWithDelim( buf,",",i,buf2,sizeof( buf2))
 	!= FALSE)
 	{
@@ -503,7 +503,7 @@ BOOL NPC_TransmigratiomWarp(int meindex, int toindex, char *buf)
 	}
     
     
-	//ワープ先のチェック
+	//检查传送目的地
     if( MAP_IsValidCoordinate( floor, x, y )== FALSE ){
 		return FALSE;
 	}
@@ -531,11 +531,11 @@ BOOL NPC_TransmigratiomWarp(int meindex, int toindex, char *buf)
 //*请  鳔及民尼永弁
 //
 //  曰袄“
-//	０：サムギ郊
-//	１：マリナス
-//	２：ジャジャ
+//	０：萨姆吉尔
+//	１：玛丽娜丝
+//	２：加加
 //	ㄢ“市伙正□瓜
-//	−１：エラー
+//	−１：错误
 //************************************************************
 int NPC_StartpointCheck(int meindex,int talker)
 {
@@ -562,17 +562,17 @@ int NPC_StartpointCheck(int meindex,int talker)
 static int NPC_TransmigrationCheck(int meindex, int talker)
 {
 	//	猿老蓉頡
-	//レベ郊が８０以上
+	//等级在８０以上
 	//ㄣ勾及箪岭奶矛件玄互蔽歹匀化中月仇午
-	//  終イベントをこなす?(これはいらんかな  
+	//  完成最终事件?(这个也许不需要  
 	int i,j,k=0;
 	int ch_no[4] = {39,40,42,46};
 	int petindex;
 	int num;
-//	int petid[4] = {1, 2, 3, 4}; //ペットの    を指定
-	int petid[4] = {693, 694, 695, 696}; //ペットの    を指定
-//	int petidfinal[4] = {11, 12, 13, 14}; //ペットの    を指定
-	int petidfinal[4] = {693, 694, 695, 696}; //ペットの    を指定
+//	int petid[4] = {1, 2, 3, 4}; //指定宠物的编号
+	int petid[4] = {693, 694, 695, 696}; //指定宠物的编号
+//	int petidfinal[4] = {11, 12, 13, 14}; //指定宠物的编号
+	int petidfinal[4] = {693, 694, 695, 696}; //指定宠物的编号
 
 	// Robin 2001/03/05
 	//CHAR_setWorkInt(talker,CHAR_TENSEICHECKED,FALSE);
@@ -587,7 +587,7 @@ static int NPC_TransmigrationCheck(int meindex, int talker)
 	}
 #endif
 
-	//レベ郊が８０以上
+	//等级在８０以上
 	if(CHAR_getInt( talker, CHAR_LV) < 80) return -1;
 
 	//奶矛件玄及白仿弘民尼永弁
@@ -624,7 +624,7 @@ static int NPC_TransmigrationCheck(int meindex, int talker)
 #endif
 	{
 		for(j = 0; j < 4 ;j++){
-			//五回  の場合は４  をチェック
+			//第五回的场合检查第４个
 			for(i=0 ; i < CHAR_MAXPETHAVE ; i++){
 				petindex = CHAR_getCharPet( talker, i);
 				if( petindex == -1  )  continue;
@@ -693,7 +693,7 @@ static int NPC_TransmigrationCheck(int meindex, int talker)
 #endif
 	// Robin 2001/03/05
 	//CHAR_setWorkInt(talker,CHAR_TENSEICHECKED,TRUE);
-	//  終イベントチェック
+	//  最终事件检查
 
 	return CHAR_getInt(talker, CHAR_TRANSMIGRATION);
 }
@@ -804,9 +804,9 @@ BOOL NPC_TransmigrationMain(int meindex, int toindex, char *buf)
 	CHAR_complianceParameter( toindex );
 	//HP毛荚汊今六化丐仆月
 	CHAR_setInt(toindex, CHAR_HP, CHAR_getWorkInt(toindex, CHAR_WORKMAXHP) );
-	//    先を出身地の村長宅に  す?
+	//    把目的地设为出身地的村长家
 	CHAR_setInt(toindex,CHAR_LASTTALKELDER, NPC_StartpointCheck(meindex,toindex));
-	/*  プレイヤー情  を送る  */
+	/*  发送玩家信息  */
 	CHAR_sendStatusString( toindex, "P" );
 	/*
 	CHAR_send_P_StatusString( toindex,
@@ -832,7 +832,7 @@ static int questTbl[20] = {
 1,2,4,5,8,12,14,15,16,17,19,22,27,30,31,34,35,38,45,47
 };
 //*******************************************************
-//クエストの数を数える
+//数任务的数量
 //*******************************************************
 int NPC_TransmigrationQuestCheck(int toindex)
 {
@@ -849,7 +849,7 @@ int NPC_TransmigrationQuestCheck(int toindex)
 }
 
 //*******************************************************
-//	ス  ータスを計算する
+//	计算状态值
 //*******************************************************
 int NPC_TransCalculation(int toindex, int para)
 {
@@ -857,7 +857,7 @@ int NPC_TransCalculation(int toindex, int para)
 	float ans;
 	int equ;
 	equ = CHAR_getInt(toindex, CHAR_TRANSEQUATION);
-	//16bit  ぁ窅暵
+	//16bit 的属性
 	quest = (float)(( equ >> 16 ) & 0xFFFF);
 	level = (float)(( equ >> 0 ) & 0xFFFF);
 	//tttom
@@ -891,7 +891,7 @@ float Rounding(float work,int num)
 
 //*******************************************************
 //
-//	ス  ータス関係の更新
+//	状态值相关的更新
 //
 //*******************************************************
 BOOL NPC_TransmigrationStatus(int meindex, int toindex,int work[10])
@@ -908,9 +908,9 @@ BOOL NPC_TransmigrationStatus(int meindex, int toindex,int work[10])
 	dex = CHAR_getInt(toindex,CHAR_DEX);
 
 
-	//クエストフラグをチェック
+	//检查任务旗标
 	quest = NPC_TransmigrationQuestCheck( toindex);
-	//レベ郊
+	//等级
 	level = CHAR_getInt(toindex,CHAR_LV);
 	
 	work[0] = level;
@@ -965,7 +965,7 @@ BOOL NPC_TransmigrationStatus(int meindex, int toindex,int work[10])
 	
 	
 	
-	//レベ郊    ポイントも  更
+	//等级    点数也变更
 	lvup = CHAR_getInt(toindex, CHAR_SKILLUPPOINT );
 /*#ifdef _TRANS_6
 	if( CHAR_getInt(toindex, CHAR_TRANSMIGRATION) == 6)
@@ -988,7 +988,7 @@ BOOL NPC_TransmigrationStatus(int meindex, int toindex,int work[10])
 
 
 /*----------------------------
- *  ペットを追加する
+ *  追加宠物
  ------------------------------*/
 BOOL NPC_TransmigrationAddPet(int meindex, int talker, int petid)
 {
@@ -1188,7 +1188,7 @@ int NPC_TransmigrationFlg_CLS(int meindex, int toindex)
 }
 
 //******************************************************************
-//ペットを消す
+//删除宠物
 //******************************************************************
 BOOL NPC_TransmigrationDelPetDel(int meindex,int talker,int petsel)
 {
@@ -1206,7 +1206,7 @@ BOOL NPC_TransmigrationDelPetDel(int meindex,int talker,int petsel)
 	/*--公及平乓仿互爵    卅日｝矢永玄毛丹日内蔽  --*/
 	if( CHAR_getWorkInt( CONNECT_getCharaindex( fd),
    	                     CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) return FALSE;
-	/*--そのペットがバト郊かどうかのチェック--*/
+	/*--检查该宠物是否在战斗中--*/
 	defpet = CHAR_getInt( talker, CHAR_DEFAULTPET);
 	if(defpet == petsel){
 		CHAR_setInt( talker, CHAR_DEFAULTPET, -1);
@@ -1231,13 +1231,13 @@ BOOL NPC_TransmigrationDelPetDel(int meindex,int talker,int petsel)
 	CHAR_setCharPet( talker, petsel, -1);
 	CHAR_endCharOneArray( petindex );
 	snprintf( szPet, sizeof( szPet ), "K%d", petsel);
-	// 新しいペットス  ータス送りつける
+	// 发送新的宠物状态
 	CHAR_sendStatusString( talker, szPet );
 	return TRUE;
 }
 
 //***********************************************************
-//	消すペットを探す?
+//	寻找要删除的宠物
 //***********************************************************
 BOOL NPC_TransmigrationDelPet(int meindex, int talker)
 {
@@ -1245,10 +1245,10 @@ BOOL NPC_TransmigrationDelPet(int meindex, int talker)
 	int petindex;
 	int num;
 	int j, k;
-//	int petid[4] = {1, 2, 3, 4}; //ペットの    を指定
-	int petid[4] = {693, 694, 695, 696}; //ペットの    を指定
-//	int petidfinal[4] = {11, 12, 13, 14}; //ペットの    を指定
-	int petidfinal[4] = {693, 694, 695, 696}; //ペットの    を指定
+//	int petid[4] = {1, 2, 3, 4}; //指定宠物的编号
+	int petid[4] = {693, 694, 695, 696}; //指定宠物的编号
+//	int petidfinal[4] = {11, 12, 13, 14}; //指定宠物的编号
+	int petidfinal[4] = {693, 694, 695, 696}; //指定宠物的编号
 	int petwork[4] ={ -1, -1, -1, -1};
 	
 	num = CHAR_getInt(talker, CHAR_TRANSMIGRATION);

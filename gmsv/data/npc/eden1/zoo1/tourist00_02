@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:濂藉彲鐖卞枖锛佺湡鎯虫姄鏉ュ綋瀹犵墿鍛紒
+NomalWindowMsg:好可爱喔！真想抓来当宠物呢！
 EventEnd

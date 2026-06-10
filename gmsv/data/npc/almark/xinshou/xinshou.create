@@ -8,7 +8,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=102049
-name=ç‚é¾™æ–°æ‰‹æ¥å¾…å‘˜
+name=Ñ×ÁúĞÂÊÖ½Ó´ıÔ±
 enemy=changeevent|file:almark/xinshou/xinshoujd.arg
 }
 
@@ -20,7 +20,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=102049
-name=ç‚é¾™æ–°æ‰‹æ¥å¾…å‘˜
+name=Ñ×ÁúĞÂÊÖ½Ó´ıÔ±
 enemy=changeevent|file:almark/xinshou/xinshoujd.arg
 }
 
@@ -32,7 +32,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=102049
-name=ç‚é¾™æ–°æ‰‹æ¥å¾…å‘˜
+name=Ñ×ÁúĞÂÊÖ½Ó´ıÔ±
 enemy=changeevent|file:almark/xinshou/xinshoujd.arg
 }
 
@@ -44,6 +44,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=102049
-name=ç‚é¾™æ–°æ‰‹æ¥å¾…å‘˜
+name=Ñ×ÁúĞÂÊÖ½Ó´ıÔ±
 enemy=changeevent|file:almark/xinshou/xinshoujd.arg
 }

@@ -82,7 +82,7 @@ static void NPC_CheckMan_selectWindow( int meindex, int talker, int num)
 
 	now[0] =0;
 	
-	/*--ウインドウタイプメッセージがおおいので先に設定--*/
+	/*--窗口类型讯息较多所以先设置--*/
   	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 
 	switch( num) {

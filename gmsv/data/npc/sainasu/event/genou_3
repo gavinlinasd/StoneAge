@@ -1,32 +1,32 @@
 ###########################################################
-#玄黄洞窟在大地图被人欺负的人#
-#						负责人：西竹#
+#���ƶ����ڴ��ͼ�����۸�����#
+#						�����ˣ�����#
 ###########################################################
 
-NomalMainMsg:啊啊，谢谢你在我危急的时候救我。
+NomalMainMsg:������лл������Σ����ʱ����ҡ�
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&NOWEV=42
-NomalWindowMsg:\n\n真的非常感谢你。
+NomalWindowMsg:\n\n��ķǳ���л�㡣
 EventEnd
 
 EventNo:42
 TYPE:REQUEST
 EVENT:LV>0&NOWEV=41&ENDEV=4
-RequestMsg:\n谢谢你在我危急的时候救我\n真的非常感谢你。
-ThanksMsg:\n刚才那些人吗？\n我的宝贝差一点就被胖特族给抢走了\n进入胖特族洞窟的暗号\n他们要我教他们，可是这···\n我真倒楣遇到这种事。
-StopMsg:\n\n\n你还有什么事吗？
-EndStopMsg:\n\n什么事？
-NoStopMsg:\n\n这样子吗，真的非常感谢你。
+RequestMsg:\nлл������Σ����ʱ�����\n��ķǳ���л�㡣
+ThanksMsg:\n�ղ���Щ����\n�ҵı�����һ��ͱ��������������\n���������嶴�ߵİ���\n����Ҫ�ҽ����ǣ������⡤����\n���浹����������¡�
+StopMsg:\n\n\n�㻹��ʲô����
+EndStopMsg:\n\nʲô�£�
+NoStopMsg:\n\n����������ķǳ���л�㡣
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:\n谢谢你在我危急的时候救我\n真的非常感谢你。\n\n刚才那些人吗？\n这个我也不太清楚啊\n就是突然被他们包围住···为什么会这样呢。
+NomalWindowMsg:\nлл������Σ����ʱ�����\n��ķǳ���л�㡣\n\n�ղ���Щ����\n�����Ҳ��̫�����\n����ͻȻ�����ǰ�Χס������Ϊʲô�������ء�
 EventEnd
 
 

@@ -1,12 +1,12 @@
-#マンモスくじ１等引換所
-NomalMainMsg:这里是长毛象签1等交换所。
+#�ޥ�⥹��������������
+NomalMainMsg:�����ǳ�ë��ǩ1�Ƚ�������
 
 EventNo:-1
 TYPE:ACCEPT
 EVENT:ITEM=2729
-AcceptMsg:这里是长毛象签1等交换所。
-ThanksMsg:非常的恭喜你。这是1等奖的稀有宠物。
-PetFullMsg:宠物已经满了、\n请随便丢掉一只。
+AcceptMsg:�����ǳ�ë��ǩ1�Ƚ�������
+ThanksMsg:�ǳ��Ĺ�ϲ�㡣����1�Ƚ���ϡ�г��
+PetFullMsg:�����Ѿ����ˡ�\n����㶪��һֻ��
 DelItem:2729*1
 GetPet:483
 EventEnd
@@ -15,6 +15,6 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM!=2729
-NomalMsg:这里是长毛象签1等交换所。请加油中1等奖吧。
+NomalMsg:�����ǳ�ë��ǩ1�Ƚ��������������1�Ƚ��ɡ�
 EventEnd
 

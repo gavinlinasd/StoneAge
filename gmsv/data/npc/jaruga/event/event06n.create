@@ -1,8 +1,8 @@
 NPCCREATE
 
 ##################################################
-#å“¥äºšå±±æ´çªŸä¸­ä¸ä¹ŒåŠ›çš„è°ˆè¯äº‹ä»¶(å“¥äºšå±±)#
-# 				       ç³»ç™«â€œæ‹§è¹¶#
+#¸çÑÇÉ½¶´¿ßÖĞÓëÎÚÁ¦µÄÌ¸»°ÊÂ¼ş(¸çÑÇÉ½)#
+# 				       Ïµñ²¡°Å¡õê#
 ##################################################
 
 {
@@ -13,7 +13,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16203
-name=å¹´é’äºº
+name=ÄêÇàÈË
 enemy=changeevent|file:jaruga/event/event06_1
 }
 
@@ -26,7 +26,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16018
-name=ç›ä¸½å¨œä¸çš„å•†äºº
+name=ÂêÀöÄÈË¿µÄÉÌÈË
 enemy=changeevent|file:jaruga/event/event06_2
 }
 

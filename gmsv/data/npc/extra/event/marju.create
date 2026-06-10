@@ -7,7 +7,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16046
-name=é©¬ç¥–
+name=Âí×æ
 enemy=changeevent|file:extra/event/marju
 }
 
@@ -19,7 +19,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16000
-name=å¡ä¼Šç‰¹
+name=¿¨ÒÁÌØ
 enemy=changeevent|file:extra/event/marju01
 }
 
@@ -31,7 +31,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju02
 }
 
@@ -43,7 +43,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju02a
 }
 
@@ -55,7 +55,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju03
 }
 
@@ -67,7 +67,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju03a
 }
 
@@ -79,7 +79,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju04
 }
 
@@ -91,7 +91,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju04a
 }
 
@@ -104,7 +104,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju05
 }
 
@@ -116,7 +116,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju05a
 }
 
@@ -129,7 +129,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju06a
 }
 
@@ -141,7 +141,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å®è¢‹
+name=±¦´ü
 enemy=changeevent|file:extra/event/marju06
 }
 

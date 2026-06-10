@@ -4,8 +4,8 @@ TYPE:ACCEPT
 EVENT:ITEM!=20918
 AcceptMsg:.....
 NomalMainMsg:.....
-ThanksMsg:....ç»™ä½ äº†
+ThanksMsg:....¸øÄãÁË
 GetItem:20918
-ItemFullMsg:ä½ èº«ä¸Šä¸œè¥¿å¤ªå¤šäº†
+ItemFullMsg:ÄãÉíÉÏ¶«Î÷Ì«¶àÁË
 EventEnd
 

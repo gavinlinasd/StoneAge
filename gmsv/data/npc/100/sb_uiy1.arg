@@ -1,13 +1,13 @@
 entype:2
-askbattlemsg1:åªæœ‰æˆ‘ä»¬ä¸‰å…„å¼Ÿæ‰¿è®¤çš„äºº
-askbattlemsg2:æ‰èƒ½ç»§ç»­å‘å‰è¿›ã€‚
-askbattlemsg3:ä½ è¦è¯•è¯•çœ‹å—ï¼Ÿ
-startmsg:æ¥ã€å†³èƒœè´Ÿå§ï¼
+askbattlemsg1:Ö»ÓĞÎÒÃÇÈıĞÖµÜ³ĞÈÏµÄÈË
+askbattlemsg2:²ÅÄÜ¼ÌĞøÏòÇ°½ø¡£
+askbattlemsg3:ÄãÒªÊÔÊÔ¿´Âğ£¿
+startmsg:À´¡¢¾öÊ¤¸º°É£¡
 dieact:1
 warpfl:10007
 warpx:29
 warpy:37
 end msg:
 enemyno:294,295,296,297,298
-deniedmsg:ç¨ç­‰ä¸€ä¸‹å“¦ã€‚
+deniedmsg:ÉÔµÈÒ»ÏÂÅ¶¡£
 

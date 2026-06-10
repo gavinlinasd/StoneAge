@@ -406,7 +406,7 @@ void ITEM_useStatusRecovery_Battle(
 	int ReceveEffect;
 	char *pszP = NULL, *arg;
 
-	// アイ  ムがあるかどうか
+	// 是否持有道具
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
@@ -414,11 +414,11 @@ void ITEM_useStatusRecovery_Battle(
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
 	pszP = arg;
-	// 効果を取  
+	// 取得效果  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
 		// 蝈莒手丐月及匹ㄟ井日腹绸
 		for( i = 0; i < BATTLE_ST_END; i ++ ){
-			// 効果ピッタリか?
+			// 效果是否恰好符合?
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -506,7 +506,7 @@ void ITEM_useMagicDef_Battle(
 //--------------------------------------------------------------
 //  由仿丢□正  凳失奶  丞毛银匀凶桦宁及质  
 //--------------------------------------------------------------
-// 戦    の場合
+// 战斗中的情况
 void ITEM_useParamChange_Battle(
 	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
 	int toNo, 			// 银歹木月谛及  寞
@@ -519,7 +519,7 @@ void ITEM_useParamChange_Battle(
 	int kind = -1;
 	char *pszP = NULL, *arg;
 
-	// アイ  ムがあるかどうか
+	// 是否持有道具
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
@@ -527,10 +527,10 @@ void ITEM_useParamChange_Battle(
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
 	pszP = arg;
-	// 効果を取  
+	// 取得效果  
 	for( ;kind == -1 && pszP[0] != 0; pszP++ ){
 		for( i = 1; i < BATTLE_MD_END; i ++ ){
-			// 効果ピッタリか?
+			// 效果是否恰好符合?
 			if( strncmp( pszP, aszParamChange[i], 2 ) == 0 ){
 				kind = i;
 				pszP +=2;
@@ -542,7 +542,7 @@ void ITEM_useParamChange_Battle(
 	if( kind == -1 ) return ;
 
 
-	if( strstr( pszP, "%" ) ){	// この場合は％計算
+	if( strstr( pszP, "%" ) ){	// 这种情况按％计算
 		par = 1;
 	}
 
@@ -575,7 +575,7 @@ void ITEM_useParamChange_Battle(
 //--------------------------------------------------------------
 //  白奴□伙玉箪岭  凳失奶  丞毛银匀凶桦宁及质  
 //--------------------------------------------------------------
-// 戦    の場合
+// 战斗中的情况
 void ITEM_useFieldChange_Battle(
 	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
 	int toNo, 			// 银歹木月谛及  寞
@@ -585,7 +585,7 @@ void ITEM_useFieldChange_Battle(
 	int itemindex;
 	char *pArg;
 
-	// アイ  ムがあるかどうか
+	// 是否持有道具
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
@@ -607,7 +607,7 @@ void ITEM_useFieldChange_Battle(
 //--------------------------------------------------------------
 //  箪岭  鳖失奶  丞毛银匀凶桦宁及质  
 //--------------------------------------------------------------
-// 戦    の場合
+// 战斗中的情况
 void ITEM_useAttReverse_Battle(
 	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
 	int toNo, 			// 银歹木月谛及  寞
@@ -617,7 +617,7 @@ void ITEM_useAttReverse_Battle(
 	int itemindex, battleindex, attackNo;
 
 
-	// アイ  ムがあるかどうか
+	// 是否持有道具
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
@@ -640,7 +640,7 @@ void ITEM_useAttReverse_Battle(
 //--------------------------------------------------------------
 //  竣濮井日汊唾毛银匀凶桦宁及质  
 //--------------------------------------------------------------
-// 戦    の場合
+// 战斗中的情况
 void ITEM_useRessurect(
 	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
 	int toNo, 			// 银歹木月谛及  寞
@@ -651,20 +651,20 @@ void ITEM_useRessurect(
 	char *pszP = NULL;
 
 
-	// アイ  ムがあるかどうか
+	// 是否持有道具
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
 	//------- 仇仇井日质   -----------
 	pszP = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 
-	if( strstr( pszP, "%" ) ){	// この場合は％計算
+	if( strstr( pszP, "%" ) ){	// 这种情况按％计算
 		par = 1;
 	}
 
 	if( sscanf( pszP, "%d", &pow ) != 1 ){
-		// 何ポイント回復するか?
-		pow = 0;	// ０の場合は完全回復
+		// 回复多少点?
+		pow = 0;	// 为０时完全回复
 	}
 
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
@@ -698,7 +698,7 @@ void ITEM_useRessurect(
 //--------------------------------------------------------------
 //    凯  膜恳毛银匀凶桦宁及质  
 //--------------------------------------------------------------
-// 戦    の場合
+// 战斗中的情况
 void ITEM_useCaptureUp_Battle(
 	int charaindex, 	// 银匀凶谛及奶件犯永弁旦
 	int toNo, 			// 银歹木月谛及  寞
@@ -708,7 +708,7 @@ void ITEM_useCaptureUp_Battle(
 	int itemindex, battleindex, attackNo, pow = 5, ReceveEffect;
 	char *pArg;
 
-	// アイ  ムがあるかどうか
+	// 是否持有道具
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
@@ -720,7 +720,7 @@ void ITEM_useCaptureUp_Battle(
 	if( pArg == NULL )return ;
 
 	if( sscanf( pArg, "%d", &pow ) != 1 ){
-		// 何ポイント回復するか?
+		// 回复多少点?
 		pow = 5;
 	}
 
@@ -778,11 +778,11 @@ void ITEM_useRefresh_Effect( int charaindex, int toindex, int haveitemindex)
 	if(!ITEM_CHECKINDEX(itemindex)) return;
 	arg = ITEM_getChar(itemindex, ITEM_ARGUMENT );
 	pszP = arg;
-	// 効果を取  
+	// 取得效果  
 	for( ;status == -1 && pszP[0] != 0; pszP++ ){
-		// １から検索
+		// 从１开始检索
 		for( i = 1; i < BATTLE_ST_END; i ++ ){
-			// 効果ピッタリか?
+			// 效果是否恰好符合?
 			if( strncmp( pszP, aszStatus[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -794,7 +794,7 @@ void ITEM_useRefresh_Effect( int charaindex, int toindex, int haveitemindex)
 	// 躲绊卅中及匹撩  
 	if( status == -1 ) return;
 
-	// バト郊  号
+	// 战斗编号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	index2 = BATTLE_No2Index( battleindex, toindex);//被击中目标之index
 	attackNo = BATTLE_Index2No( battleindex, charaindex );
@@ -803,7 +803,7 @@ void ITEM_useRefresh_Effect( int charaindex, int toindex, int haveitemindex)
 
     /* 平乓仿弁正□及赭    伉旦玄井日壅蛔 */
     CHAR_setItemIndex(charaindex, haveitemindex ,-1);
-	CHAR_sendItemDataOne( charaindex, haveitemindex);/* アイ  ム更新 */
+	CHAR_sendItemDataOne( charaindex, haveitemindex);/* 道具更新 */
 //	if( CHAR_getWorkInt( charaindex, StatusTbl[status] ) > 0 ){
 //		ReceveEffect = SPR_tyusya;
 //	}else{
@@ -1040,7 +1040,7 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 	int status = -1, i, turn = 3;
 	char szTurn[] = "turn";
 
-	// アイ  ムがあるかどうか
+	// 是否持有道具
     itemindex = CHAR_getItemIndex( charaindex, haveitemindex);
     if(!ITEM_CHECKINDEX(itemindex)) return;
 
@@ -1095,10 +1095,10 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 
 	//(光,镜,守)精灵
 
-	// 効果を取  
+	// 取得效果  
 	for( ;status == -1 && magicarg[0] != 0; magicarg++ ){
 		for( i = 1; i < BATTLE_MD_END; i ++ ){
-			// 効果ピッタリか?
+			// 效果是否恰好符合?
 			if( strncmp( magicarg, aszMagicDef[i], 2 ) == 0 ){
 				status = i;
 				pszP +=2;
@@ -1117,7 +1117,7 @@ void ITEM_ResAndDef( int charaindex, int toindex, int haveitemindex )
 
 	//print("次数:%d",turn);
 
-	// バト郊  号
+	// 战斗编号
 	battleindex = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEINDEX );
 	attackNo =  BATTLE_Index2No( battleindex, charaindex );
 

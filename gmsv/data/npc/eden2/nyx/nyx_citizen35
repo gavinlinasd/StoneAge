@@ -1,8 +1,8 @@
-NomalMainMsg:别乱花钱啊！小心老的时候没钱花！
+NomalMainMsg:���һ�Ǯ����С���ϵ�ʱ��ûǮ����
 
-#闲聊
+#����
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>80&ENDEV=81
-NomalWindowMsg:别乱花钱啊！小心老的时候没钱花！
+NomalWindowMsg:���һ�Ǯ����С���ϵ�ʱ��ûǮ����
 EventEnd

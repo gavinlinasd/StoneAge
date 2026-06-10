@@ -1,5 +1,5 @@
 NPCTEMPLATE
-######æ°´ã®å®ˆè­·è€…###########
+######¿å¤Î¼é¸î¼Ô###########
 {
 templatename=sb_4sinm
 makeatnobody=1
@@ -11,7 +11,7 @@ mp=100
 str=1
 tough=1
 }
-######ç«ã®å®ˆè­·è€…###########
+######²Ğ¤Î¼é¸î¼Ô###########
 {
 templatename=sb_4sinh
 makeatnobody=1
@@ -23,7 +23,7 @@ mp=100
 str=1
 tough=1
 }
-########é¢¨ã®å®ˆè­·è€…#########
+########É÷¤Î¼é¸î¼Ô#########
 {
 templatename=sb_4sink
 makeatnobody=1
@@ -35,7 +35,7 @@ mp=100
 str=1
 tough=1
 }
-#########åœ°ã®å®ˆè­·è€…########
+#########ÃÏ¤Î¼é¸î¼Ô########
 {
 templatename=sb_4sint
 makeatnobody=1

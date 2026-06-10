@@ -153,7 +153,7 @@ BOOL MAGIC_initMagic( char *filename)
 
     MAGIC_magicnum=0;
 
-    /*  まず  効な行が何行あるかどうか調べる    */
+    /*  先检查有多少有效行    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
@@ -208,10 +208,10 @@ BOOL MAGIC_initMagic( char *filename)
         if( line[0] == '\n' )continue;       /* none    */
         chomp( line );
 
-        /*  行を整形する    */
+        /*  整理行格式    */
         /*  引内 tab 毛 " " 卞  五晶尹月    */
         replaceString( line, '\t' , ' ' );
-        /* 先  のスペースを取る?*/
+        /* 去掉开头的空格*/
 {
         char    buf[256];
         for( i = 0; i < strlen( line); i ++) {
@@ -237,7 +237,7 @@ BOOL MAGIC_initMagic( char *filename)
 
 		for( i = 0; i < MAGIC_DATACHARNUM; i ++ ) {
 
-	        /*    字  用トークンを見る    */
+	        /*    查看字符串用的token    */
 	        ret = getStringFromIndexWithDelim( line,",",
 	        									i + 1,
 	        									token,sizeof(token));
@@ -404,8 +404,8 @@ BOOL ATTMAGIC_reinitMagic( void )
 #endif
 
 /*------------------------------------------------------------------------
- * MAGIC_IDから添字を知る関数
- * 返り値
+ * 从MAGIC_ID获知下标的函数
+ * 返回值
  * 成  : 添字
  * 撩  : -1
  *-----------------------------------------------------------------------*/
@@ -428,7 +428,7 @@ int MAGIC_getMagicArray( int magicid)
  * 热诸及楮醒  井日禾奶件正□毛忒允
  * 引数
  *  name        char*       热诸及  蟆
- * 返り値
+ * 返回值
  *  楮醒尺及禾奶件正［卅中桦宁卞反NULL
  ------------------------------------------------------------*/
 MAGIC_CALLFUNC MAGIC_getMagicFuncPointer(char* name)

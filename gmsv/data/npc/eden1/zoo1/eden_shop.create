@@ -1,6 +1,6 @@
 NPCCREATE
 
-#æ—…å®¢Aï¼ˆæ—…é¦†å†…çš„å°¼æ–¯ç”·æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍA£¨ÂÃ¹İÄÚµÄÄáË¹ÄĞĞÔÂÃ¿Í£©
 {
 floorid=7012
 borncorner=2,12,4,14
@@ -9,11 +9,11 @@ createnum=1
 dir=1
 ignoreinvincible=1
 graphicname=100001
-name=äºšä¸¹ã€€Lv:92
+name=ÑÇµ¤¡¡Lv:92
 enemy=changeevent|file:eden1/zoo1/traveller00_01
 }
 
-#æ—…å®¢Bï¼ˆæ—…é¦†å†…çš„å°¼æ–¯ç”·æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍB£¨ÂÃ¹İÄÚµÄÄáË¹ÄĞĞÔÂÃ¿Í£©
 {
 floorid=7012
 borncorner=2,20,4,22
@@ -22,11 +22,11 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100018
-name=äºšç±³æ©æ–¯ã€€Lv:98
+name=ÑÇÃ×¶÷Ë¹¡¡Lv:98
 enemy=changeevent|file:eden1/zoo1/traveller00_02
 }
 
-#æ—…å®¢Cï¼ˆæ—…é¦†å†…çš„å°¼æ–¯ç”·æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍC£¨ÂÃ¹İÄÚµÄÄáË¹ÄĞĞÔÂÃ¿Í£©
 {
 floorid=7012
 borncorner=24,18,26,20
@@ -35,12 +35,12 @@ createnum=1
 dir=3
 ignoreinvincible=1
 graphicname=100035
-name=æ°å…‹æ–¯ã€€Lv:81
+name=½Ü¿ËË¹¡¡Lv:81
 enemy=changeevent|file:eden1/zoo1/traveller00_03
 action=15
 }
 
-#æ—…å®¢Dï¼ˆæ—…é¦†å†…çš„å°¼æ–¯ç”·æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍD£¨ÂÃ¹İÄÚµÄÄáË¹ÄĞĞÔÂÃ¿Í£©
 {
 floorid=7012
 borncorner=9,14,11,16
@@ -49,11 +49,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=100052
-name=ç½—å®¾æ±‰ã€€Lv:91
+name=ÂŞ±öºº¡¡Lv:91
 enemy=changeevent|file:eden1/zoo1/traveller00_04
 }
 
-#æ—…é¦†ä¾è€…Aï¼ˆæ—…é¦†å†…çš„ä¼Šç”¸ä¾è€…ï¼‰
+#ÂÃ¹İÊÌÕßA£¨ÂÃ¹İÄÚµÄÒÁµéÊÌÕß£©
 {
 floorid=7012
 borncorner=17,13,19,15
@@ -62,11 +62,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16311
-name=æ—…é¦†å‘˜å·¥
+name=ÂÃ¹İÔ±¹¤
 enemy=changeevent|file:eden1/zoo1/waiter00_01
 }
 
-#æ—…é¦†å¨å¸ˆBï¼ˆæ—…é¦†å†…çš„ä¼Šç”¸å¨å¸ˆï¼‰
+#ÂÃ¹İ³øÊ¦B£¨ÂÃ¹İÄÚµÄÒÁµé³øÊ¦£©
 {
 floorid=7012
 borncorner=3,2,4,4
@@ -75,11 +75,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16317
-name=æ—…é¦†å¨å¸ˆ
+name=ÂÃ¹İ³øÊ¦
 enemy=changeevent|file:eden1/zoo1/waiter00_02
 }
 
-#æ—…å®¢Eï¼ˆå® ç‰©åº—çš„å°¼æ–¯ç”·æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍE£¨³èÎïµêµÄÄáË¹ÄĞĞÔÂÃ¿Í£©
 {
 floorid=7009
 borncorner=2,8,4,10
@@ -88,11 +88,11 @@ createnum=1
 dir=1
 ignoreinvincible=1
 graphicname=100069
-name=è€ƒæ—ã€€Lv:105
+name=¿¼ÁÖ¡¡Lv:105
 enemy=changeevent|file:eden1/zoo1/traveller00_05
 }
 
-#æ—…å®¢Fï¼ˆå® ç‰©åº—çš„å°¼æ–¯ç”·æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍF£¨³èÎïµêµÄÄáË¹ÄĞĞÔÂÃ¿Í£©
 {
 floorid=7009
 borncorner=11,11,13,13
@@ -101,11 +101,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100086
-name=å‡¯æ˜“æ–¯ã€€Lv:99
+name=¿­Ò×Ë¹¡¡Lv:99
 enemy=changeevent|file:eden1/zoo1/traveller00_06
 }
 
-#æ—…å®¢Gï¼ˆå® ç‰©åº—çš„å°¼æ–¯ç”·æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍG£¨³èÎïµêµÄÄáË¹ÄĞĞÔÂÃ¿Í£©
 {
 floorid=7009
 borncorner=8,8,10,10
@@ -114,11 +114,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=100103
-name=ç½—æ¯”å¨å»‰ã€€Lv:105
+name=ÂŞ±ÈÍşÁ®¡¡Lv:105
 enemy=changeevent|file:eden1/zoo1/traveller00_07
 }
 
-#å±…æ°‘Wï¼ˆè‚‰åº—çš„ä¼Šç”¸äººï¼‰
+#¾ÓÃñW£¨ÈâµêµÄÒÁµéÈË£©
 {
 floorid=7011
 borncorner=7,5,9,7
@@ -127,11 +127,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16327
-name=å±…æ°‘
+name=¾ÓÃñ
 enemy=changeevent|file:eden1/zoo1/customer00_01
 }
 
-#æ—…å®¢Hï¼ˆè‚‰åº—çš„å°¼æ–¯å¥³æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍH£¨ÈâµêµÄÄáË¹Å®ĞÔÂÃ¿Í£©
 {
 floorid=7011
 borncorner=3,6,5,8
@@ -140,11 +140,11 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100120
-name=å¡æ³¢å°¼äºšã€€Lv:112
+name=¿¨²¨ÄáÑÇ¡¡Lv:112
 enemy=changeevent|file:eden1/zoo1/traveller00_08
 }
 
-#æ—…å®¢Iï¼ˆè‚‰åº—çš„å°¼æ–¯å¥³æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍI£¨ÈâµêµÄÄáË¹Å®ĞÔÂÃ¿Í£©
 {
 floorid=7011
 borncorner=3,9,5,11
@@ -153,11 +153,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100137
-name=çˆ±åˆ©è¯ºã€€Lv:98
+name=°®ÀûÅµ¡¡Lv:98
 enemy=changeevent|file:eden1/zoo1/traveller00_09
 }
 
-#æ—…å®¢Jï¼ˆåŒ»é™¢çš„å°¼æ–¯å¥³æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍJ£¨Ò½ÔºµÄÄáË¹Å®ĞÔÂÃ¿Í£©
 {
 floorid=7010
 borncorner=3,8,5,10
@@ -166,12 +166,12 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100154
-name=å¸ƒå…°æ–½ã€€Lv:92
+name=²¼À¼Ê©¡¡Lv:92
 enemy=changeevent|file:eden1/zoo1/traveller00_10
 action=13
 }
 
-#å±…æ°‘Xï¼ˆåŒ»é™¢çš„ä¼Šç”¸äººï¼‰
+#¾ÓÃñX£¨Ò½ÔºµÄÒÁµéÈË£©
 {
 floorid=7010
 borncorner=8,9,10,11
@@ -180,11 +180,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16314
-name=å±…æ°‘
+name=¾ÓÃñ
 enemy=changeevent|file:eden1/zoo1/customer00_02
 }
 
-#æ—…å®¢Kï¼ˆåŒ»é™¢çš„å°¼æ–¯å¥³æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍK£¨Ò½ÔºµÄÄáË¹Å®ĞÔÂÃ¿Í£©
 {
 floorid=7010
 borncorner=6,4,8,6
@@ -193,12 +193,12 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100171
-name=æ…æŸæ°—å¸½ã€€Lv:93
+name=¿µË¿µ¤Ë¹¡¡Lv:93
 enemy=changeevent|file:eden1/zoo1/traveller00_11
 action=5
 }
 
-#æ—…å®¢Lï¼ˆåŒ»é™¢çš„å°¼æ–¯å¥³æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍL£¨Ò½ÔºµÄÄáË¹Å®ĞÔÂÃ¿Í£©
 {
 floorid=7010
 borncorner=0,12,2,14
@@ -207,11 +207,11 @@ createnum=1
 dir=2
 ignoreinvincible=1
 graphicname=100188
-name=åˆšä¹ƒç»®ã€€Lv:88
+name=¸ÕÄËç²¡¡Lv:88
 enemy=changeevent|file:eden1/zoo1/traveller00_12
 }
 
-#æ—…å®¢Mï¼ˆåŒ»é™¢çš„å°¼æ–¯å¥³æ€§æ—…å®¢ï¼‰
+#ÂÃ¿ÍM£¨Ò½ÔºµÄÄáË¹Å®ĞÔÂÃ¿Í£©
 {
 floorid=7010
 borncorner=13,14,15,16
@@ -220,11 +220,11 @@ createnum=1
 dir=7
 ignoreinvincible=1
 graphicname=100205
-name=èª¹å·±ã€€Lv:92
+name=Èğ¸Ê¡¡Lv:92
 enemy=changeevent|file:eden1/zoo1/traveller00_13
 }
 
-#æ—…å®¢Nï¼ˆåŒ»é™¢çš„ä¼Šç”¸æŠ¤å£«ï¼‰
+#ÂÃ¿ÍN£¨Ò½ÔºµÄÒÁµé»¤Ê¿£©
 {
 floorid=7010
 borncorner=14,5,16,7
@@ -233,6 +233,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16320
-name=ä¼Šç”¸æŠ¤å£«
+name=ÒÁµé»¤Ê¿
 enemy=changeevent|file:eden1/zoo1/nurse00_01
 }

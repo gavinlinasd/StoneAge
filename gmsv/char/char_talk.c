@@ -33,7 +33,7 @@ extern int channelMember[FAMILY_MAXNUM][FAMILY_MAXCHANNEL][FAMILY_MAXMEMBER];
 int *piOccChannelMember = NULL;
 #endif
 /*------------------------------------------------------------
- * チャット関  のソース
+ * 聊天相关的源码
  ------------------------------------------------------------*/
 #define DEBUGCDKEYNUM 100
 struct tagDebugCDKey {
@@ -42,7 +42,7 @@ struct tagDebugCDKey {
 };
 static struct tagDebugCDKey DebugCDKey[DEBUGCDKEYNUM];
 
-/*====================チャット  法====================*/
+/*====================聊天魔法====================*/
 typedef void (*CHATMAGICFUNC)(int,char*);
 typedef struct tagCHAR_ChatMagicTable
 {
@@ -538,9 +538,9 @@ void CHAR_initDebugChatCdkey( void)
 	}
 }
 /*------------------------------------------------------------
- * チャット  法のハッ竺ュ値を作る?
+ * 生成聊天魔法的哈希值
  * 娄醒｝忒曰袄
- *  なし
+ *  无
  ------------------------------------------------------------*/
 void CHAR_initChatMagic(void)
 {
@@ -634,13 +634,13 @@ int CHAR_getChatMagicFuncMaxNum( void)
 }
 
 /*------------------------------------------------------------
- * チャット  法
+ * 聊天魔法
  * 引数
- *  charaindex      int     キャラインデックス
- *  message         char*   メッセージ
- *  isDebug         BOOL    デバッグチャット  法かどうか
- * 返り値
- *  なし
+ *  charaindex      int     人物索引
+ *  message         char*   讯息
+ *  isDebug         BOOL    是否是调试聊天魔法
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 static BOOL CHAR_useChatMagic( int charaindex, char* data, BOOL isDebug)
 {
@@ -716,8 +716,8 @@ static BOOL CHAR_useChatMagic( int charaindex, char* data, BOOL isDebug)
  * 祥汹井日汔毛菲户月
  * 引数
  *  volume  int     祥汹
- * 返り値
- *  マップでのマス
+ * 返回值
+ *  地图上的格子
  ------------------------------------------------------------*/
 static int CHAR_getRangeFromVolume( int volume )
 {
@@ -734,8 +734,8 @@ static int CHAR_getRangeFromVolume( int volume )
 /*------------------------------------------------------------
  * 擘及示伉亘□丞毛茧月［条卅中支曰井凶［
  * 引数
- *  mesg        char*       しゃべる言葉
- * 返り値
+ *  mesg        char*       说的话
+ * 返回值
  *  -1 及午五反仇公仇公
  *  0  及午五反孔勾丹
  *  1 方曰云云五中午｝仃勾卞勾中化中月 ! 及醒
@@ -757,9 +757,9 @@ static int CHAR_getVolume( char* mesg )
 	}else{
 		/*  3动晓   */
 		if( mesg[stringlen-1] == '.' ){
-			/*  こそこその可  性あり    */
+			/*  有可能是窃窃私语    */
 			if( mesg[stringlen-2] == '.' && mesg[stringlen-3] == '.' ){
-				/*  こそこそ    */
+				/*  窃窃私语    */
 				return -1;
 			}
 			return 0;
@@ -781,12 +781,12 @@ static int CHAR_getVolume( char* mesg )
 /*------------------------------------------------------------
  * 丢永本□斥及    井日丢永本□斥及      坌毛潸曰请允
  * 引数
- *  message     char*           メッセージ    
+ *  message     char*           讯息内容    
  *  kind        char*           p or s or i卅及丢永本□斥
  *  kindlen     int             kind 及赢今
  *  body        char**          丢永本□斥    及禾奶件正□及伞  桦赭
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 void CHAR_getMessageBody(char* message,char* kind,int kindlen,char** body)
 {

@@ -19,12 +19,12 @@
 extern struct FM_PKFLOOR fmpkflnum[FAMILY_FMPKFLOOR];
 
 /*------------------------------------------------------------
- * パー  ィ関  のソース
+ * 队伍相关的源码
  ------------------------------------------------------------*/
 
 /*------------------------------------------------------------
  * 坞中化中月由□  奴  毛茧允
- * なければ-1を返す?
+ * 没有的话返回-1
  ------------------------------------------------------------*/
 int CHAR_getEmptyPartyArray( int charaindex)
 {
@@ -85,7 +85,7 @@ void CHAR_JoinParty_Main( int charaindex, int targetindex)
 	if( CHAR_getWorkInt( toindex, CHAR_WORKPARTYMODE) == CHAR_PARTY_NONE ) {
 		CHAR_sendLeader( CHAR_getWorkInt( toindex, CHAR_WORKOBJINDEX), 1);
 		/* 锹澎及橇谪及踏五晶尹 */
-		/* 親になる */
+		/* 成为队长 */
 		CHAR_setWorkInt( toindex, CHAR_WORKPARTYMODE, 1);
 		CHAR_setWorkInt( toindex, CHAR_WORKPARTYINDEX1, toindex);
 		firstflg = TRUE;
@@ -129,7 +129,7 @@ void CHAR_JoinParty_Main( int charaindex, int targetindex)
 	}
 }
 /*------------------------------------------------------------
- * パー  ィに  ろうとする?
+ * 尝试加入队伍
  ------------------------------------------------------------*/
 BOOL CHAR_JoinParty( int charaindex )
 {
@@ -148,7 +148,7 @@ BOOL CHAR_JoinParty( int charaindex )
 		return FALSE;
 	}
 
-        /* 自分がパー  ィ組んでたら駄   */
+        /* 自己已组队伍的话不行   */
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE ) {
 		lssproto_PR_send( fd, 1, FALSE);
 		return FALSE;
@@ -160,7 +160,7 @@ BOOL CHAR_JoinParty( int charaindex )
 							 CHAR_getInt( charaindex , CHAR_Y ) ,
 							 1 , &x , &y );
 
-	/* 初期化する */
+	/* 进行初始化 */
 	for( i = 0; i < CONNECT_WINDOWBUFSIZE; i ++ ) {
         CONNECT_setJoinpartycharaindex(fd,i,-1);
     }
@@ -196,7 +196,7 @@ BOOL CHAR_JoinParty( int charaindex )
 		/* 駐卅通慇＆式掃 */
 		if( CHAR_getInt( toindex, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ){
 			found = TRUE;
-			/* 相手が子だったら親を引っ張り出す */
+			/* 对方是队员的话拉出队长 */
 			if( CHAR_getWorkInt( toindex, CHAR_WORKPARTYMODE) == CHAR_PARTY_CLIENT ) {
 				targetindex = CHAR_getWorkInt( toindex, CHAR_WORKPARTYINDEX1);
 				if( !CHAR_CHECKINDEX( targetindex) ) {
@@ -220,7 +220,7 @@ BOOL CHAR_JoinParty( int charaindex )
 			if( CHAR_getWorkInt( targetindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ){
 				continue;
 			}
-			/* 仲間許可モードか */
+			/* 是否是允许组队模式 */
 			if( !CHAR_getFlg( targetindex, CHAR_ISPARTY) ) continue;
 
 #ifdef _ANGEL_SUMMON
@@ -582,7 +582,7 @@ BOOL CHAR_DischargePartyNoMsg( int charaindex)
 
 
 /*------------------------------------------------------------
- * 自分がリーダーかどうかを送信する?
+ * 发送自己是否是队长
  ------------------------------------------------------------*/
 void CHAR_sendLeader( int objindex, int leader)
 {
@@ -591,19 +591,19 @@ void CHAR_sendLeader( int objindex, int leader)
 	CHAR_sendWatchEvent( objindex,CHAR_ACTLEADER,opt,1,TRUE);
 }
 /*------------------------------------------------------------
- * 仲間を順    CHAR_WORKPARTYINDEX)指定でキャラindexを引っ張る?
- * 自分が親でも子でも    ?
+ * 按顺序  CHAR_WORKPARTYINDEX)指定取得队友的人物index
+ * 自己是队长还是队员都可以
  ------------------------------------------------------------*/
 int CHAR_getPartyIndex( int index, int num)
 {
 	int	nindex = -1;
 
-	/* 仲間のインデックスを取   */
-	/* 親の場合 */
+	/* 取得队友的索引   */
+	/* 队长的场合 */
 	if( CHAR_getWorkInt( index, CHAR_WORKPARTYMODE) == CHAR_PARTY_LEADER ) {
 		nindex = CHAR_getWorkInt( index, CHAR_WORKPARTYINDEX1 + num );
 	}
-	/* 子の場合 */
+	/* 队员的场合 */
 	else {
 		int oyaindex = CHAR_getWorkInt( index, CHAR_WORKPARTYINDEX1);
 		if( CHAR_CHECKINDEX( oyaindex)) {
@@ -613,8 +613,8 @@ int CHAR_getPartyIndex( int index, int num)
 	return nindex;
 }
 /*------------------------------------------------------------
- * メッセージを送信する?
- * 仲間がいればその仲間にもメッセージを送信する?
+ * 发送讯息
+ * 有队友的话给队友也发送讯息
  ------------------------------------------------------------*/
 void CHAR_talkToCliAndParty( int talkedcharaindex,int talkcharaindex,
 					 char* message, CHAR_COLOR color )

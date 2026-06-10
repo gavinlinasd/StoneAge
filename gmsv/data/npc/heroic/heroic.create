@@ -1,8 +1,8 @@
 NPCCREATE
-##############è‹±é›„æˆ˜åœº################
-########è§£è¯´å‘˜######
+##############Ó¢ĞÛÕ½³¡################
+########½âËµÔ±######
 {
-name=è‹±é›„æˆ˜åœºå…¬å‘Š
+name=Ó¢ĞÛÕ½³¡¹«¸æ
 floorid=8200
 borncenter=215,11
 dir=6
@@ -11,9 +11,9 @@ createnum=1
 graphicname=10069
 enemy=changeevent|file:heroic/heroic.arg
 }
-###ã€€è‹±é›„æˆ˜åœº1ã€€###
+###¡¡Ó¢ĞÛÕ½³¡1¡¡###
 {
-name=å®ˆçµè€…ä¸€
+name=ÊØÁéÕßÒ»
 floorid=8200
 borncenter=216,28
 dir=6
@@ -24,9 +24,9 @@ enemy=sb_dou|file:heroic/heroic1.arg
 graphicname=100091
 }
 
-###ã€€è‹±é›„æˆ˜åœº2ã€€###
+###¡¡Ó¢ĞÛÕ½³¡2¡¡###
 {
-name=å®ˆçµè€…äºŒ
+name=ÊØÁéÕß¶ş
 floorid=8200
 borncenter=212,66
 dir=4
@@ -37,9 +37,9 @@ enemy=sb_dou|file:heroic/heroic2.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº3ã€€###
+###¡¡Ó¢ĞÛÕ½³¡3¡¡###
 {
-name=å®ˆçµè€…ä¸‰
+name=ÊØÁéÕßÈı
 floorid=8200
 borncenter=216,152
 dir=6
@@ -50,9 +50,9 @@ enemy=sb_dou|file:heroic/heroic3.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº4ã€€###
+###¡¡Ó¢ĞÛÕ½³¡4¡¡###
 {
-name=å®ˆçµè€…å››
+name=ÊØÁéÕßËÄ
 floorid=8200
 borncenter=158,33
 dir=6
@@ -63,9 +63,9 @@ enemy=sb_dou|file:heroic/heroic4.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº5ã€€###
+###¡¡Ó¢ĞÛÕ½³¡5¡¡###
 {
-name=å®ˆçµè€…äº”
+name=ÊØÁéÕßÎå
 floorid=8200
 borncenter=153,66
 dir=4
@@ -76,9 +76,9 @@ enemy=sb_dou|file:heroic/heroic5.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº6ã€€###
+###¡¡Ó¢ĞÛÕ½³¡6¡¡###
 {
-name=å®ˆçµè€…å…­
+name=ÊØÁéÕßÁù
 floorid=8200
 borncenter=150,124
 dir=4
@@ -89,9 +89,9 @@ enemy=sb_dou|file:heroic/heroic6.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº7ã€€###
+###¡¡Ó¢ĞÛÕ½³¡7¡¡###
 {
-name=å®ˆçµè€…ä¸ƒ
+name=ÊØÁéÕßÆß
 floorid=8200
 borncenter=96,6
 dir=6
@@ -102,9 +102,9 @@ enemy=sb_dou|file:heroic/heroic7.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº8ã€€###
+###¡¡Ó¢ĞÛÕ½³¡8¡¡###
 {
-name=å®ˆçµè€…å…«
+name=ÊØÁéÕß°Ë
 floorid=8200
 borncenter=96,80
 dir=6
@@ -115,9 +115,9 @@ enemy=sb_dou|file:heroic/heroic8.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº9ã€€###
+###¡¡Ó¢ĞÛÕ½³¡9¡¡###
 {
-name=å®ˆçµè€…ä¹
+name=ÊØÁéÕß¾Å
 floorid=8200
 borncenter=97,130
 dir=6
@@ -128,9 +128,9 @@ enemy=sb_dou|file:heroic/heroic9.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº10ã€€###
+###¡¡Ó¢ĞÛÕ½³¡10¡¡###
 {
-name=å®ˆçµè€…å
+name=ÊØÁéÕßÊ®
 floorid=8200
 borncenter=30,3
 dir=4
@@ -141,9 +141,9 @@ enemy=sb_dou|file:heroic/heroic10.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº11ã€€###
+###¡¡Ó¢ĞÛÕ½³¡11¡¡###
 {
-name=å®ˆçµè€…åä¸€
+name=ÊØÁéÕßÊ®Ò»
 floorid=8200
 borncenter=8,64
 dir=4
@@ -154,9 +154,9 @@ enemy=sb_dou|file:heroic/heroic11.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº12ã€€###
+###¡¡Ó¢ĞÛÕ½³¡12¡¡###
 {
-name=å®ˆçµè€…åäºŒ
+name=ÊØÁéÕßÊ®¶ş
 floorid=8212
 borncenter=207,29
 dir=6
@@ -167,9 +167,9 @@ enemy=sb_dou|file:heroic/heroic12.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº13ã€€###
+###¡¡Ó¢ĞÛÕ½³¡13¡¡###
 {
-name=å®ˆçµè€…åä¸‰
+name=ÊØÁéÕßÊ®Èı
 floorid=8201
 borncenter=216,12
 dir=6
@@ -180,9 +180,9 @@ enemy=sb_dou|file:heroic/heroic13.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº14ã€€###
+###¡¡Ó¢ĞÛÕ½³¡14¡¡###
 {
-name=å®ˆçµè€…åå››
+name=ÊØÁéÕßÊ®ËÄ
 floorid=8201
 borncenter=191,65
 dir=4
@@ -193,9 +193,9 @@ enemy=sb_dou|file:heroic/heroic14.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº15ã€€###
+###¡¡Ó¢ĞÛÕ½³¡15¡¡###
 {
-name=å®ˆçµè€…åäº”
+name=ÊØÁéÕßÊ®Îå
 floorid=8201
 borncenter=213,128
 dir=6
@@ -206,9 +206,9 @@ enemy=sb_dou|file:heroic/heroic15.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº16ã€€###
+###¡¡Ó¢ĞÛÕ½³¡16¡¡###
 {
-name=å®ˆçµè€…åå…­
+name=ÊØÁéÕßÊ®Áù
 floorid=8201
 borncenter=154,3
 dir=4
@@ -219,9 +219,9 @@ enemy=sb_dou|file:heroic/heroic16.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº17ã€€###
+###¡¡Ó¢ĞÛÕ½³¡17¡¡###
 {
-name=å®ˆçµè€…åä¸ƒ
+name=ÊØÁéÕßÊ®Æß
 floorid=8201
 borncenter=157,73
 dir=6
@@ -232,9 +232,9 @@ enemy=sb_dou|file:heroic/heroic17.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº18ã€€###
+###¡¡Ó¢ĞÛÕ½³¡18¡¡###
 {
-name=å®ˆçµè€…åå…«
+name=ÊØÁéÕßÊ®°Ë
 floorid=8201
 borncenter=126,124
 dir=4
@@ -245,9 +245,9 @@ enemy=sb_dou|file:heroic/heroic18.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº19ã€€###
+###¡¡Ó¢ĞÛÕ½³¡19¡¡###
 {
-name=å®ˆçµè€…åä¹
+name=ÊØÁéÕßÊ®¾Å
 floorid=8201
 borncenter=70,11
 dir=4
@@ -258,9 +258,9 @@ enemy=sb_dou|file:heroic/heroic19.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº20ã€€###
+###¡¡Ó¢ĞÛÕ½³¡20¡¡###
 {
-name=åº“å…‹
+name=¿â¿Ë
 floorid=8201
 borncenter=93,64
 dir=4
@@ -271,9 +271,9 @@ enemy=sb_dou|file:heroic/heroic20.arg
 graphicname=101344
 }
 
-###ã€€è‹±é›„æˆ˜åœº21ã€€###
+###¡¡Ó¢ĞÛÕ½³¡21¡¡###
 {
-name=å®ˆçµè€…ä¸€
+name=ÊØÁéÕßÒ»
 floorid=8201
 borncenter=71,134
 dir=4
@@ -284,9 +284,9 @@ enemy=sb_dou|file:heroic/heroic21.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº22ã€€###
+###¡¡Ó¢ĞÛÕ½³¡22¡¡###
 {
-name=å®ˆçµè€…äºŒ
+name=ÊØÁéÕß¶ş
 floorid=8201
 borncenter=27,30
 dir=6
@@ -297,9 +297,9 @@ enemy=sb_dou|file:heroic/heroic22.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº23ã€€###
+###¡¡Ó¢ĞÛÕ½³¡23¡¡###
 {
-name=å®ˆçµè€…ä¸‰
+name=ÊØÁéÕßÈı
 floorid=8201
 borncenter=33,81
 dir=6
@@ -310,9 +310,9 @@ enemy=sb_dou|file:heroic/heroic23.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº24ã€€###
+###¡¡Ó¢ĞÛÕ½³¡24¡¡###
 {
-name=å®ˆçµè€…å››
+name=ÊØÁéÕßËÄ
 floorid=8212
 borncenter=207,69
 dir=6
@@ -323,9 +323,9 @@ enemy=sb_dou|file:heroic/heroic24.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº25ã€€###
+###¡¡Ó¢ĞÛÕ½³¡25¡¡###
 {
-name=å®ˆçµè€…äº”
+name=ÊØÁéÕßÎå
 floorid=8202
 borncenter=200,5
 dir=4
@@ -336,9 +336,9 @@ enemy=sb_dou|file:heroic/heroic25.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº26ã€€###
+###¡¡Ó¢ĞÛÕ½³¡26¡¡###
 {
-name=å®ˆçµè€…å…­
+name=ÊØÁéÕßÁù
 floorid=8202
 borncenter=193,90
 dir=2
@@ -349,9 +349,9 @@ enemy=sb_dou|file:heroic/heroic26.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº27ã€€###
+###¡¡Ó¢ĞÛÕ½³¡27¡¡###
 {
-name=å®ˆçµè€…ä¸ƒ
+name=ÊØÁéÕßÆß
 floorid=8202
 borncenter=196,141
 dir=4
@@ -362,9 +362,9 @@ enemy=sb_dou|file:heroic/heroic27.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº28ã€€###
+###¡¡Ó¢ĞÛÕ½³¡28¡¡###
 {
-name=å®ˆçµè€…å…«
+name=ÊØÁéÕß°Ë
 floorid=8202
 borncenter=149,23
 dir=4
@@ -375,9 +375,9 @@ enemy=sb_dou|file:heroic/heroic28.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº29ã€€###
+###¡¡Ó¢ĞÛÕ½³¡29¡¡###
 {
-name=å®ˆçµè€…ä¹
+name=ÊØÁéÕß¾Å
 floorid=8202
 borncenter=130,64
 dir=4
@@ -388,9 +388,9 @@ enemy=sb_dou|file:heroic/heroic29.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº30ã€€###
+###¡¡Ó¢ĞÛÕ½³¡30¡¡###
 {
-name=å®ˆçµè€…å
+name=ÊØÁéÕßÊ®
 floorid=8202
 borncenter=136,146
 dir=8
@@ -401,9 +401,9 @@ enemy=sb_dou|file:heroic/heroic30.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº31ã€€###
+###¡¡Ó¢ĞÛÕ½³¡31¡¡###
 {
-name=å®ˆçµè€…åä¸€
+name=ÊØÁéÕßÊ®Ò»
 floorid=8202
 borncenter=97,8
 dir=6
@@ -414,9 +414,9 @@ enemy=sb_dou|file:heroic/heroic31.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº32ã€€###
+###¡¡Ó¢ĞÛÕ½³¡32¡¡###
 {
-name=å®ˆçµè€…åäºŒ
+name=ÊØÁéÕßÊ®¶ş
 floorid=8202
 borncenter=96,80
 dir=6
@@ -427,9 +427,9 @@ enemy=sb_dou|file:heroic/heroic32.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº33ã€€###
+###¡¡Ó¢ĞÛÕ½³¡33¡¡###
 {
-name=å®ˆçµè€…åä¸‰
+name=ÊØÁéÕßÊ®Èı
 floorid=8202
 borncenter=90,148
 dir=6
@@ -440,9 +440,9 @@ enemy=sb_dou|file:heroic/heroic33.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº34ã€€###
+###¡¡Ó¢ĞÛÕ½³¡34¡¡###
 {
-name=å®ˆçµè€…åå››
+name=ÊØÁéÕßÊ®ËÄ
 floorid=8202
 borncenter=19,18
 dir=2
@@ -453,9 +453,9 @@ enemy=sb_dou|file:heroic/heroic34.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº35ã€€###
+###¡¡Ó¢ĞÛÕ½³¡35¡¡###
 {
-name=å®ˆçµè€…åäº”
+name=ÊØÁéÕßÊ®Îå
 floorid=8202
 borncenter=8,64
 dir=4
@@ -466,9 +466,9 @@ enemy=sb_dou|file:heroic/heroic35.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº36ã€€###
+###¡¡Ó¢ĞÛÕ½³¡36¡¡###
 {
-name=å®ˆçµè€…åå…­
+name=ÊØÁéÕßÊ®Áù
 floorid=8212
 borncenter=205,151
 dir=6
@@ -479,9 +479,9 @@ enemy=sb_dou|file:heroic/heroic36.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº37ã€€###
+###¡¡Ó¢ĞÛÕ½³¡37¡¡###
 {
-name=å®ˆçµè€…åä¸ƒ
+name=ÊØÁéÕßÊ®Æß
 floorid=8203
 borncenter=211,27
 dir=7
@@ -492,9 +492,9 @@ enemy=sb_dou|file:heroic/heroic37.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº38ã€€###
+###¡¡Ó¢ĞÛÕ½³¡38¡¡###
 {
-name=å®ˆçµè€…åå…«
+name=ÊØÁéÕßÊ®°Ë
 floorid=8203
 borncenter=192,89
 dir=2
@@ -505,9 +505,9 @@ enemy=sb_dou|file:heroic/heroic38.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº39ã€€###
+###¡¡Ó¢ĞÛÕ½³¡39¡¡###
 {
-name=å®ˆçµè€…åä¹
+name=ÊØÁéÕßÊ®¾Å
 floorid=8203
 borncenter=195,143
 dir=2
@@ -518,9 +518,9 @@ enemy=sb_dou|file:heroic/heroic39.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº40ã€€###
+###¡¡Ó¢ĞÛÕ½³¡40¡¡###
 {
-name=ç¦æ©å¥‡é‚‘
+name=¸£¶÷ÆæÒØ
 floorid=8203
 borncenter=138,17
 dir=2
@@ -531,9 +531,9 @@ enemy=sb_dou|file:heroic/heroic40.arg
 graphicname=101350
 }
 
-###ã€€è‹±é›„æˆ˜åœº41ã€€###
+###¡¡Ó¢ĞÛÕ½³¡41¡¡###
 {
-name=å®ˆçµè€…ä¸€
+name=ÊØÁéÕßÒ»
 floorid=8203
 borncenter=154,70
 dir=4
@@ -544,9 +544,9 @@ enemy=sb_dou|file:heroic/heroic41.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº42ã€€###
+###¡¡Ó¢ĞÛÕ½³¡42¡¡###
 {
-name=å®ˆçµè€…äºŒ
+name=ÊØÁéÕß¶ş
 floorid=8203
 borncenter=150,128
 dir=6
@@ -557,9 +557,9 @@ enemy=sb_dou|file:heroic/heroic42.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº43ã€€###
+###¡¡Ó¢ĞÛÕ½³¡43¡¡###
 {
-name=å®ˆçµè€…ä¸‰
+name=ÊØÁéÕßÈı
 floorid=8203
 borncenter=73,26
 dir=7
@@ -570,9 +570,9 @@ enemy=sb_dou|file:heroic/heroic43.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº44ã€€###
+###¡¡Ó¢ĞÛÕ½³¡44¡¡###
 {
-name=å®ˆçµè€…å››
+name=ÊØÁéÕßËÄ
 floorid=8203
 borncenter=88,89
 dir=7
@@ -583,9 +583,9 @@ enemy=sb_dou|file:heroic/heroic44.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº45ã€€###
+###¡¡Ó¢ĞÛÕ½³¡45¡¡###
 {
-name=å®ˆçµè€…äº”
+name=ÊØÁéÕßÎå
 floorid=8203
 borncenter=74,142
 dir=2
@@ -596,9 +596,9 @@ enemy=sb_dou|file:heroic/heroic45.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº46ã€€###
+###¡¡Ó¢ĞÛÕ½³¡46¡¡###
 {
-name=å®ˆçµè€…å…­
+name=ÊØÁéÕßÁù
 floorid=8203
 borncenter=28,18
 dir=6
@@ -609,9 +609,9 @@ enemy=sb_dou|file:heroic/heroic46.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº47ã€€###
+###¡¡Ó¢ĞÛÕ½³¡47¡¡###
 {
-name=å®ˆçµè€…ä¸ƒ
+name=ÊØÁéÕßÆß
 floorid=8203
 borncenter=29,88
 dir=6
@@ -622,9 +622,9 @@ enemy=sb_dou|file:heroic/heroic47.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº48ã€€###
+###¡¡Ó¢ĞÛÕ½³¡48¡¡###
 {
-name=å®ˆçµè€…å…«
+name=ÊØÁéÕß°Ë
 floorid=8212
 borncenter=148,25
 dir=6
@@ -635,9 +635,9 @@ enemy=sb_dou|file:heroic/heroic48.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº49ã€€###
+###¡¡Ó¢ĞÛÕ½³¡49¡¡###
 {
-name=å®ˆçµè€…ä¹
+name=ÊØÁéÕß¾Å
 floorid=8204
 borncenter=211,27
 dir=7
@@ -648,9 +648,9 @@ enemy=sb_dou|file:heroic/heroic49.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº50ã€€###
+###¡¡Ó¢ĞÛÕ½³¡50¡¡###
 {
-name=å®ˆçµè€…å
+name=ÊØÁéÕßÊ®
 floorid=8204
 borncenter=208,72
 dir=6
@@ -661,9 +661,9 @@ enemy=sb_dou|file:heroic/heroic50.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº51ã€€###
+###¡¡Ó¢ĞÛÕ½³¡51¡¡###
 {
-name=å®ˆçµè€…åä¸€
+name=ÊØÁéÕßÊ®Ò»
 floorid=8204
 borncenter=209,149
 dir=6
@@ -674,9 +674,9 @@ enemy=sb_dou|file:heroic/heroic51.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº52ã€€###
+###¡¡Ó¢ĞÛÕ½³¡52¡¡###
 {
-name=å®ˆçµè€…åäºŒ
+name=ÊØÁéÕßÊ®¶ş
 floorid=8204
 borncenter=144,9
 dir=4
@@ -687,9 +687,9 @@ enemy=sb_dou|file:heroic/heroic52.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº53ã€€###
+###¡¡Ó¢ĞÛÕ½³¡53¡¡###
 {
-name=å®ˆçµè€…åä¸‰
+name=ÊØÁéÕßÊ®Èı
 floorid=8204
 borncenter=151,71
 dir=6
@@ -700,9 +700,9 @@ enemy=sb_dou|file:heroic/heroic53.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº54ã€€###
+###¡¡Ó¢ĞÛÕ½³¡54¡¡###
 {
-name=å®ˆçµè€…åå››
+name=ÊØÁéÕßÊ®ËÄ
 floorid=8204
 borncenter=151,130
 dir=6
@@ -713,9 +713,9 @@ enemy=sb_dou|file:heroic/heroic54.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº55ã€€###
+###¡¡Ó¢ĞÛÕ½³¡55¡¡###
 {
-name=å®ˆçµè€…åäº”
+name=ÊØÁéÕßÊ®Îå
 floorid=8204
 borncenter=74,23
 dir=2
@@ -726,9 +726,9 @@ enemy=sb_dou|file:heroic/heroic55.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº56ã€€###
+###¡¡Ó¢ĞÛÕ½³¡56¡¡###
 {
-name=å®ˆçµè€…åå…­
+name=ÊØÁéÕßÊ®Áù
 floorid=8204
 borncenter=84,74
 dir=4
@@ -739,9 +739,9 @@ enemy=sb_dou|file:heroic/heroic56.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº57ã€€###
+###¡¡Ó¢ĞÛÕ½³¡57¡¡###
 {
-name=å®ˆçµè€…åä¸ƒ
+name=ÊØÁéÕßÊ®Æß
 floorid=8204
 borncenter=91,146
 dir=7
@@ -752,9 +752,9 @@ enemy=sb_dou|file:heroic/heroic57.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº58ã€€###
+###¡¡Ó¢ĞÛÕ½³¡58¡¡###
 {
-name=å®ˆçµè€…åå…«
+name=ÊØÁéÕßÊ®°Ë
 floorid=8204
 borncenter=25,12
 dir=6
@@ -765,9 +765,9 @@ enemy=sb_dou|file:heroic/heroic58.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº59ã€€###
+###¡¡Ó¢ĞÛÕ½³¡59¡¡###
 {
-name=å®ˆçµè€…åä¹
+name=ÊØÁéÕßÊ®¾Å
 floorid=8204
 borncenter=25,81
 dir=6
@@ -778,9 +778,9 @@ enemy=sb_dou|file:heroic/heroic59.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº60ã€€###
+###¡¡Ó¢ĞÛÕ½³¡60¡¡###
 {
-name=æ–¯æ´›ä¼ç‰¹
+name=Ë¹Âå·¥ÌØ
 floorid=8212
 borncenter=141,69
 dir=6
@@ -791,9 +791,9 @@ enemy=sb_dou|file:heroic/heroic60.arg
 graphicname=101341
 }
 
-###ã€€è‹±é›„æˆ˜åœº61ã€€###
+###¡¡Ó¢ĞÛÕ½³¡61¡¡###
 {
-name=å®ˆçµè€…ä¸€
+name=ÊØÁéÕßÒ»
 floorid=8205
 borncenter=205,26
 dir=6
@@ -804,9 +804,9 @@ enemy=sb_dou|file:heroic/heroic61.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº62ã€€###
+###¡¡Ó¢ĞÛÕ½³¡62¡¡###
 {
-name=å®ˆçµè€…äºŒ
+name=ÊØÁéÕß¶ş
 floorid=8205
 borncenter=211,78
 dir=6
@@ -817,9 +817,9 @@ enemy=sb_dou|file:heroic/heroic62.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº63ã€€###
+###¡¡Ó¢ĞÛÕ½³¡63¡¡###
 {
-name=å®ˆçµè€…ä¸‰
+name=ÊØÁéÕßÈı
 floorid=8205
 borncenter=193,140
 dir=2
@@ -830,9 +830,9 @@ enemy=sb_dou|file:heroic/heroic63.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº64ã€€###
+###¡¡Ó¢ĞÛÕ½³¡64¡¡###
 {
-name=å®ˆçµè€…å››
+name=ÊØÁéÕßËÄ
 floorid=8205
 borncenter=143,21
 dir=6
@@ -843,9 +843,9 @@ enemy=sb_dou|file:heroic/heroic64.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº65###
+###¡¡Ó¢ĞÛÕ½³¡65###
 {
-name=å®ˆçµè€…äº”
+name=ÊØÁéÕßÎå
 floorid=8205
 borncenter=145,78
 dir=6
@@ -856,9 +856,9 @@ enemy=sb_dou|file:heroic/heroic65.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº66ã€€###
+###¡¡Ó¢ĞÛÕ½³¡66¡¡###
 {
-name=å®ˆçµè€…å…­
+name=ÊØÁéÕßÁù
 floorid=8205
 borncenter=148,143
 dir=4
@@ -869,9 +869,9 @@ enemy=sb_dou|file:heroic/heroic66.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº67ã€€###
+###¡¡Ó¢ĞÛÕ½³¡67¡¡###
 {
-name=å®ˆçµè€…ä¸ƒ
+name=ÊØÁéÕßÆß
 floorid=8205
 borncenter=82,17
 dir=4
@@ -882,9 +882,9 @@ enemy=sb_dou|file:heroic/heroic67.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº68ã€€###
+###¡¡Ó¢ĞÛÕ½³¡68¡¡###
 {
-name=å®ˆçµè€…å…«
+name=ÊØÁéÕß°Ë
 floorid=8205
 borncenter=83,68
 dir=4
@@ -895,9 +895,9 @@ enemy=sb_dou|file:heroic/heroic68.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº69ã€€###
+###¡¡Ó¢ĞÛÕ½³¡69¡¡###
 {
-name=å®ˆçµè€…ä¹
+name=ÊØÁéÕß¾Å
 floorid=8205
 borncenter=78,133
 dir=4
@@ -908,9 +908,9 @@ enemy=sb_dou|file:heroic/heroic69.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº70ã€€###
+###¡¡Ó¢ĞÛÕ½³¡70¡¡###
 {
-name=å®ˆçµè€…å
+name=ÊØÁéÕßÊ®
 floorid=8205
 borncenter=22,12
 dir=4
@@ -921,9 +921,9 @@ enemy=sb_dou|file:heroic/heroic70.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº71ã€€###
+###¡¡Ó¢ĞÛÕ½³¡71¡¡###
 {
-name=å®ˆçµè€…åä¸€
+name=ÊØÁéÕßÊ®Ò»
 floorid=8205
 borncenter=32,81
 dir=6
@@ -934,9 +934,9 @@ enemy=sb_dou|file:heroic/heroic71.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº72ã€€###
+###¡¡Ó¢ĞÛÕ½³¡72¡¡###
 {
-name=å®ˆçµè€…åäºŒ
+name=ÊØÁéÕßÊ®¶ş
 floorid=8212
 borncenter=151,131
 dir=4
@@ -947,9 +947,9 @@ enemy=sb_dou|file:heroic/heroic72.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº73ã€€###
+###¡¡Ó¢ĞÛÕ½³¡73¡¡###
 {
-name=å®ˆçµè€…åä¸‰
+name=ÊØÁéÕßÊ®Èı
 floorid=8206
 borncenter=198,24
 dir=8
@@ -960,9 +960,9 @@ enemy=sb_dou|file:heroic/heroic73.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº74ã€€###
+###¡¡Ó¢ĞÛÕ½³¡74¡¡###
 {
-name=å®ˆçµè€…åå››
+name=ÊØÁéÕßÊ®ËÄ
 floorid=8206
 borncenter=194,92
 dir=8
@@ -973,9 +973,9 @@ enemy=sb_dou|file:heroic/heroic74.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº75ã€€###
+###¡¡Ó¢ĞÛÕ½³¡75¡¡###
 {
-name=å®ˆçµè€…åäº”
+name=ÊØÁéÕßÊ®Îå
 floorid=8206
 borncenter=195,149
 dir=2
@@ -986,9 +986,9 @@ enemy=sb_dou|file:heroic/heroic75.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº76ã€€###
+###¡¡Ó¢ĞÛÕ½³¡76¡¡###
 {
-name=å®ˆçµè€…åå…­
+name=ÊØÁéÕßÊ®Áù
 floorid=8206
 borncenter=148,27
 dir=6
@@ -999,9 +999,9 @@ enemy=sb_dou|file:heroic/heroic76.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº77ã€€###
+###¡¡Ó¢ĞÛÕ½³¡77¡¡###
 {
-name=å®ˆçµè€…åä¸ƒ
+name=ÊØÁéÕßÊ®Æß
 floorid=8206
 borncenter=133,81
 dir=2
@@ -1012,9 +1012,9 @@ enemy=sb_dou|file:heroic/heroic77.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº78ã€€###
+###¡¡Ó¢ĞÛÕ½³¡78¡¡###
 {
-name=å®ˆçµè€…åå…«
+name=ÊØÁéÕßÊ®°Ë
 floorid=8206
 borncenter=152,129
 dir=6
@@ -1025,9 +1025,9 @@ enemy=sb_dou|file:heroic/heroic78.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº79ã€€###
+###¡¡Ó¢ĞÛÕ½³¡79¡¡###
 {
-name=å®ˆçµè€…åä¹
+name=ÊØÁéÕßÊ®¾Å
 floorid=8206
 borncenter=88,31
 dir=7
@@ -1038,9 +1038,9 @@ enemy=sb_dou|file:heroic/heroic79.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº80ã€€###
+###¡¡Ó¢ĞÛÕ½³¡80¡¡###
 {
-name=æŸ¯å°”ç‰¹
+name=¿Â¶ûÌØ
 floorid=8206
 borncenter=88,88
 dir=7
@@ -1051,9 +1051,9 @@ enemy=sb_dou|file:heroic/heroic80.arg
 graphicname=101333
 }
 
-###ã€€è‹±é›„æˆ˜åœº81ã€€###
+###¡¡Ó¢ĞÛÕ½³¡81¡¡###
 {
-name=å®ˆçµè€…ä¸€
+name=ÊØÁéÕßÒ»
 floorid=8206
 borncenter=88,130
 dir=6
@@ -1064,9 +1064,9 @@ enemy=sb_dou|file:heroic/heroic81.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº82ã€€###
+###¡¡Ó¢ĞÛÕ½³¡82¡¡###
 {
-name=å®ˆçµè€…äºŒ
+name=ÊØÁéÕß¶ş
 floorid=8206
 borncenter=11,27
 dir=7
@@ -1077,9 +1077,9 @@ enemy=sb_dou|file:heroic/heroic82.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº83ã€€###
+###¡¡Ó¢ĞÛÕ½³¡83¡¡###
 {
-name=å®ˆçµè€…ä¸‰
+name=ÊØÁéÕßÈı
 floorid=8206
 borncenter=23,90
 dir=7
@@ -1090,9 +1090,9 @@ enemy=sb_dou|file:heroic/heroic83.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº84ã€€###
+###¡¡Ó¢ĞÛÕ½³¡84¡¡###
 {
-name=å®ˆçµè€…å››
+name=ÊØÁéÕßËÄ
 floorid=8206
 borncenter=25,148
 dir=2
@@ -1103,9 +1103,9 @@ enemy=sb_dou|file:heroic/heroic84.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº85ã€€###
+###¡¡Ó¢ĞÛÕ½³¡85¡¡###
 {
-name=å®ˆçµè€…äº”
+name=ÊØÁéÕßÎå
 floorid=8207
 borncenter=210,15
 dir=4
@@ -1116,9 +1116,9 @@ enemy=sb_dou|file:heroic/heroic85.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº86ã€€###
+###¡¡Ó¢ĞÛÕ½³¡86¡¡###
 {
-name=å®ˆçµè€…å…­
+name=ÊØÁéÕßÁù
 floorid=8207
 borncenter=201,89
 dir=6
@@ -1129,9 +1129,9 @@ enemy=sb_dou|file:heroic/heroic86.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº87ã€€###
+###¡¡Ó¢ĞÛÕ½³¡87¡¡###
 {
-name=å®ˆçµè€…ä¸ƒ
+name=ÊØÁéÕßÆß
 floorid=8207
 borncenter=203,149
 dir=6
@@ -1142,9 +1142,9 @@ enemy=sb_dou|file:heroic/heroic87.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº88ã€€###
+###¡¡Ó¢ĞÛÕ½³¡88¡¡###
 {
-name=å®ˆçµè€…å…«
+name=ÊØÁéÕß°Ë
 floorid=8207
 borncenter=150,32
 dir=7
@@ -1155,9 +1155,9 @@ enemy=sb_dou|file:heroic/heroic88.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº89ã€€###
+###¡¡Ó¢ĞÛÕ½³¡89¡¡###
 {
-name=å®ˆçµè€…ä¹
+name=ÊØÁéÕß¾Å
 floorid=8207
 borncenter=146,84
 dir=6
@@ -1168,9 +1168,9 @@ enemy=sb_dou|file:heroic/heroic89.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº90ã€€###
+###¡¡Ó¢ĞÛÕ½³¡90¡¡###
 {
-name=å®ˆçµè€…å
+name=ÊØÁéÕßÊ®
 floorid=8207
 borncenter=134,141
 dir=4
@@ -1181,9 +1181,9 @@ enemy=sb_dou|file:heroic/heroic90.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº91ã€€###
+###¡¡Ó¢ĞÛÕ½³¡91¡¡###
 {
-name=å®ˆçµè€…åä¸€
+name=ÊØÁéÕßÊ®Ò»
 floorid=8207
 borncenter=93,28
 dir=6
@@ -1194,9 +1194,9 @@ enemy=sb_dou|file:heroic/heroic91.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº92ã€€###
+###¡¡Ó¢ĞÛÕ½³¡92¡¡###
 {
-name=å®ˆçµè€…åäºŒ
+name=ÊØÁéÕßÊ®¶ş
 floorid=8207
 borncenter=72,81
 dir=4
@@ -1207,9 +1207,9 @@ enemy=sb_dou|file:heroic/heroic92.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº93ã€€###
+###¡¡Ó¢ĞÛÕ½³¡93¡¡###
 {
-name=å®ˆçµè€…åä¸‰
+name=ÊØÁéÕßÊ®Èı
 floorid=8207
 borncenter=92,148
 dir=6
@@ -1220,9 +1220,9 @@ enemy=sb_dou|file:heroic/heroic93.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº94ã€€###
+###¡¡Ó¢ĞÛÕ½³¡94¡¡###
 {
-name=å®ˆçµè€…åå››
+name=ÊØÁéÕßÊ®ËÄ
 floorid=8207
 borncenter=11,23
 dir=6
@@ -1233,9 +1233,9 @@ enemy=sb_dou|file:heroic/heroic94.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº95ã€€###
+###¡¡Ó¢ĞÛÕ½³¡95¡¡###
 {
-name=å®ˆçµè€…åäº”
+name=ÊØÁéÕßÊ®Îå
 floorid=8207
 borncenter=23,69
 dir=4
@@ -1246,9 +1246,9 @@ enemy=sb_dou|file:heroic/heroic95.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº96ã€€###
+###¡¡Ó¢ĞÛÕ½³¡96¡¡###
 {
-name=å®ˆçµè€…åå…­
+name=ÊØÁéÕßÊ®Áù
 floorid=8212
 borncenter=92,11
 dir=6
@@ -1259,9 +1259,9 @@ enemy=sb_dou|file:heroic/heroic96.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº97ã€€###
+###¡¡Ó¢ĞÛÕ½³¡97¡¡###
 {
-name=å®ˆçµè€…åä¸ƒ
+name=ÊØÁéÕßÊ®Æß
 floorid=8208
 borncenter=196,27
 dir=2
@@ -1272,9 +1272,9 @@ enemy=sb_dou|file:heroic/heroic97.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº98ã€€###
+###¡¡Ó¢ĞÛÕ½³¡98¡¡###
 {
-name=å®ˆçµè€…åå…«
+name=ÊØÁéÕßÊ®°Ë
 floorid=8208
 borncenter=211,80
 dir=7
@@ -1285,9 +1285,9 @@ enemy=sb_dou|file:heroic/heroic98.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº99ã€€###
+###¡¡Ó¢ĞÛÕ½³¡99¡¡###
 {
-name=å®ˆçµè€…åä¹
+name=ÊØÁéÕßÊ®¾Å
 floorid=8208
 borncenter=204,148
 dir=6
@@ -1298,9 +1298,9 @@ enemy=sb_dou|file:heroic/heroic99.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº100ã€€###
+###¡¡Ó¢ĞÛÕ½³¡100¡¡###
 {
-name=è‰¾æ–¯å…‹å·´
+name=°¬Ë¹¿Ë°Í
 floorid=8208
 borncenter=138,10
 dir=4
@@ -1311,9 +1311,9 @@ enemy=sb_dou|file:heroic/heroic100.arg
 graphicname=101323
 }
 
-###ã€€è‹±é›„æˆ˜åœº101ã€€###
+###¡¡Ó¢ĞÛÕ½³¡101¡¡###
 {
-name=å®ˆçµè€…ä¸€
+name=ÊØÁéÕßÒ»
 floorid=8208
 borncenter=132,69
 dir=4
@@ -1324,9 +1324,9 @@ enemy=sb_dou|file:heroic/heroic101.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº102ã€€###
+###¡¡Ó¢ĞÛÕ½³¡102¡¡###
 {
-name=å®ˆçµè€…äºŒ
+name=ÊØÁéÕß¶ş
 floorid=8208
 borncenter=134,138
 dir=4
@@ -1337,9 +1337,9 @@ enemy=sb_dou|file:heroic/heroic102.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº103ã€€###
+###¡¡Ó¢ĞÛÕ½³¡103¡¡###
 {
-name=å®ˆçµè€…ä¸‰
+name=ÊØÁéÕßÈı
 floorid=8208
 borncenter=75,30
 dir=2
@@ -1350,9 +1350,9 @@ enemy=sb_dou|file:heroic/heroic103.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº104ã€€###
+###¡¡Ó¢ĞÛÕ½³¡104¡¡###
 {
-name=å®ˆçµè€…å››
+name=ÊØÁéÕßËÄ
 floorid=8208
 borncenter=69,85
 dir=7
@@ -1363,9 +1363,9 @@ enemy=sb_dou|file:heroic/heroic104.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº105ã€€###
+###¡¡Ó¢ĞÛÕ½³¡105¡¡###
 {
-name=å®ˆçµè€…äº”
+name=ÊØÁéÕßÎå
 floorid=8208
 borncenter=75,149
 dir=6
@@ -1376,9 +1376,9 @@ enemy=sb_dou|file:heroic/heroic105.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº106ã€€###
+###¡¡Ó¢ĞÛÕ½³¡106¡¡###
 {
-name=å®ˆçµè€…å…­
+name=ÊØÁéÕßÁù
 floorid=8208
 borncenter=21,8
 dir=6
@@ -1389,9 +1389,9 @@ enemy=sb_dou|file:heroic/heroic106.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº107ã€€###
+###¡¡Ó¢ĞÛÕ½³¡107¡¡###
 {
-name=å®ˆçµè€…ä¸ƒ
+name=ÊØÁéÕßÆß
 floorid=8208
 borncenter=19,88
 dir=4
@@ -1402,9 +1402,9 @@ enemy=sb_dou|file:heroic/heroic107.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº108ã€€###
+###¡¡Ó¢ĞÛÕ½³¡108¡¡###
 {
-name=å®ˆçµè€…å…«
+name=ÊØÁéÕß°Ë
 floorid=8212
 borncenter=85,68
 dir=6
@@ -1415,9 +1415,9 @@ enemy=sb_dou|file:heroic/heroic108.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº109ã€€###
+###¡¡Ó¢ĞÛÕ½³¡109¡¡###
 {
-name=å®ˆçµè€…ä¹
+name=ÊØÁéÕß¾Å
 floorid=8209
 borncenter=197,28
 dir=2
@@ -1428,9 +1428,9 @@ enemy=sb_dou|file:heroic/heroic109.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº110ã€€###
+###¡¡Ó¢ĞÛÕ½³¡110¡¡###
 {
-name=å®ˆçµè€…å
+name=ÊØÁéÕßÊ®
 floorid=8209
 borncenter=201,88
 dir=6
@@ -1441,9 +1441,9 @@ enemy=sb_dou|file:heroic/heroic110.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº111ã€€###
+###¡¡Ó¢ĞÛÕ½³¡111¡¡###
 {
-name=å®ˆçµè€…åä¸€
+name=ÊØÁéÕßÊ®Ò»
 floorid=8209
 borncenter=198,147
 dir=2
@@ -1454,9 +1454,9 @@ enemy=sb_dou|file:heroic/heroic111.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº112ã€€###
+###¡¡Ó¢ĞÛÕ½³¡112¡¡###
 {
-name=å®ˆçµè€…åäºŒ
+name=ÊØÁéÕßÊ®¶ş
 floorid=8209
 borncenter=148,29
 dir=6
@@ -1467,9 +1467,9 @@ enemy=sb_dou|file:heroic/heroic112.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº113ã€€###
+###¡¡Ó¢ĞÛÕ½³¡113¡¡###
 {
-name=å®ˆçµè€…åä¸‰
+name=ÊØÁéÕßÊ®Èı
 floorid=8209
 borncenter=132,74
 dir=8
@@ -1480,9 +1480,9 @@ enemy=sb_dou|file:heroic/heroic113.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº114ã€€###
+###¡¡Ó¢ĞÛÕ½³¡114¡¡###
 {
-name=å®ˆçµè€…åå››
+name=ÊØÁéÕßÊ®ËÄ
 floorid=8209
 borncenter=132,140
 dir=4
@@ -1493,9 +1493,9 @@ enemy=sb_dou|file:heroic/heroic114.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº115ã€€###
+###¡¡Ó¢ĞÛÕ½³¡115¡¡###
 {
-name=å®ˆçµè€…åäº”
+name=ÊØÁéÕßÊ®Îå
 floorid=8209
 borncenter=79,28
 dir=4
@@ -1506,9 +1506,9 @@ enemy=sb_dou|file:heroic/heroic115.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº116ã€€###
+###¡¡Ó¢ĞÛÕ½³¡116¡¡###
 {
-name=å®ˆçµè€…åå…­
+name=ÊØÁéÕßÊ®Áù
 floorid=8209
 borncenter=91,76
 dir=4
@@ -1519,9 +1519,9 @@ enemy=sb_dou|file:heroic/heroic116.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº117ã€€###
+###¡¡Ó¢ĞÛÕ½³¡117¡¡###
 {
-name=å®ˆçµè€…åä¸ƒ
+name=ÊØÁéÕßÊ®Æß
 floorid=8209
 borncenter=74,149
 dir=4
@@ -1532,9 +1532,9 @@ enemy=sb_dou|file:heroic/heroic117.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº118ã€€###
+###¡¡Ó¢ĞÛÕ½³¡118¡¡###
 {
-name=å®ˆçµè€…åå…«
+name=ÊØÁéÕßÊ®°Ë
 floorid=8209
 borncenter=16,28
 dir=4
@@ -1545,9 +1545,9 @@ enemy=sb_dou|file:heroic/heroic118.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº119ã€€###
+###¡¡Ó¢ĞÛÕ½³¡119¡¡###
 {
-name=å®ˆçµè€…åä¹
+name=ÊØÁéÕßÊ®¾Å
 floorid=8209
 borncenter=17,89
 dir=6
@@ -1558,9 +1558,9 @@ enemy=sb_dou|file:heroic/heroic119.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº120ã€€###
+###¡¡Ó¢ĞÛÕ½³¡120¡¡###
 {
-name=é©¬å¡”æ´›å¤«
+name=ÂíËşÂå·ò
 floorid=8212
 borncenter=71,152
 dir=2
@@ -1571,9 +1571,9 @@ enemy=sb_dou|file:heroic/heroic120.arg
 graphicname=101306
 }
 
-###ã€€è‹±é›„æˆ˜åœº121ã€€###
+###¡¡Ó¢ĞÛÕ½³¡121¡¡###
 {
-name=å®ˆçµè€…ä¸€
+name=ÊØÁéÕßÒ»
 floorid=8210
 borncenter=197,29
 dir=4
@@ -1584,9 +1584,9 @@ enemy=sb_dou|file:heroic/heroic121.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº122ã€€###
+###¡¡Ó¢ĞÛÕ½³¡122¡¡###
 {
-name=å®ˆçµè€…äºŒ
+name=ÊØÁéÕß¶ş
 floorid=8210
 borncenter=194,80
 dir=7
@@ -1597,9 +1597,9 @@ enemy=sb_dou|file:heroic/heroic122.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº123ã€€###
+###¡¡Ó¢ĞÛÕ½³¡123¡¡###
 {
-name=å®ˆçµè€…ä¸‰
+name=ÊØÁéÕßÈı
 floorid=8210
 borncenter=205,151
 dir=6
@@ -1610,9 +1610,9 @@ enemy=sb_dou|file:heroic/heroic123.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº124ã€€###
+###¡¡Ó¢ĞÛÕ½³¡124¡¡###
 {
-name=å®ˆçµè€…å››
+name=ÊØÁéÕßËÄ
 floorid=8210
 borncenter=135,23
 dir=3
@@ -1623,9 +1623,9 @@ enemy=sb_dou|file:heroic/heroic124.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº125ã€€###
+###¡¡Ó¢ĞÛÕ½³¡125¡¡###
 {
-name=å®ˆçµè€…äº”
+name=ÊØÁéÕßÎå
 floorid=8210
 borncenter=132,70
 dir=3
@@ -1636,9 +1636,9 @@ enemy=sb_dou|file:heroic/heroic125.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº126ã€€###
+###¡¡Ó¢ĞÛÕ½³¡126¡¡###
 {
-name=å®ˆçµè€…å…­
+name=ÊØÁéÕßÁù
 floorid=8210
 borncenter=151,131
 dir=4
@@ -1649,9 +1649,9 @@ enemy=sb_dou|file:heroic/heroic126.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº127ã€€###
+###¡¡Ó¢ĞÛÕ½³¡127¡¡###
 {
-name=å®ˆçµè€…ä¸ƒ
+name=ÊØÁéÕßÆß
 floorid=8210
 borncenter=92,11
 dir=6
@@ -1662,9 +1662,9 @@ enemy=sb_dou|file:heroic/heroic127.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº128ã€€###
+###¡¡Ó¢ĞÛÕ½³¡128¡¡###
 {
-name=å®ˆçµè€…å…«
+name=ÊØÁéÕß°Ë
 floorid=8210
 borncenter=85,68
 dir=4
@@ -1675,9 +1675,9 @@ enemy=sb_dou|file:heroic/heroic128.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº129ã€€###
+###¡¡Ó¢ĞÛÕ½³¡129¡¡###
 {
-name=å®ˆçµè€…ä¹
+name=ÊØÁéÕß¾Å
 floorid=8210
 borncenter=71,152
 dir=3
@@ -1688,9 +1688,9 @@ enemy=sb_dou|file:heroic/heroic129.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº130ã€€###
+###¡¡Ó¢ĞÛÕ½³¡130¡¡###
 {
-name=å®ˆçµè€…å
+name=ÊØÁéÕßÊ®
 floorid=8210
 borncenter=31,22
 dir=4
@@ -1701,9 +1701,9 @@ enemy=sb_dou|file:heroic/heroic130.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº131ã€€###
+###¡¡Ó¢ĞÛÕ½³¡131¡¡###
 {
-name=å®ˆçµè€…åä¸€
+name=ÊØÁéÕßÊ®Ò»
 floorid=8210
 borncenter=9,78
 dir=7
@@ -1714,9 +1714,9 @@ enemy=sb_dou|file:heroic/heroic131.arg
 graphicname=101490
 }
 
-###ã€€è‹±é›„æˆ˜åœº132ã€€###
+###¡¡Ó¢ĞÛÕ½³¡132¡¡###
 {
-name=è·¯æ™®å‹’æ–¯
+name=Â·ÆÕÀÕË¹
 floorid=8210
 borncenter=18,150
 dir=2
@@ -1727,10 +1727,10 @@ enemy=sb_dou|file:heroic/heroic132.arg
 graphicname=101313
 }
 
-###ã€€è‹±é›„æˆ˜åœº133ã€€###
+###¡¡Ó¢ĞÛÕ½³¡133¡¡###
 
 {
-name=è·¯æ™®å‹’æ–¯
+name=Â·ÆÕÀÕË¹
 floorid=8213
 borncenter=18,150
 dir=2
@@ -1740,9 +1740,9 @@ graphicname=101313
 enemy=npcgen_warpman|file:heroic/heroic_133.arg
 }
 
-########ã€€å°æŠ¤å£«1#########
+########¡¡Ğ¡»¤Ê¿1#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=8200
 borncenter=208,29
 dir=4

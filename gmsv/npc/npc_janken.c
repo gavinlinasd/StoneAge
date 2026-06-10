@@ -13,7 +13,7 @@
 #include "log.h"
 
 /*
- *じゃんけん
+ *猜拳
  */
 static void NPC_Janken_selectWindow( int meindex, int talker, int num);
 void NPC_JnakenJudge(int meindex,int talker,int sel);
@@ -77,7 +77,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
    	char argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 	
 
-	/*--ウインドウタイプメッセージがおおいので先に設定--*/
+	/*--窗口类型讯息较多所以先设置--*/
   	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 
 	/*--涩烂白央奶伙毛  心  心--*/
@@ -91,7 +91,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	{
 	  case 0:
 
-	  	/*-- スタートのメッセージが  ければエラー  示 --*/
+	  	/*-- 没有开始讯息则显示错误 --*/
 		if(NPC_Util_GetStrFromStrWithDelim( argstr, "MainMsg", token, sizeof( token))
 	 		== NULL)
 		{
@@ -118,7 +118,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 				NPC_Janken_selectWindow(meindex, talker, 3);
 			}
 
-			//エントリ用のアイ  ムを削除
+			//删除登记用的道具
 			if(NPC_JankenEntryItemDel(talker,buf) == FALSE){
 				print("元扎氏仃氏ERR:失奶  丞壅仄卞仄匀天中");
 			}
@@ -138,7 +138,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	  break;
 
 	case 2:
-		/*--あいこ選      --*/
+		/*--平局选择      --*/
 		//sprintf(token,"              丐中仇匹″″\n"
 		sprintf(token,"              平手再来！！\n"
 			      "\n\n               《  石头  》"
@@ -152,7 +152,7 @@ static void NPC_Janken_selectWindow( int meindex, int talker, int num)
 	  	break;
 
   	case 3:
-	  	/*-- スタートのメッセージが  ければエラー  示 --*/
+	  	/*-- 没有开始讯息则显示错误 --*/
 		NPC_Util_GetStrFromStrWithDelim( argstr, "NoItem", token, sizeof( token));
 
 	  	buttontype=WINDOW_BUTTONTYPE_OK;
@@ -268,7 +268,7 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 
 //			    CHAR_talkToCli( talker , -1 ,token , CHAR_COLORCYAN );
 
-				//ワープ
+				//传送
 			    CHAR_warpToSpecificPoint(talker, fl, x, y);
 			    
 			    //  匀凶午五反＞减少＝及失弁扑亦件毛允月［
@@ -293,7 +293,7 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 						);
 //			    CHAR_talkToCli( talker , -1 ,token , CHAR_COLORCYAN );
 
-				//ワープ
+				//传送
 				CHAR_warpToSpecificPoint(talker, fl, x, y);
 
 				//  仃凶午五反＞  仄中＝失弁扑亦件毛允月
@@ -321,7 +321,7 @@ void NPC_JnakenJudge(int meindex,int talker,int sel)
 
 
 /*
- *ワープ先をGETする?
+ *GET传送目的地
  */
 void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge)
 {
@@ -337,7 +337,7 @@ void NPC_WarpPointGet(int meindex,int talker,int *fl,int *x,int *y,int judge)
 	}
 
 
-	/*--ワープ先を取  --*/
+	/*--取得传送目的地  --*/
 	NPC_Util_GetStrFromStrWithDelim( argstr, strbuf[judge], buf, sizeof( buf));
 	getStringFromIndexWithDelim(buf,",",1,buf2,sizeof(buf2));
 	*fl=atoi(buf2);
@@ -452,7 +452,7 @@ BOOL NPC_JankenEntryItemDel(int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 							"QuizDelItem(猜谜->交出道具)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -482,7 +482,7 @@ BOOL NPC_JankenEntryItemDel(int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 							"QuizDelItem(猜谜->交出道具)",
 							CHAR_getInt( talker,CHAR_FLOOR),

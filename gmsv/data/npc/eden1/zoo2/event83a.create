@@ -1,8 +1,8 @@
 NPCCREATE
 
-###### è¶…è´±å…” ######
+###### ³¬¼úÍÃ ######
 {
-name=é‡Œæ‹‰æ‹‰
+name=ÀïÀ­À­
 floorid=7000
 borncenter=83,37,1,1
 dir=4
@@ -12,7 +12,7 @@ graphicname=100854
 }
 
 {
-name=åŸ¶é–“
+name=Ô°¶¡
 floorid=7000
 borncenter=171,72,1,1
 dir=4
@@ -22,7 +22,7 @@ graphicname=16430
 }
 
 {
-name=çº¢èåœ
+name=ºìÂÜ²·
 floorid=7000
 borncenter=175,69,1,1
 dir=4
@@ -32,7 +32,7 @@ graphicname=13007
 }
 
 {
-name=çº¢èåœ
+name=ºìÂÜ²·
 floorid=7000
 borncenter=177,69,1,1
 dir=4
@@ -42,7 +42,7 @@ graphicname=13007
 }
 
 {
-name=çº¢èåœ
+name=ºìÂÜ²·
 floorid=7000
 borncenter=176,71,1,1
 dir=4
@@ -52,7 +52,7 @@ graphicname=13007
 }
 
 {
-name=çº¢èåœ
+name=ºìÂÜ²·
 floorid=7000
 borncenter=179,71,1,1
 dir=4
@@ -62,7 +62,7 @@ graphicname=13007
 }
 
 {
-name=ç™½èåœ
+name=°×ÂÜ²·
 floorid=7000
 borncenter=175,73,1,1
 dir=4
@@ -72,7 +72,7 @@ graphicname=13005
 }
 
 {
-name=ç™½èåœ
+name=°×ÂÜ²·
 floorid=7000
 borncenter=179,75,1,1
 dir=4
@@ -82,7 +82,7 @@ graphicname=13005
 }
 
 {
-name=ç™½èåœ
+name=°×ÂÜ²·
 floorid=7000
 borncenter=176,73,1,1
 dir=4
@@ -92,7 +92,7 @@ graphicname=13005
 }
 
 {
-name=ã€€
+name=¡¡
 floorid=7000
 borncenter=177,77,1,1
 dir=4
@@ -102,7 +102,7 @@ graphicname=13006
 }
 
 {
-name=é’å¹´
+name=ÇàÄê
 floorid=7000
 borncenter=68,105,1,1
 dir=4
@@ -112,7 +112,7 @@ graphicname=16344
 }
 
 {
-name=å°‘å¥³
+name=ÉÙÅ®
 floorid=7009
 borncenter=7,2,1,1
 dir=4
@@ -122,7 +122,7 @@ graphicname=16315
 }
 
 {
-name=å°‘å¥³
+name=ÉÙÅ®
 floorid=7000
 borncenter=135,138,1,1
 dir=4
@@ -132,7 +132,7 @@ graphicname=16314
 }
 
 {
-name=é’å¹´
+name=ÇàÄê
 floorid=7000
 borncenter=47,88,1,1
 dir=4
@@ -142,7 +142,7 @@ graphicname=16325
 }
 
 {
-name=å°‘å¥³
+name=ÉÙÅ®
 floorid=7012
 borncenter=17,18,1,1
 dir=4
@@ -152,7 +152,7 @@ graphicname=16425
 }
 
 {
-name=å¤©ç¼ºæµªäºº Lvï¼š87
+name=ÌìÈ±ÀËÈË Lv£º87
 floorid=7000
 borncorner=92,106,105,124
 dir=5
@@ -163,7 +163,7 @@ action=12
 }
 
 {
-name=å°‘å¹´
+name=ÉÙÄê
 floorid=60040
 borncenter=21,10,1,1
 dir=6
@@ -173,7 +173,7 @@ graphicname=16342
 }
 
 {
-name=å¸­æ ¼
+name=Ï¯¸ñ
 floorid=60044
 borncenter=8,7,1,1
 dir=5
@@ -183,7 +183,7 @@ graphicname=101160
 }
 
 {
-name=å¸­æ ¼
+name=Ï¯¸ñ
 floorid=60045
 borncenter=8,7,1,1
 dir=5

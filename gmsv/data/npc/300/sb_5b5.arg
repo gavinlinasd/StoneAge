@@ -1,5 +1,5 @@
 entype:2
-askbattlemsg1:浣犺寰楁垜鏄己鑰呭悧路路路
+askbattlemsg1:你觉得我是强者吗···
 start msg:
 dieact:1
 warpfl:31706
@@ -7,5 +7,5 @@ warpx:15
 warpy:16
 end msg:
 enemyno:1015
-deniedmsg:锛岋紝锛岋紝锛岋紝锛岋紝
+deniedmsg:········
 

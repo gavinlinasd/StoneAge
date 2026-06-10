@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### å®çŸ³ç²¾ç‚¼å¸ˆ ######
+###### ±¦Ê¯¾«Á¶Ê¦ ######
 {
-name=å®çŸ³ç²¾ç‚¼å¸ˆ
+name=±¦Ê¯¾«Á¶Ê¦
 floorid=7530
 borncenter=57,64
 dir=6
@@ -14,9 +14,9 @@ graphicname=17069
 enemy=ITEMCHANGE|file:my/shanhu4/maker1.arg
 }
 
-###### å® ç‰©ç½å¤´æç‚¼å¸ˆ ######
+###### ³èÎï¹ŞÍ·ÌáÁ¶Ê¦ ######
 {
-name=å® ç‰©ç½å¤´æç‚¼å¸ˆ
+name=³èÎï¹ŞÍ·ÌáÁ¶Ê¦
 floorid=104
 borncenter=67,40
 dir=6
@@ -27,9 +27,9 @@ graphicname=17067
 enemy=ITEMCHANGE|file:my/shanhu4/guantou.arg
 }
 
-###### å® ç‰©ç½å¤´æç‚¼å¸ˆ ######
+###### ³èÎï¹ŞÍ·ÌáÁ¶Ê¦ ######
 {
-name=å·¥ç¨‹äººå‘˜
+name=¹¤³ÌÈËÔ±
 floorid=2000
 borncenter=72,74
 dir=6
@@ -40,9 +40,9 @@ graphicname=17067
 enemy=ITEMCHANGE|file:my/shanhu4/qizheng.arg
 }
 
-###### å® è£…åˆæˆå¤§å¸ˆæ¸”æ‘ ######
+###### ³è×°ºÏ³É´óÊ¦Óæ´å ######
 {
-name=å® è£…åˆæˆå¤§å¸ˆ
+name=³è×°ºÏ³É´óÊ¦
 floorid=2000
 borncenter=71,64
 dir=6
@@ -52,9 +52,9 @@ ignoreinvincible=1
 graphicname=101913
 enemy=ITEMCHANGE|file:my/shanhu4/chongzhuang.arg
 }
-###### å® è£…åˆæˆå¤§å¸ˆjiajia ######
+###### ³è×°ºÏ³É´óÊ¦jiajia ######
 {
-name=å® è£…åˆæˆå¤§å¸ˆ
+name=³è×°ºÏ³É´óÊ¦
 floorid=3000
 borncenter=95,88
 dir=4
@@ -65,9 +65,9 @@ graphicname=101913
 enemy=ITEMCHANGE|file:my/shanhu4/chongzhuang.arg
 }
 
-###### å® è£…åˆæˆå¤§å¸ˆä¼šå‘˜ ######
+###### ³è×°ºÏ³É´óÊ¦»áÔ± ######
 {
-name=å® è£…åˆæˆå¤§å¸ˆ
+name=³è×°ºÏ³É´óÊ¦
 floorid=777
 borncenter=28,9
 dir=4

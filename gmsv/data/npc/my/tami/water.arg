@@ -1,79 +1,79 @@
-######## æµ‡èŠ±########
+######## ½½»¨########
 
-NomalMainMsg:ä¸€èˆ¬çš„äººæ˜¯åˆ°ä¸äº†è¿™é‡Œçš„ï¼ä½ æ˜¯æ€Žä¹ˆæ¥çš„å‘¢ï¼Ÿ
+NomalMainMsg:Ò»°ãµÄÈËÊÇµ½²»ÁËÕâÀïµÄ£¡ÄãÊÇÔõÃ´À´µÄÄØ£¿
 
 
-####é¸ æ¡ƒèŠ±ç››å¼€äº†####
+####ð¯ÌÒ»¨Ê¢¿ªÁË####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20850
-NomalWindowMsg:å‘µå‘µå¥½äº†ï½žé¸ æ¡ƒèŠ±ç››å¼€äº†ï¼ã€€
+NomalWindowMsg:ºÇºÇºÃÁË¡«ð¯ÌÒ»¨Ê¢¿ªÁË£¡¡¡
 EventEnd
 
 
-### æœ‰è¿·ä¹‹ç”˜éœ² èŠ±ç›†ä¸­çš„è¿·ä¹‹è°·ç‰©å¼€èŠ±äº† ###
+### ÓÐÃÔÖ®¸ÊÂ¶ »¨ÅèÖÐµÄÃÔÖ®¹ÈÎï¿ª»¨ÁË ###
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20849&ITEM=20844
-AcceptMsg1:å‘µå‘µåˆæ‰“åˆ°äº†ï¼Ÿè®©æˆ‘æ¥å¸®ä½ å§ï¼
-ThanksMsg1:è¿™â€¦
+AcceptMsg1:ºÇºÇÓÖ´òµ½ÁË£¿ÈÃÎÒÀ´°ïÄã°É£¡
+ThanksMsg1:Õâ¡­
 GetItem:20850
 DelItem:20849,20844,20872
-ItemFullMsg:ä½ çš„é“å…·æ»¡äº†
+ItemFullMsg:ÄãµÄµÀ¾ßÂúÁË
 EventEnd
 
-### æœ‰è¿·ä¹‹ç”˜éœ² èŠ±ç›†ä¸­çš„è¿·ä¹‹è°·ç‰©é•¿å‡ºäº†å«©èŠ½ ###
+### ÓÐÃÔÖ®¸ÊÂ¶ »¨ÅèÖÐµÄÃÔÖ®¹ÈÎï³¤³öÁËÄÛÑ¿ ###
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20848&ITEM=20844
-AcceptMsg1:å‘µå‘µåˆæ‰“åˆ°äº†ï¼Ÿè®©æˆ‘æ¥å¸®ä½ å§ï¼
-ThanksMsg1:è¿™â€¦
+AcceptMsg1:ºÇºÇÓÖ´òµ½ÁË£¿ÈÃÎÒÀ´°ïÄã°É£¡
+ThanksMsg1:Õâ¡­
 GetRandItem:20849,20851
 DelItem:20848,20844
-ItemFullMsg:ä½ çš„é“å…·æ»¡äº†
+ItemFullMsg:ÄãµÄµÀ¾ßÂúÁË
 EventEnd
 
-### æœ‰è¿·ä¹‹ç”˜éœ² èŠ±ç›†è¿·ä¹‹è°·ç‰©åœ¨ç”Ÿé•¿ä¸­###
+### ÓÐÃÔÖ®¸ÊÂ¶ »¨ÅèÃÔÖ®¹ÈÎïÔÚÉú³¤ÖÐ###
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20847&ITEM=20844
-AcceptMsg1:å‘µå‘µåˆæ‰“åˆ°äº†ï¼Ÿè®©æˆ‘æ¥å¸®ä½ å§ï¼
-ThanksMsg1:è¿™â€¦
+AcceptMsg1:ºÇºÇÓÖ´òµ½ÁË£¿ÈÃÎÒÀ´°ïÄã°É£¡
+ThanksMsg1:Õâ¡­
 GetRandItem:20848,20851
 DelItem:20847,20844
-ItemFullMsg:ä½ çš„é“å…·æ»¡äº†
+ItemFullMsg:ÄãµÄµÀ¾ßÂúÁË
 EventEnd
 
-### æœ‰è¿·ä¹‹ç”˜éœ² ç§ä¸‹äº†è¿·ä¹‹è°·ç‰©çš„èŠ±ç›†###
+### ÓÐÃÔÖ®¸ÊÂ¶ ÖÖÏÂÁËÃÔÖ®¹ÈÎïµÄ»¨Åè###
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20846&ITEM=20844
-AcceptMsg1:å‘µå‘µåˆæ‰“åˆ°äº†ï¼Ÿè®©æˆ‘æ¥å¸®ä½ å§ï¼
-ThanksMsg1:è¿™â€¦
+AcceptMsg1:ºÇºÇÓÖ´òµ½ÁË£¿ÈÃÎÒÀ´°ïÄã°É£¡
+ThanksMsg1:Õâ¡­
 GetRandItem:20847,20851
 DelItem:20846,20844
-ItemFullMsg:ä½ çš„é“å…·æ»¡äº†
+ItemFullMsg:ÄãµÄµÀ¾ßÂúÁË
 EventEnd
 
 
-### æœ‰è¿·ä¹‹ç”˜éœ² æž¯èŽäº†çš„###
+### ÓÐÃÔÖ®¸ÊÂ¶ ¿ÝÎ®ÁËµÄ###
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187&ITEM=20851&ITEM=20844
-AcceptMsg1:è™½ç„¶æž¯èŽäº†ï¼ä½†æ˜¯æˆ‘è¿˜å¯ä»¥å¸®ä»–æ•‘æ´»ä¸€æ¬¡å‘¢ï¼
-ThanksMsg1:è¿™â€¦
+AcceptMsg1:ËäÈ»¿ÝÎ®ÁË£¡µ«ÊÇÎÒ»¹¿ÉÒÔ°ïËû¾È»îÒ»´ÎÄØ£¡
+ThanksMsg1:Õâ¡­
 GetItem:20846
 DelItem:20851,20844
-ItemFullMsg:ä½ çš„é“å…·æ»¡äº†
+ItemFullMsg:ÄãµÄµÀ¾ßÂúÁË
 EventEnd
 
 
 
-###ã€€ä¸ç¬¦åˆæ¡ä»¶ã€€###
+###¡¡²»·ûºÏÌõ¼þ¡¡###
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>79&TRANS=6&ENDEV=184&ENDEV=185&NOWEV=187
-NomalWindowMsg:åœ¨æˆ‘é™„è¿‘æ‰¾æ‰¾è¿·ä¹‹ç”˜éœ²å§ï¼åªæœ‰è¿™ä¸ªæ‰èƒ½æµ‡çŒä½ çš„é¸ æ¡ƒèŠ±å‘¢ï¼
+NomalWindowMsg:ÔÚÎÒ¸½½üÕÒÕÒÃÔÖ®¸ÊÂ¶°É£¡Ö»ÓÐÕâ¸ö²ÅÄÜ½½¹àÄãµÄð¯ÌÒ»¨ÄØ£¡
 EventEnd
 
 

@@ -52,15 +52,15 @@ BOOL NPC_WindowHealerInit( int meindex )
 
     npcarg = CHAR_getChar(meindex,CHAR_NPCARGUMENT);
 
-	/*--回復するときの恭金を取るレベ郊を記憶--*/
-	/*--  ければ作られない--*/
+	/*--记住回复时收取金钱的等级--*/
+	/*--  没有的话不会被创建--*/
 	if(getStringFromIndexWithDelim(npcarg,"|",1,buf2,sizeof(buf2))!=FALSE){
 		CHAR_setWorkInt(meindex,CHAR_WORK_LEVEL,atoi(buf2));
 
 	}else{
 		return FALSE;
 	}
-	/*--耐久  レート--*/
+	/*--耐久力倍率--*/
 	if(getStringFromIndexWithDelim(npcarg, "|", 2, buf2, sizeof( buf2)) != FALSE ){
 		drate = atof(buf2);
 		if(drate==0) {
@@ -137,7 +137,7 @@ static void NPC_WindowHealer_selectWindow( int meindex, int toindex, int num)
 	int windowtype=0;
 	int windowno=0;
 
-	/*--ウインドウタイプメッセージがおおいので先に設定--*/
+	/*--窗口类型讯息较多所以先设置--*/
   	windowtype=WINDOW_MESSAGETYPE_MESSAGE;
 
 	switch( num){
@@ -393,7 +393,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 	  	break;
 	  
 
-	  /*-----耐久  回復を恭こなう-----*/
+	  /*-----进行耐久力回复-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_HPMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -412,7 +412,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 
 
-	  /*-----気  回復を恭こなう-----*/
+	  /*-----进行气力回复-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_SPIRITMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -432,7 +432,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 
 
-	  /*-----耐久  回復の結果-----*/
+	  /*-----耐久力回复的结果-----*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_OKHPMSG:
 		if(select==WINDOW_BUTTONTYPE_OK){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -465,7 +465,7 @@ void NPC_WindowHealerWindowTalked( int meindex, int talkerindex,
 		break;
 	
 
-	  /*--全回復の結果--*/
+	  /*--全回复的结果--*/
 	  case CHAR_WINDOWTYPE_WINDOWHEALER_OKALLMSG:
 		if(select==WINDOW_BUTTONTYPE_YES){
 			NPC_WindowHealer_selectWindow( meindex, talkerindex, 0 );
@@ -513,7 +513,7 @@ BOOL NPC_PetHealerCheck(int talker)
 
 
 /*-------------------------------------
-	  際に耐久  と気  を回復させるところ
+	  实际回复耐久力和气力的地方
 ---------------------------------------*/
 void NPC_WindowHealerAllHeal( int talker,int mode )
 {
@@ -524,7 +524,7 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 
 	/*--觐菁  及心荚汊--*/
 	if(mode==1){
-		/*--HPが耐久  なのである--*/
+		/*--HP就是耐久力--*/
     	CHAR_setInt( talker , CHAR_HP ,CHAR_getWorkInt( talker, CHAR_WORKMAXHP ) );
 	}else if(mode==2){
 		/*--竣  及心荚汊--*/
@@ -562,7 +562,7 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 	CHAR_send_P_StatusString(talker,CHAR_P_STRING_MP);
 
 
-	/*---仲間がいれば仲間にも送信--*/
+	/*---有队友的话也发给队友--*/
 	if(CHAR_getWorkInt( talker, CHAR_WORKPARTYMODE) != CHAR_PARTY_NONE )
 	{
 		int	topartyarray = -1;
@@ -601,11 +601,11 @@ void NPC_WindowHealerAllHeal( int talker,int mode )
 
 
 /*-------------------------------------
-レベ郊チェック
-レベ郊を見て設定レベ郊より低ければ    にする
+等级检查
+看等级,低于设置等级的话设为有效
   曰袄
 	必醒卅狸誌    		TRUE
-	設定レベ郊以上なら	FALSE
+	设置等级以上则	FALSE
 ---------------------------------------*/
 BOOL NPC_WindowHealerLevelCheck(int meindex,int talker)
 {
@@ -625,8 +625,8 @@ BOOL NPC_WindowHealerLevelCheck(int meindex,int talker)
 /*-------------------------------------------
 云嗯  匀化月井民尼永弁
 引数
-meindex・・・      のインデックス
-talker・・・・キャラクターのインデックス
+meindex・・・      的索引
+talker・・・・人物的索引
 ---------------------------------------------*/
 BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 {
@@ -637,10 +637,10 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	
 	if(mode==1){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
-			/*---恭金を割り出す---*/
+			/*---计算金钱---*/
 			cost=NPC_WindowCostCheck(meindex,talker);
 			/*--蜇箕反移涩烂---*/
-			/*---恭金が足りるかどうかのチェック---*/
+			/*---检查金钱是否足够---*/
 			if(CHAR_getInt(talker,CHAR_GOLD) < cost){
 				return FALSE;
 			
@@ -650,11 +650,11 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	}
 	if(mode==2){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
-			/*---恭金を割り出す---*/
+			/*---计算金钱---*/
 			cost=NPC_WindowCostCheckMp(meindex,talker);
 	
 			/*--蜇箕反移涩烂---*/
-			/*---恭金が足りるかどうかのチェック---*/
+			/*---检查金钱是否足够---*/
 			if(CHAR_getInt(talker,CHAR_GOLD) < cost){
 				return FALSE;
 			}
@@ -665,7 +665,7 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 	if(mode==3){
 		if(level <= CHAR_getInt(talker,CHAR_LV)){
 
-			/*--耐久  の恭金の計算--*/
+			/*--耐久力的金钱计算--*/
 			if( CHAR_getInt(talker,CHAR_HP) <CHAR_getWorkInt( talker, CHAR_WORKMAXHP))
 			{
 				cost=NPC_WindowCostCheck(meindex,talker);
@@ -682,7 +682,7 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 				return FALSE;
 			}
 		
-			/*---恭金を減らす---*/
+			/*---减少金钱---*/
 			CHAR_DelGold( talker, cost);
 		}
 		
@@ -697,7 +697,7 @@ BOOL NPC_WindowMoneyCheck(int meindex,int talker,int mode)
 
 
 /*-----------------------------------------
-コストの計算
+计算成本
 ------------------------------------------*/
 int NPC_WindowCostCheck(int meindex,int talker)
 {
@@ -714,7 +714,7 @@ int NPC_WindowCostCheck(int meindex,int talker)
 }
 
 /*-----------------------------------------
-気  コストの計算
+计算气力成本
 ------------------------------------------*/
 int NPC_WindowCostCheckMp(int meindex,int talker)
 {

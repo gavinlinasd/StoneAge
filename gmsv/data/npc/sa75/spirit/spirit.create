@@ -1,48 +1,48 @@
 NPCCREATE
 
-#è€å­¦è€…
+#ÀÏÑ§Õß
 {
 floorid=31201
 borncorner=41,6,41,6
 time=0
 createnum=1
 graphicname=16175
-name=è€å­¦è€…
+name=ÀÏÑ§Õß
 dir=6
 ignoreinvincible=1
 enemy=changeevent|file:sa75/spirit/spirit31201_41_6.arg
 }
 
-#çŸ¿å·¥æ²ƒå¤«ä¼Š
+#¿ó¹¤ÎÖ·òÒÁ
 {
 floorid=5100
 borncorner=25,31,25,31
 time=0
 createnum=1
 graphicname=100106
-name=çŸ¿å·¥æ²ƒå¤«ä¼Š
+name=¿ó¹¤ÎÖ·òÒÁ
 dir=4
 ignoreinvincible=1
 enemy=changeevent|file:sa75/spirit/spirit5100_25_31.arg
 action=11
 }
 
-#æ·±çº¢åº•å±‚çº¢å²©çŸ³
+#Éîºìµ×²ãºìÑÒÊ¯
 {
 floorid=30008
 borncorner=38,38,38,38
 time=0
 createnum=1
 graphicname=10817
-name=ã€€
+name=¡¡
 dir=4
 ignoreinvincible=1
 enemy=npcgen_warpman|file:sa75/spirit/spirit30008_38_38.arg
 }
 
-#è½çŸ³
+#ÂäÊ¯
 {
-name=ç«å±±è½çŸ³
+name=»ğÉ½ÂäÊ¯
 floorid=30017
 borncenter=41,87
 dir=4
@@ -54,7 +54,7 @@ graphicname=10812
 }
 
 
-#ç«çš„ä½¿è€…
+#»ğµÄÊ¹Õß
 {
 floorid=30026
 borncorner=11,14,11,14
@@ -63,6 +63,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100190
-name=ç«çš„ä½¿è€…
+name=»ğµÄÊ¹Õß
 enemy=changeevent|file:sa75/spirit/spirit30026_11_14.arg
 }

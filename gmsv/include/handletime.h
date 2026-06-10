@@ -27,7 +27,7 @@ void ASSESS_getSysEfficacy_sub( float *TVsec, int loop);
 //struct tm *localtime(const time_t *timep);
 
 /*仇仇井日票｝HiO［LS凛棉楮溢［*/
-/*    鄹蹬150(覕)*60=9000  =750*12 ぁ   LS1     */
+/*    转生150(次)*60=9000  =750*12 的   LS1     */
 /*  LS1200時間  LS1     */
 /*  LS100  ƥ   LS1     */
 typedef struct tagLSTIME

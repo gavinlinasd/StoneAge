@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-#### æ¥å‰å¡ä½¿è€… ####
+#### À´¼ª¿¨Ê¹Õß ####
 {
-name=æ¥å‰å¡ä½¿è€…
+name=À´¼ª¿¨Ê¹Õß
 floorid=3000
 borncenter=63,109
 dir=4
@@ -14,9 +14,9 @@ enemy=changeevent|file:sa50/laigi.arg
 graphicname=16092
 }
 
-#### é­”ç‹ä½¿è€… ## é­”ç‹æŒ‘æˆ˜åŒ… ####
+#### Ä§ÍõÊ¹Õß ## Ä§ÍõÌôÕ½°ü ####
 {
-name=é­”ç‹ä½¿è€…
+name=Ä§ÍõÊ¹Õß
 floorid=3000
 borncenter=61,109
 dir=4
@@ -27,9 +27,9 @@ enemy=changeevent|file:sa50/laigi_1.arg
 graphicname=16186
 }
 
-#### éº‹é¹¿ä½¿è€… ## ç©æ€§å¤§å‘åŒ… ####
+#### ÷çÂ¹Ê¹Õß ## ÍæĞÔ´ó·¢°ü ####
 {
-name=ç‰§åœºå°‘å¹´
+name=ÄÁ³¡ÉÙÄê
 floorid=3000
 borncenter=62,109
 dir=4

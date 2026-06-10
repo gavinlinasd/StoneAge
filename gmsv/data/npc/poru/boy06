@@ -1,9 +1,9 @@
-NomalMainMsg:鎴戠殑瀛╁瓙鍟婏綖濡堝鐪熸槸绯婃秱锛屽繕浜嗗甫璧颁綘...濡堝鐪熸槸瀵逛笉璧蜂綘...
+NomalMainMsg:我的孩子啊～妈妈真是糊涂，忘了带走你...妈妈真是对不起你...
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=63
-NomalWindowMsg:缁忚繃杩欎竴娆＄伨闅句箣鍚庯紝\n鎴戜互鍚庝竴瀹氫細鏇存敞鎰忔垜鐨勫瀛愶紝\n鎴戜竴瀹氫笉鑳藉湪鍍忕幇鍦ㄨ繖鏍风硦娑備簡锛侊紒
+NomalWindowMsg:经过这一次灾难之后，\n我以后一定会更注意我的孩子，\n我一定不能在像现在这样糊涂了！！
 EventEnd
 
 
@@ -11,7 +11,7 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:NOWEV=63
-NomalWindowMsg:\n鎴戠殑瀛╁瓙鍟婏綖\n濡堝鐪熸槸绯婃秱锛屽繕浜嗗甫璧颁綘...\n濡堝鐪熸槸瀵逛笉璧蜂綘...
+NomalWindowMsg:\n我的孩子啊～\n妈妈真是糊涂，忘了带走你...\n妈妈真是对不起你...
 EventEnd
 
 

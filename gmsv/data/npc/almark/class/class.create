@@ -1,9 +1,9 @@
 NPCCREATE
 
-### è¿½çŒ ###
+### ×·ÁÔ ###
 
 {
-name=è¿½çŒå°±èŒå¯¼å¸ˆå¯å¶
+name=×·ÁÔ¾ÍÖ°µ¼Ê¦¿ÉÒ¶
 floorid=777
 borncorner=6,13,6,13
 dir=4
@@ -13,10 +13,10 @@ graphicname=16186
 enemy=npcgen_warpman|file:almark/class/zhuilie
 }
 
-###ç™½ç‹¼###
+###°×ÀÇ###
 
 {
-name=ç™½ç‹¼å°±èŒå¸ˆå‰å¯å› 
+name=°×ÀÇ¾ÍÖ°Ê¦¼ª¿ÉÒò
 floorid=777
 borncenter=9,13
 dir=6
@@ -26,10 +26,10 @@ graphicname=16182
 enemy=npcgen_warpman|file:almark/class/bailang
 }
 
-###å¸ˆå…¬###
+###Ê¦¹«###
 
 {
-name=é—‡çµå°±èŒå¯¼å¸ˆå¸Œå°”
+name=éœÁé¾ÍÖ°µ¼Ê¦Ï£¶û
 floorid=777
 borncorner=12,13,12,13
 dir=4
@@ -39,9 +39,9 @@ graphicname=16170
 enemy=npcgen_warpman|file:almark/class/anling
 }
 
-##### èŒä¸šæ¸…é™¤ ######
+##### Ö°ÒµÇå³ı ######
 {
-name=å…¨èƒ½é€€èŒå‘˜
+name=È«ÄÜÍËÖ°Ô±
 floorid=777
 borncorner=12,11,12,11
 dir=4
@@ -51,9 +51,9 @@ graphicname=16666
 enemy=changeevent|file:almark/class/clean
 }
 
-#### è¿½çŒè€… ####
+#### ×·ÁÔÕß ####
 {
-name=è¿½çŒæŠ€èƒ½å¯¼å¸ˆè´å‰
+name=×·ÁÔ¼¼ÄÜµ¼Ê¦±´¼ª
 floorid=777
 borncorner=6,16,6,16
 dir=4
@@ -63,9 +63,9 @@ graphicname=16187
 enemy=ProfessionShop|file:almark/class/zhuiliesk
 }
 
-#### é—‡çµæ³•å¸ˆ ####
+#### éœÁé·¨Ê¦ ####
 {
-name=é—‡çµæŠ€èƒ½å¸ˆå¡æ‹‰ç‰¹
+name=éœÁé¼¼ÄÜÊ¦¿¨À­ÌØ
 floorid=777
 borncorner=12,16,12,16
 dir=4
@@ -75,9 +75,9 @@ graphicname=16168
 enemy=ProfessionShop|file:almark/class/anlingsk
 }
 
-#### ç™½ç‹¼å‹‡å£« ####
+#### °×ÀÇÓÂÊ¿ ####
 {
-name=ç™½ç‹¼æŠ€èƒ½å¸ˆè‚¯å°”ç‰¹
+name=°×ÀÇ¼¼ÄÜÊ¦¿Ï¶ûÌØ
 floorid=777
 borncenter=9,16
 dir=4

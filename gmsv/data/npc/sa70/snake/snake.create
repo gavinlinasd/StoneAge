@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### 涓夊澶ц泧######
+###### 三墀大蛇######
 {
-name=铔囩帇瀹堟姢
+name=蛇王守护
 floorid=9355
 borncenter=22,4
 dir=4
@@ -14,7 +14,7 @@ enemy=devilpk|file:sa70/snake/snake
 graphicname=101722
 }
 {
-name=涓夊铔囩帇
+name=三墀蛇王
 floorid=9356
 borncenter=8,9
 dir=4
@@ -31,7 +31,7 @@ borncorner=28,4,28,4
 time=0
 createnum=1
 graphicname=16121
-name=瀵嗛亾瀹堝崼
+name=密道守卫
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:sa70/snake/snake_2
@@ -43,7 +43,7 @@ borncorner=22,4,22,4
 time=0
 createnum=1
 graphicname=101722
-name=铔囩帇瀹堟姢
+name=蛇王守护
 dir=4
 ignoreinvincible=1
 enemy=npcgen_warpman|file:sa70/snake/snake_3

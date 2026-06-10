@@ -1,5 +1,5 @@
 NPCCREATE
-#æµ‹è¯•ç”¨
+#²âÊÔÓÃ
 {
 floorid=1000
 borncorner=51,106,51,106
@@ -8,6 +8,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100401
-name=å·¥ç¨‹äººå‘˜
+name=¹¤³ÌÈËÔ±
 enemy=npc_newnpcman|file:demale/testnpc01.arg
 }

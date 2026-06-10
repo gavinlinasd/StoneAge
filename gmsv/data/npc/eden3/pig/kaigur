@@ -1,26 +1,26 @@
-####男孩父亲凯格####
+####�к����׿���####
 
-NomalMainMsg:看着欧弟最近的开心模样，我可以好好的为这个家努力工作了。
+NomalMainMsg:����ŷ������Ŀ���ģ�����ҿ��Ժúõ�Ϊ�����Ŭ�������ˡ�
 
-####任务结束，认旗标113####
+####��������������113####
 
-####任务结束对话
+####��������Ի�
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&ENDEV=113
-NomalWindowMsg:谢谢你帮助我们，欧弟已经很久没这么开心了。
+NomalWindowMsg:лл��������ǣ�ŷ���Ѿ��ܾ�û��ô�����ˡ�
 EventEnd
 
-####任务进行中对话
+####��������жԻ�
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112&NOWEV=113
-NomalWindowMsg:那一切只好拜托你了。
+NomalWindowMsg:��һ��ֻ�ð������ˡ�
 EventEnd
 
-####任务未开始对话
+####����δ��ʼ�Ի�
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&ENDEV=112
-NomalWindowMsg:欧弟一直闷闷不乐，真教人担忧。
+NomalWindowMsg:ŷ��һֱ���Ʋ��֣�����˵��ǡ�
 EventEnd

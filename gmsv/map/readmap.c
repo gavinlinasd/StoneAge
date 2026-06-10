@@ -286,7 +286,7 @@ BOOL MAP_readBattleMapConfFile( char* filename )
 					BattleMapNo[0] );
 			}
 
-			//   像  号正しいか?
+			//   图像编号是否正确?
 			if( IsValidImagenumber( i ) == FALSE ){
 				continue;
 			}
@@ -409,19 +409,19 @@ FCLOSERETURNTRUE:
 static BOOL MAP_readMapOne( char*   filename )
 {
     FILE*   f;					/*  易刹通誌    */
-    char    buf[16];            /*  マジックナンバー  み用  */
-    short   data[1024];         /*  竺ョート  み用バッファ  */
-    int     ret;                /*  返り値受け取り用        */
-    int     i;                  /*  郊ープ  数  */
+    char    buf[16];            /*  魔法数字读取用  */
+    short   data[1024];         /*  短字节读取用缓冲区  */
+    int     ret;                /*  返回值接收用        */
+    int     i;                  /*  循环变量  */
     int     mapindex;
 
-    int     id=0,xsiz=0,ysiz=0;     /*  マップデータの一時格  場所  */
+    int     id=0,xsiz=0,ysiz=0;     /*  地图数据的临时存放处  */
 
     short   *tile=NULL;
     short   *obj=NULL;
     MAP_Objlink**   olink=NULL;
-    char    showstring[32];         /*  マップデータの一時格  場所  */
-    struct  stat    filestat;       /*  チェック用に使う    */
+    char    showstring[32];         /*  地图数据的临时存放处  */
+    struct  stat    filestat;       /*  检查用    */
     BOOL    invaliddata=FALSE;
     if( MAP_mapnum_index >= MAP_mapnum ){
         fprint( "这里没有足够空间装载地图数组.\n" );

@@ -73,7 +73,7 @@ int MAGIC_Recovery_Field( int charaindex, int magicindex)
 
 }
 /*----------------------------------------------------------------------
- * 他人を回復
+ * 回复他人
  * 引数
  * charaindex		int		愤坌及index
  * toindex			int		荚汊允月谛及index

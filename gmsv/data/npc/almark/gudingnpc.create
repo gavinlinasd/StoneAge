@@ -2,9 +2,9 @@ NPCCREATE
 
 
 
-###### è¨å§†å‰å°” ######
+###### ÈøÄ·¼ª¶û ######
 {
-name=è¨å§†å‰å°”
+name=ÈøÄ·¼ª¶û
 floorid=777
 borncenter=20,19,1,1
 dir=6
@@ -13,9 +13,9 @@ enemy=changeevent|file:poru/samugiru
 graphicname=100036
 }
 
-###### è¶…è´±å…” ######
+###### ³¬¼úÍÃ ######
 {
-name=é‡Œæ‹‰æ‹‰
+name=ÀïÀ­À­
 floorid=777
 borncenter=22,19,1,1
 dir=4

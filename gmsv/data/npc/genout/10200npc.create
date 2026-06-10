@@ -12,7 +12,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16205
-name=æµ·åº•æ´çªŸå…³å¡
+name=º£µ×¶´¿ß¹Ø¿¨
 enemy=npcgen_warpman|file:genout/wpm_10202_22_28
 }
 #line 12
@@ -24,6 +24,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16208
-name=æµ·åº•æ´çªŸå…³å¡
+name=º£µ×¶´¿ß¹Ø¿¨
 enemy=npcgen_warpman|file:genout/wpm_10202_22_32
 }

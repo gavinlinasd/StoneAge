@@ -75,14 +75,14 @@ void printUsage( void )
  * 引数
  *      argc      侬  及醒
  *      argv      侬  及    
- * 返り値
- *      TRUE(1)     正常なコマンドライン引数だったら
- *      FALSE(0)    異常なコマンドライン引数だったら
+ * 返回值
+ *      TRUE(1)     命令行参数正常时
+ *      FALSE(0)    命令行参数异常时
  */
 BOOL parseCommandLine( int argc , char** argv )
 {
-    int c;                          /* getopt ぁ窅竣 */
-    extern char* optarg;            /* getopt ぁ窅竣 */
+    int c;                          /* getopt 的初始化 */
+    extern char* optarg;            /* getopt 的初始化 */
 
 
     while( ( c = getopt( argc, argv ,OPTIONSTRING )) != -1 ){
@@ -118,9 +118,9 @@ BOOL parseCommandLine( int argc , char** argv )
 
 
 /*
- * 環境  数をパースする
+ * 解析环境变量
  * 引数
- *      env     環境  数の    
+ *      env     环境变量的内容    
  *
  * 漆及赭窒手仄卅中
  */
@@ -147,9 +147,9 @@ BOOL parseEnvironment( char** env )
  * 赓渝祭伙□民件
  * 引数
  *      argc    argv及醒
- *      argv    コマンドライン引数
+ *      argv    命令行参数
  *      env     環境  数
- * 返り値
+ * 返回值
  *      TRUE(1) 岳  
  *      FALSE(1) 撩  
  */
@@ -190,13 +190,13 @@ BOOL init(int argc , char** argv , char** env )
     //ttom start
     {  int iWork = setEncodeKey();
        if( iWork == 0 ){
-       // エンコードキーを設定
+       // 设置编码密钥
        printf( "----------------------------------------\n" );
        printf( "-------------[编码] 无法设置 %s\n", getConfigfilename() );
        printf( "----------------------------------------\n" );
        exit( 1 );
        }else{
-            // エンコードキーを設定
+            // 设置编码密钥
                printf( "编码 = %d\n", iWork );
        }
     }
@@ -614,7 +614,7 @@ BOOL init(int argc , char** argv , char** env )
     CONNECT_setCtype( acfd, AC );
 	
 	print( "初始化 NPC 客户端 ... " );
-    /*  rpc(client)の初期化 */
+    /*  rpc(client)的初始化 */
     if( saacproto_InitClient( lsrpcClientWriteFunc,LSGENWORKINGBUFFER, acfd) < 0 )
         goto CLOSEAC;
 	print( "完成\n" );

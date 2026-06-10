@@ -7,7 +7,7 @@ typedef enum
 {
 	MAGIC_FIELD_ALL,			/* 允屯化及桦赭匹银尹月 */
 	MAGIC_FIELD_BATTLE,				/* 爵    及心 */
-	MAGIC_FIELD_MAP,				/* 通常マップ上のみ */
+	MAGIC_FIELD_MAP,				/* 仅限通常地图上 */
 
 }MAGIC_FIELDTYPE;
 
@@ -20,7 +20,7 @@ typedef enum
 	MAGIC_TARGET_ALL,			/* 蝈化 */
 	MAGIC_TARGET_NONE,			/* 簿手蓟  请  卅中［  豢支凶户及凛 */
 	MAGIC_TARGET_OTHERWITHOUTMYSELF,/* 职及谛  愤坌殖引卅中) */
-	MAGIC_TARGET_WITHOUTMYSELFANDPET,  /* 自分とペット以外 */
+	MAGIC_TARGET_WITHOUTMYSELFANDPET,  /* 自己和宠物以外 */
 	MAGIC_TARGET_WHOLEOTHERSIDE,/*     式飯通囁鱚   */
 
 #ifdef __ATTACK_MAGIC
@@ -35,9 +35,9 @@ typedef enum
 typedef enum
 {
 	MAGIC_ID,					/* 集    蠕 */
-	MAGIC_FIELD,				/* 使える場所 */
+	MAGIC_FIELD,				/* 可使用的场所 */
 	MAGIC_TARGET,				/* 覆擂 */
-	MAGIC_TARGET_DEADFLG,		/* 死んだ者も対象に含めるか */
+	MAGIC_TARGET_DEADFLG,		/* 是否包含已死亡者 */
 #ifdef __ATTACK_MAGIC
   MAGIC_IDX ,
 #endif
@@ -47,9 +47,9 @@ typedef enum
 typedef enum
 {
 	MAGIC_NAME,					/* 热诸   */
-	MAGIC_COMMENT,				/* コメント*/
-	MAGIC_FUNCNAME,				/* 関数   */
-	MAGIC_OPTION,				/* オプ竺ョン */
+	MAGIC_COMMENT,				/* 注释*/
+	MAGIC_FUNCNAME,				/* 函数名   */
+	MAGIC_OPTION,				/* 选项 */
 	MAGIC_DATACHARNUM,
 }MAGIC_DATACHAR;
 

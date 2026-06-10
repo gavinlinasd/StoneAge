@@ -1,7 +1,7 @@
 NPCCREATE
 
 #
-#鍒朵綔閭�璇峰嚱鐨凬PC
+#制作邀请函的NPC
 #
 
 # FMLETTER
@@ -14,7 +14,7 @@ dir=6
 ignoreinvincible=1
 family=1
 graphicname=16065
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -27,7 +27,7 @@ dir=6
 ignoreinvincible=1
 family=2
 graphicname=16065
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -40,7 +40,7 @@ dir=4
 ignoreinvincible=1
 family=3
 graphicname=16027
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -53,7 +53,7 @@ dir=6
 ignoreinvincible=1
 family=4
 graphicname=16030
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -66,7 +66,7 @@ dir=6
 ignoreinvincible=1
 family=5
 graphicname=16030
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -79,7 +79,7 @@ dir=6
 ignoreinvincible=1
 family=10
 graphicname=17012
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -92,7 +92,7 @@ dir=6
 ignoreinvincible=1
 family=6
 graphicname=16030
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -105,7 +105,7 @@ dir=6
 ignoreinvincible=1
 family=7
 graphicname=16030
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -118,7 +118,7 @@ dir=6
 ignoreinvincible=1
 family=8
 graphicname=16030
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }
 
@@ -131,6 +131,6 @@ dir=6
 ignoreinvincible=1
 family=9
 graphicname=16030
-name=绉樹功
+name=秘书
 enemy=fmletter|conff:family/fmletter.conf
 }

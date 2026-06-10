@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### æ¨µå¤«é©¬æ–¯ ######
+###### éÔ·òÂíË¹ ######
 {
-name=é©¬æ–¯
+name=ÂíË¹
 floorid=7350
 borncenter=29,51
 dir=4
@@ -13,9 +13,9 @@ enemy=changeevent|file:eden3/karo/mars
 graphicname=16649
 }
 
-###### è’™è¾¾æ‘é•¿ä¼¯æ© ######
+###### ÃÉ´ï´å³¤²®¶÷ ######
 {
-name=ä¼¯æ©
+name=²®¶÷
 floorid=7353
 borncenter=17,13
 dir=6
@@ -25,9 +25,9 @@ enemy=changeevent|file:eden3/karo/burn
 graphicname=16622
 }
 
-###### æŸ¥æ‹‰ ######
+###### ²éÀ­ ######
 {
-name=æŸ¥æ‹‰
+name=²éÀ­
 floorid=60303
 borncenter=6,24
 dir=6
@@ -37,7 +37,7 @@ enemy=npcgen_warpman|file:eden3/karo/chara
 graphicname=100873
 }
 
-###### æŸ¥æ‹‰ä¸åœ¨ä¹‹ä¼ é€ç‚¹ ######
+###### ²éÀ­²»ÔÚÖ®´«ËÍµã ######
 {
 floorid=60303
 borncenter=6,24
@@ -46,9 +46,9 @@ ignoreinvincible=1
 enemy=npcgen_warp|file:eden3/karo/warppoint1.arg
 }
 
-###### ç™½å¤©ä¸€èˆ¬çš„è‘³å¨œ (å±±æ´)######
+###### °×ÌìÒ»°ãµÄİÚÄÈ (É½¶´)######
 {
-name=è‘³å¨œ
+name=İÚÄÈ
 floorid=60302 
 borncenter=15,15
 dir=4
@@ -58,9 +58,9 @@ enemy=changeevent|file:eden3/karo/weinan
 graphicname=16607
 }
 
-###### å¤œæ™šå…½åŒ–çš„è‘³å¨œ (å±±æ´)######
+###### Ò¹ÍíÊŞ»¯µÄİÚÄÈ (É½¶´)######
 {
-name=è‘³å¨œ
+name=İÚÄÈ
 floorid=60305 
 borncenter=15,15
 dir=4
@@ -70,9 +70,9 @@ enemy=changeevent|file:eden3/karo/weina
 graphicname=100849
 }
 
-###### ç‹å­å‰å¾·(ä¼Šå¡”å·¥ä½œå®¤) ######
+###### Íõ×Ó¼ªµÂ(ÒÁËş¹¤×÷ÊÒ) ######
 {
-name=å‰å¾·
+name=¼ªµÂ
 floorid=60306
 borncenter=23,23
 dir=4
@@ -83,7 +83,7 @@ graphicname=100025
 action=5
 }
 
-###### è¨ç™»(ä¼Šå¡”å·¥ä½œå®¤) ######
+###### ÈøµÇ(ÒÁËş¹¤×÷ÊÒ) ######
 {
 floorid=60306
 borncenter=22,21
@@ -92,13 +92,13 @@ time=0
 createnum=1
 ignoreinvincible=1
 graphicname=101160
-name=è¨ç™»
+name=ÈøµÇ
 enemy=sb_dou|file:eden3/karo/sardon.arg
 }
 
-###### å¡ç½—(ä¼Šå¡”å·¥ä½œå®¤) ######
+###### ¿¨ÂŞ(ÒÁËş¹¤×÷ÊÒ) ######
 {
-name=å¡ç½—
+name=¿¨ÂŞ
 floorid=60306
 borncenter=21,22
 dir=4
@@ -108,9 +108,9 @@ graphicname=100720
 action=5
 }
 
-###### å¡ç½—(ç²¾ç¥é¢†åŸŸ) ######
+###### ¿¨ÂŞ(¾«ÉñÁìÓò) ######
 {
-name=å¡ç½—
+name=¿¨ÂŞ
 floorid=60307
 borncenter=15,16
 dir=4
@@ -120,9 +120,9 @@ enemy=changeevent|file:eden3/karo/karo2
 graphicname=100720
 }
 
-###### ä¼Šå¡” ######
+###### ÒÁËş ######
 {
-name=ä¼Šå¡”
+name=ÒÁËş
 floorid=60343
 borncenter=22,21
 dir=4
@@ -132,9 +132,9 @@ enemy=npcgen_warpman|file:eden3/karo/etar
 graphicname=16634
 }
 
-###### åäºŒå¹´å‰çš„è‘³å¨œ ######
+###### Ê®¶şÄêÇ°µÄİÚÄÈ ######
 {
-name=è‘³å¨œ
+name=İÚÄÈ
 floorid=7351
 borncenter=39,46
 dir=4
@@ -145,9 +145,9 @@ graphicname=16607
 }
 
 
-###### åäºŒå¹´å‰çš„è‘³å¨œâ€¦è¯•ç‚¼æ´çªŸ ######
+###### Ê®¶şÄêÇ°µÄİÚÄÈ¡­ÊÔÁ¶¶´¿ß ######
 {
-name=è‘³å¨œ
+name=İÚÄÈ
 floorid=60308
 borncenter=40,44
 dir=6
@@ -157,7 +157,7 @@ enemy=changeevent|file:eden3/karo/weinah
 graphicname=16606
 }
 
-###### è¨ç™»(æˆ˜æ–—å‹) ######
+###### ÈøµÇ(Õ½¶·ĞÍ) ######
 {
 floorid=60312
 borncenter=22,21
@@ -166,13 +166,13 @@ time=0
 createnum=1
 ignoreinvincible=1
 graphicname=101160
-name=è¨ç™»
+name=ÈøµÇ
 enemy=sb_dou|file:eden3/karo/sardonf.arg
 }
 
-###### å¡ç½—(ä¼Šå¡”å·¥ä½œå®¤) ######
+###### ¿¨ÂŞ(ÒÁËş¹¤×÷ÊÒ) ######
 {
-name=å¡ç½—
+name=¿¨ÂŞ
 floorid=60312
 borncenter=21,22
 dir=4
@@ -183,9 +183,9 @@ action=5
 }
 
 
-###### ç‹å­å‰å¾·(ä¼Šå¡”å·¥ä½œå®¤) ######
+###### Íõ×Ó¼ªµÂ(ÒÁËş¹¤×÷ÊÒ) ######
 {
-name=å‰å¾·
+name=¼ªµÂ
 floorid=60312
 borncenter=23,23
 dir=4
@@ -196,9 +196,9 @@ graphicname=100025
 action=5
 }
 
-###### å¡ç½—(æ‰“è´¥è¨ç™»åå‡ºç°) ######
+###### ¿¨ÂŞ(´ò°ÜÈøµÇºó³öÏÖ) ######
 {
-name=å¡ç½—
+name=¿¨ÂŞ
 floorid=60343
 borncenter=21,22
 dir=4
@@ -208,9 +208,9 @@ enemy=changeevent|file:eden3/karo/karo3
 graphicname=100720
 }
 
-###### å‰å¾·(æ‰“è´¥è¨ç™»åå‡ºç°) ######
+###### ¼ªµÂ(´ò°ÜÈøµÇºó³öÏÖ) ######
 {
-name=å‰å¾·
+name=¼ªµÂ
 floorid=60343
 borncenter=23,23
 dir=4
@@ -220,7 +220,7 @@ enemy=changeevent|file:eden3/karo/kidd
 graphicname=100025
 }
 
-###### ç²¾ç¥é¢†åŸŸä¼ é€ç‚¹ ######
+###### ¾«ÉñÁìÓò´«ËÍµã ######
 {
 floorid=60307
 borncenter=15,14
@@ -229,7 +229,7 @@ ignoreinvincible=1
 enemy=npcgen_warp|file:eden3/karo/warppoint.arg
 }
 
-###### ä¼Šå¡”å·¥ä½œå®¤å¤–ä¼ é€ç‚¹ ######
+###### ÒÁËş¹¤×÷ÊÒÍâ´«ËÍµã ######
 {
 floorid=7352
 borncenter=86,36

@@ -1,8 +1,8 @@
-NomalMainMsg:骞磋交浜猴紝瑙佽瘑杩囨按鎬殑濞佸姏鍚楋紵鎴戣剼涓婄殑浼ゅ氨鏄畠鍜殑鍟婏紒
+NomalMainMsg:年轻人，见识过水怪的威力吗？我脚上的伤就是它咬的啊！
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>80&ENDEV=81
-NomalWindowMsg:骞磋交浜猴紝瑙佽瘑杩囨按鎬殑濞佸姏鍚楋紵\n鎴戣剼涓婄殑浼ゅ氨鏄畠鍜殑鍟婏紒
+NomalWindowMsg:年轻人，见识过水怪的威力吗？\n我脚上的伤就是它咬的啊！
 EventEnd

@@ -8,7 +8,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16021
-name=占卜师
+name=ռ��ʦ
 enemy=luckyman|file:sainasu/uranai
 }
 
@@ -20,7 +20,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16034
-name=占卜师
+name=ռ��ʦ
 enemy=luckyman|file:sainasu/uranai
 }
 
@@ -32,7 +32,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16021
-name=占卜师
+name=ռ��ʦ
 enemy=luckyman|file:sainasu/uranai
 }
 
@@ -44,7 +44,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16034
-name=占卜师
+name=ռ��ʦ
 enemy=luckyman|file:sainasu/uranai
 }
 

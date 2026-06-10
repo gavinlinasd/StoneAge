@@ -1,6 +1,6 @@
 NPCCREATE
 
-# è¨å§†å‰å°”çš„åº„å›­è¸¢é¦†ç™»è®°å‘˜
+# ÈøÄ·¼ª¶ûµÄ×¯Ô°Ìß¹İµÇ¼ÇÔ±
 {
 floorid=1040
 borncenter=47,29,1,1
@@ -9,11 +9,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16061
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg1
 }
 
-# ç›ä¸½å¨œä¸çš„åº„å›­è¸¢é¦†ç™»è®°å‘˜
+# ÂêÀöÄÈË¿µÄ×¯Ô°Ìß¹İµÇ¼ÇÔ±
 {
 floorid=2030
 borncenter=60,41,1,1
@@ -22,11 +22,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16061
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg2
 }
 
-# åŠ åŠ çš„åº„å›­è¸¢é¦†ç™»è®°å‘˜
+# ¼Ó¼ÓµÄ×¯Ô°Ìß¹İµÇ¼ÇÔ±
 {
 floorid=3030
 borncenter=59,35,1,1
@@ -35,11 +35,11 @@ createnum=1
 time=0
 dir=4
 graphicname=16060
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg3
 }
 
-# å¡é²å®ƒé‚£çš„åº„å›­è¸¢é¦†ç™»è®°å‘˜
+# ¿¨Â³ËüÄÇµÄ×¯Ô°Ìß¹İµÇ¼ÇÔ±
 {
 floorid=4030
 borncenter=29,17,1,1
@@ -48,11 +48,11 @@ createnum=1
 time=0
 dir=4
 graphicname=16060
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg4
 }
 
-#å…ç´š
+#ÒÁµé
 {
 floorid=5030
 borncenter=58,25,1,1
@@ -61,11 +61,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16063
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg5
 }
 
-#å¡”å°”å¡”
+#Ëş¶ûËş
 {
 floorid=6030
 borncenter=53,8,1,1
@@ -74,11 +74,11 @@ createnum=1
 time=0
 dir=4
 graphicname=16060
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg6
 }
 
-#å°¼å…‹æ–¯
+#Äá¿ËË¹
 {
 floorid=7030
 borncenter=32,35,1,1
@@ -87,11 +87,11 @@ createnum=1
 time=0
 dir=4
 graphicname=16060
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg7
 }
 
-#å¼—çƒˆé¡¿
+#¸¥ÁÒ¶Ù
 {
 floorid=8030
 borncenter=14,55,1,1
@@ -100,11 +100,11 @@ createnum=1
 time=0
 dir=4
 graphicname=16060
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg8
 }
 
-#äºšä¾æ¬§
+#ÑÇÒÀÅ·
 {
 floorid=9030
 borncenter=56,49,1,1
@@ -113,11 +113,11 @@ createnum=1
 time=0
 dir=4
 graphicname=16060
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/manorsman.arg9
 }
 
-# å®¶æ—ç«æŠ€åœºç™»è®°å‘˜
+# ¼Ò×å¾º¼¼³¡µÇ¼ÇÔ±
 {
 floorid=141
 borncenter=46,17,1,1
@@ -126,7 +126,7 @@ createnum=1
 time=0
 dir=6
 graphicname=16063
-name=åœºåœ°é¢„çº¦äºº
+name=³¡µØÔ¤Ô¼ÈË
 enemy=scheduleman|file:family/scheduleman.arg1
 }
 {
@@ -137,7 +137,7 @@ createnum=1
 time=0
 dir=6
 graphicname=16063
-name=åœºåœ°é¢„çº¦äºº
+name=³¡µØÔ¤Ô¼ÈË
 enemy=scheduleman|file:family/scheduleman.arg2
 }
 {
@@ -148,7 +148,7 @@ createnum=1
 time=0
 dir=6
 graphicname=16063
-name=åœºåœ°é¢„çº¦äºº
+name=³¡µØÔ¤Ô¼ÈË
 enemy=scheduleman|file:family/scheduleman.arg3
 }
 {
@@ -159,7 +159,7 @@ createnum=1
 time=0
 dir=4
 graphicname=16062
-name=åœºåœ°é¢„çº¦äºº
+name=³¡µØÔ¤Ô¼ÈË
 enemy=scheduleman|file:family/scheduleman.arg4
 }
 {
@@ -170,6 +170,6 @@ createnum=1
 time=0
 dir=4
 graphicname=16062
-name=åœºåœ°é¢„çº¦äºº
+name=³¡µØÔ¤Ô¼ÈË
 enemy=scheduleman|file:family/scheduleman.arg5
 }

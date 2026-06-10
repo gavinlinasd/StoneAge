@@ -1,7 +1,7 @@
 NPCCREATE
 
 ##########################################################################
-#########################    æ–¹ä½çš„ç¥ è®¾å®š  ##################
+#########################    ·½Î»µÄìôÉè¶¨  ##################
 ##########################################################################
 
 
@@ -13,7 +13,7 @@ createnum=1
 dir=7
 ignoreinvincible=1
 graphicname=100328
-name=é£çš„å®ˆæŠ¤è€…
+name=·çµÄÊØ»¤Õß
 enemy=changeevent|file:giiru/event/nev1_4
 }
 
@@ -25,7 +25,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=100370
-name=ç«çš„å®ˆæŠ¤è€…
+name=»ğµÄÊØ»¤Õß
 enemy=changeevent|file:giiru/event/nev1_3
 }
 
@@ -37,7 +37,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100274
-name=åœ°çš„å®ˆæŠ¤è€…
+name=µØµÄÊØ»¤Õß
 enemy=changeevent|file:giiru/event/nev1_1
 }
 
@@ -49,7 +49,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100379
-name=æ°´çš„å®ˆæŠ¤è€…
+name=Ë®µÄÊØ»¤Õß
 enemy=changeevent|file:giiru/event/nev1_2
 }
 
@@ -62,7 +62,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10939
-name=çŸ³åƒ
+name=Ê¯Ïñ
 enemy=changeevent|file:giiru/event/nev1_5
 
 }
@@ -76,7 +76,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=5075
-name=çŸ³åƒ
+name=Ê¯Ïñ
 enemy=changeevent|file:giiru/event/nev1_5
 
 }

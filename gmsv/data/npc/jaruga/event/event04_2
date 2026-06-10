@@ -1,10 +1,10 @@
-NomalMainMsg:æˆ‘æ˜¯å®¡åˆ¤ä»ªå¼çš„ä½¿è€…
+NomalMainMsg:ÎÒÊÇÉóÅÐÒÇÊ½µÄÊ¹Õß
 
 EventNo:4
 TYPE:ACCEPT
 EVENT:NOWEV=4&ITEM!=2417
-AcceptMsg:ä½ å¯æ˜¯æ¥ä¸¾è¡Œä»ªå¼ï¼Ÿ
-ThanksMsg:é‚£ä¹ˆï¼Œç»™ä½ ï¼‘ï¼•ä¸ªä»ªçŽ‰
-ItemFullMsg:å¦‚æžœæƒ³è¦å…¨éƒ¨çš„ä»ªçŽ‰ï¼Œå°±è¦ç©ºå‡º15ä¸ªç©ºé—´æ‰å¯
+AcceptMsg:Äã¿ÉÊÇÀ´¾ÙÐÐÒÇÊ½£¿
+ThanksMsg:ÄÇÃ´£¬¸øÄã£±£µ¸öÒÇÓñ
+ItemFullMsg:Èç¹ûÏëÒªÈ«²¿µÄÒÇÓñ£¬¾ÍÒª¿Õ³ö15¸ö¿Õ¼ä²Å¿É
 GetItem:2417*15
 EventEnd

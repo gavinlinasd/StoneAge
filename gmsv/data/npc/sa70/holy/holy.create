@@ -1,8 +1,8 @@
 NPCCREATE
-####鍏変箣鍦ｇ煶####
-########鍏嬮浄#########
+####光之圣石####
+########克雷#########
 {
-name=鍏嬮浄
+name=克雷
 floorid=3100
 borncenter=56,34
 dir=4
@@ -12,9 +12,9 @@ graphicname=16024
 enemy=changeevent|file:sa70/holy/holy1.arg
 }
 
-########鍏変箣鍦ｇ煶#########
+########光之圣石#########
 {
-name=鍏変箣鍦ｇ煶
+name=光之圣石
 floorid=20105
 borncenter=25,20
 dir=6

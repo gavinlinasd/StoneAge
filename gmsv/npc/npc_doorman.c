@@ -40,10 +40,10 @@
  *
  *
  *
- *    ストの  法
+ *    表的方法
  *
  *1  玉失毛化五午丹卞  仁
- *2  このNPCを適当にドアのとなりに  く?引数を gold|100 にする
+ *2  把这个NPC随便放在门旁边?参数设为 gold|100
  *3  仇及NPC卞覆仄化｝100打□伙玉动晓手匀化中月橇谪匹＞反中＝午蜕丹
  *4  玉失互夫日中化嗯互蛹匀凶日岳  ［
  *
@@ -125,10 +125,10 @@ void NPC_DoormanTalked( int meindex , int talkerindex , char *msg ,
                           "%d 收到金子了。现在就来开门。", g );
             	CHAR_talkToCli( talkerindex, meindex , msg, CHAR_COLORWHITE );
 
-                /* 恭金をゲット */
+                /* 取得金钱 */
                 now_g -= g;
                 CHAR_setInt( talkerindex , CHAR_GOLD , now_g );
-                /* あたらしいス  ータスを送信 */
+                /* 发送新的状态 */
                 CHAR_send_P_StatusString(talkerindex, CHAR_P_STRING_GOLD);
 
                 /* 玉失夫日仁 */
@@ -155,7 +155,7 @@ void NPC_DoormanTalked( int meindex , int talkerindex , char *msg ,
 
     } else if( strcmp( mode , "roomlimit" ) == 0 ){
 
-		/*   屋の人数制限がある場合 */
+		/*   房间有人数限制的情况 */
 		char szOk[256], szNg[256], szBuf[32];
 		int checkfloor;
 		int maxnum, i, iNum;
@@ -169,7 +169,7 @@ void NPC_DoormanTalked( int meindex , int talkerindex , char *msg ,
 		}
 
 		for( iNum = 0,i = 0; i < getFdnum(); i ++ ){
-			/* プレイヤー以外には興  が  い */
+			/* 对玩家以外没有兴趣 */
 			if( CHAR_getCharUse( i ) == FALSE )continue;
 			if( CHAR_getInt( i, CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER )continue;
 			/* 隙烂及白夫失动陆卞饬  互  中 */

@@ -31,7 +31,7 @@ BOOL NPC_OldmanInit( int meindex )
     getStringFromIndexWithDelim( npcarg,"|",4,token,sizeof(token));
     borny = atoi( token );
 
-    /* 長  はIDを覚えて恭くナリ */
+    /* 村长记住ID */
     CHAR_setWorkInt( meindex , CHAR_WORKOLDMANID ,oldmanid );
     CHAR_setInt( meindex , CHAR_WHICHTYPE , CHAR_TYPEHEALER );
     CHAR_setFlg( meindex , CHAR_ISATTACKED , 0 );
@@ -42,7 +42,7 @@ BOOL NPC_OldmanInit( int meindex )
         &&
         CHAR_ElderSetPosition( oldmanid ,bornfl,bornx, borny ) 
         == TRUE ){
-        /* 長  の位  を初期化するなり */
+        /* 初始化村长的位置 */
         return TRUE;
     }else{
         printf( "Invalid elder npcarg=%s\n", npcarg );

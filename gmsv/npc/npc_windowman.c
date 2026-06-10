@@ -282,13 +282,13 @@ BOOL NPC_Windowman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			/* 戊丢件玄反  骰 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 改行取る */
+			/* 去掉换行 */
 			chomp( line );
 			
-			/*  行を整形する    */
+			/*  整理行格式    */
 			/*  引内 tab 毛 " " 卞  五晶尹月    */
 			replaceString( line, '\t' , ' ' );
-			/* 先  のスペースを取る?*/
+			/* 去掉开头的空格*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;

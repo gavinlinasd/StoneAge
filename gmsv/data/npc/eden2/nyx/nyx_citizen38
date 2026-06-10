@@ -1,8 +1,8 @@
-NomalMainMsg:ไฝ ๆฒก่ง่ฟๆฐดๆ€ช๏ผ็ๆฏๅคช้€ไบใ€ใ€
+NomalMainMsg:ฤใรปผ๛นýหฎนึฃฟีๆสวฬซัทมหกฃกฃ
 
-#้—ฒ่
+#ฯะมฤ
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>80&ENDEV=81
-NomalWindowMsg:ไฝ ๆฒก่ง่ฟๆฐดๆ€ช๏ผ็ๆฏๅคช้€ไบใ€ใ€
+NomalWindowMsg:ฤใรปผ๛นýหฎนึฃฟีๆสวฬซัทมหกฃกฃ
 EventEnd

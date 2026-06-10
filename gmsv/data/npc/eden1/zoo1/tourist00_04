@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:鎬庝箞鏈変笁涓爡鏍忛兘鐮翠簡鍛紵鏄笉鏄湁浠�涔堝ぇ闃磋皨鍟婏紵
+NomalWindowMsg:怎么有三个栅栏都破了呢？是不是有什么大阴谋啊？
 EventEnd

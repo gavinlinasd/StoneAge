@@ -1,8 +1,8 @@
 NPCCREATE
-###å±éšªç†Šå‡ºæ²’###
-########è³½çˆ¾#########
+###¦MÀIºµ¥X¨S###
+########ÁÉº¸#########
 {
-name=è³½çˆ¾
+name=ÁÉº¸
 floorid=4000
 borncenter=96,62
 dir=6
@@ -12,9 +12,9 @@ graphicname=16056
 enemy=changeevent|file:sa70/feast/feast1.arg
 }
 
-########å¤§ç™½æ…‹#########
+########¤j¥ÕºA#########
 {
-name=å¡è‰
+name=¥d²ú
 floorid=200
 borncenter=60,443
 dir=4

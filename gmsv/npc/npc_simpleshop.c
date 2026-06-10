@@ -19,7 +19,7 @@
  *   赏读卅饕及伙□民件［by nakamura
  *
  * NPCARGUMENT卞俜  仄凶失奶  丞毛  蜃卞赭  仄化中月云饕［
- *     SIMPLESHOP_MAXINFINITITEM種    限に生成することができる?
+ *     SIMPLESHOP_MAXINFINITITEM种类可以无限生成
  *   蜃戏岳失奶  丞午  元潘  及失奶  丞毛  匀凶日  匀凶支勾互
  * 壑钗井日壅  允月［
  * 引凶｝皿伊奶乩□井日手及毛  中午月仇午互匹五月互｝丐月袄蟾
@@ -27,10 +27,10 @@
  * 卅中  潸反匹五卅中［  中午匀凶失奶  丞反公及桦匹卅仁卅月［
  * 引凶｝失奶  丞及涩烂匹cost互涩烂今木化中卅中手及手  中午木卅中［
  * 2谛动晓及皿伊奶乩□互饕卞五凶午五反｝  及菸毛穸燮允月［公丹允月
- * ことにより店が永久に誰かを相手していることを  ぐ?
+ * 以此防止店永久接待某人
  *
- * タイプ  ：SimpleShop
- * 扱うイベント: init, talked, specialtalked
+ * 类型名 ：SimpleShop
+ * 处理的事件: init, talked, specialtalked
  *
  *
  */
@@ -336,7 +336,7 @@ static void NPC_SimpleShopNormalWindow( int meindex, int playerindex,
  * 引数
  * int charindex:平乓仿及奶件犯弁旦
  * int shopwindowindex:饕它奶件玉它及奶件犯弁旦［0井日反元引月［
- * 返り値
+ * 返回值
  * 失奶  丞  □皮伙及奶件犯弁旦［巨仿□反-1［
  */
 static int NPC_ShopWindowIndexToItemTableIndex( int charindex,
@@ -423,7 +423,7 @@ static BOOL NPC_SimpleShopProcessSellMsg(char *msg, int shopindex,
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemind,
 #else
-       		ITEM_getInt( itemind, ITEM_ID ),  /* アイ  ム  号 */
+       		ITEM_getInt( itemind, ITEM_ID ),  /* 道具编号 */
 #endif
 			"Sell",
 			CHAR_getInt( playerindex,CHAR_FLOOR),
@@ -502,7 +502,7 @@ static BOOL NPC_LimitBuyInShopProcessSellMsg(char *msg,
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemind,
 #else
-       		ITEM_getInt( itemind, ITEM_ID ),  /* アイ  ム  号 */
+       		ITEM_getInt( itemind, ITEM_ID ),  /* 道具编号 */
 #endif
 			"Sell",
 			CHAR_getInt( playerindex,CHAR_FLOOR),
@@ -541,7 +541,7 @@ static int NPC_SimpleShopGetItemNum( int meindex )
 
 /*
  * 丐月平乓仿奶件犯弁旦及平乓仿卞｝云心六window毛钒仁凶户及
- * 情  を与える?
+ * 给予信息
  * int meindex:愤坌及(饕及)奶件犯弁旦
  * int cliindex:菸及奶件犯弁旦
  */
@@ -675,7 +675,7 @@ static BOOL NPC_SimpleShopFillItem( int meindex, char *npcarg )
             }
             num=NPC_Util_countHaveItem(meindex,itemid);
             if( num < 0 ){
-                return FALSE;/* 不正なidなどのfatal err */
+                return FALSE;/* 不正确的id等fatal err */
             }else if( num == 0 ){ /* 手匀化卅井匀凶日  虾 */
                 NPC_Util_createItemToChar( meindex,itemid, FALSE);
 
@@ -695,7 +695,7 @@ static BOOL NPC_SimpleShopFillItem( int meindex, char *npcarg )
 
 
 /*
- * 初期化する?
+ * 进行初始化
  */
 BOOL NPC_SimpleShopInit( int meindex )
 {
@@ -742,7 +742,7 @@ BOOL NPC_SimpleShopInit( int meindex )
 }
 
 /*
- * 店ウインドウを開くかどうか  定する?
+ * 判定是否打开商店窗口
  * npcarg及中匀仇户及玄□弁件卞
  * 仇氏卞切反,仍户氏仁分今中,仁分今中卅
  * 及方丹卞俜  今木凶  侬  毛手午卞  烂允月［仇及午五及犯伉立正反","［
@@ -750,7 +750,7 @@ BOOL NPC_SimpleShopInit( int meindex )
  * 引数
  * msg:皿伊奶乩□互仄扎屯匀凶  侬  
  * openshopstr:npcarg及中匀仇户及玄□弁件［
- * 返り値
+ * 返回值
  * 钒仁卅日TRUE, 钒井卅中卅日FALSE
  */
 static BOOL NPC_SimpleShopOpenShopOrNot( char *msg, char *openshopstr )

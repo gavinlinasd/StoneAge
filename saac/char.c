@@ -598,7 +598,7 @@ static void getCharNameFromString(char*str ,char *out )
 	for(c=0;;c++){
 		if( IS_2BYTEWORD( str[c] ) ){
 			out[c] = str[c];
-			c ++ ;	// 鵜の  字へ
+			c ++ ;	// 前往下一个字符
 			out[c] = str[c];
 			continue;
 		}
@@ -622,7 +622,7 @@ static void getCharOptionFromString( char *str , char *out )
 		if( str[c]=='\0')break;
 		if( IS_2BYTEWORD( str[c] ) ){
 			c++;
-			if( str[c] == '\0' )break;	// その  字がすでにNULLなら終  
+			if( str[c] == '\0' )break;	// 那个字符已经是NULL的话结束  
 			continue;
 		}
 		
@@ -635,16 +635,16 @@ static void getCharOptionFromString( char *str , char *out )
 					break;	
 				}
 				
-				// こ�Aも２バイト  字の１バイト  ならもう一バイトコピーする
+				// 这里也是２字节字符的第１字节的话再复制一个字节
 				//----   For 2Byte Code ----
 				if( IS_2BYTEWORD( str[c] ) ){
-					out[outc++] = str[c++];		// １バイト  コピー
-					out[outc++] = str[c];		// ２バイト  コピー
-					if( str[c] == '\0' )break;	// その  字がすでにNULLなら終  
+					out[outc++] = str[c++];		// 复制１字节
+					out[outc++] = str[c];		// 复制２字节
+					if( str[c] == '\0' )break;	// 那个字符已经是NULL的话结束  
 					continue;
 				}
 				
-				// 通常  字は１バイトコピー
+				// 通常字符复制１字节
 				out[outc] = str[c];			// 引内戊疋□
 				if( str[c] == '\0' )break;	// 蔽  分匀凶日蔽歹月
 				
@@ -901,7 +901,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	char *nmwork_p , *optwork_p , *infowork_p;
 	int l;
 	
-	/* コピーして */
+	/* 复制 */
 	
 	strncpy( nmwork , nm , sizeof( nmwork ));
 	nmwork[strlen( nm)]=0;
@@ -912,7 +912,7 @@ static int makeSaveCharString( char *out , int outlen ,
 	strncpy( infowork , info , sizeof( infowork ));
 	infowork[strlen(info)]=0;
 	
-	/* エスケープし */
+	/* 转义 */
 	/*    if ( esc ) {
 	nmwork_p = makeEscapeString1( nm , nmwork ,sizeof( nmwork ));
 	optwork_p = makeEscapeString1( opt , optwork , sizeof( optwork ));
@@ -976,7 +976,7 @@ int getCharIndexByName( char *id , char *charname )
 			char cn[CHARDATASIZE];
 			getCharNameFromString( output , cn );
 			
-			/* Escapeを解く */
+			/* 解除Escape */
 			if( strcmp( charname , makeStringFromEscaped(cn) ) == 0 ){
 				return i;
 			}else{
@@ -993,7 +993,7 @@ int getCharIndexByName( char *id , char *charname )
 		  卅日丐中化中卅中［0动晓卅日丐五旦夫永玄及index.
 		
 			
-				賭にひードできなかったらそれをかえすだけ?
+				不能读取的话就只返回它?
 				手匀午切扎氏午匹五月支欠仃升手［
 				
 */

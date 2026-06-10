@@ -1,8 +1,8 @@
 NPCCREATE
 
 ########################################
-#å‡»é£èƒ†å°è€…äº‹ä»¶#
-#æ‹…ä»»è€…ï¼šçŸ¢å»¶#
+#»÷·Éµ¨Ğ¡ÕßÊÂ¼ş#
+#µ£ÈÎÕß£ºÊ¸ÑÓ#
 ########################################
 
 
@@ -14,7 +14,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16062
-name=å¸–å°¼å§†
+name=ÌûÄáÄ·
 enemy=changeevent|file:giiru/event/giruev2_1
 }
 
@@ -28,7 +28,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16017
-name=ä¾ä¾ä»£
+name=°Í°ÍÂå
 enemy=changeevent|file:giiru/event/giruev2_2
 }
 

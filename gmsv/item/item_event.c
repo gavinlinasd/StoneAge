@@ -90,7 +90,7 @@ int ITEM_eventDrop( int itemindex, int charaindex, int itemcharaindex )
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
-       		ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
+       		ITEM_getInt( itemindex, ITEM_ID ),  /* 道具编号 */
 #endif
 			"Drop&Delete(丢出後消失)",
 			CHAR_getInt( charaindex,CHAR_FLOOR),
@@ -111,9 +111,9 @@ int ITEM_eventDrop( int itemindex, int charaindex, int itemcharaindex )
 
 typedef struct {
     char* cmd;        /* ġ    ٯ   */
-    char*   onmessage;    /*  メッセージ  字      */
-    char*   offmessage;    /*  メッセージ  字      */
-    int   element;    /* 対象になる要素 */
+    char*   onmessage;    /*  讯息字符串      */
+    char*   offmessage;    /*  讯息字符串      */
+    int   element;    /* 成为对象的元素 */
     int   maxElement; /* element匹隙烂今木凶邰豳及    袄毛手勾邰豳 */
 } ITEM_EFFECTPARAM;
 static ITEM_EFFECTPARAM ITEM_restorableParam[] = {
@@ -1656,9 +1656,9 @@ void ITEM_dropDice( int charaindex, int itemindex)
 //-------------------------------------------------------------------------
 void ITEM_pickupDice( int charaindex, int itemindex)
 {
-	//   像  号を元に  す?
+	//   按图像编号还原
 	ITEM_setInt( itemindex,  ITEM_BASEIMAGENUMBER, ITEM_getInt( itemindex, ITEM_VAR1));
-	//   前も元に  す
+	//   名字也还原
 	ITEM_setChar( itemindex, ITEM_SECRETNAME, ITEM_getChar( itemindex, ITEM_NAME));
 }
 enum {
@@ -1728,7 +1728,7 @@ BOOL ITEM_initLottery(ITEM_Item* itm)
 	count = 0;
 	memset( countnum, 0, sizeof( countnum));
 	if( hit != ITEM_LOTTERY_NONE ) {
-		// 当りをセット
+		// 设置中奖
 		result[0] = result[1] = result[2] = hit+1;
 		count = 3;
 		countnum[hit] = 3;
@@ -1753,12 +1753,12 @@ BOOL ITEM_initLottery(ITEM_Item* itm)
 		count++;
 	}
 	// 请  毛扑乓永白伙允月［
-	// 当りの時は2/3の確  で?当り数字を一    ろに固定する?
-	// ドキドキ効果を狙う為?
+	// 中奖时有2/3的概率?把中奖数字固定到最后一个
+	// 为了营造紧张刺激的效果
 	len = sizeof( result)-2;
 	if( hit != ITEM_LOTTERY_NONE ) {
 		if( RAND( 0,2) ) {
-			// 当り数字を一    ろに?
+			// 把中奖数字放到最后
 			char s = result[0];
 			result[0] = result[5];
 			result[5] = s;
@@ -1785,7 +1785,7 @@ BOOL ITEM_initLottery(ITEM_Item* itm)
 }
 //-------------------------------------------------------------------------
 //	旦疋□玉仁元毛银匀凶凛及楮醒［
-//  ６回使うと?何等賞かのアイ  ムに  化する?
+//  使用６次后?变化为某种奖品道具
 //-------------------------------------------------------------------------
 void ITEM_useLottery( int charaindex, int toindex, int haveitemindex)
 {
@@ -1803,7 +1803,7 @@ void ITEM_useLottery( int charaindex, int toindex, int haveitemindex)
 	if( count == 0 ) {
 		ITEM_setChar( itemindex, ITEM_EFFECTSTRING, "");
 	}
-	// ６回  の使用は?外れしかあり  ないので?こ�Aでアイ  ムを消す
+	// 第６次使用?不可能再中奖?在这里删除道具
 	else if( count == 6 ) {
         CHAR_setItemIndex( charaindex , haveitemindex, -1 );
 		CHAR_sendItemDataOne( charaindex, haveitemindex);
@@ -1840,8 +1840,8 @@ void ITEM_useLottery( int charaindex, int toindex, int haveitemindex)
 	snprintf( buff, sizeof( buff), "%s%s", numbuff, num[result]);
 	count ++;
 	ITEM_setInt( itemindex, ITEM_VAR2, count);
-	// ６回  で当りなら当りアイ  ムに  更?外れなら外れと  示?
-	// 鵜回ダブ郊クリックで消す?
+	// 第６次中奖的话变更为中奖道具?没中的话显示没中
+	// 下次双击时删除
 	if( count >= 6 ) {
 		// 癫曰
 		if( hit != ITEM_LOTTERY_NONE ) {
@@ -2882,7 +2882,7 @@ void ITEM_metamo( int charaindex, int toindex, int haveitemindex )
 #endif
 
 	battlemode = CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE );
-	// 戦  開始時は  視する
+	// 战斗开始时忽略
 	if( battlemode == BATTLE_CHARMODE_INIT ){
 		return;
 	}
@@ -3050,7 +3050,7 @@ print("\nvincent-->charaindex:%d,toindex:%d",charaindex,toindex);
 
     /* 平乓仿弁正□及赭    伉旦玄井日壅蛔 */
     CHAR_setItemIndex(charaindex, haveitemindex ,-1);
-	CHAR_sendItemDataOne( charaindex, haveitemindex);/* アイ  ム更新 */
+	CHAR_sendItemDataOne( charaindex, haveitemindex);/* 道具更新 */
 	/* 壅允 */
 	ITEM_endExistItemsOne( itemindex );
 }

@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### ç‹å®«å®ˆå« ######
+###### Íõ¹¬ÊØÎÀ ######
 {
-name=å®ˆå«é˜Ÿé•¿
+name=ÊØÎÀ¶Ó³¤
 floorid=7400
 borncenter=86,134
 dir=4
@@ -13,9 +13,9 @@ enemy=npcgen_warpman|file:eden3/prince/guardian
 graphicname=16741
 }
 
-###### è€è‡£å¸ƒå¾—è€³æ–¯ï¼ˆæ— ç‹å­ç‹å®«ï¼‰ ######
+###### ÀÏ³¼²¼µÃ¶úË¹£¨ÎŞÍõ×ÓÍõ¹¬£© ######
 {
-name=å¸ƒå¾—è€³æ–¯
+name=²¼µÃ¶úË¹
 floorid=7401
 borncenter=27,10
 dir=6
@@ -25,9 +25,9 @@ enemy=changeevent|file:eden3/prince/buders
 graphicname=16720
 }
 
-###### è€è‡£å¸ƒå¾—è€³æ–¯ï¼ˆæœ‰ç‹å­ç‹å®«ï¼‰ ######
+###### ÀÏ³¼²¼µÃ¶úË¹£¨ÓĞÍõ×ÓÍõ¹¬£© ######
 {
-name=å¸ƒå¾—è€³æ–¯
+name=²¼µÃ¶úË¹
 floorid=7411
 borncenter=27,10
 dir=6
@@ -37,9 +37,9 @@ enemy=changeevent|file:eden3/prince/buders
 graphicname=16720
 }
 
-###### ç‹å­å¥½å‹å¸ƒåˆ—å…‹ ######
+###### Íõ×ÓºÃÓÑ²¼ÁĞ¿Ë ######
 {
-name=å¸ƒåˆ—å…‹
+name=²¼ÁĞ¿Ë
 floorid=7200
 borncenter=76,68
 dir=4
@@ -49,9 +49,9 @@ enemy=changeevent|file:eden3/prince/black
 graphicname=16561
 }
 
-###### ç‹å­å¥½å‹æ¯”å‰æ–¯ ######
+###### Íõ×ÓºÃÓÑ±È¼ªË¹ ######
 {
-name=æ¯”å‰æ–¯
+name=±È¼ªË¹
 floorid=7119
 borncenter=24,14
 dir=6
@@ -61,9 +61,9 @@ enemy=changeevent|file:eden3/prince/begis
 graphicname=16419
 }
 
-###### ç‹å­å¥½å‹è£˜æ©æ–¯ ######
+###### Íõ×ÓºÃÓÑôÃ¶÷Ë¹ ######
 {
-name=è£˜æ©æ–¯
+name=ôÃ¶÷Ë¹
 floorid=7304
 borncenter=16,14
 dir=6
@@ -73,9 +73,9 @@ enemy=changeevent|file:eden3/prince/jones
 graphicname=16636
 }
 
-###### ç‹å­ä¼ªè£…å®ˆå«æ¯”å‡¯ ######
+###### Íõ×ÓÎ±×°ÊØÎÀ±È¿­ ######
 {
-name=æ¯”å‡¯
+name=±È¿­
 floorid=7000
 borncenter=122,135
 dir=4
@@ -85,9 +85,9 @@ enemy=npcgen_warpman|file:eden3/prince/bekai
 graphicname=16920
 }
 
-###### ç‹å­ï¼ˆæˆ˜æ–—äººï¼‰ ######
+###### Íõ×Ó£¨Õ½¶·ÈË£© ######
 {
-name=ç¦åˆ—å…‹æ–¯
+name=¸£ÁĞ¿ËË¹
 floorid=7020
 borncenter=7,2
 dir=4
@@ -97,9 +97,9 @@ enemy=frecos|file:eden3/prince/frecos.arg
 graphicname=100023
 }
 
-###### ç‹å­ï¼ˆå›½ç‹å‹ï¼‰ ######
+###### Íõ×Ó£¨¹úÍõĞÍ£© ######
 {
-name=ç¦åˆ—å…‹æ–¯
+name=¸£ÁĞ¿ËË¹
 floorid=7411
 borncenter=24,8
 dir=4

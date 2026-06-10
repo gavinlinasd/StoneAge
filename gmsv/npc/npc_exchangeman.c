@@ -102,7 +102,7 @@ BOOL NPC_ExChangeManInit( int meindex )
 	}
 
 	i = 1;
-	/*--イベントNPCが扱うアイ  ムをチェックする--*/
+	/*--检查事件NPC处理的道具--*/
 	/*--民尼永弁嫩  ｝  午仄化壅尹月井＂｝矢永玄丢□伙匹霜木月井＂--*/
 	while(getStringFromIndexWithDelim( argstr ,"EventEnd" ,i ,buf ,sizeof(buf))
 	!= FALSE)
@@ -159,7 +159,7 @@ BOOL NPC_ExChangeManInit( int meindex )
 	i = 1;
 
 #if 0
-	/*--イベントNPCが扱うアイ  ムをチェックする--*/
+	/*--检查事件NPC处理的道具--*/
 	/*--民尼永弁嫩  ｝  午仄化壅尹月井＂｝矢永玄丢□伙匹霜木月井＂--*/
 	while(getStringFromIndexWithDelim( argstr ,"EventEnd" ,i ,buf ,sizeof(buf))
 	!=FALSE)
@@ -295,7 +295,7 @@ void NPC_ExChangeManTalked( int meindex , int talkerindex , char *szMes ,int col
 		if(NPC_Util_isFaceToChara(talkerindex,meindex,1 ) == FALSE) return;
 	}
 	
-	/*--プレイヤーのワーク    を初期化--*/
+	/*--初始化玩家的工作区--*/
 	CHAR_setWorkInt( talkerindex ,CHAR_WORKSHOPRELEVANT, 0);
 	CHAR_setWorkInt( talkerindex ,CHAR_WORKSHOPRELEVANTSEC, 0);
 	CHAR_setWorkInt( talkerindex ,CHAR_WORKSHOPRELEVANTTRD, 0);
@@ -325,14 +325,14 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 		return FALSE;
 	}
 
-	/*-- 設定ファイ郊を分割する --*/
+	/*-- 分割设置文件 --*/
 	while(getStringFromIndexWithDelim( argstr,"EventEnd",i,buf,sizeof( buf))
 	!= FALSE){
 		i++;
 		CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANT, 0);
 		CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 0);
 
-		/*-- イベントナンバーをゲット --*/
+		/*-- 取得事件编号 --*/
 		if(NPC_Util_GetStrFromStrWithDelim(buf,"EventNo",
 								buf2, sizeof( buf2) ) == NULL) continue;
 
@@ -345,7 +345,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 		/*-- 白仿弘民尼永弁毛垫丹［允匹卞奶矛件玄互蔽  仄化中月桦宁反戚尺 --*/
 		if(NPC_EventCheckFlg( talker, EvNo) == TRUE) continue;
 
-		/*--キーワードのチェックを行う--*/
+		/*--进行关键字检查--*/
 		if(NPC_Util_GetStrFromStrWithDelim( buf,"KeyWord", buf2,sizeof( buf2) ) 
 		 != NULL){
 			if(strcmp( szMes, buf2) != 0) continue;
@@ -364,7 +364,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 					NPC_RequestMain( meindex, talker, buf);
 					return TRUE;
 				}else if( strstr( buf2, "ACCEPT") != NULL) {
-					/*-依  を受けとる  --*/
+					/*-接受委托  --*/
 					NPC_AcceptMain( meindex, talker, buf);
 					return TRUE;
 					
@@ -462,7 +462,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 					}else if(NPC_Util_GetStrFromStrWithDelim(buf, "NomalWindowMsg",
 						token, sizeof( token) )
 						!=NULL) {
-						/*--ウインドウでメッセージを返す--*/
+						/*--用窗口返回讯息--*/
 						int fd = getfdFromCharaIndex( talker);
 #ifdef _NEWEVENT
 						if(NPC_Util_GetStrFromStrWithDelim(buf, "NomalWindowMsg1",
@@ -493,7 +493,7 @@ BOOL NPC_TypeCheck(int meindex,int talker,char *szMes)
 									NPC_EventSetFlg( talker, atoi( buf3));
 								}
 							}
-							//イベントフラグを消す
+							//删除事件旗标
 							if( NPC_Util_GetStrFromStrWithDelim( buf, "CleanFlg",
 								buf2, sizeof( buf2)) != NULL) {
 								char buf3[16];
@@ -601,9 +601,9 @@ static void NPC_ExChangeMan_selectWindow( int meindex, int talker,int num)
 {
 
 	switch( num) {
-		/*--リクエスト型--*/
+		/*--请求型--*/
 		  case 0:
-		  /*-イベント  なので�bイベントを止めるかどうかを  う--*/
+		  /*-是事件中,询问是否停止事件--*/
 		  	NPC_MsgDisp( meindex, talker, 0);
 			break;
 
@@ -614,12 +614,12 @@ static void NPC_ExChangeMan_selectWindow( int meindex, int talker,int num)
 
 			/*--失弁本皿玄滇--*/
 		  case 2:
-			/*--受け取り--*/
+			/*--领取--*/
 			NPC_MsgDisp( meindex, talker, 6);
 			break;
 
 		  case 3:
-			/*--受け取り--*/
+			/*--领取--*/
 			NPC_MsgDisp( meindex, talker, 11);
 			break;
 	}
@@ -634,7 +634,7 @@ void NPC_RequestMain(int meindex,int talker,char *buf)
 	int shiftbit;
 	char buf2[128];
 		
-	/*--イベントナンバーをゲット--*/
+	/*--取得事件编号--*/
 	NPC_Util_GetStrFromStrWithDelim( buf,"EventNo", buf2,sizeof( buf2) );
 	shiftbit = atoi( buf2);
 
@@ -700,7 +700,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_STARTMSG:
 		break;
 #endif
-		/*--リクエストのありがとうメッセージ--*/
+		/*--请求的感谢讯息--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_REQTHANK:
 			if(select == WINDOW_BUTTONTYPE_NEXT) {
 				 CHAR_setWorkInt(talkerindex,CHAR_WORKSHOPRELEVANTTRD,
@@ -713,7 +713,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 			}
 		break;
 		
-		/*--アクセプトのありがとうメッセージ--*/
+		/*--接受的感谢讯息--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_ACCTHANK:
 			if(select == WINDOW_BUTTONTYPE_NEXT) {
 				 CHAR_setWorkInt(talkerindex,CHAR_WORKSHOPRELEVANTTRD,
@@ -726,7 +726,7 @@ void NPC_ExChangeManWindowTalked( int meindex, int talkerindex,
 			}
 		break;
 
-		/*--現在のイベントを止めるか--*/
+		/*--是否停止当前事件--*/
 	  case CHAR_WINDOWTYPE_WINDOWEVENT_NOWEVENT:
 		if(select == WINDOW_BUTTONTYPE_YES) {
 			NPC_MsgDisp( meindex, talkerindex, 7);
@@ -822,7 +822,7 @@ int NPC_ExChangeManEventCheck( int meindex, int talker, char *buff1)
 	 !=FALSE )
 	{
 		i++;
-		/*-- "&"があるので  数条件 --*/
+		/*-- 有"&"所以是复数条件 --*/
 		if(strstr( buff2, "&")!=NULL){
 			j = 1;
 			loop = 0;
@@ -841,7 +841,7 @@ int NPC_ExChangeManEventCheck( int meindex, int talker, char *buff1)
 				i--;
 				return i;
 			}
-		/*--条件がひとつ--*/
+		/*--条件只有一个--*/
 		}else{
 			if(NPC_EventBigSmallCheck( meindex, talker, buff2) == TRUE) {
 				i--;
@@ -856,7 +856,7 @@ int NPC_ExChangeManEventCheck( int meindex, int talker, char *buff1)
 }
 
 /*---------------------------------
- *   小記号チェック
+ *   检查最小记号
  --------------------------------*/
 BOOL NPC_EventBigSmallCheck(int meindex,int talker, char* buf)
 {
@@ -928,7 +928,7 @@ BOOL NPC_EventBigSmallCheck(int meindex,int talker, char* buf)
 BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 {
 
-	/*--レベ郊チェック--*/
+	/*--等级检查--*/
 	if(strcmp( buf, "LV") == 0) {
 		if(NPC_EventLevelCheck( meindex, talker, kosuu, flg) == TRUE) {
 			return TRUE;
@@ -942,7 +942,7 @@ BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 		}
 	}
 
-	/*--終  イベントチェック--*/
+	/*--结束事件检查--*/
 	if(strcmp( buf, "ENDEV") == 0) {
 		if(NPC_ENDEventNoCheck( meindex, talker, kosuu, flg) == TRUE) {
 			return TRUE;
@@ -1086,7 +1086,7 @@ BOOL NPC_EventFreeIfCheck(int meindex,int talker,char* buf,int kosuu,int flg)
 }
 
 /*--------------------------------
- *  ペットのレベ郊をチェックする
+ *  检查宠物的等级
  ---------------------------------*/
 BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)
 {
@@ -1133,7 +1133,7 @@ BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)
 		if( (baseno == petno) && (CHAR_getInt( petindex, CHAR_ENDEVENT)
 		 == mode))
 		 {
-			/*--レベ郊をチェックする--*/
+			/*--检查等级--*/
 			mypetlevel = CHAR_getInt( petindex, CHAR_LV);
 			getStringFromIndexWithDelim( buf, "-", 1, buff2, sizeof( buff2));
 
@@ -1187,7 +1187,7 @@ BOOL NPC_PetLvCheck(int meindex,int talker,char *buf,int mode)
 
 
 /*--------------------------------
- *  ペットのレベ郊をチェックする
+ *  检查宠物的等级
  ---------------------------------*/
 int NPC_PetLvCheckType2(int petindex,int meindex,int talker,char *buf,int mode)
 {
@@ -1218,7 +1218,7 @@ int NPC_PetLvCheckType2(int petindex,int meindex,int talker,char *buf,int mode)
 	if( (baseno == petno) && (CHAR_getInt( petindex, CHAR_ENDEVENT)
 	 == mode))
 	{
-		/*--レベ郊をチェックする--*/
+		/*--检查等级--*/
 		mypetlevel=CHAR_getInt( petindex, CHAR_LV);
 		getStringFromIndexWithDelim( buf, "-", 1,buff2,sizeof(buff2));
 
@@ -1287,7 +1287,7 @@ BOOL NPC_SavePointCheck(int meindex,int talker,int shiftbit,int flg)
 }
 
 /*------------------------
- *イメージのチェック
+ *检查图像
  --------------------------*/
 BOOL NPC_ImageCheck(int meindex,int talker,int kosuu,int flg)
 {
@@ -1322,7 +1322,7 @@ BOOL NPC_TiemCheck(int meindex,int talker,int time,int flg)
 }
 
 /*------------------------------
- *--Itemをチェック				
+ *--检查Item				
  -------------------------------*/
 BOOL NPC_EventItemCheck(int meindex,int talker,int itemNo,int flg)
 {
@@ -1355,7 +1355,7 @@ BOOL NPC_EventItemCheck(int meindex,int talker,int itemNo,int flg)
 
 
 /*------------------------------
- * levelをチェック				
+ * 检查level				
  -------------------------------*/
 BOOL NPC_EventLevelCheck(int meindex,int talker,int level,int flg)
 {
@@ -1377,7 +1377,7 @@ BOOL NPC_EventLevelCheck(int meindex,int talker,int level,int flg)
 
 
 /*------------------------------
- * ENDEventNoをチェック
+ * 检查ENDEventNo
  -------------------------------*/
 BOOL NPC_ENDEventNoCheck(int meindex,int talker,int shiftbit,int flg)
 {
@@ -1393,7 +1393,7 @@ BOOL NPC_ENDEventNoCheck(int meindex,int talker,int shiftbit,int flg)
 
 
 /*------------------------------
- * NOWEventNoをチェック
+ * 检查NOWEventNo
  -------------------------------*/
 BOOL NPC_NOWEventNoCheck(int meindex,int talker,int shiftbit,int flg)
 {
@@ -1407,7 +1407,7 @@ BOOL NPC_NOWEventNoCheck(int meindex,int talker,int shiftbit,int flg)
 }
 
 /*---------------------------------------
- *    終チェック
+ *    最终检查
  --------------------------------------*/
 BOOL NPC_EventBigSmallLastCheck(int point1,int mypoint,int flg)
 {
@@ -1478,14 +1478,14 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		getStringFromIndexWithDelim( argstr, "EventEnd", pwork, buf,sizeof( buf));
 		
 	}else{
-		/*設定ファイ郊を分割する*/
+		/*分割设置文件*/
 		while(getStringFromIndexWithDelim( argstr, "EventEnd", i, buf, sizeof(buf))
 		 != FALSE)
 		{
 			i++;
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 0);
 			
-			/*--イベントナンバーをゲット--*/
+			/*--取得事件编号--*/
 			NPC_Util_GetStrFromStrWithDelim( buf, "EventNo", buf2, sizeof( buf2));
 			if(strstr( buf2, "-1") != 0) {
 				EvNo = -1;
@@ -1497,14 +1497,14 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 			/*--白仿弘民尼永弁毛垫丹［允匹卞｝仇及奶矛件玄互蔽  仄化中月桦宁反戚尺--*/
 			if(NPC_EventCheckFlg( talker, EvNo) == TRUE) continue;
 
-			/*--キーワードのチェックを行う--*/
+			/*--进行关键字检查--*/
 			if(NPC_Util_GetStrFromStrWithDelim( buf,"Pet_Name", buf2,sizeof( buf2)) 
 			 != NULL )
 			{
 				CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 1);
 			}
 
-			/*--キーワードのチェックを行う--*/
+			/*--进行关键字检查--*/
 			if(NPC_Util_GetStrFromStrWithDelim( buf,"KeyWord", buf2,sizeof( buf2) ) 
 			 != NULL)
 			{
@@ -1526,7 +1526,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 	
 	switch( num) {
 		  case 0:
-			/*現在のイベントを止めるかどうかを  くメッセージ--*/
+			/*询问是否停止当前事件的讯息--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "StopMsg", 
 												buf2, sizeof( buf2) )
 			 != NULL)
@@ -1559,7 +1559,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 				/*--奶矛件玄  毛  匀化中凶桦宁反壅蛔--*/
 				NPC_EventAdd( meindex, talker, 1);
 			
-				/*--フラグを消す--*/
+				/*--删除旗标--*/
 				NPC_NowEventSetFlgCls( talker, EvNo);
 			
 				/*--蝇匀凶及匹｝    毛今仆凶--*/
@@ -1573,7 +1573,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 		
 		  case 2:
-				/*--ありがとうメッセージ--*/
+				/*--感谢讯息--*/
 				if( NPC_Util_GetStrFromStrWithDelim( buf, "ThanksMsg",
 													 buf2, sizeof( buf2) )
 				 != NULL)
@@ -1708,7 +1708,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 		break;
 
 		  case 25:
-			  /*--ありがとうメッセージ--*/
+			  /*--感谢讯息--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "ThanksMsg",
 												 buf2, sizeof( buf2) )
 			 != NULL)
@@ -2263,7 +2263,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 
 		case 88:
 			/*--失弁本皿玄及--*/
-			/*--ありがとうメッセージ--*/
+			/*--感谢讯息--*/
 			/*--文喟傲式  綯--*/
 			if( NPC_Util_GetStrFromStrWithDelim( buf, "ThanksMsg",
 												buf2, sizeof( buf2) )
@@ -2414,7 +2414,7 @@ void NPC_MsgDisp(int meindex,int talker,int num)
 							NPC_EventSetFlg( talker, atoi( buf3));
 						}
 					}
-					//イベントフラグを消す
+					//删除事件旗标
 					if( NPC_Util_GetStrFromStrWithDelim( buf, "CleanFlg",
 							 buf2, sizeof( buf2)) != NULL) {
 						 	char buf3[16];
@@ -2551,7 +2551,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 		return FALSE;
 	}
 
-	/*--恭金チェックに  る--*/
+	/*--进入金钱检查--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "DelStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -2566,7 +2566,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	}
 
 
-	/*--ペットの  を追加する--*/
+	/*--追加宠物的数量--*/
 	if((NPC_Util_GetStrFromStrWithDelim( buff, "pet_skill", buff2, sizeof( buff2) )
 	 !=NULL) && mode == 0 ){
 		if(mode == 0) {
@@ -2578,7 +2578,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	
 	if(mode == 2) mode = 0;
 	
-	/*--ペットを追加する---*/
+	/*--追加宠物---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "GetPet", buff2, sizeof( buff2) )
 	 !=NULL)
 	{	
@@ -2638,7 +2638,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 		}
 	}
 
-	/*--恭金を取る---*/
+	/*--收取金钱---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "DelStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -2671,7 +2671,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	if(NPC_Util_GetStrFromStrWithDelim( buff, "GetItem", buf, sizeof( buf)) != NULL ){
 		if(mode == 0) {
 			j = 1;
-			/*--何個のアイ  ムを  すか?--*/
+			/*--返还几个道具?--*/
 			while(getStringFromIndexWithDelim( buf, "," , j, buff2, sizeof(buff2)) !=FALSE ){
 				j++;
 			}
@@ -2708,14 +2708,14 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 	if( (NPC_Util_GetStrFromStrWithDelim( buff, "GetRandItem", buf, sizeof( buf) )
 		!=NULL) && (rand_flg == 0) && mode == 0 )
 	{	
-		/*--チェック   当に全    るか?-*/
+		/*--检查   是否全部齐全?-*/
 		for( i = CHAR_STARTITEMARRAY ; i < CHAR_MAXITEMHAVE ; i++ ){
 			itemindex=CHAR_getItemIndex( talker , i );
 			if( !ITEM_CHECKINDEX( itemindex) ){
 				kosuucnt++;
 			 }
 		}
-		/*--空きがあるかどうか--*/
+		/*--是否有空位--*/
 		if( kosuucnt == 0 ){
 			NPC_MsgDisp( meindex, talker, 4);
 			return FALSE;
@@ -2783,7 +2783,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 
 					}
 				}else{
-					/*--ペットを削除する数を指定してないので該当ペットを全て消す--*/
+					/*--没有指定要删除的宠物数量,所以删除全部该当宠物--*/
 
 					int petindex;
 
@@ -2858,7 +2858,7 @@ BOOL NPC_EventAdd(int meindex,int talker,int mode)
 						if(cnt == petcnt) break;
 					}
 				}else{
-					/*--ペットを削除する数を指定してないので該当ペットを全て消す--*/
+					/*--没有指定要删除的宠物数量,所以删除全部该当宠物--*/
 
 					int petindex;
 
@@ -2928,7 +2928,7 @@ BOOL NPC_RandItemGet(int meidex,int talker,int rand_j,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 			itemindex,
 #else
-			ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+			ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 			"EventAddItem(任务需求所得到的道具)",
 			CHAR_getInt( talker,CHAR_FLOOR),
@@ -2973,7 +2973,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 		return FALSE;
 	}
 	
-	/*--恭金チェックに  る--*/
+	/*--进入金钱检查--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "DelStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -2987,7 +2987,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--恭金チェックに  る--*/
+	/*--进入金钱检查--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetStone", buff2, sizeof( buff2) )!=NULL){
 		int stone;
 		stone = atoi(buff2);
@@ -2999,7 +2999,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--ペットの  を追加する--*/
+	/*--追加宠物的数量--*/
 	if((NPC_Util_GetStrFromStrWithDelim( buf, "pet_skill", buff2, sizeof( buff2) )
 	 !=NULL) && mode == 0 ){
 		if(mode == 0){
@@ -3009,7 +3009,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 		}
 	}
 
-	/*--ペットを消す---*/
+	/*--删除宠物---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "DelPet", buff2, sizeof( buff2) ) != NULL) {
 		char buf4[32];
 		char buf5[256];
@@ -3080,7 +3080,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 
 					}
 				}else{
-					/*--ペットを削除する数を指定してないので該当ペットを全て消す--*/
+					/*--没有指定要删除的宠物数量,所以删除全部该当宠物--*/
 
 					int petindex;
 
@@ -3163,7 +3163,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 
 					}
 				}else{
-					/*--ペットを削除する数を指定してないので該当ペットを全て消す--*/
+					/*--没有指定要删除的宠物数量,所以删除全部该当宠物--*/
 
 					int petindex;
 
@@ -3193,7 +3193,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	
 
 
-	/*--恭金をあ慌る---*/
+	/*--给予金钱---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3210,7 +3210,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--ペットを追加する---*/
+	/*--追加宠物---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetPet", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3231,7 +3231,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 		}
 	}
 
-	/*--アイ  ムを消す--*/
+	/*--删除道具--*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "DelItem", buff2, sizeof( buff2) )	!= NULL){
 		if(strstr(buff2,"EVDEL") != NULL){
 			char work[256];
@@ -3262,7 +3262,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--恭金を取る---*/
+	/*--收取金钱---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "DelStone", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3295,7 +3295,7 @@ BOOL NPC_AcceptDel(int meindex,int talker,int mode )
 	}
 
 
-	/*--アイ  ムを追加する---*/
+	/*--追加道具---*/
 	if(NPC_Util_GetStrFromStrWithDelim( buf, "GetItem", buff2, sizeof( buff2) )
 	!=NULL)
 	{
@@ -3349,7 +3349,7 @@ BOOL NPC_EventDelPet(int  meindex,int  talker, int petsel)
 	/*--公及平乓仿互爵    卅日｝矢永玄毛丹日内蔽  --*/
 	if( CHAR_getWorkInt( CONNECT_getCharaindex( fd),
    	                     CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE) return FALSE;
-	/*--そのペットがバト郊かどうかのチェック--*/
+	/*--检查该宠物是否在战斗中--*/
 	defpet = CHAR_getInt( talker, CHAR_DEFAULTPET);
 	if(defpet == petsel){
 		CHAR_setInt( talker, CHAR_DEFAULTPET, -1);
@@ -3380,7 +3380,7 @@ BOOL NPC_EventDelPet(int  meindex,int  talker, int petsel)
 	CHAR_endCharOneArray( petindex );
 
 	snprintf( szPet, sizeof( szPet ), "K%d", petsel);
-	// 新しいペットス  ータス送りつける
+	// 发送新的宠物状态
 	CHAR_sendStatusString( talker, szPet );
 
 	return TRUE;
@@ -3389,7 +3389,7 @@ BOOL NPC_EventDelPet(int  meindex,int  talker, int petsel)
 
 
 /*----------------------------
- *  ペットを追加する
+ *  追加宠物
  ------------------------------*/
 BOOL NPC_EventAddPet(int meindex, int talker, char *buff2,int mode)
 {
@@ -3615,7 +3615,7 @@ BOOL NPC_EventAddEgg(int meindex, int talker, char *buff2,int mode)
 
 
 /*---------------------------
- *  イベント  を削除する
+ *  删除事件
  -----------------------------**/
 BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 {
@@ -3656,7 +3656,7 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  // アイ  ム  号 
+							ITEM_getInt( itemindex, ITEM_ID),  // 道具编号 
 #endif
 							"EventDelItem(任务需求所收回的道具)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -3674,7 +3674,7 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 							    sprintf(token,"交出%s",ITEM_getChar( itemindex, ITEM_NAME));
 							    CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 							}
-						    //--アイ  ムを抹殺--
+						    //--抹杀道具--
 						    CHAR_setItemIndex( talker, i ,-1);
 						    ITEM_endExistItemsOne(itemindex);
 						    CHAR_sendItemDataOne( talker, i);
@@ -3700,7 +3700,7 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 							"EventDelItem(任务需求所收回的道具)",
 							CHAR_getInt( talker,CHAR_FLOOR),
@@ -3718,7 +3718,7 @@ BOOL NPC_EventDelItem(int meindex,int talker,char *buf,int breakflg)
 											ITEM_getChar( itemindex, ITEM_NAME));
 							CHAR_talkToCli( talker, -1, token, CHAR_COLORWHITE);
 						}
-						/*--アイ  ムを抹殺--*/
+						/*--抹杀道具--*/
 						CHAR_setItemIndex( talker, j ,-1);
 						ITEM_endExistItemsOne( itemindex);
 						/*--由仿丢□正霜耨--*/
@@ -3785,7 +3785,7 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 							"EventDelItem(任务需求所收回的道具)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -3842,7 +3842,7 @@ BOOL NPC_EventDelItemEVDEL(int meindex,int talker,char *buf,char *nbuf,int break
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 							"EventDelItem(任务需求所收回的道具)",
 							CHAR_getInt( talker,CHAR_FLOOR),
@@ -3922,7 +3922,7 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 						itemindex,
 #else
-	    				ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+	    				ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 						"EventAddItem(任务需求所得到的道具)",
 						CHAR_getInt( talker, CHAR_FLOOR),
@@ -3958,7 +3958,7 @@ BOOL NPC_EventAddItem(int meindex,int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-	       		ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+	       		ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 				"EventAddItem(任务需求所得到的道具)",
 				CHAR_getInt( talker, CHAR_FLOOR),
@@ -3993,33 +3993,33 @@ int NPC_EventFile(int meindex,int talker,char *arg)
 	int EvNo=0;
 	int evch;
 	
-	/*--設定ファイ郊を  み  む--*/
+	/*--读取设置文件--*/
 	if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {
 
 		print("GetArgStrErr");
 		return -1;
 	}
 
-	/*設定ファイ郊を分割する*/
+	/*分割设置文件*/
 	while(getStringFromIndexWithDelim( argstr, "EventEnd", i, buf,sizeof( buf))
 	!= FALSE)
 	{
 		CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 0);
 		i++;
-		/*--イベントナンバーをゲット--*/
+		/*--取得事件编号--*/
 		NPC_Util_GetStrFromStrWithDelim( buf, "EventNo", buff2,sizeof( buff2) );
 		EvNo = atoi( buff2);
 
 		/*--白仿弘民尼永弁毛垫丹［允匹卞｝仇及奶矛件玄互蔽  仄化中月桦宁反戚尺--*/
 		if(NPC_EventCheckFlg( talker, EvNo) == TRUE) continue;
 
-		/*--キーワードのチェックを行う--*/
+		/*--进行关键字检查--*/
 		if(NPC_Util_GetStrFromStrWithDelim( buf,"Pet_Name", buff2,sizeof( buff2) ) 
 		 != NULL)
 		{
 			CHAR_setWorkInt( talker, CHAR_WORKSHOPRELEVANTSEC, 1);
 		}
-		/*--キーワードのチェックを行う--*/
+		/*--进行关键字检查--*/
 		if(NPC_Util_GetStrFromStrWithDelim( buf,"KeyWord", buff2,sizeof( buff2) ) 
 		 != NULL)
 		{
@@ -4116,11 +4116,11 @@ void NPC_EventPetSkill( int meindex, int talker, char *data)
 //	if(NPC_EventFile( meindex, talker, argstr) == FALSE) return ;
 
 	/*弁仿奶失件玄井日忒匀化仁月犯□正--*/
-	/*どの  をえらんだか?(選    号)  どのペットか?(選    号)  
-	どのスひットか?(選    号)  値段*/
+	/*选了哪个?(选择编号)  哪只宠物?(选择编号)  
+	哪个口?(选择编号)  价格*/
 	makeStringFromEscaped( data);
 
-	/*--データの振り分け--*/
+	/*--分配数据--*/
 	getStringFromIndexWithDelim( data, "|", 1, buf, sizeof( buf));
 	skill = atoi( buf);
 	getStringFromIndexWithDelim( data, "|", 2, buf, sizeof( buf));
@@ -4154,12 +4154,12 @@ void NPC_EventPetSkill( int meindex, int talker, char *data)
 	/*--矢永玄卞  毛创尹今六月--*/
 	CHAR_setPetSkill( petindex, slot, skillID);
 			
-	/*--恭金を減らす--*/
+	/*--减少金钱--*/
 	CHAR_setInt( talker, CHAR_GOLD, (CHAR_getInt( talker, CHAR_GOLD) - cost));
 
 	snprintf( msgbuf, sizeof( msgbuf ), "W%d",pet-1);
 
-	// 新しいペットの  データを送りつける
+	// 发送新宠物的数据
 	CHAR_sendStatusString( talker, msgbuf );
 			
 	CHAR_sendStatusString( talker, "P");

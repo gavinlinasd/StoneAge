@@ -2,11 +2,11 @@ NEWWARPMAN
 
 NOFREE
 FREE:LV>0
-NomalMsg:èµ°å¼€ï½žï½žä¸è¦æ¥è¿™é‡Œï¼
-PartyMsg:ä¸€æ¬¡ä¸€ä¸ªè¿›æ¥ã€‚
+NomalMsg:×ß¿ª¡«¡«²»ÒªÀ´ÕâÀï£¡
+PartyMsg:Ò»´ÎÒ»¸ö½øÀ´¡£
 OVER
 
 TALKEVENT1
 WARP:5579,15,22
 FREE:ENDEV=81
-FreeMsg:å“¦ï½žï½žä½ æ˜¯å°ç»„é•¿çš„æ•‘å‘½æ©äººï¼Œ\nè¯·è¿›è¯·è¿›ï½žï½žã€‚OVER
+FreeMsg:Å¶¡«¡«ÄãÊÇÐ¡×é³¤µÄ¾ÈÃü¶÷ÈË£¬\nÇë½øÇë½ø¡«¡«¡£OVER

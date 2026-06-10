@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:涓嶇煡閬撹繖浜涘姩鐗╃殑鑳藉姏鎬庝箞鏍凤紝浼氫笉浼氬緢闅惧吇鍟婏紵
+NomalWindowMsg:不知道这些动物的能力怎么样，会不会很难养啊？
 EventEnd

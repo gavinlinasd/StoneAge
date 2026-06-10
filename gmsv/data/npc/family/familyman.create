@@ -1,5 +1,5 @@
 NPCCREATE
-# è¨å§†å‰å°”çš„å®¶æ—ç®¡ç†å‘˜
+# ÈøÄ·¼ª¶ûµÄ¼Ò×å¹ÜÀíÔ±
 {
 floorid=1006
 borncenter=18,24,1,1
@@ -8,11 +8,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16065
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# ç›ä¸½å¨œä¸çš„å®¶æ—ç®¡ç†å‘˜
+# ÂêÀöÄÈË¿µÄ¼Ò×å¹ÜÀíÔ±
 {
 floorid=2006
 borncenter=29,16,1,1
@@ -21,11 +21,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16030
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# åŠ åŠ çš„å®¶æ—ç®¡ç†å‘˜
+# ¼Ó¼ÓµÄ¼Ò×å¹ÜÀíÔ±
 {
 floorid=3006
 borncenter=25,16,1,1
@@ -34,12 +34,12 @@ createnum=1
 time=0
 dir=6
 graphicname=16033
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
 
-# å¡é²å®ƒé‚£çš„å®¶æ—ç®¡ç†å‘˜
+# ¿¨Â³ËüÄÇµÄ¼Ò×å¹ÜÀíÔ±
 {
 floorid=4006
 borncenter=18,23,1,1
@@ -48,11 +48,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16067
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# éœç‰¹å°”æ‘
+# »ôÌØ¶û´å
 {
 floorid=1306
 borncenter=23,17,1,1
@@ -61,11 +61,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16067
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-#å¡å¦
+#¿¨Ì¹
 {
 floorid=1406
 borncenter=23,16,1,1
@@ -74,11 +74,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16067
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# å¤šå¤š
+# ¶à¶à
 {
 floorid=3206
 borncenter=19,24,1,1
@@ -87,11 +87,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16067
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# ä¹Œé²åŠ›
+# ÎÚÂ³Á¦
 {
 floorid=3306
 borncenter=19,15,1,1
@@ -100,11 +100,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16222
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# å¥‡å–€å–€
+# Ææ¿¦¿¦
 {
 floorid=3406
 borncenter=19,20,1,1
@@ -113,11 +113,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16067
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# æ²™å§†å¥‡å§†ä¾
+# É³Ä·ÆæÄ·ÒÀ
 {
 floorid=6006
 borncenter=19,24,1,1
@@ -126,11 +126,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16067
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# è¾¾é‚£
+# ´ïÄÇ
 {
 floorid=5106
 borncenter=23,10,1,1
@@ -139,11 +139,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16067
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-# ç¦æ‘
+# ¸£´å
 {
 floorid=5005
 borncenter=18,18,1,1
@@ -152,11 +152,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16067
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-#å…ç´š
+#ÒÁµé
 {
 floorid=5030
 borncenter=61,18,1,1
@@ -165,11 +165,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16030
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-#å¡”å°”å¡”
+#Ëş¶ûËş
 {
 floorid=6030
 borncenter=45,35,1,1
@@ -178,11 +178,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16030
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-#å°¼å…‹æ–¯
+#Äá¿ËË¹
 {
 floorid=7030
 borncenter=66,35,1,1
@@ -191,11 +191,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16030
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-#å¼—çƒˆé¡¿
+#¸¥ÁÒ¶Ù
 {
 floorid=8030
 borncenter=51,52,1,1
@@ -204,11 +204,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16030
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-#äºšä¾æ¬§
+#ÑÇÒÀÅ·
 {
 floorid=9030
 borncenter=84,26,1,1
@@ -217,11 +217,11 @@ createnum=1
 time=0
 dir=6
 graphicname=16030
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
-#ç‘å°”äºšæ–¯
+#Èğ¶ûÑÇË¹
 {
 floorid=7530
 borncenter=45,46,1,1
@@ -230,6 +230,6 @@ createnum=1
 time=0
 dir=6
 graphicname=16969
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }

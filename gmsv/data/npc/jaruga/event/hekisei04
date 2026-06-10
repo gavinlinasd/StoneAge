@@ -1,26 +1,26 @@
 ###########################################################
-#捺ч韌貓  鬲攝價腔岈璃官官官官官官官官官官官     #
-# 						负责人：西竹#
+#���ප��  ��������¼��x�x�x�x�x�x�x�x�x�x�x     #
+# 						�����ˣ�����#
 ###########################################################
-###给水的NPC的设定
+###��ˮ��NPC���趨
 
 
-NomalMainMsg:到这里一定历经不少苦头吧。
+NomalMainMsg:������һ���������ٿ�ͷ�ɡ�
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>64&ENDEV=46,LV>64&NOWEV=46&ITEM=2768
-NomalWindowMsg:\n\n\n湖水派上场了没有啊？
+NomalWindowMsg:\n\n\n��ˮ���ϳ���û�а���
 EventEnd
 
 
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>64&NOWEV=46&ITEM!=2768
-AcceptMsg:\n\n你需要这个湖水吗？
-ThanksMsg:\n这样的话，请拿去吧\n我希望这个水可以帮的了你们\n要是打翻的话就会摔破\n处理的时候请小心一点哦。
-ItemFullMsg:你好像身上东西太多了，装不下了哦\n请你把身上的东西减少一点后\n再过来一趟。
+AcceptMsg:\n\n����Ҫ�����ˮ��
+ThanksMsg:\n�����Ļ�������ȥ��\n��ϣ�����ˮ���԰��������\nҪ�Ǵ򷭵Ļ��ͻ�ˤ��\n������ʱ����С��һ��Ŷ��
+ItemFullMsg:��������϶���̫���ˣ�װ������Ŷ\n��������ϵĶ�������һ���\n�ٹ���һ�ˡ�
 GetItem:2768
 EventEnd
 
@@ -28,5 +28,5 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:\n\n这里的湖水\n被称为‘群青之水’哦。
+NomalWindowMsg:\n\n����ĺ�ˮ\n����Ϊ��Ⱥ��֮ˮ��Ŷ��
 EventEnd

@@ -10,12 +10,12 @@
 typedef struct
 {
     int use;
-    BOOL online;					/* 相手キャラがサーバ  にいたらTRUE,
-                                		そうでなかったらFALSE */
-    int level;               		/* 相手キャラのレベ郊 */
+    BOOL online;					/* 对方人物在服务器内的话TRUE,
+                                		否则FALSE */
+    int level;               		/* 对方人物的等级 */
 	int	duelpoint;					/* duelpoint*/
-    int graphicsno;					/* 相手キャラの  像  号 */
-    char cdkey[CDKEYLEN];			/* CD ナンバー */
+    int graphicsno;					/* 对方人物的图像编号 */
+    char cdkey[CDKEYLEN];			/* CD 编号 */
     char charname[CHARNAMELEN];		/* 锹澎平乓仿及  蟆 */
 	int transmigration;             /* 猿老者佰 */
 	

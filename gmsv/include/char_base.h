@@ -654,21 +654,21 @@ typedef enum
 }CHAR_DATAINT;
 
 typedef enum {
-    CHAR_MODAI    			= CHAR_CHARM,    		/*  ペット  のの忠誠心修正値    */
+    CHAR_MODAI    			= CHAR_CHARM,    		/*  宠物的忠诚心修正值    */
 	CHAR_VARIABLEAI 		= CHAR_LUCK,			/*  矢永玄及镝擦艘  祭袄  ㄠㄟㄟ  仄凶袄匹  匀化云仁   */
-    CHAR_SLOT 				= CHAR_DEFAULTPET,		/* 石  をセット出  るスひット数  ペットが使用  */
+    CHAR_SLOT 				= CHAR_DEFAULTPET,		/* 能放置石板的槽数  宠物使用  */
    	CHAR_PETGETLV			= CHAR_CHATVOLUME,		/* 必永玄今木凶伊矛伙  矢永玄及心银迕   */
     CHAR_PUTPETTIME			= CHAR_LOGINCOUNT,		/*  文喟傲札皐  怨  小直俔掃筑 */
-	CHAR_MAILMODE 			= CHAR_RADARSTRENGTH,	/*   ペットのみ使用  メー郊送信状態 */
-    CHAR_ALLOCPOINT			= CHAR_LEVELUPPOINT,	/* レベ郊アップ時の割り振りポイント(ペット用) */
+	CHAR_MAILMODE 			= CHAR_RADARSTRENGTH,	/*   仅宠物使用  邮件发送状态 */
+    CHAR_ALLOCPOINT			= CHAR_LEVELUPPOINT,	/* 升级时的分配点数(宠物用) */
     CHAR_PETMAILBUFINDEX	= CHAR_GETPETCOUNT, 	/* 文喟傲卿＆誌(offmsg)樫式index */
-	CHAR_PETMAILIDLETIME	= CHAR_SENDMAILCOUNT,	/* ペットメー郊の為の時間など */
+	CHAR_PETMAILIDLETIME	= CHAR_SENDMAILCOUNT,	/* 宠物邮件用的时间等 */
 	CHAR_PETMAILFROMFLOOR	= CHAR_DUELBATTLECOUNT,	/* 丢□伙毛霜匀凶凛及白夫失 */
 	CHAR_PETMAILFROMX		= CHAR_DUELWINCOUNT,	/* 丢□伙毛霜匀凶凛及  甄   */
 	CHAR_PETMAILFROMY		= CHAR_DUELLOSECOUNT,	/* 丢□伙毛霜匀凶凛及  甄   */
-	CHAR_PETMAILEFFECT		= CHAR_DUELSTWINCOUNT,	/* ペットメー郊の出現のエフェクト  号 */
-	CHAR_PETSENDMAILCOUNT	= CHAR_TALKCOUNT,		/* ペットがメー郊を運んだ回数 */
-    CHAR_PETRANK			= CHAR_LASTTIMESETLUCK, /* ペットのランク(ペット用  １  ６?０はエラー用 */
+	CHAR_PETMAILEFFECT		= CHAR_DUELSTWINCOUNT,	/* 宠物邮件出现的特效编号 */
+	CHAR_PETSENDMAILCOUNT	= CHAR_TALKCOUNT,		/* 宠物运送邮件的次数 */
+    CHAR_PETRANK			= CHAR_LASTTIMESETLUCK, /* 宠物的排名(宠物用  １到６?０是错误用 */
 	CHAR_PETID				= CHAR_DUELMAXSTWINCOUNT,/* 矢永玄及  件皿伊□玄及     */
     CHAR_PETFAMILY		= CHAR_FMLEADERFLAG,		// CoolFish: Family 判断是否为家族守护兽
 }CHAR_PET;

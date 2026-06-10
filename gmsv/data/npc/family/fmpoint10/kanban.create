@@ -6,7 +6,7 @@ borncorner=54,53,54,53
 time=0
 createnum=1
 graphicname=10400
-name=å¾€è’åºŸä¼Šç”¸å›­
+name=Íù»Ä·ÏÒÁµéÔ°
 dir=2
 ignoreinvincible=1
 enemy=npcgen_signboard|file:family/fmpoint10/signb_721_54_53
@@ -18,7 +18,7 @@ borncorner=54,51,54,51
 time=0
 createnum=1
 graphicname=17010
-name=å²å¡é²èˆªç©ºå‘å¯¼è‰¾é›…å§¬
+name=Ê·¿¨Â³º½¿ÕÏòµ¼°¬ÑÅ¼§
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|file:family/fmpoint10/msg_721_54_51
@@ -34,7 +34,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=ç‘å°”äºšæ–¯çš„å‚¨å­˜ç‚¹
+name=Èğ¶ûÑÇË¹µÄ´¢´æµã
 enemy=npcgen_savepoint|file:family/fmpoint10/sp721
 }
 
@@ -65,7 +65,7 @@ enemy=npcgen_man|file:family/fmpoint10/msg
 }
 
 
-#æ–°æ‰‹å·¦
+#ĞÂÊÖ×ó
 {
 floorid=104
 borncorner=67,57,67,57
@@ -79,7 +79,7 @@ enemy=npcgen_man|file:family/fmpoint10/msg
 
 }
 
-#æ–°æ‰‹å³
+#ĞÂÊÖÓÒ
 {
 floorid=104
 borncorner=67,59,67,59
@@ -94,7 +94,7 @@ enemy=npcgen_man|file:family/fmpoint10/msg
 }
 
 
-#é¾™å¤´
+#ÁúÍ·
 {
 floorid=104
 borncorner=15,22,15,22
@@ -108,7 +108,7 @@ enemy=npcgen_man|file:family/fmpoint10/msg
 
 }
 
-#é¾™å¤´ç 
+#ÁúÍ·Öé
 {
 floorid=104
 borncorner=16,25,16,25
@@ -123,7 +123,7 @@ enemy=npcgen_man|file:family/fmpoint10/msg
 }
 
 
-#æµæ°´
+#Á÷Ë®
 {
 floorid=104
 borncorner=77,47,77,47
@@ -137,7 +137,7 @@ enemy=npcgen_man|file:family/fmpoint10/msg
 
 }
 
-#æµæ°´2
+#Á÷Ë®2
 {
 floorid=104
 borncorner=48,71,48,71

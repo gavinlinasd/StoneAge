@@ -1,8 +1,8 @@
 NPCCREATE
 
-##### æœˆé¥¼å¸ˆå‚…åœ†ç…®ï¼Œå¥‡åŠªä¼Šæ‘è‚‰åº— ######
+##### ÔÂ±ıÊ¦¸µÔ²Öó£¬ÆæÅ¬ÒÁ´åÈâµê ######
 {
-name=åœ†ç…®
+name=Ô²Öó
 floorid=6004
 borncenter=19,15
 dir=6
@@ -12,9 +12,9 @@ graphicname=16001
 enemy=changeevent|file:sa80/moon/cooker
 }
 
-##### ä¼æœ¨å·¥äººæ— å¹²â€¦å¹»å¢ƒä¹‹æœˆ ######
+##### ·¥Ä¾¹¤ÈËÎŞ¸É¡­»Ã¾³Ö®ÔÂ ######
 {
-name=æ— å¹²
+name=ÎŞ¸É
 floorid=8255
 borncenter=9,22
 dir=7
@@ -25,9 +25,9 @@ enemy=npcgen_warpman|file:sa80/moon/wugan
 action=2
 }
 
-##### å«¦å¨¥çš„æœ‹å‹ ######
+##### æÏ¶ğµÄÅóÓÑ ######
 {
-name=å«¦å¨¥çš„å¥½æœ‹å‹
+name=æÏ¶ğµÄºÃÅóÓÑ
 floorid=8255
 borncenter=28,24
 dir=6
@@ -38,9 +38,9 @@ enemy=npcgen_warpman|file:sa80/moon/girl
 action=13
 }
 
-##### å…”å­ ######
+##### ÍÃ×Ó ######
 {
-name=ç‰å…”çš„åŒç±»
+name=ÓñÍÃµÄÍ¬Àà
 floorid=8255
 borncenter=29,51
 dir=4
@@ -51,9 +51,9 @@ enemy=npcgen_warpman|file:sa80/moon/rabbit
 action=2
 }
 
-##### æ°´ç¼¸ ######
+##### Ë®¸× ######
 {
-name=æ°´ç¼¸
+name=Ë®¸×
 floorid=8255
 borncenter=33,38
 dir=4

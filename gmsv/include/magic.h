@@ -44,7 +44,7 @@ int MAGIC_ToCallDragon( int charaindex, int toindex,int marray, int mp );
 #endif
 
 //----------------------------------------------------------------------
-// アイ  ムの位  から呪術  号を返す
+// 从道具的位置返回咒术编号
 //
 int MAGIC_GetArrayNo(
 	int charaindex, 	// 平乓仿弁正奶件犯永弁旦
@@ -54,11 +54,11 @@ int MAGIC_GetArrayNo(
 //----------------------------------------------------------------------
 //-------------------------------------------------------------------
 //
-//  呪術を  接使う
+//  直接使用咒术
 //
 int MAGIC_DirectUse(
-	int charaindex, // 使うキャラのインデックス
-	int marray, 	// 使う呪術のインデックス
+	int charaindex, // 使用者人物的索引
+	int marray, 	// 使用的咒术的索引
 	int toindex, 	// 簿卞银丹＂
 	int itemnum
 );

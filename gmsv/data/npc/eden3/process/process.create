@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### å®çŸ³æç‚¼å¸ˆ ######
+###### ±¦Ê¯ÌáÁ¶Ê¦ ######
 {
-name=å®çŸ³æç‚¼å¸ˆ
+name=±¦Ê¯ÌáÁ¶Ê¦
 floorid=7111
 borncenter=21,16
 dir=6
@@ -14,9 +14,9 @@ graphicname=16090
 enemy=ITEMCHANGE|file:eden3/process/maker1.arg
 }
 
-###### é‡‘å±æç‚¼å¸ˆ ######
+###### ½ğÊôÌáÁ¶Ê¦ ######
 {
-name=é‡‘å±æç‚¼å¸ˆ
+name=½ğÊôÌáÁ¶Ê¦
 floorid=7300
 borncenter=110,22
 dir=6
@@ -27,9 +27,9 @@ graphicname=16090
 enemy=ITEMCHANGE|file:eden3/process/maker2.arg
 }
 
-###### åœ°é’»æˆ’åŠ å·¥å¸ˆ ######
+###### µØ×ê½ä¼Ó¹¤Ê¦ ######
 {
-name=åœ°é­”æ³•é’»æˆ’ç²¾å·¥å¸ˆ
+name=µØÄ§·¨×ê½ä¾«¹¤Ê¦
 floorid=7108
 borncenter=8,5
 dir=6
@@ -39,9 +39,9 @@ graphicname=16093
 enemy=ITEMCHANGE|file:eden3/process/blacksmith1.arg
 }
 
-###### æ°´é’»æˆ’åŠ å·¥å¸ˆ ######
+###### Ë®×ê½ä¼Ó¹¤Ê¦ ######
 {
-name=æ°´é­”æ³•é’»æˆ’ç²¾å·¥å¸ˆ
+name=Ë®Ä§·¨×ê½ä¾«¹¤Ê¦
 floorid=7203
 borncenter=30,27
 dir=6
@@ -51,9 +51,9 @@ graphicname=16093
 enemy=ITEMCHANGE|file:eden3/process/blacksmith2.arg
 }
 
-###### ç«é’»æˆ’åŠ å·¥å¸ˆ ######
+###### »ğ×ê½ä¼Ó¹¤Ê¦ ######
 {
-name=ç«é­”æ³•é’»æˆ’ç²¾å·¥å¸ˆ
+name=»ğÄ§·¨×ê½ä¾«¹¤Ê¦
 floorid=7300
 borncenter=102,106
 dir=6
@@ -63,9 +63,9 @@ graphicname=16093
 enemy=ITEMCHANGE|file:eden3/process/blacksmith3.arg
 }
 
-###### é£é’»æˆ’åŠ å·¥å¸ˆ ######
+###### ·ç×ê½ä¼Ó¹¤Ê¦ ######
 {
-name=é£é­”æ³•é’»æˆ’ç²¾å·¥å¸ˆ
+name=·çÄ§·¨×ê½ä¾«¹¤Ê¦
 floorid=7400
 borncenter=45,101
 dir=6
@@ -75,9 +75,9 @@ graphicname=16093
 enemy=ITEMCHANGE|file:eden3/process/blacksmith4.arg
 }
 
-###### æœ€ç»ˆé’»æˆ’åŠ å·¥å¸ˆ ######
+###### ×îÖÕ×ê½ä¼Ó¹¤Ê¦ ######
 {
-name=é­”æ³•é’»æˆ’ç²¾å·¥å¸ˆ
+name=Ä§·¨×ê½ä¾«¹¤Ê¦
 floorid=7000
 borncenter=50,130
 dir=6
@@ -87,9 +87,9 @@ graphicname=16093
 enemy=ITEMCHANGE|file:eden3/process/blacksmith5.arg
 }
 
-###### é‡‘å±é˜²å…·åŠ å·¥å¸ˆ ######
+###### ½ğÊô·À¾ß¼Ó¹¤Ê¦ ######
 {
-name=é‡‘å±é˜²å…·ç²¾å·¥å¸ˆ
+name=½ğÊô·À¾ß¾«¹¤Ê¦
 floorid=7107
 borncenter=23,7
 dir=4
@@ -99,9 +99,9 @@ graphicname=16092
 enemy=ITEMCHANGE|file:eden3/process/blacksmith6.arg
 }
 
-###### é‡‘å±æ­¦å™¨åŠ å·¥å¸ˆ ######
+###### ½ğÊôÎäÆ÷¼Ó¹¤Ê¦ ######
 {
-name=é‡‘å±æ­¦å™¨åŠ å·¥å¸ˆ
+name=½ğÊôÎäÆ÷¼Ó¹¤Ê¦
 floorid=7300
 borncenter=126,40
 dir=4
@@ -111,9 +111,9 @@ createnum=1
 enemy=ITEMCHANGE|file:eden3/process/blacksmith7.arg
 }
 
-###### é‡‘å±æ­¦å™¨åŠ å·¥å¸ˆ ######
+###### ½ğÊôÎäÆ÷¼Ó¹¤Ê¦ ######
 {
-name=é‡‘å±æ­¦å™¨ç²¾å·¥å¸ˆ
+name=½ğÊôÎäÆ÷¾«¹¤Ê¦
 floorid=7400
 borncenter=73,116
 dir=4

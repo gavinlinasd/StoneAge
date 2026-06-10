@@ -8,6 +8,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16092
-name=æ¢¦å·¥å‚å·¥ç¨‹äººå‘˜
+name=ÃÎ¹¤³§¹¤³ÌÈËÔ±
 enemy=changeevent|file:party/dreampet/changeticket
 }

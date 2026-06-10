@@ -1,5 +1,5 @@
 NPCCREATE
-#######„Ç¥„Ç¶##########
+#######•¥•¶##########
 {
 floorid=11107
 borncenter=22,41,1,1
@@ -8,10 +8,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100439
-name=ÊÇü
+name=Æ©
 enemy=sb_go|file:100/sb_go.arg
 }
-#########„ÉÄ„É≥########
+#########•¿•Û########
 {
 floorid=11107
 borncenter=23,41,1,1
@@ -20,6 +20,6 @@ createnum=1
 time=60000
 dir=4
 graphicname=100432
-name=Âîê
+name=≠
 enemy=sb_dan|file:100/sb_dan.arg
 }

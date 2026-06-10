@@ -1,7 +1,7 @@
 #if 0
 static Char    slime=
 {
-    FALSE,      /*  use     どうでもいい*/
+    FALSE,      /*  use     无所谓*/
 
     /*  data    */
     {
@@ -12,7 +12,7 @@ static Char    slime=
         0,      /*  CHAR_FLOOR  */
         0,      /*  CHAR_X */
         0,      /*  CHAR_Y  */
-        0,      /*  CHAR_DIR 12時を0に時計周りに */
+        0,      /*  CHAR_DIR 12点钟方向为0,顺时针方向 */
         0,      /*  CHAR_LV  */
         0,      /*  CHAR_GOLD    */
         1,      /*  CHAR_HP  */

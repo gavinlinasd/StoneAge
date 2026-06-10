@@ -1,9 +1,9 @@
 NPCCREATE
-###### äºšä¾æ¬§ä¸€èˆ¬NPC ######
+###### ÑÇÒÀÅ·Ò»°ãNPC ######
 
-### é£åŸå®ˆå«
+### ·ç³ÇÊØÎÀ
 {
-name=ä¾¿å¯®
+name=ÊØÎÀ
 floorid=7400
 borncenter=97,64
 dir=4
@@ -12,9 +12,9 @@ enemy=npcgen_man|file:eden3/wind/npc_1
 graphicname=16741
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=å¨å¸ˆ
+name=³øÊ¦
 floorid=7400
 borncenter=80,82
 dir=6
@@ -23,9 +23,9 @@ enemy=npcgen_man|file:eden3/wind/npc_2
 graphicname=16722
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=å­©ç«¥
+name=º¢Í¯
 floorid=7400
 borncenter=119,87
 dir=4
@@ -34,9 +34,9 @@ enemy=npcgen_man|file:eden3/wind/npc_3
 graphicname=16708
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=äºšä¼Šæ¬§è€äºº
+name=ÑÇÒÁÅ·ÀÏÈË
 floorid=7400
 borncenter=119,74
 dir=6
@@ -45,9 +45,9 @@ enemy=npcgen_man|file:eden3/wind/npc_4
 graphicname=16714
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=å¥³å­©
+name=Å®º¢
 floorid=7400
 borncenter=135,110
 dir=6
@@ -56,9 +56,9 @@ enemy=npcgen_man|file:eden3/wind/npc_5
 graphicname=16727
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=äº†æœ›è€…
+name=ÁËÍûÕß
 floorid=7400
 borncenter=118,139
 dir=6
@@ -67,9 +67,9 @@ enemy=npcgen_man|file:eden3/wind/npc_6
 graphicname=16740
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=å­©ç«¥
+name=º¢Í¯
 floorid=7400
 borncenter=36,86
 dir=4
@@ -78,9 +78,9 @@ enemy=npcgen_man|file:eden3/wind/npc_7
 graphicname=16711
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=è€äºº
+name=ÀÏÈË
 floorid=7400
 borncenter=39,110
 dir=4
@@ -89,9 +89,9 @@ enemy=npcgen_man|file:eden3/wind/npc_8
 graphicname=16746
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=å¥³å­©
+name=Å®º¢
 floorid=7400
 borncenter=64,122
 dir=4
@@ -100,9 +100,9 @@ enemy=npcgen_man|file:eden3/wind/npc_9
 graphicname=16726
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=ä¾¿å¯®
+name=ÊØÎÀ
 floorid=7400
 borncenter=89,134
 dir=4
@@ -111,9 +111,9 @@ enemy=npcgen_man|file:eden3/wind/npc_10
 graphicname=16741
 }
 
-### é£åŸäººæ°‘
+### ·ç³ÇÈËÃñ
 {
-name=ä¾¿å¯®
+name=ÊØÎÀ
 floorid=7400
 borncenter=90,133
 dir=4
@@ -122,9 +122,9 @@ enemy=npcgen_man|file:eden3/wind/npc_11
 graphicname=16741
 }
 
-###### å‡¯èˆæ‘å®ˆå« ######
+###### ¿­Ç‰´åÊØÎÀ ######
 {
-name=ä¾¿å¯®
+name=ÊØÎÀ
 floorid=704
 borncenter=341,126
 dir=4
@@ -134,9 +134,9 @@ enemy=npcgen_warpman|file:eden3/wind/guard.arg
 graphicname=16957
 }
 
-###### å‡¯èˆæ‘å®ˆå« ######
+###### ¿­Ç‰´åÊØÎÀ ######
 {
-name=ä¾¿å¯®
+name=ÊØÎÀ
 floorid=704
 borncenter=310,93
 dir=6

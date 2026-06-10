@@ -5,10 +5,10 @@
 #include "readmap.h"
  
 /*
- * サンプ郊のNPCコード
+ * NPC代码示例
  *
- * タイプ  ： Sample
- * 定義する関数  ： 全種  ?
+ * 类型名 ： Sample
+ * 定义的函数 ： 全种类
  * NPC_SamplePreWalk
  * NPC_SamplePostWalk
  * NPC_SamplePreOver
@@ -26,7 +26,7 @@
 /*------------------------------------------------------------
  * NPC及扔件皿伙伙□民件
  * 引数
- *  index       int     インデックス
+ *  index       int     索引
  ------------------------------------------------------------*/
 void NPC_SampleLoop( int index )
 {
@@ -40,7 +40,7 @@ void NPC_SampleLoop( int index )
     y  = CHAR_getInt(index,CHAR_Y);
 
     /*
-     * 近くにプレイヤーがいるかどうかを調べて�bいたらそいつに近づく
+     * 检查附近是否有玩家,有的话靠近他
      * 蜇箕｝  赓卞心勾井匀凶支勾分仃［
      * 中卅井匀凶日仿件母丞它巧□弁
      *  域汹汹仁  卞  猾允月

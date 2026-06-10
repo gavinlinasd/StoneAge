@@ -1,7 +1,7 @@
 NPCCREATE
 
 #########################################################################
-##########ã€€ä¼Šç”¸å¤§é™†ç¯å²›ä»»åŠ¡ ã€ˆç®€ç§°ï¼šï¼¥ï¼¯ï¼´ã€‰ç–¯ç‹‚å¼ºå¼ºï¼’å·ã€€##############
+##########¡¡ÒÁµé´óÂ½»·µºÈÎÎñ ¡´¼ò³Æ£º£Å£Ï£Ô¡µ·è¿ñÇ¿Ç¿£²ºÅ¡¡##############
 #########################################################################
 
 
@@ -13,7 +13,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16478
-name=ï¼¥ï¼¯ï¼´å—ä»˜äººå‘˜
+name=£Å£Ï£ÔÊÜ¸¶ÈËÔ±
 enemy=changeevent|file:sa50/eot/oev_0ef
 }
 
@@ -25,7 +25,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥äººå‘˜(E-1)
+name=¼ì²éÈËÔ±(E-1)
 enemy=changeevent|file:sa50/eot/oev_1e
 }
 
@@ -37,7 +37,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥äººå‘˜(E-2)
+name=¼ì²éÈËÔ±(E-2)
 enemy=changeevent|file:sa50/eot/oev_2e
 }
 
@@ -49,7 +49,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16571
-name=æ£€æŸ¥äººå‘˜(E-3)
+name=¼ì²éÈËÔ±(E-3)
 enemy=changeevent|file:sa50/eot/oev_3e
 }
 
@@ -62,7 +62,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥äººå‘˜(E-4)
+name=¼ì²éÈËÔ±(E-4)
 enemy=changeevent|file:sa50/eot/oev_4e
 }
 
@@ -74,7 +74,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16571
-name=æ£€æŸ¥äººå‘˜(E-5)
+name=¼ì²éÈËÔ±(E-5)
 enemy=changeevent|file:sa50/eot/oev_5e
 }
 
@@ -87,7 +87,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥å‘˜(E-6)
+name=¼ì²éÔ±(E-6)
 enemy=changeevent|file:sa50/eot/oev_6e
 }
 
@@ -100,7 +100,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥äººå‘˜(E-7)
+name=¼ì²éÈËÔ±(E-7)
 enemy=changeevent|file:sa50/eot/oev_7e
 }
 
@@ -113,7 +113,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥äººå‘˜(E-8)
+name=¼ì²éÈËÔ±(E-8)
 enemy=changeevent|file:sa50/eot/oev_8e
 }
 
@@ -126,7 +126,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥äººå‘˜(E-9)
+name=¼ì²éÈËÔ±(E-9)
 enemy=changeevent|file:sa50/eot/oev_9e
 }
 
@@ -139,7 +139,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥äººå‘˜(E-10)
+name=¼ì²éÈËÔ±(E-10)
 enemy=changeevent|file:sa50/eot/oev_10e
 }
 
@@ -152,7 +152,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16572
-name=æ£€æŸ¥äººå‘˜(E-11)
+name=¼ì²éÈËÔ±(E-11)
 enemy=changeevent|file:sa50/eot/oev_11e
 }
 
@@ -164,7 +164,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16571
-name=æ£€æŸ¥äººå‘˜(E-12)
+name=¼ì²éÈËÔ±(E-12)
 enemy=changeevent|file:sa50/eot/oev_12e
 }
 
@@ -177,7 +177,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥äººå‘˜(F-1)
+name=¼ì²éÈËÔ±(F-1)
 enemy=changeevent|file:sa50/eot/oev_1f
 }
 
@@ -190,7 +190,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16701
-name=æ£€æŸ¥äººå‘˜(F-2)
+name=¼ì²éÈËÔ±(F-2)
 enemy=changeevent|file:sa50/eot/oev_2f
 }
 
@@ -202,7 +202,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥äººå‘˜(F-3)
+name=¼ì²éÈËÔ±(F-3)
 enemy=changeevent|file:sa50/eot/oev_3f
 }
 
@@ -215,7 +215,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥äººå‘˜(F-4)
+name=¼ì²éÈËÔ±(F-4)
 enemy=changeevent|file:sa50/eot/oev_4f
 }
 
@@ -228,7 +228,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥äººå‘˜(F-5)
+name=¼ì²éÈËÔ±(F-5)
 enemy=changeevent|file:sa50/eot/oev_5f
 }
 
@@ -241,7 +241,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16701
-name=æ£€æŸ¥äººå‘˜(F-6)
+name=¼ì²éÈËÔ±(F-6)
 enemy=changeevent|file:sa50/eot/oev_6f
 }
 
@@ -254,7 +254,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥äººå‘˜(F-7)
+name=¼ì²éÈËÔ±(F-7)
 enemy=changeevent|file:sa50/eot/oev_7f
 }
 
@@ -267,7 +267,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥å‘˜(F-8)
+name=¼ì²éÔ±(F-8)
 enemy=changeevent|file:sa50/eot/oev_8f
 }
 
@@ -280,7 +280,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥äººå‘˜(F-9)
+name=¼ì²éÈËÔ±(F-9)
 enemy=changeevent|file:sa50/eot/oev_9f
 }
 
@@ -293,7 +293,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥äººå‘˜(F-10)
+name=¼ì²éÈËÔ±(F-10)
 enemy=changeevent|file:sa50/eot/oev_10f
 }
 
@@ -306,7 +306,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=æ£€æŸ¥äººå‘˜(F-11)
+name=¼ì²éÈËÔ±(F-11)
 enemy=changeevent|file:sa50/eot/oev_11f
 }
 
@@ -319,7 +319,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16701
-name=æ£€æŸ¥äººå‘˜(F-12)
+name=¼ì²éÈËÔ±(F-12)
 enemy=changeevent|file:sa50/eot/oev_12f
 }
 
@@ -332,7 +332,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16571
-name=Eç»ˆç‚¹æ£€æŸ¥å‘˜
+name=EÖÕµã¼ì²éÔ±
 enemy=changeevent|file:sa50/eot/oev_ede
 }
 
@@ -345,6 +345,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16700
-name=Fç»ˆç‚¹æ£€æŸ¥å‘˜
+name=FÖÕµã¼ì²éÔ±
 enemy=changeevent|file:sa50/eot/oev_edf
 }

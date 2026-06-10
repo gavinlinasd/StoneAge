@@ -1,5 +1,5 @@
 NPCCREATE
-#äº‹ä»¶ä¹
+#ÊÂ¼ş¾Å
 {
 floorid=1200
 borncorner=97,75,97,75
@@ -8,10 +8,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16205
-name=æ‘å§‘
+name=´å¹Ã
 enemy=changeevent|file:sainasu/event/event09
 }
-#äº‹ä»¶å
+#ÊÂ¼şÊ®
 {
 floorid=1300
 borncorner=65,65,65,65
@@ -20,11 +20,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16206
-name=æ‘å§‘
+name=´å¹Ã
 enemy=changeevent|file:sainasu/event/event10
 }
 
-#äº‹ä»¶åä¸€
+#ÊÂ¼şÊ®Ò»
 {
 floorid=1400
 borncorner=71,76,71,76
@@ -33,11 +33,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16203
-name=å¡å¦çš„å¹´è½»äºº
+name=¿¨Ì¹µÄÄêÇáÈË
 enemy=changeevent|file:sainasu/event/event11
 }
 
-#äº‹ä»¶åäºŒ
+#ÊÂ¼şÊ®¶ş
 {
 floorid=11107
 borncorner=24,6,24,6
@@ -46,7 +46,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16057
-name=æ¢¦å¾·ï¼ˆæ—é•¿ï¼‰
+name=ÃÎµÂ£¨×å³¤£©
 enemy=changeevent|file:sainasu/event/event12
 }
 

@@ -164,11 +164,11 @@ char*   makeStringFromEscaped( char* src )
         if( src[i] == '\\' ){
             int j;
 
-            /*  鵜の  字に行く  */
+            /*  前往下一个字符  */
             i++;
             for( j = 0; j<sizeof(escapeChar)/sizeof(escapeChar[0]); j++){
                 if( escapeChar[j].escapedchar == src[i] ){
-                    /*  鵜がエスケープキャラだ  */
+                    /*  下一个是转义字符  */
                     src[searchindex++] = escapeChar[j].escapechar;
                     goto NEXT;
                 }
@@ -246,7 +246,7 @@ char *   makeEscapeString1( char* src , char* dest, int sizeofdest)
             /*  '\0'坌互箫曰卅中及匹仇仇匹蔽曰   */
             break;
 
-	/*	// 全角の１バイト  かどうかをチェック
+	/*	// 检查是否是全角字符的第１字节
 		if( IS_2BYTEWORD( src[i] ) ){
 			// 蝈剩分［公及桦宁反ㄠ田奶玄芴坌卞褡引六月［
 			// 凶分仄ㄠ田奶玄仄井卅中桦宁反公丹仄卅中
@@ -268,7 +268,7 @@ char *   makeEscapeString1( char* src , char* dest, int sizeofdest)
             }
 
         if( dirty == TRUE ){
-            /*  エスケープする  字だ    */
+            /*  是需要转义的字符    */
             if( destindex + 2 < sizeofdest ){
                 /*  +2 午中丹及反｝ '\\' 午 'n'及仪分   */
                 /*  酸曰  侬反蜗坌分    */

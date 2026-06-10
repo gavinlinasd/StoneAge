@@ -8,7 +8,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=122019
-name=浼氬憳楠戝疇璇佸彂鏀惧憳
+name=会员骑宠证发放员
 enemy=npcgen_shop|file:my/yucunpc/qizheng.arg
 }
 

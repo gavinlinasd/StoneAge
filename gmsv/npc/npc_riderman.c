@@ -785,13 +785,13 @@ static BOOL NPC_Riderman_readData( int meindex, int windowno, BOOL chkflg)
 			
 			/* 戊丢件玄反  骰 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 改行取る */
+			/* 去掉换行 */
 			chomp( line );
 			
-			/*  行を整形する    */
+			/*  整理行格式    */
 			/*  引内 tab 毛 " " 卞  五晶尹月    */
 			replaceString( line, '\t' , ' ' );
-			/* 先  のスペースを取る?*/
+			/* 去掉开头的空格*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;
@@ -1125,7 +1125,7 @@ static BOOL getLetter(int meindex,int talker )
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
-					itemNo,  /* アイ  ム  号 */
+					itemNo,  /* 道具编号 */
 #endif
 					"RiderManDelItem",
 					CHAR_getInt( talker, CHAR_FLOOR),

@@ -1,5 +1,5 @@
 NPCCREATE
-#########   é“å ´ï¼‘ï¼ï¼äººçµ„ã¿æ‰‹   ########
+#########   Æ»¾ì£±£°£°¿ÍÁÈ¤ß¼ê   ########
 {
 floorid=1021
 borncenter=400,124,1,1
@@ -8,7 +8,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 1 ä¸ªå¼Ÿå­
+name=µÚ 1 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou001.arg
 }
 {
@@ -18,7 +18,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -28,7 +28,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -39,7 +39,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 2 ä¸ªå¼Ÿå­
+name=µÚ 2 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou002.arg
 }
 {
@@ -49,7 +49,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -59,7 +59,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -70,7 +70,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 3 ä¸ªå¼Ÿå­
+name=µÚ 3 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou003.arg
 }
 {
@@ -80,7 +80,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -90,7 +90,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -101,7 +101,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 4 ä¸ªå¼Ÿå­
+name=µÚ 4 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou004.arg
 }
 {
@@ -111,7 +111,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -121,7 +121,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -132,7 +132,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 5 ä¸ªå¼Ÿå­
+name=µÚ 5 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou005.arg
 }
 {
@@ -142,7 +142,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -152,7 +152,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -163,7 +163,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 6 ä¸ªå¼Ÿå­
+name=µÚ 6 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou006.arg
 }
 {
@@ -173,7 +173,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -183,7 +183,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -194,7 +194,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 7 ä¸ªå¼Ÿå­
+name=µÚ 7 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou007.arg
 }
 {
@@ -204,7 +204,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -214,7 +214,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -225,7 +225,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 8 ä¸ªå¼Ÿå­
+name=µÚ 8 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou008.arg
 }
 {
@@ -235,7 +235,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -245,7 +245,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -256,7 +256,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 9 ä¸ªå¼Ÿå­
+name=µÚ 9 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou009.arg
 }
 {
@@ -266,7 +266,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -276,7 +276,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -287,7 +287,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 10 ä¸ªå¼Ÿå­
+name=µÚ 10 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou010.arg
 }
 {
@@ -297,7 +297,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -307,7 +307,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -318,7 +318,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 11 ä¸ªå¼Ÿå­
+name=µÚ 11 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou011.arg
 }
 {
@@ -328,7 +328,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -338,7 +338,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -349,7 +349,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 12 ä¸ªå¼Ÿå­
+name=µÚ 12 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou012.arg
 }
 {
@@ -359,7 +359,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -369,7 +369,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -380,7 +380,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 13 ä¸ªå¼Ÿå­
+name=µÚ 13 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou013.arg
 }
 {
@@ -390,7 +390,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -400,7 +400,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -411,7 +411,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 14 ä¸ªå¼Ÿå­
+name=µÚ 14 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou014.arg
 }
 {
@@ -421,7 +421,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -431,7 +431,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -442,7 +442,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 15 ä¸ªå¼Ÿå­
+name=µÚ 15 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou015.arg
 }
 {
@@ -452,7 +452,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -462,7 +462,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -473,7 +473,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 16 ä¸ªå¼Ÿå­
+name=µÚ 16 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou016.arg
 }
 {
@@ -483,7 +483,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -493,7 +493,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -504,7 +504,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 17 ä¸ªå¼Ÿå­
+name=µÚ 17 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou017.arg
 }
 {
@@ -514,7 +514,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -524,7 +524,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -535,7 +535,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 18 ä¸ªå¼Ÿå­
+name=µÚ 18 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou018.arg
 }
 {
@@ -545,7 +545,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -555,7 +555,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -566,7 +566,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 19 ä¸ªå¼Ÿå­
+name=µÚ 19 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou019.arg
 }
 {
@@ -576,7 +576,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -586,7 +586,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -597,7 +597,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 20 ä¸ªå¼Ÿå­
+name=µÚ 20 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou020.arg
 }
 {
@@ -607,7 +607,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -617,7 +617,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -628,7 +628,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 21 ä¸ªå¼Ÿå­
+name=µÚ 21 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou021.arg
 }
 {
@@ -638,7 +638,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -648,7 +648,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -659,7 +659,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 22 ä¸ªå¼Ÿå­
+name=µÚ 22 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou022.arg
 }
 {
@@ -669,7 +669,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -679,7 +679,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -690,7 +690,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 23 ä¸ªå¼Ÿå­
+name=µÚ 23 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou023.arg
 }
 {
@@ -700,7 +700,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -710,7 +710,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -721,7 +721,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 24 ä¸ªå¼Ÿå­
+name=µÚ 24 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou024.arg
 }
 {
@@ -731,7 +731,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -741,7 +741,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -752,7 +752,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 25 ä¸ªå¼Ÿå­
+name=µÚ 25 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou025.arg
 }
 {
@@ -762,7 +762,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -772,7 +772,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -783,7 +783,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 26 ä¸ªå¼Ÿå­
+name=µÚ 26 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou026.arg
 }
 {
@@ -793,7 +793,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -803,7 +803,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -814,7 +814,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 27 ä¸ªå¼Ÿå­
+name=µÚ 27 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou027.arg
 }
 {
@@ -824,7 +824,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -834,7 +834,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -845,7 +845,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 28 ä¸ªå¼Ÿå­
+name=µÚ 28 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou028.arg
 }
 {
@@ -855,7 +855,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -865,7 +865,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -876,7 +876,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 29 ä¸ªå¼Ÿå­
+name=µÚ 29 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou029.arg
 }
 {
@@ -886,7 +886,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -896,7 +896,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -907,7 +907,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 30 ä¸ªå¼Ÿå­
+name=µÚ 30 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou030.arg
 }
 {
@@ -917,7 +917,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -927,7 +927,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -938,7 +938,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 31 ä¸ªå¼Ÿå­
+name=µÚ 31 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou031.arg
 }
 {
@@ -948,7 +948,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -958,7 +958,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -969,7 +969,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 32 ä¸ªå¼Ÿå­
+name=µÚ 32 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou032.arg
 }
 {
@@ -979,7 +979,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -989,7 +989,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1000,7 +1000,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 33 ä¸ªå¼Ÿå­
+name=µÚ 33 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou033.arg
 }
 {
@@ -1010,7 +1010,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1020,7 +1020,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1031,7 +1031,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 34 ä¸ªå¼Ÿå­
+name=µÚ 34 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou034.arg
 }
 {
@@ -1041,7 +1041,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1051,7 +1051,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1062,7 +1062,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 35 ä¸ªå¼Ÿå­
+name=µÚ 35 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou035.arg
 }
 {
@@ -1072,7 +1072,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1082,7 +1082,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1093,7 +1093,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 36 ä¸ªå¼Ÿå­
+name=µÚ 36 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou036.arg
 }
 {
@@ -1103,7 +1103,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1113,7 +1113,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1124,7 +1124,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 37 ä¸ªå¼Ÿå­
+name=µÚ 37 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou037.arg
 }
 {
@@ -1134,7 +1134,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1144,7 +1144,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1155,7 +1155,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 38 ä¸ªå¼Ÿå­
+name=µÚ 38 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou038.arg
 }
 {
@@ -1165,7 +1165,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1175,7 +1175,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1186,7 +1186,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 39 ä¸ªå¼Ÿå­
+name=µÚ 39 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou039.arg
 }
 {
@@ -1196,7 +1196,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1206,7 +1206,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1217,7 +1217,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 40 ä¸ªå¼Ÿå­
+name=µÚ 40 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou040.arg
 }
 {
@@ -1227,7 +1227,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1237,7 +1237,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1248,7 +1248,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 41 ä¸ªå¼Ÿå­
+name=µÚ 41 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou041.arg
 }
 {
@@ -1258,7 +1258,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1268,7 +1268,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1279,7 +1279,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 42 ä¸ªå¼Ÿå­
+name=µÚ 42 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou042.arg
 }
 {
@@ -1289,7 +1289,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1299,7 +1299,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1310,7 +1310,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 43 ä¸ªå¼Ÿå­
+name=µÚ 43 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou043.arg
 }
 {
@@ -1320,7 +1320,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1330,7 +1330,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1341,7 +1341,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 44 ä¸ªå¼Ÿå­
+name=µÚ 44 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou044.arg
 }
 {
@@ -1351,7 +1351,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1361,7 +1361,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1372,7 +1372,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 45 ä¸ªå¼Ÿå­
+name=µÚ 45 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou045.arg
 }
 {
@@ -1382,7 +1382,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1392,7 +1392,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1403,7 +1403,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 46 ä¸ªå¼Ÿå­
+name=µÚ 46 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou046.arg
 }
 {
@@ -1413,7 +1413,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1423,7 +1423,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1434,7 +1434,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 47 ä¸ªå¼Ÿå­
+name=µÚ 47 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou047.arg
 }
 {
@@ -1444,7 +1444,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1454,7 +1454,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1465,7 +1465,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 48 ä¸ªå¼Ÿå­
+name=µÚ 48 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou048.arg
 }
 {
@@ -1475,7 +1475,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1485,7 +1485,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1496,7 +1496,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 49 ä¸ªå¼Ÿå­
+name=µÚ 49 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou049.arg
 }
 {
@@ -1506,7 +1506,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1516,7 +1516,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1527,7 +1527,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 50 ä¸ªå¼Ÿå­
+name=µÚ 50 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou050.arg
 }
 {
@@ -1537,7 +1537,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1547,7 +1547,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1558,7 +1558,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 51 ä¸ªå¼Ÿå­
+name=µÚ 51 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou051.arg
 }
 {
@@ -1568,7 +1568,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1578,7 +1578,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1589,7 +1589,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 52 ä¸ªå¼Ÿå­
+name=µÚ 52 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou052.arg
 }
 {
@@ -1599,7 +1599,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1609,7 +1609,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1620,7 +1620,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 53 ä¸ªå¼Ÿå­
+name=µÚ 53 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou053.arg
 }
 {
@@ -1630,7 +1630,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1640,7 +1640,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1651,7 +1651,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 54 ä¸ªå¼Ÿå­
+name=µÚ 54 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou054.arg
 }
 {
@@ -1661,7 +1661,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1671,7 +1671,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1682,7 +1682,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 55 ä¸ªå¼Ÿå­
+name=µÚ 55 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou055.arg
 }
 {
@@ -1692,7 +1692,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1702,7 +1702,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1713,7 +1713,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 56 ä¸ªå¼Ÿå­
+name=µÚ 56 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou056.arg
 }
 {
@@ -1723,7 +1723,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1733,7 +1733,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1744,7 +1744,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 57 ä¸ªå¼Ÿå­
+name=µÚ 57 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou057.arg
 }
 {
@@ -1754,7 +1754,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1764,7 +1764,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1775,7 +1775,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 58 ä¸ªå¼Ÿå­
+name=µÚ 58 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou058.arg
 }
 {
@@ -1785,7 +1785,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1795,7 +1795,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1806,7 +1806,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 59 ä¸ªå¼Ÿå­
+name=µÚ 59 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou059.arg
 }
 {
@@ -1816,7 +1816,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1826,7 +1826,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1837,7 +1837,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 60 ä¸ªå¼Ÿå­
+name=µÚ 60 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou060.arg
 }
 {
@@ -1847,7 +1847,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1857,7 +1857,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1868,7 +1868,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 61 ä¸ªå¼Ÿå­
+name=µÚ 61 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou061.arg
 }
 {
@@ -1878,7 +1878,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1888,7 +1888,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1899,7 +1899,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 62 ä¸ªå¼Ÿå­
+name=µÚ 62 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou062.arg
 }
 {
@@ -1909,7 +1909,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1919,7 +1919,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1930,7 +1930,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 63 ä¸ªå¼Ÿå­
+name=µÚ 63 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou063.arg
 }
 {
@@ -1940,7 +1940,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1950,7 +1950,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1961,7 +1961,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 64 ä¸ªå¼Ÿå­
+name=µÚ 64 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou064.arg
 }
 {
@@ -1971,7 +1971,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1981,7 +1981,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -1992,7 +1992,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 65 ä¸ªå¼Ÿå­
+name=µÚ 65 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou065.arg
 }
 {
@@ -2002,7 +2002,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2012,7 +2012,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2023,7 +2023,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 66 ä¸ªå¼Ÿå­
+name=µÚ 66 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou066.arg
 }
 {
@@ -2033,7 +2033,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2043,7 +2043,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2054,7 +2054,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 67 ä¸ªå¼Ÿå­
+name=µÚ 67 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou067.arg
 }
 {
@@ -2064,7 +2064,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2074,7 +2074,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2085,7 +2085,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 68 ä¸ªå¼Ÿå­
+name=µÚ 68 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou068.arg
 }
 {
@@ -2095,7 +2095,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2105,7 +2105,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2116,7 +2116,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 69 ä¸ªå¼Ÿå­
+name=µÚ 69 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou069.arg
 }
 {
@@ -2126,7 +2126,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2136,7 +2136,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2147,7 +2147,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 70 ä¸ªå¼Ÿå­
+name=µÚ 70 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou070.arg
 }
 {
@@ -2157,7 +2157,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2167,7 +2167,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2178,7 +2178,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 71 ä¸ªå¼Ÿå­
+name=µÚ 71 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou071.arg
 }
 {
@@ -2188,7 +2188,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2198,7 +2198,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2209,7 +2209,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 72 ä¸ªå¼Ÿå­
+name=µÚ 72 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou072.arg
 }
 {
@@ -2219,7 +2219,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2229,7 +2229,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2240,7 +2240,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 73 ä¸ªå¼Ÿå­
+name=µÚ 73 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou073.arg
 }
 {
@@ -2250,7 +2250,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2260,7 +2260,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2271,7 +2271,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 74 ä¸ªå¼Ÿå­
+name=µÚ 74 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou074.arg
 }
 {
@@ -2281,7 +2281,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2291,7 +2291,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2302,7 +2302,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 75 ä¸ªå¼Ÿå­
+name=µÚ 75 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou075.arg
 }
 {
@@ -2312,7 +2312,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2322,7 +2322,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2333,7 +2333,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 76 ä¸ªå¼Ÿå­
+name=µÚ 76 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou076.arg
 }
 {
@@ -2343,7 +2343,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2353,7 +2353,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2364,7 +2364,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 77 ä¸ªå¼Ÿå­
+name=µÚ 77 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou077.arg
 }
 {
@@ -2374,7 +2374,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2384,7 +2384,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2395,7 +2395,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 78 ä¸ªå¼Ÿå­
+name=µÚ 78 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou078.arg
 }
 {
@@ -2405,7 +2405,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2415,7 +2415,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2426,7 +2426,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 79 ä¸ªå¼Ÿå­
+name=µÚ 79 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou079.arg
 }
 {
@@ -2436,7 +2436,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2446,7 +2446,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2457,7 +2457,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 80 ä¸ªå¼Ÿå­
+name=µÚ 80 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou080.arg
 }
 {
@@ -2467,7 +2467,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2477,7 +2477,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2488,7 +2488,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 81 ä¸ªå¼Ÿå­
+name=µÚ 81 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou081.arg
 }
 {
@@ -2498,7 +2498,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2508,7 +2508,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2519,7 +2519,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 82 ä¸ªå¼Ÿå­
+name=µÚ 82 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou082.arg
 }
 {
@@ -2529,7 +2529,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2539,7 +2539,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2550,7 +2550,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 83 ä¸ªå¼Ÿå­
+name=µÚ 83 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou083.arg
 }
 {
@@ -2560,7 +2560,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2570,7 +2570,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2581,7 +2581,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 84 ä¸ªå¼Ÿå­
+name=µÚ 84 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou084.arg
 }
 {
@@ -2591,7 +2591,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2601,7 +2601,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2612,7 +2612,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 85 ä¸ªå¼Ÿå­
+name=µÚ 85 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou085.arg
 }
 {
@@ -2622,7 +2622,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2632,7 +2632,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2643,7 +2643,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 86 ä¸ªå¼Ÿå­
+name=µÚ 86 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou086.arg
 }
 {
@@ -2653,7 +2653,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2663,7 +2663,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2674,7 +2674,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 87 ä¸ªå¼Ÿå­
+name=µÚ 87 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou087.arg
 }
 {
@@ -2684,7 +2684,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2694,7 +2694,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2705,7 +2705,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 88 ä¸ªå¼Ÿå­
+name=µÚ 88 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou088.arg
 }
 {
@@ -2715,7 +2715,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2725,7 +2725,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2736,7 +2736,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 89 ä¸ªå¼Ÿå­
+name=µÚ 89 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou089.arg
 }
 {
@@ -2746,7 +2746,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2756,7 +2756,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2767,7 +2767,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 90 ä¸ªå¼Ÿå­
+name=µÚ 90 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou090.arg
 }
 {
@@ -2777,7 +2777,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2787,7 +2787,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2798,7 +2798,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 91 ä¸ªå¼Ÿå­
+name=µÚ 91 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou091.arg
 }
 {
@@ -2808,7 +2808,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2818,7 +2818,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2829,7 +2829,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 92 ä¸ªå¼Ÿå­
+name=µÚ 92 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou092.arg
 }
 {
@@ -2839,7 +2839,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2849,7 +2849,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2860,7 +2860,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 93 ä¸ªå¼Ÿå­
+name=µÚ 93 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou093.arg
 }
 {
@@ -2870,7 +2870,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2880,7 +2880,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2891,7 +2891,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 94 ä¸ªå¼Ÿå­
+name=µÚ 94 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou094.arg
 }
 {
@@ -2901,7 +2901,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2911,7 +2911,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2922,7 +2922,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 95 ä¸ªå¼Ÿå­
+name=µÚ 95 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou095.arg
 }
 {
@@ -2932,7 +2932,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2942,7 +2942,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2953,7 +2953,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 96 ä¸ªå¼Ÿå­
+name=µÚ 96 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou096.arg
 }
 {
@@ -2963,7 +2963,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2973,7 +2973,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -2984,7 +2984,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 97 ä¸ªå¼Ÿå­
+name=µÚ 97 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou097.arg
 }
 {
@@ -2994,7 +2994,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -3004,7 +3004,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -3015,7 +3015,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 98 ä¸ªå¼Ÿå­
+name=µÚ 98 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou098.arg
 }
 {
@@ -3025,7 +3025,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -3035,7 +3035,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -3046,7 +3046,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 99 ä¸ªå¼Ÿå­
+name=µÚ 99 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou099.arg
 }
 {
@@ -3056,7 +3056,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -3066,7 +3066,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -3077,7 +3077,7 @@ createnum=1
 dir=4
 time=60000
 graphicname=100091
-name=ç¬¬ 100 ä¸ªå¼Ÿå­
+name=µÚ 100 ¸öµÜ×Ó
 enemy=sb_dou|file:doujyou/samdou100.arg
 }
 {
@@ -3087,7 +3087,7 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }
 {
@@ -3097,6 +3097,6 @@ movecenter=20,20,2,2
 createnum=1
 time=60000
 graphicname=0
-name=è·³è·ƒç‚¹
+name=ÌøÔ¾µã
 enemy=npcgen_warp|1022|1|7
 }

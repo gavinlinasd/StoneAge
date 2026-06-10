@@ -10,7 +10,7 @@ borncorner=22,17,22,17
 time=0
 createnum=1
 graphicname=16043
-name=æ—…äºº
+name=ÂÃÈË
 dir=5
 ignoreinvincible=1
 enemy=npcgen_man|file:genout/msg_20601_22_17
@@ -23,7 +23,7 @@ borncorner=60,39,60,39
 time=0
 createnum=1
 graphicname=16046
-name=æ—…äºº
+name=ÂÃÈË
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|file:genout/msg_20602_60_39
@@ -36,7 +36,7 @@ borncorner=35,16,35,16
 time=0
 createnum=1
 graphicname=16047
-name=å†’é™©è€…
+name=Ã°ÏÕÕß
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|file:genout/msg_20603_35_16
@@ -51,7 +51,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100432
-name=è¡¨ç«’ä¾¿å¯®
+name=É½ÔôÊØÎÀ
 enemy=npcgen_warpman|file:genout/wpm_20604_11_53
 }
 #line 22
@@ -63,7 +63,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100434
-name=è¡¨ç«’ä¾¿å¯®
+name=É½ÔôÊØÎÀ
 enemy=npcgen_warpman|file:genout/wpm_20605_51_4
 }
 #line 25
@@ -75,7 +75,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100439
-name=è¡¨ç«’ä¾¿å¯®
+name=É½ÔôÊØÎÀ
 enemy=npcgen_warpman|file:genout/wpm_20606_9_23
 }
 #line 28
@@ -85,7 +85,7 @@ borncorner=73,41,73,41
 time=0
 createnum=1
 graphicname=100433
-name=å±±è´¼
+name=É½Ôô
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|file:genout/msg_20607_73_41

@@ -1,72 +1,72 @@
 NEWWARPMAN
 
-#### 阿谷拔标全不正确，不理 ####
+#### ���Ȱα�ȫ����ȷ������ ####
 NOFREE
 WARP:0,0,0
 FREE:LV>0
-NomalMsg:嘎！嘎！
-PartyMsg:嘎！嘎！
+NomalMsg:�£��£�
+PartyMsg:�£��£�
 OVER
 
-####传送飞龙有蛋第二张地图####
+####���ͷ����е��ڶ��ŵ�ͼ####
 TALKEVENT1
 WARP:60069,32,38
 FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1482&ITEM=2414
-FreeMsg:你带回了飞龙蛋，跟我来吧。
+FreeMsg:������˷��������������ɡ�
 OVER
 
-####不传送身上有ｋｅｙ和签名####
+####�����������У�����ǩ��####
 TALKEVENT2
 WARP:0,0,0
 FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1481&ITEM=2414&ITEM=1449
-FreeMsg:嘎～！
+FreeMsg:�¡���
 OVER
 
-####不传送身上有巧克力####
+####�������������ɿ���####
 TALKEVENT3
 WARP:0,0,0
 FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1480&ITEM=2414
-FreeMsg:嘎～！
+FreeMsg:�¡���
 OVER
 
-####传送飞龙有签名####
+####���ͷ�����ǩ��####
 TALKEVENT4
 WARP:60066,32,38
 FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=2414&ITEM=1449
-FreeMsg:东西别再丢掉了。
+FreeMsg:�������ٶ����ˡ�
 OVER
 
-####传送飞龙有ｋｅｙ####
+####���ͷ����У���####
 TALKEVENT5
 WARP:60066,32,38
 FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=2414&ITEM=1481
-FreeMsg:东西别在搞丢了。
+FreeMsg:�������ڸ㶪�ˡ�
 OVER
 
-####传送飞龙有旗标１２５第一张地图ｋｅｙ和签名####
+####���ͷ�������꣱������һ�ŵ�ͼ������ǩ��####
 TALKEVENT6
 WARP:60066,32,38
 FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=2414
-FreeMsg:想救布洛多多啊，那就要看你本事够不够啰！
+FreeMsg:��Ȳ����డ���Ǿ�Ҫ���㱾�¹���������
 OVER
 
-####传送飞龙有旗标没有贝縠####
+####���ͷ��������û�б��e####
 TALKEVENT7
 WARP:0,0,0
 FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM!=2414
-FreeMsg:限゛限゛
+FreeMsg:�¡��¡�
 OVER
 
-####传送飞龙完成任务####
+####���ͷ����������####
 TALKEVENT8
 WARP:0,0,0
 FREE:LV>89&ENDEV=4&ENDEV=81&ENDEV=125&ITEM=2414&PET>0-1042
-FreeMsg:要好好照顾布洛多多喔。
+FreeMsg:Ҫ�ú��չ˲�����ม�
 OVER
 
-####传送飞龙完成任务####
+####���ͷ����������####
 TALKEVENT9
 WARP:0,0,0
 FREE:LV>89&ENDEV=4&ENDEV=81&ENDEV=125&ITEM=2414
-FreeMsg:谢谢你的帮助，我们和暴龙们和平相处了。
+FreeMsg:лл��İ��������Ǻͱ����Ǻ�ƽ�ദ�ˡ�
 OVER

@@ -1,12 +1,12 @@
-#### æ°å£«å†°åŽæ‰‹ä¸‹åºŸè¯NPC ####
+#### ½ÜÊ¿±ùºóÊÖÏÂ·Ï»°NPC ####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&ITEM=2414
-NomalWindowMsg:ä½ è¿˜ä¸æ˜¯æˆ‘çš„å¯¹æ‰‹ï¼Œè¦æŽ¥èµ°æ´›æž—å…ˆæ‰“å€’æˆ‘çš„ä¼™ä¼´å§ï¼
+NomalWindowMsg:Äã»¹²»ÊÇÎÒµÄ¶ÔÊÖ£¬Òª½Ó×ßÂåÁÖÏÈ´òµ¹ÎÒµÄ»ï°é°É£¡
 EventEnd
-#### æ°å£«å†°åŽæ‰‹ä¸‹åºŸè¯NPC ####
+#### ½ÜÊ¿±ùºóÊÖÏÂ·Ï»°NPC ####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:è§¦ã‚›è§¦
+NomalWindowMsg:¿¨¡«¿¨
 EventEnd

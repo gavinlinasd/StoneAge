@@ -1,14 +1,14 @@
 NEWNPCENEMY
-####英雄战场####
+####Ӣ��ս��####
 entype:2
-askbattlemsg1:我是贝瑞达家族的族长，想不到你可以打败我家族的成员，就让我来会会你吧。
+askbattlemsg1:���Ǳ���������峤���벻������Դ���Ҽ���ĳ�Ա���������������ɡ�
 dieact:1
 warpfl:0
 warpx:0
 warpy:0
 enemyno:2335,2342
-deniedmsg:完全看不出来你像个英雄，再去练个几年再来吧。
-alreadymsg:想和我过招还怕没有机会吗，只怕你不堪一击！！！
+deniedmsg:��ȫ�������������Ӣ�ۣ���ȥ�������������ɡ�
+alreadymsg:����ҹ��л���û�л�����ֻ���㲻��һ��������
 onebattle:0
 OVER
 
@@ -19,6 +19,6 @@ AddItem:2055,20041
 herobattlefield:120
 EvClr:153
 Event_Now:154
-endmsg:就算你打败我了！在第一百二拾一层楼还是会有人守护着。
+endmsg:�����������ˣ��ڵ�һ�ٶ�ʰһ��¥���ǻ������ػ��š�
 OVER
 

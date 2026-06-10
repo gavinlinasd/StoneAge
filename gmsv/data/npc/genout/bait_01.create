@@ -12,7 +12,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16207
-name=æ´çªŸç®¡ç†å‘˜çš„é•¿ç”·
+name=¶´¿ß¹ÜÀíÔ±µÄ³¤ÄĞ
 enemy=npcgen_warpman|file:genout/wpm_200_337_653
 }
 #line 11
@@ -22,7 +22,7 @@ borncorner=27,24,27,24
 time=0
 createnum=1
 graphicname=10062
-name=å¿ƒåŒ»
+name=¿´°å
 dir=6
 ignoreinvincible=1
 enemy=npcgen_signboard|file:genout/signb_20903_27_24
@@ -34,7 +34,7 @@ borncorner=40,12,40,12
 time=0
 createnum=1
 graphicname=10062
-name=å¿ƒåŒ»
+name=¿´°å
 dir=6
 ignoreinvincible=1
 enemy=npcgen_signboard|file:genout/signb_20902_40_12
@@ -48,7 +48,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16037
-name=æ´çªŸç®¡ç†å‘˜çš„é•¿å¥³
+name=¶´¿ß¹ÜÀíÔ±µÄ³¤Å®
 enemy=npcgen_warpman|file:genout/wpm_20901_21_13
 }
 #line 20
@@ -58,7 +58,7 @@ borncorner=54,50,54,50
 time=0
 createnum=1
 graphicname=16037
-name=æ´çªŸç®¡ç†å‘˜çš„é•¿å¥³
+name=¶´¿ß¹ÜÀíÔ±µÄ³¤Å®
 dir=5
 ignoreinvincible=1
 enemy=npcgen_man|file:genout/msg_20902_54_50
@@ -73,7 +73,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16048
-name=æ´çªŸç®¡ç†å‘˜çš„ä¸‰ç”·
+name=¶´¿ß¹ÜÀíÔ±µÄÈıÄĞ
 enemy=npcgen_warpman|file:genout/wpm_20901_16_17
 }
 #line 28
@@ -83,7 +83,7 @@ borncorner=5,4,5,4
 time=0
 createnum=1
 graphicname=16048
-name=æ´çªŸç®¡ç†å‘˜çš„ä¸‰ç”·
+name=¶´¿ß¹ÜÀíÔ±µÄÈıÄĞ
 dir=4
 ignoreinvincible=1
 enemy=npcgen_man|file:genout/msg_20903_5_4
@@ -96,7 +96,7 @@ borncorner=12,20,12,20
 time=0
 createnum=1
 graphicname=10062
-name=å¿ƒåŒ»
+name=¿´°å
 dir=6
 ignoreinvincible=1
 enemy=npcgen_signboard|file:genout/signb_201_12_20
@@ -108,7 +108,7 @@ borncorner=16,17,16,17
 time=0
 createnum=1
 graphicname=10062
-name=å¿ƒåŒ»
+name=¿´°å
 dir=6
 ignoreinvincible=1
 enemy=npcgen_signboard|file:genout/signb_201_16_17
@@ -122,7 +122,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=ç‰§åœºçš„å…¬å‘Šæ 
+name=ÄÁ³¡µÄ¹«¸æÀ¸
 enemy=npcgen_dengon
 }
 #line 42
@@ -132,7 +132,7 @@ borncorner=9,10,9,10
 time=0
 createnum=1
 graphicname=10063
-name=å¿ƒåŒ»
+name=¿´°å
 dir=4
 ignoreinvincible=1
 enemy=npcgen_signboard|file:genout/signb_201_9_10
@@ -144,7 +144,7 @@ borncorner=11,10,11,10
 time=0
 createnum=1
 graphicname=10063
-name=å¿ƒåŒ»
+name=¿´°å
 dir=4
 ignoreinvincible=1
 enemy=npcgen_signboard|file:genout/signb_201_11_10
@@ -156,7 +156,7 @@ borncorner=330,643,330,643
 time=0
 createnum=1
 graphicname=10062
-name=å¿ƒåŒ»
+name=¿´°å
 dir=6
 ignoreinvincible=1
 enemy=npcgen_signboard|file:genout/signb_200_330_643
@@ -168,7 +168,7 @@ borncorner=321,647,321,647
 time=0
 createnum=1
 graphicname=100271
-name=é¾Ÿä¹‹ç›¾
+name=¹êÖ®¶Ü
 dir=4
 ignoreinvincible=1
 enemy=npcgen_man|Ñ½
@@ -180,7 +180,7 @@ borncorner=323,649,323,649
 time=0
 createnum=1
 graphicname=100271
-name=é¾Ÿä¹‹ç›¾
+name=¹êÖ®¶Ü
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|Ñ½
@@ -192,10 +192,10 @@ borncorner=323,653,323,653
 time=0
 createnum=1
 graphicname=100335
-name=ç‰¹é‡Œè¯ºå¸ƒæ–¯
+name=ÌØÀïÅµ²¼Ë¹
 dir=5
 ignoreinvincible=1
-enemy=npcgen_man|å‘œå‘œ
+enemy=npcgen_man|ÎØÎØ
 }
 #line 59
 {
@@ -204,10 +204,10 @@ borncorner=321,655,321,655
 time=0
 createnum=1
 graphicname=100335
-name=ç‰¹é‡Œè¯ºå¸ƒæ–¯
+name=ÌØÀïÅµ²¼Ë¹
 dir=2
 ignoreinvincible=1
-enemy=npcgen_man|å‘œå‘œ
+enemy=npcgen_man|ÎØÎØ
 }
 #line 61
 {
@@ -216,10 +216,10 @@ borncorner=325,656,325,656
 time=0
 createnum=1
 graphicname=100335
-name=ç‰¹é‡Œè¯ºå¸ƒæ–¯
+name=ÌØÀïÅµ²¼Ë¹
 dir=0
 ignoreinvincible=1
-enemy=npcgen_man|å‘œå‘œ
+enemy=npcgen_man|ÎØÎØ
 }
 #line 63
 {
@@ -228,10 +228,10 @@ borncorner=325,660,325,660
 time=0
 createnum=1
 graphicname=100368
-name=å…‹å…‹æ´›æ–¯å¼
+name=¿Ë¿ËÂåË¹ÛÍ
 dir=4
 ignoreinvincible=1
-enemy=npcgen_man|æ±Ÿæ±Ÿ
+enemy=npcgen_man|¹¾¹¾
 }
 #line 65
 {
@@ -240,10 +240,10 @@ borncorner=322,659,322,659
 time=0
 createnum=1
 graphicname=100368
-name=å…‹å…‹æ´›æ–¯å¼
+name=¿Ë¿ËÂåË¹ÛÍ
 dir=7
 ignoreinvincible=1
-enemy=npcgen_man|æ±Ÿæ±Ÿ
+enemy=npcgen_man|¹¾¹¾
 }
 #line 67
 {
@@ -252,10 +252,10 @@ borncorner=320,662,320,662
 time=0
 createnum=1
 graphicname=100368
-name=å…‹å…‹æ´›æ–¯å¼
+name=¿Ë¿ËÂåË¹ÛÍ
 dir=1
 ignoreinvincible=1
-enemy=npcgen_man|æ±Ÿæ±Ÿ
+enemy=npcgen_man|¹¾¹¾
 }
 #line 73
 {
@@ -264,10 +264,10 @@ borncorner=15,31,15,31
 time=0
 createnum=1
 graphicname=100250
-name=ä¹ŒåŠ›
+name=ÎÚÁ¦
 dir=5
 ignoreinvincible=1
-enemy=npcgen_man|ä¹ŒåŠ›
+enemy=npcgen_man|ÎÚÁ¦
 }
 #line 75
 {
@@ -276,10 +276,10 @@ borncorner=17,32,17,32
 time=0
 createnum=1
 graphicname=100251
-name=ä¹ŒåŠ›ä¹ŒåŠ›
+name=ÎÚÁ¦ÎÚÁ¦
 dir=3
 ignoreinvincible=1
-enemy=npcgen_man|ä¹ŒåŠ›ä¹ŒåŠ›
+enemy=npcgen_man|ÎÚÁ¦ÎÚÁ¦
 }
 #line 77
 {
@@ -288,10 +288,10 @@ borncorner=19,31,19,31
 time=0
 createnum=1
 graphicname=100252
-name=ä¹ŒåŠ›æ–¯å¦
+name=ÎÚÁ¦Ë¹Ì¹
 dir=5
 ignoreinvincible=1
-enemy=npcgen_man|å™—å”
+enemy=npcgen_man|àÛßñ
 }
 #line 79
 {
@@ -300,10 +300,10 @@ borncorner=17,30,17,30
 time=0
 createnum=1
 graphicname=100252
-name=ä¹ŒåŠ›æ–¯å¦
+name=ÎÚÁ¦Ë¹Ì¹
 dir=7
 ignoreinvincible=1
-enemy=npcgen_man|å™—å”
+enemy=npcgen_man|àÛßñ
 }
 #line 81
 {
@@ -312,10 +312,10 @@ borncorner=21,32,21,32
 time=0
 createnum=1
 graphicname=100250
-name=ä¹ŒåŠ›
+name=ÎÚÁ¦
 dir=4
 ignoreinvincible=1
-enemy=npcgen_man|ä¹ŒåŠ›
+enemy=npcgen_man|ÎÚÁ¦
 }
 #line 85
 {
@@ -324,10 +324,10 @@ borncorner=15,9,15,9
 time=0
 createnum=1
 graphicname=100275
-name=é˜¿å“¥äºš
+name=°¢¸çÑÇ
 dir=5
 ignoreinvincible=1
-enemy=npcgen_man|å˜
+enemy=npcgen_man|¸Â
 }
 #line 87
 {
@@ -336,10 +336,10 @@ borncorner=17,10,17,10
 time=0
 createnum=1
 graphicname=100276
-name=å°¼å¯æ–¯
+name=Äá¿ÉË¹
 dir=4
 ignoreinvincible=1
-enemy=npcgen_man|ç¶²èœƒ
+enemy=npcgen_man|ºô¸Â
 }
 #line 89
 {
@@ -348,10 +348,10 @@ borncorner=20,8,20,8
 time=0
 createnum=1
 graphicname=100278
-name=è¾¾å…‹å°”
+name=´ï¿Ë¶û
 dir=2
 ignoreinvincible=1
-enemy=npcgen_man|ç¶²èœƒç¶²èœƒ
+enemy=npcgen_man|ºô¸Âºô¸Â
 }
 #line 91
 {
@@ -360,10 +360,10 @@ borncorner=17,7,17,7
 time=0
 createnum=1
 graphicname=100278
-name=è¾¾å…‹å°”
+name=´ï¿Ë¶û
 dir=6
 ignoreinvincible=1
-enemy=npcgen_man|ç¶²èœƒç¶²èœƒ
+enemy=npcgen_man|ºô¸Âºô¸Â
 }
 #line 93
 {
@@ -372,10 +372,10 @@ borncorner=21,10,21,10
 time=0
 createnum=1
 graphicname=100393
-name=å®å…‹å°”
+name=±¦¿Ë¶û
 dir=6
 ignoreinvincible=1
-enemy=npcgen_man|ç¶²èœƒ
+enemy=npcgen_man|ºô¸Â
 }
 #line 98
 {
@@ -386,7 +386,7 @@ createnum=1
 dir=0
 ignoreinvincible=1
 graphicname=16021
-name=ç®¡ç†å‘˜çš„å¤ªå¤ª
+name=¹ÜÀíÔ±µÄÌ«Ì«
 enemy=npcgen_shop|file:genout/ss_20901_8_19
 }
 #line 103
@@ -398,7 +398,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16017
-name=å¤–å–è‚‰åº—
+name=ÍâÂôÈâµê
 enemy=npcgen_limitshop|file:genout/lbis_20901_44_22
 }
 #line 107
@@ -410,7 +410,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16019
-name=å¤–å–è‚‰åº—
+name=ÍâÂôÈâµê
 enemy=npcgen_limitshop|file:genout/lbis_20902_11_4
 }
 #line 111
@@ -422,6 +422,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16019
-name=å¤–å–è‚‰åº—
+name=ÍâÂôÈâµê
 enemy=npcgen_limitshop|file:genout/lbis_20903_18_19
 }

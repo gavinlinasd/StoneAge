@@ -816,7 +816,7 @@ static BOOL NPC_PoolItemShop_PoolItem( int meindex, int talkerindex, int num)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 		itemindex,
 #else
-		ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+		ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 		"pool(寄放道具)",
 		CHAR_getInt( talkerindex,CHAR_FLOOR),

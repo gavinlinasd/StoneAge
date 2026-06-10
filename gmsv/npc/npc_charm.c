@@ -9,19 +9,19 @@
 
 //    医毛  仁煌遥挚反
 
-//レベ郊＊        ＊  現在の    /          
+//等级＊        ＊  当前的    /          
 
 //荚汊汹反｛ㄤ匹允［
 /*
 #define RATE  4		//伊□玄＂
 #define CHARMHEAL 5 //    式者竄俘
-#define WARU	3	//    を割る値
+#define WARU	3	//    除以的值
 
 */
 
 #define RATE  10	//伊□玄＂
 #define CHARMHEAL 5 //    式者竄俘
-#define WARU	3	//    を割る値
+#define WARU	3	//    除以的值
 
 
 static void NPC_Charm_selectWindow( int meindex, int toindex, int num);
@@ -78,7 +78,7 @@ static void NPC_Charm_selectWindow( int meindex, int toindex, int num)
 	int cost = 0;
 	int chartype;
 	
-	/*--ウインドウタイプメッセージがおおいので先に設定--*/
+	/*--窗口类型讯息较多所以先设置--*/
   	windowtype = WINDOW_MESSAGETYPE_MESSAGE;
 
 	switch( num) {
@@ -224,17 +224,17 @@ void NPC_CharmUp(int meindex,int talker)
 	int petindex;
 	char petsend[64];	
 
-	/*--恭金を減らしましょう--*/
+	/*--减少金钱吧--*/
 	cost = NPC_CharmCost( meindex, talker);
 	CHAR_setInt( talker, CHAR_GOLD,
 			CHAR_getInt( talker, CHAR_GOLD) - cost);
 	CHAR_send_P_StatusString( talker, CHAR_P_STRING_GOLD);
 
-	/*--    が１００以上になる場合は強引に１００にする--*/
+	/*--    超过１００时强制设为１００--*/
 	if(CHAR_getInt( talker, CHAR_CHARM) + CHARMHEAL >= 100) {
 		CHAR_setInt( talker, CHAR_CHARM, 100);
 	}else{
-		/*--    をセット--*/
+		/*--    设置--*/
 		CHAR_setInt(talker, CHAR_CHARM,
 	 			(CHAR_getInt( talker, CHAR_CHARM) + CHARMHEAL));
 	}
@@ -244,7 +244,7 @@ void NPC_CharmUp(int meindex,int talker)
 	CHAR_send_P_StatusString( talker, CHAR_P_STRING_CHARM);
 
 
-	/*--ペットのパラメータを更新--*/
+	/*--更新宠物的参数--*/
 	for( i = 0 ; i < CHAR_MAXPETHAVE ; i++){
     	petindex = CHAR_getCharPet( talker, i);
 

@@ -1,6 +1,6 @@
 NPCCREATE
 
-###### æ¸”æ‘å® ç‰©æ´¾æ´¾é€é­”ç‹No1 ######
+###### Óæ´å³èÎïÅÉÅÉËÍÄ§ÍõNo1 ######
 {
 floorid=2000
 borncenter=46,77
@@ -9,12 +9,12 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=108068
-name=æ–°æ‰‹åˆ·éª‘å® NPC
+name=ĞÂÊÖË¢Æï³èNPC
 enemy=sb_dou|file:my/mowang/mowang0.arg
 }
 
 
-###### æ¸”æ‘å® ç‰©æ´¾æ´¾é€é­”ç‹No1 ######
+###### Óæ´å³èÎïÅÉÅÉËÍÄ§ÍõNo1 ######
 {
 floorid=2000
 borncenter=46,95
@@ -23,11 +23,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=130112
-name=é€é¥çŸ³å™¨å¤§é­”ç‹
+name=åĞÒ£Ê¯Æ÷´óÄ§Íõ
 enemy=sb_dou|file:my/mowang/mowang1.arg
 }
 
-###### å® ç‰©æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº1F ######
+###### ³èÎïÅÉÅÉËÍÄ§Íõ¾º¼¼³¡1F ######
 {
 floorid=154
 borncenter=14,5
@@ -36,12 +36,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=120041
-name=äºŒæ¥¼é­”ç‹
+name=¶şÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang/mowang2.arg
 }
 
 
-###### å® ç‰©æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº2F ######
+###### ³èÎïÅÉÅÉËÍÄ§Íõ¾º¼¼³¡2F ######
 {
 floorid=155
 borncenter=14,5
@@ -50,12 +50,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=120000
-name=ä¸‰æ¥¼é­”ç‹
+name=ÈıÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang/mowang3.arg
 }
 
 
-###### å® ç‰©æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº3F ######
+###### ³èÎïÅÉÅÉËÍÄ§Íõ¾º¼¼³¡3F ######
 {
 floorid=156
 borncenter=14,5
@@ -64,12 +64,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=120014
-name=å››æ¥¼é­”ç‹
+name=ËÄÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang/mowang4.arg
 }
 
 
-###### å® ç‰©æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº4F ######
+###### ³èÎïÅÉÅÉËÍÄ§Íõ¾º¼¼³¡4F ######
 {
 floorid=157
 borncenter=14,5
@@ -78,11 +78,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101213
-name=äº”æ¥¼é­”ç‹
+name=ÎåÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang/mowang5.arg
 }
 
-###### å® ç‰©æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº5F ######
+###### ³èÎïÅÉÅÉËÍÄ§Íõ¾º¼¼³¡5F ######
 {
 floorid=147
 borncenter=14,5
@@ -91,11 +91,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101109
-name=å…­æ¥¼é­”ç‹
+name=ÁùÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang/mowang6.arg
 }
 
-###### å® ç‰©æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº6F ######
+###### ³èÎïÅÉÅÉËÍÄ§Íõ¾º¼¼³¡6F ######
 {
 floorid=200
 borncenter=14,5
@@ -104,11 +104,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=108068
-name=ä¸ƒæ¥¼é­”ç‹
+name=ÆßÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang/mowang7.arg
 }
 
-###### å® ç‰©æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº7F ######
+###### ³èÎïÅÉÅÉËÍÄ§Íõ¾º¼¼³¡7F ######
 {
 floorid=208
 borncenter=14,5
@@ -117,11 +117,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=120027
-name=å…«æ¥¼é­”ç‹
+name=°ËÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang/mowang8.arg
 }
 
-###### å® ç‰©æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº8F ######
+###### ³èÎïÅÉÅÉËÍÄ§Íõ¾º¼¼³¡8F ######
 {
 floorid=202
 borncenter=14,5
@@ -130,11 +130,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=120082
-name=é€é¥é”‹
+name=åĞÒ£·æ
 enemy=sb_dou|file:my/mowang/mowang9.arg
 }
 
-######é¢†å¥–Npc#######
+######Áì½±Npc#######
 {
 floorid=148
 borncenter=9,5
@@ -143,11 +143,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=110113
-name=å® ç‰©æ´¾æ´¾é€å…‘å¥–å¤„
+name=³èÎïÅÉÅÉËÍ¶Ò½±´¦
 enemy=changeevent|file:my/mowang/jiang.arg
 }
 
-######é¢†å¥–Npc#######
+######Áì½±Npc#######
 {
 floorid=2000
 borncenter=55,95
@@ -156,12 +156,12 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101912
-name=å® ç‰©æ´¾æ´¾é€å…‘å¥–å¤„
+name=³èÎïÅÉÅÉËÍ¶Ò½±´¦
 enemy=changeevent|file:my/mowang/jiang.arg
 }
 
 
-### é­”ç‹1å±‚ä¼ é€Npc ###
+### Ä§Íõ1²ã´«ËÍNpc ###
 
 {
 floorid=154
@@ -169,13 +169,13 @@ borncorner=9,9,9,9
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹1å±‚ä¼ é€Npc
+name=Ä§Íõ1²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang/chuansong.arg
 }
 
-### é­”ç‹2å±‚ä¼ é€Npc ###
+### Ä§Íõ2²ã´«ËÍNpc ###
 
 {
 floorid=155
@@ -183,13 +183,13 @@ borncorner=9,9,9,9
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹2å±‚ä¼ é€Npc
+name=Ä§Íõ2²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang/chuansong.arg
 }
 
-### é­”ç‹3å±‚ä¼ é€Npc ###
+### Ä§Íõ3²ã´«ËÍNpc ###
 
 {
 floorid=156
@@ -197,13 +197,13 @@ borncorner=9,9,9,9
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹3å±‚ä¼ é€Npc
+name=Ä§Íõ3²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang/chuansong.arg
 }
 
-### é­”ç‹4å±‚ä¼ é€Npc ###
+### Ä§Íõ4²ã´«ËÍNpc ###
 
 {
 floorid=157
@@ -211,13 +211,13 @@ borncorner=9,9,9,9
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹4å±‚ä¼ é€Npc
+name=Ä§Íõ4²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang/chuansong.arg
 }
 
-### é­”ç‹5å±‚ä¼ é€Npc ###
+### Ä§Íõ5²ã´«ËÍNpc ###
 
 {
 floorid=147
@@ -225,15 +225,15 @@ borncorner=9,9,9,9
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹5å±‚ä¼ é€Npc
+name=Ä§Íõ5²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang/chuansong.arg
 }
 
-########1å±‚å°æŠ¤å£«#########
+########1²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=154
 borncenter=19,9
 dir=6
@@ -244,9 +244,9 @@ enemy=npcgen_healer|1
 }
 
 
-########2å±‚å°æŠ¤å£«#########
+########2²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=155
 borncenter=19,9
 dir=6
@@ -257,9 +257,9 @@ enemy=npcgen_healer|1
 }
 
 
-########3å±‚å°æŠ¤å£«#########
+########3²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=156
 borncenter=19,9
 dir=6
@@ -270,9 +270,9 @@ enemy=npcgen_healer|1
 }
 
 
-########4å±‚å°æŠ¤å£«#########
+########4²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=157
 borncenter=19,9
 dir=6
@@ -283,9 +283,9 @@ enemy=npcgen_healer|1
 }
 
 
-########5å±‚å°æŠ¤å£«#########
+########5²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=147
 borncenter=19,9
 dir=6
@@ -296,9 +296,9 @@ enemy=npcgen_healer|1
 }
 
 
-########6å±‚å°æŠ¤å£«#########
+########6²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=200
 borncenter=19,9
 dir=6
@@ -309,9 +309,9 @@ enemy=npcgen_healer|1
 }
 
 
-########7å±‚å°æŠ¤å£«#########
+########7²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=208
 borncenter=19,9
 dir=6
@@ -322,9 +322,9 @@ enemy=npcgen_healer|1
 }
 
 
-########8å±‚å°æŠ¤å£«#########
+########8²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=202
 borncenter=19,9
 dir=6

@@ -317,7 +317,7 @@ BOOL PETSKILL_initPetskill( char *filename)
 
     PETSKILL_petskillnum=0;
 
-    /*  まず  効な行が何行あるかどうか調べる    *///读曲宠技总数
+    /*  先检查有多少有效行    *///读曲宠技总数
     while( fgets( line, sizeof( line ), f ) ){
 		char    token[256];
         linenum ++;
@@ -372,10 +372,10 @@ BOOL PETSKILL_initPetskill( char *filename)
                 
         chomp( line );
 
-        /*  行を整形する    */
+        /*  整理行格式    */
         /*  引内 tab 毛 " " 卞  五晶尹月    */
         replaceString( line, '\t' , ' ' );
-        /* 先  のスペースを取る?*/
+        /* 去掉开头的空格*/
 {
         char    buf[256];
         for( i = 0; i < strlen( line); i ++) {
@@ -402,7 +402,7 @@ BOOL PETSKILL_initPetskill( char *filename)
 #endif
 
 		for( i = 0; i < PETSKILL_DATACHARNUM; i ++ ) {
-	        /*    字  用トークンを見る    */
+	        /*    查看字符串用的token    */
 	        ret = getStringFromIndexWithDelim( line,",", i + 1, token,sizeof(token));
 	        if( ret==FALSE ){
 	            fprint("文件语法错误:%s 第%d行\n",filename,linenum);
@@ -475,8 +475,8 @@ BOOL PETSKILL_reinitPetskill( void )
 	return( PETSKILL_initPetskill( getPetskillfile()));
 }
 /*------------------------------------------------------------------------
- * PETSKILL_IDから添字を知る関数
- * 返り値
+ * 从PETSKILL_ID获知下标的函数
+ * 返回值
  * 成  : 添字
  * 撩  : -1
  *-----------------------------------------------------------------------*/
@@ -496,10 +496,10 @@ int PETSKILL_getPetskillArray( int petskillid)
 	return -1;
 }
 /*------------------------------------------------------------
- * ペット  の関数  からポインターを返す
+ * 从宠物技能函数名返回指针
  * 引数
  *  name        char*       热诸及  蟆
- * 返り値
+ * 返回值
  *  楮醒尺及禾奶件正［卅中桦宁卞反NULL
  ------------------------------------------------------------*/
 PETSKILL_CALLFUNC PETSKILL_getPetskillFuncPointer(char* name )
@@ -944,7 +944,7 @@ int PETSKILL_WildViolentAttack(
 	if( ( pszP = strstr( pszOption, "避" ) ) != NULL){
 		sscanf(	 pszP+2, "%d", &iDuck );
 	}
-	//       修正を保存
+	//       保存修正
 	CHAR_SETWORKINT_HIGH( charaindex, CHAR_WORKBATTLECOM3, iDuck );
 
 	return TRUE;
@@ -1283,7 +1283,7 @@ int PETSKILL_StealMoney( int charaindex, int toNo, int array, char *data)
 #endif
 
 //*******************************************************
-// 石  -- アイ  ム合成
+// 石板 -- 道具合成
 //
 int PETSKILL_Merge(
 	int charaindex,

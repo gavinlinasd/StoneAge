@@ -1,8 +1,8 @@
-NomalMainMsg:Ф┬▒Е√°Ф╛╒Е°╗Х█╥Е▐╤Д╦┼Г▌╘Ф╟╢Г▐═О╪│
+NomalMainMsg:нро╡╩╤тз╨ир╤иомФк╝жИё║
 
-#И≈╡Х│┼
+#опад
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>80&ENDEV=81
-NomalWindowMsg:Ф┬▒Е√°Ф╛╒Е°╗Х█╥Е▐╤Д╦┼Г▌╘Ф╟╢Г▐═О╪│
+NomalWindowMsg:нро╡╩╤тз╨ир╤иомФк╝жИё║
 EventEnd

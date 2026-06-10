@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### å—ä¼¤çš„ç”·ä¸»äººå¾·å¤« ######
+###### ÊÜÉËµÄÄĞÖ÷ÈËµÂ·ò ######
 {
-name=å¾·å¤«
+name=µÂ·ò
 floorid=7303
 borncenter=13,10
 dir=6
@@ -14,9 +14,9 @@ enemy=changeevent|file:eden3/offer/druve
 graphicname=16643
 }
 
-###### ç¥­å¸æ‹‰æ³•ç‰¹ ######
+###### ¼ÀË¾À­·¨ÌØ ######
 {
-name=æ‹‰æ³•ç‰¹
+name=À­·¨ÌØ
 floorid=7302
 borncenter=22,21
 dir=4

@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### æµæµªé“¸é€ å¸ˆ ######
+###### Á÷ÀËÖıÔìÊ¦ ######
 {
-name=æµæµªé“¸é€ å¸ˆ
+name=Á÷ÀËÖıÔìÊ¦
 floorid=7000
 borncenter=147,153,1,1
 dir=5
@@ -13,9 +13,9 @@ graphicname=16610
 }
 
 
-###### ç¥ç§˜è€äºº ######
+###### ÉñÃØÀÏÈË ######
 {
-name=ç¥ç§˜è€äºº
+name=ÉñÃØÀÏÈË
 floorid=7000
 borncenter=105,96,1,1
 dir=5
@@ -25,9 +25,9 @@ graphicname=16742
 }
 
 
-###### é»‘æš—ç²¾çµç‹ ######
+###### ºÚ°µ¾«ÁéÍõ ######
 {
-name=é»‘æš—ç²¾çµç‹
+name=ºÚ°µ¾«ÁéÍõ
 floorid=60034
 borncenter=17,12,1,1
 dir=6
@@ -37,7 +37,7 @@ graphicname=100444
 }
 
 
-###### æˆ˜æ–—é»‘æš—ç²¾çµç‹ ######
+###### Õ½¶·ºÚ°µ¾«ÁéÍõ ######
 {
 floorid=60033
 borncenter=17,12,1,1
@@ -46,13 +46,13 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100444
-name=é»‘æš—ç²¾çµç‹
+name=ºÚ°µ¾«ÁéÍõ
 enemy=saveking2pk|file:eden1/saveking2pk.arg
 }
 
-###### ä¼ é€ç‰Œå°ç²¾çµ ######
+###### ´«ËÍÅÆĞ¡¾«Áé ######
 {
-name=å°ç²¾çµ
+name=Ğ¡¾«Áé
 floorid=60034
 borncenter=14,10,1,1
 dir=4
@@ -62,9 +62,9 @@ graphicname=100768
 }
 
 
-###### ä¼ é€çŸ³ ######
+###### ´«ËÍÊ¯ ######
 {
-name=çŸ³æŸ±
+name=Ê¯Öù
 floorid=60011
 borncenter=7,4,1,1
 dir=5
@@ -77,7 +77,7 @@ graphicname=13467
 
 ###### Ê¯Í· ######
 {
-name=å¥‡ç‰¹çš„çŸ³å¤´
+name=ÆæÌØµÄÊ¯Í·
 floorid=60016
 borncenter=6,6,1,1
 dir=5
@@ -86,9 +86,9 @@ enemy=changeevent|file:eden1/saveking/saveking5
 graphicname=24366
 }
 
-###### å¹»å½±ç•Œå®ˆé—¨äºº ######
+###### »ÃÓ°½çÊØÃÅÈË ######
 {
-name=å®ˆé—¨äºº
+name=ÊØÃÅÈË
 floorid=7000
 borncenter=181,52,1,1
 dir=5
@@ -99,9 +99,9 @@ graphicname=16110
 
 
 
-###### æ¡åˆ°ä¿¡å°çš„å°é¬¼ ######
+###### ¼ñµ½ĞÅ·âµÄĞ¡¹í ######
 {
-name=æ‰¾å® ç‰©çš„å°å­©
+name=ÕÒ³èÎïµÄĞ¡º¢
 floorid=7000
 borncenter=115,157,1,1
 dir=5

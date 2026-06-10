@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:浠婂ぉ涓婄彮鐨勬椂鍊欐湁灏兼柉鏉ョ殑瀹汉鍋锋懜鎴戝枖锛屽ソ璁ㄥ帉鍠旓紒
+NomalWindowMsg:今天上班的时候有尼斯来的客人偷摸我喔，好讨厌喔！
 EventEnd

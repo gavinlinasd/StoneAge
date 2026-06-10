@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:鑳芥湁杩欎箞涓�涓湴鏂瑰彲浠ュぇ瀹朵竴璧风帺娓告垙瀹炲湪澶湁瓒ｄ簡锛屾父涔愬満鍒板簳鏄皝鎯冲嚭鏉ョ殑鐐瑰瓙鍟婏紵
+NomalWindowMsg:能有这么一个地方可以大家一起玩游戏实在太有趣了，游乐场到底是谁想出来的点子啊？
 EventEnd

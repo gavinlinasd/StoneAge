@@ -1,11 +1,11 @@
-NomalMainMsg:æˆ‘æ˜¯é€é’±çš„.
+NomalMainMsg:ÎÒÊÇËÍÇ®µÄ.
 
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>0
-AcceptMsg:è¦é’±å—?
-ThanksMsg:å¥½å°±é€ç»™ä½ å§.å¤šè°¢æˆ‘å™¢~!
-StoneFullMsg:å¯¹ä¸èµ·,ä½ çš„é’±å¤ªå¤šäº†,ä¸¢æŽ‰ç‚¹å§.
+AcceptMsg:ÒªÇ®Âð?
+ThanksMsg:ºÃ¾ÍËÍ¸øÄã°É.¶àÐ»ÎÒàÞ~!
+StoneFullMsg:¶Ô²»Æð,ÄãµÄÇ®Ì«¶àÁË,¶ªµôµã°É.
 GetStone:990000
 EventEnd
 

@@ -1,22 +1,22 @@
 NEWNPCENEMY
 
-####æš´é¾™ï¼§ï¼°å›¢æˆ˜æ–—äºº####
+####±©Áú£Ç£ÐÍÅÕ½¶·ÈË####
 
 entype:2
-askbattlemsg1:å’‹ã‚›ã‚›å’‹ã‚›ã‚›
-startmsg:å’‹ã‚›ã‚›å’‹ã‚›ã‚›
+askbattlemsg1:ºð¡«¡«ºð¡«¡«
+startmsg:ºð¡«¡«ºð¡«¡«
 dieact:1
 warpfl:0
 warpx:0
 warpy:0
 enemyno:2035,2036,2036,2033,2033
-deniedmsg:å’‹ã‚›ã‚›å’‹ã‚›ã‚›
-alreadymsg:å’‹ã‚›ã‚›å’‹ã‚›ã‚›
+deniedmsg:ºð¡«¡«ºð¡«¡«
+alreadymsg:ºð¡«¡«ºð¡«¡«
 onebattle:1
 OVER
 
 NEWEVENT1:
 FREE:LV>89&ENDEV=4&ENDEV=81&NOWEV=125&ITEM=1481&ITEM=2414
 WARP:60076,53,29
-endmsg:å’‹ã‚›ã‚›å’‹ã‚›ã‚›å’‹ã‚›ã‚›å’‹ã‚›ã‚›
+endmsg:ºð¡«¡«ºð¡«¡«ºð¡«¡«ºð¡«¡«
 OVER

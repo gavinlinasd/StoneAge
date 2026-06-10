@@ -1,10 +1,10 @@
-NomalMainMsg:é±—è–¦ã‚›ã‚›é±—è–¦ã‚›ã‚›
+NomalMainMsg:ÎÚÁ¦¡«¡«ÎÚÁ¦¡«¡«
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=2414&ENDEV=64
-NomalWindowMsg:\nç»ˆäºæ˜ç™½è¨å§†å‰å°”å¦‚ä½•å¸¦é¢†æ³¢æ‹‰å²›äººæ°‘å‰å¾€å°¼æ–¯å¤§é™†çš„æ•´ä¸ªæ¥é¾™å»è„‰äº†å§ï¼Ÿ
+NomalWindowMsg:\nÖÕÓÚÃ÷°×ÈøÄ·¼ª¶ûÈçºÎ´øÁì²¨À­µºÈËÃñÇ°ÍùÄáË¹´óÂ½µÄÕû¸öÀ´ÁúÈ¥ÂöÁË°É£¿
 EventEnd
 
 
@@ -12,7 +12,7 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=2414&NOWEV=64
-NomalWindowMsg:\næµ·çš„ç²¾çµç›ä¸½å¨œä¸å±…ç„¶ä¸è¨å§†å‰å°”ç›¸è¯†ï¼Œè¿™å²‚ä¸æ˜¯ä¸ªç¥å¥‡çš„é‚‚é€…ï¼Ÿ
+NomalWindowMsg:\nº£µÄ¾«ÁéÂêÀöÄÈË¿¾ÓÈ»ÓëÈøÄ·¼ª¶ûÏàÊ¶£¬ÕâÆñ²»ÊÇ¸öÉñÆæµÄåâåË£¿
 EventEnd
 
 
@@ -20,7 +20,7 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=2414&ENDEV=63
-NomalWindowMsg:ä½ æœ‰çœ‹åˆ°é¾™ç‹äº†å§...ï¼Œä¸çŸ¥é“ä½ ä¼šæœ‰ä»€ä¹ˆæ„Ÿæƒ³ã€‚\näººç±»ä¸æé¾™ä¹‹é—´çš„é—®é¢˜ï¼Œæˆ‘æƒ³ä»¥åä¹Ÿè¿˜ä¼šé™†ç»­å†å‘ç”Ÿå§...
+NomalWindowMsg:ÄãÓĞ¿´µ½ÁúÍõÁË°É...£¬²»ÖªµÀÄã»áÓĞÊ²Ã´¸ĞÏë¡£\nÈËÀàÓë¿ÖÁúÖ®¼äµÄÎÊÌâ£¬ÎÒÏëÒÔºóÒ²»¹»áÂ½ĞøÔÙ·¢Éú°É...
 EventEnd
 
 
@@ -29,7 +29,7 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=2414
-NomalWindowMsg:è¿™é‡Œæ˜¯æ°´åçš„å…¥å£ï¼ï¼åƒä¸‡è¦å°å¿ƒï¼ï¼
+NomalWindowMsg:ÕâÀïÊÇË®°ÓµÄÈë¿Ú£¡£¡Ç§ÍòÒªĞ¡ĞÄ£¡£¡
 EventEnd
 
 
@@ -38,5 +38,5 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:ä¹ŒåŠ›ï½ä¹ŒåŠ›ï½
+NomalWindowMsg:ÎÚÁ¦¡«ÎÚÁ¦¡«
 EventEnd

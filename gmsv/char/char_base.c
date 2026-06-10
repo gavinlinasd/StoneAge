@@ -656,7 +656,7 @@ static char* CHAR_setintdata[CHAR_DATAINTNUM]={
     "fl",               /*  CHAR_FLOOR  */
     "x",                /*  CHAR_X */
     "y",                /*  CHAR_Y  */
-    "dir",              /*  CHAR_DIR 12時を0に時計周りに */
+    "dir",              /*  CHAR_DIR 12点钟方向为0,顺时针方向 */
 	"lv",               /*  CHAR_LV  */
     "gld",              /*  CHAR_GOLD    */
 

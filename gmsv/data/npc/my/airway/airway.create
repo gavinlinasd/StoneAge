@@ -1,5 +1,5 @@
 NPCCREATE
-#######å¸å¡å¥‡èˆªç©º ç‘å°”äºšæ–¯ï½é­”æ³•ä¹‹åŸ##########
+#######Ë¾¿¨Ææº½¿Õ Èğ¶ûÑÇË¹¡«Ä§·¨Ö®³Ç##########
 {
 floorid=7500
 borncenter=41,60,1,1
@@ -7,10 +7,10 @@ movecenter=41,60,41,60
 createnum=1
 dir=6
 graphicname=101990
-name=å¸å¡å¥‡èˆªç©º
+name=Ë¾¿¨Ææº½¿Õ
 enemy=airplane|file:my/airway/airway_1.arg
 }
-#######å¸å¡å¥‡èˆªç©º ç‘å°”äºšæ–¯ï½é­”æ³•ä¹‹åŸ##########
+#######Ë¾¿¨Ææº½¿Õ Èğ¶ûÑÇË¹¡«Ä§·¨Ö®³Ç##########
 {
 floorid=7500
 borncenter=41,57,1,1
@@ -18,6 +18,6 @@ movecenter=41,57,41,57
 createnum=1
 dir=6
 graphicname=101990
-name=å¸å¡å¥‡èˆªç©º
+name=Ë¾¿¨Ææº½¿Õ
 enemy=airplane|file:my/airway/airway_2.arg
 }

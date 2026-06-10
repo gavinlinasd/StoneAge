@@ -1,8 +1,8 @@
-NomalMainMsg:闄岀敓浜猴紝娌¤杩囦綘鍟婏紵鍒板湴娲炴帰闄╄闈炲父灏忓績鍟婏紒鍒鎴戞病鎻愰啋浣狅紒
+NomalMainMsg:陌生人，没见过你啊？到地洞探险要非常小心啊！别说我没提醒你！
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>80&ENDEV=81
-NomalWindowMsg:闄岀敓浜猴紝娌¤杩囦綘鍟婏紵\n鍒板湴娲炴帰闄╄闈炲父灏忓績鍟婏紒鍒鎴戞病鎻愰啋浣狅紒
+NomalWindowMsg:陌生人，没见过你啊？\n到地洞探险要非常小心啊！别说我没提醒你！
 EventEnd

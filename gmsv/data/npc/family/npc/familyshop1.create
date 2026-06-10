@@ -1,6 +1,6 @@
 NPCCREATE
 
-#è¨å§†è´©å–å…±é€šç±»
+#ÈøÄ···Âô¹²Í¨Àà
 {
 floorid=1046
 borncorner=3,5,3,5
@@ -9,10 +9,10 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16035
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop1_1
 }
-#è¨å§†è´©å–ç´ æç±»
+#ÈøÄ···ÂôËØ²ÄÀà
 {
 floorid=1048
 borncorner=6,6,6,6
@@ -21,10 +21,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16033
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop1_2
 }
-#è¨å§†è´©å–ä¸“å±ä¸€
+#ÈøÄ···Âô×¨ÊôÒ»
 {
 floorid=1047
 borncorner=6,7,6,7
@@ -33,10 +33,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16017
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop1_3
 }
-#è¨å§†è´©å–ä¸“å±äºŒ
+#ÈøÄ···Âô×¨Êô¶ş
 {
 floorid=1045
 borncorner=5,4,5,4
@@ -45,10 +45,10 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16016
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop1_4
 }
-#æ—é•¿å®ˆé—¨å‘˜
+#×å³¤ÊØÃÅÔ±
 {
 floorid=1040
 borncorner=59,37,59,37
@@ -57,10 +57,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16207
-name=å®¶æ—å®ˆé—¨å‘˜
+name=¼Ò×åÊØÃÅÔ±
 enemy=npcgen_warpman|file:family/npc/wpm1_1
 }
-#è¨å§†é€šè¡Œè¯è´©å–
+#ÈøÄ·Í¨ĞĞÖ¤··Âô
 {
 floorid=1040
 borncorner=32,38,32,38
@@ -69,10 +69,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16036
-name=é€šè¡Œè¯è´©å–å‘˜
+name=Í¨ĞĞÖ¤··ÂôÔ±
 enemy=npcgen_shop|file:family/npc/shop1_5
 }
-#å•†åº—å®ˆé—¨å‘˜(å…±é€šç±»)
+#ÉÌµêÊØÃÅÔ±(¹²Í¨Àà)
 {
 floorid=1040
 borncorner=28,32,28,32
@@ -81,10 +81,10 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16128
-name=å•†åº—è­¦å«
+name=ÉÌµê¾¯ÎÀ
 enemy=npcgen_warpman|file:family/npc/wpm1_2
 }
-#å•†åº—å®ˆé—¨å‘˜(ä¸“å±ä¸€)
+#ÉÌµêÊØÃÅÔ±(×¨ÊôÒ»)
 {
 floorid=1040
 borncorner=35,58,35,58
@@ -93,10 +93,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16120
-name=å•†åº—è­¦å«
+name=ÉÌµê¾¯ÎÀ
 enemy=npcgen_warpman|file:family/npc/wpm1_3
 }
-#å•†åº—å®ˆé—¨å‘˜(ä¸“å±äºŒ)
+#ÉÌµêÊØÃÅÔ±(×¨Êô¶ş)
 {
 floorid=1040
 borncorner=25,53,25,53
@@ -105,6 +105,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16127
-name=å•†åº—è­¦å«
+name=ÉÌµê¾¯ÎÀ
 enemy=npcgen_warpman|file:family/npc/wpm1_4
 }

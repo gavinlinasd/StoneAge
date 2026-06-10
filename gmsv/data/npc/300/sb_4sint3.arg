@@ -1,5 +1,5 @@
 entype:2
-askbattlemsg1:å¦‚æœä½ æƒ³å¾€å‰è¿›ï¼Œå°±å…ˆæ‰“å€’æˆ‘å§ã€‚
+askbattlemsg1:Èç¹ûÄãÏëÍùÇ°½ø£¬¾ÍÏÈ´òµ¹ÎÒ°É¡£
 start msg:
 dieact:1
 warpfl:31603
@@ -7,5 +7,5 @@ warpx:20
 warpy:29
 end msg:
 enemyno:1034,1047,1047,1047,1047
-deniedmsg:ï¼Œï¼Œï¼Œï¼Œï¼Œï¼Œï¼Œï¼Œ
+deniedmsg:¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤
 

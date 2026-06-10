@@ -70,17 +70,28 @@ data paths, and the memory pool. The pool
 here: pointer-heavy structures roughly double on 64-bit, so the
 historical 15M-unit (1.9 GB) setting exhausts mid-boot.
 
+## Encoding policy
+
+- **Source code is UTF-8.** Comments are Simplified Chinese (the original
+  Japanese comments were machine-restored from fossilized mojibake and
+  then translated); a handful of undecipherable fossil fragments and
+  katakana monster names remain as-is.
+- **Game data stays GB18030** (`gmsv/data`, exact bytes of the original
+  pack). This is deliberate: the 2005 parsers read fields into fixed
+  64-byte buffers sized for 2-byte CJK - a UTF-8 conversion of the data
+  (3-byte CJK) overflowed them and silently rejected ~95% of itemset6
+  entries and broke 619 NPC enemy-spawn params. Era clients also expect
+  GB bytes on the wire. Boot must show zero `[ITEM data Error]` lines;
+  if you re-encode the data you will get ~10k of them.
+- Code string literals (server messages) are UTF-8; an unmodified 2005
+  client renders them as mojibake. If you pair this server with an
+  original client, either convert literals at the protocol boundary
+  (lssproto send/recv) or accept garbled server notices.
+
 ## Known caveats
 
-- ~1.4k of the ~10.7k entries in `data/itemset6.txt` (mostly 合成/compose
-  gear) fail the 2005 parser's field validators and are skipped at boot
-  with `[ITEM data Error]` messages. The mismatch is identical with the
-  original GB-encoded data - the data pack is from a newer patch level
-  than this server source. Cosmetic at boot; those items just don't exist.
 - `data/raceman.txt` was missing from the recovered data; a minimal valid
-  stub is committed (pet-race NPCs need real entries to be meaningful).
-- All sources and text data are UTF-8 (converted from the original
-  EUC-JP/GBK mix). A 2005-era Big5/GB client would display garbage; any
-  client work needs a matching encoding decision on the wire.
+  GB18030 stub is committed (pet-race NPCs need real entries to be
+  meaningful).
 - Remaining compiler warnings are cosmetic classes (unused variables,
   intentional truncation); the dangerous classes were fixed.

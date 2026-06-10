@@ -1,26 +1,26 @@
 NEWWARPMAN
 
-####席巴恩####
+####ϯ�Ͷ�####
 
 NOFREE
 FREE:LV>0
-NomalMsg:里面是英嘉的房间，一般人不能进去～～
+NomalMsg:������Ӣ�εķ��䣬һ���˲��ܽ�ȥ����
 OVER
 
 TALKEVENT1
 WARP:7135,9,3
 FREE:PET>0-914&NOWEV=101
-FreeMsg:你是塔耳塔战士团来的人？你要见英嘉是不是？
+FreeMsg:����������սʿ�������ˣ���Ҫ��Ӣ���ǲ��ǣ�
 OVER
 
 TALKEVENT2
 WARP:7133,0,3
 FREE:PET>0-914&ENDEV=101
-FreeMsg:你又来啦！你要进去见英嘉吗？
+FreeMsg:������������Ҫ��ȥ��Ӣ����
 OVER
 
 TALKEVENT3
 WARP:7133,0,3
 FREE:ENDEV=101
-FreeMsg:你又来啦！你要进去见英嘉吗？
+FreeMsg:������������Ҫ��ȥ��Ӣ����
 OVER

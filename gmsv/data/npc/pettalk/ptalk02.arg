@@ -1,18 +1,18 @@
-#涔屽姏涔屽姏
+#乌力乌力
 {
 PETTEMPNO:2
 
 OTHER:
-TalkMsg:鍙鑳借鎴戠殑鑳藉姏涓婂崌锛屾垜灏辫兘鎷ユ湁鍏ㄤ笘鐣屻�侽VER
+TalkMsg:只要能让我的能力上升，我就能拥有全世界。OVER
 
 EVENTRUN1:
 FREE:LV>0
 PET:LV>0
-TalkMsg:杓倹杓倹OVER
+TalkMsg:呜～呜～OVER
 
 EVENTRUN2:
 FREE:LV>0&ITEM=2414&BBI=100388|LV>0&ITEM=2414&BBI=100250
 PET:LV>0
 AddItem:2848
-TalkMsg:涔屽姏涓哥粰浣狅紝涓嬫浣犺娉ㄦ剰鍝...OVER
+TalkMsg:乌力丸给你，下次你要注意哦~...OVER
 }

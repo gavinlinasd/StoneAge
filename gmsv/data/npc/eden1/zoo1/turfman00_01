@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:锛絽锝欙紒鎮ㄤ篃鏄粠灏兼柉鏉ョ殑鍚э紝鎴戝槑鏋楄锛屽崈涓囦笉瑕佸鑷繁澶湁淇″績锛岀帺娓告垙杞绘澗涓�鐐圭帺灏辨槸浜嗭紒
+NomalWindowMsg:Ｈｅｙ！您也是从尼斯来的吧，我嘎林讲，千万不要对自己太有信心，玩游戏轻松一点玩就是了！
 EventEnd

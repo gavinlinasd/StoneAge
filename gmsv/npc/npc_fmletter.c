@@ -223,7 +223,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 			if( itemindex != -1 ){
 				char    msgbuf[128];
 				CHAR_setItemIndex( talkerindex, emptyitemindexinchara, itemindex );
-				/*  Workデータを設定    */
+				/*  设置Work数据    */
 				ITEM_setWorkInt(itemindex, ITEM_WORKOBJINDEX,-1);
 				ITEM_setWorkInt(itemindex, ITEM_WORKCHARAINDEX, talkerindex);
 				CHAR_sendItemDataOne( talkerindex, emptyitemindexinchara);
@@ -233,7 +233,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
-					ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
+					ITEM_getInt( itemindex, ITEM_ID ),  /* 道具编号 */
 #endif
 					"AddLetter(制作邀请函)",
 					CHAR_getInt( talkerindex,CHAR_FLOOR),
@@ -259,7 +259,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 			if( itemindex != -1 ){
 				char    msgbuf[128];
 				CHAR_setItemIndex( talkerindex, emptyitemindexinchara, itemindex );
-				/*  Workデータを設定    */
+				/*  设置Work数据    */
 				ITEM_setWorkInt(itemindex, ITEM_WORKOBJINDEX,-1);
 				ITEM_setWorkInt(itemindex, ITEM_WORKCHARAINDEX, talkerindex);
 				CHAR_sendItemDataOne( talkerindex, emptyitemindexinchara);
@@ -269,7 +269,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
-					ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
+					ITEM_getInt( itemindex, ITEM_ID ),  /* 道具编号 */
 #endif
 					"AddLetter(制作邀请函)",
 					CHAR_getInt( talkerindex,CHAR_FLOOR),
@@ -390,13 +390,13 @@ static BOOL NPC_FmLetter_readData( int meindex, int windowno, BOOL chkflg)
 			
 			/* 戊丢件玄反  骰 */
 			if( line[0] == '#' || line[0] == '\n') continue;
-			/* 改行取る */
+			/* 去掉换行 */
 			chomp( line );
 			
-			/*  行を整形する    */
+			/*  整理行格式    */
 			/*  引内 tab 毛 " " 卞  五晶尹月    */
 			replaceString( line, '\t' , ' ' );
-			/* 先  のスペースを取る?*/
+			/* 去掉开头的空格*/
 			for( i = 0; i < strlen( line); i ++) {
 				if( line[i] != ' ' ) {
 					break;

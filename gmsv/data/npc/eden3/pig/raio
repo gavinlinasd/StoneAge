@@ -1,11 +1,11 @@
-####èŽ±å¾·####
+####À³µÂ####
 
-NomalMainMsg:ç¶²â€µç¶²â€µç¶²ç¶²
+NomalMainMsg:ºô¡«ºô¡«ºôºô
 
-####ä»»åŠ¡ç»“æŸ####
+####ÈÎÎñ½áÊø####
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:æŸµã‚›æŸµæŸµã‚›æŸµã‚›
+NomalWindowMsg:ºô¡«ºôºô¡«ºô¡«
 EventEnd

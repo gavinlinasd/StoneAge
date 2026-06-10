@@ -1,7 +1,7 @@
 NEWNPCENEMY
 
 entype:2
-startmsg:你竟然能到九楼来？
+startmsg:�㾹Ȼ�ܵ���¥����
 dieact:1
 warpfl:0
 warpx:0
@@ -14,5 +14,5 @@ NEWEVENT1:
 FREE:LV>0
 WARP:202,18,9
 AddItem:22214,22223,22214
-endmsg:真不可思议!你竟然能打过八楼，想知道什么叫变态吗？上九楼去吧！
+endmsg:�治��˼��!�㾹Ȼ�ܴ����¥����֪��ʲô�б�̬���Ͼ�¥ȥ�ɣ�
 OVER

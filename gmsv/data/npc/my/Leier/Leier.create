@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-####åœ°ä»»åŠ¡####
+####µØÈÎÎñ####
 {
-name=å•¦å•¦
+name=À²À²
 floorid=902
 borncenter=28,20
 dir=5
@@ -13,9 +13,9 @@ graphicname=100854
 enemy=changeevent|file:my/Leier/Rabbit.arg
 }
 
-####æ°´ä»»åŠ¡####
+####Ë®ÈÎÎñ####
 {
-name=å•¦å•¦
+name=À²À²
 floorid=904
 borncenter=28,20
 dir=5
@@ -25,9 +25,9 @@ graphicname=100854
 enemy=changeevent|file:my/Leier/Rabbit.arg
 }
 
-####ç«ä»»åŠ¡####
+####»ğÈÎÎñ####
 {
-name=å•¦å•¦
+name=À²À²
 floorid=906
 borncenter=28,20
 dir=5
@@ -37,9 +37,9 @@ graphicname=100854
 enemy=changeevent|file:my/Leier/Rabbit.arg
 }
 
-####é£ä»»åŠ¡####
+####·çÈÎÎñ####
 {
-name=å•¦å•¦
+name=À²À²
 floorid=908
 borncenter=28,20
 dir=5

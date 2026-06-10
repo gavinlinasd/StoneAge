@@ -2,7 +2,7 @@
 #define __PET_H__
 
 /*
- * ペット関  の設定です?
+ * 宠物相关的设置
  */
 #include "version.h"
 #include "common.h"

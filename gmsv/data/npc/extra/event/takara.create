@@ -1,6 +1,6 @@
 NPCCREATE
 #{
-#鏈紑鏀剧殑瀹濈
+#未开放的宝箱
 #floorid=100
 #borncorner=393,427,393,427
 #floorid=909999
@@ -10,12 +10,12 @@ NPCCREATE
 #dir=6
 #ignoreinvincible=1
 #graphicname=24309
-#name=瀹濈
+#name=宝箱
 #enemy=changeevent|file:extra/event/takara
 #}
 
 #{
-#鏈紑鏀剧殑瀹濈
+#未开放的宝箱
 #floorid=20701
 #borncorner=3,41,3,41
 #floorid=909999
@@ -25,7 +25,7 @@ NPCCREATE
 #dir=6
 #ignoreinvincible=1
 #graphicname=24309
-#name=瀹濈
+#name=宝箱
 #enemy=changeevent|file:extra/event/takara2
 #}
 

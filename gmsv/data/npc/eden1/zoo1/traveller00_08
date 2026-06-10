@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:杩欏効鍔ㄧ墿鐨勮倝涓嶇煡閬撳ソ涓嶅ソ鍚冿紝浣犳湁娌℃湁鎷挎潵鍋氳繃鏂欑悊鍛紵
+NomalWindowMsg:这儿动物的肉不知道好不好吃，你有没有拿来做过料理呢？
 EventEnd

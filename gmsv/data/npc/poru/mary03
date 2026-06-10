@@ -1,24 +1,24 @@
-NomalMainMsg:士兵大哥真是辛苦！
+NomalMainMsg:ʿ������������࣡
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=64
-NomalWindowMsg:\n尼斯大陆……，不知道是怎样的地方，我好期待喔！
+NomalWindowMsg:\n��˹��½��������֪���������ĵط����Һ��ڴ�ร�
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=65&ITEM=18553
-NomalWindowMsg:\n赶快去见见泰坦队长吧，有什么大事要发生的样子……
+NomalWindowMsg:\n�Ͽ�ȥ����̩̹�ӳ��ɣ���ʲô����Ҫ���������ӡ���
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:NOWEV=65&ITEM=18552&ITEM=18551
-NomalWindowMsg:\n赶快把公文还给士兵大哥吧，他一定担心死了……
+NomalWindowMsg:\n�Ͽ�ѹ��Ļ���ʿ�����ɣ���һ���������ˡ���
 EventEnd
 
 
@@ -26,7 +26,7 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:NOWEV=65
-NomalWindowMsg:\n我们到波拉河的下游看看能不能找回他的公文好吗？
+NomalWindowMsg:\n���ǵ������ӵ����ο����ܲ����һ����Ĺ��ĺ���
 EventEnd
 
 
@@ -34,6 +34,6 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:NOWEV=64
-NomalWindowMsg:\n这位泰坦队士兵大哥看起来好像正在烦恼什么呢？\n问他看看吧！
+NomalWindowMsg:\n��λ̩̹��ʿ����翴�����������ڷ���ʲô�أ�\n���������ɣ�
 EventEnd
 

@@ -1,5 +1,5 @@
 NPCCREATE
-#######ãƒ€ã‚¤ã‚¹##########
+#######¥À¥¤¥¹##########
 {
 floorid=100
 borncenter=344,355,1,1
@@ -7,10 +7,10 @@ movecenter=20,20,100,100
 createnum=1
 dir=3
 graphicname=100432
-name=æˆ´æ–¯
+name=´÷Ë¹
 enemy=sb_dice|file:100/sb_dpd.arg
 }
-#######ãƒãƒ¼ã‚«ãƒ¼##########
+#######¥İ¡¼¥«¡¼##########
 {
 floorid=100
 borncenter=344,356,1,1
@@ -18,10 +18,10 @@ movecenter=20,20,100,100
 createnum=1
 dir=2
 graphicname=100436
-name=å®å¡
+name=±¦¿¨
 enemy=sb_por|file:100/sb_dpd.arg
 }
-#######ãƒ€ãƒ¼ãƒ„##########
+#######¥À¡¼¥Ä##########
 {
 floorid=100
 borncenter=344,357,1,1
@@ -29,6 +29,6 @@ movecenter=20,20,100,100
 createnum=1
 dir=1
 graphicname=100434
-name=è¾¾å§¿
+name=´ï×Ë
 enemy=sb_dar|file:100/sb_dpd.arg
 }

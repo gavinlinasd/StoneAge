@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:鍝堝搱鍝堬綖锝炴垜宸茬粡杩炶耽浜斿崄娆′簡锛岃涓嶅畾鎴戝鐜╄疆鐩樻父鎴忔湁澶╀唤鍠旓紒
+NomalWindowMsg:哈哈哈～～我已经连赢五十次了，说不定我对玩轮盘游戏有天份喔！
 EventEnd

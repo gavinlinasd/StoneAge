@@ -1,14 +1,14 @@
 LIMITSHOP
 sell_rate:0.7
-main_msg:æ¬¢è¿å…‰ä¸´ï¼
-buy_msg:ä¹°,è´­ä¹°,æ„Ÿè°¢æ‚¨,kau,buy,menu,è°¢è°¢,ä¹°ä¸œè¥¿
-sell_msg:å–ä¸œè¥¿,å–,sell,uru
-sell_main:å®¢äººè¦å–é‚£å—è‚‰ç»™æˆ‘å‘¢ï¼Ÿ\n
-other_msg:æš—ç¤º,æ™¯æ°”æ˜¯,è‚‰,niku
-hint_msg:ç°åœ¨åŠ ç›Ÿåº—å‹Ÿé›†ä¸­å–”ï¼Œä½ ä¹Ÿæƒ³åŠ ç›Ÿå—ï¼Ÿ
-sellonly_msg:è¿™é‡Œæ˜¯åªä¹°æ”¶çš„ä¸“é—¨åº—å–”ã€‚\n
-stone_msg:æ‚¨æ‹¥æœ‰çš„é‡‘é’±å¤ªå¤šäº†å–”ï¼
-realy_msg:è¿™æ ·å°±å¥½äº†å—ï¼Ÿ
+main_msg:»¶Ó­¹âÁÙ£¡
+buy_msg:Âò,¹ºÂò,¸ĞĞ»Äú,kau,buy,menu,Ğ»Ğ»,Âò¶«Î÷
+sell_msg:Âô¶«Î÷,Âô,sell,uru
+sell_main:¿ÍÈËÒªÂôÄÇ¿éÈâ¸øÎÒÄØ£¿\n
+other_msg:°µÊ¾,¾°ÆøÊÇ,Èâ,niku
+hint_msg:ÏÖÔÚ¼ÓÃËµêÄ¼¼¯ÖĞà¸£¬ÄãÒ²Ïë¼ÓÃËÂğ£¿
+sellonly_msg:ÕâÀïÊÇÖ»ÂòÊÕµÄ×¨ÃÅµêà¸¡£\n
+stone_msg:ÄúÓµÓĞµÄ½ğÇ®Ì«¶àÁËà¸£¡
+realy_msg:ÕâÑù¾ÍºÃÁËÂğ£¿
 LimitItemType:
 special_rate:1.0
 LimitItemNo:1234-1249

@@ -8,6 +8,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16001
-name=ä»ªå¼çš„å®¡åˆ¤
+name=ÒÇÊ½µÄÉóÅĞ
 enemy=changeevent|file:my/chengren/chengren.arg
 }

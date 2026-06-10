@@ -68,7 +68,7 @@ static int Callfromcli_Util_getTargetCharaindex( int fd, int toindex)
 }
 /*----------------------------------------
  * 弁仿奶失件玄互夫弘奶件允月 匹手丢乒伉卞卺户月分仃卅及匹民尼永弁反卅中
- * これを呼ぶと CLI になる?
+ * 调用这个就会变成 CLI
  ----------------------------------------*/
 void lssproto_ClientLogin_recv( int fd,char* cdkey, char* passwd )
 {
@@ -87,7 +87,7 @@ void lssproto_ClientLogin_recv( int fd,char* cdkey, char* passwd )
 		}
     }
     //print( "CliLogin cdkey=%s\n" , cdkey );
-    /* connectにコピーする */
+    /* 复制到connect */
     CONNECT_setCdkey( fd, cdkey );
     CONNECT_setPasswd( fd, passwd );
     CONNECT_setCtype( fd, CLI );
@@ -540,7 +540,7 @@ void lssproto_ID_recv( int fd,int x,int y,int haveitemindex,int toindex )
     if (CHAR_getWorkInt(fd_charaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE)
     	return;
                 
-	/* 戦  時は除く   ラグでこれに引っかかる可  性あり  */
+	/* 战斗时除外   有可能被这个旗标挡住  */
 	if( CHAR_getWorkInt( fd_charaindex, CHAR_WORKBATTLEMODE)
 		!= BATTLE_CHARMODE_NONE) return ;
 	//ttom avoid the warp at will 12/5
@@ -558,7 +558,7 @@ void lssproto_ID_recv( int fd,int x,int y,int haveitemindex,int toindex )
 
 
 /*------------------------------------------------------------
- * 称号を選ぶ
+ * 选择称号
  ------------------------------------------------------------*/
 void lssproto_ST_recv( int fd,int titleindex )
 {
@@ -566,7 +566,7 @@ void lssproto_ST_recv( int fd,int titleindex )
     CHAR_selectTitle( CONNECT_getCharaindex( fd) , titleindex );
 }
 /*------------------------------------------------------------
- * 称号を削除する
+ * 删除称号
  ------------------------------------------------------------*/
 void lssproto_DT_recv( int fd,int titleindex )
 {
@@ -576,7 +576,7 @@ void lssproto_DT_recv( int fd,int titleindex )
 
 
 /*------------------------------------------------------------
- * 自己称号を    する
+ * 设置自定义称号
  ------------------------------------------------------------*/
 void lssproto_FT_recv( int fd,char* data )
 {
@@ -591,7 +591,7 @@ void lssproto_FT_recv( int fd,char* data )
 }
 
 /*------------------------------------------------------------
- * アイ  ムを拾う
+ * 拾取道具
  ------------------------------------------------------------*/
 void lssproto_PI_recv( int fd,int x, int y, int dir )
 {
@@ -653,7 +653,7 @@ void lssproto_DP_recv( int fd,int x, int y, int petindex )
 }
 
 /*------------------------------------------------------------
- * 金を  く
+ * 放置金钱
  ------------------------------------------------------------*/
 void lssproto_DG_recv( int fd,int x, int y, int amount )
 {
@@ -670,7 +670,7 @@ void lssproto_DG_recv( int fd,int x, int y, int amount )
    }
    CHAR_setMyPosition( fd_charaindex, x,y,TRUE);
 
-	/* 戦    は除く   ラグでこれに引っかかる可  性あり  */
+	/* 战斗中除外   有可能被这个旗标挡住  */
 	if( CHAR_getWorkInt( fd_charaindex, CHAR_WORKBATTLEMODE)
 		!= BATTLE_CHARMODE_NONE) return ;
 		
@@ -695,7 +695,7 @@ void lssproto_MI_recv( int fd,int fromindex,int toindex )
     if (CHAR_getWorkInt(fd_charaindex, CHAR_WORKTRADEMODE) != CHAR_TRADE_FREE)
 	    	return;
     
-	/* 戦    は除く   ラグでこれに引っかかる可  性あり  */
+	/* 战斗中除外   有可能被这个旗标挡住  */
 	if( CHAR_getWorkInt( fd_charaindex, CHAR_WORKBATTLEMODE)
 		!= BATTLE_CHARMODE_NONE) return ;
     CHAR_moveEquipItem( fd_charaindex, fromindex, toindex );
@@ -711,14 +711,14 @@ void lssproto_SKUP_recv( int fd,int skillid )
     CHECKFDANDTIME;
     fd_charaindex = CONNECT_getCharaindex(fd);
 
-	/* 戦    は除く   ラグでこれに引っかかる可  性あり  */
+	/* 战斗中除外   有可能被这个旗标挡住  */
 	if( CHAR_getWorkInt( fd_charaindex, CHAR_WORKBATTLEMODE)
 		!= BATTLE_CHARMODE_NONE) return ;
     CHAR_SkillUp(fd_charaindex,skillid);
 }
 
 /*------------------------------------------------------------
- * コネク竺ョン相手にメッセージを送信
+ * 向连接对象发送讯息
  ------------------------------------------------------------*/
 void lssproto_MSG_recv( int fd,int index,char* message, int color )
 {
@@ -741,7 +741,7 @@ void lssproto_AB_recv( int fd )
 }
 
 /*------------------------------------------------------------
- * アドレスブックの項  を削除する
+ * 删除通讯录的条目
  ------------------------------------------------------------*/
 void lssproto_DAB_recv( int fd , int index)
 {
@@ -779,7 +779,7 @@ void lssproto_L_recv( int fd, int dir )
 
 
 /*------------------------------------------------------------
- * チャット用メッセージの送信
+ * 发送聊天用讯息
  ------------------------------------------------------------*/
 void lssproto_TK_recv( int fd,int x, int y,char* message,int color, int area )
 {
@@ -862,7 +862,7 @@ void lssproto_M_recv( int fd, int fl, int x1, int y1 , int x2, int y2 )
  ------------------------------------------------------------*/
 void lssproto_C_recv( int fd, int index )
 {
-    /*  これだけ時間の設定を見ない事にする  */
+    /*  只有这个不检查时间设置  */
     CHECKFD;
     CHAR_sendCSpecifiedObjindex( fd, index);
 }
@@ -984,7 +984,7 @@ void lssproto_EN_recv( int fd , int x,int y )
 	}
 }
 /*------------------------------------------------------------
- * プレイヤー  士でエンカウント  決      生
+ * 玩家之间遭遇  对决发生
  ------------------------------------------------------------*/
 void lssproto_DU_recv( int fd , int x,int y )
 {
@@ -1015,14 +1015,14 @@ void lssproto_DU_recv( int fd , int x,int y )
 		!= CHAR_PARTY_CLIENT)
 	{
 		int		i;
-		// 自分のインデックス
+		// 自己的索引
 	    charaindex = fd_charaindex;
 	    CHAR_setMyPosition( charaindex, x,y,TRUE);
 	    /* WALKARRAY毛弁伉失允月 */
 		CHAR_setWorkChar( charaindex, CHAR_WORKWALKARRAY,"");
 
 
-		/* 初期化する */
+		/* 进行初始化 */
 		for( i = 0; i < CONNECT_WINDOWBUFSIZE ; i ++ ) {
             CONNECT_setDuelcharaindex( fd, i, -1 );
 	    }
@@ -1044,14 +1044,14 @@ void lssproto_DU_recv( int fd , int x,int y )
 	        /* 平乓仿弁正□元扎卅中 */
 	        if( OBJECT_getType( objindex) != OBJTYPE_CHARA) continue;
 	        toindex = OBJECT_getIndex( objindex);
-	        /* プレイヤーじゃない */
+	        /* 不是玩家 */
 	        if( CHAR_getInt( toindex, CHAR_WHICHTYPE) != CHAR_TYPEPLAYER ) continue;
 			found = TRUE;
 	        /* 爵    分匀凶日蛲   */
 	        if( CHAR_getWorkInt( toindex, CHAR_WORKBATTLEMODE) != BATTLE_CHARMODE_NONE ){
 				continue;
 			}
-			/* 参戦拒  なら駄   */
+			/* 拒绝参战的话不行   */
 			if( !CHAR_getFlg( toindex, CHAR_ISDUEL)) continue;
 
                         // shan begin
@@ -1077,7 +1077,7 @@ void lssproto_DU_recv( int fd , int x,int y )
 				== CHAR_PARTY_CLIENT )
 			{
 				int tmpindex = CHAR_getWorkInt( toindex, CHAR_WORKPARTYINDEX1 );
-				/* 相手がプレイヤーでない事もある */
+				/* 对方也可能不是玩家 */
 				if( CHAR_CHECKINDEX( tmpindex)) {
 					if( CHAR_getWorkInt( tmpindex, CHAR_WHICHTYPE) != CHAR_TYPEPLAYER){
 						continue;
@@ -1104,7 +1104,7 @@ void lssproto_DU_recv( int fd , int x,int y )
 				== CHAR_PARTY_CLIENT )
 			{
 				enemyindex = CHAR_getWorkInt( enemyindex, CHAR_WORKPARTYINDEX1 );
-				// なぜか親がいない
+				// 不知为何没有队长
 				if( enemyindex < 0 )goto lssproto_DU_recv_Err;
 			}
 			ret = BATTLE_CreateVsPlayer( charaindex, enemyindex );
@@ -1121,7 +1121,7 @@ void lssproto_DU_recv( int fd , int x,int y )
 			char	escapebuf[2048];
 			strcpy( msgbuf, "1\n要和谁战斗？\n");
 			strlength = strlen( msgbuf);
-			/* ウィンドウのメッセージ作成?
+			/* 生成窗口讯息
 			 * 爵    及平乓仿及域  
 			 */
 			for( i = 0;
@@ -1156,7 +1156,7 @@ void lssproto_DU_recv( int fd , int x,int y )
 	}
 
 
-// エラー処  
+// 错误处理  
 lssproto_DU_recv_Err:;
 	if( ret == FALSE ) {
 		/* 結果送信 */
@@ -1323,7 +1323,7 @@ void lssproto_PR_recv( int fd,int x, int y, int request )
    CHAR_setMyPosition( fd_charaindex, x,y,TRUE);
 
 	if( request == 0 ) {
-		/* 除隊する */
+		/* 退出队伍 */
 		result = CHAR_DischargeParty(fd_charaindex, 0);
 	}
 	else if( request == 1 ) {
@@ -1695,7 +1695,7 @@ void lssproto_HL_recv( int fd,int flg )
 				  CHAR_getChar( fd_charaindex, CHAR_NAME));
 	}
 	else {
-		/* 恭助けモードのフラグ  とす */
+		/* 清除帮助模式的旗标 */
 		BattleArray[CHAR_getWorkInt( fd_charaindex,
 			CHAR_WORKBATTLEINDEX)].Side[
 			CHAR_getWorkInt( fd_charaindex,
@@ -1717,7 +1717,7 @@ void lssproto_HL_recv( int fd,int flg )
 			if( tofd != -1 ) {
 				lssproto_HL_send( tofd, flg);
 			}
-			/* メッセージ送信 */
+			/* 发送讯息 */
 			CHAR_talkToCli( toindex, -1, msgbuf, CHAR_COLORYELLOW);
 			/* 云踞仃CA  憎］引凶反壅允 */
 			CHAR_sendBattleEffect( toindex, ON);
@@ -1752,7 +1752,7 @@ void lssproto_PlayerNumGet_recv( int fd )
 
 
 /*------------------------------------------------------------
- * 観戦要求  生?
+ * 观战请求发生
  ------------------------------------------------------------*/
 void lssproto_LB_recv( int fd,int x,int y )
 {
@@ -1811,7 +1811,7 @@ void lssproto_PMSG_recv( int fd,int index,int petindex,int itemindex,
 
 }
 /*------------------------------------------------------------
- * ペット  使用受信
+ * 收到宠物邮件使用
  ------------------------------------------------------------*/
 void lssproto_PS_recv( int fd, int havepetindex, int havepetskill, int toindex, char* data )
 {

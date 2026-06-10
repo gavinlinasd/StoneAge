@@ -6,18 +6,18 @@
 /*
  *  伉件弁及  卞勾仃月
  * 引数
- *      top         トップノード
+ *      top         顶端节点
  *      add         尥仃笛尹月用□玉及    毛忡  允月用□玉尺及禾奶件正□
- * 返り値
+ * 返回值
  *      TRUE(1)     岳  
  *      FALSE(0)    撩  
  */
 BOOL Nodeappendtail( Node** top  , Node* add )
 {
-    Node* c;        /*郊ープ用*/
-    Node* next;     /*新しく作るノード用*/
+    Node* c;        /*循环用*/
+    Node* next;     /*新建节点用*/
 
-    /*トップがNULLかどうかのチェック*/
+    /*检查顶端是否为NULL*/
     if( *top == NULL ){
         *top = allocateMemory( sizeof( Node  ) );
         if( *top== NULL ) return FALSE;
@@ -30,7 +30,7 @@ BOOL Nodeappendtail( Node** top  , Node* add )
     for( c = *top ; c->next ; c = c->next ); /* c及匏  毛内日允 */
     next = allocateMemory( sizeof(Node) );
     if( next == NULL )return FALSE;
-    c->next = next;                         /* nextに値を設定する */
+    c->next = next;                         /* 给next设置值 */
     next->next  = NULL;                      /*粮五反  中*/
     next->val   = add->val;                   /*禾奶件正□及戊疋□*/
     next->size  = add->size;             /*赢今及忡栋*/
@@ -43,17 +43,17 @@ BOOL Nodeappendtail( Node** top  , Node* add )
 /*
  *  伉件弁及蟆卞勾仃月
  * 引数
- *      top         トップノード
+ *      top         顶端节点
  *      add         尥仃笛尹月用□玉及    毛忡  允月用□玉尺及禾奶件正□
- * 返り値
+ * 返回值
  *      TRUE(1)     岳  
  *      FALSE(0)    撩  
  */
 BOOL Nodeappendhead( Node** nowtop  , Node* add )
 {
-    Node* newtop;       /*新しい先  用*/
+    Node* newtop;       /*新的开头用*/
 
-    /*トップがNULLかどうかのチェック*/
+    /*检查顶端是否为NULL*/
     if( *nowtop == NULL ){
         *nowtop = allocateMemory( sizeof( Node  ) );
         if( *nowtop == NULL ) return FALSE;
@@ -80,17 +80,17 @@ BOOL Nodeappendhead( Node** nowtop  , Node* add )
 
 
 /*
- * 一    初のノードを引数にコピーして取り除く
+ * 把列表最前面的节点复制到参数并移除
  * 引数
  *          top         用□玉及燮  
  *          ret         潸曰轮中凶用□玉及戊疋□
- * 返り値
+ * 返回值
  *      TRUE(1)         岳  
  *      FALSE(0)        撩      用□玉及燮  互NULL
  */
 BOOL  Noderemovehead( Node** top , Node* ret)
 {
-    Node* newtop;         /*新しく先  になるノード*/
+    Node* newtop;         /*成为新开头的节点*/
 
     if( *top == NULL )return FALSE;
 
@@ -108,18 +108,18 @@ BOOL  Noderemovehead( Node** top , Node* ret)
 
 
 /*
- * 一      のノードを引数にコピーして取り除く
+ * 把列表最后面的节点复制到参数并移除
  * 引数
  *          top         用□玉及燮  
  *          ret         潸曰轮中凶用□玉及戊疋□
- * 返り値
+ * 返回值
  *      TRUE(1)         岳  
  *      FALSE(0)        撩      用□玉及燮  互NULL
  */
 BOOL  Noderemovetail( Node** top , Node* ret)
 {
-    Node* c;             /*郊ープ用*/
-    Node* c1;            /*郊ープ用 いつでも c->nextを指す*/
+    Node* c;             /*循环用*/
+    Node* c1;            /*循环用 总是指向 c->next*/
 
     if( *top == NULL )return FALSE;
 
@@ -128,7 +128,7 @@ BOOL  Noderemovetail( Node** top , Node* ret)
     while(1){
         if( c1->next == NULL )
             /*
-             * この時点で          c1
+             * 此时          c1
              *                      |
              *  c ---> +------+       
              *         | next |---->+------+
@@ -143,7 +143,7 @@ BOOL  Noderemovetail( Node** top , Node* ret)
         c1=c->next;
     }
     c->next = NULL;     /*c1卞丐凶月手及毛绰轮允月及匹next反NULL午允月*/
-    /*コピー*/
+    /*复制*/
     ret->val    = c1->val;
     ret->size   = c1->size;
 

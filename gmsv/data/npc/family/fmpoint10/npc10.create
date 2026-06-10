@@ -1,10 +1,10 @@
 NPCCREATE
-###### ç‘å°”äºšæ–¯ä¸€èˆ¬NPC ######
+###### Èğ¶ûÑÇË¹Ò»°ãNPC ######
 
 
-### ç‘å°”äºšæ–¯å¥³æ€§
+### Èğ¶ûÑÇË¹Å®ĞÔ
 {
-name=æ¯•ç‰¹
+name=±ÏÌØ
 floorid=104
 borncenter=46,49
 dir=4
@@ -13,9 +13,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_1
 graphicname=16165
 }
 
-### ç‘å°”äºšæ–¯ç”·æ€§
+### Èğ¶ûÑÇË¹ÄĞĞÔ
 {
-name=ç‘å°”äºšæ–¯ç”·å­
+name=Èğ¶ûÑÇË¹ÄĞ×Ó
 floorid=104
 borncenter=38,48
 dir=4
@@ -24,9 +24,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_2
 graphicname=17030
 }
 
-### ç‘å°”äºšæ–¯å°å­©
+### Èğ¶ûÑÇË¹Ğ¡º¢
 {
-name=ç‘å°”äºšæ–¯å°å­©
+name=Èğ¶ûÑÇË¹Ğ¡º¢
 floorid=104
 borncenter=35,49
 dir=4
@@ -35,9 +35,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_3
 graphicname=17003
 }
 
-### ç‘å°”äºšæ–¯å¥³æ€§
+### Èğ¶ûÑÇË¹Å®ĞÔ
 {
-name=ç‘å°”äºšæ–¯å¥³å­
+name=Èğ¶ûÑÇË¹Å®×Ó
 floorid=104
 borncenter=31,47
 dir=6
@@ -46,9 +46,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_4
 graphicname=16985
 }
 
-### ç‘å°”äºšæ–¯å¥³æ€§
+### Èğ¶ûÑÇË¹Å®ĞÔ
 {
-name=ç‘å°”äºšæ–¯å¥³æ€§
+name=Èğ¶ûÑÇË¹Å®ĞÔ
 floorid=7500
 borncenter=23,77
 dir=6
@@ -57,9 +57,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_44
 graphicname=17027
 }
 
-### æˆ¿é—´1ç‘å°”äºšæ–¯ç”·æ€§
+### ·¿¼ä1Èğ¶ûÑÇË¹ÄĞĞÔ
 {
-name=ç‘å°”äºšæ–¯ç”·å­
+name=Èğ¶ûÑÇË¹ÄĞ×Ó
 floorid=104
 borncenter=44,33
 dir=6
@@ -68,9 +68,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_5
 graphicname=16995
 }
 
-### æˆ¿é—´2
+### ·¿¼ä2
 {
-name=ç‘å°”äºšæ–¯ç”·å­
+name=Èğ¶ûÑÇË¹ÄĞ×Ó
 floorid=104
 borncenter=49,33
 dir=6
@@ -79,9 +79,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_6
 graphicname=16162
 }
 
-### æˆ¿é—´3
+### ·¿¼ä3
 {
-name=ç‘å°”äºšæ–¯æ•™å¸ˆ
+name=Èğ¶ûÑÇË¹½ÌÊ¦
 floorid=104
 borncenter=54,33
 dir=6
@@ -90,9 +90,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_7
 graphicname=16953
 }
 
-### ç‘å°”äºšæ–¯è®®ä¼šå®ˆå«
+### Èğ¶ûÑÇË¹Òé»áÊØÎÀ
 {
-name=é¦–é•¿å®ˆå«
+name=Ê×³¤ÊØÎÀ
 floorid=7500
 borncenter=77,68
 dir=6
@@ -101,9 +101,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_8
 graphicname=17046
 }
 
-### ç‘å°”äºšæ–¯è®®ä¼šå®ˆå«
+### Èğ¶ûÑÇË¹Òé»áÊØÎÀ
 {
-name=é¦–é•¿å®ˆå«
+name=Ê×³¤ÊØÎÀ
 floorid=7500
 borncenter=77,73
 dir=6
@@ -113,9 +113,9 @@ graphicname=17046
 }
 
 
-### ç‘å°”äºšæ–¯å›½ç‹
+### Èğ¶ûÑÇË¹¹úÍõ
 {
-name=é¦–é•¿ç‘å°”çº³
+name=Ê×³¤Èğ¶ûÄÉ
 floorid=7506
 borncenter=17,21
 dir=6
@@ -124,7 +124,7 @@ enemy=changeevent|file:family/fmpoint10/shouzhang.arg
 graphicname=16989
 }
 
-#ç‘å°”äºšæ–¯å®¶æ—ç®¡ç†å‘˜
+#Èğ¶ûÑÇË¹¼Ò×å¹ÜÀíÔ±
 {
 floorid=7506
 borncenter=19,19,1,1
@@ -133,7 +133,7 @@ createnum=1
 time=0
 dir=6
 graphicname=17013
-name=å®¶æ—ç®¡ç†å‘˜
+name=¼Ò×å¹ÜÀíÔ±
 enemy=familyman|conff:family/familyman.conf
 }
 
@@ -145,7 +145,7 @@ createnum=1
 time=0
 dir=6
 graphicname=16970
-name=å®¶æ—é“¶è¡Œ
+name=¼Ò×åÒøĞĞ
 enemy=bankman|conff:family/bankman.conf
 }
 
@@ -157,13 +157,13 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-### ç‘å°”äºšæ–¯è®®ä¼šå®ˆå«
+### Èğ¶ûÑÇË¹Òé»áÊØÎÀ
 {
-name=è®®ä¼šè­¦å«
+name=Òé»á¾¯ÎÀ
 floorid=7508
 borncenter=35,21
 dir=6
@@ -172,9 +172,9 @@ enemy=npcgen_man|file:family/fmpoint10/npc_21
 graphicname=17044
 }
 
-### ç‘å°”äºšæ–¯è®®ä¼šå®ˆå«
+### Èğ¶ûÑÇË¹Òé»áÊØÎÀ
 {
-name=è®®ä¼šè­¦å«
+name=Òé»á¾¯ÎÀ
 floorid=7508
 borncenter=35,30
 dir=6
@@ -182,9 +182,9 @@ createnum=1
 enemy=npcgen_man|file:family/fmpoint10/npc_21
 graphicname=17044
 }
-### è ¡ã‚‡
+### ÄùÆë
 {
-name=è ¡ã‚‡
+name=ÄùÆë
 floorid=7508
 borncenter=39,28
 dir=6
@@ -193,9 +193,9 @@ enemy=changeevent|file:family/fmpoint10/guardleader.arg
 graphicname=17048
 }
 
-### ç¥­å¸çˆ±æ´¥
+### ¼ÀË¾°®½ò
 {
-name=ç¥­å¸çˆ±æ´¥
+name=¼ÀË¾°®½ò
 floorid=7500
 borncenter=47,49
 dir=6
@@ -204,7 +204,7 @@ enemy=changeevent|file:family/fmpoint10/jisi.arg
 graphicname=16151
 }
 
-#ç‘å°”äºšæ–¯24åº—
+#Èğ¶ûÑÇË¹24µê
 {
 floorid=7509
 borncorner=14,14,14,14
@@ -213,7 +213,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16902
-name=ç‘å°”äºšæ–¯åˆæˆåº—
+name=Èğ¶ûÑÇË¹ºÏ³Éµê
 enemy=npcgen_shop|file:family/fmpoint10/ss_10309_13_10
 }
 #line 164
@@ -225,7 +225,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16902
-name=ç‘å°”äºšæ–¯åˆæˆåº—
+name=Èğ¶ûÑÇË¹ºÏ³Éµê
 enemy=npcgen_shop|file:family/fmpoint10/ss_10309_11_10
 }
 #line 166
@@ -237,7 +237,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16912
-name=ç‘å°”äºšæ–¯æ–™ç†åº—
+name=Èğ¶ûÑÇË¹ÁÏÀíµê
 enemy=npcgen_shop|file:family/fmpoint10/ss_10309_10_25
 }
 
@@ -249,13 +249,13 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16802
-name=ç‘å°”äºšæ–¯å¯„æ”¾åº—
+name=Èğ¶ûÑÇË¹¼Ä·Åµê
 enemy=npcgen_poolitemshop|file:genout/pis_1009_14_13
 }
 
 #line33
 {
-name=ç ”ç©¶è€… æ‰å“
+name=ÑĞ¾¿Õß É¼×¿
 floorid=7511
 borncenter=24,9
 time=0
@@ -267,7 +267,7 @@ enemy=changeevent|file:family/fmpoint10/yanjiu1.arg
 }
 #line34
 {
-name=ç ”ç©¶è€…æ¢…å±‹Â·å¡”å¤«
+name=ÑĞ¾¿ÕßÃ·Îİ¡¤Ëş·ò
 floorid=7511
 borncenter=19,8
 time=0
@@ -284,7 +284,7 @@ borncorner=23,18,23,18
 time=0
 createnum=1
 graphicname=17071
-name=ç ”ç©¶å®¤åŠ©ç†
+name=ÑĞ¾¿ÊÒÖúÀí
 dir=4
 ignoreinvincible=1
 enemy=npcgen_man|file:family/fmpoint10/yanjiu3.arg
@@ -299,7 +299,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=ç‘å°”äºšæ–¯çš„ä¼ è¨€æ¿
+name=Èğ¶ûÑÇË¹µÄ´«ÑÔ°å
 enemy=npcgen_dengon
 }
 #line 38
@@ -311,12 +311,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10063
-name=ç‘å°”äºšæ–¯çš„ä¼ è¨€æ¿
+name=Èğ¶ûÑÇË¹µÄ´«ÑÔ°å
 enemy=npcgen_dengon
 }
 #line39
 {
-name=å¯å¨œä¸
+name=¿ÉÄÈË¿
 floorid=7518
 borncenter=15,17
 time=0
@@ -335,7 +335,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=17038
-name=è®­ç»ƒæ‰€è¥å…»å¸ˆ
+name=ÑµÁ·ËùÓªÑøÊ¦
 enemy=npcgen_man|file:family/fmpoint10/xunliansuo1.arg
 }
 #line9
@@ -347,7 +347,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16984
-name=è®­ç»ƒæ‰€æ‰€é•¿
+name=ÑµÁ·ËùËù³¤
 enemy=npcgen_man|file:family/fmpoint10/xunliansuo2.arg
 }
 #line10
@@ -359,7 +359,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=17013
-name=è®­ç»ƒæ‰€åŠ©ç†
+name=ÑµÁ·ËùÖúÀí
 enemy=npcgen_man|file:family/fmpoint10/xunliansuo3.arg
 }
 #line11
@@ -371,7 +371,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16994
-name=æˆ˜æ–—ç»ƒä¹ ç”Ÿ
+name=Õ½¶·Á·Ï°Éú
 enemy=npcgen_man|file:family/fmpoint10/xunliansuo4.arg
 }
 #line12
@@ -383,7 +383,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17061
-name=å® ç‰©è®­ç»ƒå¸ˆ
+name=³èÎïÑµÁ·Ê¦
 enemy=npcgen_petskillshop|file:family/fmpoint10/petskill.arg
 }
 #line13
@@ -395,7 +395,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17053
-name=è®­ç»ƒæ‰€çš„å® ç‰©åº—
+name=ÑµÁ·ËùµÄ³èÎïµê
 enemy=npcgen_petshop|file:family/fmpoint10/pet.arg
 }
 #line14
@@ -407,7 +407,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=17042
-name=ç‘å°”äºšæ–¯çš„è‚‰åº—åº—å‘˜
+name=Èğ¶ûÑÇË¹µÄÈâµêµêÔ±
 enemy=npcgen_limitshop|file:family/fmpoint10/rou.arg
 }
 
@@ -418,7 +418,7 @@ borncorner=22,13,22,13
 time=0
 createnum=1
 graphicname=17000
-name=å°å­©
+name=Ğ¡º¢
 dir=8
 ignoreinvincible=1
 enemy=npcgen_man|file:family/fmpoint10/child1.arg
@@ -430,7 +430,7 @@ borncorner=16,13,16,13
 time=0
 createnum=1
 graphicname=16998
-name=å°å­©
+name=Ğ¡º¢
 dir=8
 ignoreinvincible=1
 enemy=npcgen_man|file:family/fmpoint10/child2.arg
@@ -442,7 +442,7 @@ borncorner=16,16,16,16
 time=0
 createnum=1
 graphicname=17000
-name=å°å­©
+name=Ğ¡º¢
 dir=8
 ignoreinvincible=1
 enemy=npcgen_man|file:family/fmpoint10/child3.arg
@@ -454,7 +454,7 @@ borncorner=23,10,23,10
 time=0
 createnum=1
 graphicname=17002
-name=å°å­©
+name=Ğ¡º¢
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|file:family/fmpoint10/child4.arg
@@ -466,7 +466,7 @@ borncorner=18,8,18,8
 time=0
 createnum=1
 graphicname=17014
-name=æ•™å¸ˆ
+name=½ÌÊ¦
 dir=4
 ignoreinvincible=1
 enemy=npcgen_man|file:family/fmpoint10/teacher.arg

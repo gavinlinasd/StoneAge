@@ -1,25 +1,25 @@
 NEWWARPMAN
 
-####璐濆厠鏍囧叏涓嶆纭紝涓嶇悊 ####
+####贝克标全不正确，不理 ####
 NOFREE
 WARP:0,0,0
 FREE:LV>0
-NomalMsg:浣犳槸璋佸憿锛熸兂杩涘幓鎷垮疂绠卞悧锛熼偅浣犵殑閽ュ寵鍛紵
-PartyMsg:浣犳槸璋佸憿锛熸兂杩涘幓鎷垮疂绠卞悧锛熼偅浣犵殑閽ュ寵鍛紵
+NomalMsg:你是谁呢？想进去拿宝箱吗？那你的钥匙呢？
+PartyMsg:你是谁呢？想进去拿宝箱吗？那你的钥匙呢？
 OVER
 
-####浼犻�佸埌瀹濈鍦板浘####
+####传送到宝箱地图####
 TALKEVENT1
 WARP:8007,13,15
 FREE:LV>79&ENDEV=4&ENDEV=81&ENDEV=126&ITEM=1718&NOWEV=133
-FreeMsg:鏋滅劧涓嶆槸娴緱铏氬悕锛岃窡鎴戣繘鏉ユ垜鍐嶅憡璇変綘鍓嶅洜鍚庢灉鍚э紒
+FreeMsg:果然不是浪得虚名，跟我进来我再告诉你前因后果吧！
 Event_End:133
 OVER
 
-####浼犻�佸埌瀹濈鍦板浘####
+####传送到宝箱地图####
 TALKEVENT2
 WARP:8007,13,15
 FREE:LV>79&ENDEV=4&ENDEV=81&ENDEV=126&ITEM=1719&NOWEV=133
-FreeMsg:鏋滅劧涓嶆槸娴緱铏氬悕锛岃窡鎴戣繘鏉ユ垜鍐嶅憡璇変綘鍓嶅洜鍚庢灉鍚э紒
+FreeMsg:果然不是浪得虚名，跟我进来我再告诉你前因后果吧！
 Event_End:133
 OVER

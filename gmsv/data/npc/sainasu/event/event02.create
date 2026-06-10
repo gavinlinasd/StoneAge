@@ -1,8 +1,8 @@
 NPCCREATE
 
 ###########################################################
-#ç›ä¸½å¨œä¸-è¨å§†å‰å°”ä¹‹é—´ã€€ã€€ã€€ã€€ã€€ã€€ç»™é“å…·çš„äº‹ä»¶ï¼ˆç›ä¸½å¨œä¸ï¼‰#
-# 						æ‹…å½“ï¼šè¥¿ç«¹#
+#ÂêÀöÄÈË¿-ÈøÄ·¼ª¶ûÖ®¼ä¡¡¡¡¡¡¡¡¡¡¡¡¸øµÀ¾ßµÄÊÂ¼ş£¨ÂêÀöÄÈË¿£©#
+# 						µ£µ±£ºÎ÷Öñ#
 ###########################################################
 {
 floorid=2000
@@ -12,7 +12,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16027
-name=å¼¥ç”Ÿ
+name=ÃÖÉú
 enemy=changeevent|file:sainasu/event/event02_1
 }
 {
@@ -23,7 +23,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16030
-name=æ—¥ç¾å­
+name=ÈÕÃÀ×Ó
 enemy=changeevent|file:sainasu/event/event02_2
 }
 

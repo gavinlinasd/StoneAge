@@ -1587,7 +1587,7 @@ void lssproto_M_send(int fd,int fl,int x1,int y1,int x2,int y2,char* data)
  		    CHAR_TYPEDOOR,          玉失
  		    CHAR_TYPEBOX ,              
  		    CHAR_TYPEMSG ,          枣  
- 		    CHAR_TYPEWARP ,         ワープゾーン
+ 		    CHAR_TYPEWARP ,         传送区
  		    CHAR_TYPESHOP ,         饕
  		    CHAR_TYPEHEALER ,       遮＆径＆
  		    CHAR_TYPEOLDMAN ,       Ӯ  
@@ -1602,17 +1602,17 @@ void lssproto_M_send(int fd,int fl,int x1,int y1,int x2,int y2,char* data)
  		    CHAR_TYPEPRINTPASSMAN,  玉失及由旦伐□玉  憎允月NPC
  		    CHAR_TYPENPCENEMY,      听醒劃
  		    CHAR_TYPEACTION,        失弁扑亦件卞  杀允月NPC
- 		    CHAR_TYPEWINDOWMAN,     ウィンドウ  示するNPC    ストかも)
+ 		    CHAR_TYPEWINDOWMAN,     显示窗口的NPC(可能是列表)
  		    CHAR_TYPESAVEPOINT,     本□皮禾奶件玄
  		    CHAR_TYPEWINDOWHEALER,  万通周囁万屎通駐式遮＆径＆
  		    CHAR_TYPEITEMSHOP,	    云饕
- 		    CHAR_TYPESTONESHOP,	    石  屋  ペットの  屋  
+ 		    CHAR_TYPESTONESHOP,	    石板屋  宠物的小屋  
  		    CHAR_TYPEDUELRANKING,   DUEL仿件平件弘NPC
- 		    CHAR_TYPEWARPMAN,	    ワープマンNPC
+ 		    CHAR_TYPEWARPMAN,	    传送人NPC
  		    CHAR_TYPEEVENT,	    通狸周傲NPC
  		    CHAR_TYPEMIC,	    通狸周傲NPC
  		    CHAR_TYPELUCKYMAN,	    通狸周傲NPC
- 		    CHAR_TYPEBUS,	    マンモスバス
+ 		    CHAR_TYPEBUS,	    长毛象巴士
  		    CHAR_TYPECHARM,	    通狸周傲NPC
  		    CHAR_TYPENUM,
  		}CHAR_TYPE;
@@ -1628,7 +1628,7 @@ void lssproto_M_send(int fd,int fl,int x1,int y1,int x2,int y2,char* data)
  		  分今卅仃木壬卅日卅中［ SELFTITLE卞勾中化反｝犯伉立正
  		  匹丐月凶化徇毛孔仁引卅中方丹卞巨旦弗□皿今木化中月［
  		  弁仿奶失件玄反失弁扑亦件及戊穴件玉(CA)互仁月引匹反  
- 		  ちで  示する?CHARINDEXサーバー  の一意にキャラを  
+ 		  方式显示?CHARINDEX是服务器内唯一标识人物的  
  		  烂匹五月  寞｝BASEIMG反  憎及凶户及  寞｝LEVEL反平乓
  		  仿及伊矛伙(0卅日  憎仄卅中［仇及袄反NPC卅升卞银丹［)
  		  WALKABLE反1及午五公及晓毛骚聊允月仇午互匹五｝0卅日骚
@@ -1636,8 +1636,8 @@ void lssproto_M_send(int fd,int fl,int x1,int y1,int x2,int y2,char* data)
  		  卅中及井及隙烂［
  		  
  		  平乓仿弁正□及  蟆午愤  惫寞反｝<a href="#escaping">
- 		  エスケープされなければならない?'|'でトークンを
- 		  取りだしてからエスケープを解除する?エスケープすると'
+ 		  必须经过转义?用'|'取出token
+ 		  之后再解除转义?转义则用'
  		  |'互幻井及  侬卞云五井歹月及匹｝  赓反签账卞'|'毛犯
  		  伉立正午仄化方中［霜耨允月  手｝  蟆午愤  惫寞毛巨旦
                    弗□皿仄化井日凶化徇匹勾卅中匹井日霜耨允月［
@@ -1685,12 +1685,12 @@ void lssproto_C_send(int fd,char* data)
    servertoclient CA( string data );
        (CharacterAction)
        苇尹月  区卞中月平乓仿及失弁扑亦件橇谪毛凳蕙允月［
-       サーバーからクライアントに一  的に送信する?
+       从服务器向客户端单方面发送?
        备平乓仿及1失弁扑亦件仍午卞霜耨［扔□田□反失弁扑亦件毛匹五月分
        仃做谅允月仇午［
        
  	string data
- 	CHARINDEX|X|Y|ACTION|PARAM1|PARAM2|PARAM3|PARAM4|....をコ
+ 	CHARINDEX|X|Y|ACTION|PARAM1|PARAM2|PARAM3|PARAM4|....的格式
  	    件穴匹仁亢匀凶手及卞允月［PARAM反失弁扑亦件仍午卞蜊醒手
  	    银中井凶手仇午卅月［动票反失弁扑亦件域  ［X,Y反匏  匹升
  	    及失弁扑亦件匹手｝丐凶日仄中匏  毛隙烂允月［
@@ -1706,23 +1706,23 @@ void lssproto_C_send(int fd,char* data)
  	        Dead:5    轾0~7        
  	        UseMagic:6    轾0~7  
  	        UseItem:7    轾0~7  
- 	        Effect:8    向0~7  エフェクト  号  
- 	        Down:10 (倒れる)    向0~7  
+ 	        Effect:8    方向0~7  特效编号  
+ 	        Down:10 (倒下)    方向0~7  
  	        Sit:11 (甄月)    轾0~7  
- 	        Hand:12 (手を振る)    向0~7  
+ 	        Hand:12 (挥手)    方向0~7  
  	        Pleasure:13 (减少)    轾0~7  
  	        Angry:14 (变月)    轾0~7  
  	        Sad:15 (  媃資)    澺0~7  
- 	        Guard:16 (ガード)    向0~7  
+ 	        Guard:16 (防御)    方向0~7  
  	        actionwalk:17 (失弁扑亦件迕汹五)    轾0~7  
- 	        nod:18 (うなずく)    向0~7  
+ 	        nod:18 (点头)    方向0~7  
  	        actionstand:19 (失弁扑亦件迕  切禾□术)    轾0~7  
  	        Battle:20 (爵  树  )    轾0~7  BattleNo(-1 卅日  憎壅允    SideNo  HelpNo  ㄠ卅日踞仃毛裟少CA  憎］ㄟ卅日壅允］引凶反  仄    
- 	        Leader:21 (リーダー情  )    向0~7  0:  示消す 1:  示  
+ 	        Leader:21 (队长信息)    方向0~7  0:取消显示 1:显示  
  	        Watch:22 (橋  め橋)    澺0~7  0:  崚觛埰 1:  崚  
- 	        namecolor:23(  前の色情  )    向0~7    前の色  号  
+ 	        namecolor:23(名字的颜色信息)    方向0~7  名字的颜色编号  
  	        Turn:30(  向  換)    向0~7    
- 	        Warp:31(ワープ)    向0~7    
+ 	        Warp:31(传送)    方向0~7    
  	      
  	ACTION及袄反帮醒匹｝    反晓及  及尔羹及嫩  匹丐月［
 */
@@ -1777,7 +1777,7 @@ void lssproto_CD_send(int fd,char* data)
  	    x,y反平乓仿井日及濮覆匏  ［kind反动票卞仄户允醒袄匹反卅中
  	    筏寞［伊□母□卞丹勾月  及潘  毛隙烂允月［霜日木化仁月手及
  	    及潘  反｝公木引匹卞儒尹凶  芊午井｝旦平伙匹  祭仄｝公木反
- 	    サーバーが考える?
+ 	    由服务器决定?
  	 
  	        kind及袄        
  	        E  衬  
@@ -1818,7 +1818,7 @@ void lssproto_R_send(int fd,char* data)
  	    level attackpower deffencepower 
  	    fixdex fixcharm fixluck fixfireat fixwaterat fixearthat fixwindat
  	    gold 尥仃化中月
- 	    称号のindex   前 自己称号 
+ 	    称号的index  名称 自定义称号 
  
  	    犯伉立正反 '|' 匹丐月［引凶  蟆午愤裘惫寞反｝
  	    <a href="#escaping">巨旦弗□皿仄凶手及毛
@@ -1831,7 +1831,7 @@ void lssproto_R_send(int fd,char* data)
  	        kunun  int  
  	        Hp(    )hp  int  
  	        MaxHp  int  
- 	        Mp(呪術パワー)  int  
+ 	        Mp(咒术力)  int  
  	        MaxMp  int  
  	        Vital(    )  int  
  	        Str(    )  int  
@@ -1839,10 +1839,10 @@ void lssproto_R_send(int fd,char* data)
  	        Dex(豳镀今)  int  
  	        Exp(軍境粟)exp  int  
  	        MaxExp(戚引匹及烦董袄)  int  
- 	        Level(レベ郊)  int  
+ 	        Level(等级)  int  
  	        Attack(  猾  )  int  
       	        Defense(潮    )  int  
- 	        fQuick(  終素早さ)  int  
+ 	        fQuick(最终敏捷)  int  
  	        fCharm(    )  int  
  	        fLuck(扪)  int  
  	        fEarth(哗)fixearthat  int  
@@ -1851,7 +1851,7 @@ void lssproto_R_send(int fd,char* data)
  	        fWid(氘)fixwindat  int  
  	        Gold(云嗯)  int  
  	        惫寞及index  int  
- 	        デュエ郊ポイント  int  
+ 	        对决点数  int  
  	        猿老者佰  int  
  	          前    字    
  	        自己称号    字    
@@ -1874,13 +1874,13 @@ void lssproto_R_send(int fd,char* data)
  	    中［方匀化｝必□丞钒铵凛｝闭蟾银迕及午五｝伐□皿及午五卅升
  	    反｝仇及戊穴件玉毛勾井匀化恳仄中袄毛霜耨仄卅仁化反卅日卅中［
  	    
- 	I 全アイ  ム
+ 	I 全部道具
  	    (失奶  丞1)|(失奶  丞2)...(失奶  丞n)
  	    失奶  丞及    反动票及  芊匹由永弁允月［
  	    夫午勾及失奶  丞反｝井卅日内动票及6勾及玄□弁件及本永玄匹
  	    霜耨今木月［夫午勾夫午勾及    反｝
  	    
- 	      前|  前2|ス  ージ|アイ  ムの    |アニメ  号|使用可  場所|使用対象|アイ  ムレベ郊|フラグ  
+ 	      名称|名称2|阶段|道具的    |动画编号|可使用场所|使用对象|道具等级|旗标  
  	    
  	      失奶  丞  反摹  伊矛伙匹愤  读卞  凳今木月［
  	        蟆2反摹  伊矛伙卞方匀化｝失奶  丞及    互  月  烂［
@@ -1895,7 +1895,7 @@ void lssproto_R_send(int fd,char* data)
  			{
  				ITEM_FIELD_ALL,			允屯化及桦赭匹银尹月
  				ITEM_FIELD_BATTLE,		爵    及心
- 				ITEM_FIELD_MAP,			通常マップ上のみ
+ 				ITEM_FIELD_MAP,			仅限通常地图上
  
  			}ITEM_FIELDTYPE;
  	          
@@ -1915,31 +1915,31 @@ void lssproto_R_send(int fd,char* data)
  	      失奶  丞伊矛伙［仇及伊矛伙动晓及樊匹卅中午隶  请  卅中［
  	      白仿弘  ［缙氏卅白仿弘毛霜耨允月［备申永玄及覆杀反动票及骚曰［
 
- 		      0bit    ペットメー郊で送信可  なアイ  ムかどうか?送信可  だと１?０だと送信できない?  
+ 		      0bit    是否是宠物邮件可发送的道具?可发送为１?０则不能发送?  
  		      1Bit    仇及失奶  丞互宁岳请  月井升丹井［  
  		      2Bit    仇及失奶  丞互    井升丹井［1分午    匹丐月［  
  	    
  	    仇仇及  匹反<a href="#escaping">巨旦弗□皿允月［
  	    填    ( char 及    公及引引踏仁 )
  	    
- 	    Iあほ な 子|str+2|1|あほ\|いじ|10|2|0
+ 	    I傻瓜的孩子|str+2|1|傻\|瓜|10|2|0
  	    
  	    旦  □斥及袄及啦  反｝帮醒袄匹
  	    
- 	        1  ス  ージA  
- 	        2  ス  ージB  	      
- 	        3  ス  ージC  
- 	        4  ス  ージD  
+ 	        1  阶段A  
+ 	        2  阶段B  	      
+ 	        3  阶段C  
+ 	        4  阶段D  
  	    
  	    午允月［引凶｝失奶  丞  及坞及  坌卞勾中化反｝5蜊及玄□弁件互
  	    坞匹｝勾引曰凶化徇互卅日氏分橇谪匹霜耨今木化仁月［
  	
- 	S 全スキ郊
+ 	S 全部技能
  	    (旦平伙0)|(旦平伙1)|(旦平伙2) ... (旦平伙n)
  	    惫寞午  元匹｝平乓仿互手化月    旦平伙醒坌毛霜耨允月［勾引
  	    曰卅中手及反 ||| 午卅月及匹丐月［
  	    备巨件玄伉及    反｝
- 	    スキ郊の種  コード|レベ郊
+ 	    技能的种类代码|等级
  	    匹丐月［
  	    填    ( char 及    公及引引踏仁 )
  	    
@@ -1957,17 +1957,17 @@ void lssproto_R_send(int fd,char* data)
  	    
  	    T丐幻|方匀天日中
  	    
- 	    これも<a href="#escaping">エスケープする?
+ 	    这个也要<a href="#escaping">转义?
  
  	M   坌由仿丢□正
  	    平乓仿弁正□及旦  □正旦及丹切｝    卞  凳今木月手及(蜇箕
  	    袄)午公丹匹卅中手及(    袄卅升)互丐月［升木井及旦  □正旦
  	    互  凳今木月凶太卞  荚蝈  及由仿丢□正毛霜耨允月及反生永玄
- 	    ワークトラフィックを  駄に使うことになるので�b  にHP ,
+ 	    会浪费通讯流量,所以只在HP ,
  	    MP,EXP及袄分仃卞仄廿匀凶由仿丢□正霜耨戊穴件玉毛迕啦允月［
  	    公木互仇及M戊穴件玉匹丐月［2  侬  动嫦及  域玄□弁件反HP及
  	    蜇箕袄 ,     玄□弁件反MP｝  赶玄□弁件反EXP匹丐月［
- 	    以下に具    をしめす?
+ 	    以下给出具体例子?
  	    
  	    M54|210|8944909
  	    
@@ -1995,14 +1995,14 @@ void lssproto_R_send(int fd,char* data)
  	    J0|kubun|mp|field|target|name|comment
  	    午中丹白巧□穴永玄卞卅匀化中月［
  	    kubun 反公及  互丐月井  中井［ㄟ分午  中［公木动嫦卞玄□弁件允日卅中［ㄠ分午丐月［
- 	    mpは消  気  を  す?
+ 	    mp表示消耗气力?
  	    field反升及桦赭匹银尹月井［扔□田□匹反动票及  卞烂聒今木化中月［
  	    
  		typedef enum
  		{
  			MAGIC_FIELD_ALL,		允屯化及桦赭匹银尹月
  			MAGIC_FIELD_BATTLE,		爵    及心
- 			MAGIC_FIELD_MAP,		通常マップ上のみ
+ 			MAGIC_FIELD_MAP,		仅限通常地图上
  			
  		}MAGIC_FIELDTYPE;
  	    
@@ -2017,7 +2017,7 @@ void lssproto_R_send(int fd,char* data)
  			MAGIC_TARGET_ALL,		蝈化
  			MAGIC_TARGET_NONE,		簿手蓟  请  卅中［  豢支凶户及凛
  			MAGIC_TARGET_OTHERWITHOUTMYSELF,职及谛  愤坌殖引卅中)
- 			MAGIC_TARGET_WITHOUTMYSELFANDPET, 自分とペット以外
+ 			MAGIC_TARGET_WITHOUTMYSELFANDPET, 自己和宠物以外
  			MAGIC_TARGET_WHOLEOTHERSIDE,        式飯通囁鱚  
  		}MAGIC_TARGETTYPE;
  	    
@@ -2064,7 +2064,7 @@ void lssproto_R_send(int fd,char* data)
  	        MapMp  int  
  	        Exp(軍境粟)  int  
  	        MaxExp(戚引匹及烦董袄)  int  
- 	        Level(レベ郊)  int  
+ 	        Level(等级)  int  
  	        Attack(  猾  )  int  
  	        Defense(潮    )  int  
  	        Quick(豳镀今)  int  
@@ -2095,7 +2095,7 @@ void lssproto_R_send(int fd,char* data)
  		{
  			PETSKILL_FIELD_ALL,		允屯化及桦赭匹银尹月
  			PETSKILL_FIELD_BATTLE,		爵    及心
- 			PETSKILL_FIELD_MAP,		通常マップ上のみ
+ 			PETSKILL_FIELD_MAP,		仅限通常地图上
  
  		}PETSKILL_FIELDTYPE;
  	  
@@ -2110,7 +2110,7 @@ void lssproto_R_send(int fd,char* data)
  			PETSKILL_TARGET_ALL,		蝈化
  			PETSKILL_TARGET_NONE,		簿手蓟  请  卅中［  豢支凶户及凛
  			PETSKILL_TARGET_OTHERWITHOUTMYSELF,职及谛  愤坌殖引卅中) 
- 			PETSKILL_TARGET_WITHOUTMYSELFANDPET, 自分とペット以外
+ 			PETSKILL_TARGET_WITHOUTMYSELFANDPET, 自己和宠物以外
  		}PETSKILL_TARGETTYPE;
  	  
  	  name 反  及  蟆［
@@ -2137,11 +2137,11 @@ void lssproto_S_send(int fd,char* data)
 /*
    servertoclient D( int category , int dx , int dy , string data );
        (Display)
-           に何か  示する指  ?
+           显示某种内容的指示?
  
        
  	int category
- 	何を  示するか?
+ 	显示什么内容?
  	    
  	        袄        
  	        1  愤坌动陆卞芨尹凶母丢□斥［data反  侬
@@ -2150,14 +2150,14 @@ void lssproto_S_send(int fd,char* data)
  		      卅匀凶袄  
  		
  	int dx
- 	マイキャラからのグリッド相対位  X?一  的にはイベントが  生
+ 	距自己人物的格子相对位置X?一般在事件发生时
  	    仄凶匏  ［弁仿奶失件玄反仇及袄井日赝给赝濠卅匏  毛煌遥仄化
  	        允月［
  	int dy
  	相対位  Y
  	string data 
  	  憎允月    ［    反category卞方匀化瑁引月［
- 	    この  字  は<a href="#escaping">エスケープされなければ
+ 	    这个字符串必须<a href="#escaping">经过转义
  	    卅日卅中［
 */
 void lssproto_D_send(int fd,int category,int dx,int dy,char* data)
@@ -2186,7 +2186,7 @@ void lssproto_D_send(int fd,int category,int dx,int dy,char* data)
           0 bit  0: 仲間Off                  1: 仲間On
                 鰒時  咢綯  1 bit  0: 浄      絹却off          1: 浄      絹却On    
               2 bit  0: DUEL off                 1: DUEL On
-              3 bit  0:   通のチャットモード     1: パー  ィにしかチャットが  ばないモード
+              3 bit  0:   普通的聊天模式     1: 只有队伍能听到聊天的模式
               4 bit  0:   铜跟晶OK               1:   铜跟晶蛐  
 */
 void lssproto_FS_send(int fd,int flg)
@@ -2363,22 +2363,22 @@ void lssproto_SKUP_send(int fd,int point)
 /*
    servertoclient WN( int windowtype, int buttontype, int seqno, int objindex, string data );
        (Window)
-       ウィンドウを  示せよとサーバーがクライアントに通知する?
+       服务器通知客户端显示窗口?
        
          int windowtype
          它奴件玉它正奶皿［升及方丹卅溥挚及它奴件玉它毛  憎允月井［仇木午buttontype 及赚心宁歹六匹
-             ウィンドウが決定する?
+             由窗口决定?
              扔□田□匹反动票及  卞涩烂今木化中月［
            
  		typedef enum
  		{
  			WINDOW_MESSAGETYPE_MESSAGE,			丢永本□斥及心
- 			WINDOW_MESSAGETYPE_MESSAGEANDLINEINPUT,		メッセージと一行    
+ 			WINDOW_MESSAGETYPE_MESSAGEANDLINEINPUT,		讯息加单行输入    
  			WINDOW_MESSAGETYPE_SELECT,			嫉  万笛周囁万
  			WINDOW_MESSAGETYPE_PETSELECT,			文喟傲嫉  万笛周囁万
- 			WINDOW_MESSAGETYPE_PARTYSELECT,			仲間選  ウィンドウ
- 			WINDOW_MESSAGETYPE_PETANDPARTYSELECT,		ペット?仲間選  ウィンドウ
- 			WINDOW_MESSAGETYPE_ITEMSHOPMENU,		恭店のメニューウインドウ
+ 			WINDOW_MESSAGETYPE_PARTYSELECT,			队友选择窗口
+ 			WINDOW_MESSAGETYPE_PETANDPARTYSELECT,		宠物?队友选择窗口
+ 			WINDOW_MESSAGETYPE_ITEMSHOPMENU,		道具店的菜单窗口
  			WINDOW_MWSSAGETYPE_ITEMSHOPYMAIN,		云饕及丢奶件它奶件玉它
  			WINDOW_MESSAGETYPE_LIMITITEMSHOPMAIN,		  嶄糲垰支  払通  悸歳式卿通周万通周囁万
  			WINDOW_MESSAGETYPE_PETSKILLSHOP,		文喟傲式  歳書箆万通周囁万
@@ -2403,7 +2403,7 @@ void lssproto_SKUP_send(int fd,int point)
              匹霜月［
              
          int seqno
-         このウィンドウの  号を示す?サーバーが管  する?
+         表示这个窗口的编号?由服务器管理?
              弁仿奶失件玄反WN卞化仇及它奴件玉它及丑综瑛绊毛忒允及卞］仇及  寞毛骄尹化忒蚕允月［
              仇木卞方匀化扔□田□反升及NPC及升及桦  匹及它奴件玉它井毛  蝇请  月方丹卞允月［
          int objindex
@@ -2411,39 +2411,39 @@ void lssproto_SKUP_send(int fd,int point)
              扑旦  丞互请六午蜕匀凶桦宁反-1卅升互  匀化中月［
              弁仿奶失件玄反］它奴件玉它      及WN皿夫玄戊伙匹仇及醒袄毛公及引引忒六壬  中［
          string data
-         メッセージ    を示す?    はエスケープする?"\n"で区切ると改行という意  とする?
+         表示讯息内容    需要转义    用"\n"分隔表示换行
              引凶］弁仿奶失件玄及它奴件玉它匹  憎请  月产汔毛旋尹凶端反愤  读卞荼垫今木月［
              蓟  饷及丐月它奴件玉它匹反］"\n"匹嗉濠日木凶  赓及玄□弁件互丢永本□斥及垫醒
              午卅曰］戚卞丢永本□斥及玄□弁件互  赓及玄□弁件匹隙烂今木凶蜊醒粮五］
              公及丐午及玄□弁件  互ㄠ勾内勾及蓟  饷午卅月［引凶蟆井日赐卞 1 井日
                寞毛喃曰癫化］蓟  仄凶桦宁及WN匹及忒蚕及凛卞忒允［
          string data(云饕迕  
-         メッセージ    を示す?    はエスケープする?"\n"で区切ると改行という意  とする?
+         表示讯息内容    需要转义    用"\n"分隔表示换行
              引凶］弁仿奶失件玄及它奴件玉它匹  憎请  月产汔毛旋尹凶端反愤  读卞荼垫今木月［
              犯□正  反嫩    卞"  "匹嗉濠日木化中引允［
     Ｕ  丹Ｖ
   	  中  月白仿弘    丹ㄟ“  月ㄠ    蟆及犯□正银丹井白仿弘  银丹ㄟ“银歹卅中“1    
- 		店の  前  メッセージ  店メッセージ  個数選  メッセージ  レベ郊足りないメッセージ  確  メッセージ  
+ 		店名  讯息  店讯息  个数选择讯息  等级不足讯息  确认讯息  
  		失奶  丞互中匀天中丢永本□斥  失奶  丞      尹月  尹卅中白仿弘    尹月“ㄟ  尹卅中“ㄠ    失奶  丞伊矛伙  
- 		値段    像  号        アイ  ム      える  えないフラグ  アイ  ムレベ郊  値段    像  号      
+ 		价格    图像编号        道具      可见不可见旗标  道具等级  价格    图像编号      
        		
        		0|1|扔丞幼伙及  湛盒|中日匀仄扎中｝窒及方丹分中|中日匀仄扎中升木卞允月|窒蜊  邰分中|公木毛隶  允月卞反伊矛伙互
        		箫曰卅中仃升中中及井中|  癫卞中中氏分友|云中云中失奶  丞互中匀天中元扎友尹井″  皮□丢仿件|
-       		０|１００|１６０００|横一  に  撃\n効果  群|薬草|０|５０|１６００２|    ２０回復\n  険にはつき  \n安い  
+       		０|１００|１６０００|横一排攻击\n效果拔群|药草|０|５０|１６００２|回复２０\n冒险必备\n便宜  
  
          Ｕ  月Ｖ
  		  中  月白仿弘    丹ㄟ“  月ㄠ    蟆及犯□正银丹井白仿弘  银丹ㄟ“银歹卅中“1    
- 		店の  前  メッセージ  店メッセージ  恭金がいっぱいになっちゃうメッセージ|確  メッセージ  
+ 		店名  讯息  店讯息  金钱要满出来的讯息|确认讯息  
  		失奶  丞      木月  木卅中白仿弘  袄蟾    飓  寞        失奶  丞      木月  木卅中白仿弘  
- 		値段    像  号        
+ 		价格    图像编号        
        
        		ㄠ|1|扔丞幼伙及  填盒|中日匀仄扎中｝升月允月＂  中日匀仄扎中升木毛  匀化仁木月［|  癫卞中中氏分友|
-       		それだと�b恭金がオーバーしちゃうね  ブーメラン|０|２０|１６０００|
-       		横一  に  撃\n効果  群|薬草|０|１０|１６００２|    ２０回復\n  険にはつき  \n安い  
+       		那样的话,金钱就超过上限了  回力镖|０|２０|１６０００|
+       		横一排攻击\n效果拔群|药草|０|１０|１６００２|回复２０\n冒险必备\n便宜  
          Ｕ失奶  丞  仃月Ｖ
  		白仿弘    月=ㄟ    丐午窒蜊  仃日木月井  
  		饕及  蟆  
- 		  けるメッセージ  これ以上  けられないメッセージ  確  メッセージ  
+ 		  寄放讯息  不能再寄放的讯息  确认讯息  
  		  蟆    仃日木月井白仿弘  第  ＞ㄟ］尕第＞ㄠ    袄蟾    飓  寞  域垫奶件白巧  失奶  丞    寞  ㄠ井日  
  		  蟆    仃日木月井白仿弘  第  ＞ㄟ］尕第＞ㄠ    袄蟾    飓  寞  域垫奶件白巧  失奶  丞    寞  ㄠ井日  
          Ｕ失奶  丞娄五潸月Ｖ
@@ -2453,21 +2453,21 @@ void lssproto_SKUP_send(int fd,int point)
  		  蟆  娄五请六月井升丹井白仿弘  第  ＞ㄟ］尕第＞ㄠ    失奶  丞伊矛伙  袄蟾    飓  寞  域垫奶件白巧  
  
          Ｕ公及职Ｖ
- 		店の  前  メッセージ
+ 		店名  讯息
        
        		扔丞幼伙及  填盒|中日匀仄扎中｝升月允月＂
  	
-         string data(ペットの  屋さん用  
-         メッセージ    を示す?    はエスケープする?"\n"で区切ると改行という意  とする?
+         string data(宠物的小屋用  
+         表示讯息内容    需要转义    用"\n"分隔表示换行
              引凶］弁仿奶失件玄及它奴件玉它匹  憎请  月产汔毛旋尹凶端反愤  读卞荼垫今木月［
              犯□正  反嫩    卞"  "匹嗉濠日木化中引允［
  	   Ｕ矢永玄及  潸  Ｖ
- 		前の情  使うかどうか?  使う：0�a使わない：1    店の  前  メインメッセージ  
- 		      値段                値段        
+ 		是否使用之前的信息?  使用：0,不使用：1    店名  主讯息  
+ 		      价格                价格        
  	
  		1  扔丞幼伙及  湛盒  中日匀仄扎中引匀六［允壬日仄中  壬匀井匹允方  
  		    及讽公及迭  500    猾  ㄢㄟ⊙    ｛  豢  ㄢㄟ⊙          
- 		地球一週  1000  新しい  見があるかも  適当    	
+ 		环游地球一周  1000  也许有新发现  随意    	
 */
 void lssproto_WN_send(int fd,int windowtype,int buttontype,int seqno,int objindex,char* data)
 {
@@ -2542,7 +2542,7 @@ void lssproto_EF_send(int fd,int effect,int level,char* option)
  	弁仿奶失件玄卞SE毛  日允方丹卞隙憎允月［
        
          int x,y
-         SEを  信元の座  ?
+         SE的发送源坐标?
          int senumber
              及  寞
          int sw
@@ -2692,15 +2692,15 @@ void lssproto_CharLogin_send(int fd,char* result,char* data)
  	    dataplace|faceimage|level|maxhp|atk|def|quick|charm|earth|water|fire|wind|logincount|name|place
  	    
  	      dataplace
- 	      セーブデータの何    か?これでキャラクターリストの何    かを決定する?
+ 	      存档数据的第几个?以此决定人物列表中的第几个?
  	      faceimage
- 	      顔の  像  号
+ 	      脸的图像编号
  	      level
  	      平乓仿及伊矛伙
  	      maxhp,atk,def,quick,charm
  	      备由仿丢□正［
  	      earth.water,fire,wind
- 	      各属性値
+ 	      各属性值
  	      logincount
  	      夫弘奶件市它件玄
  	      name
@@ -2710,7 +2710,7 @@ void lssproto_CharLogin_send(int fd,char* result,char* data)
  	    
  	    "|" 匹嗉濠日木化中月［ 公木冗木及嫩  反｝<a
  	    href="#escaping">巨旦弗□皿今木化中月［公及丐午凶化徇
- 	    でつな慌る?
+ 	    连接起来?
 */
 void lssproto_CharList_send(int fd,char* result,char* data)
 {
@@ -2730,12 +2730,12 @@ void lssproto_CharList_send(int fd,char* result,char* data)
 
 /*
    servertoclient CharLogout(string result , string data);
-       Logoutに対する返答?
+       对Logout的回应?
        
  	string result
  	"successful" 井 "failed" 及中内木井［巨旦弗□皿仄卅中［
  	string data
- 	"failed" の時にのみ意  があり�b失  の    (状態)を示す人間
+ 	只在"failed"时有意义,表示失败的原因(状态)
  	    及苇化坌月  侬  匹丐月［巨旦弗□皿仄卅中［
 */
 void lssproto_CharLogout_send(int fd,char* result,char* data)
@@ -2801,7 +2801,7 @@ void lssproto_PlayerNumGet_send(int fd,int logincount,int player)
 
 /*
    servertoclient Echo( string test );
-       Echoに対する返答?
+       对Echo的回应?
        
  	string test
  	今五幻升    今木凶  侬  ［巨旦弗□皿仄卅中［

@@ -1,333 +1,333 @@
-治愈的精灵 Lv1,耐久力回复 80 (自己),MAGIC_Recovery,80,0,0,0,0,
-治愈的精灵 Lv2,耐久力回复 160 (自己),MAGIC_Recovery,160,1,0,0,0,
-治愈的精灵 Lv3,耐久力回复 320 (自己),MAGIC_Recovery,320,2,0,0,0,
-治愈的精灵 Lv4,耐久力回复 480 (自己),MAGIC_Recovery,480,3,0,0,0,
-治愈的精灵 Lv5,耐久力回复 800 (自己),MAGIC_Recovery,800,4,0,0,0,
-治愈的精灵 Lv6,耐久力回复 1160 (自己),MAGIC_Recovery,1160,5,0,0,0,
-滋润的精灵 Lv1,耐久力回复 65 (单人),MAGIC_OtherRecovery,65,10,0,1,0,
-滋润的精灵 Lv2,耐久力回复 130 (单人),MAGIC_OtherRecovery,130,11,0,1,0,
-滋润的精灵 Lv3,耐久力回复 260 (单人),MAGIC_OtherRecovery,260,12,0,1,0,
-滋润的精灵 Lv4,耐久力回复 390 (单人),MAGIC_OtherRecovery,390,13,0,1,0,
-滋润的精灵 Lv5,耐久力回复 650 (单人),MAGIC_OtherRecovery,650,14,0,1,0,
-滋润的精灵 Lv6,耐久力回复 880 (单人),MAGIC_OtherRecovery,880,15,0,1,0,
-滋润的精灵 Lv7,耐久力回复 1120 (单人),MAGIC_OtherRecovery,1080,16,0,1,0,
-滋润的精灵 Lv8,耐久力回复 1280 (单人),MAGIC_OtherRecovery,1280,17,0,1,0,
-滋润的精灵 Lv9,耐久力回复 1540 (单人),MAGIC_OtherRecovery,1540,18,0,1,0,
-滋润的精灵 Lv10,耐久力回复 1880 (单人),MAGIC_OtherRecovery,1880,19,0,1,0,
-恩惠的精灵 Lv1,耐久力回复 50  (一方全体),MAGIC_Recovery,50,20,1,8,0,
-恩惠的精灵 Lv2,耐久力回复 100 (一方全体),MAGIC_Recovery,100,21,1,8,0,
-恩惠的精灵 Lv3,耐久力回复 200 (一方全体),MAGIC_Recovery,200,22,1,8,0,
-恩惠的精灵 Lv4,耐久力回复 320 (一方全体),MAGIC_Recovery,300,23,1,8,0,
-恩惠的精灵 Lv5,耐久力回复 420 (一方全体),MAGIC_Recovery,420,24,1,8,0,
-恩惠的精灵 Lv6,耐久力回复 600 (一方全体),MAGIC_Recovery,600,25,1,8,0,
-恩惠的精灵 Lv7,耐久力回复 1080 (一方全体),MAGIC_Recovery,720,26,1,8,0,
-恩惠的精灵 Lv8,耐久力回复 1280 (一方全体),MAGIC_Recovery,840,27,1,8,0,
-恩惠的精灵 Lv9,耐久力回复 1480 (一方全体),MAGIC_Recovery,960,28,1,8,0,
-恩惠的精灵 Lv10,耐久力回复 1680 (一方全体),MAGIC_Recovery,1080,29,1,8,0,
-恩惠的精灵 Lv11,耐久力回复 1880 (一方全体),MAGIC_Recovery,1200,30,1,8,0,
-恩惠的精灵 Lv12,耐久力回复 2000 (一方全体),MAGIC_Recovery,1640,31,1,8,0,
-复活精灵 Lv1,气绝状态回复 100 (单人),MAGIC_Ressurect,100,50,1,1,1,
-复活精灵 Lv2,气绝状态回复 300 (单人),MAGIC_Ressurect,300,51,1,1,1,
-复活精灵 Lv3,气绝状态回复 500 (单人),MAGIC_Ressurect,500,52,1,1,1,
-复活精灵 Lv4,气绝状态回复 700 (单人),MAGIC_Ressurect,700,53,1,1,1,
-复活精灵 Lv5,气绝状态回复 900 (单人),MAGIC_Ressurect,900,54,1,1,1,
-复活精灵 Lv6,气绝状态回复 1200 (单人),MAGIC_Ressurect,1200,55,1,1,1,
-复活精灵 Lv7,气绝状态回复 1500 (单人),MAGIC_Ressurect,1500,56,1,1,1,
-复活精灵 Lv8,气绝状态回复 1800 (单人),MAGIC_Ressurect,1800,57,1,1,1,
-复活精灵 Lv9,气绝状态回复 9999 (单人),MAGIC_Ressurect,9999,58,1,1,1,
-复活精灵 Lv10,气绝状态回复 9999 (一方全体),MAGIC_Ressurect,9999,59,1,1,1,
-高等净化精灵Lv1,全部状态异常回复 (单人),MAGIC_StatusRecovery,全,60,1,1,0,
-高等净化精灵Lv2,全部状态异常回复 (一方全体),MAGIC_StatusRecovery,全,61,1,8,0,
-净化精灵(毒)Lv1,毒状态回复 (单人),MAGIC_StatusRecovery,毒,70,1,1,0,
-净化精灵(毒)Lv2,毒状态回复 (一方全体),MAGIC_StatusRecovery,毒,71,1,8,0,
-净化精灵(麻痹)Lv1,回复一人麻痹状态,MAGIC_StatusRecovery,麻,80,1,1,0,
-净化精灵(麻痹)Lv2,回复全体麻痹状态,MAGIC_StatusRecovery,麻,81,1,8,0,
-净化精灵(石化)Lv1,石化状态回复 (单人),MAGIC_StatusRecovery,石,90,1,1,0,
-净化精灵(石化)Lv2,石化状态回复 (一方全体),MAGIC_StatusRecovery,石,91,1,8,0,
-净化精灵(混乱)Lv1,混乱状态回复 (单人),MAGIC_StatusRecovery,乱,100,1,1,0,
-净化精灵(混乱)Lv2,混乱状态回复 (一方全体),MAGIC_StatusRecovery,乱,101,1,8,0,
-净化精灵(酒醉)Lv1,酒醉状态回复 (单人),MAGIC_StatusRecovery,醉,110,1,1,0,
-净化精灵(酒醉)Lv2,酒醉状态回复 (一方全体),MAGIC_StatusRecovery,醉,111,1,8,0,
-净化精灵(睡眠)Lv1,睡眠状态回复 (单人),MAGIC_StatusRecovery,眠,120,1,1,0,
-净化精灵(睡眠)Lv2,睡眠状态回复 (一方全体),MAGIC_StatusRecovery,眠,121,1,8,0,
-猛毒的精灵 Lv1,中毒状态 3回合前后 (单人),MAGIC_StatusChange,毒 turn 3 成 20,130,1,1,0,
-猛毒的精灵 Lv2,中毒状态 3回合前后 (单人),MAGIC_StatusChange,毒 turn 3 成 25,131,1,1,0,
-猛毒的精灵 Lv3,中毒状态4回合前后 (单人),MAGIC_StatusChange,毒 turn 4  成 25,132,1,1,0,
-猛毒的精灵 Lv4,中毒状态4回合前后 (单人),MAGIC_StatusChange,毒 turn 4  成 30,133,1,1,0,
-猛毒的精灵 Lv5,中毒状态5回合前后 (单人),MAGIC_StatusChange,毒 turn 5 成 25,134,1,1,0,
-毒雾的精灵 Lv1,中毒状态 3回合前后 (一方全体),MAGIC_StatusChange,毒 turn 3 成 20,135,1,8,0,
-毒雾的精灵 Lv2,中毒状态 3回合前后 (一方全体),MAGIC_StatusChange,毒 turn 3 成 25,136,1,8,0,
-毒雾的精灵 Lv3,中毒状态 4回合前后 (一方全体),MAGIC_StatusChange,毒 turn 4 成 25,137,1,8,0,
-毒雾的精灵 Lv4,中毒状态 4回合前后 (一方全体),MAGIC_StatusChange,毒 turn 4 成 30,138,1,8,0,
-毒雾的精灵 Lv5,中毒状态 5回合前后 (一方全体),MAGIC_StatusChange,毒 turn 5 成 25,139,1,8,0,
-硬化的精灵 Lv1,石化状态 3回合前后 (单人),MAGIC_StatusChange,石 turn 3 成 15,150,1,1,0,
-硬化的精灵 Lv2,石化状态 3回合前后 (单人),MAGIC_StatusChange,石 turn 3 成 20,151,1,1,0,
-硬化的精灵 Lv3,石化状态 4回合前后 (单人),MAGIC_StatusChange,石 turn 4 成 25,152,1,1,0,
-硬化的精灵 Lv4,石化状态 4回合前后 (单人),MAGIC_StatusChange,石 turn 4 成 30,153,1,1,0,
-硬化的精灵 Lv5,石化状态 5回合前后 (单人),MAGIC_StatusChange,石 turn 5 成 25,154,1,1,0,
-石化的精灵 Lv1,石化状态 3回合前后 (一方全体),MAGIC_StatusChange,石 turn 3 成 15,155,1,8,0,
-石化的精灵 Lv2,石化状态 3回合前后 (一方全体),MAGIC_StatusChange,石 turn 3 成 20,156,1,8,0,
-石化的精灵 Lv3,石化状态 4回合前后 (一方全体),MAGIC_StatusChange,石 turn 4 成 25,157,1,8,0,
-石化的精灵 Lv4,石化状态 4回合前后 (一方全体),MAGIC_StatusChange,石 turn 4 成 30,158,1,8,0,
-石化的精灵 Lv5,石化状态 5回合前后 (一方全体),MAGIC_StatusChange,石 turn 5 成 25,159,1,8,0,
-混乱的精灵 Lv1,混乱状态 3回合前后 (单人),MAGIC_StatusChange,乱 turn 3 成 20,160,1,1,0,
-混乱的精灵 Lv2,混乱状态 3回合前后 (单人),MAGIC_StatusChange,乱 turn 3 成 25,161,1,1,0,
-混乱的精灵 Lv3,混乱状态 4回合前后 (单人),MAGIC_StatusChange,乱 turn 4 成 25,162,1,1,0,
-混乱的精灵 Lv4,混乱状态 4回合前后 (单人),MAGIC_StatusChange,乱 turn 4 成 30,163,1,1,0,
-混乱的精灵 Lv5,混乱状态 5回合前后 (单人),MAGIC_StatusChange,乱 turn 5 成 25,164,1,1,0,
-混迷的精灵 Lv1,混乱状态 3回合前后 (一方全体),MAGIC_StatusChange,乱 turn 3 成 20,165,1,8,0,
-混迷的精灵 Lv2,混乱状态 3回合前后 (一方全体),MAGIC_StatusChange,乱 turn 3 成 25,166,1,8,0,
-混迷的精灵 Lv3,混乱状态 4回合前后 (一方全体),MAGIC_StatusChange,乱 turn 4 成 25,167,1,8,0,
-混迷的精灵 Lv4,混乱状态 4回合前后 (一方全体),MAGIC_StatusChange,乱 turn 4 成 30,168,1,8,0,
-混迷的精灵 Lv5,混乱状态 5回合前后 (一方全体),MAGIC_StatusChange,乱 turn 5 成 25,169,1,8,0,
-酒的精灵 Lv1,酒醉状态 3回合前后 (单人),MAGIC_StatusChange,醉 turn 3 成 20,170,1,1,0,
-酒的精灵 Lv2,酒醉状态 3回合前后 (单人),MAGIC_StatusChange,醉 turn 3 成 25,171,1,1,0,
-酒的精灵 Lv3,酒醉状态 4回合前后 (单人),MAGIC_StatusChange,醉 turn 4 成 25,172,1,1,0,
-酒的精灵 Lv4,酒醉状态 4回合前后 (单人),MAGIC_StatusChange,醉 turn 4 成 30,173,1,1,0,
-酒的精灵 Lv5,酒醉状态 5回合前后 (单人),MAGIC_StatusChange,醉 turn 5 成 25,174,1,1,0,
-酩酊的精灵 Lv1,酒醉状态 3回合前后 (一方全体),MAGIC_StatusChange,醉 turn 3 成 20,175,1,8,0,
-酩酊的精灵 Lv2,酒醉状态 3回合前后 (一方全体),MAGIC_StatusChange,醉 turn 3 成 25,176,1,8,0,
-酩酊的精灵 Lv3,酒醉状态 4回合前后 (一方全体),MAGIC_StatusChange,醉 turn 4 成 25,177,1,8,0,
-酩酊的精灵 Lv4,酒醉状态 4回合前后 (一方全体),MAGIC_StatusChange,醉 turn 4 成 30,178,1,8,0,
-酩酊的精灵 Lv5,酒醉状态 5回合前后 (一方全体),MAGIC_StatusChange,醉 turn 5 成 25,179,1,8,0,
-睡眠的精灵 Lv1,睡眠状态 3回合前后 (单人),MAGIC_StatusChange,眠 turn 3 成 20,180,1,1,0,
-睡眠的精灵 Lv2,睡眠状态 3回合前后 (单人),MAGIC_StatusChange,眠 turn 3 成 25,181,1,1,0,
-睡眠的精灵 Lv3,睡眠状态 4回合前后 (单人),MAGIC_StatusChange,眠 turn 4 成 25,182,1,1,0,
-睡眠的精灵 Lv4,睡眠状态 4回合前后 (单人),MAGIC_StatusChange,眠 turn 4 成 30,183,1,1,0,
-睡眠的精灵 Lv5,睡眠状态 5回合前后 (单人),MAGIC_StatusChange,眠 turn 5 成 25,184,1,1,0,
-昏睡的精灵 Lv1,睡眠状态 3回合前后 (一方全体),MAGIC_StatusChange,眠 turn 3 成 20,185,1,8,0,
-昏睡的精灵 Lv2,睡眠状态 3回合前后 (一方全体),MAGIC_StatusChange,眠 turn 3 成 25,186,1,8,0,
-昏睡的精灵 Lv3,睡眠状态 4回合前后 (一方全体),MAGIC_StatusChange,眠 turn 4 成 25,187,1,8,0,
-昏睡的精灵 Lv4,睡眠状态 4回合前后 (一方全体),MAGIC_StatusChange,眠 turn 4 成 30,188,1,8,0,
-昏睡的精灵 Lv5,睡眠状态 5回合前后 (一方全体),MAGIC_StatusChange,眠 turn 5 成 25,189,1,8,0,
-大地的精灵 Lv1,地属性优遇 60% 3回合 (全体),MAGIC_FieldAttChange,地 60  turn 3,190,1,4,0,
-大地的精灵 Lv2,地属性优遇 70% 3回合 (全体),MAGIC_FieldAttChange,地 70  turn 3,191,1,4,0,
-大地的精灵 Lv3,地属性优遇 80% 4回合 (全体),MAGIC_FieldAttChange,地 80  turn 4,192,1,4,0,
-大地的精灵 Lv4,地属性优遇 90% 4回合 (全体),MAGIC_FieldAttChange,地 90  turn 4,193,1,4,0,
-大地的精灵 Lv5,地属性优遇100% 5回合 (全体),MAGIC_FieldAttChange,地 100 turn 5,194,1,4,0,
-大地的精灵 Lv6,地属性优遇100% 9回合 (全体),MAGIC_FieldAttChange,地 100 turn 9,195,1,4,0,
-水的精灵 Lv1,水属性优遇60% 3回合 (全体),MAGIC_FieldAttChange,水 60  turn 3,200,1,4,0,
-水的精灵 Lv2,水属性优遇 70% 3回合 (全体),MAGIC_FieldAttChange,水 70  turn 3,201,1,4,0,
-水的精灵 Lv3,水属性优遇 80% 4回合 (全体),MAGIC_FieldAttChange,水 80  turn 4,202,1,4,0,
-水的精灵 Lv4,水属性优遇 90% 4回合 (全体),MAGIC_FieldAttChange,水 90  turn 4,203,1,4,0,
-水的精灵 Lv5,水属性优遇100% 5回合 (全体),MAGIC_FieldAttChange,水 100  turn 5,204,1,4,0,
-水的精灵 Lv5,水属性优遇100% 9回合 (全体),MAGIC_FieldAttChange,水 100  turn 9,205,1,4,0,
-火炎的精灵 Lv1,火属性优遇 60% 3回合 (全体),MAGIC_FieldAttChange,火 60  turn 3,210,1,4,0,
-火炎的精灵 Lv2,火属性优遇 70% 3回合 (全体),MAGIC_FieldAttChange,火 70  turn 3,211,1,4,0,
-火炎的精灵 Lv3,火属性优遇 80% 4回合 (全体),MAGIC_FieldAttChange,火 80  turn 4,212,1,4,0,
-火炎的精灵 Lv4,火属性优遇 90% 4回合 (全体),MAGIC_FieldAttChange,火 90  turn 4,213,1,4,0,
-火炎的精灵 Lv5,火属性优遇100% 5回合 (全体),MAGIC_FieldAttChange,火 100  turn 5,214,1,4,0,
-火炎的精灵 Lv5,火属性优遇100% 9回合 (全体),MAGIC_FieldAttChange,火 100  turn 9,215,1,4,0,
-疾风的精灵 Lv1,风属性优遇 60% 3回合 (全体),MAGIC_FieldAttChange,风 60  turn 3,220,1,4,0,
-疾风的精灵 Lv2,风属性优遇 70% 3回合 (全体),MAGIC_FieldAttChange,风 70  turn 3,221,1,4,0,
-疾风的精灵 Lv3,风属性优遇 80% 4回合 (全体),MAGIC_FieldAttChange,风 80  turn 4,222,1,4,0,
-疾风的精灵 Lv4,风属性优遇 90% 4回合 (全体),MAGIC_FieldAttChange,风 90  turn 4,223,1,4,0,
-疾风的精灵 Lv5,风属性优遇100% 5回合 (全体),MAGIC_FieldAttChange,风 100  turn 5,224,1,4,0,
-疾风的精灵 Lv5,风属性优遇100% 9回合 (全体),MAGIC_FieldAttChange,风 100  turn 9,225,1,4,0,
-调和的精灵,回复成无属性 (全体),MAGIC_FieldAttChange,无,230,1,4,0,
-彩虹的精灵,属性反转 (单人),MAGIC_AttReverse,,240,1,1,0,
-极光的精灵,属性反转 (全体),MAGIC_AttReverse,,241,1,8,0,
-光的精灵 Lv1,攻击吸收1次 (单人),MAGIC_MagicDef,吸  turn 1,250,1,1,0,
-光的精灵 Lv2,攻击吸收2次 (单人),MAGIC_MagicDef,吸  turn 2,251,1,1,0,
-光的精灵 Lv3,攻击吸收3次 (单人),MAGIC_MagicDef,吸  turn 3,252,1,1,0,
-全体光的精灵 Lv1,攻击吸收1次 (一方全体),MAGIC_MagicDef,吸  turn 1,253,1,8,0,
-全体光的精灵 Lv2,攻击吸收2次 (一方全体),MAGIC_MagicDef,吸  turn 2,254,1,8,0,
-全体光的精灵 Lv3,攻击吸收3次 (一方全体),MAGIC_MagicDef,吸  turn 3,255,1,8,0,
-镜子的精灵 Lv1,攻击反射1次 (单人),MAGIC_MagicDef,反  turn 1,260,1,1,0,
-镜子的精灵 Lv2,攻击反射2次 (单人),MAGIC_MagicDef,反  turn 2,261,1,1,0,
-镜子的精灵 Lv3,攻击反射3次 (单人),MAGIC_MagicDef,反  turn 3,262,1,1,0,
-全体镜子的精灵 Lv1,攻击反射1次 (单人),MAGIC_MagicDef,反  turn 1,263,1,8,0,
-全体镜子的精灵 Lv2,攻击反射2次 (单人),MAGIC_MagicDef,反  turn 2,264,1,8,0,
-全体镜子的精灵 Lv3,攻击反射3次 (单人),MAGIC_MagicDef,反  turn 3,265,1,8,0,
-守护的精灵,攻击无效2次 (单人),MAGIC_MagicDef,无  turn 2,270,1,1,0,
-守护的精灵,攻击无效3次 (单人),MAGIC_MagicDef,无  turn 3,271,1,1,0,
-守护的精灵,攻击无效5次 (单人),MAGIC_MagicDef,无  turn 5,272,1,1,0,
-全体守护的精灵,攻击无效2次 (单人),MAGIC_MagicDef,无  turn 2,273,1,8,0,
-全体守护的精灵,攻击无效3次 (单人),MAGIC_MagicDef,无  turn 3,274,1,8,0,
-全体守护的精灵,攻击无效5次 (单人),MAGIC_MagicDef,无  turn 5,275,1,8,0,
-复活光精灵 Lv1,气绝状态回复 100　　　攻击吸收 1次 (单人),MAGIC_ResAndDef,100 吸 turn 1,280,1,1,1,
-复活镜精灵 Lv1,气绝状态回复 100　　　直接攻击反射 1次 (单人),MAGIC_ResAndDef,100 反 turn 1,290,1,1,1,
-复活守护精灵 Lv1,气绝状态的回复 100　　　攻击无效 2次 (单人),MAGIC_ResAndDef,100 无 turn 2,300,1,1,1,
-岩石撞击,地魔法LV1,MAGIC_AttMagic,地|100|1,301,1,1,0,8
-落石撞击,地魔法LV2,MAGIC_AttMagic,地|150|2,302,1,9,0,9
-土石流,地魔法LV3-1,MAGIC_AttMagic,地|165|3,303,1,10,0,10
-巨岩撞击,地魔法LV3-2,MAGIC_AttMagic,地|185|3,304,1,9,0,11
-地震,地魔法LV3-3,MAGIC_AttMagic,地|200|3,305,1,11,0,12
-陨石冲击,地魔法LV4,MAGIC_AttMagic,地|250|4,306,1,11,0,13
-水柱,水魔法LV1,MAGIC_AttMagic,水|100|1,307,1,9,0,14
-水刃,水魔法LV2,MAGIC_AttMagic,水|150|2,308,1,9,0,15
-大冰山,水魔法LV3-1,MAGIC_AttMagic,水|165|3,309,1,9,0,16
-沸点攻击,水魔法LV3-2,MAGIC_AttMagic,水|185|3,310,1,9,0,17
-暴风雪,水魔法LV3-3,MAGIC_AttMagic,水|200|3,311,1,9,0,18
-冰天雪地,水魔法LV4,MAGIC_AttMagic,水|250|4,312,1,11,0,19
-火球,火魔法LV1,MAGIC_AttMagic,火|100|1,313,1,9,0,2
-火焰连弹,火魔法LV2,MAGIC_AttMagic,火|150|2,314,1,9,0,3
-蒸汽喷射,火魔法LV3-1,MAGIC_AttMagic,火|165|3,315,1,9,0,4
-火焰风爆,火魔法LV3-2,MAGIC_AttMagic,火|185|3,316,1,9,0,5
-熔岩爆发,火魔法LV3-3,MAGIC_AttMagic,火|200|3,317,1,11,0,6
-火山爆发,火魔法LV4,MAGIC_AttMagic,火|200|4,318,1,11,0,7
-风刃,风魔法LV1,MAGIC_AttMagic,风|100|1,319,1,9,0,20
-真空刃,风魔法LV2,MAGIC_AttMagic,风|150|2,320,1,9,0,21
-龙卷风,风魔法LV3-1,MAGIC_AttMagic,风|165|3,321,1,10,0,22
-暴风烈刃,风魔法LV3-2,MAGIC_AttMagic,风|165|3,322,1,9,0,23
-暴风冰刃,风魔法LV3-3,MAGIC_AttMagic,风|200|3,323,1,11,0,24
-南极飓风,风魔法LV4,MAGIC_AttMagic,风|250|4,324,1,11,0,25
-毁天灭地,魔法LV5,MAGIC_AttMagic,火|350|5,325,1,11,0,26
-破除防御,对采取防敌人攻击可能,MAGIC_AttSkill,PETSKILL_GuardBreak;3,326,1,1,0,0
-突击,1回合储存力量就会有两倍的攻击力,MAGIC_AttSkill,PETSKILL_ChargeAttack;30,327,1,1,0,0
-一击必杀,给予两倍的攻击伤害但是命中率下降,MAGIC_AttSkill,PETSKILL_Mighty;40,328,1,1,0,0
-背水之战其之１,防御力减30%　　攻击力变成+30%,MAGIC_AttSkill,PETSKILL_Regret;666,329,1,1,0,0
-不防守战法,自己不进行攻击反击跟回避率就会变的非常高,MAGIC_AttSkill,PETSKILL_NoGuard;150,330,1,1,0,0
-变幻的精灵 Lv1,变身成自己的宠物一分钟,MAGIC_Metamo,60,350,0,1,0,0
-变幻的精灵 Lv2,变身成自己的宠物二分钟,MAGIC_Metamo,120,351,0,1,0,0
-变幻的精灵 Lv3,变身成自己的宠物三分钟,MAGIC_Metamo,180,352,0,1,0,0
-變幻的精靈 Lv10,變身成自己的寵物一天,MAGIC_Metamo,86400,355,0,1,0,0
-T陨石冲击,地魔法LV4,MAGIC_AttMagic,地|600|5,356,1,11,0,13
-T冰天雪地,水魔法LV4,MAGIC_AttMagic,水|600|5,357,1,11,0,19
-T火山爆发,火魔法LV4,MAGIC_AttMagic,火|600|5,358,1,11,0,7
-T南极飓风,风魔法LV4,MAGIC_AttMagic,风|600|5,359,1,11,0,25
-T毁天灭地,全魔法LV5,MAGIC_AttMagic,火|900|5,360,1,11,0,26
-虚弱,被攻击者三回合内防御跟敏捷下降20%,MAGIC_Weaken,虚 turn 3 成 50,390,1,1,0,0
-全体虚弱,敌全体三回合内防御跟敏捷下降20%,MAGIC_Weaken,虚 turn 3 成 50,391,1,8,0,0
-魔法防御 Lv1,提升全魔法抗性+20%三回合我方单体,MAGIC_MagicStatusChange,魔抗|3|20|单,392,1,1,0,0
-魔法防御 Lv2,提升全魔法抗性+20%三回合我方全体,MAGIC_MagicStatusChange,魔抗|3|20|全,393,1,8,0,0
-奔龙阵,招唤巴朵兰恩攻击敌方单体,MAGIC_ToCallDragon,100373|300,394,1,9,0,0
-强恩阵,招唤强恩攻击敌方一排,MAGIC_ToCallDragon,100401|300,395,1,10,0,1
-奔雷阵,招唤雷龙群攻击敌方全体,MAGIC_ToCallDragon,101422|400,396,1,11,0,2
-魔障,使敌全体一回合无法行动,MAGIC_Barrier,障 turn 1 成 50,397,1,3,0,0
-沉默,使敌全体无法使用咒术3回合,MAGIC_Nocast,默 turn 3 成 50,398,1,3,0,0
-E咒灵术,E咒灵术,MAGIC_ToCallDragon,101633|99999,399,1,11,0,2
-E收魂,E收魂,MAGIC_ToCallDragon,101772|99999,400,1,11,0,2
-净化精灵(剧毒)Lv1,剧毒状态回复 (单人),MAGIC_StatusRecovery,剧,402,1,1,0,
-净化精灵(剧毒)Lv2,剧毒状态回复 (一方全体),MAGIC_StatusRecovery,剧,403,1,8,0,
-净化精灵(魔障)Lv1,魔障状态回复 (单人),MAGIC_StatusRecovery,障,404,1,1,0,
-净化精灵(魔障)Lv2,魔障状态回复 (一方全体),MAGIC_StatusRecovery,障,405,1,8,0,
-净化精灵(沉默)Lv1,沉默状态回复 (单人),MAGIC_StatusRecovery,默,406,1,1,0,
-净化精灵(沉默)Lv2,沉默状态回复 (一方全体),MAGIC_StatusRecovery,默,407,1,8,0,
-净化精灵(虚弱)Lv1,虚弱状态回复 (单人),MAGIC_StatusRecovery,虚,408,1,1,0,
-净化精灵(虚弱)Lv2,虚弱状态回复 (一方全体),MAGIC_StatusRecovery,虚,409,1,8,0,
-变幻的精灵 Lv4,变身成自己的宠物十分钟,MAGIC_Metamo,600,410,0,1,0,0
-破除沉默,解除沉默状态,MAGIC_StatusRecovery,默,411,1,8,0,0
-毒雾的精灵 Lv6,中毒状态 6回合前后 (一方全体),MAGIC_StatusChange,毒 turn 6 成 25,412,1,8,0,
-石化的精灵 Lv6,石化状态 6回合前后 (一方全体),MAGIC_StatusChange,石 turn 6 成 25,413,1,8,0,
-混迷的精灵 Lv6,混乱状态 6回合前后 (一方全体),MAGIC_StatusChange,乱 turn 6 成 25,414,1,8,0,
-酩酊的精灵 Lv6,酒醉状态 6回合前后 (一方全体),MAGIC_StatusChange,醉 turn 6 成 25,415,1,8,0,
-昏睡的精灵 Lv6,睡眠状态 6回合前后 (一方全体),MAGIC_StatusChange,眠 turn 6 成 25,416,1,8,0,
-冰之精灵Lv1,冰抗性提升10  3回合(单人),MAGIC_MagicStatusChange,冰抗|3|10|单,417,1,1,0,0
-电之精灵Lv1,电抗性提升10  3回合(单人),MAGIC_MagicStatusChange,电抗|3|10|单,418,1,1,0,0
-火之精灵Lv1,火抗性提升10  3回合(单人),MAGIC_MagicStatusChange,火抗|3|10|单,419,1,1,0,0
-冰之精灵Lv2,冰抗性提升10  3回合(一方全体),MAGIC_MagicStatusChange,冰抗|3|10|全,420,1,8,0,0
-电之精灵Lv2,电抗性提升10  3回合(一方全体),MAGIC_MagicStatusChange,电抗|3|10|全,421,1,8,0,0
-火之精灵Lv2,火抗性提升10  3回合(一方全体),MAGIC_MagicStatusChange,火抗|3|10|全,422,1,8,0,0
-毒雾的精灵 Lv7,中毒状态 6回合前后 (一方全体),MAGIC_StatusChange,毒 turn 6 成 30,423,1,8,0,
-毒雾的精灵 Lv8,中毒状态 7回合前后 (一方全体),MAGIC_StatusChange,毒 turn 7 成 35,424,1,8,0,
-石化的精灵 Lv7,石化状态 6回合前后 (一方全体),MAGIC_StatusChange,石 turn 6 成 30,425,1,8,0,
-石化的精灵 Lv8,石化状态 7回合前后 (一方全体),MAGIC_StatusChange,石 turn 7 成 35,426,1,8,0,
-混迷的精灵 Lv7,混乱状态 6回合前后 (一方全体),MAGIC_StatusChange,乱 turn 6 成 30,427,1,8,0,
-混迷的精灵 Lv8,混乱状态 7回合前后 (一方全体),MAGIC_StatusChange,乱 turn 7 成 35,428,1,8,0,
-酩酊的精灵 Lv7,酒醉状态 6回合前后 (一方全体),MAGIC_StatusChange,醉 turn 6 成 30,429,1,8,0,
-酩酊的精灵 Lv8,酒醉状态 7回合前后 (一方全体),MAGIC_StatusChange,醉 turn 7 成 35,430,1,8,0,
-昏睡的精灵 Lv7,睡眠状态 6回合前后 (一方全体),MAGIC_StatusChange,眠 turn 6 成 30,431,1,8,0,
-昏睡的精灵 Lv8,睡眠状态 7回合前后 (一方全体),MAGIC_StatusChange,眠 turn 7 成 35,432,1,8,0,
-瘫痪的精灵 Lv1,敌单体三回合内防御跟敏捷下降20%,MAGIC_Weaken,虚 turn 3 成 30,433,1,1,0,0
-瘫痪的精灵 Lv2,敌单体五回合内防御跟敏捷下降20%,MAGIC_Weaken,虚 turn 5 成 40,434,1,1,0,0
-瘫痪的精灵 Lv3,敌单体七回合内防御跟敏捷下降20%,MAGIC_Weaken,虚 turn 7 成 50,435,1,1,0,0
-虚弱的精灵 Lv1,敌全体三回合内防御跟敏捷下降20%,MAGIC_Weaken,虚 turn 3 成 20,436,1,8,0,0
-虚弱的精灵 Lv2,敌全体四回合内防御跟敏捷下降20%,MAGIC_Weaken,虚 turn 4 成 25,437,1,8,0,0
-虚弱的精灵 Lv3,敌全体五回合内防御跟敏捷下降20%,MAGIC_Weaken,虚 turn 5 成 30,438,1,8,0,0
-艾巴登之咒 Lv1,被攻击者两回合无法行动,MAGIC_Barrier,障 turn 2 成 10,439,1,1,0,0
-艾巴登之咒 Lv2,被攻击者两回合无法行动,MAGIC_Barrier,障 turn 2 成 15,440,1,1,0,0
-艾巴登之咒 Lv3,被攻击者两回合无法行动,MAGIC_Barrier,障 turn 2 成 20,441,1,1,0,0
-沉默的精灵 Lv1,被攻击者无法使用咒术3回合,MAGIC_Nocast,默 turn 3 成 15,442,1,1,0,0
-沉默的精灵 Lv2,被攻击者无法使用咒术3回合,MAGIC_Nocast,默 turn 3 成 20,443,1,1,0,0
-沉默的精灵 Lv3,被攻击者无法使用咒术3回合,MAGIC_Nocast,默 turn 3 成 30,444,1,1,0,0
-封咒的精灵 Lv1,使敌全体无法使用咒术3回合,MAGIC_Nocast,默 turn 3 成 10,445,1,8,0,0
-封咒的精灵 Lv2,使敌全体无法使用咒术3回合,MAGIC_Nocast,默 turn 3 成 15,446,1,8,0,0
-封咒的精灵 Lv2,使敌全体无法使用咒术3回合,MAGIC_Nocast,默 turn 3 成 20,447,1,8,0,0
-剧毒,被攻击者三回合内防御跟敏捷下降20%,MAGIC_StatusChange2,剧 turn 5 成 50,448,1,1,0,0
-全体剧毒,敌全体三回合内防御跟敏捷下降20%,MAGIC_StatusChange2,剧 turn 6 成 50,449,1,8,0,0
-魔法防御 Lv1,提升全魔法抗性+90%三回合我方单体,MAGIC_MagicStatusChange,魔抗|3|90|单,460,1,1,0,0
-魔法防御 Lv2,提升全魔法抗性+50%三回合我方全体,MAGIC_MagicStatusChange,魔抗|3|50|全,461,1,8,0,0
-毒雾的精灵,敌人全体中毒9回合,MAGIC_StatusChange,毒 turn 9 成 90,463,1,8,0,
-石化的精灵,敌人全体石化3回合,MAGIC_StatusChange,石 turn 3 成 500,464,1,8,0,
-混迷的精灵,敌人全体混乱6回合,MAGIC_StatusChange,乱 turn 6 成 60,465,1,8,0,
-酩酊的精灵,敌人全体醉酒9回合,MAGIC_StatusChange,醉 turn 9 成 90,466,1,8,0,
-昏睡的精灵,敌人全体昏睡3回合,MAGIC_StatusChange,眠 turn 3 成 50,467,1,8,0,
-虚弱的精灵,敌人全体虚弱6回合,MAGIC_Weaken,虚 turn 6 成 80,468,1,8,0,0
-沉默的精灵,敌人全体无法使用咒术3回合,MAGIC_Nocast,默 turn 3 成 80,469,1,8,0,0
-地魔法LV1,地魔法LV1,MAGIC_AttMagic,地|50|5,470,1,9,0,9
-地魔法LV1,地魔法LV1,MAGIC_AttMagic,地|100|5,471,1,9,0,9
-地魔法LV1,地魔法LV1,MAGIC_AttMagic,地|260|5,472,1,9,0,9
-地魔法LV1,地魔法LV1,MAGIC_AttMagic,地|500|5,473,1,9,0,9
-地魔法LV1,地魔法LV1,MAGIC_AttMagic,地|700|5,474,1,9,0,9
-地魔法LV1,地魔法LV1,MAGIC_AttMagic,地|980|5,475,1,9,0,9
-地魔法LV1,地魔法LV1,MAGIC_AttMagic,地|1160|5,476,1,9,0,9
-地魔法LV1,地魔法LV1,MAGIC_AttMagic,地|1440|5,477,1,9,0,9
-地魔法LV2,地魔法LV2,MAGIC_AttMagic,地|120|5,480,1,10,0,10
-地魔法LV2,地魔法LV2,MAGIC_AttMagic,地|240|5,481,1,10,0,10
-地魔法LV2,地魔法LV2,MAGIC_AttMagic,地|360|5,482,1,10,0,10
-地魔法LV2,地魔法LV2,MAGIC_AttMagic,地|480|5,483,1,10,0,10
-地魔法LV2,地魔法LV2,MAGIC_AttMagic,地|640|5,484,1,10,0,10
-地魔法LV3,地魔法LV3,MAGIC_AttMagic,地|100|5,490,1,11,0,12
-地魔法LV3,地魔法LV3,MAGIC_AttMagic,地|200|5,491,1,11,0,12
-地魔法LV3,地魔法LV3,MAGIC_AttMagic,地|300|5,492,1,11,0,12
-地魔法LV3,地魔法LV3,MAGIC_AttMagic,地|440|5,493,1,11,0,12
-水魔法LV1,水魔法LV1,MAGIC_AttMagic,水|50|5,500,1,9,0,16
-水魔法LV1,水魔法LV1,MAGIC_AttMagic,水|100|5,501,1,9,0,16
-水魔法LV1,水魔法LV1,MAGIC_AttMagic,水|260|5,502,1,9,0,16
-水魔法LV1,水魔法LV1,MAGIC_AttMagic,水|500|5,503,1,9,0,16
-水魔法LV1,水魔法LV1,MAGIC_AttMagic,水|700|5,504,1,9,0,16
-水魔法LV1,水魔法LV1,MAGIC_AttMagic,水|980|5,505,1,9,0,16
-水魔法LV1,水魔法LV1,MAGIC_AttMagic,水|1160|5,506,1,9,0,16
-水魔法LV1,水魔法LV1,MAGIC_AttMagic,水|1440|5,507,1,9,0,16
-水魔法LV2,水魔法LV2,MAGIC_AttMagic,水|120|5,510,1,10,0,18
-水魔法LV2,水魔法LV2,MAGIC_AttMagic,水|240|5,511,1,10,0,18
-水魔法LV2,水魔法LV2,MAGIC_AttMagic,水|360|5,512,1,10,0,18
-水魔法LV2,水魔法LV2,MAGIC_AttMagic,水|480|5,513,1,10,0,18
-水魔法LV2,水魔法LV2,MAGIC_AttMagic,水|640|5,514,1,10,0,18
-水魔法LV3,水魔法LV3,MAGIC_AttMagic,水|100|5,520,1,11,0,19
-水魔法LV3,水魔法LV3,MAGIC_AttMagic,水|200|5,521,1,11,0,19
-水魔法LV3,水魔法LV3,MAGIC_AttMagic,水|300|5,522,1,11,0,19
-水魔法LV3,水魔法LV3,MAGIC_AttMagic,水|440|5,523,1,11,0,19
-火魔法LV1,火魔法LV1,MAGIC_AttMagic,火|50|5,530,1,9,0,3
-火魔法LV1,火魔法LV1,MAGIC_AttMagic,火|100|5,531,1,9,0,3
-火魔法LV1,火魔法LV1,MAGIC_AttMagic,火|260|5,532,1,9,0,3
-火魔法LV1,火魔法LV1,MAGIC_AttMagic,火|500|5,533,1,9,0,3
-火魔法LV1,火魔法LV1,MAGIC_AttMagic,火|700|5,534,1,9,0,3
-火魔法LV1,火魔法LV1,MAGIC_AttMagic,火|980|5,535,1,9,0,3
-火魔法LV1,火魔法LV1,MAGIC_AttMagic,火|1160|5,536,1,9,0,3
-火魔法LV1,火魔法LV1,MAGIC_AttMagic,火|1440|5,537,1,9,0,3
-火魔法LV2,火魔法LV2,MAGIC_AttMagic,火|120|5,540,1,10,0,6
-火魔法LV2,火魔法LV2,MAGIC_AttMagic,火|240|5,541,1,10,0,6
-火魔法LV2,火魔法LV2,MAGIC_AttMagic,火|360|5,542,1,10,0,6
-火魔法LV2,火魔法LV2,MAGIC_AttMagic,火|480|5,543,1,10,0,6
-火魔法LV2,火魔法LV2,MAGIC_AttMagic,火|640|5,544,1,10,0,6
-火魔法LV3,火魔法LV3,MAGIC_AttMagic,火|100|5,550,1,11,0,26
-火魔法LV3,火魔法LV3,MAGIC_AttMagic,火|200|5,551,1,11,0,26
-火魔法LV3,火魔法LV3,MAGIC_AttMagic,火|300|5,552,1,11,0,26
-火魔法LV3,火魔法LV3,MAGIC_AttMagic,火|440|5,553,1,11,0,26
-风魔法LV1,风魔法LV1,MAGIC_AttMagic,风|50|5,560,1,9,0,23
-风魔法LV1,风魔法LV1,MAGIC_AttMagic,风|100|5,561,1,9,0,23
-风魔法LV1,风魔法LV1,MAGIC_AttMagic,风|260|5,562,1,9,0,23
-风魔法LV1,风魔法LV1,MAGIC_AttMagic,风|500|5,563,1,9,0,23
-风魔法LV1,风魔法LV1,MAGIC_AttMagic,风|700|5,564,1,9,0,23
-风魔法LV1,风魔法LV1,MAGIC_AttMagic,风|980|5,565,1,9,0,23
-风魔法LV1,风魔法LV1,MAGIC_AttMagic,风|1160|5,566,1,9,0,23
-风魔法LV1,风魔法LV1,MAGIC_AttMagic,风|1440|5,567,1,9,0,23
-风魔法LV2,风魔法LV2,MAGIC_AttMagic,风|120|5,570,1,10,0,24
-风魔法LV2,风魔法LV2,MAGIC_AttMagic,风|240|5,571,1,10,0,24
-风魔法LV2,风魔法LV2,MAGIC_AttMagic,风|360|5,572,1,10,0,24
-风魔法LV2,风魔法LV2,MAGIC_AttMagic,风|480|5,573,1,10,0,24
-风魔法LV2,风魔法LV2,MAGIC_AttMagic,风|640|5,574,1,10,0,24
-风魔法LV3,风魔法LV3,MAGIC_AttMagic,风|100|5,580,1,11,0,25
-风魔法LV3,风魔法LV3,MAGIC_AttMagic,风|200|5,581,1,11,0,25
-风魔法LV3,风魔法LV3,MAGIC_AttMagic,风|300|5,582,1,11,0,25
-风魔法LV3,风魔法LV3,MAGIC_AttMagic,风|440|5,583,1,11,0,25
-白虎恩惠,水神独有技能 ,MAGIC_Recovery,10000,584,1,8,0,
-麒麟之气,混沌之气 复活一切生灵,MAGIC_Ressurect,100000,585,1,1,1,
-朱雀毒雾,火神独有技能,MAGIC_StatusChange,毒 turn 20 成 90,586,1,8,0,
-玄武盔甲,土神独有技能,MAGIC_MagicDef,反  turn 60,587,1,8,0,
-青龙净化,风神独有技能,MAGIC_StatusRecovery,全,588,1,8,0,
+�����ľ��� Lv1,�;����ظ� 80 (�Լ�),MAGIC_Recovery,80,0,0,0,0,
+�����ľ��� Lv2,�;����ظ� 160 (�Լ�),MAGIC_Recovery,160,1,0,0,0,
+�����ľ��� Lv3,�;����ظ� 320 (�Լ�),MAGIC_Recovery,320,2,0,0,0,
+�����ľ��� Lv4,�;����ظ� 480 (�Լ�),MAGIC_Recovery,480,3,0,0,0,
+�����ľ��� Lv5,�;����ظ� 800 (�Լ�),MAGIC_Recovery,800,4,0,0,0,
+�����ľ��� Lv6,�;����ظ� 1160 (�Լ�),MAGIC_Recovery,1160,5,0,0,0,
+����ľ��� Lv1,�;����ظ� 65 (����),MAGIC_OtherRecovery,65,10,0,1,0,
+����ľ��� Lv2,�;����ظ� 130 (����),MAGIC_OtherRecovery,130,11,0,1,0,
+����ľ��� Lv3,�;����ظ� 260 (����),MAGIC_OtherRecovery,260,12,0,1,0,
+����ľ��� Lv4,�;����ظ� 390 (����),MAGIC_OtherRecovery,390,13,0,1,0,
+����ľ��� Lv5,�;����ظ� 650 (����),MAGIC_OtherRecovery,650,14,0,1,0,
+����ľ��� Lv6,�;����ظ� 880 (����),MAGIC_OtherRecovery,880,15,0,1,0,
+����ľ��� Lv7,�;����ظ� 1120 (����),MAGIC_OtherRecovery,1080,16,0,1,0,
+����ľ��� Lv8,�;����ظ� 1280 (����),MAGIC_OtherRecovery,1280,17,0,1,0,
+����ľ��� Lv9,�;����ظ� 1540 (����),MAGIC_OtherRecovery,1540,18,0,1,0,
+����ľ��� Lv10,�;����ظ� 1880 (����),MAGIC_OtherRecovery,1880,19,0,1,0,
+���ݵľ��� Lv1,�;����ظ� 50  (һ��ȫ��),MAGIC_Recovery,50,20,1,8,0,
+���ݵľ��� Lv2,�;����ظ� 100 (һ��ȫ��),MAGIC_Recovery,100,21,1,8,0,
+���ݵľ��� Lv3,�;����ظ� 200 (һ��ȫ��),MAGIC_Recovery,200,22,1,8,0,
+���ݵľ��� Lv4,�;����ظ� 320 (һ��ȫ��),MAGIC_Recovery,300,23,1,8,0,
+���ݵľ��� Lv5,�;����ظ� 420 (һ��ȫ��),MAGIC_Recovery,420,24,1,8,0,
+���ݵľ��� Lv6,�;����ظ� 600 (һ��ȫ��),MAGIC_Recovery,600,25,1,8,0,
+���ݵľ��� Lv7,�;����ظ� 1080 (һ��ȫ��),MAGIC_Recovery,720,26,1,8,0,
+���ݵľ��� Lv8,�;����ظ� 1280 (һ��ȫ��),MAGIC_Recovery,840,27,1,8,0,
+���ݵľ��� Lv9,�;����ظ� 1480 (һ��ȫ��),MAGIC_Recovery,960,28,1,8,0,
+���ݵľ��� Lv10,�;����ظ� 1680 (һ��ȫ��),MAGIC_Recovery,1080,29,1,8,0,
+���ݵľ��� Lv11,�;����ظ� 1880 (һ��ȫ��),MAGIC_Recovery,1200,30,1,8,0,
+���ݵľ��� Lv12,�;����ظ� 2000 (һ��ȫ��),MAGIC_Recovery,1640,31,1,8,0,
+����� Lv1,����״̬�ظ� 100 (����),MAGIC_Ressurect,100,50,1,1,1,
+����� Lv2,����״̬�ظ� 300 (����),MAGIC_Ressurect,300,51,1,1,1,
+����� Lv3,����״̬�ظ� 500 (����),MAGIC_Ressurect,500,52,1,1,1,
+����� Lv4,����״̬�ظ� 700 (����),MAGIC_Ressurect,700,53,1,1,1,
+����� Lv5,����״̬�ظ� 900 (����),MAGIC_Ressurect,900,54,1,1,1,
+����� Lv6,����״̬�ظ� 1200 (����),MAGIC_Ressurect,1200,55,1,1,1,
+����� Lv7,����״̬�ظ� 1500 (����),MAGIC_Ressurect,1500,56,1,1,1,
+����� Lv8,����״̬�ظ� 1800 (����),MAGIC_Ressurect,1800,57,1,1,1,
+����� Lv9,����״̬�ظ� 9999 (����),MAGIC_Ressurect,9999,58,1,1,1,
+����� Lv10,����״̬�ظ� 9999 (һ��ȫ��),MAGIC_Ressurect,9999,59,1,1,1,
+�ߵȾ�������Lv1,ȫ��״̬�쳣�ظ� (����),MAGIC_StatusRecovery,ȫ,60,1,1,0,
+�ߵȾ�������Lv2,ȫ��״̬�쳣�ظ� (һ��ȫ��),MAGIC_StatusRecovery,ȫ,61,1,8,0,
+��������(��)Lv1,��״̬�ظ� (����),MAGIC_StatusRecovery,��,70,1,1,0,
+��������(��)Lv2,��״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,��,71,1,8,0,
+��������(���)Lv1,�ظ�һ�����״̬,MAGIC_StatusRecovery,��,80,1,1,0,
+��������(���)Lv2,�ظ�ȫ�����״̬,MAGIC_StatusRecovery,��,81,1,8,0,
+��������(ʯ��)Lv1,ʯ��״̬�ظ� (����),MAGIC_StatusRecovery,ʯ,90,1,1,0,
+��������(ʯ��)Lv2,ʯ��״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,ʯ,91,1,8,0,
+��������(����)Lv1,����״̬�ظ� (����),MAGIC_StatusRecovery,��,100,1,1,0,
+��������(����)Lv2,����״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,��,101,1,8,0,
+��������(����)Lv1,����״̬�ظ� (����),MAGIC_StatusRecovery,��,110,1,1,0,
+��������(����)Lv2,����״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,��,111,1,8,0,
+��������(˯��)Lv1,˯��״̬�ظ� (����),MAGIC_StatusRecovery,��,120,1,1,0,
+��������(˯��)Lv2,˯��״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,��,121,1,8,0,
+�Ͷ��ľ��� Lv1,�ж�״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 3 �� 20,130,1,1,0,
+�Ͷ��ľ��� Lv2,�ж�״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 3 �� 25,131,1,1,0,
+�Ͷ��ľ��� Lv3,�ж�״̬4�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 4  �� 25,132,1,1,0,
+�Ͷ��ľ��� Lv4,�ж�״̬4�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 4  �� 30,133,1,1,0,
+�Ͷ��ľ��� Lv5,�ж�״̬5�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 5 �� 25,134,1,1,0,
+�����ľ��� Lv1,�ж�״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 3 �� 20,135,1,8,0,
+�����ľ��� Lv2,�ж�״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 3 �� 25,136,1,8,0,
+�����ľ��� Lv3,�ж�״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 4 �� 25,137,1,8,0,
+�����ľ��� Lv4,�ж�״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 4 �� 30,138,1,8,0,
+�����ľ��� Lv5,�ж�״̬ 5�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 5 �� 25,139,1,8,0,
+Ӳ���ľ��� Lv1,ʯ��״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,ʯ turn 3 �� 15,150,1,1,0,
+Ӳ���ľ��� Lv2,ʯ��״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,ʯ turn 3 �� 20,151,1,1,0,
+Ӳ���ľ��� Lv3,ʯ��״̬ 4�غ�ǰ�� (����),MAGIC_StatusChange,ʯ turn 4 �� 25,152,1,1,0,
+Ӳ���ľ��� Lv4,ʯ��״̬ 4�غ�ǰ�� (����),MAGIC_StatusChange,ʯ turn 4 �� 30,153,1,1,0,
+Ӳ���ľ��� Lv5,ʯ��״̬ 5�غ�ǰ�� (����),MAGIC_StatusChange,ʯ turn 5 �� 25,154,1,1,0,
+ʯ���ľ��� Lv1,ʯ��״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,ʯ turn 3 �� 15,155,1,8,0,
+ʯ���ľ��� Lv2,ʯ��״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,ʯ turn 3 �� 20,156,1,8,0,
+ʯ���ľ��� Lv3,ʯ��״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,ʯ turn 4 �� 25,157,1,8,0,
+ʯ���ľ��� Lv4,ʯ��״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,ʯ turn 4 �� 30,158,1,8,0,
+ʯ���ľ��� Lv5,ʯ��״̬ 5�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,ʯ turn 5 �� 25,159,1,8,0,
+���ҵľ��� Lv1,����״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 3 �� 20,160,1,1,0,
+���ҵľ��� Lv2,����״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 3 �� 25,161,1,1,0,
+���ҵľ��� Lv3,����״̬ 4�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 4 �� 25,162,1,1,0,
+���ҵľ��� Lv4,����״̬ 4�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 4 �� 30,163,1,1,0,
+���ҵľ��� Lv5,����״̬ 5�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 5 �� 25,164,1,1,0,
+���Եľ��� Lv1,����״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 3 �� 20,165,1,8,0,
+���Եľ��� Lv2,����״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 3 �� 25,166,1,8,0,
+���Եľ��� Lv3,����״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 4 �� 25,167,1,8,0,
+���Եľ��� Lv4,����״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 4 �� 30,168,1,8,0,
+���Եľ��� Lv5,����״̬ 5�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 5 �� 25,169,1,8,0,
+�Ƶľ��� Lv1,����״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 3 �� 20,170,1,1,0,
+�Ƶľ��� Lv2,����״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 3 �� 25,171,1,1,0,
+�Ƶľ��� Lv3,����״̬ 4�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 4 �� 25,172,1,1,0,
+�Ƶľ��� Lv4,����״̬ 4�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 4 �� 30,173,1,1,0,
+�Ƶľ��� Lv5,����״̬ 5�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 5 �� 25,174,1,1,0,
+�����ľ��� Lv1,����״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 3 �� 20,175,1,8,0,
+�����ľ��� Lv2,����״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 3 �� 25,176,1,8,0,
+�����ľ��� Lv3,����״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 4 �� 25,177,1,8,0,
+�����ľ��� Lv4,����״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 4 �� 30,178,1,8,0,
+�����ľ��� Lv5,����״̬ 5�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 5 �� 25,179,1,8,0,
+˯�ߵľ��� Lv1,˯��״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 3 �� 20,180,1,1,0,
+˯�ߵľ��� Lv2,˯��״̬ 3�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 3 �� 25,181,1,1,0,
+˯�ߵľ��� Lv3,˯��״̬ 4�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 4 �� 25,182,1,1,0,
+˯�ߵľ��� Lv4,˯��״̬ 4�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 4 �� 30,183,1,1,0,
+˯�ߵľ��� Lv5,˯��״̬ 5�غ�ǰ�� (����),MAGIC_StatusChange,�� turn 5 �� 25,184,1,1,0,
+��˯�ľ��� Lv1,˯��״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 3 �� 20,185,1,8,0,
+��˯�ľ��� Lv2,˯��״̬ 3�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 3 �� 25,186,1,8,0,
+��˯�ľ��� Lv3,˯��״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 4 �� 25,187,1,8,0,
+��˯�ľ��� Lv4,˯��״̬ 4�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 4 �� 30,188,1,8,0,
+��˯�ľ��� Lv5,˯��״̬ 5�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 5 �� 25,189,1,8,0,
+��صľ��� Lv1,���������� 60% 3�غ� (ȫ��),MAGIC_FieldAttChange,�� 60  turn 3,190,1,4,0,
+��صľ��� Lv2,���������� 70% 3�غ� (ȫ��),MAGIC_FieldAttChange,�� 70  turn 3,191,1,4,0,
+��صľ��� Lv3,���������� 80% 4�غ� (ȫ��),MAGIC_FieldAttChange,�� 80  turn 4,192,1,4,0,
+��صľ��� Lv4,���������� 90% 4�غ� (ȫ��),MAGIC_FieldAttChange,�� 90  turn 4,193,1,4,0,
+��صľ��� Lv5,����������100% 5�غ� (ȫ��),MAGIC_FieldAttChange,�� 100 turn 5,194,1,4,0,
+��صľ��� Lv6,����������100% 9�غ� (ȫ��),MAGIC_FieldAttChange,�� 100 turn 9,195,1,4,0,
+ˮ�ľ��� Lv1,ˮ��������60% 3�غ� (ȫ��),MAGIC_FieldAttChange,ˮ 60  turn 3,200,1,4,0,
+ˮ�ľ��� Lv2,ˮ�������� 70% 3�غ� (ȫ��),MAGIC_FieldAttChange,ˮ 70  turn 3,201,1,4,0,
+ˮ�ľ��� Lv3,ˮ�������� 80% 4�غ� (ȫ��),MAGIC_FieldAttChange,ˮ 80  turn 4,202,1,4,0,
+ˮ�ľ��� Lv4,ˮ�������� 90% 4�غ� (ȫ��),MAGIC_FieldAttChange,ˮ 90  turn 4,203,1,4,0,
+ˮ�ľ��� Lv5,ˮ��������100% 5�غ� (ȫ��),MAGIC_FieldAttChange,ˮ 100  turn 5,204,1,4,0,
+ˮ�ľ��� Lv5,ˮ��������100% 9�غ� (ȫ��),MAGIC_FieldAttChange,ˮ 100  turn 9,205,1,4,0,
+���׵ľ��� Lv1,���������� 60% 3�غ� (ȫ��),MAGIC_FieldAttChange,�� 60  turn 3,210,1,4,0,
+���׵ľ��� Lv2,���������� 70% 3�غ� (ȫ��),MAGIC_FieldAttChange,�� 70  turn 3,211,1,4,0,
+���׵ľ��� Lv3,���������� 80% 4�غ� (ȫ��),MAGIC_FieldAttChange,�� 80  turn 4,212,1,4,0,
+���׵ľ��� Lv4,���������� 90% 4�غ� (ȫ��),MAGIC_FieldAttChange,�� 90  turn 4,213,1,4,0,
+���׵ľ��� Lv5,����������100% 5�غ� (ȫ��),MAGIC_FieldAttChange,�� 100  turn 5,214,1,4,0,
+���׵ľ��� Lv5,����������100% 9�غ� (ȫ��),MAGIC_FieldAttChange,�� 100  turn 9,215,1,4,0,
+����ľ��� Lv1,���������� 60% 3�غ� (ȫ��),MAGIC_FieldAttChange,�� 60  turn 3,220,1,4,0,
+����ľ��� Lv2,���������� 70% 3�غ� (ȫ��),MAGIC_FieldAttChange,�� 70  turn 3,221,1,4,0,
+����ľ��� Lv3,���������� 80% 4�غ� (ȫ��),MAGIC_FieldAttChange,�� 80  turn 4,222,1,4,0,
+����ľ��� Lv4,���������� 90% 4�غ� (ȫ��),MAGIC_FieldAttChange,�� 90  turn 4,223,1,4,0,
+����ľ��� Lv5,����������100% 5�غ� (ȫ��),MAGIC_FieldAttChange,�� 100  turn 5,224,1,4,0,
+����ľ��� Lv5,����������100% 9�غ� (ȫ��),MAGIC_FieldAttChange,�� 100  turn 9,225,1,4,0,
+���͵ľ���,�ظ��������� (ȫ��),MAGIC_FieldAttChange,��,230,1,4,0,
+�ʺ�ľ���,���Է�ת (����),MAGIC_AttReverse,,240,1,1,0,
+����ľ���,���Է�ת (ȫ��),MAGIC_AttReverse,,241,1,8,0,
+��ľ��� Lv1,��������1�� (����),MAGIC_MagicDef,��  turn 1,250,1,1,0,
+��ľ��� Lv2,��������2�� (����),MAGIC_MagicDef,��  turn 2,251,1,1,0,
+��ľ��� Lv3,��������3�� (����),MAGIC_MagicDef,��  turn 3,252,1,1,0,
+ȫ���ľ��� Lv1,��������1�� (һ��ȫ��),MAGIC_MagicDef,��  turn 1,253,1,8,0,
+ȫ���ľ��� Lv2,��������2�� (һ��ȫ��),MAGIC_MagicDef,��  turn 2,254,1,8,0,
+ȫ���ľ��� Lv3,��������3�� (һ��ȫ��),MAGIC_MagicDef,��  turn 3,255,1,8,0,
+���ӵľ��� Lv1,��������1�� (����),MAGIC_MagicDef,��  turn 1,260,1,1,0,
+���ӵľ��� Lv2,��������2�� (����),MAGIC_MagicDef,��  turn 2,261,1,1,0,
+���ӵľ��� Lv3,��������3�� (����),MAGIC_MagicDef,��  turn 3,262,1,1,0,
+ȫ�徵�ӵľ��� Lv1,��������1�� (����),MAGIC_MagicDef,��  turn 1,263,1,8,0,
+ȫ�徵�ӵľ��� Lv2,��������2�� (����),MAGIC_MagicDef,��  turn 2,264,1,8,0,
+ȫ�徵�ӵľ��� Lv3,��������3�� (����),MAGIC_MagicDef,��  turn 3,265,1,8,0,
+�ػ��ľ���,������Ч2�� (����),MAGIC_MagicDef,��  turn 2,270,1,1,0,
+�ػ��ľ���,������Ч3�� (����),MAGIC_MagicDef,��  turn 3,271,1,1,0,
+�ػ��ľ���,������Ч5�� (����),MAGIC_MagicDef,��  turn 5,272,1,1,0,
+ȫ���ػ��ľ���,������Ч2�� (����),MAGIC_MagicDef,��  turn 2,273,1,8,0,
+ȫ���ػ��ľ���,������Ч3�� (����),MAGIC_MagicDef,��  turn 3,274,1,8,0,
+ȫ���ػ��ľ���,������Ч5�� (����),MAGIC_MagicDef,��  turn 5,275,1,8,0,
+����⾫�� Lv1,����״̬�ظ� 100�������������� 1�� (����),MAGIC_ResAndDef,100 �� turn 1,280,1,1,1,
+������� Lv1,����״̬�ظ� 100������ֱ�ӹ������� 1�� (����),MAGIC_ResAndDef,100 �� turn 1,290,1,1,1,
+�����ػ����� Lv1,����״̬�Ļظ� 100������������Ч 2�� (����),MAGIC_ResAndDef,100 �� turn 2,300,1,1,1,
+��ʯײ��,��ħ��LV1,MAGIC_AttMagic,��|100|1,301,1,1,0,8
+��ʯײ��,��ħ��LV2,MAGIC_AttMagic,��|150|2,302,1,9,0,9
+��ʯ��,��ħ��LV3-1,MAGIC_AttMagic,��|165|3,303,1,10,0,10
+����ײ��,��ħ��LV3-2,MAGIC_AttMagic,��|185|3,304,1,9,0,11
+����,��ħ��LV3-3,MAGIC_AttMagic,��|200|3,305,1,11,0,12
+��ʯ���,��ħ��LV4,MAGIC_AttMagic,��|250|4,306,1,11,0,13
+ˮ��,ˮħ��LV1,MAGIC_AttMagic,ˮ|100|1,307,1,9,0,14
+ˮ��,ˮħ��LV2,MAGIC_AttMagic,ˮ|150|2,308,1,9,0,15
+���ɽ,ˮħ��LV3-1,MAGIC_AttMagic,ˮ|165|3,309,1,9,0,16
+�е㹥��,ˮħ��LV3-2,MAGIC_AttMagic,ˮ|185|3,310,1,9,0,17
+����ѩ,ˮħ��LV3-3,MAGIC_AttMagic,ˮ|200|3,311,1,9,0,18
+����ѩ��,ˮħ��LV4,MAGIC_AttMagic,ˮ|250|4,312,1,11,0,19
+����,��ħ��LV1,MAGIC_AttMagic,��|100|1,313,1,9,0,2
+��������,��ħ��LV2,MAGIC_AttMagic,��|150|2,314,1,9,0,3
+��������,��ħ��LV3-1,MAGIC_AttMagic,��|165|3,315,1,9,0,4
+����籬,��ħ��LV3-2,MAGIC_AttMagic,��|185|3,316,1,9,0,5
+���ұ���,��ħ��LV3-3,MAGIC_AttMagic,��|200|3,317,1,11,0,6
+��ɽ����,��ħ��LV4,MAGIC_AttMagic,��|200|4,318,1,11,0,7
+����,��ħ��LV1,MAGIC_AttMagic,��|100|1,319,1,9,0,20
+�����,��ħ��LV2,MAGIC_AttMagic,��|150|2,320,1,9,0,21
+������,��ħ��LV3-1,MAGIC_AttMagic,��|165|3,321,1,10,0,22
+��������,��ħ��LV3-2,MAGIC_AttMagic,��|165|3,322,1,9,0,23
+�������,��ħ��LV3-3,MAGIC_AttMagic,��|200|3,323,1,11,0,24
+�ϼ�쫷�,��ħ��LV4,MAGIC_AttMagic,��|250|4,324,1,11,0,25
+�������,ħ��LV5,MAGIC_AttMagic,��|350|5,325,1,11,0,26
+�Ƴ�����,�Բ�ȡ�����˹�������,MAGIC_AttSkill,PETSKILL_GuardBreak;3,326,1,1,0,0
+ͻ��,1�غϴ��������ͻ��������Ĺ�����,MAGIC_AttSkill,PETSKILL_ChargeAttack;30,327,1,1,0,0
+һ����ɱ,���������Ĺ����˺������������½�,MAGIC_AttSkill,PETSKILL_Mighty;40,328,1,1,0,0
+��ˮ֮ս��֮��,��������30%�������������+30%,MAGIC_AttSkill,PETSKILL_Regret;666,329,1,1,0,0
+������ս��,�Լ������й����������ر��ʾͻ��ķǳ���,MAGIC_AttSkill,PETSKILL_NoGuard;150,330,1,1,0,0
+��õľ��� Lv1,�������Լ��ĳ���һ����,MAGIC_Metamo,60,350,0,1,0,0
+��õľ��� Lv2,�������Լ��ĳ��������,MAGIC_Metamo,120,351,0,1,0,0
+��õľ��� Lv3,�������Լ��ĳ���������,MAGIC_Metamo,180,352,0,1,0,0
+׃�õľ��` Lv10,׃�����Լ��Č���һ��,MAGIC_Metamo,86400,355,0,1,0,0
+T��ʯ���,��ħ��LV4,MAGIC_AttMagic,��|600|5,356,1,11,0,13
+T����ѩ��,ˮħ��LV4,MAGIC_AttMagic,ˮ|600|5,357,1,11,0,19
+T��ɽ����,��ħ��LV4,MAGIC_AttMagic,��|600|5,358,1,11,0,7
+T�ϼ�쫷�,��ħ��LV4,MAGIC_AttMagic,��|600|5,359,1,11,0,25
+T�������,ȫħ��LV5,MAGIC_AttMagic,��|900|5,360,1,11,0,26
+����,�����������غ��ڷ����������½�20%,MAGIC_Weaken,�� turn 3 �� 50,390,1,1,0,0
+ȫ������,��ȫ�����غ��ڷ����������½�20%,MAGIC_Weaken,�� turn 3 �� 50,391,1,8,0,0
+ħ������ Lv1,����ȫħ������+20%���غ��ҷ�����,MAGIC_MagicStatusChange,ħ��|3|20|��,392,1,1,0,0
+ħ������ Lv2,����ȫħ������+20%���غ��ҷ�ȫ��,MAGIC_MagicStatusChange,ħ��|3|20|ȫ,393,1,8,0,0
+������,�л��Ͷ����������з�����,MAGIC_ToCallDragon,100373|300,394,1,9,0,0
+ǿ����,�л�ǿ�������з�һ��,MAGIC_ToCallDragon,100401|300,395,1,10,0,1
+������,�л�����Ⱥ�����з�ȫ��,MAGIC_ToCallDragon,101422|400,396,1,11,0,2
+ħ��,ʹ��ȫ��һ�غ��޷��ж�,MAGIC_Barrier,�� turn 1 �� 50,397,1,3,0,0
+��Ĭ,ʹ��ȫ���޷�ʹ������3�غ�,MAGIC_Nocast,Ĭ turn 3 �� 50,398,1,3,0,0
+E������,E������,MAGIC_ToCallDragon,101633|99999,399,1,11,0,2
+E�ջ�,E�ջ�,MAGIC_ToCallDragon,101772|99999,400,1,11,0,2
+��������(�綾)Lv1,�綾״̬�ظ� (����),MAGIC_StatusRecovery,��,402,1,1,0,
+��������(�綾)Lv2,�綾״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,��,403,1,8,0,
+��������(ħ��)Lv1,ħ��״̬�ظ� (����),MAGIC_StatusRecovery,��,404,1,1,0,
+��������(ħ��)Lv2,ħ��״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,��,405,1,8,0,
+��������(��Ĭ)Lv1,��Ĭ״̬�ظ� (����),MAGIC_StatusRecovery,Ĭ,406,1,1,0,
+��������(��Ĭ)Lv2,��Ĭ״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,Ĭ,407,1,8,0,
+��������(����)Lv1,����״̬�ظ� (����),MAGIC_StatusRecovery,��,408,1,1,0,
+��������(����)Lv2,����״̬�ظ� (һ��ȫ��),MAGIC_StatusRecovery,��,409,1,8,0,
+��õľ��� Lv4,�������Լ��ĳ���ʮ����,MAGIC_Metamo,600,410,0,1,0,0
+�Ƴ���Ĭ,�����Ĭ״̬,MAGIC_StatusRecovery,Ĭ,411,1,8,0,0
+�����ľ��� Lv6,�ж�״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 6 �� 25,412,1,8,0,
+ʯ���ľ��� Lv6,ʯ��״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,ʯ turn 6 �� 25,413,1,8,0,
+���Եľ��� Lv6,����״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 6 �� 25,414,1,8,0,
+�����ľ��� Lv6,����״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 6 �� 25,415,1,8,0,
+��˯�ľ��� Lv6,˯��״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 6 �� 25,416,1,8,0,
+��֮����Lv1,����������10  3�غ�(����),MAGIC_MagicStatusChange,����|3|10|��,417,1,1,0,0
+��֮����Lv1,�翹������10  3�غ�(����),MAGIC_MagicStatusChange,�翹|3|10|��,418,1,1,0,0
+��֮����Lv1,��������10  3�غ�(����),MAGIC_MagicStatusChange,��|3|10|��,419,1,1,0,0
+��֮����Lv2,����������10  3�غ�(һ��ȫ��),MAGIC_MagicStatusChange,����|3|10|ȫ,420,1,8,0,0
+��֮����Lv2,�翹������10  3�غ�(һ��ȫ��),MAGIC_MagicStatusChange,�翹|3|10|ȫ,421,1,8,0,0
+��֮����Lv2,��������10  3�غ�(һ��ȫ��),MAGIC_MagicStatusChange,��|3|10|ȫ,422,1,8,0,0
+�����ľ��� Lv7,�ж�״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 6 �� 30,423,1,8,0,
+�����ľ��� Lv8,�ж�״̬ 7�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 7 �� 35,424,1,8,0,
+ʯ���ľ��� Lv7,ʯ��״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,ʯ turn 6 �� 30,425,1,8,0,
+ʯ���ľ��� Lv8,ʯ��״̬ 7�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,ʯ turn 7 �� 35,426,1,8,0,
+���Եľ��� Lv7,����״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 6 �� 30,427,1,8,0,
+���Եľ��� Lv8,����״̬ 7�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 7 �� 35,428,1,8,0,
+�����ľ��� Lv7,����״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 6 �� 30,429,1,8,0,
+�����ľ��� Lv8,����״̬ 7�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 7 �� 35,430,1,8,0,
+��˯�ľ��� Lv7,˯��״̬ 6�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 6 �� 30,431,1,8,0,
+��˯�ľ��� Lv8,˯��״̬ 7�غ�ǰ�� (һ��ȫ��),MAGIC_StatusChange,�� turn 7 �� 35,432,1,8,0,
+̱���ľ��� Lv1,�е������غ��ڷ����������½�20%,MAGIC_Weaken,�� turn 3 �� 30,433,1,1,0,0
+̱���ľ��� Lv2,�е�����غ��ڷ����������½�20%,MAGIC_Weaken,�� turn 5 �� 40,434,1,1,0,0
+̱���ľ��� Lv3,�е����߻غ��ڷ����������½�20%,MAGIC_Weaken,�� turn 7 �� 50,435,1,1,0,0
+�����ľ��� Lv1,��ȫ�����غ��ڷ����������½�20%,MAGIC_Weaken,�� turn 3 �� 20,436,1,8,0,0
+�����ľ��� Lv2,��ȫ���Ļغ��ڷ����������½�20%,MAGIC_Weaken,�� turn 4 �� 25,437,1,8,0,0
+�����ľ��� Lv3,��ȫ����غ��ڷ����������½�20%,MAGIC_Weaken,�� turn 5 �� 30,438,1,8,0,0
+���͵�֮�� Lv1,�����������غ��޷��ж�,MAGIC_Barrier,�� turn 2 �� 10,439,1,1,0,0
+���͵�֮�� Lv2,�����������غ��޷��ж�,MAGIC_Barrier,�� turn 2 �� 15,440,1,1,0,0
+���͵�֮�� Lv3,�����������غ��޷��ж�,MAGIC_Barrier,�� turn 2 �� 20,441,1,1,0,0
+��Ĭ�ľ��� Lv1,���������޷�ʹ������3�غ�,MAGIC_Nocast,Ĭ turn 3 �� 15,442,1,1,0,0
+��Ĭ�ľ��� Lv2,���������޷�ʹ������3�غ�,MAGIC_Nocast,Ĭ turn 3 �� 20,443,1,1,0,0
+��Ĭ�ľ��� Lv3,���������޷�ʹ������3�غ�,MAGIC_Nocast,Ĭ turn 3 �� 30,444,1,1,0,0
+����ľ��� Lv1,ʹ��ȫ���޷�ʹ������3�غ�,MAGIC_Nocast,Ĭ turn 3 �� 10,445,1,8,0,0
+����ľ��� Lv2,ʹ��ȫ���޷�ʹ������3�غ�,MAGIC_Nocast,Ĭ turn 3 �� 15,446,1,8,0,0
+����ľ��� Lv2,ʹ��ȫ���޷�ʹ������3�غ�,MAGIC_Nocast,Ĭ turn 3 �� 20,447,1,8,0,0
+�綾,�����������غ��ڷ����������½�20%,MAGIC_StatusChange2,�� turn 5 �� 50,448,1,1,0,0
+ȫ��綾,��ȫ�����غ��ڷ����������½�20%,MAGIC_StatusChange2,�� turn 6 �� 50,449,1,8,0,0
+ħ������ Lv1,����ȫħ������+90%���غ��ҷ�����,MAGIC_MagicStatusChange,ħ��|3|90|��,460,1,1,0,0
+ħ������ Lv2,����ȫħ������+50%���غ��ҷ�ȫ��,MAGIC_MagicStatusChange,ħ��|3|50|ȫ,461,1,8,0,0
+�����ľ���,����ȫ���ж�9�غ�,MAGIC_StatusChange,�� turn 9 �� 90,463,1,8,0,
+ʯ���ľ���,����ȫ��ʯ��3�غ�,MAGIC_StatusChange,ʯ turn 3 �� 500,464,1,8,0,
+���Եľ���,����ȫ�����6�غ�,MAGIC_StatusChange,�� turn 6 �� 60,465,1,8,0,
+�����ľ���,����ȫ������9�غ�,MAGIC_StatusChange,�� turn 9 �� 90,466,1,8,0,
+��˯�ľ���,����ȫ���˯3�غ�,MAGIC_StatusChange,�� turn 3 �� 50,467,1,8,0,
+�����ľ���,����ȫ������6�غ�,MAGIC_Weaken,�� turn 6 �� 80,468,1,8,0,0
+��Ĭ�ľ���,����ȫ���޷�ʹ������3�غ�,MAGIC_Nocast,Ĭ turn 3 �� 80,469,1,8,0,0
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|50|5,470,1,9,0,9
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|100|5,471,1,9,0,9
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|260|5,472,1,9,0,9
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|500|5,473,1,9,0,9
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|700|5,474,1,9,0,9
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|980|5,475,1,9,0,9
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|1160|5,476,1,9,0,9
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|1440|5,477,1,9,0,9
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|120|5,480,1,10,0,10
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|240|5,481,1,10,0,10
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|360|5,482,1,10,0,10
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|480|5,483,1,10,0,10
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|640|5,484,1,10,0,10
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|100|5,490,1,11,0,12
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|200|5,491,1,11,0,12
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|300|5,492,1,11,0,12
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|440|5,493,1,11,0,12
+ˮħ��LV1,ˮħ��LV1,MAGIC_AttMagic,ˮ|50|5,500,1,9,0,16
+ˮħ��LV1,ˮħ��LV1,MAGIC_AttMagic,ˮ|100|5,501,1,9,0,16
+ˮħ��LV1,ˮħ��LV1,MAGIC_AttMagic,ˮ|260|5,502,1,9,0,16
+ˮħ��LV1,ˮħ��LV1,MAGIC_AttMagic,ˮ|500|5,503,1,9,0,16
+ˮħ��LV1,ˮħ��LV1,MAGIC_AttMagic,ˮ|700|5,504,1,9,0,16
+ˮħ��LV1,ˮħ��LV1,MAGIC_AttMagic,ˮ|980|5,505,1,9,0,16
+ˮħ��LV1,ˮħ��LV1,MAGIC_AttMagic,ˮ|1160|5,506,1,9,0,16
+ˮħ��LV1,ˮħ��LV1,MAGIC_AttMagic,ˮ|1440|5,507,1,9,0,16
+ˮħ��LV2,ˮħ��LV2,MAGIC_AttMagic,ˮ|120|5,510,1,10,0,18
+ˮħ��LV2,ˮħ��LV2,MAGIC_AttMagic,ˮ|240|5,511,1,10,0,18
+ˮħ��LV2,ˮħ��LV2,MAGIC_AttMagic,ˮ|360|5,512,1,10,0,18
+ˮħ��LV2,ˮħ��LV2,MAGIC_AttMagic,ˮ|480|5,513,1,10,0,18
+ˮħ��LV2,ˮħ��LV2,MAGIC_AttMagic,ˮ|640|5,514,1,10,0,18
+ˮħ��LV3,ˮħ��LV3,MAGIC_AttMagic,ˮ|100|5,520,1,11,0,19
+ˮħ��LV3,ˮħ��LV3,MAGIC_AttMagic,ˮ|200|5,521,1,11,0,19
+ˮħ��LV3,ˮħ��LV3,MAGIC_AttMagic,ˮ|300|5,522,1,11,0,19
+ˮħ��LV3,ˮħ��LV3,MAGIC_AttMagic,ˮ|440|5,523,1,11,0,19
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|50|5,530,1,9,0,3
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|100|5,531,1,9,0,3
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|260|5,532,1,9,0,3
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|500|5,533,1,9,0,3
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|700|5,534,1,9,0,3
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|980|5,535,1,9,0,3
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|1160|5,536,1,9,0,3
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|1440|5,537,1,9,0,3
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|120|5,540,1,10,0,6
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|240|5,541,1,10,0,6
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|360|5,542,1,10,0,6
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|480|5,543,1,10,0,6
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|640|5,544,1,10,0,6
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|100|5,550,1,11,0,26
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|200|5,551,1,11,0,26
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|300|5,552,1,11,0,26
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|440|5,553,1,11,0,26
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|50|5,560,1,9,0,23
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|100|5,561,1,9,0,23
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|260|5,562,1,9,0,23
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|500|5,563,1,9,0,23
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|700|5,564,1,9,0,23
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|980|5,565,1,9,0,23
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|1160|5,566,1,9,0,23
+��ħ��LV1,��ħ��LV1,MAGIC_AttMagic,��|1440|5,567,1,9,0,23
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|120|5,570,1,10,0,24
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|240|5,571,1,10,0,24
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|360|5,572,1,10,0,24
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|480|5,573,1,10,0,24
+��ħ��LV2,��ħ��LV2,MAGIC_AttMagic,��|640|5,574,1,10,0,24
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|100|5,580,1,11,0,25
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|200|5,581,1,11,0,25
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|300|5,582,1,11,0,25
+��ħ��LV3,��ħ��LV3,MAGIC_AttMagic,��|440|5,583,1,11,0,25
+�׻�����,ˮ����м��� ,MAGIC_Recovery,10000,584,1,8,0,
+����֮��,����֮�� ����һ������,MAGIC_Ressurect,100000,585,1,1,1,
+��ȸ����,������м���,MAGIC_StatusChange,�� turn 20 �� 90,586,1,8,0,
+�������,������м���,MAGIC_MagicDef,��  turn 60,587,1,8,0,
+��������,������м���,MAGIC_StatusRecovery,ȫ,588,1,8,0,
 
 
 

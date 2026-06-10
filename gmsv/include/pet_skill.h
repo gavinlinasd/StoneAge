@@ -7,7 +7,7 @@ typedef enum
 {
 	PETSKILL_FIELD_ALL,			/* 允屯化及桦赭匹银尹月 */
 	PETSKILL_FIELD_BATTLE,				/* 爵    及心 */
-	PETSKILL_FIELD_MAP,				/* 通常マップ上のみ */
+	PETSKILL_FIELD_MAP,				/* 仅限通常地图上 */
 
 }PETSKILL_FIELDTYPE;
 
@@ -20,7 +20,7 @@ typedef enum
 	PETSKILL_TARGET_ALL,			/* 蝈化 */
 	PETSKILL_TARGET_NONE,			/* 簿手蓟  请  卅中［  豢支凶户及凛 */
 	PETSKILL_TARGET_OTHERWITHOUTMYSELF,/* 职及谛  愤坌殖引卅中) */
-	PETSKILL_TARGET_WITHOUTMYSELFANDPET,  /* 自分とペット以外 */
+	PETSKILL_TARGET_WITHOUTMYSELFANDPET,  /* 自己和宠物以外 */
 }PETSKILL_TARGETTYPE;
 
 typedef enum
@@ -39,9 +39,9 @@ typedef enum
 typedef enum
 {
 	PETSKILL_NAME,					/*      */
-	PETSKILL_COMMENT,				/* コメント*/
-	PETSKILL_FUNCNAME,				/* 関数   */
-	PETSKILL_OPTION,				/* オプ竺ョン */
+	PETSKILL_COMMENT,				/* 注释*/
+	PETSKILL_FUNCNAME,				/* 函数名   */
+	PETSKILL_OPTION,				/* 选项 */
 #ifdef _CFREE_petskill
 	PETSKILL_FREE,					/*条件*/
 	PETSKILL_KINDCODE,				/*种类码*/
@@ -98,14 +98,14 @@ int PETSKILL_ChargeAttack(
 
 #define PETSKILL_ID_GBREAK		0	// 下＆囁討卅通柩
 #define PETSKILL_ID_RENZOKU		1	//   粮  猾
-#define PETSKILL_ID_GUARDIAN	2	// 忠犬ハチ公
-#define PETSKILL_ID_CHARGE		3	// チャージ  撃
+#define PETSKILL_ID_GUARDIAN	2	// 忠犬八公
+#define PETSKILL_ID_CHARGE		3	// 蓄力攻击
 #define PETSKILL_ID_ICHIGEKI	100	// 一撃  殺
 #define PETSKILL_ID_POWERBALANCE 110	//     及讽
 
 //**********************************************************************
 //
-//  石  -- 他人を守りながら  撃
+//  石板 -- 保护他人并攻击
 //
 int PETSKILL_Guardian(
 	int charaindex,
@@ -139,7 +139,7 @@ int PETSKILL_Mighty(
 
 //**********************************************************************
 //
-//  石  -- ス  ータス異常  撃
+//  石板 -- 状态异常攻击
 //
 int PETSKILL_StatusChange(
 	int charaindex,
@@ -181,7 +181,7 @@ int PETSKILL_NormalGuard(
 //*******************************************************
 
 //*******************************************************
-// 石  -- 待機(何もしない)
+// 石板 -- 待机(什么都不做)
 //
 int PETSKILL_None(
 	int charaindex,
@@ -280,7 +280,7 @@ int PETSKILL_Fixitem(
 );
 #endif
 
-// 石  -- アイ  ム合成
+// 石板 -- 道具合成
 //
 int PETSKILL_Merge(
 	int charaindex,

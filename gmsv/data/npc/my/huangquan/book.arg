@@ -9,14 +9,14 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>79&TRANS>=5&ENDEV=184&NOWEV=185&ITEM=21166
-NomalWindowMsg:ï¼ˆå™¢ï¼æˆ‘å¿˜è®°æˆ‘å·²ç»æ‹¿è¿‡ä¹¦äº†ï¼ï¼‰
+NomalWindowMsg:£¨àÞ£¡ÎÒÍü¼ÇÎÒÒÑ¾­ÄÃ¹ýÊéÁË£¡£©
 EventEnd
 
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>79&TRANS>=5&ENDEV=184&NOWEV=185&ITEM!=21166
-AcceptMsg1:ï¼ˆè¿™é‡Œæœ‰æœ¬å¥‡æ€ªçš„ä¹¦å™¢ï¼Ÿï¼Ÿï¼‰
-ThanksMsg:ï¼ˆå¥½è±¡å°±æ˜¯ç ”ç©¶ä¹¦ç¬¬äº”ç« å§ï¼Ÿï¼æ²¡é”™ï¼å°±æ˜¯å®ƒï¼‰
-ItemFullMsg:ï¼ˆé“å…·æ»¡äº†ï¼Ÿè®©æˆ‘å…ˆæ‰”æŽ‰ä¸€ç‚¹ï¼‰
+AcceptMsg1:£¨ÕâÀïÓÐ±¾Ææ¹ÖµÄÊéàÞ£¿£¿£©
+ThanksMsg:£¨ºÃÏó¾ÍÊÇÑÐ¾¿ÊéµÚÎåÕÂ°É£¿£¡Ã»´í£¡¾ÍÊÇËü£©
+ItemFullMsg:£¨µÀ¾ßÂúÁË£¿ÈÃÎÒÏÈÈÓµôÒ»µã£©
 GetItem:21166
 EventEnd

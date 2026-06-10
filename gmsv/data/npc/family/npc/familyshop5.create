@@ -1,6 +1,6 @@
 NPCCREATE
 
-#ä¼Šç”¸è´©å–å…±é€šç±»
+#ÒÁµé··Âô¹²Í¨Àà
 {
 floorid=5038
 borncorner=7,6,7,6
@@ -9,10 +9,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16311
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop5_1
 }
-#ä¼Šç”¸è´©å–ç´ æç±»
+#ÒÁµé··ÂôËØ²ÄÀà
 {
 floorid=5037
 borncorner=5,5,5,5
@@ -21,10 +21,10 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16326
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop5_2
 }
-#ä¼Šç”¸è´©å–ä¸“å±ä¸€
+#ÒÁµé··Âô×¨ÊôÒ»
 #{
 #floorid=5035
 #borncorner=5,6,5,6
@@ -33,10 +33,10 @@ enemy=npcgen_shop|file:family/npc/shop5_2
 #dir=4
 #ignoreinvincible=1
 #graphicname=16358
-#name=è´©å–æœåŠ¡å‘˜
+#name=··Âô·şÎñÔ±
 #enemy=npcgen_shop|file:family/npc/shop5_3
 #}
-#ä¼Šç”¸è´©å–ä¸“å±äºŒ
+#ÒÁµé··Âô×¨Êô¶ş
 {
 floorid=5036
 borncorner=7,4,7,4
@@ -45,11 +45,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16381
-name=è´©å–æœåŠ¡å‘˜
+name=··Âô·şÎñÔ±
 enemy=npcgen_shop|file:family/npc/shop5_4
 }
 
-#ä¼Šç”¸é€šè¡Œè¯è´©å–
+#ÒÁµéÍ¨ĞĞÖ¤··Âô
 {
 floorid=5030
 borncorner=47,53,47,53
@@ -58,10 +58,10 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16316
-name=é€šè¡Œè¯è´©å–å‘˜
+name=Í¨ĞĞÖ¤··ÂôÔ±
 enemy=npcgen_shop|file:family/npc/shop5_5
 }
-#å•†åº—å®ˆé—¨å‘˜(å…±é€šç±»)
+#ÉÌµêÊØÃÅÔ±(¹²Í¨Àà)
 {
 floorid=5030
 borncorner=49,65,49,65
@@ -70,10 +70,10 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16209
-name=å•†åº—è­¦å«
+name=ÉÌµê¾¯ÎÀ
 enemy=npcgen_warpman|file:family/npc/wpm5_1
 }
-#å•†åº—å®ˆé—¨å‘˜(ä¸“å±ä¸€)
+#ÉÌµêÊØÃÅÔ±(×¨ÊôÒ»)
 #{
 #floorid=4030
 #borncorner=39,17,39,17
@@ -82,10 +82,10 @@ enemy=npcgen_warpman|file:family/npc/wpm5_1
 #dir=4
 #ignoreinvincible=1
 #graphicname=16208
-#name=å•†åº—è­¦å«
+#name=ÉÌµê¾¯ÎÀ
 #enemy=npcgen_warpman|file:family/npc/wpm5_2
 #}
-#å•†åº—å®ˆé—¨å‘˜(ä¸“å±äºŒ)
+#ÉÌµêÊØÃÅÔ±(×¨Êô¶ş)
 {
 floorid=5030
 borncorner=58,43,58,43
@@ -94,6 +94,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16122
-name=å•†åº—è­¦å«
+name=ÉÌµê¾¯ÎÀ
 enemy=npcgen_warpman|file:family/npc/wpm5_3
 }

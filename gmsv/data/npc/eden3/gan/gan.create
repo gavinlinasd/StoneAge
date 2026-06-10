@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### æ‘æ°‘éœå¥‡æ–¯ ######
+###### ´åÃñ»ôÆæË¹ ######
 {
-name=éœå¥‡æ–¯
+name=»ôÆæË¹
 floorid=3000
 borncenter=94,60
 dir=6
@@ -13,9 +13,9 @@ enemy=changeevent|file:eden3/gan/hoggies
 graphicname=16103
 }
 
-###### å»¸å¢ƒ ######
+###### ×¯¶­ ######
 {
-name=å»¸å¢ƒ
+name=×¯¶­
 floorid=3016
 borncenter=31,49
 dir=6
@@ -25,7 +25,7 @@ enemy=changeevent|file:eden3/gan/wuwan
 graphicname=16946
 }
 
-#ç‰¹æ®Šè·³è·ƒç‚¹ä¸€ï¼ˆæ°´äº•æ—ï¼‰
+#ÌØÊâÌøÔ¾µãÒ»£¨Ë®¾®ÅÔ£©
 {
 floorid=3000
 borncenter=99,62
@@ -33,7 +33,7 @@ ignoreinvincible=1
 createnum=1
 enemy=npcgen_warp|file:eden3/gan/warppoint.arg
 }
-#ç‰¹æ®Šè·³è·ƒç‚¹äºŒï¼ˆæ°´äº•æ—ï¼‰
+#ÌØÊâÌøÔ¾µã¶ş£¨Ë®¾®ÅÔ£©
 {
 floorid=3000
 borncenter=99,63

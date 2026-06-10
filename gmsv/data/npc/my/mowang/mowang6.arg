@@ -1,7 +1,7 @@
 NEWNPCENEMY
 
 entype:2
-startmsg:你竟然能到这里来？
+startmsg:�㾹Ȼ�ܵ���������
 dieact:1
 warpfl:0
 warpx:0
@@ -14,5 +14,5 @@ NEWEVENT1:
 FREE:LV>0
 WARP:200,18,9
 AddItem:19401
-endmsg:真不可思议!去七楼送死吧,祝你第一回合就飞回来，哈哈!
+endmsg:�治��˼��!ȥ��¥������,ף���һ�غϾͷɻ���������!
 OVER

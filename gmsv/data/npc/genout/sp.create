@@ -12,7 +12,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=è¨å§†å‰å°”çš„å‚¨å­˜ç‚¹
+name=ÈøÄ·¼ª¶ûµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_1000_94_99
 }
 #line 10
@@ -24,7 +24,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=æŸ¯å¥¥çš„å‚¨å­˜ç‚¹
+name=¿Â°ÂµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_1100_50_91
 }
 #line 12
@@ -36,7 +36,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=æŸ¯å°”å…‹çš„å‚¨å­˜ç‚¹
+name=¿Â¶û¿ËµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_1200_63_46
 }
 #line 15
@@ -48,7 +48,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=éœç‰¹å°”çš„å‚¨å­˜ç‚¹
+name=»ôÌØ¶ûµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_1300_29_23
 }
 #line 18
@@ -60,7 +60,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=å¡å¦çš„å‚¨å­˜ç‚¹
+name=¿¨Ì¹µÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_1400_76_104
 }
 #line 21
@@ -72,7 +72,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=ç›ä¸½é‚£æ–¯çš„å‚¨å­˜ç‚¹
+name=ÂêÀöÄÇË¹µÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_2000_67_58
 }
 #line 27
@@ -84,7 +84,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=æ£®æ—ä¸­çš„å‚¨å­˜ç‚¹
+name=É­ÁÖÖĞµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_100_344_466
 }
 #line 30
@@ -96,7 +96,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=é˜¿å¸ƒçš„æ´çªŸä¹‹å‰çš„å‚¨å­˜ç‚¹
+name=°¢²¼µÄ¶´¿ßÖ®Ç°µÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_100_183_346
 }
 #line 36
@@ -108,7 +108,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=åŠ åŠ çš„å‚¨å­˜ç‚¹
+name=¼Ó¼ÓµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_3000_96_97
 }
 #line 39
@@ -120,7 +120,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=å¡”å§†å¡”å§†çš„å‚¨å­˜ç‚¹
+name=ËşÄ·ËşÄ·µÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_3100_83_70
 }
 #line 42
@@ -132,7 +132,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=å¤šå¤šçš„å‚¨å­˜ç‚¹
+name=¶à¶àµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_3200_49_60
 }
 #line 45
@@ -144,7 +144,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=ä¹Œé²åŠ›çš„å‚¨å­˜ç‚¹
+name=ÎÚÂ³Á¦µÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_3300_71_51
 }
 #line 48
@@ -156,7 +156,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=å¥‡å–€å–€çš„å‚¨å­˜ç‚¹
+name=Ææ¿¦¿¦µÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_3400_65_48
 }
 #line 51
@@ -168,7 +168,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=å¡é²å®ƒé‚£çš„å‚¨å­˜ç‚¹
+name=¿¨Â³ËüÄÇµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_4000_68_55
 }
 #line 57
@@ -180,7 +180,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=ä¸›æ—çš„å‚¨å­˜ç‚¹
+name=´ÔÁÖµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_200_406_371
 }
 #line 60
@@ -192,7 +192,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=æµ·å²¸å‚¨å­˜ç‚¹
+name=º£°¶´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_200_449_982
 }
 #line 66
@@ -204,7 +204,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=ç¦å°”å¾·çš„çš„å‚¨å­˜ç‚¹
+name=¸£¶ûµÂµÄµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_5000_47_53
 }
 #line 69
@@ -216,7 +216,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=è¾¾é‚£æ‘çš„å‚¨å­˜ç‚¹
+name=´ïÄÇ´åµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_5106_22_36
 }
 #line 72
@@ -228,7 +228,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=æ¼†é»‘çš„å‚¨å­˜ç‚¹
+name=ÆáºÚµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_32007_27_52
 }
 #line 75
@@ -240,7 +240,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=æ¼†é»‘çš„å‚¨å­˜ç‚¹
+name=ÆáºÚµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_32014_51_9
 }
 #line 91
@@ -252,7 +252,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10048
-name=å¤©ç©ºä¹‹å²›çš„å‚¨å­˜ç‚¹
+name=Ìì¿ÕÖ®µºµÄ´¢´æµã
 enemy=npcgen_savepoint|file:genout/sp_30691_87_60
 }
 #line 97
@@ -264,6 +264,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16322
-name=ç²æ‡
+name=ÀòÑÅ
 enemy=npcgen_savepoint|file:genout/sp_7012_6_4
 }

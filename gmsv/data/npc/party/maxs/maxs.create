@@ -1,6 +1,6 @@
 NPCCREATE
 
-#2004åœ£è¯èŠ‚
+#2004Ê¥µ®½Ú
 
 {
 floorid=1100
@@ -10,7 +10,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16036
-name=å¡å„¿ç´¢
+name=¿¨¶ùË÷
 enemy=changeevent|file:party/maxs/carso.arg
 }
 
@@ -22,7 +22,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16008
-name=ç½—èŠ‚
+name=ÂŞ½Ú
 enemy=changeevent|file:party/maxs/roje.arg
 }
 
@@ -34,7 +34,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16110
-name=ç¼ªä¼Š
+name=çÑÒÁ
 enemy=changeevent|file:party/maxs/mui.arg
 }
 
@@ -46,7 +46,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16104
-name=è‡³æŸ¯
+name=ÖÁ¿Â
 enemy=npcgen_janken|file:party/maxs/maxs_janken2
 }
 
@@ -58,7 +58,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æœˆæ£®
+name=ÔÂÉ­
 enemy=changeevent|file:party/maxs/moon.arg
 }
 
@@ -70,7 +70,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16035
-name=ä¹ƒä¹Ÿ
+name=ÄËÒ²
 enemy=changeevent|file:party/maxs/naiya.arg
 }
 
@@ -82,7 +82,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16083
-name=åˆ©äºš
+name=ÀûÑÇ
 enemy=changeevent|file:party/maxs/liya.arg
 }
 
@@ -94,7 +94,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16223
-name=æ›¼ç½—
+name=ÂüÂŞ
 enemy=npcgen_janken|file:party/maxs/maxs_janken1
 }
 
@@ -106,7 +106,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16510
-name=å¸½ä¾›
+name=Ë¹¶¡
 enemy=changeevent|file:party/maxs/stin.arg
 }
 
@@ -118,7 +118,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16660
-name=ã‚‡ä½´
+name=ÆëË¹
 enemy=changeevent|file:party/maxs/chis.arg
 }
 
@@ -130,7 +130,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101761
-name=ä¼¦å¤ª
+name=Â×Ì«
 enemy=changeevent|file:party/maxs/maxs_luntai
 }
 
@@ -142,6 +142,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16715
-name=ä¹”è£…çš„è€¶è¯è€äºº
+name=ÇÇ×°µÄÒ®µ®ÀÏÈË
 enemy=changeevent|file:party/maxs/maxs_santa
 }

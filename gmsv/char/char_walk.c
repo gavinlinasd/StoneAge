@@ -73,8 +73,8 @@ static CHAR_WALKRET CHAR_walk_turn( int index, int dir )
  *  oy          int     蟆及橇谪及y
  *  fx          int     汹中凶  及x
  *  fy          int     汹中凶  及y
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 static void CHAR_sendMapAtWalk( int index, int fl ,int ox ,int oy,
 								int fx, int fy )
@@ -186,7 +186,7 @@ static CHAR_WALKRET CHAR_walk_move( int charaindex, int dir );
  * 引数
  *  index       int     平乓仿及奶件犯永弁旦
  *  dir         int       轾
- * 返り値
+ * 返回值
  *  CHAR_WALKRET
  ------------------------------------------------------------*/
 static CHAR_WALKRET CHAR_walk_move( int charaindex, int dir )
@@ -334,7 +334,7 @@ static CHAR_WALKRET CHAR_walk_move( int charaindex, int dir )
             ox = OBJECT_setX(objindex,CHAR_getInt(charaindex,CHAR_X));
             oy = OBJECT_setY(objindex,CHAR_getInt(charaindex,CHAR_Y));
             if( !MAP_objmove( objindex, of,ox,oy,ff,fx,fy ) ){
-                /*  こんなんどうしようもない    */
+                /*  这种情况无能为力    */
                 fprint( "ERROR MAP_OBJMOVE objindex=%d(%s)\n",objindex,
                 	CHAR_getUseName( charaindex ) );
             }
@@ -610,10 +610,10 @@ CHAR_AFTERWALK:
 /*------------------------------------------------------------
  * 平乓仿互汹仁［
  * 引数
- *  index   int     Charぁ摯index
+ *  index   int     Char 中的index
  *  dir     int       轾
  *  mode    int     0卅日汹仁［1卅日  轾鳖晶［
- * 返り値
+ * 返回值
  *  CHAR_WALKRET
  ------------------------------------------------------------*/
 CHAR_WALKRET CHAR_walk( int index, int dir, int mode)
@@ -651,9 +651,9 @@ CHAR_WALKRET CHAR_walk( int index, int dir, int mode)
 /*------------------------------------------------------------
  * 汹井六月蟆赏  ［
  * 引数
- *  index       int         キャラインデックス
- * 返り値
- *  なし
+ *  index       int         人物索引
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 void CHAR_walkcall( int index )
 {
@@ -668,8 +668,8 @@ void CHAR_walkcall( int index )
                 CHAR_getWorkChar(index,CHAR_WORKWALKARRAY));
 
     CHAR_ctodirmode( tmp[0], &dir ,&mode );
-	/* 親なら事前に場所を記憶して恭く
-	 * 親の  く前の場所を    に子が移  する為
+	/* 是队长的话事先记住场所
+	 * 为了让队员移动到队长走之前的场所
 	 */
 	if( CHAR_getInt( index, CHAR_WHICHTYPE) == CHAR_TYPEPLAYER ) {
 		if( CHAR_getWorkInt( index, CHAR_WORKPARTYMODE ) == CHAR_PARTY_LEADER ) {
@@ -746,7 +746,7 @@ void CHAR_walkcall( int index )
 						}
 					}
 					else {
-						/* 初期化しな恭す */
+						/* 重新初始化 */
 						CHAR_setWorkInt( index, i+CHAR_WORKPARTYINDEX1, -1);
 					}
 				}
@@ -799,7 +799,7 @@ void CHAR_walkcall( int index )
 						}
 					}
 					else {
-						/* 初期化しな恭す */
+						/* 重新初始化 */
 						CHAR_setWorkInt( index, CHAR_WORKPETFOLLOW, -1);
 					}
 				
@@ -820,7 +820,7 @@ void CHAR_walkcall( int index )
         CHAR_setWorkChar(index,CHAR_WORKWALKARRAY,&tmp[1]);
     }
 
-    /*  時間を進める    */
+    /*  推进时间    */
     CHAR_setWorkInt( index, CHAR_WORKWALKSTARTSEC , NowTime.tv_sec );
     CHAR_setWorkInt( index, CHAR_WORKWALKSTARTMSEC , NowTime.tv_usec );
 }
@@ -833,8 +833,8 @@ void CHAR_walkcall( int index )
  *  index           int         平乓仿    匹及奶件犯永弁旦
  *  dir             char*         向  字  
  *  id              int         ID
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 void CHAR_walk_start(int index, int x, int y, char* dir, BOOL mapsendmode )
 {
@@ -902,8 +902,8 @@ void CHAR_walk_start(int index, int x, int y, char* dir, BOOL mapsendmode )
  *  index           int         平乓仿    匹及奶件犯永弁旦
  *  dir             char*         向  字  
  *  id              int         ID
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 void CHAR_walk_init( int fd, int x, int y, char *direction, BOOL mapsendmode)
 {

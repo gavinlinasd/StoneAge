@@ -1,11 +1,11 @@
 entype:2
-askbattlemsg1:Х╪╙Х╖╕,Х╪╙Х╖╕Ц┌⌡
-startmsg:Х╪╙Х╖╕,Х╪╙Х╖╕,Х╪╙Х╖╕Х╖╕
+askbattlemsg1:нь©╗,нь©╗║╚
+startmsg:нь©╗,нь©╗,нь©╗©╗
 dieact:1
 warpfl:20607
 warpx:36
 warpy:31
 end msg:
 enemyno:961,963,962
-deniedmsg:Х╪╙Х╖╕,Х╪╙Х╖╕,Х╪╙Х╖╕Х╖╕Ц┌⌡
+deniedmsg:нь©╗,нь©╗,нь©╗©╗║╚
 

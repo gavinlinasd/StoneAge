@@ -1,5 +1,5 @@
 NPCCREATE
-######ãƒªãƒãƒ³###########
+######¥ê¥Î¥ó###########
 {
 floorid=31706
 borncenter=44,60,1,1
@@ -8,10 +8,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100287
-name=é‡Œä¾¬
+name=ÀïÙ¯
 enemy=sb_5b1|file:300/sb_5b1.arg
 }
-########ã‚®ãƒ­ã‚¹#########
+########¥®¥í¥¹#########
 {
 floorid=31706
 borncenter=5,63,1,1
@@ -20,10 +20,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100288
-name=åŸºæ´›æ–¯
+name=»ùÂåË¹
 enemy=sb_5b2|file:300/sb_5b2.arg
 }
-##########ãƒœãƒ­ã‚¹#######
+##########¥Ü¥í¥¹#######
 {
 floorid=31706
 borncenter=35,63,1,1
@@ -32,10 +32,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100289
-name=è»ä»£å¸½
+name=²®ÂåË¹
 enemy=sb_5b3|file:300/sb_5b3.arg
 }
-##########ã‚®ãƒ¼ãƒ#######
+##########¥®¡¼¥Î#######
 {
 floorid=31706
 borncenter=25,63,1,1
@@ -44,10 +44,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100290
-name=åŸºè¯º
+name=»ùÅµ
 enemy=sb_5b4|file:300/sb_5b4.arg
 }
-##########ãƒ–ãƒ«ãƒ‰#######
+##########¥Ö¥ë¥É#######
 {
 floorid=31706
 borncenter=15,63,1,1
@@ -56,6 +56,6 @@ createnum=1
 time=60000
 dir=4
 graphicname=100394
-name=å¸ƒé²å¾·
+name=²¼Â³µÂ
 enemy=sb_5b5|file:300/sb_5b5.arg
 }

@@ -1,8 +1,8 @@
 NPCCREATE
 
 ########################################
-#ã€€ã€€è®£æã®è´«å‘ã‚¤ãƒ™ãƒ³ãƒˆã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€#
-#ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ä¹ˆç¢°Â¨è°°å¹‚#
+#¡¡¡¡¸¼²«¤ÎÆ¶·¢¥¤¥Ù¥ó¥È¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡#
+#¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Ã´Åö¡§À¾Ãİ#
 ########################################
 
 {
@@ -13,7 +13,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100461
-name=å¨å°”
+name=Íş¶û
 enemy=changeevent|file:sainasu/event/genou_1
 }
 
@@ -25,7 +25,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100446
-name=é£çš„ä½¿è€…
+name=·çµÄÊ¹Õß
 enemy=changeevent|file:sainasu/event/genou_2
 }
 
@@ -37,7 +37,7 @@ createnum=1
 dir=2
 ignoreinvincible=1
 graphicname=100446
-name=é£çš„ä½¿è€…
+name=·çµÄÊ¹Õß
 enemy=changeevent|file:sainasu/event/genou_2
 }
 
@@ -50,7 +50,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100110
-name=è·³è¾¼å°¾
+name=Ä·¹şÈø
 enemy=changeevent|file:sainasu/event/genou_3
 }
 
@@ -64,7 +64,7 @@ createnum=1
 dir=0
 ignoreinvincible=1
 graphicname=16306
-name=çœ‹å®ˆäºº
+name=¿´ÊØÈË
 enemy=changeevent|file:sainasu/event/genou_4
 }
 

@@ -1,8 +1,8 @@
 NPCCREATE
 
-###### è¯ç²‰æç‚¼å¸ˆï¼ˆåŠ è¡€ï¼‰ ######
+###### Ò©·ÛÌáÁ¶Ê¦£¨¼ÓÑª£© ######
 {
-name=è¯ç²‰æç‚¼å¸ˆ
+name=Ò©·ÛÌáÁ¶Ê¦
 floorid=2000
 borncenter=66,33
 dir=4
@@ -13,9 +13,9 @@ graphicname=16095
 enemy=ITEMCHANGE|file:sa50/alchemy/alchemyhp
 }
 
-###### è¯ä¸¸æç‚¼å¸ˆï¼ˆåŠ é˜²ï¼‰ ######
+###### Ò©ÍèÌáÁ¶Ê¦£¨¼Ó·À£© ######
 {
-name=è¯ä¸¸æç‚¼å¸ˆ
+name=Ò©ÍèÌáÁ¶Ê¦
 floorid=7105
 borncenter=12,11
 dir=4
@@ -26,9 +26,9 @@ graphicname=16095
 enemy=ITEMCHANGE|file:sa50/alchemy/alchemyac
 }
 
-###### è¯æ±¤æç‚¼å¸ˆï¼ˆåŠ æ”»ï¼‰ ######
+###### Ò©ÌÀÌáÁ¶Ê¦£¨¼Ó¹¥£© ######
 {
-name=è¯æ±¤æç‚¼å¸ˆ
+name=Ò©ÌÀÌáÁ¶Ê¦
 floorid=7000
 borncenter=98,102
 dir=4
@@ -39,9 +39,9 @@ graphicname=16095
 enemy=ITEMCHANGE|file:sa50/alchemy/alchemystr
 }
 
-###### è¯ä¸¹æç‚¼å¸ˆï¼ˆåŠ æ•ï¼‰ ######
+###### Ò©µ¤ÌáÁ¶Ê¦£¨¼ÓÃô£© ######
 {
-name=è¯ä¸¹æç‚¼å¸ˆ
+name=Ò©µ¤ÌáÁ¶Ê¦
 floorid=4000
 borncenter=71,104
 dir=4

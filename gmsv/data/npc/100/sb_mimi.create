@@ -1,5 +1,5 @@
 NPCCREATE
-#######122æªçƒ¯ãƒŸãƒŸãƒƒã‚¯##########
+#######122ÌÂÏ©¥ß¥ß¥Ã¥¯##########
 {
 floorid=122
 borncenter=78,102,1,1
@@ -7,7 +7,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -17,7 +17,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -27,7 +27,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -37,7 +37,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -47,7 +47,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -57,10 +57,10 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
-#######118ãƒŸãƒŸãƒƒã‚¯######
+#######118¥ß¥ß¥Ã¥¯######
 {
 floorid=118
 borncenter=75,9,1,1
@@ -68,7 +68,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -78,7 +78,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -88,7 +88,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -98,7 +98,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -108,7 +108,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }
 {
@@ -118,6 +118,6 @@ movecenter=20,20,100,100
 createnum=1
 dir=6
 graphicname=16073
-name=å®ç‰©è¢‹
+name=±¦Îï´ü
 enemy=sb_hag|file:100/sb_mimi.arg
 }

@@ -22,7 +22,7 @@
 #include "log.h"
 
 /*裔烂丢永本□斥及  赢赢今［票匹烂聒允月  侬  及赢今反
- これ以下にすること*/
+ 要在这以下*/
 #define ADDRESSBOOK_FIXEDMESSAGE_MAXLEN  128
 
 /* 愤坌及蟆卞簿手中卅井匀凶及匹｝失玉伊旦皮永弁卞馨笛匹五卅井匀凶
@@ -33,7 +33,7 @@
 /* 簿井毛笛尹月仇午互匹五凶午五｝笛尹方丹午仄凶谛卞霜耨允月丢永本□斥*/
 #define ADDRESSBOOK_ADDED "和%s交换名片 。"
 
-/* 誰かに顔を覚えられたら */
+/* 被谁记住脸的话 */
 #define ADDRESSBOOK_BEINGADDED "和%s交换名片 。"
 
 /* 巨件玄伉互中匀天中分匀凶午五及丢永本□斥 */
@@ -80,7 +80,7 @@ static BOOL ADDRESSBOOK_makeEntryFromCharaindex( int charaindex,
 												 ADDRESSBOOK_entry* ae);
 
 /*------------------------------------------------------------
- * アドレスブックのメッセージを送信する
+ * 发送通讯录的讯息
  * MSG皿夫玄戊伙井日勾井歹木月［
  *
  * 支月仇午反｝connection井日cdkey匹腹绸仄化｝平乓仿  手
@@ -88,12 +88,12 @@ static BOOL ADDRESSBOOK_makeEntryFromCharaindex( int charaindex,
  * 锹澎及伉旦玄卞卅井匀凶日窒手仄卅中午中丹仇午分［
  * 引数
  *  cindex  int     平乓仿及index
- *  aindex  int     アドレスブックのindex
- *  text    char*   送信する  字  
+ *  aindex  int     通讯录的index
+ *  text    char*   要发送的字符串  
  *  color   int     缙
- * 返り値
+ * 返回值
  * 左件仿奶件及平乓仿卞丢永本□斥毛霜耨仄凶日TRUE ,
- * オフラインに登  したらFALSEをかえす
+ * 离线登记的话返回FALSE
  ------------------------------------------------------------*/
 BOOL ADDRESSBOOK_sendMessage( int cindex, int aindex, char* text , int color )
 {
@@ -121,7 +121,7 @@ BOOL ADDRESSBOOK_sendMessage( int cindex, int aindex, char* text , int color )
     		tm1.tm_mon +1, tm1.tm_mday, tm1.tm_hour, tm1.tm_min,
     		text);
 	
-	/*   サーバー  にいる時 */
+	/*   在服务器内的时候 */
 	for( i = 0 ; i < playernum ; i ++){
 		if( CHAR_CHECKINDEX( i) &&
 			strcmp( CHAR_getChar( i, CHAR_CDKEY), ae->cdkey) == 0 &&
@@ -129,7 +129,7 @@ BOOL ADDRESSBOOK_sendMessage( int cindex, int aindex, char* text , int color )
 		{
 			/*
 			 * CDKEY 手 平乓仿  手域谯仄凶［公及平乓仿弁正及
-			 * アドレスブックに自分の情  があるか調べて�b
+			 * 检查通讯录里是否有自己的信息
 			 * 绣箕仄凶日｝MSG允月［
 			 */
 			int index_to_my_info = 
@@ -155,7 +155,7 @@ BOOL ADDRESSBOOK_sendMessage( int cindex, int aindex, char* text , int color )
 							CHAR_getChar( i, CHAR_NAME),
 							CHAR_getChar( i, CHAR_NAME));
 
-				/* 送り主にもメッセージ */
+				/* 给发送者也发讯息 */
 				CHAR_talkToCli( cindex, -1, 
 								tmpmsg , CHAR_COLORYELLOW );
 				return FALSE;
@@ -164,7 +164,7 @@ BOOL ADDRESSBOOK_sendMessage( int cindex, int aindex, char* text , int color )
 			fd = getfdFromCharaIndex( i);
 			if( fd != -1 ) {
 				lssproto_MSG_send( fd , index_to_my_info , textbuffer , color );
-				/* ひグとり */
+				/* 取日志 */
 				printl( LOG_TALK, "CD=%s\tNM=%s\tT=%s" , mycd, mycharaname, textbuffer );
 			
 			}
@@ -200,10 +200,10 @@ BOOL ADDRESSBOOK_sendMessage( int cindex, int aindex, char* text , int color )
 	return FALSE;
 }
 /*------------------------------------------------------------
- * アドレスブックのメッセージを送信する
+ * 发送通讯录的讯息
  * saac 井日msg 毛熬仃午匀化弁仿奶失件玄卞禾旦玄允月［
  *
- * 返り値
+ * 返回值
  ------------------------------------------------------------*/
 BOOL ADDRESSBOOK_sendMessage_FromOther( char *fromcdkey, char *fromcharaname, 
 										char *tocdkey, char *tocharaname,
@@ -215,7 +215,7 @@ BOOL ADDRESSBOOK_sendMessage_FromOther( char *fromcdkey, char *fromcharaname,
 	char tmpmsg[256];
 	int     playernum = CHAR_getPlayerMaxNum();
 	
-	/* サーバー  を検索する */
+	/* 检索服务器编号 */
 	for( i = 0 ; i < playernum ; i ++){
 		if( CHAR_CHECKINDEX( i) &&
 			strcmp( CHAR_getChar( i, CHAR_CDKEY), tocdkey) == 0 &&
@@ -224,7 +224,7 @@ BOOL ADDRESSBOOK_sendMessage_FromOther( char *fromcdkey, char *fromcharaname,
 			int		index_to_my_info;
 			/*
 			 * CDKEY 手 平乓仿  手域谯仄凶［公及平乓仿弁正及
-			 * アドレスブックに自分の情  があるか調べて�b
+			 * 检查通讯录里是否有自己的信息
 			 * 绣箕仄凶日｝MSG允月［
 			 */
 			 
@@ -232,7 +232,7 @@ BOOL ADDRESSBOOK_sendMessage_FromOther( char *fromcdkey, char *fromcharaname,
 			if( strcmp( fromcdkey, ADDRESSBOOK_SYSTEM) == 0 &&
 				strcmp( fromcharaname, ADDRESSBOOK_SYSTEM ) == 0 ) 
 			{
-				/* 竺ス  ムメッセージを吐く */
+				/* 输出系统讯息 */
 				CHAR_talkToCli( i, -1, text , color );
 				break;
 			}
@@ -248,7 +248,7 @@ BOOL ADDRESSBOOK_sendMessage_FromOther( char *fromcdkey, char *fromcharaname,
 				snprintf( tmpmsg, sizeof( tmpmsg), ADDRESSBOOK_RETURNED2,
 							tocharaname, tocharaname);
 
-				/* 送り主にもメッセージ */
+				/* 给发送者也发讯息 */
 				saacproto_Message_send( acfd, ADDRESSBOOK_SYSTEM , ADDRESSBOOK_SYSTEM, 
 										fromcdkey, fromcharaname, tmpmsg, CHAR_COLORYELLOW);
 
@@ -257,7 +257,7 @@ BOOL ADDRESSBOOK_sendMessage_FromOther( char *fromcdkey, char *fromcharaname,
 				int fd = getfdFromCharaIndex( i);
 				if( fd != -1 ) {
 					lssproto_MSG_send( fd , index_to_my_info , text , color );
-					/* ひグとり */
+					/* 取日志 */
 					printl( LOG_TALK, "CD=%s\tNM=%s\tT=%s" , fromcdkey,
 															fromcharaname, text );
 				}
@@ -552,7 +552,7 @@ BOOL ADDRESSBOOK_sendAddressbookTable( int cindex )
 			char charname_escaped[CHARNAMELEN*2];
 			makeEscapeString( ae->charname, charname_escaped ,
 							  sizeof(charname_escaped  ));
-			/*  使用フラグ|  前|レベ郊|ライフ|フラグ   */
+			/*  使用旗标|名称|等级|生命|旗标   */
 			snprintf( tmp , sizeof( tmp ),
 					  "%d|%s|%d|%d|%d|%d|%d|" ,
 					  ae->use,
@@ -641,12 +641,12 @@ BOOL ADDRESSBOOK_sendAddressbookTableOne( int cindex, int num )
 }
 
 /*------------------------------------------------------------
- * ひとつのアドレスブックエントリを�b  字  にな恭す?
+ * 把一条通讯录条目转换为字符串
  * 仇木反平乓仿忡绣迕卅及匹弁仿奶失件玄卞霜耨允月方曰手恳割
  * 卅手及匹丐月  邰互丐月［
  * 引数
  *  a   ADDRESSBOOK_entry*    侬  卞仄凶中厌瞻  尺及禾奶件正
- * 返り値
+ * 返回值
  *  char *
  ------------------------------------------------------------*/
 char *ADDRESSBOOK_makeAddressbookString( ADDRESSBOOK_entry *a )
@@ -675,9 +675,9 @@ char *ADDRESSBOOK_makeAddressbookString( ADDRESSBOOK_entry *a )
  * 仇及瑛绊厌瞻  及use动陆及树  反敦僬卞卅月［
  * 引数
  *  in      char*                     ٯ  
- *  a       ADDRESSBOOK_entry*      データを収める所
- * 返り値
- * つねにTRUE
+ *  a       ADDRESSBOOK_entry*      存放数据的地方
+ * 返回值
+ * 总是TRUE
  ------------------------------------------------------------*/
 BOOL ADDRESSBOOK_makeAddressbookEntry( char *in , ADDRESSBOOK_entry *a )
 {

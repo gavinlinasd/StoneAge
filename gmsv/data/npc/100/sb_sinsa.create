@@ -1,5 +1,5 @@
 NPCCREATE
-#######ï¼³ï¼¢ï¼£å¯©æŸ»å“¡##########
+#######£Ó£Â£Ã¿³ºº°÷##########
 {
 floorid=10919
 borncenter=4,7,1,1
@@ -8,10 +8,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100407
-name=ï¼³ï¼¢ï¼£å®¡æŸ¥å‘˜î…´
+name=£Ó£Â£ÃÉó²éÔ±­û
 enemy=sb_sbc|file:100/sb_sbc.arg
 }
-#########ï¼ªï¼¢ï¼¡å¯©æŸ»å“¡########
+#########£Ê£Â£Á¿³ºº°÷########
 {
 floorid=20711
 borncenter=19,4,1,1
@@ -20,6 +20,6 @@ createnum=1
 time=60000
 dir=5
 graphicname=100437
-name=ï¼ªï¼¢ï¼¡å®¡æŸ¥å‘˜î…´
+name=£Ê£Â£ÁÉó²éÔ±­û
 enemy=sb_jba|file:100/sb_jba.arg
 }

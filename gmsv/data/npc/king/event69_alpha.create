@@ -1,6 +1,6 @@
 NPCCREATE
 
-#å¡å¡é‡‘å®(åº“ä¼Šè€çˆ·çˆ·å®¶åé™¢çš„è›™æ´å®ˆé—¨å‘˜)
+#¿¨¿¨½ğ±¦(¿âÒÁÀÏÒ¯Ò¯¼ÒºóÔºµÄÍÜ¶´ÊØÃÅÔ±)
 {
 floorid=30606
 borncorner=29,9,29,9
@@ -9,11 +9,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100346
-name=å¡å¡é‡‘å®
+name=¿¨¿¨½ğ±¦
 enemy=npcgen_warpman|file:king/event69_2
 }
 
-#æ–°è—æ„¿è—çš„ç¥–çˆ¶(è¯·æ±‚å‹‡è€…æ‹¯æ•‘æ–°è—,å¼€ä»»åŠ¡æ ‡)
+#ĞÂ²ØÔ¸²ØµÄ×æ¸¸(ÇëÇóÓÂÕßÕü¾ÈĞÂ²Ø,¿ªÈÎÎñ±ê)
 {
 floorid=2000
 borncorner=50,48,50,48
@@ -22,11 +22,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16017
-name=æ„¿è—çš„ç¥–çˆ¶
+name=Ô¸²ØµÄ×æ¸¸
 enemy=changeevent|file:king/event69_3
 }
 
-#æ–°è—(ä¸æ‹©æ‰‹æ®µçš„å†’é™©å®¶,æ„¿è—çš„å¼Ÿå¼Ÿ,å›°åœ¨åº“ä¼Šè€çˆ·çˆ·å®¶åé™¢çš„è›™æ´ä¸­,ç›è•¾çš„å‘ç°è€…)
+#ĞÂ²Ø(²»ÔñÊÖ¶ÎµÄÃ°ÏÕ¼Ò,Ô¸²ØµÄµÜµÜ,À§ÔÚ¿âÒÁÀÏÒ¯Ò¯¼ÒºóÔºµÄÍÜ¶´ÖĞ,ÂêÀÙµÄ·¢ÏÖÕß)
 {
 floorid=30602
 borncorner=47,23,47,23
@@ -35,11 +35,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100401
-name=æ–°è—
+name=ĞÂ²Ø
 enemy=changeevent|file:king/event69_4
 }
 
-#æˆ˜æ–—é‡Œæ˜‚è›™ç‹(80çº§,æ¯’æ”»å‡»,ç»¼åˆæ”»å‡»,é«˜æ•)
+#Õ½¶·Àï°ºÍÜÍõ(80¼¶,¶¾¹¥»÷,×ÛºÏ¹¥»÷,¸ßÃô)
 {
 floorid=30605
 borncorner=7,9,7,9
@@ -48,11 +48,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100886
-name=é‡Œæ˜‚è›™ç‹
+name=Àï°ºÍÜÍõ
 enemy=event69_5|file:king/event69_5.arg
 }
 
-#é‡Œæ˜‚è›™ç‹(è›™æ´çš„å®ˆæŠ¤ä¸»,å–œçˆ±é—ªé—ªå‘äº®çš„å®ç‰©)
+#Àï°ºÍÜÍõ(ÍÜ¶´µÄÊØ»¤Ö÷,Ï²°®ÉÁÉÁ·¢ÁÁµÄ±¦Îï)
 {
 floorid=30607
 borncorner=7,9,7,9
@@ -61,11 +61,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100886
-name=é‡Œæ˜‚è›™ç‹
+name=Àï°ºÍÜÍõ
 enemy=changeevent|file:king/event69_6
 }
 
-#æ–°è—æ„¿è—çš„ç¥–æ¯(å°†ç›è•¾åŠé¡¹ç‚¼äº¤ç»™å‹‡è€…,æ“…é•¿åˆ¶ä½œå®çŸ³é¡¹ç‚¼)
+#ĞÂ²ØÔ¸²ØµÄ×æÄ¸(½«ÂêÀÙ¼°ÏîÁ¶½»¸øÓÂÕß,ÉÃ³¤ÖÆ×÷±¦Ê¯ÏîÁ¶)
 {
 floorid=2000
 borncorner=49,47,49,47
@@ -74,11 +74,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16021
-name=æ„¿è—çš„ç¥–æ¯
+name=Ô¸²ØµÄ×æÄ¸
 enemy=changeevent|file:king/event69_7
 }
 
-#å°å°è¿·å®«æ°´æ± å…¥å£(æ²™å§†å²›æµ·åº•é€šè·¯æ°´æ± )
+#·âÓ¡ÃÔ¹¬Ë®³ØÈë¿Ú(É³Ä·µºº£µ×Í¨Â·Ë®³Ø)
 {
 floorid=40
 borncorner=10,9,10,9
@@ -87,11 +87,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=10143
-name=ã€€
+name=¡¡
 enemy=npcgen_warpman|file:king/event69_9
 }
 
-#é—è¿¹ç›è•¾(å°†å‹‡è€…é€å›åå¹´å‰çš„å°å°è¿·å®«å»æ‹¯æ•‘å°¼æ–¯,æˆ–å¤©ç©ºå²›é‡‡ç²¾çµè‰)
+#ÒÅ¼£ÂêÀÙ(½«ÓÂÕßËÍ»ØÊ®ÄêÇ°µÄ·âÓ¡ÃÔ¹¬È¥Õü¾ÈÄáË¹,»òÌì¿Õµº²É¾«Áé²İ)
 {
 floorid=30620
 borncorner=21,15,21,15
@@ -100,11 +100,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100451
-name=åœ°ç²¾çµç›è•¾è²é›…
+name=µØ¾«ÁéÂêÀÙ·ÆÑÅ
 enemy=npcgen_warpman|file:king/event69_10
 }
 
-#ç›ä¸½(æµ·ä¹‹ç²¾çµ,é¢„çŸ¥åœ°éœ‡ä½¿å…‰æ˜ç²¾çµç‹çš„å°å°ç»“ç•Œäº§ç”Ÿè£‚ç¼,äºæ˜¯ç‡è¨å§†è‡³å°å°è¿·å®«é˜»æ­¢å°¼æ–¯çš„æ¯ç­)
+#ÂêÀö(º£Ö®¾«Áé,Ô¤ÖªµØÕğÊ¹¹âÃ÷¾«ÁéÍõµÄ·âÓ¡½á½ç²úÉúÁÑ·ì,ÓÚÊÇÂÊÈøÄ·ÖÁ·âÓ¡ÃÔ¹¬×èÖ¹ÄáË¹µÄ»ÙÃğ)
 {
 floorid=30619
 borncorner=19,17,19,17
@@ -113,11 +113,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100185
-name=æµ·ç²¾çµç›ä¸½å¨œä¸
+name=º£¾«ÁéÂêÀöÄÈË¿
 enemy=changeevent|file:king/event69_11
 }
 
-#è¨å§†(æ³¢æ‹‰å²›è‹±é›„)
+#ÈøÄ·(²¨À­µºÓ¢ĞÛ)
 {
 floorid=30619
 borncorner=22,20,22,20
@@ -126,11 +126,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100036
-name=è‹±é›„è¨å§†å‰å°”
+name=Ó¢ĞÛÈøÄ·¼ª¶û
 enemy=changeevent|file:king/event69_12
 }
 
-#æˆ˜æ–—é»‘çµç‹(ç´¯ç§¯äº†ä¸¤åƒå¹´çš„é­”åŠ›,ä¸æŒçµåŠ›æŠ¤é“ çš„å‹‡è€…æˆ˜æ–—,200çº§,èƒœåˆ©ä¼ é€åˆ°å¤©ç©ºä¹‹å²›)
+#Õ½¶·ºÚÁéÍõ(ÀÛ»ıÁËÁ½Ç§ÄêµÄÄ§Á¦,Óë³ÖÁéÁ¦»¤îøµÄÓÂÕßÕ½¶·,200¼¶,Ê¤Àû´«ËÍµ½Ìì¿ÕÖ®µº)
 {
 floorid=30619
 borncorner=19,20,19,20
@@ -139,11 +139,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100444
-name=é»‘æš—ç²¾çµç‹
+name=ºÚ°µ¾«ÁéÍõ
 enemy=event69_13|file:king/event69_13.arg
 }
 
-#å¤©ç©ºç›è•¾(å‘Šè¯‰å‹‡è€…å¤©ç©ºä¹‹å²›æ˜¯é»‘çµç‹çš„é¢†åŸŸ,å……æ»¡é­”æ³•åŠ›é‡)
+#Ìì¿ÕÂêÀÙ(¸æËßÓÂÕßÌì¿ÕÖ®µºÊÇºÚÁéÍõµÄÁìÓò,³äÂúÄ§·¨Á¦Á¿)
 {
 floorid=30691
 borncorner=85,66,85,66
@@ -152,11 +152,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100451
-name=åœ°ç²¾çµç›è•¾è²é›…
+name=µØ¾«ÁéÂêÀÙ·ÆÑÅ
 enemy=changeevent|file:king/event69_14
 }
 
-#æˆ˜æ–—é›…å°”ä¸(å¤©ç©ºä¹‹å²›ç¬¬ä¸€å±‚,éª‘å® ,120çº§)
+#Õ½¶·ÑÅ¶ûË¿(Ìì¿ÕÖ®µºµÚÒ»²ã,Æï³è,120¼¶)
 {
 floorid=30691
 borncorner=49,71,49,71
@@ -165,11 +165,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101079
-name=åœ°å®ˆæŠ¤é›…å°”ä¸
+name=µØÊØ»¤ÑÅ¶ûË¿
 enemy=event69_15|file:king/event69_15.arg
 }
 
-#é›…å°”ä¸(äº¤ç»™å‹‡è€…åœ°é­”æ³•æˆ’æŒ‡,éª‘å® )
+#ÑÅ¶ûË¿(½»¸øÓÂÕßµØÄ§·¨½äÖ¸,Æï³è)
 {
 floorid=30696
 borncorner=18,14,18,14
@@ -178,11 +178,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101079
-name=åœ°å®ˆæŠ¤é›…å°”ä¸
+name=µØÊØ»¤ÑÅ¶ûË¿
 enemy=changeevent|file:king/event69_16
 }
 
-#æˆ˜æ–—ç“¦ç¦å„¿(å¤©ç©ºä¹‹å²›ç¬¬äºŒå±‚,éª‘å® ,120çº§)
+#Õ½¶·Íßçù¶ù(Ìì¿ÕÖ®µºµÚ¶ş²ã,Æï³è,120¼¶)
 {
 floorid=30692
 borncorner=59,67,59,67
@@ -191,11 +191,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101109
-name=æ°´å®ˆæŠ¤ç“¦ç¦å„¿
+name=Ë®ÊØ»¤Íßçù¶ù
 enemy=event69_17|file:king/event69_17.arg
 }
 
-#ç“¦ç¦å„¿(äº¤ç»™å‹‡è€…æ°´é­”æ³•æˆ’æŒ‡,éª‘å® )
+#Íßçù¶ù(½»¸øÓÂÕßË®Ä§·¨½äÖ¸,Æï³è)
 {
 floorid=30697
 borncorner=20,14,20,14
@@ -204,11 +204,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101109
-name=æ°´å®ˆæŠ¤ç“¦ç¦å„¿
+name=Ë®ÊØ»¤Íßçù¶ù
 enemy=changeevent|file:king/event69_18
 }
 
-#æˆ˜æ–—è´¹å°”å¶(å¤©ç©ºä¹‹å²›ç¬¬ä¸‰å±‚,éª‘å® ,120çº§)
+#Õ½¶··Ñ¶ûÒ¶(Ìì¿ÕÖ®µºµÚÈı²ã,Æï³è,120¼¶)
 {
 floorid=30693
 borncorner=60,36,60,36
@@ -217,11 +217,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101049
-name=ç«å®ˆæŠ¤è´¹å°”å¶
+name=»ğÊØ»¤·Ñ¶ûÒ¶
 enemy=event69_19|file:king/event69_19.arg
 }
 
-#è´¹å°”å¶(äº¤ç»™å‹‡è€…ç«é­”æ³•æˆ’æŒ‡,éª‘å® )
+#·Ñ¶ûÒ¶(½»¸øÓÂÕß»ğÄ§·¨½äÖ¸,Æï³è)
 {
 floorid=30698
 borncorner=16,14,16,14
@@ -230,11 +230,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101049
-name=ç«å®ˆæŠ¤è´¹å°”å¶
+name=»ğÊØ»¤·Ñ¶ûÒ¶
 enemy=changeevent|file:king/event69_20
 }
 
-#æˆ˜æ–—å¨æ©å¾·(å¤©ç©ºä¹‹å²›ç¬¬å››å±‚,éª‘å® ,120çº§)
+#Õ½¶·Íş¶÷µÂ(Ìì¿ÕÖ®µºµÚËÄ²ã,Æï³è,120¼¶)
 {
 floorid=30694
 borncorner=54,37,54,37
@@ -243,11 +243,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101019
-name=é£å®ˆæŠ¤å¨æ©å¾·
+name=·çÊØ»¤Íş¶÷µÂ
 enemy=event69_21|file:king/event69_21.arg
 }
 
-#å¨æ©å¾·(äº¤ç»™å‹‡è€…é£é­”æ³•æˆ’æŒ‡,éª‘å® )
+#Íş¶÷µÂ(½»¸øÓÂÕß·çÄ§·¨½äÖ¸,Æï³è)
 {
 floorid=30699
 borncorner=19,14,19,14
@@ -256,11 +256,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101019
-name=é£å®ˆæŠ¤å¨æ©å¾·
+name=·çÊØ»¤Íş¶÷µÂ
 enemy=changeevent|file:king/event69_22
 }
 
-#æˆ˜æ–—æŸ¯é»‘(å¤©ç©ºä¹‹å²›çš„å®ˆæŠ¤,150çº§)
+#Õ½¶·¿ÂºÚ(Ìì¿ÕÖ®µºµÄÊØ»¤,150¼¶)
 {
 floorid=30689
 borncorner=46,29,46,29
@@ -269,11 +269,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100725
-name=æŸ¯é»‘ç©†è‚¯
+name=¿ÂºÚÄÂ¿Ï
 enemy=event69_23|file:king/event69_23.arg
 }
 
-#æŸ¯é»‘ç©†è‚¯(ç»™å‹‡è€…é»‘ç¾Šå’Œé»‘æš—ç²¾çµç‹çš„æ¶ˆæ¯)
+#¿ÂºÚÄÂ¿Ï(¸øÓÂÕßºÚÑòºÍºÚ°µ¾«ÁéÍõµÄÏûÏ¢)
 {
 floorid=30670
 borncorner=15,5,15,5
@@ -282,11 +282,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100725
-name=æŸ¯é»‘ç©†è‚¯
+name=¿ÂºÚÄÂ¿Ï
 enemy=changeevent|file:king/event69_24
 }
 
-#å°é»‘ç²¾çµ(å¤©ç©ºä¹‹å²›ä¸æ²™å§†å²›å¥‡åŠªä¼Šæ‘é€šè·¯çš„çœ‹å®ˆè€…)
+#Ğ¡ºÚ¾«Áé(Ìì¿ÕÖ®µºÓëÉ³Ä·µºÆæÅ¬ÒÁ´åÍ¨Â·µÄ¿´ÊØÕß)
 {
 floorid=30695
 borncorner=43,29,43,29
@@ -295,11 +295,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100768
-name=å°é»‘ç²¾çµ
+name=Ğ¡ºÚ¾«Áé
 enemy=npcgen_warpman|file:king/event69_25
 }
 
-#è·³è·ƒæŸ¯é»‘(è·³å‹‡è€…è¿›è¿·å®«)
+#ÌøÔ¾¿ÂºÚ(ÌøÓÂÕß½øÃÔ¹¬)
 {
 floorid=30695
 borncorner=31,15,31,15
@@ -308,6 +308,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100725
-name=æŸ¯é»‘ç©†è‚¯
+name=¿ÂºÚÄÂ¿Ï
 enemy=npcgen_warpman|file:king/event69_26
 }

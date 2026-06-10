@@ -10,7 +10,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=101428
-name=ç‚é¾™æ´»åŠ¨ç‰¹æ´¾å‘˜
+name=Ñ×Áú»î¶¯ÌØÅÉÔ±
 enemy=changeevent|file:my/huodong51/tpy.arg
 }
 
@@ -21,7 +21,7 @@ borncorner=68,81,68,81
 time=0
 createnum=1
 graphicname=125009
-name=æ´»åŠ¨å¥–å“å…‘æ¢å‘˜
+name=»î¶¯½±Æ·¶Ò»»Ô±
 dir=6
 ignoreinvincible=1
 enemy=ITEMCHANGE|file:my/huodong51/dhy.arg
@@ -36,6 +36,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=17063
-name=å…©æ³¡é‡¦
+name=ÑÀË¢ËÕ
 enemy=changeevent|file:my/huodong51/ya.arg
 }

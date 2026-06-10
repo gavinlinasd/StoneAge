@@ -1,6 +1,6 @@
 NPCCREATE
 
-#åœ°åŸæ²™å°”ç‰¹çš„åŠ©æ‰‹
+#µØ³ÇÉ³¶ûÌØµÄÖúÊÖ
 {
 floorid=7107
 borncorner=12,13,12,13
@@ -9,13 +9,13 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16458
-name=æ²™å°”ç‰¹çš„åŠ©æ‰‹
+name=É³¶ûÌØµÄÖúÊÖ
 enemy=changeevent|file:eden3/earth/earth7107_12_13
 }
 
-#ç¥ç§˜å·¨çŸ³åƒ
+#ÉñÃØ¾ŞÊ¯Ïñ
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=708
 borncorner=229,254,229,254
 time=0
@@ -26,9 +26,9 @@ ignoreinvincible=1
 enemy=npcgen_warpman|file:eden3/earth/earth708_229_253
 }
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒä¹
+#»ú¹Ø±¦Ê¯¾ŞÊ¯Ïñ¾Å
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,25,10,25
 time=0
@@ -40,9 +40,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_25
 }
 
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒå…«
+#»ú¹Ø±¦Ê¯¾ŞÊ¯Ïñ°Ë
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,27,10,27
 time=0
@@ -54,9 +54,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_27
 }
 
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒä¸ƒ
+#»ú¹Ø±¦Ê¯¾ŞÊ¯ÏñÆß
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,29,10,29
 time=0
@@ -68,9 +68,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_29
 }
 
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒå…­
+#»ú¹Ø±¦Ê¯¾ŞÊ¯ÏñÁù
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,31,10,31
 time=0
@@ -82,9 +82,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_31
 }
 
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒäº”
+#»ú¹Ø±¦Ê¯¾ŞÊ¯ÏñÎå
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,33,10,33
 time=0
@@ -96,9 +96,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_33
 }
 
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒå››
+#»ú¹Ø±¦Ê¯¾ŞÊ¯ÏñËÄ
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,35,10,35
 time=0
@@ -110,9 +110,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_35
 }
 
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒä¸‰
+#»ú¹Ø±¦Ê¯¾ŞÊ¯ÏñÈı
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,37,10,37
 time=0
@@ -124,9 +124,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_37
 }
 
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒäºŒ
+#»ú¹Ø±¦Ê¯¾ŞÊ¯Ïñ¶ş
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,39,10,39
 time=0
@@ -138,9 +138,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_39
 }
 
 
-#æœºå…³å®çŸ³å·¨çŸ³åƒä¸€
+#»ú¹Ø±¦Ê¯¾ŞÊ¯ÏñÒ»
 {
-name=ç¥ç§˜å·¨çŸ³åƒ
+name=ÉñÃØ¾ŞÊ¯Ïñ
 floorid=60101
 borncorner=10,41,10,41
 time=0
@@ -152,9 +152,9 @@ enemy=changeevent|file:eden3/earth/earth60101_10_41
 }
 
 
-#ä¼ é€æœºå…³
+#´«ËÍ»ú¹Ø
 {
-name=ä¼ é€æœºå…³
+name=´«ËÍ»ú¹Ø
 floorid=60101
 borncorner=22,5,22,5
 time=0
@@ -166,9 +166,9 @@ enemy=npcgen_warpman|file:eden3/earth/earth60101_22_5
 }
 
 
-#ä¼ é€æœºå…³
+#´«ËÍ»ú¹Ø
 {
-name=ä¼ é€æœºå…³
+name=´«ËÍ»ú¹Ø
 floorid=60101
 borncorner=18,54,18,54
 time=0
@@ -180,7 +180,7 @@ enemy=npcgen_warpman|file:eden3/earth/earth60101_36_55
 }
 
 
-#å‘Šç¤ºç‰ˆ
+#¸æÊ¾°æ
 
 {
 floorid=703
@@ -188,14 +188,14 @@ borncorner=30,299,30,299
 time=0
 createnum=1
 graphicname=10062
-name=å‘Šç¤ºç‰ˆ
+name=¸æÊ¾°æ
 dir=6
 ignoreinvincible=1
 enemy=npcgen_signboard|file:eden3/earth/earth703_30_299
 }
 
 
-#åœ°ç²¾çµ
+#µØ¾«Áé
 
 {
 floorid=60101
@@ -203,14 +203,14 @@ borncorner=47,32,47,32
 time=0
 createnum=1
 graphicname=16451
-name=å¤§åœ°ç²¾çµ
+name=´óµØ¾«Áé
 dir=6
 ignoreinvincible=1
 enemy=changeevent|file:eden3/earth/earth60101_47_32
 }
 
 {
-name=æ±‰æ–¯
+name=ººË¹
 floorid=700
 borncorner=103,127,103,127
 time=0
@@ -222,7 +222,7 @@ enemy=npcgen_warpman|file:eden3/earth/earth700_103_127
 }
 
 {
-name=é…Œæ˜”å°‘å¯®
+name=¼àÀÎ¾¯ÎÀ
 floorid=60080
 borncenter=20,5
 dir=6
@@ -234,7 +234,7 @@ graphicname=100439
 }
 
 {
-name=é…Œæ˜”å°‘å¯®
+name=¼àÀÎ¾¯ÎÀ
 floorid=60081
 borncenter=20,5
 dir=6
@@ -246,7 +246,7 @@ graphicname=100439
 }
 
 {
-name=å›¢é•¿äºšå…‹
+name=ÍÅ³¤ÑÇ¿Ë
 floorid=60082
 borncenter=13,10
 dir=4
@@ -258,7 +258,7 @@ graphicname=16902
 }
 
 {
-name=å¡å°”å¤«
+name=¿¨¶û·ò
 floorid=60082
 borncenter=15,10
 dir=4
@@ -270,7 +270,7 @@ graphicname=16442
 }
 
 {
-name=æ±‰æ–¯
+name=ººË¹
 floorid=60082
 borncenter=11,10
 dir=4
@@ -282,7 +282,7 @@ graphicname=16443
 }
 
 {
-name=è‹±å˜‰
+name=Ó¢¼Î
 floorid=60083
 borncenter=13,10
 dir=4
@@ -294,7 +294,7 @@ graphicname=16445
 }
 
 {
-name=å¡å°”å¤«
+name=¿¨¶û·ò
 floorid=60083
 borncenter=15,10
 dir=4
@@ -306,7 +306,7 @@ graphicname=16442
 }
 
 {
-name=æ±‰æ–¯
+name=ººË¹
 floorid=60083
 borncenter=11,10
 dir=4

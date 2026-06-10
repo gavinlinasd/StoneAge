@@ -1,7 +1,7 @@
 NPCCREATE
-###### é‡‘æš´æ´è·¯äºº ######
+###### ½ğ±©¶´Â·ÈË ######
 {
-name=å†’é™©è€…
+name=Ã°ÏÕÕß
 floorid=707
 borncenter=52,150
 time=0
@@ -12,9 +12,9 @@ enemy=changeevent|file:eden3/hole1
 graphicname=16717
 }
 
-###### å“¥å‰æ‹‰æ´è·¯äºº ######
+###### ¸ç¼ªÀ­¶´Â·ÈË ######
 {
-name=å†’é™©è€…
+name=Ã°ÏÕÕß
 floorid=708
 borncenter=223,254
 time=0

@@ -1,6 +1,6 @@
 NPCCREATE
 
-#ç›çŸ¿è´Ÿè´£äººï¼ˆå¡”è€³å¡”åœ°åŸç›çŸ¿è´Ÿè´£äººï¼‰
+#ÑÎ¿ó¸ºÔğÈË£¨Ëş¶úËşµØ³ÇÑÎ¿ó¸ºÔğÈË£©
 {
 floorid=7109
 borncorner=14,12,14,12
@@ -9,11 +9,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16465
-name=æ²™å°”ç‰¹
+name=É³¶ûÌØ
 enemy=changeevent|file:eden2/salt/salt86_01
 }
 
-#ä¼Šç”¸ç›å•†ï¼ˆå§”æ‰˜ç©å®¶å¸¦å›å²©ç›çš„å¥¸å•†ï¼‰
+#ÒÁµéÑÎÉÌ£¨Î¯ÍĞÍæ¼Ò´ø»ØÑÒÑÎµÄ¼éÉÌ£©
 {
 floorid=7019
 borncorner=9,8,9,8
@@ -22,11 +22,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16349
-name=ç›å•†æ¯”å…¹
+name=ÑÎÉÌ±È×È
 enemy=changeevent|file:eden2/salt/salt86_02
 }
 
-#ç›çŸ¿å®ˆå«ï¼ˆä¼ é€ç©å®¶è¿›ç›çŸ¿ï¼‰
+#ÑÎ¿óÊØÎÀ£¨´«ËÍÍæ¼Ò½øÑÎ¿ó£©
 {
 floorid=7109
 borncorner=24,4,24,4
@@ -35,11 +35,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16464
-name=å®ˆå«æ­å¾—
+name=ÊØÎÀº¼µÃ
 enemy=npcgen_warpman|file:eden2/salt/salt86_03
 }
 
-#ä¼™è®¡ï¼ˆå’Œç©å®¶ä¹°å–å²©ç›ï¼‰
+#»ï¼Æ£¨ºÍÍæ¼ÒÂòÈ¡ÑÒÑÎ£©
 {
 floorid=7019
 borncorner=12,4,12,4
@@ -48,6 +48,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16348
-name=ä¼™è®¡
+name=»ï¼Æ
 enemy=changeevent|file:eden2/salt/salt86_04
 }

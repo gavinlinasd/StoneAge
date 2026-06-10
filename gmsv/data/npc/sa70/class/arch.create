@@ -1,9 +1,9 @@
 NPCCREATE
 
-########ã€€è¿½çŒè€…ã€€#########
-##### å…¬ä¼šå¯¼å¸ˆ ######
+########¡¡×·ÁÔÕß¡¡#########
+##### ¹«»áµ¼Ê¦ ######
 {
-name=å¥ˆå°”ç§‹
+name=ÄÎ¶ûÇï
 floorid=8217
 borncenter=17,14
 dir=4
@@ -14,7 +14,7 @@ enemy=npcgen_warpman|file:sa70/class/arch.arg
 }
 
 {
-name=å°±èŒå¯¼å¸ˆå¯å¶
+name=¾ÍÖ°µ¼Ê¦¿ÉÒ¶
 floorid=8217
 borncenter=21,18
 dir=4
@@ -24,9 +24,9 @@ graphicname=16186
 enemy=npcgen_warpman|file:sa70/class/arch2
 }
 
-##### å…¬ä¼šè§£è¯´å‘˜ ######
+##### ¹«»á½âËµÔ± ######
 {
-name=å…¬ä¼šè§£è¯´å‘˜
+name=¹«»á½âËµÔ±
 floorid=8217
 borncenter=17,29
 dir=4
@@ -36,9 +36,9 @@ graphicname=16189
 enemy=changeevent|file:sa70/class/arch3
 }
 
-##### è¯•ç»ƒè€…ä¸€ ######
+##### ÊÔÁ·ÕßÒ» ######
 {
-name=è¯•ç‚¼è€…
+name=ÊÔÁ¶Õß
 floorid=8220
 borncenter=108,93
 dir=6
@@ -48,9 +48,9 @@ graphicname=16193
 enemy=npcgen_warpman|file:sa70/class/aquest1
 }
 
-##### è¯•ç»ƒè€…äºŒ ######
+##### ÊÔÁ·Õß¶ş ######
 {
-name=è¯•ç‚¼è€…
+name=ÊÔÁ¶Õß
 floorid=8220
 borncenter=124,11
 dir=4
@@ -60,9 +60,9 @@ graphicname=16188
 enemy=npcgen_warpman|file:sa70/class/aquest2
 }
 
-##### è¯•ç»ƒè€…ä¸‰ ######
+##### ÊÔÁ·ÕßÈı ######
 {
-name=è¯•ç‚¼è€…
+name=ÊÔÁ¶Õß
 floorid=8220
 borncenter=64,4
 dir=4

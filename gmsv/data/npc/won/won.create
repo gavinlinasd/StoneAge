@@ -1,7 +1,7 @@
 NPCCREATE
 
 {
-name=æ‹›å¾…å®¤ç®¡ç†å‘˜
+name=ÕĞ´ıÊÒ¹ÜÀíÔ±
 floorid=887
 borncenter=59,14
 dir=6
@@ -17,7 +17,7 @@ borncorner=59,12,59,12
 time=0
 createnum=1
 graphicname=16207
-name=å°‘å¯®
+name=¾¯ÎÀ
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|file:won/won1.arg
@@ -28,7 +28,7 @@ borncorner=59,16,59,16
 time=0
 createnum=1
 graphicname=16207
-name=å°‘å¯®
+name=¾¯ÎÀ
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|file:won/won1.arg

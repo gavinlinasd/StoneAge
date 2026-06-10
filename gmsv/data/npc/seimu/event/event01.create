@@ -1,7 +1,7 @@
 NPCCREATE
 
 #########################################################
-#########    æª€çˆ¶ã®è´«å‘ã€€ã‚¤ãƒ™ãƒ³ãƒˆè‚‹å¹´ã€€ã€€################
+#########    Ì´¸¸¤ÎÆ¶·¢¡¡¥¤¥Ù¥ó¥ÈÀßÄê¡¡¡¡################
 #########################################################
 
 
@@ -13,7 +13,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16024
-name=æ¢¦è§çš„ä»™äºº
+name=ÃÎ¼ûµÄÏÉÈË
 enemy=changeevent|file:seimu/event/event01_2
 }
 
@@ -26,7 +26,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16024
-name=æ¢¦è§çš„ä»™äºº
+name=ÃÎ¼ûµÄÏÉÈË
 enemy=changeevent|file:seimu/event/event01_2
 }
 
@@ -39,7 +39,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16001
-name=æ‘ä¸­çš„è€äºº
+name=´åÖĞµÄÀÏÈË
 enemy=changeevent|file:seimu/event/event01_1
 }
 

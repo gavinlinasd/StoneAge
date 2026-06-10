@@ -1,10 +1,10 @@
 NPCCREATE
 
 
-###### è‰¾å°”æ–¯######
+###### °¬¶ûË¹######
 
 {
-name=è‰¾å°”æ–¯
+name=°¬¶ûË¹
 floorid=100
 borncenter=404,466
 dir=6
@@ -15,9 +15,9 @@ graphicname=16353
 enemy=changeevent|file:sa80/gloves/gloves_1
 }
 
-###### è‰¾å°”ç™»######
+###### °¬¶ûµÇ######
 {
-name=è‰¾å°”ç™»
+name=°¬¶ûµÇ
 floorid=200
 borncenter=109,1020
 dir=6

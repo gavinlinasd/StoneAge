@@ -1,11 +1,11 @@
-NomalMainMsg:石器第一届狩猎比赛开打了！！你参加了吗？？
+NomalMainMsg:ʯ����һ�����Ա��������ˣ�����μ����𣿣�
 
 EventNo:-1
 TYPE:REQUEST
 EVENT:ITEM=20707
-RequestMsg:哇～我终于等到您了～新生代的猎宠英雄！！
-ThanksMsg:这是猎宠大会特别为您挑选的宠物，希望您能好好饲养它喔～
-PetFullMsg:您宠物太多了喔～请挪个位置吧！
+RequestMsg:�ۡ������ڵȵ����ˡ����������Գ�Ӣ�ۣ���
+ThanksMsg:�����Գ����ر�Ϊ����ѡ�ĳ��ϣ�����ܺú�������ม�
+PetFullMsg:������̫����ม���Ų��λ�ðɣ�
 DelItem:20707
 GetPet:1977
 EventEnd
@@ -13,9 +13,9 @@ EventEnd
 EventNo:-1
 TYPE:REQUEST
 EVENT:ITEM=20708
-RequestMsg:哇～我终于等到您了～伟大的猎宠英雄！！
-ThanksMsg:这是猎宠大会特别为您挑选的宠物，希望您能好好饲养它喔～
-PetFullMsg:您宠物太多了喔～请挪个位置吧！
+RequestMsg:�ۡ������ڵȵ����ˡ�ΰ����Գ�Ӣ�ۣ���
+ThanksMsg:�����Գ����ر�Ϊ����ѡ�ĳ��ϣ�����ܺú�������ม�
+PetFullMsg:������̫����ม���Ų��λ�ðɣ�
 DelItem:20708
 GetPet:2571
 EventEnd

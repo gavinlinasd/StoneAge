@@ -1,15 +1,15 @@
 ###########################################################
-#漆黑的洞窟  16楼讲述传说的NPC                            #
-# 				              负责人：西竹#
+#��ڵĶ���  16¥������˵��NPC                            #
+# 				              �����ˣ�����#
 ###########################################################
-###讲述传说的NPC的设定5
+###������˵��NPC���趨5
 
 EventNo:53
 TYPE:ACCEPT
 EVENT:LV>0&ITEM=2701&ITEM=2707&ITEM=2735&ITEM=2770
-AcceptMsg:\n\n真是不虏洙\n你居然可以带着精灵给你的信物来到这里。
-ThanksMsg:\n\n这是给妥善保管这些信物的你\n一点小小的敜洁\n来收下吧。
-ItemFullMsg:\n\n\n你身上东西太多了，所以装不下哦。
+AcceptMsg:\n\n���ǲ�²�\n���Ȼ���Դ��ž������������������
+ThanksMsg:\n\n���Ǹ����Ʊ�����Щ�������\nһ��СС�Ĕ���\n�����°ɡ�
+ItemFullMsg:\n\n\n�����϶���̫���ˣ�����װ����Ŷ��
 GetItem:2775
 Charm:1
 EndSetFlg:53
@@ -18,46 +18,46 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&ENDEV=52
-NomalWindowMsg:\n\n你已经把最强的力量\n给激发出来了\n要是再锣生的话，那太危险了。
+NomalWindowMsg:\n\n���Ѿ�����ǿ������\n������������\nҪ���������Ļ�����̫Σ���ˡ�
 EventEnd
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&ENDEV=51&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774
-NomalWindowMsg:\n为了具想新的能力\n你要把“地”“水”“火”“风”\n四大守护兽具齐才行\n单你所有的守护兽到齐的时候\n你就能得到精灵王赐与的新力量\n可以进行锣生的祸式摆。
+NomalWindowMsg:\nΪ�˾����µ�����\n��Ҫ�ѡ��ء���ˮ�����𡱡��硱\n�Ĵ��ػ��޾������\n�������е��ػ��޵����ʱ��\n����ܵõ������������������\n���Խ��������Ļ�ʽ�ڡ�
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&ENDEV=50&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774
-NomalWindowMsg:\n为了具想新的能力\n你需要“风的守护兽”\n烿你把风的守护兽交给精灵王之后\n你就能得到新力量\n可以进行锣生的祸式摆。
+NomalWindowMsg:\nΪ�˾����µ�����\n����Ҫ������ػ��ޡ�\n�V��ѷ���ػ��޽���������֮��\n����ܵõ�������\n���Խ��������Ļ�ʽ�ڡ�
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&ENDEV=49&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774
-NomalWindowMsg:\n为了具想新的能力\n你需要“火的守护兽”\n烿你把火的守护兽交给精灵王之后\n你就能得到新力量\n可以进行锣生的祸式摆。
+NomalWindowMsg:\nΪ�˾����µ�����\n����Ҫ������ػ��ޡ�\n�V��ѻ���ػ��޽���������֮��\n����ܵõ�������\n���Խ��������Ļ�ʽ�ڡ�
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&ENDEV=48&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774
-NomalWindowMsg:\n为了具想新的能力\n你需要“水的守护兽”\n烿你把水的守护兽交给精灵王之后\n你就能得到新力量\n可以进行锣生的祸式摆。
+NomalWindowMsg:\nΪ�˾����µ�����\n����Ҫ��ˮ���ػ��ޡ�\n�V���ˮ���ػ��޽���������֮��\n����ܵõ�������\n���Խ��������Ļ�ʽ�ڡ�
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&ITEM=2771&ITEM=2772&ITEM=2773&ITEM=2774
-NomalWindowMsg:\n为了具想新的能力\n你需要“大地的守护兽”\n烿你把大地的守护兽交给精灵王之后\n你就能得到新力量\n可以进行锣生的祸式摆。
+NomalWindowMsg:\nΪ�˾����µ�����\n����Ҫ����ص��ػ��ޡ�\n�V��Ѵ�ص��ػ��޽���������֮��\n����ܵõ�������\n���Խ��������Ļ�ʽ�ڡ�
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:\n为了得到新的力量\n你需要知道这个世界的古老历史。\n这个洞窟内有4位通惧古代历史的人。\n\n烿你知道古代历史的时候\n我就指点你通往获得新力量的道夹吧。
+NomalWindowMsg:\nΪ�˵õ��µ�����\n����Ҫ֪���������Ĺ�����ʷ��\n�����������4λͨ��Ŵ���ʷ���ˡ�\n\n�V��֪���Ŵ���ʷ��ʱ��\n�Ҿ�ָ����ͨ������������ĵ��аɡ�
 EventEnd

@@ -1,6 +1,6 @@
 NPCCREATE
 
-###### çˆ±çš„ç¤¼ç‰© æ ‡139 ###############
+###### °®µÄÀñÎï ±ê139 ###############
 {
 floorid=1100
 borncenter=78,55
@@ -9,7 +9,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16030
-name=ä¼ŠèŠ™ä¸½
+name=ÒÁÜ½Àö
 enemy=changeevent|file:sa60/gift/gift1.arg
 }
 
@@ -21,7 +21,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16049
-name=å¤šå‰å°”
+name=¶à¼ª¶û
 enemy=changeevent|file:sa60/gift/gift2.arg
 }
 

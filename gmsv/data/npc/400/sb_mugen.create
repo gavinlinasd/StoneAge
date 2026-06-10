@@ -1,6 +1,6 @@
 NPCCREATE
 ################41
-#######å¥‡å¡æ´›æ–¯##########
+#######Ææ¿¨ÂåË¹##########
 {
 floorid=41
 borncenter=34,41,1,1
@@ -9,10 +9,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100343
-name=å¥‡å¡æ´›æ–¯
+name=Ææ¿¨ÂåË¹
 enemy=sb_muge1|file:400/sb_muge1.arg
 }
-#######å¡å¡é‡‘å®##########
+#######¿¨¿¨½ğ±¦##########
 {
 floorid=41
 borncenter=33,41,1,1
@@ -21,11 +21,11 @@ createnum=1
 time=60000
 dir=4
 graphicname=100346
-name=å¡å¡é‡‘å®
+name=¿¨¿¨½ğ±¦
 enemy=sb_muge2|file:400/sb_muge2.arg
 }
 #################42
-#######å¥‡å¡æ´›æ–¯##########
+#######Ææ¿¨ÂåË¹##########
 {
 floorid=42
 borncenter=34,41,1,1
@@ -34,10 +34,10 @@ createnum=1
 time=60000
 dir=4
 graphicname=100343
-name=å¥‡å¡æ´›æ–¯
+name=Ææ¿¨ÂåË¹
 enemy=sb_muge1|file:400/sb_muge1.arg
 }
-#######å¡å¡é‡‘å®##########
+#######¿¨¿¨½ğ±¦##########
 {
 floorid=42
 borncenter=33,41,1,1
@@ -46,6 +46,6 @@ createnum=1
 time=60000
 dir=4
 graphicname=100346
-name=å¡å¡é‡‘å®
+name=¿¨¿¨½ğ±¦
 enemy=sb_muge2|file:400/sb_muge2.arg
 }

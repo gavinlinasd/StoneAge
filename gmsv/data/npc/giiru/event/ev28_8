@@ -1,12 +1,12 @@
 #########################
-#五兄弟的地下城（吉鲁） #
-#第二问424　担任者：西竹#
+#���ֵܵĵ��³ǣ���³�� #
+#�ڶ���424�������ߣ�����#
 #########################
 #########################
-########答案正确#########
+########����ȷ#########
 
 
-NomalMainMsg:来的好呀！你好吗？制作问题真快撝！
+NomalMainMsg:���ĺ�ѽ������������������֣�
 
 
 
@@ -14,9 +14,9 @@ NomalMainMsg:来的好呀！你好吗？制作问题真快撝！
 EventNo:28
 TYPE:ACCEPT
 EVENT:NOWEV=28&ITEM=2509
-AcceptMsg:\n\n\n　　　你认为是４２４ＫＧ？
-ThanksMsg:\n\n　　　那请拿着答案用纸\n　　继续向前进吧！
-ItemFullMsg:\n\n　　　似乎无法持有答案用纸，\n请减少一些物品再来吧！
+AcceptMsg:\n\n\n����������Ϊ�ǣ������ˣǣ�
+ThanksMsg:\n\n�������������Ŵ���ֽ\n����������ǰ���ɣ�
+ItemFullMsg:\n\n�������ƺ��޷����д���ֽ��\n�����һЩ��Ʒ�����ɣ�
 DelItem:2509*1
 GetItem:2509*1
 EventEnd
@@ -25,9 +25,9 @@ EventEnd
 EventNo:28
 TYPE:ACCEPT
 EVENT:NOWEV=28&ITEM=2510
-AcceptMsg:\n\n\n　　　你认为是４２４ＫＧ？
-ThanksMsg:\n\n　　　那请拿着答案用纸\n　　继续向前进吧！
-ItemFullMsg:\n\n　　　似乎无法持有答案用纸，\n请减少一些物品再来吧！
+AcceptMsg:\n\n\n����������Ϊ�ǣ������ˣǣ�
+ThanksMsg:\n\n�������������Ŵ���ֽ\n����������ǰ���ɣ�
+ItemFullMsg:\n\n�������ƺ��޷����д���ֽ��\n�����һЩ��Ʒ�����ɣ�
 DelItem:2510*1
 GetItem:2509*1
 EventEnd
@@ -36,9 +36,9 @@ EventEnd
 EventNo:28
 TYPE:ACCEPT
 EVENT:NOWEV=28&ITEM!=2509,NOWEV=28&ITEM!=2510
-AcceptMsg:\n\n\n　　　你认为是４２４ＫＧ？
-ThanksMsg:\n\n　　　那请拿着答案用纸\n　　继续向前进吧！
-ItemFullMsg:\n\n　　　似乎无法持有答案用纸，\n请减少一些物品再来吧！
+AcceptMsg:\n\n\n����������Ϊ�ǣ������ˣǣ�
+ThanksMsg:\n\n�������������Ŵ���ֽ\n����������ǰ���ɣ�
+ItemFullMsg:\n\n�������ƺ��޷����д���ֽ��\n�����һЩ��Ʒ�����ɣ�
 GetItem:2509*1
 EventEnd
 

@@ -1,31 +1,31 @@
-NomalMainMsg:ï¼ˆæ‹”ä¸èµ·æ¥â€¦â€¦ï¼‰
+NomalMainMsg:£¨°Î²»ÆðÀ´¡­¡­£©
 
-## åŠ¨ç‰©å›­ä»»åŠ¡ç»“æŸ
+## ¶¯ÎïÔ°ÈÎÎñ½áÊø
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=82
-NomalMsg:ï¼ˆæ‹”ä¸èµ·æ¥â€¦â€¦â€¦â€¦ï¼‰
+NomalMsg:£¨°Î²»ÆðÀ´¡­¡­¡­¡­£©
 EventEnd
 
-## æœ‰çº¢èåœä¸å†ç»™
+## ÓÐºìÂÜ²·²»ÔÙ¸ø
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=12090,ITEM=12091,ITEM=12092,ITEM=12093
-NomalMsg:ï¼ˆæ— æ³•æºå¸¦é‚£ä¹ˆå¤šå¤§èåœï¼ï¼‰
+NomalMsg:£¨ÎÞ·¨Ð¯´øÄÇÃ´¶à´óÂÜ²·£¡£©
 EventEnd
 
-## æ²¡é“²å­æ²¡èåœ
+## Ã»²ù×ÓÃ»ÂÜ²·
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM!=19701&NOWEV=83&NOWEV=82&ENDEV=81&NOWEV=71,ITEM!=19701&ENDEV=83&NOWEV=82&ENDEV=81&NOWEV=71
-NomalMsg:ï¼ˆèåœè¢«æ‹”åäº†ï¼ï¼‰
+NomalMsg:£¨ÂÜ²·±»°Î»µÁË£¡£©
 EventEnd
 
-## æœ‰é“²å­ç»™ä¹åˆ†ä¹‹äº”çº¢èï¼‘ï¼Œä¹åˆ†ä¹‹ä¸‰çº¢èï¼’ï¼Œä¹åˆ†ä¹‹ä¸€çº¢èï¼“
+## ÓÐ²ù×Ó¸ø¾Å·ÖÖ®ÎåºìÂÜ£±£¬¾Å·ÖÖ®ÈýºìÂÜ£²£¬¾Å·ÖÖ®Ò»ºìÂÜ£³
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=19701&NOWEV=83&NOWEV=82&ENDEV=81&NOWEV=71,ITEM=19701&ENDEV=83&NOWEV=82&ENDEV=81&NOWEV=71
-NomalWindowMsg:å‹™é–Ÿï¼ƒï¼ƒ
-ItemFullMsg:ï¼ˆè¢‹å­æ»¡äº†ï¼ï¼‰
+NomalWindowMsg:°ÈàÍ¡­¡­
+ItemFullMsg:£¨´ü×ÓÂúÁË£¡£©
 GetRandItem:12090,12090,12090,12090,12090,12091,12091,12091,12092
 EventEnd

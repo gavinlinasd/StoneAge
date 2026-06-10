@@ -1,5 +1,5 @@
 NPCCREATE
-##################å±±è´¼çš„äº‹ä»¶##############
+##################É½ÔôµÄÊÂ¼ş##############
 
 {
 floorid=3400
@@ -9,7 +9,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16030
-name=å‰å¾·çš„æœ‹å‹
+name=¼ªµÂµÄÅóÓÑ
 enemy=changeevent|file:jaruga/event/event20_1
 }
 
@@ -21,7 +21,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16017
-name=å‰å¾·
+name=¼ªµÂ
 enemy=changeevent|file:jaruga/event/event20_2
 }
 
@@ -33,11 +33,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16046
-name=å‰å¾·çš„å„¿å­
+name=¼ªµÂµÄ¶ù×Ó
 enemy=changeevent|file:jaruga/event/event20_3
 }
 
-#å¼ºæ©ä¸€æ—çš„åœ°ä¸‹åŸ
+#Ç¿¶÷Ò»×åµÄµØÏÂ³Ç
 {
 floorid=20607
 borncorner=68,5,68,5
@@ -46,7 +46,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100431
-name=å¼ºæ©
+name=Ç¿¶÷
 enemy=changeevent|file:jaruga/event/event20_4
 }
 
@@ -58,7 +58,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16032
-name=å¼ºæ©çš„å¦»å­
+name=Ç¿¶÷µÄÆŞ×Ó
 enemy=changeevent|file:jaruga/event/event20_5
 }
 
@@ -70,7 +70,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16029
-name=æ²™æ‹‰
+name=É³À­
 enemy=changeevent|file:jaruga/event/event20_6
 }
 

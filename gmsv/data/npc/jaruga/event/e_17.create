@@ -1,5 +1,5 @@
 NPCCREATE
-##################ä¸‰åªé¾™çš„äº‹ä»¶##############
+##################ÈıÖ»ÁúµÄÊÂ¼ş##############
 
 {
 floorid=20807
@@ -9,7 +9,7 @@ createnum=1
 time=200000
 dir=4
 graphicname=16024
-name=é¾™çš„å®ˆæŠ¤è€…
+name=ÁúµÄÊØ»¤Õß
 enemy=windowman|conff:jaruga/event/e_17.conf
 }
 

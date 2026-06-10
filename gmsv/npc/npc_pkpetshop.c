@@ -35,7 +35,7 @@ void NPC_LimitPetShop(int meindex,int talker,int select);
 void NPC_PKPetShop_ExpressmanCheck(int meindex,int talker);
  
 
-/*--ワーク    定義--*/
+/*--工作区定义--*/
 enum{
 	NPC_PKPETSHOP_WORK_NO 		= CHAR_NPCWORKINT1,
 	NPC_PKPETSHOP_WORK_EV 		= CHAR_NPCWORKINT2,
@@ -106,7 +106,7 @@ BOOL NPC_PKPetShopInit( int meindex )
 		return FALSE;
 	}
 	if(strstr(argstr,"LIMITSHOP") != NULL) 
-	{		/*-  い取り郡用フラグ--*/
+	{		/*-  收购店用旗标--*/
 		CHAR_setWorkInt( meindex, NPC_PKPETSHOP_WORK_NO, 1);
 	}
 	else
@@ -115,7 +115,7 @@ BOOL NPC_PKPetShopInit( int meindex )
 	}
 	
 	if(strstr( argstr, "EVENT") != NULL) 
-	{		/*-  い取り郡用フラグ--*/
+	{		/*-  收购店用旗标--*/
 		CHAR_setWorkInt( meindex, NPC_PKPETSHOP_WORK_EV, 1);
 	}
 	else
@@ -124,7 +124,7 @@ BOOL NPC_PKPetShopInit( int meindex )
 	}
 
 	if(strstr( argstr, "EXPRESS") != NULL) 
-	{		/*-運送屋フラグ--*/
+	{		/*-运送屋旗标--*/
 		CHAR_setWorkInt( meindex, NPC_PKPETSHOP_WORK_EXPRESS, 1);
 	}
 	else
@@ -183,7 +183,7 @@ void NPC_PKPetShopTalked( int meindex , int talker , char *szMes ,int color )
 			i++;
 			if( strstr( szMes, buf2) != NULL) {
 				if( CHAR_getWorkInt( meindex, NPC_PKPETSHOP_WORK_EV) == 0) {
-					/*-  い取り郡  かどうかのチェック--*/
+					/*-  检查是否是收购店--*/
 					if( CHAR_getWorkInt( meindex, NPC_PKPETSHOP_WORK_NO) == 1) {
 						if( sellonlyflg ) {
 							NPC_PKPetShop_selectWindow( meindex, talker, 3, -1);
@@ -237,7 +237,7 @@ void NPC_PKPetShopTalked( int meindex , int talker , char *szMes ,int color )
 		{
 			i++;
 			if(strstr(szMes,buf2) != NULL) {
-				/*--ヒントメッセージ--*/
+				/*--提示讯息--*/
 				if(NPC_Util_GetStrFromStrWithDelim( argstr, "hint_msg", 
 				token, sizeof( token)) != NULL)
 				{
@@ -248,7 +248,7 @@ void NPC_PKPetShopTalked( int meindex , int talker , char *szMes ,int color )
 		}	
 	}
 
-	/*-  い取り郡  かどうかのチェック--*/
+	/*-  检查是否是收购店--*/
 	if(CHAR_getWorkInt( meindex, NPC_PKPETSHOP_WORK_NO) == 1)
 	{
 		if(CHAR_getWorkInt( meindex, NPC_PKPETSHOP_WORK_EV) == 1) 
@@ -280,8 +280,8 @@ void NPC_PKPetShopTalked( int meindex , int talker , char *szMes ,int color )
 			if(CHAR_getWorkInt( meindex, NPC_PKPETSHOP_WORK_EXPRESS) == 1) {
 				NPC_PKPetShop_ExpressmanCheck( meindex, talker);
 			}else{ 
-				/*--こ�Aまで  たら共通ウインドウ(メニュー)  示--*/
-				/*--  い取り郡  でなくて  通の店ならメニュー  示--*/
+				/*--到这里的话显示共通窗口(菜单)--*/
+				/*--  不是收购店而是普通店的话显示菜单--*/
 				NPC_PKPetShop_selectWindow( meindex, talker, 0, -1);
 			}
 		}
@@ -296,7 +296,7 @@ static void NPC_PKPetShop_selectWindow( int meindex, int talker, int num,int sel
 	print("\n num = %d ", num);
 	switch( num) {
 	  case 0:
-		/*--メニュー    --*/
+		/*--菜单输入    --*/
 		/*--由仿丢□正霜曰--*/
 		CHAR_send_P_StatusString( talker, CHAR_P_STRING_GOLD);
 		
@@ -354,7 +354,7 @@ void NPC_PKPetShopWindowTalked( int meindex, int talkerindex,
 	switch( seqno){
 
 	  case CHAR_WINDOWTYPE_WINDOWITEMSHOP_STARTMSG:
-		/*--各メニューに  ばす--*/
+		/*--分发到各菜单--*/
 		/*--  丹--*/
 		if(atoi( data) == 1 )	NPC_PKPetShop_selectWindow(meindex, talkerindex, 1, -1);
 
@@ -414,7 +414,7 @@ void NPC_PKPetShopWindowTalked( int meindex, int talkerindex,
 
 /*-----------------------------------------
  *
- *  う処  メイン(クライアント送信情  作成  
+ *  购买处理主函数(生成发给客户端的信息  
  *
  *krynn 2001/12/9 加的注释
  *before == -1
@@ -429,9 +429,9 @@ void NPC_PKPetShop_BuyMain(int meindex,int talker,int before )
 
 	/*
 	  曰  中白仿弘  蟆及犯□正银丹井白仿弘  饕及  蟆  丢永本□斥|  丹丢永本□斥  
-	個数選  メッセージ  レベ郊足りないメッセージ  確  メッセージ  
-	  前    える  えないフラグ  アイ  ムレベ郊  値段    像  号  一行インフォ  
-	  前    える  えないフラグ  アイ  ムレベ郊  値段    像  号  一行インフォ  
+	个数选择讯息  等级不足讯息  确认讯息  
+	  名称    可见不可见旗标  道具等级  价格    图像编号  单行信息  
+	  名称    可见不可见旗标  道具等级  价格    图像编号  单行信息  
 	*/
 	
 	/*--云饕及白央奶伙  中坭反白央奶伙互钒仃卅井匀凶午五反蔽  --*/
@@ -440,7 +440,7 @@ void NPC_PKPetShop_BuyMain(int meindex,int talker,int before )
        	return;
     }
 
-	/*--前回のデータ使うか---*/
+	/*--是否使用上次的数据---*/
 	if(before != -1) 
 	{	/*--蟆荚及犯□正互酸匀化中月及匹职及树  反霜日卅仁    --*/
 		sprintf(token,"0|0");
@@ -484,7 +484,7 @@ void NPC_PKPetShop_BuyMain(int meindex,int talker,int before )
 		print("%s",token2);
 		// end krynn
 
-		/*--メッセージとアイ  ム情  の合  --*/
+		/*--合并讯息与道具信息  --*/
 		strncat( token, token2, sizeof( token));
 	}
 
@@ -516,7 +516,7 @@ void NPC_PKPetShop_GetPetList(char *argstr,char *argtoken)
 	double rate = 1.0;
 	int loopcnt = 0;
 
-	/*-レートを  る?  ければ１で固定--*/
+	/*-取得倍率?没有的话固定为１--*/
 	if(NPC_Util_GetStrFromStrWithDelim( argstr, "buy_rate", buff2, sizeof( buff2))
 	 != NULL){
 		rate = atof( buff2);
@@ -555,10 +555,10 @@ void NPC_PKPetShop_GetPetList(char *argstr,char *argtoken)
 				loopcnt++;
 				if(loopcnt == MAXSHOPPET) break;
 
-				/*--  際のプひトコ郊つくり--*/
+				/*--  实际构建协议--*/
 				NPC_PetStrStr( atoi( buff2), rate, name, token2, tmp);
 
-				/*--メッセージ  字  と  結--*/
+				/*--与讯息字符串连接--*/
 	    		strncat( argtoken, token2, sizeof(token2));
 			}
 			else
@@ -597,10 +597,10 @@ void NPC_PKPetShop_GetPetList(char *argstr,char *argtoken)
 					loopcnt++;
 					if(loopcnt == MAXSHOPPET) break;
 
-					//--  際のプひトコ郊つくり--
+					//--  实际构建协议--
 					NPC_PetStrStr( start, rate, name, token2, tmp);
 
-					//--メッセージ  字  と  結--
+					//--与讯息字符串连接--
 		    		strncat( argtoken, token2, sizeof(token2));
 				}*/
 			}
@@ -610,7 +610,7 @@ void NPC_PKPetShop_GetPetList(char *argstr,char *argtoken)
 
 
 /*-----------------------------------------------------------------
-	プひトコ郊作成
+	构建协议
 -------------------------------------------------------------------*/
 void NPC_PetStrStr(int petID,double rate,char *name,char *token2,int index)
 {
@@ -645,7 +645,7 @@ void NPC_PetStrStr(int petID,double rate,char *name,char *token2,int index)
 	level = 0;
 	graNo = ENEMYTEMP_getInt( i , E_T_IMGNUMBER );
 	//print("\nPKPetShop::NPC_PetStrStr(): TempNo = %d ; graNo = %d",TempNo,graNo);
-	/*--レートをかける--*/
+	/*--乘上倍率--*/
 	gold=(int)(gold * rate);
 
 	//strcpy( tryItem,ITEM_getItemInfoFromNumber( 10 ) );
@@ -690,7 +690,7 @@ BOOL NPC_PKPetShop_SetNewPet(int meindex,int talker,char *data)
 
 	if( kosuu <= 0 ) return FALSE;
     
-	/* ご主人  のペットの空きを探す */
+	/* 寻找主人的宠物空位 */
     if( !CHAR_CHECKINDEX(talker) )
 	{
 		return FALSE;
@@ -727,7 +727,7 @@ BOOL NPC_PKPetShop_SetNewPet(int meindex,int talker,char *data)
 	}
 
 	--忒匀化  凶蜊醒及  互  端及蜊醒  扔□田础  方曰聂中午云井仄中及匹
-	--サーバー側の  を  れる
+	--放入服务器侧的编号
 	if( kosuucnt < kosuu){
 		kosuu = kosuucnt;
 	}
@@ -745,7 +745,7 @@ BOOL NPC_PKPetShop_SetNewPet(int meindex,int talker,char *data)
        	return FALSE;
 	}
 
-	/*---レートを取    なければ1.0)-*/
+	/*---取不到倍率的话设为1.0)-*/
 	if(NPC_Util_GetStrFromStrWithDelim( argstr, "buy_rate", buf, sizeof( buf))
 	 != NULL) {
 		rate= atof( buf);
@@ -845,7 +845,7 @@ BOOL NPC_AddPetBuy(int meindex, int talker,int petID,int kosuu,double rate)
 	}
 	// end krynn
 
-	/*--レートをかける--*/
+	/*--乘上倍率--*/
 	// krynn 2001/12/11 mark and change
 	//gold = ITEM_getcostFromITEMtabl( itemID);
 	gold = 4;
@@ -855,7 +855,7 @@ BOOL NPC_AddPetBuy(int meindex, int talker,int petID,int kosuu,double rate)
 
 	if(CHAR_getInt( talker, CHAR_GOLD) < maxgold ) return FALSE;
 
-	/*--恭金を減らす--*/
+	/*--减少金钱--*/
 	CHAR_setInt( talker, CHAR_GOLD,CHAR_getInt( talker, CHAR_GOLD) - maxgold);
 
 	EnemyCnt = ENEMY_getEnemyNum();
@@ -880,7 +880,7 @@ BOOL NPC_AddPetBuy(int meindex, int talker,int petID,int kosuu,double rate)
 			return FALSE;
 		};
 		/******************/
-		/* ペット情  送る */
+		/* 发送宠物信息 */
 		/******************/
 		// 升仇卞反中匀凶井卅
 		for( j = 0 ; j < CHAR_MAXPETHAVE ; j++ )
@@ -917,7 +917,7 @@ BOOL NPC_AddPetBuy(int meindex, int talker,int petID,int kosuu,double rate)
 
 
 /*----------------------------------------
- *メニュー    
+ *菜单输入    
  *----------------------------------------*/
 void NPC_PKPetShop_Menu(int meindex,int talker)
 {
@@ -926,7 +926,7 @@ void NPC_PKPetShop_Menu(int meindex,int talker)
 	char	buff[256];
 	int		fd = getfdFromCharaIndex( talker);
 
-	/* 店の  前  メッセージ| */
+	/* 店名  讯息| */
 	/*--云饕及白央奶伙  中坭反白央奶伙互钒仃卅井匀凶午五反蔽  --*/
     if(NPC_Util_GetArgStr( meindex, argstr, sizeof(argstr)) == NULL) {
 		print("shop_GetArgStr_Err");
@@ -973,7 +973,7 @@ void NPC_PKPetShop_SellMain(int meindex,int talker,int before)
        	return;
     }
 
-	/*--前回のデータ使うか---*/
+	/*--是否使用上次的数据---*/
 	if(before != -1) {
 
 		/*--蟆荚及犯□正互酸匀化中月及匹职及树  反霜日卅仁    --*/
@@ -1010,7 +1010,7 @@ void NPC_PKPetShop_SellMain(int meindex,int talker,int before)
 		/*--失奶  丞树  及      --*/
 		NPC_PKPetShop_GetLimtPetList( talker,argstr, token2, -1);
 
-		/*--メッセージとアイ  ム情  の合  --*/
+		/*--合并讯息与道具信息  --*/
 		strncat( token, token2, sizeof( token));
 	
 		/*--喫喫ぁ邞嚭--*/
@@ -1059,8 +1059,8 @@ int NPC_PKPetShop_GetLimtPetList(int talker, char *argstr, char* token2,int sell
 	}	
 	
 	/*---  木月失奶  丞毛潸  允月［--*/
-	/**  スペ竺ャ郊アイ  ムをもっていたら  レートで計算--*/
-	/*-- スペ竺ャ郊処  でプひグラムが    --*/
+	/**  持有特殊道具的话  按倍率计算--*/
+	/*-- 特殊处理导致程序    --*/
 
 	for( ; i < imax ; i++ ){
 		okflg=0;
@@ -1269,7 +1269,7 @@ int NPC_GetSellPetList(int itemindex,int flg, char *argstr,char *argtoken,int se
 		}
 	}
 
-	/*--ノーマ郊レート--*/
+	/*--普通倍率--*/
 	if( NPC_Util_GetStrFromStrWithDelim( argstr,"sell_rate",buff, sizeof( buff))
 	 != NULL )
 	{
@@ -1284,7 +1284,7 @@ int NPC_GetSellPetList(int itemindex,int flg, char *argstr,char *argtoken,int se
 
 /*------------------------------------------
  
-   字  を作る(うり用)
+   生成字符串(出售用)
  
 *------------------------------------------*/
 int NPC_SellPetstrsStr(int itemindex,int flg,double rate,char *argtoken,int select,int sell)
@@ -1385,7 +1385,7 @@ BOOL NPC_PKPetShop_SellNewPet(int meindex,int talker,char *data)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 					itemindex,
 #else
-	       			ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
+	       			ITEM_getInt( itemindex, ITEM_ID ),  /* 道具编号 */
 #endif
 					"SellErr",
 					CHAR_getInt( talker, CHAR_FLOOR),
@@ -1405,7 +1405,7 @@ BOOL NPC_PKPetShop_SellNewPet(int meindex,int talker,char *data)
 			LogItem(
 					CHAR_getChar( talker, CHAR_NAME ), /* 平乓仿   */
 					CHAR_getChar( talker, CHAR_CDKEY ),
-	       			-1,  /* アイ  ム  号 */
+	       			-1,  /* 道具编号 */
 					"SellErr",
 					CHAR_getInt( talker, CHAR_FLOOR),
 					CHAR_getInt( talker, CHAR_X ),
@@ -1434,7 +1434,7 @@ BOOL NPC_PKPetShop_SellNewPet(int meindex,int talker,char *data)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 				itemindex,
 #else
-	       		ITEM_getInt( itemindex, ITEM_ID ),  /* アイ  ム  号 */
+	       		ITEM_getInt( itemindex, ITEM_ID ),  /* 道具编号 */
 #endif
 				"Sell",
 				CHAR_getInt( talker,CHAR_FLOOR),
@@ -1472,7 +1472,7 @@ void NPC_LimitPetShop(int meindex,int talker,int select)
        	return;
 	}
 
-	/*--  い取り郡  店ですメッセージ-*/
+	/*--  本店是收购店讯息-*/
 	if(NPC_Util_GetStrFromStrWithDelim( argstr, "sellonly_msg", buf, sizeof( buf))
 	!=NULL)
 	{
@@ -1491,7 +1491,7 @@ void NPC_LimitPetShop(int meindex,int talker,int select)
 }
 
 
-/*--運送屋さん--*/
+/*--运送屋--*/
 void NPC_PKPetShop_ExpressmanCheck(int meindex,int talker)
 {
 	int fd = getfdFromCharaIndex( talker);
@@ -1506,7 +1506,7 @@ void NPC_PKPetShop_ExpressmanCheck(int meindex,int talker)
 	}
 
 
-	/*--  い取り郡  店ですメッセージ-*/
+	/*--  本店是收购店讯息-*/
 	NPC_Util_GetStrFromStrWithDelim( argstr, "main_msg", buf, sizeof( buf));
 	sprintf(token,"4\n　　　　　　　%s\n\n%s"
 					"\n\n　　　　　＜  打工  ＞　　　"

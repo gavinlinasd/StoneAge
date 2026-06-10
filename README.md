@@ -16,9 +16,12 @@ This branch was redone from the pristine 2005 source (commit
 - **Encoding archaeology**: the sources carried three text strata -
   original Japanese comments in EUC-JP, that Japanese *fossilized* into
   GBK mojibake by a historical Big5→GB2312 conversion, and genuine
-  Chinese comments in GBK. Everything is UTF-8 now, and ~2,600 fossil
-  comment lines were restored to readable Japanese by reversing the
-  exact historical conversion chain (e.g. `民尼永弁` → `チェック`).
+  Chinese comments in GBK. Sources are UTF-8 now: ~2,600 fossil comment
+  lines were first restored to Japanese by reversing the exact
+  historical conversion chain (`民尼永弁` → `チェック`) and then, with
+  the rest of the Japanese comments, translated to Simplified Chinese
+  (`チェック` → `检查`). Game data deliberately stays GB18030 - see
+  BUILDING.md for why.
 - **64-bit correctness**: pointers stored in `int` work-table slots,
   a function returning a pointer to a stack array (the boot segfault),
   `int` overflow in the 5 GB memory-pool arithmetic, and a stack smash

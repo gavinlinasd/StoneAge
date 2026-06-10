@@ -1,12 +1,12 @@
-####å¡ç½—(å·¥ä½œå®¤)####
+####¿¨ÂÞ(¹¤×÷ÊÒ)####
 
-NomalMainMsg:ï¼ƒï¼ƒï¼ƒ
+NomalMainMsg:¡­¡­¡­
 
-####å€’åœ¨åœ°ä¸Šçš„å¡ç½—####
+####µ¹ÔÚµØÉÏµÄ¿¨ÂÞ####
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>89&ENDEV=4&ENDEV=81&NOWEV=112
-NomalWindowMsg:ï¼ƒï¼ƒï¼ƒï¼ƒ
+NomalWindowMsg:¡­¡­¡­¡­
 EventEnd
 
 

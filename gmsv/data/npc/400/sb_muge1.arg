@@ -1,7 +1,7 @@
 entype:2
-askbattlemsg1:ä¸æŠŠè¿™åªæé¾™æ‰“å€’çš„è¯
-askbattlemsg2:å°±æ— æ³•å¾€å‰è¿›
-askbattlemsg3:æ‰“å€’å®ƒå¹¶å‘å‰è¿›å—ï¼Ÿ
+askbattlemsg1:²»°ÑÕâÖ»¿ÖÁú´òµ¹µÄ»°
+askbattlemsg2:¾ÍÎŞ·¨ÍùÇ°½ø
+askbattlemsg3:´òµ¹Ëü²¢ÏòÇ°½øÂğ£¿
 start msg:
 dieact:1
 warpfl:41
@@ -9,5 +9,5 @@ warpx:34
 warpy:39
 end msg:
 enemyno:1095,1095,1095,1087,1086,1096,1096,1096,1096,1096
-deniedmsg:é“è·¯å¡ä½äº†æ— æ³•å†å¾€å‰è¿›
+deniedmsg:µÀÂ·Èû×¡ÁËÎŞ·¨ÔÙÍùÇ°½ø
 

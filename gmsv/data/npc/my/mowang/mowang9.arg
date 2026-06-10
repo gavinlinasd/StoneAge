@@ -1,7 +1,7 @@
 NEWNPCENEMY
 
 entype:2
-startmsg:鏈�鍚庝竴鎴樹簡锛屼綘浼氫笉浼氶鍛紵
+startmsg:最后一战了，你会不会飞呢？
 dieact:1
 warpfl:0
 warpx:0
@@ -14,5 +14,5 @@ NEWEVENT1:
 FREE:LV>0
 WARP:2000,52,92
 AddItem:22215,22224,22215
-endmsg:鐪熶笉鍙�濊!浣犵珶鐒惰兘鎵撹繃涔濇ゼ锛屾伃鍠滄伃鍠滐紝涓板帤鐨勫鍔卞湪绛夌潃浣狅紒
+endmsg:真不可思议!你竟然能打过九楼，恭喜恭喜，丰厚的奖励在等着你！
 OVER

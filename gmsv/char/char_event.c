@@ -54,7 +54,7 @@ void CHAR_allpostwalk( int index )
 BOOL CHAR_makeCADefaultString( int objindex,char* buf,int buflen, int act )
 {
 	char	objindexbuf[64];
-    /*  チェック    */
+    /*  检查    */
     if( CHECKOBJECT(objindex) == FALSE )    return FALSE;
     if( OBJECT_getType(objindex) != OBJTYPE_CHARA ) return FALSE;
     snprintf( buf,buflen,"%s|%d|%d|%d|%d",

@@ -1,7 +1,7 @@
 NPCCREATE
 
 
-###### æ¸”æ‘æ¬¢ä¹æ´¾æ´¾é€é­”ç‹No1 ######
+###### Óæ´å»¶ÀÖÅÉÅÉËÍÄ§ÍõNo1 ######
 {
 floorid=2000
 borncenter=47,23
@@ -10,11 +10,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=102057
-name=é€é¥é“å…·å¤§é­”ç‹
+name=åĞÒ£µÀ¾ß´óÄ§Íõ
 enemy=sb_dou|file:my/mowang2/mowang1.arg
 }
 
-###### æ¬¢ä¹æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº1F ######
+###### »¶ÀÖÅÉÅÉËÍÄ§Íõ¾º¼¼³¡1F ######
 {
 floorid=203
 borncenter=14,5
@@ -23,12 +23,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=110166
-name=äºŒæ¥¼é­”ç‹
+name=¶şÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang2/mowang2.arg
 }
 
 
-###### æ¬¢ä¹æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº2F ######
+###### »¶ÀÖÅÉÅÉËÍÄ§Íõ¾º¼¼³¡2F ######
 {
 floorid=204
 borncenter=14,5
@@ -37,12 +37,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=130110
-name=ä¸‰æ¥¼é­”ç‹
+name=ÈıÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang2/mowang3.arg
 }
 
 
-###### æ¬¢ä¹æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº3F ######
+###### »¶ÀÖÅÉÅÉËÍÄ§Íõ¾º¼¼³¡3F ######
 {
 floorid=205
 borncenter=14,5
@@ -51,12 +51,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101819
-name=å››æ¥¼é­”ç‹
+name=ËÄÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang2/mowang4.arg
 }
 
 
-###### æ¬¢ä¹æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº4F ######
+###### »¶ÀÖÅÉÅÉËÍÄ§Íõ¾º¼¼³¡4F ######
 {
 floorid=206
 borncenter=14,5
@@ -65,11 +65,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=110043
-name=äº”æ¥¼é­”ç‹
+name=ÎåÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang2/mowang5.arg
 }
 
-###### æ¬¢ä¹æ´¾æ´¾é€é­”ç‹ç«æŠ€åœº5F ######
+###### »¶ÀÖÅÉÅÉËÍÄ§Íõ¾º¼¼³¡5F ######
 {
 floorid=207
 borncenter=14,5
@@ -78,12 +78,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=110042
-name=å…­æ¥¼é­”ç‹
+name=ÁùÂ¥Ä§Íõ
 enemy=sb_dou|file:my/mowang2/mowang6.arg
 }
 
 
-######é¢†å¥–Npc#######
+######Áì½±Npc#######
 {
 floorid=2000
 borncenter=35,23
@@ -92,12 +92,12 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101913
-name=é“å…·æ´¾æ´¾é€å…‘å¥–å¤„
+name=µÀ¾ßÅÉÅÉËÍ¶Ò½±´¦
 enemy=changeevent|file:my/mowang2/jiang.arg
 }
 
 
-### é­”ç‹1å±‚ä¼ é€Npc ###
+### Ä§Íõ1²ã´«ËÍNpc ###
 
 {
 floorid=203
@@ -105,13 +105,13 @@ borncorner=19,14,19,14
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹1å±‚ä¼ é€Npc
+name=Ä§Íõ1²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang2/chuansong.arg
 }
 
-### é­”ç‹2å±‚ä¼ é€Npc ###
+### Ä§Íõ2²ã´«ËÍNpc ###
 
 {
 floorid=204
@@ -119,13 +119,13 @@ borncorner=19,14,19,14
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹2å±‚ä¼ é€Npc
+name=Ä§Íõ2²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang2/chuansong.arg
 }
 
-### é­”ç‹3å±‚ä¼ é€Npc ###
+### Ä§Íõ3²ã´«ËÍNpc ###
 
 {
 floorid=205
@@ -133,13 +133,13 @@ borncorner=19,14,19,14
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹3å±‚ä¼ é€Npc
+name=Ä§Íõ3²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang2/chuansong.arg
 }
 
-### é­”ç‹4å±‚ä¼ é€Npc ###
+### Ä§Íõ4²ã´«ËÍNpc ###
 
 {
 floorid=206
@@ -147,13 +147,13 @@ borncorner=19,14,19,14
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹4å±‚ä¼ é€Npc
+name=Ä§Íõ4²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang2/chuansong.arg
 }
 
-### é­”ç‹5å±‚ä¼ é€Npc ###
+### Ä§Íõ5²ã´«ËÍNpc ###
 
 {
 floorid=207
@@ -161,15 +161,15 @@ borncorner=19,14,19,14
 time=0
 createnum=1
 graphicname=17032
-name=é­”ç‹5å±‚ä¼ é€Npc
+name=Ä§Íõ5²ã´«ËÍNpc
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:my/mowang2/chuansong.arg
 }
 
-########1å±‚å°æŠ¤å£«#########
+########1²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=203
 borncenter=19,9
 dir=6
@@ -180,9 +180,9 @@ enemy=npcgen_healer|1
 }
 
 
-########2å±‚å°æŠ¤å£«#########
+########2²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=204
 borncenter=19,9
 dir=6
@@ -193,9 +193,9 @@ enemy=npcgen_healer|1
 }
 
 
-########3å±‚å°æŠ¤å£«#########
+########3²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=205
 borncenter=19,9
 dir=6
@@ -206,9 +206,9 @@ enemy=npcgen_healer|1
 }
 
 
-########4å±‚å°æŠ¤å£«#########
+########4²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=206
 borncenter=19,9
 dir=6
@@ -219,9 +219,9 @@ enemy=npcgen_healer|1
 }
 
 
-########5å±‚å°æŠ¤å£«#########
+########5²ãĞ¡»¤Ê¿#########
 {
-name=å°æŠ¤å£«
+name=Ğ¡»¤Ê¿
 floorid=207
 borncenter=19,9
 dir=6

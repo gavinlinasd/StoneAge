@@ -1,5 +1,5 @@
-#瀹犵墿璧涜窇璁剧疆 no|petname|bbi|lowlv|highlv
+#宠物赛跑设置 no|petname|bbi|lowlv|highlv
 #(raceman.txt was missing from the recovered data; minimal valid stub)
-1|涔屽姏|100353|1|140
-2|甯冩媺鍏秥100406|1|140
-3|濂囧疂|100501|1|140
+1|乌力|100353|1|140
+2|布拉其|100406|1|140
+3|奇宝|100501|1|140

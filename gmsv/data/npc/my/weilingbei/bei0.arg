@@ -2,8 +2,8 @@ NEWWARPMAN
 
 NOFREE
 FREE:LV>0
-NomalMsg:ï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒ
-PartyMsg:ï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒ
+NomalMsg:¡­¡­¡­¡­¡­
+PartyMsg:¡­¡­¡­¡­¡­
 OVER
 
 TALKEVENT1
@@ -11,5 +11,5 @@ WARP:2006,22,16
 FREE:ITEM=20624
 CHECKPARTY:TRUE
 warp_msg:OO0OO
-FreeMsg:ï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒï¼ƒOVER
+FreeMsg:¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­OVER
 

@@ -12,7 +12,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16315
-name=科壌巾算埀
+name=�ʾ��һ�Ա
 enemy=npcgen_shop|file:genout/ss_7002_32_38
 }
 #line 4
@@ -24,6 +24,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16315
-name=科壌巾算埀
+name=�ʾ��һ�Ա
 enemy=npcgen_shop|file:genout/ss_7005_7_26
 }

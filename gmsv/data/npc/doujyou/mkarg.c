@@ -3,7 +3,7 @@
 #define arraysizeof( x ) (sizeof(x)/sizeof(x[0]))
 
 
-// ÂÖ±ÈÄö
+// ∂¶ƒÃ
 #define WIN_WARP_X  400
 #define WIN_WARP_Y  (128)
 #define ROOM_SIZE_X	44
@@ -50,7 +50,7 @@ POSITION UketsukeTbl[] = {
 
 int main( int argc, char **argv ){
 	int i, j, first, last, xcnt = 0, ycnt = 0;
-	int npccnt = 1;	// ÔºÆÔº∞Ôº£„ÅÆÊï∞
+	int npccnt = 1;	// £Œ£–£√§ŒøÙ
 	int win_warpX = WIN_WARP_X, win_warpY = WIN_WARP_Y;
 	int warpX = WIN_WARP_X+6, warpY = WIN_WARP_Y;
 	int npcX = WIN_WARP_X, npcY = WIN_WARP_Y-4;
@@ -60,22 +60,22 @@ int main( int argc, char **argv ){
 	char szBuffer[256];
 
 	if( argc <= 1 ){
-		printf( "0 == „Çµ„É†„ÇÆ„É´ 1 == „Ç´„É´„Çø„Éº„Éä\n" );
+		printf( "0 == •µ•‡•Æ•Î 1 == •´•Î•ø°º• \n" );
 		exit( 0 );
 	}
 	if( sscanf( argv[1], "%d", &pos ) == 1 ){
 		if( pos == 0 ){
-			printf( "„Çµ„É†„ÇÆ„É´ÈÅìÂ†¥‰ΩúÊàê\n" );
+			printf( "•µ•‡•Æ•Î∆ªæÏ∫Ó¿Æ\n" );
 		}else
 		if( pos == 1 ){
-			printf( "„Ç∏„É£„Ç∏„É£ÈÅìÂ†¥‰ΩúÊàê\n" );
+			printf( "•∏•„•∏•„∆ªæÏ∫Ó¿Æ\n" );
 		}else{
-			printf( "(%s)„Åä„Åã„Åó„Éº\n", argv[1] );
+			printf( "(%s)§™§´§∑°º\n", argv[1] );
 			exit( 0 );
 		}
 	}
 
-	// „Å©„Å£„Å°„ÅÆ„Éï„É≠„Ç¢„Åã
+	// §…§√§¡§Œ•’•Ì•¢§´
 	floor_id = FloorIdTbl[pos];
 
 	for( xcnt = 0; xcnt < 10; xcnt ++ ){
@@ -89,23 +89,23 @@ int main( int argc, char **argv ){
 			fprintf( fp, "entype:2\n" );
 			fprintf( fp, "dieact:1\n" );
 
-			// ÔºëÔºêÔºê‰∫∫ÁõÆ„ÅØ„Åì„Åì
+			// £±£∞£∞øÕÃ‹§œ§≥§≥
 			if( npccnt == 100 ){
 				fprintf( fp, "warpfl:%d\n", SishouTbl[pos].floor );
 				fprintf( fp, "warpx:%d\n", SishouTbl[pos].x );
 				fprintf( fp, "warpy:%d\n", SishouTbl[pos].y );
 			}else
-			if( ycnt == 9 ){	// Êäò„ÇäËøî„Åó„ÅÆ„Åü„ÇÅ„Åì„ÅÆ„ÉØ„Éº„Éó
+			if( ycnt == 9 ){	// ¿ﬁ§Í ÷§∑§Œ§ø§·§≥§Œ•Ô°º•◊
 				fprintf( fp, "warpfl:%d\n", floor_id );
 				fprintf( fp, "warpx:%d\n", win_warpX-(xcnt+1)*ROOM_SIZE_X );
 				fprintf( fp, "warpy:%d\n", WIN_WARP_Y );
-			}else{	// ÈÄöÂ∏∏„ÅØ„Åì„ÅÆ„ÉØ„Éº„Éó
+			}else{	// ƒÃæÔ§œ§≥§Œ•Ô°º•◊
 				fprintf( fp, "warpfl:%d\n", floor_id );
 				fprintf( fp, "warpx:%d\n", win_warpX-xcnt*ROOM_SIZE_X );
 				fprintf( fp, "warpy:%d\n", win_warpY-(ycnt+1)*ROOM_SIZE_Y );
 			}
 			fprintf( fp, "gym:%d\n", npccnt );
-			fprintf( fp, "startmsg:ÁßÅ„ÅØ%d‰∫∫ÁõÆ„Å†\n", npccnt );
+			fprintf( fp, "startmsg:ª‰§œ%døÕÃ‹§¿\n", npccnt );
 			fprintf( fp, "enemyno:" );
 			first = 564; last = 580;
 			for( j = first; j <= last; j ++ ){
@@ -115,7 +115,7 @@ int main( int argc, char **argv ){
 			fprintf( fp, "\n" );
 
 			fprintf( fp, "enemypetno:" );
-			// „Çµ„É†„ÇÆ„É´„ÅÆÂ†¥Âêà
+			// •µ•‡•Æ•Î§ŒæÏπÁ
 			first = EnemyTbl[pos].first; last =  EnemyTbl[pos].last;
 
 			for( j = first; j <= last; j ++ ){
@@ -132,12 +132,12 @@ int main( int argc, char **argv ){
 
 	fp = fopen( szBuffer, "w" );
 	fprintf( fp, "NPCCREATE\n" );
-	fprintf( fp, "#########   ÈÅìÂ†¥ÔºëÔºêÔºê‰∫∫ÁµÑ„ÅøÊâã   ########\n" );
+	fprintf( fp, "#########   ∆ªæÏ£±£∞£∞øÕ¡»§ﬂºÍ   ########\n" );
 
 	npccnt = 1;
 	for( xcnt = 0; xcnt < 10; xcnt ++ ){
 		for( ycnt = 0; ycnt < 10; ycnt ++ ){
-			// NPC „ÅÆË®≠ÂÆö
+			// NPC §Œ¿ﬂƒÍ
 			fprintf( fp, "{\n" );
 			fprintf( fp, "floorid=%d\n", floor_id );
 			fprintf( fp, "borncenter=%d,%d,1,1\n", npcX-ROOM_SIZE_X*xcnt, npcY-ROOM_SIZE_Y*ycnt );
@@ -146,12 +146,12 @@ int main( int argc, char **argv ){
 			fprintf( fp, "dir=4\n" );
 			fprintf( fp, "time=60000\n" );
 			fprintf( fp, "graphicname=100091\n" );
-			fprintf( fp, "name=ÈñÄ‰∏ãÁîü%d‰∫∫ÁõÆ\n", npccnt );
+			fprintf( fp, "name=ÃÁ≤º¿∏%døÕÃ‹\n", npccnt );
 			fprintf( fp, "enemy=sb_dou|file:doujyou/%s%03d.arg\n",
 				CrFileName[pos], npccnt );
 			fprintf( fp, "}\n" );
 
-			// „ÉØ„Éº„Éó„Çæ„Éº„É≥„ÅÆË®≠ÂÆö
+			// •Ô°º•◊•æ°º•Û§Œ¿ﬂƒÍ
 			fprintf( fp, "{\n" );
 			fprintf( fp, "floorid=%d\n", floor_id );
 			fprintf( fp, "borncenter=%d,%d,1,1\n", warpX-ROOM_SIZE_X*xcnt, warpY-ROOM_SIZE_Y*ycnt );
@@ -159,12 +159,12 @@ int main( int argc, char **argv ){
 			fprintf( fp, "createnum=1\n" );
 			fprintf( fp, "time=60000\n" );
 			fprintf( fp, "graphicname=0\n" );
-			fprintf( fp, "name=„ÉØ„Éº„Éó\n", npccnt );
+			fprintf( fp, "name=•Ô°º•◊\n", npccnt );
 			fprintf( fp, "enemy=npcgen_warp|%d|%d|%d\n",
 				UketsukeTbl[pos].floor, UketsukeTbl[pos].x, UketsukeTbl[pos].y );
 			fprintf( fp, "}\n" );
 
-			// „ÉØ„Éº„Éó„Çæ„Éº„É≥„ÅÆË®≠ÂÆöÔºíÂÄãÁõÆ
+			// •Ô°º•◊•æ°º•Û§Œ¿ﬂƒÍ£≤∏ƒÃ‹
 			fprintf( fp, "{\n" );
 			fprintf( fp, "floorid=%d\n", floor_id );
 			fprintf( fp, "borncenter=%d,%d,1,1\n", warpX-ROOM_SIZE_X*xcnt, warpY-ROOM_SIZE_Y*ycnt+1 );
@@ -172,7 +172,7 @@ int main( int argc, char **argv ){
 			fprintf( fp, "createnum=1\n" );
 			fprintf( fp, "time=60000\n" );
 			fprintf( fp, "graphicname=0\n" );
-			fprintf( fp, "name=„ÉØ„Éº„Éó\n", npccnt );
+			fprintf( fp, "name=•Ô°º•◊\n", npccnt );
 			fprintf( fp, "enemy=npcgen_warp|%d|%d|%d\n",
 				UketsukeTbl[pos].floor, UketsukeTbl[pos].x, UketsukeTbl[pos].y );
 			fprintf( fp, "}\n" );

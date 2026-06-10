@@ -1,15 +1,15 @@
 NEWNPCENEMY
 
 entype:2
-askbattlemsg1:å¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
-startmsg:å¼ï½žæ˜¯è°åµé†’äº†æˆ‘ï¼å—æ­»å§ï½žï½ž
+askbattlemsg1:ºð£¡£¡£¡£¡£¡£¡£¡£¡
+startmsg:ºð¡«ÊÇË­³³ÐÑÁËÎÒ£¡ÊÜËÀ°É¡«¡«
 dieact:1
 warpfl:0
 warpx:0
 warpy:0
 enemyno:14011,14012,14013,14014,14015,14016,14017,14018,14019,14020
-deniedmsg:å’‹ã‚›
-alreadymsg:å’‹ã‚›
+deniedmsg:ºð¡«
+alreadymsg:ºð¡«
 item:20845
 onebattle:1
 OVER
@@ -20,11 +20,11 @@ WARP:0,0,0
 DelItem:20845
 AddItem:22003
 Event_End:231
-endmsg:ï¼ˆéšç€ä¸€å£°å¤§å¼ï¼Œè‰¾æ–¯å“æ©å€’åœ¨äº†åœ°ä¸Šï¼ï¼‰
+endmsg:£¨Ëæ×ÅÒ»Éù´óºð£¬°¬Ë¹×¿¶÷µ¹ÔÚÁËµØÉÏ£¡£©
 OVER
 
 NEWEVENT2:
 FREE:LV>0
 WARP:117,233,13
-endmsg:ï¼ˆéšç€ä¸€å£°å¤§å¼ï¼Œè‰¾æ–¯å“æ©å€’åœ¨äº†åœ°ä¸Šï¼ï¼‰
+endmsg:£¨Ëæ×ÅÒ»Éù´óºð£¬°¬Ë¹×¿¶÷µ¹ÔÚÁËµØÉÏ£¡£©
 OVER

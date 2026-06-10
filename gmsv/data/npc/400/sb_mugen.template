@@ -1,5 +1,5 @@
 NPCTEMPLATE
-#######ã‚®ã‚¬ãƒ­ã‚¹##########
+#######¥®¥¬¥í¥¹##########
 {
 templatename=sb_muge1
 makeatnobody=1
@@ -11,7 +11,7 @@ mp=100
 str=1
 tough=1
 }
-#######ã‚¬ã‚¬ã‚®ãƒ³ãƒœ##########
+#######¥¬¥¬¥®¥ó¥Ü##########
 {
 templatename=sb_muge2
 makeatnobody=1

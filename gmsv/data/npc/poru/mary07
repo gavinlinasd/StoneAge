@@ -1,13 +1,13 @@
-NomalMainMsg:这边水实在不够多！！
+NomalMainMsg:���ˮʵ�ڲ����࣡��
 
 
 
 EventNo:-1
 TYPE:ACCEPT
 EVENT:ITEM=18560*1
-AcceptMsg:哦？是干净的水！
-ThanksMsg:太好了！我就买下这些水了，谢谢你！
-StoneFullMsg:你的钱太多了，这样我无法给你喔！
+AcceptMsg:Ŷ���Ǹɾ���ˮ��
+ThanksMsg:̫���ˣ��Ҿ�������Щˮ�ˣ�лл�㣡
+StoneFullMsg:���Ǯ̫���ˣ��������޷�����ร�
 DelItem:18560*1
 GetStone:100
 EventEnd
@@ -18,6 +18,6 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:\n波拉岛缺水实在缺得很严重啊，有人能运水来就好了……
+NomalWindowMsg:\n������ȱˮʵ��ȱ�ú����ذ�����������ˮ���ͺ��ˡ���
 EventEnd
 

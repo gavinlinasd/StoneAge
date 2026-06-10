@@ -1,9 +1,9 @@
 NPCCREATE
 
 ########################################
-#æµ‹è¯•äº‹ä»¶#
-#ä¸¤éƒ¨æ—é—´çš„è¯¯ä¼š#
-#æ‹…ä»»è€…ï¼šçŸ¢å»¶#
+#²âÊÔÊÂ¼ş#
+#Á½²¿×å¼äµÄÎó»á#
+#µ£ÈÎÕß£ºÊ¸ÑÓ#
 ########################################
 
 
@@ -15,7 +15,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16206
-name=æ—é•¿å¸•é²
+name=×å³¤ÅÁÂ³
 enemy=changeevent|file:giiru/event/garunaev1
 }
 
@@ -29,7 +29,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16020
-name=ç¾é™¤è­°åƒ£ç¶š
+name=¸½½üµÄÑ©Â³
 enemy=changeevent|file:giiru/event/garunaev2
 }
 
@@ -43,7 +43,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100250
-name=ç¾é²
+name=ÃÀÂ³
 enemy=changeevent|file:giiru/event/garunaev3
 }
 
@@ -57,7 +57,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16202
-name=æ—é•¿é‚¦æ©è¾¾é²
+name=×å³¤°î¶÷´ïÂ³
 enemy=changeevent|file:giiru/event/garunaev4
 }
 
@@ -71,7 +71,7 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=16039
-name=é™„è¿‘çš„å·¦æ©å·´
+name=¸½½üµÄ×ó¶÷°Í
 enemy=changeevent|file:giiru/event/garunaev5
 }
 
@@ -85,7 +85,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100252
-name=åŠ æ´›
+name=¼ÓÂå
 enemy=changeevent|file:giiru/event/garunaev6
 }
 
@@ -99,7 +99,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=çŸ¿çŸ³è´©å–è€…
+name=¿óÊ¯··ÂôÕß
 enemy=changeevent|file:giiru/event/garunaev7
 }
 
@@ -113,7 +113,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16050
-name=çŸ¿çŸ³è´©å–è€…
+name=¿óÊ¯··ÂôÕß
 enemy=changeevent|file:giiru/event/garunaev8
 }
 

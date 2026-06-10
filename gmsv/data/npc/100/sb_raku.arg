@@ -1,11 +1,11 @@
 entype:2
-askbattlemsg1:è¦å°†è¿™ä¸ªå²©çŸ³ç§»å¼€å—ï¼Ÿ
+askbattlemsg1:Òª½«Õâ¸öÑÒÊ¯ÒÆ¿ªÂğ£¿
 star tmsg:
 dieact:0
 end msg:
 enemyno:722,512,512,508,508
-deniedmsg:ç°åœ¨ä¸è¦æ¥è¿‘æ¯”è¾ƒå¥½ã€‚
-alreadymsg:ç°åœ¨ä¸è¦æ¥è¿‘æ¯”è¾ƒå¥½ã€‚
+deniedmsg:ÏÖÔÚ²»Òª½Ó½ü±È½ÏºÃ¡£
+alreadymsg:ÏÖÔÚ²»Òª½Ó½ü±È½ÏºÃ¡£
 time:300
 onebattle:1
 

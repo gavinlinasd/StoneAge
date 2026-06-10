@@ -1,8 +1,8 @@
 NPCCREATE
-####æµ·åº•å¯»å®#####
-########å‡¯æ‹‰æ–¯#########
+####º£µ×Ñ°±¦#####
+########¿­À­Ë¹#########
 {
-name=å‡¯æ‹‰æ–¯
+name=¿­À­Ë¹
 floorid=1000
 borncenter=31,69
 dir=4
@@ -12,9 +12,9 @@ graphicname=16102
 enemy=changeevent|file:sa70/treasure/treasure1.arg
 }
 
-#####å®ç®±####
+#####±¦Ïä####
 {
-name=å®ç®±
+name=±¦Ïä
 floorid=817
 borncenter=148,26
 dir=6
@@ -25,9 +25,9 @@ enemy=npcgen_warpman|file:sa70/treasure/treasure2.arg
 graphicname=16962
 }
 
-#####å®ç®±####
+#####±¦Ïä####
 {
-name=å®ç®±
+name=±¦Ïä
 floorid=817
 borncenter=148,35
 dir=4
@@ -38,9 +38,9 @@ enemy=npcgen_warpman|file:sa70/treasure/treasure3.arg
 graphicname=16962
 }
 
-#####å®ç®±####
+#####±¦Ïä####
 {
-name=å®ç®±
+name=±¦Ïä
 floorid=817
 borncenter=153,44
 dir=6
@@ -51,9 +51,9 @@ enemy=npcgen_warpman|file:sa70/treasure/treasure4.arg
 graphicname=16962
 }
 
-#####å®ç®±####
+#####±¦Ïä####
 {
-name=å®ç®±
+name=±¦Ïä
 floorid=817
 borncenter=242,72
 dir=4
@@ -64,9 +64,9 @@ enemy=npcgen_warpman|file:sa70/treasure/treasure5.arg
 graphicname=16962
 }
 
-#####å®ç®±####
+#####±¦Ïä####
 {
-name=å®ç®±
+name=±¦Ïä
 floorid=817
 borncenter=237,98
 dir=6

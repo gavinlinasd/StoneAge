@@ -1,15 +1,15 @@
 NEWNPCENEMY
 
 entype:2
-askbattlemsg1:æ¿«ã‚›æ¿«ã‚›æ¿«ã‚›
-startmsg:æ¿«ã‚›
+askbattlemsg1:Íô¡«Íô¡«Íô¡«
+startmsg:Íô¡«
 dieact:1
 warpfl:0
 warpx:0
 warpy:0
 enemyno:5142
-deniedmsg:æ¿«ã‚›æ¿«ã‚›
-alreadymsg:æ±ªï½ï¼ï¼ï¼ï¼
+deniedmsg:Íô¡«Íô¡«
+alreadymsg:Íô¡«£¡£¡£¡£¡
 nowev:187
 onebattle:1
 OVER
@@ -17,5 +17,5 @@ OVER
 NEWEVENT1:
 FREE:NOWEV=187
 WARP:7521,15,13
-endmsg:æ¿«ã‚›.........
+endmsg:Íô¡«.........
 OVER

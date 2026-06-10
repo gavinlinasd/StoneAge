@@ -17,10 +17,10 @@
 #endif
 #include "function.h"
 /*
- * ペット処  に関するソース
+ * 关于宠物处理的源码
  */
 /*------------------------------------------------------------------------
- * ペットを１つ割り当てる?デバッグ用?
+ * 分配一只宠物?调试用
  * CHAR厌瞻  卞及心综岳今木月［
  *   曰袄“综岳今木凶平乓仿index 撩  “-1
  *-----------------------------------------------------------------------*/
@@ -53,7 +53,7 @@ int PET_DEBUG_initPetOne( int charaindex)
 
     if( index < 0 ) return -1;
 
-    /* ご主人セット */
+    /* 设置主人 */
     CHAR_setWorkInt( index, CHAR_WORKPLAYERINDEX, charaindex);
     CHAR_setWorkInt( index,CHAR_WORKOBJINDEX,-1);
     CHAR_setCharPet( charaindex, havepetindex, index);
@@ -182,14 +182,14 @@ static int _PET_dropPet( int charaindex, int havepetindex, int tofl, int tox, in
 
 
 /*------------------------------------------------------------
- *     矢  ペットを  く
+ *     强制放置宠物
  * 引数
- *  itemindex       int         アイ  ムインデックス
+ *  itemindex       int         道具索引
  *  floor           int         白夫失ID
  *  x               int         x甄  
  *  y               int         y甄  
- *  net             BOOL        ネットワークのことをするかどうか
- * 返り値
+ *  net             BOOL        是否进行网络处理
+ * 返回值
  *  岳      objindex
  *  撩      -1
  ------------------------------------------------------------*/
@@ -206,7 +206,7 @@ int PET_dropPetAbsolute( int petindex, int floor, int x, int y,BOOL net)
     object.y = y;
     object.floor = floor;
 
-    /*  オブジェクト登  する    */
+    /*  登记对象    */
     objindex = initObjectOne( &object );
 
     /* 生永玄伐□弁白仿弘互凶匀化中月午五反允月  by ringo*/
@@ -403,7 +403,7 @@ int PET_createPetFromCharaIndex( int charaindex, int enemyindex)
 BOOL PET_SelectBattleEntryPet( int charaindex, int petarray)
 {
 	int		pindex;
-	/* 戦    は除く   ラグでこれに引っかかる可  性あり  */
+	/* 战斗中除外   有可能被这个旗标挡住  */
 	if( CHAR_getWorkInt( charaindex, CHAR_WORKBATTLEMODE)
 		!= BATTLE_CHARMODE_NONE) return FALSE;
 	/* -1及桦宁反］-1卞仄化本永玄仄化蔽歹曰［*/

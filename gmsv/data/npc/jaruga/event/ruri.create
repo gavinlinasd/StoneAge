@@ -1,8 +1,8 @@
 NPCCREATE
 
 ###########################################################
-#è¯¬å¨ã®è´«å‘ã€€ãƒ†ã‚£ã‚¢ã€–ãƒˆã®ã‚¤ãƒ™ãƒ³ãƒˆã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€     #
-# 						æ‹…å½“ï¼šè¥¿ç«¹#
+#ÎÜÍş¤ÎÆ¶·¢¡¡¥Æ¥£¥¢¡¼¥È¤Î¥¤¥Ù¥ó¥È¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡     #
+# 						Ã´Åö¡§À¾Ãİ#
 ###########################################################
 
 {
@@ -13,7 +13,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100456
-name=å¥³ç¥è’‚äºšç‰¹
+name=Å®ÉñµÙÑÇÌØ
 enemy=changeevent|file:jaruga/event/ruri01
 }
 
@@ -25,7 +25,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100436
-name=æ€§ç¶š
+name=À­Â³
 enemy=changeevent|file:jaruga/event/ruri02
 }
 
@@ -37,7 +37,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100075
-name=ä¼Šå¸ƒ
+name=ÒÁ²¼
 enemy=changeevent|file:jaruga/event/ruri03
 }
 
@@ -49,7 +49,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100451
-name=å¤§åœ°çš„ä¸»äºº
+name=´óµØµÄÖ÷ÈË
 enemy=changeevent|file:jaruga/event/ruri04
 }
 
@@ -61,7 +61,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16073
-name=å¤§è¢‹å­
+name=´ó´ü×Ó
 enemy=changeevent|file:jaruga/event/ruri05
 }
 
@@ -73,7 +73,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16071
-name=å°è¢‹å­
+name=Ğ¡´ü×Ó
 enemy=changeevent|file:jaruga/event/ruri06
 }
 

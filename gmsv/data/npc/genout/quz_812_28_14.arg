@@ -1,20 +1,20 @@
-########采骨的猎人########
+########�ɹǵ�����########
 
-NomalMainMsg:有什么事吗？
+NomalMainMsg:��ʲô����
 
-####身上有龙骨####
+####����������####
 eventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0&ITEM=2759
-NomalWindowMsg:快去找我的大弟子兑换奖品吧
+NomalWindowMsg:��ȥ���ҵĴ���Ӷһ���Ʒ��
 EventEnd
 
-####给骨头####
+####����ͷ####
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>0&ITEM!=2759
-AcceptMsg1:全部答对的话就给你“谜之箱”?\n当作是礼物喔！
-ThanksMsg1:全都答对了耶！把这个箱子交给我的弟子看看、可以得到好的东西喔！
+AcceptMsg1:ȫ����ԵĻ��͸��㡰��֮�䡱?\n����������ร�
+ThanksMsg1:ȫ�������Ү����������ӽ����ҵĵ��ӿ��������Եõ��õĶ���ร�
 GetItem:2759
-ItemFullMsg:身上道具太多了喔！
+ItemFullMsg:���ϵ���̫����ร�
 EventEnd

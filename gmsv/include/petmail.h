@@ -2,14 +2,14 @@
 #define __PETMAIL_H__
 #include "version.h"
 /*
- * ペット関  の設定です?
+ * 宠物相关的设置
  */
 #define PETMAIL_OFFMSG_MAX          10000
 #define PETMAIL_OFFMSG_TIMEOUT      ( 3 * 24 * 3600 )
 #define PETMAIL_CHECK_OFFMSG_EXPIRE_INTERVAL  3600
 #define PETMAIL_OFFMSG_TEXTLEN 512
 
-/* ペットメー郊の出現効果の数?  際の数より１少なくすること */
+/* 宠物邮件出现效果的数量?要比实际数量少１ */
 #define		 PETMAIL_EFFECTMAX	1			
 
 #define		PETMAIL_SPOOLFLOOR		777
@@ -28,7 +28,7 @@ typedef struct
     char text[PETMAIL_OFFMSG_TEXTLEN];     /*   平旦玄及     */
     char destcd[CDKEYLEN];				/* 送信先CDKEY */
     char destcharname[CHARNAMELEN];		/* 霜耨燮及平乓仿   */
-    char srccd[CDKEYLEN];				/* 送信元のcdkey */
+    char srccd[CDKEYLEN];				/* 发送源的cdkey */
     char srccharname[CHARNAMELEN];		/* 霜耨葭及平乓仿   */
 	
 } PETMAIL_offmsg;

@@ -85,10 +85,10 @@ tagWarplog warplog[MAXMAPNUM];
 tagWarpCount warpCount[MAXMAPLINK];
 
 /*------------------------------------------------------------
- * ひグ設定ファイ郊を  んで file を開く
+ * 读取日志设置文件并打开 file
  * 引数
- *  filename        char*       ひグ設定ファイ郊  
- * 返り値
+ *  filename        char*       日志设置文件名  
+ * 返回值
  *  FALSE   反褐  卅撩  匹丐月［
  ------------------------------------------------------------*/
 static BOOL readLogConfFile( char* filename )
@@ -272,8 +272,8 @@ void LogAcMess(	int fd, char *type, char *mess )
 void LogItem(
 	char *CharName, /* 平乓仿弁正   */
         char *CharID, /* 平乓仿弁正ID */	
-	int ItemNo, 	/* アイ  ム  号 */
-	char *Key, 		/* キーワード */
+	int ItemNo, 	/* 道具编号 */
+	char *Key, 		/* 关键字 */
 	int floor,		/* 甄   */
 	int x,
 	int y,
@@ -328,7 +328,7 @@ void LogPetTrans(
 }                                                                                        
 /*------------------------------------------------------------
  *
- * ペットひグを取る
+ * 取得宠物日志
  *
 -------------------------------------------------------------*/
 void LogPet(
@@ -336,7 +336,7 @@ void LogPet(
 	char *CharID,
 	char *PetName,
 	int  PetLv,
-	char *Key, 		/* キーワード */
+	char *Key, 		/* 关键字 */
 	int floor,		/* 甄   */
 	int x,
 	int y,
@@ -385,7 +385,7 @@ void LogBankStone(
         char *CharId, /* 住＆闇＆ID */
 		int	meindex,
         int Gold,               /* 嗯喊 */
-        char *Key,              /* キーワード */
+        char *Key,              /* 关键字 */
         int floor,              /* 甄   */
         int x,
         int y,
@@ -436,10 +436,10 @@ void LogPetPointChange(
 void LogTensei(
 	char *CharName, /* 平乓仿弁正   */
 	char *CharID,
-	char *Key, 		/* キーワード */
-	int level,		//レベ郊
+	char *Key, 		/* 关键字 */
+	int level,		//等级
 	int transNum,	//猿老者佰
-	int quest,		//クエスト数
+	int quest,		//任务数
 	int home,		//请褥哗
 	int item,		//  却払通  悸  小垰佰
 	int pet,		//  却文喟傲  小垰佰
@@ -526,8 +526,8 @@ void backupTempLogFile( char *buf, char *entryname, int Num)
  * 涩烂卞仄凶互匀化允屯化及白央奶伙毛田永弁失永皿
  * 白央奶伙反弁夫□术今木化中卅仃木壬弁夫□术允月
  * 引数  struct tm
- *  なし
- * 返り値
+ *  无
+ * 返回值
  *  左□皿件仄凶白央奶伙及醒
  ------------------------------------------------------------*/
 void backupAllLogFile( struct tm *ptm )
@@ -539,20 +539,20 @@ void backupAllLogFile( struct tm *ptm )
         /* append 匹卅中手及反仄卅中 */
         if( ! LogConf[i].append )continue;
 
-		/* バックアップファイ郊  作成 */
+		/* 创建备份文件名 */
 		sprintf( szBuffer, "%s.%4d%02d%02d", LogConf[i].filename,
 			ptm->tm_year+1900, ptm->tm_mon+1, ptm->tm_mday );
 
 		if( LogConf[i].f != NULL ){
 			/* 左□皿件今木化中凶日弁夫□术 */
 			fclose( LogConf[i].f );
-			/* リネーム */
+			/* 重命名 */
 			rename( LogConf[i].filename, szBuffer );
 			/* 疯太左□皿件 */
 	        LogConf[i].f = fopen( LogConf[i].filename , "a" );
 
 		}else{
-			/* リネーム */
+			/* 重命名 */
 			rename( LogConf[i].filename, szBuffer );
 			/* 疯太左□皿件 */
 	        LogConf[i].f = fopen( LogConf[i].filename , "a" );
@@ -591,7 +591,7 @@ void LogStone(
         char *CharId, /* 住＆闇＆ID */
         int Gold,               /* 嗯喊 */
 		int MyGold,
-        char *Key,              /* キーワード */
+        char *Key,              /* 关键字 */
         int floor,              /* 甄   */
         int x,
         int y

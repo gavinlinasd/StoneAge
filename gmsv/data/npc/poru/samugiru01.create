@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### 鏉戞皯 ######
+###### 村民 ######
 {
-name=鏉戞皯
+name=村民
 floorid=1000
 borncenter=93,72,1,1
 dir=5
@@ -13,9 +13,9 @@ graphicname=16039
 }
 
 
-###### 鏉戝簞灏戝コ ######
+###### 村庄少女 ######
 {
-name=鏉戝簞灏戝コ
+name=村庄少女
 floorid=1000
 borncenter=97,32,1,1
 dir=5
@@ -28,9 +28,9 @@ graphicname=16028
 
 
 
-###### 鏉戞皯 ######
+###### 村民 ######
 {
-name=鏉戞皯
+name=村民
 floorid=1000
 borncenter=50,106,1,1
 dir=5
@@ -41,9 +41,9 @@ graphicname=16019
 
 
 
-###### 鑰佺埛鐖风殑瀛欏コ ######
+###### 老爷爷的孙女 ######
 {
-name=鑰佺埛鐖风殑瀛欏コ
+name=老爷爷的孙女
 floorid=1013
 borncenter=14,16,1,1
 dir=6

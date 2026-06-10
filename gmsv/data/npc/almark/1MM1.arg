@@ -1,59 +1,59 @@
-###1MM1.argçš„å†…å®¹###
-START_MSG:HIï¼Œæˆ‘æ˜¯MMæ™¯ç‚¹ä¼ é€å¸ˆ~\næœ¬MMåªä¼ 1-45çº§æ»´ä¸€è½¬MMå“¦ï¼Œåˆ«é€‰é”™äº†~æ›´é«˜çš„åœ¨éš”å£
-MenuHead:é€‰æ‹©ç›®çš„åœ°ï¼š
+###1MM1.argµÄÄÚÈÝ###
+START_MSG:HI£¬ÎÒÊÇMM¾°µã´«ËÍÊ¦~\n±¾MMÖ»´«1-45¼¶µÎÒ»×ªMMÅ¶£¬±ðÑ¡´íÁË~¸ü¸ßµÄÔÚ¸ô±Ú
+MenuHead:Ñ¡ÔñÄ¿µÄµØ£º
 
-#10çº§
+#10¼¶
 {
-MenuStr:10çº§
+MenuStr:10¼¶
 FREE:LV>0
 WARPPOINT:1000,78,80
 }
 
-#15çº§
+#15¼¶
 {
-MenuStr:15çº§
+MenuStr:15¼¶
 FREE:LV>0
 WARPPOINT:1400,71,104
 }
 
-#20çº§
+#20¼¶
 {
-MenuStr:20çº§
+MenuStr:20¼¶
 FREE:LV>0
 WARPPOINT:1200,52,47
 }
 
-#25çº§
+#25¼¶
 {
-MenuStr:25çº§
+MenuStr:25¼¶
 FREE:LV>0
 WARPPOINT:5542,28,39
 }
 
-#30çº§
+#30¼¶
 {
-MenuStr:30çº§
+MenuStr:30¼¶
 FREE:LV>0
 WARPPOINT:4000,64,55
 }
 
-#35çº§
+#35¼¶
 {
-MenuStr:35çº§
+MenuStr:35¼¶
 FREE:LV>0
 WARPPOINT:20301,276,129
 }
 
-#40çº§
+#40¼¶
 {
-MenuStr:40çº§
+MenuStr:40¼¶
 FREE:LV>0
 WARPPOINT:3300,59,50
 }
 
-#45çº§
+#45¼¶
 {
-MenuStr:45çº§
+MenuStr:45¼¶
 FREE:LV>0
 WARPPOINT:21201,59,55
 }

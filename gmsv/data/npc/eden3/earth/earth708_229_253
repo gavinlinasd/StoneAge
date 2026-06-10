@@ -2,8 +2,8 @@ NEWWARPMAN
 
 NOFREE
 FREE:LV>0
-NomalMsg:è³‡...è³‡...è³‡...............
-PartyMsg:è³‡...è³‡...è³‡...............
+NomalMsg:¸ê...¸ê...¸ê...............
+PartyMsg:¸ê...¸ê...¸ê...............
 OVER
 
 
@@ -11,7 +11,7 @@ TALKEVENT1
 WARP:60101,6,31
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ENDEV=171&NOWEV=172&NOWEV=173&ITEM=19550
 MONEY:-1
-FreeMsg:\n\n\nï¼ˆç–‘ï¼ŸçœŸçš„å¯ä»¥ä½¿ç”¨è€¶ï¼ï¼‰
+FreeMsg:\n\n\n£¨ÒÉ£¿ÕæµÄ¿ÉÒÔÊ¹ÓÃÒ®£¡£©
 DelItem:19550
 OVER
 
@@ -20,6 +20,6 @@ TALKEVENT2
 WARP:60101,6,31
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ENDEV=171&ENDEV=172&ENDEV=173&ITEM=19550
 MONEY:-1
-FreeMsg:\n\n\nï¼ˆä½¿ç”¨äº†å¯åŠ¨çŸ³ï¼ï¼‰
+FreeMsg:\n\n\n£¨Ê¹ÓÃÁËÆô¶¯Ê¯£¡£©
 DelItem:19550
 OVER

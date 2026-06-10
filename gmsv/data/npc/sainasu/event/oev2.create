@@ -1,7 +1,7 @@
 NPCCREATE
 
 #########################################################################
-#########    æ–¥ä¹“ä¼™å¸ƒå·¦ä¼‰å·¨ä»¶æ°¾â–¡ä¼‰ä»¶å¼˜ï¹›å¥¶çŸ›ä»¶ç„æ¶©çƒ‚ï¹›ï¹›################
+#########    ³âÅÒ»ï²¼×óØø¾Ş¼şšï¡õØø¼şºë©xÄÌÃ¬¼şĞşÉ¬ÀÃ©x©x################
 #########################################################################
 
 
@@ -13,7 +13,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16027
-name=ï¼³ï¼¯ï¼´æŸœå°
+name=£Ó£Ï£Ô¹ñÌ¨
 enemy=changeevent|file:sainasu/event/oev_0cd
 }
 
@@ -25,7 +25,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥å‘˜(C-1)
+name=¼ì²éÔ±(C-1)
 enemy=changeevent|file:sainasu/event/oev_1c
 }
 
@@ -37,7 +37,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥å‘˜(C-2)
+name=¼ì²éÔ±(C-2)
 enemy=changeevent|file:sainasu/event/oev_2c
 }
 
@@ -49,7 +49,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥å‘˜(C-3)
+name=¼ì²éÔ±(C-3)
 enemy=changeevent|file:sainasu/event/oev_3c
 }
 
@@ -62,7 +62,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥å‘˜(C-4)
+name=¼ì²éÔ±(C-4)
 enemy=changeevent|file:sainasu/event/oev_4c
 }
 
@@ -74,7 +74,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥å‘˜(C-5)
+name=¼ì²éÔ±(C-5)
 enemy=changeevent|file:sainasu/event/oev_5c
 }
 
@@ -87,7 +87,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥å‘˜(C-6)
+name=¼ì²éÔ±(C-6)
 enemy=changeevent|file:sainasu/event/oev_6c
 }
 
@@ -100,7 +100,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥å‘˜(C-7)
+name=¼ì²éÔ±(C-7)
 enemy=changeevent|file:sainasu/event/oev_7c
 }
 
@@ -113,7 +113,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥å‘˜(C-8)
+name=¼ì²éÔ±(C-8)
 enemy=changeevent|file:sainasu/event/oev_8c
 }
 
@@ -126,7 +126,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥å‘˜(C-9)
+name=¼ì²éÔ±(C-9)
 enemy=changeevent|file:sainasu/event/oev_9c
 }
 
@@ -139,7 +139,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥å‘˜(C-10)
+name=¼ì²éÔ±(C-10)
 enemy=changeevent|file:sainasu/event/oev_10c
 }
 
@@ -152,7 +152,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥å‘˜(C-11)
+name=¼ì²éÔ±(C-11)
 enemy=changeevent|file:sainasu/event/oev_11c
 }
 
@@ -164,7 +164,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥å‘˜(C-12)
+name=¼ì²éÔ±(C-12)
 enemy=changeevent|file:sainasu/event/oev_12c
 }
 
@@ -177,7 +177,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥å‘˜(D-1)
+name=¼ì²éÔ±(D-1)
 enemy=changeevent|file:sainasu/event/oev_1d
 }
 
@@ -190,7 +190,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥å‘˜(D-2)
+name=¼ì²éÔ±(D-2)
 enemy=changeevent|file:sainasu/event/oev_2d
 }
 
@@ -202,7 +202,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥å‘˜(D-3)
+name=¼ì²éÔ±(D-3)
 enemy=changeevent|file:sainasu/event/oev_3d
 }
 
@@ -215,7 +215,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥å‘˜(D-4)
+name=¼ì²éÔ±(D-4)
 enemy=changeevent|file:sainasu/event/oev_4d
 }
 
@@ -228,7 +228,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥å‘˜(D-5)
+name=¼ì²éÔ±(D-5)
 enemy=changeevent|file:sainasu/event/oev_5d
 }
 
@@ -241,7 +241,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥å‘˜(D-6)
+name=¼ì²éÔ±(D-6)
 enemy=changeevent|file:sainasu/event/oev_6d
 }
 
@@ -254,7 +254,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥å‘˜(D-7)
+name=¼ì²éÔ±(D-7)
 enemy=changeevent|file:sainasu/event/oev_7d
 }
 
@@ -267,7 +267,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥å‘˜(D-8)
+name=¼ì²éÔ±(D-8)
 enemy=changeevent|file:sainasu/event/oev_8d
 }
 
@@ -280,7 +280,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥å‘˜(D-9)
+name=¼ì²éÔ±(D-9)
 enemy=changeevent|file:sainasu/event/oev_9d
 }
 
@@ -293,7 +293,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥å‘˜(D-10)
+name=¼ì²éÔ±(D-10)
 enemy=changeevent|file:sainasu/event/oev_10d
 }
 
@@ -306,7 +306,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥å‘˜(D-11)
+name=¼ì²éÔ±(D-11)
 enemy=changeevent|file:sainasu/event/oev_11d
 }
 
@@ -319,7 +319,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥å‘˜(D-12)
+name=¼ì²éÔ±(D-12)
 enemy=changeevent|file:sainasu/event/oev_12d
 }
 
@@ -333,7 +333,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16027
-name=æ£€æŸ¥å‘˜(C)
+name=¼ì²éÔ±(C)
 enemy=changeevent|file:sainasu/event/oev_edc
 }
 
@@ -346,7 +346,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16033
-name=æ£€æŸ¥å‘˜(D)
+name=¼ì²éÔ±(D)
 enemy=changeevent|file:sainasu/event/oev_edd
 }
 

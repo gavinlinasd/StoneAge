@@ -1,12 +1,12 @@
 NEWNPCENEMY
 
 entype:2
-startmsg:ç»ƒæŠ—æ€§æ‰¾æˆ‘å°±å¯¹å•¦ï¼ï¼ï¼
+startmsg:Á·¿¹ĞÔÕÒÎÒ¾Í¶ÔÀ²£¡£¡£¡
 dieact:1
 warpfl:2000
 warpx:58
 warpy:69
-endmsg:æˆ‘é ï¼ä½ è¿˜çœŸå‰å®³ï¼
+endmsg:ÎÒ¿¿£¡Äã»¹ÕæÀ÷º¦£¡
 enemyno:1690
 onebattle:0
 OVER

@@ -1,7 +1,7 @@
 NPCCREATE
 
 ##########################################################################
-#########################    æ¼†é»‘çš„æ´çªŸ äº‹ä»¶è®¾å®š        ##################
+#########################    ÆáºÚµÄ¶´¿ß ÊÂ¼şÉè¶¨        ##################
 ##########################################################################
 
 
@@ -13,7 +13,7 @@ createnum=1
 dir=0
 ignoreinvincible=1
 graphicname=100451
-name=è€ƒå¤å®¶
+name=¿¼¹Å¼Ò
 enemy=changeevent|file:giiru/event/sikkoku01
 }
 
@@ -26,7 +26,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100195
-name=è€ƒå¤å®¶
+name=¿¼¹Å¼Ò
 enemy=changeevent|file:giiru/event/sikkoku02
 }
 
@@ -38,7 +38,7 @@ createnum=1
 dir=0
 ignoreinvincible=1
 graphicname=100190
-name=è€ƒå¤å®¶
+name=¿¼¹Å¼Ò
 enemy=changeevent|file:giiru/event/sikkoku03
 }
 
@@ -50,7 +50,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100446
-name=è€ƒå¤å®¶
+name=¿¼¹Å¼Ò
 enemy=changeevent|file:giiru/event/sikkoku04
 }
 
@@ -62,14 +62,14 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100436
-name=è€ƒå¤å®¶
+name=¿¼¹Å¼Ò
 enemy=changeevent|file:giiru/event/sikkoku05
 }
 
 
-###### ç²¾çµç‹ ######
+###### ¾«ÁéÍõ ######
 {
-name=ç²¾çµç‹
+name=¾«ÁéÍõ
 floorid=32021
 dir=4
 createnum=1
@@ -81,9 +81,9 @@ enemy=npc_transmigration|file:777/ten.arg
 }
 
 
-###### æŠ¤å£« ######
+###### »¤Ê¿ ######
 {
-name=æŠ¤å£«
+name=»¤Ê¿
 floorid=32014
 borncenter=51,11,1,1
 dir=5
@@ -96,9 +96,9 @@ ignoreinvincible=1
 
 
 
-###### æŠ¤å£« ######
+###### »¤Ê¿ ######
 {
-name=æŠ¤å£«
+name=»¤Ê¿
 floorid=32007
 borncenter=27,54,1,1
 dir=5

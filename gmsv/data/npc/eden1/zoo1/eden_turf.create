@@ -1,6 +1,6 @@
 NPCCREATE
 
-#ç©å®¶Aï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼›å¼ºï¼‰
+#Íæ¼ÒA£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£»Ç¿£©
 {
 floorid=7005
 borncorner=24,15,26,17
@@ -9,11 +9,11 @@ createnum=1
 dir=1
 ignoreinvincible=1
 graphicname=100009
-name=æœ«è¥¿é‚£æ–¯ã€€Lv:104
+name=Ä©Î÷ÄÇË¹¡¡Lv:104
 enemy=changeevent|file:eden1/zoo1/turfman00_01
 }
 
-#ç©å®¶Bï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒB£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=9,38,11,40
@@ -22,11 +22,11 @@ createnum=1
 dir=2
 ignoreinvincible=1
 graphicname=100189
-name=å¥¥è²è‰äºšã€€Lv:114
+name=°Â·ÆÀòÑÇ¡¡Lv:114
 enemy=changeevent|file:eden1/zoo1/turfman00_02
 }
 
-#ç©å®¶Cï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒC£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=9,5,11,7
@@ -35,11 +35,11 @@ createnum=1
 dir=3
 ignoreinvincible=1
 graphicname=100045
-name=èŒ‚é‚£æ–¯ã€€Lv:91
+name=Ã¯ÄÇË¹¡¡Lv:91
 enemy=changeevent|file:eden1/zoo1/turfman00_03
 }
 
-#ç©å®¶Dï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒD£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=31,3,33,5
@@ -48,11 +48,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100153
-name=æŸè¥–å‰¥ã€€Lv:131
+name=Ë¿²¨Çí¡¡Lv:131
 enemy=changeevent|file:eden1/zoo1/turfman00_04
 }
 
-#ç©å®¶Eï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒE£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=26,37,28,39
@@ -61,11 +61,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=100081
-name=ä½†æ©ã€€Lv:111
+name=µ«¶÷¡¡Lv:111
 enemy=changeevent|file:eden1/zoo1/turfman00_05
 }
 
-#ç©å®¶Fï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒF£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=39,18,40,32
@@ -74,11 +74,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100117
-name=å¤©å£°è¬¹ã€€Lv:100
+name=Å·À¼¶à¡¡Lv:100
 enemy=changeevent|file:eden1/zoo1/turfman00_06
 }
 
-#ç©å®¶Gï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒG£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=19,13,21,15
@@ -87,12 +87,12 @@ createnum=1
 dir=7
 ignoreinvincible=1
 graphicname=100099
-name=è¢‹å£°ã€€Lv:125
+name=ÂŞÀ¼¡¡Lv:125
 enemy=changeevent|file:eden1/zoo1/turfman00_07
 action=13
 }
 
-#ç©å®¶Hï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒH£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=1,4,3,6
@@ -101,11 +101,11 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100135
-name=è´å¾·ã€€Lv:135
+name=ÕêµÂ¡¡Lv:135
 enemy=changeevent|file:eden1/zoo1/turfman00_08
 }
 
-#ç©å®¶Iï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼›ç¥¥ï¼‰
+#Íæ¼ÒI£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£»Ïé£©
 {
 floorid=7005
 borncorner=1,44,3,46
@@ -114,12 +114,12 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=100171
-name=ç¿”å¦®ã€€Lv:97
+name=ÏèÄİ¡¡Lv:97
 enemy=changeevent|file:eden1/zoo1/turfman00_09
 action=14
 }
 
-#ç©å®¶Jï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒJ£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=15,35,17,37
@@ -128,11 +128,11 @@ createnum=1
 dir=7
 ignoreinvincible=1
 graphicname=100063
-name=å¥¥åˆ©ä½›ã€€Lv:100
+name=°ÂÀû·ğ¡¡Lv:100
 enemy=changeevent|file:eden1/zoo1/turfman00_10
 }
 
-#ç©å®¶Kï¼ˆå°¼æ–¯ç”·æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒK£¨ÄáË¹ÄĞĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=41,6,43,8
@@ -141,11 +141,11 @@ createnum=1
 dir=5
 ignoreinvincible=1
 graphicname=100027
-name=å¼—é›·ã€€Lv:125
+name=¸¥À×¡¡Lv:125
 enemy=changeevent|file:eden1/zoo1/turfman00_11
 }
 
-#ç©å®¶Lï¼ˆå°¼æ–¯å¥³æ€§ç©å®¶é€ å‹ï¼‰
+#Íæ¼ÒL£¨ÄáË¹Å®ĞÔÍæ¼ÒÔìĞÍ£©
 {
 floorid=7005
 borncorner=42,14,43,15
@@ -154,6 +154,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100207
-name=æ³¢è¥¿äºšã€€Lv:88
+name=²¨Î÷ÑÇ¡¡Lv:88
 enemy=changeevent|file:eden1/zoo1/turfman00_12
 }

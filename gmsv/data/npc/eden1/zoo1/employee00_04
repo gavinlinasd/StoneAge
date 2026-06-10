@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:濡傛灉瑕佷綇瀹跨殑璇濊鍒颁紛鐢告梾棣嗭紝鐗╃編浠峰粔鍠旓紒
+NomalWindowMsg:如果要住宿的话请到伊甸旅馆，物美价廉喔！
 EventEnd

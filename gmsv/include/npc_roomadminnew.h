@@ -19,9 +19,9 @@ typedef struct roomadmin_tag
     
     char doorname[256];     /* 公及  盒及玉失及  蟆 */
     char explanation[256];  /*      */
-    char passwd[256];       /* パスワード */
+    char passwd[256];       /* 密码 */
     int expire_time_mod;    /* 位相 */
-    time_t expire_time;     /* 期限切れの時間 */
+    time_t expire_time;     /* 过期的时间 */
     int least_cost;         /*   斓嗯喊 */
     
 }NPC_ROOMINFO;

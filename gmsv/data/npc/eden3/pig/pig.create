@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-###### å°ç”·å­©æ¬§å¼Ÿ ######
+###### Ğ¡ÄĞº¢Å·µÜ ######
 {
-name=å¤©å®®
+name=Å·µÜ
 floorid=7404
 borncenter=18,11
 dir=4
@@ -14,9 +14,9 @@ enemy=changeevent|file:eden3/pig/oody
 graphicname=16706
 }
 
-###### ç”·å­©çˆ¶äº²å‡¯æ ¼ ######
+###### ÄĞº¢¸¸Ç×¿­¸ñ ######
 {
-name=å‡¯æ ¼
+name=¿­¸ñ
 floorid=7404
 borncenter=12,8
 dir=4
@@ -27,9 +27,9 @@ enemy=changeevent|file:eden3/pig/kaigur
 graphicname=16717
 }
 
-###### ç”·å­©æ¯äº²å¨œå‰ ######
+###### ÄĞº¢Ä¸Ç×ÄÈ¼ª ######
 {
-name=å¨œå‰
+name=ÄÈ¼ª
 floorid=7404
 borncenter=20,17
 dir=5
@@ -40,9 +40,9 @@ enemy=changeevent|file:eden3/pig/narge
 graphicname=16022
 }
 
-###### çŒäººå‡¯ä¹Œ ######
+###### ÁÔÈË¿­ÎÚ ######
 {
-name=å‡¯ä¹Œ
+name=¿­ÎÚ
 floorid=7400
 borncenter=68,69
 dir=4
@@ -53,9 +53,9 @@ enemy=changeevent|file:eden3/pig/kaiwu
 graphicname=16934
 }
 
-###### å°çŒªè±å¾· ######
+###### Ğ¡ÖíÀ³µÂ ######
 {
-name=è±å¾·
+name=À³µÂ
 floorid=7404
 borncenter=17,11
 dir=4
@@ -66,9 +66,9 @@ enemy=changeevent|file:eden3/pig/raio
 graphicname=100821
 }
 
-#ä¼ é€å°çŒª
+#´«ËÍĞ¡Öí
 {
-name=è‚¯å°”
+name=¿Ï¶û
 floorid=703
 borncenter=73,189
 dir=6
@@ -79,9 +79,9 @@ enemy=npcgen_warpman|file:eden3/pig/ken
 graphicname=100821
 }
 
-###### å°çŒªçˆ¶äº²è±å¤š ######
+###### Ğ¡Öí¸¸Ç×À³¶à ######
 {
-name=è±å¤š
+name=À³¶à
 floorid=7452
 borncenter=30,46
 dir=4
@@ -92,9 +92,9 @@ enemy=changeevent|file:eden3/pig/raido
 graphicname=100821
 }
 
-###### å°çŒªæ¯äº²æ¯”ä¸ ######
+###### Ğ¡ÖíÄ¸Ç×±ÈË¿ ######
 {
-name=æ¯”ä¸
+name=±ÈË¿
 floorid=7452
 borncenter=29,46
 dir=4

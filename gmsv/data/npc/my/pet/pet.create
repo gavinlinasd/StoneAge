@@ -1,7 +1,7 @@
 NPCCREATE
 
 {
-name=æ²‰é»˜çš„æ¸©æŸ”
+name=³ÁÄ¬µÄÎÂÈá
 floorid=8262
 borncenter=8,3
 dir=5
@@ -13,7 +13,7 @@ enemy=changeevent|file:my/pet/Silence.arg
 }
 
 {
-name=å¯å¯è¥¿é‡Œ
+name=¿É¿ÉÎ÷Àï
 floorid=8262
 borncenter=11,6
 dir=5

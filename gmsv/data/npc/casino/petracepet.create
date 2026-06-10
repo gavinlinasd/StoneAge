@@ -1,5 +1,5 @@
 NPCCREATE
-#å® ç‰©ç«é€Ÿå® ç‰©
+#³èÎï¾ºËÙ³èÎï
 {
 floorid=7005
 borncenter=33,33,1,1
@@ -7,7 +7,7 @@ movecenter=33,33,1,1
 createnum=1
 dir=0
 graphicname=100820
-name=æ‰‘æ»¡ä¹ŒåŠ›
+name=ÆËÂúÎÚÁ¦
 enemy=petracepet|file:casino/petracepet1.arg
 }
 {
@@ -17,7 +17,7 @@ movecenter=35,26,1,1
 createnum=1
 dir=0
 graphicname=100821
-name=ä¹ŒåŠ›è±å¾·
+name=ÎÚÁ¦À³µÂ
 enemy=petracepet|file:casino/petracepet2.arg
 }
 {
@@ -27,6 +27,6 @@ movecenter=37,18,1,1
 createnum=1
 dir=0
 graphicname=100822
-name=ä¹ŒåŠ›å›ºåŠ›
+name=ÎÚÁ¦¹ÌÁ¦
 enemy=petracepet|file:casino/petracepet3.arg
 }

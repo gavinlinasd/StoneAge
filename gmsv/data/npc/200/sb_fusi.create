@@ -1,5 +1,5 @@
 NPCCREATE
-#######不死鳥##########
+#######�Ի�Ļ##########
 {
 floorid=20309
 borncenter=17,16,1,1
@@ -7,7 +7,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=4
 graphicname=100370
-name=奇宝
+name=�汦
 enemy=sb_fusi|file:200/sb_fusi.arg
 }
 {
@@ -17,7 +17,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=4
 graphicname=100370
-name=奇宝
+name=�汦
 enemy=sb_fusi|file:200/sb_fusi.arg
 }
 {
@@ -27,7 +27,7 @@ movecenter=20,20,100,100
 createnum=1
 dir=5
 graphicname=100370
-name=奇宝
+name=�汦
 enemy=sb_fusi|file:200/sb_fusi.arg
 }
 {
@@ -37,6 +37,6 @@ movecenter=20,20,100,100
 createnum=1
 dir=4
 graphicname=100370
-name=奇宝
+name=�汦
 enemy=sb_fusi|file:200/sb_fusi.arg
 }

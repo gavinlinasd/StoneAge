@@ -1,12 +1,12 @@
-NomalMainMsg:你也是战士团的一员吗！
+NomalMainMsg:��Ҳ��սʿ�ŵ�һԱ��
 
 
 EventNo:172
 TYPE:ACCEPT
 EVENT:LV>90&ENDEV=83&ENDEV=171&NOWEV=172&ENDEV=173&ENDEV=174
-AcceptMsg:\n年轻人，谢谢你赶来！\n你为我们战士团付出的一切我都听说了，非常感谢你···。\n由于我现在非常的虚弱，所以无法跟你好好的聊聊，但是我们战士团会永远记得你，只要路过塔耳塔都欢迎你来战士团一叙！
-ThanksMsg:\n\n从此你将是我们一家人，请收下代表骑士团身份的装备吧！\n请好好善用这个装备将战士团的精神发扬光大吧！
-ItemFullMsg:虽然想交给你但是你已经无法再收下。
+AcceptMsg:\n�����ˣ�лл�������\n��Ϊ����սʿ�Ÿ�����һ���Ҷ���˵�ˣ��ǳ���л�㡤������\n���������ڷǳ��������������޷�����úõ����ģ���������սʿ�Ż���Զ�ǵ��㣬ֻҪ·������������ӭ����սʿ��һ��
+ThanksMsg:\n\n�Ӵ��㽫������һ���ˣ������´�����ʿ�����ݵ�װ���ɣ�\n��ú��������װ����սʿ�ŵľ�������ɣ�
+ItemFullMsg:��Ȼ�뽻���㵫�����Ѿ��޷������¡�
 GetRandItem:19568,19569,19562,15967
 EndSetFlg:172
 EventEnd
@@ -15,9 +15,9 @@ EventEnd
 EventNo:173
 TYPE:ACCEPT
 EVENT:LV>90&ENDEV=83&ENDEV=171&NOWEV=173&ENDEV=172&ENDEV=174
-AcceptMsg:\n年轻人，谢谢你赶来！\n你为我们战士团付出的一切我都听说了，非常感谢你···。\n由于我现在非常的虚弱，所以无法跟你好好的聊聊，但是我们战士团会永远记得你，只要路过塔耳塔都欢迎你来战士团一叙！
-ThanksMsg:\n\n从此你将是我们一家人，我这里有一个道具，他可以使你在旅程当中受到保护！
-ItemFullMsg:虽然想交给你但是你已经无法再收下。
+AcceptMsg:\n�����ˣ�лл�������\n��Ϊ����սʿ�Ÿ�����һ���Ҷ���˵�ˣ��ǳ���л�㡤������\n���������ڷǳ��������������޷�����úõ����ģ���������սʿ�Ż���Զ�ǵ��㣬ֻҪ·������������ӭ����սʿ��һ��
+ThanksMsg:\n\n�Ӵ��㽫������һ���ˣ���������һ�����ߣ�������ʹ�����ó̵����ܵ�������
+ItemFullMsg:��Ȼ�뽻���㵫�����Ѿ��޷������¡�
 GetRandItem:2287,2288,2289
 EndSetFlg:173
 EventEnd
@@ -25,13 +25,13 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>90&ENDEV=83&ENDEV=171&ENDEV=172&ENDEV=173&ENDEV=174&ITEM!=19560
-NomalWindowMsg:\n\n差点忘了，该交给你地精灵交给我保管的威灵石，请你安全的将它送回去吧！
-ItemFullMsg:虽然想交给你但是你已经无法再收下。
+NomalWindowMsg:\n\n������ˣ��ý�����ؾ��齻���ұ��ܵ�����ʯ�����㰲ȫ�Ľ����ͻ�ȥ�ɣ�
+ItemFullMsg:��Ȼ�뽻���㵫�����Ѿ��޷������¡�
 GetItem:19560*1
 EventEnd
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>90&ENDEV=83&ENDEV=171&ENDEV=172&ENDEV=173&ENDEV=174&ITEM=19560
-NomalWindowMsg:\n\n我们战士团会永远记得你！
+NomalWindowMsg:\n\n����սʿ�Ż���Զ�ǵ��㣡
 EventEnd

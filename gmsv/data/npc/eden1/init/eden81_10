@@ -1,11 +1,11 @@
-NomalMainMsg:这里是飞龙航空本部，闲杂人等不要来这里影响我们的精密的工作。
+NomalMainMsg:�����Ƿ������ձ����������˵Ȳ�Ҫ������Ӱ�����ǵľ��ܵĹ�����
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=81&ITEM=19699
-NomalWindowMsg:喔～～太好了有了报告书，\n我的研究更加完整了，太好了。\n这一次的研究报告一定可以让飞龙一举突破长程飞行的困境。\n来～～给你赏金表达对你的感谢。
+NomalWindowMsg:ม���̫�������˱����飬\n�ҵ��о����������ˣ�̫���ˡ�\n��һ�ε��о�����һ�������÷���һ��ͻ�Ƴ��̷��е�������\n�����������ͽ�������ĸ�л��
 GetStone:200000
-StoneFullMsg:你身上已经有很多石币了...
+StoneFullMsg:�������Ѿ��кܶ�ʯ����...
 DelItem:19699*1
 EventEnd
 
@@ -13,12 +13,12 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=81
-NomalWindowMsg:哦～～听说是你帮助霍特雷敦找回布兰恩002，\n很感谢你帮了这一次大忙。
+NomalWindowMsg:Ŷ������˵������������׶��һز�����002��\n�ܸ�л�������һ�δ�æ��
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:\n这里是飞龙航本部，\n闲杂人等不要来这里影响我们的精密的工作。
+NomalWindowMsg:\n�����Ƿ�����������\n�����˵Ȳ�Ҫ������Ӱ�����ǵľ��ܵĹ�����
 EventEnd

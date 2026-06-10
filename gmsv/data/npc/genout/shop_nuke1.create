@@ -12,7 +12,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16067
-name=灏戝コ
+name=少女
 enemy=npcgen_shop|file:genout/ss_1000_94_101
 }
 #line 8
@@ -24,7 +24,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16300
-name=宸コ
+name=巫女
 enemy=npcgen_shop|file:genout/ss_2000_67_62
 }
 #line 10
@@ -36,7 +36,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16300
-name=宸コ
+name=巫女
 enemy=npcgen_shop|file:genout/ss_3000_94_94
 }
 #line 12
@@ -48,7 +48,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16300
-name=宸コ
+name=巫女
 enemy=npcgen_shop|file:genout/ss_4000_68_57
 }
 #line 14
@@ -60,7 +60,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16300
-name=宸コ
+name=巫女
 enemy=npcgen_shop|file:genout/ss_5001_25_12
 }
 #line 16
@@ -72,7 +72,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16067
-name=灏戝コ
+name=少女
 enemy=npcgen_shop|file:genout/ss_3400_63_46
 }
 #line 18
@@ -84,7 +84,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16300
-name=宸コ
+name=巫女
 enemy=npcgen_shop|file:genout/ss_5106_16_12
 }
 #line 20
@@ -96,7 +96,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16067
-name=灏戝コ
+name=少女
 enemy=npcgen_shop|file:genout/ss_1102_18_16
 }
 #line 22
@@ -108,7 +108,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16067
-name=灏戝コ
+name=少女
 enemy=npcgen_shop|file:genout/ss_3100_83_72
 }
 #line 24
@@ -120,7 +120,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16067
-name=灏戝コ
+name=少女
 enemy=npcgen_shop|file:genout/ss_1400_75_102
 }
 #line 26
@@ -132,7 +132,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16218
-name=灏戝コ
+name=少女
 enemy=npcgen_shop|file:genout/ss_3300_69_44
 }
 #line 28
@@ -144,7 +144,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16300
-name=宸コ
+name=巫女
 enemy=npcgen_shop|file:genout/ss_1302_14_15
 }
 #line 30
@@ -156,6 +156,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16300
-name=宸コ
+name=巫女
 enemy=npcgen_shop|file:genout/ss_3209_16_14
 }

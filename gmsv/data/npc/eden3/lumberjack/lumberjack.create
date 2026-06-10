@@ -1,6 +1,6 @@
 NPCCREATE
 
-###### æ—åŠ¡å±€å¤–ä¼ é€ç‚¹ ######
+###### ÁÖÎñ¾ÖÍâ´«ËÍµã ######
 {
 floorid=7000
 borncenter=27,161
@@ -9,7 +9,7 @@ ignoreinvincible=1
 enemy=npcgen_warp|file:eden3/lumberjack/warppoint1.arg
 }
 
-###### æ—åŠ¡å±€å¤–ä¼ é€ç‚¹ ######
+###### ÁÖÎñ¾ÖÍâ´«ËÍµã ######
 {
 floorid=7000
 borncenter=20,160
@@ -18,9 +18,9 @@ ignoreinvincible=1
 enemy=npcgen_warp|file:eden3/lumberjack/warppoint2.arg
 }
 
-###### æ—åŠ¡å±€é•¿æŸ¯æ¯”ç½—å°” ######
+###### ÁÖÎñ¾Ö³¤¿Â±ÈÂŞ¶û ######
 {
-name=æŸ¯æ¯”ç½—å°”
+name=¿Â±ÈÂŞ¶û
 floorid=7015
 borncenter=16,3
 dir=4
@@ -30,9 +30,9 @@ enemy=changeevent|file:eden3/lumberjack/kobe
 graphicname=100102
 }
 
-###### ç§˜ä¹¦å¸ƒé²ä¹Œé½ ######
+###### ÃØÊé²¼Â³ÎÚÆë ######
 {
-name=ä¸‹ç¶šé±—é¦´
+name=²¼Â³ÎÚÆë
 floorid=7015
 borncenter=22,8
 dir=6
@@ -42,9 +42,9 @@ enemy=changeevent|file:eden3/lumberjack/bluewuchi
 graphicname=16730
 }
 
-###### æœ¨æå•†äººè¾¾æ¯” ######
+###### Ä¾²ÄÉÌÈË´ï±È ######
 {
-name=è¾¾æ¯”
+name=´ï±È
 floorid=7015
 borncenter=8,9
 time=0
@@ -55,7 +55,7 @@ enemy=npcgen_limitshop|file:eden3/lumberjack/dabe
 graphicname=16019
 }
 
-###### å·¥å¤´æˆ¿é—´å¤–ä¼ é€ç‚¹ ######
+###### ¹¤Í··¿¼äÍâ´«ËÍµã ######
 {
 floorid=703
 borncenter=334,182
@@ -64,9 +64,9 @@ ignoreinvincible=1
 enemy=npcgen_warp|file:eden3/lumberjack/warppoint3.arg
 }
 
-###### å·¥å¤´å¸ƒé²æ–¯å£® ######
+###### ¹¤Í·²¼Â³Ë¹×³ ######
 {
-name=ä¸‹ç¶šå¸½å½
+name=²¼Â³Ë¹×³
 floorid=7453
 borncenter=10,8
 dir=6
@@ -77,9 +77,9 @@ enemy=changeevent|file:eden3/lumberjack/bluestrong
 graphicname=100439
 }
 
-###### å¸ƒé²æ–¯å£®æˆ˜æ–—å‹ ######
+###### ²¼Â³Ë¹×³Õ½¶·ĞÍ ######
 {
-name=ä¸‹ç¶šå¸½å½
+name=²¼Â³Ë¹×³
 floorid=7454
 borncenter=10,8
 dir=6
@@ -89,7 +89,7 @@ enemy=bluestrong|file:eden3/lumberjack/bluestrong.arg
 graphicname=100439
 }
 
-###### é£æ£®æ—å¤–ä¼ é€ç‚¹ ######
+###### ·çÉ­ÁÖÍâ´«ËÍµã ######
 {
 floorid=703
 borncenter=147,146
@@ -98,9 +98,9 @@ ignoreinvincible=1
 enemy=npcgen_warp|file:eden3/lumberjack/warppoint4.arg
 }
 
-###### é£ç²¾çµå¼—æ–¯æ¸©è’‚ ######
+###### ·ç¾«Áé¸¥Ë¹ÎÂµÙ ######
 {
-name=å¼—æ–¯æ¸©è’‚
+name=¸¥Ë¹ÎÂµÙ
 floorid=7464
 borncenter=62,27
 dir=4
@@ -110,9 +110,9 @@ enemy=changeevent|file:eden3/lumberjack/windy
 graphicname=16950
 }
 
-###### æ—åŠ¡å±€é•¿æŸ¯æ¯”ç½—å°”æˆ˜æ–—å‹ ######
+###### ÁÖÎñ¾Ö³¤¿Â±ÈÂŞ¶ûÕ½¶·ĞÍ ######
 {
-name=æŸ¯æ¯”ç½—å°”
+name=¿Â±ÈÂŞ¶û
 floorid=7024
 borncenter=16,3
 dir=4
@@ -122,9 +122,9 @@ enemy=koberoll|file:eden3/lumberjack/koberoll.arg
 graphicname=100102
 }
 
-###### ä¼æœ¨å·¥äººa ######
+###### ·¥Ä¾¹¤ÈËa ######
 {
-name=ä¼æœ¨å·¥äºº
+name=·¥Ä¾¹¤ÈË
 floorid=703
 borncenter=144,187
 dir=6
@@ -134,9 +134,9 @@ enemy=changeevent|file:eden3/lumberjack/worker1
 graphicname=16925
 }
 
-###### ä¼æœ¨å·¥äººb ######
+###### ·¥Ä¾¹¤ÈËb ######
 {
-name=ä¼æœ¨å·¥äºº
+name=·¥Ä¾¹¤ÈË
 floorid=703
 borncenter=202,140
 dir=4

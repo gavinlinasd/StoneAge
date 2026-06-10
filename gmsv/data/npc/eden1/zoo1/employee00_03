@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:鎴戞槸鍦ㄥ姩鐗╁洯宸ヤ綔鐨勶紝浣犻�涜繃鍔ㄧ墿鍥簡鍚楋紵
+NomalWindowMsg:我是在动物园工作的，你逛过动物园了吗？
 EventEnd

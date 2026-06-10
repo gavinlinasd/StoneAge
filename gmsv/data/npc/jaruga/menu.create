@@ -1,5 +1,5 @@
 NPCCREATE
-#ç›ä¸½å¨œæ–¯çš„ä¸»å¨
+#ÂêÀöÄÈË¹µÄÖ÷³ø
 {
 floorid=2009
 borncenter=25,41,1,1
@@ -8,11 +8,11 @@ createnum=1
 time=200000
 dir=6
 graphicname=16053
-name=ä¸»å¨
+name=Ö÷³ø
 enemy=windowman|conff:jaruga/menu01.conf
 }
 
-#åŠ åŠ çš„ä¸»å¨
+#¼Ó¼ÓµÄÖ÷³ø
 {
 floorid=3009
 borncenter=25,43,1,1
@@ -21,7 +21,7 @@ createnum=1
 time=200000
 dir=6
 graphicname=16053
-name=ä¸»å¨
+name=Ö÷³ø
 enemy=windowman|conff:jaruga/menu02.conf
 }
 
@@ -29,7 +29,7 @@ enemy=windowman|conff:jaruga/menu02.conf
 
 
 
-#å®å²³æ‰‘äº¦æ°¸çš¿ï¹‹æ‰”ä¸å¹¼ä¼™ï¹Œ
+#ÄşÔÀÆËÒàÓÀÃó©jÈÓØ©Ó×»ï©k
 {
 floorid=1009
 borncenter=25,30,1,1
@@ -38,11 +38,11 @@ createnum=1
 time=200000
 dir=6
 graphicname=16209
-name=åŠ å·¥çš„è€å¸ˆ
+name=¼Ó¹¤µÄÀÏÊ¦
 enemy=windowman|conff:jaruga/gousei.conf
 }
 
-#å®å²³æ‰‘äº¦æ°¸çš¿ï¹‹å¸‚ä¼™æ­£â–¡ç“œï¹Œ
+#ÄşÔÀÆËÒàÓÀÃó©jÊĞ»ïÕı¡õ¹Ï©k
 {
 floorid=4009
 borncenter=25,30,1,1
@@ -51,7 +51,7 @@ createnum=1
 time=200000
 dir=6
 graphicname=16209
-name=åŠ å·¥çš„è€å¸ˆ
+name=¼Ó¹¤µÄÀÏÊ¦
 enemy=windowman|conff:jaruga/gousei.conf
 }
 
@@ -64,7 +64,7 @@ createnum=1
 time=200000
 dir=6
 graphicname=16066
-name=æ–™ç†çš„è€å¸ˆ
+name=ÁÏÀíµÄÀÏÊ¦
 enemy=windowman|conff:jaruga/cook.conf
 }
 
@@ -77,7 +77,7 @@ createnum=1
 time=200000
 dir=6
 graphicname=16066
-name=æ–™ç†çš„è€å¸ˆ
+name=ÁÏÀíµÄÀÏÊ¦
 enemy=windowman|conff:jaruga/cook.conf
 }
 

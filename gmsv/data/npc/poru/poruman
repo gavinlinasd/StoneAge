@@ -1,4 +1,4 @@
-NomalMainMsg:鍓嶉潰瀹炲湪澶嵄闄╀簡锛侊紒
+NomalMainMsg:前面实在太危险了！！
 
 
 
@@ -6,7 +6,7 @@ NomalMainMsg:鍓嶉潰瀹炲湪澶嵄闄╀簡锛侊紒
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=63
-NomalWindowMsg:鍚钀ㄥ鍚夊皵灏嗛緳鎵撳�掍簡....瑙ｉ櫎浜嗚繖涓�鍦哄嵄鏈猴紒
+NomalWindowMsg:听说萨姆吉尔将龙打倒了....解除了这一场危机！
 EventEnd
 
 
@@ -15,5 +15,5 @@ EventEnd
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:閫氳繃杩欐ˉ娌挎渤宀歌蛋锛屽氨鍙互鍒拌揪姘村潩...\n涓嶈繃锛屽墠闈㈠疄鍦ㄥお鍗遍櫓浜嗭紒锛乗n浣犲崈涓囪灏忓績锛侊紒
+NomalWindowMsg:通过这桥沿河岸走，就可以到达水坝...\n不过，前面实在太危险了！！\n你千万要小心！！
 EventEnd

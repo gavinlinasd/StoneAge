@@ -7,7 +7,7 @@
 #dir=4
 #ignoreinvincible=1
 #graphicname=16014
-#name=1等兑换
+#name=1�ȶһ�
 #enemy=changeevent|file:chatroom/luck
 #}
 #
@@ -19,7 +19,7 @@
 #dir=6
 #ignoreinvincible=1
 #graphicname=16013
-#name=1等兑换
+#name=1�ȶһ�
 #enemy=changeevent|file:chatroom/luck1
 #}
 #
@@ -31,7 +31,7 @@
 #dir=6
 #ignoreinvincible=1
 #graphicname=16013
-#name=1等兑换
+#name=1�ȶһ�
 #enemy=changeevent|file:chatroom/luck2
 #}
 #
@@ -43,7 +43,7 @@
 #dir=4
 #ignoreinvincible=1
 #graphicname=16027
-#name=1等兑换
+#name=1�ȶһ�
 #enemy=changeevent|file:chatroom/luck3
 #}
 #
@@ -55,7 +55,7 @@
 #dir=6
 #ignoreinvincible=1
 #graphicname=16013
-#name=1等兑换
+#name=1�ȶһ�
 #enemy=changeevent|file:chatroom/luck4
 #}
 #

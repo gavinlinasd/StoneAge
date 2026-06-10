@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 //  荚汊失奶  丞毛银匀凶桦宁及质  
 //--------------------------------------------------------------
-// 戦    の場合
+// 战斗中的情况
 void ITEM_useRecovery_Battle( int charaindex, int toindex, int itemindex );
 void ITEM_useStatusChange_Battle( int charaindex, int toindex, int itemindex );
 void ITEM_useMagicDef_Battle( int charaindex, int toindex, int itemindex );

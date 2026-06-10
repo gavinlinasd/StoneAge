@@ -16,7 +16,7 @@ enum {
 	NPC_WORK_ROUTETOX = CHAR_NPCWORKINT1,		/* 升仇尺＂  甄   */
 	NPC_WORK_ROUTETOY = CHAR_NPCWORKINT2,		/* 升仇尺＂  甄   */
 	NPC_WORK_ROUTEPOINT = CHAR_NPCWORKINT3,		/* 那嶇    小 */
-	NPC_WORK_ROUNDTRIP = CHAR_NPCWORKINT4,		/* 行きか帰りか  ０：行き １：帰り  */
+	NPC_WORK_ROUNDTRIP = CHAR_NPCWORKINT4,		/* 去程还是回程  ０：去程 １：回程  */
 	NPC_WORK_MODE = CHAR_NPCWORKINT5,
 	NPC_WORK_CURRENTROUTE = CHAR_NPCWORKINT6, 
 	NPC_WORK_ROUTEMAX = CHAR_NPCWORKINT7,
@@ -67,7 +67,7 @@ static void NPC_Bus_walk( int meindex);
 
 #define		NPC_BUS_LOOPTIME		200
 
-/* 待ち時間デフォ郊ト */
+/* 默认等待时间 */
 #define		NPC_BUS_WAITTIME_DEFAULT	180
 
 #define		NPC_BUS_WAITINGMODE_WAITTIME	5000
@@ -126,21 +126,21 @@ BOOL NPC_BusInit( int meindex )
 	CHAR_setInt( meindex, CHAR_LOOPINTERVAL, 
 						NPC_BUS_WAITINGMODE_WAITTIME);
     
-    /* 現在の時間をセット */
+    /* 设置当前时间 */
     CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 
     for( i = 0; i < CHAR_PARTYMAX; i ++) {
     	CHAR_setWorkInt( meindex, CHAR_WORKPARTYINDEX1 + i, -1);
     }
 	
-	/* 郊ート決定する */
+	/* 决定路线 */
 {
 	int rev;
 	int r = CHAR_getWorkInt( meindex, NPC_WORK_ROUTEMAX);
 	CHAR_setWorkInt( meindex, NPC_WORK_CURRENTROUTE, RAND( 1, r));
 	//print( "route:%d\n",CHAR_getWorkInt( meindex, NPC_WORK_CURRENTROUTE));
 
-	/*   ろスタート */
+	/*   从后面开始 */
 	rev = NPC_Util_GetNumFromStrWithDelim( argstr, "reverse");
 
 	if( rev == 1 ) {
@@ -153,7 +153,7 @@ BOOL NPC_BusInit( int meindex )
 		CHAR_setWorkInt( meindex, NPC_WORK_ROUTEPOINT, num-1);
 		CHAR_setWorkInt( meindex, NPC_WORK_ROUNDTRIP, 1);
 	}
-	/* 郊ートをセットする */
+	/* 设置路线 */
 	NPC_BusSetPoint( meindex, argstr);
 	/* 垫五燮毛  憎允月 */
 	NPC_BusSetDestPoint( meindex, argstr);
@@ -176,7 +176,7 @@ void NPC_BusTalked( int meindex , int talkerindex , char *szMes ,
     if( CHAR_getInt( talkerindex , CHAR_WHICHTYPE ) != CHAR_TYPEPLAYER ) {
     	return;
     }
-	/* 自分のパー  ィ  乗客  かどうか調べる */
+	/* 检查是否是自己队伍的乘客 */
 	for( i = 0; i < CHAR_PARTYMAX; i ++ ) {
 		int index = CHAR_getWorkInt( meindex, CHAR_WORKPARTYINDEX1+i);
 		if( CHAR_CHECKINDEX(index)){
@@ -227,10 +227,10 @@ void NPC_BusTalked( int meindex , int talkerindex , char *szMes ,
 		{
 			CHAR_setWorkInt( meindex, NPC_WORK_MODE,2);
 
-			/* 郊ープ関数のインターバ郊を多くする  */
+			/* 增大循环函数的间隔  */
 			CHAR_setInt( meindex, CHAR_LOOPINTERVAL, 
 						NPC_BUS_WAITINGMODE_WAITTIME);
-		    /* 現在の時間をセット */
+		    /* 设置当前时间 */
 		    CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 		}
 		else if( strstr( szMes, NPC_BUS_DEBUGROUTINTG )) {
@@ -245,14 +245,14 @@ void NPC_BusTalked( int meindex , int talkerindex , char *szMes ,
 				CHAR_setWorkInt( meindex, NPC_WORK_CURRENTROUTE, a);
 			}
 			//print( "route:%d\n",CHAR_getWorkInt( meindex, NPC_WORK_CURRENTROUTE));
-			/* 郊ートをセットする */
+			/* 设置路线 */
 			NPC_BusSetPoint( meindex, argstr);
 		}
 #endif
 	}
 }
 /**************************************
- * 郊ープ関数
+ * 循环函数
  **************************************/
 void NPC_BusLoop( int meindex)
 {
@@ -313,21 +313,21 @@ void NPC_BusLoop( int meindex)
 			char	argstr[NPC_UTIL_GETARGSTR_BUFSIZE];
 
 			NPC_Util_GetArgStr( meindex, argstr, sizeof( argstr));
-			/* 郊ープ関数の呼出しを遅くする */
+			/* 延迟循环函数的调用 */
 			CHAR_setInt( meindex, CHAR_LOOPINTERVAL, 
 						NPC_BUS_WAITINGMODE_WAITTIME);
 			
-			/* 郊ート決定する */
+			/* 决定路线 */
 			{
 				int r = CHAR_getWorkInt( meindex, NPC_WORK_ROUTEMAX);
 				CHAR_setWorkInt( meindex, NPC_WORK_CURRENTROUTE, RAND( 1, r));
 				//print( "route:%d\n",CHAR_getWorkInt( meindex, NPC_WORK_CURRENTROUTE));
 			}
-			/* 行き帰りフラグ  更 */
+			/* 变更去/回旗标 */
 			CHAR_setWorkInt( meindex, NPC_WORK_ROUNDTRIP, 
 							CHAR_getWorkInt( meindex, NPC_WORK_ROUNDTRIP)^1);
 
-			/* 鵜ポイントの調節 */
+			/* 调整下一个点 */
 			/* 窖曰反  溃质   */
 			if( CHAR_getWorkInt( meindex, NPC_WORK_ROUNDTRIP) == 1)  {
 				/* 公及伙□玄及  嫖禾奶件玄醒毛  月 */
@@ -344,9 +344,9 @@ void NPC_BusLoop( int meindex)
 			NPC_BusSetDestPoint( meindex, argstr);
 			/* 由□  奴  仃月质  毛允月 */
 			CHAR_DischargeParty( meindex, 0);
-		    /* 現在の時間をセット */
+		    /* 设置当前时间 */
 		    CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
-			/* モードクリア */
+			/* 清除模式 */
 			CHAR_setWorkInt( meindex, NPC_WORK_MODE, 0);
 		}
 		return;
@@ -385,7 +385,7 @@ static void NPC_Bus_walk( int meindex)
 						CHAR_getWorkInt( meindex, NPC_WORK_ROUTEPOINT) +add);
 		if( NPC_BusSetPoint( meindex, argstr) == FALSE ) {
 			/*     怨快繞*/
-			/* 待ちモードにする */
+			/* 设为等待模式 */
 			CHAR_setWorkInt( meindex, NPC_WORK_MODE,3);
 			
 			/* SE   日允  穴件乒旦及陲太   */
@@ -404,7 +404,7 @@ static void NPC_Bus_walk( int meindex)
 					NPC_BusSendMsg( meindex, partyindex, NPC_BUS_MSG_END);
 				}
 			}
-		    /* 現在の時間をセット */
+		    /* 设置当前时间 */
 		    CHAR_setWorkInt( meindex, NPC_WORK_CURRENTTIME, NowTime.tv_sec);
 			return;
 		}
@@ -415,7 +415,7 @@ static void NPC_Bus_walk( int meindex)
 	/*-------------------------------------------------------*/
 	/* 汹井六月质   */
 	
-	/*   向を求める */
+	/*   求出方向 */
 	dir = NPC_Util_getDirFromTwoPoint( &start,&end );
 
 	/* 漆中月桦赭及谨    由□  奴汹五匹银丹   */
@@ -497,7 +497,7 @@ static int NPC_BusSetPoint( int meindex, char *argstr)
 	return TRUE;
 }
 /**************************************
- * route  号から?  前があったらそれを
+ * 从route编号查询,有名称的话返回它
  * 惫寞及午仇卞本永玄允月［
  **************************************/
 static void NPC_BusSetDestPoint( int meindex, char *argstr)
@@ -615,8 +615,8 @@ static BOOL NPC_BusCheckLevel( int meindex, int charaindex, char *argstr)
 	return FALSE;
 }
 /**************************************
- * 御金をチェックする
- * -1 駄   0以上；    ?かつ  要Stone
+ * 检查金钱
+ * -1 不行   0以上；可以,且需要Stone
  **************************************/
 static int NPC_BusCheckStone( int meindex, int charaindex, char *argstr)
 {
@@ -632,8 +632,8 @@ static int NPC_BusCheckStone( int meindex, int charaindex, char *argstr)
 	return -1;
 }
 /**************************************
- * メッセージを送る
- * 引数のメッセージがなければデフォ郊トメッセージを送る
+ * 发送讯息
+ * 没有参数讯息时发送默认讯息
  **************************************/
 static void NPC_BusSendMsg( int meindex, int talkerindex, int tablenum)
 {
@@ -655,7 +655,7 @@ static void NPC_BusSendMsg( int meindex, int talkerindex, int tablenum)
 	CHAR_talkToCli( talkerindex, meindex, msg, CHAR_COLORYELLOW);
 }
 /**************************************
- * 郊ート  ーブ郊のポイントの数を取  する
+ * 取得路线表的点数
  **************************************/
 static int NPC_BusGetRoutePointNum( int meindex, char *argstr )
 {
@@ -741,7 +741,7 @@ BOOL NPC_BusCheckJoinParty( int meindex, int charaindex, BOOL msgflg)
 	}
 	if( ret != 0 ) {
 		char msgbuf[128];
-		/* 御金をとる */
+		/* 收取金钱 */
 		CHAR_setInt( charaindex, CHAR_GOLD, 
 					CHAR_getInt( charaindex, CHAR_GOLD) - ret);
 		/* 送信 */

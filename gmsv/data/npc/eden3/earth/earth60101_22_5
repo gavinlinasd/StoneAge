@@ -2,15 +2,15 @@ NEWWARPMAN
 
 NOFREE
 FREE:LV>0
-NomalMsg:ш╜░ш╜░ш╜░............................
-PartyMsg:ш╜░ш╜░ш╜░............................
+NomalMsg:║ф║ф║ф............................
+PartyMsg:║ф║ф║ф............................
 OVER
 
 TALKEVENT1
 WARP:60101,15,32
 FREE:LV>79&ENDEV=81&ENDEV=175&ENDEV=176&ITEM=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19558
 OVER
 
@@ -18,7 +18,7 @@ TALKEVENT2
 WARP:60101,15,32
 FREE:LV>79&ENDEV=81&ENDEV=175&NOWEV=176&ITEM=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19558
 OVER
 
@@ -26,7 +26,7 @@ TALKEVENT3
 WARP:60101,15,32
 FREE:LV>79&ENDEV=81&NOWEV=175&NOWEV=176&ITEM=19558&ITEM=20605
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19558
 OVER
 
@@ -34,7 +34,7 @@ TALKEVENT4
 WARP:8514,15,32
 FREE:LV>79&ENDEV=81&NOWEV=175&NOWEV=176&ITEM=19558&ITEM!=20605
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19558
 OVER
 
@@ -42,7 +42,7 @@ TALKEVENT5
 WARP:60101,15,32
 FREE:LV>79&ENDEV=81&NOWEV=175&ITEM=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19558
 OVER
 
@@ -50,7 +50,7 @@ TALKEVENT6
 WARP:708,228,254
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ITEM=19551&ITEM!=19552&ITEM!=19553&ITEM!=19554&ITEM!=19555&ITEM!=19556&ITEM!=19557&ITEM!=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19551
 OVER
 
@@ -59,7 +59,7 @@ TALKEVENT7
 WARP:708,228,254
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ITEM!=19551&ITEM=19552&ITEM!=19553&ITEM!=19554&ITEM!=19555&ITEM!=19556&ITEM!=19557&ITEM!=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19552
 OVER
 
@@ -68,7 +68,7 @@ TALKEVENT8
 WARP:708,228,254
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ITEM!=19551&ITEM!=19552&ITEM=19553&ITEM!=19554&ITEM!=19555&ITEM!=19556&ITEM!=19557&ITEM!=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19553
 OVER
 
@@ -77,7 +77,7 @@ TALKEVENT9
 WARP:708,228,254
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ITEM!=19551&ITEM!=19552&ITEM!=19553&ITEM=19554&ITEM!=19555&ITEM!=19556&ITEM!=19557&ITEM!=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19554
 OVER
 
@@ -86,7 +86,7 @@ TALKEVENT10
 WARP:708,228,254
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ITEM!=19551&ITEM!=19552&ITEM!=19553&ITEM!=19554&ITEM=19555&ITEM!=19556&ITEM!=19557&ITEM!=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19555
 OVER
 
@@ -95,7 +95,7 @@ TALKEVENT11
 WARP:708,228,254
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ITEM!=19551&ITEM!=19552&ITEM!=19553&ITEM!=19554&ITEM!=19555&ITEM=19556&ITEM!=19557&ITEM!=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19556
 OVER
 
@@ -104,7 +104,7 @@ TALKEVENT12
 WARP:708,228,254
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ITEM!=19551&ITEM!=19552&ITEM!=19553&ITEM!=19554&ITEM!=19555&ITEM!=19556&ITEM=19557&ITEM!=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19557
 OVER
 
@@ -113,6 +113,6 @@ TALKEVENT13
 WARP:60101,15,32
 FREE:LV>79&ENDEV=81&ENDEV=86&ENDEV=87&ENDEV=105&ITEM!=19551&ITEM!=19552&ITEM!=19553&ITEM!=19554&ITEM!=19555&ITEM!=19556&ITEM!=19557&ITEM=19558
 MONEY:-1
-FreeMsg:\n\n\nф╜ачбохоЪцФ╛хЕехоЭчЯ│я╝Я
+FreeMsg:\n\n\n─у╚╖╢и╖┼╚ы▒ж╩пг┐
 DelItem:19558
 OVER

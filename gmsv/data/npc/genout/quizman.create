@@ -12,7 +12,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100060
-name=é‚¦æ‹‰å‰
+name=°îÀ­¼ª
 enemy=npcgen_quiz|file:genout/quz_800_29_19
 }
 #line 9
@@ -24,7 +24,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100065
-name=æŸ¥å…‹
+name=²é¿Ë
 enemy=npcgen_quiz|file:genout/quz_801_18_19
 }
 #line 11
@@ -36,7 +36,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100070
-name=ä¼Šæ¬§åŠ›
+name=ÒÁÅ·Á¦
 enemy=npcgen_quiz|file:genout/quz_803_18_19
 }
 #line 13
@@ -48,7 +48,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100075
-name=æ†šã¯
+name=¼ªÆÓ
 enemy=npcgen_quiz|file:genout/quz_805_18_19
 }
 #line 15
@@ -60,7 +60,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100060
-name=æ´¾å…‹æ‹‰
+name=ÅÉ¿ËÀ­
 enemy=npcgen_quiz|file:genout/quz_806_29_19
 }
 #line 17
@@ -72,7 +72,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100065
-name=æ–¯å°”å‰
+name=Ë¹¶û¼ª
 enemy=npcgen_quiz|file:genout/quz_808_29_19
 }
 #line 19
@@ -84,7 +84,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100070
-name=ç‰¹é²å…‹
+name=ÌØÂ³¿Ë
 enemy=npcgen_quiz|file:genout/quz_809_18_19
 }
 #line 26
@@ -96,7 +96,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100060
-name=å…‹é‡Œæ–¯å‰
+name=¿ËÀïË¹¼ª
 enemy=npcgen_quiz|file:genout/quz_820_29_19
 }
 #line 28
@@ -108,7 +108,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100065
-name=é‚¦æ©å¤šå…‹
+name=°î¶÷¶à¿Ë
 enemy=npcgen_quiz|file:genout/quz_821_18_19
 }
 #line 30
@@ -120,7 +120,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100070
-name=ç¦å°”æ–¯
+name=¸£¶ûË¹
 enemy=npcgen_quiz|file:genout/quz_823_18_19
 }
 #line 32
@@ -132,7 +132,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100075
-name=ç´¢å‰æ‹‰
+name=Ë÷¼ªÀ­
 enemy=npcgen_quiz|file:genout/quz_825_18_19
 }
 #line 34
@@ -144,7 +144,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100060
-name=ã¯è–¯
+name=ÆÓÁ¦
 enemy=npcgen_quiz|file:genout/quz_826_29_19
 }
 #line 36
@@ -156,7 +156,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100065
-name=å‰å°”
+name=¼ª¶û
 enemy=npcgen_quiz|file:genout/quz_828_29_19
 }
 #line 38
@@ -168,7 +168,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100070
-name=ä¼Šæ‹‰å‰
+name=ÒÁÀ­¼ª
 enemy=npcgen_quiz|file:genout/quz_829_18_19
 }
 #line 44
@@ -180,7 +180,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100060
-name=ç¶šå¤©è–¦
+name=Â³Å·Á¦
 enemy=npcgen_quiz|file:genout/quz_840_29_19
 }
 #line 46
@@ -192,7 +192,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100065
-name=æ–¯æ‹‰å…‹
+name=Ë¹À­¿Ë
 enemy=npcgen_quiz|file:genout/quz_841_18_19
 }
 #line 48
@@ -204,7 +204,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100070
-name=å¸–æ‹‰
+name=ÌûÀ­
 enemy=npcgen_quiz|file:genout/quz_843_18_19
 }
 #line 50
@@ -216,7 +216,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100075
-name=å¤šæ©
+name=¶à¶÷
 enemy=npcgen_quiz|file:genout/quz_845_18_19
 }
 #line 52
@@ -228,7 +228,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100060
-name=å°”æ–¯å‰
+name=¶ûË¹¼ª
 enemy=npcgen_quiz|file:genout/quz_846_29_19
 }
 #line 54
@@ -240,7 +240,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100065
-name=å¸–é²åŠ›
+name=ÌûÂ³Á¦
 enemy=npcgen_quiz|file:genout/quz_848_29_19
 }
 #line 56
@@ -252,7 +252,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100070
-name=ç¦å°”
+name=¸£¶û
 enemy=npcgen_quiz|file:genout/quz_849_18_19
 }
 #line 58
@@ -264,7 +264,7 @@ enemy=npcgen_quiz|file:genout/quz_849_18_19
 #dir=4
 #ignoreinvincible=1
 #graphicname=100070
-#name=å¤©è€³æ€§
+#name=Å·¼ªÀ­
 #enemy=npcgen_quiz|file:genout/quz_7777_20_20
 #}
 #line 64
@@ -276,6 +276,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100010
-name=çŒœè°œå¤§å¸ˆ
+name=²ÂÃÕ´óÊ¦
 enemy=npcgen_quiz|file:genout/quz_812_28_14
 }

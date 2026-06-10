@@ -66,8 +66,8 @@ void LogAcMess( int fd, char *type, char *mess );
 void LogItem(
 	char *CharName, /* 平乓仿弁正   */
 	char *CharID,
-	int ItemNo, 	/* アイ  ム  号 */
-	char *Key, 		/* キーワード */
+	int ItemNo, 	/* 道具编号 */
+	char *Key, 		/* 关键字 */
 	int floor,		/* 甄   */
 	int x,
 	int y,
@@ -89,7 +89,7 @@ void LogPet(
 	char *CharID,
 	char *PetName,
 	int PetLv,
-	char *Key, 		/* キーワード */
+	char *Key, 		/* 关键字 */
 	int floor,		/* 甄   */
 	int x,
 	int y,
@@ -119,10 +119,10 @@ void LogStreetVendor(
 void LogTensei(
 	char *CharName, /* 平乓仿弁正   */
 	char *CharID,
-	char *Key, 		/* キーワード */
-	int level,		//レベ郊
+	char *Key, 		/* 关键字 */
+	int level,		//等级
 	int transNum,	//猿老者佰
-	int quest,		//クエスト数
+	int quest,		//任务数
 	int home,		//请褥哗
 	int item,		//  却払通  悸  小垰佰
 	int pet,		//  却文喟傲  小垰佰
@@ -154,7 +154,7 @@ void LogStone(
         char *CharId,   /* 住＆闇＆ID */
         int Gold,               /* 嗯喊 */
 		int MyGold,
-        char *Key,              /* キーワード */
+        char *Key,              /* 关键字 */
         int floor,              /* 甄   */
         int x,
         int y
@@ -273,7 +273,7 @@ void LogBankStone(
         char *CharId, /* 住＆闇＆ID */
 		int	meindex,
         int Gold,               /* 嗯喊 */
-        char *Key,              /* キーワード */
+        char *Key,              /* 关键字 */
         int floor,              /* 甄   */
         int x,
         int y,

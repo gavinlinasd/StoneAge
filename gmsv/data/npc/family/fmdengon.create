@@ -1,5 +1,5 @@
 NPCCREATE
-# è¨å§†å‰å°”æ‘é•¿å®¶
+# ÈøÄ·¼ª¶û´å³¤¼Ò
 {
 floorid=1006
 borncorner=16,19,16,19
@@ -8,11 +8,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# é¡Œæ´—æ§ŒæŸç¿«æµ·ç¤¾
+# ÂêÀöÄÈË¿´å³¤¼Ò
 {
 floorid=2006
 borncorner=23,19,23,19
@@ -21,11 +21,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# åŠ åŠ æ‘é•¿å®¶
+# ¼Ó¼Ó´å³¤¼Ò
 {
 floorid=3006
 borncorner=18,17,18,17
@@ -34,11 +34,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# å¡é²å®ƒé‚£æ‘é•¿å®¶
+# ¿¨Â³ËüÄÇ´å³¤¼Ò
 {
 floorid=4006
 borncorner=19,18,19,18
@@ -47,11 +47,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-#è¨å§†å‰å°”æ—é•¿å®¶
+#ÈøÄ·¼ª¶û×å³¤¼Ò
 {
 floorid=1041
 borncorner=16,9,16,9
@@ -60,11 +60,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# ç›ä¸½å¨œä¸æ—é•¿å®¶
+# ÂêÀöÄÈË¿×å³¤¼Ò
 {
 floorid=2031
 borncorner=17,9,17,9
@@ -73,11 +73,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# åŠ åŠ æ—é•¿å®¶
+# ¼Ó¼Ó×å³¤¼Ò
 {
 floorid=3031
 borncorner=8,9,8,9
@@ -86,11 +86,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# å¡é²å®ƒé‚£æ—é•¿å®¶
+# ¿¨Â³ËüÄÇ×å³¤¼Ò
 {
 floorid=4031
 borncorner=11,7,11,7
@@ -99,11 +99,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# éœç‰¹å°”æ‘
+# »ôÌØ¶û´å
 {
 floorid=1306
 borncorner=22,14,22,14
@@ -112,11 +112,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10063
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# å¡å¦
+# ¿¨Ì¹
 {
 floorid=1406
 borncorner=22,19,22,19
@@ -125,11 +125,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# å¤šå¤š
+# ¶à¶à
 {
 floorid=3206
 borncorner=19,19,19,19
@@ -138,11 +138,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# ä¹Œé²åŠ›
+# ÎÚÂ³Á¦
 {
 floorid=3306
 borncorner=19,18,19,18
@@ -151,11 +151,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# å¥‡å–€å–€
+# Ææ¿¦¿¦
 {
 floorid=3406
 borncorner=13,12,13,12
@@ -164,11 +164,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=10063
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# æ²™å§†å¥‡å§†ä¾
+# É³Ä·ÆæÄ·ÒÀ
 {
 floorid=6006
 borncorner=19,19,19,19
@@ -177,11 +177,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# è¾¾é‚£
+# ´ïÄÇ
 {
 floorid=5106
 borncorner=23,12,23,12
@@ -190,11 +190,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# ç¦æ‘
+# ¸£´å
 {
 floorid=5005
 borncorner=16,11,16,11
@@ -203,11 +203,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-# 777 æ—é•¿åŠŸèƒ½
+# 777 ×å³¤¹¦ÄÜ
 {
 floorid=777
 borncorner=1,1,1,1
@@ -216,11 +216,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-#å…ç´š
+#ÒÁµé
 {
 floorid=5030
 borncorner=61,20,61,20
@@ -229,11 +229,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-#ç‘å°”äºšæ–¯
+#Èğ¶ûÑÇË¹
 {
 floorid=7530
 borncorner=46,48,46,48
@@ -242,11 +242,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-#å¡”å°”å¡”
+#Ëş¶ûËş
 {
 floorid=6030
 borncorner=45,37,45,37
@@ -255,11 +255,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-#å°¼å…‹æ–¯
+#Äá¿ËË¹
 {
 floorid=7030
 borncorner=66,33,66,33
@@ -268,11 +268,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-#å¼—çƒˆé¡¿
+#¸¥ÁÒ¶Ù
 {
 floorid=8030
 borncorner=51,51,51,51
@@ -281,11 +281,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }
 
-#äºšä¾æ¬§
+#ÑÇÒÀÅ·
 {
 floorid=9030
 borncorner=84,27,84,27
@@ -294,6 +294,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=å®¶æ—ç•™è¨€ç‰ˆ
+name=¼Ò×åÁôÑÔ°æ
 enemy=npcgen_fmdengon
 }

@@ -216,7 +216,7 @@ BOOL CHAR_checkPlayerImageNumber( int imagenumber)
 	else return TRUE;
 }
 /*------------------------------------------------------------
- * 顔  像  号のチェック
+ * 检查脸图像编号
  *
  * 涌  飓  寞反动票及白巧□穴永玄匹瑁引匀化中月
  * number = 嶇斟  小
@@ -322,18 +322,18 @@ int CHAR_eqimagetbl[][5]={
 };
 
 /*------------------------------------------------------------
- * 装    と  像  号から新しい  像  号を  る?
+ * 从装备和图像编号取得新的图像编号
  * 引数
- *  basebaseimagenumber     int             元になる  像  号
+ *  basebaseimagenumber     int             原始的图像编号
  *  category                ITEM_CATEGORY   失奶  丞及市  打伉
- * 返り値
+ * 返回值
  *  蕙仄中  飓  寞［巨仿□及凛反｝-1
  ------------------------------------------------------------*/
 int CHAR_getNewImagenumberFromEquip( int basebaseimagenumber,
                                      ITEM_CATEGORY category )
 {
     int i;
-    /*  ITEM_CATEGORY チェック  */
+    /*  ITEM_CATEGORY 检查  */
     if( category < 0 || category > arraysizeof(CHAR_eqimagetbl[0]) )
         return -1;
     for( i=0 ; i<arraysizeof(CHAR_eqimagetbl) ; i++ ){
@@ -347,10 +347,10 @@ int CHAR_getNewImagenumberFromEquip( int basebaseimagenumber,
 
 
 /*------------------------------------------------------------
- * hash 値を求める?
+ * 求 hash 值
  * 引数
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 void CHAR_initSeekGraphicNumberFromString( void )
 {
@@ -363,9 +363,9 @@ void CHAR_initSeekGraphicNumberFromString( void )
  *   侬  井日  飓  寞毛  月［
  * 引数
  *  string      char*         ٯ  
- * 返り値
- *  エラー -1
- *  それ以外だとグラフィック  号
+ * 返回值
+ *  错误 -1
+ *  除此以外是图形编号
  ------------------------------------------------------------*/
 int CHAR_seekGraphicNumberFromString( char* string )
 {
@@ -388,7 +388,7 @@ int CHAR_seekGraphicNumberFromString( char* string )
 
 
 /*====================  敵場所====================*/
-/*  敵場所を保  する    */
+/*  保存敌人场所的    */
 typedef struct tagCHAR_invinsibleArea
 {
     CHAR_AREAKIND   kind;
@@ -400,10 +400,10 @@ CHAR_invincibleArea*    CHAR_invarea;
 int                     CHAR_invareanum;
 
 /*------------------------------------------------------------
- *   敵場所の初期化をする?
+ *   初始化敌人场所
  * 引数
  *  filename        char*       必醒易刹通誌  
- * 返り値
+ * 返回值
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  *------------------------------------------------------------*/
@@ -422,7 +422,7 @@ BOOL CHAR_initInvinciblePlace( char* filename )
 
     CHAR_invareanum=0;
 
-    /*  まず  効な行が何行あるかどうか調べる    */
+    /*  先检查有多少有效行    */
     while( fgets( line, sizeof( line ), f ) ){
         linenum ++;
         if( line[0] == '#' )continue;        /* comment */
@@ -822,10 +822,10 @@ BOOL CHAR_getInitElderPosition( Char* ch,int hometown)
 /*------------------------------------------------------------
  * 巨伙母□及桦赭毛  月
  * 引数
- *  elderindex      int     エ郊ダーインデックス
+ *  elderindex      int     长老索引
  *  fl              int*    白夫失毛熬仃潸月桦赭
- *  x               int*    xを受け取る場所
- *  y               int*    yを受け取る場所
+ *  x               int*    接收x的地方
+ *  y               int*    接收y的地方
  * 引数
  *  岳    TRUE(1)
  *  撩    FALSE(0)
@@ -843,7 +843,7 @@ BOOL CHAR_getElderPosition( int elderindex, int* fl, int* x, int* y )
  * 赢  NPC互愤坌及赓渝祭及午五卞｝赢    卞踏五仇戈及分［
  * 公及凶户及奶件正□白尼奶旦
  * 引数
- *  index   int オーバーで 失  したらFALSE をかえす
+ *  index   int 超过的话 失败返回FALSE
  *  fl      int 匏  及树  
  *  x       int
  *  y       int
@@ -1379,7 +1379,7 @@ int CHAR_PetLevelUp( int petindex )
 #ifdef _TEACHER_SYSTEM
 	int iGetFame = 0;
 #endif	
-	// 引数チェック
+	// 参数检查
 	if( CHAR_CHECKINDEX( petindex ) == FALSE )	return -1;
 	if( CHAR_getInt( petindex, CHAR_WHICHTYPE ) != CHAR_TYPEPET )return -1;
 	
@@ -1395,7 +1395,7 @@ int CHAR_PetLevelUp( int petindex )
 	tgh = (float)(( LevelUpPoint >> 8 ) & 0xFF);
 	dex = (float)(( LevelUpPoint >> 0 ) & 0xFF);
 	
-	// １０回４    サイコひを振って各項  に１足す
+	// 掷１０次４面骰子给各项加１
 	for( i = 0; i < 10; i ++ ){
 		Param[RAND( 0, 3 )] += 1.0;
 	}
@@ -1404,7 +1404,7 @@ int CHAR_PetLevelUp( int petindex )
 	fRand = (float)RAND( RankRandTbl[petrank].min, RankRandTbl[petrank].max )
 		* 0.01;
 	
-	// 割り振りポイントより計算
+	// 按分配点数计算
 	vital = (float)vital * fRand + Param[0] * fRand;
 	str = (float)str   * fRand + Param[1] * fRand;
 	tgh = (float)tgh   * fRand + Param[2] * fRand;

@@ -9,7 +9,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=é­”æ³•é“åœºç•™è¨€ç‰ˆ
+name=Ä§·¨µÀ³¡ÁôÑÔ°æ
 enemy=npcgen_dengon
 }
 #line 2
@@ -21,7 +21,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16181
-name=é­”æ³•é“åœºæŠ€å±‹
+name=Ä§·¨µÀ³¡¼¼Îİ
 enemy=npcgen_petskillshop|file:my/magicdou/psks_3008_28_23
 }
 #line 3
@@ -33,7 +33,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16141
-name=é­”æ³•é“åœºçš„å•†äºº
+name=Ä§·¨µÀ³¡µÄÉÌÈË
 enemy=npcgen_shop|file:my/magicdou/ss_3008_28_17
 }
 #line 4
@@ -43,7 +43,7 @@ borncorner=28,21,28,21
 time=0
 createnum=1
 graphicname=16138
-name=é­”æ³•é“åœºå¸ˆå‚…
+name=Ä§·¨µÀ³¡Ê¦¸µ
 dir=6
 ignoreinvincible=1
 enemy=changeevent|file:my/magicdou/msg_3008_28_20
@@ -59,7 +59,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=17054
-name=é­”æ³•é“åœºæŸœå°
+name=Ä§·¨µÀ³¡¹ñÌ¨
 enemy=npcgen_warpman|file:my/magicdou/wpm_7101_18_12
 }
 
@@ -82,7 +82,7 @@ borncorner=13,10,13,10
 time=0
 createnum=1
 graphicname=0
-name=ç²¾ç¥çµé­‚
+name=¾«ÉñÁé»ê
 dir=4
 ignoreinvincible=1
 enemy=changeevent|file:my/magicdou/xxx.arg
@@ -97,7 +97,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17037
-name=é­”æ³•é“åœºçš„æŠ¤å£«
+name=Ä§·¨µÀ³¡µÄ»¤Ê¿
 enemy=npcgen_winhealer|10|1.5|3.0|2
 }
 
@@ -109,6 +109,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17037
-name=é­”æ³•é“åœºçš„è¯å‰‚å¸ˆ
+name=Ä§·¨µÀ³¡µÄÒ©¼ÁÊ¦
 enemy=npcgen_shop|file:my/ruieryasi/yao.arg
 }

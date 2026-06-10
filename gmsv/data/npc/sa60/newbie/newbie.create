@@ -1,8 +1,8 @@
 NPCCREATE
 
-########ã€€æ–°æ‰‹å…¥é—¨å¯¼å¸ˆã€€#########
+########¡¡ĞÂÊÖÈëÃÅµ¼Ê¦¡¡#########
 #{
-#name=æ–°æ‰‹å…¥é—¨å¯¼å¸ˆ
+#name=ĞÂÊÖÈëÃÅµ¼Ê¦
 #floorid=815
 #borncenter=29,41
 #dir=6
@@ -12,9 +12,9 @@ NPCCREATE
 #enemy=changeevent|file:sa60/newbie/master
 #}
 
-########ã€€åŒ»é™¢æŒ‡å¯¼å‘˜ã€€#########
+########¡¡Ò½ÔºÖ¸µ¼Ô±¡¡#########
 #{
-#name=åŒ»é™¢æŒ‡å¯¼å‘˜
+#name=Ò½ÔºÖ¸µ¼Ô±
 #floorid=815
 #borncenter=31,13
 #dir=6
@@ -24,9 +24,9 @@ NPCCREATE
 #enemy=changeevent|file:sa60/newbie/hpmaster
 #}
 
-########ã€€å°æŠ¤å£«(æ–°æ‰‹æ‘)ã€€#########
+########¡¡Ğ¡»¤Ê¿(ĞÂÊÖ´å)¡¡#########
 #{
-#name=å°æŠ¤å£«
+#name=Ğ¡»¤Ê¿
 #floorid=8020
 #borncenter=17,13
 #dir=4
@@ -36,9 +36,9 @@ NPCCREATE
 #enemy=npcgen_winhealer|10|0.5|2.0|2
 #}
 
-########ã€€å°æŠ¤å£«(è¯•ç‚¼æ´çªŸ)ã€€#########
+########¡¡Ğ¡»¤Ê¿(ÊÔÁ¶¶´¿ß)¡¡#########
 #{
-#name=å°æŠ¤å£«
+#name=Ğ¡»¤Ê¿
 #floorid=816
 #borncenter=89,41
 #dir=4
@@ -48,7 +48,7 @@ NPCCREATE
 #enemy=npcgen_winhealer|10|0.5|2.0|2
 #}
 
-#### è¯å‰‚å¸ˆ ####
+#### Ò©¼ÁÊ¦ ####
 #{
 #floorid=8020
 #borncenter=15,14
@@ -57,13 +57,13 @@ NPCCREATE
 #dir=6
 #ignoreinvincible=1
 #graphicname=16023
-#name=è¯å‰‚å¸ˆ
+#name=Ò©¼ÁÊ¦
 #enemy=npcgen_shop|file:sa60/newbie/nurse
 #}
 
-########ã€€è‚‰åº—æŒ‡å¯¼å‘˜ã€€#########
+########¡¡ÈâµêÖ¸µ¼Ô±¡¡#########
 #{
-#name=è‚‰åº—æŒ‡å¯¼å‘˜
+#name=ÈâµêÖ¸µ¼Ô±
 #floorid=8019
 #borncenter=14,14
 #dir=4
@@ -73,9 +73,9 @@ NPCCREATE
 #enemy=changeevent|file:sa60/newbie/trader
 #}
 
-########ã€€è‚‰åº—è€æ¿ã€€#########
+########¡¡ÈâµêÀÏ°å¡¡#########
 #{
-#name=è‚‰åº—è€æ¿
+#name=ÈâµêÀÏ°å
 #floorid=8019
 #borncenter=17,13
 #dir=4
@@ -85,9 +85,9 @@ NPCCREATE
 #enemy=npcgen_limitshop|file:sa60/newbie/butcher
 #}
 
-########ã€€è¨æ‘æˆ˜æ–—æŒ‡å¯¼å‘˜ã€€#########
+########¡¡Èø´åÕ½¶·Ö¸µ¼Ô±¡¡#########
 {
-name=æˆ˜æ–—æŠ€å·§æŒ‡å¯¼å‘˜
+name=Õ½¶·¼¼ÇÉÖ¸µ¼Ô±
 floorid=1000
 borncenter=48,62
 dir=6
@@ -97,9 +97,9 @@ graphicname=16496
 enemy=changeevent|file:sa60/newbie/fighter
 }
 
-########ã€€ç›æ‘æˆ˜æ–—æŒ‡å¯¼å‘˜ã€€#########
+########¡¡Âê´åÕ½¶·Ö¸µ¼Ô±¡¡#########
 {
-name=æˆ˜æ–—æŠ€å·§æŒ‡å¯¼å‘˜
+name=Õ½¶·¼¼ÇÉÖ¸µ¼Ô±
 floorid=2000
 borncenter=89,79
 dir=6
@@ -109,9 +109,9 @@ graphicname=16496
 enemy=changeevent|file:sa60/newbie/fighter
 }
 
-########ã€€åŠ åŠ è¨æ‘æˆ˜æ–—æŒ‡å¯¼å‘˜ã€€#########
+########¡¡¼Ó¼ÓÈø´åÕ½¶·Ö¸µ¼Ô±¡¡#########
 {
-name=æˆ˜æ–—æŠ€å·§æŒ‡å¯¼å‘˜
+name=Õ½¶·¼¼ÇÉÖ¸µ¼Ô±
 floorid=3000
 borncenter=97,86
 dir=6
@@ -121,9 +121,9 @@ graphicname=16496
 enemy=changeevent|file:sa60/newbie/fighter
 }
 
-########ã€€åŠ é²å¡æ‘æˆ˜æ–—æŒ‡å¯¼å‘˜ã€€#########
+########¡¡¼ÓÂ³¿¨´åÕ½¶·Ö¸µ¼Ô±¡¡#########
 {
-name=æˆ˜æ–—æŠ€å·§æŒ‡å¯¼å‘˜
+name=Õ½¶·¼¼ÇÉÖ¸µ¼Ô±
 floorid=4000
 borncenter=86,61
 dir=6
@@ -133,9 +133,9 @@ graphicname=16496
 enemy=changeevent|file:sa60/newbie/fighter
 }
 
-########ã€€æ–°æ‰‹è®­ç»ƒå‘˜ã€€#########
+########¡¡ĞÂÊÖÑµÁ·Ô±¡¡#########
 #{
-#name=æ–°æ‰‹è®­ç»ƒå‘˜
+#name=ĞÂÊÖÑµÁ·Ô±
 #floorid=8021
 #borncenter=24,24
 #dir=6
@@ -145,9 +145,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=changeevent|file:sa60/newbie/trainer
 #}
 
-########ã€€è®­ç»ƒä½©éœ²å¤ã€€#########
+########¡¡ÑµÁ·ÅåÂ¶ÏÄ¡¡#########
 #{
-#name=å¥—å…¶æ­ª
+#name=ÅåÂ¶ÏÄ
 #floorid=8021
 #borncenter=34,25
 #dir=6
@@ -157,9 +157,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/tiger.arg
 #}
 
-########ã€€è®­ç»ƒå‡¯æ©ã€€#########
+########¡¡ÑµÁ·¿­¶÷¡¡#########
 #{
-#name=å‡¯æ©
+#name=¿­¶÷
 #floorid=8021
 #borncenter=29,25
 #dir=6
@@ -169,9 +169,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/dragon.arg
 #}
 
-########ã€€è®­ç»ƒæ–‘å°¼è¿ªå…‹ã€€#########
+########¡¡ÑµÁ·°ßÄáµÏ¿Ë¡¡#########
 #{
-#name=æ–‘å°¼è¿ªå…‹
+#name=°ßÄáµÏ¿Ë
 #floorid=8021
 #borncenter=34,22
 #dir=6
@@ -181,9 +181,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/ban.arg
 #}
 
-########ã€€è®­ç»ƒå‰æ¯”ã€€#########
+########¡¡ÑµÁ·¼ª±È¡¡#########
 #{
-#name=å‰æ¯”
+#name=¼ª±È
 #floorid=8021
 #borncenter=34,31
 #dir=6
@@ -193,9 +193,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/gibe.arg
 #}
 
-########ã€€è®­ç»ƒè’™å¥‡ã€€#########
+########¡¡ÑµÁ·ÃÉÆæ¡¡#########
 #{
-#name=èŸ¹ã‚‚
+#name=ÃÉÆæ
 #floorid=8021
 #borncenter=34,19
 #dir=6
@@ -205,9 +205,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/monkey.arg
 #}
 
-########ã€€è®­ç»ƒé»‘ç¾Šã€€#########
+########¡¡ÑµÁ·ºÚÑò¡¡#########
 #{
-#name=é‚¦è¾¾éœæ©
+#name=°î´ï»ô¶÷
 #floorid=8021
 #borncenter=34,28
 #dir=6
@@ -217,9 +217,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/sheep.arg
 #}
 
-########ã€€è®­ç»ƒç»¿è›‡ã€€#########
+########¡¡ÑµÁ·ÂÌÉß¡¡#########
 #{
-#name=å¡æ©æ ¼ç™»
+#name=¿¨¶÷¸ñµÇ
 #floorid=8021
 #borncenter=29,28
 #dir=6
@@ -229,9 +229,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/snake.arg
 #}
 
-########ã€€è®­ç»ƒé»‘é¸Ÿã€€#########
+########¡¡ÑµÁ·ºÚÄñ¡¡#########
 #{
-#name=ç‘é‡Œè¥¿å°”
+#name=ÈğÀïÎ÷¶û
 #floorid=8021
 #borncenter=29,22
 #dir=6
@@ -241,9 +241,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/bird.arg
 #}
 
-########ã€€è®­ç»ƒç™½çŒ©çŒ©ã€€#########
+########¡¡ÑµÁ·°×ĞÉĞÉ¡¡#########
 #{
-#name=æ ¼å°”å¸Œæ´›
+#name=¸ñ¶ûÏ£Âå
 #floorid=8021
 #borncenter=29,31
 #dir=6
@@ -253,9 +253,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/orangoutang.arg
 #}
 
-########ã€€è®­ç»ƒå˜å±å•¦ã€€#########
+########¡¡ÑµÁ·¸ÂÖ¨À²¡¡#########
 #{
-#name=å˜å±å•¦
+#name=¸ÂÖ¨À²
 #floorid=8021
 #borncenter=29,19
 #dir=6
@@ -265,9 +265,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=sb_dou|file:sa60/newbie/bigdragon.arg
 #}
 
-########ã€€åˆæˆå¯¼å¸ˆã€€#########
+########¡¡ºÏ³Éµ¼Ê¦¡¡#########
 #{
-#name=åˆæˆè®­ç»ƒå¸ˆ
+#name=ºÏ³ÉÑµÁ·Ê¦
 #floorid=8023
 #borncenter=14,12
 #dir=4
@@ -277,9 +277,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=changeevent|file:sa60/newbie/processer
 #}
 
-########ã€€æ–™ç†å¯¼å¸ˆã€€#########
+########¡¡ÁÏÀíµ¼Ê¦¡¡#########
 #{
-#name=æ–™ç†è®­ç»ƒå¸ˆ
+#name=ÁÏÀíÑµÁ·Ê¦
 #floorid=8022
 #borncenter=15,10
 #dir=4
@@ -289,9 +289,9 @@ enemy=changeevent|file:sa60/newbie/fighter
 #enemy=changeevent|file:sa60/newbie/cooker
 #}
 
-########ã€€è¨å§†å® ç‰©åº—è§£è¯´å‘˜ã€€#########
+########¡¡ÈøÄ·³èÎïµê½âËµÔ±¡¡#########
 {
-name=å® ç‰©å¸¸è¯†è§£è¯´å‘˜
+name=³èÎï³£Ê¶½âËµÔ±
 floorid=1003
 borncenter=19,15
 dir=4
@@ -301,9 +301,9 @@ graphicname=16122
 enemy=changeevent|file:sa60/newbie/petmaster
 }
 
-########ã€€æ¸”æ‘å® ç‰©åº—è§£è¯´å‘˜ã€€#########
+########¡¡Óæ´å³èÎïµê½âËµÔ±¡¡#########
 {
-name=å® ç‰©å¸¸è¯†è§£è¯´å‘˜
+name=³èÎï³£Ê¶½âËµÔ±
 floorid=2003
 borncenter=11,12
 dir=4
@@ -313,9 +313,9 @@ graphicname=16127
 enemy=changeevent|file:sa60/newbie/petmaster
 }
 
-########ã€€åŠ åŠ å® ç‰©åº—è§£è¯´å‘˜ã€€#########
+########¡¡¼Ó¼Ó³èÎïµê½âËµÔ±¡¡#########
 {
-name=å® ç‰©å¸¸è¯†è§£è¯´å‘˜
+name=³èÎï³£Ê¶½âËµÔ±
 floorid=3003
 borncenter=16,19
 dir=4
@@ -325,9 +325,9 @@ graphicname=16122
 enemy=changeevent|file:sa60/newbie/petmaster
 }
 
-########ã€€åŠ é²å¡å® ç‰©åº—è§£è¯´å‘˜ã€€#########
+########¡¡¼ÓÂ³¿¨³èÎïµê½âËµÔ±¡¡#########
 {
-name=å® ç‰©å¸¸è¯†è§£è¯´å‘˜
+name=³èÎï³£Ê¶½âËµÔ±
 floorid=4003
 borncenter=14,17
 dir=4
@@ -337,9 +337,9 @@ graphicname=16122
 enemy=changeevent|file:sa60/newbie/petmaster
 }
 
-#########ã€€å® ç‰©åº—æŠ€èƒ½å¸ˆã€€#########
+#########¡¡³èÎïµê¼¼ÄÜÊ¦¡¡#########
 #{
-#name=æŠ€èƒ½è®­ç»ƒå¸ˆ
+#name=¼¼ÄÜÑµÁ·Ê¦
 #floorid=8018
 #borncenter=19,18
 #dir=6
@@ -349,9 +349,9 @@ enemy=changeevent|file:sa60/newbie/petmaster
 #enemy=petskillshop|file:sa60/newbie/petskill
 #}
 
-########ã€€å® ç‰©åº—è€æ¿ã€€#########
+########¡¡³èÎïµêÀÏ°å¡¡#########
 #{
-#name=å® ç‰©åº—è€æ¿
+#name=³èÎïµêÀÏ°å
 #floorid=8018
 #borncenter=16,13
 #dir=4
@@ -361,9 +361,9 @@ enemy=changeevent|file:sa60/newbie/petmaster
 #enemy=npcgen_petshop|file:sa60/newbie/petboss
 #}
 
-########ã€€ç»„é˜Ÿäº¤å‹å¯¼å¸ˆã€€#########
+########¡¡×é¶Ó½»ÓÑµ¼Ê¦¡¡#########
 #{
-#name=äº¤å‹å¯¼å¸ˆ
+#name=½»ÓÑµ¼Ê¦
 #floorid=8024
 #borncenter=14,13
 #dir=4
@@ -373,9 +373,9 @@ enemy=changeevent|file:sa60/newbie/petmaster
 #enemy=changeevent|file:sa60/newbie/grouper
 #}
 
-######ã€€ä¼ é€å¸ˆã€€######
+######¡¡´«ËÍÊ¦¡¡######
 #{
-#name=ä¼ é€å¸ˆ
+#name=´«ËÍÊ¦
 #floorid=815
 #borncenter=18,35
 #dir=4
@@ -385,9 +385,9 @@ enemy=changeevent|file:sa60/newbie/petmaster
 #enemy=npcgen_warpman|file:sa60/newbie/warpman.arg
 #}
 
-########ã€€å‘¼å¸å™¨å‘æ”¾äººã€€#########
+########¡¡ºôÎüÆ÷·¢·ÅÈË¡¡#########
 {
-name=è€æ¸”æ°‘
+name=ÀÏÓæÃñ
 floorid=200
 borncenter=100,1018
 dir=4
@@ -397,7 +397,7 @@ graphicname=16001
 enemy=changeevent|file:sa60/newbie/breath
 }
 
-########ã€€æ–°æ‰‹æ‘å‚¨å­˜ç‚¹ã€€#########
+########¡¡ĞÂÊÖ´å´¢´æµã¡¡#########
 #{
 #floorid=815
 #borncenter=62,65
@@ -409,9 +409,9 @@ enemy=changeevent|file:sa60/newbie/breath
 #enemy=npcgen_savepoint|file:sa60/newbie/sp.arg
 #}
 
-########ã€€å·¥ä½œè¯å‘æ”¾äººã€€#########
+########¡¡¹¤×÷Ö¤·¢·ÅÈË¡¡#########
 #{
-#name=å·¥ä½œç‹‚æˆ´è¥¿
+#name=¹¤×÷¿ñ´÷Î÷
 #floorid=815
 #borncenter=27,38
 #dir=6
@@ -421,9 +421,9 @@ enemy=changeevent|file:sa60/newbie/breath
 #enemy=changeevent|file:sa60/newbie/work
 #}
 
-######ã€€å·¥ä½œéªŒæ”¶ã€€######
+######¡¡¹¤×÷ÑéÊÕ¡¡######
 #{
-#name=éªŒæ”¶è€…å…‹åŠ³
+#name=ÑéÊÕÕß¿ËÀÍ
 #floorid=815
 #borncenter=28,31
 #dir=4
@@ -433,9 +433,9 @@ enemy=changeevent|file:sa60/newbie/breath
 #enemy=npcgen_warpman|file:sa60/newbie/worksell
 #}
 
-########ã€€ç­‰é¥­å›¢çš„äººã€€#########
+########¡¡µÈ·¹ÍÅµÄÈË¡¡#########
 #{
-#name=ç­‰é¥­å›¢çš„äºº
+#name=µÈ·¹ÍÅµÄÈË
 #floorid=8017
 #borncenter=44,4
 #dir=6
@@ -445,9 +445,9 @@ enemy=changeevent|file:sa60/newbie/breath
 #enemy=changeevent|file:sa60/newbie/wait
 #}
 
-########ã€€å·¥ä½œè¯è§£è¯´å‘˜ã€€#########
+########¡¡¹¤×÷Ö¤½âËµÔ±¡¡#########
 #{
-#name=æˆ´è¥¿çš„ç§˜ä¹¦
+#name=´÷Î÷µÄÃØÊé
 #floorid=815
 #borncenter=28,36
 #dir=6

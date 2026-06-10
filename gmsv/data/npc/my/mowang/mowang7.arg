@@ -1,7 +1,7 @@
 NEWNPCENEMY
 
 entype:2
-startmsg:你竟然能到这里来？
+startmsg:�㾹Ȼ�ܵ���������
 dieact:1
 warpfl:0
 warpx:0
@@ -14,5 +14,5 @@ NEWEVENT1:
 FREE:LV>0
 WARP:208,18,9
 AddItem:19402,22222,19402
-endmsg:真不可思议!你竟然能打过七楼，不要得意，还有更厉害的八楼呢！
+endmsg:�治��˼��!�㾹Ȼ�ܴ����¥����Ҫ���⣬���и������İ�¥�أ�
 OVER

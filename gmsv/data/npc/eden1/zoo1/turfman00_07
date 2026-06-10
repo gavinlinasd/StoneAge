@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:锛堢湅寰楀緢涓撳績鐨勬牱瀛愶紝杩樻槸涓嶈鎵撴壈浠栧ソ浜嗏�︹�︼級
+NomalWindowMsg:（看得很专心的样子，还是不要打扰他好了……）
 EventEnd

@@ -1,8 +1,8 @@
 NPCCREATE
 
 ###########################################################
-#ç›ä¸½å¨œæ–¯    æƒ³é’“é±¼çš„çˆ·çˆ·ä¹‹äº‹ä»¶  ï¼ˆç›ä¸½å¨œæ–¯ï¼‰#
-# 					            æ‹…ä»»è€…ï¼šè¥¿ç«¹#
+#ÂêÀöÄÈË¹    ÏëµöÓãµÄÒ¯Ò¯Ö®ÊÂ¼ş  £¨ÂêÀöÄÈË¹£©#
+# 					            µ£ÈÎÕß£ºÎ÷Öñ#
 ###########################################################
 {
 floorid=2000
@@ -12,7 +12,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16064
-name=è€äºº
+name=ÀÏÈË
 enemy=changeevent|file:sainasu/event/nevent01_1
 }
 
@@ -24,13 +24,13 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16024
-name=é’“ç«¿ä¸“å®¶
+name=µö¸Í×¨¼Ò
 enemy=changeevent|file:sainasu/event/nevent01_2
 }
 
 ###########################################################
-#å¡é²å®ƒé‚£    æƒ³é’“é±¼çš„çˆ·çˆ·ä¹‹äº‹ä»¶  ï¼ˆç›ä¸½å¨œæ–¯ï¼‰#
-# 						æ‹…ä»»è€…ï¼šè¥¿ç«¹#
+#¿¨Â³ËüÄÇ    ÏëµöÓãµÄÒ¯Ò¯Ö®ÊÂ¼ş  £¨ÂêÀöÄÈË¹£©#
+# 						µ£ÈÎÕß£ºÎ÷Öñ#
 ###########################################################
 
 {
@@ -41,7 +41,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16064
-name=è€äºº
+name=ÀÏÈË
 enemy=changeevent|file:sainasu/event/nevent01_1
 }
 
@@ -54,7 +54,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16024
-name=é’“ç«¿ä¸“å®¶
+name=µö¸Í×¨¼Ò
 enemy=changeevent|file:sainasu/event/nevent01_2
 }
 

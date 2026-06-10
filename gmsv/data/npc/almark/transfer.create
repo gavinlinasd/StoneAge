@@ -1,13 +1,13 @@
 NPCCREATE
 
-#æ¸”æ‘
+#Óæ´å
 {
 floorid=2000
 borncenter=65,63
 time=0
 createnum=1
 graphicname=16131
-name=å¤©æ‰ä¼ é€å¸ˆ
+name=Ìì²Å´«ËÍÊ¦
 dir=4
 ignoreinvincible=1
 enemy=transman|file:almark/transfer5.arg
@@ -18,7 +18,7 @@ borncenter=64,63
 time=0
 createnum=1
 graphicname=16115
-name=å¤©æ‰ä¼ é€å¸ˆ
+name=Ìì²Å´«ËÍÊ¦
 dir=4
 ignoreinvincible=1
 enemy=transman|file:almark/transfer9.arg
@@ -30,7 +30,7 @@ borncenter=66,53
 time=0
 createnum=1
 graphicname=16131
-name=å¤©æ‰ä¼ é€å¸ˆ
+name=Ìì²Å´«ËÍÊ¦
 dir=4
 ignoreinvincible=1
 enemy=transman|file:almark/transfer5.arg
@@ -42,7 +42,7 @@ borncenter=91,98
 time=0
 createnum=1
 graphicname=16131
-name=å¤©æ‰ä¼ é€å¸ˆ
+name=Ìì²Å´«ËÍÊ¦
 dir=4
 ignoreinvincible=1
 enemy=transman|file:almark/transfer5.arg
@@ -54,20 +54,20 @@ borncenter=92,94
 time=0
 createnum=1
 graphicname=16131
-name=å¤©æ‰ä¼ é€å¸ˆ
+name=Ìì²Å´«ËÍÊ¦
 dir=4
 ignoreinvincible=1
 enemy=transman|file:almark/transfer5.arg
 }
 
-#ä¼šå‘˜åŒº
+#»áÔ±Çø
 {
 floorid=777
 borncenter=28,28
 time=0
 createnum=1
 graphicname=16131
-name=ä¼šå‘˜å¤©æ‰ä¼ é€å¸ˆ
+name=»áÔ±Ìì²Å´«ËÍÊ¦
 dir=4
 ignoreinvincible=1
 enemy=transman|file:almark/transfer6.arg

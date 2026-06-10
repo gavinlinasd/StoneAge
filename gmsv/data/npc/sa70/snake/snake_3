@@ -2,14 +2,14 @@ NEWWARPMAN
 
 NOFREE
 FREE:LV>0
-NomalMsg:х┐ЩуВЫуВЫуВЫуВЫуВЫуАВ
-PartyMsg:хШ╢я╜Юя╜Юя╜Юя╜Юя╜Юя╜Юя╜Юя╝Я
+NomalMsg:╦╗блблблблблбг
+PartyMsg:╦╗блблблблблблблг┐
 OVER
 
 TALKEVENT1
 WARP:9356,7,23
 FREE:LV>79&ENDEV=4&NOWEV=165
 MONEY:-1
-FreeMsg:хШ╢я╜Юя╜Юя╜Юя╜Юя╜ЮхШ╢я╜Юя╝Б
+FreeMsg:╦╗блблблблбл╦╗блгб
 OVER
 

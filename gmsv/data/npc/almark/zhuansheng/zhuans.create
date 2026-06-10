@@ -6,7 +6,7 @@ borncenter=44,60
 time=0
 createnum=1
 graphicname=110096
-name=ç‰ç’ƒè½¬ç”Ÿå¤©ä½¿
+name=ÁğÁ§×ªÉúÌìÊ¹
 dir=4
 enemy=changeevent|file:almark/zhuansheng/zhuans1.arg
 }
@@ -17,7 +17,7 @@ borncenter=46,60
 time=0
 createnum=1
 graphicname=110092
-name=ç¢§æ¸…è½¬ç”Ÿå¤©ä½¿
+name=±ÌÇå×ªÉúÌìÊ¹
 dir=4
 enemy=changeevent|file:almark/zhuansheng/zhuans2.arg
 }
@@ -28,7 +28,7 @@ borncenter=48,60
 time=0
 createnum=1
 graphicname=110095
-name=æ·±çº¢è½¬ç”Ÿå¤©ä½¿
+name=Éîºì×ªÉúÌìÊ¹
 dir=4
 enemy=changeevent|file:almark/zhuansheng/zhuans3.arg
 }
@@ -40,33 +40,33 @@ borncenter=50,60
 time=0
 createnum=1
 graphicname=110093
-name=ç„é»„è½¬ç”Ÿå¤©ä½¿
+name=Ğş»Æ×ªÉúÌìÊ¹
 dir=4
 enemy=changeevent|file:almark/zhuansheng/zhuans4.arg
 }
 
-#ä¼šå‘˜ç²¾çµç‹
+#»áÔ±¾«ÁéÍõ
 {
 floorid=777
 borncenter=27,23
 time=0
 createnum=1
 graphicname=100444
-name=ç²¾çµç‹
+name=¾«ÁéÍõ
 dir=4
 ignoreinvincible=1
 enemy=npc_transmigration|file:almark/zhuansheng/ten.arg
 }
 
 
-#ä¼šå‘˜è½¬ç”Ÿå¤©ä½¿
+#»áÔ±×ªÉúÌìÊ¹
 {
 floorid=777
 borncenter=19,23
 time=0
 createnum=1
 graphicname=110096
-name=ç‰ç’ƒè½¬ç”Ÿå¤©ä½¿
+name=ÁğÁ§×ªÉúÌìÊ¹
 dir=4
 enemy=changeevent|file:almark/zhuansheng/zhuans1.arg
 }
@@ -77,7 +77,7 @@ borncenter=21,23
 time=0
 createnum=1
 graphicname=110092
-name=ç¢§é’è½¬ç”Ÿå¤©ä½¿
+name=±ÌÇà×ªÉúÌìÊ¹
 dir=4
 enemy=changeevent|file:almark/zhuansheng/zhuans2.arg
 }
@@ -88,7 +88,7 @@ borncenter=23,23
 time=0
 createnum=1
 graphicname=110095
-name=æ·±çº¢è½¬ç”Ÿå¤©ä½¿
+name=Éîºì×ªÉúÌìÊ¹
 dir=4
 enemy=changeevent|file:almark/zhuansheng/zhuans3.arg
 }
@@ -99,7 +99,7 @@ borncenter=25,23
 time=0
 createnum=1
 graphicname=110093
-name=ç„é»„è½¬ç”Ÿå¤©ä½¿
+name=Ğş»Æ×ªÉúÌìÊ¹
 dir=4
 enemy=changeevent|file:almark/zhuansheng/zhuans4.arg
 }

@@ -1,6 +1,6 @@
 NPCCREATE
 
-#ç‘å°”äºšæ–¯
+#Èğ¶ûÑÇË¹
 {
 floorid=7530
 borncenter=50,51,1,1
@@ -9,11 +9,11 @@ createnum=1
 time=0
 dir=4
 graphicname=16990
-name=è¸¢é¦†ç™»è®°äºº
+name=Ìß¹İµÇ¼ÇÈË
 enemy=manorsman|file:family/fmpoint10/manorsman.arg10
 }
 
-#ç‘å¥‡äºšæ–¯å®¶æ—å¯¹æˆ˜æœåŠ¡å‘˜
+#ÈğÆæÑÇË¹¼Ò×å¶ÔÕ½·şÎñÔ±
 {
 floorid=10032
 borncorner=18,27,18,27
@@ -22,11 +22,11 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16965
-name=å®¶æ—å¯¹æˆ˜æœåŠ¡å‘˜
+name=¼Ò×å¶ÔÕ½·şÎñÔ±
 enemy=npcgen_fmpkman|file:family/fmpoint10/wpm_10032_18_20
 }
 
-#ç‘å¥‡äºšæ–¯å®¶æ—å¯¹æˆ˜å‘å¯¼
+#ÈğÆæÑÇË¹¼Ò×å¶ÔÕ½Ïòµ¼
 {
 floorid=7530
 borncorner=53,51,53,51
@@ -35,11 +35,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17043
-name=å®¶æ—å¯¹æˆ˜å‘å¯¼
+name=¼Ò×å¶ÔÕ½Ïòµ¼
 enemy=npcgen_fmwarpman|file:family/fmpoint10/wpm_10030_53_36
 }
 
-#ç‘å¥‡äºšæ–¯å®¶å®¶æ—å¬å”¤å‘˜
+#ÈğÆæÑÇË¹¼Ò¼Ò×åÕÙ»½Ô±
 {
 floorid=7530
 borncorner=56,51,56,51
@@ -48,7 +48,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16966
-name=å®¶æ—å¬å”¤å‘˜
+name=¼Ò×åÕÙ»½Ô±
 enemy=npcgen_fmpkcallman|file:family/fmpoint10/wpm_10030_49_34
 }
 
@@ -60,6 +60,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=17043
-name=å®¶æ—å®ˆé—¨å‘˜
+name=¼Ò×åÊØÃÅÔ±
 enemy=npcgen_warpman|file:family/fmpoint10/wpm_10030_33_23
 }

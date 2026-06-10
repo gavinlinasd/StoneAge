@@ -1,9 +1,9 @@
 NPCCREATE
-###### å¼—çƒˆé¡¿ä¸€èˆ¬NPC ######
+###### ¸¥ÁÒ¶ÙÒ»°ãNPC ######
 
-### å¾·å¤«å¥³å„¿
+### µÂ·òÅ®¶ù
 {
-name=è•¾ä¸½äºš
+name=ÀÙÀöÑÇ
 floorid=7303
 borncenter=13,7
 dir=4
@@ -12,9 +12,9 @@ enemy=changeevent|file:eden3/fire/raylia
 graphicname=16608
 }
 
-### ç«åŸå¥³æ€§
+### »ğ³ÇÅ®ĞÔ
 {
-name=å¼—çƒˆé¡¿å¥³å­
+name=¸¥ÁÒ¶ÙÅ®×Ó
 floorid=7300
 borncenter=39,47
 dir=4
@@ -23,9 +23,9 @@ enemy=npcgen_man|file:eden3/fire/npc_1
 graphicname=16645
 }
 
-### ç«åŸç”·æ€§
+### »ğ³ÇÄĞĞÔ
 {
-name=å¼—çƒˆé¡¿ç”·å­
+name=¸¥ÁÒ¶ÙÄĞ×Ó
 floorid=7300
 borncenter=88,128
 dir=4
@@ -34,9 +34,9 @@ enemy=npcgen_man|file:eden3/fire/npc_2
 graphicname=16625
 }
 
-### ç«åŸå°å­©
+### »ğ³ÇĞ¡º¢
 {
-name=å¼—çƒˆé¡¿å°å­©
+name=¸¥ÁÒ¶ÙĞ¡º¢
 floorid=7300
 borncenter=34,102
 dir=4
@@ -45,9 +45,9 @@ enemy=npcgen_man|file:eden3/fire/npc_3
 graphicname=16639
 }
 
-### ç«åŸå¥³æ€§
+### »ğ³ÇÅ®ĞÔ
 {
-name=å¼—çƒˆé¡¿å¥³å­
+name=¸¥ÁÒ¶ÙÅ®×Ó
 floorid=7300
 borncenter=46,59
 dir=6
@@ -56,9 +56,9 @@ enemy=npcgen_man|file:eden3/fire/npc_4
 graphicname=16647
 }
 
-### ç«åŸç”·æ€§
+### »ğ³ÇÄĞĞÔ
 {
-name=å¼—çƒˆé¡¿ç”·å­
+name=¸¥ÁÒ¶ÙÄĞ×Ó
 floorid=7300
 borncenter=87,88
 dir=6
@@ -67,9 +67,9 @@ enemy=npcgen_man|file:eden3/fire/npc_5
 graphicname=16618
 }
 
-### ç«åŸè€äºº
+### »ğ³ÇÀÏÈË
 {
-name=å¼—çƒˆé¡¿è€äºº
+name=¸¥ÁÒ¶ÙÀÏÈË
 floorid=7300
 borncenter=34,85
 dir=6
@@ -78,9 +78,9 @@ enemy=npcgen_man|file:eden3/fire/npc_6
 graphicname=16630
 }
 
-### ç«åŸç”·æ€§æ•™å¸ˆ
+### »ğ³ÇÄĞĞÔ½ÌÊ¦
 {
-name=å¼—çƒˆé¡¿æ•™å¸ˆ
+name=¸¥ÁÒ¶Ù½ÌÊ¦
 floorid=7300
 borncenter=23,113
 dir=6
@@ -89,9 +89,9 @@ enemy=npcgen_man|file:eden3/fire/npc_7
 graphicname=16636
 }
 
-### ç«åŸç¥­å›å®ˆå«
+### »ğ³Ç¼ÀÌ³ÊØÎÀ
 {
-name=ç–¾å‹™ä¾¿å¯®
+name=¼ÀÌ³ÊØÎÀ
 floorid=7301
 borncenter=45,118
 dir=6
@@ -100,9 +100,9 @@ enemy=npcgen_man|file:eden3/fire/npc_8
 graphicname=16914
 }
 
-### ç«åŸç¥­å›å®ˆå«
+### »ğ³Ç¼ÀÌ³ÊØÎÀ
 {
-name=ç–¾å‹™ä¾¿å¯®
+name=¼ÀÌ³ÊØÎÀ
 floorid=7301
 borncenter=45,124
 dir=6
@@ -111,9 +111,9 @@ enemy=npcgen_man|file:eden3/fire/npc_8
 graphicname=16914
 }
 
-### è’™è¾¾æ‘æ°‘
+### ÃÉ´ï´åÃñ
 {
-name=æ¨µå¤«
+name=éÔ·ò
 floorid=7350
 borncenter=65,70
 dir=4
@@ -122,9 +122,9 @@ enemy=npcgen_man|file:eden3/fire/npc_9
 graphicname=16915
 }
 
-### è’™è¾¾æ‘æ°‘
+### ÃÉ´ï´åÃñ
 {
-name=å°å¥³å­©
+name=Ğ¡Å®º¢
 floorid=7350
 borncenter=52,64
 dir=6
@@ -133,9 +133,9 @@ enemy=npcgen_man|file:eden3/fire/npc_10
 graphicname=16641
 }
 
-### è’™è¾¾æ‘æ°‘
+### ÃÉ´ï´åÃñ
 {
-name=ä¾¿å¯®
+name=ÊØÎÀ
 floorid=7350
 borncenter=52,42
 dir=6
@@ -144,9 +144,9 @@ enemy=npcgen_man|file:eden3/fire/npc_11
 graphicname=16914
 }
 
-### è’™è¾¾æ‘æ°‘
+### ÃÉ´ï´åÃñ
 {
-name=æ‘æ°‘
+name=´åÃñ
 floorid=7350
 borncenter=41,48
 dir=4
@@ -155,9 +155,9 @@ enemy=npcgen_man|file:eden3/fire/npc_12
 graphicname=16917
 }
 
-### åäºŒå¹´å‰è’™è¾¾æ‘æ°‘
+### Ê®¶şÄêÇ°ÃÉ´ï´åÃñ
 {
-name=ä¾¿å¯®
+name=ÊØÎÀ
 floorid=7351
 borncenter=52,42
 dir=4
@@ -166,9 +166,9 @@ enemy=npcgen_man|file:eden3/fire/npc_13
 graphicname=16920
 }
 
-### åäºŒå¹´å‰è’™è¾¾æ‘æ°‘
+### Ê®¶şÄêÇ°ÃÉ´ï´åÃñ
 {
-name=æ‘æ°‘
+name=´åÃñ
 floorid=7351
 borncenter=36,26
 dir=4
@@ -177,9 +177,9 @@ enemy=npcgen_man|file:eden3/fire/npc_14
 graphicname=16631
 }
 
-### åäºŒå¹´å‰è’™è¾¾æ‘æ°‘
+### Ê®¶şÄêÇ°ÃÉ´ï´åÃñ
 {
-name=æ‘æ°‘
+name=´åÃñ
 floorid=7351
 borncenter=49,29
 dir=6
@@ -188,9 +188,9 @@ enemy=npcgen_man|file:eden3/fire/npc_15
 graphicname=16644
 }
 
-### ç«å±±é“åœºç«çµå‹‡å£«
+### »ğÉ½µÀ³¡»ğÁéÓÂÊ¿
 {
-name=ç«çµå‹‡å£«
+name=»ğÁéÓÂÊ¿
 floorid=7301
 borncenter=50,93
 dir=6
@@ -199,9 +199,9 @@ enemy=npcgen_man|file:eden3/fire/npc_16
 graphicname=16627
 }
 
-### ç«å±±é“åœºç«çµå‹‡å£«
+### »ğÉ½µÀ³¡»ğÁéÓÂÊ¿
 {
-name=ç«çµå‹‡å£«
+name=»ğÁéÓÂÊ¿
 floorid=7301
 borncenter=50,56
 dir=4
@@ -210,9 +210,9 @@ enemy=npcgen_man|file:eden3/fire/npc_17
 graphicname=16628
 }
 
-### ç«å±±é“åœºç«çµå‹‡å£«
+### »ğÉ½µÀ³¡»ğÁéÓÂÊ¿
 {
-name=ç«çµå‹‡å£«
+name=»ğÁéÓÂÊ¿
 floorid=7301
 borncenter=32,75
 dir=4
@@ -221,9 +221,9 @@ enemy=npcgen_man|file:eden3/fire/npc_18
 graphicname=16627
 }
 
-### ç«å±±é“åœºäººæ°‘
+### »ğÉ½µÀ³¡ÈËÃñ
 {
-name=å°å­©
+name=Ğ¡º¢
 floorid=7301
 borncenter=39,17
 dir=4
@@ -232,9 +232,9 @@ enemy=npcgen_man|file:eden3/fire/npc_19
 graphicname=16603
 }
 
-### ç«åŸå›½ç‹
+### »ğ³Ç¹úÍõ
 {
-name=èµ«è‚¯è±ª
+name=ºÕ¿ÏºÀ
 floorid=7300
 borncenter=71,70
 dir=6
@@ -243,9 +243,9 @@ enemy=changeevent|file:eden3/fire/npc_20
 graphicname=16938
 }
 
-### ç«åŸçš‡å®«å®ˆå«
+### »ğ³Ç»Ê¹¬ÊØÎÀ
 {
-name=å¸å¹¸åˆ¥å¯®
+name=»Ê¹¬ÊÌÎÀ
 floorid=7300
 borncenter=58,66
 dir=6
@@ -254,9 +254,9 @@ enemy=npcgen_man|file:eden3/fire/npc_21
 graphicname=16914
 }
 
-### ç«åŸçš‡å®«å®ˆå«
+### »ğ³Ç»Ê¹¬ÊØÎÀ
 {
-name=å¸å¹¸åˆ¥å¯®
+name=»Ê¹¬ÊÌÎÀ
 floorid=7300
 borncenter=58,70
 dir=6

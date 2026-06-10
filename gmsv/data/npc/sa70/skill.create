@@ -1,7 +1,7 @@
 NPCCREATE
-#### è¿½çŒè€… ####
+#### ×·ÁÔÕß ####
 {
-name=æŠ€èƒ½å¯¼å¸ˆè´å‰
+name=¼¼ÄÜµ¼Ê¦±´¼ª
 floorid=8217
 borncenter=13,18
 dir=4
@@ -11,9 +11,9 @@ graphicname=16187
 enemy=ProfessionShop|file:sa70/hunsk
 }
 
-#### é—‡çµæ³•å¸ˆ ####
+#### éœÁé·¨Ê¦ ####
 {
-name=æŠ€èƒ½å¯¼å¸ˆå¡æ‹‰ç‰¹
+name=¼¼ÄÜµ¼Ê¦¿¨À­ÌØ
 floorid=8218
 borncenter=21,25
 dir=4
@@ -23,9 +23,9 @@ graphicname=16168
 enemy=ProfessionShop|file:sa70/wizsk
 }
 
-#### ç™½ç‹¼å‹‡å£« ####
+#### °×ÀÇÓÂÊ¿ ####
 {
-name=æŠ€èƒ½å¯¼å¸ˆè‚¯å°”ç‰¹
+name=¼¼ÄÜµ¼Ê¦¿Ï¶ûÌØ
 floorid=8216
 borncenter=26,20
 dir=6
@@ -35,9 +35,9 @@ graphicname=16185
 enemy=ProfessionShop|file:sa70/warsk
 }
 
-#### ç™½ç‹¼å‹‡å£«äºŒé˜¶ ####
+#### °×ÀÇÓÂÊ¿¶ş½× ####
 {
-name=æµæµªå‹‡å£«
+name=Á÷ÀËÓÂÊ¿
 floorid=300
 borncenter=475,176
 dir=6
@@ -46,9 +46,9 @@ createnum=1
 graphicname=16185
 enemy=ProfessionShop|file:sa70/warsk2
 }
-#### é—‡çµæ³•å¸ˆäºŒé˜¶####
+#### éœÁé·¨Ê¦¶ş½×####
 {
-name=é—‡çµä½¿è€…
+name=éœÁéÊ¹Õß
 floorid=30304
 borncenter=9,31
 dir=4
@@ -57,9 +57,9 @@ createnum=1
 graphicname=16168
 enemy=ProfessionShop|file:sa70/wizsk2
 }
-#### è¿½çŒè€…äºŒé˜¶ ####
+#### ×·ÁÔÕß¶ş½× ####
 {
-name=é‡å¤–ç‹©çŒè€…
+name=Ò°Íâá÷ÁÔÕß
 floorid=200
 borncenter=439,902
 dir=4
@@ -69,9 +69,9 @@ graphicname=16187
 enemy=ProfessionShop|file:sa70/hunsk2
 }
 
-#### ç™½ç‹¼å‹‡å£«ä¸‰é˜¶ ####
+#### °×ÀÇÓÂÊ¿Èı½× ####
 {
-name=å‹‡å£«ä¹‹ç‹
+name=ÓÂÊ¿Ö®Íõ
 floorid=100
 borncenter=651,585
 dir=6
@@ -80,9 +80,9 @@ createnum=1
 graphicname=16185
 enemy=ProfessionShop|file:sa70/warsk3
 }
-#### é—‡çµæ³•å¸ˆä¸‰é˜¶####
+#### éœÁé·¨Ê¦Èı½×####
 {
-name=é—‡çµä¹‹ç‹
+name=éœÁéÖ®Íõ
 floorid=400
 borncenter=97,49
 dir=4
@@ -91,9 +91,9 @@ createnum=1
 graphicname=16168
 enemy=ProfessionShop|file:sa70/wizsk3
 }
-#### è¿½çŒè€…ä¸‰é˜¶ ####
+#### ×·ÁÔÕßÈı½× ####
 {
-name=è¿½çŒä¹‹ç‹
+name=×·ÁÔÖ®Íõ
 floorid=200
 borncenter=300,568
 dir=4

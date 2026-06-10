@@ -1,18 +1,18 @@
 buy_rate:1.0
 sell_rate:0.2
-buy_msg:ä½ å¥½,æ¬¢è¿,ä¹°,ã„‡ã„Ë‡,buy
-sell_msg:é—–,sell,äº›ä½ºæ—
-other_msg:æœ€è¿‘æ€æ ·ï¼Ÿ
-hint_msg:å—¯ã€è¯è‰å¹¶ä¸å®¹æ˜“é½å…¨
-sellonly_msg:å¹¶ä¸æ˜¯ä¸“é—¨ä¹°å…¥çš„å–”
-main_msg:å–”ï¼
-buy_main:åªæœ‰å–éª°å­å–”ã€‚
-sell_main:å·²ç»ä¸éœ€è¦éª°å­äº†å—ï¼Ÿ
-what_msg:è¦ä¹°å‡ ä¸ªï¼Ÿ
-stone_msg:æ‰€æŒé‡‘å·²æ»¡ã€‚
-level_msg:ç­‰çº§è¿˜ä¸è¶³ä»¥ä½¿ç”¨é‚£ä¸ªã€‚
-realy_msg:è¿™æ ·å°±å¯ä»¥äº†å—ï¼Ÿ
-itemfull_msg:é“å…·å·²ç»æ»¡äº†ã€‚
+buy_msg:ÄãºÃ,»¶Ó­,Âò,¨Ç¨Ş¡¦,buy
+sell_msg:Âô,sell,¨Ç¨Ş¨A
+other_msg:×î½üÔõÑù£¿
+hint_msg:àÅ¡¢Ò©²İ²¢²»ÈİÒ×ÆëÈ«
+sellonly_msg:²¢²»ÊÇ×¨ÃÅÂòÈëµÄà¸
+main_msg:à¸£¡
+buy_main:Ö»ÓĞÂô÷»×Óà¸¡£
+sell_main:ÒÑ¾­²»ĞèÒª÷»×ÓÁËÂğ£¿
+what_msg:ÒªÂò¼¸¸ö£¿
+stone_msg:Ëù³Ö½ğÒÑÂú¡£
+level_msg:µÈ¼¶»¹²»×ãÒÔÊ¹ÓÃÄÇ¸ö¡£
+realy_msg:ÕâÑù¾Í¿ÉÒÔÁËÂğ£¿
+itemfull_msg:µÀ¾ßÒÑ¾­ÂúÁË¡£
 ItemList:2612
 LimitItemNo:2612
 special_rate:1.5

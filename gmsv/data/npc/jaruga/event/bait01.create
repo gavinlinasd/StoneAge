@@ -1,7 +1,7 @@
 NPCCREATE
 
 #################################################################
-#########    ã‚¸ãƒ£ãƒ«ã‚¬ã‚¢ãƒ«ãƒã‚¤ãƒˆã€€ã‚¤ãƒ™ãƒ³ãƒˆè‚‹å¹´ã€€ã€€################
+#########    ¥¸¥ã¥ë¥¬¥¢¥ë¥Ğ¥¤¥È¡¡¥¤¥Ù¥ó¥ÈÀßÄê¡¡¡¡################
 #################################################################
 
 
@@ -13,7 +13,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16017
-name=ç‰§åœºä¸»äºº
+name=ÄÁ³¡Ö÷ÈË
 enemy=changeevent|file:jaruga/event/bait_01
 }
 
@@ -26,7 +26,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16018
-name=æ´çªŸç®¡ç†è€…
+name=¶´¿ß¹ÜÀíÕß
 enemy=changeevent|file:jaruga/event/bait_02
 }
 
@@ -38,7 +38,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=è¯æ˜å‘è¡Œ(ç»¿)
+name=Ö¤Ã÷·¢ĞĞ(ÂÌ)
 enemy=changeevent|file:jaruga/event/bait_03a2
 }
 
@@ -51,7 +51,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16036
-name=è¯æ˜å‘è¡Œ(çº¢)
+name=Ö¤Ã÷·¢ĞĞ(ºì)
 enemy=changeevent|file:jaruga/event/bait_03b2
 }
 
@@ -64,7 +64,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=è¯æ˜å‘è¡Œ(è“)
+name=Ö¤Ã÷·¢ĞĞ(À¶)
 enemy=changeevent|file:jaruga/event/bait_03c2
 }
 
@@ -79,7 +79,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16046
-name=æ´çªŸç®¡ç†äººçš„æ¬¡ç”·
+name=¶´¿ß¹ÜÀíÈËµÄ´ÎÄĞ
 enemy=changeevent|file:jaruga/event/bait_04
 }
 

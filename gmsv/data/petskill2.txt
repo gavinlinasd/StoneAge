@@ -1,288 +1,288 @@
-å¾…æœº,ä»€ä¹ˆä¹Ÿä¸åš,PETSKILL_None,,,,0,1,5,2,500,PETSKILL_NONE
-æ”»å‡»,é€šå¸¸æ”»å‡»,PETSKILL_NormalAttack,,,,1,1,6,2,1000,PETSKILL_NORMALATTACK
-é˜²å¾¡,é€šå¸¸é˜²å¾¡,PETSKILL_NormalGuard,,,,2,1,5,2,1000,PETSKILL_NORMALGUARD
-ç ´é™¤é˜²å¾¡,å¯¹é‡‡å–é˜²æ•Œäººæ”»å‡»å¯èƒ½,PETSKILL_GuardBreak,,,,3,1,6,2,1500,PETSKILL_GUARDBREAK
-è¿žç»­æ”»å‡»,ä¸¤æ¬¡è¿žç»­æ”»å‡»,PETSKILL_ContinuationAttack,2,,,10,1,6,2,2000,PETSKILL_CONTINUATIONATTACK1
-ä¸‰æ®µæ”»å‡»,3å›žåˆè¿žç»­æ”»å‡»,PETSKILL_ContinuationAttack,3,,,11,1,6,2,5000,PETSKILL_CONTINUATIONATTACK2
-Tå››æ®µæ”»å‡»,4å›žè¿žç»­æ”»å‡»,PETSKILL_ContinuationAttack,4,,Te,12,1,6,2,15000,PETSKILL_CONTINUATIONATTACK3
-Täº”æ®µæ”»å‡»,5å›žè¿žç»­æ”»å‡»,PETSKILL_ContinuationAttack,5,,Tf,13,1,6,2,25000,PETSKILL_CONTINUATIONATTACK4
-Tå…­æ®µæ”»å‡»,6å›žè¿žç»­æ”»å‡»,PETSKILL_ContinuationAttack,6,,,14,1,6,2,225000,PETSKILL_CONTINUATIONATTACK5
-Tä¸ƒæ®µæ”»å‡»,7å›žè¿žç»­æ”»å‡»,PETSKILL_ContinuationAttack,7,,,15,1,6,2,625000,PETSKILL_CONTINUATIONATTACK6
-Tå…«æ®µæ”»å‡»,8å›žè¿žç»­æ”»å‡»,PETSKILL_ContinuationAttack,8,,,16,1,6,2,625000,PETSKILL_CONTINUATIONATTACK7
-Tä¹æ®µæ”»å‡»,9å›žè¿žç»­æ”»å‡»,PETSKILL_ContinuationAttack,9,,,17,1,6,2,1625000,PETSKILL_CONTINUATIONATTACK8
-å¿ çŠ¬,ä¿æŠ¤ä¸»äººä¸å—åˆ°æ•Œäººçš„ç›´æŽ¥æ”»å‡»,PETSKILL_Guardian,æ”»%-20  COM:æ”»å‡»,,,20,1,7,2,2500,PETSKILL_GUARDIAN
-çªå‡»,1å›žåˆå‚¨å­˜åŠ›é‡ã€€ã€€ã€€ ä¸‹æ¬¡æ”»å‡»æ—¶ã€€ã€€ã€€ å°±ä¼šæœ‰ä¸¤å€çš„æ”»å‡»åŠ›,PETSKILL_ChargeAttack,1 æ”»%+90,,,30,1,6,2,4000,PETSKILL_CHARGE1
-åŒé‡çªå‡»,2å›žåˆå‚¨å­˜åŠ›é‡ ã€€ã€€ã€€ä¸‹æ¬¡æ”»å‡»æ—¶ ã€€ã€€ã€€å°±ä¼šæœ‰ä¸¤å€ä»¥ä¸Šçš„æ”»å‡»åŠ›,PETSKILL_ChargeAttack,2 æ”»%+110,,,31,1,6,2,8000,PETSKILL_CHARGE2
-ä¸€å‡»å¿…æ€,ç»™äºˆä¸¤å€çš„æ”»å‡»ä¼¤å®³ä½†æ˜¯å‘½ä¸­çŽ‡ä¸‹é™,PETSKILL_Mighty,å€2 å›žé¿30,,,40,1,6,2,2500,PETSKILL_MIGHTY1
-Tä¸€å‡»å¿…æ€æ”¹,ç»™äºˆ3å€çš„æ”»å‡»ä¼¤å®³ä½†æ˜¯å‘½ä¸­çŽ‡ä¸‹é™,PETSKILL_Mighty,å€3 å›žé¿15,,Ta,41,1,6,2,25000,PETSKILL_MIGHTY2
-èƒŒæ°´ä¹‹æˆ˜å…¶ä¹‹ï¼‘,é˜²å¾¡åŠ›å‡30%ã€€ã€€æ”»å‡»åŠ›å˜æˆ+30%,PETSKILL_PowerBalance,æ”»%+25 é˜²%-35,,,50,1,6,2,2000,PETSKILL_POWERBALANCE1
-èƒŒæ°´ä¹‹æˆ˜å…¶ä¹‹ï¼’,é˜²å¾¡åŠ›å‡50%ã€€ã€€æ”»å‡»åŠ›å˜æˆ+50%,PETSKILL_PowerBalance,æ”»%+45 é˜²%-55,,,51,1,6,2,2500,PETSKILL_POWERBALANCE2
-TèƒŒæ°´ä¹‹æˆ˜ä¹‹å…¶ï¼“,é˜²å¾¡åŠ›å˜æˆ-50%ã€€ã€€æ”»å‡»åŠ›å˜æˆ+80%,PETSKILL_PowerBalance,æ”»%+80 é˜²%-50,,Tb,52,1,6,2,30000,PETSKILL_POWERBALANCE3
-èƒŒæ°´ä¹‹æˆ˜ä¹‹å…¶ï¼“,é˜²å¾¡åŠ›å˜æˆ-65%ã€€ã€€æ”»å‡»åŠ›å˜æˆ+70%,PETSKILL_PowerBalance,æ”»%+70 é˜²%-65,,,53,1,6,2,100000,PETSKILL_POWERBALANCE4
-TèƒŒæ°´ä¹‹æˆ˜ä¹‹å…¶ï¼”,é˜²å¾¡åŠ›å˜æˆ-70%ã€€ã€€æ”»å‡»åŠ›å˜æˆ+100%,PETSKILL_PowerBalance,æ”»%+100 é˜²%-70,,,54,1,6,2,130000,PETSKILL_POWERBALANCE5
-æ¯’æ”»å‡»,æ”»å‡»åŠ›å‡30%ä¸‰å›žåˆå‰åŽè®©æ•Œäººä¸­æ¯’,PETSKILL_StatusChange,æ¯’ turn 3  æ”»%-30,,,60,1,6,2,2500,PETSKILL_POISON_ATTACK1
-çŒ›æ¯’æ”»å‡»,æ”»å‡»åŠ›å‡50%äº”å›žåˆå‰åŽè®©æ•Œäººä¸­æ¯’,PETSKILL_StatusChange,æ¯’ turn 5  æ”»%-50,,,61,1,6,2,4000,PETSKILL_POISON_ATTACK2
-çŸ³åŒ–æ”»å‡»,æ”»å‡»åŠ›å‡30%ä¸‰å›žåˆå‰åŽè®©æ•ŒäººçŸ³åŒ–,PETSKILL_StatusChange,çŸ³ turn 3  æ”»%-30,,,80,1,6,2,2300,PETSKILL_STONE
-æ··ä¹±æ”»å‡»,æ”»å‡»åŠ›å‡30%ä¸‰å›žåˆå‰åŽè®©æ•Œäººæ··ä¹±,PETSKILL_StatusChange,ä¹± turn 3 æ”»%-30,,,90,1,6,2,2000,PETSKILL_CONFUSION_ATTACK
-æ³¥é†‰æ”»å‡»,æ”»å‡»åŠ›å‡30%ä¸‰å›žåˆå‰åŽè®©æ•Œäººé…’é†‰,PETSKILL_StatusChange,é†‰ turn 3 æ”»%-30,,,100,1,6,2,2000,PETSKILL_DRUNK_ATTACK
-å‚¬çœ æ”»å‡»,æ”»å‡»åŠ›å‡30%ä¸‰å›žåˆå‰åŽè®©æ•Œäººæ²‰ç¡,PETSKILL_StatusChange,çœ  turn 3  æ”»%-30,,,110,1,6,2,2500,PETSKILL_SLEEP_ATTACK
-åœ°çƒä¸€å‘¨,ä¸€å›žåˆä»Žæ•ŒäººèƒŒåŽä»¥ä¸¤å€æ”»å‡»åŠ›æ”»å‡»,PETSKILL_EarthRound,æ”»%+90,,,120,1,6,2,2000,PETSKILL_EARTHROUND1
-Tåœ°çƒä¸€å‘¨,ä¸€å›žåˆä»Žæ•ŒäººèƒŒåŽä»¥ä¸¤å€æ”»å‡»åŠ›æ”»å‡»,PETSKILL_EarthRound,æ”»%+200,,,121,1,6,2,2000,PETSKILL_EARTHROUND1
-æ—…ç¨‹ä¼™ä¼´,æŠŠä¸€åªæé¾™å½“ä½œæ˜¯ä¼™ä¼´å½“åœºå¸¦èµ°,PETSKILL_Abduct,,,,130,1,7,2,3000,PETSKILL_Abduct
-è£•æ•—,è£•æ•—,PETSKILL_Steal,,,,140,1,7,2,0,PETSKILL_STEAL
-ä¸é˜²å®ˆæˆ˜æ³•,è‡ªå·±ä¸è¿›è¡Œæ”»å‡»ã€€ã€€åå‡»è·Ÿå›žé¿çŽ‡ã€€ã€€ã€€ã€€ã€€å°±ä¼šå˜çš„éžå¸¸é«˜,PETSKILL_NoGuard,å›žé¿%+30 åå‡»%+50 ä¼šå¿ƒ%+20,,,150,1,5,2,3000,PETSKILL_NOGUARD1
-Tä¸é˜²å®ˆæˆ˜æ³•2,è‡ªå·±ä¸è¿›è¡Œæ”»å‡»ã€€ã€€åå‡»è·Ÿå›žé¿çŽ‡ã€€ã€€ã€€ã€€ã€€å°±ä¼šå˜çš„éžå¸¸é«˜,PETSKILL_NoGuard,å›žé¿%+40 åå‡»%+60 ä¼šå¿ƒ%+30,,Tc,151,1,5,2,15000,PETSKILL_NOGUARD2
-Tä¸é˜²å®ˆæˆ˜æ³•3,è‡ªå·±ä¸è¿›è¡Œæ”»å‡»ã€€ã€€åå‡»è·Ÿå›žé¿çŽ‡ã€€ã€€ã€€ã€€ã€€å°±ä¼šå˜çš„éžå¸¸é«˜,PETSKILL_NoGuard,å›žé¿%+50 åå‡»%+80 ä¼šå¿ƒ%+40,,Td,152,1,5,2,25000,PETSKILL_NOGUARD3
-åŠ å·¥,åˆæˆç´ æåˆ¶ä½œé“å…·,PETSKILL_Merge,,,,200,2,0,1,1500,PETSKILL_MERGE
-æ–™ç†,ä½¿ç”¨ç´ æåˆ¶ä½œæ–™ç†,PETSKILL_Merge,,,,201,2,0,1,1000,PETSKILL_MERGE2
-è½é©¬æœ¯,è½é©¬,PETSKILL_FallGround,æ”»%-30,,Ca,210,1,6,2,3000,PETSKILL_FALLGROUND
-æçŒ®,è¦æ±‚å¯¹æ–¹æçŒ®çŸ³å¸,PETSKILL_StealMoney,,,Aa,211,1,7,2,3500,PETSKILL_STEALMONEY
-Eå²©çŸ³æ’žå‡»,åœ°é­”æ³•LV1,PETSKILL_AttackMagic,magic 301 item 19647,,,301,1,7,2,0,PETSKILL_AttactMagic
-Eè½çŸ³æ’žå‡»,åœ°é­”æ³•LV2,PETSKILL_AttackMagic,magic 302 item 19648,,,302,1,7,2,0,PETSKILL_AttactMagic
-EåœŸçŸ³æµ,åœ°é­”æ³•LV3-1,PETSKILL_AttackMagic,magic 303 item 19649,,,303,1,7,2,0,PETSKILL_AttactMagic
-Eå·¨å²©æ’žå‡»,åœ°é­”æ³•LV3-2,PETSKILL_AttackMagic,magic 304 item 19650,,,304,1,7,2,0,PETSKILL_AttactMagic
-Eåœ°éœ‡,åœ°é­”æ³•LV3-3,PETSKILL_AttackMagic,magic 305 item 19651,,,305,1,7,2,0,PETSKILL_AttactMagic
-Eé™¨çŸ³å†²å‡»,åœ°é­”æ³•LV4,PETSKILL_AttackMagic,magic 306 item 19652,,,306,1,7,2,0,PETSKILL_AttactMagic
-Eæ°´æŸ±,æ°´é­”æ³•LV1,PETSKILL_AttackMagic,magic 307 item 19653,,,307,1,7,2,0,PETSKILL_AttactMagic
-Eæ°´åˆƒ,æ°´é­”æ³•LV2,PETSKILL_AttackMagic,magic 308 item 19654,,,308,1,7,2,0,PETSKILL_AttactMagic
-Eå¤§å†°å±±,æ°´é­”æ³•LV3-1,PETSKILL_AttackMagic,magic 309 item 19655,,,309,1,7,2,0,PETSKILL_AttactMagic
-Eæ²¸ç‚¹æ”»å‡»,æ°´é­”æ³•LV3-2,PETSKILL_AttackMagic,magic 310 item 19656,,,310,1,7,2,0,PETSKILL_AttactMagic
-Eæš´é£Žé›ª,æ°´é­”æ³•LV3-3,PETSKILL_AttackMagic,magic 311 item 19657,,,311,1,7,2,0,PETSKILL_AttactMagic
-Eå†°å¤©é›ªåœ°,æ°´é­”æ³•LV4,PETSKILL_AttackMagic,magic 312 item 19658,,,312,1,7,2,0,PETSKILL_AttactMagic
-Eç«çƒ,ç«é­”æ³•LV1,PETSKILL_AttackMagic,magic 313 item 19659,,,313,1,7,2,0,PETSKILL_AttactMagic
-Eç«ç„°è¿žå¼¹,ç«é­”æ³•LV2,PETSKILL_AttackMagic,magic 314 item 19660,,,314,1,7,2,0,PETSKILL_AttactMagic
-Eè’¸æ±½å–·å°„,ç«é­”æ³•LV3-1,PETSKILL_AttackMagic,magic 315 item 19661,,,315,1,7,2,0,PETSKILL_AttactMagic
-Eç«ç„°é£Žçˆ†,ç«é­”æ³•LV3-2,PETSKILL_AttackMagic,magic 316 item 19662,,,316,1,7,2,0,PETSKILL_AttactMagic
-Eç†”å²©çˆ†å‘,ç«é­”æ³•LV3-3,PETSKILL_AttackMagic,magic 317 item 19663,,,317,1,7,2,0,PETSKILL_AttactMagic
-Eç«å±±çˆ†å‘,ç«é­”æ³•LV4,PETSKILL_AttackMagic,magic 318 item 19664,,,318,1,7,2,0,PETSKILL_AttactMagic
-Eé£Žåˆƒ,é£Žé­”æ³•LV1,PETSKILL_AttackMagic,magic 319 item 19665,,,319,1,7,2,0,PETSKILL_AttactMagic
-EçœŸç©ºåˆƒ,é£Žé­”æ³•LV2,PETSKILL_AttackMagic,magic 320 item 19666,,,320,1,7,2,0,PETSKILL_AttactMagic
-Eé¾™å·é£Ž,é£Žé­”æ³•LV3-1,PETSKILL_AttackMagic,magic 321 item 19667,,,321,1,7,2,0,PETSKILL_AttactMagic
-Eæš´é£Žçƒˆåˆƒ,é£Žé­”æ³•LV3-2,PETSKILL_AttackMagic,magic 322 item 19668,,,322,1,7,2,0,PETSKILL_AttactMagic
-Eæš´é£Žå†°åˆƒ,é£Žé­”æ³•LV3-3,PETSKILL_AttackMagic,magic 323 item 19669,,,323,1,7,2,0,PETSKILL_AttactMagic
-Eå—æžé£“é£Ž,é£Žé­”æ³•LV4,PETSKILL_AttackMagic,magic 324 item 19670,,,324,1,7,2,0,PETSKILL_AttactMagic
-Eæ¯å¤©ç­åœ°,é­”æ³•LV5,PETSKILL_AttackMagic,magic 325 item 19671,,,325,1,7,2,0,PETSKILL_AttactMagic
-Eå‡€åŒ–,è§£é™¤æ‰€æœ‰å¼‚å¸¸çŠ¶æ€,PETSKILL_Refresh,å…¨,,,326,1,3,2,8000,PETSKILL_REFRESH
-Eå¤æ´»æœ¯,ENEMYä¸“å±žå¤æ´»æœ¯LV1,ENEMYSKILL_ReLife,,,Ea,500,1,2,2,0,ENEMYSKILL_RELIFES
-Eå›žå¤æŠ€,ENEMYä¸“å±žå›žå¤æŠ€LV1,ENEMYSKILL_ReHP,,,Eb,501,1,2,2,0,ENEMYSKILL_RELIFHP
-Eæ‹›å”¤,ENEMYä¸“å±žæ‹›å”¤LV1,ENEMYSKILL_EnemyHELP,,,Ec,502,1,2,2,0,ENEMYSKILL_HELP
-å—œè¡€æŠ€,æ”»å‡»åŠ›ä¸‹é™30%ã€€ã€€ã€€ å¹¶å°†ä¼¤å®³å€¼çš„50%åŒ–ä¸ºå·±ç”¨,PETSKILL_DamageToHp,30|50,,Ba,503,1,6,2,2000,PETSKILL_DAMAGETOHP
-å—œè¡€æŠ€2,æ”»å‡»åŠ›ä¸‹é™20%ã€€ã€€ã€€ å¹¶å°†ä¼¤å®³å€¼çš„70%åŒ–ä¸ºå·±ç”¨,PETSKILL_DamageToHp,20|70,,Bb,504,1,6,2,0,PETSKILL_DAMAGETOHP
-å—œè¡€æŠ€3,æ”»å‡»åŠ›ä¸‹é™10%ã€€ã€€ã€€ å¹¶å°†ä¼¤å®³å€¼çš„100%åŒ–ä¸ºå·±ç”¨,PETSKILL_DamageToHp,10|100,,Bc,505,1,6,2,0,PETSKILL_DAMAGETOHP
-MPæ”»å‡»,æ”»å‡»åŠ›ä¸‹é™50%ã€€ã€€ã€€ å¹¶æŸå®³å¯¹æ–¹50%çš„MP,PETSKILL_MpDamage,50|50,,Bd,506,1,6,2,2000,PETSKILL_MPDAMAGE
-MPæ”»å‡»2,æ”»å‡»åŠ›ä¸‹é™50%ã€€ã€€ã€€ å¹¶æŸå®³å¯¹æ–¹75%çš„MP,PETSKILL_MpDamage,50|75,,Bf,507,1,6,2,0,PETSKILL_MPDAMAGE
-MPæ”»å‡»3,æ”»å‡»åŠ›ä¸‹é™50%ã€€ã€€ã€€ å¹¶æŸå®³å¯¹æ–¹100%çš„MP,PETSKILL_MpDamage,50|100,,Be,508,1,6,2,0,PETSKILL_MPDAMAGE
-ä¿®å¤,ä¿®å¤æŸåçš„é“å…·è£…å¤‡,PETSKILL_Fixitem,,,,540,2,0,1,300,PETSKILL_FIXITEM
-ç‹‚æš´æ”»å‡»,é˜²å¾¡åŠ›å‡30%ã€€ã€€æ”»å‡»åŠ›åŠ 100%ã€€ã€€ã€€ã€€ã€€ å‘½ä¸­çŽ‡ä¸‹é™30%,PETSKILL_WildViolentAttack,æ”»%+80 é˜²%-35 å›žé¿30,,Wa,541,1,6,2,1000,PETSKILL_WILDVIOLENTATTACK
-ç–¾é€Ÿæ”»å‡»,é˜²å¾¡åŠ›å‡30%ã€€ã€€æ•æ·å˜æˆåŠ +30%,PETSKILL_SpeedyAttack,é˜²%-30 æ•%+30,,Qa,542,1,6,2,1000,PETSKILL_SPEEDYATTACK
-ç ´é™¤é˜²å¾¡ä¹‹2,æ•Œé˜²å¾¡æ—¶æ”»+30%ã€€ã€€æ•Œéžé˜²å¾¡æ—¶æ”»-30%,PETSKILL_GuardBreak2,,,Ai,543,1,6,2,1000,PETSKILL_GUARDBREAK2
-åœ°å±žæ€§å¼ºåŒ–æ”»å‡»,å¯¹åœ°å±žæ€§å¼ºåŒ–20%æ”»å‡»,PETSKILL_Modifyattack,EA|20,,Dq,544,1,6,2,2000,PETSKILL_MODIFYATT
-æ°´å±žæ€§å¼ºåŒ–æ”»å‡»,å¯¹æ°´å±žæ€§å¼ºåŒ–20%æ”»å‡»,PETSKILL_Modifyattack,WA|20,,Sq,545,1,6,2,2000,PETSKILL_MODIFYATT
-ç«å±žæ€§å¼ºåŒ–æ”»å‡»,å¯¹ç«å±žæ€§å¼ºåŒ–20%æ”»å‡»,PETSKILL_Modifyattack,FI|20,,Hq,546,1,6,2,2000,PETSKILL_MODIFYATT
-é£Žå±žæ€§å¼ºåŒ–æ”»å‡»,å¯¹é£Žå±žæ€§å¼ºåŒ–20%æ”»å‡»,PETSKILL_Modifyattack,WI|20,,Fq,547,1,6,2,2000,PETSKILL_MODIFYATT
-åœ°å±žæ€§è½¬æ¢æ”»å‡»,è½¬æ¢è‡ªå·±ä¸ºåœ°å±žæ€§,PETSKILL_Mdfyattack,EA|100,,,548,1,6,2,2000,PETSKILL_MDFYATTACK
-æ°´å±žæ€§è½¬æ¢æ”»å‡»,è½¬æ¢è‡ªå·±ä¸ºæ°´å±žæ€§,PETSKILL_Mdfyattack,WA|100,,,549,1,6,2,2000,PETSKILL_MDFYATTACK
-ç«å±žæ€§è½¬æ¢æ”»å‡»,è½¬æ¢è‡ªå·±ä¸ºç«å±žæ€§,PETSKILL_Mdfyattack,FI|100,,,550,1,6,2,2000,PETSKILL_MDFYATTACK
-é£Žå±žæ€§è½¬æ¢æ”»å‡»,è½¬æ¢è‡ªå·±ä¸ºé£Žå±žæ€§,PETSKILL_Mdfyattack,WI|100,,,551,1,6,2,2000,PETSKILL_MDFYATTACK
-é“å£,æé«˜å·±æ–¹å…¨ä½“é˜²å¾¡åŠ›30%3å›žåˆã€€ã€€,PETSKILL_MagicStatusChange,é“å£|3|30|å…¨,,Af,552,1,2,2,0,PETSKILL_MSTATUSCHANGH
-é“å£,æé«˜å·±æ–¹å…¨ä½“é˜²å¾¡åŠ›30%3å›žåˆã€€ã€€,PETSKILL_MagicStatusChange,é“å£|3|30|å…¨,,At,553,1,2,2,0,PETSKILL_MSTATUSCHANGH
-é•¶å®çŸ³,å°†æç‚¼å‡ºçš„å®çŸ³é•¶åœ¨ç²¾å·¥è£…å¤‡ä¸Š,PETSKILL_Inslay,,,Da,572,2,0,1,3000,PETSKILL_INSLAY
-æ•‘æ´,ç‰ºç‰²è‡ªå·±50%çš„HPã€€ã€€è¡¥è‡³ä»–äººèº«ä¸Š,PETSKILL_Sacrifice,,,,573,1,1,2,0,PETSKILL_SACRIFICE
-Eå•®é½¿æœ¯,ç ´åå¯¹æ–¹è£…å¤‡æ­¦å™¨,PETSKILL_ToothCrushe,,,Ed,574,1,6,2,0,PETSKILL_TOOTHCRUSHE
-è™šå¼±,è¢«æ”»å‡»è€…ä¸‰å›žåˆå†…æ”»é˜²æ•ä¸‹é™20%,PETSKILL_Weaken,è™š turn 3 æˆ 50,,Ga,575,1,6,2,3000,PETSKILL_WEAKEN
-å…¨ä½“è™šå¼±,æ•Œå…¨ä½“ä¸‰å›žåˆå†…æ”»é˜²æ•ä¸‹é™20%,PETSKILL_Weaken,è™š turn 3 æˆ 50,,,576,1,3,2,0,PETSKILL_WEAKEN
-å‰§æ¯’,æ•Œå•ä½“ä¸­æ¯’5å›žåˆã€€ã€€ç¬¬å…­å›žåˆå‰æœªè§£åˆ™é˜µäº¡,PETSKILL_Deeppoison,å‰§ turn 5 æˆ 50,,,577,1,6,2,0,PETSKILL_DEEPPOISON
-å…¨ä½“å‰§æ¯’,æ•Œå…¨ä½“ä¸­æ¯’5å›žåˆã€€ã€€ç¬¬å…­å›žåˆå‰æœªè§£åˆ™é˜µäº¡,PETSKILL_Deeppoison,å‰§ turn 5 æˆ 50,,,578,1,3,2,0,PETSKILL_DEEPPOISON
-é­”éšœ,æ•Œå…¨ä½“ä¸€å›žåˆæ— æ³•è¡ŒåŠ¨,PETSKILL_Barrier,éšœ turn 1 æˆ 50,,,579,1,3,2,0,PETSKILL_BARRIER
-æ²‰é»˜,æ•Œå…¨ä½“æ— æ³•ä½¿ç”¨å’’æœ¯ä¸‰å›žåˆ,PETSKILL_Nocast,é»˜ turn 3 æˆ 50,,Ra,580,1,3,2,1000,PETSKILL_NOCAST
-å¤§å¼,å¯¹å¹´å…½å¼å«ã€€ã€€å¯å“è·‘å¹´å…½ã€€ã€€é›·é¾™ä¸“ç”¨æŠ€,PETSKILL_Roar,901|902|903|904|1056|1057|1058|1059,,,581,1,6,2,3000,PETSKILL_Roar
-è‡ªçˆ†æ”»å‡»,ç‰ºç‰²è‡ªå·±ã€€ã€€æé«˜50%å‘½ä¸­çŽ‡ã€€ã€€é€ æˆä¸‰å€æŸä¼¤,PETSKILL_SelfExplodeAttack,å€3 å›žé¿-50,,,582,1,6,2,5000,PETSKILL_SELFEXPLODEATTACK
-ç ´é™¤æ²‰é»˜,è§£é™¤æ²‰é»˜çŠ¶æ€,PETSKILL_Refresh,é»˜,,Ah,583,1,2,2,2000,PETSKILL_REFRESH
-å‰§æ¯’æ²»ç–—,è§£é™¤å‰§æ¯’çŠ¶æ€,PETSKILL_Refresh,å‰§,,,584,1,2,2,5000,PETSKILL_REFRESH
-ç ´é™¤é­”éšœ,è§£é™¤é­”éšœçŠ¶æ€,PETSKILL_Refresh,éšœ,,,591,1,1,2,5000,PETSKILL_REFRESH
-å‡€åŒ–,è§£é™¤æ‰€æœ‰å¼‚å¸¸çŠ¶æ€,PETSKILL_Refresh,å…¨,,,592,1,2,2,8000,PETSKILL_REFRESH
-ç ´é™¤è™šå¼±,è§£é™¤è™šå¼±çŠ¶æ€,PETSKILL_Refresh,è™š,,,593,1,2,2,5000,PETSKILL_REFRESH
-ç©¶æžé­”éšœ,æ•Œå…¨ä½“ä¸‰å›žåˆæ— æ³•è¡ŒåŠ¨,PETSKILL_Barrier,éšœ turn 3 æˆ 50,,,594,1,3,2,0,PETSKILL_BARRIER
-é—ªé¿æœ¯,ä¸‰å›žåˆå†…é—ªé¿çŽ‡ä¸Šå‡60ã€€ã€€æœ‰æ•ˆæ—¶é—´ä¸‰å›žåˆ,PETSKILL_SetDuck,3|60,,Ha,595,1,0,2,1000,PETSKILL_SETDUCK
-æš—æœˆå˜èº«,å˜èº«åŽå¢žåŠ 30%çš„æ”»å‡»åŠ›è·Ÿæ•æ·  é­”æ³•é˜²å¾¡å€¼å‡åŠ  æœ‰æ•ˆæ—¶é—´äº”å›žåˆã€€ã€€ã€€,PETSKILL_Vary,æ”»%+30 æ•%+30 é­”é˜²%-50,,Ia,600,1,5,2,1000,PETSKILL_VARY
-å¤§åœ°é“ ç”²,æˆ‘æ–¹å…¨ä½“é˜²å¾¡åŠ›ä¸‰å›žåˆå†…æå‡15%,PETSKILL_SetMagicPet,3|15|TGH,,Ja,601,1,2,2,2500,PETSKILL_SETMAGICPET
-æ°´çµæ»‹æ¶¦,æˆ‘æ–¹å…¨ä½“ä½“åŠ›300å›žå¤,PETSKILL_SetMagicPet,3|300|HP,,Ka,602,1,2,2,2500,PETSKILL_SETMAGICPET
-ç«ç„°å¨èƒ½,æˆ‘æ–¹å…¨ä½“æ”»å‡»åŠ›ä¸‰å›žåˆå†…æå‡10%,PETSKILL_SetMagicPet,3|10|STR,,La,603,1,2,2,2500,PETSKILL_SETMAGICPET
-é£Žä¹‹å¹æ¯,æˆ‘æ–¹å…¨ä½“æ•æ·åŠ›ä¸‰å›žåˆå†…æå‡15%,PETSKILL_SetMagicPet,3|15|DEX,,Ma,604,1,2,2,2500,PETSKILL_SETMAGICPET
-ä¸‰é‡çªå‡»,3å›žåˆå‚¨å­˜åŠ›é‡ ã€€ã€€ã€€ä¸‹æ¬¡æ”»å‡»æ—¶ ã€€ã€€ã€€å°±ä¼šæœ‰ä¸‰å€ä»¥ä¸Šçš„æ”»å‡»åŠ›,PETSKILL_ChargeAttack,3 æ”»%+150,,,605,1,6,2,8500,PETSKILL_CHARGE2
-æ€¯æˆ˜,æ”»å‡»åŠ›30%ä¸‹é™  é˜²å¾¡åŠ›50%ä¸‹é™  å‘½ä¸­ä¹‹æ•Œä¼šé€ƒè·‘,PETSKILL_BattleTimid,,,Na,606,1,6,2,3000,PETSKILL_BTIMID
-æ€¯æˆ˜,æ”»å‡»åŠ›30%ä¸‹é™  é˜²å¾¡åŠ›50%ä¸‹é™  å‘½ä¸­ä¹‹æ•Œä¼šé€ƒè·‘,PETSKILL_BattleTimid,,,Qz,727,1,6,2,3000,PETSKILL_BTIMID
-æ—…ç¨‹ä¼™ä¼´2,æŠŠä¸€åªæé¾™å½“ä½œæ˜¯ä¼™ä¼´å½“åœºå¸¦èµ° å¿ è¯šåº¦60ä»¥ä¸‹æˆåŠŸçŽ‡100%,PETSKILL_Abduct,60,,,607,1,7,2,5000,PETSKILL_Abduct
-Eæ—…ç¨‹ä¼™ä¼´3,æŠŠä¸€åªæé¾™å½“ä½œæ˜¯ä¼™ä¼´å½“åœºå¸¦èµ° å¿ è¯šåº¦80ä»¥ä¸‹æˆåŠŸçŽ‡100%,PETSKILL_Abduct,80,,,608,1,7,2,3000,PETSKILL_Abduct
-é‡‡å…‰æœ¯,å°†å¯¹æ–¹ä¹‹å…‰çš„ç²¾çµå¸æ”¶åˆ°è‡ªå·±èº«ä¸Š,PETSKILL_Lighttakeed,ABSROB,,,609,1,7,2,5000,PETSKILL_Light
-ç ´é•œé‡åœ†,å°†å¯¹æ–¹ä¹‹é•œçš„ç²¾çµå¸æ”¶åˆ°è‡ªå·±èº«ä¸Š,PETSKILL_Lighttakeed,REFLEC,,,610,1,7,2,5000,PETSKILL_Light
-ç©¿é€æœ¯,å°†å¯¹æ–¹ä¹‹å®ˆçš„ç²¾çµå¸æ”¶åˆ°è‡ªå·±èº«ä¸Š,PETSKILL_Lighttakeed,VANISH,,,611,1,7,2,5000,PETSKILL_Light
-é­”ä¹‹è¯…å’’,å¾…æœºä¸€å›žåˆ  å¯å°†å±žæ€§è°ƒæˆå…‹å¯¹æ–¹å±žæ€§,PETSKILL_BattleProperty,PET_PetskillPropertyEvent,,Oa,612,1,5,2,3000,PETSKILL_NONE
-ç‹‚ä¹±æš´èµ°,ä¹±æ•°æ”»å‡»å¯¹æ‰‹3æ¬¡ æ”»20% é˜²30% ä¸‹é™,PETSKILL_AttackCrazed,3,,,613,1,1,2,0,PETSKILL_AttCrazed
-æ —å­è¿žæ¿€,ä¹±æ•°è¿žç»­æŠ•æŽ·æ —å­3~5é¢—,PETSKILL_AttackShoot,3|5,,Pa,614,1,1,2,2000,PETSKILL_AttShoot
-æ’•è£‚ä¼¤å£1,æ’•è£‚æ—§ä¼¤å£ å¢žåŠ 20%ä¼¤å®³,PETSKILL_BattleTearDamage,20,,Sa,615,1,1,2,10000,PETSKILL_NONE
-æ’•è£‚ä¼¤å£2,æ’•è£‚æ—§ä¼¤å£ å¢žåŠ 50%ä¼¤å®³,PETSKILL_BattleTearDamage,50,,Sb,616,1,1,2,10000,PETSKILL_NONE
-æ’•è£‚ä¼¤å£2,æ’•è£‚æ—§ä¼¤å£ å¢žåŠ 50%ä¼¤å®³,PETSKILL_BattleTearDamage,50,,Sl,596,1,1,2,10000,PETSKILL_NONE
-æ¯’ç…žè”“å»¶,è®©å¯¹æ‰‹ä¸­æ¯’ ä¸”æœ‰æœºä¼šä¼ æŸ“åˆ°å‘¨å›´çš„äºº,PETSKILL_Sars,ç…ž,,Ua,617,1,1,2,5000,PETSKILL_NONE
-éŸ³æ³¢å†²å‡»,æ”»å‡»å® ç‰©æ—¶ å¯è´¯ç©¿ä¼¤å®³è‡³äººç‰©èº«ä¸Š ä¼¤å®³å€¼ä¸º1/2,PETSKILL_Sonic,,,Va,618,1,1,2,3000,PETSKILL_NONE
-å›žæ—‹æ”»å‡»,æ”»å‡»åŠ›ä¸‹é™50% å¯æ”»å‡»æ•Œæ–¹ä¸€æŽ’,PETSKILL_Gyrate,æ”»%-50,,Xa,619,1,1,2,3000,PETSKILL_NONE
-å¨å“æ”»å‡»,æ”»å‡»åŠ›ä¸‹é™30% æ•æ·ä¸‹é™30% æœ‰60%çš„æœºçŽ‡ä½¿å¯¹æ‰‹éº»ç—¹ä¸€å›žåˆ,PETSKILL_Hector,éº» turn 1 æ”»%-30 æ•%-30,,Ya,620,1,1,2,5000,PETSKILL_NONE
-è¿½è¿¹æ”»å‡»,å¯¹æ‰‹åœ¨ç¬¬ä¸€æ¬¡æ”»å‡»é—ªé¿çš„è¯ å°†ä¼š80%çš„æœºçŽ‡å‘åŠ¨ç¬¬äºŒæ¬¡æ”»å‡»,PETSKILL_Retrace,æ”»%+20,,Za,621,1,1,2,3000,PETSKILL_NONE
-é’ˆåˆºå¤–çš®,å¯ä»¤æ”»å‡»è€…å—åˆ°1/2çš„ä¼¤å®³,PETSKILL_Acupuncture,,,Ab,622,1,0,2,5000,PETSKILL_NONE
-æµ´è¡€ç‹‚è¢­,Hp50%ä»¥ä¸‹æ—¶æ‰å¯ä½¿ç”¨ æ”»æ•ä¸Šå‡20% ä¼šå¿ƒä¸€å‡»ä¸Šå‡30% å¸æ”¶ä¼¤å®³30%è½¬Hp,PETSKILL_DamageToHp2,30,,Aj,623,1,6,2,5000,PETSKILL_NONE
-ç«çº¿çŒŽæ€,æ•Œä¸€æŽ’ç«ç„°æ”»å‡»,PETSKILL_Firekill,,,Ad,624,1,1,2,5000,PETSKILL_NONE
-åªšæƒ‘æœ¯,ä½¿å® ç‰©å˜æˆå°ç‹ç‹¸,PETSKILL_BecomeFox,,,Ae,625,1,1,2,3000,PETSKILL_NONE
-æ‰‹ä¸‹ç•™æƒ…,ä½¿å¯¹æ–¹Hpå‰©ä¸‹ä¸€ç‚¹ ä¸ä¼šå°†å¯¹æ–¹è‡´æ­»,PETSKILL_ShowMercy,,,,626,1,1,2,10000,PETSKILL_NONE
-éš¾å¾—ç³Šæ¶‚,éšæœºè®©å¯¹æ–¹äº§ç”Ÿå¼‚å¸¸çŠ¶æ€æˆ–å›žå¤,PETSKILL_Combined,ç»¼åˆæ³•|6|21|139|159|169|179|189,,Ag,627,1,3,2,2000,PETSKILL_NONE
-ä¹ŒåŠ›åŒ–,åœ¨ä¸€å®šæ—¶é—´å†…ä½¿å¯¹æ–¹å˜æˆä¹ŒåŠ›,PETSKILL_BecomePig,,,,628,1,7,2,5000,PETSKILL_BECOMEPIG
-éš¾å¾—ç³Šæ¶‚æ”¹,éšæœºè®©å¯¹æ–¹äº§ç”Ÿå¼‚å¸¸çŠ¶æ€,PETSKILL_Combined,ç»¼åˆæ³•|5|139|159|169|179|189,,Ag,629,1,3,2,2000,PETSKILL_NONE
-åœ°çµå¨èƒ½,å¯æ‹›å”¤åœ°ç²¾çµé­”æ³•å¨åŠ›çš„æŠ€èƒ½,PETSKILL_Combined,ç»¼åˆæ³•|1|306,,Ak,630,1,3,2,2000,PETSKILL_NONE
-ä¹ŒåŠ›åŒ–,åœ¨ä¸€å®šæ—¶é—´å†…ä½¿å¯¹æ–¹å˜æˆä¹ŒåŠ›,PETSKILL_BecomePig,30 180,,Al,631,1,7,2,20000,PETSKILL_BECOMEPIG
-é€†è½¬,åè½¬å±žæ€§,PETSKILL_Combined,ç»¼åˆæ³•|1|240,,Am,632,1,1,2,5000,PETSKILL_NONE
-ç¾¤è å››çªœ,å¸è¡€,PETSKILL_BatFly,,,,633,1,3,2,5000,PETSKILL_NONE
-åˆ†èº«åœ°è£‚,å…¨ä½“æ”»å‡»,PETSKILL_DivideAttack,,,,634,1,3,1,5000,PETSKILL_NONE
-é»‘ä¹ŒåŠ›åŒ–,åœ¨ä¸€å®šæ—¶é—´å†…ä½¿å¯¹æ–¹å˜æˆé»‘ä¹ŒåŠ›,PETSKILL_BecomePig,30 180 100388,,An,635,1,7,2,20000,PETSKILL_BECOMEPIG
-ç‹‚ç‹®æ€’å¼,ä½¿ç”¨æ—¶æ”»ä¸‹é™50% æ•ä¸Šå‡30% ä½¿æ•Œæ–¹å® ç‰©å—åˆ°æƒŠå“å›žåˆ°å® ç‰©æ ,PETSKILL_2BattleTimid,-æ”»%50+æ•%30å‘½%60,,Ao,636,1,7,2,10000,PETSKILL_NONE
-å‡€åŒ–ä¹‹èˆž,å…¨éƒ¨çŠ¶æ€å¼‚å¸¸å›žå¤ (ä¸€æ–¹å…¨ä½“),PETSKILL_Combined,ç»¼åˆæ³•|1|61,,Ap,637,1,2,2,20000,PETSKILL_NONE
-ç¾¤èœ‚ä¹±èˆž,æ”»å‡»åŠ›ä¸‹é™30% å…¨ä½“éº»ç—¹ä¸€å›žåˆ,PETSKILL_BattleModel,5|4|éº»|1|30|æ”»%-30|101867 101868,,Aq,638,1,3,3,10000,PETSKILL_NONE
-èšè‘¬,ä½¿æ•Œæ–¹æ­»äº¡å® ç‰©å›žåˆ°å® ç‰©æ ï¼Œæ— æ³•å†å‚ä¸Žæˆ˜æ–—,PETSKILL_AntInter,,,Ar,639,1,10,2,10000,PETSKILL_NONE
-æ†¾ç”²ä¸€å‡»,ä½¿æ—¶æ— è§†æ•Œæ–¹è£…å¤‡é˜²å¾¡æ”»å‡»å‰åŽæ–¹æ•Œäººï¼Œä½¿ç”¨æ—¶æ”»ä¸Šå‡30%é˜²å¾¡ä¸‹é™50%,PETSKILL_Regret,å‘½%20 æ”»%30 é˜²%-50,,Re,640,1,7,2,10000,PETSKILL_NONE
-ç¾¤èœ‚ä¹±èˆžæ”¹,æ”»å‡»åŠ›ä¸‹é™30% å…¨ä½“éº»ç—¹ä¸¤å›žåˆ,PETSKILL_BattleModel,5|4|éº»|2|30|æ”»%-30|101867 101868,,As,641,1,3,3,10000,PETSKILL_NONE
-è§‰é†’,å‘½ä¸­çŽ‡ä¸Žå›žé¿çŽ‡ä¸Šå‡30% æ”»é˜²æ•ä¸Šå‡5%,PETSKILL_Awaken,æ”»%5 é˜²%5 æ•%5 å‘½%30 å›ž%30,,Aw,642,1,7,3,10000,PETSKILL_NONE
-è›Šæƒ‘,ä½¿å¿ è¯šä½ŽäºŽ40ä¹‹æ•Œå® åæ”»æ•Œæ–¹é˜µè¥,PETSKILL_Temptation,40,,Gh,643,1,7,3,10000,PETSKILL_NONE
-å…ƒæ°”,å›žè¦†æˆ‘æ–¹å…¨ä½“ä½“åŠ›,PETSKILL_Combined,ç»¼åˆæ³•|6|20|21|22|23|24|25,,Av,646,1,2,2,20000,PETSKILL_NONE
-æ —å­è¿žæ¿€æ”¹,ä¹±æ•°è¿žç»­æŠ•æŽ·æ —å­6~8é¢—,PETSKILL_AttackShoot,6|8,,Pa,647,1,1,2,20000,PETSKILL_AttShoot
-é…è¯,éšæœºåŒ»æ²»æˆ‘æ–¹å…¨ä½“å¼‚å¸¸çŠ¶æ€,PETSKILL_Combined,ç»¼åˆæ³•|6|71|81|91|101|121|61,,Ax,648,1,2,2,20000,PETSKILL_NONE
-è‚†æ— å¿Œè›‹,é˜²å¾¡åŠ›ä¸‹é™30%   ä¸¢é¸¡è›‹æ”»å‡»æ•Œæ–¹å…¨ä½“ é™„åŠ ç¡çœ æ•ˆæžœ,PETSKILL_BattleModel,5|5|çœ |2|30|æ”»%-30|101489,,Ay,649,1,1,1,20000,PETSKILL_NONE
-ç‹‚çŒ«ä¹±æŠ“æ”¹,çŒ«äººä¸“å±žæŠ€èƒ½ï¼Œæ”»å‡»åŠ›ä¸Šå‡15% å…¨ä½“éº»ç—¹1å›žåˆ,PETSKILL_BattleModel,5|5|éº»|2|30|æ”»%5|101885 101884,,Zx,650,1,1,1,10000,PETSKILL_NONE
-ç–¯ç‹‚æ”»å‡»æœ¯,é˜²å¾¡åŠ›å‡50%ã€€æ”»å‡»åŠ›åŠ 60%ã€€ å‘½ä¸­çŽ‡ä¸‹é™50%,PETSKILL_WildViolentAttack,æ”»%+60 é˜²%-50 å›žé¿50,,101413 101741,652,1,6,2,1000,PETSKILL_WILDVIOLENTATTACK
-è™Žè™Žç”Ÿå¨,äºŒä»£ç™½è™Žä¸“å±žæŠ€èƒ½ï¼Œæ”»å‡»åŠ›ä¸Šå‡20% å…¨ä½“çŸ³åŒ–3å›žåˆ,PETSKILL_BattleModel,5|5|çŸ³|3|30|æ”»%15|100871 100872,,Zh,655,1,3,3,10000,PETSKILL_NONE
-è™Žè™Žç”Ÿå¨,è€è™Žä¸“å±žæŠ€èƒ½ï¼Œæ”»å‡»åŠ›ä¸Šå‡20% å…¨ä½“çŸ³åŒ–3å›žåˆ,PETSKILL_BattleModel,5|5|çŸ³|3|30|æ”»%15|100871 100872,,Zl,590,1,3,3,10000,PETSKILL_NONE
-æ’•è£‚ä¼¤å£3,æ’•è£‚æ—§ä¼¤å£ å¢žåŠ 70%ä¼¤å®³,PETSKILL_BattleTearDamage,70,,Sc,656,1,1,2,10000,PETSKILL_NONE
-æ•Œæ–¹å…¨é€†è½¬,åè½¬æ•Œæ–¹å…¨ä½“å±žæ€§,PETSKILL_Combined,ç»¼åˆæ³•|1|240,,Qn,657,1,3,2,5000,PETSKILL_NONE
-æ•Œæ–¹å…¨é€†è½¬,åè½¬æ•Œæ–¹å…¨ä½“å±žæ€§,PETSKILL_Combined,ç»¼åˆæ³•|1|240,,Nd,724,1,3,2,5000,PETSKILL_NONE
-Tå›žæ—‹æ”»å‡»,æ”»å‡»åŠ›ä¸Šå‡20% å¯æ”»å‡»æ•Œæ–¹ä¸€æŽ’,PETSKILL_Gyrate,æ”»%+20,,Xb,653,1,1,2,3000,PETSKILL_NONE
-è‚†æ— å¿Œè›‹,æ”»å‡»åŠ›ä¸‹é™10%   ä¸¢æµ·å® è›‹æ”»å‡»æ•Œæ–¹å…¨ä½“ é™„åŠ çŸ³åŒ–æ•ˆæžœ,PETSKILL_BattleModel,5|5|çŸ³|3|30|æ”»%-10|101935,,Az,654,1,3,3,20000,PETSKILL_NONE
-æ’•è£‚ä¼¤å£4,æ’•è£‚æ—§ä¼¤å£ å¢žåŠ 100%ä¼¤å®³,PETSKILL_BattleTearDamage,150,,Sd,651,1,1,2,10000,PETSKILL_NONE
-çŽ„æ­¦é“å£,æé«˜å·±æ–¹å…¨ä½“é˜²å¾¡åŠ›50%3å›žåˆã€€ã€€,PETSKILL_MagicStatusChange,é“å£|3|50|å…¨,,,658,1,2,2,0,PETSKILL_MSTATUSCHANGH
-Tæµ´è¡€ç‹‚è¢­,ä»»ä½•æ—¶å€™éƒ½å¯ä½¿ç”¨ æ”»æ•ä¸Šå‡20% ä¼šå¿ƒä¸€å‡»ä¸Šå‡30% å¸æ”¶ä¼¤å®³100%è½¬Hp,PETSKILL_DamageToHp2,100,,,659,1,6,2,5000,PETSKILL_NONE
-Tå¤§åœ°é“ ç”²,æˆ‘æ–¹å•ä½“é˜²å¾¡åŠ›4å›žåˆå†…æå‡50%,PETSKILL_SetMagicPet,4|50|TGH,,,660,1,1,2,112500,PETSKILL_SETMAGICPET
-Tæ°´çµæ»‹æ¶¦,æˆ‘æ–¹å•ä½“ä½“åŠ›800å›žå¤,PETSKILL_SetMagicPet,3|800|HP,,,661,1,1,2,112500,PETSKILL_SETMAGICPET
-Tç«ç„°å¨èƒ½,æˆ‘æ–¹å•ä½“æ”»å‡»åŠ›4å›žåˆå†…æå‡50%,PETSKILL_SetMagicPet,4|50|STR,,,662,1,1,2,112500,PETSKILL_SETMAGICPET
-Té£Žä¹‹å¹æ¯,æˆ‘æ–¹å•ä½“æ•æ·åŠ›4å›žåˆå†…æå‡40%,PETSKILL_SetMagicPet,4|40|DEX,,,663,1,1,2,112500,PETSKILL_SETMAGICPET
-é¾™æˆ˜äºŽé‡Ž,æœºæ¢°äººé¾™ä¸“å±žæŠ€èƒ½ æ”»å‡»ä¸‹é™18% å…¨ä½“éº»ç—¹2å›žåˆ,PETSKILL_BattleModel,5|5|éº»|2|30|æ”»%-15|101819,,Jf,664,1,3,3,10000,PETSKILL_NONE
-Tç‹‚æš´æ”»å‡»,é˜²å¾¡åŠ›å‡20%ã€€ã€€æ”»å‡»åŠ›åŠ 150%ã€€ã€€ã€€ã€€ã€€ å‘½ä¸­çŽ‡ä¸‹é™20%,PETSKILL_WildViolentAttack,æ”»%+150 é˜²%-20 å›žé¿20,,Tk,665,1,6,2,1000,PETSKILL_WILDVIOLENTATTACK
-Tæ†¾ç”²ä¸€å‡»,ä½¿æ—¶æ— è§†æ•Œæ–¹è£…å¤‡é˜²å¾¡æ”»å‡»å‰åŽæ–¹æ•Œäººï¼Œä½¿ç”¨æ—¶æ”»ä¸Šå‡60%é˜²å¾¡ä¸‹é™20%,PETSKILL_Regret,å‘½%30 æ”»%60 é˜²-20%,,Rf,666,1,7,2,10000,PETSKILL_NONE
-é’é¾™æ‘†å°¾,æ”»å‡»åŠ›ä¸Šå‡50% å¯æ”»å‡»æ•Œæ–¹ä¸€æŽ’,PETSKILL_Gyrate,æ”»%+50,,Jb,667,1,1,2,3000,PETSKILL_NONE
-ç™½è™Žä¹‹æ€’,æ”»å‡»åŠ›ä¸‹é™10% é™„åŠ ç¡çœ æ•ˆæžœ4å›žåˆ,PETSKILL_BattleModel,5|5|çœ |4|30|æ”»%-12|100872,,Jc,668,1,3,3,200000,PETSKILL_NONE
-æœ±é›€ä¹‹æ€’,æ”»å‡»åŠ›ä¸‹é™20% é™„åŠ çŸ³åŒ–æ•ˆæžœ3å›žåˆ,PETSKILL_BattleModel,5|5|çŸ³|3|30|æ”»%-22|101413,,Jd,669,1,3,3,200000,PETSKILL_NONE
-ç ´é‡œæ²‰èˆŸ,æ”»å‡»åŠ›ä¸Šå‡200%é˜²å¾¡ä¸‹é™99%,PETSKILL_PowerBalance,æ”»%+200 é˜²%-99,,Je,670,1,6,2,130000,PETSKILL_POWERBALANCE7
-æš´èµ°,é˜²å¾¡åŠ›å‡25%ã€€ã€€æ”»å‡»åŠ›åŠ 120%ã€€ã€€ã€€ã€€ã€€ å‘½ä¸­çŽ‡ä¸‹é™10%,PETSKILL_WildViolentAttack,æ”»%+115 é˜²%-25 å›žé¿10,,,671,1,6,2,1000,PETSKILL_WILDVIOLENTATTACK
-å…¨ä½“æ²‰é»˜,æ•Œå…¨ä½“æ— æ³•ä½¿ç”¨å’’æœ¯ä¸‰å›žåˆ,PETSKILL_Nocast,é»˜ turn 3 æˆ 50,,,672,1,3,2,8000000,PETSKILL_NOCAST
-å…¨ä½“é­”éšœ,æ•Œå…¨ä½“ä¸¤å›žåˆæ— æ³•è¡ŒåŠ¨,PETSKILL_Barrier,éšœ turn 2 æˆ 50,,,673,1,3,2,8000000,PETSKILL_BARRIER
-æš—æœˆå˜èº«æ”¹,å˜èº«åŽå¢žåŠ 60%çš„æ”»å‡»åŠ›è·Ÿæ•æ·  é­”æ³•é˜²å¾¡å€¼å‡80%  æœ‰æ•ˆæ—¶é—´äº”å›žåˆã€€ã€€ã€€,PETSKILL_Vary,æ”»%+60 æ•%+50 é­”é˜²%-80,,Ib,674,1,5,2,1000,PETSKILL_VARY
-Eå¤§åœ°çš„ç²¾çµ,é­”æ³•LV5,PETSKILL_AttackMagic,magic 194 item 20899,,,675,1,7,2,0,PETSKILL_AttactMagic
-Eæ°´çš„ç²¾çµ,é­”æ³•LV5,PETSKILL_AttackMagic,magic 204 item 20900,,,676,1,7,2,0,PETSKILL_AttactMagic
-Eç«ç‚Žçš„ç²¾çµ,é­”æ³•LV5,PETSKILL_AttackMagic,magic 214 item 20901,,,677,1,7,2,0,PETSKILL_AttactMagic
-Eç–¾é£Žçš„ç²¾çµ,é­”æ³•LV5,PETSKILL_AttackMagic,magic 224 item 20902,,,678,1,7,2,0,PETSKILL_AttactMagic
-Eæžå…‰çš„ç²¾çµ,é­”æ³•LV5,PETSKILL_AttackMagic,magic 241 item 20903,,,679,1,7,2,0,PETSKILL_AttactMagic
-Eå›é€†çš„ç²¾çµ,é­”æ³•LV5,PETSKILL_AttackMagic,magic 23 item 20904,,,680,1,7,2,0,PETSKILL_AttactMagic
-Eå¥”é›·çš„ç²¾çµ1,é­”æ³•LV5,PETSKILL_AttackMagic,magic 427 item 20905,,,681,1,7,2,0,PETSKILL_AttactMagic
-Eå¥”é›·çš„ç²¾çµ2,é­”æ³•LV5,PETSKILL_AttackMagic,magic 428 item 20906,,,682,1,7,2,0,PETSKILL_AttactMagic
-Eå†°æš´æœ¯1,é­”æ³•LV5,PETSKILL_AttackMagic,magic 430 item 20907,,,683,1,7,2,0,PETSKILL_AttactMagic
-Eå†°æš´æœ¯2,é­”æ³•LV5,PETSKILL_AttackMagic,magic 431 item 20908,,,684,1,7,2,0,PETSKILL_AttactMagic
-Eç«é¾™æžª,é­”æ³•LV5,PETSKILL_AttackMagic,magic 432 item 20909,,,685,1,7,2,0,PETSKILL_AttactMagic
-Eå†°é•œæœ¯,é­”æ³•LV5,PETSKILL_AttackMagic,magic 433 item 20910,,,686,1,7,2,0,PETSKILL_AttactMagic
-Eé™¨è½,é­”æ³•LV5,PETSKILL_AttackMagic,magic 434 item 20911,,,687,1,7,2,0,PETSKILL_AttactMagic
-Eå’’çµæœ¯,1å‡»å¿…æ€,PETSKILL_AttackMagic,magic 435 item 20912,,,688,1,7,2,0,PETSKILL_AttactMagic
-Qé›·åˆ†èº«æœ¯,Qç‰ˆé›·å°”å®å®çš„åˆ†èº«æœ¯ é­”éšœ3å›žåˆ,PETSKILL_BattleModel,5|5|éšœ|3|30|æ”»%10|101996,,Qb,689,1,3,3,10000,PETSKILL_NONE
-Qæµ·ç›—åˆ†èº«æœ¯,Qç‰ˆæµ·ç›—å®å®çš„åˆ†èº«æœ¯ å‰§æ¯’6å›žåˆ,PETSKILL_BattleModel,5|5|å‰§|6|30|æ”»%5|101987,,Qc,690,1,3,3,10000,PETSKILL_NONE
-Qå¿è€…åˆ†èº«æœ¯,Qç‰ˆå¿è€…å®å®çš„åˆ†èº«æœ¯ çŸ³åŒ–6å›žåˆ,PETSKILL_BattleModel,5|5|çŸ³|6|30|æ”»%5|101994,,Qd,691,1,3,3,10000,PETSKILL_NONE
-Qå¥¶ç‰›åˆ†èº«æœ¯,Qç‰ˆå¥¶ç‰›å®å®çš„åˆ†èº«æœ¯ è™šå¼±9å›žåˆ,PETSKILL_BattleModel,5|5|è™š|9|30|æ”»%-50|101995,,Qe,692,1,3,3,10000,PETSKILL_NONE
-åœ°ä¹‹ç¥ç¦,æˆ‘æ–¹å•ä½“é˜²å¾¡åŠ›4å›žåˆå†…æå‡30%,PETSKILL_SetMagicPet,4|30|TGH,,Qf,693,1,1,2,112500,PETSKILL_SETMAGICPET
-ç¥žä¹‹ç¥ç¦,æˆ‘æ–¹å•ä½“ä½“åŠ›800å›žå¤,PETSKILL_SetMagicPet,3|800|HP,,Qg,694,1,1,2,112500,PETSKILL_SETMAGICPET
-ç‚Žä¹‹ç¥ç¦,æˆ‘æ–¹å•ä½“æ”»å‡»åŠ›4å›žåˆå†…æå‡30%,PETSKILL_SetMagicPet,4|30|STR,,Qh,695,1,1,2,112500,PETSKILL_SETMAGICPET
-é£Žä¹‹ç¥ç¦,æˆ‘æ–¹å•ä½“æ•æ·åŠ›4å›žåˆå†…æå‡20%,PETSKILL_SetMagicPet,4|20|DEX,,Qi,696,1,1,2,112500,PETSKILL_SETMAGICPET
-é€†è½¬æ”»å‡»-åœ°,è½¬æ¢è‡ªå·±ä¸ºåœ°å±žæ€§æ”»å‡»å¯¹æ–¹,PETSKILL_Mdfyattack,EA|100,,,699,1,6,2,2000,PETSKILL_MDFYATTACK
-é€†è½¬æ”»å‡»-æ°´,è½¬æ¢è‡ªå·±ä¸ºæ°´å±žæ€§æ”»å‡»å¯¹æ–¹,PETSKILL_Mdfyattack,WA|100,,,700,1,6,2,2000,PETSKILL_MDFYATTACK
-é€†è½¬æ”»å‡»-ç«,è½¬æ¢è‡ªå·±ä¸ºç«å±žæ€§æ”»å‡»å¯¹æ–¹,PETSKILL_Mdfyattack,FI|100,,,697,1,6,2,2000,PETSKILL_MDFYATTACK
-é€†è½¬æ”»å‡»-é£Ž,è½¬æ¢è‡ªå·±ä¸ºé£Žå±žæ€§æ”»å‡»å¯¹æ–¹,PETSKILL_Mdfyattack,WI|100,,,698,1,6,2,2000,PETSKILL_MDFYATTACK
-è£‚åœ°,å°†æˆ˜åœºå˜ä¸ºåœ°å±žæ€§ ,PETSKILL_Combined,ç»¼åˆæ³•|1|194,,,701,1,2,2,20000,PETSKILL_NONE
-æ¶Œæ³‰,å°†æˆ˜åœºå˜ä¸ºæ°´å±žæ€§ ,PETSKILL_Combined,ç»¼åˆæ³•|1|204,,,702,1,2,2,20000,PETSKILL_NONE
-ç†”ç‚Ž,å°†æˆ˜åœºå˜ä¸ºç«å±žæ€§ ,PETSKILL_Combined,ç»¼åˆæ³•|1|214,,,703,1,2,2,20000,PETSKILL_NONE
-æ¿€é£Ž,å°†æˆ˜åœºå˜ä¸ºé£Žå±žæ€§ ,PETSKILL_Combined,ç»¼åˆæ³•|1|224,,,704,1,2,2,20000,PETSKILL_NONE
-è°ƒå’Œ,å°†å…¨ä½“å›žå¤æˆæ— å±žæ€§,PETSKILL_Combined,ç»¼åˆæ³•|1|230,,,705,1,2,2,20000,PETSKILL_NONE
-è°ƒå’Œ,å°†å…¨ä½“å›žå¤æˆæ— å±žæ€§,PETSKILL_Combined,ç»¼åˆæ³•|1|230,,Th,728,1,2,2,20000,PETSKILL_NONE
-å¤šé‡å½±åˆ†èº«æœ¯,å¿è€…å®å®ä¸“ç”¨æŠ€èƒ½ å¤šé‡åˆ†èº«æ”»å‡»æ•Œäºº,PETSKILL_Combined,ç»¼åˆæ³•|1|436,,Qj,706,1,3,2,20000,PETSKILL_NONE
-å‰§æ¯’æ”»å‡»,æ”»å‡»åŠ›åŠ 20%å…­å›žåˆå‰åŽè®©æ•Œäººä¸­å‰§æ¯’,PETSKILL_StatusChange,å‰§ turn 6  æ”»%+20,,,707,1,6,2,4000,PETSKILL_POISON_ATTACK2
-çŸ³åŒ–æ”»å‡»,æ”»å‡»åŠ›å‡30%ä¹å›žåˆå‰åŽè®©æ•ŒäººçŸ³åŒ–,PETSKILL_StatusChange,çŸ³ turn 9  æ”»%-30,,,708,1,6,2,2300,PETSKILL_STONE
-æ··ä¹±æ”»å‡»,æ”»å‡»åŠ›å‡30%å…­å›žåˆå‰åŽè®©æ•Œäººæ··ä¹±,PETSKILL_StatusChange,ä¹± turn 6 æ”»%-30,,,709,1,6,2,2000,PETSKILL_CONFUSION_ATTACK
-å‚¬çœ æ”»å‡»,æ”»å‡»åŠ›å‡30%å…­å›žåˆå‰åŽè®©æ•Œäººæ²‰ç¡,PETSKILL_StatusChange,çœ  turn 6  æ”»%-30,,,710,1,6,2,2500,PETSKILL_SLEEP_ATTACK
-äº¢å¥‹,æš‚æ—¶æé«˜æ”»å‡»åŠ› å¹¶æœ‰ä¸€å®šå‡ çŽ‡è®©å¯¹æ‰‹ç˜«ç—ª,PETSKILL_StatusChange,è™š turn 9  æ”»%+60,,Kf,711,1,6,2,2500,PETSKILL_POISON_ATTACK2
-äº¢å¥‹,æš‚æ—¶æé«˜æ”»å‡»åŠ› å¹¶æœ‰ä¸€å®šå‡ çŽ‡è®©å¯¹æ‰‹éº»ç—¹,PETSKILL_StatusChange,éº» turn 1  æ”»%+70,,,712,1,6,2,2500,PETSKILL_POISON_ATTACK2
-è¿½è¿¹æ”»å‡»,å¯¹æ‰‹åœ¨ç¬¬ä¸€æ¬¡æ”»å‡»é—ªé¿çš„è¯ å°†ä¼š80%çš„æœºçŽ‡å‘åŠ¨ç¬¬äºŒæ¬¡æ”»å‡»,PETSKILL_Retrace,æ”»%+100,,,713,1,1,2,3000,PETSKILL_NONE
-å—œè¡€ä¹‹å‡»,å°†å¯¹æ•Œäººçš„ä¼¤å®³100%åŒ–ä¸ºå·±ç”¨,PETSKILL_DamageToHp,30|100,,,714,1,6,2,0,PETSKILL_DAMAGETOHP
-ç«ç‰›ç‹‚è¢­,ç«ç‰›åˆ†èº«æ”»å‡»å¯¹æ–¹æ•Œäººå…¨ä½“,PETSKILL_Combined,ç»¼åˆæ³•|5|458|459|460|461|462,,Hn,715,1,3,2,20000,PETSKILL_NONE
-Tæ„¤æ€’,ç»™äºˆæ•Œäººæ„¤æ€’åœ°ä¸€å‡»,PETSKILL_PowerBalance,æ”»%+200 é˜²%-70,,Bh,716,1,6,2,130000,PETSKILL_POWERBALANCE6
-Tè‚†æ— å¿Œè›‹,æ”»å‡»åŠ›ä¸Šå‡15%   ä¸¢é¸¡è›‹æ”»å‡»æ•Œæ–¹å…¨ä½“ é™„åŠ ç¡çœ æ•ˆæžœ,PETSKILL_BattleModel,5|5|çœ |3|30|æ”»%+15|101489,,Bi,717,1,3,3,20000,PETSKILL_NONE
-Tæ†¾ç”²ä¸€å‡»,ä½¿æ—¶æ— è§†æ•Œæ–¹è£…å¤‡é˜²å¾¡æ”»å‡»å‰åŽæ–¹æ•Œäººï¼Œä½¿ç”¨æ—¶æ”»ä¸Šå‡60%é˜²å¾¡ä¸‹é™35%,PETSKILL_Regret,å‘½%20 æ”»%60 é˜²-35%,,Bj,718,1,7,2,10000,PETSKILL_NONE
-æˆ‘æ–¹å…¨é€†è½¬,åè½¬æˆ‘æ–¹å…¨ä½“å±žæ€§,PETSKILL_Combined,ç»¼åˆæ³•|1|240,,Qw,719,1,2,2,5000,PETSKILL_NONE
-æˆ‘æ–¹å…¨é€†è½¬,åè½¬æˆ‘æ–¹å…¨ä½“å±žæ€§,PETSKILL_Combined,ç»¼åˆæ³•|1|240,,Wf,725,1,2,2,5000,PETSKILL_NONE
-Tå¤§åœ°é“ ç”²,æˆ‘æ–¹å…¨ä½“é˜²å¾¡åŠ›ä¸‰å›žåˆå†…æå‡30%,PETSKILL_SetMagicPet,3|30|TGH,,Kb,720,1,2,2,2500,PETSKILL_SETMAGICPET
-Tæ°´çµæ»‹æ¶¦,æˆ‘æ–¹å…¨ä½“ä½“åŠ›1000å›žå¤,PETSKILL_SetMagicPet,3|1000|HP,,Kc,721,1,2,2,2500,PETSKILL_SETMAGICPET
-Tæ°´çµæ»‹æ¶¦,æˆ‘æ–¹å…¨ä½“ä½“åŠ›1000å›žå¤,PETSKILL_SetMagicPet,3|1000|HP,,Kt,726,1,2,2,2500,PETSKILL_SETMAGICPET
-Tç«ç„°å¨èƒ½,æˆ‘æ–¹å…¨ä½“æ”»å‡»åŠ›ä¸‰å›žåˆå†…æå‡25%,PETSKILL_SetMagicPet,3|25|STR,,Kd,722,1,2,2,2500,PETSKILL_SETMAGICPET
-Té£Žä¹‹å¹æ¯,æˆ‘æ–¹å…¨ä½“æ•æ·åŠ›ä¸‰å›žåˆå†…æå‡30%,PETSKILL_SetMagicPet,3|30|DEX,,Ke,723,1,2,2,2500,PETSKILL_SETMAGICPET
-ç‹®çŽ‹ä¹‹å¼,éšæœºæ–½æ”¾çŸ³åŒ–ã€ç¡çœ ã€æ··ä¹±LV6å…¨ä½“ç²¾çµ     ç‹®çŽ‹ä¸“ç”¨æŠ€,PETSKILL_Combined,ç»¼åˆæ³•|3|413|414|416,,Sw,733,1,3,2,2000,PETSKILL_NONE
-ç‹®çŽ‹ä¹‹å¼,å¯¹èžåˆå® å¼å«ã€€ã€€å¯å“è·‘æŸäº›èžåˆå® ã€€ã€€ç‹®çŽ‹ä¸“ç”¨æŠ€,PETSKILL_Roar,1009|1010|1011|989|990|991|992|1030|1031|1032|997|998|999|1000,,Ss,734,1,6,2,3000,PETSKILL_Roar
-èƒŒæ°´è¿½è¿¹,å¯¹æ‰‹åœ¨ç¬¬ä¸€æ¬¡é—ªé¿çš„è¯ å°†ä¼š80%çš„æœºçŽ‡å‘åŠ¨ç¬¬äºŒæ¬¡æ”»å‡»,PETSKILL_Retrace,æ”»%+50,,Zb,735,1,1,2,30000,PETSKILL_NONE
-æ­»çŒªç•çƒ«,æ”»å‡»åŠ›ä¸Šå‡120%é˜²å¾¡ä¸‹é™99%,PETSKILL_PowerBalance,æ”»%+120 é˜²%-99,,Je,736,1,6,2,130000,PETSKILL_POWERBALANCE7
-é“œå¢™,æé«˜æˆ‘æ–¹å…¨ä½“é˜²å¾¡åŠ›40%5å›žåˆã€€ã€€,PETSKILL_MagicStatusChange,é“å£|5|40|å…¨,,Tq,565,1,2,2,0,PETSKILL_MSTATUSCHANGH
-åœŸç³»é­”æ³•åˆçº§,åœŸç³»é­”æ³•åˆçº§,PETSKILL_Combined,ç»¼åˆæ³•|8|470|471|472|473|474|475|476|477,,Cb,800,1,6,2,20000,PETSKILL_NONE
-åœŸç³»é­”æ³•ä¸­çº§,åœŸç³»é­”æ³•ä¸­çº§,PETSKILL_Combined,ç»¼åˆæ³•|5|480|481|482|483|484,,Cc,801,1,8,2,20000,PETSKILL_NONE
-åœŸç³»é­”æ³•é«˜çº§,åœŸç³»é­”æ³•é«˜çº§,PETSKILL_Combined,ç»¼åˆæ³•|4|490|491|492|493,,Cd,802,1,3,2,20000,PETSKILL_NONE
-æ°´ç³»é­”æ³•åˆçº§,æ°´ç³»é­”æ³•åˆçº§,PETSKILL_Combined,ç»¼åˆæ³•|8|500|501|502|503|504|505|506|507,,Ce,803,1,6,2,20000,PETSKILL_NONE
-æ°´ç³»é­”æ³•ä¸­çº§,æ°´ç³»é­”æ³•ä¸­çº§,PETSKILL_Combined,ç»¼åˆæ³•|5|510|511|512|513|514,,Cf,804,1,8,2,20000,PETSKILL_NONE
-æ°´ç³»é­”æ³•é«˜çº§,æ°´ç³»é­”æ³•é«˜çº§,PETSKILL_Combined,ç»¼åˆæ³•|4|520|521|522|523,,Cg,805,1,3,2,20000,PETSKILL_NONE
-ç«ç³»é­”æ³•åˆçº§,ç«ç³»é­”æ³•åˆçº§,PETSKILL_Combined,ç»¼åˆæ³•|8|530|531|532|533|534|535|536|537,,Ch,806,1,6,2,20000,PETSKILL_NONE
-ç«ç³»é­”æ³•ä¸­çº§,ç«ç³»é­”æ³•ä¸­çº§,PETSKILL_Combined,ç»¼åˆæ³•|5|540|541|542|543|544,,Ci,807,1,8,2,20000,PETSKILL_NONE
-ç«ç³»é­”æ³•é«˜çº§,ç«ç³»é­”æ³•é«˜çº§,PETSKILL_Combined,ç»¼åˆæ³•|4|550|551|552|553,,Cj,808,1,3,2,20000,PETSKILL_NONE
-é£Žç³»é­”æ³•åˆçº§,é£Žç³»é­”æ³•åˆçº§,PETSKILL_Combined,ç»¼åˆæ³•|8|560|561|562|563|564|565|566|567,,Ck,809,1,6,2,20000,PETSKILL_NONE
-é£Žç³»é­”æ³•ä¸­çº§,é£Žç³»é­”æ³•ä¸­çº§,PETSKILL_Combined,ç»¼åˆæ³•|5|570|571|572|573|574,,Cl,810,1,8,2,20000,PETSKILL_NONE
-é£Žç³»é­”æ³•é«˜çº§,é£Žç³»é­”æ³•é«˜çº§,PETSKILL_Combined,ç»¼åˆæ³•|4|580|581|582|583,,Cm,811,1,3,2,20000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100705,,Db,812,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100715,,Dc,813,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100725,,Dd,814,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100735,,De,815,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100745,,Df,816,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100755,,Dg,817,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100765,,Dh,818,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100775,,Di,819,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100785,,Dj,820,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100795,,Dk,821,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100805,,Dl,822,1,3,3,10000,PETSKILL_NONE
-å¤©ç½—åœ°ç½‘æœ¯,é»‘æš—æˆ˜å£«ä¸“ç½²æ”»å‡»æŠ€èƒ½ åˆ†èº«æ”»å‡»åŽä¸€å®šå‡ çŽ‡å°†å¯¹æ–¹ç½‘ä½,PETSKILL_BattleModel,5|5|ç½—|2|20|æ”»%-40|100815,,Dm,823,1,3,3,10000,PETSKILL_NONE
-æå“,ä½¿ç”¨æ—¶æ”»ä¸‹é™50% æ•ä¸Šå‡50% ä½¿æ•Œæ–¹å® ç‰©å—åˆ°æå“å›žåˆ°å® ç‰©æ ,PETSKILL_2BattleTimid,-æ”»%50+æ•%50å‘½%60,,Dn,824,1,7,2,10000,PETSKILL_NONE
-åœ°å±žæ€§å¼ºåŒ–æ”»å‡»,å¯¹åœ°å±žæ€§å¼ºåŒ–99999%æ”»å‡»,PETSKILL_Modifyattack,EA|9999,,,825,1,6,2,2000,PETSKILL_MODIFYATT
-æ°´å±žæ€§å¼ºåŒ–æ”»å‡»,å¯¹æ°´å±žæ€§å¼ºåŒ–99999%æ”»å‡»,PETSKILL_Modifyattack,WA|9999,,,826,1,6,2,2000,PETSKILL_MODIFYATT
-ç«å±žæ€§å¼ºåŒ–æ”»å‡»,å¯¹ç«å±žæ€§å¼ºåŒ–99999%æ”»å‡»,PETSKILL_Modifyattack,FI|9999,,,827,1,6,2,2000,PETSKILL_MODIFYATT
-é£Žå±žæ€§å¼ºåŒ–æ”»å‡»,å¯¹é£Žå±žæ€§å¼ºåŒ–99999%æ”»å‡»,PETSKILL_Modifyattack,WI|9999,,,828,1,6,2,2000,PETSKILL_MODIFYATT
-é¼ é¼ ç”Ÿå¨,é¼ å¹´ä¸“å±žç¾¤ä½“æŠ€èƒ½ï¼Œæ”»å‡»åŠ›ä¸Šå‡20% å…¨ä½“éº»ç—¹3å›žåˆ,PETSKILL_BattleModel,5|5|éº»|3|30|æ”»%20|20122 20119 20120 20121,,,829,1,3,3,100000,PETSKILL_NONE
-å¤§åœ°ç¥žå¨,èµµå­é¾™ä¸“å±žæŠ€èƒ½,PETSKILL_Combined,ç»¼åˆæ³•|4|490|491|492|493,,Cd,830,1,3,2,20000,PETSKILL_NONE
-å¤§åœ°å›žåˆº,èµµå­é¾™ä¸“å±žæŠ€èƒ½,PETSKILL_Gyrate,æ”»%+80,,Jb,831,1,1,2,3000,PETSKILL_NONE
+´ý»ú,Ê²Ã´Ò²²»×ö,PETSKILL_None,,,,0,1,5,2,500,PETSKILL_NONE
+¹¥»÷,Í¨³£¹¥»÷,PETSKILL_NormalAttack,,,,1,1,6,2,1000,PETSKILL_NORMALATTACK
+·ÀÓù,Í¨³£·ÀÓù,PETSKILL_NormalGuard,,,,2,1,5,2,1000,PETSKILL_NORMALGUARD
+ÆÆ³ý·ÀÓù,¶Ô²ÉÈ¡·ÀµÐÈË¹¥»÷¿ÉÄÜ,PETSKILL_GuardBreak,,,,3,1,6,2,1500,PETSKILL_GUARDBREAK
+Á¬Ðø¹¥»÷,Á½´ÎÁ¬Ðø¹¥»÷,PETSKILL_ContinuationAttack,2,,,10,1,6,2,2000,PETSKILL_CONTINUATIONATTACK1
+Èý¶Î¹¥»÷,3»ØºÏÁ¬Ðø¹¥»÷,PETSKILL_ContinuationAttack,3,,,11,1,6,2,5000,PETSKILL_CONTINUATIONATTACK2
+TËÄ¶Î¹¥»÷,4»ØÁ¬Ðø¹¥»÷,PETSKILL_ContinuationAttack,4,,Te,12,1,6,2,15000,PETSKILL_CONTINUATIONATTACK3
+TÎå¶Î¹¥»÷,5»ØÁ¬Ðø¹¥»÷,PETSKILL_ContinuationAttack,5,,Tf,13,1,6,2,25000,PETSKILL_CONTINUATIONATTACK4
+TÁù¶Î¹¥»÷,6»ØÁ¬Ðø¹¥»÷,PETSKILL_ContinuationAttack,6,,,14,1,6,2,225000,PETSKILL_CONTINUATIONATTACK5
+TÆß¶Î¹¥»÷,7»ØÁ¬Ðø¹¥»÷,PETSKILL_ContinuationAttack,7,,,15,1,6,2,625000,PETSKILL_CONTINUATIONATTACK6
+T°Ë¶Î¹¥»÷,8»ØÁ¬Ðø¹¥»÷,PETSKILL_ContinuationAttack,8,,,16,1,6,2,625000,PETSKILL_CONTINUATIONATTACK7
+T¾Å¶Î¹¥»÷,9»ØÁ¬Ðø¹¥»÷,PETSKILL_ContinuationAttack,9,,,17,1,6,2,1625000,PETSKILL_CONTINUATIONATTACK8
+ÖÒÈ®,±£»¤Ö÷ÈË²»ÊÜµ½µÐÈËµÄÖ±½Ó¹¥»÷,PETSKILL_Guardian,¹¥%-20  COM:¹¥»÷,,,20,1,7,2,2500,PETSKILL_GUARDIAN
+Í»»÷,1»ØºÏ´¢´æÁ¦Á¿¡¡¡¡¡¡ ÏÂ´Î¹¥»÷Ê±¡¡¡¡¡¡ ¾Í»áÓÐÁ½±¶µÄ¹¥»÷Á¦,PETSKILL_ChargeAttack,1 ¹¥%+90,,,30,1,6,2,4000,PETSKILL_CHARGE1
+Ë«ÖØÍ»»÷,2»ØºÏ´¢´æÁ¦Á¿ ¡¡¡¡¡¡ÏÂ´Î¹¥»÷Ê± ¡¡¡¡¡¡¾Í»áÓÐÁ½±¶ÒÔÉÏµÄ¹¥»÷Á¦,PETSKILL_ChargeAttack,2 ¹¥%+110,,,31,1,6,2,8000,PETSKILL_CHARGE2
+Ò»»÷±ØÉ±,¸øÓèÁ½±¶µÄ¹¥»÷ÉËº¦µ«ÊÇÃüÖÐÂÊÏÂ½µ,PETSKILL_Mighty,±¶2 »Ø±Ü30,,,40,1,6,2,2500,PETSKILL_MIGHTY1
+TÒ»»÷±ØÉ±¸Ä,¸øÓè3±¶µÄ¹¥»÷ÉËº¦µ«ÊÇÃüÖÐÂÊÏÂ½µ,PETSKILL_Mighty,±¶3 »Ø±Ü15,,Ta,41,1,6,2,25000,PETSKILL_MIGHTY2
+±³Ë®Ö®Õ½ÆäÖ®£±,·ÀÓùÁ¦¼õ30%¡¡¡¡¹¥»÷Á¦±ä³É+30%,PETSKILL_PowerBalance,¹¥%+25 ·À%-35,,,50,1,6,2,2000,PETSKILL_POWERBALANCE1
+±³Ë®Ö®Õ½ÆäÖ®£²,·ÀÓùÁ¦¼õ50%¡¡¡¡¹¥»÷Á¦±ä³É+50%,PETSKILL_PowerBalance,¹¥%+45 ·À%-55,,,51,1,6,2,2500,PETSKILL_POWERBALANCE2
+T±³Ë®Ö®Õ½Ö®Æä£³,·ÀÓùÁ¦±ä³É-50%¡¡¡¡¹¥»÷Á¦±ä³É+80%,PETSKILL_PowerBalance,¹¥%+80 ·À%-50,,Tb,52,1,6,2,30000,PETSKILL_POWERBALANCE3
+±³Ë®Ö®Õ½Ö®Æä£³,·ÀÓùÁ¦±ä³É-65%¡¡¡¡¹¥»÷Á¦±ä³É+70%,PETSKILL_PowerBalance,¹¥%+70 ·À%-65,,,53,1,6,2,100000,PETSKILL_POWERBALANCE4
+T±³Ë®Ö®Õ½Ö®Æä£´,·ÀÓùÁ¦±ä³É-70%¡¡¡¡¹¥»÷Á¦±ä³É+100%,PETSKILL_PowerBalance,¹¥%+100 ·À%-70,,,54,1,6,2,130000,PETSKILL_POWERBALANCE5
+¶¾¹¥»÷,¹¥»÷Á¦¼õ30%Èý»ØºÏÇ°ºóÈÃµÐÈËÖÐ¶¾,PETSKILL_StatusChange,¶¾ turn 3  ¹¥%-30,,,60,1,6,2,2500,PETSKILL_POISON_ATTACK1
+ÃÍ¶¾¹¥»÷,¹¥»÷Á¦¼õ50%Îå»ØºÏÇ°ºóÈÃµÐÈËÖÐ¶¾,PETSKILL_StatusChange,¶¾ turn 5  ¹¥%-50,,,61,1,6,2,4000,PETSKILL_POISON_ATTACK2
+Ê¯»¯¹¥»÷,¹¥»÷Á¦¼õ30%Èý»ØºÏÇ°ºóÈÃµÐÈËÊ¯»¯,PETSKILL_StatusChange,Ê¯ turn 3  ¹¥%-30,,,80,1,6,2,2300,PETSKILL_STONE
+»ìÂÒ¹¥»÷,¹¥»÷Á¦¼õ30%Èý»ØºÏÇ°ºóÈÃµÐÈË»ìÂÒ,PETSKILL_StatusChange,ÂÒ turn 3 ¹¥%-30,,,90,1,6,2,2000,PETSKILL_CONFUSION_ATTACK
+Äà×í¹¥»÷,¹¥»÷Á¦¼õ30%Èý»ØºÏÇ°ºóÈÃµÐÈË¾Æ×í,PETSKILL_StatusChange,×í turn 3 ¹¥%-30,,,100,1,6,2,2000,PETSKILL_DRUNK_ATTACK
+´ßÃß¹¥»÷,¹¥»÷Á¦¼õ30%Èý»ØºÏÇ°ºóÈÃµÐÈË³ÁË¯,PETSKILL_StatusChange,Ãß turn 3  ¹¥%-30,,,110,1,6,2,2500,PETSKILL_SLEEP_ATTACK
+µØÇòÒ»ÖÜ,Ò»»ØºÏ´ÓµÐÈË±³ºóÒÔÁ½±¶¹¥»÷Á¦¹¥»÷,PETSKILL_EarthRound,¹¥%+90,,,120,1,6,2,2000,PETSKILL_EARTHROUND1
+TµØÇòÒ»ÖÜ,Ò»»ØºÏ´ÓµÐÈË±³ºóÒÔÁ½±¶¹¥»÷Á¦¹¥»÷,PETSKILL_EarthRound,¹¥%+200,,,121,1,6,2,2000,PETSKILL_EARTHROUND1
+ÂÃ³Ì»ï°é,°ÑÒ»Ö»¿ÖÁúµ±×÷ÊÇ»ï°éµ±³¡´ø×ß,PETSKILL_Abduct,,,,130,1,7,2,3000,PETSKILL_Abduct
+ÍµÇÔ,ÍµÇÔ,PETSKILL_Steal,,,,140,1,7,2,0,PETSKILL_STEAL
+²»·ÀÊØÕ½·¨,×Ô¼º²»½øÐÐ¹¥»÷¡¡¡¡·´»÷¸ú»Ø±ÜÂÊ¡¡¡¡¡¡¡¡¡¡¾Í»á±äµÄ·Ç³£¸ß,PETSKILL_NoGuard,»Ø±Ü%+30 ·´»÷%+50 »áÐÄ%+20,,,150,1,5,2,3000,PETSKILL_NOGUARD1
+T²»·ÀÊØÕ½·¨2,×Ô¼º²»½øÐÐ¹¥»÷¡¡¡¡·´»÷¸ú»Ø±ÜÂÊ¡¡¡¡¡¡¡¡¡¡¾Í»á±äµÄ·Ç³£¸ß,PETSKILL_NoGuard,»Ø±Ü%+40 ·´»÷%+60 »áÐÄ%+30,,Tc,151,1,5,2,15000,PETSKILL_NOGUARD2
+T²»·ÀÊØÕ½·¨3,×Ô¼º²»½øÐÐ¹¥»÷¡¡¡¡·´»÷¸ú»Ø±ÜÂÊ¡¡¡¡¡¡¡¡¡¡¾Í»á±äµÄ·Ç³£¸ß,PETSKILL_NoGuard,»Ø±Ü%+50 ·´»÷%+80 »áÐÄ%+40,,Td,152,1,5,2,25000,PETSKILL_NOGUARD3
+¼Ó¹¤,ºÏ³ÉËØ²ÄÖÆ×÷µÀ¾ß,PETSKILL_Merge,,,,200,2,0,1,1500,PETSKILL_MERGE
+ÁÏÀí,Ê¹ÓÃËØ²ÄÖÆ×÷ÁÏÀí,PETSKILL_Merge,,,,201,2,0,1,1000,PETSKILL_MERGE2
+ÂäÂíÊõ,ÂäÂí,PETSKILL_FallGround,¹¥%-30,,Ca,210,1,6,2,3000,PETSKILL_FALLGROUND
+¾èÏ×,ÒªÇó¶Ô·½¾èÏ×Ê¯±Ò,PETSKILL_StealMoney,,,Aa,211,1,7,2,3500,PETSKILL_STEALMONEY
+EÑÒÊ¯×²»÷,µØÄ§·¨LV1,PETSKILL_AttackMagic,magic 301 item 19647,,,301,1,7,2,0,PETSKILL_AttactMagic
+EÂäÊ¯×²»÷,µØÄ§·¨LV2,PETSKILL_AttackMagic,magic 302 item 19648,,,302,1,7,2,0,PETSKILL_AttactMagic
+EÍÁÊ¯Á÷,µØÄ§·¨LV3-1,PETSKILL_AttackMagic,magic 303 item 19649,,,303,1,7,2,0,PETSKILL_AttactMagic
+E¾ÞÑÒ×²»÷,µØÄ§·¨LV3-2,PETSKILL_AttackMagic,magic 304 item 19650,,,304,1,7,2,0,PETSKILL_AttactMagic
+EµØÕð,µØÄ§·¨LV3-3,PETSKILL_AttackMagic,magic 305 item 19651,,,305,1,7,2,0,PETSKILL_AttactMagic
+EÔÉÊ¯³å»÷,µØÄ§·¨LV4,PETSKILL_AttackMagic,magic 306 item 19652,,,306,1,7,2,0,PETSKILL_AttactMagic
+EË®Öù,Ë®Ä§·¨LV1,PETSKILL_AttackMagic,magic 307 item 19653,,,307,1,7,2,0,PETSKILL_AttactMagic
+EË®ÈÐ,Ë®Ä§·¨LV2,PETSKILL_AttackMagic,magic 308 item 19654,,,308,1,7,2,0,PETSKILL_AttactMagic
+E´ó±ùÉ½,Ë®Ä§·¨LV3-1,PETSKILL_AttackMagic,magic 309 item 19655,,,309,1,7,2,0,PETSKILL_AttactMagic
+E·Ðµã¹¥»÷,Ë®Ä§·¨LV3-2,PETSKILL_AttackMagic,magic 310 item 19656,,,310,1,7,2,0,PETSKILL_AttactMagic
+E±©·çÑ©,Ë®Ä§·¨LV3-3,PETSKILL_AttackMagic,magic 311 item 19657,,,311,1,7,2,0,PETSKILL_AttactMagic
+E±ùÌìÑ©µØ,Ë®Ä§·¨LV4,PETSKILL_AttackMagic,magic 312 item 19658,,,312,1,7,2,0,PETSKILL_AttactMagic
+E»ðÇò,»ðÄ§·¨LV1,PETSKILL_AttackMagic,magic 313 item 19659,,,313,1,7,2,0,PETSKILL_AttactMagic
+E»ðÑæÁ¬µ¯,»ðÄ§·¨LV2,PETSKILL_AttackMagic,magic 314 item 19660,,,314,1,7,2,0,PETSKILL_AttactMagic
+EÕôÆûÅçÉä,»ðÄ§·¨LV3-1,PETSKILL_AttackMagic,magic 315 item 19661,,,315,1,7,2,0,PETSKILL_AttactMagic
+E»ðÑæ·ç±¬,»ðÄ§·¨LV3-2,PETSKILL_AttackMagic,magic 316 item 19662,,,316,1,7,2,0,PETSKILL_AttactMagic
+EÈÛÑÒ±¬·¢,»ðÄ§·¨LV3-3,PETSKILL_AttackMagic,magic 317 item 19663,,,317,1,7,2,0,PETSKILL_AttactMagic
+E»ðÉ½±¬·¢,»ðÄ§·¨LV4,PETSKILL_AttackMagic,magic 318 item 19664,,,318,1,7,2,0,PETSKILL_AttactMagic
+E·çÈÐ,·çÄ§·¨LV1,PETSKILL_AttackMagic,magic 319 item 19665,,,319,1,7,2,0,PETSKILL_AttactMagic
+EÕæ¿ÕÈÐ,·çÄ§·¨LV2,PETSKILL_AttackMagic,magic 320 item 19666,,,320,1,7,2,0,PETSKILL_AttactMagic
+EÁú¾í·ç,·çÄ§·¨LV3-1,PETSKILL_AttackMagic,magic 321 item 19667,,,321,1,7,2,0,PETSKILL_AttactMagic
+E±©·çÁÒÈÐ,·çÄ§·¨LV3-2,PETSKILL_AttackMagic,magic 322 item 19668,,,322,1,7,2,0,PETSKILL_AttactMagic
+E±©·ç±ùÈÐ,·çÄ§·¨LV3-3,PETSKILL_AttackMagic,magic 323 item 19669,,,323,1,7,2,0,PETSKILL_AttactMagic
+EÄÏ¼«ì«·ç,·çÄ§·¨LV4,PETSKILL_AttackMagic,magic 324 item 19670,,,324,1,7,2,0,PETSKILL_AttactMagic
+E»ÙÌìÃðµØ,Ä§·¨LV5,PETSKILL_AttackMagic,magic 325 item 19671,,,325,1,7,2,0,PETSKILL_AttactMagic
+E¾»»¯,½â³ýËùÓÐÒì³£×´Ì¬,PETSKILL_Refresh,È«,,,326,1,3,2,8000,PETSKILL_REFRESH
+E¸´»îÊõ,ENEMY×¨Êô¸´»îÊõLV1,ENEMYSKILL_ReLife,,,Ea,500,1,2,2,0,ENEMYSKILL_RELIFES
+E»Ø¸´¼¼,ENEMY×¨Êô»Ø¸´¼¼LV1,ENEMYSKILL_ReHP,,,Eb,501,1,2,2,0,ENEMYSKILL_RELIFHP
+EÕÐ»½,ENEMY×¨ÊôÕÐ»½LV1,ENEMYSKILL_EnemyHELP,,,Ec,502,1,2,2,0,ENEMYSKILL_HELP
+ÊÈÑª¼¼,¹¥»÷Á¦ÏÂ½µ30%¡¡¡¡¡¡ ²¢½«ÉËº¦ÖµµÄ50%»¯Îª¼ºÓÃ,PETSKILL_DamageToHp,30|50,,Ba,503,1,6,2,2000,PETSKILL_DAMAGETOHP
+ÊÈÑª¼¼2,¹¥»÷Á¦ÏÂ½µ20%¡¡¡¡¡¡ ²¢½«ÉËº¦ÖµµÄ70%»¯Îª¼ºÓÃ,PETSKILL_DamageToHp,20|70,,Bb,504,1,6,2,0,PETSKILL_DAMAGETOHP
+ÊÈÑª¼¼3,¹¥»÷Á¦ÏÂ½µ10%¡¡¡¡¡¡ ²¢½«ÉËº¦ÖµµÄ100%»¯Îª¼ºÓÃ,PETSKILL_DamageToHp,10|100,,Bc,505,1,6,2,0,PETSKILL_DAMAGETOHP
+MP¹¥»÷,¹¥»÷Á¦ÏÂ½µ50%¡¡¡¡¡¡ ²¢Ëðº¦¶Ô·½50%µÄMP,PETSKILL_MpDamage,50|50,,Bd,506,1,6,2,2000,PETSKILL_MPDAMAGE
+MP¹¥»÷2,¹¥»÷Á¦ÏÂ½µ50%¡¡¡¡¡¡ ²¢Ëðº¦¶Ô·½75%µÄMP,PETSKILL_MpDamage,50|75,,Bf,507,1,6,2,0,PETSKILL_MPDAMAGE
+MP¹¥»÷3,¹¥»÷Á¦ÏÂ½µ50%¡¡¡¡¡¡ ²¢Ëðº¦¶Ô·½100%µÄMP,PETSKILL_MpDamage,50|100,,Be,508,1,6,2,0,PETSKILL_MPDAMAGE
+ÐÞ¸´,ÐÞ¸´Ëð»µµÄµÀ¾ß×°±¸,PETSKILL_Fixitem,,,,540,2,0,1,300,PETSKILL_FIXITEM
+¿ñ±©¹¥»÷,·ÀÓùÁ¦¼õ30%¡¡¡¡¹¥»÷Á¦¼Ó100%¡¡¡¡¡¡¡¡¡¡ ÃüÖÐÂÊÏÂ½µ30%,PETSKILL_WildViolentAttack,¹¥%+80 ·À%-35 »Ø±Ü30,,Wa,541,1,6,2,1000,PETSKILL_WILDVIOLENTATTACK
+¼²ËÙ¹¥»÷,·ÀÓùÁ¦¼õ30%¡¡¡¡Ãô½Ý±ä³É¼Ó+30%,PETSKILL_SpeedyAttack,·À%-30 Ãô%+30,,Qa,542,1,6,2,1000,PETSKILL_SPEEDYATTACK
+ÆÆ³ý·ÀÓùÖ®2,µÐ·ÀÓùÊ±¹¥+30%¡¡¡¡µÐ·Ç·ÀÓùÊ±¹¥-30%,PETSKILL_GuardBreak2,,,Ai,543,1,6,2,1000,PETSKILL_GUARDBREAK2
+µØÊôÐÔÇ¿»¯¹¥»÷,¶ÔµØÊôÐÔÇ¿»¯20%¹¥»÷,PETSKILL_Modifyattack,EA|20,,Dq,544,1,6,2,2000,PETSKILL_MODIFYATT
+Ë®ÊôÐÔÇ¿»¯¹¥»÷,¶ÔË®ÊôÐÔÇ¿»¯20%¹¥»÷,PETSKILL_Modifyattack,WA|20,,Sq,545,1,6,2,2000,PETSKILL_MODIFYATT
+»ðÊôÐÔÇ¿»¯¹¥»÷,¶Ô»ðÊôÐÔÇ¿»¯20%¹¥»÷,PETSKILL_Modifyattack,FI|20,,Hq,546,1,6,2,2000,PETSKILL_MODIFYATT
+·çÊôÐÔÇ¿»¯¹¥»÷,¶Ô·çÊôÐÔÇ¿»¯20%¹¥»÷,PETSKILL_Modifyattack,WI|20,,Fq,547,1,6,2,2000,PETSKILL_MODIFYATT
+µØÊôÐÔ×ª»»¹¥»÷,×ª»»×Ô¼ºÎªµØÊôÐÔ,PETSKILL_Mdfyattack,EA|100,,,548,1,6,2,2000,PETSKILL_MDFYATTACK
+Ë®ÊôÐÔ×ª»»¹¥»÷,×ª»»×Ô¼ºÎªË®ÊôÐÔ,PETSKILL_Mdfyattack,WA|100,,,549,1,6,2,2000,PETSKILL_MDFYATTACK
+»ðÊôÐÔ×ª»»¹¥»÷,×ª»»×Ô¼ºÎª»ðÊôÐÔ,PETSKILL_Mdfyattack,FI|100,,,550,1,6,2,2000,PETSKILL_MDFYATTACK
+·çÊôÐÔ×ª»»¹¥»÷,×ª»»×Ô¼ºÎª·çÊôÐÔ,PETSKILL_Mdfyattack,WI|100,,,551,1,6,2,2000,PETSKILL_MDFYATTACK
+Ìú±Ú,Ìá¸ß¼º·½È«Ìå·ÀÓùÁ¦30%3»ØºÏ¡¡¡¡,PETSKILL_MagicStatusChange,Ìú±Ú|3|30|È«,,Af,552,1,2,2,0,PETSKILL_MSTATUSCHANGH
+Ìú±Ú,Ìá¸ß¼º·½È«Ìå·ÀÓùÁ¦30%3»ØºÏ¡¡¡¡,PETSKILL_MagicStatusChange,Ìú±Ú|3|30|È«,,At,553,1,2,2,0,PETSKILL_MSTATUSCHANGH
+Ïâ±¦Ê¯,½«ÌáÁ¶³öµÄ±¦Ê¯ÏâÔÚ¾«¹¤×°±¸ÉÏ,PETSKILL_Inslay,,,Da,572,2,0,1,3000,PETSKILL_INSLAY
+¾ÈÔ®,ÎþÉü×Ô¼º50%µÄHP¡¡¡¡²¹ÖÁËûÈËÉíÉÏ,PETSKILL_Sacrifice,,,,573,1,1,2,0,PETSKILL_SACRIFICE
+EÄö³ÝÊõ,ÆÆ»µ¶Ô·½×°±¸ÎäÆ÷,PETSKILL_ToothCrushe,,,Ed,574,1,6,2,0,PETSKILL_TOOTHCRUSHE
+ÐéÈõ,±»¹¥»÷ÕßÈý»ØºÏÄÚ¹¥·ÀÃôÏÂ½µ20%,PETSKILL_Weaken,Ðé turn 3 ³É 50,,Ga,575,1,6,2,3000,PETSKILL_WEAKEN
+È«ÌåÐéÈõ,µÐÈ«ÌåÈý»ØºÏÄÚ¹¥·ÀÃôÏÂ½µ20%,PETSKILL_Weaken,Ðé turn 3 ³É 50,,,576,1,3,2,0,PETSKILL_WEAKEN
+¾ç¶¾,µÐµ¥ÌåÖÐ¶¾5»ØºÏ¡¡¡¡µÚÁù»ØºÏÇ°Î´½âÔòÕóÍö,PETSKILL_Deeppoison,¾ç turn 5 ³É 50,,,577,1,6,2,0,PETSKILL_DEEPPOISON
+È«Ìå¾ç¶¾,µÐÈ«ÌåÖÐ¶¾5»ØºÏ¡¡¡¡µÚÁù»ØºÏÇ°Î´½âÔòÕóÍö,PETSKILL_Deeppoison,¾ç turn 5 ³É 50,,,578,1,3,2,0,PETSKILL_DEEPPOISON
+Ä§ÕÏ,µÐÈ«ÌåÒ»»ØºÏÎÞ·¨ÐÐ¶¯,PETSKILL_Barrier,ÕÏ turn 1 ³É 50,,,579,1,3,2,0,PETSKILL_BARRIER
+³ÁÄ¬,µÐÈ«ÌåÎÞ·¨Ê¹ÓÃÖäÊõÈý»ØºÏ,PETSKILL_Nocast,Ä¬ turn 3 ³É 50,,Ra,580,1,3,2,1000,PETSKILL_NOCAST
+´óºð,¶ÔÄêÊÞºð½Ð¡¡¡¡¿ÉÏÅÅÜÄêÊÞ¡¡¡¡À×Áú×¨ÓÃ¼¼,PETSKILL_Roar,901|902|903|904|1056|1057|1058|1059,,,581,1,6,2,3000,PETSKILL_Roar
+×Ô±¬¹¥»÷,ÎþÉü×Ô¼º¡¡¡¡Ìá¸ß50%ÃüÖÐÂÊ¡¡¡¡Ôì³ÉÈý±¶ËðÉË,PETSKILL_SelfExplodeAttack,±¶3 »Ø±Ü-50,,,582,1,6,2,5000,PETSKILL_SELFEXPLODEATTACK
+ÆÆ³ý³ÁÄ¬,½â³ý³ÁÄ¬×´Ì¬,PETSKILL_Refresh,Ä¬,,Ah,583,1,2,2,2000,PETSKILL_REFRESH
+¾ç¶¾ÖÎÁÆ,½â³ý¾ç¶¾×´Ì¬,PETSKILL_Refresh,¾ç,,,584,1,2,2,5000,PETSKILL_REFRESH
+ÆÆ³ýÄ§ÕÏ,½â³ýÄ§ÕÏ×´Ì¬,PETSKILL_Refresh,ÕÏ,,,591,1,1,2,5000,PETSKILL_REFRESH
+¾»»¯,½â³ýËùÓÐÒì³£×´Ì¬,PETSKILL_Refresh,È«,,,592,1,2,2,8000,PETSKILL_REFRESH
+ÆÆ³ýÐéÈõ,½â³ýÐéÈõ×´Ì¬,PETSKILL_Refresh,Ðé,,,593,1,2,2,5000,PETSKILL_REFRESH
+¾¿¼«Ä§ÕÏ,µÐÈ«ÌåÈý»ØºÏÎÞ·¨ÐÐ¶¯,PETSKILL_Barrier,ÕÏ turn 3 ³É 50,,,594,1,3,2,0,PETSKILL_BARRIER
+ÉÁ±ÜÊõ,Èý»ØºÏÄÚÉÁ±ÜÂÊÉÏÉý60¡¡¡¡ÓÐÐ§Ê±¼äÈý»ØºÏ,PETSKILL_SetDuck,3|60,,Ha,595,1,0,2,1000,PETSKILL_SETDUCK
+°µÔÂ±äÉí,±äÉíºóÔö¼Ó30%µÄ¹¥»÷Á¦¸úÃô½Ý  Ä§·¨·ÀÓùÖµ¼õ°ë  ÓÐÐ§Ê±¼äÎå»ØºÏ¡¡¡¡¡¡,PETSKILL_Vary,¹¥%+30 Ãô%+30 Ä§·À%-50,,Ia,600,1,5,2,1000,PETSKILL_VARY
+´óµØîø¼×,ÎÒ·½È«Ìå·ÀÓùÁ¦Èý»ØºÏÄÚÌáÉý15%,PETSKILL_SetMagicPet,3|15|TGH,,Ja,601,1,2,2,2500,PETSKILL_SETMAGICPET
+Ë®Áé×ÌÈó,ÎÒ·½È«ÌåÌåÁ¦300»Ø¸´,PETSKILL_SetMagicPet,3|300|HP,,Ka,602,1,2,2,2500,PETSKILL_SETMAGICPET
+»ðÑæÍþÄÜ,ÎÒ·½È«Ìå¹¥»÷Á¦Èý»ØºÏÄÚÌáÉý10%,PETSKILL_SetMagicPet,3|10|STR,,La,603,1,2,2,2500,PETSKILL_SETMAGICPET
+·çÖ®´µÏ¢,ÎÒ·½È«ÌåÃô½ÝÁ¦Èý»ØºÏÄÚÌáÉý15%,PETSKILL_SetMagicPet,3|15|DEX,,Ma,604,1,2,2,2500,PETSKILL_SETMAGICPET
+ÈýÖØÍ»»÷,3»ØºÏ´¢´æÁ¦Á¿ ¡¡¡¡¡¡ÏÂ´Î¹¥»÷Ê± ¡¡¡¡¡¡¾Í»áÓÐÈý±¶ÒÔÉÏµÄ¹¥»÷Á¦,PETSKILL_ChargeAttack,3 ¹¥%+150,,,605,1,6,2,8500,PETSKILL_CHARGE2
+ÇÓÕ½,¹¥»÷Á¦30%ÏÂ½µ  ·ÀÓùÁ¦50%ÏÂ½µ  ÃüÖÐÖ®µÐ»áÌÓÅÜ,PETSKILL_BattleTimid,,,Na,606,1,6,2,3000,PETSKILL_BTIMID
+ÇÓÕ½,¹¥»÷Á¦30%ÏÂ½µ  ·ÀÓùÁ¦50%ÏÂ½µ  ÃüÖÐÖ®µÐ»áÌÓÅÜ,PETSKILL_BattleTimid,,,Qz,727,1,6,2,3000,PETSKILL_BTIMID
+ÂÃ³Ì»ï°é2,°ÑÒ»Ö»¿ÖÁúµ±×÷ÊÇ»ï°éµ±³¡´ø×ß ÖÒ³Ï¶È60ÒÔÏÂ³É¹¦ÂÊ100%,PETSKILL_Abduct,60,,,607,1,7,2,5000,PETSKILL_Abduct
+EÂÃ³Ì»ï°é3,°ÑÒ»Ö»¿ÖÁúµ±×÷ÊÇ»ï°éµ±³¡´ø×ß ÖÒ³Ï¶È80ÒÔÏÂ³É¹¦ÂÊ100%,PETSKILL_Abduct,80,,,608,1,7,2,3000,PETSKILL_Abduct
+²É¹âÊõ,½«¶Ô·½Ö®¹âµÄ¾«ÁéÎüÊÕµ½×Ô¼ºÉíÉÏ,PETSKILL_Lighttakeed,ABSROB,,,609,1,7,2,5000,PETSKILL_Light
+ÆÆ¾µÖØÔ²,½«¶Ô·½Ö®¾µµÄ¾«ÁéÎüÊÕµ½×Ô¼ºÉíÉÏ,PETSKILL_Lighttakeed,REFLEC,,,610,1,7,2,5000,PETSKILL_Light
+´©Í¸Êõ,½«¶Ô·½Ö®ÊØµÄ¾«ÁéÎüÊÕµ½×Ô¼ºÉíÉÏ,PETSKILL_Lighttakeed,VANISH,,,611,1,7,2,5000,PETSKILL_Light
+Ä§Ö®×çÖä,´ý»úÒ»»ØºÏ  ¿É½«ÊôÐÔµ÷³É¿Ë¶Ô·½ÊôÐÔ,PETSKILL_BattleProperty,PET_PetskillPropertyEvent,,Oa,612,1,5,2,3000,PETSKILL_NONE
+¿ñÂÒ±©×ß,ÂÒÊý¹¥»÷¶ÔÊÖ3´Î ¹¥20% ·À30% ÏÂ½µ,PETSKILL_AttackCrazed,3,,,613,1,1,2,0,PETSKILL_AttCrazed
+Àõ×ÓÁ¬¼¤,ÂÒÊýÁ¬ÐøÍ¶ÖÀÀõ×Ó3~5¿Å,PETSKILL_AttackShoot,3|5,,Pa,614,1,1,2,2000,PETSKILL_AttShoot
+ËºÁÑÉË¿Ú1,ËºÁÑ¾ÉÉË¿Ú Ôö¼Ó20%ÉËº¦,PETSKILL_BattleTearDamage,20,,Sa,615,1,1,2,10000,PETSKILL_NONE
+ËºÁÑÉË¿Ú2,ËºÁÑ¾ÉÉË¿Ú Ôö¼Ó50%ÉËº¦,PETSKILL_BattleTearDamage,50,,Sb,616,1,1,2,10000,PETSKILL_NONE
+ËºÁÑÉË¿Ú2,ËºÁÑ¾ÉÉË¿Ú Ôö¼Ó50%ÉËº¦,PETSKILL_BattleTearDamage,50,,Sl,596,1,1,2,10000,PETSKILL_NONE
+¶¾É·ÂûÑÓ,ÈÃ¶ÔÊÖÖÐ¶¾ ÇÒÓÐ»ú»á´«È¾µ½ÖÜÎ§µÄÈË,PETSKILL_Sars,É·,,Ua,617,1,1,2,5000,PETSKILL_NONE
+Òô²¨³å»÷,¹¥»÷³èÎïÊ± ¿É¹á´©ÉËº¦ÖÁÈËÎïÉíÉÏ ÉËº¦ÖµÎª1/2,PETSKILL_Sonic,,,Va,618,1,1,2,3000,PETSKILL_NONE
+»ØÐý¹¥»÷,¹¥»÷Á¦ÏÂ½µ50% ¿É¹¥»÷µÐ·½Ò»ÅÅ,PETSKILL_Gyrate,¹¥%-50,,Xa,619,1,1,2,3000,PETSKILL_NONE
+ÍþÏÅ¹¥»÷,¹¥»÷Á¦ÏÂ½µ30% Ãô½ÝÏÂ½µ30% ÓÐ60%µÄ»úÂÊÊ¹¶ÔÊÖÂé±ÔÒ»»ØºÏ,PETSKILL_Hector,Âé turn 1 ¹¥%-30 Ãô%-30,,Ya,620,1,1,2,5000,PETSKILL_NONE
+×·¼£¹¥»÷,¶ÔÊÖÔÚµÚÒ»´Î¹¥»÷ÉÁ±ÜµÄ»° ½«»á80%µÄ»úÂÊ·¢¶¯µÚ¶þ´Î¹¥»÷,PETSKILL_Retrace,¹¥%+20,,Za,621,1,1,2,3000,PETSKILL_NONE
+Õë´ÌÍâÆ¤,¿ÉÁî¹¥»÷ÕßÊÜµ½1/2µÄÉËº¦,PETSKILL_Acupuncture,,,Ab,622,1,0,2,5000,PETSKILL_NONE
+Ô¡Ñª¿ñÏ®,Hp50%ÒÔÏÂÊ±²Å¿ÉÊ¹ÓÃ ¹¥ÃôÉÏÉý20% »áÐÄÒ»»÷ÉÏÉý30% ÎüÊÕÉËº¦30%×ªHp,PETSKILL_DamageToHp2,30,,Aj,623,1,6,2,5000,PETSKILL_NONE
+»ðÏßÁÔÉ±,µÐÒ»ÅÅ»ðÑæ¹¥»÷,PETSKILL_Firekill,,,Ad,624,1,1,2,5000,PETSKILL_NONE
+ÃÄ»óÊõ,Ê¹³èÎï±ä³ÉÐ¡ºüÀê,PETSKILL_BecomeFox,,,Ae,625,1,1,2,3000,PETSKILL_NONE
+ÊÖÏÂÁôÇé,Ê¹¶Ô·½HpÊ£ÏÂÒ»µã ²»»á½«¶Ô·½ÖÂËÀ,PETSKILL_ShowMercy,,,,626,1,1,2,10000,PETSKILL_NONE
+ÄÑµÃºýÍ¿,Ëæ»úÈÃ¶Ô·½²úÉúÒì³£×´Ì¬»ò»Ø¸´,PETSKILL_Combined,×ÛºÏ·¨|6|21|139|159|169|179|189,,Ag,627,1,3,2,2000,PETSKILL_NONE
+ÎÚÁ¦»¯,ÔÚÒ»¶¨Ê±¼äÄÚÊ¹¶Ô·½±ä³ÉÎÚÁ¦,PETSKILL_BecomePig,,,,628,1,7,2,5000,PETSKILL_BECOMEPIG
+ÄÑµÃºýÍ¿¸Ä,Ëæ»úÈÃ¶Ô·½²úÉúÒì³£×´Ì¬,PETSKILL_Combined,×ÛºÏ·¨|5|139|159|169|179|189,,Ag,629,1,3,2,2000,PETSKILL_NONE
+µØÁéÍþÄÜ,¿ÉÕÐ»½µØ¾«ÁéÄ§·¨ÍþÁ¦µÄ¼¼ÄÜ,PETSKILL_Combined,×ÛºÏ·¨|1|306,,Ak,630,1,3,2,2000,PETSKILL_NONE
+ÎÚÁ¦»¯,ÔÚÒ»¶¨Ê±¼äÄÚÊ¹¶Ô·½±ä³ÉÎÚÁ¦,PETSKILL_BecomePig,30 180,,Al,631,1,7,2,20000,PETSKILL_BECOMEPIG
+Äæ×ª,·´×ªÊôÐÔ,PETSKILL_Combined,×ÛºÏ·¨|1|240,,Am,632,1,1,2,5000,PETSKILL_NONE
+ÈºòðËÄ´Ü,ÎüÑª,PETSKILL_BatFly,,,,633,1,3,2,5000,PETSKILL_NONE
+·ÖÉíµØÁÑ,È«Ìå¹¥»÷,PETSKILL_DivideAttack,,,,634,1,3,1,5000,PETSKILL_NONE
+ºÚÎÚÁ¦»¯,ÔÚÒ»¶¨Ê±¼äÄÚÊ¹¶Ô·½±ä³ÉºÚÎÚÁ¦,PETSKILL_BecomePig,30 180 100388,,An,635,1,7,2,20000,PETSKILL_BECOMEPIG
+¿ñÊ¨Å­ºð,Ê¹ÓÃÊ±¹¥ÏÂ½µ50% ÃôÉÏÉý30% Ê¹µÐ·½³èÎïÊÜµ½¾ªÏÅ»Øµ½³èÎïÀ¸,PETSKILL_2BattleTimid,-¹¥%50+Ãô%30Ãü%60,,Ao,636,1,7,2,10000,PETSKILL_NONE
+¾»»¯Ö®Îè,È«²¿×´Ì¬Òì³£»Ø¸´ (Ò»·½È«Ìå),PETSKILL_Combined,×ÛºÏ·¨|1|61,,Ap,637,1,2,2,20000,PETSKILL_NONE
+Èº·äÂÒÎè,¹¥»÷Á¦ÏÂ½µ30% È«ÌåÂé±ÔÒ»»ØºÏ,PETSKILL_BattleModel,5|4|Âé|1|30|¹¥%-30|101867 101868,,Aq,638,1,3,3,10000,PETSKILL_NONE
+ÒÏÔá,Ê¹µÐ·½ËÀÍö³èÎï»Øµ½³èÎïÀ¸£¬ÎÞ·¨ÔÙ²ÎÓëÕ½¶·,PETSKILL_AntInter,,,Ar,639,1,10,2,10000,PETSKILL_NONE
+º¶¼×Ò»»÷,Ê¹Ê±ÎÞÊÓµÐ·½×°±¸·ÀÓù¹¥»÷Ç°ºó·½µÐÈË£¬Ê¹ÓÃÊ±¹¥ÉÏÉý30%·ÀÓùÏÂ½µ50%,PETSKILL_Regret,Ãü%20 ¹¥%30 ·À%-50,,Re,640,1,7,2,10000,PETSKILL_NONE
+Èº·äÂÒÎè¸Ä,¹¥»÷Á¦ÏÂ½µ30% È«ÌåÂé±ÔÁ½»ØºÏ,PETSKILL_BattleModel,5|4|Âé|2|30|¹¥%-30|101867 101868,,As,641,1,3,3,10000,PETSKILL_NONE
+¾õÐÑ,ÃüÖÐÂÊÓë»Ø±ÜÂÊÉÏÉý30% ¹¥·ÀÃôÉÏÉý5%,PETSKILL_Awaken,¹¥%5 ·À%5 Ãô%5 Ãü%30 »Ø%30,,Aw,642,1,7,3,10000,PETSKILL_NONE
+¹Æ»ó,Ê¹ÖÒ³ÏµÍÓÚ40Ö®µÐ³è·´¹¥µÐ·½ÕóÓª,PETSKILL_Temptation,40,,Gh,643,1,7,3,10000,PETSKILL_NONE
+ÔªÆø,»Ø¸²ÎÒ·½È«ÌåÌåÁ¦,PETSKILL_Combined,×ÛºÏ·¨|6|20|21|22|23|24|25,,Av,646,1,2,2,20000,PETSKILL_NONE
+Àõ×ÓÁ¬¼¤¸Ä,ÂÒÊýÁ¬ÐøÍ¶ÖÀÀõ×Ó6~8¿Å,PETSKILL_AttackShoot,6|8,,Pa,647,1,1,2,20000,PETSKILL_AttShoot
+ÅäÒ©,Ëæ»úÒ½ÖÎÎÒ·½È«ÌåÒì³£×´Ì¬,PETSKILL_Combined,×ÛºÏ·¨|6|71|81|91|101|121|61,,Ax,648,1,2,2,20000,PETSKILL_NONE
+ËÁÎÞ¼Éµ°,·ÀÓùÁ¦ÏÂ½µ30%   ¶ª¼¦µ°¹¥»÷µÐ·½È«Ìå ¸½¼ÓË¯ÃßÐ§¹û,PETSKILL_BattleModel,5|5|Ãß|2|30|¹¥%-30|101489,,Ay,649,1,1,1,20000,PETSKILL_NONE
+¿ñÃ¨ÂÒ×¥¸Ä,Ã¨ÈË×¨Êô¼¼ÄÜ£¬¹¥»÷Á¦ÉÏÉý15% È«ÌåÂé±Ô1»ØºÏ,PETSKILL_BattleModel,5|5|Âé|2|30|¹¥%5|101885 101884,,Zx,650,1,1,1,10000,PETSKILL_NONE
+·è¿ñ¹¥»÷Êõ,·ÀÓùÁ¦¼õ50%¡¡¹¥»÷Á¦¼Ó60%¡¡ ÃüÖÐÂÊÏÂ½µ50%,PETSKILL_WildViolentAttack,¹¥%+60 ·À%-50 »Ø±Ü50,,101413 101741,652,1,6,2,1000,PETSKILL_WILDVIOLENTATTACK
+»¢»¢ÉúÍþ,¶þ´ú°×»¢×¨Êô¼¼ÄÜ£¬¹¥»÷Á¦ÉÏÉý20% È«ÌåÊ¯»¯3»ØºÏ,PETSKILL_BattleModel,5|5|Ê¯|3|30|¹¥%15|100871 100872,,Zh,655,1,3,3,10000,PETSKILL_NONE
+»¢»¢ÉúÍþ,ÀÏ»¢×¨Êô¼¼ÄÜ£¬¹¥»÷Á¦ÉÏÉý20% È«ÌåÊ¯»¯3»ØºÏ,PETSKILL_BattleModel,5|5|Ê¯|3|30|¹¥%15|100871 100872,,Zl,590,1,3,3,10000,PETSKILL_NONE
+ËºÁÑÉË¿Ú3,ËºÁÑ¾ÉÉË¿Ú Ôö¼Ó70%ÉËº¦,PETSKILL_BattleTearDamage,70,,Sc,656,1,1,2,10000,PETSKILL_NONE
+µÐ·½È«Äæ×ª,·´×ªµÐ·½È«ÌåÊôÐÔ,PETSKILL_Combined,×ÛºÏ·¨|1|240,,Qn,657,1,3,2,5000,PETSKILL_NONE
+µÐ·½È«Äæ×ª,·´×ªµÐ·½È«ÌåÊôÐÔ,PETSKILL_Combined,×ÛºÏ·¨|1|240,,Nd,724,1,3,2,5000,PETSKILL_NONE
+T»ØÐý¹¥»÷,¹¥»÷Á¦ÉÏÉý20% ¿É¹¥»÷µÐ·½Ò»ÅÅ,PETSKILL_Gyrate,¹¥%+20,,Xb,653,1,1,2,3000,PETSKILL_NONE
+ËÁÎÞ¼Éµ°,¹¥»÷Á¦ÏÂ½µ10%   ¶ªº£³èµ°¹¥»÷µÐ·½È«Ìå ¸½¼ÓÊ¯»¯Ð§¹û,PETSKILL_BattleModel,5|5|Ê¯|3|30|¹¥%-10|101935,,Az,654,1,3,3,20000,PETSKILL_NONE
+ËºÁÑÉË¿Ú4,ËºÁÑ¾ÉÉË¿Ú Ôö¼Ó100%ÉËº¦,PETSKILL_BattleTearDamage,150,,Sd,651,1,1,2,10000,PETSKILL_NONE
+ÐþÎäÌú±Ú,Ìá¸ß¼º·½È«Ìå·ÀÓùÁ¦50%3»ØºÏ¡¡¡¡,PETSKILL_MagicStatusChange,Ìú±Ú|3|50|È«,,,658,1,2,2,0,PETSKILL_MSTATUSCHANGH
+TÔ¡Ñª¿ñÏ®,ÈÎºÎÊ±ºò¶¼¿ÉÊ¹ÓÃ ¹¥ÃôÉÏÉý20% »áÐÄÒ»»÷ÉÏÉý30% ÎüÊÕÉËº¦100%×ªHp,PETSKILL_DamageToHp2,100,,,659,1,6,2,5000,PETSKILL_NONE
+T´óµØîø¼×,ÎÒ·½µ¥Ìå·ÀÓùÁ¦4»ØºÏÄÚÌáÉý50%,PETSKILL_SetMagicPet,4|50|TGH,,,660,1,1,2,112500,PETSKILL_SETMAGICPET
+TË®Áé×ÌÈó,ÎÒ·½µ¥ÌåÌåÁ¦800»Ø¸´,PETSKILL_SetMagicPet,3|800|HP,,,661,1,1,2,112500,PETSKILL_SETMAGICPET
+T»ðÑæÍþÄÜ,ÎÒ·½µ¥Ìå¹¥»÷Á¦4»ØºÏÄÚÌáÉý50%,PETSKILL_SetMagicPet,4|50|STR,,,662,1,1,2,112500,PETSKILL_SETMAGICPET
+T·çÖ®´µÏ¢,ÎÒ·½µ¥ÌåÃô½ÝÁ¦4»ØºÏÄÚÌáÉý40%,PETSKILL_SetMagicPet,4|40|DEX,,,663,1,1,2,112500,PETSKILL_SETMAGICPET
+ÁúÕ½ÓÚÒ°,»úÐµÈËÁú×¨Êô¼¼ÄÜ ¹¥»÷ÏÂ½µ18% È«ÌåÂé±Ô2»ØºÏ,PETSKILL_BattleModel,5|5|Âé|2|30|¹¥%-15|101819,,Jf,664,1,3,3,10000,PETSKILL_NONE
+T¿ñ±©¹¥»÷,·ÀÓùÁ¦¼õ20%¡¡¡¡¹¥»÷Á¦¼Ó150%¡¡¡¡¡¡¡¡¡¡ ÃüÖÐÂÊÏÂ½µ20%,PETSKILL_WildViolentAttack,¹¥%+150 ·À%-20 »Ø±Ü20,,Tk,665,1,6,2,1000,PETSKILL_WILDVIOLENTATTACK
+Tº¶¼×Ò»»÷,Ê¹Ê±ÎÞÊÓµÐ·½×°±¸·ÀÓù¹¥»÷Ç°ºó·½µÐÈË£¬Ê¹ÓÃÊ±¹¥ÉÏÉý60%·ÀÓùÏÂ½µ20%,PETSKILL_Regret,Ãü%30 ¹¥%60 ·À-20%,,Rf,666,1,7,2,10000,PETSKILL_NONE
+ÇàÁú°ÚÎ²,¹¥»÷Á¦ÉÏÉý50% ¿É¹¥»÷µÐ·½Ò»ÅÅ,PETSKILL_Gyrate,¹¥%+50,,Jb,667,1,1,2,3000,PETSKILL_NONE
+°×»¢Ö®Å­,¹¥»÷Á¦ÏÂ½µ10% ¸½¼ÓË¯ÃßÐ§¹û4»ØºÏ,PETSKILL_BattleModel,5|5|Ãß|4|30|¹¥%-12|100872,,Jc,668,1,3,3,200000,PETSKILL_NONE
+ÖìÈ¸Ö®Å­,¹¥»÷Á¦ÏÂ½µ20% ¸½¼ÓÊ¯»¯Ð§¹û3»ØºÏ,PETSKILL_BattleModel,5|5|Ê¯|3|30|¹¥%-22|101413,,Jd,669,1,3,3,200000,PETSKILL_NONE
+ÆÆ¸ª³ÁÖÛ,¹¥»÷Á¦ÉÏÉý200%·ÀÓùÏÂ½µ99%,PETSKILL_PowerBalance,¹¥%+200 ·À%-99,,Je,670,1,6,2,130000,PETSKILL_POWERBALANCE7
+±©×ß,·ÀÓùÁ¦¼õ25%¡¡¡¡¹¥»÷Á¦¼Ó120%¡¡¡¡¡¡¡¡¡¡ ÃüÖÐÂÊÏÂ½µ10%,PETSKILL_WildViolentAttack,¹¥%+115 ·À%-25 »Ø±Ü10,,,671,1,6,2,1000,PETSKILL_WILDVIOLENTATTACK
+È«Ìå³ÁÄ¬,µÐÈ«ÌåÎÞ·¨Ê¹ÓÃÖäÊõÈý»ØºÏ,PETSKILL_Nocast,Ä¬ turn 3 ³É 50,,,672,1,3,2,8000000,PETSKILL_NOCAST
+È«ÌåÄ§ÕÏ,µÐÈ«ÌåÁ½»ØºÏÎÞ·¨ÐÐ¶¯,PETSKILL_Barrier,ÕÏ turn 2 ³É 50,,,673,1,3,2,8000000,PETSKILL_BARRIER
+°µÔÂ±äÉí¸Ä,±äÉíºóÔö¼Ó60%µÄ¹¥»÷Á¦¸úÃô½Ý  Ä§·¨·ÀÓùÖµ¼õ80%  ÓÐÐ§Ê±¼äÎå»ØºÏ¡¡¡¡¡¡,PETSKILL_Vary,¹¥%+60 Ãô%+50 Ä§·À%-80,,Ib,674,1,5,2,1000,PETSKILL_VARY
+E´óµØµÄ¾«Áé,Ä§·¨LV5,PETSKILL_AttackMagic,magic 194 item 20899,,,675,1,7,2,0,PETSKILL_AttactMagic
+EË®µÄ¾«Áé,Ä§·¨LV5,PETSKILL_AttackMagic,magic 204 item 20900,,,676,1,7,2,0,PETSKILL_AttactMagic
+E»ðÑ×µÄ¾«Áé,Ä§·¨LV5,PETSKILL_AttackMagic,magic 214 item 20901,,,677,1,7,2,0,PETSKILL_AttactMagic
+E¼²·çµÄ¾«Áé,Ä§·¨LV5,PETSKILL_AttackMagic,magic 224 item 20902,,,678,1,7,2,0,PETSKILL_AttactMagic
+E¼«¹âµÄ¾«Áé,Ä§·¨LV5,PETSKILL_AttackMagic,magic 241 item 20903,,,679,1,7,2,0,PETSKILL_AttactMagic
+EÅÑÄæµÄ¾«Áé,Ä§·¨LV5,PETSKILL_AttackMagic,magic 23 item 20904,,,680,1,7,2,0,PETSKILL_AttactMagic
+E±¼À×µÄ¾«Áé1,Ä§·¨LV5,PETSKILL_AttackMagic,magic 427 item 20905,,,681,1,7,2,0,PETSKILL_AttactMagic
+E±¼À×µÄ¾«Áé2,Ä§·¨LV5,PETSKILL_AttackMagic,magic 428 item 20906,,,682,1,7,2,0,PETSKILL_AttactMagic
+E±ù±©Êõ1,Ä§·¨LV5,PETSKILL_AttackMagic,magic 430 item 20907,,,683,1,7,2,0,PETSKILL_AttactMagic
+E±ù±©Êõ2,Ä§·¨LV5,PETSKILL_AttackMagic,magic 431 item 20908,,,684,1,7,2,0,PETSKILL_AttactMagic
+E»ðÁúÇ¹,Ä§·¨LV5,PETSKILL_AttackMagic,magic 432 item 20909,,,685,1,7,2,0,PETSKILL_AttactMagic
+E±ù¾µÊõ,Ä§·¨LV5,PETSKILL_AttackMagic,magic 433 item 20910,,,686,1,7,2,0,PETSKILL_AttactMagic
+EÔÉÂä,Ä§·¨LV5,PETSKILL_AttackMagic,magic 434 item 20911,,,687,1,7,2,0,PETSKILL_AttactMagic
+EÖäÁéÊõ,1»÷±ØÉ±,PETSKILL_AttackMagic,magic 435 item 20912,,,688,1,7,2,0,PETSKILL_AttactMagic
+QÀ×·ÖÉíÊõ,Q°æÀ×¶û±¦±¦µÄ·ÖÉíÊõ Ä§ÕÏ3»ØºÏ,PETSKILL_BattleModel,5|5|ÕÏ|3|30|¹¥%10|101996,,Qb,689,1,3,3,10000,PETSKILL_NONE
+Qº£µÁ·ÖÉíÊõ,Q°æº£µÁ±¦±¦µÄ·ÖÉíÊõ ¾ç¶¾6»ØºÏ,PETSKILL_BattleModel,5|5|¾ç|6|30|¹¥%5|101987,,Qc,690,1,3,3,10000,PETSKILL_NONE
+QÈÌÕß·ÖÉíÊõ,Q°æÈÌÕß±¦±¦µÄ·ÖÉíÊõ Ê¯»¯6»ØºÏ,PETSKILL_BattleModel,5|5|Ê¯|6|30|¹¥%5|101994,,Qd,691,1,3,3,10000,PETSKILL_NONE
+QÄÌÅ£·ÖÉíÊõ,Q°æÄÌÅ£±¦±¦µÄ·ÖÉíÊõ ÐéÈõ9»ØºÏ,PETSKILL_BattleModel,5|5|Ðé|9|30|¹¥%-50|101995,,Qe,692,1,3,3,10000,PETSKILL_NONE
+µØÖ®×£¸£,ÎÒ·½µ¥Ìå·ÀÓùÁ¦4»ØºÏÄÚÌáÉý30%,PETSKILL_SetMagicPet,4|30|TGH,,Qf,693,1,1,2,112500,PETSKILL_SETMAGICPET
+ÉñÖ®×£¸£,ÎÒ·½µ¥ÌåÌåÁ¦800»Ø¸´,PETSKILL_SetMagicPet,3|800|HP,,Qg,694,1,1,2,112500,PETSKILL_SETMAGICPET
+Ñ×Ö®×£¸£,ÎÒ·½µ¥Ìå¹¥»÷Á¦4»ØºÏÄÚÌáÉý30%,PETSKILL_SetMagicPet,4|30|STR,,Qh,695,1,1,2,112500,PETSKILL_SETMAGICPET
+·çÖ®×£¸£,ÎÒ·½µ¥ÌåÃô½ÝÁ¦4»ØºÏÄÚÌáÉý20%,PETSKILL_SetMagicPet,4|20|DEX,,Qi,696,1,1,2,112500,PETSKILL_SETMAGICPET
+Äæ×ª¹¥»÷-µØ,×ª»»×Ô¼ºÎªµØÊôÐÔ¹¥»÷¶Ô·½,PETSKILL_Mdfyattack,EA|100,,,699,1,6,2,2000,PETSKILL_MDFYATTACK
+Äæ×ª¹¥»÷-Ë®,×ª»»×Ô¼ºÎªË®ÊôÐÔ¹¥»÷¶Ô·½,PETSKILL_Mdfyattack,WA|100,,,700,1,6,2,2000,PETSKILL_MDFYATTACK
+Äæ×ª¹¥»÷-»ð,×ª»»×Ô¼ºÎª»ðÊôÐÔ¹¥»÷¶Ô·½,PETSKILL_Mdfyattack,FI|100,,,697,1,6,2,2000,PETSKILL_MDFYATTACK
+Äæ×ª¹¥»÷-·ç,×ª»»×Ô¼ºÎª·çÊôÐÔ¹¥»÷¶Ô·½,PETSKILL_Mdfyattack,WI|100,,,698,1,6,2,2000,PETSKILL_MDFYATTACK
+ÁÑµØ,½«Õ½³¡±äÎªµØÊôÐÔ ,PETSKILL_Combined,×ÛºÏ·¨|1|194,,,701,1,2,2,20000,PETSKILL_NONE
+Ó¿Èª,½«Õ½³¡±äÎªË®ÊôÐÔ ,PETSKILL_Combined,×ÛºÏ·¨|1|204,,,702,1,2,2,20000,PETSKILL_NONE
+ÈÛÑ×,½«Õ½³¡±äÎª»ðÊôÐÔ ,PETSKILL_Combined,×ÛºÏ·¨|1|214,,,703,1,2,2,20000,PETSKILL_NONE
+¼¤·ç,½«Õ½³¡±äÎª·çÊôÐÔ ,PETSKILL_Combined,×ÛºÏ·¨|1|224,,,704,1,2,2,20000,PETSKILL_NONE
+µ÷ºÍ,½«È«Ìå»Ø¸´³ÉÎÞÊôÐÔ,PETSKILL_Combined,×ÛºÏ·¨|1|230,,,705,1,2,2,20000,PETSKILL_NONE
+µ÷ºÍ,½«È«Ìå»Ø¸´³ÉÎÞÊôÐÔ,PETSKILL_Combined,×ÛºÏ·¨|1|230,,Th,728,1,2,2,20000,PETSKILL_NONE
+¶àÖØÓ°·ÖÉíÊõ,ÈÌÕß±¦±¦×¨ÓÃ¼¼ÄÜ ¶àÖØ·ÖÉí¹¥»÷µÐÈË,PETSKILL_Combined,×ÛºÏ·¨|1|436,,Qj,706,1,3,2,20000,PETSKILL_NONE
+¾ç¶¾¹¥»÷,¹¥»÷Á¦¼Ó20%Áù»ØºÏÇ°ºóÈÃµÐÈËÖÐ¾ç¶¾,PETSKILL_StatusChange,¾ç turn 6  ¹¥%+20,,,707,1,6,2,4000,PETSKILL_POISON_ATTACK2
+Ê¯»¯¹¥»÷,¹¥»÷Á¦¼õ30%¾Å»ØºÏÇ°ºóÈÃµÐÈËÊ¯»¯,PETSKILL_StatusChange,Ê¯ turn 9  ¹¥%-30,,,708,1,6,2,2300,PETSKILL_STONE
+»ìÂÒ¹¥»÷,¹¥»÷Á¦¼õ30%Áù»ØºÏÇ°ºóÈÃµÐÈË»ìÂÒ,PETSKILL_StatusChange,ÂÒ turn 6 ¹¥%-30,,,709,1,6,2,2000,PETSKILL_CONFUSION_ATTACK
+´ßÃß¹¥»÷,¹¥»÷Á¦¼õ30%Áù»ØºÏÇ°ºóÈÃµÐÈË³ÁË¯,PETSKILL_StatusChange,Ãß turn 6  ¹¥%-30,,,710,1,6,2,2500,PETSKILL_SLEEP_ATTACK
+¿º·Ü,ÔÝÊ±Ìá¸ß¹¥»÷Á¦ ²¢ÓÐÒ»¶¨¼¸ÂÊÈÃ¶ÔÊÖÌ±»¾,PETSKILL_StatusChange,Ðé turn 9  ¹¥%+60,,Kf,711,1,6,2,2500,PETSKILL_POISON_ATTACK2
+¿º·Ü,ÔÝÊ±Ìá¸ß¹¥»÷Á¦ ²¢ÓÐÒ»¶¨¼¸ÂÊÈÃ¶ÔÊÖÂé±Ô,PETSKILL_StatusChange,Âé turn 1  ¹¥%+70,,,712,1,6,2,2500,PETSKILL_POISON_ATTACK2
+×·¼£¹¥»÷,¶ÔÊÖÔÚµÚÒ»´Î¹¥»÷ÉÁ±ÜµÄ»° ½«»á80%µÄ»úÂÊ·¢¶¯µÚ¶þ´Î¹¥»÷,PETSKILL_Retrace,¹¥%+100,,,713,1,1,2,3000,PETSKILL_NONE
+ÊÈÑªÖ®»÷,½«¶ÔµÐÈËµÄÉËº¦100%»¯Îª¼ºÓÃ,PETSKILL_DamageToHp,30|100,,,714,1,6,2,0,PETSKILL_DAMAGETOHP
+»ðÅ£¿ñÏ®,»ðÅ£·ÖÉí¹¥»÷¶Ô·½µÐÈËÈ«Ìå,PETSKILL_Combined,×ÛºÏ·¨|5|458|459|460|461|462,,Hn,715,1,3,2,20000,PETSKILL_NONE
+T·ßÅ­,¸øÓèµÐÈË·ßÅ­µØÒ»»÷,PETSKILL_PowerBalance,¹¥%+200 ·À%-70,,Bh,716,1,6,2,130000,PETSKILL_POWERBALANCE6
+TËÁÎÞ¼Éµ°,¹¥»÷Á¦ÉÏÉý15%   ¶ª¼¦µ°¹¥»÷µÐ·½È«Ìå ¸½¼ÓË¯ÃßÐ§¹û,PETSKILL_BattleModel,5|5|Ãß|3|30|¹¥%+15|101489,,Bi,717,1,3,3,20000,PETSKILL_NONE
+Tº¶¼×Ò»»÷,Ê¹Ê±ÎÞÊÓµÐ·½×°±¸·ÀÓù¹¥»÷Ç°ºó·½µÐÈË£¬Ê¹ÓÃÊ±¹¥ÉÏÉý60%·ÀÓùÏÂ½µ35%,PETSKILL_Regret,Ãü%20 ¹¥%60 ·À-35%,,Bj,718,1,7,2,10000,PETSKILL_NONE
+ÎÒ·½È«Äæ×ª,·´×ªÎÒ·½È«ÌåÊôÐÔ,PETSKILL_Combined,×ÛºÏ·¨|1|240,,Qw,719,1,2,2,5000,PETSKILL_NONE
+ÎÒ·½È«Äæ×ª,·´×ªÎÒ·½È«ÌåÊôÐÔ,PETSKILL_Combined,×ÛºÏ·¨|1|240,,Wf,725,1,2,2,5000,PETSKILL_NONE
+T´óµØîø¼×,ÎÒ·½È«Ìå·ÀÓùÁ¦Èý»ØºÏÄÚÌáÉý30%,PETSKILL_SetMagicPet,3|30|TGH,,Kb,720,1,2,2,2500,PETSKILL_SETMAGICPET
+TË®Áé×ÌÈó,ÎÒ·½È«ÌåÌåÁ¦1000»Ø¸´,PETSKILL_SetMagicPet,3|1000|HP,,Kc,721,1,2,2,2500,PETSKILL_SETMAGICPET
+TË®Áé×ÌÈó,ÎÒ·½È«ÌåÌåÁ¦1000»Ø¸´,PETSKILL_SetMagicPet,3|1000|HP,,Kt,726,1,2,2,2500,PETSKILL_SETMAGICPET
+T»ðÑæÍþÄÜ,ÎÒ·½È«Ìå¹¥»÷Á¦Èý»ØºÏÄÚÌáÉý25%,PETSKILL_SetMagicPet,3|25|STR,,Kd,722,1,2,2,2500,PETSKILL_SETMAGICPET
+T·çÖ®´µÏ¢,ÎÒ·½È«ÌåÃô½ÝÁ¦Èý»ØºÏÄÚÌáÉý30%,PETSKILL_SetMagicPet,3|30|DEX,,Ke,723,1,2,2,2500,PETSKILL_SETMAGICPET
+Ê¨ÍõÖ®ºð,Ëæ»úÊ©·ÅÊ¯»¯¡¢Ë¯Ãß¡¢»ìÂÒLV6È«Ìå¾«Áé     Ê¨Íõ×¨ÓÃ¼¼,PETSKILL_Combined,×ÛºÏ·¨|3|413|414|416,,Sw,733,1,3,2,2000,PETSKILL_NONE
+Ê¨ÍõÖ®ºð,¶ÔÈÚºÏ³èºð½Ð¡¡¡¡¿ÉÏÅÅÜÄ³Ð©ÈÚºÏ³è¡¡¡¡Ê¨Íõ×¨ÓÃ¼¼,PETSKILL_Roar,1009|1010|1011|989|990|991|992|1030|1031|1032|997|998|999|1000,,Ss,734,1,6,2,3000,PETSKILL_Roar
+±³Ë®×·¼£,¶ÔÊÖÔÚµÚÒ»´ÎÉÁ±ÜµÄ»° ½«»á80%µÄ»úÂÊ·¢¶¯µÚ¶þ´Î¹¥»÷,PETSKILL_Retrace,¹¥%+50,,Zb,735,1,1,2,30000,PETSKILL_NONE
+ËÀÖíÎ·ÌÌ,¹¥»÷Á¦ÉÏÉý120%·ÀÓùÏÂ½µ99%,PETSKILL_PowerBalance,¹¥%+120 ·À%-99,,Je,736,1,6,2,130000,PETSKILL_POWERBALANCE7
+Í­Ç½,Ìá¸ßÎÒ·½È«Ìå·ÀÓùÁ¦40%5»ØºÏ¡¡¡¡,PETSKILL_MagicStatusChange,Ìú±Ú|5|40|È«,,Tq,565,1,2,2,0,PETSKILL_MSTATUSCHANGH
+ÍÁÏµÄ§·¨³õ¼¶,ÍÁÏµÄ§·¨³õ¼¶,PETSKILL_Combined,×ÛºÏ·¨|8|470|471|472|473|474|475|476|477,,Cb,800,1,6,2,20000,PETSKILL_NONE
+ÍÁÏµÄ§·¨ÖÐ¼¶,ÍÁÏµÄ§·¨ÖÐ¼¶,PETSKILL_Combined,×ÛºÏ·¨|5|480|481|482|483|484,,Cc,801,1,8,2,20000,PETSKILL_NONE
+ÍÁÏµÄ§·¨¸ß¼¶,ÍÁÏµÄ§·¨¸ß¼¶,PETSKILL_Combined,×ÛºÏ·¨|4|490|491|492|493,,Cd,802,1,3,2,20000,PETSKILL_NONE
+Ë®ÏµÄ§·¨³õ¼¶,Ë®ÏµÄ§·¨³õ¼¶,PETSKILL_Combined,×ÛºÏ·¨|8|500|501|502|503|504|505|506|507,,Ce,803,1,6,2,20000,PETSKILL_NONE
+Ë®ÏµÄ§·¨ÖÐ¼¶,Ë®ÏµÄ§·¨ÖÐ¼¶,PETSKILL_Combined,×ÛºÏ·¨|5|510|511|512|513|514,,Cf,804,1,8,2,20000,PETSKILL_NONE
+Ë®ÏµÄ§·¨¸ß¼¶,Ë®ÏµÄ§·¨¸ß¼¶,PETSKILL_Combined,×ÛºÏ·¨|4|520|521|522|523,,Cg,805,1,3,2,20000,PETSKILL_NONE
+»ðÏµÄ§·¨³õ¼¶,»ðÏµÄ§·¨³õ¼¶,PETSKILL_Combined,×ÛºÏ·¨|8|530|531|532|533|534|535|536|537,,Ch,806,1,6,2,20000,PETSKILL_NONE
+»ðÏµÄ§·¨ÖÐ¼¶,»ðÏµÄ§·¨ÖÐ¼¶,PETSKILL_Combined,×ÛºÏ·¨|5|540|541|542|543|544,,Ci,807,1,8,2,20000,PETSKILL_NONE
+»ðÏµÄ§·¨¸ß¼¶,»ðÏµÄ§·¨¸ß¼¶,PETSKILL_Combined,×ÛºÏ·¨|4|550|551|552|553,,Cj,808,1,3,2,20000,PETSKILL_NONE
+·çÏµÄ§·¨³õ¼¶,·çÏµÄ§·¨³õ¼¶,PETSKILL_Combined,×ÛºÏ·¨|8|560|561|562|563|564|565|566|567,,Ck,809,1,6,2,20000,PETSKILL_NONE
+·çÏµÄ§·¨ÖÐ¼¶,·çÏµÄ§·¨ÖÐ¼¶,PETSKILL_Combined,×ÛºÏ·¨|5|570|571|572|573|574,,Cl,810,1,8,2,20000,PETSKILL_NONE
+·çÏµÄ§·¨¸ß¼¶,·çÏµÄ§·¨¸ß¼¶,PETSKILL_Combined,×ÛºÏ·¨|4|580|581|582|583,,Cm,811,1,3,2,20000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100705,,Db,812,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100715,,Dc,813,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100725,,Dd,814,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100735,,De,815,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100745,,Df,816,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100755,,Dg,817,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100765,,Dh,818,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100775,,Di,819,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100785,,Dj,820,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100795,,Dk,821,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100805,,Dl,822,1,3,3,10000,PETSKILL_NONE
+ÌìÂÞµØÍøÊõ,ºÚ°µÕ½Ê¿×¨Êð¹¥»÷¼¼ÄÜ ·ÖÉí¹¥»÷ºóÒ»¶¨¼¸ÂÊ½«¶Ô·½Íø×¡,PETSKILL_BattleModel,5|5|ÂÞ|2|20|¹¥%-40|100815,,Dm,823,1,3,3,10000,PETSKILL_NONE
+¿ÖÏÅ,Ê¹ÓÃÊ±¹¥ÏÂ½µ50% ÃôÉÏÉý50% Ê¹µÐ·½³èÎïÊÜµ½¿ÖÏÅ»Øµ½³èÎïÀ¸,PETSKILL_2BattleTimid,-¹¥%50+Ãô%50Ãü%60,,Dn,824,1,7,2,10000,PETSKILL_NONE
+µØÊôÐÔÇ¿»¯¹¥»÷,¶ÔµØÊôÐÔÇ¿»¯99999%¹¥»÷,PETSKILL_Modifyattack,EA|9999,,,825,1,6,2,2000,PETSKILL_MODIFYATT
+Ë®ÊôÐÔÇ¿»¯¹¥»÷,¶ÔË®ÊôÐÔÇ¿»¯99999%¹¥»÷,PETSKILL_Modifyattack,WA|9999,,,826,1,6,2,2000,PETSKILL_MODIFYATT
+»ðÊôÐÔÇ¿»¯¹¥»÷,¶Ô»ðÊôÐÔÇ¿»¯99999%¹¥»÷,PETSKILL_Modifyattack,FI|9999,,,827,1,6,2,2000,PETSKILL_MODIFYATT
+·çÊôÐÔÇ¿»¯¹¥»÷,¶Ô·çÊôÐÔÇ¿»¯99999%¹¥»÷,PETSKILL_Modifyattack,WI|9999,,,828,1,6,2,2000,PETSKILL_MODIFYATT
+ÊóÊóÉúÍþ,ÊóÄê×¨ÊôÈºÌå¼¼ÄÜ£¬¹¥»÷Á¦ÉÏÉý20% È«ÌåÂé±Ô3»ØºÏ,PETSKILL_BattleModel,5|5|Âé|3|30|¹¥%20|20122 20119 20120 20121,,,829,1,3,3,100000,PETSKILL_NONE
+´óµØÉñÍþ,ÕÔ×ÓÁú×¨Êô¼¼ÄÜ,PETSKILL_Combined,×ÛºÏ·¨|4|490|491|492|493,,Cd,830,1,3,2,20000,PETSKILL_NONE
+´óµØ»Ø´Ì,ÕÔ×ÓÁú×¨Êô¼¼ÄÜ,PETSKILL_Gyrate,¹¥%+80,,Jb,831,1,1,2,3000,PETSKILL_NONE
 
-å¤§æµ·ä¹‹æ€’,èŠ±æœ¨å…°ä¸“å±žæŠ€èƒ½,PETSKILL_Combined,ç»¼åˆæ³•|4|520|521|522|523,,Cg,832,1,3,2,20000,PETSKILL_NONE
-å¤§æµ·è¡€å‡»,èŠ±æœ¨å…°ä¸“å±žæŠ€èƒ½,PETSKILL_DamageToHp,30|100,,,833,1,6,2,0,PETSKILL_DAMAGETOHP
+´óº£Ö®Å­,»¨Ä¾À¼×¨Êô¼¼ÄÜ,PETSKILL_Combined,×ÛºÏ·¨|4|520|521|522|523,,Cg,832,1,3,2,20000,PETSKILL_NONE
+´óº£Ñª»÷,»¨Ä¾À¼×¨Êô¼¼ÄÜ,PETSKILL_DamageToHp,30|100,,,833,1,6,2,0,PETSKILL_DAMAGETOHP
 
-å¤©ç½¡ä¹‹ç«,æ­¦å¤©é›„ä¸“å±žæŠ€èƒ½,PETSKILL_Combined,ç»¼åˆæ³•|4|550|551|552|553,,Cj,834,1,3,2,20000,PETSKILL_NONE
-å¤©ç½¡ä¹‹é£Ž,æ­¦å¤©é›„ä¸“å±žæŠ€èƒ½,PETSKILL_Combined,ç»¼åˆæ³•|4|580|581|582|583,,Cm,835,1,3,2,20000,PETSKILL_NONE
+Ììî¸Ö®»ð,ÎäÌìÐÛ×¨Êô¼¼ÄÜ,PETSKILL_Combined,×ÛºÏ·¨|4|550|551|552|553,,Cj,834,1,3,2,20000,PETSKILL_NONE
+Ììî¸Ö®·ç,ÎäÌìÐÛ×¨Êô¼¼ÄÜ,PETSKILL_Combined,×ÛºÏ·¨|4|580|581|582|583,,Cm,835,1,3,2,20000,PETSKILL_NONE
 
-ç¥žä¹‹å®š,å…­ç¿¼å¤§å¤©ä½¿ä¸“å±žæŠ€èƒ½,PETSKILL_Barrier,éšœ turn 5 æˆ 99,,,836,1,3,2,8000000,PETSKILL_BARRIER
-ç¥žä¹‹ç•Œ,å…­ç¿¼å¤§å¤©ä½¿ä¸“å±žæŠ€èƒ½,PETSKILL_Nocast,é»˜ turn 5 æˆ 99,,,837,1,3,2,8000000,PETSKILL_NOCAST
-ç¥žä¹‹ç¥ç¦,å…­ç¿¼å¤§å¤©ä½¿ä¸“å±žæŠ€èƒ½,PETSKILL_SetMagicPet,3|5000|HP,,Kc,838,1,2,2,2500,PETSKILL_SETMAGICPET
-ç¥žå‰‘æ”»å‡»,å…­ç¿¼å¤§å¤©ä½¿ä¸“å±žæŠ€èƒ½,PETSKILL_ContinuationAttack,9,,,839,1,6,2,1625000,PETSKILL_CONTINUATIONATTACK8
-ç¥žä¹‹è¯…å’’,å…­ç¿¼å¤§å¤©ä½¿ä¸“å±žæŠ€èƒ½,PETSKILL_Deeppoison,å‰§ turn 5 æˆ 99,,,840,1,3,2,0,PETSKILL_DEEPPOISON
-ç¥ç¦æœ¯,å…¨ä½“ä½“åŠ›2000å›žå¤,PETSKILL_SetMagicPet,3|2000|HP,,Kc,841,1,2,2,2500,PETSKILL_SETMAGICPET
+ÉñÖ®¶¨,ÁùÒí´óÌìÊ¹×¨Êô¼¼ÄÜ,PETSKILL_Barrier,ÕÏ turn 5 ³É 99,,,836,1,3,2,8000000,PETSKILL_BARRIER
+ÉñÖ®½ç,ÁùÒí´óÌìÊ¹×¨Êô¼¼ÄÜ,PETSKILL_Nocast,Ä¬ turn 5 ³É 99,,,837,1,3,2,8000000,PETSKILL_NOCAST
+ÉñÖ®×£¸£,ÁùÒí´óÌìÊ¹×¨Êô¼¼ÄÜ,PETSKILL_SetMagicPet,3|5000|HP,,Kc,838,1,2,2,2500,PETSKILL_SETMAGICPET
+Éñ½£¹¥»÷,ÁùÒí´óÌìÊ¹×¨Êô¼¼ÄÜ,PETSKILL_ContinuationAttack,9,,,839,1,6,2,1625000,PETSKILL_CONTINUATIONATTACK8
+ÉñÖ®×çÖä,ÁùÒí´óÌìÊ¹×¨Êô¼¼ÄÜ,PETSKILL_Deeppoison,¾ç turn 5 ³É 99,,,840,1,3,2,0,PETSKILL_DEEPPOISON
+×£¸£Êõ,È«ÌåÌåÁ¦2000»Ø¸´,PETSKILL_SetMagicPet,3|2000|HP,,Kc,841,1,2,2,2500,PETSKILL_SETMAGICPET
 
 
 

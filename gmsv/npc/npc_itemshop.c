@@ -593,7 +593,7 @@ BOOL NPC_SetNewItem(int meindex,int talker,char *data)
 	}
 
 	/*--忒匀化  凶蜊醒及  互  端及蜊醒  扔□田础  方曰聂中午云井仄中及匹--*/
-	/*--サーバー側の  を  れる--*/
+	/*--放入服务器侧的编号--*/
 	if( kosuucnt < kosuu) kosuu = kosuucnt;
 		
 	/*--未夫及桦宁反巨仿□--*/
@@ -607,7 +607,7 @@ BOOL NPC_SetNewItem(int meindex,int talker,char *data)
    	return FALSE;
 	}
 
-	/*---レートを取    なければ1.0)-*/
+	/*---取不到倍率的话设为1.0)-*/
 	if(NPC_Util_GetStrFromStrWithDelim( argstr, "buy_rate", buf, sizeof( buf)) != NULL) {
 		rate= atof( buf);
 	}

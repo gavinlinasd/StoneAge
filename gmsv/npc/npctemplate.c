@@ -54,13 +54,13 @@ static FunctionNameSet  functionSet[]={
       "SimpleShopTalked" , "","",
       "","","" ,"SimpleShopSpecialTalked" ,""},
 
-	/* メッセージ */
+	/* 讯息 */
     { "Msg" , "MsgInit" , "","",
       "","","","",
       "","","", "",
       "","MsgLooked","","",""},
 
-	/* ワープゾーン */
+	/* 传送区 */
     { "Warp","WarpInit","","",
       "","","","",
       "","","","",
@@ -125,7 +125,7 @@ static FunctionNameSet  functionSet[]={
      "FmDengonInit", "", "", "", "", "", "", "", "",
      "", "", "", "FmDengonLooked", "", "","FmDengonWindowTalked"},
 
-	/*佐野追加アイ  ム合成*/
+	/*佐野追加道具合成*/
     { "ItemCompo" , "ItemCompoInit", "", "",
       "", "", "", "",
       "" ,"ItemCompoTalked","",""
@@ -237,7 +237,7 @@ static FunctionNameSet  functionSet[]={
       "","LuckyManTalked","","",
       "","", "","","LuckyManWindowTalked"},
 
-	/* マンモスバス君 */
+	/* 长毛象巴士君 */
     { "Bus","BusInit","","",
       "","","","BusLoop",
       "","BusTalked","","",
@@ -273,7 +273,7 @@ static FunctionNameSet  functionSet[]={
       "","CheckManTalked","","",
       "","", "","","CheckManWindowTalked"},
 
-	/* じゃんけん君 */
+	/* 猜拳君 */
     { "Janken","JankenInit","","",
       "","","","",
       "","JankenTalked","","",
@@ -609,10 +609,10 @@ typedef enum
 }NPC_TYPECATEGORYATREADFILE;
 
 /*------------------------------------------------------------
- * Template index として正しいかどうかcheckする
+ * 检查是否是正确的 Template index
  * 引数
  *  index       int             index
- * 返り値
+ * 返回值
  *  valid       TRUE
  *  invalid     FALSE
  ------------------------------------------------------------*/
@@ -622,10 +622,10 @@ INLINE int NPC_CHECKTEMPLATEINDEX(int index)
     return TRUE;
 }
 /*------------------------------------------------------------
- * Template intdata index として正しいかどうかcheckする
+ * 检查是否是正确的 Template intdata index
  * 引数
  *  index     int             index
- * 返り値
+ * 返回值
  *  valid       TRUE
  *  invalid     FALSE
  ------------------------------------------------------------*/
@@ -635,10 +635,10 @@ static INLINE int NPC_CHECKTEMPLATEINTINDEX(int index)
     return TRUE;
 }
 /*------------------------------------------------------------
- * Template chardata index として正しいかどうかcheckする
+ * 检查是否是正确的 Template chardata index
  * 引数
  *  index     int             index
- * 返り値
+ * 返回值
  *  valid       TRUE
  *  invalid     FALSE
  ------------------------------------------------------------*/
@@ -651,10 +651,10 @@ static INLINE int NPC_CHECKTEMPLATECHARINDEX(int index)
 
 
 /*------------------------------------------------------------
- * NPC_Templateを初期化する?
+ * 初始化 NPC_Template
  * 引数
  *  filenum    int      易刹通誌佰
- * 返り値
+ * 返回值
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  ------------------------------------------------------------*/
@@ -672,8 +672,8 @@ BOOL NPC_initTemplateArray( int templatenum )
  * 犯白巧伙玄及NPC  件皿伊□玄毛医  允月［
  * 引数
  *  temp    NPC_Template*     件皿伊□玄及禾奶件正□
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 void NPC_setDefaultNPCTemplate( NPC_Template*  temp )
 {
@@ -751,7 +751,7 @@ void NPC_templateallocitemdata( NPC_Template* one )
  * 引数
  *  string      char*         ٯ  
  *  unuse       int*        银歹卅中［
- * 返り値
+ * 返回值
  *  仿件母丞及  斓及袄  汔及涩烂反｝2    及娄醒卞忡绣允月［
  ------------------------------------------------------------*/
 static int NPC_seekGraphicNumberFromString( char* string, int* unuse )
@@ -764,7 +764,7 @@ static int NPC_seekGraphicNumberFromString( char* string, int* unuse )
  * 引数
  *  string      char*         ٯ  
  *  randomvalue int*        仿件母丞及  五今
- * 返り値
+ * 返回值
  *  仿件母丞及  斓及袄  汔及涩烂反｝2    及娄醒卞忡绣允月［
  ------------------------------------------------------------*/
 static int NPC_getRandomValue( char*  string,int* randomwidth )
@@ -790,10 +790,10 @@ static int NPC_getRandomValue( char*  string,int* randomwidth )
 
 
 /*------------------------------------------------------------
- * NPCTemplate ファイ郊をひとつ  む?
+ * 读取一个 NPCTemplate 文件
  * 引数
- *  filename   char*       設定ファイ郊を  み始めるトップディレクトリ
- * 返り値
+ *  filename   char*       开始读取设置文件的顶层目录
+ * 返回值
  *  岳      TRUE(1)
  *  分户(仇木动晓白央奶伙毛  氏匹反中仃卅中)
  *  撩      FALSE(0)
@@ -1114,8 +1114,8 @@ BOOL NPC_readNPCTemplateFiles( char* topdirectory ,int templatesize)
  *   侬  卞覆杀允月 template 及 index 毛忒允［
  * 引数
  *  templatename        char*         件皿伊□玄及  蟆
- * 返り値
- *  -1  の時エラー
+ * 返回值
+ *  -1  时为错误
  ------------------------------------------------------------*/
 int NPC_templateGetTemplateIndex( char* templatename )
 {

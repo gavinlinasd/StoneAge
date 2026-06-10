@@ -2,7 +2,7 @@ NPCCREATE
 
 #line1
 {
-name=å‚é¡Œå¸½
+name=¿âÂêË¹
 floorid=1997
 borncenter=13,21
 time=0
@@ -16,7 +16,7 @@ enemy=changeevent|file:my/ronghe/11.arg
 
 #line2
 {
-name=é›·ç›ç‰¹
+name=À×ÂêÌØ
 floorid=1997
 borncenter=16,21
 time=0
@@ -30,7 +30,7 @@ enemy=changeevent|file:my/ronghe/12.arg
 
 #line3
 {
-name=æ†©å¸½é¡Œ
+name=·ÆË¹Âê
 floorid=1997
 borncenter=19,21
 time=0
@@ -44,7 +44,7 @@ enemy=changeevent|file:my/ronghe/13.arg
 
 #line3
 {
-name=è´åº“å°”
+name=±´¿â¶û
 floorid=1997
 borncenter=22,21
 time=0
@@ -62,7 +62,7 @@ enemy=changeevent|file:my/ronghe/14.arg
 
 #line1
 {
-name=æ¯•æ ¼è‰¾æ–¯
+name=±Ï¸ñ°¬Ë¹
 floorid=1997
 borncenter=13,18
 time=0
@@ -76,7 +76,7 @@ enemy=changeevent|file:my/ronghe/21.arg
 
 #line2
 {
-name=è£˜æ¯”æ–¯
+name=ôÃ±ÈË¹
 floorid=1997
 borncenter=16,18
 time=0
@@ -90,7 +90,7 @@ enemy=changeevent|file:my/ronghe/22.arg
 
 #line3
 {
-name=é˜¿å¡è¥¿æ–¯
+name=°¢¿¨Î÷Ë¹
 floorid=1997
 borncenter=19,18
 time=0
@@ -104,7 +104,7 @@ enemy=changeevent|file:my/ronghe/23.arg
 
 #line3
 {
-name=ä»£è¾›ä»£å¸½
+name=Âå¿ÉÂåË¹
 floorid=1997
 borncenter=22,18
 time=0
@@ -131,7 +131,7 @@ enemy=changeevent|file:my/ronghe/24.arg
 
 #line1
 {
-name=æ³•å…¹è’™ç‰¹
+name=·¨×ÈÃÉÌØ
 floorid=1997
 borncenter=13,15
 time=0
@@ -145,7 +145,7 @@ enemy=changeevent|file:my/ronghe/31.arg
 
 #line2
 {
-name=é›·æ ¼ç‰¹
+name=À×¸ñÌØ
 floorid=1997
 borncenter=16,15
 time=0
@@ -159,7 +159,7 @@ enemy=changeevent|file:my/ronghe/32.arg
 
 #line3
 {
-name=æ´›å…‹å°”
+name=Âå¿Ë¶û
 floorid=1997
 borncenter=19,15
 time=0
@@ -173,7 +173,7 @@ enemy=changeevent|file:my/ronghe/33.arg
 
 #line3
 {
-name=ç±³æ©æ–¯ç‰¹
+name=Ã×¶÷Ë¹ÌØ
 floorid=1997
 borncenter=22,15
 time=0
@@ -195,7 +195,7 @@ enemy=changeevent|file:my/ronghe/34.arg
 
 #line1
 {
-name=åˆ©è¥¿äºš
+name=ÀûÎ÷ÑÇ
 floorid=1997
 borncenter=13,12
 time=0
@@ -209,7 +209,7 @@ enemy=changeevent|file:my/ronghe/41.arg
 
 #line2
 {
-name=ä½©ç½—äºš
+name=ÅåÂŞÑÇ
 floorid=1997
 borncenter=16,12
 time=0
@@ -223,7 +223,7 @@ enemy=changeevent|file:my/ronghe/42.arg
 
 #line3
 {
-name=ä¼Šåˆ©æ›¼äºš
+name=ÒÁÀûÂüÑÇ
 floorid=1997
 borncenter=19,12
 time=0
@@ -237,7 +237,7 @@ enemy=changeevent|file:my/ronghe/43.arg
 
 #line3
 {
-name=å¡åŠ›æ´›äºš
+name=¿¨Á¦ÂåÑÇ
 floorid=1997
 borncenter=22,12
 time=0
@@ -266,7 +266,7 @@ enemy=changeevent|file:my/ronghe/44.arg
 
 #line1
 {
-name=æ€§å€¹ä»£å¸½
+name=À­·ğÂåË¹
 floorid=1997
 borncenter=13,9
 time=0
@@ -280,7 +280,7 @@ enemy=changeevent|file:my/ronghe/51.arg
 
 #line2
 {
-name=åˆ©æ™®å¤šå°”
+name=ÀûÆÕ¶à¶û
 floorid=1997
 borncenter=16,9
 time=0
@@ -294,7 +294,7 @@ enemy=changeevent|file:my/ronghe/52.arg
 
 #line3
 {
-name=é‚¦å…‹æ™®æ–¯
+name=°î¿ËÆÕË¹
 floorid=1997
 borncenter=19,9
 time=0
@@ -308,7 +308,7 @@ enemy=changeevent|file:my/ronghe/53.arg
 
 #line3
 {
-name=å®‰å™¸å°¾å¸½
+name=°ÂÆÕÈøË¹
 floorid=1997
 borncenter=22,9
 time=0
@@ -337,7 +337,7 @@ enemy=changeevent|file:my/ronghe/54.arg
 
 #line1
 {
-name=è¿ªäºšå¤æ–¯
+name=µÏÑÇ¹ÅË¹
 floorid=1997
 borncenter=13,30
 time=0
@@ -351,7 +351,7 @@ enemy=changeevent|file:my/ronghe/61.arg
 
 #line2
 {
-name=é©¬é²å¤æ–¯
+name=ÂíÂ³¹ÅË¹
 floorid=1997
 borncenter=16,30
 time=0
@@ -365,7 +365,7 @@ enemy=changeevent|file:my/ronghe/62.arg
 
 #line3
 {
-name=å°”æ´›æ™®
+name=¶ûÂåÆÕ
 floorid=1997
 borncenter=19,30
 time=0
@@ -379,7 +379,7 @@ enemy=changeevent|file:my/ronghe/63.arg
 
 #line3
 {
-name=å¡å…‹æ™®
+name=¿¨¿ËÆÕ
 floorid=1997
 borncenter=22,30
 time=0
@@ -403,7 +403,7 @@ enemy=changeevent|file:my/ronghe/64.arg
 
 #line1
 {
-name=è¥¿ä¿®
+name=Î÷ĞŞ
 floorid=1997
 borncenter=13,33
 time=0
@@ -417,7 +417,7 @@ enemy=changeevent|file:my/ronghe/71.arg
 
 #line2
 {
-name=å“ˆå°”ä¿®
+name=¹ş¶ûĞŞ
 floorid=1997
 borncenter=16,33
 time=0
@@ -431,7 +431,7 @@ enemy=changeevent|file:my/ronghe/72.arg
 
 #line3
 {
-name=å¼—åˆ©ä¿®
+name=¸¥ÀûĞŞ
 floorid=1997
 borncenter=19,33
 time=0
@@ -445,7 +445,7 @@ enemy=changeevent|file:my/ronghe/73.arg
 
 #line3
 {
-name=å·´åˆ©
+name=°ÍÀû
 floorid=1997
 borncenter=22,33
 time=0
@@ -469,7 +469,7 @@ enemy=changeevent|file:my/ronghe/74.arg
 
 #line1
 {
-name=é›…ç‰¹æ‹‰æ–¯
+name=ÑÅÌØÀ­Ë¹
 floorid=1997
 borncenter=13,36
 time=0
@@ -483,7 +483,7 @@ enemy=changeevent|file:my/ronghe/81.arg
 
 #line2
 {
-name=ä¼Šåˆ©äºšå¾·
+name=ÒÁÀûÑÇµÂ
 floorid=1997
 borncenter=16,36
 time=0
@@ -497,7 +497,7 @@ enemy=changeevent|file:my/ronghe/82.arg
 
 #line3
 {
-name=ç±³å°¼å¥ˆå·´
+name=Ã×ÄáÄÎ°Í
 floorid=1997
 borncenter=19,36
 time=0
@@ -511,7 +511,7 @@ enemy=changeevent|file:my/ronghe/83.arg
 
 #line3
 {
-name=å¾·æ‹‰æ–¯
+name=µÂÀ­Ë¹
 floorid=1997
 borncenter=22,36
 time=0
@@ -525,7 +525,7 @@ enemy=changeevent|file:my/ronghe/84.arg
 
 #line3
 {
-name=ç§‘ä¼¦ç‰¹
+name=¿ÆÂ×ÌØ
 floorid=1997
 borncenter=25,36
 time=0
@@ -546,7 +546,7 @@ enemy=changeevent|file:my/ronghe/85.arg
 
 #line1
 {
-name=é‚¦æ¬§é‡Œ
+name=°îÅ·Àï
 floorid=1997
 borncenter=13,39
 time=0
@@ -560,7 +560,7 @@ enemy=changeevent|file:my/ronghe/91.arg
 
 #line2
 {
-name=åŠ é›·
+name=¼ÓÀ×
 floorid=1997
 borncenter=16,39
 time=0
@@ -574,7 +574,7 @@ enemy=changeevent|file:my/ronghe/92.arg
 
 #line3
 {
-name=åŠ å¤ç‰¹
+name=¼Ó¹ÅÌØ
 floorid=1997
 borncenter=19,39
 time=0
@@ -588,7 +588,7 @@ enemy=changeevent|file:my/ronghe/93.arg
 
 #line3
 {
-name=é‚¦è¥¿æ™®
+name=°îÎ÷ÆÕ
 floorid=1997
 borncenter=22,39
 time=0
@@ -612,7 +612,7 @@ enemy=changeevent|file:my/ronghe/94.arg
 
 #line1
 {
-name=ä¼Šäºšæ¬§è±
+name=ÒÁÑÇÅ·À³
 floorid=1997
 borncenter=13,42
 time=0
@@ -626,7 +626,7 @@ enemy=changeevent|file:my/ronghe/101.arg
 
 #line2
 {
-name=æ‹‰æ ¼å¤šé²
+name=À­¸ñ¶àÂ³
 floorid=1997
 borncenter=16,42
 time=0
@@ -640,7 +640,7 @@ enemy=changeevent|file:my/ronghe/102.arg
 
 #line3
 {
-name=è¥¿é¡¿å…‹å°”
+name=Î÷¶Ù¿Ë¶û
 floorid=1997
 borncenter=19,42
 time=0
@@ -654,7 +654,7 @@ enemy=changeevent|file:my/ronghe/103.arg
 
 #line3
 {
-name=å…‹ç½—é‚£æ–¯
+name=¿ËÂŞÄÇË¹
 floorid=1997
 borncenter=22,42
 time=0

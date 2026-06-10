@@ -1,6 +1,6 @@
 NPCCREATE
 
-### é­”ç‹æŒ‘æˆ˜é—¨ç¥¨ ###
+### Ä§ÍõÌôÕ½ÃÅÆ± ###
 
 {
 floorid=1000
@@ -8,13 +8,13 @@ borncorner=77,78,77,78
 time=0
 createnum=1
 graphicname=16131
-name=æŒ‘æˆ˜é­”ç‹éªŒç¥¨å‘˜
+name=ÌôÕ½Ä§ÍõÑéÆ±Ô±
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:party/devil/devil1.arg
 }
 
-### å›è¨æ‘ä½¿è€… ###
+### »ØÈø´åÊ¹Õß ###
 
 {
 floorid=147
@@ -22,13 +22,13 @@ borncorner=27,14,27,14
 time=0
 createnum=1
 graphicname=16131
-name=è¨å§†å‰å°”æ‘ä½¿è€…
+name=ÈøÄ·¼ª¶û´åÊ¹Õß
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:party/devil/devil2.arg
 }
 
-### å›è¨æ‘ä½¿è€… ###
+### »ØÈø´åÊ¹Õß ###
 
 {
 floorid=154
@@ -36,13 +36,13 @@ borncorner=27,14,27,14
 time=0
 createnum=1
 graphicname=16131
-name=è¨å§†å‰å°”æ‘ä½¿è€…
+name=ÈøÄ·¼ª¶û´åÊ¹Õß
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:party/devil/devil2.arg
 }
 
-### å›è¨æ‘ä½¿è€… ###
+### »ØÈø´åÊ¹Õß ###
 
 {
 floorid=155
@@ -50,13 +50,13 @@ borncorner=27,14,27,14
 time=0
 createnum=1
 graphicname=16131
-name=è¨å§†å‰å°”æ‘ä½¿è€…
+name=ÈøÄ·¼ª¶û´åÊ¹Õß
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:party/devil/devil2.arg
 }
 
-### å›è¨æ‘ä½¿è€… ###
+### »ØÈø´åÊ¹Õß ###
 
 {
 floorid=156
@@ -64,13 +64,13 @@ borncorner=27,14,27,14
 time=0
 createnum=1
 graphicname=16131
-name=è¨å§†å‰å°”æ‘ä½¿è€…
+name=ÈøÄ·¼ª¶û´åÊ¹Õß
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:party/devil/devil2.arg
 }
 
-### å›è¨æ‘ä½¿è€… ###
+### »ØÈø´åÊ¹Õß ###
 
 {
 floorid=157
@@ -78,13 +78,13 @@ borncorner=27,14,27,14
 time=0
 createnum=1
 graphicname=16131
-name=è¨å§†å‰å°”æ‘ä½¿è€…
+name=ÈøÄ·¼ª¶û´åÊ¹Õß
 dir=6
 ignoreinvincible=1
 enemy=npcgen_warpman|file:party/devil/devil2.arg
 }
 
-###### é­”ç‹æŒ‘æˆ˜åŒ…çš„é­”ç‹ ######
+###### Ä§ÍõÌôÕ½°üµÄÄ§Íõ ######
 {
 floorid=147
 borncenter=14,5,1,1
@@ -94,11 +94,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101277
-name=ç‚é¾™å¤§é­”ç‹
+name=Ñ×Áú´óÄ§Íõ
 enemy=devilpk|file:party/devil/devilpk.arg
 }
 
-######é¢†å¥–Npc é­”ç•Œä½¿è€…#######
+######Áì½±Npc Ä§½çÊ¹Õß#######
 {
 floorid=148
 borncenter=9,5,1,1
@@ -107,11 +107,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16131
-name=é­”ç•Œä½¿è€…
+name=Ä§½çÊ¹Õß
 enemy=changeevent|file:party/devil/devil3.arg
 }
 
-###### é­”ç‹æŒ‘æˆ˜åŒ…çš„é­”ç‹äº”æœˆ13æ—¥ç¬¬ä¸€å…³ ######
+###### Ä§ÍõÌôÕ½°üµÄÄ§ÍõÎåÔÂ13ÈÕµÚÒ»¹Ø ######
 {
 floorid=154
 borncenter=14,5,1,1
@@ -121,11 +121,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101277
-name=ç‚é¾™å¤§é­”ç‹
+name=Ñ×Áú´óÄ§Íõ
 enemy=sb_dou|file:party/devil/devilpk1.arg
 }
 
-###### é­”ç‹æŒ‘æˆ˜åŒ…çš„é­”ç‹äº”æœˆ13æ—¥ç¬¬äºŒå…³ ######
+###### Ä§ÍõÌôÕ½°üµÄÄ§ÍõÎåÔÂ13ÈÕµÚ¶ş¹Ø ######
 {
 floorid=155
 borncenter=14,5,1,1
@@ -135,11 +135,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101277
-name=ç‚é¾™å¤§é­”ç‹
+name=Ñ×Áú´óÄ§Íõ
 enemy=sb_dou|file:party/devil/devilpk2.arg
 }
 
-###### é­”ç‹æŒ‘æˆ˜åŒ…çš„é­”ç‹äº”æœˆ13æ—¥ç¬¬ä¸‰å…³ ######
+###### Ä§ÍõÌôÕ½°üµÄÄ§ÍõÎåÔÂ13ÈÕµÚÈı¹Ø ######
 {
 floorid=156
 borncenter=14,5,1,1
@@ -149,11 +149,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101277
-name=ç‚é¾™å¤§é­”ç‹
+name=Ñ×Áú´óÄ§Íõ
 enemy=sb_dou|file:party/devil/devilpk3.arg
 }
 
-######é¢†å¥–Npc#######
+######Áì½±Npc#######
 {
 floorid=155
 borncenter=8,8,1,1
@@ -162,11 +162,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16131
-name=é­”ç•Œä½¿è€…
+name=Ä§½çÊ¹Õß
 enemy=changeevent|file:party/devil/devil5.arg
 }
 
-######é¢†å¥–Npc é­”ç•Œä½¿è€…#######
+######Áì½±Npc Ä§½çÊ¹Õß#######
 {
 floorid=156
 borncenter=8,8,1,1
@@ -175,11 +175,11 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16131
-name=é­”ç•Œä½¿è€…
+name=Ä§½çÊ¹Õß
 enemy=changeevent|file:party/devil/devil6.arg
 }
 
-######é¢†å¥–Npc é­”ç•Œä½¿è€…#######
+######Áì½±Npc Ä§½çÊ¹Õß#######
 {
 floorid=157
 borncenter=14,2,1,1
@@ -188,6 +188,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16131
-name=é­”ç•Œä½¿è€…
+name=Ä§½çÊ¹Õß
 enemy=changeevent|file:party/devil/devil7.arg
 }

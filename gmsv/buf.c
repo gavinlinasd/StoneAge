@@ -167,8 +167,8 @@ void*   allocateMemory( const unsigned int nbyte )
  * allocateMemory匹割忡仄凶丢乒伉□毛free允月［
  * 引数
  *  freepointer     int     割忡允月燮  及禾奶件正□
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 void freeMemory( void* freepointer )
 {

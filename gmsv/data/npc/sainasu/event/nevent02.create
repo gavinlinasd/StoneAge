@@ -8,7 +8,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16016
-name=å°å­©çš„çˆ¶äº²
+name=Ğ¡º¢µÄ¸¸Ç×
 enemy=changeevent|file:sainasu/event/nevent02_3
 }
 
@@ -20,7 +20,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16215
-name=ä¹Œé²åŠ›çš„è¯å‰‚å¸ˆ
+name=ÎÚÂ³Á¦µÄÒ©¼ÁÊ¦
 enemy=changeevent|file:sainasu/event/nevent02_2
 }
 
@@ -33,7 +33,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16017
-name=å°å­©çš„çˆ¶äº²
+name=Ğ¡º¢µÄ¸¸Ç×
 enemy=changeevent|file:sainasu/event/nevent02_3
 }
 
@@ -45,7 +45,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16057
-name=å¡”å§†å¡”å§†
+name=ËşÄ·ËşÄ·
 enemy=changeevent|file:sainasu/event/nevent02_2
 }
 
@@ -58,7 +58,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16057
-name=å‰è¨æ‹‰å¥‡
+name=¼ªÈøÀ­Ææ
 enemy=changeevent|file:sainasu/event/nevent02_4
 }
 

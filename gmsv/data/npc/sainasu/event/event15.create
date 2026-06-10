@@ -7,7 +7,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16024
-name=è¨Šéœœé´¬å¹³è¾¼ç¶š
+name=¿ÖÁú²©Ê¿¹şÂ³
 enemy=changeevent|file:sainasu/event/event15_1
 }
 
@@ -19,6 +19,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16046
-name=å»è¿”è€³ç¶š
+name=ÖúÊÖ¼ªÂ³
 enemy=changeevent|file:sainasu/event/event15_2
 }

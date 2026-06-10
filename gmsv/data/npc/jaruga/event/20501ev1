@@ -1,92 +1,92 @@
 
 ########################################
-# 我是造斧专家哈恩。怎样？厉害吧？〝#
-#官官官官官官官官官官官官官官童�挍舝監解�#
+# �����츫ר�ҹ����������������ɣ���#
+#�x�x�x�x�x�x�x�x�x�x�x�x�x�x�����ߣ�ʸ��#
 ########################################
 
-NomalMainMsg:我是造斧专家哈恩，我住在这也已经有４５年了。不是每个人我都会帮他造斧头的。
+NomalMainMsg:�����츫ר�ҹ�������ס����Ҳ�Ѿ��У������ˡ�����ÿ�����Ҷ�������츫ͷ�ġ�
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:NOWEV=19&ITEM!=2466
-NomalWindowMsg:嗯？总觉得好像在哪看过你…。\n是有来请我帮忙…。\n还是根本没来过…。\n有没有人委托你来啊？\n你有没有带委托书来啊？
+NomalWindowMsg:�ţ��ܾ��ú������Ŀ����㡭��\n���������Ұ�æ����\n���Ǹ���û��������\n��û����ί����������\n����û�д�ί����������
 EventEnd
 
 EventNo:19
 TYPE:ACCEPT
 EVENT:NOWEV=19&ITEM=2464&ITEM=2466
-AcceptMsg:嗯…提来了嘛…\n好！你在这等一下！
-ThanksMsg:咚·咚·乓·嗙·轰隆···。\n好！做好了！\n来！帮我把这个\n拿到巴尔那边去！
+AcceptMsg:�š��������\n�ã��������һ�£�
+ThanksMsg:�ˡ��ˡ��ҡ��硤��¡��������\n�ã������ˣ�\n�������Ұ����\n�õ��Ͷ��Ǳ�ȥ��
 GetItem:2465*1
 DelItem:2464,2466,2463
 EndSetFlg:19
-ItemFullMsg:喂！你的道具袋已经满了\n你要怎么把斧头带回去啊\n快挪出一个空位来！
+ItemFullMsg:ι����ĵ��ߴ��Ѿ�����\n��Ҫ��ô�Ѹ�ͷ����ȥ��\n��Ų��һ����λ����
 EventEnd
 
 EventNo:19
 TYPE:MESSAGE
 EVENT:NOWEV=19&ITEM!=2463&ITEM=2466
-NomalWindowMsg:什么？弄丢了\n真拿你没办法…\n好吧…那…\n就把它再给你一次
+NomalWindowMsg:ʲô��Ū����\n������û�취��\n�ðɡ��ǡ�\n�Ͱ����ٸ���һ��
 GetItem:2463
-ItemFullMsg:你带了那么多东西\n没有办法提水喔…\n减轻一点重量再来吧！
+ItemFullMsg:�������ô�ණ��\nû�а취��ˮม�\n����һ�����������ɣ�
 EventEnd
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ENDEV=19&ITEM=2465
-NomalWindowMsg:你快点帮我把斧头带去！想必他也很困扰吧！
+NomalWindowMsg:������ҰѸ�ͷ��ȥ�������Ҳ�����Űɣ�
 EventEnd
 
 EventNo:19
 TYPE:REQUEST
 EVENT:ITEM=2466
-RequestMsg:嗯？这不是巴尔的委托书吗？\n既然是他的要求那就不能拒绝。\n喂！不好意思！\n你可以帮我个忙吗？
-ThanksMsg:很好很好！看来你准备好了！\n你帮我去最下层\n跟看守用水的人要点水来。\n那就交给你了，要把水装满喔。
-StopMsg:那你是不想帮我啰…
-EndStopMsg:这样的话我就无法帮你制造斧头了\n真可惜…
-NoStopMsg:哦？是吗？那你快去帮我把水拿来。
+RequestMsg:�ţ��ⲻ�ǰͶ���ί������\n��Ȼ������Ҫ���ǾͲ��ܾܾ���\nι��������˼��\n����԰��Ҹ�æ��
+ThanksMsg:�ܺúܺã�������׼�����ˣ�\n�����ȥ���²�\n��������ˮ����Ҫ��ˮ����\n�Ǿͽ������ˣ�Ҫ��ˮװ��ม�
+StopMsg:�����ǲ�����҆���
+EndStopMsg:�����Ļ��Ҿ��޷��������츫ͷ��\n���ϧ��
+NoStopMsg:Ŷ�����������ȥ���Ұ�ˮ������
 GetItem:2463
-ItemFullMsg:你带了那么多东西\n没有办法提水喔…\n减轻一点重量再来吧！
+ItemFullMsg:�������ô�ණ��\nû�а취��ˮม�\n����һ�����������ɣ�
 EventEnd
 
 EventNo:-1
 TYPE:REQUEST
 EVENT:ITEM=2484
-RequestMsg:嗯？你拿的是\n我做的斧头吧？\n喔喔！还是一样\n非常的锋利嘛…\n这是我做给巴尔\n的那一把吧？
-ThanksMsg:嗯…我也是这么想。\n真难得你没把这斧头丢掉。\n好！我再帮你从做一次！\n锵、锵、锵、锵、锵…\n来！你可以把它带走了！
+RequestMsg:�ţ����õ���\n�����ĸ�ͷ�ɣ�\n�ร�����һ��\n�ǳ��ķ����\n�����������Ͷ�\n����һ�Ѱɣ�
+ThanksMsg:�š���Ҳ����ô�롣\n���ѵ���û���⸫ͷ������\n�ã����ٰ������һ�Σ�\n�ϡ��ϡ��ϡ��ϡ��ϡ�\n��������԰��������ˣ�
 GetItem:2485*1
 DelItem:2484*1
-ItemFullMsg:什么嘛！你的道具全满了嘛！\n你该不会是\n不想要我的斧头了吧？
+ItemFullMsg:ʲô���ĵ���ȫ�����\n��ò�����\n����Ҫ�ҵĸ�ͷ�˰ɣ�
 EventEnd
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=2465
-NomalWindowMsg:这把是我做的斧头嘛…\n怎样…好用吗？
+NomalWindowMsg:����������ĸ�ͷ�\n������������
 EventEnd
 
 EventNo:-1
 TYPE:CLEAN
 EVENT:ENDEV=19
 CleanFlg:19
-CleanFlgMsg:我可不是\n随便就帮人至造斧头的喔！
-CleanMainMsg:什么？想请我做斧头吗？
+CleanFlgMsg:�ҿɲ���\n���Ͱ������츫ͷ��ร�
+CleanMainMsg:ʲô������������ͷ��
 EventEnd
 
 
 EventNo:-1
 TYPE:REQUEST
 EVENT:ITEM=1837
-RequestMsg:这一把钥匙还真是小巧精致，蛮特别的，难怪没有人会修理这一把钥匙。
-ThanksMsg:好！我帮你修复它吧！\n锵、锵、锵、锵、锵…\n来！你可以把它带走了！
+RequestMsg:��һ��Կ�׻�����С�ɾ��£����ر�ģ��ѹ�û���˻�������һ��Կ�ס�
+ThanksMsg:�ã��Ұ����޸����ɣ�\n�ϡ��ϡ��ϡ��ϡ��ϡ�\n��������԰��������ˣ�
 GetItem:1838*1
 DelItem:1837*1
-ItemFullMsg:什么嘛！你的道具全满了嘛！
+ItemFullMsg:ʲô���ĵ���ȫ�����
 EventEnd
 
 
 EventNo:-1
 TYPE:MESSAGE
 EVENT:ITEM=1838
-NomalWindowMsg:这世界真奇妙…\n连钥匙都可以做到这么小！
+NomalWindowMsg:�����������\n��Կ�׶�����������ôС��
 EventEnd

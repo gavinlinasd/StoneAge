@@ -316,7 +316,7 @@ BOOL PetTalk_DelItem(int meindex,int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 							"WarpManDelItem(NPC收道具後传至某点)",
 							CHAR_getInt( talker, CHAR_FLOOR),
@@ -348,7 +348,7 @@ BOOL PetTalk_DelItem(int meindex,int talker,char *buf)
 #ifdef _add_item_log_name  // WON ADD 在item的log中增加item名称
 							itemindex,
 #else
-							ITEM_getInt( itemindex, ITEM_ID),  /* アイ  ム  号 */
+							ITEM_getInt( itemindex, ITEM_ID),  /* 道具编号 */
 #endif
 							"WarpManDelItem(NPC收道具後传至某点)",
 							CHAR_getInt( talker,CHAR_FLOOR),

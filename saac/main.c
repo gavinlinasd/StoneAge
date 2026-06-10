@@ -113,7 +113,7 @@ struct sockaddr_in localaddr;       /* bind 允月失玉伊旦 */
 struct connection *con;        /* 戊生弁扑亦件     */
 
 static int mb_finder=0;              /* mb及坞五毛腹绸允月凶户及
-                               検索トップの位  記憶用 */
+                               检索顶端的位置记忆用 */
 // WON FIX
 char tmpbuf[65536];
 //char tmpbuf[65536*3];         /* read迕 */
@@ -149,13 +149,13 @@ void set_nodelay( int sock );
 #define TCPSTRUCT_EHOST -9        /* gethostbyname 撩   */
 #define TCPSTRUCT_ECONNECT -10    /* connect 撩   */
 #define TCPSTRUCT_ECFULL -11      /* con 互中匀天中 */
-#define TCPSTRUCT_ETOOLONG -12    /* 行がながすぎ */
+#define TCPSTRUCT_ETOOLONG -12    /* 行太长 */
 #define TCPSTRUCT_EMBFULL -13     /* mb 互中匀天中  */
 #define TCPSTRUCT_ECLOSEAGAIN -14 /* close 札2者書直俔 */
 #endif
 
 
-int port;               /* ゲームサーバーが接続してくるポート */
+int port;               /* 游戏服务器连入的端口 */
 int Total_Charlist;
 int Expired_mail;
 int Del_Family_or_Member;
@@ -840,7 +840,7 @@ int main( int argc , char **argv )
   
 	}
 
-    /* TCPSTRUCT を初期化 */
+    /* 初始化 TCPSTRUCT */
     {
         int tcpr;
         if( ( tcpr = tcpstruct_init( NULL , port , 0 ,
@@ -1135,7 +1135,7 @@ int main( int argc , char **argv )
 
         /* 伐□市□及正奶丞失它玄毛譬屯月［
            正奶丞失它玄仄凶日夫弘毛分仄化伐□市□毛诮仄化仄引丹［
-           でゲームサーバーに  終的には通知する           */
+           最终会通知游戏服务器           */
         {
             int i;
             time_t thre = time(NULL) - WKTIMEOUT;            
@@ -1675,10 +1675,10 @@ static int getLineReadBuffer( int index , char *buf, int len )
         top = mb[top].next;
     }
     if( ti > len ){
-        /* 1行がながすぎる?    なエラーをかえせ */
+        /* 1行太长?返回适当的错误 */
         return TCPSTRUCT_ETOOLONG;
     }
-    /* 行が完成してない */
+    /* 行未完成 */
     if( breakflag == 0 ){
         return 0;
     }
@@ -1693,7 +1693,7 @@ static int getLineReadBuffer( int index , char *buf, int len )
   int index : con index
 
   return:
-    はエラー
+    是错误
   0动晓及桦宁反 read 仄化手方中赢今［
 
 
@@ -1736,7 +1736,7 @@ static int findregBlankMemBuf( void  )
 }
 
 /*
-  mb を解  する
+  释放 mb
   
  */
 static int unregMemBuf(  int index )
@@ -1827,7 +1827,7 @@ void set_nodelay( int sock )
 
 
 /*
-  すべてのゲームサーバーに  送?
+  转发给所有游戏服务器?
 
   int flag : 1分匀凶日霜耨葭卞反云仁日卅中
   

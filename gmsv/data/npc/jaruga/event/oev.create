@@ -1,7 +1,7 @@
 NPCCREATE
 
 #########################################################################
-#########    åŠ é²å¡å·¡å›å…¨å²›æ´»åŠ¨    äº‹ä»¶è®¾å®š################
+#########    ¼ÓÂ³¿¨Ñ²»ØÈ«µº»î¶¯    ÊÂ¼şÉè¶¨################
 #########################################################################
 
 
@@ -13,7 +13,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16027
-name=ï¼ªï¼¯ï¼´è¯¢é—®å°
+name=£Ê£Ï£ÔÑ¯ÎÊÌ¨
 enemy=changeevent|file:jaruga/event/oev_0
 }
 
@@ -25,7 +25,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥äººå‘˜(A-1)
+name=¼ì²éÈËÔ±(A-1)
 enemy=changeevent|file:jaruga/event/oev_1
 }
 
@@ -37,7 +37,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥äººå‘˜(A-2)
+name=¼ì²éÈËÔ±(A-2)
 enemy=changeevent|file:jaruga/event/oev_2
 }
 
@@ -49,7 +49,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥äººå‘˜(A-3)
+name=¼ì²éÈËÔ±(A-3)
 enemy=changeevent|file:jaruga/event/oev_3
 }
 
@@ -62,7 +62,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥äººå‘˜(A-4)
+name=¼ì²éÈËÔ±(A-4)
 enemy=changeevent|file:jaruga/event/oev_4
 }
 
@@ -74,7 +74,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥äººå‘˜(A-5)
+name=¼ì²éÈËÔ±(A-5)
 enemy=changeevent|file:jaruga/event/oev_5
 }
 
@@ -87,7 +87,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥äººå‘˜(A-6)
+name=¼ì²éÈËÔ±(A-6)
 enemy=changeevent|file:jaruga/event/oev_6
 }
 
@@ -100,7 +100,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥äººå‘˜(A-7)
+name=¼ì²éÈËÔ±(A-7)
 enemy=changeevent|file:jaruga/event/oev_7
 }
 
@@ -113,7 +113,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥äººå‘˜(A-8)
+name=¼ì²éÈËÔ±(A-8)
 enemy=changeevent|file:jaruga/event/oev_8
 }
 
@@ -126,7 +126,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥äººå‘˜(A-9)
+name=¼ì²éÈËÔ±(A-9)
 enemy=changeevent|file:jaruga/event/oev_9
 }
 
@@ -139,7 +139,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥äººå‘˜(A-10)
+name=¼ì²éÈËÔ±(A-10)
 enemy=changeevent|file:jaruga/event/oev_10
 }
 
@@ -152,7 +152,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16068
-name=æ£€æŸ¥äººå‘˜(A-11)
+name=¼ì²éÈËÔ±(A-11)
 enemy=changeevent|file:jaruga/event/oev_11
 }
 
@@ -164,7 +164,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16067
-name=æ£€æŸ¥äººå‘˜(A-12)
+name=¼ì²éÈËÔ±(A-12)
 enemy=changeevent|file:jaruga/event/oev_12
 }
 
@@ -177,7 +177,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥äººå‘˜(B-1)
+name=¼ì²éÈËÔ±(B-1)
 enemy=changeevent|file:jaruga/event/oev_1b
 }
 
@@ -190,7 +190,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-2)
+name=¼ì²éÈËÔ±(B-2)
 enemy=changeevent|file:jaruga/event/oev_2b
 }
 
@@ -202,7 +202,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-3)
+name=¼ì²éÈËÔ±(B-3)
 enemy=changeevent|file:jaruga/event/oev_3b
 }
 
@@ -215,7 +215,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-4)
+name=¼ì²éÈËÔ±(B-4)
 enemy=changeevent|file:jaruga/event/oev_4b
 }
 
@@ -228,7 +228,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-5)
+name=¼ì²éÈËÔ±(B-5)
 enemy=changeevent|file:jaruga/event/oev_5b
 }
 
@@ -241,7 +241,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-6)
+name=¼ì²éÈËÔ±(B-6)
 enemy=changeevent|file:jaruga/event/oev_6b
 }
 
@@ -254,7 +254,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-7)
+name=¼ì²éÈËÔ±(B-7)
 enemy=changeevent|file:jaruga/event/oev_7b
 }
 
@@ -267,7 +267,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-8)
+name=¼ì²éÈËÔ±(B-8)
 enemy=changeevent|file:jaruga/event/oev_8b
 }
 
@@ -280,7 +280,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-9)
+name=¼ì²éÈËÔ±(B-9)
 enemy=changeevent|file:jaruga/event/oev_9b
 }
 
@@ -293,7 +293,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥äººå‘˜(B-10)
+name=¼ì²éÈËÔ±(B-10)
 enemy=changeevent|file:jaruga/event/oev_10b
 }
 
@@ -306,7 +306,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=æ£€æŸ¥äººå‘˜(B-11)
+name=¼ì²éÈËÔ±(B-11)
 enemy=changeevent|file:jaruga/event/oev_11b
 }
 
@@ -319,7 +319,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=æ£€æŸ¥äººå‘˜(B-12)
+name=¼ì²éÈËÔ±(B-12)
 enemy=changeevent|file:jaruga/event/oev_12b
 }
 
@@ -333,7 +333,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16027
-name=æ£€æŸ¥äººå‘˜(A)
+name=¼ì²éÈËÔ±(A)
 enemy=changeevent|file:jaruga/event/oev_ed1
 }
 
@@ -346,7 +346,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16033
-name=æ£€æŸ¥äººå‘˜(B)
+name=¼ì²éÈËÔ±(B)
 enemy=changeevent|file:jaruga/event/oev_edb
 }
 

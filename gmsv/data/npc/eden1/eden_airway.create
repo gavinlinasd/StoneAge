@@ -1,5 +1,5 @@
 NPCCREATE
-#######æ•¬éœœç ‚è… é¶´å¸½-è¥–æ€§ã‚›å…ç´šå©##########
+#######·ÉÁúº½¿Õ ÄáË¹-²¨À­¡«ÒÁµéÔ°##########
 {
 floorid=5579
 borncenter=18,11,1,1
@@ -7,10 +7,10 @@ movecenter=18,11,18,11
 createnum=1
 dir=4
 graphicname=100362
-name=é£é¾™èˆªç©º
+name=·ÉÁúº½¿Õ
 enemy=airplane|file:eden1/eden_airway_1.arg
 }
-#######æ•¬éœœç ‚è… é¶´å¸½-è¥–æ€§ã‚›å…ç´šå©##########
+#######·ÉÁúº½¿Õ ÄáË¹-²¨À­¡«ÒÁµéÔ°##########
 {
 floorid=5579
 borncenter=14,11,1,1
@@ -18,10 +18,10 @@ movecenter=14,11,14,11
 createnum=1
 dir=4
 graphicname=100362
-name=é£é¾™èˆªç©º
+name=·ÉÁúº½¿Õ
 enemy=airplane|file:eden1/eden_airway_2.arg
 }
-#######æ•¬éœœç ‚è… é¶´å¸½-è¥–æ€§ã‚›å…ç´šå©##########
+#######·ÉÁúº½¿Õ ÄáË¹-²¨À­¡«ÒÁµéÔ°##########
 {
 floorid=5579
 borncenter=10,11,1,1
@@ -29,6 +29,6 @@ movecenter=10,11,10,11
 createnum=1
 dir=4
 graphicname=100362
-name=é£é¾™èˆªç©º
+name=·ÉÁúº½¿Õ
 enemy=airplane|file:eden1/eden_airway_3.arg
 }

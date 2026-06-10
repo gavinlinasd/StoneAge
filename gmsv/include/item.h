@@ -130,7 +130,7 @@ typedef enum
     ITEM_MODIFYCHARM,               /*  CHARM  祭汹    */
     ITEM_MODIFYAVOID,               /*  者    弔尋    */
 	ITEM_MODIFYATTRIB,				/*  属性修正 */
-	ITEM_MODIFYATTRIBVALUE,			/*  属性修正値 */
+	ITEM_MODIFYATTRIBVALUE,			/*  属性修正值 */
 	ITEM_MAGICID,					/*  热诸  寞 */
 	ITEM_MAGICPROB,					/*  热诸       */
 	ITEM_MAGICUSEMP,				/*  壅  MP */
@@ -146,23 +146,23 @@ typedef enum
 	ITEM_NEGLECTGUARD,
 //	ITEM_BEMERGE,
 #endif
-    /*  ス  ータス修正値?*/
+    /*  状态修正值?*/
     ITEM_POISON,					/*   汹仁凶太卞母丢□斥          */
     ITEM_PARALYSIS,          		/* 仄太木｝1  及垫  互匹五卅中［ */
     ITEM_SLEEP,              		/* 戽曰［垫  匹五卅中            */
     ITEM_STONE,              		/* 檗［垫  匹五卅中              */
     ITEM_DRUNK,              		/* 办丹［      互票互月     */
-    ITEM_CONFUSION,          		/* 混乱?  撃    を誤る     */
+    ITEM_CONFUSION,          		/* 混乱?攻击目标会出错     */
 
-	ITEM_CRITICAL,					/* クリ  ィカ郊  修正 */
+	ITEM_CRITICAL,					/* 暴击    修正 */
 
 	ITEM_USEACTION,					/* 银匀凶凛及失弁扑亦件 */
-    ITEM_DROPATLOGOUT,              /* ひグアウトする時に  すかどうか  */
+    ITEM_DROPATLOGOUT,              /* 登出时是否放下  */
     ITEM_VANISHATDROP,              /*   仄凶凛卞壅尹月井升丹井 */
-    ITEM_ISOVERED,                  /*  上に乗っからられるかどうか?*/
+    ITEM_ISOVERED,                  /*  是否能骑乘?*/
 	ITEM_CANPETMAIL,				/* 文喟傲卿＆誌謄蜂直埖小 */
-	ITEM_CANMERGEFROM,				/* 合成元になれるか */
-	ITEM_CANMERGETO,				/* 合成先になれるか */
+	ITEM_CANMERGEFROM,				/* 能否成为合成源 */
+	ITEM_CANMERGETO,				/* 能否成为合成目标 */
 
     ITEM_INGVALUE0,                 /* 成分(5個分) */
     ITEM_INGVALUE1,
@@ -186,7 +186,7 @@ typedef enum
 
 typedef enum
 {
-    ITEM_NAME,                      /*    前     当の  前     */
+    ITEM_NAME,                      /*    名称     该当的名称     */
     ITEM_SECRETNAME,                /*    蟆    凳今木月第  岭  曰    */
     ITEM_EFFECTSTRING,              /*  効果  字    */
     ITEM_ARGUMENT,                  /*  失奶  丞及娄醒  */
@@ -204,7 +204,7 @@ typedef enum
     ITEM_UNIQUECODE,		  /* 物品编码 */
 #endif
 
-    ITEM_INGNAME0,                  /*  成分の  前(5個分) */
+    ITEM_INGNAME0,                  /*  成分的名称(5个) */
     ITEM_INGNAME1,
     ITEM_INGNAME2,
     ITEM_INGNAME3,
@@ -213,7 +213,7 @@ typedef enum
 
     ITEM_INITFUNC,                  /* 引数
                                      * ITEM_Item*
-                                     * 返り値 BOOL
+                                     * 返回值 BOOL
                                      * 忒曰袄及啦  反 CHAR_INITFUNC
                                      * 午  元  */
     ITEM_FIRSTFUNCTION = ITEM_INITFUNC,
@@ -221,21 +221,21 @@ typedef enum
     ITEM_POSTOVERFUNC,              /* CHAR_POSTOVERFUNC 禱落敺*/
     ITEM_WATCHFUNC,                 /* CHAR_WATCHFUNC 禱落敺 */
     ITEM_USEFUNC,                   /* 娄醒反｝
-                                     * int charaindex キャラインデックス
+                                     * int charaindex 人物索引
                                      * int charitemindex 愤坌及
                                      *              失奶  丞    及窒    
                                      *              谷咢堡俔小
                                      */
     ITEM_ATTACHFUNC,                /* 娄醒反｝
-                                     * int charaindex キャラインデックス
-                                     * int itemindex  アイ  ムインデックス
+                                     * int charaindex 人物索引
+                                     * int itemindex  道具索引
                                      *      平乓仿弁正及  匀化中月失奶  丞
                                      *      及失奶  丞  匹及奶件犯永弁旦
                                      *      匹反卅中仪卞镗啦［
                                      */
     ITEM_DETACHFUNC,                /* 娄醒反｝
-                                     * int charaindex キャラインデックス
-                                     * int itemindex  アイ  ムインデックス
+                                     * int charaindex 人物索引
+                                     * int itemindex  道具索引
                                      *      平乓仿弁正及  匀化中月失奶  丞
                                      *      及失奶  丞  匹及奶件犯永弁旦
                                      *      匹反卅中仪卞镗啦［
@@ -243,12 +243,12 @@ typedef enum
     ITEM_DROPFUNC, 		            /*   午仄凶午五
                                      * 娄醒反
                                      *  int charaindex   午仄凶平乓仿
-                                     *  int itemindex アイ  ムインデックス
+                                     *  int itemindex 道具索引
                                      */
     ITEM_PICKUPFUNC,              /* 失奶  丞毛胶匀凶凛
                                      * 娄醒反
                                      *  int charaindex  胶匀凶平乓仿index
-                                     *  int itemindex アイ  ムインデックス
+                                     *  int itemindex 道具索引
                                      */
 #ifdef _Item_ReLifeAct
 	ITEM_DIERELIFEFUNC,					/*ANDY_ADD

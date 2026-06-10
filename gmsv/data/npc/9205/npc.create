@@ -9,7 +9,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101607
-name=å°å¯çˆ±
+name=Ğ¡¿É°®
 enemy=npcgen_shop|file:9205/npc.arg1
 }
 
@@ -22,7 +22,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101608
-name=å°å¤©æ‰
+name=Ğ¡Ìì²Å
 enemy=npcgen_shop|file:9205/npc.arg2
 }
 
@@ -35,7 +35,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101609
-name=å°ä¸ç‚¹
+name=Ğ¡²»µã
 enemy=npcgen_shop|file:9205/npc.arg3
 }
 
@@ -48,7 +48,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=101610
-name=å°èƒ–å¦
+name=Ğ¡ÅÖæ¤
 enemy=npcgen_shop|file:9205/npc.arg4
 }
 
@@ -61,7 +61,7 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=101152
-name=å°å¸…å“¥
+name=Ğ¡Ë§¸ç
 enemy=npcgen_shop|file:9205/npc.arg5
 }
 
@@ -74,7 +74,7 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=101153
-name=å°çƒ­ç‹—
+name=Ğ¡ÈÈ¹·
 enemy=npcgen_shop|file:9205/npc.arg6
 }
 
@@ -87,7 +87,7 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=101154
-name=å°æƒ…äºº
+name=Ğ¡ÇéÈË
 enemy=npcgen_shop|file:9205/npc.arg7
 }
 
@@ -100,7 +100,7 @@ createnum=1
 dir=8
 ignoreinvincible=1
 graphicname=101155
-name=å°å¿ƒç‚¹
+name=Ğ¡ĞÄµã
 enemy=npcgen_shop|file:9205/npc.arg8
 }
 

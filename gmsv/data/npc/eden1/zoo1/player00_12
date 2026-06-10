@@ -1,8 +1,8 @@
 NomalMainMsg:
 
-#闂茶亰
+#闲聊
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:鐜╂父鎴忔渶閲嶈鐨勫氨鏄皵鍔匡紒
+NomalWindowMsg:玩游戏最重要的就是气势！
 EventEnd

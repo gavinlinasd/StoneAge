@@ -1,24 +1,24 @@
-########ã€€ç†”ç‚‰ã€€########
+########¡¡ÈÛÂ¯¡¡########
 
-NomalMainMsg:å¿™ã‚›ã‚›å¿™å¿™ã‚›
+NomalMainMsg:Ë»¡«¡«Ë»Ë»¡«
 
-###ã€€ç‰©å“æ­£ç¡®â€¦éšæœºå¾—åˆ°åŒ•é¦–ã€€###
+###¡¡ÎïÆ·ÕýÈ·¡­Ëæ»úµÃµ½Ø°Ê×¡¡###
 EventNo:-1
 TYPE:ACCEPT
 EVENT:LV>0&ENDEV=4&NOWEV=145&ITEM=2100&ITEM=2101&ITEM=2102&ITEM=2087&ITEM=2088&ITEM=2089
-AcceptMsg1:åº”è¯¥æ˜¯è¿™ä¸ªç†”ç‚‰äº†â€¦å¸Œæœ›èƒ½æˆåŠŸã€‚
-ThanksMsg1:è¿™â€¦
+AcceptMsg1:Ó¦¸ÃÊÇÕâ¸öÈÛÂ¯ÁË¡­Ï£ÍûÄÜ³É¹¦¡£
+ThanksMsg1:Õâ¡­
 GetRandItem:2087,2088,2089,2099
 DelItem:2087,2088,2089
-ItemFullMsg:å¿™ã‚›ã‚›å¿™å¿™ã‚›
+ItemFullMsg:Ë»¡«¡«Ë»Ë»¡«
 EventEnd
 
 
-###ã€€ä¸ç¬¦åˆæ¡ä»¶ã€€###
+###¡¡²»·ûºÏÌõ¼þ¡¡###
 EventNo:-1
 TYPE:MESSAGE
 EVENT:LV>0
-NomalWindowMsg:å¿™ã‚›ã‚›å¿™å¿™ã‚›
+NomalWindowMsg:Ë»¡«¡«Ë»Ë»¡«
 EventEnd
 
 

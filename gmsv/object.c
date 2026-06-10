@@ -201,8 +201,8 @@ INLINE int OBJECT_setTime( int index, int newvalue )
 /*------------------------------------------------------------
  * index 毛  月
  * 引数
- *  index      int     インデックス
- * 返り値
+ *  index      int     索引
+ * 返回值
  *  int
  ------------------------------------------------------------*/
 INLINE int OBJECT_getIndex( int index )
@@ -210,11 +210,11 @@ INLINE int OBJECT_getIndex( int index )
     return obj[index].index;
 }
 /*------------------------------------------------------------
- * y を設定する
+ * 设置 y
  * 引数
- *  index      int     インデックス
- *  newvalue    int     新しい値
- * 返り値
+ *  index      int     索引
+ *  newvalue    int     新的值
+ * 返回值
  *  int 樯及袄
  ------------------------------------------------------------*/
 INLINE int OBJECT_setIndex( int index, int newvalue )
@@ -227,10 +227,10 @@ INLINE int OBJECT_setIndex( int index, int newvalue )
 
 
 /*------------------------------------------------------------
- * オブジェクトの    数を求める
+ * 求对象的最大数量
  * 引数
- *  なし
- * 返り値
+ *  无
+ * 返回值
  *  int
  ------------------------------------------------------------*/
 INLINE int OBJECT_getNum( void )
@@ -239,16 +239,16 @@ INLINE int OBJECT_getNum( void )
 }
 
 /*------------------------------------------------------------
- *  オブジェクト構造  のメンバを全  引数に  って
+ *  把对象结构体的成员全部放进参数
  *  左皮斥尼弁玄厌瞻  毛综曰请仄化｝瓒  允月［
  *
  * 引数
- *  type    OBJTYPE     オブジェクトのタイプ
+ *  type    OBJTYPE     对象的类型
  *  index   int         巷直庇直式    謄式index
  *  x       int         x甄  
  *  y       int         y甄  
  *  floor   int         floorid
- * 返り値
+ * 返回值
  *   int  喃曰癫化木凶index, 撩  及凛反｝ -1
  ------------------------------------------------------------*/
 int initObjectFromObjectMember(

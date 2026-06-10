@@ -12,7 +12,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16205
-name=é˜¿å¸ƒä¹‹æ³‰çš„å–æ°´äºº
+name=°¢²¼Ö®ÈªµÄÂôË®ÈË
 enemy=npcgen_shop|file:genout/ss_10007_38_24
 }
 #line 14
@@ -24,7 +24,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16209
-name=é˜¿å¸ƒä¹‹æ³‰çš„å–æ°´äºº
+name=°¢²¼Ö®ÈªµÄÂôË®ÈË
 enemy=npcgen_shop|file:genout/ss_10007_39_35
 }
 #line 19
@@ -36,7 +36,7 @@ createnum=1
 dir=2
 ignoreinvincible=1
 graphicname=16026
-name=é˜¿å¸ƒçš„è‚‰é“º
+name=°¢²¼µÄÈâÆÌ
 enemy=npcgen_limitshop|file:genout/lbis_10007_21_35
 }
 #line 23
@@ -48,7 +48,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16207
-name=åœ°åº•ä¸‹çš„è‚‰é“º
+name=µØµ×ÏÂµÄÈâÆÌ
 enemy=npcgen_limitshop|file:genout/lbis_10005_35_9
 }
 #line 32
@@ -58,7 +58,7 @@ borncorner=36,29,36,29
 time=0
 createnum=1
 graphicname=16017
-name=æ‘äºº
+name=´åÈË
 dir=6
 ignoreinvincible=1
 enemy=npcgen_man|file:genout/msg_10408_36_29
@@ -71,7 +71,7 @@ borncorner=17,25,17,25
 time=0
 createnum=1
 graphicname=16047
-name=æ‘äºº
+name=´åÈË
 dir=4
 ignoreinvincible=1
 enemy=npcgen_man|file:genout/msg_10408_17_25
@@ -86,7 +86,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16049
-name=â€œæ¬ºéª—â€çš„å•†äºº
+name=¡°ÆÛÆ­¡±µÄÉÌÈË
 enemy=npcgen_shop|file:genout/ss_10408_28_24
 }
 #line 39
@@ -98,7 +98,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16046
-name=æ¬ºéª—çš„ç‰¹æŠ€åº—
+name=ÆÛÆ­µÄÌØ¼¼µê
 enemy=npcgen_petskillshop|file:genout/psks_10408_18_34
 }
 #line 43
@@ -110,7 +110,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16018
-name=åœ°åº•ä¸‹çš„è‚‰é“º
+name=µØµ×ÏÂµÄÈâÆÌ
 enemy=npcgen_limitshop|file:genout/lbis_10408_18_31
 }
 #line 47
@@ -122,7 +122,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=10062
-name=æ¬ºéª—çš„å…¬å¸ƒæ 
+name=ÆÛÆ­µÄ¹«²¼À¸
 enemy=npcgen_dengon
 }
 #line 56
@@ -134,7 +134,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16026
-name=ç›—è´¼çš„å¥³åº—å‘˜
+name=µÁÔôµÄÅ®µêÔ±
 enemy=npcgen_limitshop|file:genout/lbis_11107_44_37
 }
 #line 59
@@ -146,7 +146,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16017
-name=ç›—è´¼çš„æ­¦å™¨åº—
+name=µÁÔôµÄÎäÆ÷µê
 enemy=npcgen_shop|file:genout/ss_11107_7_40
 }
 #line 63
@@ -158,7 +158,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100431
-name=æ¢¦å¾·çš„é“å…·åº—
+name=ÃÎµÂµÄµÀ¾ßµê
 enemy=npcgen_shop|file:genout/ss_11107_7_18
 }
 #line 66
@@ -170,7 +170,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16026
-name=ç›—è´¼çš„è‚‰é“º
+name=µÁÔôµÄÈâÆÌ
 enemy=npcgen_limitshop|file:genout/lbis_11107_44_37
 }
 #line 77
@@ -182,7 +182,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16048
-name=ï¼³ï¼¢ï¼£æ­¦å™¨å±‹
+name=£Ó£Â£ÃÎäÆ÷Îİ
 enemy=npcgen_shop|file:genout/ss_10920_62_46
 }
 #line 81
@@ -194,7 +194,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16066
-name=ï¼³ï¼¢ï¼£çš„é˜²å…·åº—
+name=£Ó£Â£ÃµÄ·À¾ßµê
 enemy=npcgen_shop|file:genout/ss_10920_71_48
 }
 #line 86
@@ -206,7 +206,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16035
-name=ï¼³ï¼¢ï¼£çš„é“å…·å±‹
+name=£Ó£Â£ÃµÄµÀ¾ßÎİ
 enemy=npcgen_shop|file:genout/ss_10920_47_51
 }
 #line 91
@@ -218,7 +218,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16047
-name=é«˜çº§é¥²è‚²å‘˜
+name=¸ß¼¶ËÇÓıÔ±
 enemy=npcgen_petskillshop|file:genout/psks_10920_43_51
 }
 #line 92
@@ -230,7 +230,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16047
-name=é«˜çº§é¥²è‚²å‘˜
+name=¸ß¼¶ËÇÓıÔ±
 enemy=npcgen_petskillshop|file:genout/psks_10920_41_51
 }
 #line 93
@@ -240,7 +240,7 @@ borncorner=40,51,40,51
 time=0
 createnum=1
 graphicname=100250
-name=ä¹ŒåŠ›
+name=ÎÚÁ¦
 dir=4
 ignoreinvincible=1
 enemy=npcgen_mugon
@@ -252,7 +252,7 @@ borncorner=42,51,42,51
 time=0
 createnum=1
 graphicname=100252
-name=ä¹ŒåŠ›æ–¯å¦
+name=ÎÚÁ¦Ë¹Ì¹
 dir=4
 ignoreinvincible=1
 enemy=npcgen_mugon
@@ -266,7 +266,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16058
-name=ï¼³ï¼¢ï¼£çš„æŠ¤å£«
+name=£Ó£Â£ÃµÄ»¤Ê¿
 enemy=npcgen_winhealer|10|2.0|4.0|2
 }
 #line 100
@@ -278,6 +278,6 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16059
-name=ï¼³ï¼¢ï¼£çš„è¯å¸ˆ
+name=£Ó£Â£ÃµÄÒ©Ê¦
 enemy=npcgen_shop|file:genout/ss_10920_76_63
 }

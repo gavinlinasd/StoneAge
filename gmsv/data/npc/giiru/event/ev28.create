@@ -1,7 +1,7 @@
 NPCCREATE
 
 ##########################################################################
-#########################    äº”å…„å¼Ÿçš„åœ°ä¸‹åŸæ´çªŸäº‹ä»¶è®¾å®š    ##################
+#########################    ÎåĞÖµÜµÄµØÏÂ³Ç¶´¿ßÊÂ¼şÉè¶¨    ##################
 ##########################################################################
 
 
@@ -13,7 +13,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100290
-name=å‰è¯º
+name=¼ªÅµ
 enemy=changeevent|file:giiru/event/ev28_0
 }
 
@@ -25,7 +25,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_1
 }
 
@@ -37,7 +37,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_2
 }
 
@@ -49,7 +49,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_3
 }
 
@@ -61,7 +61,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_4
 }
 
@@ -73,7 +73,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_5
 }
 
@@ -85,7 +85,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_6
 }
 
@@ -97,7 +97,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_7
 }
 
@@ -109,7 +109,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_8
 }
 
@@ -122,7 +122,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_9
 }
 
@@ -135,7 +135,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_10
 }
 
@@ -148,7 +148,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_11
 }
 
@@ -161,7 +161,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_12
 }
 
@@ -174,7 +174,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_13
 }
 
@@ -187,7 +187,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_14
 }
 
@@ -200,7 +200,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_15
 }
 
@@ -213,7 +213,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_16
 }
 
@@ -226,7 +226,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_17
 }
 
@@ -239,7 +239,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_18
 }
 
@@ -252,7 +252,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_19
 }
 
@@ -266,7 +266,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_20
 }
 
@@ -279,7 +279,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_21
 }
 
@@ -292,7 +292,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=24700
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_22
 }
 
@@ -305,7 +305,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=24701
-name=è¡¨ç¤ºé€‰æ‹©çš„å›¾åƒ
+name=±íÊ¾Ñ¡ÔñµÄÍ¼Ïñ
 enemy=changeevent|file:giiru/event/ev28_23
 }
 
@@ -318,7 +318,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100288
-name=å¥‡æ´›æ–¯
+name=ÆæÂåË¹
 enemy=changeevent|file:giiru/event/ev28_end
 }
 
@@ -335,7 +335,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100287
-name=åˆ©è¯ºæ©
+name=ÀûÅµ¶÷
 enemy=changeevent|file:giiru/event/ev28_ed1
 }
 
@@ -348,7 +348,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100290
-name=å‰è¯º
+name=¼ªÅµ
 enemy=changeevent|file:giiru/event/ev28_ed2
 }
 
@@ -361,7 +361,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100288
-name=å¥‡æ´›æ–¯
+name=ÆæÂåË¹
 enemy=changeevent|file:giiru/event/ev28_ed3
 }
 
@@ -374,7 +374,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100289
-name=å±¯ä»£å¸½
+name=ÆÖÂåË¹
 enemy=changeevent|file:giiru/event/ev28_ed4
 }
 
@@ -387,7 +387,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100394
-name=æµ¦é²å¾·
+name=ÆÖÂ³µÂ
 enemy=changeevent|file:giiru/event/ev28_ed5
 }
 

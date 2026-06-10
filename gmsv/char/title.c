@@ -27,10 +27,10 @@ static int TITLE_SexCheck( int charaindex,int elem, int *data, int flg);
 
 typedef enum
 {
-	TITLE_FUNCTYPENONE,     /*  関数生成しない  */
-	TITLE_FUNCTYPEUSERFUNC, /* definefunction を使って  前を作る
+	TITLE_FUNCTYPENONE,     /*  不生成函数  */
+	TITLE_FUNCTYPEUSERFUNC, /* 用 definefunction 创建名称
 							 * 楮醒及娄醒反
-							 *  int     キャラインデックス
+							 *  int     人物索引
 							 *  buf       蟆尺及田永白央
 							 *  buflen  公及田永白央及赢今
 							 */
@@ -92,9 +92,9 @@ TITLE_PARAM TITLE_param[] =
 #define     TITLE_PARAMSIZE     20
 typedef struct tagTITLE_configTable
 {
-	int     paramindex[20];         /* TITLE_paramへの添字 */
+	int     paramindex[20];         /* 指向TITLE_param的下标 */
 	int     param[20][TITLE_PARAMSIZE];              /*   笠袄 */
-	int     compareflg[20];         /* ><=等どうするか */
+	int     compareflg[20];         /* ><=等怎么处理 */
 	int     title;
 	BOOL    equipcheckflg;          /* 
 									 *  失奶  丞啖  奶矛件玄匹反仇及白仿弘及  匀化中月
@@ -138,14 +138,14 @@ static char    TITLE_statusStringBuffer[TITLESTRINGBUFSIZ];
  * 引数
  *  title       Title*      旦平伙
  *  charaindex  int         仇及惫寞毛  匀化中月平乓仿及奶件犯永弁旦
- * 返り値
+ * 返回值
  *  char*
  ------------------------------------------------------------*/
 char* TITLE_makeTitleStatusString( int charaindex,int havetitleindex )
 {
 	int     attach;
 	int     index;
-	/*  関数  へのインデックスからデータを作成する  */
+	/*  从函数名的索引生成数据  */
 	index = CHAR_getCharHaveTitle( charaindex,havetitleindex );
 #if 0
 	if( TITLE_CHECKTABLEINDEX( index ) == FALSE ){
@@ -186,10 +186,10 @@ char* TITLE_makeTitleStatusString( int charaindex,int havetitleindex )
 }
 
 /*------------------------------------------------------------
- * ない称号の  字  データを返す
+ * 返回不存在称号的字符串数据
  * 引数
- *  なし
- * 返り値
+ *  无
+ * 返回值
  *  char*
  ------------------------------------------------------------*/
 char* TITLE_makeSkillFalseString( void )
@@ -202,9 +202,9 @@ char* TITLE_makeSkillFalseString( void )
 /*------------------------------------------------------------
  * 隙烂今木凶  寞及惫寞毛馨笛允月［褐今卅匀化中凶日｝馨笛仄卅中
  * 引数
- *  charaindex      int     キャラインデックス
- *  titleindex      int     称号インデックス
- * 返り値
+ *  charaindex      int     人物索引
+ *  titleindex      int     称号索引
+ * 返回值
  *  椣却愼俔index       
  *  椣却愼悧小堡俔      FALSE(0)
  ------------------------------------------------------------*/
@@ -232,11 +232,11 @@ BOOL TITLE_addtitle( int charaindex, int titleindex )
 
 /*------------------------------------------------------------
  * 隙烂今木凶  寞及惫寞互丐匀凶日绰轮允月［卅井匀凶日窒手仄卅中［
- *   数個あったら全  消す?
+ *   有复数个的话全部删除
  * 引数
- *  charaindex      int     キャラインデックス
- *  titleindex      int     称号インデックス
- * 返り値
+ *  charaindex      int     人物索引
+ *  titleindex      int     称号索引
+ * 返回值
  *  澗態愼俔            TRUE(1)
  *  澗態愼悧小堡俔      FALSE(0)
  ------------------------------------------------------------*/
@@ -265,10 +265,10 @@ BOOL TITLE_deltitle( int charaindex, int titleindex )
 	return del;
 }
 /*------------------------------------------------------------
- * 称号の初期化をする?
+ * 初始化称号
  * 引数
  *  filename        char*       必醒易刹通誌  
- * 返り値
+ * 返回值
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  *------------------------------------------------------------*/
@@ -287,7 +287,7 @@ BOOL TITLE_initTitleName( char* filename )
 
 	TITLE_titlenum=0;
 
-	/*  まず  効な行が何行あるかどうか調べる    */
+	/*  先检查有多少有效行    */
 	while( fgets( line, sizeof( line ), f ) ){
 		linenum ++;
 		if( line[0] == '#' )continue;        /* comment */
@@ -331,10 +331,10 @@ BOOL TITLE_initTitleName( char* filename )
 		if( line[0] == '\n' )continue;       /* none    */
 		chomp( line );
 
-		/*  行を整形する    */
+		/*  整理行格式    */
 		/*  引内 tab 毛 " " 卞  五晶尹月    */
 		replaceString( line, '\t' , ' ' );
-		/* 先  のスペースを取る?*/
+		/* 去掉开头的空格*/
 {
 		int     i;
 		char    buf[256];
@@ -398,10 +398,10 @@ BOOL TITLE_initTitleName( char* filename )
 	return TRUE;
 }
 /*------------------------------------------------------------
- * 称号の再初期化をする?
+ * 重新初始化称号
  * 引数
  *  filename        char*       必醒易刹通誌  
- * 返り値
+ * 返回值
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  *------------------------------------------------------------*/
@@ -411,10 +411,10 @@ BOOL TITLE_reinitTitleName( void)
 	return(TITLE_initTitleName( getTitleNamefile()));
 }
 /*------------------------------------------------------------
- * 称号設定の初期化をする?
+ * 初始化称号设置
  * 引数
  *  filename        char*       必醒易刹通誌  
- * 返り値
+ * 返回值
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  *------------------------------------------------------------*/
@@ -446,7 +446,7 @@ static int TITLE_getConfigOneLine( FILE *fp, char *line, int linelen)
 		linenum ++;
 		if( buf[0] == '#' )continue;        /* comment */
 		if( buf[0] == '\n' )continue;       /* none    */
-		/*  行を整形する    */
+		/*  整理行格式    */
 		/*  引内 tab 毛 " " 卞  五晶尹月    */
 		replaceString( buf, '\t' , ' ' );
 		/* 稀文＆稀澗態 */
@@ -514,10 +514,10 @@ static int TITLE_getParamData( int readarray, int array,char *src)
 }
 
 /*------------------------------------------------------------
- * 称号設定の初期化をする?
+ * 初始化称号设置
  * 引数
  *  filename        char*       必醒易刹通誌  
- * 返り値
+ * 返回值
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  *------------------------------------------------------------*/
@@ -536,7 +536,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 
 	TITLE_titlecfgnum=0;
 
-	/*  まず  効な行が何行あるかどうか調べる    */
+	/*  先检查有多少有效行    */
 	/*while( fgets( line, sizeof( line ), f ) ){}*/
 	while( 1 ) {
 		int rc;
@@ -604,7 +604,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 			for( j = 0; j < strlen( token); j ++ ) {
 				token[j] = toupper( token[j]);
 			}
-			/* 称号指定を調べる */
+			/* 检查称号指定 */
 			if( strncmp( "TITLE", token, 5) == 0 ) {
 				char    buf[64];
 				ret = getStringFromIndexWithDelim( token,"=",2,buf,
@@ -618,7 +618,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 				TITLE_ConfigTable[titlecfg_readlen].title = atoi( buf);
 			}
 			else {
-				/* パラメータ指定を  む */
+				/* 读取参数指定 */
 				for( j = 0; j < arraysizeof( TITLE_param); j ++ ) {
 					if( strncmp( TITLE_param[j].paramname, 
 								token, 
@@ -641,7 +641,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 					errflg = TRUE;
 					break;
 				}
-				/* 等号?不等号が存在するか調べる */
+				/* 检查是否存在等号?不等号 */
 				comppos = charInclude( token, "<>=");
 				if( comppos == -1 ) {
 					fprint("文件语法错误:%s 第%d行\n",filename,linenum);
@@ -649,9 +649,9 @@ BOOL TITLE_initTitleConfig( char* filename )
 					errflg = TRUE;
 					break;;
 				}
-				/* 等号?不等号が２つ以上  るとき */
+				/* 等号?不等号出现２个以上时 */
 				if( charInclude( &token[comppos+1], "<>=") != -1 ) {
-					/* どんな  較かを  む */
+					/* 读取比较方式 */
 					for( j = 0; j < 3;  j ++ ) {
 						if( memcmp( TITLE_compare[j].compare, &token[comppos], 2 ) == 0 ) {
 							break;
@@ -687,7 +687,7 @@ BOOL TITLE_initTitleConfig( char* filename )
 					}
 					/*TITLE_ConfigTable[titlecfg_readlen].param[i-1] 
 							= atoi( &token[comppos+1]);*/
-					/* どんな  較かを  む */
+					/* 读取比较方式 */
 					for( j = 3; j < 6;  j ++ ) {
 						if( memcmp( TITLE_compare[j].compare, &token[comppos], 1 ) == 0 ) {
 							TITLE_ConfigTable[titlecfg_readlen].compareflg[i-1] = j;
@@ -739,12 +739,12 @@ BOOL TITLE_initTitleConfig( char* filename )
 	return TRUE;
 }
 /*------------------------------------------------------------
- * 称号設定に合うか調べて称号を与える?
+ * 检查是否符合称号设置并授予称号
  * 引数
- *  charaindex        int   キャラインデックス
+ *  charaindex        int   人物索引
  *  mode              BOOL  TRUE:item=及手及及心譬屯月 FALSE:蝈  
- * 返り値
- *  TRUE: 称号に  化  り?
+ * 返回值
+ *  TRUE: 称号有变化
  *  FALSE:窒手  井匀凶［
  *------------------------------------------------------------*/
 static BOOL TITLE_TitleCheck_Main( int charaindex, BOOL mode, int *addcnt, int *delcnt)
@@ -819,12 +819,12 @@ static BOOL TITLE_TitleCheck_Main( int charaindex, BOOL mode, int *addcnt, int *
 	
 }
 /*------------------------------------------------------------
- * 称号設定に合うか調べて称号を与える?
+ * 检查是否符合称号设置并授予称号
  * 引数
- *  charaindex        int   キャラインデックス
+ *  charaindex        int   人物索引
  *  mode              BOOL  TRUE:item=及手及及心譬屯月 FALSE:蝈  
- * 返り値
- *  TRUE: 称号に  化  り?
+ * 返回值
+ *  TRUE: 称号有变化
  *  FALSE:窒手  井匀凶［
  *------------------------------------------------------------*/
 BOOL TITLE_TitleCheck( int charaindex, BOOL mode)
@@ -852,12 +852,12 @@ BOOL TITLE_TitleCheck( int charaindex, BOOL mode)
 	return rc;
 }
 /*------------------------------------------------------------
- * 称号設定に合うか調べて称号を与える?
+ * 检查是否符合称号设置并授予称号
  * 引数
- *  charaindex        int   キャラインデックス
+ *  charaindex        int   人物索引
  *  mode              BOOL  TRUE:item=及手及及心譬屯月 FALSE:蝈  
- * 返り値
- *  TRUE: 称号に  化  り?
+ * 返回值
+ *  TRUE: 称号有变化
  *  FALSE:窒手  井匀凶［
  *------------------------------------------------------------*/
 BOOL TITLE_TitleCheck_Nomsg( int charaindex, BOOL mode, int *addcnt, int *delcnt)

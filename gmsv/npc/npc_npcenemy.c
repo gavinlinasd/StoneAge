@@ -17,14 +17,14 @@
 
 enum {
 	CHAR_WORK_ENCOUNTTYPE	= CHAR_NPCWORKINT1,	/* 巨件市它件玄及酷   */
-	CHAR_WORK_DIEACT		= CHAR_NPCWORKINT2,	/* 死んだ時どうするか */
+	CHAR_WORK_DIEACT		= CHAR_NPCWORKINT2,	/* 死亡时怎么办 */
 	CHAR_WORK_WARP_FLOOR	= CHAR_NPCWORKINT3,	/* 伐□皿允月白夫失*/
-	CHAR_WORK_WARP_X		= CHAR_NPCWORKINT4,	/* ワープするX */
-	CHAR_WORK_WARP_Y		= CHAR_NPCWORKINT5,	/* ワープするY */
-	CHAR_WORK_ONEBATTLE 	= CHAR_NPCWORKINT6,	/* 一つしか戦  しない */
+	CHAR_WORK_WARP_X		= CHAR_NPCWORKINT4,	/* 传送目标X */
+	CHAR_WORK_WARP_Y		= CHAR_NPCWORKINT5,	/* 传送目标Y */
+	CHAR_WORK_ONEBATTLE 	= CHAR_NPCWORKINT6,	/* 只进行一场战斗 */
 	NPC_TIME_MODE			= CHAR_NPCWORKINT7, 
 	CHAR_WORK_BASEIMGBAK	= CHAR_NPCWORKINT8, /* 手午及  飓  寞 */
-	CHAR_WORK_DIETIME		= CHAR_NPCWORKINT9, /* 死んだ時間 */
+	CHAR_WORK_DIETIME		= CHAR_NPCWORKINT9, /* 死亡时间 */
 	CHAR_WORK_REVIVALTIME	= CHAR_NPCWORKINT10, /* 戏五忒月凛棉 */
 	CHAR_WORK_BATTLETYPE	= CHAR_NPCWORKINT11,
 };
@@ -358,7 +358,7 @@ int NPC_NPCEnemy_Encount( int meindex, int charaindex, int mode)
 		if( CHAR_getWorkInt( charaindex, CHAR_WORKPARTYMODE) != CHAR_PARTY_CLIENT) {
 			char	config[32];
 			snprintf( config, sizeof( config), "askbattlemsg1");
-			/* 戦  が始まる前に質  メッセージ */
+			/* 战斗开始前的提问讯息 */
 			
 			
 			if( NPC_Util_GetStrFromStrWithDelim( argstr, config,  buf, sizeof( buf))
@@ -368,7 +368,7 @@ int NPC_NPCEnemy_Encount( int meindex, int charaindex, int mode)
 				char	escapebuf[1024];
 				int fd = getfdFromCharaIndex( charaindex);
 				char	buf2[256];
-				/* askbattlemsg? があれば  数行にする  "\n"コードを  れる)*/
+				/* askbattlemsg? 存在的话变为多行  放入"\n"代码)*/
 				for( i = 2; i < 7; i ++ ) {
 					snprintf( config, sizeof( config), "askbattlemsg%d", i);
 					if( NPC_Util_GetStrFromStrWithDelim( argstr, config, buf2, sizeof( buf2))

@@ -1,12 +1,12 @@
 NPCCREATE
-###å¸‚é›†ä¼ é€
+###ÊĞ¼¯´«ËÍ
 {
 floorid=2000
 borncenter=70,68
 time=0
 createnum=1
 graphicname=102000
-name=å¸‚é›†ä¼ é€å‘˜
+name=ÊĞ¼¯´«ËÍÔ±
 dir=6
 enemy=npcgen_warpman|file:vipshop/viptran.arg
 }
@@ -17,7 +17,7 @@ borncenter=27,23
 time=0
 createnum=1
 graphicname=17012
-name=VIPç‚¹å…‘æ¢ç‚¹åˆ¸
+name=VIPµã¶Ò»»µãÈ¯
 dir=6
 enemy=vipshop|file:vipshop/dianquan.arg
 }
@@ -28,7 +28,7 @@ borncenter=30,24
 time=0
 createnum=1
 graphicname=17060
-name=ç‚¹åˆ¸éª‘å® å•†åº—
+name=µãÈ¯Æï³èÉÌµê
 dir=6
 enemy=vipshop|file:vipshop/qichong.arg
 }
@@ -39,7 +39,7 @@ borncenter=32,24
 time=0
 createnum=1
 graphicname=17060
-name=ç‚¹åˆ¸éª‘å® å•†åº—
+name=µãÈ¯Æï³èÉÌµê
 dir=6
 enemy=vipshop|file:vipshop/qichong2.arg
 }
@@ -50,7 +50,7 @@ borncenter=32,26
 time=0
 createnum=1
 graphicname=17017
-name=ç‚¹åˆ¸æˆ˜å® å•†åº—
+name=µãÈ¯Õ½³èÉÌµê
 dir=6
 enemy=vipshop|file:vipshop/zhanchong.arg
 }
@@ -61,7 +61,7 @@ borncenter=24,18
 time=0
 createnum=1
 graphicname=17074
-name=ç‚¹åˆ¸è£…å¤‡å•†åº—
+name=µãÈ¯×°±¸ÉÌµê
 dir=6
 enemy=vipshop|file:vipshop/zhuangbei.arg
 }
@@ -72,7 +72,7 @@ borncenter=26,20
 time=0
 createnum=1
 graphicname=17075
-name=ç‚¹åˆ¸é“å…·å•†åº—
+name=µãÈ¯µÀ¾ßÉÌµê
 dir=6
 enemy=vipshop|file:vipshop/daojv.arg
 }
@@ -83,7 +83,7 @@ borncenter=27,17
 time=0
 createnum=1
 graphicname=16988
-name=ç‚¹åˆ¸ç´ æå•†åº—
+name=µãÈ¯ËØ²ÄÉÌµê
 dir=6
 enemy=vipshop|file:vipshop/sucai.arg
 }
@@ -94,7 +94,7 @@ borncenter=26,30
 time=0
 createnum=1
 graphicname=16974
-name=å£°æœ›ç‰©å“å•†åº—
+name=ÉùÍûÎïÆ·ÉÌµê
 dir=6
 enemy=npcgen_shop|file:vipshop/shengwang.arg
 }
@@ -105,7 +105,7 @@ borncenter=20,24
 time=0
 createnum=1
 graphicname=16975
-name=å£°æœ›å•†åº—
+name=ÉùÍûÉÌµê
 dir=6
 enemy=npcgen_shop|file:vipshop/yanhua.arg
 }

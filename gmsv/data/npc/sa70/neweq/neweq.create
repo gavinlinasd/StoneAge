@@ -1,8 +1,8 @@
 NPCCREATE
 
-########ã€€æµ·æ—ç‹ã€€#########
+########¡¡º£×åÍõ¡¡#########
 {
-name=å…‹è¾¾
+name=¿Ë´ï
 floorid=8011
 borncenter=35,5
 dir=4
@@ -13,9 +13,9 @@ graphicname=101575
 enemy=changeevent|file:sa70/neweq/king
 }
 
-########ã€€çŠç‘šå•†äººã€€#########
+########¡¡Éºº÷ÉÌÈË¡¡#########
 {
-name=æµ·æ—ç²®é£Ÿç®¡ç†è€…
+name=º£×åÁ¸Ê³¹ÜÀíÕß
 floorid=8011
 borncenter=40,12
 dir=6
@@ -26,9 +26,9 @@ graphicname=101560
 enemy=npcgen_limitshop|file:sa70/neweq/vendor
 }
 
-########ã€€çŠç‘šç²¾å·¥å¸ˆã€€#########
+########¡¡Éºº÷¾«¹¤Ê¦¡¡#########
 {
-name=è´æ©æ–¯
+name=±´¶÷Ë¹
 floorid=8011
 borncenter=81,14
 dir=6
@@ -39,9 +39,9 @@ graphicname=101571
 enemy=ITEMCHANGE|file:sa70/neweq/process
 }
 
-########ã€€ä¾¿å¯®ã€€#########
+########¡¡ÊØÎÀ¡¡#########
 {
-name=å«å£«æŸ¥ç½•å¸ƒ
+name=ÎÀÊ¿²éº±²¼
 floorid=8011
 borncenter=38,7
 time=0
@@ -52,9 +52,9 @@ ignoreinvincible=1
 enemy=npcgen_man|file:sa70/neweq/solder
 }
 
-########ã€€ä¾¿å¯®ã€€#########
+########¡¡ÊØÎÀ¡¡#########
 {
-name=å«å£«ç™»æ¥å°”
+name=ÎÀÊ¿µÇÀ´¶û
 floorid=8011
 borncenter=33,7
 time=0
@@ -65,9 +65,9 @@ ignoreinvincible=1
 enemy=npcgen_man|file:sa70/neweq/solder
 }
 
-########ã€€ä¸€èˆ¬äºº1ã€€#########
+########¡¡Ò»°ãÈË1¡¡#########
 {
-name=å¡ç‰¹
+name=¿¨ÌØ
 floorid=8011
 borncenter=67,29
 time=0
@@ -78,9 +78,9 @@ ignoreinvincible=1
 enemy=npcgen_man|file:sa70/neweq/npc1
 }
 
-########ã€€ä¸€èˆ¬äºº2ã€€#########
+########¡¡Ò»°ãÈË2¡¡#########
 {
-name=å¥‡æ ¼æ‹‰
+name=Ææ¸ñÀ­
 floorid=8011
 borncenter=48,36
 time=0
@@ -91,9 +91,9 @@ ignoreinvincible=1
 enemy=npcgen_man|file:sa70/neweq/npc2
 }
 
-########ã€€ä¸€èˆ¬äºº3ã€€#########
+########¡¡Ò»°ãÈË3¡¡#########
 {
-name=é›·æ¯”ç‰¹
+name=À×±ÈÌØ
 floorid=8011
 borncenter=37,59
 time=0
@@ -105,9 +105,9 @@ enemy=npcgen_man|file:sa70/neweq/npc3
 }
 
 
-########ã€€ä¸€èˆ¬äºº4ã€€#########
+########¡¡Ò»°ãÈË4¡¡#########
 {
-name=ä¼¯æ´›è¥¿
+name=²®ÂåÎ÷
 floorid=8011
 borncenter=26,50
 time=0
@@ -119,9 +119,9 @@ enemy=npcgen_man|file:sa70/neweq/npc4
 }
 
 
-########ã€€ä¸€èˆ¬äºº5ã€€#########
+########¡¡Ò»°ãÈË5¡¡#########
 {
-name=å¤šå°”å…‹
+name=¶à¶û¿Ë
 floorid=8011
 borncenter=7,43
 time=0
@@ -133,9 +133,9 @@ enemy=npcgen_man|file:sa70/neweq/npc5
 }
 
 
-########ã€€ä¸€èˆ¬äºº6ã€€#########
+########¡¡Ò»°ãÈË6¡¡#########
 {
-name=ç½—å¤šå…‹æ‹‰
+name=ÂŞ¶à¿ËÀ­
 floorid=8011
 borncenter=15,9
 time=0
@@ -147,9 +147,9 @@ enemy=npcgen_man|file:sa70/neweq/npc6
 }
 
 
-########ã€€ä¸€èˆ¬äºº7ã€€#########
+########¡¡Ò»°ãÈË7¡¡#########
 {
-name=ç‰¹é›·å…‹æ´›
+name=ÌØÀ×¿ËÂå
 floorid=8011
 borncenter=76,53
 time=0
@@ -160,9 +160,9 @@ ignoreinvincible=1
 enemy=npcgen_man|file:sa70/neweq/npc7
 }
 
-########ã€€é“œé“è¿›åŒ–è¯´æ˜å‘˜ã€€#########
+########¡¡Í­Ìú½ø»¯ËµÃ÷Ô±¡¡#########
 #{
-#name=è«éåŠ©æ‰‹
+#name=Äª·ÇÖúÊÖ
 #floorid=3200
 #borncenter=53,45
 #dir=4
@@ -173,9 +173,9 @@ enemy=npcgen_man|file:sa70/neweq/npc7
 #enemy=changeevent|file:sa70/neweq/makehelp
 #}
 
-########ã€€ç„°çº¢ç­‰çº§ä¸€è£…å¤‡ç²¾å·¥å¸ˆ å¤šå¤šæ‘ã€€#########
+########¡¡ÑæºìµÈ¼¶Ò»×°±¸¾«¹¤Ê¦ ¶à¶à´å¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=3200
 borncenter=55,46
 dir=6
@@ -186,9 +186,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker1.arg
 }
 
-########ã€€ç„°çº¢ç­‰çº§äºŒè£…å¤‡ç²¾å·¥å¸ˆ é˜¿æ–¯ç›é²çŸ¿å±±ä¸€æ¥¼ã€€#########
+########¡¡ÑæºìµÈ¼¶¶ş×°±¸¾«¹¤Ê¦ °¢Ë¹ÂêÂ³¿óÉ½Ò»Â¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=31801
 borncenter=38,7
 dir=4
@@ -199,9 +199,9 @@ graphicname=16127
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker2.arg
 }
 
-########ã€€ç„°çº¢ç­‰çº§ä¸‰è£…å¤‡ç²¾å·¥å¸ˆ æ·±çº¢æ´åœ°ä¸‹ä¸‰æ¥¼ã€€#########
+########¡¡ÑæºìµÈ¼¶Èı×°±¸¾«¹¤Ê¦ Éîºì¶´µØÏÂÈıÂ¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=30003
 borncenter=25,24
 dir=6
@@ -212,9 +212,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker3.arg
 }
 
-########ã€€è‹ç»¿ç­‰çº§ä¸€è£…å¤‡ç²¾å·¥å¸ˆ æ— åæ´åœ°ä¸‹ä¸€æ¥¼ã€€#########
+########¡¡²ÔÂÌµÈ¼¶Ò»×°±¸¾«¹¤Ê¦ ÎŞÃû¶´µØÏÂÒ»Â¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=30307
 borncenter=41,32
 dir=6
@@ -225,9 +225,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker4.arg
 }
 
-########ã€€è‹ç»¿ç­‰çº§äºŒè£…å¤‡ç²¾å·¥å¸ˆ æ‹‰å¤šæ‹‰æ´çªŸä¸€æ¥¼ã€€#########
+########¡¡²ÔÂÌµÈ¼¶¶ş×°±¸¾«¹¤Ê¦ À­¶àÀ­¶´¿ßÒ»Â¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=20701
 borncenter=47,21
 dir=6
@@ -238,9 +238,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker5.arg
 }
 
-########ã€€è‹ç»¿ç­‰çº§ä¸‰è£…å¤‡ç²¾å·¥å¸ˆ ç‰ç’ƒæ´äº”æ¥¼ã€€#########
+########¡¡²ÔÂÌµÈ¼¶Èı×°±¸¾«¹¤Ê¦ ÁğÁ§¶´ÎåÂ¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=21005
 borncenter=20,37
 dir=6
@@ -251,9 +251,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker6.arg
 }
 
-########ã€€æ¹›è“ç­‰çº§ä¸€è£…å¤‡ç²¾å·¥å¸ˆ å·´é‚£å§†æ´åœ°ä¸‹äºŒæ¥¼ã€€#########
+########¡¡Õ¿À¶µÈ¼¶Ò»×°±¸¾«¹¤Ê¦ °ÍÄÇÄ·¶´µØÏÂ¶şÂ¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=30503
 borncenter=47,34
 dir=6
@@ -264,9 +264,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker7.arg
 }
 
-########ã€€æ¹›è“ç­‰çº§äºŒè£…å¤‡ç²¾å·¥å¸ˆ ç¢§é’æ´åœ°ä¸‹äº”æ¥¼ã€€#########
+########¡¡Õ¿À¶µÈ¼¶¶ş×°±¸¾«¹¤Ê¦ ±ÌÇà¶´µØÏÂÎåÂ¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=21205
 borncenter=29,5
 dir=4
@@ -277,9 +277,9 @@ graphicname=16127
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker8.arg
 }
 
-########ã€€æ¹›è“ç­‰çº§ä¸‰è£…å¤‡ç²¾å·¥å¸ˆ æ°´è‹æ´åœ°ä¸‹ä¸‰æ¥¼ã€€#########
+########¡¡Õ¿À¶µÈ¼¶Èı×°±¸¾«¹¤Ê¦ Ë®²Ô¶´µØÏÂÈıÂ¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=21303
 borncenter=18,4
 dir=6
@@ -290,9 +290,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker9.arg
 }
 
-########ã€€å²šé»„ç­‰çº§ä¸€è£…å¤‡ç²¾å·¥å¸ˆ å‰é²é‡‡çŸ³åœºä¸€æ¥¼ã€€#########
+########¡¡á°»ÆµÈ¼¶Ò»×°±¸¾«¹¤Ê¦ ¼ªÂ³²ÉÊ¯³¡Ò»Â¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=31901
 borncenter=18,9
 dir=6
@@ -303,9 +303,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker10.arg
 }
 
-########ã€€å²šé»„ç­‰çº§äºŒè£…å¤‡ç²¾å·¥å¸ˆ æ²¡è½çš„çŸ¿å‘äºŒæ¥¼ã€€#########
+########¡¡á°»ÆµÈ¼¶¶ş×°±¸¾«¹¤Ê¦ Ã»ÂäµÄ¿ó¿Ó¶şÂ¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=31202
 borncenter=26,54
 dir=6
@@ -316,9 +316,9 @@ graphicname=16208
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker11.arg
 }
 
-########ã€€å²šé»„ç­‰çº§ä¸‰è£…å¤‡ç²¾å·¥å¸ˆ ç„é»„æ´å››æ¥¼ã€€#########
+########¡¡á°»ÆµÈ¼¶Èı×°±¸¾«¹¤Ê¦ Ğş»Æ¶´ËÄÂ¥¡¡#########
 {
-name=è«éçš„å¼Ÿå­
+name=Äª·ÇµÄµÜ×Ó
 floorid=11204
 borncenter=33,12
 dir=4
@@ -329,9 +329,9 @@ graphicname=16127
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker12.arg
 }
 
-########ã€€è‹ç»¿ç­‰çº§4è£…å¤‡ç²¾å·¥å¸ˆ ç‘å°”äºšæ–¯å¤§é™†ã€€#########
+########¡¡²ÔÂÌµÈ¼¶4×°±¸¾«¹¤Ê¦ Èğ¶ûÑÇË¹´óÂ½¡¡#########
 {
-name=è«éçš„å¸ˆå‚…
+name=Äª·ÇµÄÊ¦¸µ
 floorid=147
 borncenter=45,18
 dir=4
@@ -341,9 +341,9 @@ ignoreinvincible=1
 graphicname=17062
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker13.arg
 }
-########ã€€æ¹›è“ç­‰çº§4è£…å¤‡ç²¾å·¥å¸ˆ ç‘å°”äºšæ–¯ã€€#########
+########¡¡Õ¿À¶µÈ¼¶4×°±¸¾«¹¤Ê¦ Èğ¶ûÑÇË¹¡¡#########
 {
-name=è«éçš„å¸ˆå‚…
+name=Äª·ÇµÄÊ¦¸µ
 floorid=104
 borncenter=66,65
 dir=4
@@ -353,9 +353,9 @@ ignoreinvincible=1
 graphicname=17062
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker14.arg
 }
-########ã€€ç„°çº¢ç­‰çº§4è£…å¤‡ç²¾å·¥å¸ˆ è’åºŸä¼Šç”¸å›­ã€€#########
+########¡¡ÑæºìµÈ¼¶4×°±¸¾«¹¤Ê¦ »Ä·ÏÒÁµéÔ°¡¡#########
 {
-name=è«éçš„å¸ˆå‚…
+name=Äª·ÇµÄÊ¦¸µ
 floorid=710
 borncenter=167,173
 dir=4
@@ -365,9 +365,9 @@ ignoreinvincible=1
 graphicname=17062
 enemy=ITEMCHANGE|file:sa70/neweq/eqmaker15.arg
 }
-########ã€€å²šé»„ç­‰çº§4è£…å¤‡ç²¾å·¥å¸ˆ ç‘å°”äºšæ–¯é«˜åŸã€€#########
+########¡¡á°»ÆµÈ¼¶4×°±¸¾«¹¤Ê¦ Èğ¶ûÑÇË¹¸ßÔ­¡¡#########
 {
-name=è«éçš„å¸ˆå‚…
+name=Äª·ÇµÄÊ¦¸µ
 floorid=711
 borncenter=150,351
 dir=4

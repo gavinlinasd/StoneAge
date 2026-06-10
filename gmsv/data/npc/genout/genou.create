@@ -498,7 +498,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16202
-name=å®ˆäºº
+name=ÊØÈË
 enemy=npcgen_warpman|file:genout/wpm_100_278_325
 }
 #line 53
@@ -510,7 +510,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16202
-name=å®ˆäºº
+name=ÊØÈË
 enemy=npcgen_warpman|file:genout/wpm_200_359_671
 }
 #line 55
@@ -522,7 +522,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16202
-name=å®ˆäºº
+name=ÊØÈË
 enemy=npcgen_warpman|file:genout/wpm_200_358_671
 }
 #line 59
@@ -534,7 +534,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16207
-name=å®ˆäºº
+name=ÊØÈË
 enemy=npcgen_warpman|file:genout/wpm_30502_45_41
 }
 #line 61
@@ -546,7 +546,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16202
-name=å®ˆäºº
+name=ÊØÈË
 enemy=npcgen_warpman|file:genout/wpm_30503_26_5
 }
 #line 68
@@ -558,6 +558,6 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=16048
-name=å®ˆäºº
+name=ÊØÈË
 enemy=npcgen_warpman|file:genout/wpm_11206_5_42
 }

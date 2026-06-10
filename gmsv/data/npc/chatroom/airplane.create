@@ -1,5 +1,5 @@
 NPCCREATE
-#######åŠ ç¾èˆªç©º ç›ä¸½å¨œä¸ï½å¥‡åŠªä¼Š##########
+#######¼ÓÃÀº½¿Õ ÂêÀöÄÈË¿¡«ÆæÅ¬ÒÁ##########
 {
 floorid=2000
 borncenter=105,87,1,1
@@ -7,10 +7,10 @@ movecenter=105,87,105,87
 createnum=1
 dir=4
 graphicname=100259
-name=åŠ ç¾èˆªç©º
+name=¼ÓÃÀº½¿Õ
 enemy=airplane|file:chatroom/airplane.arg
 }
-#######åŠ ç¾èˆªç©º ç±³å…°è¾¾ï½å¥‡åŠªä¼Š##########
+#######¼ÓÃÀº½¿Õ Ã×À¼´ï¡«ÆæÅ¬ÒÁ##########
 {
 floorid=5543
 borncenter=20,24,1,1
@@ -18,10 +18,10 @@ movecenter=20,24,20,24
 createnum=1
 dir=2
 graphicname=100259
-name=åŠ ç¾èˆªç©º
+name=¼ÓÃÀº½¿Õ
 enemy=airplane|file:chatroom/airplane1.arg
 }
-#######åŠ ç¾èˆªç©º å¡é²ä»–é‚£ï½å¥‡åŠªä¼Š##########
+#######¼ÓÃÀº½¿Õ ¿¨Â³ËûÄÇ¡«ÆæÅ¬ÒÁ##########
 {
 floorid=4000
 borncenter=92,72,1,1
@@ -29,10 +29,10 @@ movecenter=92,72,92,72
 createnum=1
 dir=4
 graphicname=100259
-name=åŠ ç¾èˆªç©º
+name=¼ÓÃÀº½¿Õ
 enemy=airplane|file:chatroom/airplane2.arg
 }
-#######åŠ ç¾èˆªç©º è¾¾é‚£ï½å¥‡åŠªä¼Š##########
+#######¼ÓÃÀº½¿Õ ´ïÄÇ¡«ÆæÅ¬ÒÁ##########
 {
 floorid=5100
 borncenter=43,37,1,1
@@ -40,11 +40,11 @@ movecenter=43,37,43,37
 createnum=1
 dir=2
 graphicname=100259
-name=åŠ ç¾èˆªç©º
+name=¼ÓÃÀº½¿Õ
 enemy=airplane|file:chatroom/airplane3.arg
 }
 
-#######åŠ ç¾èˆªç©º ç¦æ‘ï½åŒ—å‰é²åŒº##########
+#######¼ÓÃÀº½¿Õ ¸£´å¡«±±¼ªÂ³Çø##########
 {
 floorid=5000
 borncenter=43,59,1,1
@@ -52,11 +52,11 @@ movecenter=43,59,43,59
 createnum=1
 dir=4
 graphicname=100259
-name=åŠ ç¾èˆªç©º
+name=¼ÓÃÀº½¿Õ
 enemy=airplane|file:chatroom/airplane5.arg
 }
 
-#######åŠ ç¾èˆªç©º ç¦æ‘ï½è¥¿å‰é²åŒº##########
+#######¼ÓÃÀº½¿Õ ¸£´å¡«Î÷¼ªÂ³Çø##########
 {
 floorid=5000
 borncenter=45,60,1,1
@@ -64,11 +64,11 @@ movecenter=45,60,45,60
 createnum=1
 dir=4
 graphicname=100259
-name=åŠ ç¾èˆªç©º
+name=¼ÓÃÀº½¿Õ
 enemy=airplane|file:chatroom/airplane4.arg
 }
 
-#######å²å¡é²èˆªç©º ç‘å°”äºšæ–¯ï½è’åºŸä¼Šç”¸å›­##########
+#######Ê·¿¨Â³º½¿Õ Èğ¶ûÑÇË¹¡«»Ä·ÏÒÁµéÔ°##########
 {
 floorid=104
 borncenter=53,53,1,1
@@ -76,6 +76,6 @@ movecenter=53,53,53,53
 createnum=1
 dir=4
 graphicname=101532
-name=å²å¡é²èˆªç©º
+name=Ê·¿¨Â³º½¿Õ
 enemy=airplane|file:chatroom/airplane6.arg
 }

@@ -79,20 +79,20 @@ BOOL b_first_shutdown=FALSE;//ttom
 int mfdfulll = 0;
 
 /*------------------------------------------------------------
- * サーバの状態
+ * 服务器的状态
  ------------------------------------------------------------*/
 typedef struct tag_serverState
 {
     BOOL            acceptmore;     /*  1分匀凶日｝accept 仄凶丐午
                                         切斤仁匹｝close 允月 */
-    unsigned int    fdid;           /*  fd の通り値 */
+    unsigned int    fdid;           /*  fd 的通信值 */
     unsigned int    closeallsocketnum;  /*   closeallsocket   及酸曰及
                                              醒*/
-	int				shutdown;		/*  サーバをshutdownするモード 
+	int				shutdown;		/*  关闭服务器的模式 
 									 *	0:玊橖 鼠躂雄翻:で籤蚗哱で籤蚗哱さ↓迶
 									 * 乒□玉卞卅匀凶凛棉互  匀化月［
 									 */
-	int				dsptime;		/* shutdown モードのワーク  数*/
+	int				dsptime;		/* shutdown 模式的工作变量*/
 	int				limittime;		/* 叶直返 */
 }ServerState;
 
@@ -116,11 +116,11 @@ typedef struct tagCONNECT
 	int check_rb_time;
 #endif    
 
-    struct sockaddr_in sin; /* 接続先のアドレス */
+    struct sockaddr_in sin; /* 连接目标的地址 */
     ConnectType ctype;       /* 戊生弁扑亦件及潘   */
 
     char    cdkey[CDKEYLEN];    /* CDKEY */
-    char    passwd[PASSWDLEN];  /* パスワード */
+    char    passwd[PASSWDLEN];  /* 密码 */
     LoginType state;        /* 蜇箕及夫弘奶件橇谪 */
 	int		nstatecount;
     char    charname[CHARNAMELEN];  /* 夫弘奶件  及平乓仿   */
@@ -316,9 +316,9 @@ int other_write_cnt =0;
 
 
 /*------------------------------------------------------------
- * servstateを初期化する?
+ * 初始化servstate
  * 娄醒｝忒曰袄
- *  なし
+ *  无
  ------------------------------------------------------------*/
 ANYTHREAD static void SERVSTATE_initserverState( void )
 {
@@ -617,7 +617,7 @@ ANYTHREAD BOOL initConnectOne( int sockfd, struct sockaddr_in* sin ,int len )
     Connect[sockfd].check_rb_oneline_b = 0;
 	Connect[sockfd].check_rb_time = 0;
     
-     Connect[sockfd].close_request = 0;      /* 切断要求フラグ */
+     Connect[sockfd].close_request = 0;      /* 断线请求旗标 */
     // Nuke 08/27 For acceleration avoidance
     Connect[sockfd].Walktime = 0;
     Connect[sockfd].lastWalktime = 0;
@@ -1310,11 +1310,11 @@ ANYTHREAD void CONNECT_setCloseRequest( int fd, int count )
                        
 
 /*------------------------------------------------------------
- * CAcheck などに使われる関数?  際に送る?
+ * 用于 CAcheck 等的函数?实际发送?
  * 引数
- *  fd      int     ファイ郊ディスクリプタ
- * 返り値
- *  なし
+ *  fd      int     文件描述符
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 ANYTHREAD void CAsend( int fd )
 {
@@ -1337,8 +1337,8 @@ ANYTHREAD void CAsend( int fd )
 /*------------------------------------------------------------
  * CA毛霜月［
  * 引数
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 ANYTHREAD void CAcheck( void )
 {
@@ -1366,12 +1366,12 @@ ANYTHREAD void CAflush( int charaindex )
 
 
 /*------------------------------------------------------------
- * CDbuf に追加する?
+ * 追加到 CDbuf
  * 引数
- *  fd      int     ファイ郊ディスクリプタ
+ *  fd      int     文件描述符
  *  data    char*   犯□正
  *  size    int     犯□正及扔奶术
- * 返り値
+ * 返回值
  *  岳      TRUE(1)
  *  撩      FALSE(0)
  ------------------------------------------------------------*/
@@ -1392,11 +1392,11 @@ ANYTHREAD BOOL CONNECT_appendCDbuf( int fd , char* data, int size )
 
 
 /*------------------------------------------------------------
- * CDcheck などに使われる関数?  際に送る?
+ * 用于 CDcheck 等的函数?实际发送?
  * 引数
- *  fd      int     ファイ郊ディスクリプタ
- * 返り値
- *  なし
+ *  fd      int     文件描述符
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 ANYTHREAD void CDsend( int fd )
 {
@@ -1413,8 +1413,8 @@ ANYTHREAD void CDsend( int fd )
 /*------------------------------------------------------------
  * CD毛霜月［
  * 引数
- * 返り値
- *  なし
+ * 返回值
+ *  无
  ------------------------------------------------------------*/
 ANYTHREAD void CDcheck( void )
 {
@@ -1538,10 +1538,10 @@ void GM_BROADCAST()
 #endif
 
 /*------------------------------------------------------------
- * fd が valid なものかどうかを調べる
+ * 检查 fd 是否有效
  * 引数
  *  fd          int         fd
- * 返り値
+ * 返回值
  *  valid   TRUE(1)
  *  invalid FALSE(0)
  ------------------------------------------------------------*/
@@ -1565,7 +1565,7 @@ ANYTHREAD INLINE int CONNECT_checkfd( int fd )
  * cdkey 井日 fd 毛  月［
  * 引数
  *  cd      char*       cdkey
- * 返り値
+ * 返回值
  *  白央奶伙犯奴旦弁伉皿正  方匀化｝ -1 及凛反巨仿□
  ------------------------------------------------------------*/
 ANYTHREAD int getfdFromCdkey( char* cd )
@@ -1589,7 +1589,7 @@ ANYTHREAD int getfdFromCdkey( char* cd )
  *   陆质  及民尼永弁毛聂仁仄凶［
  * 引数
  *  charaindex      int     平乓仿及奶件犯永弁旦
- * 返り値
+ * 返回值
  *  白央奶伙犯奴旦弁伉皿正  方匀化｝ -1 及凛反巨仿□
  ------------------------------------------------------------*/
 ANYTHREAD int getfdFromCharaIndex( int charaindex )
@@ -1619,7 +1619,7 @@ ANYTHREAD int getfdFromCharaIndex( int charaindex )
  * charaindex 井日 cdkey 毛  月［
  * 引数
  *  charaindex  int     平乓仿及奶件犯永弁旦
- * 返り値
+ * 返回值
  *  0卅日岳  ｝  卅日撩  
  ------------------------------------------------------------*/
 ANYTHREAD int getcdkeyFromCharaIndex( int charaindex , char *out, int outlen )
@@ -1644,7 +1644,7 @@ ANYTHREAD int getcdkeyFromCharaIndex( int charaindex , char *out, int outlen )
  *   元fdid 及蛊毛茧允
  * 引数
  *  fdid    int     fd及id
- * 返り値
+ * 返回值
  *  -1 及凛反巨仿□
  ------------------------------------------------------------*/
 ANYTHREAD int getfdFromFdid( int fdid )
@@ -1667,7 +1667,7 @@ ANYTHREAD int getfdFromFdid( int fdid )
  * fdid 井日平乓仿及index 毛手午户月［
  * 引数
  *  fdid    int     fd及id
- * 返り値
+ * 返回值
  *  -1 及凛反夫弘奶件  及平乓仿反心勾井日卅井匀凶［0动晓卅日
  * 夫弘奶件  及平乓仿及平乓仿反中木勾尺及 index
  ------------------------------------------------------------*/
@@ -1692,7 +1692,7 @@ ANYTHREAD int getCharindexFromFdid( int fdid )
 /*------------------------------------------------------------
  * 平乓仿index 井日 fdid 毛手午户月［
  * 引数
- *  charind  int     ファイ郊ディスクリプタ
+ *  charind  int     文件描述符
  * 井尹曰切 fdid    分匀凶日平乓仿ind互云井仄中
  ------------------------------------------------------------*/
 ANYTHREAD int getFdidFromCharaIndex( int charind )
@@ -1718,7 +1718,7 @@ ANYTHREAD int getFdidFromCharaIndex( int charind )
  * fd卞喃曰癫化日木凶涛粮互弁仿奶失件玄分午｝BOOL毛忒允
  * 称中巨仿□民尼永弁反仄卅中［
  * 引数
- *  fd  int     ファイ郊ディスクリプタ
+ *  fd  int     文件描述符
  ------------------------------------------------------------*/
 ANYTHREAD BOOL CONNECT_isCLI( int fd )
 {
@@ -1734,7 +1734,7 @@ ANYTHREAD BOOL CONNECT_isCLI( int fd )
  * fd卞喃曰癫化日木凶涛粮互失市它件玄扔□田分午｝BOOL毛忒允
  * 称中巨仿□民尼永弁反仄卅中［
  * 引数
- *  fd  int     ファイ郊ディスクリプタ
+ *  fd  int     文件描述符
  ------------------------------------------------------------*/
 ANYTHREAD BOOL CONNECT_isAC( int fd )
 {
@@ -1747,9 +1747,9 @@ ANYTHREAD BOOL CONNECT_isAC( int fd )
 
 /*------------------------------------------------------------
  * fd卞喃曰癫化日木凶涛粮互夫弘奶件橇谪匹丐月井升丹井
- * を返す
+ * 返回
  * 引数
- *  fd  int     ファイ郊ディスクリプタ
+ *  fd  int     文件描述符
  ------------------------------------------------------------*/
 ANYTHREAD BOOL CONNECT_isUnderLogin( int fd )
 {
@@ -1761,9 +1761,9 @@ ANYTHREAD BOOL CONNECT_isUnderLogin( int fd )
 }
 
 /*------------------------------------------------------------
- * Login処    かどうか調べる
+ * 检查是否在Login处理中
  * 引数
- *  fd  int     ファイ郊ディスクリプタ
+ *  fd  int     文件描述符
  ------------------------------------------------------------*/
 ANYTHREAD BOOL CONNECT_isWhileLogin( int fd )
 {
@@ -1776,9 +1776,9 @@ ANYTHREAD BOOL CONNECT_isWhileLogin( int fd )
 
 /*------------------------------------------------------------
  * 夫弘奶件仄化中卅中橇谪井
- * どうかを返す
+ * 返回是否如此
  * 引数
- *  fd  int     ファイ郊ディスクリプタ
+ *  fd  int     文件描述符
  ------------------------------------------------------------*/
 ANYTHREAD BOOL CONNECT_isNOTLOGIN( int fd )
 {
@@ -1791,9 +1791,9 @@ ANYTHREAD BOOL CONNECT_isNOTLOGIN( int fd )
 
 /*------------------------------------------------------------
  * 夫弘奶件仄化中月橇谪井
- * どうかを返す
+ * 返回是否如此
  * 引数
- *  fd  int     ファイ郊ディスクリプタ
+ *  fd  int     文件描述符
  ------------------------------------------------------------*/
 ANYTHREAD BOOL CONNECT_isLOGIN( int fd )
 {
@@ -1809,7 +1809,7 @@ ANYTHREAD BOOL CONNECT_isLOGIN( int fd )
 /*------------------------------------------------------------
  * 蝈够及涛粮毛濠匀化｝失市它件玄扔□田卞犯□正毛忡绣仄方丹午允月［
  * 娄醒｝忒曰袄
- *  なし
+ *  无
  ------------------------------------------------------------*/
 void closeAllConnectionandSaveData( void )
 {
@@ -1819,7 +1819,7 @@ void closeAllConnectionandSaveData( void )
     /*  仇木动晓 accept 仄卅中方丹卞允月    */
     SERVSTATE_setCloseallsocketnum(0);
 
-    /*  全  削除する    */
+    /*  全部删除    */
     for( i = 0 ; i<ConnectLen ; i++ ){
         if( CONNECT_getUse_debug(i,1413) == TRUE ){
             BOOL    clilogin=FALSE;
@@ -2870,7 +2870,7 @@ ANYTHREAD void outputNetProcLog( int fd, int mode)
  * cdkey 井日 fd 毛  月［
  * 引数
  *  cd      char*       cdkey
- * 返り値
+ * 返回值
  *  白央奶伙犯奴旦弁伉皿正  方匀化｝ -1 及凛反巨仿□
  ------------------------------------------------------------*/
 ANYTHREAD int getfdFromCdkeyWithLogin( char* cd )
@@ -2915,7 +2915,7 @@ MUTLITHREAD void MTIO_print( char *s )
 
 /*
   
-  マ郊チスレッド環境を初期化する
+  初始化多线程环境
   
  */
 static void MTIO_loop( void );
@@ -2947,7 +2947,7 @@ MTIO_join( void )
  * TRUE : 岳  
  * FALSE : 撩  
  *
- * 賭純このうえないな?
+ * 真是赌得不能再赌了
  */
 MUTLITHREAD static BOOL MTIO_appendRB( int conindex, char *src, int length )
 {
@@ -3109,7 +3109,7 @@ MTIO_loop( void )
 				}
 			}
 		}
-        /* つぎにwrite  */
+        /* 接着write  */
         FD_ZERO( &fds );
         for(i=0;i<ConnectLen;i++){
             CONNECT_LOCK_ARG2(i,2618);

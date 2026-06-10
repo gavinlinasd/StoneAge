@@ -211,14 +211,14 @@ void saacproto_ACCharSave_recv(int fd ,char* result, char* data,int retfd)
             /* 岳   */
             lssproto_CharLogout_send( clifd, result , "success" );
         else
-            /* エラーやとしゃべる   */
+            /* 报错并说话   */
             lssproto_CharLogout_send( clifd, result , "Cannot save" );
         CONNECT_setState( clifd, NOTLOGIN );
         CONNECT_setCharaindex( clifd, -1 );
         break;
 
     case WHILELOSTCHARSAVE:
-        /*  結果がどうであれ�bこのキャラは削除する  */
+        /*  无论结果如何,这个人物都会被删除  */
         saacproto_ACCharDelete_send( acfd, cdkey,passwd,charname,"",fdid );
         CONNECT_setState( clifd, WHILELOSTCHARDELETE );
         CONNECT_setCharaindex( clifd, -1 );
@@ -253,9 +253,9 @@ void saacproto_ACCharDelete_recv(int fd,char* result,char* data,int retfd)
 
     switch( CONNECT_getState(clifd) ){
     case WHILELOSTCHARDELETE:
-        /*  ひストでキャラ消し  の返答    */
+        /*  对表中人物删除的回应    */
         /*  窒手仄卅中  */
-        /*  状態を  す  */
+        /*  返回状态  */
         CONNECT_setState(clifd, NOTLOGIN );
         CONNECT_setCharaindex( clifd, -1 );
         break;
@@ -273,7 +273,7 @@ void saacproto_ACCharDelete_recv(int fd,char* result,char* data,int retfd)
 }
 
 /*
- *  ひックの返答?これは解除にしか使わない?現在ほぼ使われる  定はない
+ *  锁定的回应?只用于解锁,目前几乎没有被使用的场合
  */
 void saacproto_ACLock_recv(int fd , char* result, char* data ,int retfd)
 {
@@ -314,7 +314,7 @@ void saacproto_ACLock_recv(int fd , char* result, char* data ,int retfd)
 
         }else{
             /*
-             * メッセージを見る
+             * 查看讯息
              */
             char    mesg[128];
             snprintf( mesg ,sizeof( mesg ), "%s hasn't been locked" ,cdkey);
@@ -326,7 +326,7 @@ void saacproto_ACLock_recv(int fd , char* result, char* data ,int retfd)
                 CONNECT_setState( clifd, NOTLOGIN );
             }else{
                 /*
-                 * 再度ひック解除しようとする
+                 * 再次尝试解锁
                  * state 及  祭卅仄［
                  */
                 saacproto_ACLock_send(fd, cdkey ,
@@ -351,7 +351,7 @@ void saacproto_ACUCheck_recv( int fd , char *cd )
 
 
 /* ---------------------------------------------
- * データベース更新受けとり処    数値  
+ * 数据库更新接收处理  数值版  
  * --------------------------------------------*/
 void saacproto_DBUpdateEntryInt_recv( int fd,char* result,
 									char* table,char* key,int msgid,int msgid2 )
@@ -362,7 +362,7 @@ void saacproto_DBUpdateEntryInt_recv( int fd,char* result,
 	}
 }
 /* ---------------------------------------------
- * データベース更新受けとり処      字    
+ * 数据库更新接收处理  字符串版    
  * --------------------------------------------*/
 void saacproto_DBUpdateEntryString_recv( int fd,char* result,
 									char* table,char* key,int msgid,int msgid2 )
@@ -374,7 +374,7 @@ void saacproto_DBUpdateEntryString_recv( int fd,char* result,
 }
 
 /* ---------------------------------------------
- * データベース受けとり処    ランク  
+ * 数据库接收处理  排名版  
  * --------------------------------------------*/
 void saacproto_DBGetEntryRank_recv( int fd,char* result,int rank,int count,
 									char* table,char* key,int msgid,int msgid2 )
@@ -402,7 +402,7 @@ void saacproto_DBDeleteEntryInt_recv( int fd,char* result,
 
 }
 /* ---------------------------------------------
- * データベース削除受けとり処      字    
+ * 数据库删除接收处理  字符串版    
  * --------------------------------------------*/
 void saacproto_DBDeleteEntryString_recv( int fd,char* result,
 									char* table,char* key,int msgid,int msgid2 )
@@ -416,7 +416,7 @@ void saacproto_DBDeleteEntryString_recv( int fd,char* result,
 
 
 /* ---------------------------------------------
- * データベース受けとり処    数値  
+ * 数据库接收处理  数值版  
  * --------------------------------------------*/
 void saacproto_DBGetEntryInt_recv( int fd,char* result,int value,
 									char* table,char* key,int msgid,int msgid2 )
@@ -427,7 +427,7 @@ void saacproto_DBGetEntryInt_recv( int fd,char* result,int value,
 	}
 }
 /* ---------------------------------------------
- * データベース受けとり処      字    
+ * 数据库接收处理  字符串版    
  * --------------------------------------------*/
 void saacproto_DBGetEntryString_recv( int fd,char* result,char *value,
 									char* table,char* key,int msgid,int msgid2 )
@@ -493,7 +493,7 @@ void saacproto_S_UpdataStele_recv( int i , char *ocdkey , char *oname , char *nc
 
 #endif
 /* ---------------------------------------------
- * ブひードキャストメッセージ受けとり
+ * 广播讯息接收
  * --------------------------------------------*/
 void saacproto_Broadcast_recv( int fd,char* id,char* charname,char *message )
 {

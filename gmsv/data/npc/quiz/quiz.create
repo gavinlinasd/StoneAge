@@ -7,7 +7,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=100000
-name=å¤§å¸ˆçš„å¼Ÿå­
+name=´óÊ¦µÄµÜ×Ó
 enemy=changeevent|file:quiz/equiz_04
 }
 
@@ -19,7 +19,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100000
-name=é­å¸
+name=¿ıË¾
 enemy=changeevent|file:quiz/equiz_01
 }
 
@@ -31,7 +31,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100015
-name=ä¼Šé‚£å¤š
+name=ÒÁÄÇ¶à
 enemy=changeevent|file:quiz/equiz_02
 }
 
@@ -44,7 +44,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100010
-name=è§•ã‚‚
+name=×ÈÆæ
 enemy=changeevent|file:quiz/equiz_03
 }
 
@@ -58,7 +58,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100000
-name=é­å¸
+name=¿ıË¾
 enemy=changeevent|file:quiz/equiz_01
 }
 
@@ -70,7 +70,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100015
-name=ä¼Šé‚£å¤š
+name=ÒÁÄÇ¶à
 enemy=changeevent|file:quiz/equiz_02
 }
 
@@ -83,7 +83,7 @@ createnum=1
 dir=4
 ignoreinvincible=1
 graphicname=100010
-name=è§•ã‚‚
+name=×ÈÆæ
 enemy=changeevent|file:quiz/equiz_03
 }
 
@@ -95,7 +95,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=å…¥åœºå·è´©å”®äºº
+name=Èë³¡¾í··ÊÛÈË
 enemy=changeevent|file:quiz/uketuke
 }
 
@@ -107,7 +107,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=å…¥åœºå·è´©å”®äºº
+name=Èë³¡¾í··ÊÛÈË
 enemy=changeevent|file:quiz/uketuke
 }
 
@@ -119,7 +119,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=å…¥åœºå·è´©å”®äºº
+name=Èë³¡¾í··ÊÛÈË
 enemy=changeevent|file:quiz/uketuke2
 }
 
@@ -131,7 +131,7 @@ createnum=1
 dir=6
 ignoreinvincible=1
 graphicname=16065
-name=å…¥åœºå·è´©å”®äºº
+name=Èë³¡¾í··ÊÛÈË
 enemy=changeevent|file:quiz/uketuke2
 }
 

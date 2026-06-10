@@ -1,9 +1,9 @@
 NPCCREATE
 
 
-#è™Žçš„è®­ç»ƒå¸ˆ
+#»¢µÄÑµÁ·Ê¦
 {
-name=è™Žçš„è®­ç»ƒå¸ˆ
+name=»¢µÄÑµÁ·Ê¦
 floorid=1040
 borncenter=61,43
 dir=6
@@ -14,9 +14,9 @@ enemy=npcgen_warpman|file:sa60/newbie/m_tiger
 graphicname=16354
 }
 
-#è™Žçš„è®­ç»ƒå¸ˆ
+#»¢µÄÑµÁ·Ê¦
 {
-name=è™Žçš„è®­ç»ƒå¸ˆ
+name=»¢µÄÑµÁ·Ê¦
 floorid=2030
 borncenter=58,16
 dir=6
@@ -27,9 +27,9 @@ enemy=npcgen_warpman|file:sa60/newbie/m_tiger
 graphicname=16354
 }
 
-#è™Žçš„è®­ç»ƒå¸ˆ
+#»¢µÄÑµÁ·Ê¦
 {
-name=è™Žçš„è®­ç»ƒå¸ˆ
+name=»¢µÄÑµÁ·Ê¦
 floorid=3030
 borncenter=52,22
 dir=6
@@ -40,9 +40,9 @@ enemy=npcgen_warpman|file:sa60/newbie/m_tiger
 graphicname=16354
 }
 
-#è™Žçš„è®­ç»ƒå¸ˆ
+#»¢µÄÑµÁ·Ê¦
 {
-name=è™Žçš„è®­ç»ƒå¸ˆ
+name=»¢µÄÑµÁ·Ê¦
 floorid=4030
 borncenter=16,32
 dir=6
