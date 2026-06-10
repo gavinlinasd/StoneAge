@@ -1,0 +1,14 @@
+NPCCREATE
+
+
+
+###### 萨姆吉尔 ######
+{
+name=萨姆吉尔
+floorid=5501
+borncenter=43,5,1,1
+dir=6
+createnum=1
+enemy=changeevent|file:poru/samugiru
+graphicname=100036
+}

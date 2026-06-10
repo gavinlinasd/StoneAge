@@ -1,0 +1,14 @@
+NPCCREATE
+####失眠的夜####
+########哈尔利#########
+{
+name=哈尔利
+floorid=3400
+borncenter=63,43
+dir=6
+ignoreinvincible=1
+createnum=1
+graphicname=16017
+enemy=changeevent|file:sa70/collect/collect1.arg
+}
+

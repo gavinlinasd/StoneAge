@@ -1,0 +1,14 @@
+NPCCREATE
+###### 驯兽机暴 ######
+{
+name=驯兽机暴
+floorid=1040
+borncenter=23,20
+time=0
+dir=4
+createnum=1
+ignoreinvincible=1
+enemy=npcgen_warpman|file:eden3/rider.arg
+graphicname=100374
+}
+

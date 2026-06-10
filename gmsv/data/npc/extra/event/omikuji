@@ -1,0 +1,31 @@
+###########################################################
+#おみくじもらいましょ　　　　　　　　　　　　　　　　　　 #
+# 						担当：西竹#
+###########################################################
+
+NomalMainMsg:你好。神签一天只能抽一次喔。
+
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:ENDEV=36&LV>0
+NomalWindowMsg:\n\n　　　　　欢迎来到长毛象神社。\n　　神签一天只能抽一次喔。
+EventEnd
+
+
+EventNo:-1
+TYPE:ACCEPT
+EVENT:NOWEV=36&LV>0&ITEM!=2615,NOWEV=36&LV>0&ITEM!=2616,NOWEV=36&LV>0&ITEM!=2617,NOWEV=36&LV>0&ITEM!=2618,NOWEV=36&LV>0&ITEM!=2619,NOWEV=36&LV>0&ITEM!=2620
+AcceptMsg:\n\n　　　　　欢迎来到长毛象神社\n　　　　　要不要抽个签呀？
+ThanksMsg:\n\n　　　　　好的、请。\n　　神签一天只能抽一次喔。
+ItemFullMsg:\n所持物太多了无法收下。\n能否把手中的行李减少之后\n再到我这里来一次呢？
+GetRandItem:2615,2616,2616,2617,2617,2617,2617,2618,2618,2618,2618,2618,2619,2619,2620
+EndSetFlg:36
+EventEnd
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:\n\n　　　　　欢迎来到长毛象神社。\n　　　　要不要抽个签呀？\n香油钱、请放入本殿的香油箱里面。
+EventEnd
+

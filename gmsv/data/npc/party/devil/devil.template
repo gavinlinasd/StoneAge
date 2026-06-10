@@ -1,0 +1,13 @@
+NPCTEMPLATE
+
+{
+templatename=devilpk
+makeatnobody=1
+makeatnosee=1
+type=101277
+functionset=NPCEnemy
+hp=100
+mp=100
+str=1
+tough=1
+}

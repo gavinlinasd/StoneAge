@@ -1,0 +1,47 @@
+#### 珊瑚提炼师 ####
+
+START_MSG:你想提炼珊瑚矿粉吗？？提炼一次1000元喔。而且…三个珊瑚原液才能提炼出一份珊瑚精炼矿粉。\n脚本制作-偷偷&QQ：28952572
+
+MenuHead:选择要提炼的珊瑚精炼矿粉
+NeedHead:需要的珊瑚原液
+
+
+####  红珊瑚精练矿粉提炼 ####
+{
+CHANGEITEM:21150
+NeedItem:21146,21146,21146
+FREE:ENDEV=4&ENDEV=81&ITEM=21146*3&GOLD>=1000&reITEM>=1
+DelGold:1000
+DelItem:21146*3
+AddItem:21150
+}
+
+####  蓝珊瑚精练矿粉提炼 ####
+{
+CHANGEITEM:21152
+NeedItem:21148,21148,21148
+FREE:ENDEV=4&ENDEV=81&ITEM=21148*3&GOLD>=1000&reITEM>=1
+DelGold:1000
+DelItem:21148*3
+AddItem:21152
+}
+
+####  绿珊瑚精练矿粉提炼 ####
+{
+CHANGEITEM:21151
+NeedItem:21147,21147,21147
+FREE:ENDEV=4&ENDEV=81&ITEM=21147*3&GOLD>=1000&reITEM>=1
+DelGold:1000
+DelItem:21147*3
+AddItem:21151
+}
+
+####  黄珊瑚精练矿粉提炼 ####
+{
+CHANGEITEM:21153
+NeedItem:21149,21149,21149
+FREE:ENDEV=4&ENDEV=81&ITEM=21149*3&GOLD>=1000&reITEM>=1
+DelGold:1000
+DelItem:21149*3
+AddItem:21153
+}

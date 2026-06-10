@@ -1178,7 +1178,21 @@ int *NPC_GetQuestion(int meindex)
 	}
 
 	{
-		int tmp_tbl[j+1];
+		/* The original returned a pointer to this stack array, which is
+		 * undefined behavior that 2005 compilers happened to tolerate.
+		 * gcc 13 -O2 reuses the frame immediately (segfault at boot in
+		 * NPC_QuizInit). Single-threaded server: a static buffer is safe. */
+		static int *tmp_tbl = NULL;
+		static int tmp_tbl_size = 0;
+		if( tmp_tbl_size < j + 1 ){
+			int *p = realloc( tmp_tbl, sizeof(int) * (j + 1) );
+			if( p == NULL ){
+				static int empty_tbl[1] = { 1 };
+				return empty_tbl;
+			}
+			tmp_tbl = p;
+			tmp_tbl_size = j + 1;
+		}
 		tmp_tbl[0] = j+1;
 		for(j=1,i=0; i < quizcnt ;i++){
 			if( (type & (1 << (Quiz[i].type-1)))  != (1 << (Quiz[i].type-1))){

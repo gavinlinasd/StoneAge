@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:青龍+機暴+黑暴 凱恩+帖拉所伊朵\n繆那+帖拉所伊朵 撲滿烏力+帖拉所伊朵
+EventEnd

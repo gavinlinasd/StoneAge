@@ -1,0 +1,29 @@
+NPCCREATE
+
+
+###### 艾尔斯######
+
+{
+name=艾尔斯
+floorid=100
+borncenter=404,466
+dir=6
+time=0
+ignoreinvincible=1
+createnum=1
+graphicname=16353
+enemy=changeevent|file:sa80/gloves/gloves_1
+}
+
+###### 艾尔登######
+{
+name=艾尔登
+floorid=200
+borncenter=109,1020
+dir=6
+time=0
+ignoreinvincible=1
+createnum=1
+graphicname=16353
+enemy=changeevent|file:sa80/gloves/gloves_2
+}

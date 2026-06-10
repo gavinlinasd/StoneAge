@@ -1,0 +1,5 @@
+#宠物赛跑设置 no|petname|bbi|lowlv|highlv
+#(raceman.txt was missing from the recovered data; minimal valid stub)
+1|乌力|100353|1|140
+2|布拉其|100406|1|140
+3|奇宝|100501|1|140

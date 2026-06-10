@@ -49,26 +49,26 @@ BOOL memInit( void )
     int i;
     if( memconfig == FALSE )
         return FALSE;
-    mem = calloc( 1, sizeof( Memory ) * UNITNUMBER );
+    mem = calloc( 1, sizeof( Memory ) * (size_t)UNITNUMBER );
     if( mem == NULL ){
-        print( "memInit: Can't alloc memory: %d\n" ,
-               sizeof(Memory)*UNITNUMBER );
+        print( "memInit: Can't alloc memory: %zu\n" ,
+               sizeof(Memory)*(size_t)UNITNUMBER );
         return FALSE;
     }
 
-    memset( mem , 0 , sizeof( Memory )* UNITNUMBER );
+    memset( mem , 0 , sizeof( Memory )* (size_t)UNITNUMBER );
     for( i = 0 ; i < UNITNUMBER ; i ++ ){
         mem[i].pointer  =   NULL;
         mem[i].used     =   FALSE;
         mem[i].nsize    =   0;
     }
-    mem[0].pointer = calloc( 1, UNIT*UNITNUMBER );
+    mem[0].pointer = calloc( 1, (size_t)UNIT*UNITNUMBER );
     if( mem[0].pointer == NULL ){
-        print( "memInit: Can't Allocate %d byte\n" , UNIT*UNITNUMBER );
+        print( "memInit: Can't Allocate %zu byte\n" , (size_t)UNIT*UNITNUMBER );
         free( mem );
         return FALSE;
     }
-    memset( mem[0].pointer , 0 , sizeof( UNIT*UNITNUMBER ));
+    /* pool already zeroed by calloc */
 
 #ifdef DEBUG
     print( "Allocate %d byte( %.2fK byte %.2fM byte )\n" ,
@@ -79,7 +79,7 @@ BOOL memInit( void )
 #endif
 	readblock = 0;
     for( i = 0 ; i < UNITNUMBER ; i ++ )
-        mem[i].pointer = mem[0].pointer + i * UNIT;
+        mem[i].pointer = mem[0].pointer + (size_t)i * UNIT;
 
 	NowMemory = 0;
 	AllocOldTime.tv_sec = NowTime.tv_sec;
@@ -139,7 +139,7 @@ void*   allocateMemory( const unsigned int nbyte )
 		
 	}
 	if( ret == NULL ) {
-	    print( "Can't Allocate %d byte .remnants:%4.2f\n" , nbyte, (float)(NowMemory/UNITNUMBER));
+	    print( "Can't Allocate %d byte .used:%4.2f%%\n" , nbyte, 100.0*(float)NowMemory/(float)UNITNUMBER);
 	}else {
 		NowMemory += arrayAllocSize;
 

@@ -1,0 +1,8 @@
+NomalMainMsg:你是谁！？快出去！别想偷窥我的最新研究成果！！！！！！！！
+
+####任务结束对话####
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:克克爾+裏斯基+裏斯基 紅雷+任何穿山甲\n克克爾+裏斯基 揚奇洛斯+瑞德寶\n布拉奇多斯+卡達魯卡斯 格爾希洛+歐林吉魯
+EventEnd

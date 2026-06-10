@@ -1,0 +1,9 @@
+NPCTEMPLATE
+#事件编号侽侾
+{
+templatename=changeevent
+makeatnobody=1
+makeatnosee=1
+graphicname=0
+functionset=ExChangeMan
+}

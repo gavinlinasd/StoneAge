@@ -1,0 +1,7 @@
+NomalMainMsg:嘎嘎嘎！！！
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>80&ENDEV=81
+NomalWindowMsg:嘎嘎嘎！！！
+EventEnd

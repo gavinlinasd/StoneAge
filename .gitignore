@@ -12,3 +12,19 @@ core.*
 
 # generated at build time
 /gmsv/genver.h
+
+# runtime state created by the servers
+/gmsv/log/*.log
+/gmsv/log/*.LOG
+/gmsv/old_icache.txt
+/gmsv/Schedule/
+/saac/char/
+/saac/char_sleep/
+/saac/lock/
+/saac/log/
+/saac/mail/
+/saac/db/int/
+/saac/db/string/
+/saac/data/wklog/
+/saac/nohup.out
+nohup.out

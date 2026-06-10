@@ -1,0 +1,11 @@
+entype:2
+askbattlemsg1:輪触,輪触゛
+startmsg:輪触,輪触,輪触触
+dieact:1
+warpfl:20607
+warpx:36
+warpy:31
+end msg:
+enemyno:961,963,962
+deniedmsg:輪触,輪触,輪触触゛
+

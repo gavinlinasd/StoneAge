@@ -1,0 +1,11 @@
+####莱德####
+
+NomalMainMsg:網‵網‵網網
+
+####任务结束####
+
+EventNo:-1
+TYPE:MESSAGE
+EVENT:LV>0
+NomalWindowMsg:柵゛柵柵゛柵゛
+EventEnd

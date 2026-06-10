@@ -1,0 +1,14 @@
+NPCTEMPLATE
+#######いじわるなガンゾ□フバ禿##########
+{
+templatename=sb_ganzo
+makeatnobody=1
+makeatnosee=1
+type=100401
+functionset=NPCEnemy
+hp=100
+mp=100
+str=1
+tough=1
+}
+

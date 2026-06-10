@@ -1,0 +1,27 @@
+###########################################################
+#おさいせんしましょ　　　　　　　　　　　　　　　　　　　 #
+# 						担当：西竹#
+###########################################################
+
+NomalMainMsg:这是捐献箱。请多指教。
+
+EventNo:-1
+TYPE:CLEAN
+EVENT:NOWEV=36,ENDEV=36
+CleanFlg:36
+CleanMainMsg:\n\n　　　你已经拉过神签了吗？
+CleanFlgMsg:\n\n　　　　　请从神社前的牌坊\n　　　　　再一次走往本殿。
+EventEnd
+
+EventNo:36
+TYPE:REQUEST
+EVENT:LV>0
+RequestMsg:\n\n　　把香油钱、放入捐献箱内吗？
+ThanksMsg:\n\n　　　　　　贡献了香油钱。
+StopMsg:\n要终止现在的事件吗？
+EndStopMsg:若是、随时想到都可以来喔
+NoStopMsg:非常期待喔
+StoneLessMsg:\n\n钱不够喔。
+DelStone:50
+EventEnd
+

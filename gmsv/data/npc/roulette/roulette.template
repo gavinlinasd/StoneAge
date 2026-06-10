@@ -1,0 +1,9 @@
+NPCTEMPLATE
+{
+templatename=NPC_GambleRoulette
+makeatnobody=1
+makeatnosee=1
+name=
+graphicname=100820
+functionset=NPC_GambleRoulette
+}

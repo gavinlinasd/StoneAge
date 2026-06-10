@@ -1,0 +1,12 @@
+NPCCREATE
+#######いじわるなガンゾ□フバ禿##########
+{
+floorid=100
+borncenter=472,297,1,1
+movecenter=20,20,100,100
+createnum=1
+dir=4
+graphicname=100401
+name=坏心眼的愿藏
+enemy=sb_ganzo|file:100/sb_ganzo.arg
+}
